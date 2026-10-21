@@ -1,0 +1,15 @@
+{
+  "fixed": {
+    "file_version": "0.1.0.0"
+  },
+  "info": {
+    "0000": {
+      "ProductVersion": "0.1.0",
+      "CompanyName": "Postika Technologies",
+      "FileDescription": "Postika desktop application",
+      "LegalCopyright": "Copyright (c) 2026 Postika Technologies",
+      "ProductName": "Postika",
+      "Comments": "Website: https://postika.softwrhq.com; Support: haronkibetrutoh@gmail.com; License: MIT"
+    }
+  }
+}

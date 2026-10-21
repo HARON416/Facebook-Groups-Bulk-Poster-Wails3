@@ -1,0 +1,8 @@
+# Local development profile for this checkout on Ubuntu 24.04.
+# Update the executable path if the checkout moves.
+abi <abi/4.0>,
+include <tunables/global>
+
+profile postika-dev /home/kibet/Projects/Postika-WailsV3/bin/postika flags=(unconfined) {
+  userns,
+}

@@ -1,0 +1,1836 @@
+msgid ""
+msgstr ""
+"Source-Language: en\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2\n"
+"X-Plurals-Order: one, other\n"
+
+#. 0: minimumInterval === maximumInterval ? minimumInterval \\: `${minimumInterval}–${maximumInterval}`; 1: rewriteState
+#: src/App.svelte
+msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
+msgstr "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
+
+#: src/App.svelte
+msgid "Could not restore saved groups. Load groups to refresh the list."
+msgstr "Could not restore saved groups. Load groups to refresh the list."
+
+#: src/App.svelte
+msgid "Choose a future date and time for your post."
+msgstr "Choose a future date and time for your post."
+
+#: src/App.svelte
+msgid "Saving your scheduled queue…"
+msgstr "Saving your scheduled queue…"
+
+#: src/App.svelte
+msgid "Opening a selected group to capture fresh posting requests…"
+msgstr "Opening a selected group to capture fresh posting requests…"
+
+#: src/App.svelte
+#: src/App.svelte
+#: src/components/LogMessage.svelte
+msgid "Posting stopped."
+msgstr "Posting stopped."
+
+#: src/App.svelte
+#: src/components/LogMessage.svelte
+msgid "Could not read a selected image"
+msgstr "Could not read a selected image"
+
+#. 0: image.file.name
+#. 0: missingNames
+#. 0: unreadableNames
+#. 0: image.file.name
+#: src/App.svelte
+#: src/App.svelte
+#: src/components/PostComposer.svelte
+#: src/components/PostComposer.svelte
+msgid "Could not read {0}"
+msgstr "Could not read {0}"
+
+#: src/App.svelte
+msgid "Posting finished."
+msgstr "Posting finished."
+
+#. 0: scheduleLabel(scheduledFor)
+#. 0: date
+#: src/App.svelte
+#: src/components/LogMessage.svelte
+msgid "Scheduled for {0}. Keep Postika open and your computer awake."
+msgstr "Scheduled for {0}. Keep Postika open and your computer awake."
+
+#: src/App.svelte
+msgid "Could not restore this account’s draft. New edits will stay available while Postika is open."
+msgstr "Could not restore this account’s draft. New edits will stay available while Postika is open."
+
+#: src/App.svelte
+msgid "Could not add the dropped images. Try browsing for them instead."
+msgstr "Could not add the dropped images. Try browsing for them instead."
+
+#: src/App.svelte
+msgid "Could not save this account’s draft to disk. Keep Postika open to retain your edits."
+msgstr "Could not save this account’s draft to disk. Keep Postika open to retain your edits."
+
+#: src/App.svelte
+msgid "Start with your message. Add images to bring it to life."
+msgstr "Start with your message. Add images to bring it to life."
+
+#: src/App.svelte
+msgid "Choose the groups you want to share your post with."
+msgstr "Choose the groups you want to share your post with."
+
+#~ msgid "Review your post and preferences, then post now or schedule for later."
+#~ msgstr "Review your post and preferences, then post now or schedule for later."
+
+#. 0: currentStep + 1; 1: steps.length
+#: src/App.svelte
+msgid "STEP {0} OF {1}"
+msgstr "STEP {0} OF {1}"
+
+#: src/App.svelte
+msgid "Restoring account workspace…"
+msgstr "Restoring account workspace…"
+
+#: src/App.svelte
+msgid "Opening…"
+msgstr "Opening…"
+
+#: src/App.svelte
+msgid "Loading…"
+msgstr "Loading…"
+
+#: src/App.svelte
+msgid "Load groups"
+msgstr "Load groups"
+
+#: src/App.svelte
+msgid "Groups"
+msgstr "Groups"
+
+#: src/App.svelte
+msgid "Search groups…"
+msgstr "Search groups…"
+
+#: src/App.svelte
+msgid "Clear group search"
+msgstr "Clear group search"
+
+#: src/App.svelte
+msgid "Search groups"
+msgstr "Search groups"
+
+#: src/App.svelte
+msgid "Select all groups"
+msgstr "Select all groups"
+
+#: src/App.svelte
+msgid "Unselect all groups"
+msgstr "Unselect all groups"
+
+#~ msgid "{0} selected{1}"
+#~ msgstr "{0} selected{1}"
+
+#: src/App.svelte
+msgid "Searching…"
+msgstr "Searching…"
+
+#: src/App.svelte
+msgid "No groups found. Try another search."
+msgstr "No groups found. Try another search."
+
+#: src/App.svelte
+msgid "Joined groups"
+msgstr "Joined groups"
+
+#: src/App.svelte
+msgid "No groups loaded yet."
+msgstr "No groups loaded yet."
+
+#: src/App.svelte
+msgid "Open your Facebook groups to get started."
+msgstr "Open your Facebook groups to get started."
+
+#: src/App.svelte
+msgid "Posting settings"
+msgstr "Posting settings"
+
+#: src/App.svelte
+msgid "Add a Gemini API key in Settings to enable rewriting."
+msgstr "Add a Gemini API key in Settings to enable rewriting."
+
+#: src/App.svelte
+msgid "Applying defaults…"
+msgstr "Applying defaults…"
+
+#: src/App.svelte
+msgid "Use saved defaults"
+msgstr "Use saved defaults"
+
+#: src/App.svelte
+msgid "Open settings"
+msgstr "Open settings"
+
+#~ msgid "Posting as <0/>"
+#~ msgstr "Posting as <0/>"
+
+#~ msgid "Review your post<0>{0} images · {1} groups selected</0>"
+#~ msgstr "Review your post<0>{0} images · {1} groups selected</0>"
+
+#~ msgid "Original post"
+#~ msgstr "Original post"
+
+#~ msgid "Your post"
+#~ msgstr "Your post"
+
+#~ msgid "Gemini will rewrite this body for each group using your instructions."
+#~ msgstr "Gemini will rewrite this body for each group using your instructions."
+
+#~ msgid "Selected groups ({0})"
+#~ msgstr "Selected groups ({0})"
+
+#: src/App.svelte
+msgid "Schedule your queue"
+msgstr "Schedule your queue"
+
+#. 0: Intl.DateTimeFormat().resolvedOptions().timeZone
+#: src/App.svelte
+msgid "Time zone: {0}. Keep Postika open and your computer awake. Facebook may ask you to sign in when posting starts."
+msgstr "Time zone: {0}. Keep Postika open and your computer awake. Facebook may ask you to sign in when posting starts."
+
+#: src/App.svelte
+#: src/Workspace.svelte
+msgid "Cancel"
+msgstr "Cancel"
+
+#: src/App.svelte
+msgid "Confirm schedule"
+msgstr "Confirm schedule"
+
+#: src/App.svelte
+msgid "Next <0/>"
+msgstr "Next <0/>"
+
+#: src/App.svelte
+msgid "View logs"
+msgstr "View logs"
+
+#: src/App.svelte
+#: src/components/PostingLogView.svelte
+msgid "Stop"
+msgstr "Stop"
+
+#: src/App.svelte
+#: src/Workspace.svelte
+#: src/components/PostingLogView.svelte
+msgid "Scheduled"
+msgstr "Scheduled"
+
+#: src/App.svelte
+msgid "Posting…"
+msgstr "Posting…"
+
+#: src/App.svelte
+msgid "Post now"
+msgstr "Post now"
+
+#: src/App.svelte
+msgid "Schedule"
+msgstr "Schedule"
+
+#: src/App.svelte
+msgid "<0/> Previous"
+msgstr "<0/> Previous"
+
+#: src/Workspace.svelte
+msgid "Application menu"
+msgstr "Application menu"
+
+#: src/Workspace.svelte
+msgid "Add account"
+msgstr "Add account"
+
+#: src/Workspace.svelte
+#: src/components/PostingLogView.svelte
+#: src/components/PostingLogView.svelte
+msgid "Posting logs"
+msgstr "Posting logs"
+
+#: src/Workspace.svelte
+#: src/components/Settings.svelte
+#: src/components/Settings.svelte
+msgid "Settings"
+msgstr "Settings"
+
+#: src/Workspace.svelte
+msgid "Creating…"
+msgstr "Creating…"
+
+#: src/Workspace.svelte
+msgid "Create & sign in"
+msgstr "Create & sign in"
+
+#: src/Workspace.svelte
+msgid "Account name"
+msgstr "Account name"
+
+#: src/Workspace.svelte
+msgid "Sign in to Facebook in the new account’s browser window."
+msgstr "Sign in to Facebook in the new account’s browser window."
+
+#: src/Workspace.svelte
+msgid "Running"
+msgstr "Running"
+
+#: src/Workspace.svelte
+msgid "In the background: <0/>"
+msgstr "In the background: <0/>"
+
+#: src/Workspace.svelte
+msgid "Loading accounts…"
+msgstr "Loading accounts…"
+
+#: src/components/AccountDropdown.svelte
+msgid "Loading accounts"
+msgstr "Loading accounts"
+
+#. 0: current?.name ?? 'Loading accounts'
+#: src/components/AccountDropdown.svelte
+msgid "Account: {0}"
+msgstr "Account: {0}"
+
+#: src/components/AccountDropdown.svelte
+msgid "Select account"
+msgstr "Select account"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search accounts…"
+msgstr "Search accounts…"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search accounts"
+msgstr "Search accounts"
+
+#: src/components/AccountDropdown.svelte
+msgid "Clear account search"
+msgstr "Clear account search"
+
+#: src/components/AccountDropdown.svelte
+msgid "All accounts"
+msgstr "All accounts"
+
+#: src/components/AccountDropdown.svelte
+msgid "Accounts"
+msgstr "Accounts"
+
+#: src/components/AccountDropdown.svelte
+msgid "No accounts found"
+msgstr "No accounts found"
+
+#: src/components/AccountDropdown.svelte
+#: src/components/ThemePicker.svelte
+msgid "Try a different name."
+msgstr "Try a different name."
+
+#: src/components/ConnectivityToast.svelte
+msgid "You’re back online"
+msgstr "You’re back online"
+
+#: src/components/ConnectivityToast.svelte
+msgid "Internet connection lost"
+msgstr "Internet connection lost"
+
+#: src/components/ConnectivityToast.svelte
+msgid "Your queue is still manually paused."
+msgstr "Your queue is still manually paused."
+
+#: src/components/ConnectivityToast.svelte
+msgid "Your queue will continue automatically."
+msgstr "Your queue will continue automatically."
+
+#: src/components/ConnectivityToast.svelte
+msgid "Your queue is paused. We’ll continue when the connection returns."
+msgstr "Your queue is paused. We’ll continue when the connection returns."
+
+#: src/components/ConnectivityToast.svelte
+msgid "Dismiss connection notification"
+msgstr "Dismiss connection notification"
+
+#: src/components/DateTimePicker.svelte
+msgid "Choose a date and time"
+msgstr "Choose a date and time"
+
+#: src/components/DateTimePicker.svelte
+msgid "Select date"
+msgstr "Select date"
+
+#: src/components/DateTimePicker.svelte
+msgid "Choose a weekday for this post"
+msgstr "Choose a weekday for this post"
+
+#. 0: day.description
+#: src/components/DateTimePicker.svelte
+msgid "Select {0}"
+msgstr "Select {0}"
+
+#: src/components/DateTimePicker.svelte
+msgid "Previous month"
+msgstr "Previous month"
+
+#: src/components/DateTimePicker.svelte
+msgid "Next month"
+msgstr "Next month"
+
+#: src/components/DateTimePicker.svelte
+#: src/components/DateTimePicker.svelte
+msgid "Select time"
+msgstr "Select time"
+
+#: src/components/DateTimePicker.svelte
+msgid "24-hour clock"
+msgstr "24-hour clock"
+
+#: src/components/DateTimePicker.svelte
+msgid "Increase hour"
+msgstr "Increase hour"
+
+#: src/components/DateTimePicker.svelte
+#: src/components/DateTimePicker.svelte
+msgid "Hour"
+msgstr "Hour"
+
+#: src/components/DateTimePicker.svelte
+msgid "Decrease hour"
+msgstr "Decrease hour"
+
+#: src/components/DateTimePicker.svelte
+msgid "Increase minute"
+msgstr "Increase minute"
+
+#: src/components/DateTimePicker.svelte
+#: src/components/DateTimePicker.svelte
+msgid "Minute"
+msgstr "Minute"
+
+#: src/components/DateTimePicker.svelte
+msgid "Decrease minute"
+msgstr "Decrease minute"
+
+#: src/components/DateTimePicker.svelte
+msgid "Choose a date and time in the future."
+msgstr "Choose a date and time in the future."
+
+#. 0: rejected.join(', ')
+#: src/components/PostComposer.svelte
+msgid "Unsupported files: {0}. Choose JPG, PNG, WebP, or GIF images."
+msgstr "Unsupported files: {0}. Choose JPG, PNG, WebP, or GIF images."
+
+#. 0: image.file.name
+#: src/components/PostComposer.svelte
+msgid "Could not preview {0}. Please choose another image."
+msgstr "Could not preview {0}. Please choose another image."
+
+#. 0: images[index].file.name; 1: index + 1; 2: images.length
+#: src/components/PostComposer.svelte
+msgid "{0} moved to position {1} of {2}."
+msgstr "{0} moved to position {1} of {2}."
+
+#: src/components/PostComposer.svelte
+#: src/components/PostEditorContent.svelte
+msgid "Post body"
+msgstr "Post body"
+
+#: src/components/PostComposer.svelte
+#: src/components/PostComposer.svelte
+msgid "Required"
+msgstr "Required"
+
+#: src/components/PostComposer.svelte
+msgid "Images"
+msgstr "Images"
+
+#: src/components/PostComposer.svelte
+msgid "Choose images"
+msgstr "Choose images"
+
+#: src/components/PostComposer.svelte
+msgid "Drop images here or <0>browse images</0>"
+msgstr "Drop images here or <0>browse images</0>"
+
+#: src/components/PostComposer.svelte
+msgid "JPG, PNG, WebP, or GIF · Select multiple images"
+msgstr "JPG, PNG, WebP, or GIF · Select multiple images"
+
+#~ msgid "{0} {1} selected"
+#~ msgstr "{0} {1} selected"
+
+#: src/components/PostComposer.svelte
+msgid "Add more"
+msgstr "Add more"
+
+#: src/components/PostComposer.svelte
+msgid "Drag images to rearrange. Or focus an image and use Alt + Left / Right."
+msgstr "Drag images to rearrange. Or focus an image and use Alt + Left / Right."
+
+#: src/components/PostComposer.svelte
+msgid "Selected images"
+msgstr "Selected images"
+
+#. 0: image.file.name; 1: images.indexOf(image) + 1; 2: images.length
+#: src/components/PostComposer.svelte
+msgid "{0}, image {1} of {2}"
+msgstr "{0}, image {1} of {2}"
+
+#. 0: image.file.name
+#: src/components/PostComposer.svelte
+msgid "Remove {0}"
+msgstr "Remove {0}"
+
+#: src/components/PostComposer.svelte
+msgid "Drop more images here to add them."
+msgstr "Drop more images here to add them."
+
+#. 0: error
+#: src/components/PostEditor.svelte
+msgid "Could not edit the post: {0}"
+msgstr "Could not edit the post: {0}"
+
+#: src/components/PostEditorContent.svelte
+msgid "Post editor controls"
+msgstr "Post editor controls"
+
+#: src/components/PostEditorContent.svelte
+msgid "Text formatting"
+msgstr "Text formatting"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bold (Ctrl+B)"
+msgstr "Bold (Ctrl+B)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bold"
+msgstr "Bold"
+
+#: src/components/PostEditorContent.svelte
+msgid "Italic (Ctrl+I)"
+msgstr "Italic (Ctrl+I)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Italic"
+msgstr "Italic"
+
+#: src/components/PostEditorContent.svelte
+msgid "Heading 1"
+msgstr "Heading 1"
+
+#: src/components/PostEditorContent.svelte
+msgid "Heading 2"
+msgstr "Heading 2"
+
+#: src/components/PostEditorContent.svelte
+msgid "Quote"
+msgstr "Quote"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bullet list"
+msgstr "Bullet list"
+
+#: src/components/PostEditorContent.svelte
+msgid "Numbered list"
+msgstr "Numbered list"
+
+#: src/components/PostEditorContent.svelte
+msgid "Undo (Ctrl+Z)"
+msgstr "Undo (Ctrl+Z)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Undo"
+msgstr "Undo"
+
+#: src/components/PostEditorContent.svelte
+msgid "Redo (Ctrl+Shift+Z)"
+msgstr "Redo (Ctrl+Shift+Z)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Redo"
+msgstr "Redo"
+
+#: src/components/PostEditorContent.svelte
+msgid "What would you like to share?"
+msgstr "What would you like to share?"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bold, italic, headings, quotes, and lists · Markdown shortcuts supported"
+msgstr "Bold, italic, headings, quotes, and lists · Markdown shortcuts supported"
+
+#. 0: body.length.toLocaleString(getLocale())
+#: src/components/PostEditorContent.svelte
+msgid "{0} characters"
+msgstr "{0} characters"
+
+#: src/components/LogMessage.svelte
+msgid "Ready to post."
+msgstr "Ready to post."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook response copied."
+msgstr "Facebook response copied."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook response received"
+msgstr "Facebook response received"
+
+#: src/components/PostingLogView.svelte
+msgid "POSTIKA / ACTIVITY"
+msgstr "POSTIKA / ACTIVITY"
+
+#: src/components/PostingLogView.svelte
+msgid "Posting progress"
+msgstr "Posting progress"
+
+#. 0: activity?.processed || 0; 1: activity?.total || 0
+#: src/components/PostingLogView.svelte
+msgid "{0}/{1} groups processed"
+msgstr "{0}/{1} groups processed"
+
+#. 0: percentage
+#: src/components/PostingLogView.svelte
+msgid "{0}% complete"
+msgstr "{0}% complete"
+
+#: src/components/PostingLogView.svelte
+msgid "Groups processed"
+msgstr "Groups processed"
+
+#: src/components/PostingLogView.svelte
+msgid "Published"
+msgstr "Published"
+
+#: src/components/PostingLogView.svelte
+msgid "Awaiting approval"
+msgstr "Awaiting approval"
+
+#: src/components/PostingLogView.svelte
+msgid "Failed or skipped"
+msgstr "Failed or skipped"
+
+#: src/components/PostingLogView.svelte
+msgid "Remaining"
+msgstr "Remaining"
+
+#. 0: number(a); 1: number(b); 2: c
+#. 0: activity.current; 1: activity.total; 2: activity.currentGroup.name
+#: src/components/LogMessage.svelte
+#: src/components/PostingLogView.svelte
+msgid "Group {0}/{1}: {2}"
+msgstr "Group {0}/{1}: {2}"
+
+#. 0: pauseRequested ? /* @wc-include */ ' · Paused' \\: ''
+#: src/components/PostingLogView.svelte
+msgid "Next post in <0/>{0}"
+msgstr "Next post in <0/>{0}"
+
+#: src/components/PostingLogView.svelte
+msgid "Elapsed <0/>"
+msgstr "Elapsed <0/>"
+
+#: src/components/PostingLogView.svelte
+msgid "Current group <0/>"
+msgstr "Current group <0/>"
+
+#: src/components/PostingLogView.svelte
+msgid "Following latest"
+msgstr "Following latest"
+
+#: src/components/PostingLogView.svelte
+msgid "Jump to latest"
+msgstr "Jump to latest"
+
+#. 0.0: total
+#: src/components/PostingLogView.svelte
+msgid "Activity timeline <0>{0} logs</0>"
+msgstr "Activity timeline <0>{0} logs</0>"
+
+#: src/components/PostingLogView.svelte
+msgid "Posting activity"
+msgstr "Posting activity"
+
+#. 0: entryLabel(entry)
+#: src/components/PostingLogView.svelte
+msgid "{0} log"
+msgstr "{0} log"
+
+#. 0: itemTime(entry.message)
+#: src/components/PostingLogView.svelte
+msgid "Took {0}"
+msgstr "Took {0}"
+
+#: src/components/PostingLogView.svelte
+#: src/components/PostingLogView.svelte
+msgid "Copy Facebook response"
+msgstr "Copy Facebook response"
+
+#: src/components/PostingLogView.svelte
+msgid "Response copied"
+msgstr "Response copied"
+
+#: src/components/PostingLogView.svelte
+msgid "Copied"
+msgstr "Copied"
+
+#: src/components/PostingLogView.svelte
+msgid "Copying…"
+msgstr "Copying…"
+
+#: src/components/PostingLogView.svelte
+msgid "Copy response"
+msgstr "Copy response"
+
+#. 0.0: entry.hasResponse ? /* @wc-include */ ' · Response available to copy' \\: ''
+#: src/components/PostingLogView.svelte
+msgid "Debug details<0>Original log message{0}</0>"
+msgstr "Debug details<0>Original log message{0}</0>"
+
+#: src/components/PostingLogView.svelte
+msgid "Your activity will appear here"
+msgstr "Your activity will appear here"
+
+#: src/components/PostingLogView.svelte
+msgid "Start posting to follow uploads, results, and wait times."
+msgstr "Start posting to follow uploads, results, and wait times."
+
+#: src/components/PostingLogView.svelte
+msgid "Log pages"
+msgstr "Log pages"
+
+#: src/components/PostingLogView.svelte
+msgid "Previous page"
+msgstr "Previous page"
+
+#. 0: number
+#: src/components/PostingLogView.svelte
+msgid "Page {0}"
+msgstr "Page {0}"
+
+#: src/components/PostingLogView.svelte
+msgid "Next page"
+msgstr "Next page"
+
+#: src/components/PostingLogView.svelte
+msgid "← Prev"
+msgstr "← Prev"
+
+#: src/components/PostingLogView.svelte
+msgid "Next →"
+msgstr "Next →"
+
+#. 0: total ? (page - 1) * pageSize + 1 \\: 0; 1: Math.min(page * pageSize, total); 2: total
+#: src/components/PostingLogView.svelte
+msgid "{0}–{1} of {2} logs"
+msgstr "{0}–{1} of {2} logs"
+
+#: src/components/PostingLogView.svelte
+msgid "Resume"
+msgstr "Resume"
+
+#: src/components/PostingLogView.svelte
+msgid "Pause"
+msgstr "Pause"
+
+#: src/components/PostingLogView.svelte
+msgid "Stopping…"
+msgstr "Stopping…"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "POSTING PACE"
+msgstr "POSTING PACE"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Interval between posts"
+msgstr "Interval between posts"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Minimum (seconds)"
+msgstr "Minimum (seconds)"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Maximum (seconds)"
+msgstr "Maximum (seconds)"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Choose how long to wait before posting to the next group."
+msgstr "Choose how long to wait before posting to the next group."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "At least 60 seconds. Use equal values for a fixed interval."
+msgstr "At least 60 seconds. Use equal values for a fixed interval."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "OPTIONAL · AI REWRITE"
+msgstr "OPTIONAL · AI REWRITE"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "A fresh version for each group"
+msgstr "A fresh version for each group"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Rewrite each post body with Gemini"
+msgstr "Rewrite each post body with Gemini"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
+msgstr "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Keep it concise and easy to scan. Preserve the price and contact details."
+msgstr "Keep it concise and easy to scan. Preserve the price and contact details."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Rewrite instructions"
+msgstr "Rewrite instructions"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
+msgstr "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
+msgstr "If rewriting fails, that post uses your original text. The next post tries Gemini again."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Let Gemini rewrite your post using your instructions."
+msgstr "Let Gemini rewrite your post using your instructions."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Posting preferences"
+msgstr "Posting preferences"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved defaults help"
+msgstr "Saved defaults help"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "About saved defaults"
+msgstr "About saved defaults"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved interval"
+msgstr "Saved interval"
+
+#. 0: settings.minimumInterval === settings.maximumInterval ? settings.minimumInterval \\: `${settings.minimumInterval}–${settings.maximumInterval}`
+#: src/components/SavedDefaultsInfo.svelte
+msgid "{0} seconds"
+msgstr "{0} seconds"
+
+#: src/App.svelte
+#: src/components/SavedDefaultsInfo.svelte
+msgid "On"
+msgstr "On"
+
+#: src/App.svelte
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Off"
+msgstr "Off"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Gemini rewrite"
+msgstr "Gemini rewrite"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "No instructions saved."
+msgstr "No instructions saved."
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved rewrite instructions"
+msgstr "Saved rewrite instructions"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved values could not be loaded. Try “Use saved defaults” again."
+msgstr "Saved values could not be loaded. Try “Use saved defaults” again."
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "What does “Use saved defaults” do?"
+msgstr "What does “Use saved defaults” do?"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
+msgstr "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
+msgstr "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
+
+#: src/components/Settings.svelte
+msgid "Settings saved. New runs can use these defaults."
+msgstr "Settings saved. New runs can use these defaults."
+
+#: src/components/Settings.svelte
+msgid "Key saved · leave blank to keep it"
+msgstr "Key saved · leave blank to keep it"
+
+#: src/components/Settings.svelte
+msgid "Enter your Gemini API key"
+msgstr "Enter your Gemini API key"
+
+#: src/components/Settings.svelte
+msgid "A key is saved on this device."
+msgstr "A key is saved on this device."
+
+#: src/components/Settings.svelte
+msgid "No API key saved."
+msgstr "No API key saved."
+
+#: src/components/Settings.svelte
+msgid "Remove saved key"
+msgstr "Remove saved key"
+
+#: src/components/Settings.svelte
+msgid "Gemini"
+msgstr "Gemini"
+
+#: src/components/Settings.svelte
+msgid "API key<0/>"
+msgstr "API key<0/>"
+
+#. 0: keyConfigured ? 'A key is saved on this device.' \\: 'No API key saved.'
+#: src/components/Settings.svelte
+msgid "{0} The saved key is never displayed."
+msgstr "{0} The saved key is never displayed."
+
+#: src/components/Settings.svelte
+msgid "Model<0/>"
+msgstr "Model<0/>"
+
+#: src/components/Settings.svelte
+msgid "Posting defaults"
+msgstr "Posting defaults"
+
+#: src/components/Settings.svelte
+msgid "Applied when you start a new posting run."
+msgstr "Applied when you start a new posting run."
+
+#: src/components/Settings.svelte
+msgid "Saving…"
+msgstr "Saving…"
+
+#: src/components/Settings.svelte
+msgid "Save settings"
+msgstr "Save settings"
+
+#: src/components/Settings.svelte
+msgid "YOUR PREFERENCES"
+msgstr "YOUR PREFERENCES"
+
+#. 0: accountName
+#: src/components/Settings.svelte
+msgid "Set up Gemini and save posting defaults for {0}."
+msgstr "Set up Gemini and save posting defaults for {0}."
+
+#: src/components/StepProgress.svelte
+msgid "Completed"
+msgstr "Completed"
+
+#: src/components/StepProgress.svelte
+msgid "Current"
+msgstr "Current"
+
+#: src/components/StepProgress.svelte
+msgid "Upcoming"
+msgstr "Upcoming"
+
+#. 0: index + 1; 1: steps.length; 2: completed || index < currentStep ? 'Completed' \\: index === currentStep ? 'Current' \\: 'Upcoming'
+#: src/components/StepProgress.svelte
+msgid "Step {0} of {1}: {2}"
+msgstr "Step {0} of {1}: {2}"
+
+#: src/components/WindowControls.svelte
+msgid "Could not change the window. Please try again."
+msgstr "Could not change the window. Please try again."
+
+#: src/components/WindowControls.svelte
+msgid "Window controls"
+msgstr "Window controls"
+
+#: src/components/WindowControls.svelte
+msgid "Minimize window"
+msgstr "Minimize window"
+
+#: src/components/WindowControls.svelte
+msgid "Restore window"
+msgstr "Restore window"
+
+#: src/components/WindowControls.svelte
+msgid "Maximize window"
+msgstr "Maximize window"
+
+#: src/components/WindowControls.svelte
+msgid "Close window"
+msgstr "Close window"
+
+#: src/App.svelte
+msgid "Create post"
+msgstr "Create post"
+
+#: src/App.svelte
+msgid "Write your post and add images"
+msgstr "Write your post and add images"
+
+#: src/App.svelte
+msgid "Select groups"
+msgstr "Select groups"
+
+#: src/App.svelte
+msgid "Load groups and choose where to post"
+msgstr "Load groups and choose where to post"
+
+#~ msgid "Review & post"
+#~ msgstr "Review & post"
+
+#~ msgid "Review, set preferences, then post now or schedule"
+#~ msgstr "Review, set preferences, then post now or schedule"
+
+#: src/App.svelte
+msgid "Facebook session captured"
+msgstr "Facebook session captured"
+
+#: src/App.svelte
+msgid "The browser is closed. It will reopen when you click Post."
+msgstr "The browser is closed. It will reopen when you click Post."
+
+#: src/App.svelte
+msgid "Checking Facebook login"
+msgstr "Checking Facebook login"
+
+#: src/App.svelte
+msgid "Finish signing in or any verification prompts in Chrome. Your login will be detected automatically."
+msgstr "Finish signing in or any verification prompts in Chrome. Your login will be detected automatically."
+
+#: src/App.svelte
+msgid "Login required"
+msgstr "Login required"
+
+#: src/App.svelte
+msgid "Please log in to Facebook in the Chrome window. Postika will detect when you’re signed in."
+msgstr "Please log in to Facebook in the Chrome window. Postika will detect when you’re signed in."
+
+#: src/App.svelte
+msgid "Complete Facebook verification"
+msgstr "Complete Facebook verification"
+
+#: src/App.svelte
+msgid "Complete the login or verification prompts in Chrome to continue."
+msgstr "Complete the login or verification prompts in Chrome to continue."
+
+#: src/App.svelte
+msgid "Facebook connected"
+msgstr "Facebook connected"
+
+#: src/App.svelte
+msgid "You’re logged in. Your session is ready."
+msgstr "You’re logged in. Your session is ready."
+
+#: src/App.svelte
+msgid "Facebook window closed"
+msgstr "Facebook window closed"
+
+#: src/App.svelte
+msgid "Click Load groups to reopen Facebook and check your login."
+msgstr "Click Load groups to reopen Facebook and check your login."
+
+#. 0: current?.name ?? ''
+#: src/components/AccountDropdown.svelte
+msgid "Language: {0}"
+msgstr "Language: {0}"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search languages…"
+msgstr "Search languages…"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search languages"
+msgstr "Search languages"
+
+#: src/components/AccountDropdown.svelte
+msgid "Clear language search"
+msgstr "Clear language search"
+
+#. 0: matches.length
+#: src/components/AccountDropdown.svelte
+msgid "{0} result"
+msgstr "{0} result"
+
+#. 0: matches.length
+#: src/components/AccountDropdown.svelte
+msgid "{0} results"
+msgstr "{0} results"
+
+#: src/components/AccountDropdown.svelte
+msgid "All languages"
+msgstr "All languages"
+
+#: src/components/AccountDropdown.svelte
+msgid "Languages"
+msgstr "Languages"
+
+#: src/components/AccountDropdown.svelte
+msgid "No languages found"
+msgstr "No languages found"
+
+#: src/components/DateTimePicker.svelte
+msgid "Morning"
+msgstr "Morning"
+
+#: src/components/DateTimePicker.svelte
+msgid "Afternoon"
+msgstr "Afternoon"
+
+#: src/components/DateTimePicker.svelte
+msgid "Evening"
+msgstr "Evening"
+
+#: src/components/LanguageMenu.svelte
+msgid "Could not change the language. Please try again."
+msgstr "Could not change the language. Please try again."
+
+#: src/components/Settings.svelte
+msgid "Language"
+msgstr "Language"
+
+#: src/components/PostingOptionsForm.svelte
+#: src/components/PostingOptionsForm.svelte
+msgid "seconds"
+msgstr "seconds"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Minimum"
+msgstr "Minimum"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Maximum"
+msgstr "Maximum"
+
+#: src/components/StepProgress.svelte
+msgid "Post progress"
+msgstr "Post progress"
+
+#. 0: visibleGroups.length
+#: src/App.svelte
+msgid "{0} shown"
+msgstr "{0} shown"
+
+#. 0: selectedGroupIds.length
+#: src/App.svelte
+msgid "{0} selected"
+msgstr "{0} selected"
+
+#. 0: images.length
+#: src/components/PostComposer.svelte
+msgid "{0} images selected"
+msgstr "{0} images selected"
+
+#: src/components/PostingLogView.svelte
+msgid "WARN"
+msgstr "WARN"
+
+#: src/components/PostingLogView.svelte
+msgid "INFO"
+msgstr "INFO"
+
+#: src/components/PostingLogView.svelte
+msgid "ERROR"
+msgstr "ERROR"
+
+#: src/components/PostingLogView.svelte
+msgid "DEBUG"
+msgstr "DEBUG"
+
+#: src/components/PostingLogView.svelte
+msgid "PUBLISHED"
+msgstr "PUBLISHED"
+
+#: src/components/PostingLogView.svelte
+msgid "PENDING"
+msgstr "PENDING"
+
+#: src/components/PostingLogView.svelte
+msgid "FAILED"
+msgstr "FAILED"
+
+#: src/components/PostingLogView.svelte
+msgid "SKIPPED"
+msgstr "SKIPPED"
+
+#: src/components/PostingLogView.svelte
+msgid "UNCONFIRMED"
+msgstr "UNCONFIRMED"
+
+#: src/Workspace.svelte
+msgid "e.g. Business"
+msgstr "e.g. Business"
+
+#: src/components/PostComposer.svelte
+msgid "1 image selected"
+msgstr "1 image selected"
+
+#: src/components/PostingLogView.svelte
+msgid "Paused · Waiting for internet"
+msgstr "Paused · Waiting for internet"
+
+#: src/components/PostingLogView.svelte
+msgid "Pausing after the current operation"
+msgstr "Pausing after the current operation"
+
+#: src/components/PostingLogView.svelte
+msgid "Paused"
+msgstr "Paused"
+
+#: src/components/PostingLogView.svelte
+msgid "Stopping"
+msgstr "Stopping"
+
+#: src/components/PostingLogView.svelte
+msgid "Posting"
+msgstr "Posting"
+
+#: src/components/PostingLogView.svelte
+msgid "Finished"
+msgstr "Finished"
+
+#: src/components/PostingLogView.svelte
+msgid "Stopped"
+msgstr "Stopped"
+
+#: src/components/PostingLogView.svelte
+msgid "Ready"
+msgstr "Ready"
+
+#: src/components/PostingLogView.svelte
+msgid "CURRENT ACTIVITY"
+msgstr "CURRENT ACTIVITY"
+
+#: src/components/PostingLogView.svelte
+msgid "RUN STATUS"
+msgstr "RUN STATUS"
+
+#: src/components/PostingLogView.svelte
+msgid " · Paused"
+msgstr " · Paused"
+
+#: src/components/PostingLogView.svelte
+msgid " · Response available to copy"
+msgstr " · Response available to copy"
+
+#: src/components/AccountLabel.svelte
+msgid "Default profile"
+msgstr "Default profile"
+
+#~ msgid "Switch to light mode"
+#~ msgstr "Switch to light mode"
+
+#~ msgid "Switch to dark mode"
+#~ msgstr "Switch to dark mode"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Color themes"
+msgstr "Color themes"
+
+#: src/components/ThemePicker.svelte
+msgid "Close"
+msgstr "Close"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Search themes…"
+msgstr "Search themes…"
+
+#: src/components/ThemePicker.svelte
+msgid "No themes found"
+msgstr "No themes found"
+
+#: src/components/LogMessage.svelte
+msgid "A selected group is no longer available. Load groups again"
+msgstr "A selected group is no longer available. Load groups again"
+
+#: src/components/LogMessage.svelte
+msgid "Add a Gemini API key in Settings before enabling rewriting"
+msgstr "Add a Gemini API key in Settings before enabling rewriting"
+
+#: src/components/LogMessage.svelte
+msgid "Add a post body and at least one image"
+msgstr "Add a post body and at least one image"
+
+#: src/components/LogMessage.svelte
+msgid "All selected groups were already attempted. Review unconfirmed results on Facebook."
+msgstr "All selected groups were already attempted. Review unconfirmed results on Facebook."
+
+#: src/components/LogMessage.svelte
+msgid "An image upload failed in Chrome. Check the composer and retry Post"
+msgstr "An image upload failed in Chrome. Check the composer and retry Post"
+
+#: src/components/LogMessage.svelte
+msgid "Attaching images…"
+msgstr "Attaching images…"
+
+#: src/components/LogMessage.svelte
+msgid "Choose JPG, PNG, WebP, or GIF images"
+msgstr "Choose JPG, PNG, WebP, or GIF images"
+
+#: src/components/LogMessage.svelte
+msgid "Choose a future date and time for your post"
+msgstr "Choose a future date and time for your post"
+
+#: src/components/LogMessage.svelte
+msgid "Closing Chrome and posting to the remaining groups…"
+msgstr "Closing Chrome and posting to the remaining groups…"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the complete create-post request"
+msgstr "Could not capture the complete create-post request"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the completed image upload response"
+msgstr "Could not capture the completed image upload response"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the image upload form fields"
+msgstr "Could not capture the image upload form fields"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the image upload form. Retry Post"
+msgstr "Could not capture the image upload form. Retry Post"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the upload endpoint"
+msgstr "Could not capture the upload endpoint"
+
+#: src/components/LogMessage.svelte
+msgid "Could not copy the Facebook response to the clipboard"
+msgstr "Could not copy the Facebook response to the clipboard"
+
+#: src/components/LogMessage.svelte
+msgid "Could not enable create-post capture in Chrome"
+msgstr "Could not enable create-post capture in Chrome"
+
+#: src/components/LogMessage.svelte
+msgid "Could not parse the captured create-post form"
+msgstr "Could not parse the captured create-post form"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare image files"
+msgstr "Could not prepare image files"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare post images"
+msgstr "Could not prepare post images"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare the Gemini request"
+msgstr "Could not prepare the Gemini request"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare the image upload."
+msgstr "Could not prepare the image upload."
+
+#: src/components/LogMessage.svelte
+msgid "Could not reach Gemini. Check your connection"
+msgstr "Could not reach Gemini. Check your connection"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read Facebook's post confirmation"
+msgstr "Could not read Facebook's post confirmation"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read the Gemini rewrite"
+msgstr "Could not read the Gemini rewrite"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read the completed image upload response"
+msgstr "Could not read the completed image upload response"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read the selected image."
+msgstr "Could not read the selected image."
+
+#: src/components/LogMessage.svelte
+msgid "Create-post capture ended before confirmation. Check Facebook before retrying"
+msgstr "Create-post capture ended before confirmation. Check Facebook before retrying"
+
+#: src/components/LogMessage.svelte
+msgid "Create-post request detected. Capturing fresh form values…"
+msgstr "Create-post request detected. Capturing fresh form values…"
+
+#: src/components/LogMessage.svelte
+msgid "Create-post response complete. Waiting for captured session headers…"
+msgstr "Create-post response complete. Waiting for captured session headers…"
+
+#: src/components/LogMessage.svelte
+msgid "Create-post response received. Waiting for its complete body…"
+msgstr "Create-post response received. Waiting for its complete body…"
+
+#: src/components/LogMessage.svelte
+msgid "Description inserted"
+msgstr "Description inserted"
+
+#: src/components/LogMessage.svelte
+msgid "Earlier submission is unconfirmed. Skipping this group and continuing with the remaining groups."
+msgstr "Earlier submission is unconfirmed. Skipping this group and continuing with the remaining groups."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook could not post to this group. Continuing with the remaining groups."
+msgstr "Facebook could not post to this group. Continuing with the remaining groups."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook did not confirm all images. Check the composer."
+msgstr "Facebook did not confirm all images. Check the composer."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook did not confirm the submission"
+msgstr "Facebook did not confirm the submission"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook did not confirm this post. Check the group before trying again."
+msgstr "Facebook did not confirm this post. Check the group before trying again."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook has temporarily limited posting. Try again later."
+msgstr "Facebook has temporarily limited posting. Try again later."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook rejected this post."
+msgstr "Facebook rejected this post."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook requires login or verification. Load groups again."
+msgstr "Facebook requires login or verification. Load groups again."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook returned a story, but did not confirm its group or publication state. Posting stopped. Check Facebook before retrying."
+msgstr "Facebook returned a story, but did not confirm its group or publication state. Posting stopped. Check Facebook before retrying."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook's confirmation exceeded the 16 MiB response limit; retained response is truncated"
+msgstr "Facebook's confirmation exceeded the 16 MiB response limit; retained response is truncated"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook's editor did not accept the formatted post. Posting was not submitted"
+msgstr "Facebook's editor did not accept the formatted post. Posting was not submitted"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook's editor did not retain the formatted post text. Posting was not submitted"
+msgstr "Facebook's editor did not retain the formatted post text. Posting was not submitted"
+
+#: src/components/LogMessage.svelte
+msgid "First post confirmed. Waiting for the Facebook composer to close…"
+msgstr "First post confirmed. Waiting for the Facebook composer to close…"
+
+#: src/components/LogMessage.svelte
+msgid "First submission unconfirmed. Retrying request 1/3 with the captured mutation ID…"
+msgstr "First submission unconfirmed. Retrying request 1/3 with the captured mutation ID…"
+
+#: src/components/LogMessage.svelte
+msgid "Formatted post is too large"
+msgstr "Formatted post is too large"
+
+#: src/components/LogMessage.svelte
+msgid "Found multiple matching post composers on the group page"
+msgstr "Found multiple matching post composers on the group page"
+
+#: src/components/LogMessage.svelte
+msgid "Fresh create-post form captured. Waiting for Facebook's response…"
+msgstr "Fresh create-post form captured. Waiting for Facebook's response…"
+
+#: src/components/LogMessage.svelte
+msgid "Gemini did not finish the rewrite"
+msgstr "Gemini did not finish the rewrite"
+
+#: src/components/LogMessage.svelte
+msgid "Gemini returned no rewritten text"
+msgstr "Gemini returned no rewritten text"
+
+#: src/components/LogMessage.svelte
+msgid "Gemini rewrite completed."
+msgstr "Gemini rewrite completed."
+
+#: src/components/LogMessage.svelte
+msgid "Gemini rewrite failed. Using the original text for this post; Gemini will be tried again for the next post."
+msgstr "Gemini rewrite failed. Using the original text for this post; Gemini will be tried again for the next post."
+
+#: src/components/LogMessage.svelte
+msgid "Image uploads belong to a different profile"
+msgstr "Image uploads belong to a different profile"
+
+#: src/components/LogMessage.svelte
+msgid "Images inserted"
+msgstr "Images inserted"
+
+#: src/components/LogMessage.svelte
+msgid "Inserting post body…"
+msgstr "Inserting post body…"
+
+#: src/components/LogMessage.svelte
+msgid "Internet connection lost. Queue paused until the connection returns."
+msgstr "Internet connection lost. Queue paused until the connection returns."
+
+#: src/components/LogMessage.svelte
+msgid "Internet connection restored. Continuing the queue."
+msgstr "Internet connection restored. Continuing the queue."
+
+#: src/components/LogMessage.svelte
+msgid "Internet connection restored. The queue remains manually paused."
+msgstr "Internet connection restored. The queue remains manually paused."
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured endpoint"
+msgstr "Invalid captured endpoint"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured formatted post"
+msgstr "Invalid captured formatted post"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured post form"
+msgstr "Invalid captured post form"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured post variables"
+msgstr "Invalid captured post variables"
+
+#: src/components/LogMessage.svelte
+msgid "Load your groups before opening a post"
+msgstr "Load your groups before opening a post"
+
+#: src/components/LogMessage.svelte
+msgid "Log in or complete Facebook verification in Chrome, then click Post again"
+msgstr "Log in or complete Facebook verification in Chrome, then click Post again"
+
+#: src/components/LogMessage.svelte
+msgid "Multiple matching controls found in the post composer"
+msgstr "Multiple matching controls found in the post composer"
+
+#: src/components/LogMessage.svelte
+msgid "No Facebook response was captured for this entry"
+msgstr "No Facebook response was captured for this entry"
+
+#: src/components/LogMessage.svelte
+msgid "No available post composer."
+msgstr "No available post composer."
+
+#: src/components/LogMessage.svelte
+msgid "No complete image upload request was captured."
+msgstr "No complete image upload request was captured."
+
+#: src/components/LogMessage.svelte
+msgid "No fresh image upload request was captured."
+msgstr "No fresh image upload request was captured."
+
+#: src/components/LogMessage.svelte
+msgid "Opening browser…"
+msgstr "Opening browser…"
+
+#: src/components/LogMessage.svelte
+msgid "Pause requested. The current operation will finish before pausing."
+msgstr "Pause requested. The current operation will finish before pausing."
+
+#: src/components/LogMessage.svelte
+msgid "Post button clicked"
+msgstr "Post button clicked"
+
+#: src/components/LogMessage.svelte
+msgid "Post published."
+msgstr "Post published."
+
+#: src/components/LogMessage.svelte
+msgid "Postika is shutting down"
+msgstr "Postika is shutting down"
+
+#: src/components/LogMessage.svelte
+msgid "Posting is already running"
+msgstr "Posting is already running"
+
+#: src/components/LogMessage.svelte
+msgid "Posting paused."
+msgstr "Posting paused."
+
+#: src/components/LogMessage.svelte
+msgid "Posting resumed."
+msgstr "Posting resumed."
+
+#: src/components/LogMessage.svelte
+msgid "Posting stopped after the first post was confirmed"
+msgstr "Posting stopped after the first post was confirmed"
+
+#: src/components/LogMessage.svelte
+msgid "Posting..."
+msgstr "Posting..."
+
+#: src/components/LogMessage.svelte
+msgid "Reading Facebook's create-post confirmation…"
+msgstr "Reading Facebook's create-post confirmation…"
+
+#: src/components/LogMessage.svelte
+msgid "Rewriting the post body with Gemini…"
+msgstr "Rewriting the post body with Gemini…"
+
+#: src/components/LogMessage.svelte
+msgid "Scheduled posting cancelled."
+msgstr "Scheduled posting cancelled."
+
+#: src/components/LogMessage.svelte
+msgid "Scheduled time reached. Starting posting…"
+msgstr "Scheduled time reached. Starting posting…"
+
+#: src/components/LogMessage.svelte
+msgid "Select at least one group"
+msgstr "Select at least one group"
+
+#: src/components/LogMessage.svelte
+msgid "Setting up automatic posting using your first Facebook post..."
+msgstr "Setting up automatic posting using your first Facebook post..."
+
+#: src/components/LogMessage.svelte
+msgid "Stopping posting…"
+msgstr "Stopping posting…"
+
+#: src/components/LogMessage.svelte
+msgid "Submitting the first post and capturing fresh request values…"
+msgstr "Submitting the first post and capturing fresh request values…"
+
+#: src/components/LogMessage.svelte
+#: src/components/LogMessage.svelte
+msgid "Technical details recorded. Open debug details to inspect the original message."
+msgstr "Technical details recorded. Open debug details to inspect the original message."
+
+#: src/components/LogMessage.svelte
+msgid "The active Facebook profile changed or expired"
+msgstr "The active Facebook profile changed or expired"
+
+#: src/components/LogMessage.svelte
+msgid "The browser connection was lost. Check Facebook before retrying"
+msgstr "The browser connection was lost. Check Facebook before retrying"
+
+#: src/components/LogMessage.svelte
+msgid "The browser profile changed while capturing posting requests"
+msgstr "The browser profile changed while capturing posting requests"
+
+#: src/components/LogMessage.svelte
+msgid "The captured formatted post body does not match your draft"
+msgstr "The captured formatted post body does not match your draft"
+
+#: src/components/LogMessage.svelte
+msgid "The captured image upload cookies do not match the Facebook profile"
+msgstr "The captured image upload cookies do not match the Facebook profile"
+
+#: src/components/LogMessage.svelte
+msgid "The captured image upload format is not supported"
+msgstr "The captured image upload format is not supported"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post belongs to a different Facebook profile"
+msgstr "The captured post belongs to a different Facebook profile"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post body does not match your draft"
+msgstr "The captured post body does not match your draft"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post cookies do not match the logged-in profile"
+msgstr "The captured post cookies do not match the logged-in profile"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post has no group target"
+msgstr "The captured post has no group target"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post target does not match the selected group"
+msgstr "The captured post target does not match the selected group"
+
+#: src/components/LogMessage.svelte
+msgid "The composer dialog was replaced while loading"
+msgstr "The composer dialog was replaced while loading"
+
+#: src/components/LogMessage.svelte
+msgid "The create-post connection failed. Check Facebook before retrying"
+msgstr "The create-post connection failed. Check Facebook before retrying"
+
+#: src/components/LogMessage.svelte
+msgid "The current profile differs from the profile used to load groups. Load groups again."
+msgstr "The current profile differs from the profile used to load groups. Load groups again."
+
+#: src/components/LogMessage.svelte
+msgid "The desktop application is not ready"
+msgstr "The desktop application is not ready"
+
+#: src/components/LogMessage.svelte
+msgid "The desktop clipboard is not ready"
+msgstr "The desktop clipboard is not ready"
+
+#: src/components/LogMessage.svelte
+msgid "The expected composer control did not appear in Chrome"
+msgstr "The expected composer control did not appear in Chrome"
+
+#: src/components/LogMessage.svelte
+msgid "The first post was confirmed, but Chrome's completion state could not be checked. Posting stopped"
+msgstr "The first post was confirmed, but Chrome's completion state could not be checked. Posting stopped"
+
+#: src/components/LogMessage.svelte
+msgid "The image upload did not contain multipart form data"
+msgstr "The image upload did not contain multipart form data"
+
+#: src/components/LogMessage.svelte
+msgid "The image upload does not match its active Facebook profile"
+msgstr "The image upload does not match its active Facebook profile"
+
+#: src/components/LogMessage.svelte
+msgid "The image upload form belongs to a different Facebook profile"
+msgstr "The image upload form belongs to a different Facebook profile"
+
+#: src/components/LogMessage.svelte
+msgid "The selected group has an invalid Facebook URL. Load groups again"
+msgstr "The selected group has an invalid Facebook URL. Load groups again"
+
+#: src/components/LogMessage.svelte
+msgid "The session could not be saved for posting retries and remaining groups."
+msgstr "The session could not be saved for posting retries and remaining groups."
+
+#: src/components/LogMessage.svelte
+msgid "This draft has already been submitted to the first group. It was not submitted again."
+msgstr "This draft has already been submitted to the first group. It was not submitted again."
+
+#: src/components/LogMessage.svelte
+msgid "This group has no available post composer"
+msgstr "This group has no available post composer"
+
+#: src/components/LogMessage.svelte
+msgid "This group has reached its pending-content limit."
+msgstr "This group has reached its pending-content limit."
+
+#: src/components/LogMessage.svelte
+msgid "This post was submitted, but confirmation is uncertain. Check Facebook before retrying."
+msgstr "This post was submitted, but confirmation is uncertain. Check Facebook before retrying."
+
+#: src/components/LogMessage.svelte
+msgid "This response is no longer available for the current run"
+msgstr "This response is no longer available for the current run"
+
+#: src/components/LogMessage.svelte
+msgid "Upload and post captures must belong to the same logged-in profile"
+msgstr "Upload and post captures must belong to the same logged-in profile"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for Facebook's Post button…"
+msgstr "Waiting for Facebook's Post button…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the composer controls and layout…"
+msgstr "Waiting for the composer controls and layout…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the group page and opening its composer…"
+msgstr "Waiting for the group page and opening its composer…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the image previews and composer to settle…"
+msgstr "Waiting for the image previews and composer to settle…"
+
+#: src/components/LogMessage.svelte
+msgid "Your Facebook session needs login or verification. Load groups again."
+msgstr "Your Facebook session needs login or verification. Load groups again."
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Published to {0}."
+msgstr "Published to {0}."
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "{0}: Awaiting admin approval."
+msgstr "{0}: Awaiting admin approval."
+
+#. 0: number(a); 1: b
+#: src/components/LogMessage.svelte
+msgid "Waiting {0} seconds before posting to {1}."
+msgstr "Waiting {0} seconds before posting to {1}."
+
+#. 0: a; 1: b
+#: src/components/LogMessage.svelte
+msgid "Next post in {0} · {1}"
+msgstr "Next post in {0} · {1}"
+
+#. 0: a; 1: number(b); 2: number(c)
+#: src/components/LogMessage.svelte
+msgid "{0}: Uploading photo {1} of {2}…"
+msgstr "{0}: Uploading photo {1} of {2}…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Preparing a post for {0}…"
+msgstr "Preparing a post for {0}…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Uploading images for {0}…"
+msgstr "Uploading images for {0}…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Posting to {0}…"
+msgstr "Posting to {0}…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Fresh upload and post request values captured from {0}."
+msgstr "Fresh upload and post request values captured from {0}."
+
+#. 0: number(a); 1: number(b)
+#: src/components/LogMessage.svelte
+msgid "Submission unconfirmed. Retrying request {0}/{1}…"
+msgstr "Submission unconfirmed. Retrying request {0}/{1}…"
+
+#. 0: number(a); 1: number(b); 2: number(c)
+#: src/components/LogMessage.svelte
+msgid "Finished: {0} published, {1} awaiting approval, {2} failed or skipped."
+msgstr "Finished: {0} published, {1} awaiting approval, {2} failed or skipped."
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Opening {0}…"
+msgstr "Opening {0}…"
+
+#. 0: number(a); 1: number(b)
+#: src/components/LogMessage.svelte
+msgid "Capturing image uploads ({0} of {1})…"
+msgstr "Capturing image uploads ({0} of {1})…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Gemini rewrite failed (HTTP {0}). Check the key, model and account quota"
+msgstr "Gemini rewrite failed (HTTP {0}). Check the key, model and account quota"
+
+#. 0: code
+#: src/components/LogMessage.svelte
+msgid " (Code {0})"
+msgstr " (Code {0})"
+
+#: src/components/PostingLogView.svelte
+msgid "Debug details"
+msgstr "Debug details"
+
+#~ msgid ", "
+#~ msgstr ", "
+
+#: src/components/ThemePicker.svelte
+msgid "Themes"
+msgstr "Themes"
+
+#: src/App.svelte
+msgid "Preferences & post"
+msgstr "Preferences & post"
+
+#: src/App.svelte
+#: src/App.svelte
+msgid "Set preferences, then post now or schedule"
+msgstr "Set preferences, then post now or schedule"

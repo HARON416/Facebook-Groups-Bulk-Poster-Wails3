@@ -1,0 +1,78 @@
+.task
+bin
+frontend/dist
+frontend/node_modules
+build/linux/appimage/build
+build/windows/nsis/MicrosoftEdgeWebview2Setup.exe
+# Mobile generated (per-machine; overlays hold absolute paths)
+build/ios/xcode/overlay.json
+build/ios/xcode/gen/
+build/android/overlay.json
+build/android/gen/
+.tools/
+
+# Wuchale compiled catalogs and extraction cache are regenerated.
+frontend/src/locales/.wuchale/
+
+# Local environment files
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Generated frontend bindings
+/frontend/bindings/
+
+# Generated Windows resources
+/wails_windows_*.syso
+
+# Copied Linux executable used for AppImage packaging
+/build/linux/appimage/postika
+
+# Android build outputs and local settings
+/build/android/.gradle/
+/build/android/build/
+/build/android/app/build/
+/build/android/local.properties
+/build/android/app/src/main/jniLibs/
+
+# Personal Xcode settings
+xcuserdata/
+*.xcuserstate
+
+# Local signing keys
+*.keystore
+*.jks
+*.p12
+*.pfx
+
+# Local copies of Postika account data and browser sessions
+browser-profile/
+/profiles/
+/postika/
+
+# Test and coverage artifacts
+*.test
+/coverage.out
+/coverage.html
+/frontend/coverage/
+*.tsbuildinfo
+/ui-artifacts/
+
+# Package-manager diagnostics
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local Go workspace
+/go.work
+/go.work.sum
+
+# Editor temporary files
+*.swp
+*.swo
+*~
+
+# OS metadata
+.DS_Store
+Thumbs.db

@@ -1,0 +1,1836 @@
+msgid ""
+msgstr ""
+"Source-Language: en\n"
+"Language: id\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1\n"
+"X-Plurals-Order: other\n"
+
+#. 0: minimumInterval === maximumInterval ? minimumInterval \\: `${minimumInterval}–${maximumInterval}`; 1: rewriteState
+#: src/App.svelte
+msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
+msgstr "Pengaturan bawaan diterapkan: jeda {0} detik antarpostingan · Penulisan ulang Gemini {1}."
+
+#: src/App.svelte
+msgid "Could not restore saved groups. Load groups to refresh the list."
+msgstr "Grup tersimpan tidak dapat dipulihkan. Muat grup untuk memperbarui daftar."
+
+#: src/App.svelte
+msgid "Choose a future date and time for your post."
+msgstr "Pilih tanggal dan waktu mendatang untuk postingan Anda."
+
+#: src/App.svelte
+msgid "Saving your scheduled queue…"
+msgstr "Menyimpan antrean terjadwal…"
+
+#: src/App.svelte
+msgid "Opening a selected group to capture fresh posting requests…"
+msgstr "Membuka grup terpilih untuk menyiapkan permintaan postingan baru…"
+
+#: src/App.svelte
+#: src/App.svelte
+#: src/components/LogMessage.svelte
+msgid "Posting stopped."
+msgstr "Pengiriman postingan dihentikan."
+
+#: src/App.svelte
+#: src/components/LogMessage.svelte
+msgid "Could not read a selected image"
+msgstr "Gambar yang dipilih tidak dapat dibaca"
+
+#. 0: image.file.name
+#. 0: missingNames
+#. 0: unreadableNames
+#. 0: image.file.name
+#: src/App.svelte
+#: src/App.svelte
+#: src/components/PostComposer.svelte
+#: src/components/PostComposer.svelte
+msgid "Could not read {0}"
+msgstr "Tidak dapat membaca {0}"
+
+#: src/App.svelte
+msgid "Posting finished."
+msgstr "Pengiriman postingan selesai."
+
+#. 0: scheduleLabel(scheduledFor)
+#. 0: date
+#: src/App.svelte
+#: src/components/LogMessage.svelte
+msgid "Scheduled for {0}. Keep Postika open and your computer awake."
+msgstr "Dijadwalkan pada {0}. Biarkan Postika tetap terbuka dan komputer tetap aktif."
+
+#: src/App.svelte
+msgid "Could not restore this account’s draft. New edits will stay available while Postika is open."
+msgstr "Draf akun ini tidak dapat dipulihkan. Perubahan baru akan tetap tersedia selama Postika terbuka."
+
+#: src/App.svelte
+msgid "Could not add the dropped images. Try browsing for them instead."
+msgstr "Gambar yang dilepas tidak dapat ditambahkan. Coba pilih gambar melalui penelusuran berkas."
+
+#: src/App.svelte
+msgid "Could not save this account’s draft to disk. Keep Postika open to retain your edits."
+msgstr "Draf akun ini tidak dapat disimpan ke disk. Biarkan Postika terbuka agar perubahan Anda tetap tersimpan."
+
+#: src/App.svelte
+msgid "Start with your message. Add images to bring it to life."
+msgstr "Mulai dengan pesan Anda. Tambahkan gambar agar lebih menarik."
+
+#: src/App.svelte
+msgid "Choose the groups you want to share your post with."
+msgstr "Pilih grup tempat Anda ingin membagikan postingan."
+
+#~ msgid "Review your post and preferences, then post now or schedule for later."
+#~ msgstr "Tinjau postingan dan preferensi Anda, lalu kirim sekarang atau jadwalkan untuk nanti."
+
+#. 0: currentStep + 1; 1: steps.length
+#: src/App.svelte
+msgid "STEP {0} OF {1}"
+msgstr "LANGKAH {0} DARI {1}"
+
+#: src/App.svelte
+msgid "Restoring account workspace…"
+msgstr "Memulihkan ruang kerja akun…"
+
+#: src/App.svelte
+msgid "Opening…"
+msgstr "Membuka…"
+
+#: src/App.svelte
+msgid "Loading…"
+msgstr "Memuat…"
+
+#: src/App.svelte
+msgid "Load groups"
+msgstr "Muat grup"
+
+#: src/App.svelte
+msgid "Groups"
+msgstr "Grup"
+
+#: src/App.svelte
+msgid "Search groups…"
+msgstr "Cari grup…"
+
+#: src/App.svelte
+msgid "Clear group search"
+msgstr "Hapus pencarian grup"
+
+#: src/App.svelte
+msgid "Search groups"
+msgstr "Cari grup"
+
+#: src/App.svelte
+msgid "Select all groups"
+msgstr "Pilih semua grup"
+
+#: src/App.svelte
+msgid "Unselect all groups"
+msgstr "Batalkan semua pilihan grup"
+
+#~ msgid "{0} selected{1}"
+#~ msgstr ""
+
+#: src/App.svelte
+msgid "Searching…"
+msgstr "Mencari…"
+
+#: src/App.svelte
+msgid "No groups found. Try another search."
+msgstr "Tidak ada grup ditemukan. Coba pencarian lain."
+
+#: src/App.svelte
+msgid "Joined groups"
+msgstr "Grup yang diikuti"
+
+#: src/App.svelte
+msgid "No groups loaded yet."
+msgstr "Belum ada grup yang dimuat."
+
+#: src/App.svelte
+msgid "Open your Facebook groups to get started."
+msgstr "Buka grup Facebook Anda untuk memulai."
+
+#: src/App.svelte
+msgid "Posting settings"
+msgstr "Pengaturan postingan"
+
+#: src/App.svelte
+msgid "Add a Gemini API key in Settings to enable rewriting."
+msgstr "Tambahkan kunci API Gemini di Pengaturan untuk mengaktifkan penulisan ulang."
+
+#: src/App.svelte
+msgid "Applying defaults…"
+msgstr "Menerapkan pengaturan bawaan…"
+
+#: src/App.svelte
+msgid "Use saved defaults"
+msgstr "Gunakan pengaturan bawaan tersimpan"
+
+#: src/App.svelte
+msgid "Open settings"
+msgstr "Buka pengaturan"
+
+#~ msgid "Posting as <0/>"
+#~ msgstr "Mengirim sebagai <0/>"
+
+#~ msgid "Review your post<0>{0} images · {1} groups selected</0>"
+#~ msgstr "Tinjau postingan Anda<0>{0} gambar · {1} grup dipilih</0>"
+
+#~ msgid "Original post"
+#~ msgstr "Postingan asli"
+
+#~ msgid "Your post"
+#~ msgstr "Postingan Anda"
+
+#~ msgid "Gemini will rewrite this body for each group using your instructions."
+#~ msgstr "Gemini akan menulis ulang isi postingan ini untuk setiap grup sesuai instruksi Anda."
+
+#~ msgid "Selected groups ({0})"
+#~ msgstr "Grup terpilih ({0})"
+
+#: src/App.svelte
+msgid "Schedule your queue"
+msgstr "Jadwalkan antrean Anda"
+
+#. 0: Intl.DateTimeFormat().resolvedOptions().timeZone
+#: src/App.svelte
+msgid "Time zone: {0}. Keep Postika open and your computer awake. Facebook may ask you to sign in when posting starts."
+msgstr "Zona waktu: {0}. Biarkan Postika tetap terbuka dan komputer tetap aktif. Facebook mungkin meminta Anda masuk saat pengiriman dimulai."
+
+#: src/App.svelte
+#: src/Workspace.svelte
+msgid "Cancel"
+msgstr "Batal"
+
+#: src/App.svelte
+msgid "Confirm schedule"
+msgstr "Konfirmasi jadwal"
+
+#: src/App.svelte
+msgid "Next <0/>"
+msgstr "Berikutnya <0/>"
+
+#: src/App.svelte
+msgid "View logs"
+msgstr "Lihat log"
+
+#: src/App.svelte
+#: src/components/PostingLogView.svelte
+msgid "Stop"
+msgstr "Hentikan"
+
+#: src/App.svelte
+#: src/Workspace.svelte
+#: src/components/PostingLogView.svelte
+msgid "Scheduled"
+msgstr "Terjadwal"
+
+#: src/App.svelte
+msgid "Posting…"
+msgstr "Mengirim postingan…"
+
+#: src/App.svelte
+msgid "Post now"
+msgstr "Kirim sekarang"
+
+#: src/App.svelte
+msgid "Schedule"
+msgstr "Jadwalkan"
+
+#: src/App.svelte
+msgid "<0/> Previous"
+msgstr "<0/> Sebelumnya"
+
+#: src/Workspace.svelte
+msgid "Application menu"
+msgstr "Menu aplikasi"
+
+#: src/Workspace.svelte
+msgid "Add account"
+msgstr "Tambah akun"
+
+#: src/Workspace.svelte
+#: src/components/PostingLogView.svelte
+#: src/components/PostingLogView.svelte
+msgid "Posting logs"
+msgstr "Log postingan"
+
+#: src/Workspace.svelte
+#: src/components/Settings.svelte
+#: src/components/Settings.svelte
+msgid "Settings"
+msgstr "Pengaturan"
+
+#: src/Workspace.svelte
+msgid "Creating…"
+msgstr "Membuat…"
+
+#: src/Workspace.svelte
+msgid "Create & sign in"
+msgstr "Buat & masuk"
+
+#: src/Workspace.svelte
+msgid "Account name"
+msgstr "Nama akun"
+
+#: src/Workspace.svelte
+msgid "Sign in to Facebook in the new account’s browser window."
+msgstr "Masuk ke Facebook di jendela browser akun baru."
+
+#: src/Workspace.svelte
+msgid "Running"
+msgstr "Berjalan"
+
+#: src/Workspace.svelte
+msgid "In the background: <0/>"
+msgstr "Di latar belakang: <0/>"
+
+#: src/Workspace.svelte
+msgid "Loading accounts…"
+msgstr "Memuat akun…"
+
+#: src/components/AccountDropdown.svelte
+msgid "Loading accounts"
+msgstr "Memuat akun"
+
+#. 0: current?.name ?? 'Loading accounts'
+#: src/components/AccountDropdown.svelte
+msgid "Account: {0}"
+msgstr "Akun: {0}"
+
+#: src/components/AccountDropdown.svelte
+msgid "Select account"
+msgstr "Pilih akun"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search accounts…"
+msgstr "Cari akun…"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search accounts"
+msgstr "Cari akun"
+
+#: src/components/AccountDropdown.svelte
+msgid "Clear account search"
+msgstr "Hapus pencarian akun"
+
+#: src/components/AccountDropdown.svelte
+msgid "All accounts"
+msgstr "Semua akun"
+
+#: src/components/AccountDropdown.svelte
+msgid "Accounts"
+msgstr "Akun"
+
+#: src/components/AccountDropdown.svelte
+msgid "No accounts found"
+msgstr "Tidak ada akun ditemukan"
+
+#: src/components/AccountDropdown.svelte
+#: src/components/ThemePicker.svelte
+msgid "Try a different name."
+msgstr "Coba nama lain."
+
+#: src/components/ConnectivityToast.svelte
+msgid "You’re back online"
+msgstr "Anda kembali terhubung"
+
+#: src/components/ConnectivityToast.svelte
+msgid "Internet connection lost"
+msgstr "Koneksi internet terputus"
+
+#: src/components/ConnectivityToast.svelte
+msgid "Your queue is still manually paused."
+msgstr "Antrean Anda masih dijeda secara manual."
+
+#: src/components/ConnectivityToast.svelte
+msgid "Your queue will continue automatically."
+msgstr "Antrean Anda akan dilanjutkan secara otomatis."
+
+#: src/components/ConnectivityToast.svelte
+msgid "Your queue is paused. We’ll continue when the connection returns."
+msgstr "Antrean Anda dijeda. Proses akan dilanjutkan saat koneksi kembali."
+
+#: src/components/ConnectivityToast.svelte
+msgid "Dismiss connection notification"
+msgstr "Tutup pemberitahuan koneksi"
+
+#: src/components/DateTimePicker.svelte
+msgid "Choose a date and time"
+msgstr "Pilih tanggal dan waktu"
+
+#: src/components/DateTimePicker.svelte
+msgid "Select date"
+msgstr "Pilih tanggal"
+
+#: src/components/DateTimePicker.svelte
+msgid "Choose a weekday for this post"
+msgstr "Pilih hari untuk postingan ini"
+
+#. 0: day.description
+#: src/components/DateTimePicker.svelte
+msgid "Select {0}"
+msgstr "Pilih {0}"
+
+#: src/components/DateTimePicker.svelte
+msgid "Previous month"
+msgstr "Bulan sebelumnya"
+
+#: src/components/DateTimePicker.svelte
+msgid "Next month"
+msgstr "Bulan berikutnya"
+
+#: src/components/DateTimePicker.svelte
+#: src/components/DateTimePicker.svelte
+msgid "Select time"
+msgstr "Pilih waktu"
+
+#: src/components/DateTimePicker.svelte
+msgid "24-hour clock"
+msgstr "Format 24 jam"
+
+#: src/components/DateTimePicker.svelte
+msgid "Increase hour"
+msgstr "Tambah jam"
+
+#: src/components/DateTimePicker.svelte
+#: src/components/DateTimePicker.svelte
+msgid "Hour"
+msgstr "Jam"
+
+#: src/components/DateTimePicker.svelte
+msgid "Decrease hour"
+msgstr "Kurangi jam"
+
+#: src/components/DateTimePicker.svelte
+msgid "Increase minute"
+msgstr "Tambah menit"
+
+#: src/components/DateTimePicker.svelte
+#: src/components/DateTimePicker.svelte
+msgid "Minute"
+msgstr "Menit"
+
+#: src/components/DateTimePicker.svelte
+msgid "Decrease minute"
+msgstr "Kurangi menit"
+
+#: src/components/DateTimePicker.svelte
+msgid "Choose a date and time in the future."
+msgstr "Pilih tanggal dan waktu mendatang."
+
+#. 0: rejected.join(', ')
+#: src/components/PostComposer.svelte
+msgid "Unsupported files: {0}. Choose JPG, PNG, WebP, or GIF images."
+msgstr "Berkas tidak didukung: {0}. Pilih gambar JPG, PNG, WebP, atau GIF."
+
+#. 0: image.file.name
+#: src/components/PostComposer.svelte
+msgid "Could not preview {0}. Please choose another image."
+msgstr "Pratinjau {0} tidak dapat ditampilkan. Pilih gambar lain."
+
+#. 0: images[index].file.name; 1: index + 1; 2: images.length
+#: src/components/PostComposer.svelte
+msgid "{0} moved to position {1} of {2}."
+msgstr "{0} dipindahkan ke posisi {1} dari {2}."
+
+#: src/components/PostComposer.svelte
+#: src/components/PostEditorContent.svelte
+msgid "Post body"
+msgstr "Isi postingan"
+
+#: src/components/PostComposer.svelte
+#: src/components/PostComposer.svelte
+msgid "Required"
+msgstr "Wajib"
+
+#: src/components/PostComposer.svelte
+msgid "Images"
+msgstr "Gambar"
+
+#: src/components/PostComposer.svelte
+msgid "Choose images"
+msgstr "Pilih gambar"
+
+#: src/components/PostComposer.svelte
+msgid "Drop images here or <0>browse images</0>"
+msgstr "Lepaskan gambar di sini atau <0>telusuri gambar</0>"
+
+#: src/components/PostComposer.svelte
+msgid "JPG, PNG, WebP, or GIF · Select multiple images"
+msgstr "JPG, PNG, WebP, atau GIF · Pilih beberapa gambar"
+
+#~ msgid "{0} {1} selected"
+#~ msgstr ""
+
+#: src/components/PostComposer.svelte
+msgid "Add more"
+msgstr "Tambah lagi"
+
+#: src/components/PostComposer.svelte
+msgid "Drag images to rearrange. Or focus an image and use Alt + Left / Right."
+msgstr "Seret gambar untuk mengubah urutannya. Atau fokuskan gambar dan gunakan Alt + Kiri / Kanan."
+
+#: src/components/PostComposer.svelte
+msgid "Selected images"
+msgstr "Gambar terpilih"
+
+#. 0: image.file.name; 1: images.indexOf(image) + 1; 2: images.length
+#: src/components/PostComposer.svelte
+msgid "{0}, image {1} of {2}"
+msgstr "{0}, gambar {1} dari {2}"
+
+#. 0: image.file.name
+#: src/components/PostComposer.svelte
+msgid "Remove {0}"
+msgstr "Hapus {0}"
+
+#: src/components/PostComposer.svelte
+msgid "Drop more images here to add them."
+msgstr "Lepaskan gambar lain di sini untuk menambahkannya."
+
+#. 0: error
+#: src/components/PostEditor.svelte
+msgid "Could not edit the post: {0}"
+msgstr "Postingan tidak dapat diedit: {0}"
+
+#: src/components/PostEditorContent.svelte
+msgid "Post editor controls"
+msgstr "Kontrol editor postingan"
+
+#: src/components/PostEditorContent.svelte
+msgid "Text formatting"
+msgstr "Pemformatan teks"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bold (Ctrl+B)"
+msgstr "Tebal (Ctrl+B)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bold"
+msgstr "Tebal"
+
+#: src/components/PostEditorContent.svelte
+msgid "Italic (Ctrl+I)"
+msgstr "Miring (Ctrl+I)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Italic"
+msgstr "Miring"
+
+#: src/components/PostEditorContent.svelte
+msgid "Heading 1"
+msgstr "Judul 1"
+
+#: src/components/PostEditorContent.svelte
+msgid "Heading 2"
+msgstr "Judul 2"
+
+#: src/components/PostEditorContent.svelte
+msgid "Quote"
+msgstr "Kutipan"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bullet list"
+msgstr "Daftar berpoin"
+
+#: src/components/PostEditorContent.svelte
+msgid "Numbered list"
+msgstr "Daftar bernomor"
+
+#: src/components/PostEditorContent.svelte
+msgid "Undo (Ctrl+Z)"
+msgstr "Urungkan (Ctrl+Z)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Undo"
+msgstr "Urungkan"
+
+#: src/components/PostEditorContent.svelte
+msgid "Redo (Ctrl+Shift+Z)"
+msgstr "Ulangi (Ctrl+Shift+Z)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Redo"
+msgstr "Ulangi"
+
+#: src/components/PostEditorContent.svelte
+msgid "What would you like to share?"
+msgstr "Apa yang ingin Anda bagikan?"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bold, italic, headings, quotes, and lists · Markdown shortcuts supported"
+msgstr "Tebal, miring, judul, kutipan, dan daftar · Mendukung pintasan Markdown"
+
+#. 0: body.length.toLocaleString(getLocale())
+#: src/components/PostEditorContent.svelte
+msgid "{0} characters"
+msgstr "{0} karakter"
+
+#: src/components/LogMessage.svelte
+msgid "Ready to post."
+msgstr "Siap mengirim postingan."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook response copied."
+msgstr "Respons Facebook disalin."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook response received"
+msgstr "Respons Facebook diterima"
+
+#: src/components/PostingLogView.svelte
+msgid "POSTIKA / ACTIVITY"
+msgstr "POSTIKA / AKTIVITAS"
+
+#: src/components/PostingLogView.svelte
+msgid "Posting progress"
+msgstr "Progres pengiriman postingan"
+
+#. 0: activity?.processed || 0; 1: activity?.total || 0
+#: src/components/PostingLogView.svelte
+msgid "{0}/{1} groups processed"
+msgstr "{0}/{1} grup diproses"
+
+#. 0: percentage
+#: src/components/PostingLogView.svelte
+msgid "{0}% complete"
+msgstr "{0}% selesai"
+
+#: src/components/PostingLogView.svelte
+msgid "Groups processed"
+msgstr "Grup diproses"
+
+#: src/components/PostingLogView.svelte
+msgid "Published"
+msgstr "Diterbitkan"
+
+#: src/components/PostingLogView.svelte
+msgid "Awaiting approval"
+msgstr "Menunggu persetujuan"
+
+#: src/components/PostingLogView.svelte
+msgid "Failed or skipped"
+msgstr "Gagal atau dilewati"
+
+#: src/components/PostingLogView.svelte
+msgid "Remaining"
+msgstr "Tersisa"
+
+#. 0: number(a); 1: number(b); 2: c
+#. 0: activity.current; 1: activity.total; 2: activity.currentGroup.name
+#: src/components/LogMessage.svelte
+#: src/components/PostingLogView.svelte
+msgid "Group {0}/{1}: {2}"
+msgstr "Grup {0}/{1}: {2}"
+
+#. 0: pauseRequested ? /* @wc-include */ ' · Paused' \\: ''
+#: src/components/PostingLogView.svelte
+msgid "Next post in <0/>{0}"
+msgstr "Postingan berikutnya dalam <0/>{0}"
+
+#: src/components/PostingLogView.svelte
+msgid "Elapsed <0/>"
+msgstr "Waktu berlalu <0/>"
+
+#: src/components/PostingLogView.svelte
+msgid "Current group <0/>"
+msgstr "Grup saat ini <0/>"
+
+#: src/components/PostingLogView.svelte
+msgid "Following latest"
+msgstr "Mengikuti yang terbaru"
+
+#: src/components/PostingLogView.svelte
+msgid "Jump to latest"
+msgstr "Lompat ke yang terbaru"
+
+#. 0.0: total
+#: src/components/PostingLogView.svelte
+msgid "Activity timeline <0>{0} logs</0>"
+msgstr "Linimasa aktivitas <0>{0} log</0>"
+
+#: src/components/PostingLogView.svelte
+msgid "Posting activity"
+msgstr "Aktivitas pengiriman postingan"
+
+#. 0: entryLabel(entry)
+#: src/components/PostingLogView.svelte
+msgid "{0} log"
+msgstr "Log {0}"
+
+#. 0: itemTime(entry.message)
+#: src/components/PostingLogView.svelte
+msgid "Took {0}"
+msgstr "Memerlukan {0}"
+
+#: src/components/PostingLogView.svelte
+#: src/components/PostingLogView.svelte
+msgid "Copy Facebook response"
+msgstr "Salin respons Facebook"
+
+#: src/components/PostingLogView.svelte
+msgid "Response copied"
+msgstr "Respons disalin"
+
+#: src/components/PostingLogView.svelte
+msgid "Copied"
+msgstr "Disalin"
+
+#: src/components/PostingLogView.svelte
+msgid "Copying…"
+msgstr "Menyalin…"
+
+#: src/components/PostingLogView.svelte
+msgid "Copy response"
+msgstr "Salin respons"
+
+#. 0.0: entry.hasResponse ? /* @wc-include */ ' · Response available to copy' \\: ''
+#: src/components/PostingLogView.svelte
+msgid "Debug details<0>Original log message{0}</0>"
+msgstr "Detail debug<0>Pesan log asli{0}</0>"
+
+#: src/components/PostingLogView.svelte
+msgid "Your activity will appear here"
+msgstr "Aktivitas Anda akan muncul di sini"
+
+#: src/components/PostingLogView.svelte
+msgid "Start posting to follow uploads, results, and wait times."
+msgstr "Mulai mengirim postingan untuk memantau unggahan, hasil, dan waktu tunggu."
+
+#: src/components/PostingLogView.svelte
+msgid "Log pages"
+msgstr "Halaman log"
+
+#: src/components/PostingLogView.svelte
+msgid "Previous page"
+msgstr "Halaman sebelumnya"
+
+#. 0: number
+#: src/components/PostingLogView.svelte
+msgid "Page {0}"
+msgstr "Halaman {0}"
+
+#: src/components/PostingLogView.svelte
+msgid "Next page"
+msgstr "Halaman berikutnya"
+
+#: src/components/PostingLogView.svelte
+msgid "← Prev"
+msgstr "← Sebelumnya"
+
+#: src/components/PostingLogView.svelte
+msgid "Next →"
+msgstr "Berikutnya →"
+
+#. 0: total ? (page - 1) * pageSize + 1 \\: 0; 1: Math.min(page * pageSize, total); 2: total
+#: src/components/PostingLogView.svelte
+msgid "{0}–{1} of {2} logs"
+msgstr "{0}–{1} dari {2} log"
+
+#: src/components/PostingLogView.svelte
+msgid "Resume"
+msgstr "Lanjutkan"
+
+#: src/components/PostingLogView.svelte
+msgid "Pause"
+msgstr "Jeda"
+
+#: src/components/PostingLogView.svelte
+msgid "Stopping…"
+msgstr "Menghentikan…"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "POSTING PACE"
+msgstr "JEDA PENGIRIMAN"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Interval between posts"
+msgstr "Jeda antarpostingan"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Minimum (seconds)"
+msgstr "Minimum (detik)"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Maximum (seconds)"
+msgstr "Maksimum (detik)"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Choose how long to wait before posting to the next group."
+msgstr "Pilih waktu tunggu sebelum mengirim ke grup berikutnya."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "At least 60 seconds. Use equal values for a fixed interval."
+msgstr "Minimal 60 detik. Gunakan nilai yang sama untuk jeda tetap."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "OPTIONAL · AI REWRITE"
+msgstr "OPSIONAL · PENULISAN ULANG AI"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "A fresh version for each group"
+msgstr "Versi baru untuk setiap grup"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Rewrite each post body with Gemini"
+msgstr "Tulis ulang isi setiap postingan dengan Gemini"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
+msgstr "Instruksi penulisan ulang<0>Pilih gaya bahasa dan detail yang harus dipertahankan Gemini.</0>"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Keep it concise and easy to scan. Preserve the price and contact details."
+msgstr "Buat ringkas dan mudah dibaca. Pertahankan harga dan detail kontak."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Rewrite instructions"
+msgstr "Instruksi penulisan ulang"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
+msgstr "Teks postingan dan instruksi Anda dikirim ke Google Gemini. Gambar tidak dikirim. Gemini menulis ulang dalam teks biasa."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
+msgstr "Jika penulisan ulang gagal, postingan tersebut menggunakan teks asli Anda. Postingan berikutnya akan mencoba Gemini lagi."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Let Gemini rewrite your post using your instructions."
+msgstr "Biarkan Gemini menulis ulang postingan sesuai instruksi Anda."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Posting preferences"
+msgstr "Preferensi postingan"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved defaults help"
+msgstr "Bantuan pengaturan bawaan tersimpan"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "About saved defaults"
+msgstr "Tentang pengaturan bawaan tersimpan"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved interval"
+msgstr "Jeda tersimpan"
+
+#. 0: settings.minimumInterval === settings.maximumInterval ? settings.minimumInterval \\: `${settings.minimumInterval}–${settings.maximumInterval}`
+#: src/components/SavedDefaultsInfo.svelte
+msgid "{0} seconds"
+msgstr "{0} detik"
+
+#: src/App.svelte
+#: src/components/SavedDefaultsInfo.svelte
+msgid "On"
+msgstr "Aktif"
+
+#: src/App.svelte
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Off"
+msgstr "Nonaktif"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Gemini rewrite"
+msgstr "Penulisan ulang Gemini"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "No instructions saved."
+msgstr "Belum ada instruksi tersimpan."
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved rewrite instructions"
+msgstr "Instruksi penulisan ulang tersimpan"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved values could not be loaded. Try “Use saved defaults” again."
+msgstr "Nilai tersimpan tidak dapat dimuat. Coba “Gunakan pengaturan bawaan tersimpan” lagi."
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "What does “Use saved defaults” do?"
+msgstr "Apa fungsi “Gunakan pengaturan bawaan tersimpan”?"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
+msgstr "Mengganti jeda pengiriman, opsi penulisan ulang Gemini, dan instruksi penulisan ulang untuk sesi ini dengan nilai yang disimpan di Pengaturan."
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
+msgstr "Pengaturan awal: 60–120 detik, penulisan ulang Gemini nonaktif, dan tanpa instruksi penulisan ulang. Simpan preferensi Anda di Pengaturan untuk mengubahnya."
+
+#: src/components/Settings.svelte
+msgid "Settings saved. New runs can use these defaults."
+msgstr "Pengaturan disimpan. Sesi baru dapat menggunakan pengaturan bawaan ini."
+
+#: src/components/Settings.svelte
+msgid "Key saved · leave blank to keep it"
+msgstr "Kunci tersimpan · biarkan kosong untuk mempertahankannya"
+
+#: src/components/Settings.svelte
+msgid "Enter your Gemini API key"
+msgstr "Masukkan kunci API Gemini Anda"
+
+#: src/components/Settings.svelte
+msgid "A key is saved on this device."
+msgstr "Kunci tersimpan di perangkat ini."
+
+#: src/components/Settings.svelte
+msgid "No API key saved."
+msgstr "Belum ada kunci API tersimpan."
+
+#: src/components/Settings.svelte
+msgid "Remove saved key"
+msgstr "Hapus kunci tersimpan"
+
+#: src/components/Settings.svelte
+msgid "Gemini"
+msgstr "Gemini"
+
+#: src/components/Settings.svelte
+msgid "API key<0/>"
+msgstr "Kunci API<0/>"
+
+#. 0: keyConfigured ? 'A key is saved on this device.' \\: 'No API key saved.'
+#: src/components/Settings.svelte
+msgid "{0} The saved key is never displayed."
+msgstr "{0} Kunci tersimpan tidak pernah ditampilkan."
+
+#: src/components/Settings.svelte
+msgid "Model<0/>"
+msgstr "Model<0/>"
+
+#: src/components/Settings.svelte
+msgid "Posting defaults"
+msgstr "Pengaturan bawaan postingan"
+
+#: src/components/Settings.svelte
+msgid "Applied when you start a new posting run."
+msgstr "Diterapkan saat Anda memulai sesi pengiriman baru."
+
+#: src/components/Settings.svelte
+msgid "Saving…"
+msgstr "Menyimpan…"
+
+#: src/components/Settings.svelte
+msgid "Save settings"
+msgstr "Simpan pengaturan"
+
+#: src/components/Settings.svelte
+msgid "YOUR PREFERENCES"
+msgstr "PREFERENSI ANDA"
+
+#. 0: accountName
+#: src/components/Settings.svelte
+msgid "Set up Gemini and save posting defaults for {0}."
+msgstr "Siapkan Gemini dan simpan pengaturan bawaan postingan untuk {0}."
+
+#: src/components/StepProgress.svelte
+msgid "Completed"
+msgstr "Selesai"
+
+#: src/components/StepProgress.svelte
+msgid "Current"
+msgstr "Saat ini"
+
+#: src/components/StepProgress.svelte
+msgid "Upcoming"
+msgstr "Berikutnya"
+
+#. 0: index + 1; 1: steps.length; 2: completed || index < currentStep ? 'Completed' \\: index === currentStep ? 'Current' \\: 'Upcoming'
+#: src/components/StepProgress.svelte
+msgid "Step {0} of {1}: {2}"
+msgstr "Langkah {0} dari {1}: {2}"
+
+#: src/components/WindowControls.svelte
+msgid "Could not change the window. Please try again."
+msgstr "Jendela tidak dapat diubah. Silakan coba lagi."
+
+#: src/components/WindowControls.svelte
+msgid "Window controls"
+msgstr "Kontrol jendela"
+
+#: src/components/WindowControls.svelte
+msgid "Minimize window"
+msgstr "Minimalkan jendela"
+
+#: src/components/WindowControls.svelte
+msgid "Restore window"
+msgstr "Pulihkan jendela"
+
+#: src/components/WindowControls.svelte
+msgid "Maximize window"
+msgstr "Maksimalkan jendela"
+
+#: src/components/WindowControls.svelte
+msgid "Close window"
+msgstr "Tutup jendela"
+
+#: src/App.svelte
+msgid "Create post"
+msgstr "Buat postingan"
+
+#: src/App.svelte
+msgid "Write your post and add images"
+msgstr "Tulis postingan Anda dan tambahkan gambar"
+
+#: src/App.svelte
+msgid "Select groups"
+msgstr "Pilih grup"
+
+#: src/App.svelte
+msgid "Load groups and choose where to post"
+msgstr "Muat grup dan pilih tempat mengirim postingan"
+
+#~ msgid "Review & post"
+#~ msgstr "Tinjau & kirim"
+
+#~ msgid "Review, set preferences, then post now or schedule"
+#~ msgstr "Tinjau, atur preferensi, lalu kirim sekarang atau jadwalkan"
+
+#: src/App.svelte
+msgid "Facebook session captured"
+msgstr "Sesi Facebook tersimpan"
+
+#: src/App.svelte
+msgid "The browser is closed. It will reopen when you click Post."
+msgstr "Browser ditutup. Browser akan terbuka kembali saat Anda mengirim postingan."
+
+#: src/App.svelte
+msgid "Checking Facebook login"
+msgstr "Memeriksa status masuk Facebook"
+
+#: src/App.svelte
+msgid "Finish signing in or any verification prompts in Chrome. Your login will be detected automatically."
+msgstr "Selesaikan proses masuk atau verifikasi di Chrome. Status masuk Anda akan terdeteksi secara otomatis."
+
+#: src/App.svelte
+msgid "Login required"
+msgstr "Perlu masuk"
+
+#: src/App.svelte
+msgid "Please log in to Facebook in the Chrome window. Postika will detect when you’re signed in."
+msgstr "Silakan masuk ke Facebook di jendela Chrome. Postika akan mendeteksi saat Anda sudah masuk."
+
+#: src/App.svelte
+msgid "Complete Facebook verification"
+msgstr "Selesaikan verifikasi Facebook"
+
+#: src/App.svelte
+msgid "Complete the login or verification prompts in Chrome to continue."
+msgstr "Selesaikan proses masuk atau verifikasi di Chrome untuk melanjutkan."
+
+#: src/App.svelte
+msgid "Facebook connected"
+msgstr "Facebook terhubung"
+
+#: src/App.svelte
+msgid "You’re logged in. Your session is ready."
+msgstr "Anda sudah masuk. Sesi Anda siap."
+
+#: src/App.svelte
+msgid "Facebook window closed"
+msgstr "Jendela Facebook ditutup"
+
+#: src/App.svelte
+msgid "Click Load groups to reopen Facebook and check your login."
+msgstr "Klik Muat grup untuk membuka kembali Facebook dan memeriksa status masuk Anda."
+
+#. 0: current?.name ?? ''
+#: src/components/AccountDropdown.svelte
+msgid "Language: {0}"
+msgstr "Bahasa: {0}"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search languages…"
+msgstr "Cari bahasa…"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search languages"
+msgstr "Cari bahasa"
+
+#: src/components/AccountDropdown.svelte
+msgid "Clear language search"
+msgstr "Hapus pencarian bahasa"
+
+#. 0: matches.length
+#: src/components/AccountDropdown.svelte
+msgid "{0} result"
+msgstr "{0} hasil"
+
+#. 0: matches.length
+#: src/components/AccountDropdown.svelte
+msgid "{0} results"
+msgstr "{0} hasil"
+
+#: src/components/AccountDropdown.svelte
+msgid "All languages"
+msgstr "Semua bahasa"
+
+#: src/components/AccountDropdown.svelte
+msgid "Languages"
+msgstr "Bahasa"
+
+#: src/components/AccountDropdown.svelte
+msgid "No languages found"
+msgstr "Tidak ada bahasa ditemukan"
+
+#: src/components/DateTimePicker.svelte
+msgid "Morning"
+msgstr "Pagi"
+
+#: src/components/DateTimePicker.svelte
+msgid "Afternoon"
+msgstr "Siang"
+
+#: src/components/DateTimePicker.svelte
+msgid "Evening"
+msgstr "Sore"
+
+#: src/components/LanguageMenu.svelte
+msgid "Could not change the language. Please try again."
+msgstr "Bahasa tidak dapat diubah. Silakan coba lagi."
+
+#: src/components/Settings.svelte
+msgid "Language"
+msgstr "Bahasa"
+
+#: src/components/PostingOptionsForm.svelte
+#: src/components/PostingOptionsForm.svelte
+msgid "seconds"
+msgstr "detik"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Minimum"
+msgstr "Minimum"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Maximum"
+msgstr "Maksimum"
+
+#: src/components/StepProgress.svelte
+msgid "Post progress"
+msgstr "Progres postingan"
+
+#. 0: visibleGroups.length
+#: src/App.svelte
+msgid "{0} shown"
+msgstr "{0} ditampilkan"
+
+#. 0: selectedGroupIds.length
+#: src/App.svelte
+msgid "{0} selected"
+msgstr "{0} dipilih"
+
+#. 0: images.length
+#: src/components/PostComposer.svelte
+msgid "{0} images selected"
+msgstr "{0} gambar dipilih"
+
+#: src/components/PostingLogView.svelte
+msgid "WARN"
+msgstr "PERINGATAN"
+
+#: src/components/PostingLogView.svelte
+msgid "INFO"
+msgstr "INFO"
+
+#: src/components/PostingLogView.svelte
+msgid "ERROR"
+msgstr "GALAT"
+
+#: src/components/PostingLogView.svelte
+msgid "DEBUG"
+msgstr "DEBUG"
+
+#: src/components/PostingLogView.svelte
+msgid "PUBLISHED"
+msgstr "DITERBITKAN"
+
+#: src/components/PostingLogView.svelte
+msgid "PENDING"
+msgstr "MENUNGGU"
+
+#: src/components/PostingLogView.svelte
+msgid "FAILED"
+msgstr "GAGAL"
+
+#: src/components/PostingLogView.svelte
+msgid "SKIPPED"
+msgstr "DILEWATI"
+
+#: src/components/PostingLogView.svelte
+msgid "UNCONFIRMED"
+msgstr "BELUM TERKONFIRMASI"
+
+#: src/Workspace.svelte
+msgid "e.g. Business"
+msgstr "mis. Bisnis"
+
+#: src/components/PostComposer.svelte
+msgid "1 image selected"
+msgstr "1 gambar dipilih"
+
+#: src/components/PostingLogView.svelte
+msgid "Paused · Waiting for internet"
+msgstr "Dijeda · Menunggu koneksi internet"
+
+#: src/components/PostingLogView.svelte
+msgid "Pausing after the current operation"
+msgstr "Menjeda setelah operasi saat ini selesai"
+
+#: src/components/PostingLogView.svelte
+msgid "Paused"
+msgstr "Dijeda"
+
+#: src/components/PostingLogView.svelte
+msgid "Stopping"
+msgstr "Menghentikan"
+
+#: src/components/PostingLogView.svelte
+msgid "Posting"
+msgstr "Mengirim postingan"
+
+#: src/components/PostingLogView.svelte
+msgid "Finished"
+msgstr "Selesai"
+
+#: src/components/PostingLogView.svelte
+msgid "Stopped"
+msgstr "Dihentikan"
+
+#: src/components/PostingLogView.svelte
+msgid "Ready"
+msgstr "Siap"
+
+#: src/components/PostingLogView.svelte
+msgid "CURRENT ACTIVITY"
+msgstr "AKTIVITAS SAAT INI"
+
+#: src/components/PostingLogView.svelte
+msgid "RUN STATUS"
+msgstr "STATUS SESI"
+
+#: src/components/PostingLogView.svelte
+msgid " · Paused"
+msgstr " · Dijeda"
+
+#: src/components/PostingLogView.svelte
+msgid " · Response available to copy"
+msgstr " · Respons tersedia untuk disalin"
+
+#: src/components/AccountLabel.svelte
+msgid "Default profile"
+msgstr "Profil bawaan"
+
+#~ msgid "Switch to light mode"
+#~ msgstr "Beralih ke mode terang"
+
+#~ msgid "Switch to dark mode"
+#~ msgstr "Beralih ke mode gelap"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Color themes"
+msgstr "Tema warna"
+
+#: src/components/ThemePicker.svelte
+msgid "Close"
+msgstr "Tutup"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Search themes…"
+msgstr "Cari tema…"
+
+#: src/components/ThemePicker.svelte
+msgid "No themes found"
+msgstr "Tidak ada tema ditemukan"
+
+#: src/components/LogMessage.svelte
+msgid "A selected group is no longer available. Load groups again"
+msgstr "Kelompok yang dipilih tidak lagi tersedia. Muat ulang kelompok"
+
+#: src/components/LogMessage.svelte
+msgid "Add a Gemini API key in Settings before enabling rewriting"
+msgstr "Tambahkan kunci API Gemini di Pengaturan sebelum mengaktifkan penulisan ulang"
+
+#: src/components/LogMessage.svelte
+msgid "Add a post body and at least one image"
+msgstr "Tambahkan isi postingan dan setidaknya satu gambar"
+
+#: src/components/LogMessage.svelte
+msgid "All selected groups were already attempted. Review unconfirmed results on Facebook."
+msgstr "Semua kelompok yang dipilih sudah dicoba. Tinjau hasil yang belum dikonfirmasi di Facebook."
+
+#: src/components/LogMessage.svelte
+msgid "An image upload failed in Chrome. Check the composer and retry Post"
+msgstr "Unggahan gambar gagal di Chrome. Periksa penyusun dan coba unggah Post lagi"
+
+#: src/components/LogMessage.svelte
+msgid "Attaching images…"
+msgstr "Menempelkan gambar…"
+
+#: src/components/LogMessage.svelte
+msgid "Choose JPG, PNG, WebP, or GIF images"
+msgstr "Pilih gambar JPG, PNG, WebP, atau GIF"
+
+#: src/components/LogMessage.svelte
+msgid "Choose a future date and time for your post"
+msgstr "Pilih tanggal dan waktu di masa depan untuk postingan Anda"
+
+#: src/components/LogMessage.svelte
+msgid "Closing Chrome and posting to the remaining groups…"
+msgstr "Menutup Chrome dan memposting ke kelompok yang tersisa…"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the complete create-post request"
+msgstr "Tidak dapat menangkap permintaan buat-post lengkap"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the completed image upload response"
+msgstr "Tidak dapat menangkap respons unggah gambar yang selesai"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the image upload form fields"
+msgstr "Tidak dapat menangkap bidang formulir unggah gambar"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the image upload form. Retry Post"
+msgstr "Tidak dapat menangkap formulir unggah gambar. Coba unggah Post lagi"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the upload endpoint"
+msgstr "Tidak dapat menangkap endpoint unggah"
+
+#: src/components/LogMessage.svelte
+msgid "Could not copy the Facebook response to the clipboard"
+msgstr "Tidak dapat menyalin respons Facebook ke clipboard"
+
+#: src/components/LogMessage.svelte
+msgid "Could not enable create-post capture in Chrome"
+msgstr "Tidak dapat mengaktifkan tangkapan buat-pos di Chrome"
+
+#: src/components/LogMessage.svelte
+msgid "Could not parse the captured create-post form"
+msgstr "Tidak dapat mem-parsing formulir buat-pos yang ditangkap"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare image files"
+msgstr "Tidak dapat menyiapkan file gambar"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare post images"
+msgstr "Tidak dapat menyiapkan gambar pos"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare the Gemini request"
+msgstr "Tidak dapat menyiapkan permintaan Gemini"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare the image upload."
+msgstr "Tidak dapat menyiapkan unggahan gambar"
+
+#: src/components/LogMessage.svelte
+msgid "Could not reach Gemini. Check your connection"
+msgstr "Tidak dapat menghubungi Gemini. Periksa koneksi Anda"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read Facebook's post confirmation"
+msgstr "Tidak dapat membaca konfirmasi pos Facebook"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read the Gemini rewrite"
+msgstr "Tidak dapat membaca penulisan ulang Gemini"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read the completed image upload response"
+msgstr "Tidak dapat membaca respons unggahan gambar yang selesai"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read the selected image."
+msgstr "Tidak dapat membaca gambar yang dipilih"
+
+#: src/components/LogMessage.svelte
+msgid "Create-post capture ended before confirmation. Check Facebook before retrying"
+msgstr "Tangkapan buat-pos berakhir sebelum konfirmasi. Periksa Facebook sebelum mencoba lagi"
+
+#: src/components/LogMessage.svelte
+msgid "Create-post request detected. Capturing fresh form values…"
+msgstr "Permintaan buat-pos terdeteksi. Menangkap nilai formulir baru…"
+
+#: src/components/LogMessage.svelte
+msgid "Create-post response complete. Waiting for captured session headers…"
+msgstr "Respons buat-pos selesai. Menunggu header sesi yang ditangkap…"
+
+#: src/components/LogMessage.svelte
+msgid "Create-post response received. Waiting for its complete body…"
+msgstr "Respons buat-pos diterima. Menunggu tubuh lengkapnya…"
+
+#: src/components/LogMessage.svelte
+msgid "Description inserted"
+msgstr "Deskripsi dimasukkan"
+
+#: src/components/LogMessage.svelte
+msgid "Earlier submission is unconfirmed. Skipping this group and continuing with the remaining groups."
+msgstr "Pengiriman sebelumnya belum dikonfirmasi. Melewati grup ini dan melanjutkan dengan grup yang tersisa."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook could not post to this group. Continuing with the remaining groups."
+msgstr "Facebook tidak dapat memposting ke grup ini. Melanjutkan dengan grup yang tersisa."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook did not confirm all images. Check the composer."
+msgstr "Facebook tidak mengonfirmasi semua gambar. Periksa pembuat posting."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook did not confirm the submission"
+msgstr "Facebook tidak mengonfirmasi pengiriman"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook did not confirm this post. Check the group before trying again."
+msgstr "Facebook tidak mengonfirmasi posting ini. Periksa grup sebelum mencoba lagi."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook has temporarily limited posting. Try again later."
+msgstr "Facebook telah membatasi sementara pengiriman posting. Coba lagi nanti."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook rejected this post."
+msgstr "Facebook menolak posting ini."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook requires login or verification. Load groups again."
+msgstr "Facebook memerlukan login atau verifikasi. Muat ulang grup."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook returned a story, but did not confirm its group or publication state. Posting stopped. Check Facebook before retrying."
+msgstr "Facebook mengembalikan cerita, tetapi tidak mengonfirmasi grup atau status publikasinya. Pengiriman dihentikan. Periksa Facebook sebelum mencoba lagi."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook's confirmation exceeded the 16 MiB response limit; retained response is truncated"
+msgstr "Konfirmasi Facebook melebihi batas respons 16 MiB; respons yang disimpan dipotong"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook's editor did not accept the formatted post. Posting was not submitted"
+msgstr "Editor Facebook tidak menerima posting yang diformat. Pengiriman tidak dikirimkan"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook's editor did not retain the formatted post text. Posting was not submitted"
+msgstr "Editor Facebook tidak mempertahankan teks posting yang diformat. Posting tidak dikirim"
+
+#: src/components/LogMessage.svelte
+msgid "First post confirmed. Waiting for the Facebook composer to close…"
+msgstr "Posting pertama dikonfirmasi. Menunggu penutup komposer Facebook…"
+
+#: src/components/LogMessage.svelte
+msgid "First submission unconfirmed. Retrying request 1/3 with the captured mutation ID…"
+msgstr "Pengiriman pertama tidak dikonfirmasi. Mencoba lagi permintaan 1/3 dengan ID mutasi yang ditangkap…"
+
+#: src/components/LogMessage.svelte
+msgid "Formatted post is too large"
+msgstr "Posting yang diformat terlalu besar"
+
+#: src/components/LogMessage.svelte
+msgid "Found multiple matching post composers on the group page"
+msgstr "Ditemukan beberapa komposer posting yang cocok di halaman grup"
+
+#: src/components/LogMessage.svelte
+msgid "Fresh create-post form captured. Waiting for Facebook's response…"
+msgstr "Formulir buat-postingan baru ditangkap. Menunggu respons dari Facebook…"
+
+#: src/components/LogMessage.svelte
+msgid "Gemini did not finish the rewrite"
+msgstr "Gemini tidak menyelesaikan penulisan ulang"
+
+#: src/components/LogMessage.svelte
+msgid "Gemini returned no rewritten text"
+msgstr "Gemini tidak mengembalikan teks yang ditulis ulang"
+
+#: src/components/LogMessage.svelte
+msgid "Gemini rewrite completed."
+msgstr "Penulisan ulang Gemini selesai."
+
+#: src/components/LogMessage.svelte
+msgid "Gemini rewrite failed. Using the original text for this post; Gemini will be tried again for the next post."
+msgstr "Penulisan ulang Gemini gagal. Menggunakan teks asli untuk posting ini; Gemini akan dicoba lagi untuk posting berikutnya."
+
+#: src/components/LogMessage.svelte
+msgid "Image uploads belong to a different profile"
+msgstr "Unggahan gambar milik profil lain"
+
+#: src/components/LogMessage.svelte
+msgid "Images inserted"
+msgstr "Gambar dimasukkan"
+
+#: src/components/LogMessage.svelte
+msgid "Inserting post body…"
+msgstr "Memasukkan badan posting…"
+
+#: src/components/LogMessage.svelte
+msgid "Internet connection lost. Queue paused until the connection returns."
+msgstr "Koneksi internet terputus. Antrian dijeda sampai koneksi kembali."
+
+#: src/components/LogMessage.svelte
+msgid "Internet connection restored. Continuing the queue."
+msgstr "Koneksi internet dipulihkan. Melanjutkan antrean."
+
+#: src/components/LogMessage.svelte
+msgid "Internet connection restored. The queue remains manually paused."
+msgstr "Koneksi internet dipulihkan. Antrean tetap dihentikan secara manual."
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured endpoint"
+msgstr "Endpoint yang ditangkap tidak valid"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured formatted post"
+msgstr "Post terformat yang ditangkap tidak valid"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured post form"
+msgstr "Formulir post yang ditangkap tidak valid"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured post variables"
+msgstr "Variabel post yang ditangkap tidak valid"
+
+#: src/components/LogMessage.svelte
+msgid "Load your groups before opening a post"
+msgstr "Muat grup Anda sebelum membuka postingan"
+
+#: src/components/LogMessage.svelte
+msgid "Log in or complete Facebook verification in Chrome, then click Post again"
+msgstr "Masuk atau selesaikan verifikasi Facebook di Chrome, lalu klik Post lagi"
+
+#: src/components/LogMessage.svelte
+msgid "Multiple matching controls found in the post composer"
+msgstr "Beberapa kontrol yang cocok ditemukan di penyusun post"
+
+#: src/components/LogMessage.svelte
+msgid "No Facebook response was captured for this entry"
+msgstr "Tidak ada respons Facebook yang ditangkap untuk entri ini"
+
+#: src/components/LogMessage.svelte
+msgid "No available post composer."
+msgstr "Tidak ada penyusun post yang tersedia."
+
+#: src/components/LogMessage.svelte
+msgid "No complete image upload request was captured."
+msgstr "Tidak ada permintaan unggah gambar lengkap yang ditangkap."
+
+#: src/components/LogMessage.svelte
+msgid "No fresh image upload request was captured."
+msgstr "Tidak ada permintaan unggah gambar baru yang ditangkap."
+
+#: src/components/LogMessage.svelte
+msgid "Opening browser…"
+msgstr "Membuka browser…"
+
+#: src/components/LogMessage.svelte
+msgid "Pause requested. The current operation will finish before pausing."
+msgstr "Jeda diminta. Operasi saat ini akan selesai sebelum dijeda."
+
+#: src/components/LogMessage.svelte
+msgid "Post button clicked"
+msgstr "Tombol post diklik"
+
+#: src/components/LogMessage.svelte
+msgid "Post published."
+msgstr "Post dipublikasikan."
+
+#: src/components/LogMessage.svelte
+msgid "Postika is shutting down"
+msgstr "Postika sedang dimatikan"
+
+#: src/components/LogMessage.svelte
+msgid "Posting is already running"
+msgstr "Posting sudah berjalan"
+
+#: src/components/LogMessage.svelte
+msgid "Posting paused."
+msgstr "Posting dijeda."
+
+#: src/components/LogMessage.svelte
+msgid "Posting resumed."
+msgstr "Posting dilanjutkan."
+
+#: src/components/LogMessage.svelte
+msgid "Posting stopped after the first post was confirmed"
+msgstr "Posting berhenti setelah posting pertama dikonfirmasi"
+
+#: src/components/LogMessage.svelte
+msgid "Posting..."
+msgstr "Sedang memposting..."
+
+#: src/components/LogMessage.svelte
+msgid "Reading Facebook's create-post confirmation…"
+msgstr "Membaca konfirmasi buat postingan Facebook…"
+
+#: src/components/LogMessage.svelte
+msgid "Rewriting the post body with Gemini…"
+msgstr "Menulis ulang isi postingan dengan Gemini…"
+
+#: src/components/LogMessage.svelte
+msgid "Scheduled posting cancelled."
+msgstr "Posting terjadwal dibatalkan."
+
+#: src/components/LogMessage.svelte
+msgid "Scheduled time reached. Starting posting…"
+msgstr "Waktu terjadwal tercapai. Memulai posting…"
+
+#: src/components/LogMessage.svelte
+msgid "Select at least one group"
+msgstr "Pilih setidaknya satu grup"
+
+#: src/components/LogMessage.svelte
+msgid "Setting up automatic posting using your first Facebook post..."
+msgstr "Menyiapkan posting otomatis menggunakan posting Facebook pertama Anda..."
+
+#: src/components/LogMessage.svelte
+msgid "Stopping posting…"
+msgstr "Menghentikan posting…"
+
+#: src/components/LogMessage.svelte
+msgid "Submitting the first post and capturing fresh request values…"
+msgstr "Mengirim posting pertama dan menangkap nilai permintaan baru…"
+
+#: src/components/LogMessage.svelte
+#: src/components/LogMessage.svelte
+msgid "Technical details recorded. Open debug details to inspect the original message."
+msgstr "Detail teknis dicatat. Buka detail debug untuk memeriksa pesan aslinya."
+
+#: src/components/LogMessage.svelte
+msgid "The active Facebook profile changed or expired"
+msgstr "Profil Facebook aktif berubah atau kedaluwarsa"
+
+#: src/components/LogMessage.svelte
+msgid "The browser connection was lost. Check Facebook before retrying"
+msgstr "Koneksi browser terputus. Periksa Facebook sebelum mencoba lagi"
+
+#: src/components/LogMessage.svelte
+msgid "The browser profile changed while capturing posting requests"
+msgstr "Profil browser berubah saat menangkap permintaan posting"
+
+#: src/components/LogMessage.svelte
+msgid "The captured formatted post body does not match your draft"
+msgstr "Isi postingan yang diformat yang ditangkap tidak cocok dengan draf Anda"
+
+#: src/components/LogMessage.svelte
+msgid "The captured image upload cookies do not match the Facebook profile"
+msgstr "Cookie unggah gambar yang ditangkap tidak cocok dengan profil Facebook"
+
+#: src/components/LogMessage.svelte
+msgid "The captured image upload format is not supported"
+msgstr "Format unggah gambar yang ditangkap tidak didukung"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post belongs to a different Facebook profile"
+msgstr "Postingan yang ditangkap milik profil Facebook yang berbeda"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post body does not match your draft"
+msgstr "Isi postingan yang ditangkap tidak cocok dengan draf Anda"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post cookies do not match the logged-in profile"
+msgstr "Cookie postingan yang ditangkap tidak cocok dengan profil yang masuk"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post has no group target"
+msgstr "Postingan yang ditangkap tidak memiliki target grup"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post target does not match the selected group"
+msgstr "Target postingan yang ditangkap tidak cocok dengan grup yang dipilih"
+
+#: src/components/LogMessage.svelte
+msgid "The composer dialog was replaced while loading"
+msgstr "Dialog pembuat postingan diganti saat memuat"
+
+#: src/components/LogMessage.svelte
+msgid "The create-post connection failed. Check Facebook before retrying"
+msgstr "Koneksi buat-posting gagal. Periksa Facebook sebelum mencoba lagi"
+
+#: src/components/LogMessage.svelte
+msgid "The current profile differs from the profile used to load groups. Load groups again."
+msgstr "Profil saat ini berbeda dari profil yang digunakan untuk memuat grup. Muat ulang grup."
+
+#: src/components/LogMessage.svelte
+msgid "The desktop application is not ready"
+msgstr "Aplikasi desktop tidak siap"
+
+#: src/components/LogMessage.svelte
+msgid "The desktop clipboard is not ready"
+msgstr "Clipboard desktop tidak siap"
+
+#: src/components/LogMessage.svelte
+msgid "The expected composer control did not appear in Chrome"
+msgstr "Kontrol pembuat postingan yang diharapkan tidak muncul di Chrome"
+
+#: src/components/LogMessage.svelte
+msgid "The first post was confirmed, but Chrome's completion state could not be checked. Posting stopped"
+msgstr "Posting pertama telah dikonfirmasi, tetapi status penyelesaian Chrome tidak dapat diperiksa. Posting dihentikan"
+
+#: src/components/LogMessage.svelte
+msgid "The image upload did not contain multipart form data"
+msgstr "Unggahan gambar tidak mengandung data formulir multipart"
+
+#: src/components/LogMessage.svelte
+msgid "The image upload does not match its active Facebook profile"
+msgstr "Unggahan gambar tidak sesuai dengan profil Facebook aktifnya"
+
+#: src/components/LogMessage.svelte
+msgid "The image upload form belongs to a different Facebook profile"
+msgstr "Formulir unggahan gambar milik profil Facebook yang berbeda"
+
+#: src/components/LogMessage.svelte
+msgid "The selected group has an invalid Facebook URL. Load groups again"
+msgstr "Grup yang dipilih memiliki URL Facebook yang tidak valid. Muat ulang grup"
+
+#: src/components/LogMessage.svelte
+msgid "The session could not be saved for posting retries and remaining groups."
+msgstr "Sesi tidak dapat disimpan untuk percobaan posting ulang dan grup yang tersisa."
+
+#: src/components/LogMessage.svelte
+msgid "This draft has already been submitted to the first group. It was not submitted again."
+msgstr "Draft ini sudah dikirim ke grup pertama. Tidak dikirim ulang."
+
+#: src/components/LogMessage.svelte
+msgid "This group has no available post composer"
+msgstr "Grup ini tidak memiliki pembuat posting yang tersedia"
+
+#: src/components/LogMessage.svelte
+msgid "This group has reached its pending-content limit."
+msgstr "Grup ini telah mencapai batas konten yang tertunda."
+
+#: src/components/LogMessage.svelte
+msgid "This post was submitted, but confirmation is uncertain. Check Facebook before retrying."
+msgstr "Posting ini telah dikirim, tetapi konfirmasi tidak pasti. Periksa Facebook sebelum mencoba lagi."
+
+#: src/components/LogMessage.svelte
+msgid "This response is no longer available for the current run"
+msgstr "Respon ini tidak lagi tersedia untuk jalannya operasi saat ini"
+
+#: src/components/LogMessage.svelte
+msgid "Upload and post captures must belong to the same logged-in profile"
+msgstr "Upload dan posting tangkapan layar harus berasal dari profil yang sama yang sedang login"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for Facebook's Post button…"
+msgstr "Menunggu tombol Posting Facebook…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the composer controls and layout…"
+msgstr "Menunggu kontrol dan tata letak pembuat konten…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the group page and opening its composer…"
+msgstr "Menunggu halaman grup dan membuka pembuat kontennya…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the image previews and composer to settle…"
+msgstr "Menunggu pratinjau gambar dan pembuat konten stabil…"
+
+#: src/components/LogMessage.svelte
+msgid "Your Facebook session needs login or verification. Load groups again."
+msgstr "Sesi Facebook Anda membutuhkan login atau verifikasi. Muat ulang grup."
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Published to {0}."
+msgstr "Dipublikasikan ke {0}."
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "{0}: Awaiting admin approval."
+msgstr "{0}: Menunggu persetujuan admin."
+
+#. 0: number(a); 1: b
+#: src/components/LogMessage.svelte
+msgid "Waiting {0} seconds before posting to {1}."
+msgstr "Menunggu {0} detik sebelum memposting ke {1}."
+
+#. 0: a; 1: b
+#: src/components/LogMessage.svelte
+msgid "Next post in {0} · {1}"
+msgstr "Posting berikutnya dalam {0} · {1}"
+
+#. 0: a; 1: number(b); 2: number(c)
+#: src/components/LogMessage.svelte
+msgid "{0}: Uploading photo {1} of {2}…"
+msgstr "{0}: Mengunggah foto {1} dari {2}…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Preparing a post for {0}…"
+msgstr "Mempersiapkan posting untuk {0}…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Uploading images for {0}…"
+msgstr "Mengunggah gambar untuk {0}…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Posting to {0}…"
+msgstr "Memposting ke {0}…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Fresh upload and post request values captured from {0}."
+msgstr "Nilai permintaan unggah dan posting baru ditangkap dari {0}."
+
+#. 0: number(a); 1: number(b)
+#: src/components/LogMessage.svelte
+msgid "Submission unconfirmed. Retrying request {0}/{1}…"
+msgstr "Pengiriman tidak dikonfirmasi. Mencoba lagi permintaan {0}/{1}…"
+
+#. 0: number(a); 1: number(b); 2: number(c)
+#: src/components/LogMessage.svelte
+msgid "Finished: {0} published, {1} awaiting approval, {2} failed or skipped."
+msgstr "Selesai: {0} dipublikasikan, {1} menunggu persetujuan, {2} gagal atau dilewati."
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Opening {0}…"
+msgstr "Membuka {0}…"
+
+#. 0: number(a); 1: number(b)
+#: src/components/LogMessage.svelte
+msgid "Capturing image uploads ({0} of {1})…"
+msgstr "Mengunggah gambar ({0} dari {1})…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Gemini rewrite failed (HTTP {0}). Check the key, model and account quota"
+msgstr "Penulisan ulang Gemini gagal (HTTP {0}). Periksa kunci, model, dan kuota akun"
+
+#. 0: code
+#: src/components/LogMessage.svelte
+msgid " (Code {0})"
+msgstr "(Kode {0})"
+
+#: src/components/PostingLogView.svelte
+msgid "Debug details"
+msgstr "Detail debug"
+
+#~ msgid ", "
+#~ msgstr ""
+
+#: src/components/ThemePicker.svelte
+msgid "Themes"
+msgstr "Tema"
+
+#: src/App.svelte
+msgid "Preferences & post"
+msgstr "Preferensi & kirim"
+
+#: src/App.svelte
+#: src/App.svelte
+msgid "Set preferences, then post now or schedule"
+msgstr "Atur preferensi, lalu kirim sekarang atau jadwalkan"

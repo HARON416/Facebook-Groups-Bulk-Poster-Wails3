@@ -1,0 +1,1836 @@
+msgid ""
+msgstr ""
+"Source-Language: en\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2\n"
+"X-Plurals-Order: one, other\n"
+
+#. 0: minimumInterval === maximumInterval ? minimumInterval \\: `${minimumInterval}–${maximumInterval}`; 1: rewriteState
+#: src/App.svelte
+msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
+msgstr "Mentett alapbeállítások alkalmazva: {0} másodperc a bejegyzések között · Gemini újraírás {1}."
+
+#: src/App.svelte
+msgid "Could not restore saved groups. Load groups to refresh the list."
+msgstr "Nem sikerült visszaállítani a mentett csoportokat. Töltsd be a csoportokat a lista frissítéséhez."
+
+#: src/App.svelte
+msgid "Choose a future date and time for your post."
+msgstr "Válassz egy jövőbeli dátumot és időt a bejegyzésedhez."
+
+#: src/App.svelte
+msgid "Saving your scheduled queue…"
+msgstr "Ütemezett sor mentése…"
+
+#: src/App.svelte
+msgid "Opening a selected group to capture fresh posting requests…"
+msgstr "Kiválasztott csoport megnyitása az új bejegyzési kérések rögzítéséhez…"
+
+#: src/App.svelte
+#: src/App.svelte
+#: src/components/LogMessage.svelte
+msgid "Posting stopped."
+msgstr "A posztolás leállt."
+
+#: src/App.svelte
+#: src/components/LogMessage.svelte
+msgid "Could not read a selected image"
+msgstr "Nem sikerült beolvasni a kiválasztott képet"
+
+#. 0: image.file.name
+#. 0: missingNames
+#. 0: unreadableNames
+#. 0: image.file.name
+#: src/App.svelte
+#: src/App.svelte
+#: src/components/PostComposer.svelte
+#: src/components/PostComposer.svelte
+msgid "Could not read {0}"
+msgstr "Nem sikerült beolvasni: {0}"
+
+#: src/App.svelte
+msgid "Posting finished."
+msgstr "A posztolás befejeződött."
+
+#. 0: scheduleLabel(scheduledFor)
+#. 0: date
+#: src/App.svelte
+#: src/components/LogMessage.svelte
+msgid "Scheduled for {0}. Keep Postika open and your computer awake."
+msgstr "Ütemezve: {0}. Tartsd nyitva a Postikát és a számítógéped aktívan."
+
+#: src/App.svelte
+msgid "Could not restore this account’s draft. New edits will stay available while Postika is open."
+msgstr "Nem sikerült visszaállítani a fiók vázlatát. Az új szerkesztések elérhetők maradnak, amíg a Postika nyitva van."
+
+#: src/App.svelte
+msgid "Could not add the dropped images. Try browsing for them instead."
+msgstr "Nem sikerült hozzáadni az elejtett képeket. Próbáld meg inkább böngészve kiválasztani őket."
+
+#: src/App.svelte
+msgid "Could not save this account’s draft to disk. Keep Postika open to retain your edits."
+msgstr "Nem sikerült menteni a fiók vázlatát a lemezre. Tartsd nyitva a Postikát a szerkesztéseid megtartásához."
+
+#: src/App.svelte
+msgid "Start with your message. Add images to bring it to life."
+msgstr "Kezdd az üzeneteddel. Adj hozzá képeket, hogy életre keljen."
+
+#: src/App.svelte
+msgid "Choose the groups you want to share your post with."
+msgstr "Válaszd ki azokat a csoportokat, amelyekkel meg szeretnéd osztani a bejegyzésed."
+
+#~ msgid "Review your post and preferences, then post now or schedule for later."
+#~ msgstr "Tekintsd át a bejegyzésed és a beállításaid, majd tedd közzé most, vagy ütemezd későbbre."
+
+#. 0: currentStep + 1; 1: steps.length
+#: src/App.svelte
+msgid "STEP {0} OF {1}"
+msgstr "{0} LÉPÉS {1}-BŐL"
+
+#: src/App.svelte
+msgid "Restoring account workspace…"
+msgstr "Fiók munkaterületének visszaállítása…"
+
+#: src/App.svelte
+msgid "Opening…"
+msgstr "Megnyitás…"
+
+#: src/App.svelte
+msgid "Loading…"
+msgstr "Betöltés…"
+
+#: src/App.svelte
+msgid "Load groups"
+msgstr "Csoportok betöltése"
+
+#: src/App.svelte
+msgid "Groups"
+msgstr "Csoportok"
+
+#: src/App.svelte
+msgid "Search groups…"
+msgstr "Csoportok keresése…"
+
+#: src/App.svelte
+msgid "Clear group search"
+msgstr "Csoportkeresés törlése"
+
+#: src/App.svelte
+msgid "Search groups"
+msgstr "Csoportok keresése"
+
+#: src/App.svelte
+msgid "Select all groups"
+msgstr "Összes csoport kijelölése"
+
+#: src/App.svelte
+msgid "Unselect all groups"
+msgstr "Összes kijelölés törlése"
+
+#~ msgid "{0} selected{1}"
+#~ msgstr ""
+
+#: src/App.svelte
+msgid "Searching…"
+msgstr "Keresés…"
+
+#: src/App.svelte
+msgid "No groups found. Try another search."
+msgstr "Nem található csoport. Próbálj egy másik keresést."
+
+#: src/App.svelte
+msgid "Joined groups"
+msgstr "Csatlakozott csoportok"
+
+#: src/App.svelte
+msgid "No groups loaded yet."
+msgstr "Még nem töltődött be egy csoport sem."
+
+#: src/App.svelte
+msgid "Open your Facebook groups to get started."
+msgstr "Nyisd meg a Facebook-csoportjaidat a kezdéshez."
+
+#: src/App.svelte
+msgid "Posting settings"
+msgstr "Bejegyzés beállításai"
+
+#: src/App.svelte
+msgid "Add a Gemini API key in Settings to enable rewriting."
+msgstr "Adj hozzá egy Gemini API kulcsot a Beállításokban a átírás engedélyezéséhez."
+
+#: src/App.svelte
+msgid "Applying defaults…"
+msgstr "Alapértelmezett értékek alkalmazása…"
+
+#: src/App.svelte
+msgid "Use saved defaults"
+msgstr "Mentett alapértelmezett értékek használata"
+
+#: src/App.svelte
+msgid "Open settings"
+msgstr "Beállítások megnyitása"
+
+#~ msgid "Posting as <0/>"
+#~ msgstr "Beküldés mint <0/>"
+
+#~ msgid "Review your post<0>{0} images · {1} groups selected</0>"
+#~ msgstr "Tekintsd át a bejegyzésed<0>{0} kép · {1} csoport kiválasztva</0>"
+
+#~ msgid "Original post"
+#~ msgstr "Eredeti bejegyzés"
+
+#~ msgid "Your post"
+#~ msgstr "A bejegyzésed"
+
+#~ msgid "Gemini will rewrite this body for each group using your instructions."
+#~ msgstr "A Gemini a megadott utasításaid alapján át fogja írni ezt a szöveget minden csoport számára."
+
+#~ msgid "Selected groups ({0})"
+#~ msgstr "Kiválasztott csoportok ({0})"
+
+#: src/App.svelte
+msgid "Schedule your queue"
+msgstr "Ütemezd a sorodat"
+
+#. 0: Intl.DateTimeFormat().resolvedOptions().timeZone
+#: src/App.svelte
+msgid "Time zone: {0}. Keep Postika open and your computer awake. Facebook may ask you to sign in when posting starts."
+msgstr "Időzóna: {0}. Tartsd nyitva a Postikát és a számítógéped ébren. A Facebook esetleg kérni fogja a bejelentkezést, amikor a közzététel elindul."
+
+#: src/App.svelte
+#: src/Workspace.svelte
+msgid "Cancel"
+msgstr "Mégse"
+
+#: src/App.svelte
+msgid "Confirm schedule"
+msgstr "Ütemterv megerősítése"
+
+#: src/App.svelte
+msgid "Next <0/>"
+msgstr "Tovább <0/>"
+
+#: src/App.svelte
+msgid "View logs"
+msgstr "Naplók megtekintése"
+
+#: src/App.svelte
+#: src/components/PostingLogView.svelte
+msgid "Stop"
+msgstr "Leállítás"
+
+#: src/App.svelte
+#: src/Workspace.svelte
+#: src/components/PostingLogView.svelte
+msgid "Scheduled"
+msgstr "Ütemezve"
+
+#: src/App.svelte
+msgid "Posting…"
+msgstr "Közzététel folyamatban…"
+
+#: src/App.svelte
+msgid "Post now"
+msgstr "Közzététel most"
+
+#: src/App.svelte
+msgid "Schedule"
+msgstr "Ütemezés"
+
+#: src/App.svelte
+msgid "<0/> Previous"
+msgstr "<0/> Vissza"
+
+#: src/Workspace.svelte
+msgid "Application menu"
+msgstr "Alkalmazás menü"
+
+#: src/Workspace.svelte
+msgid "Add account"
+msgstr "Fiók hozzáadása"
+
+#: src/Workspace.svelte
+#: src/components/PostingLogView.svelte
+#: src/components/PostingLogView.svelte
+msgid "Posting logs"
+msgstr "Közzétételi napló"
+
+#: src/Workspace.svelte
+#: src/components/Settings.svelte
+#: src/components/Settings.svelte
+msgid "Settings"
+msgstr "Beállítások"
+
+#: src/Workspace.svelte
+msgid "Creating…"
+msgstr "Létrehozás…"
+
+#: src/Workspace.svelte
+msgid "Create & sign in"
+msgstr "Létrehozás és bejelentkezés"
+
+#: src/Workspace.svelte
+msgid "Account name"
+msgstr "Fióknév"
+
+#: src/Workspace.svelte
+msgid "Sign in to Facebook in the new account’s browser window."
+msgstr "Jelentkezz be a Facebookra az új fiók böngészőablakában."
+
+#: src/Workspace.svelte
+msgid "Running"
+msgstr "Fut"
+
+#: src/Workspace.svelte
+msgid "In the background: <0/>"
+msgstr "A háttérben: <0/>"
+
+#: src/Workspace.svelte
+msgid "Loading accounts…"
+msgstr "Fiókok betöltése…"
+
+#: src/components/AccountDropdown.svelte
+msgid "Loading accounts"
+msgstr "Fiókok betöltése"
+
+#. 0: current?.name ?? 'Loading accounts'
+#: src/components/AccountDropdown.svelte
+msgid "Account: {0}"
+msgstr "Fiók: {0}"
+
+#: src/components/AccountDropdown.svelte
+msgid "Select account"
+msgstr "Fiók kiválasztása"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search accounts…"
+msgstr "Fiókok keresése…"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search accounts"
+msgstr "Fiókok keresése"
+
+#: src/components/AccountDropdown.svelte
+msgid "Clear account search"
+msgstr "Fiók keresés törlése"
+
+#: src/components/AccountDropdown.svelte
+msgid "All accounts"
+msgstr "Összes fiók"
+
+#: src/components/AccountDropdown.svelte
+msgid "Accounts"
+msgstr "Fiókok"
+
+#: src/components/AccountDropdown.svelte
+msgid "No accounts found"
+msgstr "Nem található fiók"
+
+#: src/components/AccountDropdown.svelte
+#: src/components/ThemePicker.svelte
+msgid "Try a different name."
+msgstr "Próbáljon másik nevet."
+
+#: src/components/ConnectivityToast.svelte
+msgid "You’re back online"
+msgstr "Újra online vagy"
+
+#: src/components/ConnectivityToast.svelte
+msgid "Internet connection lost"
+msgstr "Internetkapcsolat megszakadt"
+
+#: src/components/ConnectivityToast.svelte
+msgid "Your queue is still manually paused."
+msgstr "A sorod továbbra is kézzel szünetel."
+
+#: src/components/ConnectivityToast.svelte
+msgid "Your queue will continue automatically."
+msgstr "A sorod automatikusan folytatódik."
+
+#: src/components/ConnectivityToast.svelte
+msgid "Your queue is paused. We’ll continue when the connection returns."
+msgstr "A sorod szünetel. Folytatjuk, amikor a kapcsolat visszatér."
+
+#: src/components/ConnectivityToast.svelte
+msgid "Dismiss connection notification"
+msgstr "Kapcsolati értesítés elutasítása"
+
+#: src/components/DateTimePicker.svelte
+msgid "Choose a date and time"
+msgstr "Válassz egy dátumot és időpontot"
+
+#: src/components/DateTimePicker.svelte
+msgid "Select date"
+msgstr "Dátum kiválasztása"
+
+#: src/components/DateTimePicker.svelte
+msgid "Choose a weekday for this post"
+msgstr "Válassz egy hétköznapot ehhez a bejegyzéshez"
+
+#. 0: day.description
+#: src/components/DateTimePicker.svelte
+msgid "Select {0}"
+msgstr "Válassz {0}"
+
+#: src/components/DateTimePicker.svelte
+msgid "Previous month"
+msgstr "Előző hónap"
+
+#: src/components/DateTimePicker.svelte
+msgid "Next month"
+msgstr "Következő hónap"
+
+#: src/components/DateTimePicker.svelte
+#: src/components/DateTimePicker.svelte
+msgid "Select time"
+msgstr "Idő kiválasztása"
+
+#: src/components/DateTimePicker.svelte
+msgid "24-hour clock"
+msgstr "24 órás óra"
+
+#: src/components/DateTimePicker.svelte
+msgid "Increase hour"
+msgstr "Óra növelése"
+
+#: src/components/DateTimePicker.svelte
+#: src/components/DateTimePicker.svelte
+msgid "Hour"
+msgstr "Óra"
+
+#: src/components/DateTimePicker.svelte
+msgid "Decrease hour"
+msgstr "Óra csökkentése"
+
+#: src/components/DateTimePicker.svelte
+msgid "Increase minute"
+msgstr "Perc növelése"
+
+#: src/components/DateTimePicker.svelte
+#: src/components/DateTimePicker.svelte
+msgid "Minute"
+msgstr "Perc"
+
+#: src/components/DateTimePicker.svelte
+msgid "Decrease minute"
+msgstr "Perc csökkentése"
+
+#: src/components/DateTimePicker.svelte
+msgid "Choose a date and time in the future."
+msgstr "Válasszon jövőbeli dátumot és időpontot."
+
+#. 0: rejected.join(', ')
+#: src/components/PostComposer.svelte
+msgid "Unsupported files: {0}. Choose JPG, PNG, WebP, or GIF images."
+msgstr "Nem támogatott fájlok: {0}. Válasszon JPG, PNG, WebP vagy GIF képeket."
+
+#. 0: image.file.name
+#: src/components/PostComposer.svelte
+msgid "Could not preview {0}. Please choose another image."
+msgstr "{0} előnézete nem sikerült. Kérjük, válasszon másik képet."
+
+#. 0: images[index].file.name; 1: index + 1; 2: images.length
+#: src/components/PostComposer.svelte
+msgid "{0} moved to position {1} of {2}."
+msgstr "{0} áthelyezve a(z) {2} közül a(z) {1}. pozícióra."
+
+#: src/components/PostComposer.svelte
+#: src/components/PostEditorContent.svelte
+msgid "Post body"
+msgstr "Bejegyzés szövege"
+
+#: src/components/PostComposer.svelte
+#: src/components/PostComposer.svelte
+msgid "Required"
+msgstr "Kötelező"
+
+#: src/components/PostComposer.svelte
+msgid "Images"
+msgstr "Képek"
+
+#: src/components/PostComposer.svelte
+msgid "Choose images"
+msgstr "Képek kiválasztása"
+
+#: src/components/PostComposer.svelte
+msgid "Drop images here or <0>browse images</0>"
+msgstr "Húzza ide a képeket vagy <0>tallózza a képeket</0>"
+
+#: src/components/PostComposer.svelte
+msgid "JPG, PNG, WebP, or GIF · Select multiple images"
+msgstr "JPG, PNG, WebP vagy GIF · Több kép kiválasztása"
+
+#~ msgid "{0} {1} selected"
+#~ msgstr ""
+
+#: src/components/PostComposer.svelte
+msgid "Add more"
+msgstr "Továbbiak hozzáadása"
+
+#: src/components/PostComposer.svelte
+msgid "Drag images to rearrange. Or focus an image and use Alt + Left / Right."
+msgstr "Képek átrendezéséhez húzza őket. Vagy fókuszáljon egy képre és használja az Alt + Balra / Jobbra billentyűket."
+
+#: src/components/PostComposer.svelte
+msgid "Selected images"
+msgstr "Kiválasztott képek"
+
+#. 0: image.file.name; 1: images.indexOf(image) + 1; 2: images.length
+#: src/components/PostComposer.svelte
+msgid "{0}, image {1} of {2}"
+msgstr "{0}, {2} közül a(z) {1}. kép"
+
+#. 0: image.file.name
+#: src/components/PostComposer.svelte
+msgid "Remove {0}"
+msgstr "{0} eltávolítása"
+
+#: src/components/PostComposer.svelte
+msgid "Drop more images here to add them."
+msgstr "További képek hozzáadásához húzza ide őket."
+
+#. 0: error
+#: src/components/PostEditor.svelte
+msgid "Could not edit the post: {0}"
+msgstr "A bejegyzés szerkesztése nem sikerült: {0}"
+
+#: src/components/PostEditorContent.svelte
+msgid "Post editor controls"
+msgstr "Bejegyzésszerkesztő vezérlők"
+
+#: src/components/PostEditorContent.svelte
+msgid "Text formatting"
+msgstr "Szövegformázás"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bold (Ctrl+B)"
+msgstr "Félkövér (Ctrl+B)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bold"
+msgstr "Félkövér"
+
+#: src/components/PostEditorContent.svelte
+msgid "Italic (Ctrl+I)"
+msgstr "Dőlt (Ctrl+I)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Italic"
+msgstr "Dőlt"
+
+#: src/components/PostEditorContent.svelte
+msgid "Heading 1"
+msgstr "Címsor 1"
+
+#: src/components/PostEditorContent.svelte
+msgid "Heading 2"
+msgstr "Címsor 2"
+
+#: src/components/PostEditorContent.svelte
+msgid "Quote"
+msgstr "Idézet"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bullet list"
+msgstr "Felsorolás pontokkal"
+
+#: src/components/PostEditorContent.svelte
+msgid "Numbered list"
+msgstr "Számozott lista"
+
+#: src/components/PostEditorContent.svelte
+msgid "Undo (Ctrl+Z)"
+msgstr "Visszavonás (Ctrl+Z)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Undo"
+msgstr "Visszavonás"
+
+#: src/components/PostEditorContent.svelte
+msgid "Redo (Ctrl+Shift+Z)"
+msgstr "Újra (Ctrl+Shift+Z)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Redo"
+msgstr "Újra"
+
+#: src/components/PostEditorContent.svelte
+msgid "What would you like to share?"
+msgstr "Mit szeretnél megosztani?"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bold, italic, headings, quotes, and lists · Markdown shortcuts supported"
+msgstr "Félkövér, dőlt, címsorok, idézetek és listák · Markdown gyorsbillentyűk támogatottak"
+
+#. 0: body.length.toLocaleString(getLocale())
+#: src/components/PostEditorContent.svelte
+msgid "{0} characters"
+msgstr "{0} karakter"
+
+#: src/components/LogMessage.svelte
+msgid "Ready to post."
+msgstr "Készen áll a közzétételre."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook response copied."
+msgstr "Facebook válasz másolva."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook response received"
+msgstr "Facebook válasz fogadva"
+
+#: src/components/PostingLogView.svelte
+msgid "POSTIKA / ACTIVITY"
+msgstr "POSTIKA / TEVÉKENYSÉG"
+
+#: src/components/PostingLogView.svelte
+msgid "Posting progress"
+msgstr "Közzététel folyamata"
+
+#. 0: activity?.processed || 0; 1: activity?.total || 0
+#: src/components/PostingLogView.svelte
+msgid "{0}/{1} groups processed"
+msgstr "{0}/{1} csoport feldolgozva"
+
+#. 0: percentage
+#: src/components/PostingLogView.svelte
+msgid "{0}% complete"
+msgstr "{0}% kész"
+
+#: src/components/PostingLogView.svelte
+msgid "Groups processed"
+msgstr "Feldolgozott csoportok"
+
+#: src/components/PostingLogView.svelte
+msgid "Published"
+msgstr "Közzétéve"
+
+#: src/components/PostingLogView.svelte
+msgid "Awaiting approval"
+msgstr "Jóváhagyásra vár"
+
+#: src/components/PostingLogView.svelte
+msgid "Failed or skipped"
+msgstr "Sikertelen vagy kihagyott"
+
+#: src/components/PostingLogView.svelte
+msgid "Remaining"
+msgstr "Maradt"
+
+#. 0: number(a); 1: number(b); 2: c
+#. 0: activity.current; 1: activity.total; 2: activity.currentGroup.name
+#: src/components/LogMessage.svelte
+#: src/components/PostingLogView.svelte
+msgid "Group {0}/{1}: {2}"
+msgstr "Csoport {0}/{1}: {2}"
+
+#. 0: pauseRequested ? /* @wc-include */ ' · Paused' \\: ''
+#: src/components/PostingLogView.svelte
+msgid "Next post in <0/>{0}"
+msgstr "Következő poszt <0/>{0}"
+
+#: src/components/PostingLogView.svelte
+msgid "Elapsed <0/>"
+msgstr "Eltelt <0/>"
+
+#: src/components/PostingLogView.svelte
+msgid "Current group <0/>"
+msgstr "Jelenlegi csoport <0/>"
+
+#: src/components/PostingLogView.svelte
+msgid "Following latest"
+msgstr "Legfrissebb követése"
+
+#: src/components/PostingLogView.svelte
+msgid "Jump to latest"
+msgstr "Ugrás a legfrissebbhez"
+
+#. 0.0: total
+#: src/components/PostingLogView.svelte
+msgid "Activity timeline <0>{0} logs</0>"
+msgstr "Tevékenységi idővonal <0>{0} napló</0>"
+
+#: src/components/PostingLogView.svelte
+msgid "Posting activity"
+msgstr "Közzétételi tevékenység"
+
+#. 0: entryLabel(entry)
+#: src/components/PostingLogView.svelte
+msgid "{0} log"
+msgstr "{0} napló"
+
+#. 0: itemTime(entry.message)
+#: src/components/PostingLogView.svelte
+msgid "Took {0}"
+msgstr "Eltartott {0}"
+
+#: src/components/PostingLogView.svelte
+#: src/components/PostingLogView.svelte
+msgid "Copy Facebook response"
+msgstr "Facebook válasz másolása"
+
+#: src/components/PostingLogView.svelte
+msgid "Response copied"
+msgstr "Válasz másolva"
+
+#: src/components/PostingLogView.svelte
+msgid "Copied"
+msgstr "Másolva"
+
+#: src/components/PostingLogView.svelte
+msgid "Copying…"
+msgstr "Másolás…"
+
+#: src/components/PostingLogView.svelte
+msgid "Copy response"
+msgstr "Válasz másolása"
+
+#. 0.0: entry.hasResponse ? /* @wc-include */ ' · Response available to copy' \\: ''
+#: src/components/PostingLogView.svelte
+msgid "Debug details<0>Original log message{0}</0>"
+msgstr "Hibakeresési részletek<0>Eredeti naplóüzenet{0}</0>"
+
+#: src/components/PostingLogView.svelte
+msgid "Your activity will appear here"
+msgstr "A te tevékenységed itt jelenik meg"
+
+#: src/components/PostingLogView.svelte
+msgid "Start posting to follow uploads, results, and wait times."
+msgstr "Kezdj el posztolni, hogy kövesd a feltöltéseket, eredményeket és várakozási időket."
+
+#: src/components/PostingLogView.svelte
+msgid "Log pages"
+msgstr "Naplóoldalak"
+
+#: src/components/PostingLogView.svelte
+msgid "Previous page"
+msgstr "Előző oldal"
+
+#. 0: number
+#: src/components/PostingLogView.svelte
+msgid "Page {0}"
+msgstr "{0}. oldal"
+
+#: src/components/PostingLogView.svelte
+msgid "Next page"
+msgstr "Következő oldal"
+
+#: src/components/PostingLogView.svelte
+msgid "← Prev"
+msgstr "← Előző"
+
+#: src/components/PostingLogView.svelte
+msgid "Next →"
+msgstr "Következő →"
+
+#. 0: total ? (page - 1) * pageSize + 1 \\: 0; 1: Math.min(page * pageSize, total); 2: total
+#: src/components/PostingLogView.svelte
+msgid "{0}–{1} of {2} logs"
+msgstr "{0}–{1} / {2} napló"
+
+#: src/components/PostingLogView.svelte
+msgid "Resume"
+msgstr "Folytatás"
+
+#: src/components/PostingLogView.svelte
+msgid "Pause"
+msgstr "Szünet"
+
+#: src/components/PostingLogView.svelte
+msgid "Stopping…"
+msgstr "Leállítás…"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "POSTING PACE"
+msgstr "POSZTOLÁSI ÜTEM"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Interval between posts"
+msgstr "Időköz a posztok között"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Minimum (seconds)"
+msgstr "Minimum (másodperc)"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Maximum (seconds)"
+msgstr "Maximum (másodperc)"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Choose how long to wait before posting to the next group."
+msgstr "Válaszd ki, mennyi ideig várj a következő csoporthoz való posztolás előtt."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "At least 60 seconds. Use equal values for a fixed interval."
+msgstr "Legalább 60 másodperc. Használj egyenlő értékeket fix időközhöz."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "OPTIONAL · AI REWRITE"
+msgstr "OPCIONÁLIS · AI ÁTÍRÁS"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "A fresh version for each group"
+msgstr "Friss verzió minden csoporthoz"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Rewrite each post body with Gemini"
+msgstr "Írd át minden poszt tartalmát a Gemini segítségével"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
+msgstr "Írási utasítások újraírása<0>Válassza ki a hangnemet és azokat a részleteket, amelyeket a Gemini meg kell őrizzen.</0>"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Keep it concise and easy to scan. Preserve the price and contact details."
+msgstr "Tartsa tömören és könnyen áttekinthetően. Őrizze meg az árat és az elérhetőségi adatokat."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Rewrite instructions"
+msgstr "Írási utasítások újraírása"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
+msgstr "Az Ön bejegyzésszövege és utasításai a Google Gemininek kerülnek elküldésre. Képek nem kerülnek elküldésre. A Gemini újraírása sima szöveget használ."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
+msgstr "Ha az újraírás nem sikerül, az adott bejegyzés az eredeti szöveget használja. A következő bejegyzésnél a Gemini újra próbálkozik."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Let Gemini rewrite your post using your instructions."
+msgstr "Hagyd, hogy a Gemini az utasításaid alapján írja újra a bejegyzésedet."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Posting preferences"
+msgstr "Bejegyzési beállítások"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved defaults help"
+msgstr "A mentett alapértelmezett értékek segítenek"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "About saved defaults"
+msgstr "A mentett alapértelmezésekről"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved interval"
+msgstr "Mentett időköz"
+
+#. 0: settings.minimumInterval === settings.maximumInterval ? settings.minimumInterval \\: `${settings.minimumInterval}–${settings.maximumInterval}`
+#: src/components/SavedDefaultsInfo.svelte
+msgid "{0} seconds"
+msgstr "{0} másodperc"
+
+#: src/App.svelte
+#: src/components/SavedDefaultsInfo.svelte
+msgid "On"
+msgstr "Be"
+
+#: src/App.svelte
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Off"
+msgstr "Ki"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Gemini rewrite"
+msgstr "Gemini újraírás"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "No instructions saved."
+msgstr "Nincsenek mentett utasítások."
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved rewrite instructions"
+msgstr "Mentett írási utasítások"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved values could not be loaded. Try “Use saved defaults” again."
+msgstr "A mentett értékek betöltése nem sikerült. Próbáld újra a „Mentett alapértelmezések használata” lehetőséget."
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "What does “Use saved defaults” do?"
+msgstr "Mit csinál a „Mentett alapértelmezések használata”?"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
+msgstr "Ezzel lecseréli a jelen futás közzétételi intervallumát, a Gemini újraírási opciót és az újraírási utasításokat a Beállításokban mentett értékekre."
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
+msgstr "Kezdeti alapértelmezett értékek: 60–120 másodperc, Gemini újraírás ki, és nincs újraírási utasítás. Mentse saját preferenciáit a Beállításokban a módosításhoz."
+
+#: src/components/Settings.svelte
+msgid "Settings saved. New runs can use these defaults."
+msgstr "Beállítások elmentve. Az új futások használhatják ezeket az alapértelmezett értékeket."
+
+#: src/components/Settings.svelte
+msgid "Key saved · leave blank to keep it"
+msgstr "Kulcs elmentve · hagyja üresen a megtartáshoz"
+
+#: src/components/Settings.svelte
+msgid "Enter your Gemini API key"
+msgstr "Írja be a Gemini API kulcsát"
+
+#: src/components/Settings.svelte
+msgid "A key is saved on this device."
+msgstr "Egy kulcs elmentve ezen az eszközön."
+
+#: src/components/Settings.svelte
+msgid "No API key saved."
+msgstr "Nincs elmentett API kulcs."
+
+#: src/components/Settings.svelte
+msgid "Remove saved key"
+msgstr "Elmentett kulcs eltávolítása"
+
+#: src/components/Settings.svelte
+msgid "Gemini"
+msgstr "Gemini"
+
+#: src/components/Settings.svelte
+msgid "API key<0/>"
+msgstr "API kulcs<0/>"
+
+#. 0: keyConfigured ? 'A key is saved on this device.' \\: 'No API key saved.'
+#: src/components/Settings.svelte
+msgid "{0} The saved key is never displayed."
+msgstr "{0} Az elmentett kulcs soha nem kerül megjelenítésre."
+
+#: src/components/Settings.svelte
+msgid "Model<0/>"
+msgstr "Modell<0/>"
+
+#: src/components/Settings.svelte
+msgid "Posting defaults"
+msgstr "Alapértelmezett közzétételi beállítások"
+
+#: src/components/Settings.svelte
+msgid "Applied when you start a new posting run."
+msgstr "Alkalmazva, amikor új közzétételi futást indít."
+
+#: src/components/Settings.svelte
+msgid "Saving…"
+msgstr "Mentés…"
+
+#: src/components/Settings.svelte
+msgid "Save settings"
+msgstr "Beállítások mentése"
+
+#: src/components/Settings.svelte
+msgid "YOUR PREFERENCES"
+msgstr "ÖN PREFERENCIÁI"
+
+#. 0: accountName
+#: src/components/Settings.svelte
+msgid "Set up Gemini and save posting defaults for {0}."
+msgstr "Állítsa be a Gemini-t és mentse a közzétételi alapértelmezéseket {0} számára."
+
+#: src/components/StepProgress.svelte
+msgid "Completed"
+msgstr "Befejezve"
+
+#: src/components/StepProgress.svelte
+msgid "Current"
+msgstr "Jelenlegi"
+
+#: src/components/StepProgress.svelte
+msgid "Upcoming"
+msgstr "Közelgő"
+
+#. 0: index + 1; 1: steps.length; 2: completed || index < currentStep ? 'Completed' \\: index === currentStep ? 'Current' \\: 'Upcoming'
+#: src/components/StepProgress.svelte
+msgid "Step {0} of {1}: {2}"
+msgstr "{0}. lépés {1}-ból: {2}"
+
+#: src/components/WindowControls.svelte
+msgid "Could not change the window. Please try again."
+msgstr "Nem sikerült megváltoztatni az ablakot. Kérjük, próbálkozzon újra."
+
+#: src/components/WindowControls.svelte
+msgid "Window controls"
+msgstr "Ablakkezelés"
+
+#: src/components/WindowControls.svelte
+msgid "Minimize window"
+msgstr "Ablak kicsinyítése"
+
+#: src/components/WindowControls.svelte
+msgid "Restore window"
+msgstr "Ablak visszaállítása"
+
+#: src/components/WindowControls.svelte
+msgid "Maximize window"
+msgstr "Ablak nagyítása"
+
+#: src/components/WindowControls.svelte
+msgid "Close window"
+msgstr "Ablak bezárása"
+
+#: src/App.svelte
+msgid "Create post"
+msgstr "Bejegyzés létrehozása"
+
+#: src/App.svelte
+msgid "Write your post and add images"
+msgstr "Írja meg bejegyzését és adjon hozzá képeket"
+
+#: src/App.svelte
+msgid "Select groups"
+msgstr "Csoportok kiválasztása"
+
+#: src/App.svelte
+msgid "Load groups and choose where to post"
+msgstr "Csoportok betöltése és a poszt helyének kiválasztása"
+
+#~ msgid "Review & post"
+#~ msgstr "Ellenőrzés és közzététel"
+
+#~ msgid "Review, set preferences, then post now or schedule"
+#~ msgstr "Ellenőrizze, állítsa be a preferenciákat, majd posztoljon most vagy ütemezze"
+
+#: src/App.svelte
+msgid "Facebook session captured"
+msgstr "Facebook munkamenet rögzítve"
+
+#: src/App.svelte
+msgid "The browser is closed. It will reopen when you click Post."
+msgstr "A böngésző zárva van. Újra megnyílik, amikor a Poszt gombra kattint."
+
+#: src/App.svelte
+msgid "Checking Facebook login"
+msgstr "Facebook bejelentkezés ellenőrzése"
+
+#: src/App.svelte
+msgid "Finish signing in or any verification prompts in Chrome. Your login will be detected automatically."
+msgstr "Fejezze be a bejelentkezést vagy bármely ellenőrzési kérést a Chrome-ban. A bejelentkezés automatikusan észlelve lesz."
+
+#: src/App.svelte
+msgid "Login required"
+msgstr "Bejelentkezés szükséges"
+
+#: src/App.svelte
+msgid "Please log in to Facebook in the Chrome window. Postika will detect when you’re signed in."
+msgstr "Kérjük, jelentkezzen be a Facebookra a Chrome ablakban. A Postika észleli, amikor bejelentkezett."
+
+#: src/App.svelte
+msgid "Complete Facebook verification"
+msgstr "Facebook ellenőrzés befejezése"
+
+#: src/App.svelte
+msgid "Complete the login or verification prompts in Chrome to continue."
+msgstr "Fejezze be a bejelentkezést vagy az ellenőrzési kéréseket a Chrome-ban a folytatáshoz."
+
+#: src/App.svelte
+msgid "Facebook connected"
+msgstr "Facebook csatlakoztatva"
+
+#: src/App.svelte
+msgid "You’re logged in. Your session is ready."
+msgstr "Bejelentkezett. A munkamenet készen áll."
+
+#: src/App.svelte
+msgid "Facebook window closed"
+msgstr "Facebook ablak bezárva"
+
+#: src/App.svelte
+msgid "Click Load groups to reopen Facebook and check your login."
+msgstr "Kattints a Csoportok betöltése gombra a Facebook újranyitásához és a bejelentkezés ellenőrzéséhez."
+
+#. 0: current?.name ?? ''
+#: src/components/AccountDropdown.svelte
+msgid "Language: {0}"
+msgstr "Nyelv: {0}"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search languages…"
+msgstr "Nyelvek keresése…"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search languages"
+msgstr "Nyelvek keresése"
+
+#: src/components/AccountDropdown.svelte
+msgid "Clear language search"
+msgstr "Nyelvkeresés törlése"
+
+#. 0: matches.length
+#: src/components/AccountDropdown.svelte
+msgid "{0} result"
+msgstr "{0} eredmény"
+
+#. 0: matches.length
+#: src/components/AccountDropdown.svelte
+msgid "{0} results"
+msgstr "{0} eredmény"
+
+#: src/components/AccountDropdown.svelte
+msgid "All languages"
+msgstr "Összes nyelv"
+
+#: src/components/AccountDropdown.svelte
+msgid "Languages"
+msgstr "Nyelvek"
+
+#: src/components/AccountDropdown.svelte
+msgid "No languages found"
+msgstr "Nem található nyelv"
+
+#: src/components/DateTimePicker.svelte
+msgid "Morning"
+msgstr "Reggel"
+
+#: src/components/DateTimePicker.svelte
+msgid "Afternoon"
+msgstr "Délután"
+
+#: src/components/DateTimePicker.svelte
+msgid "Evening"
+msgstr "Este"
+
+#: src/components/LanguageMenu.svelte
+msgid "Could not change the language. Please try again."
+msgstr "A nyelvet nem sikerült megváltoztatni. Kérjük, próbáld újra."
+
+#: src/components/Settings.svelte
+msgid "Language"
+msgstr "Nyelv"
+
+#: src/components/PostingOptionsForm.svelte
+#: src/components/PostingOptionsForm.svelte
+msgid "seconds"
+msgstr "másodperc"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Minimum"
+msgstr "Minimum"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Maximum"
+msgstr "Maximum"
+
+#: src/components/StepProgress.svelte
+msgid "Post progress"
+msgstr "Bejegyzés előrehaladása"
+
+#. 0: visibleGroups.length
+#: src/App.svelte
+msgid "{0} shown"
+msgstr "{0} megjelenítve"
+
+#. 0: selectedGroupIds.length
+#: src/App.svelte
+msgid "{0} selected"
+msgstr "{0} kiválasztva"
+
+#. 0: images.length
+#: src/components/PostComposer.svelte
+msgid "{0} images selected"
+msgstr "{0} kép kiválasztva"
+
+#: src/components/PostingLogView.svelte
+msgid "WARN"
+msgstr "FIGYELMEZTETÉS"
+
+#: src/components/PostingLogView.svelte
+msgid "INFO"
+msgstr "INFORMÁCIÓ"
+
+#: src/components/PostingLogView.svelte
+msgid "ERROR"
+msgstr "HIBÁS"
+
+#: src/components/PostingLogView.svelte
+msgid "DEBUG"
+msgstr "HIBAELHÁRÍTÁS"
+
+#: src/components/PostingLogView.svelte
+msgid "PUBLISHED"
+msgstr "KÖZZÉTÉVE"
+
+#: src/components/PostingLogView.svelte
+msgid "PENDING"
+msgstr "FÜGGŐBEN"
+
+#: src/components/PostingLogView.svelte
+msgid "FAILED"
+msgstr "SIKERTELEN"
+
+#: src/components/PostingLogView.svelte
+msgid "SKIPPED"
+msgstr "KIHAGYVA"
+
+#: src/components/PostingLogView.svelte
+msgid "UNCONFIRMED"
+msgstr "MEGERŐSÍTETLEN"
+
+#: src/Workspace.svelte
+msgid "e.g. Business"
+msgstr "például Üzlet"
+
+#: src/components/PostComposer.svelte
+msgid "1 image selected"
+msgstr "1 kép kiválasztva"
+
+#: src/components/PostingLogView.svelte
+msgid "Paused · Waiting for internet"
+msgstr "Szünet · Internetre vár"
+
+#: src/components/PostingLogView.svelte
+msgid "Pausing after the current operation"
+msgstr "A jelenlegi művelet után szüneteltetés"
+
+#: src/components/PostingLogView.svelte
+msgid "Paused"
+msgstr "Szüneteltetve"
+
+#: src/components/PostingLogView.svelte
+msgid "Stopping"
+msgstr "Leállítás"
+
+#: src/components/PostingLogView.svelte
+msgid "Posting"
+msgstr "Feltöltés"
+
+#: src/components/PostingLogView.svelte
+msgid "Finished"
+msgstr "Befejezve"
+
+#: src/components/PostingLogView.svelte
+msgid "Stopped"
+msgstr "Megállítva"
+
+#: src/components/PostingLogView.svelte
+msgid "Ready"
+msgstr "Kész"
+
+#: src/components/PostingLogView.svelte
+msgid "CURRENT ACTIVITY"
+msgstr "JELENLEGI TEVÉKENYSÉG"
+
+#: src/components/PostingLogView.svelte
+msgid "RUN STATUS"
+msgstr "FUTÁSI ÁLLAPOT"
+
+#: src/components/PostingLogView.svelte
+msgid " · Paused"
+msgstr " · Szüneteltetve"
+
+#: src/components/PostingLogView.svelte
+msgid " · Response available to copy"
+msgstr " · Válasz másolásra elérhető"
+
+#: src/components/AccountLabel.svelte
+msgid "Default profile"
+msgstr "Alapértelmezett profil"
+
+#~ msgid "Switch to light mode"
+#~ msgstr "Váltás világos módra"
+
+#~ msgid "Switch to dark mode"
+#~ msgstr "Váltás sötét módra"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Color themes"
+msgstr "Színtémák"
+
+#: src/components/ThemePicker.svelte
+msgid "Close"
+msgstr "Bezárás"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Search themes…"
+msgstr "Témák keresése…"
+
+#: src/components/ThemePicker.svelte
+msgid "No themes found"
+msgstr "Nem található téma"
+
+#: src/components/LogMessage.svelte
+msgid "A selected group is no longer available. Load groups again"
+msgstr "A kiválasztott csoport már nem elérhető. Töltsd be újra a csoportokat"
+
+#: src/components/LogMessage.svelte
+msgid "Add a Gemini API key in Settings before enabling rewriting"
+msgstr "Adj meg egy Gemini API kulcsot a Beállításokban, mielőtt engedélyeznéd az átírást"
+
+#: src/components/LogMessage.svelte
+msgid "Add a post body and at least one image"
+msgstr "Adj hozzá egy bejegyzés szöveget és legalább egy képet"
+
+#: src/components/LogMessage.svelte
+msgid "All selected groups were already attempted. Review unconfirmed results on Facebook."
+msgstr "Minden kiválasztott csoportot már megpróbáltak. Ellenőrizd a megerősítetlen eredményeket a Facebookon."
+
+#: src/components/LogMessage.svelte
+msgid "An image upload failed in Chrome. Check the composer and retry Post"
+msgstr "Egy kép feltöltése sikertelen volt Chrome-ban. Ellenőrizd a komponenst és próbáld újra a Közzétételt"
+
+#: src/components/LogMessage.svelte
+msgid "Attaching images…"
+msgstr "Képek csatolása…"
+
+#: src/components/LogMessage.svelte
+msgid "Choose JPG, PNG, WebP, or GIF images"
+msgstr "Válassz JPG, PNG, WebP vagy GIF képeket"
+
+#: src/components/LogMessage.svelte
+msgid "Choose a future date and time for your post"
+msgstr "Válassz egy jövőbeli dátumot és időt a bejegyzésedhez"
+
+#: src/components/LogMessage.svelte
+msgid "Closing Chrome and posting to the remaining groups…"
+msgstr "Chrome bezárása és a fennmaradó csoportokba történő közzététel…"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the complete create-post request"
+msgstr "Nem sikerült rögzíteni az összes létrehozott bejegyzés kérést"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the completed image upload response"
+msgstr "Nem sikerült rögzíteni a befejezett kép feltöltés válaszát"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the image upload form fields"
+msgstr "Nem sikerült rögzíteni a kép feltöltési űrlapmezőket"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the image upload form. Retry Post"
+msgstr "Nem sikerült rögzíteni a kép feltöltési űrlapot. Próbáld újra a Közzétételt"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the upload endpoint"
+msgstr "Nem sikerült rögzíteni a feltöltési végpontot"
+
+#: src/components/LogMessage.svelte
+msgid "Could not copy the Facebook response to the clipboard"
+msgstr "Nem sikerült a Facebook válaszát a vágólapra másolni"
+
+#: src/components/LogMessage.svelte
+msgid "Could not enable create-post capture in Chrome"
+msgstr "Nem sikerült engedélyezni a bejegyzés-létrehozás rögzítését a Chrome-ban"
+
+#: src/components/LogMessage.svelte
+msgid "Could not parse the captured create-post form"
+msgstr "Nem sikerült feldolgozni a rögzített bejegyzés-létrehozó űrlapot"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare image files"
+msgstr "Nem sikerült előkészíteni a képfájlokat"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare post images"
+msgstr "Nem sikerült előkészíteni a bejegyzésképeket"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare the Gemini request"
+msgstr "Nem sikerült előkészíteni a Gemini kérést"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare the image upload."
+msgstr "Nem sikerült előkészíteni a kép feltöltését."
+
+#: src/components/LogMessage.svelte
+msgid "Could not reach Gemini. Check your connection"
+msgstr "Nem sikerült elérni a Geminit. Ellenőrizze a kapcsolatát"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read Facebook's post confirmation"
+msgstr "Nem sikerült olvasni a Facebook bejegyzés- megerősítését"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read the Gemini rewrite"
+msgstr "Nem sikerült olvasni a Gemini újraírást"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read the completed image upload response"
+msgstr "Nem sikerült olvasni a befejezett kép feltöltés válaszát"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read the selected image."
+msgstr "Nem sikerült olvasni a kiválasztott képet."
+
+#: src/components/LogMessage.svelte
+msgid "Create-post capture ended before confirmation. Check Facebook before retrying"
+msgstr "A bejegyzés-létrehozás rögzítése a megerősítés előtt véget ért. Ellenőrizze a Facebookot a próbálkozás előtt"
+
+#: src/components/LogMessage.svelte
+msgid "Create-post request detected. Capturing fresh form values…"
+msgstr "Bejegyzés-létrehozás kérés észlelve. Új űrlapadatok rögzítése…"
+
+#: src/components/LogMessage.svelte
+msgid "Create-post response complete. Waiting for captured session headers…"
+msgstr "Bejegyzés-létrehozás válasz befejezve. Várakozás a rögzített munkamenet fejlécére…"
+
+#: src/components/LogMessage.svelte
+msgid "Create-post response received. Waiting for its complete body…"
+msgstr "Bejegyzés-létrehozás válasz megérkezett. Várakozás a teljes tartalomra…"
+
+#: src/components/LogMessage.svelte
+msgid "Description inserted"
+msgstr "Leírás beszúrva"
+
+#: src/components/LogMessage.svelte
+msgid "Earlier submission is unconfirmed. Skipping this group and continuing with the remaining groups."
+msgstr "A korábbi beküldés nincs megerősítve. A csoport kihagyása, és folytatás a fennmaradó csoportokkal."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook could not post to this group. Continuing with the remaining groups."
+msgstr "A Facebook nem tudott posztolni ebbe a csoportba. Folytatás a fennmaradó csoportokkal."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook did not confirm all images. Check the composer."
+msgstr "A Facebook nem erősítette meg az összes képet. Ellenőrizze a szerkesztőt."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook did not confirm the submission"
+msgstr "A Facebook nem erősítette meg a beküldést."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook did not confirm this post. Check the group before trying again."
+msgstr "A Facebook nem erősítette meg ezt a bejegyzést. Ellenőrizze a csoportot, mielőtt újrapróbálkozna."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook has temporarily limited posting. Try again later."
+msgstr "A Facebook ideiglenesen korlátozta a posztolást. Próbálja újra később."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook rejected this post."
+msgstr "A Facebook elutasította ezt a bejegyzést."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook requires login or verification. Load groups again."
+msgstr "A Facebook bejelentkezést vagy ellenőrzést kér. Töltse be újra a csoportokat."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook returned a story, but did not confirm its group or publication state. Posting stopped. Check Facebook before retrying."
+msgstr "A Facebook visszaadott egy történetet, de nem erősítette meg annak csoportját vagy közzétételi állapotát. A posztolás leállt. Ellenőrizze a Facebookot, mielőtt újrapróbálkozna."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook's confirmation exceeded the 16 MiB response limit; retained response is truncated"
+msgstr "A Facebook megerősítése meghaladta a 16 MiB válaszlimitjét; a megtartott válasz le van rövidítve."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook's editor did not accept the formatted post. Posting was not submitted"
+msgstr "A Facebook szerkesztője nem fogadta el a formázott bejegyzést. A posztolás nem lett elküldve."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook's editor did not retain the formatted post text. Posting was not submitted"
+msgstr "A Facebook szerkesztője nem őrizte meg a formázott bejegyzésszöveget. A közzététel nem történt meg"
+
+#: src/components/LogMessage.svelte
+msgid "First post confirmed. Waiting for the Facebook composer to close…"
+msgstr "Az első bejegyzés megerősítve. Várakozás a Facebook szerkesztő bezárására…"
+
+#: src/components/LogMessage.svelte
+msgid "First submission unconfirmed. Retrying request 1/3 with the captured mutation ID…"
+msgstr "Az első benyújtás nem megerősített. Az 1/3. próbálkozás a rögzített módosítási azonosítóval…"
+
+#: src/components/LogMessage.svelte
+msgid "Formatted post is too large"
+msgstr "A formázott bejegyzés túl nagy"
+
+#: src/components/LogMessage.svelte
+msgid "Found multiple matching post composers on the group page"
+msgstr "Több egyező bejegyzésszerkesztőt találtunk a csoportoldalon"
+
+#: src/components/LogMessage.svelte
+msgid "Fresh create-post form captured. Waiting for Facebook's response…"
+msgstr "Új bejegyzés létrehozási űrlap rögzítve. Várakozás a Facebook válaszára…"
+
+#: src/components/LogMessage.svelte
+msgid "Gemini did not finish the rewrite"
+msgstr "A Gemini nem fejezte be az átdolgozást"
+
+#: src/components/LogMessage.svelte
+msgid "Gemini returned no rewritten text"
+msgstr "A Gemini nem adott vissza átdolgozott szöveget"
+
+#: src/components/LogMessage.svelte
+msgid "Gemini rewrite completed."
+msgstr "A Gemini átdolgozás befejezve."
+
+#: src/components/LogMessage.svelte
+msgid "Gemini rewrite failed. Using the original text for this post; Gemini will be tried again for the next post."
+msgstr "A Gemini átdolgozás sikertelen. Az eredeti szöveget használjuk ehhez a bejegyzéshez; a Geminit a következő bejegyzésnél újra megpróbáljuk."
+
+#: src/components/LogMessage.svelte
+msgid "Image uploads belong to a different profile"
+msgstr "A képfeltöltések más profilhoz tartoznak"
+
+#: src/components/LogMessage.svelte
+msgid "Images inserted"
+msgstr "Képek beszúrva"
+
+#: src/components/LogMessage.svelte
+msgid "Inserting post body…"
+msgstr "Bejegyzés szöveg beszúrása…"
+
+#: src/components/LogMessage.svelte
+msgid "Internet connection lost. Queue paused until the connection returns."
+msgstr "Internetkapcsolat megszakadt. A sor várakozik, amíg a kapcsolat vissza nem tér."
+
+#: src/components/LogMessage.svelte
+msgid "Internet connection restored. Continuing the queue."
+msgstr "Internetkapcsolat helyreállítva. A sor folytatódik."
+
+#: src/components/LogMessage.svelte
+msgid "Internet connection restored. The queue remains manually paused."
+msgstr "Internetkapcsolat helyreállítva. A sor továbbra is kézzel szünetel."
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured endpoint"
+msgstr "Érvénytelen rögzített végpont"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured formatted post"
+msgstr "Érvénytelen rögzített formázott bejegyzés"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured post form"
+msgstr "Érvénytelen rögzített bejegyzésű űrlap"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured post variables"
+msgstr "Érvénytelen rögzített bejegyzés változók"
+
+#: src/components/LogMessage.svelte
+msgid "Load your groups before opening a post"
+msgstr "Töltsd be a csoportjaidat, mielőtt megnyitsz egy bejegyzést"
+
+#: src/components/LogMessage.svelte
+msgid "Log in or complete Facebook verification in Chrome, then click Post again"
+msgstr "Jelentkezz be, vagy fejezd be a Facebook ellenőrzést a Chrome-ban, majd kattints ismét a Közzétételre"
+
+#: src/components/LogMessage.svelte
+msgid "Multiple matching controls found in the post composer"
+msgstr "Több egyező vezérlőelem található a bejegyzés szerkesztőben"
+
+#: src/components/LogMessage.svelte
+msgid "No Facebook response was captured for this entry"
+msgstr "Nem került rögzítésre Facebook válasz ehhez a bejegyzéshez"
+
+#: src/components/LogMessage.svelte
+msgid "No available post composer."
+msgstr "Nincs elérhető bejegyzés-szerkesztő."
+
+#: src/components/LogMessage.svelte
+msgid "No complete image upload request was captured."
+msgstr "Nem került rögzítésre teljes kép feltöltési kérelem."
+
+#: src/components/LogMessage.svelte
+msgid "No fresh image upload request was captured."
+msgstr "Nem került rögzítésre új kép feltöltési kérelem."
+
+#: src/components/LogMessage.svelte
+msgid "Opening browser…"
+msgstr "Böngésző megnyitása…"
+
+#: src/components/LogMessage.svelte
+msgid "Pause requested. The current operation will finish before pausing."
+msgstr "Szünet kérése. A folyamatban lévő művelet befejeződik a szünet előtt."
+
+#: src/components/LogMessage.svelte
+msgid "Post button clicked"
+msgstr "A Közzététel gombra kattintottak"
+
+#: src/components/LogMessage.svelte
+msgid "Post published."
+msgstr "Bejegyzés közzétéve."
+
+#: src/components/LogMessage.svelte
+msgid "Postika is shutting down"
+msgstr "A Postika leáll."
+
+#: src/components/LogMessage.svelte
+msgid "Posting is already running"
+msgstr "A közzététel már fut"
+
+#: src/components/LogMessage.svelte
+msgid "Posting paused."
+msgstr "A közzététel szüneteltetve."
+
+#: src/components/LogMessage.svelte
+msgid "Posting resumed."
+msgstr "A közzététel folytatva."
+
+#: src/components/LogMessage.svelte
+msgid "Posting stopped after the first post was confirmed"
+msgstr "A közzététel leállt, miután az első posztot megerősítették"
+
+#: src/components/LogMessage.svelte
+msgid "Posting..."
+msgstr "Közzététel..."
+
+#: src/components/LogMessage.svelte
+msgid "Reading Facebook's create-post confirmation…"
+msgstr "A Facebook poszt-létrehozás megerősítésének olvasása..."
+
+#: src/components/LogMessage.svelte
+msgid "Rewriting the post body with Gemini…"
+msgstr "A poszt szövegének átírása a Gemini segítségével..."
+
+#: src/components/LogMessage.svelte
+msgid "Scheduled posting cancelled."
+msgstr "Az ütemezett közzététel megszakítva."
+
+#: src/components/LogMessage.svelte
+msgid "Scheduled time reached. Starting posting…"
+msgstr "Elérkezett az ütemezett idő. Közzététel indítása..."
+
+#: src/components/LogMessage.svelte
+msgid "Select at least one group"
+msgstr "Jelöljön ki legalább egy csoportot"
+
+#: src/components/LogMessage.svelte
+msgid "Setting up automatic posting using your first Facebook post..."
+msgstr "Automatikus közzététel beállítása az első Facebook posztod alapján..."
+
+#: src/components/LogMessage.svelte
+msgid "Stopping posting…"
+msgstr "Közzététel leállítása..."
+
+#: src/components/LogMessage.svelte
+msgid "Submitting the first post and capturing fresh request values…"
+msgstr "Az első poszt beküldése és új kéréstartalmak rögzítése..."
+
+#: src/components/LogMessage.svelte
+#: src/components/LogMessage.svelte
+msgid "Technical details recorded. Open debug details to inspect the original message."
+msgstr "Technikai részletek rögzítve. Nyisd meg a hibakeresési részleteket az eredeti üzenet megtekintéséhez."
+
+#: src/components/LogMessage.svelte
+msgid "The active Facebook profile changed or expired"
+msgstr "Az aktív Facebook profil megváltozott vagy lejárt"
+
+#: src/components/LogMessage.svelte
+msgid "The browser connection was lost. Check Facebook before retrying"
+msgstr "A böngészőkapcsolat megszakadt. Ellenőrizze a Facebookot, mielőtt újrapróbálkozik"
+
+#: src/components/LogMessage.svelte
+msgid "The browser profile changed while capturing posting requests"
+msgstr "A böngészőprofil megváltozott a közzétételi kérések rögzítése közben"
+
+#: src/components/LogMessage.svelte
+msgid "The captured formatted post body does not match your draft"
+msgstr "A rögzített formázott bejegyzésszöveg nem egyezik a vázlatoddal"
+
+#: src/components/LogMessage.svelte
+msgid "The captured image upload cookies do not match the Facebook profile"
+msgstr "A rögzített kép feltöltési sütik nem egyeznek a Facebook-profillal"
+
+#: src/components/LogMessage.svelte
+msgid "The captured image upload format is not supported"
+msgstr "A rögzített kép feltöltési formátum nem támogatott"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post belongs to a different Facebook profile"
+msgstr "A rögzített bejegyzés egy másik Facebook-profilhoz tartozik"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post body does not match your draft"
+msgstr "A rögzített bejegyzésszöveg nem egyezik a vázlatoddal"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post cookies do not match the logged-in profile"
+msgstr "A rögzített bejegyzés sütijei nem egyeznek a bejelentkezett profillal"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post has no group target"
+msgstr "A rögzített bejegyzés nem céloz meg semmilyen csoportot"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post target does not match the selected group"
+msgstr "A rögzített bejegyzés célja nem egyezik a kiválasztott csoporttal"
+
+#: src/components/LogMessage.svelte
+msgid "The composer dialog was replaced while loading"
+msgstr "A szerkesztő párbeszédablakát betöltés közben lecserélték"
+
+#: src/components/LogMessage.svelte
+msgid "The create-post connection failed. Check Facebook before retrying"
+msgstr "A bejegyzés létrehozása sikertelen. Ellenőrizd a Facebookot, majd próbáld újra"
+
+#: src/components/LogMessage.svelte
+msgid "The current profile differs from the profile used to load groups. Load groups again."
+msgstr "A jelenlegi profil eltér a csoportok betöltéséhez használt profiltól. Töltsd be újra a csoportokat."
+
+#: src/components/LogMessage.svelte
+msgid "The desktop application is not ready"
+msgstr "Az asztali alkalmazás nem készen áll"
+
+#: src/components/LogMessage.svelte
+msgid "The desktop clipboard is not ready"
+msgstr "Az asztali vágólap nem készen áll"
+
+#: src/components/LogMessage.svelte
+msgid "The expected composer control did not appear in Chrome"
+msgstr "A várt szerkesztő vezérlőelem nem jelent meg a Chrome-ban"
+
+#: src/components/LogMessage.svelte
+msgid "The first post was confirmed, but Chrome's completion state could not be checked. Posting stopped"
+msgstr "Az első bejegyzés megerősítve, de a Chrome befejezettségi állapota nem ellenőrizhető. A bejegyzés közzétételét megszakítottuk"
+
+#: src/components/LogMessage.svelte
+msgid "The image upload did not contain multipart form data"
+msgstr "A képfeltöltés nem tartalmazott többrészes űrlap adatot"
+
+#: src/components/LogMessage.svelte
+msgid "The image upload does not match its active Facebook profile"
+msgstr "A képfeltöltés nem egyezik az aktív Facebook-profillal"
+
+#: src/components/LogMessage.svelte
+msgid "The image upload form belongs to a different Facebook profile"
+msgstr "A képfeltöltő űrlap egy másik Facebook-profilhoz tartozik"
+
+#: src/components/LogMessage.svelte
+msgid "The selected group has an invalid Facebook URL. Load groups again"
+msgstr "A kiválasztott csoport érvénytelen Facebook URL-lel rendelkezik. Töltsd újra a csoportokat"
+
+#: src/components/LogMessage.svelte
+msgid "The session could not be saved for posting retries and remaining groups."
+msgstr "A munkamenet nem menthető a bejegyzés újbóli próbálkozásához és a fennmaradó csoportokhoz"
+
+#: src/components/LogMessage.svelte
+msgid "This draft has already been submitted to the first group. It was not submitted again."
+msgstr "Ez a vázlat már el lett küldve az első csoportnak. Nem lett újra elküldve"
+
+#: src/components/LogMessage.svelte
+msgid "This group has no available post composer"
+msgstr "Ennek a csoportnak nincs elérhető bejegyzéskészítője"
+
+#: src/components/LogMessage.svelte
+msgid "This group has reached its pending-content limit."
+msgstr "Ennek a csoportnak elérte a függő tartalom limitjét"
+
+#: src/components/LogMessage.svelte
+msgid "This post was submitted, but confirmation is uncertain. Check Facebook before retrying."
+msgstr "Ez a bejegyzés el lett küldve, de a megerősítés bizonytalan. Ellenőrizd a Facebookon, mielőtt újrapróbálnád"
+
+#: src/components/LogMessage.svelte
+msgid "This response is no longer available for the current run"
+msgstr "Ez a válasz már nem érhető el a jelenlegi futás számára"
+
+#: src/components/LogMessage.svelte
+msgid "Upload and post captures must belong to the same logged-in profile"
+msgstr "A feltöltött és közzétett képeknek ugyanahhoz a bejelentkezett profilhoz kell tartozniuk"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for Facebook's Post button…"
+msgstr "Várakozás a Facebook Közzététel gombjára…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the composer controls and layout…"
+msgstr "Várakozás a szerkesztői vezérlőkre és elrendezésre…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the group page and opening its composer…"
+msgstr "Várakozás a csoport oldalára és a szerkesztő megnyitására…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the image previews and composer to settle…"
+msgstr "Várakozás a képelőnézetekre és a szerkesztő stabilizálódására…"
+
+#: src/components/LogMessage.svelte
+msgid "Your Facebook session needs login or verification. Load groups again."
+msgstr "A Facebook-munkamenete bejelentkezést vagy megerősítést igényel. Töltse be újra a csoportokat."
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Published to {0}."
+msgstr "Közzétéve: {0}."
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "{0}: Awaiting admin approval."
+msgstr "{0}: Várakozik az admin jóváhagyására."
+
+#. 0: number(a); 1: b
+#: src/components/LogMessage.svelte
+msgid "Waiting {0} seconds before posting to {1}."
+msgstr "Várakozás {0} másodpercet, mielőtt közzétenné {1}-re."
+
+#. 0: a; 1: b
+#: src/components/LogMessage.svelte
+msgid "Next post in {0} · {1}"
+msgstr "Következő bejegyzés {0} · {1}"
+
+#. 0: a; 1: number(b); 2: number(c)
+#: src/components/LogMessage.svelte
+msgid "{0}: Uploading photo {1} of {2}…"
+msgstr "{0}: {1} / {2} fotó feltöltése…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Preparing a post for {0}…"
+msgstr "Bejegyzés előkészítése {0} számára…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Uploading images for {0}…"
+msgstr "Képek feltöltése {0} számára…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Posting to {0}…"
+msgstr "Közzététel {0}-re…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Fresh upload and post request values captured from {0}."
+msgstr "Friss feltöltési és közzétételi kérések értékei rögzítve {0}-ról."
+
+#. 0: number(a); 1: number(b)
+#: src/components/LogMessage.svelte
+msgid "Submission unconfirmed. Retrying request {0}/{1}…"
+msgstr "Beküldés nem megerősített. Újrapróbálkozás {0}/{1}…"
+
+#. 0: number(a); 1: number(b); 2: number(c)
+#: src/components/LogMessage.svelte
+msgid "Finished: {0} published, {1} awaiting approval, {2} failed or skipped."
+msgstr "Befejezve: {0} közzétéve, {1} jóváhagyásra vár, {2} sikertelen vagy kihagyva."
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Opening {0}…"
+msgstr "Megnyitás {0}…"
+
+#. 0: number(a); 1: number(b)
+#: src/components/LogMessage.svelte
+msgid "Capturing image uploads ({0} of {1})…"
+msgstr "Képfeltöltések rögzítése ({0} a {1}-ből)…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Gemini rewrite failed (HTTP {0}). Check the key, model and account quota"
+msgstr "Gemini átírás sikertelen (HTTP {0}). Ellenőrizze a kulcsot, a modellt és a fiók kvótáját"
+
+#. 0: code
+#: src/components/LogMessage.svelte
+msgid " (Code {0})"
+msgstr "(Kód {0})"
+
+#: src/components/PostingLogView.svelte
+msgid "Debug details"
+msgstr "Hibakeresési részletek"
+
+#~ msgid ", "
+#~ msgstr ""
+
+#: src/components/ThemePicker.svelte
+msgid "Themes"
+msgstr "Témák"
+
+#: src/App.svelte
+msgid "Preferences & post"
+msgstr "Beállítások és közzététel"
+
+#: src/App.svelte
+#: src/App.svelte
+msgid "Set preferences, then post now or schedule"
+msgstr "Állítsa be a lehetőségeket, majd tegye közzé most vagy ütemezze"

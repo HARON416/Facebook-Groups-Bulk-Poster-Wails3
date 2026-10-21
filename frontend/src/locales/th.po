@@ -1,0 +1,1836 @@
+msgid ""
+msgstr ""
+"Source-Language: en\n"
+"Language: th\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1\n"
+"X-Plurals-Order: other\n"
+
+#. 0: minimumInterval === maximumInterval ? minimumInterval \\: `${minimumInterval}–${maximumInterval}`; 1: rewriteState
+#: src/App.svelte
+msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
+msgstr "ค่าตั้งต้นที่บันทึกไว้ถูกนำมาใช้: {0} วินาทีระหว่างโพสต์ · Gemini rewrite {1}."
+
+#: src/App.svelte
+msgid "Could not restore saved groups. Load groups to refresh the list."
+msgstr "ไม่สามารถกู้คืนกลุ่มที่บันทึกไว้ได้ โหลดกลุ่มเพื่อรีเฟรชรายการ."
+
+#: src/App.svelte
+msgid "Choose a future date and time for your post."
+msgstr "เลือกวันที่และเวลาล่วงหน้าสำหรับโพสต์ของคุณ."
+
+#: src/App.svelte
+msgid "Saving your scheduled queue…"
+msgstr "กำลังบันทึกคิวที่กำหนดเวลาไว้ของคุณ…"
+
+#: src/App.svelte
+msgid "Opening a selected group to capture fresh posting requests…"
+msgstr "กำลังเปิดกลุ่มที่เลือกเพื่อดึงคำขอโพสต์ใหม่…"
+
+#: src/App.svelte
+#: src/App.svelte
+#: src/components/LogMessage.svelte
+msgid "Posting stopped."
+msgstr "การโพสต์ถูกหยุด."
+
+#: src/App.svelte
+#: src/components/LogMessage.svelte
+msgid "Could not read a selected image"
+msgstr "ไม่สามารถอ่านภาพที่เลือกได้"
+
+#. 0: image.file.name
+#. 0: missingNames
+#. 0: unreadableNames
+#. 0: image.file.name
+#: src/App.svelte
+#: src/App.svelte
+#: src/components/PostComposer.svelte
+#: src/components/PostComposer.svelte
+msgid "Could not read {0}"
+msgstr "ไม่สามารถอ่าน {0}"
+
+#: src/App.svelte
+msgid "Posting finished."
+msgstr "การโพสต์เสร็จสมบูรณ์."
+
+#. 0: scheduleLabel(scheduledFor)
+#. 0: date
+#: src/App.svelte
+#: src/components/LogMessage.svelte
+msgid "Scheduled for {0}. Keep Postika open and your computer awake."
+msgstr "กำหนดเวลาไว้สำหรับ {0} โปรดเก็บ Postika ไว้และให้คอมพิวเตอร์ของคุณไม่หลับ."
+
+#: src/App.svelte
+msgid "Could not restore this account’s draft. New edits will stay available while Postika is open."
+msgstr "ไม่สามารถกู้ร่างงานของบัญชีนี้ได้ การแก้ไขใหม่จะยังคงใช้งานได้ตราบที่ Postika เปิดอยู่."
+
+#: src/App.svelte
+msgid "Could not add the dropped images. Try browsing for them instead."
+msgstr "ไม่สามารถเพิ่มภาพที่ถูกลากลงมาได้ ลองเรียกดูเพื่อเลือกแทน."
+
+#: src/App.svelte
+msgid "Could not save this account’s draft to disk. Keep Postika open to retain your edits."
+msgstr "ไม่สามารถบันทึกร่างงานของบัญชีนี้ลงดิสก์ได้ โปรดเก็บ Postika ไว้เพื่อรักษาการแก้ไขของคุณ."
+
+#: src/App.svelte
+msgid "Start with your message. Add images to bring it to life."
+msgstr "เริ่มต้นด้วยข้อความของคุณ เพิ่มภาพเพื่อทำให้มันมีชีวิตชีวา."
+
+#: src/App.svelte
+msgid "Choose the groups you want to share your post with."
+msgstr "เลือกกลุ่มที่คุณต้องการแชร์โพสต์ของคุณด้วย"
+
+#~ msgid "Review your post and preferences, then post now or schedule for later."
+#~ msgstr "ตรวจสอบโพสต์และการตั้งค่าของคุณ แล้วโพสต์ตอนนี้หรือกำหนดเวลาโพสต์ในภายหลัง"
+
+#. 0: currentStep + 1; 1: steps.length
+#: src/App.svelte
+msgid "STEP {0} OF {1}"
+msgstr "ขั้นตอน {0} จาก {1}"
+
+#: src/App.svelte
+msgid "Restoring account workspace…"
+msgstr "กำลังเรียกคืนพื้นที่ทำงานบัญชี..."
+
+#: src/App.svelte
+msgid "Opening…"
+msgstr "กำลังเปิด..."
+
+#: src/App.svelte
+msgid "Loading…"
+msgstr "กำลังโหลด..."
+
+#: src/App.svelte
+msgid "Load groups"
+msgstr "โหลดกลุ่ม"
+
+#: src/App.svelte
+msgid "Groups"
+msgstr "กลุ่ม"
+
+#: src/App.svelte
+msgid "Search groups…"
+msgstr "ค้นหากลุ่ม…"
+
+#: src/App.svelte
+msgid "Clear group search"
+msgstr "ล้างการค้นหากลุ่ม"
+
+#: src/App.svelte
+msgid "Search groups"
+msgstr "ค้นหากลุ่ม"
+
+#: src/App.svelte
+msgid "Select all groups"
+msgstr "เลือกทุกกลุ่ม"
+
+#: src/App.svelte
+msgid "Unselect all groups"
+msgstr "ยกเลิกการเลือกทุกกลุ่ม"
+
+#~ msgid "{0} selected{1}"
+#~ msgstr ""
+
+#: src/App.svelte
+msgid "Searching…"
+msgstr "กำลังค้นหา..."
+
+#: src/App.svelte
+msgid "No groups found. Try another search."
+msgstr "ไม่พบกลุ่ม ลองค้นหาใหม่"
+
+#: src/App.svelte
+msgid "Joined groups"
+msgstr "กลุ่มที่เข้าร่วม"
+
+#: src/App.svelte
+msgid "No groups loaded yet."
+msgstr "ยังไม่มีการโหลดกลุ่ม"
+
+#: src/App.svelte
+msgid "Open your Facebook groups to get started."
+msgstr "เปิดกลุ่ม Facebook ของคุณเพื่อเริ่มต้น"
+
+#: src/App.svelte
+msgid "Posting settings"
+msgstr "การตั้งค่าโพสต์"
+
+#: src/App.svelte
+msgid "Add a Gemini API key in Settings to enable rewriting."
+msgstr "เพิ่มคีย์ Gemini API ในการตั้งค่าเพื่อเปิดใช้งานการเขียนใหม่"
+
+#: src/App.svelte
+msgid "Applying defaults…"
+msgstr "กำลังใช้ค่าปริยาย..."
+
+#: src/App.svelte
+msgid "Use saved defaults"
+msgstr "ใช้ค่าปริยายที่บันทึกไว้"
+
+#: src/App.svelte
+msgid "Open settings"
+msgstr "เปิดการตั้งค่า"
+
+#~ msgid "Posting as <0/>"
+#~ msgstr "โพสต์ในนาม <0/>"
+
+#~ msgid "Review your post<0>{0} images · {1} groups selected</0>"
+#~ msgstr "ตรวจสอบโพสต์ของคุณ<0>{0} ภาพ · {1} กลุ่มที่เลือก</0>"
+
+#~ msgid "Original post"
+#~ msgstr "โพสต์ต้นฉบับ"
+
+#~ msgid "Your post"
+#~ msgstr "โพสต์ของคุณ"
+
+#~ msgid "Gemini will rewrite this body for each group using your instructions."
+#~ msgstr "Gemini จะเขียนเนื้อหานี้ใหม่สำหรับแต่ละกลุ่มตามคำแนะนำของคุณ"
+
+#~ msgid "Selected groups ({0})"
+#~ msgstr "กลุ่มที่เลือก ({0})"
+
+#: src/App.svelte
+msgid "Schedule your queue"
+msgstr "กำหนดเวลาคิวของคุณ"
+
+#. 0: Intl.DateTimeFormat().resolvedOptions().timeZone
+#: src/App.svelte
+msgid "Time zone: {0}. Keep Postika open and your computer awake. Facebook may ask you to sign in when posting starts."
+msgstr "เขตเวลา: {0} รักษา Postika ให้เปิดอยู่และคอมพิวเตอร์ของคุณให้ตื่นอยู่ Facebook อาจขอให้คุณลงชื่อเข้าใช้เมื่อการโพสต์เริ่มต้น"
+
+#: src/App.svelte
+#: src/Workspace.svelte
+msgid "Cancel"
+msgstr "ยกเลิก"
+
+#: src/App.svelte
+msgid "Confirm schedule"
+msgstr "ยืนยันตารางเวลา"
+
+#: src/App.svelte
+msgid "Next <0/>"
+msgstr "ถัดไป <0/>"
+
+#: src/App.svelte
+msgid "View logs"
+msgstr "ดูบันทึก"
+
+#: src/App.svelte
+#: src/components/PostingLogView.svelte
+msgid "Stop"
+msgstr "หยุด"
+
+#: src/App.svelte
+#: src/Workspace.svelte
+#: src/components/PostingLogView.svelte
+msgid "Scheduled"
+msgstr "กำหนดเวลาแล้ว"
+
+#: src/App.svelte
+msgid "Posting…"
+msgstr "กำลังโพสต์…"
+
+#: src/App.svelte
+msgid "Post now"
+msgstr "โพสต์ตอนนี้"
+
+#: src/App.svelte
+msgid "Schedule"
+msgstr "กำหนดเวลา"
+
+#: src/App.svelte
+msgid "<0/> Previous"
+msgstr "<0/> ก่อนหน้า"
+
+#: src/Workspace.svelte
+msgid "Application menu"
+msgstr "เมนูแอปพลิเคชัน"
+
+#: src/Workspace.svelte
+msgid "Add account"
+msgstr "เพิ่มบัญชี"
+
+#: src/Workspace.svelte
+#: src/components/PostingLogView.svelte
+#: src/components/PostingLogView.svelte
+msgid "Posting logs"
+msgstr "บันทึกการโพสต์"
+
+#: src/Workspace.svelte
+#: src/components/Settings.svelte
+#: src/components/Settings.svelte
+msgid "Settings"
+msgstr "การตั้งค่า"
+
+#: src/Workspace.svelte
+msgid "Creating…"
+msgstr "กำลังสร้าง…"
+
+#: src/Workspace.svelte
+msgid "Create & sign in"
+msgstr "สร้างและเข้าสู่ระบบ"
+
+#: src/Workspace.svelte
+msgid "Account name"
+msgstr "ชื่อบัญชี"
+
+#: src/Workspace.svelte
+msgid "Sign in to Facebook in the new account’s browser window."
+msgstr "ลงชื่อเข้าใช้ Facebook ในหน้าต่างเบราว์เซอร์ของบัญชีใหม่"
+
+#: src/Workspace.svelte
+msgid "Running"
+msgstr "กำลังทำงาน"
+
+#: src/Workspace.svelte
+msgid "In the background: <0/>"
+msgstr "ทำงานเบื้องหลัง: <0/>"
+
+#: src/Workspace.svelte
+msgid "Loading accounts…"
+msgstr "กำลังโหลดบัญชี…"
+
+#: src/components/AccountDropdown.svelte
+msgid "Loading accounts"
+msgstr "กำลังโหลดบัญชี"
+
+#. 0: current?.name ?? 'Loading accounts'
+#: src/components/AccountDropdown.svelte
+msgid "Account: {0}"
+msgstr "บัญชี: {0}"
+
+#: src/components/AccountDropdown.svelte
+msgid "Select account"
+msgstr "เลือกบัญชี"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search accounts…"
+msgstr "ค้นหาบัญชี…"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search accounts"
+msgstr "ค้นหาบัญชี"
+
+#: src/components/AccountDropdown.svelte
+msgid "Clear account search"
+msgstr "ลบการค้นหาบัญชี"
+
+#: src/components/AccountDropdown.svelte
+msgid "All accounts"
+msgstr "บัญชีทั้งหมด"
+
+#: src/components/AccountDropdown.svelte
+msgid "Accounts"
+msgstr "บัญชี"
+
+#: src/components/AccountDropdown.svelte
+msgid "No accounts found"
+msgstr "ไม่พบบัญชี"
+
+#: src/components/AccountDropdown.svelte
+#: src/components/ThemePicker.svelte
+msgid "Try a different name."
+msgstr "ลองใช้ชื่ออื่น"
+
+#: src/components/ConnectivityToast.svelte
+msgid "You’re back online"
+msgstr "คุณกลับมาออนไลน์แล้ว"
+
+#: src/components/ConnectivityToast.svelte
+msgid "Internet connection lost"
+msgstr "การเชื่อมต่ออินเทอร์เน็ตถูกตัดขาด"
+
+#: src/components/ConnectivityToast.svelte
+msgid "Your queue is still manually paused."
+msgstr "คิวของคุณยังหยุดชั่วคราวด้วยตนเอง"
+
+#: src/components/ConnectivityToast.svelte
+msgid "Your queue will continue automatically."
+msgstr "คิวของคุณจะดำเนินการต่อโดยอัตโนมัติ"
+
+#: src/components/ConnectivityToast.svelte
+msgid "Your queue is paused. We’ll continue when the connection returns."
+msgstr "คิวของคุณถูกหยุดชั่วคราว เราจะดำเนินการต่อเมื่อการเชื่อมต่อกลับมา"
+
+#: src/components/ConnectivityToast.svelte
+msgid "Dismiss connection notification"
+msgstr "ปิดการแจ้งเตือนการเชื่อมต่อ"
+
+#: src/components/DateTimePicker.svelte
+msgid "Choose a date and time"
+msgstr "เลือกวันและเวลา"
+
+#: src/components/DateTimePicker.svelte
+msgid "Select date"
+msgstr "เลือกวันที่"
+
+#: src/components/DateTimePicker.svelte
+msgid "Choose a weekday for this post"
+msgstr "เลือกวันในสัปดาห์สำหรับโพสต์นี้"
+
+#. 0: day.description
+#: src/components/DateTimePicker.svelte
+msgid "Select {0}"
+msgstr "เลือก {0}"
+
+#: src/components/DateTimePicker.svelte
+msgid "Previous month"
+msgstr "เดือนก่อนหน้า"
+
+#: src/components/DateTimePicker.svelte
+msgid "Next month"
+msgstr "เดือนหน้า"
+
+#: src/components/DateTimePicker.svelte
+#: src/components/DateTimePicker.svelte
+msgid "Select time"
+msgstr "เลือกเวลา"
+
+#: src/components/DateTimePicker.svelte
+msgid "24-hour clock"
+msgstr "นาฬิกา 24 ชั่วโมง"
+
+#: src/components/DateTimePicker.svelte
+msgid "Increase hour"
+msgstr "เพิ่มชั่วโมง"
+
+#: src/components/DateTimePicker.svelte
+#: src/components/DateTimePicker.svelte
+msgid "Hour"
+msgstr "ชั่วโมง"
+
+#: src/components/DateTimePicker.svelte
+msgid "Decrease hour"
+msgstr "ลดชั่วโมง"
+
+#: src/components/DateTimePicker.svelte
+msgid "Increase minute"
+msgstr "เพิ่มนาที"
+
+#: src/components/DateTimePicker.svelte
+#: src/components/DateTimePicker.svelte
+msgid "Minute"
+msgstr "นาที"
+
+#: src/components/DateTimePicker.svelte
+msgid "Decrease minute"
+msgstr "ลดนาที"
+
+#: src/components/DateTimePicker.svelte
+msgid "Choose a date and time in the future."
+msgstr "เลือกวันที่และเวลาในอนาคต"
+
+#. 0: rejected.join(', ')
+#: src/components/PostComposer.svelte
+msgid "Unsupported files: {0}. Choose JPG, PNG, WebP, or GIF images."
+msgstr "ไฟล์ที่ไม่รองรับ: {0}. กรุณาเลือกภาพ JPG, PNG, WebP หรือ GIF"
+
+#. 0: image.file.name
+#: src/components/PostComposer.svelte
+msgid "Could not preview {0}. Please choose another image."
+msgstr "ไม่สามารถแสดงตัวอย่าง {0} ได้ กรุณาเลือกภาพอื่น"
+
+#. 0: images[index].file.name; 1: index + 1; 2: images.length
+#: src/components/PostComposer.svelte
+msgid "{0} moved to position {1} of {2}."
+msgstr "{0} ถูกย้ายไปตำแหน่ง {1} จาก {2}"
+
+#: src/components/PostComposer.svelte
+#: src/components/PostEditorContent.svelte
+msgid "Post body"
+msgstr "ข้อความโพสต์"
+
+#: src/components/PostComposer.svelte
+#: src/components/PostComposer.svelte
+msgid "Required"
+msgstr "จำเป็น"
+
+#: src/components/PostComposer.svelte
+msgid "Images"
+msgstr "รูปภาพ"
+
+#: src/components/PostComposer.svelte
+msgid "Choose images"
+msgstr "เลือกภาพ"
+
+#: src/components/PostComposer.svelte
+msgid "Drop images here or <0>browse images</0>"
+msgstr "วางภาพที่นี่หรือ <0>เรียกดูภาพ</0>"
+
+#: src/components/PostComposer.svelte
+msgid "JPG, PNG, WebP, or GIF · Select multiple images"
+msgstr "JPG, PNG, WebP หรือ GIF · เลือกหลายภาพ"
+
+#~ msgid "{0} {1} selected"
+#~ msgstr ""
+
+#: src/components/PostComposer.svelte
+msgid "Add more"
+msgstr "เพิ่มอีก"
+
+#: src/components/PostComposer.svelte
+msgid "Drag images to rearrange. Or focus an image and use Alt + Left / Right."
+msgstr "ลากภาพเพื่อจัดเรียงใหม่ หรือโฟกัสที่ภาพแล้วใช้ Alt + ซ้าย / ขวา"
+
+#: src/components/PostComposer.svelte
+msgid "Selected images"
+msgstr "ภาพที่เลือก"
+
+#. 0: image.file.name; 1: images.indexOf(image) + 1; 2: images.length
+#: src/components/PostComposer.svelte
+msgid "{0}, image {1} of {2}"
+msgstr "{0}, ภาพที่ {1} จาก {2}"
+
+#. 0: image.file.name
+#: src/components/PostComposer.svelte
+msgid "Remove {0}"
+msgstr "ลบ {0}"
+
+#: src/components/PostComposer.svelte
+msgid "Drop more images here to add them."
+msgstr "วางภาพเพิ่มเติมที่นี่เพื่อเพิ่มลงไป"
+
+#. 0: error
+#: src/components/PostEditor.svelte
+msgid "Could not edit the post: {0}"
+msgstr "ไม่สามารถแก้ไขโพสต์ได้: {0}"
+
+#: src/components/PostEditorContent.svelte
+msgid "Post editor controls"
+msgstr "ควบคุมตัวแก้ไขโพสต์"
+
+#: src/components/PostEditorContent.svelte
+msgid "Text formatting"
+msgstr "การจัดรูปแบบข้อความ"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bold (Ctrl+B)"
+msgstr "ตัวหนา (Ctrl+B)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bold"
+msgstr "ตัวหนา"
+
+#: src/components/PostEditorContent.svelte
+msgid "Italic (Ctrl+I)"
+msgstr "ตัวเอียง (Ctrl+I)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Italic"
+msgstr "ตัวเอียง"
+
+#: src/components/PostEditorContent.svelte
+msgid "Heading 1"
+msgstr "หัวข้อ 1"
+
+#: src/components/PostEditorContent.svelte
+msgid "Heading 2"
+msgstr "หัวข้อ 2"
+
+#: src/components/PostEditorContent.svelte
+msgid "Quote"
+msgstr "อ้างอิง"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bullet list"
+msgstr "รายการแบบสัญลักษณ์แสดงหัวข้อ"
+
+#: src/components/PostEditorContent.svelte
+msgid "Numbered list"
+msgstr "รายการแบบมีหมายเลข"
+
+#: src/components/PostEditorContent.svelte
+msgid "Undo (Ctrl+Z)"
+msgstr "เลิกทำ (Ctrl+Z)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Undo"
+msgstr "เลิกทำ"
+
+#: src/components/PostEditorContent.svelte
+msgid "Redo (Ctrl+Shift+Z)"
+msgstr "ทำซ้ำ (Ctrl+Shift+Z)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Redo"
+msgstr "ทำซ้ำ"
+
+#: src/components/PostEditorContent.svelte
+msgid "What would you like to share?"
+msgstr "คุณต้องการจะแบ่งปันอะไร?"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bold, italic, headings, quotes, and lists · Markdown shortcuts supported"
+msgstr "ตัวหนา ตัวเอียง หัวข้อ ข้อความอ้างอิง และรายการ · รองรับทางลัด Markdown"
+
+#. 0: body.length.toLocaleString(getLocale())
+#: src/components/PostEditorContent.svelte
+msgid "{0} characters"
+msgstr "{0} ตัวอักษร"
+
+#: src/components/LogMessage.svelte
+msgid "Ready to post."
+msgstr "พร้อมที่จะโพสต์"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook response copied."
+msgstr "คัดลอกการตอบกลับจาก Facebook แล้ว"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook response received"
+msgstr "ได้รับการตอบกลับจาก Facebook แล้ว"
+
+#: src/components/PostingLogView.svelte
+msgid "POSTIKA / ACTIVITY"
+msgstr "POSTIKA / กิจกรรม"
+
+#: src/components/PostingLogView.svelte
+msgid "Posting progress"
+msgstr "ความคืบหน้าการโพสต์"
+
+#. 0: activity?.processed || 0; 1: activity?.total || 0
+#: src/components/PostingLogView.svelte
+msgid "{0}/{1} groups processed"
+msgstr "{0}/{1} กลุ่มที่ประมวลผลแล้ว"
+
+#. 0: percentage
+#: src/components/PostingLogView.svelte
+msgid "{0}% complete"
+msgstr "{0}% เสร็จสมบูรณ์"
+
+#: src/components/PostingLogView.svelte
+msgid "Groups processed"
+msgstr "กลุ่มที่ประมวลผลแล้ว"
+
+#: src/components/PostingLogView.svelte
+msgid "Published"
+msgstr "เผยแพร่แล้ว"
+
+#: src/components/PostingLogView.svelte
+msgid "Awaiting approval"
+msgstr "รอการอนุมัติ"
+
+#: src/components/PostingLogView.svelte
+msgid "Failed or skipped"
+msgstr "ล้มเหลวหรือข้ามไป"
+
+#: src/components/PostingLogView.svelte
+msgid "Remaining"
+msgstr "ที่เหลือ"
+
+#. 0: number(a); 1: number(b); 2: c
+#. 0: activity.current; 1: activity.total; 2: activity.currentGroup.name
+#: src/components/LogMessage.svelte
+#: src/components/PostingLogView.svelte
+msgid "Group {0}/{1}: {2}"
+msgstr "กลุ่ม {0}/{1}: {2}"
+
+#. 0: pauseRequested ? /* @wc-include */ ' · Paused' \\: ''
+#: src/components/PostingLogView.svelte
+msgid "Next post in <0/>{0}"
+msgstr "โพสต์ถัดไปใน <0/>{0}"
+
+#: src/components/PostingLogView.svelte
+msgid "Elapsed <0/>"
+msgstr "เวลาที่ผ่านไป <0/>"
+
+#: src/components/PostingLogView.svelte
+msgid "Current group <0/>"
+msgstr "กลุ่มปัจจุบัน <0/>"
+
+#: src/components/PostingLogView.svelte
+msgid "Following latest"
+msgstr "ติดตามล่าสุด"
+
+#: src/components/PostingLogView.svelte
+msgid "Jump to latest"
+msgstr "ไปยังล่าสุด"
+
+#. 0.0: total
+#: src/components/PostingLogView.svelte
+msgid "Activity timeline <0>{0} logs</0>"
+msgstr "ไทม์ไลน์กิจกรรม <0>{0} บันทึก</0>"
+
+#: src/components/PostingLogView.svelte
+msgid "Posting activity"
+msgstr "กิจกรรมการโพสต์"
+
+#. 0: entryLabel(entry)
+#: src/components/PostingLogView.svelte
+msgid "{0} log"
+msgstr "{0} บันทึก"
+
+#. 0: itemTime(entry.message)
+#: src/components/PostingLogView.svelte
+msgid "Took {0}"
+msgstr "ใช้เวลา {0}"
+
+#: src/components/PostingLogView.svelte
+#: src/components/PostingLogView.svelte
+msgid "Copy Facebook response"
+msgstr "คัดลอกคำตอบ Facebook"
+
+#: src/components/PostingLogView.svelte
+msgid "Response copied"
+msgstr "คัดลอกคำตอบแล้ว"
+
+#: src/components/PostingLogView.svelte
+msgid "Copied"
+msgstr "คัดลอกแล้ว"
+
+#: src/components/PostingLogView.svelte
+msgid "Copying…"
+msgstr "กำลังคัดลอก…"
+
+#: src/components/PostingLogView.svelte
+msgid "Copy response"
+msgstr "คัดลอกคำตอบ"
+
+#. 0.0: entry.hasResponse ? /* @wc-include */ ' · Response available to copy' \\: ''
+#: src/components/PostingLogView.svelte
+msgid "Debug details<0>Original log message{0}</0>"
+msgstr "รายละเอียดดีบัก<0>ข้อความบันทึกต้นฉบับ{0}</0>"
+
+#: src/components/PostingLogView.svelte
+msgid "Your activity will appear here"
+msgstr "กิจกรรมของคุณจะแสดงที่นี่"
+
+#: src/components/PostingLogView.svelte
+msgid "Start posting to follow uploads, results, and wait times."
+msgstr "เริ่มโพสต์เพื่อติดตามการอัปโหลด ผลลัพธ์ และเวลารอ"
+
+#: src/components/PostingLogView.svelte
+msgid "Log pages"
+msgstr "หน้าบันทึก"
+
+#: src/components/PostingLogView.svelte
+msgid "Previous page"
+msgstr "หน้าก่อนหน้า"
+
+#. 0: number
+#: src/components/PostingLogView.svelte
+msgid "Page {0}"
+msgstr "หน้า {0}"
+
+#: src/components/PostingLogView.svelte
+msgid "Next page"
+msgstr "หน้าต่อไป"
+
+#: src/components/PostingLogView.svelte
+msgid "← Prev"
+msgstr "← ก่อนหน้า"
+
+#: src/components/PostingLogView.svelte
+msgid "Next →"
+msgstr "ถัดไป →"
+
+#. 0: total ? (page - 1) * pageSize + 1 \\: 0; 1: Math.min(page * pageSize, total); 2: total
+#: src/components/PostingLogView.svelte
+msgid "{0}–{1} of {2} logs"
+msgstr "{0}–{1} จาก {2} บันทึก"
+
+#: src/components/PostingLogView.svelte
+msgid "Resume"
+msgstr "ดำเนินการต่อ"
+
+#: src/components/PostingLogView.svelte
+msgid "Pause"
+msgstr "พัก"
+
+#: src/components/PostingLogView.svelte
+msgid "Stopping…"
+msgstr "กำลังหยุด…"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "POSTING PACE"
+msgstr "จังหวะการโพสต์"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Interval between posts"
+msgstr "ช่วงเวลาระหว่างการโพสต์"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Minimum (seconds)"
+msgstr "ค่าต่ำสุด (วินาที)"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Maximum (seconds)"
+msgstr "ค่าสูงสุด (วินาที)"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Choose how long to wait before posting to the next group."
+msgstr "เลือกเวลาที่จะรอก่อนโพสต์ไปยังกลุ่มถัดไป"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "At least 60 seconds. Use equal values for a fixed interval."
+msgstr "อย่างน้อย 60 วินาที ใช้ค่าเท่ากันเพื่อช่วงเวลาคงที่"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "OPTIONAL · AI REWRITE"
+msgstr "ไม่บังคับ · เขียนใหม่ด้วย AI"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "A fresh version for each group"
+msgstr "เวอร์ชันใหม่สำหรับแต่ละกลุ่ม"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Rewrite each post body with Gemini"
+msgstr "เขียนข้อความโพสต์แต่ละอันใหม่ด้วย Gemini"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
+msgstr "คำแนะนำการเขียนใหม่<0>เลือกโทนเสียงและรายละเอียดที่ Gemini ควรรักษาไว้.</0>"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Keep it concise and easy to scan. Preserve the price and contact details."
+msgstr "ทำให้กระชับและอ่านง่าย รักษาราคาและรายละเอียดการติดต่อไว้"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Rewrite instructions"
+msgstr "คำแนะนำการเขียนใหม่"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
+msgstr "ข้อความโพสต์และคำแนะนำของคุณจะถูกส่งไปยัง Google Gemini ภาพจะไม่ถูกส่ง Gemini จะเขียนใหม่เป็นข้อความธรรมดา"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
+msgstr "หากการเขียนใหม่ล้มเหลว โพสต์นั้นจะใช้ข้อความต้นฉบับของคุณ โพสต์ถัดไปจะพยายามใช้ Gemini อีกครั้ง"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Let Gemini rewrite your post using your instructions."
+msgstr "ให้ Gemini เขียนโพสต์ของคุณใหม่ตามคำแนะนำของคุณ"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Posting preferences"
+msgstr "ตัวเลือกการโพสต์"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved defaults help"
+msgstr "ค่าเริ่มต้นที่บันทึกช่วยได้"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "About saved defaults"
+msgstr "เกี่ยวกับค่าเริ่มต้นที่บันทึก"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved interval"
+msgstr "ช่วงเวลาที่บันทึก"
+
+#. 0: settings.minimumInterval === settings.maximumInterval ? settings.minimumInterval \\: `${settings.minimumInterval}–${settings.maximumInterval}`
+#: src/components/SavedDefaultsInfo.svelte
+msgid "{0} seconds"
+msgstr "{0} วินาที"
+
+#: src/App.svelte
+#: src/components/SavedDefaultsInfo.svelte
+msgid "On"
+msgstr "เปิด"
+
+#: src/App.svelte
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Off"
+msgstr "ปิด"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Gemini rewrite"
+msgstr "การเขียนใหม่ด้วย Gemini"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "No instructions saved."
+msgstr "ยังไม่มีคำแนะนำถูกบันทึก"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved rewrite instructions"
+msgstr "คำแนะนำการเขียนที่บันทึกไว้"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved values could not be loaded. Try “Use saved defaults” again."
+msgstr "ไม่สามารถโหลดค่าที่บันทึกไว้ได้ ลอง “ใช้ค่าเริ่มต้นที่บันทึก” อีกครั้ง"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "What does “Use saved defaults” do?"
+msgstr "“ใช้ค่าเริ่มต้นที่บันทึก” ทำอะไร?"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
+msgstr "แทนที่ช่วงเวลาการโพสต์ในรอบนี้ ตัวเลือกการเขียนซ้ำของ Gemini และคำสั่งเขียนซ้ำด้วยค่าที่บันทึกไว้ในการตั้งค่า"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
+msgstr "ค่าเริ่มต้น: 60–120 วินาที, ปิดการเขียนซ้ำของ Gemini, และไม่มีคำสั่งเขียนซ้ำ บันทึกค่าที่คุณต้องการในการตั้งค่าเพื่อเปลี่ยนแปลง"
+
+#: src/components/Settings.svelte
+msgid "Settings saved. New runs can use these defaults."
+msgstr "การตั้งค่าถูกบันทึก รันใหม่สามารถใช้ค่ามาตรฐานเหล่านี้ได้"
+
+#: src/components/Settings.svelte
+msgid "Key saved · leave blank to keep it"
+msgstr "คีย์ถูกบันทึก · เว้นว่างเพื่อเก็บไว้"
+
+#: src/components/Settings.svelte
+msgid "Enter your Gemini API key"
+msgstr "ป้อนคีย์ API ของ Gemini ของคุณ"
+
+#: src/components/Settings.svelte
+msgid "A key is saved on this device."
+msgstr "มีการบันทึกคีย์บนอุปกรณ์นี้"
+
+#: src/components/Settings.svelte
+msgid "No API key saved."
+msgstr "ไม่มีการบันทึกคีย์ API"
+
+#: src/components/Settings.svelte
+msgid "Remove saved key"
+msgstr "ลบคีย์ที่บันทึกไว้"
+
+#: src/components/Settings.svelte
+msgid "Gemini"
+msgstr "Gemini"
+
+#: src/components/Settings.svelte
+msgid "API key<0/>"
+msgstr "คีย์ API<0/>"
+
+#. 0: keyConfigured ? 'A key is saved on this device.' \\: 'No API key saved.'
+#: src/components/Settings.svelte
+msgid "{0} The saved key is never displayed."
+msgstr "{0} คีย์ที่บันทึกจะไม่เคยถูกแสดง"
+
+#: src/components/Settings.svelte
+msgid "Model<0/>"
+msgstr "รุ่น<0/>"
+
+#: src/components/Settings.svelte
+msgid "Posting defaults"
+msgstr "ค่าเริ่มต้นการโพสต์"
+
+#: src/components/Settings.svelte
+msgid "Applied when you start a new posting run."
+msgstr "ใช้เมื่อคุณเริ่มรอบการโพสต์ใหม่"
+
+#: src/components/Settings.svelte
+msgid "Saving…"
+msgstr "กำลังบันทึก…"
+
+#: src/components/Settings.svelte
+msgid "Save settings"
+msgstr "บันทึกการตั้งค่า"
+
+#: src/components/Settings.svelte
+msgid "YOUR PREFERENCES"
+msgstr "ค่าที่คุณต้องการ"
+
+#. 0: accountName
+#: src/components/Settings.svelte
+msgid "Set up Gemini and save posting defaults for {0}."
+msgstr "ตั้งค่า Gemini และบันทึกค่าการโพสต์เริ่มต้นสำหรับ {0}"
+
+#: src/components/StepProgress.svelte
+msgid "Completed"
+msgstr "เสร็จสิ้น"
+
+#: src/components/StepProgress.svelte
+msgid "Current"
+msgstr "ปัจจุบัน"
+
+#: src/components/StepProgress.svelte
+msgid "Upcoming"
+msgstr "ถัดไป"
+
+#. 0: index + 1; 1: steps.length; 2: completed || index < currentStep ? 'Completed' \\: index === currentStep ? 'Current' \\: 'Upcoming'
+#: src/components/StepProgress.svelte
+msgid "Step {0} of {1}: {2}"
+msgstr "ขั้นตอน {0} จาก {1}: {2}"
+
+#: src/components/WindowControls.svelte
+msgid "Could not change the window. Please try again."
+msgstr "ไม่สามารถเปลี่ยนหน้าต่างได้ โปรดลองอีกครั้ง"
+
+#: src/components/WindowControls.svelte
+msgid "Window controls"
+msgstr "การควบคุมหน้าต่าง"
+
+#: src/components/WindowControls.svelte
+msgid "Minimize window"
+msgstr "ย่อหน้าต่าง"
+
+#: src/components/WindowControls.svelte
+msgid "Restore window"
+msgstr "คืนค่าหน้าต่าง"
+
+#: src/components/WindowControls.svelte
+msgid "Maximize window"
+msgstr "ขยายหน้าต่าง"
+
+#: src/components/WindowControls.svelte
+msgid "Close window"
+msgstr "ปิดหน้าต่าง"
+
+#: src/App.svelte
+msgid "Create post"
+msgstr "สร้างโพสต์"
+
+#: src/App.svelte
+msgid "Write your post and add images"
+msgstr "เขียนโพสต์ของคุณและเพิ่มรูปภาพ"
+
+#: src/App.svelte
+msgid "Select groups"
+msgstr "เลือกกลุ่ม"
+
+#: src/App.svelte
+msgid "Load groups and choose where to post"
+msgstr "โหลดกลุ่มและเลือกว่าจะโพสต์ที่ไหน"
+
+#~ msgid "Review & post"
+#~ msgstr "ตรวจสอบและโพสต์"
+
+#~ msgid "Review, set preferences, then post now or schedule"
+#~ msgstr "ตรวจสอบ ตั้งค่าความชอบ แล้วโพสต์ทันทีหรือกำหนดเวลา"
+
+#: src/App.svelte
+msgid "Facebook session captured"
+msgstr "เซสชัน Facebook ถูกจับแล้ว"
+
+#: src/App.svelte
+msgid "The browser is closed. It will reopen when you click Post."
+msgstr "เบราว์เซอร์ถูกปิด จะเปิดใหม่เมื่อคุณคลิกโพสต์"
+
+#: src/App.svelte
+msgid "Checking Facebook login"
+msgstr "กำลังตรวจสอบการเข้าสู่ระบบ Facebook"
+
+#: src/App.svelte
+msgid "Finish signing in or any verification prompts in Chrome. Your login will be detected automatically."
+msgstr "ทำการลงชื่อเข้าใช้ให้เสร็จหรือทำการยืนยันใด ๆ ใน Chrome การเข้าสู่ระบบของคุณจะถูกตรวจพบโดยอัตโนมัติ"
+
+#: src/App.svelte
+msgid "Login required"
+msgstr "ต้องเข้าสู่ระบบ"
+
+#: src/App.svelte
+msgid "Please log in to Facebook in the Chrome window. Postika will detect when you’re signed in."
+msgstr "โปรดเข้าสู่ระบบ Facebook ในหน้าต่าง Chrome Postika จะตรวจพบเมื่อคุณเข้าสู่ระบบแล้ว"
+
+#: src/App.svelte
+msgid "Complete Facebook verification"
+msgstr "ทำการยืนยัน Facebook ให้เสร็จ"
+
+#: src/App.svelte
+msgid "Complete the login or verification prompts in Chrome to continue."
+msgstr "ทำการเข้าสู่ระบบหรือยืนยันใน Chrome ให้เสร็จเพื่อดำเนินการต่อ"
+
+#: src/App.svelte
+msgid "Facebook connected"
+msgstr "เชื่อมต่อ Facebook เรียบร้อย"
+
+#: src/App.svelte
+msgid "You’re logged in. Your session is ready."
+msgstr "คุณเข้าสู่ระบบแล้ว เซสชันของคุณพร้อมใช้งาน"
+
+#: src/App.svelte
+msgid "Facebook window closed"
+msgstr "หน้าต่าง Facebook ถูกปิดแล้ว"
+
+#: src/App.svelte
+msgid "Click Load groups to reopen Facebook and check your login."
+msgstr "คลิก โหลดกลุ่ม เพื่อเปิด Facebook อีกครั้งและตรวจสอบการเข้าสู่ระบบของคุณ"
+
+#. 0: current?.name ?? ''
+#: src/components/AccountDropdown.svelte
+msgid "Language: {0}"
+msgstr "ภาษา: {0}"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search languages…"
+msgstr "ค้นหาภาษา…"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search languages"
+msgstr "ค้นหาภาษา"
+
+#: src/components/AccountDropdown.svelte
+msgid "Clear language search"
+msgstr "ล้างการค้นหาภาษา"
+
+#. 0: matches.length
+#: src/components/AccountDropdown.svelte
+msgid "{0} result"
+msgstr "{0} ผลลัพธ์"
+
+#. 0: matches.length
+#: src/components/AccountDropdown.svelte
+msgid "{0} results"
+msgstr "{0} ผลลัพธ์"
+
+#: src/components/AccountDropdown.svelte
+msgid "All languages"
+msgstr "ภาษาทั้งหมด"
+
+#: src/components/AccountDropdown.svelte
+msgid "Languages"
+msgstr "ภาษา"
+
+#: src/components/AccountDropdown.svelte
+msgid "No languages found"
+msgstr "ไม่พบภาษา"
+
+#: src/components/DateTimePicker.svelte
+msgid "Morning"
+msgstr "เช้า"
+
+#: src/components/DateTimePicker.svelte
+msgid "Afternoon"
+msgstr "บ่าย"
+
+#: src/components/DateTimePicker.svelte
+msgid "Evening"
+msgstr "เย็น"
+
+#: src/components/LanguageMenu.svelte
+msgid "Could not change the language. Please try again."
+msgstr "ไม่สามารถเปลี่ยนภาษาได้ กรุณาลองอีกครั้ง"
+
+#: src/components/Settings.svelte
+msgid "Language"
+msgstr "ภาษา"
+
+#: src/components/PostingOptionsForm.svelte
+#: src/components/PostingOptionsForm.svelte
+msgid "seconds"
+msgstr "วินาที"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Minimum"
+msgstr "ต่ำสุด"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Maximum"
+msgstr "สูงสุด"
+
+#: src/components/StepProgress.svelte
+msgid "Post progress"
+msgstr "ความคืบหน้าในการโพสต์"
+
+#. 0: visibleGroups.length
+#: src/App.svelte
+msgid "{0} shown"
+msgstr "แสดง {0}"
+
+#. 0: selectedGroupIds.length
+#: src/App.svelte
+msgid "{0} selected"
+msgstr "เลือก {0}"
+
+#. 0: images.length
+#: src/components/PostComposer.svelte
+msgid "{0} images selected"
+msgstr "เลือก {0} รูปภาพ"
+
+#: src/components/PostingLogView.svelte
+msgid "WARN"
+msgstr "เตือน"
+
+#: src/components/PostingLogView.svelte
+msgid "INFO"
+msgstr "ข้อมูล"
+
+#: src/components/PostingLogView.svelte
+msgid "ERROR"
+msgstr "ข้อผิดพลาด"
+
+#: src/components/PostingLogView.svelte
+msgid "DEBUG"
+msgstr "ดีบัก"
+
+#: src/components/PostingLogView.svelte
+msgid "PUBLISHED"
+msgstr "เผยแพร่แล้ว"
+
+#: src/components/PostingLogView.svelte
+msgid "PENDING"
+msgstr "รอดำเนินการ"
+
+#: src/components/PostingLogView.svelte
+msgid "FAILED"
+msgstr "ล้มเหลว"
+
+#: src/components/PostingLogView.svelte
+msgid "SKIPPED"
+msgstr "ข้าม"
+
+#: src/components/PostingLogView.svelte
+msgid "UNCONFIRMED"
+msgstr "ยังไม่ได้ยืนยัน"
+
+#: src/Workspace.svelte
+msgid "e.g. Business"
+msgstr "เช่น ธุรกิจ"
+
+#: src/components/PostComposer.svelte
+msgid "1 image selected"
+msgstr "เลือก 1 รูปภาพ"
+
+#: src/components/PostingLogView.svelte
+msgid "Paused · Waiting for internet"
+msgstr "หยุดชั่วคราว · รอการเชื่อมต่ออินเทอร์เน็ต"
+
+#: src/components/PostingLogView.svelte
+msgid "Pausing after the current operation"
+msgstr "กำลังหยุดชั่วคราวหลังจากการดำเนินการปัจจุบัน"
+
+#: src/components/PostingLogView.svelte
+msgid "Paused"
+msgstr "หยุดชั่วคราว"
+
+#: src/components/PostingLogView.svelte
+msgid "Stopping"
+msgstr "กำลังหยุด"
+
+#: src/components/PostingLogView.svelte
+msgid "Posting"
+msgstr "กำลังโพสต์"
+
+#: src/components/PostingLogView.svelte
+msgid "Finished"
+msgstr "เสร็จสิ้น"
+
+#: src/components/PostingLogView.svelte
+msgid "Stopped"
+msgstr "หยุดแล้ว"
+
+#: src/components/PostingLogView.svelte
+msgid "Ready"
+msgstr "พร้อม"
+
+#: src/components/PostingLogView.svelte
+msgid "CURRENT ACTIVITY"
+msgstr "กิจกรรมปัจจุบัน"
+
+#: src/components/PostingLogView.svelte
+msgid "RUN STATUS"
+msgstr "สถานะการทำงาน"
+
+#: src/components/PostingLogView.svelte
+msgid " · Paused"
+msgstr " · หยุดชั่วคราว"
+
+#: src/components/PostingLogView.svelte
+msgid " · Response available to copy"
+msgstr " · มีการตอบกลับให้คัดลอก"
+
+#: src/components/AccountLabel.svelte
+msgid "Default profile"
+msgstr "โปรไฟล์เริ่มต้น"
+
+#~ msgid "Switch to light mode"
+#~ msgstr "เปลี่ยนเป็นโหมดสว่าง"
+
+#~ msgid "Switch to dark mode"
+#~ msgstr "เปลี่ยนเป็นโหมดมืด"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Color themes"
+msgstr "ธีมสี"
+
+#: src/components/ThemePicker.svelte
+msgid "Close"
+msgstr "ปิด"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Search themes…"
+msgstr "ค้นหาธีม…"
+
+#: src/components/ThemePicker.svelte
+msgid "No themes found"
+msgstr "ไม่พบธีม"
+
+#: src/components/LogMessage.svelte
+msgid "A selected group is no longer available. Load groups again"
+msgstr "กลุ่มที่เลือกไม่สามารถใช้งานได้อีก โหลดกลุ่มอีกครั้ง"
+
+#: src/components/LogMessage.svelte
+msgid "Add a Gemini API key in Settings before enabling rewriting"
+msgstr "เพิ่มคีย์ API ของ Gemini ในการตั้งค่าก่อนเปิดใช้งานการเขียนซ้ำ"
+
+#: src/components/LogMessage.svelte
+msgid "Add a post body and at least one image"
+msgstr "เพิ่มเนื้อหาของโพสต์และอย่างน้อยหนึ่งภาพ"
+
+#: src/components/LogMessage.svelte
+msgid "All selected groups were already attempted. Review unconfirmed results on Facebook."
+msgstr "กลุ่มที่เลือกทั้งหมดถูกพยายามไปแล้ว ตรวจสอบผลลัพธ์ที่ยังไม่ยืนยันบน Facebook"
+
+#: src/components/LogMessage.svelte
+msgid "An image upload failed in Chrome. Check the composer and retry Post"
+msgstr "การอัปโหลดภาพล้มเหลวใน Chrome ตรวจสอบตัวเขียนและลองโพสต์อีกครั้ง"
+
+#: src/components/LogMessage.svelte
+msgid "Attaching images…"
+msgstr "กำลังแนบภาพ..."
+
+#: src/components/LogMessage.svelte
+msgid "Choose JPG, PNG, WebP, or GIF images"
+msgstr "เลือกภาพ JPG, PNG, WebP หรือ GIF"
+
+#: src/components/LogMessage.svelte
+msgid "Choose a future date and time for your post"
+msgstr "เลือกวันที่และเวลาของโพสต์ในอนาคต"
+
+#: src/components/LogMessage.svelte
+msgid "Closing Chrome and posting to the remaining groups…"
+msgstr "กำลังปิด Chrome และโพสต์ไปยังกลุ่มที่เหลือ..."
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the complete create-post request"
+msgstr "ไม่สามารถจับคำขอสร้างโพสต์ทั้งหมดได้"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the completed image upload response"
+msgstr "ไม่สามารถจับการตอบกลับการอัปโหลดภาพที่เสร็จสมบูรณ์ได้"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the image upload form fields"
+msgstr "ไม่สามารถจับฟิลด์ฟอร์มการอัปโหลดภาพได้"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the image upload form. Retry Post"
+msgstr "ไม่สามารถจับฟอร์มการอัปโหลดภาพได้ ลองโพสต์อีกครั้ง"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the upload endpoint"
+msgstr "ไม่สามารถจับจุดปลายทางการอัปโหลดได้"
+
+#: src/components/LogMessage.svelte
+msgid "Could not copy the Facebook response to the clipboard"
+msgstr "ไม่สามารถคัดลอกการตอบกลับจาก Facebook ไปยังคลิปบอร์ด"
+
+#: src/components/LogMessage.svelte
+msgid "Could not enable create-post capture in Chrome"
+msgstr "ไม่สามารถเปิดใช้งานการจับภาพสร้างโพสต์ใน Chrome"
+
+#: src/components/LogMessage.svelte
+msgid "Could not parse the captured create-post form"
+msgstr "ไม่สามารถวิเคราะห์แบบฟอร์มสร้างโพสต์ที่จับภาพได้"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare image files"
+msgstr "ไม่สามารถเตรียมไฟล์ภาพ"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare post images"
+msgstr "ไม่สามารถเตรียมภาพโพสต์"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare the Gemini request"
+msgstr "ไม่สามารถเตรียมคำขอของ Gemini"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare the image upload."
+msgstr "ไม่สามารถเตรียมการอัปโหลดภาพ"
+
+#: src/components/LogMessage.svelte
+msgid "Could not reach Gemini. Check your connection"
+msgstr "ไม่สามารถเชื่อมต่อกับ Gemini ได้ ตรวจสอบการเชื่อมต่อของคุณ"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read Facebook's post confirmation"
+msgstr "ไม่สามารถอ่านการยืนยันโพสต์ของ Facebook"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read the Gemini rewrite"
+msgstr "ไม่สามารถอ่านการแก้ไขของ Gemini"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read the completed image upload response"
+msgstr "ไม่สามารถอ่านการตอบสนองการอัปโหลดภาพที่เสร็จสมบูรณ์"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read the selected image."
+msgstr "ไม่สามารถอ่านภาพที่เลือก"
+
+#: src/components/LogMessage.svelte
+msgid "Create-post capture ended before confirmation. Check Facebook before retrying"
+msgstr "การจับภาพสร้างโพสต์สิ้นสุดก่อนการยืนยัน ตรวจสอบ Facebook ก่อนลองอีกครั้ง"
+
+#: src/components/LogMessage.svelte
+msgid "Create-post request detected. Capturing fresh form values…"
+msgstr "ตรวจพบคำขอสร้างโพสต์ กำลังจับค่าฟอร์มใหม่..."
+
+#: src/components/LogMessage.svelte
+msgid "Create-post response complete. Waiting for captured session headers…"
+msgstr "การตอบสนองสร้างโพสต์เสร็จสมบูรณ์ กำลังรอส่วนหัวของเซสชันที่ถูกจับภาพ..."
+
+#: src/components/LogMessage.svelte
+msgid "Create-post response received. Waiting for its complete body…"
+msgstr "ได้รับการตอบสนองการสร้างโพสต์ กำลังรอส่วนเนื้อหาเต็ม..."
+
+#: src/components/LogMessage.svelte
+msgid "Description inserted"
+msgstr "แทรกคำอธิบายแล้ว"
+
+#: src/components/LogMessage.svelte
+msgid "Earlier submission is unconfirmed. Skipping this group and continuing with the remaining groups."
+msgstr "การส่งก่อนหน้านี้ยังไม่ยืนยัน ข้ามกลุ่มนี้และดำเนินการกับกลุ่มที่เหลือ"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook could not post to this group. Continuing with the remaining groups."
+msgstr "Facebook ไม่สามารถโพสต์ไปยังกลุ่มนี้ได้ ดำเนินการกับกลุ่มที่เหลือต่อไป"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook did not confirm all images. Check the composer."
+msgstr "Facebook ไม่ยืนยันภาพทั้งหมด ตรวจสอบตัวสร้างโพสต์"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook did not confirm the submission"
+msgstr "Facebook ไม่ยืนยันการส่ง"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook did not confirm this post. Check the group before trying again."
+msgstr "Facebook ไม่ยืนยันโพสต์นี้ ตรวจสอบกลุ่มก่อนลองอีกครั้ง"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook has temporarily limited posting. Try again later."
+msgstr "Facebook จำกัดการโพสต์ชั่วคราว ลองอีกครั้งในภายหลัง"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook rejected this post."
+msgstr "Facebook ปฏิเสธโพสต์นี้"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook requires login or verification. Load groups again."
+msgstr "Facebook ต้องการการเข้าสู่ระบบหรือการยืนยัน โหลดกลุ่มอีกครั้ง"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook returned a story, but did not confirm its group or publication state. Posting stopped. Check Facebook before retrying."
+msgstr "Facebook ส่งเรื่องราวกลับมา แต่ไม่ยืนยันกลุ่มหรือสถานะการเผยแพร่ การโพสต์ถูกหยุด ตรวจสอบ Facebook ก่อนลองอีกครั้ง"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook's confirmation exceeded the 16 MiB response limit; retained response is truncated"
+msgstr "การยืนยันของ Facebook เกินขีดจำกัดการตอบสนอง 16 MiB; การตอบสนองที่เก็บไว้นั้นถูกตัดทอน"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook's editor did not accept the formatted post. Posting was not submitted"
+msgstr "ตัวแก้ไขของ Facebook ไม่ยอมรับโพสต์ที่ฟอร์แมต การโพสต์ไม่ได้ถูกส่ง"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook's editor did not retain the formatted post text. Posting was not submitted"
+msgstr "โปรแกรมแก้ไขของ Facebook ไม่ได้เก็บข้อความโพสต์ที่จัดรูปแบบไว้ การโพสต์ไม่ได้ถูกส่ง"
+
+#: src/components/LogMessage.svelte
+msgid "First post confirmed. Waiting for the Facebook composer to close…"
+msgstr "โพสต์แรกยืนยันแล้ว กำลังรอให้ตัวสร้างโพสต์ของ Facebook ปิด..."
+
+#: src/components/LogMessage.svelte
+msgid "First submission unconfirmed. Retrying request 1/3 with the captured mutation ID…"
+msgstr "การส่งครั้งแรกยังไม่ได้รับการยืนยัน กำลังลองส่งคำขอใหม่ 1/3 พร้อมกับรหัสการเปลี่ยนแปลงที่จับได้..."
+
+#: src/components/LogMessage.svelte
+msgid "Formatted post is too large"
+msgstr "โพสต์ที่จัดรูปแบบมีขนาดใหญ่เกินไป"
+
+#: src/components/LogMessage.svelte
+msgid "Found multiple matching post composers on the group page"
+msgstr "พบตัวสร้างโพสต์หลายตัวที่ตรงกันบนหน้ากลุ่ม"
+
+#: src/components/LogMessage.svelte
+msgid "Fresh create-post form captured. Waiting for Facebook's response…"
+msgstr "ฟอร์มสร้างโพสต์ใหม่ถูกจับไว้แล้ว กำลังรอการตอบกลับจาก Facebook..."
+
+#: src/components/LogMessage.svelte
+msgid "Gemini did not finish the rewrite"
+msgstr "Gemini ไม่ได้ทำการเขียนใหม่เสร็จ"
+
+#: src/components/LogMessage.svelte
+msgid "Gemini returned no rewritten text"
+msgstr "Gemini ไม่ได้คืนข้อความที่ถูกเขียนใหม่"
+
+#: src/components/LogMessage.svelte
+msgid "Gemini rewrite completed."
+msgstr "Gemini เขียนใหม่เสร็จเรียบร้อย"
+
+#: src/components/LogMessage.svelte
+msgid "Gemini rewrite failed. Using the original text for this post; Gemini will be tried again for the next post."
+msgstr "การเขียนใหม่ของ Gemini ล้มเหลว ใช้ข้อความเดิมสำหรับโพสต์นี้; Gemini จะถูกลองใหม่สำหรับโพสต์ถัดไป"
+
+#: src/components/LogMessage.svelte
+msgid "Image uploads belong to a different profile"
+msgstr "การอัปโหลดภาพเป็นของโปรไฟล์อื่น"
+
+#: src/components/LogMessage.svelte
+msgid "Images inserted"
+msgstr "แทรกรูปภาพแล้ว"
+
+#: src/components/LogMessage.svelte
+msgid "Inserting post body…"
+msgstr "กำลังแทรกเนื้อหาโพสต์..."
+
+#: src/components/LogMessage.svelte
+msgid "Internet connection lost. Queue paused until the connection returns."
+msgstr "การเชื่อมต่ออินเทอร์เน็ตสูญหาย คิวหยุดชั่วคราวจนกว่าการเชื่อมต่อจะกลับมา"
+
+#: src/components/LogMessage.svelte
+msgid "Internet connection restored. Continuing the queue."
+msgstr "การเชื่อมต่ออินเทอร์เน็ตกลับคืน สานต่อคิวต่อไป"
+
+#: src/components/LogMessage.svelte
+msgid "Internet connection restored. The queue remains manually paused."
+msgstr "การเชื่อมต่ออินเทอร์เน็ตกลับคืน แต่คิวยังคงหยุดชั่วคราวด้วยตนเอง"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured endpoint"
+msgstr "จุดเชื่อมต่อที่จับไม่ถูกต้อง"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured formatted post"
+msgstr "โพสต์ที่จับรูปแบบไม่ถูกต้อง"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured post form"
+msgstr "ฟอร์มโพสต์ที่จับไม่ถูกต้อง"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured post variables"
+msgstr "ตัวแปรโพสต์ที่จับไม่ถูกต้อง"
+
+#: src/components/LogMessage.svelte
+msgid "Load your groups before opening a post"
+msgstr "โหลดกลุ่มของคุณก่อนเปิดโพสต์"
+
+#: src/components/LogMessage.svelte
+msgid "Log in or complete Facebook verification in Chrome, then click Post again"
+msgstr "เข้าสู่ระบบหรือทำการยืนยัน Facebook ใน Chrome จากนั้นคลิกโพสต์อีกครั้ง"
+
+#: src/components/LogMessage.svelte
+msgid "Multiple matching controls found in the post composer"
+msgstr "พบตัวควบคุมหลายตัวที่ตรงกันในตัวสร้างโพสต์"
+
+#: src/components/LogMessage.svelte
+msgid "No Facebook response was captured for this entry"
+msgstr "ไม่มีการตอบสนองจาก Facebook ที่จับได้สำหรับรายการนี้"
+
+#: src/components/LogMessage.svelte
+msgid "No available post composer."
+msgstr "ไม่มีตัวสร้างโพสต์ที่ใช้ได้"
+
+#: src/components/LogMessage.svelte
+msgid "No complete image upload request was captured."
+msgstr "ไม่มีคำขออัปโหลดรูปภาพสมบูรณ์ที่จับได้"
+
+#: src/components/LogMessage.svelte
+msgid "No fresh image upload request was captured."
+msgstr "ไม่มีคำขออัปโหลดรูปภาพใหม่ที่จับได้"
+
+#: src/components/LogMessage.svelte
+msgid "Opening browser…"
+msgstr "กำลังเปิดเบราว์เซอร์…"
+
+#: src/components/LogMessage.svelte
+msgid "Pause requested. The current operation will finish before pausing."
+msgstr "มีคำขอหยุดชั่วคราว การดำเนินการปัจจุบันจะเสร็จก่อนหยุดชั่วคราว"
+
+#: src/components/LogMessage.svelte
+msgid "Post button clicked"
+msgstr "ปุ่มโพสต์ถูกคลิก"
+
+#: src/components/LogMessage.svelte
+msgid "Post published."
+msgstr "โพสต์ถูกเผยแพร่แล้ว"
+
+#: src/components/LogMessage.svelte
+msgid "Postika is shutting down"
+msgstr "Postika กำลังปิดตัว"
+
+#: src/components/LogMessage.svelte
+msgid "Posting is already running"
+msgstr "การโพสต์กำลังทำงานอยู่"
+
+#: src/components/LogMessage.svelte
+msgid "Posting paused."
+msgstr "การโพสต์หยุดชั่วคราว"
+
+#: src/components/LogMessage.svelte
+msgid "Posting resumed."
+msgstr "การโพสต์ดำเนินต่อ"
+
+#: src/components/LogMessage.svelte
+msgid "Posting stopped after the first post was confirmed"
+msgstr "การโพสต์หยุดหลังจากยืนยันโพสต์แรกแล้ว"
+
+#: src/components/LogMessage.svelte
+msgid "Posting..."
+msgstr "กำลังโพสต์..."
+
+#: src/components/LogMessage.svelte
+msgid "Reading Facebook's create-post confirmation…"
+msgstr "กำลังอ่านการยืนยันการสร้างโพสต์ของ Facebook…"
+
+#: src/components/LogMessage.svelte
+msgid "Rewriting the post body with Gemini…"
+msgstr "กำลังเขียนเนื้อหาโพสต์ใหม่ด้วย Gemini…"
+
+#: src/components/LogMessage.svelte
+msgid "Scheduled posting cancelled."
+msgstr "การโพสต์ตามกำหนดการถูกยกเลิก"
+
+#: src/components/LogMessage.svelte
+msgid "Scheduled time reached. Starting posting…"
+msgstr "ถึงเวลาที่กำหนด เริ่มการโพสต์…"
+
+#: src/components/LogMessage.svelte
+msgid "Select at least one group"
+msgstr "โปรดเลือกอย่างน้อยหนึ่งกลุ่ม"
+
+#: src/components/LogMessage.svelte
+msgid "Setting up automatic posting using your first Facebook post..."
+msgstr "กำลังตั้งค่าการโพสต์อัตโนมัติโดยใช้โพสต์แรกของคุณบน Facebook..."
+
+#: src/components/LogMessage.svelte
+msgid "Stopping posting…"
+msgstr "กำลังหยุดการโพสต์…"
+
+#: src/components/LogMessage.svelte
+msgid "Submitting the first post and capturing fresh request values…"
+msgstr "กำลังส่งโพสต์แรกและจับค่าคำขอใหม่ๆ…"
+
+#: src/components/LogMessage.svelte
+#: src/components/LogMessage.svelte
+msgid "Technical details recorded. Open debug details to inspect the original message."
+msgstr "รายละเอียดทางเทคนิคถูกบันทึก เปิดรายละเอียดดีบักเพื่อตรวจสอบข้อความต้นฉบับ"
+
+#: src/components/LogMessage.svelte
+msgid "The active Facebook profile changed or expired"
+msgstr "โปรไฟล์ Facebook ที่ใช้งานเปลี่ยนแปลงหรือหมดอายุ"
+
+#: src/components/LogMessage.svelte
+msgid "The browser connection was lost. Check Facebook before retrying"
+msgstr "การเชื่อมต่อเบราว์เซอร์หายไป ตรวจสอบ Facebook ก่อนลองอีกครั้ง"
+
+#: src/components/LogMessage.svelte
+msgid "The browser profile changed while capturing posting requests"
+msgstr "โปรไฟล์เบราว์เซอร์เปลี่ยนขณะจับคำขอโพสต์"
+
+#: src/components/LogMessage.svelte
+msgid "The captured formatted post body does not match your draft"
+msgstr "เนื้อหาที่จับรูปแบบโพสต์ไม่ตรงกับร่างของคุณ"
+
+#: src/components/LogMessage.svelte
+msgid "The captured image upload cookies do not match the Facebook profile"
+msgstr "คุกกี้การอัปโหลดรูปภาพที่จับได้ไม่ตรงกับโปรไฟล์ Facebook"
+
+#: src/components/LogMessage.svelte
+msgid "The captured image upload format is not supported"
+msgstr "รูปแบบการอัปโหลดรูปภาพที่จับได้ไม่รองรับ"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post belongs to a different Facebook profile"
+msgstr "โพสต์ที่จับได้เป็นของโปรไฟล์ Facebook อื่น"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post body does not match your draft"
+msgstr "เนื้อหาโพสต์ที่จับได้ไม่ตรงกับร่างของคุณ"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post cookies do not match the logged-in profile"
+msgstr "คุกกี้ของโพสต์ที่จับไม่ได้ตรงกับโปรไฟล์ที่เข้าสู่ระบบ"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post has no group target"
+msgstr "โพสต์ที่จับไม่มีเป้าหมายกลุ่ม"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post target does not match the selected group"
+msgstr "เป้าหมายโพสต์ที่จับไม่ตรงกับกลุ่มที่เลือก"
+
+#: src/components/LogMessage.svelte
+msgid "The composer dialog was replaced while loading"
+msgstr "กล่องโต้ตอบตัวสร้างโพสต์ถูกแทนที่ในขณะโหลด"
+
+#: src/components/LogMessage.svelte
+msgid "The create-post connection failed. Check Facebook before retrying"
+msgstr "การเชื่อมต่อสร้างโพสต์ล้มเหลว ตรวจสอบ Facebook ก่อนลองใหม่"
+
+#: src/components/LogMessage.svelte
+msgid "The current profile differs from the profile used to load groups. Load groups again."
+msgstr "โปรไฟล์ปัจจุบันต่างจากโปรไฟล์ที่ใช้โหลดกลุ่ม โหลดกลุ่มใหม่"
+
+#: src/components/LogMessage.svelte
+msgid "The desktop application is not ready"
+msgstr "แอปพลิเคชันเดสก์ท็อปยังไม่พร้อม"
+
+#: src/components/LogMessage.svelte
+msgid "The desktop clipboard is not ready"
+msgstr "คลิปบอร์ดเดสก์ท็อปยังไม่พร้อม"
+
+#: src/components/LogMessage.svelte
+msgid "The expected composer control did not appear in Chrome"
+msgstr "ตัวควบคุมตัวสร้างโพสต์ที่คาดหวังไม่ปรากฏใน Chrome"
+
+#: src/components/LogMessage.svelte
+msgid "The first post was confirmed, but Chrome's completion state could not be checked. Posting stopped"
+msgstr "โพสต์แรกได้รับการยืนยันแล้ว แต่ไม่สามารถตรวจสอบสถานะการเสร็จสิ้นของ Chrome ได้ การโพสต์หยุดชะงัก"
+
+#: src/components/LogMessage.svelte
+msgid "The image upload did not contain multipart form data"
+msgstr "การอัปโหลดรูปภาพไม่ได้มีข้อมูลแบบฟอร์มหลายส่วน"
+
+#: src/components/LogMessage.svelte
+msgid "The image upload does not match its active Facebook profile"
+msgstr "การอัปโหลดรูปภาพไม่ตรงกับโปรไฟล์ Facebook ที่ใช้งานอยู่"
+
+#: src/components/LogMessage.svelte
+msgid "The image upload form belongs to a different Facebook profile"
+msgstr "แบบฟอร์มการอัปโหลดรูปภาพเป็นของโปรไฟล์ Facebook อื่น"
+
+#: src/components/LogMessage.svelte
+msgid "The selected group has an invalid Facebook URL. Load groups again"
+msgstr "กลุ่มที่เลือกมี URL ของ Facebook ไม่ถูกต้อง โหลดกลุ่มอีกครั้ง"
+
+#: src/components/LogMessage.svelte
+msgid "The session could not be saved for posting retries and remaining groups."
+msgstr "ไม่สามารถบันทึกเซสชันสำหรับการลองโพสต์ซ้ำและกลุ่มที่เหลือได้"
+
+#: src/components/LogMessage.svelte
+msgid "This draft has already been submitted to the first group. It was not submitted again."
+msgstr "ร่างนี้ถูกส่งไปยังกลุ่มแรกแล้ว ไม่ได้ถูกส่งซ้ำ"
+
+#: src/components/LogMessage.svelte
+msgid "This group has no available post composer"
+msgstr "กลุ่มนี้ไม่มีเครื่องมือสร้างโพสต์ที่พร้อมใช้งาน"
+
+#: src/components/LogMessage.svelte
+msgid "This group has reached its pending-content limit."
+msgstr "กลุ่มนี้ถึงขีดจำกัดเนื้อหาที่รอดำเนินการแล้ว"
+
+#: src/components/LogMessage.svelte
+msgid "This post was submitted, but confirmation is uncertain. Check Facebook before retrying."
+msgstr "โพสต์นี้ถูกส่งแล้ว แต่การยืนยันไม่แน่นอน ตรวจสอบ Facebook ก่อนลองใหม่"
+
+#: src/components/LogMessage.svelte
+msgid "This response is no longer available for the current run"
+msgstr "คำตอบนี้ไม่สามารถใช้งานได้สำหรับการทำงานในรอบปัจจุบัน"
+
+#: src/components/LogMessage.svelte
+msgid "Upload and post captures must belong to the same logged-in profile"
+msgstr "การอัปโหลดและโพสต์ภาพจับต้องต้องอยู่ในโปรไฟล์ที่เข้าสู่ระบบเดียวกัน"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for Facebook's Post button…"
+msgstr "กำลังรอปุ่มโพสต์ของ Facebook…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the composer controls and layout…"
+msgstr "กำลังรอการควบคุมและเลย์เอาต์ของตัวเขียนโพสต์…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the group page and opening its composer…"
+msgstr "กำลังรอหน้าโฆษณากลุ่มและเปิดตัวเขียนโพสต์ของกลุ่มนั้น…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the image previews and composer to settle…"
+msgstr "กำลังรอการแสดงตัวอย่างรูปภาพและตัวเขียนโพสต์ให้อยู่ตัว…"
+
+#: src/components/LogMessage.svelte
+msgid "Your Facebook session needs login or verification. Load groups again."
+msgstr "เซสชัน Facebook ของคุณต้องการการเข้าสู่ระบบหรือการยืนยัน โหลดกลุ่มอีกครั้ง"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Published to {0}."
+msgstr "เผยแพร่ไปยัง {0} แล้ว"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "{0}: Awaiting admin approval."
+msgstr "{0}: รอการอนุมัติจากผู้ดูแล"
+
+#. 0: number(a); 1: b
+#: src/components/LogMessage.svelte
+msgid "Waiting {0} seconds before posting to {1}."
+msgstr "รอ {0} วินาทีก่อนโพสต์ไปยัง {1}"
+
+#. 0: a; 1: b
+#: src/components/LogMessage.svelte
+msgid "Next post in {0} · {1}"
+msgstr "โพสต์ถัดไปใน {0} · {1}"
+
+#. 0: a; 1: number(b); 2: number(c)
+#: src/components/LogMessage.svelte
+msgid "{0}: Uploading photo {1} of {2}…"
+msgstr "{0}: กำลังอัปโหลดภาพที่ {1} ของ {2}…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Preparing a post for {0}…"
+msgstr "กำลังเตรียมโพสต์สำหรับ {0}…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Uploading images for {0}…"
+msgstr "กำลังอัปโหลดภาพสำหรับ {0}…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Posting to {0}…"
+msgstr "กำลังโพสต์ไปยัง {0}…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Fresh upload and post request values captured from {0}."
+msgstr "จับค่าการอัปโหลดและโพสต์ใหม่จาก {0} แล้ว"
+
+#. 0: number(a); 1: number(b)
+#: src/components/LogMessage.svelte
+msgid "Submission unconfirmed. Retrying request {0}/{1}…"
+msgstr "การส่งไม่ยืนยัน กำลังลองส่งคำขออีกครั้ง {0}/{1}…"
+
+#. 0: number(a); 1: number(b); 2: number(c)
+#: src/components/LogMessage.svelte
+msgid "Finished: {0} published, {1} awaiting approval, {2} failed or skipped."
+msgstr "เสร็จสิ้น: {0} เผยแพร่แล้ว, {1} รอการอนุมัติ, {2} ล้มเหลวหรือข้ามไป"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Opening {0}…"
+msgstr "กำลังเปิด {0}…"
+
+#. 0: number(a); 1: number(b)
+#: src/components/LogMessage.svelte
+msgid "Capturing image uploads ({0} of {1})…"
+msgstr "กำลังอัปโหลดภาพ ({0} จาก {1})…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Gemini rewrite failed (HTTP {0}). Check the key, model and account quota"
+msgstr "การเขียนใหม่ของ Gemini ล้มเหลว (HTTP {0}) ตรวจสอบคีย์ รุ่น และโควต้าบัญชี"
+
+#. 0: code
+#: src/components/LogMessage.svelte
+msgid " (Code {0})"
+msgstr "(รหัส {0})"
+
+#: src/components/PostingLogView.svelte
+msgid "Debug details"
+msgstr "รายละเอียดดีบัก"
+
+#~ msgid ", "
+#~ msgstr ""
+
+#: src/components/ThemePicker.svelte
+msgid "Themes"
+msgstr "ธีม"
+
+#: src/App.svelte
+msgid "Preferences & post"
+msgstr "การตั้งค่าและโพสต์"
+
+#: src/App.svelte
+#: src/App.svelte
+msgid "Set preferences, then post now or schedule"
+msgstr "ตั้งค่าตามต้องการ แล้วโพสต์ทันทีหรือกำหนดเวลา"

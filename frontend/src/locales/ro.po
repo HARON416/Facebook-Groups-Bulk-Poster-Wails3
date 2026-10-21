@@ -1,0 +1,1836 @@
+msgid ""
+msgstr ""
+"Source-Language: en\n"
+"Language: ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3\n"
+"X-Plurals-Order: one, few, other\n"
+
+#. 0: minimumInterval === maximumInterval ? minimumInterval \\: `${minimumInterval}–${maximumInterval}`; 1: rewriteState
+#: src/App.svelte
+msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
+msgstr "Valorile implicite salvate au fost aplicate: {0} secunde între postări · Rescriere Gemini {1}."
+
+#: src/App.svelte
+msgid "Could not restore saved groups. Load groups to refresh the list."
+msgstr "Nu s-au putut restaura grupurile salvate. Încarcă grupurile pentru a reîmprospăta lista."
+
+#: src/App.svelte
+msgid "Choose a future date and time for your post."
+msgstr "Alege o dată și o oră viitoare pentru postarea ta."
+
+#: src/App.svelte
+msgid "Saving your scheduled queue…"
+msgstr "Se salvează coada programată…"
+
+#: src/App.svelte
+msgid "Opening a selected group to capture fresh posting requests…"
+msgstr "Se deschide un grup selectat pentru a captura cereri noi de postare…"
+
+#: src/App.svelte
+#: src/App.svelte
+#: src/components/LogMessage.svelte
+msgid "Posting stopped."
+msgstr "Postarea a fost oprită."
+
+#: src/App.svelte
+#: src/components/LogMessage.svelte
+msgid "Could not read a selected image"
+msgstr "Nu s-a putut citi o imagine selectată."
+
+#. 0: image.file.name
+#. 0: missingNames
+#. 0: unreadableNames
+#. 0: image.file.name
+#: src/App.svelte
+#: src/App.svelte
+#: src/components/PostComposer.svelte
+#: src/components/PostComposer.svelte
+msgid "Could not read {0}"
+msgstr "Nu s-a putut citi {0}."
+
+#: src/App.svelte
+msgid "Posting finished."
+msgstr "Postarea s-a terminat."
+
+#. 0: scheduleLabel(scheduledFor)
+#. 0: date
+#: src/App.svelte
+#: src/components/LogMessage.svelte
+msgid "Scheduled for {0}. Keep Postika open and your computer awake."
+msgstr "Programat pentru {0}. Ține Postika deschis și computerul activ."
+
+#: src/App.svelte
+msgid "Could not restore this account’s draft. New edits will stay available while Postika is open."
+msgstr "Nu s-a putut restaura ciorna acestui cont. Noile editări vor rămâne disponibile cât timp Postika este deschis."
+
+#: src/App.svelte
+msgid "Could not add the dropped images. Try browsing for them instead."
+msgstr "Nu s-au putut adăuga imaginile abandonate. Încearcă să le cauți manual."
+
+#: src/App.svelte
+msgid "Could not save this account’s draft to disk. Keep Postika open to retain your edits."
+msgstr "Nu s-a putut salva ciorna acestui cont pe disc. Ține Postika deschis pentru a păstra editările tale."
+
+#: src/App.svelte
+msgid "Start with your message. Add images to bring it to life."
+msgstr "Începe cu mesajul tău. Adaugă imagini pentru a-l pune în valoare."
+
+#: src/App.svelte
+msgid "Choose the groups you want to share your post with."
+msgstr "Alege grupurile cu care vrei să distribui postarea ta."
+
+#~ msgid "Review your post and preferences, then post now or schedule for later."
+#~ msgstr "Revizuiește postarea și preferințele tale, apoi postează acum sau programează pentru mai târziu."
+
+#. 0: currentStep + 1; 1: steps.length
+#: src/App.svelte
+msgid "STEP {0} OF {1}"
+msgstr "PASUL {0} DIN {1}"
+
+#: src/App.svelte
+msgid "Restoring account workspace…"
+msgstr "Se restaurează spațiul de lucru al contului..."
+
+#: src/App.svelte
+msgid "Opening…"
+msgstr "Se deschide..."
+
+#: src/App.svelte
+msgid "Loading…"
+msgstr "Se încarcă..."
+
+#: src/App.svelte
+msgid "Load groups"
+msgstr "Încarcă grupuri"
+
+#: src/App.svelte
+msgid "Groups"
+msgstr "Grupuri"
+
+#: src/App.svelte
+msgid "Search groups…"
+msgstr "Caută grupuri…"
+
+#: src/App.svelte
+msgid "Clear group search"
+msgstr "Șterge căutarea grupului"
+
+#: src/App.svelte
+msgid "Search groups"
+msgstr "Caută grupuri"
+
+#: src/App.svelte
+msgid "Select all groups"
+msgstr "Selectează toate grupurile"
+
+#: src/App.svelte
+msgid "Unselect all groups"
+msgstr "Deselectează toate grupurile"
+
+#~ msgid "{0} selected{1}"
+#~ msgstr ""
+
+#: src/App.svelte
+msgid "Searching…"
+msgstr "Se caută..."
+
+#: src/App.svelte
+msgid "No groups found. Try another search."
+msgstr "Nu s-au găsit grupuri. Încearcă o altă căutare."
+
+#: src/App.svelte
+msgid "Joined groups"
+msgstr "Grupuri la care te-ai alăturat"
+
+#: src/App.svelte
+msgid "No groups loaded yet."
+msgstr "Niciun grup încărcat."
+
+#: src/App.svelte
+msgid "Open your Facebook groups to get started."
+msgstr "Deschide grupurile tale de Facebook pentru a începe."
+
+#: src/App.svelte
+msgid "Posting settings"
+msgstr "Setări de postare"
+
+#: src/App.svelte
+msgid "Add a Gemini API key in Settings to enable rewriting."
+msgstr "Adaugă o cheie API Gemini în Setări pentru a activa rescrierea."
+
+#: src/App.svelte
+msgid "Applying defaults…"
+msgstr "Se aplică implicitul..."
+
+#: src/App.svelte
+msgid "Use saved defaults"
+msgstr "Folosește implicitul salvat"
+
+#: src/App.svelte
+msgid "Open settings"
+msgstr "Deschide setările"
+
+#~ msgid "Posting as <0/>"
+#~ msgstr "Postează ca <0/>"
+
+#~ msgid "Review your post<0>{0} images · {1} groups selected</0>"
+#~ msgstr "Revizuiește postarea ta<0>{0} imagini · {1} grupuri selectate</0>"
+
+#~ msgid "Original post"
+#~ msgstr "Postarea originală"
+
+#~ msgid "Your post"
+#~ msgstr "Postarea ta"
+
+#~ msgid "Gemini will rewrite this body for each group using your instructions."
+#~ msgstr "Gemini va rescrie acest conținut pentru fiecare grup folosind instrucțiunile tale."
+
+#~ msgid "Selected groups ({0})"
+#~ msgstr "Grupuri selectate ({0})"
+
+#: src/App.svelte
+msgid "Schedule your queue"
+msgstr "Programează coada ta"
+
+#. 0: Intl.DateTimeFormat().resolvedOptions().timeZone
+#: src/App.svelte
+msgid "Time zone: {0}. Keep Postika open and your computer awake. Facebook may ask you to sign in when posting starts."
+msgstr "Fus orar: {0}. Păstrează Postika deschis și calculatorul activ. Facebook poate să îți ceară să te conectezi când începe postarea."
+
+#: src/App.svelte
+#: src/Workspace.svelte
+msgid "Cancel"
+msgstr "Anulează"
+
+#: src/App.svelte
+msgid "Confirm schedule"
+msgstr "Confirmă programul"
+
+#: src/App.svelte
+msgid "Next <0/>"
+msgstr "Înainte <0/>"
+
+#: src/App.svelte
+msgid "View logs"
+msgstr "Vezi jurnalele"
+
+#: src/App.svelte
+#: src/components/PostingLogView.svelte
+msgid "Stop"
+msgstr "Oprește"
+
+#: src/App.svelte
+#: src/Workspace.svelte
+#: src/components/PostingLogView.svelte
+msgid "Scheduled"
+msgstr "Programat"
+
+#: src/App.svelte
+msgid "Posting…"
+msgstr "Se postează…"
+
+#: src/App.svelte
+msgid "Post now"
+msgstr "Publică acum"
+
+#: src/App.svelte
+msgid "Schedule"
+msgstr "Programează"
+
+#: src/App.svelte
+msgid "<0/> Previous"
+msgstr "<0/> Înapoi"
+
+#: src/Workspace.svelte
+msgid "Application menu"
+msgstr "Meniu aplicație"
+
+#: src/Workspace.svelte
+msgid "Add account"
+msgstr "Adaugă un cont"
+
+#: src/Workspace.svelte
+#: src/components/PostingLogView.svelte
+#: src/components/PostingLogView.svelte
+msgid "Posting logs"
+msgstr "Jurnal de publicare"
+
+#: src/Workspace.svelte
+#: src/components/Settings.svelte
+#: src/components/Settings.svelte
+msgid "Settings"
+msgstr "Setări"
+
+#: src/Workspace.svelte
+msgid "Creating…"
+msgstr "Se creează…"
+
+#: src/Workspace.svelte
+msgid "Create & sign in"
+msgstr "Creează și conectează-te"
+
+#: src/Workspace.svelte
+msgid "Account name"
+msgstr "Numele contului"
+
+#: src/Workspace.svelte
+msgid "Sign in to Facebook in the new account’s browser window."
+msgstr "Conectează-te la Facebook în fereastra browser-ului noului cont."
+
+#: src/Workspace.svelte
+msgid "Running"
+msgstr "Se execută"
+
+#: src/Workspace.svelte
+msgid "In the background: <0/>"
+msgstr "În fundal: <0/>"
+
+#: src/Workspace.svelte
+msgid "Loading accounts…"
+msgstr "Se încarcă conturile…"
+
+#: src/components/AccountDropdown.svelte
+msgid "Loading accounts"
+msgstr "Se încarcă conturile"
+
+#. 0: current?.name ?? 'Loading accounts'
+#: src/components/AccountDropdown.svelte
+msgid "Account: {0}"
+msgstr "Cont: {0}"
+
+#: src/components/AccountDropdown.svelte
+msgid "Select account"
+msgstr "Selectează contul"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search accounts…"
+msgstr "Caută conturi…"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search accounts"
+msgstr "Caută conturi"
+
+#: src/components/AccountDropdown.svelte
+msgid "Clear account search"
+msgstr "Șterge căutarea contului"
+
+#: src/components/AccountDropdown.svelte
+msgid "All accounts"
+msgstr "Toate conturile"
+
+#: src/components/AccountDropdown.svelte
+msgid "Accounts"
+msgstr "Conturi"
+
+#: src/components/AccountDropdown.svelte
+msgid "No accounts found"
+msgstr "Nu s-au găsit conturi"
+
+#: src/components/AccountDropdown.svelte
+#: src/components/ThemePicker.svelte
+msgid "Try a different name."
+msgstr "Încearcă alt nume."
+
+#: src/components/ConnectivityToast.svelte
+msgid "You’re back online"
+msgstr "Ești din nou online"
+
+#: src/components/ConnectivityToast.svelte
+msgid "Internet connection lost"
+msgstr "Conexiunea la internet a fost pierdută"
+
+#: src/components/ConnectivityToast.svelte
+msgid "Your queue is still manually paused."
+msgstr "Coada ta este încă întreruptă manual."
+
+#: src/components/ConnectivityToast.svelte
+msgid "Your queue will continue automatically."
+msgstr "Coada ta va continua automat."
+
+#: src/components/ConnectivityToast.svelte
+msgid "Your queue is paused. We’ll continue when the connection returns."
+msgstr "Coada ta este întreruptă. Vom continua când conexiunea se întoarce."
+
+#: src/components/ConnectivityToast.svelte
+msgid "Dismiss connection notification"
+msgstr "Respinge notificarea de conexiune"
+
+#: src/components/DateTimePicker.svelte
+msgid "Choose a date and time"
+msgstr "Alege o dată și o oră"
+
+#: src/components/DateTimePicker.svelte
+msgid "Select date"
+msgstr "Selectează data"
+
+#: src/components/DateTimePicker.svelte
+msgid "Choose a weekday for this post"
+msgstr "Alege o zi a săptămânii pentru această postare"
+
+#. 0: day.description
+#: src/components/DateTimePicker.svelte
+msgid "Select {0}"
+msgstr "Selectează {0}"
+
+#: src/components/DateTimePicker.svelte
+msgid "Previous month"
+msgstr "Luna precedentă"
+
+#: src/components/DateTimePicker.svelte
+msgid "Next month"
+msgstr "Luna viitoare"
+
+#: src/components/DateTimePicker.svelte
+#: src/components/DateTimePicker.svelte
+msgid "Select time"
+msgstr "Selectează ora"
+
+#: src/components/DateTimePicker.svelte
+msgid "24-hour clock"
+msgstr "Ceas de 24 de ore"
+
+#: src/components/DateTimePicker.svelte
+msgid "Increase hour"
+msgstr "Crește ora"
+
+#: src/components/DateTimePicker.svelte
+#: src/components/DateTimePicker.svelte
+msgid "Hour"
+msgstr "Oră"
+
+#: src/components/DateTimePicker.svelte
+msgid "Decrease hour"
+msgstr "Scade ora"
+
+#: src/components/DateTimePicker.svelte
+msgid "Increase minute"
+msgstr "Crește minutul"
+
+#: src/components/DateTimePicker.svelte
+#: src/components/DateTimePicker.svelte
+msgid "Minute"
+msgstr "Minut"
+
+#: src/components/DateTimePicker.svelte
+msgid "Decrease minute"
+msgstr "Scade minutul"
+
+#: src/components/DateTimePicker.svelte
+msgid "Choose a date and time in the future."
+msgstr "Alege o dată și o oră în viitor."
+
+#. 0: rejected.join(', ')
+#: src/components/PostComposer.svelte
+msgid "Unsupported files: {0}. Choose JPG, PNG, WebP, or GIF images."
+msgstr "Fișiere neacceptate: {0}. Alege imagini JPG, PNG, WebP sau GIF."
+
+#. 0: image.file.name
+#: src/components/PostComposer.svelte
+msgid "Could not preview {0}. Please choose another image."
+msgstr "Nu s-a putut previzualiza {0}. Te rugăm să alegi o altă imagine."
+
+#. 0: images[index].file.name; 1: index + 1; 2: images.length
+#: src/components/PostComposer.svelte
+msgid "{0} moved to position {1} of {2}."
+msgstr "{0} mutat la poziția {1} din {2}."
+
+#: src/components/PostComposer.svelte
+#: src/components/PostEditorContent.svelte
+msgid "Post body"
+msgstr "Textul postării"
+
+#: src/components/PostComposer.svelte
+#: src/components/PostComposer.svelte
+msgid "Required"
+msgstr "Obligatoriu"
+
+#: src/components/PostComposer.svelte
+msgid "Images"
+msgstr "Imagini"
+
+#: src/components/PostComposer.svelte
+msgid "Choose images"
+msgstr "Alege imagini"
+
+#: src/components/PostComposer.svelte
+msgid "Drop images here or <0>browse images</0>"
+msgstr "Trage imaginile aici sau <0>răsfoiește imaginile</0>"
+
+#: src/components/PostComposer.svelte
+msgid "JPG, PNG, WebP, or GIF · Select multiple images"
+msgstr "JPG, PNG, WebP sau GIF · Selectează mai multe imagini"
+
+#~ msgid "{0} {1} selected"
+#~ msgstr ""
+
+#: src/components/PostComposer.svelte
+msgid "Add more"
+msgstr "Adaugă mai multe"
+
+#: src/components/PostComposer.svelte
+msgid "Drag images to rearrange. Or focus an image and use Alt + Left / Right."
+msgstr "Trage imaginile pentru a le rearanja. Sau concentrează-te pe o imagine și folosește Alt + Săgeată Stânga / Dreapta."
+
+#: src/components/PostComposer.svelte
+msgid "Selected images"
+msgstr "Imagini selectate"
+
+#. 0: image.file.name; 1: images.indexOf(image) + 1; 2: images.length
+#: src/components/PostComposer.svelte
+msgid "{0}, image {1} of {2}"
+msgstr "{0}, imaginea {1} din {2}"
+
+#. 0: image.file.name
+#: src/components/PostComposer.svelte
+msgid "Remove {0}"
+msgstr "Elimină {0}"
+
+#: src/components/PostComposer.svelte
+msgid "Drop more images here to add them."
+msgstr "Aruncă aici mai multe imagini pentru a le adăuga."
+
+#. 0: error
+#: src/components/PostEditor.svelte
+msgid "Could not edit the post: {0}"
+msgstr "Nu s-a putut edita postarea: {0}"
+
+#: src/components/PostEditorContent.svelte
+msgid "Post editor controls"
+msgstr "Controale editor postare"
+
+#: src/components/PostEditorContent.svelte
+msgid "Text formatting"
+msgstr "Formatare text"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bold (Ctrl+B)"
+msgstr "Aldin (Ctrl+B)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bold"
+msgstr "Aldin"
+
+#: src/components/PostEditorContent.svelte
+msgid "Italic (Ctrl+I)"
+msgstr "Italic (Ctrl+I)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Italic"
+msgstr "Italic"
+
+#: src/components/PostEditorContent.svelte
+msgid "Heading 1"
+msgstr "Direcția 1"
+
+#: src/components/PostEditorContent.svelte
+msgid "Heading 2"
+msgstr "Direcția 2"
+
+#: src/components/PostEditorContent.svelte
+msgid "Quote"
+msgstr "Citat"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bullet list"
+msgstr "Listă de puncte"
+
+#: src/components/PostEditorContent.svelte
+msgid "Numbered list"
+msgstr "Listă numerotată"
+
+#: src/components/PostEditorContent.svelte
+msgid "Undo (Ctrl+Z)"
+msgstr "Anulează (Ctrl+Z)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Undo"
+msgstr "Anulează"
+
+#: src/components/PostEditorContent.svelte
+msgid "Redo (Ctrl+Shift+Z)"
+msgstr "Redo (Ctrl+Shift+Z)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Redo"
+msgstr "Refac"
+
+#: src/components/PostEditorContent.svelte
+msgid "What would you like to share?"
+msgstr "Ce ai vrea să împărtășești?"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bold, italic, headings, quotes, and lists · Markdown shortcuts supported"
+msgstr "Îngroș, italice, titluri, ghilimele și liste · Scurtături Markdown suportate"
+
+#. 0: body.length.toLocaleString(getLocale())
+#: src/components/PostEditorContent.svelte
+msgid "{0} characters"
+msgstr "{0} personaje"
+
+#: src/components/LogMessage.svelte
+msgid "Ready to post."
+msgstr "Gata să postez."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook response copied."
+msgstr "Răspuns de pe Facebook copiat."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook response received"
+msgstr "Răspuns pe Facebook primit"
+
+#: src/components/PostingLogView.svelte
+msgid "POSTIKA / ACTIVITY"
+msgstr "POSTIKA / ACTIVITATE"
+
+#: src/components/PostingLogView.svelte
+msgid "Posting progress"
+msgstr "Progresul postărilor"
+
+#. 0: activity?.processed || 0; 1: activity?.total || 0
+#: src/components/PostingLogView.svelte
+msgid "{0}/{1} groups processed"
+msgstr "{0}/{1} grupuri procesate"
+
+#. 0: percentage
+#: src/components/PostingLogView.svelte
+msgid "{0}% complete"
+msgstr "{0}% finalizat"
+
+#: src/components/PostingLogView.svelte
+msgid "Groups processed"
+msgstr "Grupuri procesate"
+
+#: src/components/PostingLogView.svelte
+msgid "Published"
+msgstr "Publicat"
+
+#: src/components/PostingLogView.svelte
+msgid "Awaiting approval"
+msgstr "Aștept aprobarea"
+
+#: src/components/PostingLogView.svelte
+msgid "Failed or skipped"
+msgstr "Eșuat sau sărit peste"
+
+#: src/components/PostingLogView.svelte
+msgid "Remaining"
+msgstr "Rămași"
+
+#. 0: number(a); 1: number(b); 2: c
+#. 0: activity.current; 1: activity.total; 2: activity.currentGroup.name
+#: src/components/LogMessage.svelte
+#: src/components/PostingLogView.svelte
+msgid "Group {0}/{1}: {2}"
+msgstr "Grupul {0}/{1}: {2}"
+
+#. 0: pauseRequested ? /* @wc-include */ ' · Paused' \\: ''
+#: src/components/PostingLogView.svelte
+msgid "Next post in <0/>{0}"
+msgstr "Următoarea postare în <0/>{0}"
+
+#: src/components/PostingLogView.svelte
+msgid "Elapsed <0/>"
+msgstr "Au trecut <0/>"
+
+#: src/components/PostingLogView.svelte
+msgid "Current group <0/>"
+msgstr "Grupa actuală <0/>"
+
+#: src/components/PostingLogView.svelte
+msgid "Following latest"
+msgstr "Ultimele ultime"
+
+#: src/components/PostingLogView.svelte
+msgid "Jump to latest"
+msgstr "Sari la cele mai recente"
+
+#. 0.0: total
+#: src/components/PostingLogView.svelte
+msgid "Activity timeline <0>{0} logs</0>"
+msgstr "Cronologia activității <0>{0} jurnale</0>"
+
+#: src/components/PostingLogView.svelte
+msgid "Posting activity"
+msgstr "Activitate de postare"
+
+#. 0: entryLabel(entry)
+#: src/components/PostingLogView.svelte
+msgid "{0} log"
+msgstr "{0} jurnal"
+
+#. 0: itemTime(entry.message)
+#: src/components/PostingLogView.svelte
+msgid "Took {0}"
+msgstr "A durat {0}"
+
+#: src/components/PostingLogView.svelte
+#: src/components/PostingLogView.svelte
+msgid "Copy Facebook response"
+msgstr "Copiază răspunsul Facebook"
+
+#: src/components/PostingLogView.svelte
+msgid "Response copied"
+msgstr "Răspuns copiat"
+
+#: src/components/PostingLogView.svelte
+msgid "Copied"
+msgstr "Copiat"
+
+#: src/components/PostingLogView.svelte
+msgid "Copying…"
+msgstr "Se copiază…"
+
+#: src/components/PostingLogView.svelte
+msgid "Copy response"
+msgstr "Copiază răspunsul"
+
+#. 0.0: entry.hasResponse ? /* @wc-include */ ' · Response available to copy' \\: ''
+#: src/components/PostingLogView.svelte
+msgid "Debug details<0>Original log message{0}</0>"
+msgstr "Detalii depanare<0>Mesaj de jurnal original{0}</0>"
+
+#: src/components/PostingLogView.svelte
+msgid "Your activity will appear here"
+msgstr "Activitatea ta va apărea aici"
+
+#: src/components/PostingLogView.svelte
+msgid "Start posting to follow uploads, results, and wait times."
+msgstr "Începe să postezi pentru a urmări încărcările, rezultatele și timpii de așteptare."
+
+#: src/components/PostingLogView.svelte
+msgid "Log pages"
+msgstr "Pagina de jurnale"
+
+#: src/components/PostingLogView.svelte
+msgid "Previous page"
+msgstr "Pagina anterioară"
+
+#. 0: number
+#: src/components/PostingLogView.svelte
+msgid "Page {0}"
+msgstr "Pagina {0}"
+
+#: src/components/PostingLogView.svelte
+msgid "Next page"
+msgstr "Pagina următoare"
+
+#: src/components/PostingLogView.svelte
+msgid "← Prev"
+msgstr "← Anterior"
+
+#: src/components/PostingLogView.svelte
+msgid "Next →"
+msgstr "Următor →"
+
+#. 0: total ? (page - 1) * pageSize + 1 \\: 0; 1: Math.min(page * pageSize, total); 2: total
+#: src/components/PostingLogView.svelte
+msgid "{0}–{1} of {2} logs"
+msgstr "{0}–{1} din {2} jurnale"
+
+#: src/components/PostingLogView.svelte
+msgid "Resume"
+msgstr "Reia"
+
+#: src/components/PostingLogView.svelte
+msgid "Pause"
+msgstr "Pauză"
+
+#: src/components/PostingLogView.svelte
+msgid "Stopping…"
+msgstr "Se oprește…"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "POSTING PACE"
+msgstr "RITMUL POSTĂRILOR"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Interval between posts"
+msgstr "Interval între postări"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Minimum (seconds)"
+msgstr "Minim (secunde)"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Maximum (seconds)"
+msgstr "Maxim (secunde)"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Choose how long to wait before posting to the next group."
+msgstr "Alege cât timp să aștepți înainte de a posta în următorul grup."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "At least 60 seconds. Use equal values for a fixed interval."
+msgstr "Cel puțin 60 de secunde. Folosește valori egale pentru un interval fix."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "OPTIONAL · AI REWRITE"
+msgstr "OPȚIONAL · RESCRIERE AI"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "A fresh version for each group"
+msgstr "O versiune nouă pentru fiecare grup"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Rewrite each post body with Gemini"
+msgstr "Rescrie corpul fiecărei postări cu Gemini"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
+msgstr "Instrucțiuni de rescriere<0>Alege tonul și detaliile pe care Gemini ar trebui să le păstreze.</0>"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Keep it concise and easy to scan. Preserve the price and contact details."
+msgstr "Păstrează concis și ușor de scanat. Păstrează prețul și detaliile de contact."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Rewrite instructions"
+msgstr "Instrucțiuni de rescriere"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
+msgstr "Textul postării și instrucțiunile tale sunt trimise la Google Gemini. Imaginile nu sunt trimise. Rescrierile Gemini folosesc text simplu."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
+msgstr "Dacă rescrierea eșuează, postarea utilizează textul tău original. Postarea următoare încearcă din nou Gemini."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Let Gemini rewrite your post using your instructions."
+msgstr "Lasă Gemini să rescrie postarea ta folosind instrucțiunile tale."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Posting preferences"
+msgstr "Preferințe de postare"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved defaults help"
+msgstr "Implicit salvate ajută"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "About saved defaults"
+msgstr "Despre implicit salvate"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved interval"
+msgstr "Interval salvat"
+
+#. 0: settings.minimumInterval === settings.maximumInterval ? settings.minimumInterval \\: `${settings.minimumInterval}–${settings.maximumInterval}`
+#: src/components/SavedDefaultsInfo.svelte
+msgid "{0} seconds"
+msgstr "{0} secunde"
+
+#: src/App.svelte
+#: src/components/SavedDefaultsInfo.svelte
+msgid "On"
+msgstr "Activat"
+
+#: src/App.svelte
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Off"
+msgstr "Dezactivat"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Gemini rewrite"
+msgstr "Rescriere Gemini"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "No instructions saved."
+msgstr "Nicio instrucțiune salvată."
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved rewrite instructions"
+msgstr "Instrucțiuni de rescriere salvate"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved values could not be loaded. Try “Use saved defaults” again."
+msgstr "Valorile salvate nu au putut fi încărcate. Încearcă din nou “Folosește implicit salvate”."
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "What does “Use saved defaults” do?"
+msgstr "Ce face “Folosește implicit salvate”?"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
+msgstr "Înlocuiește intervalul de postare al acestei sesiuni, opțiunea de rescriere Gemini și instrucțiunile de rescriere cu valorile salvate în Setări."
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
+msgstr "Valorile implicite inițiale: 60–120 secunde, rescriere Gemini dezactivată și fără instrucțiuni de rescriere. Salvați propriile preferințe în Setări pentru a le modifica."
+
+#: src/components/Settings.svelte
+msgid "Settings saved. New runs can use these defaults."
+msgstr "Setările au fost salvate. Noile sesiuni pot folosi aceste valori implicite."
+
+#: src/components/Settings.svelte
+msgid "Key saved · leave blank to keep it"
+msgstr "Cheie salvată · lăsați gol pentru a o păstra"
+
+#: src/components/Settings.svelte
+msgid "Enter your Gemini API key"
+msgstr "Introduceți cheia API Gemini"
+
+#: src/components/Settings.svelte
+msgid "A key is saved on this device."
+msgstr "O cheie este salvată pe acest dispozitiv."
+
+#: src/components/Settings.svelte
+msgid "No API key saved."
+msgstr "Nicio cheie API salvată."
+
+#: src/components/Settings.svelte
+msgid "Remove saved key"
+msgstr "Eliminați cheia salvată"
+
+#: src/components/Settings.svelte
+msgid "Gemini"
+msgstr "Gemini"
+
+#: src/components/Settings.svelte
+msgid "API key<0/>"
+msgstr "Cheie API<0/>"
+
+#. 0: keyConfigured ? 'A key is saved on this device.' \\: 'No API key saved.'
+#: src/components/Settings.svelte
+msgid "{0} The saved key is never displayed."
+msgstr "{0} Cheia salvată nu este niciodată afișată."
+
+#: src/components/Settings.svelte
+msgid "Model<0/>"
+msgstr "Model<0/>"
+
+#: src/components/Settings.svelte
+msgid "Posting defaults"
+msgstr "Setări implicite de publicare"
+
+#: src/components/Settings.svelte
+msgid "Applied when you start a new posting run."
+msgstr "Se aplică atunci când începeți o nouă sesiune de postare."
+
+#: src/components/Settings.svelte
+msgid "Saving…"
+msgstr "Se salvează…"
+
+#: src/components/Settings.svelte
+msgid "Save settings"
+msgstr "Salvează setările"
+
+#: src/components/Settings.svelte
+msgid "YOUR PREFERENCES"
+msgstr "PREFERINȚELE DUMNEAVOASTRĂ"
+
+#. 0: accountName
+#: src/components/Settings.svelte
+msgid "Set up Gemini and save posting defaults for {0}."
+msgstr "Configurați Gemini și salvați valorile implicite de postare pentru {0}."
+
+#: src/components/StepProgress.svelte
+msgid "Completed"
+msgstr "Finalizat"
+
+#: src/components/StepProgress.svelte
+msgid "Current"
+msgstr "Curent"
+
+#: src/components/StepProgress.svelte
+msgid "Upcoming"
+msgstr "Următor"
+
+#. 0: index + 1; 1: steps.length; 2: completed || index < currentStep ? 'Completed' \\: index === currentStep ? 'Current' \\: 'Upcoming'
+#: src/components/StepProgress.svelte
+msgid "Step {0} of {1}: {2}"
+msgstr "Pasul {0} din {1}: {2}"
+
+#: src/components/WindowControls.svelte
+msgid "Could not change the window. Please try again."
+msgstr "Nu s-a putut schimba fereastra. Vă rugăm să încercați din nou."
+
+#: src/components/WindowControls.svelte
+msgid "Window controls"
+msgstr "Controale ferestre"
+
+#: src/components/WindowControls.svelte
+msgid "Minimize window"
+msgstr "Minimizează fereastra"
+
+#: src/components/WindowControls.svelte
+msgid "Restore window"
+msgstr "Restaurează fereastra"
+
+#: src/components/WindowControls.svelte
+msgid "Maximize window"
+msgstr "Maximizează fereastra"
+
+#: src/components/WindowControls.svelte
+msgid "Close window"
+msgstr "Închide fereastra"
+
+#: src/App.svelte
+msgid "Create post"
+msgstr "Creează o postare"
+
+#: src/App.svelte
+msgid "Write your post and add images"
+msgstr "Scrieți postarea și adăugați imagini"
+
+#: src/App.svelte
+msgid "Select groups"
+msgstr "Selectează grupuri"
+
+#: src/App.svelte
+msgid "Load groups and choose where to post"
+msgstr "Încărcați grupurile și alegeți unde să postați"
+
+#~ msgid "Review & post"
+#~ msgstr "Verifică și publică"
+
+#~ msgid "Review, set preferences, then post now or schedule"
+#~ msgstr "Revizuiți, setați preferințele, apoi postați acum sau programați"
+
+#: src/App.svelte
+msgid "Facebook session captured"
+msgstr "Sesiunea Facebook capturată"
+
+#: src/App.svelte
+msgid "The browser is closed. It will reopen when you click Post."
+msgstr "Browserul este închis. Se va redeschide când faceți clic pe Postează."
+
+#: src/App.svelte
+msgid "Checking Facebook login"
+msgstr "Se verifică conectarea la Facebook"
+
+#: src/App.svelte
+msgid "Finish signing in or any verification prompts in Chrome. Your login will be detected automatically."
+msgstr "Finalizați conectarea sau orice solicitare de verificare în Chrome. Conectarea dvs. va fi detectată automat."
+
+#: src/App.svelte
+msgid "Login required"
+msgstr "Este necesară autentificarea"
+
+#: src/App.svelte
+msgid "Please log in to Facebook in the Chrome window. Postika will detect when you’re signed in."
+msgstr "Vă rugăm să vă conectați la Facebook în fereastra Chrome. Postika va detecta când sunteți conectat."
+
+#: src/App.svelte
+msgid "Complete Facebook verification"
+msgstr "Finalizați verificarea Facebook"
+
+#: src/App.svelte
+msgid "Complete the login or verification prompts in Chrome to continue."
+msgstr "Completați solicitările de conectare sau verificare în Chrome pentru a continua."
+
+#: src/App.svelte
+msgid "Facebook connected"
+msgstr "Facebook conectat"
+
+#: src/App.svelte
+msgid "You’re logged in. Your session is ready."
+msgstr "V-ați conectat. Sesiunea dvs. este pregătită."
+
+#: src/App.svelte
+msgid "Facebook window closed"
+msgstr "Fereastra Facebook închisă"
+
+#: src/App.svelte
+msgid "Click Load groups to reopen Facebook and check your login."
+msgstr "Faceți clic pe Încărcați grupurile pentru a redeschide Facebook și a vă verifica autentificarea."
+
+#. 0: current?.name ?? ''
+#: src/components/AccountDropdown.svelte
+msgid "Language: {0}"
+msgstr "Limbă: {0}"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search languages…"
+msgstr "Caută limbi…"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search languages"
+msgstr "Caută limbi"
+
+#: src/components/AccountDropdown.svelte
+msgid "Clear language search"
+msgstr "Ștergeți căutarea după limbă"
+
+#. 0: matches.length
+#: src/components/AccountDropdown.svelte
+msgid "{0} result"
+msgstr "{0} rezultat"
+
+#. 0: matches.length
+#: src/components/AccountDropdown.svelte
+msgid "{0} results"
+msgstr "{0} rezultate"
+
+#: src/components/AccountDropdown.svelte
+msgid "All languages"
+msgstr "Toate limbile"
+
+#: src/components/AccountDropdown.svelte
+msgid "Languages"
+msgstr "Limbi"
+
+#: src/components/AccountDropdown.svelte
+msgid "No languages found"
+msgstr "Nu s-au găsit limbi"
+
+#: src/components/DateTimePicker.svelte
+msgid "Morning"
+msgstr "Dimineață"
+
+#: src/components/DateTimePicker.svelte
+msgid "Afternoon"
+msgstr "După-amiază"
+
+#: src/components/DateTimePicker.svelte
+msgid "Evening"
+msgstr "Seară"
+
+#: src/components/LanguageMenu.svelte
+msgid "Could not change the language. Please try again."
+msgstr "Nu s-a putut schimba limba. Vă rugăm să încercați din nou."
+
+#: src/components/Settings.svelte
+msgid "Language"
+msgstr "Limbă"
+
+#: src/components/PostingOptionsForm.svelte
+#: src/components/PostingOptionsForm.svelte
+msgid "seconds"
+msgstr "secunde"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Minimum"
+msgstr "Minim"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Maximum"
+msgstr "Maxim"
+
+#: src/components/StepProgress.svelte
+msgid "Post progress"
+msgstr "Progres postare"
+
+#. 0: visibleGroups.length
+#: src/App.svelte
+msgid "{0} shown"
+msgstr "{0} afișate"
+
+#. 0: selectedGroupIds.length
+#: src/App.svelte
+msgid "{0} selected"
+msgstr "{0} selectate"
+
+#. 0: images.length
+#: src/components/PostComposer.svelte
+msgid "{0} images selected"
+msgstr "{0} imagini selectate"
+
+#: src/components/PostingLogView.svelte
+msgid "WARN"
+msgstr "AVERTISMENT"
+
+#: src/components/PostingLogView.svelte
+msgid "INFO"
+msgstr "INFORMAȚII"
+
+#: src/components/PostingLogView.svelte
+msgid "ERROR"
+msgstr "EROARE"
+
+#: src/components/PostingLogView.svelte
+msgid "DEBUG"
+msgstr "DEPAŃARE"
+
+#: src/components/PostingLogView.svelte
+msgid "PUBLISHED"
+msgstr "PUBLICAT"
+
+#: src/components/PostingLogView.svelte
+msgid "PENDING"
+msgstr "ÎN AȘTEPTARE"
+
+#: src/components/PostingLogView.svelte
+msgid "FAILED"
+msgstr "EȘUAT"
+
+#: src/components/PostingLogView.svelte
+msgid "SKIPPED"
+msgstr "OMIS"
+
+#: src/components/PostingLogView.svelte
+msgid "UNCONFIRMED"
+msgstr "NECONFIRMAT"
+
+#: src/Workspace.svelte
+msgid "e.g. Business"
+msgstr "ex. Afaceri"
+
+#: src/components/PostComposer.svelte
+msgid "1 image selected"
+msgstr "1 imagine selectată"
+
+#: src/components/PostingLogView.svelte
+msgid "Paused · Waiting for internet"
+msgstr "Pauză · Așteptând internet"
+
+#: src/components/PostingLogView.svelte
+msgid "Pausing after the current operation"
+msgstr "Se pune pauză după operațiunea curentă"
+
+#: src/components/PostingLogView.svelte
+msgid "Paused"
+msgstr "În pauză"
+
+#: src/components/PostingLogView.svelte
+msgid "Stopping"
+msgstr "Oprire"
+
+#: src/components/PostingLogView.svelte
+msgid "Posting"
+msgstr "Postare în desfășurare"
+
+#: src/components/PostingLogView.svelte
+msgid "Finished"
+msgstr "Finalizat"
+
+#: src/components/PostingLogView.svelte
+msgid "Stopped"
+msgstr "Oprit"
+
+#: src/components/PostingLogView.svelte
+msgid "Ready"
+msgstr "Gata"
+
+#: src/components/PostingLogView.svelte
+msgid "CURRENT ACTIVITY"
+msgstr "ACTIVITATE CURENTĂ"
+
+#: src/components/PostingLogView.svelte
+msgid "RUN STATUS"
+msgstr "STARE RULARE"
+
+#: src/components/PostingLogView.svelte
+msgid " · Paused"
+msgstr " · Pauză"
+
+#: src/components/PostingLogView.svelte
+msgid " · Response available to copy"
+msgstr " · Răspuns disponibil pentru copiere"
+
+#: src/components/AccountLabel.svelte
+msgid "Default profile"
+msgstr "Profil implicit"
+
+#~ msgid "Switch to light mode"
+#~ msgstr "Comută la modul luminos"
+
+#~ msgid "Switch to dark mode"
+#~ msgstr "Comută la modul întunecat"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Color themes"
+msgstr "Teme de culori"
+
+#: src/components/ThemePicker.svelte
+msgid "Close"
+msgstr "Închide"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Search themes…"
+msgstr "Caută teme…"
+
+#: src/components/ThemePicker.svelte
+msgid "No themes found"
+msgstr "Nu s-au găsit teme"
+
+#: src/components/LogMessage.svelte
+msgid "A selected group is no longer available. Load groups again"
+msgstr "Un grup selectat nu mai este disponibil. Reîncarcă grupurile"
+
+#: src/components/LogMessage.svelte
+msgid "Add a Gemini API key in Settings before enabling rewriting"
+msgstr "Adaugă o cheie API Gemini în Setări înainte de a activa rescrierea"
+
+#: src/components/LogMessage.svelte
+msgid "Add a post body and at least one image"
+msgstr "Adaugă un text al postării și cel puțin o imagine"
+
+#: src/components/LogMessage.svelte
+msgid "All selected groups were already attempted. Review unconfirmed results on Facebook."
+msgstr "Toate grupurile selectate au fost deja încercate. Verifică rezultatele neconfirmate pe Facebook."
+
+#: src/components/LogMessage.svelte
+msgid "An image upload failed in Chrome. Check the composer and retry Post"
+msgstr "Încărcarea unei imagini a eșuat în Chrome. Verifică editorul și încearcă din nou Postarea"
+
+#: src/components/LogMessage.svelte
+msgid "Attaching images…"
+msgstr "Se atașează imagini…"
+
+#: src/components/LogMessage.svelte
+msgid "Choose JPG, PNG, WebP, or GIF images"
+msgstr "Alege imagini JPG, PNG, WebP sau GIF"
+
+#: src/components/LogMessage.svelte
+msgid "Choose a future date and time for your post"
+msgstr "Alege o dată și o oră viitoare pentru postarea ta"
+
+#: src/components/LogMessage.svelte
+msgid "Closing Chrome and posting to the remaining groups…"
+msgstr "Se închide Chrome și se postează către grupurile rămase…"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the complete create-post request"
+msgstr "Nu s-a putut captura cererea completă de creare a postării"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the completed image upload response"
+msgstr "Nu s-a putut captura răspunsul complet la încărcarea imaginii"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the image upload form fields"
+msgstr "Nu s-au putut captura câmpurile formularului de încărcare a imaginii"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the image upload form. Retry Post"
+msgstr "Nu s-a putut captura formularul de încărcare a imaginii. Încearcă din nou Postarea"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the upload endpoint"
+msgstr "Nu s-a putut captura punctul de trimitere a încărcării"
+
+#: src/components/LogMessage.svelte
+msgid "Could not copy the Facebook response to the clipboard"
+msgstr "Nu s-a putut copia răspunsul Facebook în clipboard"
+
+#: src/components/LogMessage.svelte
+msgid "Could not enable create-post capture in Chrome"
+msgstr "Nu s-a putut activa capturarea pentru crearea postării în Chrome"
+
+#: src/components/LogMessage.svelte
+msgid "Could not parse the captured create-post form"
+msgstr "Nu s-a putut analiza formularul de creare a postării capturat"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare image files"
+msgstr "Nu s-au putut pregăti fișierele de imagine"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare post images"
+msgstr "Nu s-au putut pregăti imaginile pentru postare"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare the Gemini request"
+msgstr "Nu s-a putut pregăti cererea Gemini"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare the image upload."
+msgstr "Nu s-a putut pregăti încărcarea imaginii."
+
+#: src/components/LogMessage.svelte
+msgid "Could not reach Gemini. Check your connection"
+msgstr "Nu s-a putut ajunge la Gemini. Verifică conexiunea ta"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read Facebook's post confirmation"
+msgstr "Nu s-a putut citi confirmarea postării de pe Facebook"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read the Gemini rewrite"
+msgstr "Nu s-a putut citi rescrierea Gemini"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read the completed image upload response"
+msgstr "Nu s-a putut citi răspunsul de încărcare completă a imaginii"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read the selected image."
+msgstr "Nu s-a putut citi imaginea selectată."
+
+#: src/components/LogMessage.svelte
+msgid "Create-post capture ended before confirmation. Check Facebook before retrying"
+msgstr "Capturarea pentru crearea postării s-a încheiat înainte de confirmare. Verifică Facebook înainte de a încerca din nou"
+
+#: src/components/LogMessage.svelte
+msgid "Create-post request detected. Capturing fresh form values…"
+msgstr "Cerere de creare postare detectată. Se capturează valori noi ale formularului…"
+
+#: src/components/LogMessage.svelte
+msgid "Create-post response complete. Waiting for captured session headers…"
+msgstr "Răspunsul pentru crearea postării complet. Se așteaptă capturarea anteturilor sesiunii…"
+
+#: src/components/LogMessage.svelte
+msgid "Create-post response received. Waiting for its complete body…"
+msgstr "Răspunsul la crearea postării primit. Se așteaptă completarea corpului său…"
+
+#: src/components/LogMessage.svelte
+msgid "Description inserted"
+msgstr "Descriere inserată"
+
+#: src/components/LogMessage.svelte
+msgid "Earlier submission is unconfirmed. Skipping this group and continuing with the remaining groups."
+msgstr "Trimiterea anterioară nu este confirmată. Sărim peste acest grup și continuăm cu grupurile rămase."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook could not post to this group. Continuing with the remaining groups."
+msgstr "Facebook nu a putut posta în acest grup. Continuăm cu grupurile rămase."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook did not confirm all images. Check the composer."
+msgstr "Facebook nu a confirmat toate imaginile. Verificați editorul."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook did not confirm the submission"
+msgstr "Facebook nu a confirmat trimiterea."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook did not confirm this post. Check the group before trying again."
+msgstr "Facebook nu a confirmat această postare. Verificați grupul înainte de a încerca din nou."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook has temporarily limited posting. Try again later."
+msgstr "Facebook a limitat temporar postările. Încercați din nou mai târziu."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook rejected this post."
+msgstr "Facebook a respins această postare."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook requires login or verification. Load groups again."
+msgstr "Facebook necesită autentificare sau verificare. Reîncărcați grupurile."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook returned a story, but did not confirm its group or publication state. Posting stopped. Check Facebook before retrying."
+msgstr "Facebook a returnat o poveste, dar nu a confirmat grupul sau starea publicării acesteia. Postarea a fost oprită. Verificați Facebook înainte de a încerca din nou."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook's confirmation exceeded the 16 MiB response limit; retained response is truncated"
+msgstr "Confirmarea Facebook a depășit limita de răspuns de 16 MiB; răspunsul păstrat este trunchiat."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook's editor did not accept the formatted post. Posting was not submitted"
+msgstr "Editorul Facebook nu a acceptat postarea formatată. Postarea nu a fost trimisă."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook's editor did not retain the formatted post text. Posting was not submitted"
+msgstr "Editorul Facebook nu a reținut textul postării formatate. Postarea nu a fost trimisă"
+
+#: src/components/LogMessage.svelte
+msgid "First post confirmed. Waiting for the Facebook composer to close…"
+msgstr "Prima postare confirmată. Se așteaptă ca editorul Facebook să se închidă…"
+
+#: src/components/LogMessage.svelte
+msgid "First submission unconfirmed. Retrying request 1/3 with the captured mutation ID…"
+msgstr "Prima trimitere neconfirmată. Se reîncearcă cererea 1/3 cu ID-ul de modificare capturat…"
+
+#: src/components/LogMessage.svelte
+msgid "Formatted post is too large"
+msgstr "Postarea formatată este prea mare"
+
+#: src/components/LogMessage.svelte
+msgid "Found multiple matching post composers on the group page"
+msgstr "Au fost găsiți mai mulți editori de postări corespunzători pe pagina grupului"
+
+#: src/components/LogMessage.svelte
+msgid "Fresh create-post form captured. Waiting for Facebook's response…"
+msgstr "Formularul de creare postare nouă capturat. Se așteaptă răspunsul Facebook…"
+
+#: src/components/LogMessage.svelte
+msgid "Gemini did not finish the rewrite"
+msgstr "Gemini nu a finalizat rescrierea"
+
+#: src/components/LogMessage.svelte
+msgid "Gemini returned no rewritten text"
+msgstr "Gemini nu a returnat text rescris"
+
+#: src/components/LogMessage.svelte
+msgid "Gemini rewrite completed."
+msgstr "Rescrierea Gemini finalizată."
+
+#: src/components/LogMessage.svelte
+msgid "Gemini rewrite failed. Using the original text for this post; Gemini will be tried again for the next post."
+msgstr "Rescrierea Gemini a eșuat. Se folosește textul original pentru această postare; Gemini va fi încercat din nou pentru următoarea postare."
+
+#: src/components/LogMessage.svelte
+msgid "Image uploads belong to a different profile"
+msgstr "Încărcările de imagini aparțin unui alt profil"
+
+#: src/components/LogMessage.svelte
+msgid "Images inserted"
+msgstr "Imaginile inserate"
+
+#: src/components/LogMessage.svelte
+msgid "Inserting post body…"
+msgstr "Se inserează corpul postării…"
+
+#: src/components/LogMessage.svelte
+msgid "Internet connection lost. Queue paused until the connection returns."
+msgstr "Conexiunea la internet pierdută. Coada este pusă în pauză până când se restabilește conexiunea."
+
+#: src/components/LogMessage.svelte
+msgid "Internet connection restored. Continuing the queue."
+msgstr "Conexiunea la internet a fost restaurată. Continuarea cozii."
+
+#: src/components/LogMessage.svelte
+msgid "Internet connection restored. The queue remains manually paused."
+msgstr "Conexiunea la internet a fost restaurată. Coada rămâne întreruptă manual."
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured endpoint"
+msgstr "Endpoint capturat invalid"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured formatted post"
+msgstr "Postare formatată capturată invalid"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured post form"
+msgstr "Formular de postare capturat invalid"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured post variables"
+msgstr "Variabile de postare capturate invalid"
+
+#: src/components/LogMessage.svelte
+msgid "Load your groups before opening a post"
+msgstr "Încărcați grupurile înainte de a deschide o postare"
+
+#: src/components/LogMessage.svelte
+msgid "Log in or complete Facebook verification in Chrome, then click Post again"
+msgstr "Conectați-vă sau finalizați verificarea Facebook în Chrome, apoi faceți clic din nou pe Post"
+
+#: src/components/LogMessage.svelte
+msgid "Multiple matching controls found in the post composer"
+msgstr "Au fost găsite mai multe controale corespunzătoare în editorul de postări"
+
+#: src/components/LogMessage.svelte
+msgid "No Facebook response was captured for this entry"
+msgstr "Nu a fost capturat niciun răspuns de la Facebook pentru această intrare"
+
+#: src/components/LogMessage.svelte
+msgid "No available post composer."
+msgstr "Niciun editor de postare disponibil."
+
+#: src/components/LogMessage.svelte
+msgid "No complete image upload request was captured."
+msgstr "Nu a fost capturată nicio cerere completă de încărcare a imaginii."
+
+#: src/components/LogMessage.svelte
+msgid "No fresh image upload request was captured."
+msgstr "Nu a fost capturată nicio cerere proaspătă de încărcare a imaginii."
+
+#: src/components/LogMessage.svelte
+msgid "Opening browser…"
+msgstr "Deschiderea browserului…"
+
+#: src/components/LogMessage.svelte
+msgid "Pause requested. The current operation will finish before pausing."
+msgstr "Pauză solicitată. Operațiunea curentă se va termina înainte de a pune în pauză."
+
+#: src/components/LogMessage.svelte
+msgid "Post button clicked"
+msgstr "Butonul Post a fost apăsat"
+
+#: src/components/LogMessage.svelte
+msgid "Post published."
+msgstr "Postarea a fost publicată."
+
+#: src/components/LogMessage.svelte
+msgid "Postika is shutting down"
+msgstr "Postika se oprește"
+
+#: src/components/LogMessage.svelte
+msgid "Posting is already running"
+msgstr "Postarea este deja în desfășurare"
+
+#: src/components/LogMessage.svelte
+msgid "Posting paused."
+msgstr "Postarea a fost pusă pe pauză."
+
+#: src/components/LogMessage.svelte
+msgid "Posting resumed."
+msgstr "Postarea a fost reluată."
+
+#: src/components/LogMessage.svelte
+msgid "Posting stopped after the first post was confirmed"
+msgstr "Postarea a fost oprită după ce prima postare a fost confirmată"
+
+#: src/components/LogMessage.svelte
+msgid "Posting..."
+msgstr "Postare în curs..."
+
+#: src/components/LogMessage.svelte
+msgid "Reading Facebook's create-post confirmation…"
+msgstr "Se citește confirmarea creației postării pe Facebook…"
+
+#: src/components/LogMessage.svelte
+msgid "Rewriting the post body with Gemini…"
+msgstr "Rescrierea conținutului postării cu Gemini…"
+
+#: src/components/LogMessage.svelte
+msgid "Scheduled posting cancelled."
+msgstr "Postarea programată a fost anulată."
+
+#: src/components/LogMessage.svelte
+msgid "Scheduled time reached. Starting posting…"
+msgstr "Ora programată a fost atinsă. Începem postarea…"
+
+#: src/components/LogMessage.svelte
+msgid "Select at least one group"
+msgstr "Selectați cel puțin un grup"
+
+#: src/components/LogMessage.svelte
+msgid "Setting up automatic posting using your first Facebook post..."
+msgstr "Se configurează postarea automată folosind prima dvs. postare pe Facebook..."
+
+#: src/components/LogMessage.svelte
+msgid "Stopping posting…"
+msgstr "Oprirea postării…"
+
+#: src/components/LogMessage.svelte
+msgid "Submitting the first post and capturing fresh request values…"
+msgstr "Se trimite prima postare și se capturează valorile noi ale cererii…"
+
+#: src/components/LogMessage.svelte
+#: src/components/LogMessage.svelte
+msgid "Technical details recorded. Open debug details to inspect the original message."
+msgstr "Detaliile tehnice au fost înregistrate. Deschideți detaliile de depanare pentru a inspecta mesajul original."
+
+#: src/components/LogMessage.svelte
+msgid "The active Facebook profile changed or expired"
+msgstr "Profilul Facebook activ s-a schimbat sau a expirat"
+
+#: src/components/LogMessage.svelte
+msgid "The browser connection was lost. Check Facebook before retrying"
+msgstr "Conexiunea browserului a fost pierdută. Verificați Facebook înainte de a reîncerca"
+
+#: src/components/LogMessage.svelte
+msgid "The browser profile changed while capturing posting requests"
+msgstr "Profilul browserului s-a schimbat în timp ce se capturau cererile de postare"
+
+#: src/components/LogMessage.svelte
+msgid "The captured formatted post body does not match your draft"
+msgstr "Corpul postării formatate capturate nu corespunde cu schița ta"
+
+#: src/components/LogMessage.svelte
+msgid "The captured image upload cookies do not match the Facebook profile"
+msgstr "Cookie-urile de încărcare a imaginii capturate nu corespund profilului Facebook"
+
+#: src/components/LogMessage.svelte
+msgid "The captured image upload format is not supported"
+msgstr "Formatul imaginii capturate pentru încărcare nu este suportat"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post belongs to a different Facebook profile"
+msgstr "Postarea capturată aparține unui alt profil Facebook"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post body does not match your draft"
+msgstr "Corpul postării capturate nu corespunde cu schița ta"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post cookies do not match the logged-in profile"
+msgstr "Cookie-urile postării capturate nu corespund profilului autentificat"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post has no group target"
+msgstr "Postarea capturată nu are un grup țintă"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post target does not match the selected group"
+msgstr "Ținta postării capturate nu corespunde grupului selectat"
+
+#: src/components/LogMessage.svelte
+msgid "The composer dialog was replaced while loading"
+msgstr "Dialogul editorului a fost înlocuit în timpul încărcării"
+
+#: src/components/LogMessage.svelte
+msgid "The create-post connection failed. Check Facebook before retrying"
+msgstr "Conexiunea de creare a postării a eșuat. Verifică Facebook înainte de a reîncerca"
+
+#: src/components/LogMessage.svelte
+msgid "The current profile differs from the profile used to load groups. Load groups again."
+msgstr "Profilul curent diferă de profilul folosit pentru încărcarea grupurilor. Încarcă grupurile din nou."
+
+#: src/components/LogMessage.svelte
+msgid "The desktop application is not ready"
+msgstr "Aplicația desktop nu este pregătită"
+
+#: src/components/LogMessage.svelte
+msgid "The desktop clipboard is not ready"
+msgstr "Clipboard-ul desktop nu este pregătit"
+
+#: src/components/LogMessage.svelte
+msgid "The expected composer control did not appear in Chrome"
+msgstr "Controlul așteptat al editorului nu a apărut în Chrome"
+
+#: src/components/LogMessage.svelte
+msgid "The first post was confirmed, but Chrome's completion state could not be checked. Posting stopped"
+msgstr "Prima postare a fost confirmată, dar starea de completare a Chrome nu a putut fi verificată. Publicarea a fost oprită"
+
+#: src/components/LogMessage.svelte
+msgid "The image upload did not contain multipart form data"
+msgstr "Încărcarea imaginii nu conținea date de tip formular multipart"
+
+#: src/components/LogMessage.svelte
+msgid "The image upload does not match its active Facebook profile"
+msgstr "Încărcarea imaginii nu corespunde profilului Facebook activ"
+
+#: src/components/LogMessage.svelte
+msgid "The image upload form belongs to a different Facebook profile"
+msgstr "Formularul de încărcare a imaginii aparține unui alt profil Facebook"
+
+#: src/components/LogMessage.svelte
+msgid "The selected group has an invalid Facebook URL. Load groups again"
+msgstr "Grupul selectat are un URL Facebook invalid. Reîncarcă grupurile"
+
+#: src/components/LogMessage.svelte
+msgid "The session could not be saved for posting retries and remaining groups."
+msgstr "Sesiunea nu a putut fi salvată pentru reîncercările de postare și grupurile rămase."
+
+#: src/components/LogMessage.svelte
+msgid "This draft has already been submitted to the first group. It was not submitted again."
+msgstr "Acest draft a fost deja trimis la primul grup. Nu a fost trimis din nou."
+
+#: src/components/LogMessage.svelte
+msgid "This group has no available post composer"
+msgstr "Acestui grup nu îi este disponibil un compozitor de postări"
+
+#: src/components/LogMessage.svelte
+msgid "This group has reached its pending-content limit."
+msgstr "Acest grup a atins limita de conținut în așteptare."
+
+#: src/components/LogMessage.svelte
+msgid "This post was submitted, but confirmation is uncertain. Check Facebook before retrying."
+msgstr "Această postare a fost trimisă, dar confirmarea este incertă. Verifică Facebook înainte de a reîncerca."
+
+#: src/components/LogMessage.svelte
+msgid "This response is no longer available for the current run"
+msgstr "Acest răspuns nu mai este disponibil pentru rularea curentă"
+
+#: src/components/LogMessage.svelte
+msgid "Upload and post captures must belong to the same logged-in profile"
+msgstr "Capturile de încărcare și postare trebuie să aparțină aceluiași profil autentificat"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for Facebook's Post button…"
+msgstr "Așteptând butonul de postare de pe Facebook..."
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the composer controls and layout…"
+msgstr "Așteptând controalele și layout-ul compozitorului..."
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the group page and opening its composer…"
+msgstr "Așteptând pagina grupului și deschizând compozitorul..."
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the image previews and composer to settle…"
+msgstr "Așteptând ca previzualizările imaginilor și compozitorul să se așeze..."
+
+#: src/components/LogMessage.svelte
+msgid "Your Facebook session needs login or verification. Load groups again."
+msgstr "Sesiunea ta de Facebook necesită autentificare sau verificare. Încarcă din nou grupurile."
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Published to {0}."
+msgstr "Publicat la {0}."
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "{0}: Awaiting admin approval."
+msgstr "{0}: Aștept aprobarea administrativă."
+
+#. 0: number(a); 1: b
+#: src/components/LogMessage.svelte
+msgid "Waiting {0} seconds before posting to {1}."
+msgstr "Aștept {0} secunde înainte să postez pe {1}."
+
+#. 0: a; 1: b
+#: src/components/LogMessage.svelte
+msgid "Next post in {0} · {1}"
+msgstr "Următoarea postare în {0} · {1}"
+
+#. 0: a; 1: number(b); 2: number(c)
+#: src/components/LogMessage.svelte
+msgid "{0}: Uploading photo {1} of {2}…"
+msgstr "{0}: Încarc {1} foto cu {2}..."
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Preparing a post for {0}…"
+msgstr "Pregătesc un post pentru {0}..."
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Uploading images for {0}…"
+msgstr "Încarc imagini pentru {0}..."
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Posting to {0}…"
+msgstr "Postez pe {0}..."
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Fresh upload and post request values captured from {0}."
+msgstr "Valori proaspete de încărcare și cereri de postare capturate din {0}."
+
+#. 0: number(a); 1: number(b)
+#: src/components/LogMessage.svelte
+msgid "Submission unconfirmed. Retrying request {0}/{1}…"
+msgstr "Trimitere neconfirmată. Reîncercarea cererii {0}/{1}..."
+
+#. 0: number(a); 1: number(b); 2: number(c)
+#: src/components/LogMessage.svelte
+msgid "Finished: {0} published, {1} awaiting approval, {2} failed or skipped."
+msgstr "Finalizat: {0} publicat, {1} așteptând aprobarea, {2} eșuat sau sărit."
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Opening {0}…"
+msgstr "Deschid {0}..."
+
+#. 0: number(a); 1: number(b)
+#: src/components/LogMessage.svelte
+msgid "Capturing image uploads ({0} of {1})…"
+msgstr "Se încarcă imaginile ({0} din {1})..."
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Gemini rewrite failed (HTTP {0}). Check the key, model and account quota"
+msgstr "Rescrierea Gemini a eșuat (HTTP {0}). Verificați cheia, modelul și cota contului"
+
+#. 0: code
+#: src/components/LogMessage.svelte
+msgid " (Code {0})"
+msgstr "(Cod {0})"
+
+#: src/components/PostingLogView.svelte
+msgid "Debug details"
+msgstr "Detalii depanare"
+
+#~ msgid ", "
+#~ msgstr ""
+
+#: src/components/ThemePicker.svelte
+msgid "Themes"
+msgstr "Teme"
+
+#: src/App.svelte
+msgid "Preferences & post"
+msgstr "Preferințe și publicare"
+
+#: src/App.svelte
+#: src/App.svelte
+msgid "Set preferences, then post now or schedule"
+msgstr "Setați preferințele, apoi publicați acum sau programați publicarea"

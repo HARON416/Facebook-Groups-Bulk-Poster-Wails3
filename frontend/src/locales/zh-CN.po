@@ -1,0 +1,1836 @@
+msgid ""
+msgstr ""
+"Source-Language: en\n"
+"Language: zh-CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1\n"
+"X-Plurals-Order: other\n"
+
+#. 0: minimumInterval === maximumInterval ? minimumInterval \\: `${minimumInterval}–${maximumInterval}`; 1: rewriteState
+#: src/App.svelte
+msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
+msgstr "已应用保存的默认值：帖子间隔 {0} 秒 · Gemini 重写 {1}。"
+
+#: src/App.svelte
+msgid "Could not restore saved groups. Load groups to refresh the list."
+msgstr "无法恢复已保存的群组。加载群组以刷新列表。"
+
+#: src/App.svelte
+msgid "Choose a future date and time for your post."
+msgstr "选择帖子发布的未来日期和时间。"
+
+#: src/App.svelte
+msgid "Saving your scheduled queue…"
+msgstr "正在保存您的预定队列…"
+
+#: src/App.svelte
+msgid "Opening a selected group to capture fresh posting requests…"
+msgstr "正在打开选定群组以获取新的发布请求…"
+
+#: src/App.svelte
+#: src/App.svelte
+#: src/components/LogMessage.svelte
+msgid "Posting stopped."
+msgstr "发布已停止。"
+
+#: src/App.svelte
+#: src/components/LogMessage.svelte
+msgid "Could not read a selected image"
+msgstr "无法读取所选图片"
+
+#. 0: image.file.name
+#. 0: missingNames
+#. 0: unreadableNames
+#. 0: image.file.name
+#: src/App.svelte
+#: src/App.svelte
+#: src/components/PostComposer.svelte
+#: src/components/PostComposer.svelte
+msgid "Could not read {0}"
+msgstr "无法读取 {0}"
+
+#: src/App.svelte
+msgid "Posting finished."
+msgstr "发布完成。"
+
+#. 0: scheduleLabel(scheduledFor)
+#. 0: date
+#: src/App.svelte
+#: src/components/LogMessage.svelte
+msgid "Scheduled for {0}. Keep Postika open and your computer awake."
+msgstr "已安排在 {0} 发布。请保持 Postika 打开并让计算机保持唤醒。"
+
+#: src/App.svelte
+msgid "Could not restore this account’s draft. New edits will stay available while Postika is open."
+msgstr "无法恢复此账户的草稿。只要 Postika 打开，新编辑内容仍可使用。"
+
+#: src/App.svelte
+msgid "Could not add the dropped images. Try browsing for them instead."
+msgstr "无法添加拖入的图片。请尝试通过浏览文件来添加。"
+
+#: src/App.svelte
+msgid "Could not save this account’s draft to disk. Keep Postika open to retain your edits."
+msgstr "无法将此账户的草稿保存到磁盘。保持 Postika 打开以保留您的编辑。"
+
+#: src/App.svelte
+msgid "Start with your message. Add images to bring it to life."
+msgstr "从您的消息开始。添加图片以让内容更生动。"
+
+#: src/App.svelte
+msgid "Choose the groups you want to share your post with."
+msgstr "选择您想要分享帖子的群组。"
+
+#~ msgid "Review your post and preferences, then post now or schedule for later."
+#~ msgstr "查看您的帖子和偏好设置，然后立即发布或安排稍后发布。"
+
+#. 0: currentStep + 1; 1: steps.length
+#: src/App.svelte
+msgid "STEP {0} OF {1}"
+msgstr "第 {0} 步，共 {1} 步"
+
+#: src/App.svelte
+msgid "Restoring account workspace…"
+msgstr "正在恢复账户工作区…"
+
+#: src/App.svelte
+msgid "Opening…"
+msgstr "正在打开…"
+
+#: src/App.svelte
+msgid "Loading…"
+msgstr "正在加载…"
+
+#: src/App.svelte
+msgid "Load groups"
+msgstr "加载群组"
+
+#: src/App.svelte
+msgid "Groups"
+msgstr "群组"
+
+#: src/App.svelte
+msgid "Search groups…"
+msgstr "搜索群组…"
+
+#: src/App.svelte
+msgid "Clear group search"
+msgstr "清除群组搜索"
+
+#: src/App.svelte
+msgid "Search groups"
+msgstr "搜索群组"
+
+#: src/App.svelte
+msgid "Select all groups"
+msgstr "选择所有群组"
+
+#: src/App.svelte
+msgid "Unselect all groups"
+msgstr "取消选择所有群组"
+
+#~ msgid "{0} selected{1}"
+#~ msgstr ""
+
+#: src/App.svelte
+msgid "Searching…"
+msgstr "正在搜索…"
+
+#: src/App.svelte
+msgid "No groups found. Try another search."
+msgstr "未找到群组。试试其他搜索。"
+
+#: src/App.svelte
+msgid "Joined groups"
+msgstr "已加入的群组"
+
+#: src/App.svelte
+msgid "No groups loaded yet."
+msgstr "尚未加载群组。"
+
+#: src/App.svelte
+msgid "Open your Facebook groups to get started."
+msgstr "打开您的 Facebook 群组以开始操作。"
+
+#: src/App.svelte
+msgid "Posting settings"
+msgstr "发布设置"
+
+#: src/App.svelte
+msgid "Add a Gemini API key in Settings to enable rewriting."
+msgstr "在设置中添加 Gemini API 密钥以启用重写功能。"
+
+#: src/App.svelte
+msgid "Applying defaults…"
+msgstr "正在应用默认设置…"
+
+#: src/App.svelte
+msgid "Use saved defaults"
+msgstr "使用已保存的默认值"
+
+#: src/App.svelte
+msgid "Open settings"
+msgstr "打开设置"
+
+#~ msgid "Posting as <0/>"
+#~ msgstr "以 <0/> 发布"
+
+#~ msgid "Review your post<0>{0} images · {1} groups selected</0>"
+#~ msgstr "查看您的帖子<0>{0} 张图片 · 已选择 {1} 个群组</0>"
+
+#~ msgid "Original post"
+#~ msgstr "原始帖子"
+
+#~ msgid "Your post"
+#~ msgstr "您的帖子"
+
+#~ msgid "Gemini will rewrite this body for each group using your instructions."
+#~ msgstr "Gemini 将根据您的指示为每个群组重写正文。"
+
+#~ msgid "Selected groups ({0})"
+#~ msgstr "已选择群组 ({0})"
+
+#: src/App.svelte
+msgid "Schedule your queue"
+msgstr "安排发布队列"
+
+#. 0: Intl.DateTimeFormat().resolvedOptions().timeZone
+#: src/App.svelte
+msgid "Time zone: {0}. Keep Postika open and your computer awake. Facebook may ask you to sign in when posting starts."
+msgstr "时区：{0}。保持 Postika 打开并让计算机保持唤醒。发布开始时，Facebook 可能会要求你登录。"
+
+#: src/App.svelte
+#: src/Workspace.svelte
+msgid "Cancel"
+msgstr "取消"
+
+#: src/App.svelte
+msgid "Confirm schedule"
+msgstr "确认日程"
+
+#: src/App.svelte
+msgid "Next <0/>"
+msgstr "下一步 <0/>"
+
+#: src/App.svelte
+msgid "View logs"
+msgstr "查看日志"
+
+#: src/App.svelte
+#: src/components/PostingLogView.svelte
+msgid "Stop"
+msgstr "停止"
+
+#: src/App.svelte
+#: src/Workspace.svelte
+#: src/components/PostingLogView.svelte
+msgid "Scheduled"
+msgstr "已计划"
+
+#: src/App.svelte
+msgid "Posting…"
+msgstr "正在发布…"
+
+#: src/App.svelte
+msgid "Post now"
+msgstr "立即发布"
+
+#: src/App.svelte
+msgid "Schedule"
+msgstr "定时发布"
+
+#: src/App.svelte
+msgid "<0/> Previous"
+msgstr "<0/> 上一步"
+
+#: src/Workspace.svelte
+msgid "Application menu"
+msgstr "应用菜单"
+
+#: src/Workspace.svelte
+msgid "Add account"
+msgstr "添加账号"
+
+#: src/Workspace.svelte
+#: src/components/PostingLogView.svelte
+#: src/components/PostingLogView.svelte
+msgid "Posting logs"
+msgstr "发布日志"
+
+#: src/Workspace.svelte
+#: src/components/Settings.svelte
+#: src/components/Settings.svelte
+msgid "Settings"
+msgstr "设置"
+
+#: src/Workspace.svelte
+msgid "Creating…"
+msgstr "正在创建…"
+
+#: src/Workspace.svelte
+msgid "Create & sign in"
+msgstr "创建并登录"
+
+#: src/Workspace.svelte
+msgid "Account name"
+msgstr "账号名称"
+
+#: src/Workspace.svelte
+msgid "Sign in to Facebook in the new account’s browser window."
+msgstr "在新账户的浏览器窗口中登录 Facebook。"
+
+#: src/Workspace.svelte
+msgid "Running"
+msgstr "运行中"
+
+#: src/Workspace.svelte
+msgid "In the background: <0/>"
+msgstr "在后台：<0/>"
+
+#: src/Workspace.svelte
+msgid "Loading accounts…"
+msgstr "正在加载账户…"
+
+#: src/components/AccountDropdown.svelte
+msgid "Loading accounts"
+msgstr "正在加载账户"
+
+#. 0: current?.name ?? 'Loading accounts'
+#: src/components/AccountDropdown.svelte
+msgid "Account: {0}"
+msgstr "账户：{0}"
+
+#: src/components/AccountDropdown.svelte
+msgid "Select account"
+msgstr "选择账号"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search accounts…"
+msgstr "搜索账号…"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search accounts"
+msgstr "搜索账号"
+
+#: src/components/AccountDropdown.svelte
+msgid "Clear account search"
+msgstr "清除账户搜索"
+
+#: src/components/AccountDropdown.svelte
+msgid "All accounts"
+msgstr "所有账号"
+
+#: src/components/AccountDropdown.svelte
+msgid "Accounts"
+msgstr "账户"
+
+#: src/components/AccountDropdown.svelte
+msgid "No accounts found"
+msgstr "未找到账号"
+
+#: src/components/AccountDropdown.svelte
+#: src/components/ThemePicker.svelte
+msgid "Try a different name."
+msgstr "请尝试其他名称。"
+
+#: src/components/ConnectivityToast.svelte
+msgid "You’re back online"
+msgstr "你已重新上线"
+
+#: src/components/ConnectivityToast.svelte
+msgid "Internet connection lost"
+msgstr "互联网连接丢失"
+
+#: src/components/ConnectivityToast.svelte
+msgid "Your queue is still manually paused."
+msgstr "你的队列仍处于手动暂停状态。"
+
+#: src/components/ConnectivityToast.svelte
+msgid "Your queue will continue automatically."
+msgstr "你的队列将自动继续。"
+
+#: src/components/ConnectivityToast.svelte
+msgid "Your queue is paused. We’ll continue when the connection returns."
+msgstr "你的队列已暂停。我们将在连接恢复后继续。"
+
+#: src/components/ConnectivityToast.svelte
+msgid "Dismiss connection notification"
+msgstr "关闭连接通知"
+
+#: src/components/DateTimePicker.svelte
+msgid "Choose a date and time"
+msgstr "选择日期和时间"
+
+#: src/components/DateTimePicker.svelte
+msgid "Select date"
+msgstr "选择日期"
+
+#: src/components/DateTimePicker.svelte
+msgid "Choose a weekday for this post"
+msgstr "为此帖子选择一个工作日"
+
+#. 0: day.description
+#: src/components/DateTimePicker.svelte
+msgid "Select {0}"
+msgstr "选择 {0}"
+
+#: src/components/DateTimePicker.svelte
+msgid "Previous month"
+msgstr "上个月"
+
+#: src/components/DateTimePicker.svelte
+msgid "Next month"
+msgstr "下个月"
+
+#: src/components/DateTimePicker.svelte
+#: src/components/DateTimePicker.svelte
+msgid "Select time"
+msgstr "选择时间"
+
+#: src/components/DateTimePicker.svelte
+msgid "24-hour clock"
+msgstr "24小时制"
+
+#: src/components/DateTimePicker.svelte
+msgid "Increase hour"
+msgstr "增加小时"
+
+#: src/components/DateTimePicker.svelte
+#: src/components/DateTimePicker.svelte
+msgid "Hour"
+msgstr "小时"
+
+#: src/components/DateTimePicker.svelte
+msgid "Decrease hour"
+msgstr "减少小时"
+
+#: src/components/DateTimePicker.svelte
+msgid "Increase minute"
+msgstr "增加分钟"
+
+#: src/components/DateTimePicker.svelte
+#: src/components/DateTimePicker.svelte
+msgid "Minute"
+msgstr "分钟"
+
+#: src/components/DateTimePicker.svelte
+msgid "Decrease minute"
+msgstr "减少分钟"
+
+#: src/components/DateTimePicker.svelte
+msgid "Choose a date and time in the future."
+msgstr "选择未来的日期和时间。"
+
+#. 0: rejected.join(', ')
+#: src/components/PostComposer.svelte
+msgid "Unsupported files: {0}. Choose JPG, PNG, WebP, or GIF images."
+msgstr "不支持的文件：{0}。请选择 JPG、PNG、WebP 或 GIF 图片。"
+
+#. 0: image.file.name
+#: src/components/PostComposer.svelte
+msgid "Could not preview {0}. Please choose another image."
+msgstr "无法预览 {0}。请选择另一张图片。"
+
+#. 0: images[index].file.name; 1: index + 1; 2: images.length
+#: src/components/PostComposer.svelte
+msgid "{0} moved to position {1} of {2}."
+msgstr "{0} 移动到第 {2} 个位置的 {1}。"
+
+#: src/components/PostComposer.svelte
+#: src/components/PostEditorContent.svelte
+msgid "Post body"
+msgstr "帖子正文"
+
+#: src/components/PostComposer.svelte
+#: src/components/PostComposer.svelte
+msgid "Required"
+msgstr "必填"
+
+#: src/components/PostComposer.svelte
+msgid "Images"
+msgstr "图片"
+
+#: src/components/PostComposer.svelte
+msgid "Choose images"
+msgstr "选择图片"
+
+#: src/components/PostComposer.svelte
+msgid "Drop images here or <0>browse images</0>"
+msgstr "将图片拖到此处或 <0>浏览图片</0>"
+
+#: src/components/PostComposer.svelte
+msgid "JPG, PNG, WebP, or GIF · Select multiple images"
+msgstr "JPG、PNG、WebP 或 GIF · 可选择多张图片"
+
+#~ msgid "{0} {1} selected"
+#~ msgstr ""
+
+#: src/components/PostComposer.svelte
+msgid "Add more"
+msgstr "添加更多"
+
+#: src/components/PostComposer.svelte
+msgid "Drag images to rearrange. Or focus an image and use Alt + Left / Right."
+msgstr "拖动图片以重新排列。或者聚焦图片并使用 Alt + 左 / 右。"
+
+#: src/components/PostComposer.svelte
+msgid "Selected images"
+msgstr "已选图片"
+
+#. 0: image.file.name; 1: images.indexOf(image) + 1; 2: images.length
+#: src/components/PostComposer.svelte
+msgid "{0}, image {1} of {2}"
+msgstr "{0}，第 {2} 张中的第 {1} 张图片"
+
+#. 0: image.file.name
+#: src/components/PostComposer.svelte
+msgid "Remove {0}"
+msgstr "移除 {0}"
+
+#: src/components/PostComposer.svelte
+msgid "Drop more images here to add them."
+msgstr "将更多图片拖到此处以添加。"
+
+#. 0: error
+#: src/components/PostEditor.svelte
+msgid "Could not edit the post: {0}"
+msgstr "无法编辑帖子：{0}"
+
+#: src/components/PostEditorContent.svelte
+msgid "Post editor controls"
+msgstr "帖子编辑器控件"
+
+#: src/components/PostEditorContent.svelte
+msgid "Text formatting"
+msgstr "文本格式"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bold (Ctrl+B)"
+msgstr "加粗 (Ctrl+B)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bold"
+msgstr "加粗"
+
+#: src/components/PostEditorContent.svelte
+msgid "Italic (Ctrl+I)"
+msgstr "斜体 (Ctrl+I)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Italic"
+msgstr "斜体"
+
+#: src/components/PostEditorContent.svelte
+msgid "Heading 1"
+msgstr "标题 1"
+
+#: src/components/PostEditorContent.svelte
+msgid "Heading 2"
+msgstr "标题 2"
+
+#: src/components/PostEditorContent.svelte
+msgid "Quote"
+msgstr "引用"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bullet list"
+msgstr "项目符号列表"
+
+#: src/components/PostEditorContent.svelte
+msgid "Numbered list"
+msgstr "编号列表"
+
+#: src/components/PostEditorContent.svelte
+msgid "Undo (Ctrl+Z)"
+msgstr "撤销 (Ctrl+Z)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Undo"
+msgstr "撤销"
+
+#: src/components/PostEditorContent.svelte
+msgid "Redo (Ctrl+Shift+Z)"
+msgstr "重做 (Ctrl+Shift+Z)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Redo"
+msgstr "重做"
+
+#: src/components/PostEditorContent.svelte
+msgid "What would you like to share?"
+msgstr "你想分享什么？"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bold, italic, headings, quotes, and lists · Markdown shortcuts supported"
+msgstr "加粗、斜体、标题、引用和列表 · 支持 Markdown 快捷键"
+
+#. 0: body.length.toLocaleString(getLocale())
+#: src/components/PostEditorContent.svelte
+msgid "{0} characters"
+msgstr "{0} 字符"
+
+#: src/components/LogMessage.svelte
+msgid "Ready to post."
+msgstr "准备发布。"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook response copied."
+msgstr "Facebook 回复已复制。"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook response received"
+msgstr "收到 Facebook 回复"
+
+#: src/components/PostingLogView.svelte
+msgid "POSTIKA / ACTIVITY"
+msgstr "POSTIKA / 活动"
+
+#: src/components/PostingLogView.svelte
+msgid "Posting progress"
+msgstr "发布进度"
+
+#. 0: activity?.processed || 0; 1: activity?.total || 0
+#: src/components/PostingLogView.svelte
+msgid "{0}/{1} groups processed"
+msgstr "已处理 {0}/{1} 个群组"
+
+#. 0: percentage
+#: src/components/PostingLogView.svelte
+msgid "{0}% complete"
+msgstr "{0}% 完成"
+
+#: src/components/PostingLogView.svelte
+msgid "Groups processed"
+msgstr "已处理群组"
+
+#: src/components/PostingLogView.svelte
+msgid "Published"
+msgstr "已发布"
+
+#: src/components/PostingLogView.svelte
+msgid "Awaiting approval"
+msgstr "等待批准"
+
+#: src/components/PostingLogView.svelte
+msgid "Failed or skipped"
+msgstr "失败或跳过"
+
+#: src/components/PostingLogView.svelte
+msgid "Remaining"
+msgstr "剩余"
+
+#. 0: number(a); 1: number(b); 2: c
+#. 0: activity.current; 1: activity.total; 2: activity.currentGroup.name
+#: src/components/LogMessage.svelte
+#: src/components/PostingLogView.svelte
+msgid "Group {0}/{1}: {2}"
+msgstr "群组 {0}/{1}：{2}"
+
+#. 0: pauseRequested ? /* @wc-include */ ' · Paused' \\: ''
+#: src/components/PostingLogView.svelte
+msgid "Next post in <0/>{0}"
+msgstr "下一次发布在 <0/>{0}"
+
+#: src/components/PostingLogView.svelte
+msgid "Elapsed <0/>"
+msgstr "已过时间 <0/>"
+
+#: src/components/PostingLogView.svelte
+msgid "Current group <0/>"
+msgstr "当前群组 <0/>"
+
+#: src/components/PostingLogView.svelte
+msgid "Following latest"
+msgstr "关注最新"
+
+#: src/components/PostingLogView.svelte
+msgid "Jump to latest"
+msgstr "跳转到最新"
+
+#. 0.0: total
+#: src/components/PostingLogView.svelte
+msgid "Activity timeline <0>{0} logs</0>"
+msgstr "活动时间线 <0>{0} 条日志</0>"
+
+#: src/components/PostingLogView.svelte
+msgid "Posting activity"
+msgstr "发布活动"
+
+#. 0: entryLabel(entry)
+#: src/components/PostingLogView.svelte
+msgid "{0} log"
+msgstr "{0} 日志"
+
+#. 0: itemTime(entry.message)
+#: src/components/PostingLogView.svelte
+msgid "Took {0}"
+msgstr "耗时 {0}"
+
+#: src/components/PostingLogView.svelte
+#: src/components/PostingLogView.svelte
+msgid "Copy Facebook response"
+msgstr "复制 Facebook 回复"
+
+#: src/components/PostingLogView.svelte
+msgid "Response copied"
+msgstr "回复已复制"
+
+#: src/components/PostingLogView.svelte
+msgid "Copied"
+msgstr "已复制"
+
+#: src/components/PostingLogView.svelte
+msgid "Copying…"
+msgstr "正在复制…"
+
+#: src/components/PostingLogView.svelte
+msgid "Copy response"
+msgstr "复制回复"
+
+#. 0.0: entry.hasResponse ? /* @wc-include */ ' · Response available to copy' \\: ''
+#: src/components/PostingLogView.svelte
+msgid "Debug details<0>Original log message{0}</0>"
+msgstr "调试详情<0>原始日志信息{0}</0>"
+
+#: src/components/PostingLogView.svelte
+msgid "Your activity will appear here"
+msgstr "您的活动将显示在这里"
+
+#: src/components/PostingLogView.svelte
+msgid "Start posting to follow uploads, results, and wait times."
+msgstr "开始发帖以关注上传、结果和等待时间。"
+
+#: src/components/PostingLogView.svelte
+msgid "Log pages"
+msgstr "日志页面"
+
+#: src/components/PostingLogView.svelte
+msgid "Previous page"
+msgstr "上一页"
+
+#. 0: number
+#: src/components/PostingLogView.svelte
+msgid "Page {0}"
+msgstr "第 {0} 页"
+
+#: src/components/PostingLogView.svelte
+msgid "Next page"
+msgstr "下一页"
+
+#: src/components/PostingLogView.svelte
+msgid "← Prev"
+msgstr "← 上一页"
+
+#: src/components/PostingLogView.svelte
+msgid "Next →"
+msgstr "下一页 →"
+
+#. 0: total ? (page - 1) * pageSize + 1 \\: 0; 1: Math.min(page * pageSize, total); 2: total
+#: src/components/PostingLogView.svelte
+msgid "{0}–{1} of {2} logs"
+msgstr "{0}–{1} 共 {2} 条日志"
+
+#: src/components/PostingLogView.svelte
+msgid "Resume"
+msgstr "继续"
+
+#: src/components/PostingLogView.svelte
+msgid "Pause"
+msgstr "暂停"
+
+#: src/components/PostingLogView.svelte
+msgid "Stopping…"
+msgstr "正在停止…"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "POSTING PACE"
+msgstr "发帖间隔"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Interval between posts"
+msgstr "帖子间隔时间"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Minimum (seconds)"
+msgstr "最小（秒）"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Maximum (seconds)"
+msgstr "最大（秒）"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Choose how long to wait before posting to the next group."
+msgstr "选择在发帖至下一组前等待的时间。"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "At least 60 seconds. Use equal values for a fixed interval."
+msgstr "至少 60 秒。使用相同数值可设固定间隔。"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "OPTIONAL · AI REWRITE"
+msgstr "可选 · AI 重写"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "A fresh version for each group"
+msgstr "为每组生成新的版本"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Rewrite each post body with Gemini"
+msgstr "使用 Gemini 重写每个帖子正文"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
+msgstr "重写指令<0>选择Gemini应保留的语气和细节。</0>"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Keep it concise and easy to scan. Preserve the price and contact details."
+msgstr "保持简洁，便于浏览。保留价格和联系方式。"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Rewrite instructions"
+msgstr "重写指令"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
+msgstr "您的帖子文本和指令将发送到 Google Gemini。图片不发送。Gemini 的重写使用纯文本。"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
+msgstr "如果重写失败，该帖子将使用您的原始文本。下一次发布再尝试 Gemini。"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Let Gemini rewrite your post using your instructions."
+msgstr "让 Gemini 根据您的指令重写您的帖子。"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Posting preferences"
+msgstr "发布偏好"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved defaults help"
+msgstr "已保存的默认值有帮助"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "About saved defaults"
+msgstr "关于已保存的默认值"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved interval"
+msgstr "已保存的间隔"
+
+#. 0: settings.minimumInterval === settings.maximumInterval ? settings.minimumInterval \\: `${settings.minimumInterval}–${settings.maximumInterval}`
+#: src/components/SavedDefaultsInfo.svelte
+msgid "{0} seconds"
+msgstr "{0} 秒"
+
+#: src/App.svelte
+#: src/components/SavedDefaultsInfo.svelte
+msgid "On"
+msgstr "开"
+
+#: src/App.svelte
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Off"
+msgstr "关"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Gemini rewrite"
+msgstr "Gemini 重写"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "No instructions saved."
+msgstr "没有保存的指令。"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved rewrite instructions"
+msgstr "已保存的重写指令"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved values could not be loaded. Try “Use saved defaults” again."
+msgstr "无法加载已保存的值。请再试一次“使用已保存的默认值”。"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "What does “Use saved defaults” do?"
+msgstr "“使用已保存的默认值”是做什么的？"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
+msgstr "用设置中保存的值替换本次运行的发布间隔、Gemini 重写选项和重写指令。"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
+msgstr "初始默认值：60–120 秒，Gemini 重写关闭，无重写指令。保存您自己的偏好在设置中以进行更改。"
+
+#: src/components/Settings.svelte
+msgid "Settings saved. New runs can use these defaults."
+msgstr "设置已保存。新运行可以使用这些默认值。"
+
+#: src/components/Settings.svelte
+msgid "Key saved · leave blank to keep it"
+msgstr "密钥已保存 · 留空以保留它"
+
+#: src/components/Settings.svelte
+msgid "Enter your Gemini API key"
+msgstr "输入您的 Gemini API 密钥"
+
+#: src/components/Settings.svelte
+msgid "A key is saved on this device."
+msgstr "此设备上已保存密钥。"
+
+#: src/components/Settings.svelte
+msgid "No API key saved."
+msgstr "没有保存 API 密钥。"
+
+#: src/components/Settings.svelte
+msgid "Remove saved key"
+msgstr "移除已保存的密钥"
+
+#: src/components/Settings.svelte
+msgid "Gemini"
+msgstr "Gemini"
+
+#: src/components/Settings.svelte
+msgid "API key<0/>"
+msgstr "API 密钥<0/>"
+
+#. 0: keyConfigured ? 'A key is saved on this device.' \\: 'No API key saved.'
+#: src/components/Settings.svelte
+msgid "{0} The saved key is never displayed."
+msgstr "{0} 已保存的密钥从不显示。"
+
+#: src/components/Settings.svelte
+msgid "Model<0/>"
+msgstr "模型<0/>"
+
+#: src/components/Settings.svelte
+msgid "Posting defaults"
+msgstr "默认发布设置"
+
+#: src/components/Settings.svelte
+msgid "Applied when you start a new posting run."
+msgstr "应用于您开始新的发布运行时。"
+
+#: src/components/Settings.svelte
+msgid "Saving…"
+msgstr "正在保存…"
+
+#: src/components/Settings.svelte
+msgid "Save settings"
+msgstr "保存设置"
+
+#: src/components/Settings.svelte
+msgid "YOUR PREFERENCES"
+msgstr "您的偏好"
+
+#. 0: accountName
+#: src/components/Settings.svelte
+msgid "Set up Gemini and save posting defaults for {0}."
+msgstr "设置 Gemini 并保存 {0} 的发布默认值。"
+
+#: src/components/StepProgress.svelte
+msgid "Completed"
+msgstr "完成"
+
+#: src/components/StepProgress.svelte
+msgid "Current"
+msgstr "当前"
+
+#: src/components/StepProgress.svelte
+msgid "Upcoming"
+msgstr "即将到来"
+
+#. 0: index + 1; 1: steps.length; 2: completed || index < currentStep ? 'Completed' \\: index === currentStep ? 'Current' \\: 'Upcoming'
+#: src/components/StepProgress.svelte
+msgid "Step {0} of {1}: {2}"
+msgstr "步骤 {0} / {1}：{2}"
+
+#: src/components/WindowControls.svelte
+msgid "Could not change the window. Please try again."
+msgstr "无法更改窗口。请重试。"
+
+#: src/components/WindowControls.svelte
+msgid "Window controls"
+msgstr "窗口控制"
+
+#: src/components/WindowControls.svelte
+msgid "Minimize window"
+msgstr "最小化窗口"
+
+#: src/components/WindowControls.svelte
+msgid "Restore window"
+msgstr "还原窗口"
+
+#: src/components/WindowControls.svelte
+msgid "Maximize window"
+msgstr "最大化窗口"
+
+#: src/components/WindowControls.svelte
+msgid "Close window"
+msgstr "关闭窗口"
+
+#: src/App.svelte
+msgid "Create post"
+msgstr "创建帖子"
+
+#: src/App.svelte
+msgid "Write your post and add images"
+msgstr "撰写帖子并添加图片"
+
+#: src/App.svelte
+msgid "Select groups"
+msgstr "选择群组"
+
+#: src/App.svelte
+msgid "Load groups and choose where to post"
+msgstr "加载群组并选择发布位置"
+
+#~ msgid "Review & post"
+#~ msgstr "检查并发布"
+
+#~ msgid "Review, set preferences, then post now or schedule"
+#~ msgstr "审核、设置偏好，然后立即发布或安排发布"
+
+#: src/App.svelte
+msgid "Facebook session captured"
+msgstr "Facebook 会话已捕获"
+
+#: src/App.svelte
+msgid "The browser is closed. It will reopen when you click Post."
+msgstr "浏览器已关闭。点击发布时将重新打开。"
+
+#: src/App.svelte
+msgid "Checking Facebook login"
+msgstr "正在检查 Facebook 登录"
+
+#: src/App.svelte
+msgid "Finish signing in or any verification prompts in Chrome. Your login will be detected automatically."
+msgstr "在 Chrome 中完成登录或任何验证提示。您的登录信息将自动被检测。"
+
+#: src/App.svelte
+msgid "Login required"
+msgstr "需要登录"
+
+#: src/App.svelte
+msgid "Please log in to Facebook in the Chrome window. Postika will detect when you’re signed in."
+msgstr "请在 Chrome 窗口中登录 Facebook。Postika 将在您登录后检测到。"
+
+#: src/App.svelte
+msgid "Complete Facebook verification"
+msgstr "完成 Facebook 验证"
+
+#: src/App.svelte
+msgid "Complete the login or verification prompts in Chrome to continue."
+msgstr "在 Chrome 中完成登录或验证提示以继续。"
+
+#: src/App.svelte
+msgid "Facebook connected"
+msgstr "Facebook 已连接"
+
+#: src/App.svelte
+msgid "You’re logged in. Your session is ready."
+msgstr "您已登录。会话已准备好。"
+
+#: src/App.svelte
+msgid "Facebook window closed"
+msgstr "Facebook 窗口已关闭"
+
+#: src/App.svelte
+msgid "Click Load groups to reopen Facebook and check your login."
+msgstr "点击“加载群组”以重新打开 Facebook 并检查您的登录状态。"
+
+#. 0: current?.name ?? ''
+#: src/components/AccountDropdown.svelte
+msgid "Language: {0}"
+msgstr "语言: {0}"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search languages…"
+msgstr "搜索语言…"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search languages"
+msgstr "搜索语言"
+
+#: src/components/AccountDropdown.svelte
+msgid "Clear language search"
+msgstr "清除语言搜索"
+
+#. 0: matches.length
+#: src/components/AccountDropdown.svelte
+msgid "{0} result"
+msgstr "{0} 个结果"
+
+#. 0: matches.length
+#: src/components/AccountDropdown.svelte
+msgid "{0} results"
+msgstr "{0} 个结果"
+
+#: src/components/AccountDropdown.svelte
+msgid "All languages"
+msgstr "所有语言"
+
+#: src/components/AccountDropdown.svelte
+msgid "Languages"
+msgstr "语言"
+
+#: src/components/AccountDropdown.svelte
+msgid "No languages found"
+msgstr "未找到语言"
+
+#: src/components/DateTimePicker.svelte
+msgid "Morning"
+msgstr "早上"
+
+#: src/components/DateTimePicker.svelte
+msgid "Afternoon"
+msgstr "下午"
+
+#: src/components/DateTimePicker.svelte
+msgid "Evening"
+msgstr "晚上"
+
+#: src/components/LanguageMenu.svelte
+msgid "Could not change the language. Please try again."
+msgstr "无法更改语言。请重试。"
+
+#: src/components/Settings.svelte
+msgid "Language"
+msgstr "语言"
+
+#: src/components/PostingOptionsForm.svelte
+#: src/components/PostingOptionsForm.svelte
+msgid "seconds"
+msgstr "秒"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Minimum"
+msgstr "最小值"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Maximum"
+msgstr "最大值"
+
+#: src/components/StepProgress.svelte
+msgid "Post progress"
+msgstr "发布进度"
+
+#. 0: visibleGroups.length
+#: src/App.svelte
+msgid "{0} shown"
+msgstr "显示 {0}"
+
+#. 0: selectedGroupIds.length
+#: src/App.svelte
+msgid "{0} selected"
+msgstr "已选择 {0}"
+
+#. 0: images.length
+#: src/components/PostComposer.svelte
+msgid "{0} images selected"
+msgstr "已选择 {0} 张图片"
+
+#: src/components/PostingLogView.svelte
+msgid "WARN"
+msgstr "警告"
+
+#: src/components/PostingLogView.svelte
+msgid "INFO"
+msgstr "信息"
+
+#: src/components/PostingLogView.svelte
+msgid "ERROR"
+msgstr "错误"
+
+#: src/components/PostingLogView.svelte
+msgid "DEBUG"
+msgstr "调试"
+
+#: src/components/PostingLogView.svelte
+msgid "PUBLISHED"
+msgstr "已发布"
+
+#: src/components/PostingLogView.svelte
+msgid "PENDING"
+msgstr "待定"
+
+#: src/components/PostingLogView.svelte
+msgid "FAILED"
+msgstr "失败"
+
+#: src/components/PostingLogView.svelte
+msgid "SKIPPED"
+msgstr "已跳过"
+
+#: src/components/PostingLogView.svelte
+msgid "UNCONFIRMED"
+msgstr "未确认"
+
+#: src/Workspace.svelte
+msgid "e.g. Business"
+msgstr "例如：商业"
+
+#: src/components/PostComposer.svelte
+msgid "1 image selected"
+msgstr "已选择 1 张图片"
+
+#: src/components/PostingLogView.svelte
+msgid "Paused · Waiting for internet"
+msgstr "已暂停 · 等待网络"
+
+#: src/components/PostingLogView.svelte
+msgid "Pausing after the current operation"
+msgstr "在当前操作完成后暂停"
+
+#: src/components/PostingLogView.svelte
+msgid "Paused"
+msgstr "已暂停"
+
+#: src/components/PostingLogView.svelte
+msgid "Stopping"
+msgstr "正在停止"
+
+#: src/components/PostingLogView.svelte
+msgid "Posting"
+msgstr "正在发布"
+
+#: src/components/PostingLogView.svelte
+msgid "Finished"
+msgstr "已完成"
+
+#: src/components/PostingLogView.svelte
+msgid "Stopped"
+msgstr "已停止"
+
+#: src/components/PostingLogView.svelte
+msgid "Ready"
+msgstr "准备就绪"
+
+#: src/components/PostingLogView.svelte
+msgid "CURRENT ACTIVITY"
+msgstr "当前活动"
+
+#: src/components/PostingLogView.svelte
+msgid "RUN STATUS"
+msgstr "运行状态"
+
+#: src/components/PostingLogView.svelte
+msgid " · Paused"
+msgstr " · 已暂停"
+
+#: src/components/PostingLogView.svelte
+msgid " · Response available to copy"
+msgstr " · 响应可供复制"
+
+#: src/components/AccountLabel.svelte
+msgid "Default profile"
+msgstr "默认个人资料"
+
+#~ msgid "Switch to light mode"
+#~ msgstr "切换到浅色模式"
+
+#~ msgid "Switch to dark mode"
+#~ msgstr "切换到深色模式"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Color themes"
+msgstr "配色主题"
+
+#: src/components/ThemePicker.svelte
+msgid "Close"
+msgstr "关闭"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Search themes…"
+msgstr "搜索主题…"
+
+#: src/components/ThemePicker.svelte
+msgid "No themes found"
+msgstr "未找到主题"
+
+#: src/components/LogMessage.svelte
+msgid "A selected group is no longer available. Load groups again"
+msgstr "所选群组不再可用。请重新加载群组"
+
+#: src/components/LogMessage.svelte
+msgid "Add a Gemini API key in Settings before enabling rewriting"
+msgstr "在启用重写之前，在设置中添加 Gemini API 密钥"
+
+#: src/components/LogMessage.svelte
+msgid "Add a post body and at least one image"
+msgstr "添加帖子内容和至少一张图片"
+
+#: src/components/LogMessage.svelte
+msgid "All selected groups were already attempted. Review unconfirmed results on Facebook."
+msgstr "所有选择的群组都已尝试过。在 Facebook 上查看未确认的结果。"
+
+#: src/components/LogMessage.svelte
+msgid "An image upload failed in Chrome. Check the composer and retry Post"
+msgstr "Chrome 中的图片上传失败。检查编辑器并重试发布"
+
+#: src/components/LogMessage.svelte
+msgid "Attaching images…"
+msgstr "正在附加图片…"
+
+#: src/components/LogMessage.svelte
+msgid "Choose JPG, PNG, WebP, or GIF images"
+msgstr "请选择 JPG、PNG、WebP 或 GIF 图片"
+
+#: src/components/LogMessage.svelte
+msgid "Choose a future date and time for your post"
+msgstr "为您的帖子选择未来的日期和时间"
+
+#: src/components/LogMessage.svelte
+msgid "Closing Chrome and posting to the remaining groups…"
+msgstr "关闭 Chrome 并向剩余群组发布…"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the complete create-post request"
+msgstr "无法捕获完整的创建帖子请求"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the completed image upload response"
+msgstr "无法捕获完整的图片上传响应"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the image upload form fields"
+msgstr "无法捕获图片上传表单字段"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the image upload form. Retry Post"
+msgstr "无法捕获图片上传表单。重试发布"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the upload endpoint"
+msgstr "无法捕获上传端点"
+
+#: src/components/LogMessage.svelte
+msgid "Could not copy the Facebook response to the clipboard"
+msgstr "无法将 Facebook 响应复制到剪贴板"
+
+#: src/components/LogMessage.svelte
+msgid "Could not enable create-post capture in Chrome"
+msgstr "无法在 Chrome 中启用创建帖子的捕获"
+
+#: src/components/LogMessage.svelte
+msgid "Could not parse the captured create-post form"
+msgstr "无法解析捕获的创建帖子表单"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare image files"
+msgstr "无法准备图像文件"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare post images"
+msgstr "无法准备帖子图像"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare the Gemini request"
+msgstr "无法准备 Gemini 请求"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare the image upload."
+msgstr "无法准备图像上传"
+
+#: src/components/LogMessage.svelte
+msgid "Could not reach Gemini. Check your connection"
+msgstr "无法连接 Gemini。请检查您的连接"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read Facebook's post confirmation"
+msgstr "无法读取 Facebook 的帖子确认"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read the Gemini rewrite"
+msgstr "无法读取 Gemini 重写"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read the completed image upload response"
+msgstr "无法读取已完成的图像上传响应"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read the selected image."
+msgstr "无法读取所选图像"
+
+#: src/components/LogMessage.svelte
+msgid "Create-post capture ended before confirmation. Check Facebook before retrying"
+msgstr "创建帖子捕获在确认前结束。重试前请检查 Facebook"
+
+#: src/components/LogMessage.svelte
+msgid "Create-post request detected. Capturing fresh form values…"
+msgstr "检测到创建帖子请求。正在捕获新的表单值…"
+
+#: src/components/LogMessage.svelte
+msgid "Create-post response complete. Waiting for captured session headers…"
+msgstr "创建帖子响应完成。正在等待捕获的会话头…"
+
+#: src/components/LogMessage.svelte
+msgid "Create-post response received. Waiting for its complete body…"
+msgstr "收到创建帖子响应。正在等待其完整正文…"
+
+#: src/components/LogMessage.svelte
+msgid "Description inserted"
+msgstr "描述已插入"
+
+#: src/components/LogMessage.svelte
+msgid "Earlier submission is unconfirmed. Skipping this group and continuing with the remaining groups."
+msgstr "早期提交未确认。跳过此组，继续处理其余组。"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook could not post to this group. Continuing with the remaining groups."
+msgstr "Facebook 无法发布到此组。继续处理其余组。"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook did not confirm all images. Check the composer."
+msgstr "Facebook 未确认所有图片。请检查编辑器。"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook did not confirm the submission"
+msgstr "Facebook 未确认提交"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook did not confirm this post. Check the group before trying again."
+msgstr "Facebook 未确认此帖。再次尝试前请检查该组。"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook has temporarily limited posting. Try again later."
+msgstr "Facebook 临时限制了发帖。请稍后再试。"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook rejected this post."
+msgstr "Facebook 拒绝了此帖。"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook requires login or verification. Load groups again."
+msgstr "Facebook 需要登录或验证。请重新加载组。"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook returned a story, but did not confirm its group or publication state. Posting stopped. Check Facebook before retrying."
+msgstr "Facebook 返回了一个故事，但未确认其组或发布状态。发布已停止。再次尝试前请检查 Facebook。"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook's confirmation exceeded the 16 MiB response limit; retained response is truncated"
+msgstr "Facebook 的确认超过了 16 MiB 的响应限制；保留的响应已被截断"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook's editor did not accept the formatted post. Posting was not submitted"
+msgstr "Facebook 的编辑器未接受已格式化的帖子。发布未提交"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook's editor did not retain the formatted post text. Posting was not submitted"
+msgstr "Facebook 的编辑器未保留格式化的帖子文本。帖子未提交"
+
+#: src/components/LogMessage.svelte
+msgid "First post confirmed. Waiting for the Facebook composer to close…"
+msgstr "第一条帖子已确认。等待 Facebook 编辑器关闭…"
+
+#: src/components/LogMessage.svelte
+msgid "First submission unconfirmed. Retrying request 1/3 with the captured mutation ID…"
+msgstr "第一次提交未确认。使用捕获的变异 ID 重试请求 1/3…"
+
+#: src/components/LogMessage.svelte
+msgid "Formatted post is too large"
+msgstr "格式化的帖子过大"
+
+#: src/components/LogMessage.svelte
+msgid "Found multiple matching post composers on the group page"
+msgstr "在群组页面上找到多个匹配的帖子编辑器"
+
+#: src/components/LogMessage.svelte
+msgid "Fresh create-post form captured. Waiting for Facebook's response…"
+msgstr "捕获到新的创建帖子表单。等待 Facebook 的响应…"
+
+#: src/components/LogMessage.svelte
+msgid "Gemini did not finish the rewrite"
+msgstr "Gemini 未完成重写"
+
+#: src/components/LogMessage.svelte
+msgid "Gemini returned no rewritten text"
+msgstr "Gemini 未返回重写文本"
+
+#: src/components/LogMessage.svelte
+msgid "Gemini rewrite completed."
+msgstr "Gemini 重写完成。"
+
+#: src/components/LogMessage.svelte
+msgid "Gemini rewrite failed. Using the original text for this post; Gemini will be tried again for the next post."
+msgstr "Gemini 重写失败。使用该帖子的原始文本；下一条帖子将再次尝试 Gemini。"
+
+#: src/components/LogMessage.svelte
+msgid "Image uploads belong to a different profile"
+msgstr "图片上传属于不同的个人资料"
+
+#: src/components/LogMessage.svelte
+msgid "Images inserted"
+msgstr "图片已插入"
+
+#: src/components/LogMessage.svelte
+msgid "Inserting post body…"
+msgstr "正在插入帖子正文…"
+
+#: src/components/LogMessage.svelte
+msgid "Internet connection lost. Queue paused until the connection returns."
+msgstr "互联网连接丢失。队列已暂停，直到连接恢复。"
+
+#: src/components/LogMessage.svelte
+msgid "Internet connection restored. Continuing the queue."
+msgstr "互联网连接已恢复。继续队列。"
+
+#: src/components/LogMessage.svelte
+msgid "Internet connection restored. The queue remains manually paused."
+msgstr "互联网连接已恢复。队列仍处于手动暂停状态。"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured endpoint"
+msgstr "捕获的端点无效"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured formatted post"
+msgstr "捕获的格式化帖子无效"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured post form"
+msgstr "捕获的帖子表单无效"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured post variables"
+msgstr "捕获的帖子变量无效"
+
+#: src/components/LogMessage.svelte
+msgid "Load your groups before opening a post"
+msgstr "在打开帖子前请加载你的群组"
+
+#: src/components/LogMessage.svelte
+msgid "Log in or complete Facebook verification in Chrome, then click Post again"
+msgstr "请在Chrome中登录或完成Facebook验证，然后再次点击发布"
+
+#: src/components/LogMessage.svelte
+msgid "Multiple matching controls found in the post composer"
+msgstr "在帖子编辑器中找到多个匹配控件"
+
+#: src/components/LogMessage.svelte
+msgid "No Facebook response was captured for this entry"
+msgstr "未捕获此条目的Facebook响应"
+
+#: src/components/LogMessage.svelte
+msgid "No available post composer."
+msgstr "没有可用的帖子编辑器。"
+
+#: src/components/LogMessage.svelte
+msgid "No complete image upload request was captured."
+msgstr "未捕获完整的图片上传请求。"
+
+#: src/components/LogMessage.svelte
+msgid "No fresh image upload request was captured."
+msgstr "未捕获新的图片上传请求。"
+
+#: src/components/LogMessage.svelte
+msgid "Opening browser…"
+msgstr "正在打开浏览器…"
+
+#: src/components/LogMessage.svelte
+msgid "Pause requested. The current operation will finish before pausing."
+msgstr "已请求暂停。当前操作将完成后再暂停。"
+
+#: src/components/LogMessage.svelte
+msgid "Post button clicked"
+msgstr "点击了发布按钮"
+
+#: src/components/LogMessage.svelte
+msgid "Post published."
+msgstr "帖子已发布。"
+
+#: src/components/LogMessage.svelte
+msgid "Postika is shutting down"
+msgstr "Postika正在关闭"
+
+#: src/components/LogMessage.svelte
+msgid "Posting is already running"
+msgstr "帖子已在运行"
+
+#: src/components/LogMessage.svelte
+msgid "Posting paused."
+msgstr "发布已暂停。"
+
+#: src/components/LogMessage.svelte
+msgid "Posting resumed."
+msgstr "帖子已恢复。"
+
+#: src/components/LogMessage.svelte
+msgid "Posting stopped after the first post was confirmed"
+msgstr "在确认第一条帖子后已停止发布"
+
+#: src/components/LogMessage.svelte
+msgid "Posting..."
+msgstr "正在发布帖子..."
+
+#: src/components/LogMessage.svelte
+msgid "Reading Facebook's create-post confirmation…"
+msgstr "正在读取 Facebook 的创建帖子确认…"
+
+#: src/components/LogMessage.svelte
+msgid "Rewriting the post body with Gemini…"
+msgstr "正在使用 Gemini 重写帖子正文…"
+
+#: src/components/LogMessage.svelte
+msgid "Scheduled posting cancelled."
+msgstr "预定发布已取消。"
+
+#: src/components/LogMessage.svelte
+msgid "Scheduled time reached. Starting posting…"
+msgstr "已到预定时间。开始发布帖子…"
+
+#: src/components/LogMessage.svelte
+msgid "Select at least one group"
+msgstr "请选择至少一个群组"
+
+#: src/components/LogMessage.svelte
+msgid "Setting up automatic posting using your first Facebook post..."
+msgstr "正在使用您的第一条 Facebook 帖子设置自动发布..."
+
+#: src/components/LogMessage.svelte
+msgid "Stopping posting…"
+msgstr "正在停止发布帖子…"
+
+#: src/components/LogMessage.svelte
+msgid "Submitting the first post and capturing fresh request values…"
+msgstr "提交第一条帖子并捕获新的请求值…"
+
+#: src/components/LogMessage.svelte
+#: src/components/LogMessage.svelte
+msgid "Technical details recorded. Open debug details to inspect the original message."
+msgstr "技术细节已记录。打开调试详情以检查原始消息。"
+
+#: src/components/LogMessage.svelte
+msgid "The active Facebook profile changed or expired"
+msgstr "活动的 Facebook 个人资料已更改或过期"
+
+#: src/components/LogMessage.svelte
+msgid "The browser connection was lost. Check Facebook before retrying"
+msgstr "浏览器连接已丢失。在重试前请检查 Facebook"
+
+#: src/components/LogMessage.svelte
+msgid "The browser profile changed while capturing posting requests"
+msgstr "在捕获发布请求时浏览器个人资料已更改"
+
+#: src/components/LogMessage.svelte
+msgid "The captured formatted post body does not match your draft"
+msgstr "捕获的已格式化帖子内容与您的草稿不匹配"
+
+#: src/components/LogMessage.svelte
+msgid "The captured image upload cookies do not match the Facebook profile"
+msgstr "捕获的图片上传 Cookie 与 Facebook 个人资料不匹配"
+
+#: src/components/LogMessage.svelte
+msgid "The captured image upload format is not supported"
+msgstr "捕获的图片上传格式不受支持"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post belongs to a different Facebook profile"
+msgstr "捕获的帖子属于不同的 Facebook 个人资料"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post body does not match your draft"
+msgstr "捕获的帖子内容与您的草稿不匹配"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post cookies do not match the logged-in profile"
+msgstr "捕获的帖子 Cookie 与已登录的个人资料不匹配"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post has no group target"
+msgstr "捕获的帖子没有群组目标"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post target does not match the selected group"
+msgstr "捕获的帖子目标与选择的群组不匹配"
+
+#: src/components/LogMessage.svelte
+msgid "The composer dialog was replaced while loading"
+msgstr "加载时作曲器对话框被替换"
+
+#: src/components/LogMessage.svelte
+msgid "The create-post connection failed. Check Facebook before retrying"
+msgstr "创建帖子连接失败。请先检查 Facebook 再重试"
+
+#: src/components/LogMessage.svelte
+msgid "The current profile differs from the profile used to load groups. Load groups again."
+msgstr "当前个人资料与用于加载群组的个人资料不同。请重新加载群组。"
+
+#: src/components/LogMessage.svelte
+msgid "The desktop application is not ready"
+msgstr "桌面应用程序尚未准备好"
+
+#: src/components/LogMessage.svelte
+msgid "The desktop clipboard is not ready"
+msgstr "桌面剪贴板尚未准备好"
+
+#: src/components/LogMessage.svelte
+msgid "The expected composer control did not appear in Chrome"
+msgstr "预期的作曲器控件未在 Chrome 中出现"
+
+#: src/components/LogMessage.svelte
+msgid "The first post was confirmed, but Chrome's completion state could not be checked. Posting stopped"
+msgstr "第一条帖子已确认，但无法检查 Chrome 的完成状态。发布已停止"
+
+#: src/components/LogMessage.svelte
+msgid "The image upload did not contain multipart form data"
+msgstr "图片上传未包含多部分表单数据"
+
+#: src/components/LogMessage.svelte
+msgid "The image upload does not match its active Facebook profile"
+msgstr "图片上传与其活动的 Facebook 个人资料不匹配"
+
+#: src/components/LogMessage.svelte
+msgid "The image upload form belongs to a different Facebook profile"
+msgstr "图片上传表单属于不同的 Facebook 个人资料"
+
+#: src/components/LogMessage.svelte
+msgid "The selected group has an invalid Facebook URL. Load groups again"
+msgstr "所选的群组具有无效的 Facebook URL。请重新加载群组"
+
+#: src/components/LogMessage.svelte
+msgid "The session could not be saved for posting retries and remaining groups."
+msgstr "无法保存会话以重试发布和剩余群组。"
+
+#: src/components/LogMessage.svelte
+msgid "This draft has already been submitted to the first group. It was not submitted again."
+msgstr "此草稿已提交到第一个群组。未再次提交。"
+
+#: src/components/LogMessage.svelte
+msgid "This group has no available post composer"
+msgstr "此群组没有可用的帖子编辑器"
+
+#: src/components/LogMessage.svelte
+msgid "This group has reached its pending-content limit."
+msgstr "此群组已达到待定内容限制。"
+
+#: src/components/LogMessage.svelte
+msgid "This post was submitted, but confirmation is uncertain. Check Facebook before retrying."
+msgstr "此帖子已提交，但确认不确定。重试前请检查 Facebook。"
+
+#: src/components/LogMessage.svelte
+msgid "This response is no longer available for the current run"
+msgstr "此回应在当前运行中不再可用"
+
+#: src/components/LogMessage.svelte
+msgid "Upload and post captures must belong to the same logged-in profile"
+msgstr "上传和发布的截图必须属于同一个已登录的账号"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for Facebook's Post button…"
+msgstr "等待 Facebook 的发布按钮…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the composer controls and layout…"
+msgstr "等待编辑器控件和布局…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the group page and opening its composer…"
+msgstr "等待群组页面并打开其编辑器…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the image previews and composer to settle…"
+msgstr "等待图片预览和编辑器稳定…"
+
+#: src/components/LogMessage.svelte
+msgid "Your Facebook session needs login or verification. Load groups again."
+msgstr "您的 Facebook 会话需要登录或验证。请重新加载群组。"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Published to {0}."
+msgstr "已发布到 {0}。"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "{0}: Awaiting admin approval."
+msgstr "{0}：等待管理员批准。"
+
+#. 0: number(a); 1: b
+#: src/components/LogMessage.svelte
+msgid "Waiting {0} seconds before posting to {1}."
+msgstr "在发布到 {1} 之前等待 {0} 秒。"
+
+#. 0: a; 1: b
+#: src/components/LogMessage.svelte
+msgid "Next post in {0} · {1}"
+msgstr "下一个帖子在 {0} · {1}"
+
+#. 0: a; 1: number(b); 2: number(c)
+#: src/components/LogMessage.svelte
+msgid "{0}: Uploading photo {1} of {2}…"
+msgstr "{0}：正在上传第 {1} 张照片，共 {2} 张…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Preparing a post for {0}…"
+msgstr "正在为 {0} 准备帖子…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Uploading images for {0}…"
+msgstr "正在上传 {0} 的图片…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Posting to {0}…"
+msgstr "正在发布到 {0}…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Fresh upload and post request values captured from {0}."
+msgstr "从 {0} 捕获的新上传和发布请求值。"
+
+#. 0: number(a); 1: number(b)
+#: src/components/LogMessage.svelte
+msgid "Submission unconfirmed. Retrying request {0}/{1}…"
+msgstr "提交未确认。重试请求 {0}/{1}…"
+
+#. 0: number(a); 1: number(b); 2: number(c)
+#: src/components/LogMessage.svelte
+msgid "Finished: {0} published, {1} awaiting approval, {2} failed or skipped."
+msgstr "完成：已发布 {0}，等待批准 {1}，失败或跳过 {2}。"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Opening {0}…"
+msgstr "正在打开 {0}…"
+
+#. 0: number(a); 1: number(b)
+#: src/components/LogMessage.svelte
+msgid "Capturing image uploads ({0} of {1})…"
+msgstr "正在捕获图像上传（{0} / {1}）…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Gemini rewrite failed (HTTP {0}). Check the key, model and account quota"
+msgstr "Gemini重写失败（HTTP {0}）。请检查密钥、模型和账户配额"
+
+#. 0: code
+#: src/components/LogMessage.svelte
+msgid " (Code {0})"
+msgstr "（代码 {0}）"
+
+#: src/components/PostingLogView.svelte
+msgid "Debug details"
+msgstr "调试详情"
+
+#~ msgid ", "
+#~ msgstr ""
+
+#: src/components/ThemePicker.svelte
+msgid "Themes"
+msgstr "主题"
+
+#: src/App.svelte
+msgid "Preferences & post"
+msgstr "偏好设置与发布"
+
+#: src/App.svelte
+#: src/App.svelte
+msgid "Set preferences, then post now or schedule"
+msgstr "设置偏好，然后立即发布或定时发布"

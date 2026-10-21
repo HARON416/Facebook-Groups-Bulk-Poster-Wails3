@@ -1,0 +1,1836 @@
+msgid ""
+msgstr ""
+"Source-Language: en\n"
+"Language: te\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2\n"
+"X-Plurals-Order: one, other\n"
+
+#. 0: minimumInterval === maximumInterval ? minimumInterval \\: `${minimumInterval}–${maximumInterval}`; 1: rewriteState
+#: src/App.svelte
+msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
+msgstr "సేవ్ చేయబడిన డిఫాల్ట్స్ అన్వయించబడ్డాయి: పోస్ట్‌ల మధ్య {0} సెకన్లు · Gemini రీరైట్ {1}."
+
+#: src/App.svelte
+msgid "Could not restore saved groups. Load groups to refresh the list."
+msgstr "సేవ్ చేసిన గ్రూప్‌లను పున రుద్ధరించలేకపోయాము. జాబితాను రిఫ్రెష్ చేయడానికి గ్రూప్‌లను లోడ్ చేయండి."
+
+#: src/App.svelte
+msgid "Choose a future date and time for your post."
+msgstr "మీ పోస్ట్ కోసం భవిష్యత్తు తేదీ మరియు సమయాన్ని ఎంచుకోండి."
+
+#: src/App.svelte
+msgid "Saving your scheduled queue…"
+msgstr "మీ షెడ్యూల్ చేయబడిన క్యూను సేవ్ చేస్తోంది…"
+
+#: src/App.svelte
+msgid "Opening a selected group to capture fresh posting requests…"
+msgstr "తాజా పოს్టింగ్ వినతులను సేకరించడానికి ఎంచుకున్న గ్రూప్‌ను తెరవడం…"
+
+#: src/App.svelte
+#: src/App.svelte
+#: src/components/LogMessage.svelte
+msgid "Posting stopped."
+msgstr "పోస్టింగ్ ఆగిపోయింది."
+
+#: src/App.svelte
+#: src/components/LogMessage.svelte
+msgid "Could not read a selected image"
+msgstr "ఎంచుకున్న చిత్రాన్ని చదవలేకపోయాము"
+
+#. 0: image.file.name
+#. 0: missingNames
+#. 0: unreadableNames
+#. 0: image.file.name
+#: src/App.svelte
+#: src/App.svelte
+#: src/components/PostComposer.svelte
+#: src/components/PostComposer.svelte
+msgid "Could not read {0}"
+msgstr "{0} ను చదవలేకపోయాము"
+
+#: src/App.svelte
+msgid "Posting finished."
+msgstr "పోస్టింగ్ పూర్తయింది."
+
+#. 0: scheduleLabel(scheduledFor)
+#. 0: date
+#: src/App.svelte
+#: src/components/LogMessage.svelte
+msgid "Scheduled for {0}. Keep Postika open and your computer awake."
+msgstr "{0} కు షెడ్యూల్ చేయబడింది. పోస్స్తికా తెరిచి ఉంచండి మరియు మీ కంప్యూటర్ జాగ్రత్తగా ఉంచండి."
+
+#: src/App.svelte
+msgid "Could not restore this account’s draft. New edits will stay available while Postika is open."
+msgstr "ఈ ఖాతాలోని డ్రాఫ్ట్‌ను పునఃస్థాపించలేము. కొత్త ఎడిట్లు పోస్టికా తెరిచి ఉండగా అందుబాటులో ఉంటాయి."
+
+#: src/App.svelte
+msgid "Could not add the dropped images. Try browsing for them instead."
+msgstr "డ్రాప్ చేసిన చిత్రాలను జోడించలేకపోయాము. వాటిని బ్రౌజ్ చేసి ప్రయత్నించండి."
+
+#: src/App.svelte
+msgid "Could not save this account’s draft to disk. Keep Postika open to retain your edits."
+msgstr "ఈ ఖాతాలోని డ్రాఫ్ట్‌ను డిస్క్‌కి సేవ్ చేయలేకపోయాము. మీ ఎడిట్లను ఉంచడానికి పోస్టికా తెరిచి ఉంచండి."
+
+#: src/App.svelte
+msgid "Start with your message. Add images to bring it to life."
+msgstr "మీ మెసేజ్‌తో ప్రారంభించండి. దానిని సజీవం చేయడానికి చిత్రాలను జోడించండి."
+
+#: src/App.svelte
+msgid "Choose the groups you want to share your post with."
+msgstr "మీ పోస్ట్‌ను భాగస్వామ్యం చేయదలచిన గ్రూప్‌లను ఎంచుకోండి."
+
+#~ msgid "Review your post and preferences, then post now or schedule for later."
+#~ msgstr "మీ పోస్ట్ మరియు ప్రాధాన్యతలను సమీక్షించండి, అప్పుడు ఇప్పుడే పోస్ట్ చేయండి లేదా తర్వాత కోసం షెడ్యూల్ చేయండి."
+
+#. 0: currentStep + 1; 1: steps.length
+#: src/App.svelte
+msgid "STEP {0} OF {1}"
+msgstr "దశ {0} מתוך {1}"
+
+#: src/App.svelte
+msgid "Restoring account workspace…"
+msgstr "ఖాతా వర్క్‌స్పేస్‌ను పునరుద్ధరిస్తోంది…"
+
+#: src/App.svelte
+msgid "Opening…"
+msgstr "తీస్తోంది…"
+
+#: src/App.svelte
+msgid "Loading…"
+msgstr "లోడ్ అవుతోంది…"
+
+#: src/App.svelte
+msgid "Load groups"
+msgstr "సమూహాలను లోడ్ చేయండి"
+
+#: src/App.svelte
+msgid "Groups"
+msgstr "సమూహాలు"
+
+#: src/App.svelte
+msgid "Search groups…"
+msgstr "సమూహాలను వెతకండి…"
+
+#: src/App.svelte
+msgid "Clear group search"
+msgstr "గ్రూప్ శోధనను క్లియర్ చేయండి"
+
+#: src/App.svelte
+msgid "Search groups"
+msgstr "సమూహాలను వెతకండి"
+
+#: src/App.svelte
+msgid "Select all groups"
+msgstr "అన్ని సమూహాలను ఎంచుకోండి"
+
+#: src/App.svelte
+msgid "Unselect all groups"
+msgstr "అన్ని సమూహాల ఎంపికను తీసివేయండి"
+
+#~ msgid "{0} selected{1}"
+#~ msgstr ""
+
+#: src/App.svelte
+msgid "Searching…"
+msgstr "శోధిస్తోంది…"
+
+#: src/App.svelte
+msgid "No groups found. Try another search."
+msgstr "ఏ గ్రూప్‌లు కనుగొనబడలేదు. మరో శోధన ప్రయత్నించండి."
+
+#: src/App.svelte
+msgid "Joined groups"
+msgstr "జాయిన్ అయిన గ్రూప్‌లు"
+
+#: src/App.svelte
+msgid "No groups loaded yet."
+msgstr "ఇంకా ఎలాంటి గ్రూప్‌లు లోడ్ కాలేదు."
+
+#: src/App.svelte
+msgid "Open your Facebook groups to get started."
+msgstr "ప్రారంభించడానికి మీ Facebook గ్రూప్‌లను తెరవండి."
+
+#: src/App.svelte
+msgid "Posting settings"
+msgstr "పోస్టింగ్ సెట్టింగ్స్"
+
+#: src/App.svelte
+msgid "Add a Gemini API key in Settings to enable rewriting."
+msgstr "రిరైటింగ్‌ను అనుమతించడానికి సెట్టింగ్స్‌లో Gemini API కీని చేర్చండి."
+
+#: src/App.svelte
+msgid "Applying defaults…"
+msgstr "డిఫాల్ట్స్‌ను అన్వయిస్తోంది…"
+
+#: src/App.svelte
+msgid "Use saved defaults"
+msgstr "సేవ్ చేసిన డిఫాల్ట్స్‌ని ఉపయోగించండి"
+
+#: src/App.svelte
+msgid "Open settings"
+msgstr "సెట్టింగ్స్ తెరవండి"
+
+#~ msgid "Posting as <0/>"
+#~ msgstr "<0/>గా పోస్ట్ చేస్తోంది"
+
+#~ msgid "Review your post<0>{0} images · {1} groups selected</0>"
+#~ msgstr "మీ పోస్ట్‌ని సమీక్షించండి<0>{0} చిత్రాలు · {1} గ్రూప్‌లు ఎంచబడ్డాయి</0>"
+
+#~ msgid "Original post"
+#~ msgstr "మూల పోస్ట్"
+
+#~ msgid "Your post"
+#~ msgstr "మీ పోస్ట్"
+
+#~ msgid "Gemini will rewrite this body for each group using your instructions."
+#~ msgstr "Gemini మీ సూచనలను ఉపయోగించి ప్రతి గ్రూప్ కోసం ఈ విషయం తిరిగి రాత చేస్తుంది."
+
+#~ msgid "Selected groups ({0})"
+#~ msgstr "ఎంచుకున్న గ్రూప్‌లు ({0})"
+
+#: src/App.svelte
+msgid "Schedule your queue"
+msgstr "మీ క్యూను షెడ్యూల్ చేయండి"
+
+#. 0: Intl.DateTimeFormat().resolvedOptions().timeZone
+#: src/App.svelte
+msgid "Time zone: {0}. Keep Postika open and your computer awake. Facebook may ask you to sign in when posting starts."
+msgstr "సమయ జోన్: {0}. పోస్టికా открыт ఉంచండి మరియు మీ కంప్యూటర్ నిద్రలో లేకుండా ఉంచండి. పోస్ట్ ప్రారంభమవుతుండగా Facebook మీరు సైన్ ఇన్ కావాలని అడగవచ్చు."
+
+#: src/App.svelte
+#: src/Workspace.svelte
+msgid "Cancel"
+msgstr "రద్దు చేయండి"
+
+#: src/App.svelte
+msgid "Confirm schedule"
+msgstr "షెడ్యూల్‌ను నిర్ధారించండి"
+
+#: src/App.svelte
+msgid "Next <0/>"
+msgstr "తదుపరి <0/>"
+
+#: src/App.svelte
+msgid "View logs"
+msgstr "లాగ్‌లను చూడండి"
+
+#: src/App.svelte
+#: src/components/PostingLogView.svelte
+msgid "Stop"
+msgstr "ఆపండి"
+
+#: src/App.svelte
+#: src/Workspace.svelte
+#: src/components/PostingLogView.svelte
+msgid "Scheduled"
+msgstr "షెడ్యూల్ చేయబడింది"
+
+#: src/App.svelte
+msgid "Posting…"
+msgstr "పోస్ట్ చేస్తున్నాం…"
+
+#: src/App.svelte
+msgid "Post now"
+msgstr "ఇప్పుడే పోస్ట్ చేయండి"
+
+#: src/App.svelte
+msgid "Schedule"
+msgstr "షెడ్యూల్ చేయండి"
+
+#: src/App.svelte
+msgid "<0/> Previous"
+msgstr "<0/> మునుపటి"
+
+#: src/Workspace.svelte
+msgid "Application menu"
+msgstr "యాప్ మెనూ"
+
+#: src/Workspace.svelte
+msgid "Add account"
+msgstr "ఖాతాను జోడించండి"
+
+#: src/Workspace.svelte
+#: src/components/PostingLogView.svelte
+#: src/components/PostingLogView.svelte
+msgid "Posting logs"
+msgstr "పోస్టింగ్ లాగ్‌లు"
+
+#: src/Workspace.svelte
+#: src/components/Settings.svelte
+#: src/components/Settings.svelte
+msgid "Settings"
+msgstr "సెట్టింగ్‌లు"
+
+#: src/Workspace.svelte
+msgid "Creating…"
+msgstr "సృష్టిస్తోంది…"
+
+#: src/Workspace.svelte
+msgid "Create & sign in"
+msgstr "సృష్టించి సైన్ ఇన్ చేయండి"
+
+#: src/Workspace.svelte
+msgid "Account name"
+msgstr "ఖాతా పేరు"
+
+#: src/Workspace.svelte
+msgid "Sign in to Facebook in the new account’s browser window."
+msgstr "కొత్త ఖాతా బ్రౌజర్ విండోలో Facebook లో సైన్ ఇన్ చేయండి."
+
+#: src/Workspace.svelte
+msgid "Running"
+msgstr "దర్శిస్తున్నది"
+
+#: src/Workspace.svelte
+msgid "In the background: <0/>"
+msgstr "పరిధి లో: <0/>"
+
+#: src/Workspace.svelte
+msgid "Loading accounts…"
+msgstr "ఖాతాలను లోడ్ చేస్తోంది…"
+
+#: src/components/AccountDropdown.svelte
+msgid "Loading accounts"
+msgstr "ఖాతాలను లోడ్ చేయడం"
+
+#. 0: current?.name ?? 'Loading accounts'
+#: src/components/AccountDropdown.svelte
+msgid "Account: {0}"
+msgstr "ఖాతా: {0}"
+
+#: src/components/AccountDropdown.svelte
+msgid "Select account"
+msgstr "ఖాతాను ఎంచుకోండి"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search accounts…"
+msgstr "ఖాతాలను వెతకండి…"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search accounts"
+msgstr "ఖాతాలను వెతకండి"
+
+#: src/components/AccountDropdown.svelte
+msgid "Clear account search"
+msgstr "ఖాతా శోధన క్లియర్ చేయండి"
+
+#: src/components/AccountDropdown.svelte
+msgid "All accounts"
+msgstr "అన్ని ఖాతాలు"
+
+#: src/components/AccountDropdown.svelte
+msgid "Accounts"
+msgstr "ఖాతాలు"
+
+#: src/components/AccountDropdown.svelte
+msgid "No accounts found"
+msgstr "ఖాతాలు కనుగొనబడలేదు"
+
+#: src/components/AccountDropdown.svelte
+#: src/components/ThemePicker.svelte
+msgid "Try a different name."
+msgstr "వేరే పేరుతో ప్రయత్నించండి."
+
+#: src/components/ConnectivityToast.svelte
+msgid "You’re back online"
+msgstr "మీరు మళ్లీ ఆన్‌లైన్ అయ్యారు"
+
+#: src/components/ConnectivityToast.svelte
+msgid "Internet connection lost"
+msgstr "ఇంటర్నెట్ కనెక్షన్ పోయింది"
+
+#: src/components/ConnectivityToast.svelte
+msgid "Your queue is still manually paused."
+msgstr "మీ క్యూయు ఇంకా మాన్యువల్ గా నిలిపివేయబడింది."
+
+#: src/components/ConnectivityToast.svelte
+msgid "Your queue will continue automatically."
+msgstr "మీ క్యూయు ఆటోమేటిక్ గా కొనసాగుతుంది."
+
+#: src/components/ConnectivityToast.svelte
+msgid "Your queue is paused. We’ll continue when the connection returns."
+msgstr "మీ క్యూయు ఆపబడింది. కనెక్షన్ తిరిగి వచ్చినప్పుడు కొనసాగిస్తాము."
+
+#: src/components/ConnectivityToast.svelte
+msgid "Dismiss connection notification"
+msgstr "కనెక్షన్ నోటిఫికేషన్‌ని తీసివేయండి"
+
+#: src/components/DateTimePicker.svelte
+msgid "Choose a date and time"
+msgstr "తేది మరియు సమయం ఎంచుకోండి"
+
+#: src/components/DateTimePicker.svelte
+msgid "Select date"
+msgstr "తేదీ ఎంచుకోండి"
+
+#: src/components/DateTimePicker.svelte
+msgid "Choose a weekday for this post"
+msgstr "ఈ పోస్టుకు వారానికి రోజును ఎంచుకోండి"
+
+#. 0: day.description
+#: src/components/DateTimePicker.svelte
+msgid "Select {0}"
+msgstr "{0} ఎంచుకోండి"
+
+#: src/components/DateTimePicker.svelte
+msgid "Previous month"
+msgstr "మున్ముందు నెల"
+
+#: src/components/DateTimePicker.svelte
+msgid "Next month"
+msgstr "తరువాతి నెల"
+
+#: src/components/DateTimePicker.svelte
+#: src/components/DateTimePicker.svelte
+msgid "Select time"
+msgstr "సమయం ఎంచుకోండి"
+
+#: src/components/DateTimePicker.svelte
+msgid "24-hour clock"
+msgstr "24-గంటల గడియారం"
+
+#: src/components/DateTimePicker.svelte
+msgid "Increase hour"
+msgstr "గంటను పెంచండి"
+
+#: src/components/DateTimePicker.svelte
+#: src/components/DateTimePicker.svelte
+msgid "Hour"
+msgstr "గంట"
+
+#: src/components/DateTimePicker.svelte
+msgid "Decrease hour"
+msgstr "గంటను తగ్గించండి"
+
+#: src/components/DateTimePicker.svelte
+msgid "Increase minute"
+msgstr "నిమిషాలను పెంచండి"
+
+#: src/components/DateTimePicker.svelte
+#: src/components/DateTimePicker.svelte
+msgid "Minute"
+msgstr "నిమిషం"
+
+#: src/components/DateTimePicker.svelte
+msgid "Decrease minute"
+msgstr "నిమిషాన్ని తగ్గించండి"
+
+#: src/components/DateTimePicker.svelte
+msgid "Choose a date and time in the future."
+msgstr "భవిష్యత్తులో తేదీ మరియు సమయాన్ని ఎంచుకోండి."
+
+#. 0: rejected.join(', ')
+#: src/components/PostComposer.svelte
+msgid "Unsupported files: {0}. Choose JPG, PNG, WebP, or GIF images."
+msgstr "అనాబంధిత ఫైల్స్: {0}. JPG, PNG, WebP, లేదా GIF ఇమేజ్‌లను ఎంచుకోండి."
+
+#. 0: image.file.name
+#: src/components/PostComposer.svelte
+msgid "Could not preview {0}. Please choose another image."
+msgstr "{0} ను ప్రివ్యూ చేయలేకపోయాం. దయచేసి మరొక ఇమేజ్ ను ఎంచుకోండి."
+
+#. 0: images[index].file.name; 1: index + 1; 2: images.length
+#: src/components/PostComposer.svelte
+msgid "{0} moved to position {1} of {2}."
+msgstr "{0} ను {2}లో {1} స్థానానికి తరలించారు."
+
+#: src/components/PostComposer.svelte
+#: src/components/PostEditorContent.svelte
+msgid "Post body"
+msgstr "పోస్ట్ వచనం"
+
+#: src/components/PostComposer.svelte
+#: src/components/PostComposer.svelte
+msgid "Required"
+msgstr "అవసరం"
+
+#: src/components/PostComposer.svelte
+msgid "Images"
+msgstr "చిత్రాలు"
+
+#: src/components/PostComposer.svelte
+msgid "Choose images"
+msgstr "ఇమేజ్‌లను ఎంచుకోండి"
+
+#: src/components/PostComposer.svelte
+msgid "Drop images here or <0>browse images</0>"
+msgstr "ఇమేజ్‌లను ఇక్కడ డ్రాప్ చేయండి లేదా <0>చదరిక ఇమేజ్‌లు</0>"
+
+#: src/components/PostComposer.svelte
+msgid "JPG, PNG, WebP, or GIF · Select multiple images"
+msgstr "JPG, PNG, WebP, లేదా GIF · ఒకేసారి బహుళ ఇమేజ్‌లు ఎంచుకోండి"
+
+#~ msgid "{0} {1} selected"
+#~ msgstr ""
+
+#: src/components/PostComposer.svelte
+msgid "Add more"
+msgstr "మరిన్ని జోడించండి"
+
+#: src/components/PostComposer.svelte
+msgid "Drag images to rearrange. Or focus an image and use Alt + Left / Right."
+msgstr "మీరు డ్రాగ్ చేసి ఇమేజ్‌లను తిరగవేస్తే సర్దుబాటు చేయండి. లేదా ఒక ఇమేజ్ పై ఫోకస్ చేసి Alt + ఎడమ / కుడి కనుక్కోవచ్చు."
+
+#: src/components/PostComposer.svelte
+msgid "Selected images"
+msgstr "ఎంచుకున్న ఇమేజ్‌లు"
+
+#. 0: image.file.name; 1: images.indexOf(image) + 1; 2: images.length
+#: src/components/PostComposer.svelte
+msgid "{0}, image {1} of {2}"
+msgstr "{0}, ఇమేజ్ {2}లో {1}"
+
+#. 0: image.file.name
+#: src/components/PostComposer.svelte
+msgid "Remove {0}"
+msgstr "{0} ను తొలగించండి"
+
+#: src/components/PostComposer.svelte
+msgid "Drop more images here to add them."
+msgstr "వేరే ఇమేజ్‌లను చేర్చడానికి ఇక్కడ డ్రాప్ చేయండి."
+
+#. 0: error
+#: src/components/PostEditor.svelte
+msgid "Could not edit the post: {0}"
+msgstr "పోస్ట్‌ను సవరించలేము: {0}"
+
+#: src/components/PostEditorContent.svelte
+msgid "Post editor controls"
+msgstr "పోస్ట్ ఎడిటర్ నియంత్రణలు"
+
+#: src/components/PostEditorContent.svelte
+msgid "Text formatting"
+msgstr "టెక్స్టు ఫార్మాటింగ్"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bold (Ctrl+B)"
+msgstr "బోల్డ్ (Ctrl+B)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bold"
+msgstr "బోల్డ్"
+
+#: src/components/PostEditorContent.svelte
+msgid "Italic (Ctrl+I)"
+msgstr "ఇటాలిక్ (Ctrl+I)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Italic"
+msgstr "ఇటాలిక్"
+
+#: src/components/PostEditorContent.svelte
+msgid "Heading 1"
+msgstr "శీర్షిక 1"
+
+#: src/components/PostEditorContent.svelte
+msgid "Heading 2"
+msgstr "శీర్షిక 2"
+
+#: src/components/PostEditorContent.svelte
+msgid "Quote"
+msgstr "ఉదృతి"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bullet list"
+msgstr "బుల్లెట్ జాబితా"
+
+#: src/components/PostEditorContent.svelte
+msgid "Numbered list"
+msgstr "సంఖ్యాబద్ధమైన జాబితా"
+
+#: src/components/PostEditorContent.svelte
+msgid "Undo (Ctrl+Z)"
+msgstr "రద్దు (Ctrl+Z)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Undo"
+msgstr "రద్దు"
+
+#: src/components/PostEditorContent.svelte
+msgid "Redo (Ctrl+Shift+Z)"
+msgstr "మళ్ళీ చేయి (Ctrl+Shift+Z)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Redo"
+msgstr "మళ్ళీ చేయి"
+
+#: src/components/PostEditorContent.svelte
+msgid "What would you like to share?"
+msgstr "మీరు ఏది పంచుకోదలిచారు?"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bold, italic, headings, quotes, and lists · Markdown shortcuts supported"
+msgstr "బోల్డ్, ఇటాలిక్, శీર્ષికలు, ఉదృతులు, మరియు జాబితాలు · Markdown షార్ట్‌కట్స్ మద్దతు సంతృప్తి"
+
+#. 0: body.length.toLocaleString(getLocale())
+#: src/components/PostEditorContent.svelte
+msgid "{0} characters"
+msgstr "{0} అక్షరాలు"
+
+#: src/components/LogMessage.svelte
+msgid "Ready to post."
+msgstr "పోస్ట్ చేయడానికి సిద్ధంగా ఉంది."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook response copied."
+msgstr "Facebook ప్రతిస్పందన కాపీ చేయబడింది."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook response received"
+msgstr "Facebook ప్రతిస్పందన పొందబడింది"
+
+#: src/components/PostingLogView.svelte
+msgid "POSTIKA / ACTIVITY"
+msgstr "POSTIKA / కార్యకలాపం"
+
+#: src/components/PostingLogView.svelte
+msgid "Posting progress"
+msgstr "పోస్టింగ్ పురోగతి"
+
+#. 0: activity?.processed || 0; 1: activity?.total || 0
+#: src/components/PostingLogView.svelte
+msgid "{0}/{1} groups processed"
+msgstr "{0}/{1} సమూహాలు ప్రాసెస్ అయ్యాయి"
+
+#. 0: percentage
+#: src/components/PostingLogView.svelte
+msgid "{0}% complete"
+msgstr "{0}% పూర్తి"
+
+#: src/components/PostingLogView.svelte
+msgid "Groups processed"
+msgstr "ప్రాసెస్ అయిన సమూహాలు"
+
+#: src/components/PostingLogView.svelte
+msgid "Published"
+msgstr "ప్రకటన చేయబడింది"
+
+#: src/components/PostingLogView.svelte
+msgid "Awaiting approval"
+msgstr "అనుమతి కోసం ఎదురుచూస్తోంది"
+
+#: src/components/PostingLogView.svelte
+msgid "Failed or skipped"
+msgstr "విఫలమైంది లేదా దాటిపోయింది"
+
+#: src/components/PostingLogView.svelte
+msgid "Remaining"
+msgstr "మిగిలింది"
+
+#. 0: number(a); 1: number(b); 2: c
+#. 0: activity.current; 1: activity.total; 2: activity.currentGroup.name
+#: src/components/LogMessage.svelte
+#: src/components/PostingLogView.svelte
+msgid "Group {0}/{1}: {2}"
+msgstr "సమూహం {0}/{1}: {2}"
+
+#. 0: pauseRequested ? /* @wc-include */ ' · Paused' \\: ''
+#: src/components/PostingLogView.svelte
+msgid "Next post in <0/>{0}"
+msgstr "తరువాతి పోస్ట్ <0/>{0}"
+
+#: src/components/PostingLogView.svelte
+msgid "Elapsed <0/>"
+msgstr "గడిచిన సమయం <0/>"
+
+#: src/components/PostingLogView.svelte
+msgid "Current group <0/>"
+msgstr "ప్రస్తుత సమూహం <0/>"
+
+#: src/components/PostingLogView.svelte
+msgid "Following latest"
+msgstr "తాజాలు అనుసరిస్తోంది"
+
+#: src/components/PostingLogView.svelte
+msgid "Jump to latest"
+msgstr "తాజానికి కదిలి వెళ్ళు"
+
+#. 0.0: total
+#: src/components/PostingLogView.svelte
+msgid "Activity timeline <0>{0} logs</0>"
+msgstr "కార్యకలాపం సమయరేఖ <0>{0} లాగ్స్</0>"
+
+#: src/components/PostingLogView.svelte
+msgid "Posting activity"
+msgstr "పోస్టింగ్ కార్యకలాపం"
+
+#. 0: entryLabel(entry)
+#: src/components/PostingLogView.svelte
+msgid "{0} log"
+msgstr "{0} లాగ్"
+
+#. 0: itemTime(entry.message)
+#: src/components/PostingLogView.svelte
+msgid "Took {0}"
+msgstr "{0} తీసుకున్నది"
+
+#: src/components/PostingLogView.svelte
+#: src/components/PostingLogView.svelte
+msgid "Copy Facebook response"
+msgstr "ఫేస్‌బుక్ స్పందనను కాపీ చేయండి"
+
+#: src/components/PostingLogView.svelte
+msgid "Response copied"
+msgstr "స్పాందనాన్ని కాపీ చేశారు"
+
+#: src/components/PostingLogView.svelte
+msgid "Copied"
+msgstr "కాపీ చేయబడింది"
+
+#: src/components/PostingLogView.svelte
+msgid "Copying…"
+msgstr "కాపీ చేస్తుంది…"
+
+#: src/components/PostingLogView.svelte
+msgid "Copy response"
+msgstr "స్పాందనాన్ని కాపీ చేయండి"
+
+#. 0.0: entry.hasResponse ? /* @wc-include */ ' · Response available to copy' \\: ''
+#: src/components/PostingLogView.svelte
+msgid "Debug details<0>Original log message{0}</0>"
+msgstr "డీబగ్ వివరాలు<0>మూల లాగ్ సందేశం{0}</0>"
+
+#: src/components/PostingLogView.svelte
+msgid "Your activity will appear here"
+msgstr "మీ కార్యకలాపం ఇక్కడ చూపబడుతుంది"
+
+#: src/components/PostingLogView.svelte
+msgid "Start posting to follow uploads, results, and wait times."
+msgstr "అప్‌లోడ్లు, ఫలితాలు, మరియు వేచివుంటున్న సమయాలను ఫాలో చేయడం కోసం ప్రచురణ ప్రారంభించండి."
+
+#: src/components/PostingLogView.svelte
+msgid "Log pages"
+msgstr "లాగ్ పేజీలు"
+
+#: src/components/PostingLogView.svelte
+msgid "Previous page"
+msgstr "మునుపటి పేజీ"
+
+#. 0: number
+#: src/components/PostingLogView.svelte
+msgid "Page {0}"
+msgstr "పేజీ {0}"
+
+#: src/components/PostingLogView.svelte
+msgid "Next page"
+msgstr "తర్వాతి పేజీ"
+
+#: src/components/PostingLogView.svelte
+msgid "← Prev"
+msgstr "← ముందు"
+
+#: src/components/PostingLogView.svelte
+msgid "Next →"
+msgstr "తరువాత →"
+
+#. 0: total ? (page - 1) * pageSize + 1 \\: 0; 1: Math.min(page * pageSize, total); 2: total
+#: src/components/PostingLogView.svelte
+msgid "{0}–{1} of {2} logs"
+msgstr "{0}–{1} లో {2} లాగ్‌లు"
+
+#: src/components/PostingLogView.svelte
+msgid "Resume"
+msgstr "కొనసాగించండి"
+
+#: src/components/PostingLogView.svelte
+msgid "Pause"
+msgstr "పాజ్ చేయండి"
+
+#: src/components/PostingLogView.svelte
+msgid "Stopping…"
+msgstr "ఆపడం…"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "POSTING PACE"
+msgstr "పోస్టింగ్ వేగం"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Interval between posts"
+msgstr "పోస్ట్‌ల మధ్య అంతరం"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Minimum (seconds)"
+msgstr "కనిష్ఠం (సెకన్లు)"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Maximum (seconds)"
+msgstr "గరిష్ఠం (సెకన్లు)"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Choose how long to wait before posting to the next group."
+msgstr "తదుపరి గ్రూప్‌కు పోస్టు చేయడానికి ఎంత సమయం వేచి ఉండాలో ఎంచుకోండి."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "At least 60 seconds. Use equal values for a fixed interval."
+msgstr "కనీసం 60 సెకన్లు. స్థిరమైన అంతరానికి సమాన విలువలను ఉపయోగించండి."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "OPTIONAL · AI REWRITE"
+msgstr "ఐచ్ఛిక · AI పునరకు��"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "A fresh version for each group"
+msgstr "ప్రతి గ్రూప్ కోసం కొత్త వర్షన్"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Rewrite each post body with Gemini"
+msgstr "ప్రతి పోస్ట్ శరీరాన్ని Gemini తో పునరాయించండి"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
+msgstr "మళ్ళీ వ్రాయడానికి సూచనలు<0>Geminiకి ఏ శైలి మరియు వివరాలను నిలుపుకోవాలో ఎంచుకోండి.</0>"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Keep it concise and easy to scan. Preserve the price and contact details."
+msgstr "సంక్షిప్తంగా మరియు సులభంగా చదవదగిన విధంగా ఉంచండి. ధర మరియు సంప్రదింపు వివరాలను నిలుపుకోండి."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Rewrite instructions"
+msgstr "మళ్ళీ వ్రాయడానికి సూచనలు"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
+msgstr "మీ పోస్ట్ టెక్స్ట్ మరియు సూచనలు Google Gemini కి పంపబడతాయి. చిత్రాలు పంపబడవు. Gemini మళ్ళీ వ్రాసినవి సాదా టెక్స్ట్ లో వుంటాయి."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
+msgstr "మళ్ళీ వ్రాయడం విఫలమైతే, ఆ పోస్ట్ మీ అసలు టెక్స్ట్ ను ఉపయోగిస్తుంది. తరువాతి పోస్ట్ మళ్ళీ Geminiను ప్రయత్నిస్తుంది."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Let Gemini rewrite your post using your instructions."
+msgstr "Geminiని మీ సూచనలతో మీ పోస్ట్‌ను మళ్ళీ వ్రాసնելուకు అనుమతించండి."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Posting preferences"
+msgstr "పోస్టింగ్ ప్రాధాన్యతలు"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved defaults help"
+msgstr "సేవ్ చేసిన డిఫాల్ట్లు సహాయపడతాయి"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "About saved defaults"
+msgstr "సేవ్ చేసిన డిఫాల్ట్ల గురించి"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved interval"
+msgstr "సేవ్ చేసిన అంతరం"
+
+#. 0: settings.minimumInterval === settings.maximumInterval ? settings.minimumInterval \\: `${settings.minimumInterval}–${settings.maximumInterval}`
+#: src/components/SavedDefaultsInfo.svelte
+msgid "{0} seconds"
+msgstr "{0} సెకన్లు"
+
+#: src/App.svelte
+#: src/components/SavedDefaultsInfo.svelte
+msgid "On"
+msgstr "ఆన్"
+
+#: src/App.svelte
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Off"
+msgstr "ఆఫ్"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Gemini rewrite"
+msgstr "Gemini మళ్ళీ వ్రాయడం"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "No instructions saved."
+msgstr "ఏ సూచనలు సేవ్ చేయబడలేదు."
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved rewrite instructions"
+msgstr "సేవ్ చేసిన మళ్ళీ వ్రాయడం సూచనలు"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved values could not be loaded. Try “Use saved defaults” again."
+msgstr "సేవ్ చేసిన విలువలను లోడ్ చేయలేకపోయారు. మరోసారి “సేవ్ చేసిన డిఫాల్ట్లు ఉపయోగించండి” ప్రయత్నించండి."
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "What does “Use saved defaults” do?"
+msgstr "“సేవ్ చేసిన డిఫాల్ట్లు ఉపయోగించండి” అంటే ఏమిటి?"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
+msgstr "ఈ రన్ యొక్క పోస్టింగ్ ఇంటర్వెల్, Gemini రీరైట్ ఆప్షన్ మరియు రీరైట్ సూచనలను సెట్టింగ్స్ లో సేవ్ చేసిన విలువలతో మార్చుతుంది."
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
+msgstr "ప్రారంభ డిఫాల్ట్స్: 60–120 సెకన్లు, Gemini రీరైట్ ఆఫ్, మరియు రీరైట్ సూచనలు లేవు. వాటిని మార్చడానికి మీ సొంత ప్రాధాన్యతలను సెట్టింగ్స్‌లో సేవ్ చేయండి."
+
+#: src/components/Settings.svelte
+msgid "Settings saved. New runs can use these defaults."
+msgstr "సెట్టింగ్స్ సేవ్ చేయబడ్డాయి. కొత్త రన్లు ఈ డిఫాల్ట్స్‌ని ఉపయోగించవచ్చు."
+
+#: src/components/Settings.svelte
+msgid "Key saved · leave blank to keep it"
+msgstr "కీ సేవ్ చేయబడింది · దానిని ఉంచడానికి ఖాళీగా వదిలేయండి"
+
+#: src/components/Settings.svelte
+msgid "Enter your Gemini API key"
+msgstr "మీ Gemini API కీని నమోదు చేయండి"
+
+#: src/components/Settings.svelte
+msgid "A key is saved on this device."
+msgstr "ఈ డివైస్ లో ఒక కీ సేవ్ చేయబడింది."
+
+#: src/components/Settings.svelte
+msgid "No API key saved."
+msgstr "ఎటువంటి API కీ సేవ్ చేయబడలేదు."
+
+#: src/components/Settings.svelte
+msgid "Remove saved key"
+msgstr "సేవ్ చేసిన కీని తొలగించండి"
+
+#: src/components/Settings.svelte
+msgid "Gemini"
+msgstr "Gemini"
+
+#: src/components/Settings.svelte
+msgid "API key<0/>"
+msgstr "API కీ<0/>"
+
+#. 0: keyConfigured ? 'A key is saved on this device.' \\: 'No API key saved.'
+#: src/components/Settings.svelte
+msgid "{0} The saved key is never displayed."
+msgstr "{0} సేవ్ చేసిన కీ ఎప్పుడూ ప్రదర్శించబడదు."
+
+#: src/components/Settings.svelte
+msgid "Model<0/>"
+msgstr "మోడల్<0/>"
+
+#: src/components/Settings.svelte
+msgid "Posting defaults"
+msgstr "పోస్టింగ్ డిఫాల్ట్‌లు"
+
+#: src/components/Settings.svelte
+msgid "Applied when you start a new posting run."
+msgstr "మీరు కొత్త పోస్టింగ్ రన్ ప్రారంభించినప్పుడు వర్తింపబడుతుంది."
+
+#: src/components/Settings.svelte
+msgid "Saving…"
+msgstr "సేవ్ చేయడం…"
+
+#: src/components/Settings.svelte
+msgid "Save settings"
+msgstr "సెట్టింగ్‌లను సేవ్ చేయండి"
+
+#: src/components/Settings.svelte
+msgid "YOUR PREFERENCES"
+msgstr "మీ ప్రాధాన్యతలు"
+
+#. 0: accountName
+#: src/components/Settings.svelte
+msgid "Set up Gemini and save posting defaults for {0}."
+msgstr "Gemini ను సెటప్ చేసి {0} కోసం పోస్టింగ్ డిఫాల్ట్స్ సేవ్ చేయండి."
+
+#: src/components/StepProgress.svelte
+msgid "Completed"
+msgstr "కంప్లీటెడ్"
+
+#: src/components/StepProgress.svelte
+msgid "Current"
+msgstr "ప్రస్తుతము"
+
+#: src/components/StepProgress.svelte
+msgid "Upcoming"
+msgstr "రాబోతోన్నవి"
+
+#. 0: index + 1; 1: steps.length; 2: completed || index < currentStep ? 'Completed' \\: index === currentStep ? 'Current' \\: 'Upcoming'
+#: src/components/StepProgress.svelte
+msgid "Step {0} of {1}: {2}"
+msgstr "దశ {0} లో {1}: {2}"
+
+#: src/components/WindowControls.svelte
+msgid "Could not change the window. Please try again."
+msgstr "విండోను మార్చలేకపోయాం. దయచేసి మళ్లీ ప్రయత్నించండి."
+
+#: src/components/WindowControls.svelte
+msgid "Window controls"
+msgstr "విండో నియంత్రణలు"
+
+#: src/components/WindowControls.svelte
+msgid "Minimize window"
+msgstr "విండోను తగ్గించండి"
+
+#: src/components/WindowControls.svelte
+msgid "Restore window"
+msgstr "విండోను మళ్లీ తెరవండి"
+
+#: src/components/WindowControls.svelte
+msgid "Maximize window"
+msgstr "విండోను పెంచండి"
+
+#: src/components/WindowControls.svelte
+msgid "Close window"
+msgstr "విండోను మూసివేయండి"
+
+#: src/App.svelte
+msgid "Create post"
+msgstr "పోస్ట్ సృష్టించండి"
+
+#: src/App.svelte
+msgid "Write your post and add images"
+msgstr "మీ పోస్ట్ రాయండి మరియు చిత్రాలు జోడించండి"
+
+#: src/App.svelte
+msgid "Select groups"
+msgstr "సమూహాలను ఎంచుకోండి"
+
+#: src/App.svelte
+msgid "Load groups and choose where to post"
+msgstr "గ్రూపులను లోడ్ చేసి ఎక్కడ పోస్ట్ చేయాలో ఎంచుకోండి"
+
+#~ msgid "Review & post"
+#~ msgstr "సమీక్షించి పోస్ట్ చేయండి"
+
+#~ msgid "Review, set preferences, then post now or schedule"
+#~ msgstr "సమీక్షించండి, ప్రాధాన్యతలను సెట్ చేసి, ఇప్పుడు పోస్ట్ చేయండి లేదా షెడ్యూల్ చేయండి"
+
+#: src/App.svelte
+msgid "Facebook session captured"
+msgstr "Facebook సెషన్ క్యాప్చర్ చేయబడింది"
+
+#: src/App.svelte
+msgid "The browser is closed. It will reopen when you click Post."
+msgstr "బ్రౌజర్ మూసివేసారు. మీరు పోస్ట్ పై క్లిక్ చేసినప్పుడు ఇది మళ్లీ తెరుచుకుంటుంది."
+
+#: src/App.svelte
+msgid "Checking Facebook login"
+msgstr "Facebook లాగిన్ ను తనిఖీ చేస్తోంది"
+
+#: src/App.svelte
+msgid "Finish signing in or any verification prompts in Chrome. Your login will be detected automatically."
+msgstr "Chrome లో సైన్ ఇన్ లేదా ఏదైనా ధృవీకరణ ప్రాంప్ట్ ను పూర్తి చేయండి. మీ లాగిన్ ఆటోమేటిక్ గా గుర్తించబడుతుంది."
+
+#: src/App.svelte
+msgid "Login required"
+msgstr "లాగిన్ అవసరం"
+
+#: src/App.svelte
+msgid "Please log in to Facebook in the Chrome window. Postika will detect when you’re signed in."
+msgstr "దయచేసి Chrome విండోలో Facebook లో లాగిన్ అవ్వండి. మీ సైన్ ఇన్ అయినప్పుడు Postika గుర్తిస్తుంది."
+
+#: src/App.svelte
+msgid "Complete Facebook verification"
+msgstr "Facebook ధృవీకరణని పూర్తి చేయండి"
+
+#: src/App.svelte
+msgid "Complete the login or verification prompts in Chrome to continue."
+msgstr "కొన్టిన్యూ చేసేందుకు Chrome లో లాగిన్ లేదా ధృవీకరణ ప్రాంప్ట్ లను పూర్తి చేయండి."
+
+#: src/App.svelte
+msgid "Facebook connected"
+msgstr "Facebook కనెక్ట్ అయింది"
+
+#: src/App.svelte
+msgid "You’re logged in. Your session is ready."
+msgstr "మీరు లాగిన్ అయ్యారు. మీ సెషన్ సిద్ధంగా ఉంది."
+
+#: src/App.svelte
+msgid "Facebook window closed"
+msgstr "ఫేస్బుక్ విండో మూతబడింది"
+
+#: src/App.svelte
+msgid "Click Load groups to reopen Facebook and check your login."
+msgstr "ఫేస్బుక్ తిరిగి తెరవడానికి మరియు మీ లాగిన్‌ను తనిఖీ చేసేందుకు 'లొడ్డు గ్రూప్స్' క్లిక్ చేయండి."
+
+#. 0: current?.name ?? ''
+#: src/components/AccountDropdown.svelte
+msgid "Language: {0}"
+msgstr "భాష: {0}"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search languages…"
+msgstr "భాషలను వెతకండి…"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search languages"
+msgstr "భాషలను వెతకండి"
+
+#: src/components/AccountDropdown.svelte
+msgid "Clear language search"
+msgstr "భాషా శోధనను క్లియర్ చేయండి"
+
+#. 0: matches.length
+#: src/components/AccountDropdown.svelte
+msgid "{0} result"
+msgstr "{0} ఫలితం"
+
+#. 0: matches.length
+#: src/components/AccountDropdown.svelte
+msgid "{0} results"
+msgstr "{0} ఫలితాలు"
+
+#: src/components/AccountDropdown.svelte
+msgid "All languages"
+msgstr "అన్ని భాషలు"
+
+#: src/components/AccountDropdown.svelte
+msgid "Languages"
+msgstr "భాషలు"
+
+#: src/components/AccountDropdown.svelte
+msgid "No languages found"
+msgstr "ఎలాంటి భాషలు కనిపించలేదు"
+
+#: src/components/DateTimePicker.svelte
+msgid "Morning"
+msgstr "ఉదయం"
+
+#: src/components/DateTimePicker.svelte
+msgid "Afternoon"
+msgstr "మధ్యాహ్నం"
+
+#: src/components/DateTimePicker.svelte
+msgid "Evening"
+msgstr "సాయంత్రం"
+
+#: src/components/LanguageMenu.svelte
+msgid "Could not change the language. Please try again."
+msgstr "భాష మార్చలేకపోయాము. దయచేసి మళ్ళీ ప్రయత్నించండి."
+
+#: src/components/Settings.svelte
+msgid "Language"
+msgstr "భాష"
+
+#: src/components/PostingOptionsForm.svelte
+#: src/components/PostingOptionsForm.svelte
+msgid "seconds"
+msgstr "సెకన్లు"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Minimum"
+msgstr "కనీసం"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Maximum"
+msgstr "గరిష్టం"
+
+#: src/components/StepProgress.svelte
+msgid "Post progress"
+msgstr "ప్రగతి పోస్ట్ చేయడం"
+
+#. 0: visibleGroups.length
+#: src/App.svelte
+msgid "{0} shown"
+msgstr "{0} చూపించబడింది"
+
+#. 0: selectedGroupIds.length
+#: src/App.svelte
+msgid "{0} selected"
+msgstr "{0} ఎంచుకోబడింది"
+
+#. 0: images.length
+#: src/components/PostComposer.svelte
+msgid "{0} images selected"
+msgstr "{0} చిత్రాలు ఎంచుకోబడింది"
+
+#: src/components/PostingLogView.svelte
+msgid "WARN"
+msgstr "హెల్త్"
+
+#: src/components/PostingLogView.svelte
+msgid "INFO"
+msgstr "సమాచారం"
+
+#: src/components/PostingLogView.svelte
+msgid "ERROR"
+msgstr "లోపం"
+
+#: src/components/PostingLogView.svelte
+msgid "DEBUG"
+msgstr "డెబగ్"
+
+#: src/components/PostingLogView.svelte
+msgid "PUBLISHED"
+msgstr "ప్రచురించబడింది"
+
+#: src/components/PostingLogView.svelte
+msgid "PENDING"
+msgstr "పెండింగ్‌లో ఉంది"
+
+#: src/components/PostingLogView.svelte
+msgid "FAILED"
+msgstr "విఫలమైంది"
+
+#: src/components/PostingLogView.svelte
+msgid "SKIPPED"
+msgstr "దాటివేయబడింది"
+
+#: src/components/PostingLogView.svelte
+msgid "UNCONFIRMED"
+msgstr "నిర్ధారించబడలేదు"
+
+#: src/Workspace.svelte
+msgid "e.g. Business"
+msgstr "ఉదా. బిజినెస్"
+
+#: src/components/PostComposer.svelte
+msgid "1 image selected"
+msgstr "1 చిత్రం ఎంచుకోబడింది"
+
+#: src/components/PostingLogView.svelte
+msgid "Paused · Waiting for internet"
+msgstr "సరియైనది · ఇంటర్నెట్ కోసం వేచిచూస్తోంది"
+
+#: src/components/PostingLogView.svelte
+msgid "Pausing after the current operation"
+msgstr "ప్రస్తుత ఆపరేషన్ తరువాత ఆగిపోరు"
+
+#: src/components/PostingLogView.svelte
+msgid "Paused"
+msgstr "ఆగిపోయింది"
+
+#: src/components/PostingLogView.svelte
+msgid "Stopping"
+msgstr "ఆగుతుంది"
+
+#: src/components/PostingLogView.svelte
+msgid "Posting"
+msgstr "పోస్ట్ చేయడం"
+
+#: src/components/PostingLogView.svelte
+msgid "Finished"
+msgstr "పూర్తయింది"
+
+#: src/components/PostingLogView.svelte
+msgid "Stopped"
+msgstr "ఆగిపోయింది"
+
+#: src/components/PostingLogView.svelte
+msgid "Ready"
+msgstr "సిద్‌ధం"
+
+#: src/components/PostingLogView.svelte
+msgid "CURRENT ACTIVITY"
+msgstr "ప్రస్తుత కార్యకలాపం"
+
+#: src/components/PostingLogView.svelte
+msgid "RUN STATUS"
+msgstr "రన్ స్థితి"
+
+#: src/components/PostingLogView.svelte
+msgid " · Paused"
+msgstr " · నిలిపివేశింది"
+
+#: src/components/PostingLogView.svelte
+msgid " · Response available to copy"
+msgstr " · ప్రతిస్పందన కాపీ చేసుకోవడానికి అందుబాటులో ఉంది"
+
+#: src/components/AccountLabel.svelte
+msgid "Default profile"
+msgstr "డిఫాల్ట్ ప్రొఫైల్"
+
+#~ msgid "Switch to light mode"
+#~ msgstr "లైట్ మోడ్‌కు మారండి"
+
+#~ msgid "Switch to dark mode"
+#~ msgstr "డార్క్ మోడ్‌కు మారండి"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Color themes"
+msgstr "రంగు థీమ్‌లు"
+
+#: src/components/ThemePicker.svelte
+msgid "Close"
+msgstr "మూసివేయి"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Search themes…"
+msgstr "థీమ్‌లను వెతకండి…"
+
+#: src/components/ThemePicker.svelte
+msgid "No themes found"
+msgstr "థీమ్‌లు ఏవీ కనుగొనబడలేదు"
+
+#: src/components/LogMessage.svelte
+msgid "A selected group is no longer available. Load groups again"
+msgstr "ఎంచుకున్న గ్రూప్ ఇక అందుబాటులో లేదు. గ్రూప్‌లను మళ్లీ లోడ్ చేయండి"
+
+#: src/components/LogMessage.svelte
+msgid "Add a Gemini API key in Settings before enabling rewriting"
+msgstr "రిరైటింగ్ ఎనేబుల్ చేయడానికి ముందు సెట్టింగ్స్‌లో Gemini API కీని జోడించండి"
+
+#: src/components/LogMessage.svelte
+msgid "Add a post body and at least one image"
+msgstr "పోస్ట్ బాడీ మరియు కనీసం ఒక చిత్రం జోడించండి"
+
+#: src/components/LogMessage.svelte
+msgid "All selected groups were already attempted. Review unconfirmed results on Facebook."
+msgstr "ఎన్నిక చేయబడిన అన్ని గ్రూప్‌లకు ఇప్పటికే ప్రయత్నించారు. Facebookలో నిర్ధారితం కాని ఫలితాలను సమీక్షించండి."
+
+#: src/components/LogMessage.svelte
+msgid "An image upload failed in Chrome. Check the composer and retry Post"
+msgstr "Chromeలో ఒక చిత్రం అప్లోడ్ విఫలమైంది. కాంపోజర్‌ని తనిఖీ చేసి పోస్ట్ పునరాయించండి"
+
+#: src/components/LogMessage.svelte
+msgid "Attaching images…"
+msgstr "చిత్రాలను జత చేసుకుంటోంది…"
+
+#: src/components/LogMessage.svelte
+msgid "Choose JPG, PNG, WebP, or GIF images"
+msgstr "JPG, PNG, WebP, లేదా GIF చిత్రాలను ఎంచుకోండి"
+
+#: src/components/LogMessage.svelte
+msgid "Choose a future date and time for your post"
+msgstr "మీ పోస్ట్ కోసం భవిష్యత్తు తేది మరియు సమయాన్ని ఎంచుకోండి"
+
+#: src/components/LogMessage.svelte
+msgid "Closing Chrome and posting to the remaining groups…"
+msgstr "Chrome ను మూసివేస్తూ మిగిలిన గ్రూప్‌లకు పోస్ట్ చేయడం…"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the complete create-post request"
+msgstr "పూర్తి క్రియేట్-పోస్ట్ అభ్యర్థనను క్యాప్ చేయలేకపోయాం"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the completed image upload response"
+msgstr "పూర్తైన చిత్రం అప్లోడ్ ప్రతిస్పందనను క్యాప్ చేయలేకపోయాం"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the image upload form fields"
+msgstr "చిత్రం అప్లోడ్ ఫారమ్ ఫీల్డ్స్‌ను క్యాప్ చేయలేకపోయాం"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the image upload form. Retry Post"
+msgstr "చిత్రం అప్లోడ్ ఫారమ్‌ను క్యాప్ చేయలేకపోయాం. పోస్ట్ పునరాయించండి"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the upload endpoint"
+msgstr "అప్లోడ్ ఎండ్పాయింట్‌ను క్యాప్ చేయలేకపోయాం"
+
+#: src/components/LogMessage.svelte
+msgid "Could not copy the Facebook response to the clipboard"
+msgstr "Facebook ప్రతిస్పందనను క్లిప్‌బోర్డ్‌కు కాపీ చేయలేకపోయాం"
+
+#: src/components/LogMessage.svelte
+msgid "Could not enable create-post capture in Chrome"
+msgstr "క్రోమ్‌లో create-post క్యాప్చర్ ను సಕ್ರియం చేయలేకపోయింది"
+
+#: src/components/LogMessage.svelte
+msgid "Could not parse the captured create-post form"
+msgstr "క్యాప్చర్ చేసిన create-post ఫారమ్ ని పార్స్ చేయలేకపోయింది"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare image files"
+msgstr "చిత్ర ఫైళ్ళను సిద్ధం చేయలేకపోయింది"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare post images"
+msgstr "పోస్ట్ చిత్రాలను సిద్ధం చేయలేకపోయింది"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare the Gemini request"
+msgstr "Gemini అభ్యర్థనను సిద్ధం చేయలేకపోయింది"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare the image upload."
+msgstr "చిత్ర అప్లోడ్ ను సిద్ధం చేయలేకపోయింది."
+
+#: src/components/LogMessage.svelte
+msgid "Could not reach Gemini. Check your connection"
+msgstr "Gemini కి చేరుకోలేకపోయింది. మీ కనెక్షన్ ను తనిఖీ చేయండి"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read Facebook's post confirmation"
+msgstr "ఫేస్‌బుక్ యొక్క పోస్ట్ నిర్ధారణను చదవలేకపోయింది"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read the Gemini rewrite"
+msgstr "Gemini రీరైట్ ను చదవలేకపోయింది"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read the completed image upload response"
+msgstr "పూర్తయిన చిత్ర అప్లోడ్ స్పందనను చదవలేకపోయింది"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read the selected image."
+msgstr "ఎంపిక చేసిన చిత్రాన్ని చదవలేకపోయింది."
+
+#: src/components/LogMessage.svelte
+msgid "Create-post capture ended before confirmation. Check Facebook before retrying"
+msgstr "Create-post క్యాప్చర్ నిర్ధారణకు ముందే ముగిసింది. పునఃప్రయత్నం చేయడానికి ముందు ఫేస్‌బుక్‌ని తనిఖీ చేయండి"
+
+#: src/components/LogMessage.svelte
+msgid "Create-post request detected. Capturing fresh form values…"
+msgstr "Create-post అభ్యర్థన గుర్తించబడింది. తాజా ఫారమ్ విలువలను క్యాప్చర్ చేస్తోంది…"
+
+#: src/components/LogMessage.svelte
+msgid "Create-post response complete. Waiting for captured session headers…"
+msgstr "Create-post స్పందన పూర్తి. క్యాప్చర్ అయిన సెషన్ హెడర్స్ కోసం వేచి ఉంది…"
+
+#: src/components/LogMessage.svelte
+msgid "Create-post response received. Waiting for its complete body…"
+msgstr "Create-post స్పందన అందింది. దాని పూర్తి బాడీ కోసం వేచి ఉంది…"
+
+#: src/components/LogMessage.svelte
+msgid "Description inserted"
+msgstr "వివరణ చొప్పించబడింది"
+
+#: src/components/LogMessage.svelte
+msgid "Earlier submission is unconfirmed. Skipping this group and continuing with the remaining groups."
+msgstr "ముందస్తు సమర్పణ నిర్ధారించబడలేదు. ఈ గ్రూప్‌ను దాటివచ్చి మిగతా గ్రూప్‌లతో కొనసాగుతుంది."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook could not post to this group. Continuing with the remaining groups."
+msgstr "ఫేస్‌బుక్ ఈ గ్రూప్‌లో పోస్ట్ చేయలేకపోయింది. మిగతా గ్రూప్‌లతో కొనసాగుతుంది."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook did not confirm all images. Check the composer."
+msgstr "ఫేస్‌బుక్ అన్ని చిత్రాలను నిర్ధారించలేదు. రచయితను పరిశీలించండి."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook did not confirm the submission"
+msgstr "ఫేస్‌బుక్ సమర్పణను నిర్ధారించలేదు."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook did not confirm this post. Check the group before trying again."
+msgstr "ఫేస్‌బుక్ ఈ పోస్ట్‌ను నిర్ధారించలేదు. మళ్ళీ ప్రయత్నించే ముందు గ్రూప్‌ను తనిఖీ చేయండి."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook has temporarily limited posting. Try again later."
+msgstr "ఫేస్‌బుక్ తాత్కాలికంగా పోస్ట్ చేయడాన్ని పరిమితం చేసింది. తర్వాత మళ్లీ ప్రయత్నించండి."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook rejected this post."
+msgstr "ఫేస్‌బుక్ ఈ పోస్ట్‌ను తిరస్కరించింది."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook requires login or verification. Load groups again."
+msgstr "ఫేస్‌బుక్ లాగిన్ లేదా ధృవీకరణను కోరుతోంది. గ్రూప్‌లను మళ్లీ లోడ్ చేయండి."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook returned a story, but did not confirm its group or publication state. Posting stopped. Check Facebook before retrying."
+msgstr "ఫేస్‌బుక్ ఒక స్టోరీను తిరిగి ఇచ్చింది, కానీ దాని గ్రూప్ లేదా ప్రచురణ స్థితిని నిర్ధారించలేదు. పోస్టింగ్ నిలిపివేయబడింది. మళ్లీ ప్రయత్నించే ముందు ఫేస్‌బుక్‌ను తనిఖీ చేయండి."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook's confirmation exceeded the 16 MiB response limit; retained response is truncated"
+msgstr "ఫేస్‌బుక్ నిర్ధారణ 16 MiB ప్రతిస్పందన పరిమితిని మించిపోయింది; నిల్వ చేసిన ప్రతిస్పందన చీలితంగా ఉంది"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook's editor did not accept the formatted post. Posting was not submitted"
+msgstr "ఫేస్‌బుక్ ఎడిటర్ ఫార్మాటింగ్ చేసిన పోస్ట్‌ను ఆమోదించలేదు. పోస్ట్ సమర్పణ చేయబడలేదు"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook's editor did not retain the formatted post text. Posting was not submitted"
+msgstr "Facebook ఎడిటర్ ఫార్మాట్ చేసిన పోస్టు టెక్స్ట్ ను నిలుపుకోలేదు. పోస్ట్ పంపబడలేదు"
+
+#: src/components/LogMessage.svelte
+msgid "First post confirmed. Waiting for the Facebook composer to close…"
+msgstr "మొదటి పోస్ట్ ధృవీకరించబడింది. Facebook కంపోజర్ మూసివేసే వరకు వేస్తుంది…"
+
+#: src/components/LogMessage.svelte
+msgid "First submission unconfirmed. Retrying request 1/3 with the captured mutation ID…"
+msgstr "మొదటి సమర్పణ ధృవీకరించబడలేదు. క్యాప్చర్ చేసిన మ్యూటేషన్ ID తో అభ్యర్థనను పునరావృతంగా ప్రయత్నిస్తోంది 1/3…"
+
+#: src/components/LogMessage.svelte
+msgid "Formatted post is too large"
+msgstr "ఫార్మాట్ చేసిన పోస్ట్ చాలా పెద్దది"
+
+#: src/components/LogMessage.svelte
+msgid "Found multiple matching post composers on the group page"
+msgstr "గ్రూప్ పేజీలోని అనేక సరిపోని పోస్ట్ కంపోజర్లను గుర్తించింది"
+
+#: src/components/LogMessage.svelte
+msgid "Fresh create-post form captured. Waiting for Facebook's response…"
+msgstr "తాజా క్రియేట్-పోస్ట్ ఫారం క్యాప్చర్ అయింది. Facebook స్పందన కోసం వేస్తోంది…"
+
+#: src/components/LogMessage.svelte
+msgid "Gemini did not finish the rewrite"
+msgstr "Gemini తిరిగి రాయడం పూర్తిచేయలేదు"
+
+#: src/components/LogMessage.svelte
+msgid "Gemini returned no rewritten text"
+msgstr "Gemini తిరిగి రాసిన టెక్స్ట్ ఇవ్వలేదు"
+
+#: src/components/LogMessage.svelte
+msgid "Gemini rewrite completed."
+msgstr "Gemini తిరిగి రాయడం పూర్తయింది."
+
+#: src/components/LogMessage.svelte
+msgid "Gemini rewrite failed. Using the original text for this post; Gemini will be tried again for the next post."
+msgstr "Gemini తిరిగి రాయడం విఫలమైంది. ఈ పోస్టుకు అసలైన టెక్స్ట్ వాడబడుతుంది; తదుపరి పోస్టుకు Geminiని మళ్లీ ప్రయత్నిస్తారు."
+
+#: src/components/LogMessage.svelte
+msgid "Image uploads belong to a different profile"
+msgstr "చిత్రాల అప్‌లోడ్లు వేరిగా ఉన్న ప్రొఫైల్‌కు చెందాయి"
+
+#: src/components/LogMessage.svelte
+msgid "Images inserted"
+msgstr "చిత్రాలు చేర్చబడ్డాయి"
+
+#: src/components/LogMessage.svelte
+msgid "Inserting post body…"
+msgstr "పోస్ట్ బాడీని చేర్చుతున్నాం…"
+
+#: src/components/LogMessage.svelte
+msgid "Internet connection lost. Queue paused until the connection returns."
+msgstr "ఇంటర్నెట్ కనెక్షన్ కోల్పోయినది. కనెక్షన్ తిరిగి వచ్చే వరకు క్యూలను నిలిపివేస్తోంది."
+
+#: src/components/LogMessage.svelte
+msgid "Internet connection restored. Continuing the queue."
+msgstr "ఇంటర్నెట్ కనెక్షన్ పునరుద్ధరించబడింది. క్యూను కొనసాగిస్తున్నాం."
+
+#: src/components/LogMessage.svelte
+msgid "Internet connection restored. The queue remains manually paused."
+msgstr "ఇంటర్నెట్ కనెక్షన్ పునరుద్ధరించబడింది. క్యూను మానువల్‌గా నిలిపివేసారు."
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured endpoint"
+msgstr "చెల్లనిది క్యాప్చర్ చేసిన ఎండ్‌పాయింట్"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured formatted post"
+msgstr "చెల్లనిది క్యాప్చర్ చేసిన ఫార్మాటెడ్ పోస్ట్"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured post form"
+msgstr "చెల్లనిది క్యాప్చర్ చేసిన పోస్ట్ ఫారం"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured post variables"
+msgstr "చెల్లనిది క్యాప్చర్ చేసిన పోస్ట్ వేరియబుల్స్"
+
+#: src/components/LogMessage.svelte
+msgid "Load your groups before opening a post"
+msgstr "పోస్ట్ ని తెరవడానికి ముందు మీ గ్రూప్స్ లోడ్ చేయండి"
+
+#: src/components/LogMessage.svelte
+msgid "Log in or complete Facebook verification in Chrome, then click Post again"
+msgstr "క్రోమ్‌లో లాగిన్ అవ్వండి లేదా ఫేస్బుక్ ధృవీకరణ పూర్తి చేయండి, ఆపై మళ్లీ పోస్ట్‌పై క్లిక్ చేయండి"
+
+#: src/components/LogMessage.svelte
+msgid "Multiple matching controls found in the post composer"
+msgstr "పోస్ట్ కంపోజర్‌లో బహుళ సరిపోతున్న కంట్రోల్స్ కనుగొనేందుకు"
+
+#: src/components/LogMessage.svelte
+msgid "No Facebook response was captured for this entry"
+msgstr "ఈ ఎంట్రీకి ఫేస్బుక్ ప్రతిక్రియ పట్టడంలో విఫలమైంది"
+
+#: src/components/LogMessage.svelte
+msgid "No available post composer."
+msgstr "అందుబాటులో ఉన్న పోస్ట్ కంపోజర్ లేదు."
+
+#: src/components/LogMessage.svelte
+msgid "No complete image upload request was captured."
+msgstr "పూర్తి ఇమేజ్ అప్‌లోడ్ అభ్యర్థన పట్టబడలేదు."
+
+#: src/components/LogMessage.svelte
+msgid "No fresh image upload request was captured."
+msgstr "తాజా ఇమేజ్ అప్‌లోడ్ అభ్యర్థన పట్టబడలేదు."
+
+#: src/components/LogMessage.svelte
+msgid "Opening browser…"
+msgstr "బ్రౌజర్ తెరవబడుతోంది…"
+
+#: src/components/LogMessage.svelte
+msgid "Pause requested. The current operation will finish before pausing."
+msgstr "నిలిపివేయటం కోరబడింది. ప్రస్తుత ఆపరేషన్ పూర్తయిన తర్వాత నిలుపబడుతుంది."
+
+#: src/components/LogMessage.svelte
+msgid "Post button clicked"
+msgstr "పోస్ట్ బటన్ క్లిక్ చేయబడింది"
+
+#: src/components/LogMessage.svelte
+msgid "Post published."
+msgstr "పోస్ట్ ప్రచురించబడింది."
+
+#: src/components/LogMessage.svelte
+msgid "Postika is shutting down"
+msgstr "పోస్టికా షట్డౌన్ చేస్తున్నది"
+
+#: src/components/LogMessage.svelte
+msgid "Posting is already running"
+msgstr "పోస్టింగ్ ఇప్పటికే నడుస్తోంది"
+
+#: src/components/LogMessage.svelte
+msgid "Posting paused."
+msgstr "పోస్టింగ్ ఆగింది."
+
+#: src/components/LogMessage.svelte
+msgid "Posting resumed."
+msgstr "పోస్టింగ్ పునరారంభించబడింది."
+
+#: src/components/LogMessage.svelte
+msgid "Posting stopped after the first post was confirmed"
+msgstr "మొదటి పోస్ట్ ధృవీకరించబడిన తర్వాత పోస్టింగ్ ఆపబడింది"
+
+#: src/components/LogMessage.svelte
+msgid "Posting..."
+msgstr "పోస్టింగ్..."
+
+#: src/components/LogMessage.svelte
+msgid "Reading Facebook's create-post confirmation…"
+msgstr "Facebook యొక్క create-post ధృవీకరణ చదివılıyor…"
+
+#: src/components/LogMessage.svelte
+msgid "Rewriting the post body with Gemini…"
+msgstr "Gemini తో పోస్ట్ బాడీని పునర్రచన చేయడం…"
+
+#: src/components/LogMessage.svelte
+msgid "Scheduled posting cancelled."
+msgstr "ప్రణాళిక చేసిన పోస్టింగ్ రద్దు చేయబడింది."
+
+#: src/components/LogMessage.svelte
+msgid "Scheduled time reached. Starting posting…"
+msgstr "ప్రణాళికా సమయం చేరింది. పోస్టింగ్ ప్రారంభించబడింది..."
+
+#: src/components/LogMessage.svelte
+msgid "Select at least one group"
+msgstr "కనీసం ఒక గ్రూప్ ఎంచుకోండి"
+
+#: src/components/LogMessage.svelte
+msgid "Setting up automatic posting using your first Facebook post..."
+msgstr "మీ మొదటి Facebook పోస్ట్ ఉపయోగించి ఆటోమేటిక్ పోస్టింగ్ సెట్ చేయడం..."
+
+#: src/components/LogMessage.svelte
+msgid "Stopping posting…"
+msgstr "పోస్టింగ్ ఆపడం…"
+
+#: src/components/LogMessage.svelte
+msgid "Submitting the first post and capturing fresh request values…"
+msgstr "మొదటి పోస్ట్ సమర్పించడం మరియు తాజా అభ్యర్థన విలువలను సేకరణ చేయడం…"
+
+#: src/components/LogMessage.svelte
+#: src/components/LogMessage.svelte
+msgid "Technical details recorded. Open debug details to inspect the original message."
+msgstr "సాంకేతిక వివరాలు నమోదు చేయబడ్డాయి. అసలు సందేశాన్ని పరిశీలించడానికి డీబగ్ వివరాలను ఓపెన్ చేయండి."
+
+#: src/components/LogMessage.svelte
+msgid "The active Facebook profile changed or expired"
+msgstr "క్రియాశీల Facebook ప్రొఫైల్ మారు లేదా సమయం ముగిశింది"
+
+#: src/components/LogMessage.svelte
+msgid "The browser connection was lost. Check Facebook before retrying"
+msgstr "బ్రౌజర్ కనెక్షన్ కోల్పోయింది. మళ్లీ ప్రయత్నించడానికి Facebook ని తనిఖీ చేయండి"
+
+#: src/components/LogMessage.svelte
+msgid "The browser profile changed while capturing posting requests"
+msgstr "పోస్టింగ్ అభ్యర్థనలను సేకరిస్తూ బ్రౌజర్ ప్రొఫైల్ మార్చబడింది"
+
+#: src/components/LogMessage.svelte
+msgid "The captured formatted post body does not match your draft"
+msgstr "అసలు ఫార్మాటెడ్ పోస్ట్ బాడీ మీ డ్రాఫ్ట్‌కు సరిపోలడం లేదు"
+
+#: src/components/LogMessage.svelte
+msgid "The captured image upload cookies do not match the Facebook profile"
+msgstr "అసలు ఇమేజ్ అప్‌లోడ్ కుకీస్ ఫేస్‌బుక్ ప్రొఫైల్‌కు సరిపోలడం లేదు"
+
+#: src/components/LogMessage.svelte
+msgid "The captured image upload format is not supported"
+msgstr "అసలు ఇమేజ్ అప్‌లోడ్ ఫార్మాట్ మద్దతు ఇవ్వబడలేదు"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post belongs to a different Facebook profile"
+msgstr "అసలు పోస్ట్ వేరే ఫేస్‌బుక్ ప్రొఫైల్‌కు చెందినది"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post body does not match your draft"
+msgstr "అసలు పోస్ట్ బాడీ మీ డ్రాఫ్ట్‌కు సరిపోలడం లేదు"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post cookies do not match the logged-in profile"
+msgstr "అసలు పోస్ట్ కుకీస్ లాగ్ ఇన్ చేసిన ప్రొఫైల్‌కు సరిపోలడం లేదు"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post has no group target"
+msgstr "అసలు పోస్ట్‌కు ఎలాంటి గ్రూప్ లక్ష్యం లేదు"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post target does not match the selected group"
+msgstr "అసలు పోస్ట్ లక్ష్యం ఎంపిక చేసిన గ్రూప్‌‌కు సరిపోలడం లేదు"
+
+#: src/components/LogMessage.svelte
+msgid "The composer dialog was replaced while loading"
+msgstr "కంపోజర్ డైలాగ్‌లోడ్ కాబడుతూ ఉన్నప్పుడు భర్తీ చేయబడింది"
+
+#: src/components/LogMessage.svelte
+msgid "The create-post connection failed. Check Facebook before retrying"
+msgstr "పోస్ట్ సృష్టించడం కనెక్షన్ విఫలమైంది. పునరాయింపునకు ముందు ఫేస్‌బుక్‌ను తనిఖీ చేయండి"
+
+#: src/components/LogMessage.svelte
+msgid "The current profile differs from the profile used to load groups. Load groups again."
+msgstr "ప్రస్తుత ప్రొఫైల్ లొడ్తున్న గ్రూప్స్ ఉపయోగించిన ప్రొఫైల్‌తో భిన్నంగా ఉంది. గ్రూప్స్‌ను మళ్లీ లోడ్ చేయండి."
+
+#: src/components/LogMessage.svelte
+msgid "The desktop application is not ready"
+msgstr "డెస్క్‌టాప్ అప్లికేషన్ సిద్ధంగా లేదు"
+
+#: src/components/LogMessage.svelte
+msgid "The desktop clipboard is not ready"
+msgstr "డెస్క్‌టాప్ క్లిప్‌బోర్డ్ సిద్ధంగా లేదు"
+
+#: src/components/LogMessage.svelte
+msgid "The expected composer control did not appear in Chrome"
+msgstr "అంచనావేసిన కంపోజర్ కంట్రోల్ Chromeలో ప్రదర్శించబడలేదు"
+
+#: src/components/LogMessage.svelte
+msgid "The first post was confirmed, but Chrome's completion state could not be checked. Posting stopped"
+msgstr "మొదటి పోస్ట్ నిర్ధారించబడింది, కానీ క్రోమ్ పూర్తి స్థితిని తనిఖీ చేయలేకపోయింది. పోస్ట్ చేయడం ఆపబడింది"
+
+#: src/components/LogMessage.svelte
+msgid "The image upload did not contain multipart form data"
+msgstr "చిత్రం అప్లోడ్ multipart ఫారం డేటా కలిగి లేదు"
+
+#: src/components/LogMessage.svelte
+msgid "The image upload does not match its active Facebook profile"
+msgstr "చిత్రం అప్లోడ్ దాని చెల్లుబాటు అయ్యే Facebook ప్రొఫైల్‌కు సరిపోలడం లేదు"
+
+#: src/components/LogMessage.svelte
+msgid "The image upload form belongs to a different Facebook profile"
+msgstr "చిత్రం అప్లోడ్ ఫారం వేరే Facebook ప్రొఫైల్‌కు చెందినది"
+
+#: src/components/LogMessage.svelte
+msgid "The selected group has an invalid Facebook URL. Load groups again"
+msgstr "ఎంచుకున్న గ్రూప్‌లో చెల్లుబాటు కాని Facebook URL ఉంది. గ్రూప్‌లను మళ్లీ లోడ్ చేయండి"
+
+#: src/components/LogMessage.svelte
+msgid "The session could not be saved for posting retries and remaining groups."
+msgstr "పోస్టింగ్ రీట్రైలు మరియు మిగిలిన గ్రూప్‌ల కోసం సెషన్ సేవ్ చేయలేకపోయింది."
+
+#: src/components/LogMessage.svelte
+msgid "This draft has already been submitted to the first group. It was not submitted again."
+msgstr "ఈ డ్రాఫ్ట్ ఇప్పటికే మొదటి గ్రూప్‌కు సమర్పించబడింది. దానిని మళ్లీ సమర్పించలేదు."
+
+#: src/components/LogMessage.svelte
+msgid "This group has no available post composer"
+msgstr "ఈ గ్రూప్‌లో అందుబాటులో ఉన్న పోస్ట్ కంపోజర్ లేదు"
+
+#: src/components/LogMessage.svelte
+msgid "This group has reached its pending-content limit."
+msgstr "ఈ గ్రూప్ తన పెండింగ్-కంటెంట్ పరిమితిని చేరుకుంది."
+
+#: src/components/LogMessage.svelte
+msgid "This post was submitted, but confirmation is uncertain. Check Facebook before retrying."
+msgstr "ఈ పోస్ట్ సమర్పించబడింది, కానీ నిర్ధారణ అనిశ్చితంగా ఉంది. తిరిగి ప్రయత్నించడానికి ముందే Facebookని తనిఖీ చేయండి."
+
+#: src/components/LogMessage.svelte
+msgid "This response is no longer available for the current run"
+msgstr "ప్రస్తుత రన్‌లో ఈ స్పందన πλέον అందుబాటులో లేదు"
+
+#: src/components/LogMessage.svelte
+msgid "Upload and post captures must belong to the same logged-in profile"
+msgstr "అప్‌లోడ్ మరియు పోస్ట్ చేసిన క్యాప్చర్లు ఒకే లాగిన్ రికార్డ్ లో ఉండాలి"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for Facebook's Post button…"
+msgstr "ఫేస్‌బుక్ పోస్ట్ బటనుకి వేచి ఉన్నాం…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the composer controls and layout…"
+msgstr "కంపోజర్ నియంత్రణలు మరియు లేఅవుట్ కోసం వేచి ఉన్నాం…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the group page and opening its composer…"
+msgstr "గ్రూప్ పేజీకి వెళ్ళి దాని కంపోజర్ ని తెరవడానికి వేచి ఉన్నాం…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the image previews and composer to settle…"
+msgstr "చిత్ర ప్రీวิว్‌లు మరియు కంపోజర్ స్థిరపడేవరకు వేచి ఉన్నాం…"
+
+#: src/components/LogMessage.svelte
+msgid "Your Facebook session needs login or verification. Load groups again."
+msgstr "మీ ఫేస్‌బుక్ సెషన్‌లో లాగిన్ లేదా ధృవీకరణ అవసరం. గ్రూప్‌లను మళ్లీ లోడ్ చేయండి."
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Published to {0}."
+msgstr "{0} కి ప్రచురించబడింది."
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "{0}: Awaiting admin approval."
+msgstr "{0}: నిర్వాహక అధికారం ఆమోదం కోసం వేచి ఉంది."
+
+#. 0: number(a); 1: b
+#: src/components/LogMessage.svelte
+msgid "Waiting {0} seconds before posting to {1}."
+msgstr "{1} కి పోస్ట్ చేయడానికి {0} సెకన్ల కోసం వేచి ఉన్నాం."
+
+#. 0: a; 1: b
+#: src/components/LogMessage.svelte
+msgid "Next post in {0} · {1}"
+msgstr "తరువాతి పోస్ట్ {0} · {1}"
+
+#. 0: a; 1: number(b); 2: number(c)
+#: src/components/LogMessage.svelte
+msgid "{0}: Uploading photo {1} of {2}…"
+msgstr "{0}: ఫొటో {2} లో {1} అప్‌లోడ్ అవుతోంది…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Preparing a post for {0}…"
+msgstr "{0} కోసం పోస్ట్ సిద్ధం చేయబడుతోంది…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Uploading images for {0}…"
+msgstr "{0} కోసం చిత్రాలు అప్‌లోడ్ చేస్తున్నాం…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Posting to {0}…"
+msgstr "{0} కి పోస్ట్ చేస్తోంది…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Fresh upload and post request values captured from {0}."
+msgstr "{0} నుండి కొత్త అప్‌లోడ్ మరియు పోస్ట్ అభ్యర్థన విలువలు క్యాప్చర్ చేయబడ్డాయి."
+
+#. 0: number(a); 1: number(b)
+#: src/components/LogMessage.svelte
+msgid "Submission unconfirmed. Retrying request {0}/{1}…"
+msgstr "సమర్పణ కనఫర్మ్ కాలేదు. అభ్యర్థన {0}/{1} మళ్లీ ప్రయత్నిస్తాం…"
+
+#. 0: number(a); 1: number(b); 2: number(c)
+#: src/components/LogMessage.svelte
+msgid "Finished: {0} published, {1} awaiting approval, {2} failed or skipped."
+msgstr "తీర్చారు: {0} ప్రచురించబడింది, {1} ఆమోదం కోసం వేచి ఉంది, {2} విఫలమై లేదా విసర్జించబడింది."
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Opening {0}…"
+msgstr "{0} తెరవబడుతుంది…"
+
+#. 0: number(a); 1: number(b)
+#: src/components/LogMessage.svelte
+msgid "Capturing image uploads ({0} of {1})…"
+msgstr "చిత్రం అప్‌లోడ్స్‌ను పొందుతోంది ({1} నుండి {0})…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Gemini rewrite failed (HTTP {0}). Check the key, model and account quota"
+msgstr "Gemini పునర్రచనా విఫలమైంది (HTTP {0}). కీ, మోడల్ మరియు ఖాతా క్వోటా తనిఖీ చేయండి"
+
+#. 0: code
+#: src/components/LogMessage.svelte
+msgid " (Code {0})"
+msgstr "(కోడ్ {0})"
+
+#: src/components/PostingLogView.svelte
+msgid "Debug details"
+msgstr "డీబగ్ వివరాలు"
+
+#~ msgid ", "
+#~ msgstr ""
+
+#: src/components/ThemePicker.svelte
+msgid "Themes"
+msgstr "థీమ్‌లు"
+
+#: src/App.svelte
+msgid "Preferences & post"
+msgstr "ప్రాధాన్యతలు మరియు పోస్ట్"
+
+#: src/App.svelte
+#: src/App.svelte
+msgid "Set preferences, then post now or schedule"
+msgstr "ప్రాధాన్యతలను సెట్ చేసి, ఇప్పుడే పోస్ట్ చేయండి లేదా షెడ్యూల్ చేయండి"

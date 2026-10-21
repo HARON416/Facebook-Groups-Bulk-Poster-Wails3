@@ -1,0 +1,1836 @@
+msgid ""
+msgstr ""
+"Source-Language: en\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4\n"
+"X-Plurals-Order: one, few, many, other\n"
+
+#. 0: minimumInterval === maximumInterval ? minimumInterval \\: `${minimumInterval}–${maximumInterval}`; 1: rewriteState
+#: src/App.svelte
+msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
+msgstr "Použité uložené predvolené nastavenia: {0} sekúnd medzi príspevkami · Prepis Gemini {1}."
+
+#: src/App.svelte
+msgid "Could not restore saved groups. Load groups to refresh the list."
+msgstr "Nepodarilo sa obnoviť uložené skupiny. Na obnovenie zoznamu načítajte skupiny."
+
+#: src/App.svelte
+msgid "Choose a future date and time for your post."
+msgstr "Vyberte budúci dátum a čas pre váš príspevok."
+
+#: src/App.svelte
+msgid "Saving your scheduled queue…"
+msgstr "Ukladanie vašej naplánovanej fronty…"
+
+#: src/App.svelte
+msgid "Opening a selected group to capture fresh posting requests…"
+msgstr "Otváranie vybranej skupiny na zachytenie nových požiadaviek na príspevky…"
+
+#: src/App.svelte
+#: src/App.svelte
+#: src/components/LogMessage.svelte
+msgid "Posting stopped."
+msgstr "Zastavené publikovanie."
+
+#: src/App.svelte
+#: src/components/LogMessage.svelte
+msgid "Could not read a selected image"
+msgstr "Nepodarilo sa prečítať vybraný obrázok."
+
+#. 0: image.file.name
+#. 0: missingNames
+#. 0: unreadableNames
+#. 0: image.file.name
+#: src/App.svelte
+#: src/App.svelte
+#: src/components/PostComposer.svelte
+#: src/components/PostComposer.svelte
+msgid "Could not read {0}"
+msgstr "Nepodarilo sa prečítať {0}."
+
+#: src/App.svelte
+msgid "Posting finished."
+msgstr "Publikovanie dokončené."
+
+#. 0: scheduleLabel(scheduledFor)
+#. 0: date
+#: src/App.svelte
+#: src/components/LogMessage.svelte
+msgid "Scheduled for {0}. Keep Postika open and your computer awake."
+msgstr "Naplánované na {0}. Majte Postiku otvorenú a počítač prebudený."
+
+#: src/App.svelte
+msgid "Could not restore this account’s draft. New edits will stay available while Postika is open."
+msgstr "Nepodarilo sa obnoviť koncept tohto účtu. Nové úpravy zostanú dostupné, kým je Postika otvorená."
+
+#: src/App.svelte
+msgid "Could not add the dropped images. Try browsing for them instead."
+msgstr "Nepodarilo sa pridať odhodené obrázky. Skúste ich namiesto toho vyhľadať."
+
+#: src/App.svelte
+msgid "Could not save this account’s draft to disk. Keep Postika open to retain your edits."
+msgstr "Nepodarilo sa uložiť koncept tohto účtu na disk. Majte Postiku otvorenú, aby ste si zachovali úpravy."
+
+#: src/App.svelte
+msgid "Start with your message. Add images to bring it to life."
+msgstr "Začnite svojou správou. Pridajte obrázky, aby ste ju oživili."
+
+#: src/App.svelte
+msgid "Choose the groups you want to share your post with."
+msgstr "Vyberte skupiny, s ktorými chcete zdieľať svoj príspevok."
+
+#~ msgid "Review your post and preferences, then post now or schedule for later."
+#~ msgstr "Skontrolujte svoj príspevok a nastavenia, potom zverejnite teraz alebo naplánujte na neskôr."
+
+#. 0: currentStep + 1; 1: steps.length
+#: src/App.svelte
+msgid "STEP {0} OF {1}"
+msgstr "KROK {0} Z {1}"
+
+#: src/App.svelte
+msgid "Restoring account workspace…"
+msgstr "Obnovovanie pracovného priestoru účtu…"
+
+#: src/App.svelte
+msgid "Opening…"
+msgstr "Otvorenie…"
+
+#: src/App.svelte
+msgid "Loading…"
+msgstr "Načítavanie…"
+
+#: src/App.svelte
+msgid "Load groups"
+msgstr "Načítať skupiny"
+
+#: src/App.svelte
+msgid "Groups"
+msgstr "Skupiny"
+
+#: src/App.svelte
+msgid "Search groups…"
+msgstr "Hľadať skupiny…"
+
+#: src/App.svelte
+msgid "Clear group search"
+msgstr "Vymazať vyhľadávanie skupiny"
+
+#: src/App.svelte
+msgid "Search groups"
+msgstr "Hľadať skupiny"
+
+#: src/App.svelte
+msgid "Select all groups"
+msgstr "Vybrať všetky skupiny"
+
+#: src/App.svelte
+msgid "Unselect all groups"
+msgstr "Zrušiť výber všetkých skupín"
+
+#~ msgid "{0} selected{1}"
+#~ msgstr ""
+
+#: src/App.svelte
+msgid "Searching…"
+msgstr "Vyhľadávanie…"
+
+#: src/App.svelte
+msgid "No groups found. Try another search."
+msgstr "Nenašli sa žiadne skupiny. Skúste iné vyhľadávanie."
+
+#: src/App.svelte
+msgid "Joined groups"
+msgstr "Pripojené skupiny"
+
+#: src/App.svelte
+msgid "No groups loaded yet."
+msgstr "Žiadne skupiny ešte načítané."
+
+#: src/App.svelte
+msgid "Open your Facebook groups to get started."
+msgstr "Otvorte svoje skupiny na Facebooku pre začiatok."
+
+#: src/App.svelte
+msgid "Posting settings"
+msgstr "Nastavenia zverejňovania"
+
+#: src/App.svelte
+msgid "Add a Gemini API key in Settings to enable rewriting."
+msgstr "Pridajte kľúč Gemini API v Nastaveniach, aby ste povolili prepisovanie."
+
+#: src/App.svelte
+msgid "Applying defaults…"
+msgstr "Používanie predvolených nastavení…"
+
+#: src/App.svelte
+msgid "Use saved defaults"
+msgstr "Použiť uložené predvolené hodnoty"
+
+#: src/App.svelte
+msgid "Open settings"
+msgstr "Otvoriť nastavenia"
+
+#~ msgid "Posting as <0/>"
+#~ msgstr "Zverejňovanie ako <0/>"
+
+#~ msgid "Review your post<0>{0} images · {1} groups selected</0>"
+#~ msgstr "Skontrolujte svoj príspevok<0>{0} obrázkov · {1} skupín vybraných</0>"
+
+#~ msgid "Original post"
+#~ msgstr "Pôvodný príspevok"
+
+#~ msgid "Your post"
+#~ msgstr "Váš príspevok"
+
+#~ msgid "Gemini will rewrite this body for each group using your instructions."
+#~ msgstr "Gemini prepíše tento obsah pre každú skupinu podľa vašich inštrukcií."
+
+#~ msgid "Selected groups ({0})"
+#~ msgstr "Vybrané skupiny ({0})"
+
+#: src/App.svelte
+msgid "Schedule your queue"
+msgstr "Naplánovať svoj zoznam úloh"
+
+#. 0: Intl.DateTimeFormat().resolvedOptions().timeZone
+#: src/App.svelte
+msgid "Time zone: {0}. Keep Postika open and your computer awake. Facebook may ask you to sign in when posting starts."
+msgstr "Časové pásmo: {0}. Majte Postika otvorený a počítač zapnutý. Facebook vás môže požiadať o prihlásenie, keď sa začne zverejňovanie."
+
+#: src/App.svelte
+#: src/Workspace.svelte
+msgid "Cancel"
+msgstr "Zrušiť"
+
+#: src/App.svelte
+msgid "Confirm schedule"
+msgstr "Potvrdiť plán"
+
+#: src/App.svelte
+msgid "Next <0/>"
+msgstr "Ďalej <0/>"
+
+#: src/App.svelte
+msgid "View logs"
+msgstr "Zobraziť záznamy"
+
+#: src/App.svelte
+#: src/components/PostingLogView.svelte
+msgid "Stop"
+msgstr "Zastaviť"
+
+#: src/App.svelte
+#: src/Workspace.svelte
+#: src/components/PostingLogView.svelte
+msgid "Scheduled"
+msgstr "Naplánované"
+
+#: src/App.svelte
+msgid "Posting…"
+msgstr "Zverejňuje sa…"
+
+#: src/App.svelte
+msgid "Post now"
+msgstr "Publikovať teraz"
+
+#: src/App.svelte
+msgid "Schedule"
+msgstr "Naplánovať"
+
+#: src/App.svelte
+msgid "<0/> Previous"
+msgstr "<0/> Späť"
+
+#: src/Workspace.svelte
+msgid "Application menu"
+msgstr "Menu aplikácie"
+
+#: src/Workspace.svelte
+msgid "Add account"
+msgstr "Pridať účet"
+
+#: src/Workspace.svelte
+#: src/components/PostingLogView.svelte
+#: src/components/PostingLogView.svelte
+msgid "Posting logs"
+msgstr "Denník publikovania"
+
+#: src/Workspace.svelte
+#: src/components/Settings.svelte
+#: src/components/Settings.svelte
+msgid "Settings"
+msgstr "Nastavenia"
+
+#: src/Workspace.svelte
+msgid "Creating…"
+msgstr "Vytvára sa…"
+
+#: src/Workspace.svelte
+msgid "Create & sign in"
+msgstr "Vytvoriť a prihlásiť sa"
+
+#: src/Workspace.svelte
+msgid "Account name"
+msgstr "Názov účtu"
+
+#: src/Workspace.svelte
+msgid "Sign in to Facebook in the new account’s browser window."
+msgstr "Prihláste sa na Facebook v okne prehliadača nového účtu."
+
+#: src/Workspace.svelte
+msgid "Running"
+msgstr "Spúšťa sa"
+
+#: src/Workspace.svelte
+msgid "In the background: <0/>"
+msgstr "Na pozadí: <0/>"
+
+#: src/Workspace.svelte
+msgid "Loading accounts…"
+msgstr "Načítavam účty…"
+
+#: src/components/AccountDropdown.svelte
+msgid "Loading accounts"
+msgstr "Načítavam účty"
+
+#. 0: current?.name ?? 'Loading accounts'
+#: src/components/AccountDropdown.svelte
+msgid "Account: {0}"
+msgstr "Účet: {0}"
+
+#: src/components/AccountDropdown.svelte
+msgid "Select account"
+msgstr "Vybrať účet"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search accounts…"
+msgstr "Hľadať účty…"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search accounts"
+msgstr "Hľadať účty"
+
+#: src/components/AccountDropdown.svelte
+msgid "Clear account search"
+msgstr "Vymazať vyhľadávanie účtu"
+
+#: src/components/AccountDropdown.svelte
+msgid "All accounts"
+msgstr "Všetky účty"
+
+#: src/components/AccountDropdown.svelte
+msgid "Accounts"
+msgstr "Účty"
+
+#: src/components/AccountDropdown.svelte
+msgid "No accounts found"
+msgstr "Nenašli sa žiadne účty"
+
+#: src/components/AccountDropdown.svelte
+#: src/components/ThemePicker.svelte
+msgid "Try a different name."
+msgstr "Skúste iný názov."
+
+#: src/components/ConnectivityToast.svelte
+msgid "You’re back online"
+msgstr "Ste opäť online"
+
+#: src/components/ConnectivityToast.svelte
+msgid "Internet connection lost"
+msgstr "Stratilo sa pripojenie na internet"
+
+#: src/components/ConnectivityToast.svelte
+msgid "Your queue is still manually paused."
+msgstr "Váš rad je stále manuálne pozastavený."
+
+#: src/components/ConnectivityToast.svelte
+msgid "Your queue will continue automatically."
+msgstr "Váš rad bude pokračovať automaticky."
+
+#: src/components/ConnectivityToast.svelte
+msgid "Your queue is paused. We’ll continue when the connection returns."
+msgstr "Váš rad je pozastavený. Pokračujeme, keď sa pripojenie obnoví."
+
+#: src/components/ConnectivityToast.svelte
+msgid "Dismiss connection notification"
+msgstr "Zahodiť oznámenie o pripojení"
+
+#: src/components/DateTimePicker.svelte
+msgid "Choose a date and time"
+msgstr "Vyberte dátum a čas"
+
+#: src/components/DateTimePicker.svelte
+msgid "Select date"
+msgstr "Vybrať dátum"
+
+#: src/components/DateTimePicker.svelte
+msgid "Choose a weekday for this post"
+msgstr "Vyberte deň v týždni pre tento príspevok"
+
+#. 0: day.description
+#: src/components/DateTimePicker.svelte
+msgid "Select {0}"
+msgstr "Vybrať {0}"
+
+#: src/components/DateTimePicker.svelte
+msgid "Previous month"
+msgstr "Predchádzajúci mesiac"
+
+#: src/components/DateTimePicker.svelte
+msgid "Next month"
+msgstr "Ďalší mesiac"
+
+#: src/components/DateTimePicker.svelte
+#: src/components/DateTimePicker.svelte
+msgid "Select time"
+msgstr "Vyberte čas"
+
+#: src/components/DateTimePicker.svelte
+msgid "24-hour clock"
+msgstr "24-hodinový formát"
+
+#: src/components/DateTimePicker.svelte
+msgid "Increase hour"
+msgstr "Zvýšiť hodinu"
+
+#: src/components/DateTimePicker.svelte
+#: src/components/DateTimePicker.svelte
+msgid "Hour"
+msgstr "Hodina"
+
+#: src/components/DateTimePicker.svelte
+msgid "Decrease hour"
+msgstr "Znížiť hodinu"
+
+#: src/components/DateTimePicker.svelte
+msgid "Increase minute"
+msgstr "Zvýšiť minútu"
+
+#: src/components/DateTimePicker.svelte
+#: src/components/DateTimePicker.svelte
+msgid "Minute"
+msgstr "Minúta"
+
+#: src/components/DateTimePicker.svelte
+msgid "Decrease minute"
+msgstr "Znížiť minútu"
+
+#: src/components/DateTimePicker.svelte
+msgid "Choose a date and time in the future."
+msgstr "Vyberte dátum a čas v budúcnosti."
+
+#. 0: rejected.join(', ')
+#: src/components/PostComposer.svelte
+msgid "Unsupported files: {0}. Choose JPG, PNG, WebP, or GIF images."
+msgstr "Nepodporované súbory: {0}. Vyberte obrázky JPG, PNG, WebP alebo GIF."
+
+#. 0: image.file.name
+#: src/components/PostComposer.svelte
+msgid "Could not preview {0}. Please choose another image."
+msgstr "Nedá sa zobraziť náhľad {0}. Prosím vyberte iný obrázok."
+
+#. 0: images[index].file.name; 1: index + 1; 2: images.length
+#: src/components/PostComposer.svelte
+msgid "{0} moved to position {1} of {2}."
+msgstr "{0} presunuté na pozíciu {1} z {2}."
+
+#: src/components/PostComposer.svelte
+#: src/components/PostEditorContent.svelte
+msgid "Post body"
+msgstr "Text príspevku"
+
+#: src/components/PostComposer.svelte
+#: src/components/PostComposer.svelte
+msgid "Required"
+msgstr "Povinné"
+
+#: src/components/PostComposer.svelte
+msgid "Images"
+msgstr "Obrázky"
+
+#: src/components/PostComposer.svelte
+msgid "Choose images"
+msgstr "Vyberte obrázky"
+
+#: src/components/PostComposer.svelte
+msgid "Drop images here or <0>browse images</0>"
+msgstr "Presuňte obrázky sem alebo <0>prehľadávajte obrázky</0>"
+
+#: src/components/PostComposer.svelte
+msgid "JPG, PNG, WebP, or GIF · Select multiple images"
+msgstr "JPG, PNG, WebP alebo GIF · Vyberte viacero obrázkov"
+
+#~ msgid "{0} {1} selected"
+#~ msgstr ""
+
+#: src/components/PostComposer.svelte
+msgid "Add more"
+msgstr "Pridať ďalšie"
+
+#: src/components/PostComposer.svelte
+msgid "Drag images to rearrange. Or focus an image and use Alt + Left / Right."
+msgstr "Presúvajte obrázky na zmenu poradia. Alebo vyberte obrázok a použite Alt + Ľavá / Pravá."
+
+#: src/components/PostComposer.svelte
+msgid "Selected images"
+msgstr "Vybrané obrázky"
+
+#. 0: image.file.name; 1: images.indexOf(image) + 1; 2: images.length
+#: src/components/PostComposer.svelte
+msgid "{0}, image {1} of {2}"
+msgstr "{0}, obrázok {1} z {2}"
+
+#. 0: image.file.name
+#: src/components/PostComposer.svelte
+msgid "Remove {0}"
+msgstr "Odstrániť {0}"
+
+#: src/components/PostComposer.svelte
+msgid "Drop more images here to add them."
+msgstr "Presuňte sem ďalšie obrázky, aby ste ich pridali."
+
+#. 0: error
+#: src/components/PostEditor.svelte
+msgid "Could not edit the post: {0}"
+msgstr "Nepodarilo sa upraviť príspevok: {0}"
+
+#: src/components/PostEditorContent.svelte
+msgid "Post editor controls"
+msgstr "Ovládacie prvky editora príspevkov"
+
+#: src/components/PostEditorContent.svelte
+msgid "Text formatting"
+msgstr "Formátovanie textu"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bold (Ctrl+B)"
+msgstr "Tučné (Ctrl+B)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bold"
+msgstr "Tučné"
+
+#: src/components/PostEditorContent.svelte
+msgid "Italic (Ctrl+I)"
+msgstr "Kurzíva (Ctrl+I)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Italic"
+msgstr "Kurzíva"
+
+#: src/components/PostEditorContent.svelte
+msgid "Heading 1"
+msgstr "Nadpis 1"
+
+#: src/components/PostEditorContent.svelte
+msgid "Heading 2"
+msgstr "Nadpis 2"
+
+#: src/components/PostEditorContent.svelte
+msgid "Quote"
+msgstr "Citát"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bullet list"
+msgstr "Odrážkový zoznam"
+
+#: src/components/PostEditorContent.svelte
+msgid "Numbered list"
+msgstr "Číslovaný zoznam"
+
+#: src/components/PostEditorContent.svelte
+msgid "Undo (Ctrl+Z)"
+msgstr "Späť (Ctrl+Z)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Undo"
+msgstr "Späť"
+
+#: src/components/PostEditorContent.svelte
+msgid "Redo (Ctrl+Shift+Z)"
+msgstr "Znova (Ctrl+Shift+Z)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Redo"
+msgstr "Znova"
+
+#: src/components/PostEditorContent.svelte
+msgid "What would you like to share?"
+msgstr "Čo by ste chceli zdieľať?"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bold, italic, headings, quotes, and lists · Markdown shortcuts supported"
+msgstr "Tučné, kurzíva, nadpisy, citáty a zoznamy · Podpora skrátených príkazov Markdown"
+
+#. 0: body.length.toLocaleString(getLocale())
+#: src/components/PostEditorContent.svelte
+msgid "{0} characters"
+msgstr "{0} znakov"
+
+#: src/components/LogMessage.svelte
+msgid "Ready to post."
+msgstr "Pripravené na zverejnenie."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook response copied."
+msgstr "Odpoveď na Facebook skopírovaná."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook response received"
+msgstr "Odpoveď na Facebook prijatá"
+
+#: src/components/PostingLogView.svelte
+msgid "POSTIKA / ACTIVITY"
+msgstr "POSTIKA / AKTIVITA"
+
+#: src/components/PostingLogView.svelte
+msgid "Posting progress"
+msgstr "Priebeh zverejňovania"
+
+#. 0: activity?.processed || 0; 1: activity?.total || 0
+#: src/components/PostingLogView.svelte
+msgid "{0}/{1} groups processed"
+msgstr "{0}/{1} spracovaných skupín"
+
+#. 0: percentage
+#: src/components/PostingLogView.svelte
+msgid "{0}% complete"
+msgstr "{0}% hotovo"
+
+#: src/components/PostingLogView.svelte
+msgid "Groups processed"
+msgstr "Spracované skupiny"
+
+#: src/components/PostingLogView.svelte
+msgid "Published"
+msgstr "Publikované"
+
+#: src/components/PostingLogView.svelte
+msgid "Awaiting approval"
+msgstr "Čaká na schválenie"
+
+#: src/components/PostingLogView.svelte
+msgid "Failed or skipped"
+msgstr "Neúspešné alebo preskočené"
+
+#: src/components/PostingLogView.svelte
+msgid "Remaining"
+msgstr "Zostáva"
+
+#. 0: number(a); 1: number(b); 2: c
+#. 0: activity.current; 1: activity.total; 2: activity.currentGroup.name
+#: src/components/LogMessage.svelte
+#: src/components/PostingLogView.svelte
+msgid "Group {0}/{1}: {2}"
+msgstr "Skupina {0}/{1}: {2}"
+
+#. 0: pauseRequested ? /* @wc-include */ ' · Paused' \\: ''
+#: src/components/PostingLogView.svelte
+msgid "Next post in <0/>{0}"
+msgstr "Ďalší príspevok o <0/>{0}"
+
+#: src/components/PostingLogView.svelte
+msgid "Elapsed <0/>"
+msgstr "Uplynulo <0/>"
+
+#: src/components/PostingLogView.svelte
+msgid "Current group <0/>"
+msgstr "Aktuálna skupina <0/>"
+
+#: src/components/PostingLogView.svelte
+msgid "Following latest"
+msgstr "Sledujem najnovšie"
+
+#: src/components/PostingLogView.svelte
+msgid "Jump to latest"
+msgstr "Prejsť na najnovšie"
+
+#. 0.0: total
+#: src/components/PostingLogView.svelte
+msgid "Activity timeline <0>{0} logs</0>"
+msgstr "Časová os aktivity <0>{0} záznamov</0>"
+
+#: src/components/PostingLogView.svelte
+msgid "Posting activity"
+msgstr "Aktivita zverejňovania"
+
+#. 0: entryLabel(entry)
+#: src/components/PostingLogView.svelte
+msgid "{0} log"
+msgstr "{0} záznam"
+
+#. 0: itemTime(entry.message)
+#: src/components/PostingLogView.svelte
+msgid "Took {0}"
+msgstr "Trvalo {0}"
+
+#: src/components/PostingLogView.svelte
+#: src/components/PostingLogView.svelte
+msgid "Copy Facebook response"
+msgstr "Skopírovať odpoveď z Facebooku"
+
+#: src/components/PostingLogView.svelte
+msgid "Response copied"
+msgstr "Odpoveď skopírovaná"
+
+#: src/components/PostingLogView.svelte
+msgid "Copied"
+msgstr "Skopírované"
+
+#: src/components/PostingLogView.svelte
+msgid "Copying…"
+msgstr "Kopíruje sa…"
+
+#: src/components/PostingLogView.svelte
+msgid "Copy response"
+msgstr "Skopírovať odpoveď"
+
+#. 0.0: entry.hasResponse ? /* @wc-include */ ' · Response available to copy' \\: ''
+#: src/components/PostingLogView.svelte
+msgid "Debug details<0>Original log message{0}</0>"
+msgstr "Detaily ladenia<0>Pôvodná správa záznamu{0}</0>"
+
+#: src/components/PostingLogView.svelte
+msgid "Your activity will appear here"
+msgstr "Vaša aktivita sa tu zobrazí"
+
+#: src/components/PostingLogView.svelte
+msgid "Start posting to follow uploads, results, and wait times."
+msgstr "Začnite pridávať príspevky, aby ste sledovali nahrané súbory, výsledky a časy čakania."
+
+#: src/components/PostingLogView.svelte
+msgid "Log pages"
+msgstr "Stránky záznamov"
+
+#: src/components/PostingLogView.svelte
+msgid "Previous page"
+msgstr "Predchádzajúca stránka"
+
+#. 0: number
+#: src/components/PostingLogView.svelte
+msgid "Page {0}"
+msgstr "Stránka {0}"
+
+#: src/components/PostingLogView.svelte
+msgid "Next page"
+msgstr "Nasledujúca stránka"
+
+#: src/components/PostingLogView.svelte
+msgid "← Prev"
+msgstr "← Predchádzajúce"
+
+#: src/components/PostingLogView.svelte
+msgid "Next →"
+msgstr "Nasledujúce →"
+
+#. 0: total ? (page - 1) * pageSize + 1 \\: 0; 1: Math.min(page * pageSize, total); 2: total
+#: src/components/PostingLogView.svelte
+msgid "{0}–{1} of {2} logs"
+msgstr "{0}–{1} z {2} záznamov"
+
+#: src/components/PostingLogView.svelte
+msgid "Resume"
+msgstr "Pokračovať"
+
+#: src/components/PostingLogView.svelte
+msgid "Pause"
+msgstr "Pozastaviť"
+
+#: src/components/PostingLogView.svelte
+msgid "Stopping…"
+msgstr "Zastavuje sa…"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "POSTING PACE"
+msgstr "RYCHLOSŤ ZASIELANIA"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Interval between posts"
+msgstr "Interval medzi príspevkami"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Minimum (seconds)"
+msgstr "Minimálne (sekundy)"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Maximum (seconds)"
+msgstr "Maximálne (sekundy)"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Choose how long to wait before posting to the next group."
+msgstr "Vyberte, ako dlho počkať pred zverejnením ďalšej skupine."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "At least 60 seconds. Use equal values for a fixed interval."
+msgstr "Aspoň 60 sekúnd. Použite rovnaké hodnoty pre pevný interval."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "OPTIONAL · AI REWRITE"
+msgstr "VOLITEĽNÉ · PREPÍSANIE AI"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "A fresh version for each group"
+msgstr "Nová verzia pre každú skupinu"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Rewrite each post body with Gemini"
+msgstr "Prepísať telo každého príspevku s Gemini"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
+msgstr "Pokyny na prepísanie<0>Vyberte tón a podrobnosti, ktoré by Gemini mala zachovať.</0>"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Keep it concise and easy to scan. Preserve the price and contact details."
+msgstr "Zachovajte stručnosť a prehľadnosť. Zachovajte cenu a kontaktné údaje."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Rewrite instructions"
+msgstr "Pokyny na prepísanie"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
+msgstr "Váš text príspevku a pokyny sa odosielajú do Google Gemini. Obrázky sa neodosielajú. Gemini prepíše pomocou obyčajného textu."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
+msgstr "Ak prepísanie zlyhá, tento príspevok použije váš pôvodný text. Nasledujúci príspevok skúsi Gemini znova."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Let Gemini rewrite your post using your instructions."
+msgstr "Nechajte Gemini prepísať váš príspevok podľa vašich pokynov."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Posting preferences"
+msgstr "Predvoľby zverejňovania"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved defaults help"
+msgstr "Uložené predvoľby pomáhajú"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "About saved defaults"
+msgstr "O uložených predvoľbách"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved interval"
+msgstr "Uložený interval"
+
+#. 0: settings.minimumInterval === settings.maximumInterval ? settings.minimumInterval \\: `${settings.minimumInterval}–${settings.maximumInterval}`
+#: src/components/SavedDefaultsInfo.svelte
+msgid "{0} seconds"
+msgstr "{0} sekúnd"
+
+#: src/App.svelte
+#: src/components/SavedDefaultsInfo.svelte
+msgid "On"
+msgstr "Zapnuté"
+
+#: src/App.svelte
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Off"
+msgstr "Vypnuté"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Gemini rewrite"
+msgstr "Prepísanie Gemini"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "No instructions saved."
+msgstr "Nie sú uložené žiadne pokyny."
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved rewrite instructions"
+msgstr "Uložené pokyny na prepísanie"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved values could not be loaded. Try “Use saved defaults” again."
+msgstr "Nepodarilo sa načítať uložené hodnoty. Skúste znova „Použiť uložené predvoľby“."
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "What does “Use saved defaults” do?"
+msgstr "Čo robí „Použiť uložené predvoľby“?"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
+msgstr "Nahrádza interval príspevkov tohto behu, možnosť prepísať Gemini a inštrukcie na prepísanie hodnotami uloženými v Nastaveniach."
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
+msgstr "Počiatočné predvolené hodnoty: 60–120 sekúnd, prepísanie Gemini vypnuté a žiadne inštrukcie na prepísanie. Uložte si vlastné preferencie v Nastaveniach, aby ste ich zmenili."
+
+#: src/components/Settings.svelte
+msgid "Settings saved. New runs can use these defaults."
+msgstr "Nastavenia uložené. Nové behy môžu používať tieto predvolené hodnoty."
+
+#: src/components/Settings.svelte
+msgid "Key saved · leave blank to keep it"
+msgstr "Kľúč uložený · nechajte prázdne, aby ste ho zachovali"
+
+#: src/components/Settings.svelte
+msgid "Enter your Gemini API key"
+msgstr "Zadajte svoj Gemini API kľúč"
+
+#: src/components/Settings.svelte
+msgid "A key is saved on this device."
+msgstr "Na tomto zariadení je uložený kľúč."
+
+#: src/components/Settings.svelte
+msgid "No API key saved."
+msgstr "Žiadny API kľúč nie je uložený."
+
+#: src/components/Settings.svelte
+msgid "Remove saved key"
+msgstr "Odstrániť uložený kľúč"
+
+#: src/components/Settings.svelte
+msgid "Gemini"
+msgstr "Gemini"
+
+#: src/components/Settings.svelte
+msgid "API key<0/>"
+msgstr "API kľúč<0/>"
+
+#. 0: keyConfigured ? 'A key is saved on this device.' \\: 'No API key saved.'
+#: src/components/Settings.svelte
+msgid "{0} The saved key is never displayed."
+msgstr "{0} Uložený kľúč sa nikdy nezobrazuje."
+
+#: src/components/Settings.svelte
+msgid "Model<0/>"
+msgstr "Model<0/>"
+
+#: src/components/Settings.svelte
+msgid "Posting defaults"
+msgstr "Predvolené nastavenia príspevkov"
+
+#: src/components/Settings.svelte
+msgid "Applied when you start a new posting run."
+msgstr "Používa sa, keď spustíte nový beh príspevkov."
+
+#: src/components/Settings.svelte
+msgid "Saving…"
+msgstr "Ukladanie…"
+
+#: src/components/Settings.svelte
+msgid "Save settings"
+msgstr "Uložiť nastavenia"
+
+#: src/components/Settings.svelte
+msgid "YOUR PREFERENCES"
+msgstr "VAŠE PREFERENCIE"
+
+#. 0: accountName
+#: src/components/Settings.svelte
+msgid "Set up Gemini and save posting defaults for {0}."
+msgstr "Nastavte Gemini a uložte predvolené nastavenia príspevkov pre {0}."
+
+#: src/components/StepProgress.svelte
+msgid "Completed"
+msgstr "Dokončené"
+
+#: src/components/StepProgress.svelte
+msgid "Current"
+msgstr "Aktuálne"
+
+#: src/components/StepProgress.svelte
+msgid "Upcoming"
+msgstr "Pripravované"
+
+#. 0: index + 1; 1: steps.length; 2: completed || index < currentStep ? 'Completed' \\: index === currentStep ? 'Current' \\: 'Upcoming'
+#: src/components/StepProgress.svelte
+msgid "Step {0} of {1}: {2}"
+msgstr "Krok {0} z {1}: {2}"
+
+#: src/components/WindowControls.svelte
+msgid "Could not change the window. Please try again."
+msgstr "Nepodarilo sa zmeniť okno. Skúste to znova."
+
+#: src/components/WindowControls.svelte
+msgid "Window controls"
+msgstr "Ovládacie prvky okna"
+
+#: src/components/WindowControls.svelte
+msgid "Minimize window"
+msgstr "Minimalizovať okno"
+
+#: src/components/WindowControls.svelte
+msgid "Restore window"
+msgstr "Obnoviť okno"
+
+#: src/components/WindowControls.svelte
+msgid "Maximize window"
+msgstr "Maximalizovať okno"
+
+#: src/components/WindowControls.svelte
+msgid "Close window"
+msgstr "Zatvoriť okno"
+
+#: src/App.svelte
+msgid "Create post"
+msgstr "Vytvoriť príspevok"
+
+#: src/App.svelte
+msgid "Write your post and add images"
+msgstr "Napíšte svoj príspevok a pridajte obrázky"
+
+#: src/App.svelte
+msgid "Select groups"
+msgstr "Vybrať skupiny"
+
+#: src/App.svelte
+msgid "Load groups and choose where to post"
+msgstr "Načítať skupiny a vybrať miesto zverejnenia"
+
+#~ msgid "Review & post"
+#~ msgstr "Kontrola a publikovanie"
+
+#~ msgid "Review, set preferences, then post now or schedule"
+#~ msgstr "Skontrolovať, nastaviť preferencie, potom zverejniť teraz alebo naplánovať"
+
+#: src/App.svelte
+msgid "Facebook session captured"
+msgstr "Relácia Facebooku zachytená"
+
+#: src/App.svelte
+msgid "The browser is closed. It will reopen when you click Post."
+msgstr "Prehliadač je zatvorený. Otvorí sa znovu po kliknutí na Zverejniť."
+
+#: src/App.svelte
+msgid "Checking Facebook login"
+msgstr "Kontrola prihlásenia na Facebook"
+
+#: src/App.svelte
+msgid "Finish signing in or any verification prompts in Chrome. Your login will be detected automatically."
+msgstr "Dokončite prihlásenie alebo akékoľvek overovacie výzvy v Chrome. Vaše prihlásenie bude automaticky detekované."
+
+#: src/App.svelte
+msgid "Login required"
+msgstr "Prihlásenie je potrebné"
+
+#: src/App.svelte
+msgid "Please log in to Facebook in the Chrome window. Postika will detect when you’re signed in."
+msgstr "Prihláste sa, prosím, do Facebooku v okne Chrome. Postika zistí, keď budete prihlásený."
+
+#: src/App.svelte
+msgid "Complete Facebook verification"
+msgstr "Dokončiť overenie Facebooku"
+
+#: src/App.svelte
+msgid "Complete the login or verification prompts in Chrome to continue."
+msgstr "Dokončite prihlásenie alebo overovacie výzvy v Chrome, aby ste mohli pokračovať."
+
+#: src/App.svelte
+msgid "Facebook connected"
+msgstr "Facebook pripojený"
+
+#: src/App.svelte
+msgid "You’re logged in. Your session is ready."
+msgstr "Ste prihlásený. Vaša relácia je pripravená."
+
+#: src/App.svelte
+msgid "Facebook window closed"
+msgstr "Okno Facebooku zatvorené"
+
+#: src/App.svelte
+msgid "Click Load groups to reopen Facebook and check your login."
+msgstr "Kliknite na Načítať skupiny, aby ste znovu otvorili Facebook a skontrolovali svoje prihlásenie."
+
+#. 0: current?.name ?? ''
+#: src/components/AccountDropdown.svelte
+msgid "Language: {0}"
+msgstr "Jazyk: {0}"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search languages…"
+msgstr "Hľadať jazyky…"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search languages"
+msgstr "Hľadať jazyky"
+
+#: src/components/AccountDropdown.svelte
+msgid "Clear language search"
+msgstr "Vyhľadávanie v jasnom jazyku"
+
+#. 0: matches.length
+#: src/components/AccountDropdown.svelte
+msgid "{0} result"
+msgstr "{0} výsledok"
+
+#. 0: matches.length
+#: src/components/AccountDropdown.svelte
+msgid "{0} results"
+msgstr "{0} výsledky"
+
+#: src/components/AccountDropdown.svelte
+msgid "All languages"
+msgstr "Všetky jazyky"
+
+#: src/components/AccountDropdown.svelte
+msgid "Languages"
+msgstr "Jazyky"
+
+#: src/components/AccountDropdown.svelte
+msgid "No languages found"
+msgstr "Nenašli sa žiadne jazyky"
+
+#: src/components/DateTimePicker.svelte
+msgid "Morning"
+msgstr "Dobré ráno"
+
+#: src/components/DateTimePicker.svelte
+msgid "Afternoon"
+msgstr "Popoludnie"
+
+#: src/components/DateTimePicker.svelte
+msgid "Evening"
+msgstr "Dobrý večer"
+
+#: src/components/LanguageMenu.svelte
+msgid "Could not change the language. Please try again."
+msgstr "Nemohol som zmeniť jazyk. Skúste to znova."
+
+#: src/components/Settings.svelte
+msgid "Language"
+msgstr "Jazyk"
+
+#: src/components/PostingOptionsForm.svelte
+#: src/components/PostingOptionsForm.svelte
+msgid "seconds"
+msgstr "sekundy"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Minimum"
+msgstr "Minimum"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Maximum"
+msgstr "Maximum"
+
+#: src/components/StepProgress.svelte
+msgid "Post progress"
+msgstr "Po postupe"
+
+#. 0: visibleGroups.length
+#: src/App.svelte
+msgid "{0} shown"
+msgstr "{0} zobrazené"
+
+#. 0: selectedGroupIds.length
+#: src/App.svelte
+msgid "{0} selected"
+msgstr "{0} vybraný"
+
+#. 0: images.length
+#: src/components/PostComposer.svelte
+msgid "{0} images selected"
+msgstr "{0} vybraných obrázkov"
+
+#: src/components/PostingLogView.svelte
+msgid "WARN"
+msgstr "VARUJ"
+
+#: src/components/PostingLogView.svelte
+msgid "INFO"
+msgstr "INFORMÁCIE"
+
+#: src/components/PostingLogView.svelte
+msgid "ERROR"
+msgstr "CHYBA"
+
+#: src/components/PostingLogView.svelte
+msgid "DEBUG"
+msgstr "DEBUG"
+
+#: src/components/PostingLogView.svelte
+msgid "PUBLISHED"
+msgstr "PUBLIKOVANÉ"
+
+#: src/components/PostingLogView.svelte
+msgid "PENDING"
+msgstr "ČAKÁ NA ČAKANÍ"
+
+#: src/components/PostingLogView.svelte
+msgid "FAILED"
+msgstr "NEÚSPEŠNÉ"
+
+#: src/components/PostingLogView.svelte
+msgid "SKIPPED"
+msgstr "PRESKOČENÉ"
+
+#: src/components/PostingLogView.svelte
+msgid "UNCONFIRMED"
+msgstr "NEPOTVRDENÉ"
+
+#: src/Workspace.svelte
+msgid "e.g. Business"
+msgstr "napr. Obchod"
+
+#: src/components/PostComposer.svelte
+msgid "1 image selected"
+msgstr "Vybraný 1 obrázok"
+
+#: src/components/PostingLogView.svelte
+msgid "Paused · Waiting for internet"
+msgstr "Pozastavené · Čakanie na internet"
+
+#: src/components/PostingLogView.svelte
+msgid "Pausing after the current operation"
+msgstr "Pauza po aktuálnej operácii"
+
+#: src/components/PostingLogView.svelte
+msgid "Paused"
+msgstr "Pauza"
+
+#: src/components/PostingLogView.svelte
+msgid "Stopping"
+msgstr "Zastavenie"
+
+#: src/components/PostingLogView.svelte
+msgid "Posting"
+msgstr "Umiestnenie"
+
+#: src/components/PostingLogView.svelte
+msgid "Finished"
+msgstr "Dokončené"
+
+#: src/components/PostingLogView.svelte
+msgid "Stopped"
+msgstr "Zastavil som sa"
+
+#: src/components/PostingLogView.svelte
+msgid "Ready"
+msgstr "Pripravený"
+
+#: src/components/PostingLogView.svelte
+msgid "CURRENT ACTIVITY"
+msgstr "SÚČASNÁ ČINNOSŤ"
+
+#: src/components/PostingLogView.svelte
+msgid "RUN STATUS"
+msgstr "STAV BEHU"
+
+#: src/components/PostingLogView.svelte
+msgid " · Paused"
+msgstr " · Pozastavené"
+
+#: src/components/PostingLogView.svelte
+msgid " · Response available to copy"
+msgstr " · Reakcia k dispozícii na kopírovanie"
+
+#: src/components/AccountLabel.svelte
+msgid "Default profile"
+msgstr "Predvolený profil"
+
+#~ msgid "Switch to light mode"
+#~ msgstr "Prepnúť na svetlý režim"
+
+#~ msgid "Switch to dark mode"
+#~ msgstr "Prepnúť na tmavý režim"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Color themes"
+msgstr "Farebné témy"
+
+#: src/components/ThemePicker.svelte
+msgid "Close"
+msgstr "Zavrieť"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Search themes…"
+msgstr "Hľadať témy…"
+
+#: src/components/ThemePicker.svelte
+msgid "No themes found"
+msgstr "Nenašli sa žiadne témy"
+
+#: src/components/LogMessage.svelte
+msgid "A selected group is no longer available. Load groups again"
+msgstr "Vybraná skupina už nie je k dispozícii. Načítajte skupiny znova"
+
+#: src/components/LogMessage.svelte
+msgid "Add a Gemini API key in Settings before enabling rewriting"
+msgstr "Pridajte kľúč API Gemini v nastaveniach pred povolením prepísania"
+
+#: src/components/LogMessage.svelte
+msgid "Add a post body and at least one image"
+msgstr "Pridajte telo príspevku a aspoň jeden obrázok"
+
+#: src/components/LogMessage.svelte
+msgid "All selected groups were already attempted. Review unconfirmed results on Facebook."
+msgstr "Všetky vybrané skupiny už boli pokusne spracované. Skontrolujte nepotvrdené výsledky na Facebooku."
+
+#: src/components/LogMessage.svelte
+msgid "An image upload failed in Chrome. Check the composer and retry Post"
+msgstr "Nahratie obrázka v Chrome zlyhalo. Skontrolujte tvorcu príspevku a skúste znovu odoslať príspevok"
+
+#: src/components/LogMessage.svelte
+msgid "Attaching images…"
+msgstr "Pripájanie obrázkov…"
+
+#: src/components/LogMessage.svelte
+msgid "Choose JPG, PNG, WebP, or GIF images"
+msgstr "Vyberte obrázky vo formáte JPG, PNG, WebP alebo GIF"
+
+#: src/components/LogMessage.svelte
+msgid "Choose a future date and time for your post"
+msgstr "Vyberte budúci dátum a čas pre váš príspevok"
+
+#: src/components/LogMessage.svelte
+msgid "Closing Chrome and posting to the remaining groups…"
+msgstr "Zatváram Chrome a odosielam príspevok do zostávajúcich skupín…"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the complete create-post request"
+msgstr "Nepodarilo sa zachytiť kompletnú žiadosť o vytvorenie príspevku"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the completed image upload response"
+msgstr "Nepodarilo sa zachytiť dokončenú odpoveď na nahranie obrázka"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the image upload form fields"
+msgstr "Nepodarilo sa zachytiť polia formulára na nahratie obrázka"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the image upload form. Retry Post"
+msgstr "Nepodarilo sa zachytiť formulár na nahratie obrázka. Skúste odoslať príspevok znova"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the upload endpoint"
+msgstr "Nepodarilo sa zachytiť koncový bod nahrania"
+
+#: src/components/LogMessage.svelte
+msgid "Could not copy the Facebook response to the clipboard"
+msgstr "Nepodarilo sa skopírovať odpoveď Facebooku do schránky"
+
+#: src/components/LogMessage.svelte
+msgid "Could not enable create-post capture in Chrome"
+msgstr "Nepodarilo sa povoliť zachytávanie vytvárania príspevku v prehliadači Chrome"
+
+#: src/components/LogMessage.svelte
+msgid "Could not parse the captured create-post form"
+msgstr "Nepodarilo sa analyzovať zachytený formulár na vytvorenie príspevku"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare image files"
+msgstr "Nepodarilo sa pripraviť súbory obrázkov"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare post images"
+msgstr "Nepodarilo sa pripraviť obrázky príspevku"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare the Gemini request"
+msgstr "Nepodarilo sa pripraviť požiadavku Gemini"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare the image upload."
+msgstr "Nepodarilo sa pripraviť nahrávanie obrázkov."
+
+#: src/components/LogMessage.svelte
+msgid "Could not reach Gemini. Check your connection"
+msgstr "Nepodarilo sa pripojiť k Gemini. Skontrolujte svoje pripojenie"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read Facebook's post confirmation"
+msgstr "Nepodarilo sa prečítať potvrdenie príspevku na Facebooku"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read the Gemini rewrite"
+msgstr "Nepodarilo sa prečítať prepis Gemini"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read the completed image upload response"
+msgstr "Nepodarilo sa prečítať odpoveď na dokončené nahrávanie obrázkov"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read the selected image."
+msgstr "Nepodarilo sa prečítať vybraný obrázok."
+
+#: src/components/LogMessage.svelte
+msgid "Create-post capture ended before confirmation. Check Facebook before retrying"
+msgstr "Zachytávanie vytvárania príspevku skončilo pred potvrdením. Skontrolujte Facebook pred opätovným pokusom"
+
+#: src/components/LogMessage.svelte
+msgid "Create-post request detected. Capturing fresh form values…"
+msgstr "Zistená požiadavka na vytvorenie príspevku. Zachytávajú sa nové hodnoty formulára…"
+
+#: src/components/LogMessage.svelte
+msgid "Create-post response complete. Waiting for captured session headers…"
+msgstr "Odpoveď na vytvorenie príspevku dokončená. Čakanie na zachytené hlavičky relácie…"
+
+#: src/components/LogMessage.svelte
+msgid "Create-post response received. Waiting for its complete body…"
+msgstr "Odpoveď na vytvorenie príspevku prijatá. Čakanie na jej kompletné telo…"
+
+#: src/components/LogMessage.svelte
+msgid "Description inserted"
+msgstr "Popis vložený"
+
+#: src/components/LogMessage.svelte
+msgid "Earlier submission is unconfirmed. Skipping this group and continuing with the remaining groups."
+msgstr "Predchádzajúce odoslanie nie je potvrdené. Preskočenie tejto skupiny a pokračovanie so zvyšnými skupinami."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook could not post to this group. Continuing with the remaining groups."
+msgstr "Facebook nemohol zverejniť v tejto skupine. Pokračovanie so zvyšnými skupinami."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook did not confirm all images. Check the composer."
+msgstr "Facebook nepotvrdil všetky obrázky. Skontrolujte skladateľa."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook did not confirm the submission"
+msgstr "Facebook nepotvrdil odoslanie."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook did not confirm this post. Check the group before trying again."
+msgstr "Facebook nepotvrdil tento príspevok. Skontrolujte skupinu pred opätovným pokusom."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook has temporarily limited posting. Try again later."
+msgstr "Facebook dočasne obmedzil príspevky. Skúste neskôr."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook rejected this post."
+msgstr "Facebook tento príspevok odmietol."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook requires login or verification. Load groups again."
+msgstr "Facebook vyžaduje prihlásenie alebo overenie. Načítajte skupiny znova."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook returned a story, but did not confirm its group or publication state. Posting stopped. Check Facebook before retrying."
+msgstr "Facebook vrátil príbeh, ale nepotvrdil jeho skupinu ani stav publikovania. Zverejnenie zastavené. Skontrolujte Facebook pred opätovným pokusom."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook's confirmation exceeded the 16 MiB response limit; retained response is truncated"
+msgstr "Potvrdenie od Facebooku presiahlo limit odpovede 16 MiB; uložená odpoveď je skrátená."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook's editor did not accept the formatted post. Posting was not submitted"
+msgstr "Editor Facebooku neprijal formátovaný príspevok. Odoslanie nebolo zrealizované."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook's editor did not retain the formatted post text. Posting was not submitted"
+msgstr "Editor Facebooku si neuložil naformátovaný text príspevku. Príspevok nebol odoslaný"
+
+#: src/components/LogMessage.svelte
+msgid "First post confirmed. Waiting for the Facebook composer to close…"
+msgstr "Prvý príspevok potvrdený. Čaká sa na zatvorenie Facebook kompozitora…"
+
+#: src/components/LogMessage.svelte
+msgid "First submission unconfirmed. Retrying request 1/3 with the captured mutation ID…"
+msgstr "Prvé odoslanie nepotvrdené. Opakujem požiadavku 1/3 s zachyteným ID mutácie…"
+
+#: src/components/LogMessage.svelte
+msgid "Formatted post is too large"
+msgstr "Naformátovaný príspevok je príliš veľký"
+
+#: src/components/LogMessage.svelte
+msgid "Found multiple matching post composers on the group page"
+msgstr "Na stránke skupiny bolo nájdených viacero zodpovedajúcich kompozitorov príspevkov"
+
+#: src/components/LogMessage.svelte
+msgid "Fresh create-post form captured. Waiting for Facebook's response…"
+msgstr "Zachytený nový formulár na vytvorenie príspevku. Čaká sa na odpoveď Facebooku…"
+
+#: src/components/LogMessage.svelte
+msgid "Gemini did not finish the rewrite"
+msgstr "Gemini nedokončil prepísanie"
+
+#: src/components/LogMessage.svelte
+msgid "Gemini returned no rewritten text"
+msgstr "Gemini nevrátil žiadny prepísaný text"
+
+#: src/components/LogMessage.svelte
+msgid "Gemini rewrite completed."
+msgstr "Prepísanie Gemini dokončené."
+
+#: src/components/LogMessage.svelte
+msgid "Gemini rewrite failed. Using the original text for this post; Gemini will be tried again for the next post."
+msgstr "Prepísanie Gemini zlyhalo. Používa sa pôvodný text tohto príspevku; Gemini bude skúšaný znova pri ďalšom príspevku."
+
+#: src/components/LogMessage.svelte
+msgid "Image uploads belong to a different profile"
+msgstr "Nahrávanie obrázkov patrí inému profilu"
+
+#: src/components/LogMessage.svelte
+msgid "Images inserted"
+msgstr "Obrázky vložené"
+
+#: src/components/LogMessage.svelte
+msgid "Inserting post body…"
+msgstr "Vkladá sa telo príspevku…"
+
+#: src/components/LogMessage.svelte
+msgid "Internet connection lost. Queue paused until the connection returns."
+msgstr "Stratené pripojenie na internet. Fronta pozastavená, kým sa pripojenie neobnoví."
+
+#: src/components/LogMessage.svelte
+msgid "Internet connection restored. Continuing the queue."
+msgstr "Internetové pripojenie obnovené. Pokračuje sa v poradí."
+
+#: src/components/LogMessage.svelte
+msgid "Internet connection restored. The queue remains manually paused."
+msgstr "Internetové pripojenie obnovené. Poradie zostáva manuálne pozastavené."
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured endpoint"
+msgstr "Neplatný zachytený koncový bod"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured formatted post"
+msgstr "Neplatný zachytený formátovaný príspevok"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured post form"
+msgstr "Neplatný zachytený formulár príspevku"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured post variables"
+msgstr "Neplatné zachytené premenné príspevku"
+
+#: src/components/LogMessage.svelte
+msgid "Load your groups before opening a post"
+msgstr "Načítajte svoje skupiny pred otvorením príspevku"
+
+#: src/components/LogMessage.svelte
+msgid "Log in or complete Facebook verification in Chrome, then click Post again"
+msgstr "Prihláste sa alebo dokončite overenie Facebooku v Chrome, potom znova kliknite na Príspevok"
+
+#: src/components/LogMessage.svelte
+msgid "Multiple matching controls found in the post composer"
+msgstr "V kompozítore príspevku bolo nájdených viacero zhodných ovládacích prvkov"
+
+#: src/components/LogMessage.svelte
+msgid "No Facebook response was captured for this entry"
+msgstr "Pre tento záznam nebola zachytená žiadna odpoveď Facebooku"
+
+#: src/components/LogMessage.svelte
+msgid "No available post composer."
+msgstr "Žiadny dostupný kompozítor príspevkov."
+
+#: src/components/LogMessage.svelte
+msgid "No complete image upload request was captured."
+msgstr "Nebola zachytená žiadna kompletná požiadavka na nahranie obrázka."
+
+#: src/components/LogMessage.svelte
+msgid "No fresh image upload request was captured."
+msgstr "Nebola zachytená žiadna nová požiadavka na nahranie obrázka."
+
+#: src/components/LogMessage.svelte
+msgid "Opening browser…"
+msgstr "Otvára sa prehliadač…"
+
+#: src/components/LogMessage.svelte
+msgid "Pause requested. The current operation will finish before pausing."
+msgstr "Požadované pozastavenie. Aktuálna operácia sa dokončí pred pozastavením."
+
+#: src/components/LogMessage.svelte
+msgid "Post button clicked"
+msgstr "Tlačidlo príspevku bolo kliknuté"
+
+#: src/components/LogMessage.svelte
+msgid "Post published."
+msgstr "Príspevok zverejnený."
+
+#: src/components/LogMessage.svelte
+msgid "Postika is shutting down"
+msgstr "Postika sa vypína"
+
+#: src/components/LogMessage.svelte
+msgid "Posting is already running"
+msgstr "Zverejňovanie je už spustené"
+
+#: src/components/LogMessage.svelte
+msgid "Posting paused."
+msgstr "Zverejňovanie pozastavené."
+
+#: src/components/LogMessage.svelte
+msgid "Posting resumed."
+msgstr "Zverejňovanie obnovené."
+
+#: src/components/LogMessage.svelte
+msgid "Posting stopped after the first post was confirmed"
+msgstr "Zverejňovanie zastavené po potvrdení prvého príspevku"
+
+#: src/components/LogMessage.svelte
+msgid "Posting..."
+msgstr "Zverejňovanie..."
+
+#: src/components/LogMessage.svelte
+msgid "Reading Facebook's create-post confirmation…"
+msgstr "Načítavam potvrdenie vytvorenia príspevku na Facebooku…"
+
+#: src/components/LogMessage.svelte
+msgid "Rewriting the post body with Gemini…"
+msgstr "Prepísanie tela príspevku pomocou Gemini…"
+
+#: src/components/LogMessage.svelte
+msgid "Scheduled posting cancelled."
+msgstr "Plánované zverejňovanie zrušené."
+
+#: src/components/LogMessage.svelte
+msgid "Scheduled time reached. Starting posting…"
+msgstr "Dosiahnutý plánovaný čas. Spúšťam zverejňovanie…"
+
+#: src/components/LogMessage.svelte
+msgid "Select at least one group"
+msgstr "Vyberte aspoň jednu skupinu"
+
+#: src/components/LogMessage.svelte
+msgid "Setting up automatic posting using your first Facebook post..."
+msgstr "Nastavujem automatické zverejňovanie pomocou vášho prvého príspevku na Facebooku..."
+
+#: src/components/LogMessage.svelte
+msgid "Stopping posting…"
+msgstr "Zastavujem zverejňovanie…"
+
+#: src/components/LogMessage.svelte
+msgid "Submitting the first post and capturing fresh request values…"
+msgstr "Odosielam prvý príspevok a zachytávam nové hodnoty požiadavky…"
+
+#: src/components/LogMessage.svelte
+#: src/components/LogMessage.svelte
+msgid "Technical details recorded. Open debug details to inspect the original message."
+msgstr "Technické detaily zaznamenané. Otvorte podrobnosti ladenia pre kontrolu pôvodnej správy."
+
+#: src/components/LogMessage.svelte
+msgid "The active Facebook profile changed or expired"
+msgstr "Aktívny profil na Facebooku sa zmenil alebo vypršal"
+
+#: src/components/LogMessage.svelte
+msgid "The browser connection was lost. Check Facebook before retrying"
+msgstr "Stratilo sa pripojenie prehliadača. Skontrolujte Facebook pred opätovným pokusom"
+
+#: src/components/LogMessage.svelte
+msgid "The browser profile changed while capturing posting requests"
+msgstr "Profil prehliadača sa zmenil počas zachytávania požiadaviek na zverejnenie"
+
+#: src/components/LogMessage.svelte
+msgid "The captured formatted post body does not match your draft"
+msgstr "Zachytené naformátované telo príspevku nezodpovedá vašej koncepcii"
+
+#: src/components/LogMessage.svelte
+msgid "The captured image upload cookies do not match the Facebook profile"
+msgstr "Zachytené cookies nahrávania obrázkov nezodpovedajú Facebook profilu"
+
+#: src/components/LogMessage.svelte
+msgid "The captured image upload format is not supported"
+msgstr "Zachytený formát nahrávania obrázkov nie je podporovaný"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post belongs to a different Facebook profile"
+msgstr "Zachytený príspevok patrí inému Facebook profilu"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post body does not match your draft"
+msgstr "Zachytené telo príspevku nezodpovedá vašej koncepcii"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post cookies do not match the logged-in profile"
+msgstr "Zachytené cookies príspevku nezodpovedajú prihlásenému profilu"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post has no group target"
+msgstr "Zachytený príspevok nemá cieľovú skupinu"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post target does not match the selected group"
+msgstr "Cieľ príspevku nezodpovedá vybranej skupine"
+
+#: src/components/LogMessage.svelte
+msgid "The composer dialog was replaced while loading"
+msgstr "Dialóg tvorcu bol nahradený počas načítavania"
+
+#: src/components/LogMessage.svelte
+msgid "The create-post connection failed. Check Facebook before retrying"
+msgstr "Pripojenie k vytvoreniu príspevku zlyhalo. Skontrolujte Facebook pred opakovaním"
+
+#: src/components/LogMessage.svelte
+msgid "The current profile differs from the profile used to load groups. Load groups again."
+msgstr "Aktuálny profil sa líši od profilu použitého na načítanie skupín. Načítajte skupiny znova."
+
+#: src/components/LogMessage.svelte
+msgid "The desktop application is not ready"
+msgstr "Desktopová aplikácia nie je pripravená"
+
+#: src/components/LogMessage.svelte
+msgid "The desktop clipboard is not ready"
+msgstr "Desktopová schránka nie je pripravená"
+
+#: src/components/LogMessage.svelte
+msgid "The expected composer control did not appear in Chrome"
+msgstr "Očakávaná kontrola tvorcu sa v Chrome nezobrazila"
+
+#: src/components/LogMessage.svelte
+msgid "The first post was confirmed, but Chrome's completion state could not be checked. Posting stopped"
+msgstr "Prvý príspevok bol potvrdený, ale stav dokončenia v prehliadači Chrome sa nedal overiť. Zverejňovanie bolo zastavené"
+
+#: src/components/LogMessage.svelte
+msgid "The image upload did not contain multipart form data"
+msgstr "Nahrávanie obrázka neobsahovalo multipart/form-dáta"
+
+#: src/components/LogMessage.svelte
+msgid "The image upload does not match its active Facebook profile"
+msgstr "Nahraný obrázok nezodpovedá aktívnemu Facebook profilu"
+
+#: src/components/LogMessage.svelte
+msgid "The image upload form belongs to a different Facebook profile"
+msgstr "Formulár na nahranie obrázka patrí inému Facebook profilu"
+
+#: src/components/LogMessage.svelte
+msgid "The selected group has an invalid Facebook URL. Load groups again"
+msgstr "Vybraná skupina má neplatnú URL Facebooku. Načítajte skupiny znova"
+
+#: src/components/LogMessage.svelte
+msgid "The session could not be saved for posting retries and remaining groups."
+msgstr "Reláciu sa nepodarilo uložiť pre opakované zverejnenie a zostávajúce skupiny."
+
+#: src/components/LogMessage.svelte
+msgid "This draft has already been submitted to the first group. It was not submitted again."
+msgstr "Tento koncept už bol odoslaný do prvej skupiny. Nebol odoslaný znova."
+
+#: src/components/LogMessage.svelte
+msgid "This group has no available post composer"
+msgstr "Táto skupina nemá k dispozícii tvorcu príspevkov"
+
+#: src/components/LogMessage.svelte
+msgid "This group has reached its pending-content limit."
+msgstr "Táto skupina dosiahla limit čakajúceho obsahu."
+
+#: src/components/LogMessage.svelte
+msgid "This post was submitted, but confirmation is uncertain. Check Facebook before retrying."
+msgstr "Tento príspevok bol odoslaný, ale potvrdenie je neisté. Skontrolujte Facebook pred opakovaním."
+
+#: src/components/LogMessage.svelte
+msgid "This response is no longer available for the current run"
+msgstr "Táto odpoveď už nie je k dispozícii pre aktuálne spustenie"
+
+#: src/components/LogMessage.svelte
+msgid "Upload and post captures must belong to the same logged-in profile"
+msgstr "Nahrané a zverejnené snímky musia patriť rovnakému prihlásenému profilu"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for Facebook's Post button…"
+msgstr "Čakanie na tlačidlo Zverejniť na Facebooku…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the composer controls and layout…"
+msgstr "Čakanie na ovládacie prvky a rozloženie composera…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the group page and opening its composer…"
+msgstr "Čakanie na stránku skupiny a otvorenie jej composera…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the image previews and composer to settle…"
+msgstr "Čakanie na náhľady obrázkov a stabilizáciu composera…"
+
+#: src/components/LogMessage.svelte
+msgid "Your Facebook session needs login or verification. Load groups again."
+msgstr "Vaša Facebook relácia vyžaduje prihlásenie alebo overenie. Načítajte skupiny znova."
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Published to {0}."
+msgstr "Zverejnené na {0}."
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "{0}: Awaiting admin approval."
+msgstr "{0}: Čaká na schválenie administrátora."
+
+#. 0: number(a); 1: b
+#: src/components/LogMessage.svelte
+msgid "Waiting {0} seconds before posting to {1}."
+msgstr "Čakanie {0} sekúnd pred zverejnením na {1}."
+
+#. 0: a; 1: b
+#: src/components/LogMessage.svelte
+msgid "Next post in {0} · {1}"
+msgstr "Ďalší príspevok o {0} · {1}"
+
+#. 0: a; 1: number(b); 2: number(c)
+#: src/components/LogMessage.svelte
+msgid "{0}: Uploading photo {1} of {2}…"
+msgstr "{0}: Nahrávanie fotografie {1} z {2}…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Preparing a post for {0}…"
+msgstr "Príprava príspevku pre {0}…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Uploading images for {0}…"
+msgstr "Nahrávanie obrázkov pre {0}…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Posting to {0}…"
+msgstr "Zverejňovanie na {0}…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Fresh upload and post request values captured from {0}."
+msgstr "Nové hodnoty žiadosti o nahranie a zverejnenie zachytené z {0}."
+
+#. 0: number(a); 1: number(b)
+#: src/components/LogMessage.svelte
+msgid "Submission unconfirmed. Retrying request {0}/{1}…"
+msgstr "Odoslanie nepotvrdené. Opakovanie žiadosti {0}/{1}…"
+
+#. 0: number(a); 1: number(b); 2: number(c)
+#: src/components/LogMessage.svelte
+msgid "Finished: {0} published, {1} awaiting approval, {2} failed or skipped."
+msgstr "Dokončené: {0} zverejnené, {1} čaká na schválenie, {2} zlyhalo alebo preskočené."
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Opening {0}…"
+msgstr "Otvorenie {0}…"
+
+#. 0: number(a); 1: number(b)
+#: src/components/LogMessage.svelte
+msgid "Capturing image uploads ({0} of {1})…"
+msgstr "Nahrávanie obrázkov ({0} z {1})..."
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Gemini rewrite failed (HTTP {0}). Check the key, model and account quota"
+msgstr "Prepis Gemini zlyhal (HTTP {0}). Skontrolujte kľúč, model a kvótu účtu"
+
+#. 0: code
+#: src/components/LogMessage.svelte
+msgid " (Code {0})"
+msgstr "(Kód {0})"
+
+#: src/components/PostingLogView.svelte
+msgid "Debug details"
+msgstr "Detaily ladenia"
+
+#~ msgid ", "
+#~ msgstr ""
+
+#: src/components/ThemePicker.svelte
+msgid "Themes"
+msgstr "Témy"
+
+#: src/App.svelte
+msgid "Preferences & post"
+msgstr "Predvoľby a zverejnenie"
+
+#: src/App.svelte
+#: src/App.svelte
+msgid "Set preferences, then post now or schedule"
+msgstr "Nastavte predvoľby a potom príspevok zverejnite alebo naplánujte"

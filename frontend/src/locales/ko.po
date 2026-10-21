@@ -1,0 +1,1836 @@
+msgid ""
+msgstr ""
+"Source-Language: en\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1\n"
+"X-Plurals-Order: other\n"
+
+#. 0: minimumInterval === maximumInterval ? minimumInterval \\: `${minimumInterval}–${maximumInterval}`; 1: rewriteState
+#: src/App.svelte
+msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
+msgstr "저장된 기본값 적용됨: 게시물 간 {0}초 · Gemini 재작성 {1}."
+
+#: src/App.svelte
+msgid "Could not restore saved groups. Load groups to refresh the list."
+msgstr "저장된 그룹을 복원할 수 없습니다. 목록을 새로 고치려면 그룹을 불러오세요."
+
+#: src/App.svelte
+msgid "Choose a future date and time for your post."
+msgstr "게시물의 미래 날짜와 시간을 선택하세요."
+
+#: src/App.svelte
+msgid "Saving your scheduled queue…"
+msgstr "예약된 큐 저장 중…"
+
+#: src/App.svelte
+msgid "Opening a selected group to capture fresh posting requests…"
+msgstr "새 게시물 요청을 가져오기 위해 선택한 그룹 열기…"
+
+#: src/App.svelte
+#: src/App.svelte
+#: src/components/LogMessage.svelte
+msgid "Posting stopped."
+msgstr "게시 중지됨."
+
+#: src/App.svelte
+#: src/components/LogMessage.svelte
+msgid "Could not read a selected image"
+msgstr "선택한 이미지를 읽을 수 없습니다."
+
+#. 0: image.file.name
+#. 0: missingNames
+#. 0: unreadableNames
+#. 0: image.file.name
+#: src/App.svelte
+#: src/App.svelte
+#: src/components/PostComposer.svelte
+#: src/components/PostComposer.svelte
+msgid "Could not read {0}"
+msgstr "{0}을(를) 읽을 수 없습니다."
+
+#: src/App.svelte
+msgid "Posting finished."
+msgstr "게시 완료."
+
+#. 0: scheduleLabel(scheduledFor)
+#. 0: date
+#: src/App.svelte
+#: src/components/LogMessage.svelte
+msgid "Scheduled for {0}. Keep Postika open and your computer awake."
+msgstr "{0}에 예약됨. Postika를 열어 두고 컴퓨터를 깨워 두세요."
+
+#: src/App.svelte
+msgid "Could not restore this account’s draft. New edits will stay available while Postika is open."
+msgstr "이 계정의 초안을 복원할 수 없습니다. Postika가 열려 있는 동안 새 편집 내용은 계속 사용할 수 있습니다."
+
+#: src/App.svelte
+msgid "Could not add the dropped images. Try browsing for them instead."
+msgstr "드롭된 이미지를 추가할 수 없습니다. 대신 찾아보기를 시도하세요."
+
+#: src/App.svelte
+msgid "Could not save this account’s draft to disk. Keep Postika open to retain your edits."
+msgstr "이 계정의 초안을 디스크에 저장할 수 없습니다. 편집 내용을 유지하려면 Postika를 열어 두세요."
+
+#: src/App.svelte
+msgid "Start with your message. Add images to bring it to life."
+msgstr "메시지로 시작하세요. 이미지를 추가하여 메시지에 생동감을 불어넣으세요."
+
+#: src/App.svelte
+msgid "Choose the groups you want to share your post with."
+msgstr "게시물을 공유할 그룹을 선택하세요."
+
+#~ msgid "Review your post and preferences, then post now or schedule for later."
+#~ msgstr "게시물과 설정을 검토한 후 지금 게시하거나 나중에 예약하세요."
+
+#. 0: currentStep + 1; 1: steps.length
+#: src/App.svelte
+msgid "STEP {0} OF {1}"
+msgstr "단계 {0} / {1}"
+
+#: src/App.svelte
+msgid "Restoring account workspace…"
+msgstr "계정 작업 공간 복원 중…"
+
+#: src/App.svelte
+msgid "Opening…"
+msgstr "열기 중…"
+
+#: src/App.svelte
+msgid "Loading…"
+msgstr "로딩 중…"
+
+#: src/App.svelte
+msgid "Load groups"
+msgstr "그룹 불러오기"
+
+#: src/App.svelte
+msgid "Groups"
+msgstr "그룹"
+
+#: src/App.svelte
+msgid "Search groups…"
+msgstr "그룹 검색…"
+
+#: src/App.svelte
+msgid "Clear group search"
+msgstr "그룹 검색 지우기"
+
+#: src/App.svelte
+msgid "Search groups"
+msgstr "그룹 검색"
+
+#: src/App.svelte
+msgid "Select all groups"
+msgstr "모든 그룹 선택"
+
+#: src/App.svelte
+msgid "Unselect all groups"
+msgstr "모든 그룹 선택 해제"
+
+#~ msgid "{0} selected{1}"
+#~ msgstr ""
+
+#: src/App.svelte
+msgid "Searching…"
+msgstr "검색 중…"
+
+#: src/App.svelte
+msgid "No groups found. Try another search."
+msgstr "그룹을 찾을 수 없습니다. 다른 검색을 시도하세요."
+
+#: src/App.svelte
+msgid "Joined groups"
+msgstr "참여한 그룹"
+
+#: src/App.svelte
+msgid "No groups loaded yet."
+msgstr "아직 그룹이 불러와지지 않았습니다."
+
+#: src/App.svelte
+msgid "Open your Facebook groups to get started."
+msgstr "시작하려면 Facebook 그룹을 열어보세요."
+
+#: src/App.svelte
+msgid "Posting settings"
+msgstr "게시 설정"
+
+#: src/App.svelte
+msgid "Add a Gemini API key in Settings to enable rewriting."
+msgstr "재작성 기능을 사용하려면 설정에서 Gemini API 키를 추가하세요."
+
+#: src/App.svelte
+msgid "Applying defaults…"
+msgstr "기본값 적용 중…"
+
+#: src/App.svelte
+msgid "Use saved defaults"
+msgstr "저장된 기본값 사용"
+
+#: src/App.svelte
+msgid "Open settings"
+msgstr "설정 열기"
+
+#~ msgid "Posting as <0/>"
+#~ msgstr "<0/>로 게시 중"
+
+#~ msgid "Review your post<0>{0} images · {1} groups selected</0>"
+#~ msgstr "게시물 검토<0>{0} 이미지 · {1}개 그룹 선택됨</0>"
+
+#~ msgid "Original post"
+#~ msgstr "원본 게시물"
+
+#~ msgid "Your post"
+#~ msgstr "귀하의 게시물"
+
+#~ msgid "Gemini will rewrite this body for each group using your instructions."
+#~ msgstr "Gemini가 각 그룹에 대해 이 본문을 귀하의 지침에 따라 재작성합니다."
+
+#~ msgid "Selected groups ({0})"
+#~ msgstr "선택한 그룹 ({0})"
+
+#: src/App.svelte
+msgid "Schedule your queue"
+msgstr "큐 예약"
+
+#. 0: Intl.DateTimeFormat().resolvedOptions().timeZone
+#: src/App.svelte
+msgid "Time zone: {0}. Keep Postika open and your computer awake. Facebook may ask you to sign in when posting starts."
+msgstr "시간대: {0}. Postika를 열어두고 컴퓨터를 깨워 두세요. 게시가 시작될 때 Facebook이 로그인하라고 요청할 수 있습니다."
+
+#: src/App.svelte
+#: src/Workspace.svelte
+msgid "Cancel"
+msgstr "취소"
+
+#: src/App.svelte
+msgid "Confirm schedule"
+msgstr "일정 확인"
+
+#: src/App.svelte
+msgid "Next <0/>"
+msgstr "다음 <0/>"
+
+#: src/App.svelte
+msgid "View logs"
+msgstr "로그 보기"
+
+#: src/App.svelte
+#: src/components/PostingLogView.svelte
+msgid "Stop"
+msgstr "중지"
+
+#: src/App.svelte
+#: src/Workspace.svelte
+#: src/components/PostingLogView.svelte
+msgid "Scheduled"
+msgstr "예약됨"
+
+#: src/App.svelte
+msgid "Posting…"
+msgstr "게시 중…"
+
+#: src/App.svelte
+msgid "Post now"
+msgstr "지금 게시"
+
+#: src/App.svelte
+msgid "Schedule"
+msgstr "예약"
+
+#: src/App.svelte
+msgid "<0/> Previous"
+msgstr "<0/> 이전"
+
+#: src/Workspace.svelte
+msgid "Application menu"
+msgstr "애플리케이션 메뉴"
+
+#: src/Workspace.svelte
+msgid "Add account"
+msgstr "계정 추가"
+
+#: src/Workspace.svelte
+#: src/components/PostingLogView.svelte
+#: src/components/PostingLogView.svelte
+msgid "Posting logs"
+msgstr "게시 로그"
+
+#: src/Workspace.svelte
+#: src/components/Settings.svelte
+#: src/components/Settings.svelte
+msgid "Settings"
+msgstr "설정"
+
+#: src/Workspace.svelte
+msgid "Creating…"
+msgstr "생성 중…"
+
+#: src/Workspace.svelte
+msgid "Create & sign in"
+msgstr "만들고 로그인"
+
+#: src/Workspace.svelte
+msgid "Account name"
+msgstr "계정 이름"
+
+#: src/Workspace.svelte
+msgid "Sign in to Facebook in the new account’s browser window."
+msgstr "새 계정의 브라우저 창에서 Facebook에 로그인하세요."
+
+#: src/Workspace.svelte
+msgid "Running"
+msgstr "실행 중"
+
+#: src/Workspace.svelte
+msgid "In the background: <0/>"
+msgstr "백그라운드에서: <0/>"
+
+#: src/Workspace.svelte
+msgid "Loading accounts…"
+msgstr "계정 불러오는 중…"
+
+#: src/components/AccountDropdown.svelte
+msgid "Loading accounts"
+msgstr "계정 불러오기"
+
+#. 0: current?.name ?? 'Loading accounts'
+#: src/components/AccountDropdown.svelte
+msgid "Account: {0}"
+msgstr "계정: {0}"
+
+#: src/components/AccountDropdown.svelte
+msgid "Select account"
+msgstr "계정 선택"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search accounts…"
+msgstr "계정 검색…"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search accounts"
+msgstr "계정 검색"
+
+#: src/components/AccountDropdown.svelte
+msgid "Clear account search"
+msgstr "계정 검색 지우기"
+
+#: src/components/AccountDropdown.svelte
+msgid "All accounts"
+msgstr "모든 계정"
+
+#: src/components/AccountDropdown.svelte
+msgid "Accounts"
+msgstr "계정"
+
+#: src/components/AccountDropdown.svelte
+msgid "No accounts found"
+msgstr "계정을 찾을 수 없습니다"
+
+#: src/components/AccountDropdown.svelte
+#: src/components/ThemePicker.svelte
+msgid "Try a different name."
+msgstr "다른 이름으로 검색해 보세요."
+
+#: src/components/ConnectivityToast.svelte
+msgid "You’re back online"
+msgstr "온라인 상태로 돌아왔습니다"
+
+#: src/components/ConnectivityToast.svelte
+msgid "Internet connection lost"
+msgstr "인터넷 연결이 끊어졌습니다"
+
+#: src/components/ConnectivityToast.svelte
+msgid "Your queue is still manually paused."
+msgstr "대기열이 여전히 수동으로 일시 중지되어 있습니다."
+
+#: src/components/ConnectivityToast.svelte
+msgid "Your queue will continue automatically."
+msgstr "대기열이 자동으로 계속됩니다."
+
+#: src/components/ConnectivityToast.svelte
+msgid "Your queue is paused. We’ll continue when the connection returns."
+msgstr "대기열이 일시 중지되었습니다. 연결이 복구되면 계속 진행합니다."
+
+#: src/components/ConnectivityToast.svelte
+msgid "Dismiss connection notification"
+msgstr "연결 알림 닫기"
+
+#: src/components/DateTimePicker.svelte
+msgid "Choose a date and time"
+msgstr "날짜와 시간 선택"
+
+#: src/components/DateTimePicker.svelte
+msgid "Select date"
+msgstr "날짜 선택"
+
+#: src/components/DateTimePicker.svelte
+msgid "Choose a weekday for this post"
+msgstr "이 게시물의 요일 선택"
+
+#. 0: day.description
+#: src/components/DateTimePicker.svelte
+msgid "Select {0}"
+msgstr "{0} 선택"
+
+#: src/components/DateTimePicker.svelte
+msgid "Previous month"
+msgstr "지난 달"
+
+#: src/components/DateTimePicker.svelte
+msgid "Next month"
+msgstr "다음 달"
+
+#: src/components/DateTimePicker.svelte
+#: src/components/DateTimePicker.svelte
+msgid "Select time"
+msgstr "시간 선택"
+
+#: src/components/DateTimePicker.svelte
+msgid "24-hour clock"
+msgstr "24시간제"
+
+#: src/components/DateTimePicker.svelte
+msgid "Increase hour"
+msgstr "시간 올리기"
+
+#: src/components/DateTimePicker.svelte
+#: src/components/DateTimePicker.svelte
+msgid "Hour"
+msgstr "시간"
+
+#: src/components/DateTimePicker.svelte
+msgid "Decrease hour"
+msgstr "시간 내리기"
+
+#: src/components/DateTimePicker.svelte
+msgid "Increase minute"
+msgstr "분 올리기"
+
+#: src/components/DateTimePicker.svelte
+#: src/components/DateTimePicker.svelte
+msgid "Minute"
+msgstr "분"
+
+#: src/components/DateTimePicker.svelte
+msgid "Decrease minute"
+msgstr "분 내리기"
+
+#: src/components/DateTimePicker.svelte
+msgid "Choose a date and time in the future."
+msgstr "미래의 날짜와 시간을 선택하세요."
+
+#. 0: rejected.join(', ')
+#: src/components/PostComposer.svelte
+msgid "Unsupported files: {0}. Choose JPG, PNG, WebP, or GIF images."
+msgstr "지원되지 않는 파일: {0}. JPG, PNG, WebP 또는 GIF 이미지를 선택하세요."
+
+#. 0: image.file.name
+#: src/components/PostComposer.svelte
+msgid "Could not preview {0}. Please choose another image."
+msgstr "{0}을(를) 미리 볼 수 없습니다. 다른 이미지를 선택하세요."
+
+#. 0: images[index].file.name; 1: index + 1; 2: images.length
+#: src/components/PostComposer.svelte
+msgid "{0} moved to position {1} of {2}."
+msgstr "{0}이(가) {2}개의 위치 중 {1} 위치로 이동되었습니다."
+
+#: src/components/PostComposer.svelte
+#: src/components/PostEditorContent.svelte
+msgid "Post body"
+msgstr "게시물 내용"
+
+#: src/components/PostComposer.svelte
+#: src/components/PostComposer.svelte
+msgid "Required"
+msgstr "필수"
+
+#: src/components/PostComposer.svelte
+msgid "Images"
+msgstr "이미지"
+
+#: src/components/PostComposer.svelte
+msgid "Choose images"
+msgstr "이미지 선택"
+
+#: src/components/PostComposer.svelte
+msgid "Drop images here or <0>browse images</0>"
+msgstr "이미지를 여기에 드롭하거나 <0>이미지 찾아보기</0>"
+
+#: src/components/PostComposer.svelte
+msgid "JPG, PNG, WebP, or GIF · Select multiple images"
+msgstr "JPG, PNG, WebP 또는 GIF · 여러 이미지 선택 가능"
+
+#~ msgid "{0} {1} selected"
+#~ msgstr ""
+
+#: src/components/PostComposer.svelte
+msgid "Add more"
+msgstr "더 추가"
+
+#: src/components/PostComposer.svelte
+msgid "Drag images to rearrange. Or focus an image and use Alt + Left / Right."
+msgstr "이미지를 드래그하여 순서를 변경하세요. 아니면 이미지를 선택한 후 Alt + 좌/우 키를 사용하세요."
+
+#: src/components/PostComposer.svelte
+msgid "Selected images"
+msgstr "선택된 이미지"
+
+#. 0: image.file.name; 1: images.indexOf(image) + 1; 2: images.length
+#: src/components/PostComposer.svelte
+msgid "{0}, image {1} of {2}"
+msgstr "{0}, 이미지 {2}개 중 {1}"
+
+#. 0: image.file.name
+#: src/components/PostComposer.svelte
+msgid "Remove {0}"
+msgstr "{0} 제거"
+
+#: src/components/PostComposer.svelte
+msgid "Drop more images here to add them."
+msgstr "여기에 더 많은 이미지를 드롭하여 추가할 수 있습니다."
+
+#. 0: error
+#: src/components/PostEditor.svelte
+msgid "Could not edit the post: {0}"
+msgstr "게시물 편집 실패: {0}"
+
+#: src/components/PostEditorContent.svelte
+msgid "Post editor controls"
+msgstr "게시물 편집기 컨트롤"
+
+#: src/components/PostEditorContent.svelte
+msgid "Text formatting"
+msgstr "텍스트 서식"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bold (Ctrl+B)"
+msgstr "굵게 (Ctrl+B)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bold"
+msgstr "굵게"
+
+#: src/components/PostEditorContent.svelte
+msgid "Italic (Ctrl+I)"
+msgstr "기울임꼴 (Ctrl+I)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Italic"
+msgstr "이탤릭"
+
+#: src/components/PostEditorContent.svelte
+msgid "Heading 1"
+msgstr "제목 1"
+
+#: src/components/PostEditorContent.svelte
+msgid "Heading 2"
+msgstr "제목 2"
+
+#: src/components/PostEditorContent.svelte
+msgid "Quote"
+msgstr "인용"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bullet list"
+msgstr "글머리 기호 목록"
+
+#: src/components/PostEditorContent.svelte
+msgid "Numbered list"
+msgstr "번호 매기기 목록"
+
+#: src/components/PostEditorContent.svelte
+msgid "Undo (Ctrl+Z)"
+msgstr "실행 취소 (Ctrl+Z)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Undo"
+msgstr "실행 취소"
+
+#: src/components/PostEditorContent.svelte
+msgid "Redo (Ctrl+Shift+Z)"
+msgstr "다시 실행 (Ctrl+Shift+Z)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Redo"
+msgstr "다시 실행"
+
+#: src/components/PostEditorContent.svelte
+msgid "What would you like to share?"
+msgstr "무엇을 공유하시겠습니까?"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bold, italic, headings, quotes, and lists · Markdown shortcuts supported"
+msgstr "굵게, 이탤릭, 제목, 인용문 및 목록 · Markdown 단축키 지원"
+
+#. 0: body.length.toLocaleString(getLocale())
+#: src/components/PostEditorContent.svelte
+msgid "{0} characters"
+msgstr "{0} 글자"
+
+#: src/components/LogMessage.svelte
+msgid "Ready to post."
+msgstr "게시 준비 완료"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook response copied."
+msgstr "Facebook 응답이 복사되었습니다."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook response received"
+msgstr "Facebook 응답 수신"
+
+#: src/components/PostingLogView.svelte
+msgid "POSTIKA / ACTIVITY"
+msgstr "POSTIKA / 활동"
+
+#: src/components/PostingLogView.svelte
+msgid "Posting progress"
+msgstr "게시 진행 상황"
+
+#. 0: activity?.processed || 0; 1: activity?.total || 0
+#: src/components/PostingLogView.svelte
+msgid "{0}/{1} groups processed"
+msgstr "{0}/{1} 그룹 처리 완료"
+
+#. 0: percentage
+#: src/components/PostingLogView.svelte
+msgid "{0}% complete"
+msgstr "{0}% 완료"
+
+#: src/components/PostingLogView.svelte
+msgid "Groups processed"
+msgstr "처리된 그룹"
+
+#: src/components/PostingLogView.svelte
+msgid "Published"
+msgstr "게시됨"
+
+#: src/components/PostingLogView.svelte
+msgid "Awaiting approval"
+msgstr "승인 대기 중"
+
+#: src/components/PostingLogView.svelte
+msgid "Failed or skipped"
+msgstr "실패 또는 건너뜀"
+
+#: src/components/PostingLogView.svelte
+msgid "Remaining"
+msgstr "남은 항목"
+
+#. 0: number(a); 1: number(b); 2: c
+#. 0: activity.current; 1: activity.total; 2: activity.currentGroup.name
+#: src/components/LogMessage.svelte
+#: src/components/PostingLogView.svelte
+msgid "Group {0}/{1}: {2}"
+msgstr "그룹 {0}/{1}: {2}"
+
+#. 0: pauseRequested ? /* @wc-include */ ' · Paused' \\: ''
+#: src/components/PostingLogView.svelte
+msgid "Next post in <0/>{0}"
+msgstr "다음 게시물까지 <0/>{0}"
+
+#: src/components/PostingLogView.svelte
+msgid "Elapsed <0/>"
+msgstr "경과 <0/>"
+
+#: src/components/PostingLogView.svelte
+msgid "Current group <0/>"
+msgstr "현재 그룹 <0/>"
+
+#: src/components/PostingLogView.svelte
+msgid "Following latest"
+msgstr "최신 팔로잉"
+
+#: src/components/PostingLogView.svelte
+msgid "Jump to latest"
+msgstr "최신 게시물로 이동"
+
+#. 0.0: total
+#: src/components/PostingLogView.svelte
+msgid "Activity timeline <0>{0} logs</0>"
+msgstr "활동 타임라인 <0>{0} 로그</0>"
+
+#: src/components/PostingLogView.svelte
+msgid "Posting activity"
+msgstr "게시 활동"
+
+#. 0: entryLabel(entry)
+#: src/components/PostingLogView.svelte
+msgid "{0} log"
+msgstr "{0} 로그"
+
+#. 0: itemTime(entry.message)
+#: src/components/PostingLogView.svelte
+msgid "Took {0}"
+msgstr "걸린 시간 {0}"
+
+#: src/components/PostingLogView.svelte
+#: src/components/PostingLogView.svelte
+msgid "Copy Facebook response"
+msgstr "페이스북 응답 복사"
+
+#: src/components/PostingLogView.svelte
+msgid "Response copied"
+msgstr "응답이 복사되었습니다"
+
+#: src/components/PostingLogView.svelte
+msgid "Copied"
+msgstr "복사됨"
+
+#: src/components/PostingLogView.svelte
+msgid "Copying…"
+msgstr "복사 중…"
+
+#: src/components/PostingLogView.svelte
+msgid "Copy response"
+msgstr "응답 복사"
+
+#. 0.0: entry.hasResponse ? /* @wc-include */ ' · Response available to copy' \\: ''
+#: src/components/PostingLogView.svelte
+msgid "Debug details<0>Original log message{0}</0>"
+msgstr "디버그 세부 정보<0>원본 로그 메시지{0}</0>"
+
+#: src/components/PostingLogView.svelte
+msgid "Your activity will appear here"
+msgstr "활동이 여기에 표시됩니다"
+
+#: src/components/PostingLogView.svelte
+msgid "Start posting to follow uploads, results, and wait times."
+msgstr "업로드, 결과 및 대기 시간을 확인하려면 게시 시작하기."
+
+#: src/components/PostingLogView.svelte
+msgid "Log pages"
+msgstr "로그 페이지"
+
+#: src/components/PostingLogView.svelte
+msgid "Previous page"
+msgstr "이전 페이지"
+
+#. 0: number
+#: src/components/PostingLogView.svelte
+msgid "Page {0}"
+msgstr "페이지 {0}"
+
+#: src/components/PostingLogView.svelte
+msgid "Next page"
+msgstr "다음 페이지"
+
+#: src/components/PostingLogView.svelte
+msgid "← Prev"
+msgstr "← 이전"
+
+#: src/components/PostingLogView.svelte
+msgid "Next →"
+msgstr "다음 →"
+
+#. 0: total ? (page - 1) * pageSize + 1 \\: 0; 1: Math.min(page * pageSize, total); 2: total
+#: src/components/PostingLogView.svelte
+msgid "{0}–{1} of {2} logs"
+msgstr "{0}–{1} / 총 {2} 로그"
+
+#: src/components/PostingLogView.svelte
+msgid "Resume"
+msgstr "계속"
+
+#: src/components/PostingLogView.svelte
+msgid "Pause"
+msgstr "일시 중지"
+
+#: src/components/PostingLogView.svelte
+msgid "Stopping…"
+msgstr "중지 중…"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "POSTING PACE"
+msgstr "게시 속도"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Interval between posts"
+msgstr "게시 간 간격"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Minimum (seconds)"
+msgstr "최소 (초)"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Maximum (seconds)"
+msgstr "최대 (초)"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Choose how long to wait before posting to the next group."
+msgstr "다음 그룹에 게시하기 전에 기다릴 시간을 선택하세요."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "At least 60 seconds. Use equal values for a fixed interval."
+msgstr "최소 60초. 고정 간격을 위해 동일한 값을 사용하세요."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "OPTIONAL · AI REWRITE"
+msgstr "선택 사항 · AI 재작성"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "A fresh version for each group"
+msgstr "각 그룹별 새 버전"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Rewrite each post body with Gemini"
+msgstr "각 게시물 본문을 Gemini로 재작성"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
+msgstr "다시 쓰기 지침<0>Gemini가 유지해야 할 톤과 세부사항을 선택하세요.</0>"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Keep it concise and easy to scan. Preserve the price and contact details."
+msgstr "간결하게 작성하고 쉽게 볼 수 있도록 합니다. 가격과 연락처 정보는 유지하세요."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Rewrite instructions"
+msgstr "다시 쓰기 지침"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
+msgstr "귀하의 게시물 텍스트와 지침은 Google Gemini로 전송됩니다. 이미지는 전송되지 않습니다. Gemini는 일반 텍스트를 사용하여 다시 씁니다."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
+msgstr "다시 쓰기에 실패하면 해당 게시물은 원래 텍스트를 사용합니다. 다음 게시물에서 Gemini를 다시 시도합니다."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Let Gemini rewrite your post using your instructions."
+msgstr "Gemini가 귀하의 지침을 사용하여 게시물을 다시 작성하게 합니다."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Posting preferences"
+msgstr "게시 설정"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved defaults help"
+msgstr "저장된 기본값 사용 도움말"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "About saved defaults"
+msgstr "저장된 기본값 정보"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved interval"
+msgstr "저장된 간격"
+
+#. 0: settings.minimumInterval === settings.maximumInterval ? settings.minimumInterval \\: `${settings.minimumInterval}–${settings.maximumInterval}`
+#: src/components/SavedDefaultsInfo.svelte
+msgid "{0} seconds"
+msgstr "{0}초"
+
+#: src/App.svelte
+#: src/components/SavedDefaultsInfo.svelte
+msgid "On"
+msgstr "켜기"
+
+#: src/App.svelte
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Off"
+msgstr "끄기"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Gemini rewrite"
+msgstr "Gemini 다시 쓰기"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "No instructions saved."
+msgstr "저장된 지침이 없습니다."
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved rewrite instructions"
+msgstr "저장된 다시 쓰기 지침"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved values could not be loaded. Try “Use saved defaults” again."
+msgstr "저장된 값을 불러올 수 없습니다. “저장된 기본값 사용”을 다시 시도하세요."
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "What does “Use saved defaults” do?"
+msgstr "“저장된 기본값 사용”은 무엇을 하나요?"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
+msgstr "이 실행의 게시 간격, Gemini 재작성 옵션 및 재작성 지침을 설정에 저장된 값으로 대체합니다."
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
+msgstr "초기 기본값: 60–120초, Gemini 재작성 끄기, 재작성 지침 없음. 변경하려면 설정에서 직접 환경설정을 저장하세요."
+
+#: src/components/Settings.svelte
+msgid "Settings saved. New runs can use these defaults."
+msgstr "설정이 저장되었습니다. 새로운 실행은 이 기본값을 사용할 수 있습니다."
+
+#: src/components/Settings.svelte
+msgid "Key saved · leave blank to keep it"
+msgstr "키가 저장됨 · 그대로 두면 유지됩니다"
+
+#: src/components/Settings.svelte
+msgid "Enter your Gemini API key"
+msgstr "Gemini API 키를 입력하세요"
+
+#: src/components/Settings.svelte
+msgid "A key is saved on this device."
+msgstr "이 장치에 키가 저장되어 있습니다."
+
+#: src/components/Settings.svelte
+msgid "No API key saved."
+msgstr "저장된 API 키가 없습니다."
+
+#: src/components/Settings.svelte
+msgid "Remove saved key"
+msgstr "저장된 키 삭제"
+
+#: src/components/Settings.svelte
+msgid "Gemini"
+msgstr "Gemini"
+
+#: src/components/Settings.svelte
+msgid "API key<0/>"
+msgstr "API 키<0/>"
+
+#. 0: keyConfigured ? 'A key is saved on this device.' \\: 'No API key saved.'
+#: src/components/Settings.svelte
+msgid "{0} The saved key is never displayed."
+msgstr "{0} 저장된 키는 절대 표시되지 않습니다."
+
+#: src/components/Settings.svelte
+msgid "Model<0/>"
+msgstr "모델<0/>"
+
+#: src/components/Settings.svelte
+msgid "Posting defaults"
+msgstr "게시 기본 설정"
+
+#: src/components/Settings.svelte
+msgid "Applied when you start a new posting run."
+msgstr "새 게시 실행을 시작할 때 적용됩니다."
+
+#: src/components/Settings.svelte
+msgid "Saving…"
+msgstr "저장 중…"
+
+#: src/components/Settings.svelte
+msgid "Save settings"
+msgstr "설정 저장"
+
+#: src/components/Settings.svelte
+msgid "YOUR PREFERENCES"
+msgstr "환경설정"
+
+#. 0: accountName
+#: src/components/Settings.svelte
+msgid "Set up Gemini and save posting defaults for {0}."
+msgstr "Gemini를 설정하고 {0}의 게시 기본값을 저장하세요."
+
+#: src/components/StepProgress.svelte
+msgid "Completed"
+msgstr "완료"
+
+#: src/components/StepProgress.svelte
+msgid "Current"
+msgstr "현재"
+
+#: src/components/StepProgress.svelte
+msgid "Upcoming"
+msgstr "예정"
+
+#. 0: index + 1; 1: steps.length; 2: completed || index < currentStep ? 'Completed' \\: index === currentStep ? 'Current' \\: 'Upcoming'
+#: src/components/StepProgress.svelte
+msgid "Step {0} of {1}: {2}"
+msgstr "단계 {0} / {1}: {2}"
+
+#: src/components/WindowControls.svelte
+msgid "Could not change the window. Please try again."
+msgstr "창을 변경할 수 없습니다. 다시 시도해 주세요."
+
+#: src/components/WindowControls.svelte
+msgid "Window controls"
+msgstr "창 제어"
+
+#: src/components/WindowControls.svelte
+msgid "Minimize window"
+msgstr "창 최소화"
+
+#: src/components/WindowControls.svelte
+msgid "Restore window"
+msgstr "창 복원"
+
+#: src/components/WindowControls.svelte
+msgid "Maximize window"
+msgstr "창 최대화"
+
+#: src/components/WindowControls.svelte
+msgid "Close window"
+msgstr "창 닫기"
+
+#: src/App.svelte
+msgid "Create post"
+msgstr "게시물 작성"
+
+#: src/App.svelte
+msgid "Write your post and add images"
+msgstr "게시물 작성 및 이미지 추가"
+
+#: src/App.svelte
+msgid "Select groups"
+msgstr "그룹 선택"
+
+#: src/App.svelte
+msgid "Load groups and choose where to post"
+msgstr "그룹 불러오기 및 게시할 위치 선택"
+
+#~ msgid "Review & post"
+#~ msgstr "검토 및 게시"
+
+#~ msgid "Review, set preferences, then post now or schedule"
+#~ msgstr "검토하고, 환경 설정 설정 후 즉시 게시하거나 예약"
+
+#: src/App.svelte
+msgid "Facebook session captured"
+msgstr "Facebook 세션 캡처됨"
+
+#: src/App.svelte
+msgid "The browser is closed. It will reopen when you click Post."
+msgstr "브라우저가 닫혔습니다. 게시를 클릭하면 다시 열립니다."
+
+#: src/App.svelte
+msgid "Checking Facebook login"
+msgstr "Facebook 로그인 확인 중"
+
+#: src/App.svelte
+msgid "Finish signing in or any verification prompts in Chrome. Your login will be detected automatically."
+msgstr "Chrome에서 로그인 완료 또는 인증 요청을 완료하세요. 로그인 상태가 자동으로 감지됩니다."
+
+#: src/App.svelte
+msgid "Login required"
+msgstr "로그인 필요"
+
+#: src/App.svelte
+msgid "Please log in to Facebook in the Chrome window. Postika will detect when you’re signed in."
+msgstr "Chrome 창에서 Facebook에 로그인하세요. Postika가 로그인 상태를 감지합니다."
+
+#: src/App.svelte
+msgid "Complete Facebook verification"
+msgstr "Facebook 인증 완료"
+
+#: src/App.svelte
+msgid "Complete the login or verification prompts in Chrome to continue."
+msgstr "계속하려면 Chrome에서 로그인 또는 인증 요청을 완료하세요."
+
+#: src/App.svelte
+msgid "Facebook connected"
+msgstr "Facebook 연결됨"
+
+#: src/App.svelte
+msgid "You’re logged in. Your session is ready."
+msgstr "로그인되었습니다. 세션이 준비되었습니다."
+
+#: src/App.svelte
+msgid "Facebook window closed"
+msgstr "페이스북 창이 닫혔습니다"
+
+#: src/App.svelte
+msgid "Click Load groups to reopen Facebook and check your login."
+msgstr "그룹 불러오기를 클릭하여 페이스북을 다시 열고 로그인 상태를 확인하세요."
+
+#. 0: current?.name ?? ''
+#: src/components/AccountDropdown.svelte
+msgid "Language: {0}"
+msgstr "언어: {0}"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search languages…"
+msgstr "언어 검색…"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search languages"
+msgstr "언어 검색"
+
+#: src/components/AccountDropdown.svelte
+msgid "Clear language search"
+msgstr "언어 검색 지우기"
+
+#. 0: matches.length
+#: src/components/AccountDropdown.svelte
+msgid "{0} result"
+msgstr "{0} 결과"
+
+#. 0: matches.length
+#: src/components/AccountDropdown.svelte
+msgid "{0} results"
+msgstr "{0} 개 결과"
+
+#: src/components/AccountDropdown.svelte
+msgid "All languages"
+msgstr "모든 언어"
+
+#: src/components/AccountDropdown.svelte
+msgid "Languages"
+msgstr "언어"
+
+#: src/components/AccountDropdown.svelte
+msgid "No languages found"
+msgstr "언어를 찾을 수 없습니다"
+
+#: src/components/DateTimePicker.svelte
+msgid "Morning"
+msgstr "오전"
+
+#: src/components/DateTimePicker.svelte
+msgid "Afternoon"
+msgstr "오후"
+
+#: src/components/DateTimePicker.svelte
+msgid "Evening"
+msgstr "저녁"
+
+#: src/components/LanguageMenu.svelte
+msgid "Could not change the language. Please try again."
+msgstr "언어를 변경할 수 없습니다. 다시 시도하세요."
+
+#: src/components/Settings.svelte
+msgid "Language"
+msgstr "언어"
+
+#: src/components/PostingOptionsForm.svelte
+#: src/components/PostingOptionsForm.svelte
+msgid "seconds"
+msgstr "초"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Minimum"
+msgstr "최소"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Maximum"
+msgstr "최대"
+
+#: src/components/StepProgress.svelte
+msgid "Post progress"
+msgstr "게시 진행"
+
+#. 0: visibleGroups.length
+#: src/App.svelte
+msgid "{0} shown"
+msgstr "{0} 표시됨"
+
+#. 0: selectedGroupIds.length
+#: src/App.svelte
+msgid "{0} selected"
+msgstr "{0} 선택됨"
+
+#. 0: images.length
+#: src/components/PostComposer.svelte
+msgid "{0} images selected"
+msgstr "{0} 개 이미지 선택됨"
+
+#: src/components/PostingLogView.svelte
+msgid "WARN"
+msgstr "경고"
+
+#: src/components/PostingLogView.svelte
+msgid "INFO"
+msgstr "정보"
+
+#: src/components/PostingLogView.svelte
+msgid "ERROR"
+msgstr "오류"
+
+#: src/components/PostingLogView.svelte
+msgid "DEBUG"
+msgstr "디버그"
+
+#: src/components/PostingLogView.svelte
+msgid "PUBLISHED"
+msgstr "게시됨"
+
+#: src/components/PostingLogView.svelte
+msgid "PENDING"
+msgstr "대기 중"
+
+#: src/components/PostingLogView.svelte
+msgid "FAILED"
+msgstr "실패"
+
+#: src/components/PostingLogView.svelte
+msgid "SKIPPED"
+msgstr "건너뜀"
+
+#: src/components/PostingLogView.svelte
+msgid "UNCONFIRMED"
+msgstr "확인되지 않음"
+
+#: src/Workspace.svelte
+msgid "e.g. Business"
+msgstr "예: 비즈니스"
+
+#: src/components/PostComposer.svelte
+msgid "1 image selected"
+msgstr "1 개 이미지 선택됨"
+
+#: src/components/PostingLogView.svelte
+msgid "Paused · Waiting for internet"
+msgstr "일시정지 · 인터넷 대기 중"
+
+#: src/components/PostingLogView.svelte
+msgid "Pausing after the current operation"
+msgstr "현재 작업 후 일시정지"
+
+#: src/components/PostingLogView.svelte
+msgid "Paused"
+msgstr "일시정지됨"
+
+#: src/components/PostingLogView.svelte
+msgid "Stopping"
+msgstr "중지 중"
+
+#: src/components/PostingLogView.svelte
+msgid "Posting"
+msgstr "게시 중"
+
+#: src/components/PostingLogView.svelte
+msgid "Finished"
+msgstr "완료"
+
+#: src/components/PostingLogView.svelte
+msgid "Stopped"
+msgstr "중지됨"
+
+#: src/components/PostingLogView.svelte
+msgid "Ready"
+msgstr "준비 완료"
+
+#: src/components/PostingLogView.svelte
+msgid "CURRENT ACTIVITY"
+msgstr "현재 활동"
+
+#: src/components/PostingLogView.svelte
+msgid "RUN STATUS"
+msgstr "실행 상태"
+
+#: src/components/PostingLogView.svelte
+msgid " · Paused"
+msgstr " · 일시 중지됨"
+
+#: src/components/PostingLogView.svelte
+msgid " · Response available to copy"
+msgstr " · 복사 가능한 응답"
+
+#: src/components/AccountLabel.svelte
+msgid "Default profile"
+msgstr "기본 프로필"
+
+#~ msgid "Switch to light mode"
+#~ msgstr "밝은 모드로 전환"
+
+#~ msgid "Switch to dark mode"
+#~ msgstr "어두운 모드로 전환"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Color themes"
+msgstr "색상 테마"
+
+#: src/components/ThemePicker.svelte
+msgid "Close"
+msgstr "닫기"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Search themes…"
+msgstr "테마 검색…"
+
+#: src/components/ThemePicker.svelte
+msgid "No themes found"
+msgstr "테마를 찾을 수 없습니다"
+
+#: src/components/LogMessage.svelte
+msgid "A selected group is no longer available. Load groups again"
+msgstr "선택한 그룹을 더 이상 사용할 수 없습니다. 그룹을 다시 불러오세요."
+
+#: src/components/LogMessage.svelte
+msgid "Add a Gemini API key in Settings before enabling rewriting"
+msgstr "재작성 기능을 활성화하기 전에 설정에서 Gemini API 키를 추가하세요."
+
+#: src/components/LogMessage.svelte
+msgid "Add a post body and at least one image"
+msgstr "게시물 본문과 최소한 한 장의 이미지를 추가하세요."
+
+#: src/components/LogMessage.svelte
+msgid "All selected groups were already attempted. Review unconfirmed results on Facebook."
+msgstr "선택한 모든 그룹에 이미 시도했습니다. Facebook에서 확인되지 않은 결과를 검토하세요."
+
+#: src/components/LogMessage.svelte
+msgid "An image upload failed in Chrome. Check the composer and retry Post"
+msgstr "Chrome에서 이미지 업로드에 실패했습니다. 작성기를 확인하고 게시물을 다시 시도하세요."
+
+#: src/components/LogMessage.svelte
+msgid "Attaching images…"
+msgstr "이미지를 첨부하는 중…"
+
+#: src/components/LogMessage.svelte
+msgid "Choose JPG, PNG, WebP, or GIF images"
+msgstr "JPG, PNG, WebP, 또는 GIF 이미지를 선택하세요."
+
+#: src/components/LogMessage.svelte
+msgid "Choose a future date and time for your post"
+msgstr "게시물의 미래 날짜와 시간을 선택하세요."
+
+#: src/components/LogMessage.svelte
+msgid "Closing Chrome and posting to the remaining groups…"
+msgstr "Chrome을 닫고 나머지 그룹에 게시하는 중…"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the complete create-post request"
+msgstr "게시물 작성 요청 전체를 캡처할 수 없습니다."
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the completed image upload response"
+msgstr "완료된 이미지 업로드 응답을 캡처할 수 없습니다."
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the image upload form fields"
+msgstr "이미지 업로드 폼 필드를 캡처할 수 없습니다."
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the image upload form. Retry Post"
+msgstr "이미지 업로드 폼을 캡처할 수 없습니다. 게시물을 다시 시도하세요."
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the upload endpoint"
+msgstr "업로드 엔드포인트를 캡처할 수 없습니다."
+
+#: src/components/LogMessage.svelte
+msgid "Could not copy the Facebook response to the clipboard"
+msgstr "Facebook 응답을 클립보드로 복사할 수 없습니다."
+
+#: src/components/LogMessage.svelte
+msgid "Could not enable create-post capture in Chrome"
+msgstr "Chrome에서 게시물 작성 캡처를 활성화할 수 없습니다"
+
+#: src/components/LogMessage.svelte
+msgid "Could not parse the captured create-post form"
+msgstr "캡처된 게시물 작성 양식을 구문 분석할 수 없습니다"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare image files"
+msgstr "이미지 파일을 준비할 수 없습니다"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare post images"
+msgstr "게시물 이미지를 준비할 수 없습니다"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare the Gemini request"
+msgstr "Gemini 요청을 준비할 수 없습니다"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare the image upload."
+msgstr "이미지 업로드를 준비할 수 없습니다."
+
+#: src/components/LogMessage.svelte
+msgid "Could not reach Gemini. Check your connection"
+msgstr "Gemini에 접근할 수 없습니다. 연결을 확인하세요"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read Facebook's post confirmation"
+msgstr "Facebook의 게시물 확인을 읽을 수 없습니다"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read the Gemini rewrite"
+msgstr "Gemini 재작성 내용을 읽을 수 없습니다"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read the completed image upload response"
+msgstr "완료된 이미지 업로드 응답을 읽을 수 없습니다"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read the selected image."
+msgstr "선택된 이미지를 읽을 수 없습니다."
+
+#: src/components/LogMessage.svelte
+msgid "Create-post capture ended before confirmation. Check Facebook before retrying"
+msgstr "게시물 작성 캡처가 확인 전에 종료되었습니다. 재시도하기 전에 Facebook을 확인하세요"
+
+#: src/components/LogMessage.svelte
+msgid "Create-post request detected. Capturing fresh form values…"
+msgstr "게시물 작성 요청이 감지되었습니다. 새 양식 값을 캡처 중…"
+
+#: src/components/LogMessage.svelte
+msgid "Create-post response complete. Waiting for captured session headers…"
+msgstr "게시물 작성 응답 완료. 캡처된 세션 헤더를 기다리는 중…"
+
+#: src/components/LogMessage.svelte
+msgid "Create-post response received. Waiting for its complete body…"
+msgstr "게시물 작성 응답 수신 완료. 전체 본문을 기다리는 중…"
+
+#: src/components/LogMessage.svelte
+msgid "Description inserted"
+msgstr "설명 삽입됨"
+
+#: src/components/LogMessage.svelte
+msgid "Earlier submission is unconfirmed. Skipping this group and continuing with the remaining groups."
+msgstr "이전 제출은 확인되지 않았습니다. 이 그룹을 건너뛰고 나머지 그룹으로 계속 진행합니다."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook could not post to this group. Continuing with the remaining groups."
+msgstr "Facebook이 이 그룹에 게시할 수 없습니다. 나머지 그룹으로 계속 진행합니다."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook did not confirm all images. Check the composer."
+msgstr "Facebook이 모든 이미지를 확인하지 않았습니다. 작성기를 확인하세요."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook did not confirm the submission"
+msgstr "Facebook이 제출을 확인하지 않았습니다."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook did not confirm this post. Check the group before trying again."
+msgstr "Facebook이 이 게시물을 확인하지 않았습니다. 다시 시도하기 전에 그룹을 확인하세요."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook has temporarily limited posting. Try again later."
+msgstr "Facebook이 일시적으로 게시를 제한했습니다. 나중에 다시 시도하세요."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook rejected this post."
+msgstr "Facebook이 이 게시물을 거부했습니다."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook requires login or verification. Load groups again."
+msgstr "Facebook이 로그인 또는 인증을 요구합니다. 그룹을 다시 불러오세요."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook returned a story, but did not confirm its group or publication state. Posting stopped. Check Facebook before retrying."
+msgstr "Facebook이 스토리를 반환했지만 그룹이나 게시 상태를 확인하지 않았습니다. 게시가 중단되었습니다. 다시 시도하기 전에 Facebook을 확인하세요."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook's confirmation exceeded the 16 MiB response limit; retained response is truncated"
+msgstr "Facebook의 확인이 16MiB 응답 한도를 초과했습니다; 보존된 응답이 잘렸습니다."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook's editor did not accept the formatted post. Posting was not submitted"
+msgstr "Facebook의 편집기가 형식화된 게시물을 수락하지 않았습니다. 게시가 제출되지 않았습니다."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook's editor did not retain the formatted post text. Posting was not submitted"
+msgstr "페이스북 편집기가 서식이 지정된 게시물 텍스트를 유지하지 않았습니다. 게시물이 제출되지 않았습니다."
+
+#: src/components/LogMessage.svelte
+msgid "First post confirmed. Waiting for the Facebook composer to close…"
+msgstr "첫 번째 게시물이 확인되었습니다. 페이스북 작성기가 닫히기를 기다리는 중..."
+
+#: src/components/LogMessage.svelte
+msgid "First submission unconfirmed. Retrying request 1/3 with the captured mutation ID…"
+msgstr "첫 번째 제출이 확인되지 않았습니다. 캡처된 변형 ID로 요청 1/3 재시도 중..."
+
+#: src/components/LogMessage.svelte
+msgid "Formatted post is too large"
+msgstr "서식이 지정된 게시물이 너무 큽니다."
+
+#: src/components/LogMessage.svelte
+msgid "Found multiple matching post composers on the group page"
+msgstr "그룹 페이지에서 여러 개의 일치하는 게시물 작성기를 찾았습니다."
+
+#: src/components/LogMessage.svelte
+msgid "Fresh create-post form captured. Waiting for Facebook's response…"
+msgstr "새 게시물 작성 양식이 캡처되었습니다. 페이스북의 응답을 기다리는 중..."
+
+#: src/components/LogMessage.svelte
+msgid "Gemini did not finish the rewrite"
+msgstr "Gemini가 재작성 작업을 완료하지 못했습니다."
+
+#: src/components/LogMessage.svelte
+msgid "Gemini returned no rewritten text"
+msgstr "Gemini가 재작성된 텍스트를 반환하지 않았습니다."
+
+#: src/components/LogMessage.svelte
+msgid "Gemini rewrite completed."
+msgstr "Gemini 재작성 완료."
+
+#: src/components/LogMessage.svelte
+msgid "Gemini rewrite failed. Using the original text for this post; Gemini will be tried again for the next post."
+msgstr "Gemini 재작성 실패. 이 게시물에는 원본 텍스트를 사용합니다; 다음 게시물에는 Gemini를 다시 시도할 예정입니다."
+
+#: src/components/LogMessage.svelte
+msgid "Image uploads belong to a different profile"
+msgstr "이미지 업로드가 다른 프로필에 속합니다."
+
+#: src/components/LogMessage.svelte
+msgid "Images inserted"
+msgstr "이미지가 삽입되었습니다."
+
+#: src/components/LogMessage.svelte
+msgid "Inserting post body…"
+msgstr "게시물 본문 삽입 중..."
+
+#: src/components/LogMessage.svelte
+msgid "Internet connection lost. Queue paused until the connection returns."
+msgstr "인터넷 연결이 끊어졌습니다. 연결이 복구될 때까지 대기열 일시 중지."
+
+#: src/components/LogMessage.svelte
+msgid "Internet connection restored. Continuing the queue."
+msgstr "인터넷 연결이 복원되었습니다. 큐를 계속 진행합니다."
+
+#: src/components/LogMessage.svelte
+msgid "Internet connection restored. The queue remains manually paused."
+msgstr "인터넷 연결이 복원되었습니다. 큐는 수동으로 일시 중지된 상태로 남아 있습니다."
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured endpoint"
+msgstr "잘못된 캡처된 엔드포인트"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured formatted post"
+msgstr "잘못된 캡처된 포맷된 게시물"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured post form"
+msgstr "잘못된 캡처된 게시물 양식"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured post variables"
+msgstr "잘못된 캡처된 게시물 변수"
+
+#: src/components/LogMessage.svelte
+msgid "Load your groups before opening a post"
+msgstr "게시물을 열기 전에 그룹을 불러오세요"
+
+#: src/components/LogMessage.svelte
+msgid "Log in or complete Facebook verification in Chrome, then click Post again"
+msgstr "Chrome에서 로그인하거나 Facebook 인증을 완료한 후, 다시 게시 버튼을 클릭하세요"
+
+#: src/components/LogMessage.svelte
+msgid "Multiple matching controls found in the post composer"
+msgstr "게시물 작성기에서 여러 개의 일치하는 컨트롤이 발견되었습니다"
+
+#: src/components/LogMessage.svelte
+msgid "No Facebook response was captured for this entry"
+msgstr "이 항목에 대해 Facebook 응답이 캡처되지 않았습니다"
+
+#: src/components/LogMessage.svelte
+msgid "No available post composer."
+msgstr "사용 가능한 게시물 작성기가 없습니다."
+
+#: src/components/LogMessage.svelte
+msgid "No complete image upload request was captured."
+msgstr "완전한 이미지 업로드 요청이 캡처되지 않았습니다."
+
+#: src/components/LogMessage.svelte
+msgid "No fresh image upload request was captured."
+msgstr "새로운 이미지 업로드 요청이 캡처되지 않았습니다."
+
+#: src/components/LogMessage.svelte
+msgid "Opening browser…"
+msgstr "브라우저를 열고 있습니다…"
+
+#: src/components/LogMessage.svelte
+msgid "Pause requested. The current operation will finish before pausing."
+msgstr "일시 중지가 요청되었습니다. 현재 작업이 완료된 후 일시 중지됩니다."
+
+#: src/components/LogMessage.svelte
+msgid "Post button clicked"
+msgstr "게시 버튼이 클릭되었습니다"
+
+#: src/components/LogMessage.svelte
+msgid "Post published."
+msgstr "게시물이 게시되었습니다."
+
+#: src/components/LogMessage.svelte
+msgid "Postika is shutting down"
+msgstr "Postika가 종료되고 있습니다"
+
+#: src/components/LogMessage.svelte
+msgid "Posting is already running"
+msgstr "게시가 이미 실행 중입니다"
+
+#: src/components/LogMessage.svelte
+msgid "Posting paused."
+msgstr "게시가 일시 중지되었습니다."
+
+#: src/components/LogMessage.svelte
+msgid "Posting resumed."
+msgstr "게시가 다시 시작되었습니다."
+
+#: src/components/LogMessage.svelte
+msgid "Posting stopped after the first post was confirmed"
+msgstr "첫 번째 게시물이 확인된 후 게시가 중단되었습니다"
+
+#: src/components/LogMessage.svelte
+msgid "Posting..."
+msgstr "게시 중..."
+
+#: src/components/LogMessage.svelte
+msgid "Reading Facebook's create-post confirmation…"
+msgstr "Facebook의 게시물 생성 확인을 읽는 중..."
+
+#: src/components/LogMessage.svelte
+msgid "Rewriting the post body with Gemini…"
+msgstr "Gemini로 게시물 내용을 다시 작성하는 중..."
+
+#: src/components/LogMessage.svelte
+msgid "Scheduled posting cancelled."
+msgstr "예약 게시가 취소되었습니다."
+
+#: src/components/LogMessage.svelte
+msgid "Scheduled time reached. Starting posting…"
+msgstr "예약 시간이 도달했습니다. 게시 시작 중..."
+
+#: src/components/LogMessage.svelte
+msgid "Select at least one group"
+msgstr "최소 하나의 그룹을 선택하세요"
+
+#: src/components/LogMessage.svelte
+msgid "Setting up automatic posting using your first Facebook post..."
+msgstr "첫 번째 Facebook 게시물을 사용하여 자동 게시 설정 중..."
+
+#: src/components/LogMessage.svelte
+msgid "Stopping posting…"
+msgstr "게시 중지 중..."
+
+#: src/components/LogMessage.svelte
+msgid "Submitting the first post and capturing fresh request values…"
+msgstr "첫 번째 게시물을 제출하고 새로운 요청 값을 캡처하는 중..."
+
+#: src/components/LogMessage.svelte
+#: src/components/LogMessage.svelte
+msgid "Technical details recorded. Open debug details to inspect the original message."
+msgstr "기술 세부 정보가 기록되었습니다. 원본 메시지를 확인하려면 디버그 세부 정보를 열어보세요."
+
+#: src/components/LogMessage.svelte
+msgid "The active Facebook profile changed or expired"
+msgstr "활성 Facebook 프로필이 변경되었거나 만료되었습니다"
+
+#: src/components/LogMessage.svelte
+msgid "The browser connection was lost. Check Facebook before retrying"
+msgstr "브라우저 연결이 끊겼습니다. 다시 시도하기 전에 Facebook을 확인하세요"
+
+#: src/components/LogMessage.svelte
+msgid "The browser profile changed while capturing posting requests"
+msgstr "게시 요청을 캡처하는 동안 브라우저 프로필이 변경되었습니다"
+
+#: src/components/LogMessage.svelte
+msgid "The captured formatted post body does not match your draft"
+msgstr "캡처된 형식화된 게시물 본문이 작성 중인 초안과 일치하지 않습니다"
+
+#: src/components/LogMessage.svelte
+msgid "The captured image upload cookies do not match the Facebook profile"
+msgstr "캡처된 이미지 업로드 쿠키가 Facebook 프로필과 일치하지 않습니다"
+
+#: src/components/LogMessage.svelte
+msgid "The captured image upload format is not supported"
+msgstr "캡처된 이미지 업로드 형식이 지원되지 않습니다"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post belongs to a different Facebook profile"
+msgstr "캡처된 게시물이 다른 Facebook 프로필에 속합니다"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post body does not match your draft"
+msgstr "캡처된 게시물 본문이 작성 중인 초안과 일치하지 않습니다"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post cookies do not match the logged-in profile"
+msgstr "캡처된 게시물 쿠키가 로그인된 프로필과 일치하지 않습니다"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post has no group target"
+msgstr "캡처된 게시물에 그룹 대상이 없습니다"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post target does not match the selected group"
+msgstr "캡처된 게시물 대상이 선택된 그룹과 일치하지 않습니다"
+
+#: src/components/LogMessage.svelte
+msgid "The composer dialog was replaced while loading"
+msgstr "컴포저 대화상자가 로드되는 동안 교체되었습니다"
+
+#: src/components/LogMessage.svelte
+msgid "The create-post connection failed. Check Facebook before retrying"
+msgstr "게시물 작성 연결에 실패했습니다. 다시 시도하기 전에 Facebook을 확인하세요"
+
+#: src/components/LogMessage.svelte
+msgid "The current profile differs from the profile used to load groups. Load groups again."
+msgstr "현재 프로필이 그룹 로드에 사용된 프로필과 다릅니다. 그룹을 다시 로드하세요."
+
+#: src/components/LogMessage.svelte
+msgid "The desktop application is not ready"
+msgstr "데스크톱 애플리케이션이 준비되지 않았습니다"
+
+#: src/components/LogMessage.svelte
+msgid "The desktop clipboard is not ready"
+msgstr "데스크톱 클립보드가 준비되지 않았습니다"
+
+#: src/components/LogMessage.svelte
+msgid "The expected composer control did not appear in Chrome"
+msgstr "예상되는 컴포저 컨트롤이 Chrome에 나타나지 않았습니다"
+
+#: src/components/LogMessage.svelte
+msgid "The first post was confirmed, but Chrome's completion state could not be checked. Posting stopped"
+msgstr "첫 번째 게시물이 확인되었으나, Chrome의 완료 상태를 확인할 수 없습니다. 게시가 중단되었습니다."
+
+#: src/components/LogMessage.svelte
+msgid "The image upload did not contain multipart form data"
+msgstr "이미지 업로드에 멀티파트 폼 데이터가 포함되어 있지 않습니다."
+
+#: src/components/LogMessage.svelte
+msgid "The image upload does not match its active Facebook profile"
+msgstr "이미지 업로드가 현재 활성화된 Facebook 프로필과 일치하지 않습니다."
+
+#: src/components/LogMessage.svelte
+msgid "The image upload form belongs to a different Facebook profile"
+msgstr "이미지 업로드 폼이 다른 Facebook 프로필에 속해 있습니다."
+
+#: src/components/LogMessage.svelte
+msgid "The selected group has an invalid Facebook URL. Load groups again"
+msgstr "선택한 그룹의 Facebook URL이 유효하지 않습니다. 그룹을 다시 불러오세요."
+
+#: src/components/LogMessage.svelte
+msgid "The session could not be saved for posting retries and remaining groups."
+msgstr "게시 재시도 및 남은 그룹에 대한 세션을 저장할 수 없습니다."
+
+#: src/components/LogMessage.svelte
+msgid "This draft has already been submitted to the first group. It was not submitted again."
+msgstr "이 초안은 이미 첫 번째 그룹에 제출되었습니다. 다시 제출되지 않았습니다."
+
+#: src/components/LogMessage.svelte
+msgid "This group has no available post composer"
+msgstr "이 그룹에는 사용 가능한 게시 작성기가 없습니다."
+
+#: src/components/LogMessage.svelte
+msgid "This group has reached its pending-content limit."
+msgstr "이 그룹은 현재 보류 중인 콘텐츠 한도에 도달했습니다."
+
+#: src/components/LogMessage.svelte
+msgid "This post was submitted, but confirmation is uncertain. Check Facebook before retrying."
+msgstr "이 게시물은 제출되었지만 확인이 불확실합니다. 재시도 전에 Facebook을 확인하세요."
+
+#: src/components/LogMessage.svelte
+msgid "This response is no longer available for the current run"
+msgstr "이 응답은 현재 실행에서는 더 이상 사용할 수 없습니다."
+
+#: src/components/LogMessage.svelte
+msgid "Upload and post captures must belong to the same logged-in profile"
+msgstr "업로드 및 게시된 캡처는 동일한 로그인된 프로필에 속해야 합니다."
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for Facebook's Post button…"
+msgstr "Facebook의 게시 버튼을 기다리는 중…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the composer controls and layout…"
+msgstr "작성기 컨트롤과 레이아웃을 기다리는 중…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the group page and opening its composer…"
+msgstr "그룹 페이지를 기다리고 작성기를 여는 중…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the image previews and composer to settle…"
+msgstr "이미지 미리보기와 작성기가 안정될 때까지 기다리는 중…"
+
+#: src/components/LogMessage.svelte
+msgid "Your Facebook session needs login or verification. Load groups again."
+msgstr "Facebook 세션에 로그인 또는 인증이 필요합니다. 그룹을 다시 로드하세요."
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Published to {0}."
+msgstr "{0}에 게시됨."
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "{0}: Awaiting admin approval."
+msgstr "{0}: 관리자 승인을 대기 중입니다."
+
+#. 0: number(a); 1: b
+#: src/components/LogMessage.svelte
+msgid "Waiting {0} seconds before posting to {1}."
+msgstr "{1}에 게시하기 전에 {0}초 기다리는 중."
+
+#. 0: a; 1: b
+#: src/components/LogMessage.svelte
+msgid "Next post in {0} · {1}"
+msgstr "다음 게시물: {0} · {1}"
+
+#. 0: a; 1: number(b); 2: number(c)
+#: src/components/LogMessage.svelte
+msgid "{0}: Uploading photo {1} of {2}…"
+msgstr "{0}: 사진 {2}개 중 {1}번째 업로드 중…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Preparing a post for {0}…"
+msgstr "{0}용 게시물 준비 중…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Uploading images for {0}…"
+msgstr "{0}용 이미지 업로드 중…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Posting to {0}…"
+msgstr "{0}에 게시 중…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Fresh upload and post request values captured from {0}."
+msgstr "{0}에서 새 업로드 및 게시 요청 값 캡처."
+
+#. 0: number(a); 1: number(b)
+#: src/components/LogMessage.svelte
+msgid "Submission unconfirmed. Retrying request {0}/{1}…"
+msgstr "제출 확인되지 않음. 요청 재시도 {0}/{1}…"
+
+#. 0: number(a); 1: number(b); 2: number(c)
+#: src/components/LogMessage.svelte
+msgid "Finished: {0} published, {1} awaiting approval, {2} failed or skipped."
+msgstr "완료: {0} 게시됨, {1} 승인 대기 중, {2} 실패 또는 건너뜀."
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Opening {0}…"
+msgstr "{0} 열기…"
+
+#. 0: number(a); 1: number(b)
+#: src/components/LogMessage.svelte
+msgid "Capturing image uploads ({0} of {1})…"
+msgstr "이미지 업로드 중 ({1} 중 {0})…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Gemini rewrite failed (HTTP {0}). Check the key, model and account quota"
+msgstr "제미니 재작성 실패 (HTTP {0}). 키, 모델 및 계정 한도를 확인하세요"
+
+#. 0: code
+#: src/components/LogMessage.svelte
+msgid " (Code {0})"
+msgstr "(코드 {0})"
+
+#: src/components/PostingLogView.svelte
+msgid "Debug details"
+msgstr "디버그 세부 정보"
+
+#~ msgid ", "
+#~ msgstr ""
+
+#: src/components/ThemePicker.svelte
+msgid "Themes"
+msgstr "테마"
+
+#: src/App.svelte
+msgid "Preferences & post"
+msgstr "환경설정 및 게시"
+
+#: src/App.svelte
+#: src/App.svelte
+msgid "Set preferences, then post now or schedule"
+msgstr "환경설정을 지정한 후 지금 게시하거나 예약하세요"

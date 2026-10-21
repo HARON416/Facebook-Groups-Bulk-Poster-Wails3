@@ -1,0 +1,1836 @@
+msgid ""
+msgstr ""
+"Source-Language: en\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2\n"
+"X-Plurals-Order: one, other\n"
+
+#. 0: minimumInterval === maximumInterval ? minimumInterval \\: `${minimumInterval}–${maximumInterval}`; 1: rewriteState
+#: src/App.svelte
+msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
+msgstr "Εφαρμόστηκαν αποθηκευμένες προεπιλογές: {0} δευτερόλεπτα μεταξύ αναρτήσεων · Επανεγγραφή Gemini {1}."
+
+#: src/App.svelte
+msgid "Could not restore saved groups. Load groups to refresh the list."
+msgstr "Δεν ήταν δυνατή η επαναφορά των αποθηκευμένων ομάδων. Φορτώστε ομάδες για να ανανεώσετε τη λίστα."
+
+#: src/App.svelte
+msgid "Choose a future date and time for your post."
+msgstr "Επιλέξτε μια μελλοντική ημερομηνία και ώρα για την ανάρτησή σας."
+
+#: src/App.svelte
+msgid "Saving your scheduled queue…"
+msgstr "Αποθήκευση του προγραμματισμένου σας πίνακα…"
+
+#: src/App.svelte
+msgid "Opening a selected group to capture fresh posting requests…"
+msgstr "Άνοιγμα επιλεγμένης ομάδας για συλλογή νέων αιτημάτων ανάρτησης…"
+
+#: src/App.svelte
+#: src/App.svelte
+#: src/components/LogMessage.svelte
+msgid "Posting stopped."
+msgstr "Η ανάρτηση σταμάτησε."
+
+#: src/App.svelte
+#: src/components/LogMessage.svelte
+msgid "Could not read a selected image"
+msgstr "Δεν ήταν δυνατή η ανάγνωση της επιλεγμένης εικόνας"
+
+#. 0: image.file.name
+#. 0: missingNames
+#. 0: unreadableNames
+#. 0: image.file.name
+#: src/App.svelte
+#: src/App.svelte
+#: src/components/PostComposer.svelte
+#: src/components/PostComposer.svelte
+msgid "Could not read {0}"
+msgstr "Δεν ήταν δυνατή η ανάγνωση {0}"
+
+#: src/App.svelte
+msgid "Posting finished."
+msgstr "Η ανάρτηση ολοκληρώθηκε."
+
+#. 0: scheduleLabel(scheduledFor)
+#. 0: date
+#: src/App.svelte
+#: src/components/LogMessage.svelte
+msgid "Scheduled for {0}. Keep Postika open and your computer awake."
+msgstr "Προγραμματισμένο για {0}. Κρατήστε το Postika ανοιχτό και τον υπολογιστή σας ενεργό."
+
+#: src/App.svelte
+msgid "Could not restore this account’s draft. New edits will stay available while Postika is open."
+msgstr "Δεν ήταν δυνατή η επαναφορά του προσχεδίου αυτού του λογαριασμού. Οι νέες επεξεργασίες θα παραμείνουν διαθέσιμες όσο το Postika είναι ανοιχτό."
+
+#: src/App.svelte
+msgid "Could not add the dropped images. Try browsing for them instead."
+msgstr "Δεν ήταν δυνατή η προσθήκη των απορριφθέντων εικόνων. Δοκιμάστε να τις αναζητήσετε χειροκίνητα."
+
+#: src/App.svelte
+msgid "Could not save this account’s draft to disk. Keep Postika open to retain your edits."
+msgstr "Δεν ήταν δυνατή η αποθήκευση του προσχεδίου αυτού του λογαριασμού στο δίσκο. Κρατήστε το Postika ανοιχτό για να διατηρήσετε τις επεξεργασίες σας."
+
+#: src/App.svelte
+msgid "Start with your message. Add images to bring it to life."
+msgstr "Ξεκινήστε με το μήνυμά σας. Προσθέστε εικόνες για να το ζωντανέψετε."
+
+#: src/App.svelte
+msgid "Choose the groups you want to share your post with."
+msgstr "Επιλέξτε τις ομάδες με τις οποίες θέλετε να μοιραστείτε την ανάρτησή σας."
+
+#~ msgid "Review your post and preferences, then post now or schedule for later."
+#~ msgstr "Ελέγξτε την ανάρτησή σας και τις προτιμήσεις, στη συνέχεια δημοσιεύστε τώρα ή προγραμματίστε για αργότερα."
+
+#. 0: currentStep + 1; 1: steps.length
+#: src/App.svelte
+msgid "STEP {0} OF {1}"
+msgstr "ΒΗΜΑ {0} ΑΠΟ {1}"
+
+#: src/App.svelte
+msgid "Restoring account workspace…"
+msgstr "Αποκατάσταση χώρου εργασίας λογαριασμού…"
+
+#: src/App.svelte
+msgid "Opening…"
+msgstr "Άνοιγμα…"
+
+#: src/App.svelte
+msgid "Loading…"
+msgstr "Φόρτωση…"
+
+#: src/App.svelte
+msgid "Load groups"
+msgstr "Φόρτωση ομάδων"
+
+#: src/App.svelte
+msgid "Groups"
+msgstr "Ομάδες"
+
+#: src/App.svelte
+msgid "Search groups…"
+msgstr "Αναζήτηση ομάδων…"
+
+#: src/App.svelte
+msgid "Clear group search"
+msgstr "Καθαρισμός αναζήτησης ομάδων"
+
+#: src/App.svelte
+msgid "Search groups"
+msgstr "Αναζήτηση ομάδων"
+
+#: src/App.svelte
+msgid "Select all groups"
+msgstr "Επιλογή όλων των ομάδων"
+
+#: src/App.svelte
+msgid "Unselect all groups"
+msgstr "Αποεπιλογή όλων των ομάδων"
+
+#~ msgid "{0} selected{1}"
+#~ msgstr ""
+
+#: src/App.svelte
+msgid "Searching…"
+msgstr "Αναζήτηση…"
+
+#: src/App.svelte
+msgid "No groups found. Try another search."
+msgstr "Δεν βρέθηκαν ομάδες. Δοκιμάστε άλλη αναζήτηση."
+
+#: src/App.svelte
+msgid "Joined groups"
+msgstr "Συμμετέχουσες ομάδες"
+
+#: src/App.svelte
+msgid "No groups loaded yet."
+msgstr "Δεν έχει φορτωθεί καμία ομάδα ακόμα."
+
+#: src/App.svelte
+msgid "Open your Facebook groups to get started."
+msgstr "Ανοίξτε τις ομάδες σας στο Facebook για να ξεκινήσετε."
+
+#: src/App.svelte
+msgid "Posting settings"
+msgstr "Ρυθμίσεις δημοσίευσης"
+
+#: src/App.svelte
+msgid "Add a Gemini API key in Settings to enable rewriting."
+msgstr "Προσθέστε ένα κλειδί Gemini API στις Ρυθμίσεις για να ενεργοποιήσετε την επανεγγραφή."
+
+#: src/App.svelte
+msgid "Applying defaults…"
+msgstr "Εφαρμογή προεπιλογών…"
+
+#: src/App.svelte
+msgid "Use saved defaults"
+msgstr "Χρήση αποθηκευμένων προεπιλογών"
+
+#: src/App.svelte
+msgid "Open settings"
+msgstr "Άνοιγμα ρυθμίσεων"
+
+#~ msgid "Posting as <0/>"
+#~ msgstr "Δημοσίευση ως <0/>"
+
+#~ msgid "Review your post<0>{0} images · {1} groups selected</0>"
+#~ msgstr "Ελέγξτε την ανάρτησή σας<0>{0} εικόνες · {1} επιλεγμένες ομάδες</0>"
+
+#~ msgid "Original post"
+#~ msgstr "Αρχική ανάρτηση"
+
+#~ msgid "Your post"
+#~ msgstr "Η ανάρτησή σας"
+
+#~ msgid "Gemini will rewrite this body for each group using your instructions."
+#~ msgstr "Το Gemini θα ξαναγράψει αυτό το κείμενο για κάθε ομάδα χρησιμοποιώντας τις οδηγίες σας."
+
+#~ msgid "Selected groups ({0})"
+#~ msgstr "Επιλεγμένες ομάδες ({0})"
+
+#: src/App.svelte
+msgid "Schedule your queue"
+msgstr "Προγραμματίστε τη σειρά δημοσιεύσεων"
+
+#. 0: Intl.DateTimeFormat().resolvedOptions().timeZone
+#: src/App.svelte
+msgid "Time zone: {0}. Keep Postika open and your computer awake. Facebook may ask you to sign in when posting starts."
+msgstr "Ζώνη ώρας: {0}. Κρατήστε το Postika ανοιχτό και τον υπολογιστή σας ενεργό. Το Facebook ενδέχεται να σας ζητήσει να συνδεθείτε όταν ξεκινήσει η ανάρτηση."
+
+#: src/App.svelte
+#: src/Workspace.svelte
+msgid "Cancel"
+msgstr "Ακύρωση"
+
+#: src/App.svelte
+msgid "Confirm schedule"
+msgstr "Επιβεβαίωση προγράμματος"
+
+#: src/App.svelte
+msgid "Next <0/>"
+msgstr "Επόμενο <0/>"
+
+#: src/App.svelte
+msgid "View logs"
+msgstr "Προβολή αρχείων καταγραφής"
+
+#: src/App.svelte
+#: src/components/PostingLogView.svelte
+msgid "Stop"
+msgstr "Διακοπή"
+
+#: src/App.svelte
+#: src/Workspace.svelte
+#: src/components/PostingLogView.svelte
+msgid "Scheduled"
+msgstr "Προγραμματισμένο"
+
+#: src/App.svelte
+msgid "Posting…"
+msgstr "Ανάρτηση…"
+
+#: src/App.svelte
+msgid "Post now"
+msgstr "Δημοσίευση τώρα"
+
+#: src/App.svelte
+msgid "Schedule"
+msgstr "Προγραμματισμός"
+
+#: src/App.svelte
+msgid "<0/> Previous"
+msgstr "<0/> Προηγούμενο"
+
+#: src/Workspace.svelte
+msgid "Application menu"
+msgstr "Μενού εφαρμογής"
+
+#: src/Workspace.svelte
+msgid "Add account"
+msgstr "Προσθήκη λογαριασμού"
+
+#: src/Workspace.svelte
+#: src/components/PostingLogView.svelte
+#: src/components/PostingLogView.svelte
+msgid "Posting logs"
+msgstr "Αρχείο δημοσιεύσεων"
+
+#: src/Workspace.svelte
+#: src/components/Settings.svelte
+#: src/components/Settings.svelte
+msgid "Settings"
+msgstr "Ρυθμίσεις"
+
+#: src/Workspace.svelte
+msgid "Creating…"
+msgstr "Δημιουργία…"
+
+#: src/Workspace.svelte
+msgid "Create & sign in"
+msgstr "Δημιουργία και σύνδεση"
+
+#: src/Workspace.svelte
+msgid "Account name"
+msgstr "Όνομα λογαριασμού"
+
+#: src/Workspace.svelte
+msgid "Sign in to Facebook in the new account’s browser window."
+msgstr "Συνδεθείτε στο Facebook στο παράθυρο του προγράμματος περιήγησης του νέου λογαριασμού."
+
+#: src/Workspace.svelte
+msgid "Running"
+msgstr "Σε εκτέλεση"
+
+#: src/Workspace.svelte
+msgid "In the background: <0/>"
+msgstr "Στο παρασκήνιο: <0/>"
+
+#: src/Workspace.svelte
+msgid "Loading accounts…"
+msgstr "Φόρτωση λογαριασμών…"
+
+#: src/components/AccountDropdown.svelte
+msgid "Loading accounts"
+msgstr "Φόρτωση λογαριασμών"
+
+#. 0: current?.name ?? 'Loading accounts'
+#: src/components/AccountDropdown.svelte
+msgid "Account: {0}"
+msgstr "Λογαριασμός: {0}"
+
+#: src/components/AccountDropdown.svelte
+msgid "Select account"
+msgstr "Επιλογή λογαριασμού"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search accounts…"
+msgstr "Αναζήτηση λογαριασμών…"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search accounts"
+msgstr "Αναζήτηση λογαριασμών"
+
+#: src/components/AccountDropdown.svelte
+msgid "Clear account search"
+msgstr "Καθαρισμός αναζήτησης λογαριασμού"
+
+#: src/components/AccountDropdown.svelte
+msgid "All accounts"
+msgstr "Όλοι οι λογαριασμοί"
+
+#: src/components/AccountDropdown.svelte
+msgid "Accounts"
+msgstr "Λογαριασμοί"
+
+#: src/components/AccountDropdown.svelte
+msgid "No accounts found"
+msgstr "Δεν βρέθηκαν λογαριασμοί"
+
+#: src/components/AccountDropdown.svelte
+#: src/components/ThemePicker.svelte
+msgid "Try a different name."
+msgstr "Δοκιμάστε άλλο όνομα."
+
+#: src/components/ConnectivityToast.svelte
+msgid "You’re back online"
+msgstr "Είστε ξανά online"
+
+#: src/components/ConnectivityToast.svelte
+msgid "Internet connection lost"
+msgstr "Η σύνδεση στο διαδίκτυο χάθηκε"
+
+#: src/components/ConnectivityToast.svelte
+msgid "Your queue is still manually paused."
+msgstr "Η ουρά σας παραμένει προσωρινά σε παύση."
+
+#: src/components/ConnectivityToast.svelte
+msgid "Your queue will continue automatically."
+msgstr "Η ουρά σας θα συνεχιστεί αυτόματα."
+
+#: src/components/ConnectivityToast.svelte
+msgid "Your queue is paused. We’ll continue when the connection returns."
+msgstr "Η ουρά σας είναι σε παύση. Θα συνεχίσουμε όταν επιστρέψει η σύνδεση."
+
+#: src/components/ConnectivityToast.svelte
+msgid "Dismiss connection notification"
+msgstr "Απόρριψη ειδοποίησης σύνδεσης"
+
+#: src/components/DateTimePicker.svelte
+msgid "Choose a date and time"
+msgstr "Επιλέξτε ημερομηνία και ώρα"
+
+#: src/components/DateTimePicker.svelte
+msgid "Select date"
+msgstr "Επιλέξτε ημερομηνία"
+
+#: src/components/DateTimePicker.svelte
+msgid "Choose a weekday for this post"
+msgstr "Επιλέξτε ημέρα της εβδομάδας για αυτήν την ανάρτηση"
+
+#. 0: day.description
+#: src/components/DateTimePicker.svelte
+msgid "Select {0}"
+msgstr "Επιλέξτε {0}"
+
+#: src/components/DateTimePicker.svelte
+msgid "Previous month"
+msgstr "Προηγούμενος μήνας"
+
+#: src/components/DateTimePicker.svelte
+msgid "Next month"
+msgstr "Επόμενος μήνας"
+
+#: src/components/DateTimePicker.svelte
+#: src/components/DateTimePicker.svelte
+msgid "Select time"
+msgstr "Επιλέξτε ώρα"
+
+#: src/components/DateTimePicker.svelte
+msgid "24-hour clock"
+msgstr "24ωρο ρολόι"
+
+#: src/components/DateTimePicker.svelte
+msgid "Increase hour"
+msgstr "Αύξηση ώρας"
+
+#: src/components/DateTimePicker.svelte
+#: src/components/DateTimePicker.svelte
+msgid "Hour"
+msgstr "Ώρα"
+
+#: src/components/DateTimePicker.svelte
+msgid "Decrease hour"
+msgstr "Μείωση ώρας"
+
+#: src/components/DateTimePicker.svelte
+msgid "Increase minute"
+msgstr "Αύξηση λεπτού"
+
+#: src/components/DateTimePicker.svelte
+#: src/components/DateTimePicker.svelte
+msgid "Minute"
+msgstr "Λεπτό"
+
+#: src/components/DateTimePicker.svelte
+msgid "Decrease minute"
+msgstr "Μείωση λεπτού"
+
+#: src/components/DateTimePicker.svelte
+msgid "Choose a date and time in the future."
+msgstr "Επιλέξτε μια ημερομηνία και ώρα στο μέλλον."
+
+#. 0: rejected.join(', ')
+#: src/components/PostComposer.svelte
+msgid "Unsupported files: {0}. Choose JPG, PNG, WebP, or GIF images."
+msgstr "Μη υποστηριζόμενα αρχεία: {0}. Επιλέξτε εικόνες JPG, PNG, WebP ή GIF."
+
+#. 0: image.file.name
+#: src/components/PostComposer.svelte
+msgid "Could not preview {0}. Please choose another image."
+msgstr "Δεν ήταν δυνατή η προεπισκόπηση {0}. Παρακαλώ επιλέξτε άλλη εικόνα."
+
+#. 0: images[index].file.name; 1: index + 1; 2: images.length
+#: src/components/PostComposer.svelte
+msgid "{0} moved to position {1} of {2}."
+msgstr "Το {0} μετακινήθηκε στη θέση {1} από {2}."
+
+#: src/components/PostComposer.svelte
+#: src/components/PostEditorContent.svelte
+msgid "Post body"
+msgstr "Κείμενο ανάρτησης"
+
+#: src/components/PostComposer.svelte
+#: src/components/PostComposer.svelte
+msgid "Required"
+msgstr "Υποχρεωτικό"
+
+#: src/components/PostComposer.svelte
+msgid "Images"
+msgstr "Εικόνες"
+
+#: src/components/PostComposer.svelte
+msgid "Choose images"
+msgstr "Επιλέξτε εικόνες"
+
+#: src/components/PostComposer.svelte
+msgid "Drop images here or <0>browse images</0>"
+msgstr "Αποθέστε εικόνες εδώ ή <0>περιηγηθείτε στις εικόνες</0>"
+
+#: src/components/PostComposer.svelte
+msgid "JPG, PNG, WebP, or GIF · Select multiple images"
+msgstr "JPG, PNG, WebP ή GIF · Επιλέξτε πολλές εικόνες"
+
+#~ msgid "{0} {1} selected"
+#~ msgstr ""
+
+#: src/components/PostComposer.svelte
+msgid "Add more"
+msgstr "Προσθήκη περισσότερων"
+
+#: src/components/PostComposer.svelte
+msgid "Drag images to rearrange. Or focus an image and use Alt + Left / Right."
+msgstr "Σύρετε τις εικόνες για να τις αναδιατάξετε. Ή εστιάστε σε μια εικόνα και χρησιμοποιήστε Alt + Αριστερά / Δεξιά."
+
+#: src/components/PostComposer.svelte
+msgid "Selected images"
+msgstr "Επιλεγμένες εικόνες"
+
+#. 0: image.file.name; 1: images.indexOf(image) + 1; 2: images.length
+#: src/components/PostComposer.svelte
+msgid "{0}, image {1} of {2}"
+msgstr "{0}, εικόνα {1} από {2}"
+
+#. 0: image.file.name
+#: src/components/PostComposer.svelte
+msgid "Remove {0}"
+msgstr "Αφαιρέστε το {0}"
+
+#: src/components/PostComposer.svelte
+msgid "Drop more images here to add them."
+msgstr "Ρίξτε ακόμα περισσότερες εικόνες εδώ για να τις προσθέσετε."
+
+#. 0: error
+#: src/components/PostEditor.svelte
+msgid "Could not edit the post: {0}"
+msgstr "Δεν ήταν δυνατή η επεξεργασία της ανάρτησης: {0}"
+
+#: src/components/PostEditorContent.svelte
+msgid "Post editor controls"
+msgstr "Έλεγχοι επεξεργασίας ανάρτησης"
+
+#: src/components/PostEditorContent.svelte
+msgid "Text formatting"
+msgstr "Μορφοποίηση κειμένου"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bold (Ctrl+B)"
+msgstr "Έντονα (Ctrl+B)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bold"
+msgstr "Έντονα"
+
+#: src/components/PostEditorContent.svelte
+msgid "Italic (Ctrl+I)"
+msgstr "Πλάγια (Ctrl+I)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Italic"
+msgstr "Πλάγια γραφή"
+
+#: src/components/PostEditorContent.svelte
+msgid "Heading 1"
+msgstr "Επικεφαλίδα 1"
+
+#: src/components/PostEditorContent.svelte
+msgid "Heading 2"
+msgstr "Επικεφαλίδα 2"
+
+#: src/components/PostEditorContent.svelte
+msgid "Quote"
+msgstr "Απόσπασμα"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bullet list"
+msgstr "Λίστα με κουκκίδες"
+
+#: src/components/PostEditorContent.svelte
+msgid "Numbered list"
+msgstr "Αριθμημένη λίστα"
+
+#: src/components/PostEditorContent.svelte
+msgid "Undo (Ctrl+Z)"
+msgstr "Αναίρεση (Ctrl+Z)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Undo"
+msgstr "Αναίρεση"
+
+#: src/components/PostEditorContent.svelte
+msgid "Redo (Ctrl+Shift+Z)"
+msgstr "Επανάληψη (Ctrl+Shift+Z)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Redo"
+msgstr "Επανάληψη"
+
+#: src/components/PostEditorContent.svelte
+msgid "What would you like to share?"
+msgstr "Τι θα θέλατε να μοιραστείτε;"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bold, italic, headings, quotes, and lists · Markdown shortcuts supported"
+msgstr "Έντονα, πλάγια, επικεφαλίδες, αποσπάσματα και λίστες · Υποστηρίζονται συντομεύσεις Markdown"
+
+#. 0: body.length.toLocaleString(getLocale())
+#: src/components/PostEditorContent.svelte
+msgid "{0} characters"
+msgstr "{0} χαρακτήρες"
+
+#: src/components/LogMessage.svelte
+msgid "Ready to post."
+msgstr "Έτοιμο για δημοσίευση."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook response copied."
+msgstr "Αντίγραφο απάντησης Facebook."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook response received"
+msgstr "Λήψη απάντησης Facebook"
+
+#: src/components/PostingLogView.svelte
+msgid "POSTIKA / ACTIVITY"
+msgstr "POSTIKA / ΔΡΑΣΤΗΡΙΟΤΗΤΑ"
+
+#: src/components/PostingLogView.svelte
+msgid "Posting progress"
+msgstr "Πρόοδος δημοσίευσης"
+
+#. 0: activity?.processed || 0; 1: activity?.total || 0
+#: src/components/PostingLogView.svelte
+msgid "{0}/{1} groups processed"
+msgstr "Επεξεργασμένα {0}/{1} ομάδες"
+
+#. 0: percentage
+#: src/components/PostingLogView.svelte
+msgid "{0}% complete"
+msgstr "{0}% ολοκληρωμένο"
+
+#: src/components/PostingLogView.svelte
+msgid "Groups processed"
+msgstr "Ομάδες που επεξεργάστηκαν"
+
+#: src/components/PostingLogView.svelte
+msgid "Published"
+msgstr "Δημοσιεύτηκε"
+
+#: src/components/PostingLogView.svelte
+msgid "Awaiting approval"
+msgstr "Αναμονή έγκρισης"
+
+#: src/components/PostingLogView.svelte
+msgid "Failed or skipped"
+msgstr "Απέτυχε ή παραλείφθηκε"
+
+#: src/components/PostingLogView.svelte
+msgid "Remaining"
+msgstr "Υπολειπόμενα"
+
+#. 0: number(a); 1: number(b); 2: c
+#. 0: activity.current; 1: activity.total; 2: activity.currentGroup.name
+#: src/components/LogMessage.svelte
+#: src/components/PostingLogView.svelte
+msgid "Group {0}/{1}: {2}"
+msgstr "Ομάδα {0}/{1}: {2}"
+
+#. 0: pauseRequested ? /* @wc-include */ ' · Paused' \\: ''
+#: src/components/PostingLogView.svelte
+msgid "Next post in <0/>{0}"
+msgstr "Επόμενη δημοσίευση σε <0/>{0}"
+
+#: src/components/PostingLogView.svelte
+msgid "Elapsed <0/>"
+msgstr "Διαρκούσα <0/>"
+
+#: src/components/PostingLogView.svelte
+msgid "Current group <0/>"
+msgstr "Τρέχουσα ομάδα <0/>"
+
+#: src/components/PostingLogView.svelte
+msgid "Following latest"
+msgstr "Ακολουθώντας τα τελευταία"
+
+#: src/components/PostingLogView.svelte
+msgid "Jump to latest"
+msgstr "Μετάβαση στα τελευταία"
+
+#. 0.0: total
+#: src/components/PostingLogView.svelte
+msgid "Activity timeline <0>{0} logs</0>"
+msgstr "Χρονολόγιο δραστηριότητας <0>{0} αρχεία καταγραφής</0>"
+
+#: src/components/PostingLogView.svelte
+msgid "Posting activity"
+msgstr "Δραστηριότητα δημοσίευσης"
+
+#. 0: entryLabel(entry)
+#: src/components/PostingLogView.svelte
+msgid "{0} log"
+msgstr "{0} καταγραφή"
+
+#. 0: itemTime(entry.message)
+#: src/components/PostingLogView.svelte
+msgid "Took {0}"
+msgstr "Χρειάστηκαν {0}"
+
+#: src/components/PostingLogView.svelte
+#: src/components/PostingLogView.svelte
+msgid "Copy Facebook response"
+msgstr "Αντιγραφή απάντησης Facebook"
+
+#: src/components/PostingLogView.svelte
+msgid "Response copied"
+msgstr "Απάντηση αντιγράφηκε"
+
+#: src/components/PostingLogView.svelte
+msgid "Copied"
+msgstr "Αντιγράφηκε"
+
+#: src/components/PostingLogView.svelte
+msgid "Copying…"
+msgstr "Αντιγραφή…"
+
+#: src/components/PostingLogView.svelte
+msgid "Copy response"
+msgstr "Αντιγραφή απάντησης"
+
+#. 0.0: entry.hasResponse ? /* @wc-include */ ' · Response available to copy' \\: ''
+#: src/components/PostingLogView.svelte
+msgid "Debug details<0>Original log message{0}</0>"
+msgstr "Λεπτομέρειες εντοπισμού σφαλμάτων<0>Αρχικό μήνυμα καταγραφής{0}</0>"
+
+#: src/components/PostingLogView.svelte
+msgid "Your activity will appear here"
+msgstr "Η δραστηριότητά σας θα εμφανιστεί εδώ"
+
+#: src/components/PostingLogView.svelte
+msgid "Start posting to follow uploads, results, and wait times."
+msgstr "Ξεκινήστε τις αναρτήσεις για να ακολουθήσετε τις μεταφορτώσεις, τα αποτελέσματα και τους χρόνους αναμονής."
+
+#: src/components/PostingLogView.svelte
+msgid "Log pages"
+msgstr "Σελίδες καταγραφής"
+
+#: src/components/PostingLogView.svelte
+msgid "Previous page"
+msgstr "Προηγούμενη σελίδα"
+
+#. 0: number
+#: src/components/PostingLogView.svelte
+msgid "Page {0}"
+msgstr "Σελίδα {0}"
+
+#: src/components/PostingLogView.svelte
+msgid "Next page"
+msgstr "Επόμενη σελίδα"
+
+#: src/components/PostingLogView.svelte
+msgid "← Prev"
+msgstr "← Προηγ."
+
+#: src/components/PostingLogView.svelte
+msgid "Next →"
+msgstr "Επόμ. →"
+
+#. 0: total ? (page - 1) * pageSize + 1 \\: 0; 1: Math.min(page * pageSize, total); 2: total
+#: src/components/PostingLogView.svelte
+msgid "{0}–{1} of {2} logs"
+msgstr "{0}–{1} από {2} καταγραφές"
+
+#: src/components/PostingLogView.svelte
+msgid "Resume"
+msgstr "Συνέχιση"
+
+#: src/components/PostingLogView.svelte
+msgid "Pause"
+msgstr "Παύση"
+
+#: src/components/PostingLogView.svelte
+msgid "Stopping…"
+msgstr "Διακοπή…"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "POSTING PACE"
+msgstr "ΡΥΘΜΟΣ ΑΝΑΡΤΗΣΗΣ"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Interval between posts"
+msgstr "Διάστημα μεταξύ αναρτήσεων"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Minimum (seconds)"
+msgstr "Ελάχιστο (δευτερόλεπτα)"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Maximum (seconds)"
+msgstr "Μέγιστο (δευτερόλεπτα)"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Choose how long to wait before posting to the next group."
+msgstr "Επιλέξτε πόσο να περιμένετε πριν την ανάρτηση στην επόμενη ομάδα."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "At least 60 seconds. Use equal values for a fixed interval."
+msgstr "Τουλάχιστον 60 δευτερόλεπτα. Χρησιμοποιήστε ίσες τιμές για σταθερό διάστημα."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "OPTIONAL · AI REWRITE"
+msgstr "ΠΡΟΑΙΡΕΤΙΚΟ · ΕΠΑΝΑΓΡΑΦΗ ΜΕ AI"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "A fresh version for each group"
+msgstr "Μια νέα έκδοση για κάθε ομάδα"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Rewrite each post body with Gemini"
+msgstr "Επαναγράψτε κάθε κείμενο ανάρτησης με Gemini"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
+msgstr "Οδηγίες επανεγγραφής<0>Επιλέξτε τον τόνο και τις λεπτομέρειες που πρέπει να διατηρήσει το Gemini.</0>"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Keep it concise and easy to scan. Preserve the price and contact details."
+msgstr "Διατηρήστε το συνοπτικό και εύκολο στην ανάγνωση. Διατηρήστε την τιμή και τα στοιχεία επικοινωνίας."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Rewrite instructions"
+msgstr "Οδηγίες επανεγγραφής"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
+msgstr "Το κείμενο της ανάρτησής σας και οι οδηγίες αποστέλλονται στο Google Gemini. Οι εικόνες δεν αποστέλλονται. Οι επανεγγραφές του Gemini χρησιμοποιούν απλό κείμενο."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
+msgstr "Αν η επανεγγραφή αποτύχει, η ανάρτηση χρησιμοποιεί το αρχικό σας κείμενο. Η επόμενη ανάρτηση προσπαθεί ξανά με το Gemini."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Let Gemini rewrite your post using your instructions."
+msgstr "Αφήστε το Gemini να επανεγγράψει την ανάρτησή σας χρησιμοποιώντας τις οδηγίες σας."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Posting preferences"
+msgstr "Προτιμήσεις ανάρτησης"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved defaults help"
+msgstr "Οι αποθηκευμένες προεπιλογές βοηθούν"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "About saved defaults"
+msgstr "Σχετικά με τις αποθηκευμένες προεπιλογές"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved interval"
+msgstr "Αποθηκευμένο διάστημα"
+
+#. 0: settings.minimumInterval === settings.maximumInterval ? settings.minimumInterval \\: `${settings.minimumInterval}–${settings.maximumInterval}`
+#: src/components/SavedDefaultsInfo.svelte
+msgid "{0} seconds"
+msgstr "{0} δευτερόλεπτα"
+
+#: src/App.svelte
+#: src/components/SavedDefaultsInfo.svelte
+msgid "On"
+msgstr "Ενεργό"
+
+#: src/App.svelte
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Off"
+msgstr "Ανενεργό"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Gemini rewrite"
+msgstr "Επανεγγραφή Gemini"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "No instructions saved."
+msgstr "Δεν έχουν αποθηκευτεί οδηγίες."
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved rewrite instructions"
+msgstr "Αποθηκευμένες οδηγίες επανεγγραφής"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved values could not be loaded. Try “Use saved defaults” again."
+msgstr "Δεν ήταν δυνατή η φόρτωση των αποθηκευμένων τιμών. Δοκιμάστε ξανά «Χρήση αποθηκευμένων προεπιλογών»."
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "What does “Use saved defaults” do?"
+msgstr "Τι κάνει η «Χρήση αποθηκευμένων προεπιλογών»;"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
+msgstr "Αντικαθιστά το διάστημα ανάρτησης αυτού του τρεξίματος, την επιλογή επανεγγραφής Gemini και τις οδηγίες επανεγγραφής με τις τιμές που έχουν αποθηκευτεί στις Ρυθμίσεις."
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
+msgstr "Αρχικές προεπιλογές: 60–120 δευτερόλεπτα, επανεγγραφή Gemini απενεργοποιημένη και χωρίς οδηγίες επανεγγραφής. Αποθηκεύστε τις δικές σας προτιμήσεις στις Ρυθμίσεις για να τις αλλάξετε."
+
+#: src/components/Settings.svelte
+msgid "Settings saved. New runs can use these defaults."
+msgstr "Ρυθμίσεις αποθηκεύτηκαν. Νέα τρεξίματα μπορούν να χρησιμοποιήσουν αυτές τις προεπιλογές."
+
+#: src/components/Settings.svelte
+msgid "Key saved · leave blank to keep it"
+msgstr "Κλειδί αποθηκεύτηκε · αφήστε κενό για να το διατηρήσετε"
+
+#: src/components/Settings.svelte
+msgid "Enter your Gemini API key"
+msgstr "Εισαγάγετε το κλειδί API Gemini σας"
+
+#: src/components/Settings.svelte
+msgid "A key is saved on this device."
+msgstr "Ένα κλειδί έχει αποθηκευτεί σε αυτή τη συσκευή."
+
+#: src/components/Settings.svelte
+msgid "No API key saved."
+msgstr "Κανένα κλειδί API δεν έχει αποθηκευτεί."
+
+#: src/components/Settings.svelte
+msgid "Remove saved key"
+msgstr "Αφαιρέστε το αποθηκευμένο κλειδί"
+
+#: src/components/Settings.svelte
+msgid "Gemini"
+msgstr "Gemini"
+
+#: src/components/Settings.svelte
+msgid "API key<0/>"
+msgstr "Κλειδί API<0/>"
+
+#. 0: keyConfigured ? 'A key is saved on this device.' \\: 'No API key saved.'
+#: src/components/Settings.svelte
+msgid "{0} The saved key is never displayed."
+msgstr "{0} Το αποθηκευμένο κλειδί δεν προβάλλεται ποτέ."
+
+#: src/components/Settings.svelte
+msgid "Model<0/>"
+msgstr "Μοντέλο<0/>"
+
+#: src/components/Settings.svelte
+msgid "Posting defaults"
+msgstr "Προεπιλογές δημοσίευσης"
+
+#: src/components/Settings.svelte
+msgid "Applied when you start a new posting run."
+msgstr "Εφαρμόζεται όταν ξεκινάτε ένα νέο τρέξιμο ανάρτησης."
+
+#: src/components/Settings.svelte
+msgid "Saving…"
+msgstr "Αποθήκευση…"
+
+#: src/components/Settings.svelte
+msgid "Save settings"
+msgstr "Αποθήκευση ρυθμίσεων"
+
+#: src/components/Settings.svelte
+msgid "YOUR PREFERENCES"
+msgstr "ΟΙ ΠΡΟΤΙΜΗΣΕΙΣ ΣΑΣ"
+
+#. 0: accountName
+#: src/components/Settings.svelte
+msgid "Set up Gemini and save posting defaults for {0}."
+msgstr "Ρυθμίστε το Gemini και αποθηκεύστε τις προεπιλογές ανάρτησης για {0}."
+
+#: src/components/StepProgress.svelte
+msgid "Completed"
+msgstr "Ολοκληρώθηκε"
+
+#: src/components/StepProgress.svelte
+msgid "Current"
+msgstr "Τρέχον"
+
+#: src/components/StepProgress.svelte
+msgid "Upcoming"
+msgstr "Επόμενο"
+
+#. 0: index + 1; 1: steps.length; 2: completed || index < currentStep ? 'Completed' \\: index === currentStep ? 'Current' \\: 'Upcoming'
+#: src/components/StepProgress.svelte
+msgid "Step {0} of {1}: {2}"
+msgstr "Βήμα {0} από {1}: {2}"
+
+#: src/components/WindowControls.svelte
+msgid "Could not change the window. Please try again."
+msgstr "Δεν ήταν δυνατή η αλλαγή του παραθύρου. Παρακαλώ δοκιμάστε ξανά."
+
+#: src/components/WindowControls.svelte
+msgid "Window controls"
+msgstr "Έλεγχοι παραθύρου"
+
+#: src/components/WindowControls.svelte
+msgid "Minimize window"
+msgstr "Ελαχιστοποίηση παραθύρου"
+
+#: src/components/WindowControls.svelte
+msgid "Restore window"
+msgstr "Επαναφορά παραθύρου"
+
+#: src/components/WindowControls.svelte
+msgid "Maximize window"
+msgstr "Μεγιστοποίηση παραθύρου"
+
+#: src/components/WindowControls.svelte
+msgid "Close window"
+msgstr "Κλείσιμο παραθύρου"
+
+#: src/App.svelte
+msgid "Create post"
+msgstr "Δημιουργία ανάρτησης"
+
+#: src/App.svelte
+msgid "Write your post and add images"
+msgstr "Γράψτε την ανάρτησή σας και προσθέστε εικόνες"
+
+#: src/App.svelte
+msgid "Select groups"
+msgstr "Επιλογή ομάδων"
+
+#: src/App.svelte
+msgid "Load groups and choose where to post"
+msgstr "Φορτώστε ομάδες και επιλέξτε πού να δημοσιεύσετε"
+
+#~ msgid "Review & post"
+#~ msgstr "Έλεγχος και δημοσίευση"
+
+#~ msgid "Review, set preferences, then post now or schedule"
+#~ msgstr "Ελέγξτε, ορίστε προτιμήσεις και δημοσιεύστε τώρα ή προγραμματίστε"
+
+#: src/App.svelte
+msgid "Facebook session captured"
+msgstr "Η συνεδρία του Facebook καταγράφηκε"
+
+#: src/App.svelte
+msgid "The browser is closed. It will reopen when you click Post."
+msgstr "Ο περιηγητής είναι κλειστός. Θα ανοίξει ξανά όταν κάνετε κλικ στο Δημοσίευση."
+
+#: src/App.svelte
+msgid "Checking Facebook login"
+msgstr "Έλεγχος σύνδεσης στο Facebook"
+
+#: src/App.svelte
+msgid "Finish signing in or any verification prompts in Chrome. Your login will be detected automatically."
+msgstr "Ολοκληρώστε τη σύνδεση ή οποιαδήποτε προτροπή επαλήθευσης στο Chrome. Η σύνδεσή σας θα ανιχνευθεί αυτόματα."
+
+#: src/App.svelte
+msgid "Login required"
+msgstr "Απαιτείται σύνδεση"
+
+#: src/App.svelte
+msgid "Please log in to Facebook in the Chrome window. Postika will detect when you’re signed in."
+msgstr "Συνδεθείτε στο Facebook στο παράθυρο του Chrome. Το Postika θα ανιχνεύσει όταν έχετε συνδεθεί."
+
+#: src/App.svelte
+msgid "Complete Facebook verification"
+msgstr "Ολοκληρώστε την επαλήθευση του Facebook"
+
+#: src/App.svelte
+msgid "Complete the login or verification prompts in Chrome to continue."
+msgstr "Ολοκληρώστε τις οδηγίες σύνδεσης ή επαλήθευσης στο Chrome για να συνεχίσετε."
+
+#: src/App.svelte
+msgid "Facebook connected"
+msgstr "Το Facebook συνδέθηκε"
+
+#: src/App.svelte
+msgid "You’re logged in. Your session is ready."
+msgstr "Έχετε συνδεθεί. Η συνεδρία σας είναι έτοιμη."
+
+#: src/App.svelte
+msgid "Facebook window closed"
+msgstr "Το παράθυρο του Facebook έκλεισε"
+
+#: src/App.svelte
+msgid "Click Load groups to reopen Facebook and check your login."
+msgstr "Κάντε κλικ στο Φόρτωση ομάδων για να ανοίξετε ξανά το Facebook και να ελέγξετε το σύνδεσή σας."
+
+#. 0: current?.name ?? ''
+#: src/components/AccountDropdown.svelte
+msgid "Language: {0}"
+msgstr "Γλώσσα: {0}"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search languages…"
+msgstr "Αναζήτηση γλωσσών…"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search languages"
+msgstr "Αναζήτηση γλωσσών"
+
+#: src/components/AccountDropdown.svelte
+msgid "Clear language search"
+msgstr "Καθαρισμός αναζήτησης γλώσσας"
+
+#. 0: matches.length
+#: src/components/AccountDropdown.svelte
+msgid "{0} result"
+msgstr "{0} αποτέλεσμα"
+
+#. 0: matches.length
+#: src/components/AccountDropdown.svelte
+msgid "{0} results"
+msgstr "{0} αποτελέσματα"
+
+#: src/components/AccountDropdown.svelte
+msgid "All languages"
+msgstr "Όλες οι γλώσσες"
+
+#: src/components/AccountDropdown.svelte
+msgid "Languages"
+msgstr "Γλώσσες"
+
+#: src/components/AccountDropdown.svelte
+msgid "No languages found"
+msgstr "Δεν βρέθηκαν γλώσσες"
+
+#: src/components/DateTimePicker.svelte
+msgid "Morning"
+msgstr "Πρωί"
+
+#: src/components/DateTimePicker.svelte
+msgid "Afternoon"
+msgstr "Απόγευμα"
+
+#: src/components/DateTimePicker.svelte
+msgid "Evening"
+msgstr "Βράδυ"
+
+#: src/components/LanguageMenu.svelte
+msgid "Could not change the language. Please try again."
+msgstr "Δεν ήταν δυνατή η αλλαγή της γλώσσας. Παρακαλώ δοκιμάστε ξανά."
+
+#: src/components/Settings.svelte
+msgid "Language"
+msgstr "Γλώσσα"
+
+#: src/components/PostingOptionsForm.svelte
+#: src/components/PostingOptionsForm.svelte
+msgid "seconds"
+msgstr "δευτερόλεπτα"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Minimum"
+msgstr "Ελάχιστο"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Maximum"
+msgstr "Μέγιστο"
+
+#: src/components/StepProgress.svelte
+msgid "Post progress"
+msgstr "Πρόοδος ανάρτησης"
+
+#. 0: visibleGroups.length
+#: src/App.svelte
+msgid "{0} shown"
+msgstr "Εμφανίστηκαν {0}"
+
+#. 0: selectedGroupIds.length
+#: src/App.svelte
+msgid "{0} selected"
+msgstr "Επιλέχθηκαν {0}"
+
+#. 0: images.length
+#: src/components/PostComposer.svelte
+msgid "{0} images selected"
+msgstr "Επιλέχθηκαν {0} εικόνες"
+
+#: src/components/PostingLogView.svelte
+msgid "WARN"
+msgstr "ΠΡΟΕΙΔΟΠΟΙΗΣΗ"
+
+#: src/components/PostingLogView.svelte
+msgid "INFO"
+msgstr "ΠΛΗΡΟΦΟΡΙΕΣ"
+
+#: src/components/PostingLogView.svelte
+msgid "ERROR"
+msgstr "ΣΦΑΛΜΑ"
+
+#: src/components/PostingLogView.svelte
+msgid "DEBUG"
+msgstr "ΑΠΟΚΑΛΥΨΗ ΣΦΑΛΜΑΤΟΣ"
+
+#: src/components/PostingLogView.svelte
+msgid "PUBLISHED"
+msgstr "ΔΗΜΟΣΙΕΥΤΗΚΕ"
+
+#: src/components/PostingLogView.svelte
+msgid "PENDING"
+msgstr "ΕΚΚΡΕΜΕΙ"
+
+#: src/components/PostingLogView.svelte
+msgid "FAILED"
+msgstr "ΑΠΟΤΥΧΙΑ"
+
+#: src/components/PostingLogView.svelte
+msgid "SKIPPED"
+msgstr "ΠΑΡΑΛΕΙΦΘΗΚΕ"
+
+#: src/components/PostingLogView.svelte
+msgid "UNCONFIRMED"
+msgstr "ΜΗ ΕΠΙΒΕΒΑΙΩΜΕΝΟ"
+
+#: src/Workspace.svelte
+msgid "e.g. Business"
+msgstr "π.χ. Επιχείρηση"
+
+#: src/components/PostComposer.svelte
+msgid "1 image selected"
+msgstr "Επιλέχθηκε 1 εικόνα"
+
+#: src/components/PostingLogView.svelte
+msgid "Paused · Waiting for internet"
+msgstr "Σε παύση · Αναμονή για σύνδεση στο διαδίκτυο"
+
+#: src/components/PostingLogView.svelte
+msgid "Pausing after the current operation"
+msgstr "Σταματά μετά την τρέχουσα ενέργεια"
+
+#: src/components/PostingLogView.svelte
+msgid "Paused"
+msgstr "Σε παύση"
+
+#: src/components/PostingLogView.svelte
+msgid "Stopping"
+msgstr "Τερματισμός"
+
+#: src/components/PostingLogView.svelte
+msgid "Posting"
+msgstr "Ανάρτηση"
+
+#: src/components/PostingLogView.svelte
+msgid "Finished"
+msgstr "Ολοκληρώθηκε"
+
+#: src/components/PostingLogView.svelte
+msgid "Stopped"
+msgstr "Σταματήθηκε"
+
+#: src/components/PostingLogView.svelte
+msgid "Ready"
+msgstr "Έτοιμο"
+
+#: src/components/PostingLogView.svelte
+msgid "CURRENT ACTIVITY"
+msgstr "ΤΡΕΧΟΥΣΑ ΔΡΑΣΤΗΡΙΟΤΗΤΑ"
+
+#: src/components/PostingLogView.svelte
+msgid "RUN STATUS"
+msgstr "ΚΑΤΑΣΤΑΣΗ ΕΚΤΕΛΕΣΗΣ"
+
+#: src/components/PostingLogView.svelte
+msgid " · Paused"
+msgstr " · Σε παύση"
+
+#: src/components/PostingLogView.svelte
+msgid " · Response available to copy"
+msgstr " · Διαθέσιμη απάντηση για αντιγραφή"
+
+#: src/components/AccountLabel.svelte
+msgid "Default profile"
+msgstr "Προεπιλεγμένο προφίλ"
+
+#~ msgid "Switch to light mode"
+#~ msgstr "Μετάβαση σε φωτεινή λειτουργία"
+
+#~ msgid "Switch to dark mode"
+#~ msgstr "Μετάβαση σε σκοτεινή λειτουργία"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Color themes"
+msgstr "Χρωματικά θέματα"
+
+#: src/components/ThemePicker.svelte
+msgid "Close"
+msgstr "Κλείσιμο"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Search themes…"
+msgstr "Αναζήτηση θεμάτων…"
+
+#: src/components/ThemePicker.svelte
+msgid "No themes found"
+msgstr "Δεν βρέθηκαν θέματα"
+
+#: src/components/LogMessage.svelte
+msgid "A selected group is no longer available. Load groups again"
+msgstr "Η επιλεγμένη ομάδα δεν είναι πλέον διαθέσιμη. Φόρτωση ομάδων ξανά"
+
+#: src/components/LogMessage.svelte
+msgid "Add a Gemini API key in Settings before enabling rewriting"
+msgstr "Προσθέστε ένα κλειδί API Gemini στις Ρυθμίσεις πριν ενεργοποιήσετε την επαναγραφή"
+
+#: src/components/LogMessage.svelte
+msgid "Add a post body and at least one image"
+msgstr "Προσθέστε ένα σώμα ανάρτησης και τουλάχιστον μία εικόνα"
+
+#: src/components/LogMessage.svelte
+msgid "All selected groups were already attempted. Review unconfirmed results on Facebook."
+msgstr "Όλες οι επιλεγμένες ομάδες έχουν ήδη προσπαθηθεί. Ελέγξτε τα ανεπιβεβαίωτα αποτελέσματα στο Facebook."
+
+#: src/components/LogMessage.svelte
+msgid "An image upload failed in Chrome. Check the composer and retry Post"
+msgstr "Η μεταφόρτωση εικόνας απέτυχε στο Chrome. Ελέγξτε το συντάκτη και δοκιμάστε ξανά την Ανάρτηση"
+
+#: src/components/LogMessage.svelte
+msgid "Attaching images…"
+msgstr "Συνημμένες εικόνες…"
+
+#: src/components/LogMessage.svelte
+msgid "Choose JPG, PNG, WebP, or GIF images"
+msgstr "Επιλέξτε εικόνες JPG, PNG, WebP ή GIF"
+
+#: src/components/LogMessage.svelte
+msgid "Choose a future date and time for your post"
+msgstr "Επιλέξτε μια μελλοντική ημερομηνία και ώρα για την ανάρτησή σας"
+
+#: src/components/LogMessage.svelte
+msgid "Closing Chrome and posting to the remaining groups…"
+msgstr "Κλείσιμο Chrome και ανάρτηση στις υπόλοιπες ομάδες…"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the complete create-post request"
+msgstr "Αδύνατη η καταγραφή του πλήρους αιτήματος δημιουργίας ανάρτησης"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the completed image upload response"
+msgstr "Αδύνατη η καταγραφή της ολοκληρωμένης απόκρισης μεταφόρτωσης εικόνας"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the image upload form fields"
+msgstr "Αδύνατη η καταγραφή των πεδίων της φόρμας μεταφόρτωσης εικόνας"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the image upload form. Retry Post"
+msgstr "Αδύνατη η καταγραφή της φόρμας μεταφόρτωσης εικόνας. Δοκιμάστε ξανά την Ανάρτηση"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the upload endpoint"
+msgstr "Αδύνατη η καταγραφή του σημείου τελικού φορτώματος"
+
+#: src/components/LogMessage.svelte
+msgid "Could not copy the Facebook response to the clipboard"
+msgstr "Αδύνατη η αντιγραφή της απόκρισης του Facebook στο πρόχειρο"
+
+#: src/components/LogMessage.svelte
+msgid "Could not enable create-post capture in Chrome"
+msgstr "Δεν ήταν δυνατή η ενεργοποίηση της καταγραφής δημιουργίας δημοσίευσης στο Chrome"
+
+#: src/components/LogMessage.svelte
+msgid "Could not parse the captured create-post form"
+msgstr "Δεν ήταν δυνατή η ανάλυση της καταγεγραμμένης φόρμας δημιουργίας δημοσίευσης"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare image files"
+msgstr "Δεν ήταν δυνατή η προετοιμασία των αρχείων εικόνας"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare post images"
+msgstr "Δεν ήταν δυνατή η προετοιμασία των εικόνων δημοσίευσης"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare the Gemini request"
+msgstr "Δεν ήταν δυνατή η προετοιμασία του αιτήματος Gemini"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare the image upload."
+msgstr "Δεν ήταν δυνατή η προετοιμασία της φόρτωσης εικόνας."
+
+#: src/components/LogMessage.svelte
+msgid "Could not reach Gemini. Check your connection"
+msgstr "Δεν ήταν δυνατή η πρόσβαση στο Gemini. Ελέγξτε τη σύνδεσή σας"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read Facebook's post confirmation"
+msgstr "Δεν ήταν δυνατή η ανάγνωση της επιβεβαίωσης δημοσίευσης του Facebook"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read the Gemini rewrite"
+msgstr "Δεν ήταν δυνατή η ανάγνωση της επαναγραμμής του Gemini"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read the completed image upload response"
+msgstr "Δεν ήταν δυνατή η ανάγνωση της απόκρισης της ολοκληρωμένης φόρτωσης εικόνας"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read the selected image."
+msgstr "Δεν ήταν δυνατή η ανάγνωση της επιλεγμένης εικόνας."
+
+#: src/components/LogMessage.svelte
+msgid "Create-post capture ended before confirmation. Check Facebook before retrying"
+msgstr "Η καταγραφή δημιουργίας δημοσίευσης τερματίστηκε πριν από την επιβεβαίωση. Ελέγξτε το Facebook πριν προσπαθήσετε ξανά"
+
+#: src/components/LogMessage.svelte
+msgid "Create-post request detected. Capturing fresh form values…"
+msgstr "Εντοπίστηκε αίτημα δημιουργίας δημοσίευσης. Καταγράφονται νέες τιμές φόρμας…"
+
+#: src/components/LogMessage.svelte
+msgid "Create-post response complete. Waiting for captured session headers…"
+msgstr "Η απόκριση δημιουργίας δημοσίευσης ολοκληρώθηκε. Αναμονή για τα καταγεγραμμένα headers συνεδρίας…"
+
+#: src/components/LogMessage.svelte
+msgid "Create-post response received. Waiting for its complete body…"
+msgstr "Η απόκριση δημιουργίας δημοσίευσης ελήφθη. Αναμονή για το πλήρες σώμα της…"
+
+#: src/components/LogMessage.svelte
+msgid "Description inserted"
+msgstr "Η περιγραφή εισήχθη"
+
+#: src/components/LogMessage.svelte
+msgid "Earlier submission is unconfirmed. Skipping this group and continuing with the remaining groups."
+msgstr "Η προηγούμενη υποβολή δεν έχει επιβεβαιωθεί. Παράκαμψη αυτής της ομάδας και συνέχιση με τις υπόλοιπες ομάδες."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook could not post to this group. Continuing with the remaining groups."
+msgstr "Η Facebook δεν μπόρεσε να δημοσιεύσει σε αυτήν την ομάδα. Συνέχιση με τις υπόλοιπες ομάδες."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook did not confirm all images. Check the composer."
+msgstr "Η Facebook δεν επιβεβαίωσε όλες τις εικόνες. Ελέγξτε τον συντάκτη."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook did not confirm the submission"
+msgstr "Η Facebook δεν επιβεβαίωσε την υποβολή"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook did not confirm this post. Check the group before trying again."
+msgstr "Η Facebook δεν επιβεβαίωσε αυτήν την ανάρτηση. Ελέγξτε την ομάδα πριν δοκιμάσετε ξανά."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook has temporarily limited posting. Try again later."
+msgstr "Η Facebook έχει προσωρινά περιορίσει τις δημοσιεύσεις. Προσπαθήστε ξανά αργότερα."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook rejected this post."
+msgstr "Η Facebook απέρριψε αυτήν την ανάρτηση."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook requires login or verification. Load groups again."
+msgstr "Η Facebook απαιτεί σύνδεση ή επαλήθευση. Φορτώστε ξανά τις ομάδες."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook returned a story, but did not confirm its group or publication state. Posting stopped. Check Facebook before retrying."
+msgstr "Η Facebook επέστρεψε μια ιστορία, αλλά δεν επιβεβαίωσε την ομάδα ή την κατάσταση δημοσίευσής της. Η δημοσίευση σταμάτησε. Ελέγξτε το Facebook πριν δοκιμάσετε ξανά."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook's confirmation exceeded the 16 MiB response limit; retained response is truncated"
+msgstr "Η επιβεβαίωση του Facebook υπερέβη το όριο απόκρισης των 16 MiB· η διατηρημένη απόκριση είναι περικομμένη"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook's editor did not accept the formatted post. Posting was not submitted"
+msgstr "Ο επεξεργαστής του Facebook δεν αποδέχθηκε την μορφοποιημένη ανάρτηση. Η δημοσίευση δεν υποβλήθηκε"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook's editor did not retain the formatted post text. Posting was not submitted"
+msgstr "Ο επεξεργαστής του Facebook δεν κράτησε το μορφοποιημένο κείμενο της δημοσίευσης. Η δημοσίευση δεν υποβλήθηκε"
+
+#: src/components/LogMessage.svelte
+msgid "First post confirmed. Waiting for the Facebook composer to close…"
+msgstr "Η πρώτη δημοσίευση επιβεβαιώθηκε. Αναμονή για το κλείσιμο του δημιουργού δημοσιεύσεων του Facebook…"
+
+#: src/components/LogMessage.svelte
+msgid "First submission unconfirmed. Retrying request 1/3 with the captured mutation ID…"
+msgstr "Η πρώτη υποβολή δεν επιβεβαιώθηκε. Επαναπροσπάθεια αίτησης 1/3 με το καταγεγραμμένο ID μεταβολής…"
+
+#: src/components/LogMessage.svelte
+msgid "Formatted post is too large"
+msgstr "Η μορφοποιημένη δημοσίευση είναι πολύ μεγάλη"
+
+#: src/components/LogMessage.svelte
+msgid "Found multiple matching post composers on the group page"
+msgstr "Βρέθηκαν πολλοί αντίστοιχοι δημιουργοί δημοσιεύσεων στη σελίδα της ομάδας"
+
+#: src/components/LogMessage.svelte
+msgid "Fresh create-post form captured. Waiting for Facebook's response…"
+msgstr "Καταγράφηκε νέα φόρμα δημιουργίας δημοσίευσης. Αναμονή για την απάντηση του Facebook…"
+
+#: src/components/LogMessage.svelte
+msgid "Gemini did not finish the rewrite"
+msgstr "Ο Gemini δεν ολοκλήρωσε την επανεγγραφή"
+
+#: src/components/LogMessage.svelte
+msgid "Gemini returned no rewritten text"
+msgstr "Ο Gemini δεν επέστρεψε κανένα επαναγραμμένο κείμενο"
+
+#: src/components/LogMessage.svelte
+msgid "Gemini rewrite completed."
+msgstr "Η επανεγγραφή του Gemini ολοκληρώθηκε."
+
+#: src/components/LogMessage.svelte
+msgid "Gemini rewrite failed. Using the original text for this post; Gemini will be tried again for the next post."
+msgstr "Η επανεγγραφή του Gemini απέτυχε. Χρήση του αρχικού κειμένου για αυτή τη δημοσίευση. Ο Gemini θα δοκιμαστεί ξανά για την επόμενη δημοσίευση."
+
+#: src/components/LogMessage.svelte
+msgid "Image uploads belong to a different profile"
+msgstr "Οι μεταφορτώσεις εικόνων ανήκουν σε διαφορετικό προφίλ"
+
+#: src/components/LogMessage.svelte
+msgid "Images inserted"
+msgstr "Οι εικόνες εισήχθησαν"
+
+#: src/components/LogMessage.svelte
+msgid "Inserting post body…"
+msgstr "Εισαγωγή σώματος δημοσίευσης…"
+
+#: src/components/LogMessage.svelte
+msgid "Internet connection lost. Queue paused until the connection returns."
+msgstr "Η σύνδεση στο διαδίκτυο χάθηκε. Η ουρά σταμάτησε έως ότου επανέλθει η σύνδεση."
+
+#: src/components/LogMessage.svelte
+msgid "Internet connection restored. Continuing the queue."
+msgstr "Η σύνδεση στο διαδίκτυο αποκαταστάθηκε. Συνεχίζεται η ουρά."
+
+#: src/components/LogMessage.svelte
+msgid "Internet connection restored. The queue remains manually paused."
+msgstr "Η σύνδεση στο διαδίκτυο αποκαταστάθηκε. Η ουρά παραμένει χειροκίνητα σε παύση."
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured endpoint"
+msgstr "Μη έγκυρο καταγεγραμμένο endpoint"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured formatted post"
+msgstr "Μη έγκυρη καταγεγραμμένη μορφοποιημένη δημοσίευση"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured post form"
+msgstr "Μη έγκυρη καταγεγραμμένη φόρμα δημοσίευσης"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured post variables"
+msgstr "Μη έγκυρες καταγεγραμμένες μεταβλητές δημοσίευσης"
+
+#: src/components/LogMessage.svelte
+msgid "Load your groups before opening a post"
+msgstr "Φορτώστε τις ομάδες σας πριν ανοίξετε μια δημοσίευση"
+
+#: src/components/LogMessage.svelte
+msgid "Log in or complete Facebook verification in Chrome, then click Post again"
+msgstr "Συνδεθείτε ή ολοκληρώστε την επαλήθευση Facebook στο Chrome, και μετά κάντε κλικ ξανά στο Δημοσίευση"
+
+#: src/components/LogMessage.svelte
+msgid "Multiple matching controls found in the post composer"
+msgstr "Βρέθηκαν πολλαπλά ταιριαστά στοιχεία ελέγχου στον δημιουργό δημοσιεύσεων"
+
+#: src/components/LogMessage.svelte
+msgid "No Facebook response was captured for this entry"
+msgstr "Δεν καταγράφηκε καμία απάντηση του Facebook για αυτή την καταχώρηση"
+
+#: src/components/LogMessage.svelte
+msgid "No available post composer."
+msgstr "Δεν υπάρχει διαθέσιμος δημιουργός δημοσιεύσεων."
+
+#: src/components/LogMessage.svelte
+msgid "No complete image upload request was captured."
+msgstr "Δεν καταγράφηκε πλήρης αίτηση ανέβασματος εικόνας."
+
+#: src/components/LogMessage.svelte
+msgid "No fresh image upload request was captured."
+msgstr "Δεν καταγράφηκε φρέσκια αίτηση ανέβασματος εικόνας."
+
+#: src/components/LogMessage.svelte
+msgid "Opening browser…"
+msgstr "Άνοιγμα προγράμματος περιήγησης…"
+
+#: src/components/LogMessage.svelte
+msgid "Pause requested. The current operation will finish before pausing."
+msgstr "Ζητήθηκε παύση. Η τρέχουσα λειτουργία θα ολοκληρωθεί πριν την παύση."
+
+#: src/components/LogMessage.svelte
+msgid "Post button clicked"
+msgstr "Πατήθηκε το κουμπί Δημοσίευση"
+
+#: src/components/LogMessage.svelte
+msgid "Post published."
+msgstr "Η δημοσίευση αναρτήθηκε."
+
+#: src/components/LogMessage.svelte
+msgid "Postika is shutting down"
+msgstr "Το Postika τερματίζει"
+
+#: src/components/LogMessage.svelte
+msgid "Posting is already running"
+msgstr "Η ανάρτηση είναι ήδη σε εξέλιξη"
+
+#: src/components/LogMessage.svelte
+msgid "Posting paused."
+msgstr "Η ανάρτηση έχει διακοπεί προσωρινά."
+
+#: src/components/LogMessage.svelte
+msgid "Posting resumed."
+msgstr "Η ανάρτηση συνεχίστηκε."
+
+#: src/components/LogMessage.svelte
+msgid "Posting stopped after the first post was confirmed"
+msgstr "Η ανάρτηση σταμάτησε μετά την επιβεβαίωση της πρώτης ανάρτησης"
+
+#: src/components/LogMessage.svelte
+msgid "Posting..."
+msgstr "Ανάρτηση..."
+
+#: src/components/LogMessage.svelte
+msgid "Reading Facebook's create-post confirmation…"
+msgstr "Ανάγνωση επιβεβαίωσης δημιουργίας ανάρτησης στο Facebook…"
+
+#: src/components/LogMessage.svelte
+msgid "Rewriting the post body with Gemini…"
+msgstr "Αναδιατύπωση του περιεχομένου της ανάρτησης με το Gemini…"
+
+#: src/components/LogMessage.svelte
+msgid "Scheduled posting cancelled."
+msgstr "Η προγραμματισμένη ανάρτηση ακυρώθηκε."
+
+#: src/components/LogMessage.svelte
+msgid "Scheduled time reached. Starting posting…"
+msgstr "Έφτασε η προγραμματισμένη ώρα. Ξεκινά η ανάρτηση…"
+
+#: src/components/LogMessage.svelte
+msgid "Select at least one group"
+msgstr "Επιλέξτε τουλάχιστον μία ομάδα"
+
+#: src/components/LogMessage.svelte
+msgid "Setting up automatic posting using your first Facebook post..."
+msgstr "Ρύθμιση αυτόματης ανάρτησης χρησιμοποιώντας την πρώτη σας ανάρτηση στο Facebook..."
+
+#: src/components/LogMessage.svelte
+msgid "Stopping posting…"
+msgstr "Διακοπή ανάρτησης…"
+
+#: src/components/LogMessage.svelte
+msgid "Submitting the first post and capturing fresh request values…"
+msgstr "Υποβολή της πρώτης ανάρτησης και λήψη νέων τιμών αιτήματος…"
+
+#: src/components/LogMessage.svelte
+#: src/components/LogMessage.svelte
+msgid "Technical details recorded. Open debug details to inspect the original message."
+msgstr "Καταγράφηκαν τεχνικές λεπτομέρειες. Ανοίξτε τις λεπτομέρειες αποσφαλμάτωσης για να ελέγξετε το αρχικό μήνυμα."
+
+#: src/components/LogMessage.svelte
+msgid "The active Facebook profile changed or expired"
+msgstr "Το ενεργό προφίλ στο Facebook άλλαξε ή έληξε"
+
+#: src/components/LogMessage.svelte
+msgid "The browser connection was lost. Check Facebook before retrying"
+msgstr "Η σύνδεση του προγράμματος περιήγησης χάθηκε. Ελέγξτε το Facebook πριν δοκιμάσετε ξανά"
+
+#: src/components/LogMessage.svelte
+msgid "The browser profile changed while capturing posting requests"
+msgstr "Το προφίλ του προγράμματος περιήγησης άλλαξε κατά τη λήψη αιτήσεων ανάρτησης"
+
+#: src/components/LogMessage.svelte
+msgid "The captured formatted post body does not match your draft"
+msgstr "Το καταγεγραμμένο μορφοποιημένο σώμα δημοσίευσης δεν ταιριάζει με το σχέδιό σας"
+
+#: src/components/LogMessage.svelte
+msgid "The captured image upload cookies do not match the Facebook profile"
+msgstr "Τα καταγεγραμμένα cookies ανέβασμα εικόνας δεν ταιριάζουν με το προφίλ στο Facebook"
+
+#: src/components/LogMessage.svelte
+msgid "The captured image upload format is not supported"
+msgstr "Το καταγεγραμμένο φορμάτ ανέβασμα εικόνας δεν υποστηρίζεται"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post belongs to a different Facebook profile"
+msgstr "Η καταγεγραμμένη δημοσίευση ανήκει σε διαφορετικό προφίλ Facebook"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post body does not match your draft"
+msgstr "Το καταγεγραμμένο σώμα δημοσίευσης δεν ταιριάζει με το σχέδιό σας"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post cookies do not match the logged-in profile"
+msgstr "Τα καταγεγραμμένα cookies δημοσίευσης δεν ταιριάζουν με το συνδεδεμένο προφίλ"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post has no group target"
+msgstr "Η καταγεγραμμένη δημοσίευση δεν έχει στόχο ομάδα"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post target does not match the selected group"
+msgstr "Ο στόχος της καταγεγραμμένης δημοσίευσης δεν ταιριάζει με την επιλεγμένη ομάδα"
+
+#: src/components/LogMessage.svelte
+msgid "The composer dialog was replaced while loading"
+msgstr "Το παράθυρο διαλόγου του συγγραφέα αντικαταστάθηκε κατά τη φόρτωση"
+
+#: src/components/LogMessage.svelte
+msgid "The create-post connection failed. Check Facebook before retrying"
+msgstr "Η σύνδεση δημιουργίας δημοσίευσης απέτυχε. Ελέγξτε το Facebook πριν ξαναδοκιμάσετε"
+
+#: src/components/LogMessage.svelte
+msgid "The current profile differs from the profile used to load groups. Load groups again."
+msgstr "Το τρέχον προφίλ διαφέρει από το προφίλ που χρησιμοποιήθηκε για να φορτωθούν οι ομάδες. Φορτώστε ξανά τις ομάδες."
+
+#: src/components/LogMessage.svelte
+msgid "The desktop application is not ready"
+msgstr "Η εφαρμογή για υπολογιστές δεν είναι έτοιμη"
+
+#: src/components/LogMessage.svelte
+msgid "The desktop clipboard is not ready"
+msgstr "Το πρόχειρο του υπολογιστή δεν είναι έτοιμο"
+
+#: src/components/LogMessage.svelte
+msgid "The expected composer control did not appear in Chrome"
+msgstr "Ο αναμενόμενος έλεγχος του συντάκτη δεν εμφανίστηκε στο Chrome"
+
+#: src/components/LogMessage.svelte
+msgid "The first post was confirmed, but Chrome's completion state could not be checked. Posting stopped"
+msgstr "Η πρώτη δημοσίευση επιβεβαιώθηκε, αλλά η κατάσταση ολοκλήρωσης του Chrome δεν μπόρεσε να ελεγχθεί. Η δημοσίευση σταμάτησε"
+
+#: src/components/LogMessage.svelte
+msgid "The image upload did not contain multipart form data"
+msgstr "Η μεταφόρτωση της εικόνας δεν περιείχε πολλαπλά μέρη δεδομένων φόρμας"
+
+#: src/components/LogMessage.svelte
+msgid "The image upload does not match its active Facebook profile"
+msgstr "Η μεταφόρτωση της εικόνας δεν ταιριάζει με το ενεργό προφίλ Facebook"
+
+#: src/components/LogMessage.svelte
+msgid "The image upload form belongs to a different Facebook profile"
+msgstr "Η φόρμα μεταφόρτωσης της εικόνας ανήκει σε διαφορετικό προφίλ Facebook"
+
+#: src/components/LogMessage.svelte
+msgid "The selected group has an invalid Facebook URL. Load groups again"
+msgstr "Η επιλεγμένη ομάδα έχει μη έγκυρο URL Facebook. Φορτώστε και πάλι τις ομάδες"
+
+#: src/components/LogMessage.svelte
+msgid "The session could not be saved for posting retries and remaining groups."
+msgstr "Η συνεδρία δεν μπόρεσε να αποθηκευτεί για προσπάθειες επανάληψης δημοσίευσης και για τις υπόλοιπες ομάδες."
+
+#: src/components/LogMessage.svelte
+msgid "This draft has already been submitted to the first group. It was not submitted again."
+msgstr "Αυτό το προσχέδιο έχει ήδη υποβληθεί στην πρώτη ομάδα. Δεν υποβλήθηκε ξανά."
+
+#: src/components/LogMessage.svelte
+msgid "This group has no available post composer"
+msgstr "Αυτή η ομάδα δεν διαθέτει συνθέτη δημοσιεύσεων"
+
+#: src/components/LogMessage.svelte
+msgid "This group has reached its pending-content limit."
+msgstr "Αυτή η ομάδα έχει φτάσει το όριο περιεχομένου σε εκκρεμότητα."
+
+#: src/components/LogMessage.svelte
+msgid "This post was submitted, but confirmation is uncertain. Check Facebook before retrying."
+msgstr "Αυτή η δημοσίευση υποβλήθηκε, αλλά η επιβεβαίωση είναι αβέβαιη. Ελέγξτε το Facebook πριν επιχειρήσετε ξανά."
+
+#: src/components/LogMessage.svelte
+msgid "This response is no longer available for the current run"
+msgstr "Αυτή η απάντηση δεν είναι πλέον διαθέσιμη για την τρέχουσα εκτέλεση"
+
+#: src/components/LogMessage.svelte
+msgid "Upload and post captures must belong to the same logged-in profile"
+msgstr "Οι μεταφορτώσεις και οι δημοσιεύσεις πρέπει να ανήκουν στο ίδιο προφίλ που είναι συνδεδεμένο"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for Facebook's Post button…"
+msgstr "Αναμονή για το κουμπί Δημοσίευση του Facebook…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the composer controls and layout…"
+msgstr "Αναμονή για τα χειριστήρια και τη διάταξη του συντάκτη…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the group page and opening its composer…"
+msgstr "Αναμονή για τη σελίδα της ομάδας και άνοιγμα του συντάκτη της…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the image previews and composer to settle…"
+msgstr "Αναμονή για τις προεπισκοπήσεις εικόνων και για το σταθερό του συντάκτη…"
+
+#: src/components/LogMessage.svelte
+msgid "Your Facebook session needs login or verification. Load groups again."
+msgstr "Η συνεδρία σας στο Facebook χρειάζεται σύνδεση ή επαλήθευση. Φορτώστε ξανά τις ομάδες."
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Published to {0}."
+msgstr "Δημοσιεύτηκε στο {0}."
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "{0}: Awaiting admin approval."
+msgstr "{0}: Αναμονή έγκρισης από διαχειριστή."
+
+#. 0: number(a); 1: b
+#: src/components/LogMessage.svelte
+msgid "Waiting {0} seconds before posting to {1}."
+msgstr "Αναμονή {0} δευτερολέπτων πριν τη δημοσίευση στο {1}."
+
+#. 0: a; 1: b
+#: src/components/LogMessage.svelte
+msgid "Next post in {0} · {1}"
+msgstr "Επόμενη δημοσίευση σε {0} · {1}"
+
+#. 0: a; 1: number(b); 2: number(c)
+#: src/components/LogMessage.svelte
+msgid "{0}: Uploading photo {1} of {2}…"
+msgstr "{0}: Μεταφόρτωση φωτογραφίας {1} από {2}…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Preparing a post for {0}…"
+msgstr "Προετοιμασία δημοσίευσης για το {0}…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Uploading images for {0}…"
+msgstr "Μεταφόρτωση εικόνων για το {0}…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Posting to {0}…"
+msgstr "Δημοσίευση στο {0}…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Fresh upload and post request values captured from {0}."
+msgstr "Νέες τιμές μεταφόρτωσης και δημοσίευσης καταγράφηκαν από το {0}."
+
+#. 0: number(a); 1: number(b)
+#: src/components/LogMessage.svelte
+msgid "Submission unconfirmed. Retrying request {0}/{1}…"
+msgstr "Η υποβολή δεν επιβεβαιώθηκε. Επαναδοκιμή αιτήματος {0}/{1}…"
+
+#. 0: number(a); 1: number(b); 2: number(c)
+#: src/components/LogMessage.svelte
+msgid "Finished: {0} published, {1} awaiting approval, {2} failed or skipped."
+msgstr "Ολοκληρώθηκε: {0} δημοσιεύτηκε, {1} αναμένει έγκριση, {2} απέτυχε ή παραλείφθηκε."
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Opening {0}…"
+msgstr "Άνοιγμα {0}…"
+
+#. 0: number(a); 1: number(b)
+#: src/components/LogMessage.svelte
+msgid "Capturing image uploads ({0} of {1})…"
+msgstr "Ανέβασμα εικόνων ({0} από {1}) σε εξέλιξη…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Gemini rewrite failed (HTTP {0}). Check the key, model and account quota"
+msgstr "Η επανεγγραφή Gemini απέτυχε (HTTP {0}). Ελέγξτε το κλειδί, το μοντέλο και το υπόλοιπο του λογαριασμού"
+
+#. 0: code
+#: src/components/LogMessage.svelte
+msgid " (Code {0})"
+msgstr "(Κωδικός {0})"
+
+#: src/components/PostingLogView.svelte
+msgid "Debug details"
+msgstr "Λεπτομέρειες εντοπισμού σφαλμάτων"
+
+#~ msgid ", "
+#~ msgstr ""
+
+#: src/components/ThemePicker.svelte
+msgid "Themes"
+msgstr "Θέματα"
+
+#: src/App.svelte
+msgid "Preferences & post"
+msgstr "Προτιμήσεις και δημοσίευση"
+
+#: src/App.svelte
+#: src/App.svelte
+msgid "Set preferences, then post now or schedule"
+msgstr "Ορίστε προτιμήσεις και μετά δημοσιεύστε τώρα ή προγραμματίστε"

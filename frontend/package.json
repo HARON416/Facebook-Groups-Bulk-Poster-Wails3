@@ -1,0 +1,44 @@
+{
+  "name": "postika-frontend",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build:dev": "vite build --minify false --mode development",
+    "build": "vite build --mode production",
+    "preview": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "i18n:extract": "wuchale",
+    "i18n:check": "wuchale check --full && node scripts/check-i18n.mjs",
+    "i18n:coverage": "node scripts/check-i18n.mjs",
+    "i18n:status": "wuchale status",
+    "precheck": "node scripts/generate-themes.mjs && wuchale && node scripts/check-i18n.mjs",
+    "prebuild": "node scripts/generate-themes.mjs && wuchale && node scripts/check-i18n.mjs",
+    "themes:generate": "node scripts/generate-themes.mjs",
+    "themes:test": "node scripts/themes.test.mjs",
+    "logs:test": "node scripts/log-messages.test.mjs"
+  },
+  "dependencies": {
+    "@lexical/html": "^0.40.0",
+    "@lexical/list": "^0.40.0",
+    "@lexical/rich-text": "^0.40.0",
+    "@lexical/selection": "^0.40.0",
+    "@wailsio/runtime": "latest",
+    "@wuchale/svelte": "0.21.4",
+    "fflate": "^0.8.3",
+    "lexical": "^0.40.0",
+    "lottie-web": "^5.13.0",
+    "svelte-lexical": "^0.6.5",
+    "wuchale": "0.26.7"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^7.0.0",
+    "@tsconfig/svelte": "^5.0.8",
+    "svelte": "^5.46.4",
+    "svelte-check": "^4.4.8",
+    "tslib": "^2.6.2",
+    "typescript": "^5.2.2",
+    "vite": "^8.0.5"
+  }
+}

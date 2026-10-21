@@ -1,0 +1,1836 @@
+msgid ""
+msgstr ""
+"Source-Language: en\n"
+"Language: bn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2\n"
+"X-Plurals-Order: one, other\n"
+
+#. 0: minimumInterval === maximumInterval ? minimumInterval \\: `${minimumInterval}–${maximumInterval}`; 1: rewriteState
+#: src/App.svelte
+msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
+msgstr "সংরক্ষিত ডিফল্ট প্রয়োগ করা হয়েছে: পোস্টগুলির মধ্যে {0} সেকেন্ড · Gemini পুনর্লিখন {1}।"
+
+#: src/App.svelte
+msgid "Could not restore saved groups. Load groups to refresh the list."
+msgstr "সংরক্ষিত গ্রুপগুলি পুনঃস্থাপন করতে পারিনি। তালিকাটি রিফ্রেশ করতে গ্রুপগুলি লোড করুন।"
+
+#: src/App.svelte
+msgid "Choose a future date and time for your post."
+msgstr "আপনার পোস্টের জন্য ভবিষ্যতের তারিখ এবং সময় নির্বাচন করুন।"
+
+#: src/App.svelte
+msgid "Saving your scheduled queue…"
+msgstr "আপনার নির্ধারিত কিউ সংরক্ষণ করা হচ্ছে…"
+
+#: src/App.svelte
+msgid "Opening a selected group to capture fresh posting requests…"
+msgstr "নতুন পোস্টিং অনুরোধ ক্যাপচার করতে নির্বাচিত গ্রুপটি খুলুন…"
+
+#: src/App.svelte
+#: src/App.svelte
+#: src/components/LogMessage.svelte
+msgid "Posting stopped."
+msgstr "পোস্টিং বন্ধ হয়েছে।"
+
+#: src/App.svelte
+#: src/components/LogMessage.svelte
+msgid "Could not read a selected image"
+msgstr "নির্বাচিত ছবি পড়া যায়নি"
+
+#. 0: image.file.name
+#. 0: missingNames
+#. 0: unreadableNames
+#. 0: image.file.name
+#: src/App.svelte
+#: src/App.svelte
+#: src/components/PostComposer.svelte
+#: src/components/PostComposer.svelte
+msgid "Could not read {0}"
+msgstr "{0} পড়তে পারিনি"
+
+#: src/App.svelte
+msgid "Posting finished."
+msgstr "পোস্টিং সমাপ্ত হয়েছে।"
+
+#. 0: scheduleLabel(scheduledFor)
+#. 0: date
+#: src/App.svelte
+#: src/components/LogMessage.svelte
+msgid "Scheduled for {0}. Keep Postika open and your computer awake."
+msgstr "{0} জন্য নির্ধারিত। Postika খোলা রাখুন এবং আপনার কম্পিউটার সক্রিয় রাখুন।"
+
+#: src/App.svelte
+msgid "Could not restore this account’s draft. New edits will stay available while Postika is open."
+msgstr "এই অ্যাকাউন্টের খসড়া পুনঃস্থাপন করতে পারিনি। নতুন সম্পাদনা Postika খোলা থাকা অবস্থায় উপলব্ধ থাকবে।"
+
+#: src/App.svelte
+msgid "Could not add the dropped images. Try browsing for them instead."
+msgstr "ড্রপ করা ছবিগুলি যোগ করতে পারিনি। পরিবর্তে সেগুলির জন্য ব্রাউজ করার চেষ্টা করুন।"
+
+#: src/App.svelte
+msgid "Could not save this account’s draft to disk. Keep Postika open to retain your edits."
+msgstr "এই অ্যাকাউন্টের খসড়া ডিস্কে সংরক্ষণ করতে পারিনি। আপনার সম্পাদনা বজায় রাখতে Postika খোলা রাখুন।"
+
+#: src/App.svelte
+msgid "Start with your message. Add images to bring it to life."
+msgstr "আপনার বার্তা দিয়ে শুরু করুন। এটিকে জীবন্ত করার জন্য ছবি যোগ করুন।"
+
+#: src/App.svelte
+msgid "Choose the groups you want to share your post with."
+msgstr "আপনার পোস্টটি যে গ্রুপে শেয়ার করতে চান তা নির্বাচন করুন।"
+
+#~ msgid "Review your post and preferences, then post now or schedule for later."
+#~ msgstr "আপনার পোস্ট এবং পছন্দসমূহ পর্যালোচনা করুন, তারপর এখন পোস্ট করুন বা পরে সময় নির্ধারণ করুন।"
+
+#. 0: currentStep + 1; 1: steps.length
+#: src/App.svelte
+msgid "STEP {0} OF {1}"
+msgstr "ধাপ {0} এর {1}"
+
+#: src/App.svelte
+msgid "Restoring account workspace…"
+msgstr "অ্যাকাউন্ট ওয়ার্কস্পেস পুনরুদ্ধার করা হচ্ছে…"
+
+#: src/App.svelte
+msgid "Opening…"
+msgstr "খোলা হচ্ছে…"
+
+#: src/App.svelte
+msgid "Loading…"
+msgstr "লোড হচ্ছে…"
+
+#: src/App.svelte
+msgid "Load groups"
+msgstr "গ্রুপ লোড করুন"
+
+#: src/App.svelte
+msgid "Groups"
+msgstr "গ্রুপ"
+
+#: src/App.svelte
+msgid "Search groups…"
+msgstr "গ্রুপ খুঁজুন…"
+
+#: src/App.svelte
+msgid "Clear group search"
+msgstr "গ্রুপ অনুসন্ধান পরিষ্কার করুন"
+
+#: src/App.svelte
+msgid "Search groups"
+msgstr "গ্রুপ খুঁজুন"
+
+#: src/App.svelte
+msgid "Select all groups"
+msgstr "সব গ্রুপ বাছুন"
+
+#: src/App.svelte
+msgid "Unselect all groups"
+msgstr "সব গ্রুপের নির্বাচন সরান"
+
+#~ msgid "{0} selected{1}"
+#~ msgstr ""
+
+#: src/App.svelte
+msgid "Searching…"
+msgstr "অনুসন্ধান করা হচ্ছে…"
+
+#: src/App.svelte
+msgid "No groups found. Try another search."
+msgstr "কোনও গ্রুপ পাওয়া যায়নি। অন্য একটি অনুসন্ধান চেষ্টা করুন।"
+
+#: src/App.svelte
+msgid "Joined groups"
+msgstr "যোগদানকৃত গ্রুপ"
+
+#: src/App.svelte
+msgid "No groups loaded yet."
+msgstr "এখনো কোন গ্রুপ লোড হয়নি।"
+
+#: src/App.svelte
+msgid "Open your Facebook groups to get started."
+msgstr "শুরু করতে আপনার Facebook গ্রুপগুলো খুলুন।"
+
+#: src/App.svelte
+msgid "Posting settings"
+msgstr "পোস্টিং সেটিংস"
+
+#: src/App.svelte
+msgid "Add a Gemini API key in Settings to enable rewriting."
+msgstr "পুনরায় লেখা সক্রিয় করতে সেটিংসে একটি Gemini API কী যোগ করুন।"
+
+#: src/App.svelte
+msgid "Applying defaults…"
+msgstr "ডিফল্ট প্রয়োগ করা হচ্ছে…"
+
+#: src/App.svelte
+msgid "Use saved defaults"
+msgstr "সংরক্ষিত ডিফল্ট ব্যবহার করুন"
+
+#: src/App.svelte
+msgid "Open settings"
+msgstr "সেটিংস খুলুন"
+
+#~ msgid "Posting as <0/>"
+#~ msgstr "<0/> হিসেবে পোস্ট করা হচ্ছে"
+
+#~ msgid "Review your post<0>{0} images · {1} groups selected</0>"
+#~ msgstr "আপনার পোস্ট পর্যালোচনা করুন<0>{0}টি ছবি · {1}টি গ্রুপ নির্বাচিত</0>"
+
+#~ msgid "Original post"
+#~ msgstr "মূল পোস্ট"
+
+#~ msgid "Your post"
+#~ msgstr "আপনার পোস্ট"
+
+#~ msgid "Gemini will rewrite this body for each group using your instructions."
+#~ msgstr "Gemini প্রতিটি গ্রুপের জন্য আপনার নির্দেশনা অনুযায়ী এই বিষয়বস্তু পুনরায় লিখবে।"
+
+#~ msgid "Selected groups ({0})"
+#~ msgstr "নির্বাচিত গ্রুপ ({0})"
+
+#: src/App.svelte
+msgid "Schedule your queue"
+msgstr "আপনার কিউ শিডিউল করুন"
+
+#. 0: Intl.DateTimeFormat().resolvedOptions().timeZone
+#: src/App.svelte
+msgid "Time zone: {0}. Keep Postika open and your computer awake. Facebook may ask you to sign in when posting starts."
+msgstr "টাইম জোন: {0}. পোস্টিকা খোলা রাখুন এবং আপনার কম্পিউটার সচল রাখুন। পোস্টিং শুরু হলে ফেসবুক আপনাকে সাইন ইন করতে বলতে পারে।"
+
+#: src/App.svelte
+#: src/Workspace.svelte
+msgid "Cancel"
+msgstr "বাতিল"
+
+#: src/App.svelte
+msgid "Confirm schedule"
+msgstr "সূচি নিশ্চিত করুন"
+
+#: src/App.svelte
+msgid "Next <0/>"
+msgstr "পরবর্তী <0/>"
+
+#: src/App.svelte
+msgid "View logs"
+msgstr "লগ দেখুন"
+
+#: src/App.svelte
+#: src/components/PostingLogView.svelte
+msgid "Stop"
+msgstr "থামান"
+
+#: src/App.svelte
+#: src/Workspace.svelte
+#: src/components/PostingLogView.svelte
+msgid "Scheduled"
+msgstr "নির্ধারিত"
+
+#: src/App.svelte
+msgid "Posting…"
+msgstr "পোস্ট করা হচ্ছে…"
+
+#: src/App.svelte
+msgid "Post now"
+msgstr "এখনই পোস্ট করুন"
+
+#: src/App.svelte
+msgid "Schedule"
+msgstr "সময় নির্ধারণ করুন"
+
+#: src/App.svelte
+msgid "<0/> Previous"
+msgstr "<0/> পূর্ববর্তী"
+
+#: src/Workspace.svelte
+msgid "Application menu"
+msgstr "অ্যাপ্লিকেশন মেনু"
+
+#: src/Workspace.svelte
+msgid "Add account"
+msgstr "অ্যাকাউন্ট যোগ করুন"
+
+#: src/Workspace.svelte
+#: src/components/PostingLogView.svelte
+#: src/components/PostingLogView.svelte
+msgid "Posting logs"
+msgstr "পোস্টের লগ"
+
+#: src/Workspace.svelte
+#: src/components/Settings.svelte
+#: src/components/Settings.svelte
+msgid "Settings"
+msgstr "সেটিংস"
+
+#: src/Workspace.svelte
+msgid "Creating…"
+msgstr "তৈরি করা হচ্ছে…"
+
+#: src/Workspace.svelte
+msgid "Create & sign in"
+msgstr "তৈরি করুন ও সাইন ইন করুন"
+
+#: src/Workspace.svelte
+msgid "Account name"
+msgstr "অ্যাকাউন্টের নাম"
+
+#: src/Workspace.svelte
+msgid "Sign in to Facebook in the new account’s browser window."
+msgstr "নতুন অ্যাকাউন্টের ব্রাউজার উইন্ডোতে ফেসবুকে সাইন ইন করুন।"
+
+#: src/Workspace.svelte
+msgid "Running"
+msgstr "চলছে"
+
+#: src/Workspace.svelte
+msgid "In the background: <0/>"
+msgstr "পটভূমিতে: <0/>"
+
+#: src/Workspace.svelte
+msgid "Loading accounts…"
+msgstr "অ্যাকাউন্ট লোড হচ্ছে…"
+
+#: src/components/AccountDropdown.svelte
+msgid "Loading accounts"
+msgstr "অ্যাকাউন্ট লোড হচ্ছে"
+
+#. 0: current?.name ?? 'Loading accounts'
+#: src/components/AccountDropdown.svelte
+msgid "Account: {0}"
+msgstr "অ্যাকাউন্ট: {0}"
+
+#: src/components/AccountDropdown.svelte
+msgid "Select account"
+msgstr "অ্যাকাউন্ট বাছুন"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search accounts…"
+msgstr "অ্যাকাউন্ট খুঁজুন…"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search accounts"
+msgstr "অ্যাকাউন্ট খুঁজুন"
+
+#: src/components/AccountDropdown.svelte
+msgid "Clear account search"
+msgstr "অ্যাকাউন্ট অনুসন্ধান মুছুন"
+
+#: src/components/AccountDropdown.svelte
+msgid "All accounts"
+msgstr "সব অ্যাকাউন্ট"
+
+#: src/components/AccountDropdown.svelte
+msgid "Accounts"
+msgstr "অ্যাকাউন্টসমূহ"
+
+#: src/components/AccountDropdown.svelte
+msgid "No accounts found"
+msgstr "কোনো অ্যাকাউন্ট পাওয়া যায়নি"
+
+#: src/components/AccountDropdown.svelte
+#: src/components/ThemePicker.svelte
+msgid "Try a different name."
+msgstr "অন্য নাম দিয়ে চেষ্টা করুন।"
+
+#: src/components/ConnectivityToast.svelte
+msgid "You’re back online"
+msgstr "আপনি আবার অনলাইনে ফিরে এসেছেন"
+
+#: src/components/ConnectivityToast.svelte
+msgid "Internet connection lost"
+msgstr "ইন্টারনেট সংযোগ হারানো হয়েছে"
+
+#: src/components/ConnectivityToast.svelte
+msgid "Your queue is still manually paused."
+msgstr "আপনার কিউ এখনও ম্যানুয়ালি বিরতি দেওয়া আছে।"
+
+#: src/components/ConnectivityToast.svelte
+msgid "Your queue will continue automatically."
+msgstr "আপনার কিউ স্বয়ংক্রিয়ভাবে চালু হবে।"
+
+#: src/components/ConnectivityToast.svelte
+msgid "Your queue is paused. We’ll continue when the connection returns."
+msgstr "আপনার কিউ বিরতিপ্রাপ্ত। সংযোগ ফিরে এলে আমরা চালিয়ে দেব।"
+
+#: src/components/ConnectivityToast.svelte
+msgid "Dismiss connection notification"
+msgstr "সংযোগ বিজ্ঞপ্তি বাতিল করুন"
+
+#: src/components/DateTimePicker.svelte
+msgid "Choose a date and time"
+msgstr "একটি তারিখ এবং সময় নির্বাচন করুন"
+
+#: src/components/DateTimePicker.svelte
+msgid "Select date"
+msgstr "তারিখ নির্বাচন করুন"
+
+#: src/components/DateTimePicker.svelte
+msgid "Choose a weekday for this post"
+msgstr "এই পোস্টের জন্য একটি সপ্তাহের দিন নির্বাচন করুন"
+
+#. 0: day.description
+#: src/components/DateTimePicker.svelte
+msgid "Select {0}"
+msgstr "{0} নির্বাচন করুন"
+
+#: src/components/DateTimePicker.svelte
+msgid "Previous month"
+msgstr "পূর্ববর্তী মাস"
+
+#: src/components/DateTimePicker.svelte
+msgid "Next month"
+msgstr "পরবর্তী মাস"
+
+#: src/components/DateTimePicker.svelte
+#: src/components/DateTimePicker.svelte
+msgid "Select time"
+msgstr "সময় নির্বাচন করুন"
+
+#: src/components/DateTimePicker.svelte
+msgid "24-hour clock"
+msgstr "২৪ ঘণ্টার ঘড়ি"
+
+#: src/components/DateTimePicker.svelte
+msgid "Increase hour"
+msgstr "ঘন্টা বৃদ্ধি করুন"
+
+#: src/components/DateTimePicker.svelte
+#: src/components/DateTimePicker.svelte
+msgid "Hour"
+msgstr "ঘন্টা"
+
+#: src/components/DateTimePicker.svelte
+msgid "Decrease hour"
+msgstr "ঘন্টা কমান"
+
+#: src/components/DateTimePicker.svelte
+msgid "Increase minute"
+msgstr "মিনিট বৃদ্ধি করুন"
+
+#: src/components/DateTimePicker.svelte
+#: src/components/DateTimePicker.svelte
+msgid "Minute"
+msgstr "মিনিট"
+
+#: src/components/DateTimePicker.svelte
+msgid "Decrease minute"
+msgstr "মিনিট কমান"
+
+#: src/components/DateTimePicker.svelte
+msgid "Choose a date and time in the future."
+msgstr "ভবিষ্যতের একটি তারিখ এবং সময় নির্বাচন করুন।"
+
+#. 0: rejected.join(', ')
+#: src/components/PostComposer.svelte
+msgid "Unsupported files: {0}. Choose JPG, PNG, WebP, or GIF images."
+msgstr "সমর্থনহীন ফাইল: {0}. JPG, PNG, WebP, বা GIF চিত্র নির্বাচন করুন।"
+
+#. 0: image.file.name
+#: src/components/PostComposer.svelte
+msgid "Could not preview {0}. Please choose another image."
+msgstr "{0} প্রিভিউ করা সম্ভব নয়। অনুগ্রহ করে অন্য একটি চিত্র নির্বাচন করুন।"
+
+#. 0: images[index].file.name; 1: index + 1; 2: images.length
+#: src/components/PostComposer.svelte
+msgid "{0} moved to position {1} of {2}."
+msgstr "{0} {2}-এর {1} অবস্থানে স্থানান্তরিত হয়েছে।"
+
+#: src/components/PostComposer.svelte
+#: src/components/PostEditorContent.svelte
+msgid "Post body"
+msgstr "পোস্টের লেখা"
+
+#: src/components/PostComposer.svelte
+#: src/components/PostComposer.svelte
+msgid "Required"
+msgstr "আবশ্যক"
+
+#: src/components/PostComposer.svelte
+msgid "Images"
+msgstr "ছবি"
+
+#: src/components/PostComposer.svelte
+msgid "Choose images"
+msgstr "চিত্র নির্বাচন করুন"
+
+#: src/components/PostComposer.svelte
+msgid "Drop images here or <0>browse images</0>"
+msgstr "চিত্র এখানে ড্রপ করুন বা <0>চিত্র ব্রাউজ করুন</0>"
+
+#: src/components/PostComposer.svelte
+msgid "JPG, PNG, WebP, or GIF · Select multiple images"
+msgstr "JPG, PNG, WebP, বা GIF · একাধিক চিত্র নির্বাচন করুন"
+
+#~ msgid "{0} {1} selected"
+#~ msgstr ""
+
+#: src/components/PostComposer.svelte
+msgid "Add more"
+msgstr "আরও যোগ করুন"
+
+#: src/components/PostComposer.svelte
+msgid "Drag images to rearrange. Or focus an image and use Alt + Left / Right."
+msgstr "পুনর্বিন্যাস করার জন্য চিত্রগুলো ড্র্যাগ করুন। অথবা একটি চিত্রে ফোকাস করুন এবং Alt + বাম / ডান ব্যবহার করুন।"
+
+#: src/components/PostComposer.svelte
+msgid "Selected images"
+msgstr "নির্বাচিত চিত্রসমূহ"
+
+#. 0: image.file.name; 1: images.indexOf(image) + 1; 2: images.length
+#: src/components/PostComposer.svelte
+msgid "{0}, image {1} of {2}"
+msgstr "{0}, চিত্র {2}-এর {1}"
+
+#. 0: image.file.name
+#: src/components/PostComposer.svelte
+msgid "Remove {0}"
+msgstr "{0} সরানো"
+
+#: src/components/PostComposer.svelte
+msgid "Drop more images here to add them."
+msgstr "চিত্র যোগ করতে আরও চিত্র এখানে ড্রপ করুন।"
+
+#. 0: error
+#: src/components/PostEditor.svelte
+msgid "Could not edit the post: {0}"
+msgstr "পোস্ট সম্পাদনা করা সম্ভব নয়: {0}"
+
+#: src/components/PostEditorContent.svelte
+msgid "Post editor controls"
+msgstr "পোস্ট সম্পাদক নিয়ন্ত্রণগুলি"
+
+#: src/components/PostEditorContent.svelte
+msgid "Text formatting"
+msgstr "টেক্সট ফরম্যাটিং"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bold (Ctrl+B)"
+msgstr "বোল্ড (Ctrl+B)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bold"
+msgstr "বোল্ড"
+
+#: src/components/PostEditorContent.svelte
+msgid "Italic (Ctrl+I)"
+msgstr "ইটালিক (Ctrl+I)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Italic"
+msgstr "ইটালিক"
+
+#: src/components/PostEditorContent.svelte
+msgid "Heading 1"
+msgstr "শিরোনাম ১"
+
+#: src/components/PostEditorContent.svelte
+msgid "Heading 2"
+msgstr "শিরোনাম ২"
+
+#: src/components/PostEditorContent.svelte
+msgid "Quote"
+msgstr "উদ্ধৃতি"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bullet list"
+msgstr "বুলেট তালিকা"
+
+#: src/components/PostEditorContent.svelte
+msgid "Numbered list"
+msgstr "সংখ্যাযুক্ত তালিকা"
+
+#: src/components/PostEditorContent.svelte
+msgid "Undo (Ctrl+Z)"
+msgstr "পূর্বাবস্থা (Ctrl+Z)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Undo"
+msgstr "পূর্বাবস্থা"
+
+#: src/components/PostEditorContent.svelte
+msgid "Redo (Ctrl+Shift+Z)"
+msgstr "পুনরায় করুন (Ctrl+Shift+Z)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Redo"
+msgstr "পুনরায় করুন"
+
+#: src/components/PostEditorContent.svelte
+msgid "What would you like to share?"
+msgstr "আপনি কী শেয়ার করতে চান?"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bold, italic, headings, quotes, and lists · Markdown shortcuts supported"
+msgstr "বোল্ড, ইটালিক, শিরোনাম, উদ্ধৃতি, এবং তালিকা · Markdown শর্টকাট সমর্থিত"
+
+#. 0: body.length.toLocaleString(getLocale())
+#: src/components/PostEditorContent.svelte
+msgid "{0} characters"
+msgstr "{0} অক্ষর"
+
+#: src/components/LogMessage.svelte
+msgid "Ready to post."
+msgstr "প্রকাশের জন্য প্রস্তুত।"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook response copied."
+msgstr "ফেসবুক প্রতিক্রিয়া কপি করা হয়েছে।"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook response received"
+msgstr "ফেসবুক প্রতিক্রিয়া পাওয়া গেছে"
+
+#: src/components/PostingLogView.svelte
+msgid "POSTIKA / ACTIVITY"
+msgstr "POSTIKA / কার্যকলাপ"
+
+#: src/components/PostingLogView.svelte
+msgid "Posting progress"
+msgstr "প্রকাশের অগ্রগতি"
+
+#. 0: activity?.processed || 0; 1: activity?.total || 0
+#: src/components/PostingLogView.svelte
+msgid "{0}/{1} groups processed"
+msgstr "{0}/{1} গ্রুপ প্রক্রিয়াজাত"
+
+#. 0: percentage
+#: src/components/PostingLogView.svelte
+msgid "{0}% complete"
+msgstr "{0}% সম্পন্ন"
+
+#: src/components/PostingLogView.svelte
+msgid "Groups processed"
+msgstr "প্রক্রিয়াজাত গ্রুপ"
+
+#: src/components/PostingLogView.svelte
+msgid "Published"
+msgstr "প্রকাশিত"
+
+#: src/components/PostingLogView.svelte
+msgid "Awaiting approval"
+msgstr "অনুমোদনের অপেক্ষায়"
+
+#: src/components/PostingLogView.svelte
+msgid "Failed or skipped"
+msgstr "ব্যর্থ বা এড়ানো হয়েছে"
+
+#: src/components/PostingLogView.svelte
+msgid "Remaining"
+msgstr "বাকি"
+
+#. 0: number(a); 1: number(b); 2: c
+#. 0: activity.current; 1: activity.total; 2: activity.currentGroup.name
+#: src/components/LogMessage.svelte
+#: src/components/PostingLogView.svelte
+msgid "Group {0}/{1}: {2}"
+msgstr "গ্রুপ {0}/{1}: {2}"
+
+#. 0: pauseRequested ? /* @wc-include */ ' · Paused' \\: ''
+#: src/components/PostingLogView.svelte
+msgid "Next post in <0/>{0}"
+msgstr "পরবর্তী পোস্ট <0/>{0} সময় পরে"
+
+#: src/components/PostingLogView.svelte
+msgid "Elapsed <0/>"
+msgstr "সময় অতিবাহিত <0/>"
+
+#: src/components/PostingLogView.svelte
+msgid "Current group <0/>"
+msgstr "বর্তমান গ্রুপ <0/>"
+
+#: src/components/PostingLogView.svelte
+msgid "Following latest"
+msgstr "সর্বশেষ অনুসরণ করা"
+
+#: src/components/PostingLogView.svelte
+msgid "Jump to latest"
+msgstr "সর্বশেষে যাও"
+
+#. 0.0: total
+#: src/components/PostingLogView.svelte
+msgid "Activity timeline <0>{0} logs</0>"
+msgstr "কার্যকলাপ সময়রেখা <0>{0} লগ</0>"
+
+#: src/components/PostingLogView.svelte
+msgid "Posting activity"
+msgstr "প্রকাশ কার্যকলাপ"
+
+#. 0: entryLabel(entry)
+#: src/components/PostingLogView.svelte
+msgid "{0} log"
+msgstr "{0} লগ"
+
+#. 0: itemTime(entry.message)
+#: src/components/PostingLogView.svelte
+msgid "Took {0}"
+msgstr "{0} নিয়েছে"
+
+#: src/components/PostingLogView.svelte
+#: src/components/PostingLogView.svelte
+msgid "Copy Facebook response"
+msgstr "ফেসবুকের উত্তর কপি করুন"
+
+#: src/components/PostingLogView.svelte
+msgid "Response copied"
+msgstr "উত্তর কপি করা হয়েছে"
+
+#: src/components/PostingLogView.svelte
+msgid "Copied"
+msgstr "কপি করা হয়েছে"
+
+#: src/components/PostingLogView.svelte
+msgid "Copying…"
+msgstr "কপি হচ্ছে…"
+
+#: src/components/PostingLogView.svelte
+msgid "Copy response"
+msgstr "উত্তর কপি করুন"
+
+#. 0.0: entry.hasResponse ? /* @wc-include */ ' · Response available to copy' \\: ''
+#: src/components/PostingLogView.svelte
+msgid "Debug details<0>Original log message{0}</0>"
+msgstr "ডিবাগ বিবরণ<0>মূল লগ বার্তা{0}</0>"
+
+#: src/components/PostingLogView.svelte
+msgid "Your activity will appear here"
+msgstr "আপনার কার্যক্রম এখানে দেখাবে"
+
+#: src/components/PostingLogView.svelte
+msgid "Start posting to follow uploads, results, and wait times."
+msgstr "আপলোড, ফলাফল এবং অপেক্ষার সময় অনুসরণ করতে পোস্ট করা শুরু করুন।"
+
+#: src/components/PostingLogView.svelte
+msgid "Log pages"
+msgstr "লগ পৃষ্ঠা"
+
+#: src/components/PostingLogView.svelte
+msgid "Previous page"
+msgstr "পূর্ববর্তী পৃষ্ঠা"
+
+#. 0: number
+#: src/components/PostingLogView.svelte
+msgid "Page {0}"
+msgstr "পৃষ্ঠা {0}"
+
+#: src/components/PostingLogView.svelte
+msgid "Next page"
+msgstr "পরবর্তী পৃষ্ঠা"
+
+#: src/components/PostingLogView.svelte
+msgid "← Prev"
+msgstr "← পূর্ববর্তী"
+
+#: src/components/PostingLogView.svelte
+msgid "Next →"
+msgstr "পরবর্তী →"
+
+#. 0: total ? (page - 1) * pageSize + 1 \\: 0; 1: Math.min(page * pageSize, total); 2: total
+#: src/components/PostingLogView.svelte
+msgid "{0}–{1} of {2} logs"
+msgstr "{0}–{1} এর {2} লগ"
+
+#: src/components/PostingLogView.svelte
+msgid "Resume"
+msgstr "আবার শুরু করুন"
+
+#: src/components/PostingLogView.svelte
+msgid "Pause"
+msgstr "বিরতি দিন"
+
+#: src/components/PostingLogView.svelte
+msgid "Stopping…"
+msgstr "থামছে…"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "POSTING PACE"
+msgstr "পোস্টিং গতি"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Interval between posts"
+msgstr "পোস্টগুলোর মধ্যে অন্তরাল"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Minimum (seconds)"
+msgstr "ন্যূনতম (সেকেন্ড)"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Maximum (seconds)"
+msgstr "সর্বাধিক (সেকেন্ড)"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Choose how long to wait before posting to the next group."
+msgstr "পরবর্তী গ্রুপে পোস্ট করার আগে কতক্ষণ অপেক্ষা করবেন তা নির্বাচন করুন।"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "At least 60 seconds. Use equal values for a fixed interval."
+msgstr "কমপক্ষে ৬০ সেকেন্ড। নির্দিষ্ট অন্তরালের জন্য সমান মান ব্যবহার করুন।"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "OPTIONAL · AI REWRITE"
+msgstr "ঐচ্ছিক · এআই রিরাইট"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "A fresh version for each group"
+msgstr "প্রতিটি গ্রুপের জন্য নতুন সংস্করণ"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Rewrite each post body with Gemini"
+msgstr "Gemini দিয়ে প্রতিটি পোস্ট বডি পুনঃলিখন করুন"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
+msgstr "পুনর্লিখনের নির্দেশনা<0>Gemini কোন সুর ও বিবরণ সংরক্ষণ করবে তা নির্বাচন করুন।</0>"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Keep it concise and easy to scan. Preserve the price and contact details."
+msgstr "সংক্ষিপ্ত এবং সহজে পড়ার উপযোগী রাখুন। দাম এবং যোগাযোগের বিবরণ সংরক্ষণ করুন।"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Rewrite instructions"
+msgstr "পুনর্লিখনের নির্দেশনা"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
+msgstr "আপনার পোস্টের লেখা এবং নির্দেশনা Google Gemini-তে পাঠানো হয়। চিত্র পাঠানো হয় না। Gemini পুনর্লিখন সাধারণ লেখায় ব্যবহার করে।"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
+msgstr "যদি পুনর্লিখন ব্যর্থ হয়, সেই পোস্টে আপনার মূল লেখা ব্যবহার করা হয়। পরবর্তী পোস্টে Gemini আবার চেষ্টা করে।"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Let Gemini rewrite your post using your instructions."
+msgstr "Gemini আপনার নির্দেশনা ব্যবহার করে আপনার পোস্ট পুনর্লিখন করুক।"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Posting preferences"
+msgstr "পোস্টিং পছন্দসমূহ"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved defaults help"
+msgstr "সংরক্ষিত ডিফল্ট সহায়তা করে"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "About saved defaults"
+msgstr "সংরক্ষিত ডিফল্ট সম্বন্ধে"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved interval"
+msgstr "সংরক্ষিত অন্তরাল"
+
+#. 0: settings.minimumInterval === settings.maximumInterval ? settings.minimumInterval \\: `${settings.minimumInterval}–${settings.maximumInterval}`
+#: src/components/SavedDefaultsInfo.svelte
+msgid "{0} seconds"
+msgstr "{0} সেকেন্ড"
+
+#: src/App.svelte
+#: src/components/SavedDefaultsInfo.svelte
+msgid "On"
+msgstr "চালু"
+
+#: src/App.svelte
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Off"
+msgstr "বন্ধ"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Gemini rewrite"
+msgstr "Gemini পুনর্লিখন"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "No instructions saved."
+msgstr "কোন নির্দেশনা সংরক্ষিত নেই।"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved rewrite instructions"
+msgstr "সংরক্ষিত পুনর্লিখনের নির্দেশনা"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved values could not be loaded. Try “Use saved defaults” again."
+msgstr "সংরক্ষিত মানগুলি লোড করা যায়নি। আবার “সংরক্ষিত ডিফল্ট ব্যবহার করুন” চেষ্টা করুন।"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "What does “Use saved defaults” do?"
+msgstr "“সংরক্ষিত ডিফল্ট ব্যবহার করুন” কী করে?"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
+msgstr "এই রানটির পোস্টিং ইন্টারভাল, Gemini পুনর্লিখন বিকল্প এবং পুনর্লিখন নির্দেশনাগুলি সেটিংসে সংরক্ষিত মানের মাধ্যমে প্রতিস্থাপন করে।"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
+msgstr "প্রাথমিক ডিফল্ট: ৬০–১২০ সেকেন্ড, Gemini পুনর্লিখন বন্ধ, এবং কোনো পুনর্লিখন নির্দেশনা নেই। এগুলি পরিবর্তন করতে আপনার পছন্দসই সেটিংসে সংরক্ষণ করুন।"
+
+#: src/components/Settings.svelte
+msgid "Settings saved. New runs can use these defaults."
+msgstr "সেটিংস সংরক্ষিত হয়েছে। নতুন রানের জন্য এই ডিফল্ট মানগুলি ব্যবহার করা যেতে পারে।"
+
+#: src/components/Settings.svelte
+msgid "Key saved · leave blank to keep it"
+msgstr "কী সংরক্ষণ করা হয়েছে · রাখতে খালি রাখুন"
+
+#: src/components/Settings.svelte
+msgid "Enter your Gemini API key"
+msgstr "আপনার Gemini এপিআই কী লিখুন"
+
+#: src/components/Settings.svelte
+msgid "A key is saved on this device."
+msgstr "এই ডিভাইসে কী সংরক্ষণ করা হয়েছে।"
+
+#: src/components/Settings.svelte
+msgid "No API key saved."
+msgstr "কোনো এপিআই কী সংরক্ষণ করা হয়নি।"
+
+#: src/components/Settings.svelte
+msgid "Remove saved key"
+msgstr "সংরক্ষিত কী মুছে দিন"
+
+#: src/components/Settings.svelte
+msgid "Gemini"
+msgstr "Gemini"
+
+#: src/components/Settings.svelte
+msgid "API key<0/>"
+msgstr "এপিআই কী<0/>"
+
+#. 0: keyConfigured ? 'A key is saved on this device.' \\: 'No API key saved.'
+#: src/components/Settings.svelte
+msgid "{0} The saved key is never displayed."
+msgstr "{0} সংরক্ষিত কী কখনো প্রদর্শিত হয় না।"
+
+#: src/components/Settings.svelte
+msgid "Model<0/>"
+msgstr "মডেল<0/>"
+
+#: src/components/Settings.svelte
+msgid "Posting defaults"
+msgstr "পোস্টের ডিফল্ট সেটিংস"
+
+#: src/components/Settings.svelte
+msgid "Applied when you start a new posting run."
+msgstr "নতুন পোস্টিং রান শুরু করার সময় প্রয়োগ করা হয়।"
+
+#: src/components/Settings.svelte
+msgid "Saving…"
+msgstr "সংরক্ষণ হচ্ছে…"
+
+#: src/components/Settings.svelte
+msgid "Save settings"
+msgstr "সেটিংস সংরক্ষণ করুন"
+
+#: src/components/Settings.svelte
+msgid "YOUR PREFERENCES"
+msgstr "আপনার পছন্দসমূহ"
+
+#. 0: accountName
+#: src/components/Settings.svelte
+msgid "Set up Gemini and save posting defaults for {0}."
+msgstr "Gemini সেট আপ করুন এবং {0}-এর জন্য পোস্টিং ডিফল্ট সংরক্ষণ করুন।"
+
+#: src/components/StepProgress.svelte
+msgid "Completed"
+msgstr "সম্পন্ন"
+
+#: src/components/StepProgress.svelte
+msgid "Current"
+msgstr "বর্তমান"
+
+#: src/components/StepProgress.svelte
+msgid "Upcoming"
+msgstr "আনার্সূচি"
+
+#. 0: index + 1; 1: steps.length; 2: completed || index < currentStep ? 'Completed' \\: index === currentStep ? 'Current' \\: 'Upcoming'
+#: src/components/StepProgress.svelte
+msgid "Step {0} of {1}: {2}"
+msgstr "ধাপ {0} এর {1}: {2}"
+
+#: src/components/WindowControls.svelte
+msgid "Could not change the window. Please try again."
+msgstr "উইন্ডো পরিবর্তন করা যায়নি। অনুগ্রহ করে আবার চেষ্টা করুন।"
+
+#: src/components/WindowControls.svelte
+msgid "Window controls"
+msgstr "উইন্ডো নিয়ন্ত্রণ"
+
+#: src/components/WindowControls.svelte
+msgid "Minimize window"
+msgstr "উইন্ডো ছোট করুন"
+
+#: src/components/WindowControls.svelte
+msgid "Restore window"
+msgstr "উইন্ডো পূরণের আকারে আনুন"
+
+#: src/components/WindowControls.svelte
+msgid "Maximize window"
+msgstr "উইন্ডো সর্বাধিক আকারে করুন"
+
+#: src/components/WindowControls.svelte
+msgid "Close window"
+msgstr "উইন্ডো বন্ধ করুন"
+
+#: src/App.svelte
+msgid "Create post"
+msgstr "পোস্ট তৈরি করুন"
+
+#: src/App.svelte
+msgid "Write your post and add images"
+msgstr "আপনার পোস্ট লিখুন এবং ছবি যোগ করুন"
+
+#: src/App.svelte
+msgid "Select groups"
+msgstr "গ্রুপ বাছুন"
+
+#: src/App.svelte
+msgid "Load groups and choose where to post"
+msgstr "গ্রুপ লোড করুন এবং কোথায় পোস্ট করতে হবে তা নির্বাচন করুন"
+
+#~ msgid "Review & post"
+#~ msgstr "পর্যালোচনা করুন ও পোস্ট করুন"
+
+#~ msgid "Review, set preferences, then post now or schedule"
+#~ msgstr "পুনঃপর্যালোচনা করুন, পছন্দসেট করুন, তারপর এখন পোস্ট করুন বা সময় নির্ধারণ করুন"
+
+#: src/App.svelte
+msgid "Facebook session captured"
+msgstr "ফেসবুক সেশন ধরা হয়েছে"
+
+#: src/App.svelte
+msgid "The browser is closed. It will reopen when you click Post."
+msgstr "ব্রাউজার বন্ধ আছে। আপনি পোস্টে ক্লিক করলে এটি পুনরায় খোলা হবে।"
+
+#: src/App.svelte
+msgid "Checking Facebook login"
+msgstr "ফেসবুক লগইন যাচাই করা হচ্ছে"
+
+#: src/App.svelte
+msgid "Finish signing in or any verification prompts in Chrome. Your login will be detected automatically."
+msgstr "ক্রোমে সাইন ইন সম্পন্ন করুন বা যে কোনো যাচাইকরণের নির্দেশ অনুসরণ করুন। আপনার লগইন স্বয়ংক্রিয়ভাবে শনাক্ত হবে।"
+
+#: src/App.svelte
+msgid "Login required"
+msgstr "লগইন প্রয়োজন"
+
+#: src/App.svelte
+msgid "Please log in to Facebook in the Chrome window. Postika will detect when you’re signed in."
+msgstr "অনুগ্রহ করে ক্রোম উইন্ডোতে ফেসবুকে লগইন করুন। পোস্টিকা আপনাকে লগইন করলে তা শনাক্ত করবে।"
+
+#: src/App.svelte
+msgid "Complete Facebook verification"
+msgstr "ফেসবুক যাচাইকরণ সম্পূর্ণ করুন"
+
+#: src/App.svelte
+msgid "Complete the login or verification prompts in Chrome to continue."
+msgstr "জারি রাখার জন্য ক্রোমে লগইন বা যাচাইকরণের নির্দেশ সম্পূর্ণ করুন।"
+
+#: src/App.svelte
+msgid "Facebook connected"
+msgstr "ফেসবুক সংযুক্ত হয়েছে"
+
+#: src/App.svelte
+msgid "You’re logged in. Your session is ready."
+msgstr "আপনি লগইন করেছেন। আপনার সেশন প্রস্তুত।"
+
+#: src/App.svelte
+msgid "Facebook window closed"
+msgstr "ফেসবুক উইন্ডো বন্ধ"
+
+#: src/App.svelte
+msgid "Click Load groups to reopen Facebook and check your login."
+msgstr "ফেসবুক পুনরায় খোলার জন্য লোড গ্রুপস ক্লিক করুন এবং আপনার লগইন চেক করুন।"
+
+#. 0: current?.name ?? ''
+#: src/components/AccountDropdown.svelte
+msgid "Language: {0}"
+msgstr "ভাষা: {0}"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search languages…"
+msgstr "ভাষা খুঁজুন…"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search languages"
+msgstr "ভাষা খুঁজুন"
+
+#: src/components/AccountDropdown.svelte
+msgid "Clear language search"
+msgstr "ভাষা অনুসন্ধান মুছে দিন"
+
+#. 0: matches.length
+#: src/components/AccountDropdown.svelte
+msgid "{0} result"
+msgstr "{0} ফলাফল"
+
+#. 0: matches.length
+#: src/components/AccountDropdown.svelte
+msgid "{0} results"
+msgstr "{0} ফলাফল"
+
+#: src/components/AccountDropdown.svelte
+msgid "All languages"
+msgstr "সব ভাষা"
+
+#: src/components/AccountDropdown.svelte
+msgid "Languages"
+msgstr "ভাষাসমূহ"
+
+#: src/components/AccountDropdown.svelte
+msgid "No languages found"
+msgstr "কোনও ভাষা পাওয়া যায়নি"
+
+#: src/components/DateTimePicker.svelte
+msgid "Morning"
+msgstr "সকাল"
+
+#: src/components/DateTimePicker.svelte
+msgid "Afternoon"
+msgstr "দুপুর"
+
+#: src/components/DateTimePicker.svelte
+msgid "Evening"
+msgstr "সন্ধ্যা"
+
+#: src/components/LanguageMenu.svelte
+msgid "Could not change the language. Please try again."
+msgstr "ভাষা পরিবর্তন করতে পারিনি। অনুগ্রহ করে পুনরায় চেষ্টা করুন।"
+
+#: src/components/Settings.svelte
+msgid "Language"
+msgstr "ভাষা"
+
+#: src/components/PostingOptionsForm.svelte
+#: src/components/PostingOptionsForm.svelte
+msgid "seconds"
+msgstr "সেকেন্ড"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Minimum"
+msgstr "সর্বনিম্ন"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Maximum"
+msgstr "সর্বাধিক"
+
+#: src/components/StepProgress.svelte
+msgid "Post progress"
+msgstr "পোস্টের অগ্রগতি"
+
+#. 0: visibleGroups.length
+#: src/App.svelte
+msgid "{0} shown"
+msgstr "{0} প্রদর্শিত"
+
+#. 0: selectedGroupIds.length
+#: src/App.svelte
+msgid "{0} selected"
+msgstr "{0} নির্বাচন করা হয়েছে"
+
+#. 0: images.length
+#: src/components/PostComposer.svelte
+msgid "{0} images selected"
+msgstr "{0} চিত্র নির্বাচিত"
+
+#: src/components/PostingLogView.svelte
+msgid "WARN"
+msgstr "সতর্কীকরণ"
+
+#: src/components/PostingLogView.svelte
+msgid "INFO"
+msgstr "তথ্য"
+
+#: src/components/PostingLogView.svelte
+msgid "ERROR"
+msgstr "ত্রুটি"
+
+#: src/components/PostingLogView.svelte
+msgid "DEBUG"
+msgstr "ডিবাগ"
+
+#: src/components/PostingLogView.svelte
+msgid "PUBLISHED"
+msgstr "প্রকাশিত"
+
+#: src/components/PostingLogView.svelte
+msgid "PENDING"
+msgstr "মুলতুবি"
+
+#: src/components/PostingLogView.svelte
+msgid "FAILED"
+msgstr "বিফল"
+
+#: src/components/PostingLogView.svelte
+msgid "SKIPPED"
+msgstr "পাশ কাটানো হয়েছে"
+
+#: src/components/PostingLogView.svelte
+msgid "UNCONFIRMED"
+msgstr "অপটুস্ত"
+
+#: src/Workspace.svelte
+msgid "e.g. Business"
+msgstr "উদাহরণস্বরূপ ব্যবসা"
+
+#: src/components/PostComposer.svelte
+msgid "1 image selected"
+msgstr "1টি চিত্র নির্বাচিত"
+
+#: src/components/PostingLogView.svelte
+msgid "Paused · Waiting for internet"
+msgstr "বিরতি দেওয়া হয়েছে · ইন্টারনেটের জন্য অপেক্ষা করছে"
+
+#: src/components/PostingLogView.svelte
+msgid "Pausing after the current operation"
+msgstr "বর্তমান অপারেশনের পরে বিরতি দেওয়া হচ্ছে"
+
+#: src/components/PostingLogView.svelte
+msgid "Paused"
+msgstr "বিরতি দেওয়া হয়েছে"
+
+#: src/components/PostingLogView.svelte
+msgid "Stopping"
+msgstr "বন্ধ করা হচ্ছে"
+
+#: src/components/PostingLogView.svelte
+msgid "Posting"
+msgstr "পোস্ট করা হচ্ছে"
+
+#: src/components/PostingLogView.svelte
+msgid "Finished"
+msgstr "সমাপ্ত"
+
+#: src/components/PostingLogView.svelte
+msgid "Stopped"
+msgstr "বন্ধ করা হয়েছে"
+
+#: src/components/PostingLogView.svelte
+msgid "Ready"
+msgstr "প্রস্তুত"
+
+#: src/components/PostingLogView.svelte
+msgid "CURRENT ACTIVITY"
+msgstr "বর্তমান কার্যক্রম"
+
+#: src/components/PostingLogView.svelte
+msgid "RUN STATUS"
+msgstr "চালনার অবস্থা"
+
+#: src/components/PostingLogView.svelte
+msgid " · Paused"
+msgstr " · বিরতি"
+
+#: src/components/PostingLogView.svelte
+msgid " · Response available to copy"
+msgstr " · কপি করার জন্য প্রতিক্রিয়া উপলব্ধ"
+
+#: src/components/AccountLabel.svelte
+msgid "Default profile"
+msgstr "ডিফল্ট প্রোফাইল"
+
+#~ msgid "Switch to light mode"
+#~ msgstr "লাইট মোডে পরিবর্তন করুন"
+
+#~ msgid "Switch to dark mode"
+#~ msgstr "ডার্ক মোডে পরিবর্তন করুন"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Color themes"
+msgstr "রঙের থিম"
+
+#: src/components/ThemePicker.svelte
+msgid "Close"
+msgstr "বন্ধ করুন"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Search themes…"
+msgstr "থিম খুঁজুন…"
+
+#: src/components/ThemePicker.svelte
+msgid "No themes found"
+msgstr "কোনো থিম পাওয়া যায়নি"
+
+#: src/components/LogMessage.svelte
+msgid "A selected group is no longer available. Load groups again"
+msgstr "নির্বাচিত একটি গ্রুপ আর উপলব্ধ নেই। আবার গ্রুপ লোড করুন"
+
+#: src/components/LogMessage.svelte
+msgid "Add a Gemini API key in Settings before enabling rewriting"
+msgstr "পুনর্লিখন সক্ষম করার আগে সেটিংস-এ একটি Gemini API কী যুক্ত করুন"
+
+#: src/components/LogMessage.svelte
+msgid "Add a post body and at least one image"
+msgstr "একটি পোস্ট বডি এবং অন্তত একটি ছবি যোগ করুন"
+
+#: src/components/LogMessage.svelte
+msgid "All selected groups were already attempted. Review unconfirmed results on Facebook."
+msgstr "সব নির্বাচিত গ্রুপ ইতিমধ্যেই চেষ্টা করা হয়েছে। Facebook-এ অযাচিত ফলাফল পুনর্বিবেচনা করুন।"
+
+#: src/components/LogMessage.svelte
+msgid "An image upload failed in Chrome. Check the composer and retry Post"
+msgstr "Chrome-এ একটি ছবি আপলোড ব্যর্থ হয়েছে। কম্পোজার পরীক্ষা করুন এবং পোস্ট পুনরায় চেষ্টা করুন"
+
+#: src/components/LogMessage.svelte
+msgid "Attaching images…"
+msgstr "ছবি সংযুক্ত করা হচ্ছে…"
+
+#: src/components/LogMessage.svelte
+msgid "Choose JPG, PNG, WebP, or GIF images"
+msgstr "JPG, PNG, WebP বা GIF ছবি নির্বাচন করুন"
+
+#: src/components/LogMessage.svelte
+msgid "Choose a future date and time for your post"
+msgstr "আপনার পোস্টের জন্য একটি ভবিষ্যতের তারিখ এবং সময় নির্বাচন করুন"
+
+#: src/components/LogMessage.svelte
+msgid "Closing Chrome and posting to the remaining groups…"
+msgstr "Chrome বন্ধ করা হচ্ছে এবং বাকি গ্রুপে পোস্ট করা হচ্ছে…"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the complete create-post request"
+msgstr "সম্পূর্ণ ক্রিয়েট-পোস্ট অনুরোধ ধরতে পারিনি"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the completed image upload response"
+msgstr "সম্পূর্ণ ছবির আপলোড প্রতিক্রিয়া ধরতে পারিনি"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the image upload form fields"
+msgstr "ছবি আপলোড ফর্ম ফিল্ড ধরতে পারিনি"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the image upload form. Retry Post"
+msgstr "ছবি আপলোড ফর্ম ধরতে পারিনি। পোস্ট পুনরায় চেষ্টা করুন"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the upload endpoint"
+msgstr "আপলোড এন্ডপয়েন্ট ধরতে পারিনি"
+
+#: src/components/LogMessage.svelte
+msgid "Could not copy the Facebook response to the clipboard"
+msgstr "Facebook প্রতিক্রিয়া ক্লিপবোর্ডে কপি করতে পারিনি"
+
+#: src/components/LogMessage.svelte
+msgid "Could not enable create-post capture in Chrome"
+msgstr "ক্রোমে ক্রিয়েট-পোস্ট ক্যাপচার সক্ষম করা যায়নি"
+
+#: src/components/LogMessage.svelte
+msgid "Could not parse the captured create-post form"
+msgstr "ক্যাপচার করা ক্রিয়েট-পোস্ট ফর্মটি বিশ্লেষণ করা যায়নি"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare image files"
+msgstr "চিত্র ফাইলগুলি প্রস্তুত করা যায়নি"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare post images"
+msgstr "পোস্ট চিত্র প্রস্তুত করা যায়নি"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare the Gemini request"
+msgstr "মিথুন রাশির অনুরোধ প্রস্তুত করা যায়নি"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare the image upload."
+msgstr "চিত্র আপলোড প্রস্তুত করা যায়নি।"
+
+#: src/components/LogMessage.svelte
+msgid "Could not reach Gemini. Check your connection"
+msgstr "মিথুন রাশির কাছে পৌঁছাতে পারেননি। আপনার সংযোগ পরীক্ষা করুন"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read Facebook's post confirmation"
+msgstr "ফেসবুকের পোস্ট কনফার্মেশন পড়তে পারেননি"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read the Gemini rewrite"
+msgstr "মিথুন রাশির লিখন পড়া যায়নি"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read the completed image upload response"
+msgstr "সম্পূর্ণ চিত্র আপলোড প্রতিক্রিয়া পড়া যায়নি"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read the selected image."
+msgstr "নির্বাচিত চিত্রটি পড়া যায়নি।"
+
+#: src/components/LogMessage.svelte
+msgid "Create-post capture ended before confirmation. Check Facebook before retrying"
+msgstr "ক্রিয়েট-পোস্ট ক্যাপচার নিশ্চিতকরণের আগে শেষ হয়েছে। পুনরায় চেষ্টা করার আগে ফেসবুক চেক করুন"
+
+#: src/components/LogMessage.svelte
+msgid "Create-post request detected. Capturing fresh form values…"
+msgstr "ক্রিয়েট-পোস্ট অনুরোধ সনাক্ত করা হয়েছে। নতুন ফর্ম মানগুলি ক্যাপচার করা হচ্ছে..."
+
+#: src/components/LogMessage.svelte
+msgid "Create-post response complete. Waiting for captured session headers…"
+msgstr "প্রতিক্রিয়া তৈরি করুন-পোস্ট সম্পূর্ণ। ক্যাপচার করা সেশন শিরোনামের জন্য অপেক্ষা করা হচ্ছে..."
+
+#: src/components/LogMessage.svelte
+msgid "Create-post response received. Waiting for its complete body…"
+msgstr "ক্রিয়েট-পোস্ট প্রতিক্রিয়া পাওয়া গেছে। এর সম্পূর্ণ দেহের জন্য অপেক্ষা করছে..."
+
+#: src/components/LogMessage.svelte
+msgid "Description inserted"
+msgstr "বিবরণ সন্নিবেশ করা হয়েছে"
+
+#: src/components/LogMessage.svelte
+msgid "Earlier submission is unconfirmed. Skipping this group and continuing with the remaining groups."
+msgstr "আগের জমা নিশ্চিত নয়। এই গ্রুপটি বাদ দিয়ে বাকি গ্রুপগুলোর সাথে এগিয়ে চলা হচ্ছে।"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook could not post to this group. Continuing with the remaining groups."
+msgstr "Facebook এই গ্রুপে পোস্ট করতে পারেনি। বাকি গ্রুপগুলোর সাথে চলা হচ্ছে।"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook did not confirm all images. Check the composer."
+msgstr "Facebook সব ছবি নিশ্চিত করেনি। কম্পোজার পরীক্ষা করুন।"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook did not confirm the submission"
+msgstr "Facebook জমাটি নিশ্চিত করেনি"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook did not confirm this post. Check the group before trying again."
+msgstr "Facebook এই পোস্টটি নিশ্চিত করেনি। পুনরায় চেষ্টা করার আগে গ্রুপ পরীক্ষা করুন।"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook has temporarily limited posting. Try again later."
+msgstr "Facebook অস্থায়ীভাবে পোস্টিং সীমিত করেছে। পরে পুনরায় চেষ্টা করুন।"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook rejected this post."
+msgstr "Facebook এই পোস্টটি প্রত্যাখ্যান করেছে।"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook requires login or verification. Load groups again."
+msgstr "Facebook লগইন বা যাচাইকরণ প্রয়োজন। গ্রুপগুলো পুনরায় লোড করুন।"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook returned a story, but did not confirm its group or publication state. Posting stopped. Check Facebook before retrying."
+msgstr "Facebook একটি স্টরি ফিরিয়ে দিয়েছে, কিন্তু তার গ্রুপ বা প্রকাশনার অবস্থা নিশ্চিত করেনি। পোস্টিং বন্ধ হয়েছে। পুনরায় চেষ্টা করার আগে Facebook পরীক্ষা করুন।"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook's confirmation exceeded the 16 MiB response limit; retained response is truncated"
+msgstr "Facebook-এর নিশ্চিতকরণ 16 MiB রেসপন্স সীমা অতিক্রম করেছে; সংরক্ষিত রেসপন্স সংক্ষিপ্ত করা হয়েছে"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook's editor did not accept the formatted post. Posting was not submitted"
+msgstr "Facebook-এর সম্পাদক ফরম্যাট করা পোস্ট গ্রহণ করেনি। পোস্ট জমা দেওয়া হয়নি"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook's editor did not retain the formatted post text. Posting was not submitted"
+msgstr "ফেসবুকের সম্পাদক ফরম্যাট করা পোস্ট টেক্সটটি সংরক্ষণ করেনি। পোস্ট জমা দেওয়া হয়নি"
+
+#: src/components/LogMessage.svelte
+msgid "First post confirmed. Waiting for the Facebook composer to close…"
+msgstr "প্রথম পোস্ট নিশ্চিত করা হয়েছে। ফেসবুক কম্পোজার বন্ধ হওয়ার জন্য অপেক্ষা করা হচ্ছে…"
+
+#: src/components/LogMessage.svelte
+msgid "First submission unconfirmed. Retrying request 1/3 with the captured mutation ID…"
+msgstr "প্রথম জমা নিশ্চিত হয়নি। ক্যাপচার করা মিউটেশন আইডি দিয়ে অনুরোধটি 1/3 পুনরায় পাঠানো হচ্ছে…"
+
+#: src/components/LogMessage.svelte
+msgid "Formatted post is too large"
+msgstr "ফরম্যাট করা পোস্টটি খুব বড়"
+
+#: src/components/LogMessage.svelte
+msgid "Found multiple matching post composers on the group page"
+msgstr "গ্রুপ পৃষ্ঠায় একাধিক মেলানো পোস্ট কম্পোজার পাওয়া গেছে"
+
+#: src/components/LogMessage.svelte
+msgid "Fresh create-post form captured. Waiting for Facebook's response…"
+msgstr "নতুন পোস্ট ফর্ম ক্যাপচার করা হয়েছে। ফেসবুকের প্রতিক্রিয়ার জন্য অপেক্ষা করা হচ্ছে…"
+
+#: src/components/LogMessage.svelte
+msgid "Gemini did not finish the rewrite"
+msgstr "Gemini পুনঃলিখন শেষ করেনি"
+
+#: src/components/LogMessage.svelte
+msgid "Gemini returned no rewritten text"
+msgstr "Gemini কোন পুনঃলিখিত টেক্সট ফেরায়নি"
+
+#: src/components/LogMessage.svelte
+msgid "Gemini rewrite completed."
+msgstr "Gemini পুনঃলিখন সম্পন্ন হয়েছে।"
+
+#: src/components/LogMessage.svelte
+msgid "Gemini rewrite failed. Using the original text for this post; Gemini will be tried again for the next post."
+msgstr "Gemini পুনঃলিখন ব্যর্থ হয়েছে। এই পোস্টের জন্য মূল টেক্সট ব্যবহার করা হচ্ছে; পরবর্তী পোস্টের জন্য Geminiকে আবার চেষ্টা করা হবে।"
+
+#: src/components/LogMessage.svelte
+msgid "Image uploads belong to a different profile"
+msgstr "ছবি আপলোডগুলি ভিন্ন প্রোফাইলের"
+
+#: src/components/LogMessage.svelte
+msgid "Images inserted"
+msgstr "ছবি সংযুক্ত করা হয়েছে"
+
+#: src/components/LogMessage.svelte
+msgid "Inserting post body…"
+msgstr "পোস্ট বডি সংযুক্ত করা হচ্ছে…"
+
+#: src/components/LogMessage.svelte
+msgid "Internet connection lost. Queue paused until the connection returns."
+msgstr "ইন্টারনেট সংযোগ বন্ধ। সংযোগ ফিরে না আসা পর্যন্ত কিউ স্থগিত রাখা হয়েছে।"
+
+#: src/components/LogMessage.svelte
+msgid "Internet connection restored. Continuing the queue."
+msgstr "ইন্টারনেট সংযোগ পুনঃস্থাপিত। কিউ চলমান থাকবে।"
+
+#: src/components/LogMessage.svelte
+msgid "Internet connection restored. The queue remains manually paused."
+msgstr "ইন্টারনেট সংযোগ পুনঃস্থাপিত। কিউ ম্যানুয়ালি বিরত থাকবে।"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured endpoint"
+msgstr "অবৈধ ধরা নেওয়া এন্ডপয়েন্ট"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured formatted post"
+msgstr "অবৈধ ধরা নেওয়া ফরম্যাট করা পোস্ট"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured post form"
+msgstr "অবৈধ ধরা নেওয়া পোস্ট ফর্ম"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured post variables"
+msgstr "অবৈধ ধরা নেওয়া পোস্ট ভেরিয়েবলস"
+
+#: src/components/LogMessage.svelte
+msgid "Load your groups before opening a post"
+msgstr "পোস্ট খোলার আগে আপনার গ্রুপগুলি লোড করুন"
+
+#: src/components/LogMessage.svelte
+msgid "Log in or complete Facebook verification in Chrome, then click Post again"
+msgstr "Chrome-এ লগইন করুন বা Facebook যাচাই সম্পন্ন করুন, তারপর আবার পোস্ট ক্লিক করুন"
+
+#: src/components/LogMessage.svelte
+msgid "Multiple matching controls found in the post composer"
+msgstr "পোস্ট কম্পোজারের মধ্যে একাধিক মিলিত কন্ট্রোল পাওয়া গেছে"
+
+#: src/components/LogMessage.svelte
+msgid "No Facebook response was captured for this entry"
+msgstr "এই এন্ট্রির জন্য কোনো Facebook প্রতিক্রিয়া ধরা পড়েনি"
+
+#: src/components/LogMessage.svelte
+msgid "No available post composer."
+msgstr "কোনও উপলব্ধ পোস্ট কম্পোজার নেই।"
+
+#: src/components/LogMessage.svelte
+msgid "No complete image upload request was captured."
+msgstr "কোনও সম্পূর্ণ ইমেজ আপলোড অনুরোধ ধরা পড়েনি।"
+
+#: src/components/LogMessage.svelte
+msgid "No fresh image upload request was captured."
+msgstr "কোনও নতুন ইমেজ আপলোড অনুরোধ ধরা পড়েনি।"
+
+#: src/components/LogMessage.svelte
+msgid "Opening browser…"
+msgstr "ব্রাউজার খোলা হচ্ছে…"
+
+#: src/components/LogMessage.svelte
+msgid "Pause requested. The current operation will finish before pausing."
+msgstr "বিরতি অনুরোধ করা হয়েছে। চলমান অপারেশনটি সম্পন্ন হওয়ার পর বিরতি নেওয়া হবে।"
+
+#: src/components/LogMessage.svelte
+msgid "Post button clicked"
+msgstr "পোস্ট বোতাম ক্লিক করা হয়েছে"
+
+#: src/components/LogMessage.svelte
+msgid "Post published."
+msgstr "পোস্ট প্রকাশিত হয়েছে।"
+
+#: src/components/LogMessage.svelte
+msgid "Postika is shutting down"
+msgstr "Postika বন্ধ হচ্ছে"
+
+#: src/components/LogMessage.svelte
+msgid "Posting is already running"
+msgstr "পোস্টিং ইতিমধ্যেই চলছে"
+
+#: src/components/LogMessage.svelte
+msgid "Posting paused."
+msgstr "পোস্টিং সাময়িকভাবে বন্ধ করা হয়েছে।"
+
+#: src/components/LogMessage.svelte
+msgid "Posting resumed."
+msgstr "পোস্টিং পুনরায় শুরু হয়েছে।"
+
+#: src/components/LogMessage.svelte
+msgid "Posting stopped after the first post was confirmed"
+msgstr "প্রথম পোস্ট নিশ্চিত হওয়ার পরে পোস্টিং বন্ধ করা হয়েছে"
+
+#: src/components/LogMessage.svelte
+msgid "Posting..."
+msgstr "পোস্টিং চলেছে..."
+
+#: src/components/LogMessage.svelte
+msgid "Reading Facebook's create-post confirmation…"
+msgstr "Facebook-এর তৈরি-পোস্ট নিশ্চিতকরণ পড়া হচ্ছে…"
+
+#: src/components/LogMessage.svelte
+msgid "Rewriting the post body with Gemini…"
+msgstr "Gemini দিয়ে পোস্টের বিষয়বস্তু পুনঃলিখন করা হচ্ছে…"
+
+#: src/components/LogMessage.svelte
+msgid "Scheduled posting cancelled."
+msgstr "নির্ধারিত পোস্টিং বাতিল করা হয়েছে।"
+
+#: src/components/LogMessage.svelte
+msgid "Scheduled time reached. Starting posting…"
+msgstr "নির্ধারিত সময় এসেছে। পোস্টিং শুরু হচ্ছে…"
+
+#: src/components/LogMessage.svelte
+msgid "Select at least one group"
+msgstr "কমপক্ষে একটি গ্রুপ নির্বাচন করুন"
+
+#: src/components/LogMessage.svelte
+msgid "Setting up automatic posting using your first Facebook post..."
+msgstr "আপনার প্রথম Facebook পোস্ট ব্যবহার করে স্বয়ংক্রিয় পোস্টিং সেট আপ করা হচ্ছে..."
+
+#: src/components/LogMessage.svelte
+msgid "Stopping posting…"
+msgstr "পোস্টিং বন্ধ করা হচ্ছে…"
+
+#: src/components/LogMessage.svelte
+msgid "Submitting the first post and capturing fresh request values…"
+msgstr "প্রথম পোস্ট জমা দেওয়া হচ্ছে এবং নতুন অনুরোধের মান নথিভুক্ত করা হচ্ছে…"
+
+#: src/components/LogMessage.svelte
+#: src/components/LogMessage.svelte
+msgid "Technical details recorded. Open debug details to inspect the original message."
+msgstr "প্রযুক্তিগত বিশদ নথিভুক্ত হয়েছে। মূল বার্তা পরীক্ষা করতে ডিবাগের বিশদ খোলুন।"
+
+#: src/components/LogMessage.svelte
+msgid "The active Facebook profile changed or expired"
+msgstr "সক্রিয় Facebook প্রোফাইল পরিবর্তিত হয়েছে বা মেয়াদোত্তীর্ণ হয়েছে"
+
+#: src/components/LogMessage.svelte
+msgid "The browser connection was lost. Check Facebook before retrying"
+msgstr "ব্রাউজারের সংযোগ হারানো হয়েছে। পুনরায় চেষ্টা করার আগে Facebook পরীক্ষা করুন"
+
+#: src/components/LogMessage.svelte
+msgid "The browser profile changed while capturing posting requests"
+msgstr "পোস্টিং অনুরোধগুলি ক্যাপচার করার সময় ব্রাউজার প্রোফাইল পরিবর্তিত হয়েছে"
+
+#: src/components/LogMessage.svelte
+msgid "The captured formatted post body does not match your draft"
+msgstr "ধরা পড়া ফরম্যাট করা পোস্ট বডি আপনার খসড্রাফটের সাথে মেলে না"
+
+#: src/components/LogMessage.svelte
+msgid "The captured image upload cookies do not match the Facebook profile"
+msgstr "ধরা পড়া ইমেজ আপলোড কুকিজ ফেসবুক প্রোফাইলের সাথে মেলে না"
+
+#: src/components/LogMessage.svelte
+msgid "The captured image upload format is not supported"
+msgstr "ধরা পড়া ইমেজ আপলোড ফরম্যাট সমর্থিত নয়"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post belongs to a different Facebook profile"
+msgstr "ধরা পড়া পোস্টটি অন্য একটি ফেসবুক প্রোফাইলের"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post body does not match your draft"
+msgstr "ধরা পড়া পোস্ট বডি আপনার খসড্রাফটের সাথে মেলে না"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post cookies do not match the logged-in profile"
+msgstr "ধরা পড়া পোস্ট কুকিজ লগইন করা প্রোফাইলের সাথে মেলে না"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post has no group target"
+msgstr "ধরা পড়া পোস্টের কোন গ্রুপ লক্ষ্য নেই"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post target does not match the selected group"
+msgstr "ধরা পড়া পোস্টের লক্ষ্য নির্বাচিত গ্রুপের সাথে মেলে না"
+
+#: src/components/LogMessage.svelte
+msgid "The composer dialog was replaced while loading"
+msgstr "লোড করার সময় কম্পোজার ডায়ালগটি প্রতিস্থাপিত হয়েছে"
+
+#: src/components/LogMessage.svelte
+msgid "The create-post connection failed. Check Facebook before retrying"
+msgstr "পোস্ট তৈরি সংযোগ ব্যর্থ হয়েছে। পুনরায় চেষ্টা করার আগে ফেসবুক চেক করুন"
+
+#: src/components/LogMessage.svelte
+msgid "The current profile differs from the profile used to load groups. Load groups again."
+msgstr "বর্তমান প্রোফাইলটি গ্রুপ লোড করার জন্য ব্যবহৃত প্রোফাইল থেকে আলাদা। আবার গ্রুপ লোড করুন।"
+
+#: src/components/LogMessage.svelte
+msgid "The desktop application is not ready"
+msgstr "ডেস্কটপ অ্যাপ্লিকেশন প্রস্তুত নয়"
+
+#: src/components/LogMessage.svelte
+msgid "The desktop clipboard is not ready"
+msgstr "ডেস্কটপ ক্লিপবোর্ড প্রস্তুত নয়"
+
+#: src/components/LogMessage.svelte
+msgid "The expected composer control did not appear in Chrome"
+msgstr "ক্রোমে প্রত্যাশিত কম্পোজার কন্ট্রোল প্রদর্শিত হয়নি"
+
+#: src/components/LogMessage.svelte
+msgid "The first post was confirmed, but Chrome's completion state could not be checked. Posting stopped"
+msgstr "প্রথম পোস্টটি নিশ্চিত হয়েছে, কিন্তু ক্রোমের সম্পূর্ণতার অবস্থা পরীক্ষা করা যায়নি। পোস্টিং বন্ধ হয়েছে"
+
+#: src/components/LogMessage.svelte
+msgid "The image upload did not contain multipart form data"
+msgstr "ইমেজ আপলোডে মাল্টিপার্ট ফর্ম ডেটা নেই"
+
+#: src/components/LogMessage.svelte
+msgid "The image upload does not match its active Facebook profile"
+msgstr "ইমেজ আপলোডটি তার সক্রিয় ফেসবুক প্রোফাইলের সাথে মিলে না"
+
+#: src/components/LogMessage.svelte
+msgid "The image upload form belongs to a different Facebook profile"
+msgstr "ইমেজ আপলোড ফর্মটি অন্য ফেসবুক প্রোফাইলের"
+
+#: src/components/LogMessage.svelte
+msgid "The selected group has an invalid Facebook URL. Load groups again"
+msgstr "নির্বাচিত গ্রুপের ফেসবুক URL অবৈধ। আবার গ্রুপ লোড করুন"
+
+#: src/components/LogMessage.svelte
+msgid "The session could not be saved for posting retries and remaining groups."
+msgstr "পোস্ট পুনরায় চেষ্টা এবং অবশিষ্ট গ্রুপের জন্য সেশন সংরক্ষণ করা যায়নি।"
+
+#: src/components/LogMessage.svelte
+msgid "This draft has already been submitted to the first group. It was not submitted again."
+msgstr "এই খসড়া ইতিমধ্যেই প্রথম গ্রুপে জমা হয়েছে। এটি আবার জমা দেওয়া হয়নি।"
+
+#: src/components/LogMessage.svelte
+msgid "This group has no available post composer"
+msgstr "এই গ্রুপের কোনও উপলব্ধ পোস্ট কম্পোজার নেই"
+
+#: src/components/LogMessage.svelte
+msgid "This group has reached its pending-content limit."
+msgstr "এই গ্রুপ তার মুলতুবি-কনটেন্ট সীমায় পৌঁছেছে।"
+
+#: src/components/LogMessage.svelte
+msgid "This post was submitted, but confirmation is uncertain. Check Facebook before retrying."
+msgstr "এই পোস্টটি জমা দেওয়া হয়েছে, কিন্তু নিশ্চিতকরণ অনিশ্চিত। পুনরায় চেষ্টা করার আগে ফেসবুক পরীক্ষা করুন।"
+
+#: src/components/LogMessage.svelte
+msgid "This response is no longer available for the current run"
+msgstr "এই প্রতিক্রিয়া বর্তমানে রান-এর জন্য আর উপলব্ধ নেই"
+
+#: src/components/LogMessage.svelte
+msgid "Upload and post captures must belong to the same logged-in profile"
+msgstr "আপলোড এবং পোস্ট করা ক্যাপচার একই লগইন করা প্রোফাইলের অন্তর্ভুক্ত হতে হবে"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for Facebook's Post button…"
+msgstr "Facebook-এর পোস্ট বোতামের জন্য অপেক্ষা করা হচ্ছে…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the composer controls and layout…"
+msgstr "কম্পোজার নিয়ন্ত্রণ এবং লেআউটের জন্য অপেক্ষা করা হচ্ছে…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the group page and opening its composer…"
+msgstr "গ্রুপ পেজ এবং তার কম্পোজার খোলার জন্য অপেক্ষা করা হচ্ছে…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the image previews and composer to settle…"
+msgstr "ইমেজ প্রিভিউ এবং কম্পোজার ঠিক হওয়ার জন্য অপেক্ষা করা হচ্ছে…"
+
+#: src/components/LogMessage.svelte
+msgid "Your Facebook session needs login or verification. Load groups again."
+msgstr "আপনার Facebook সেশন লগইন বা যাচাইকরণ প্রয়োজন। গ্রুপগুলি আবার লোড করুন।"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Published to {0}."
+msgstr "{0} এ প্রকাশিত।"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "{0}: Awaiting admin approval."
+msgstr "{0}: অ্যাডমিন অনুমোদনের জন্য অপেক্ষা করছে।"
+
+#. 0: number(a); 1: b
+#: src/components/LogMessage.svelte
+msgid "Waiting {0} seconds before posting to {1}."
+msgstr "{1}-এ পোস্ট করার আগে {0} সেকেন্ড অপেক্ষা করুন।"
+
+#. 0: a; 1: b
+#: src/components/LogMessage.svelte
+msgid "Next post in {0} · {1}"
+msgstr "পরবর্তী পোস্ট {0} · {1}"
+
+#. 0: a; 1: number(b); 2: number(c)
+#: src/components/LogMessage.svelte
+msgid "{0}: Uploading photo {1} of {2}…"
+msgstr "{0}: ফটো {2} এর {1} আপলোড করা হচ্ছে…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Preparing a post for {0}…"
+msgstr "{0}-এর জন্য একটি পোস্ট প্রস্তুত করা হচ্ছে…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Uploading images for {0}…"
+msgstr "{0}-এর জন্য চিত্র আপলোড করা হচ্ছে…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Posting to {0}…"
+msgstr "{0}-এ পোস্ট করা হচ্ছে…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Fresh upload and post request values captured from {0}."
+msgstr "{0}-থেকে নতুন আপলোড এবং পোস্ট অনুরোধের মান সংগ্রহ করা হয়েছে।"
+
+#. 0: number(a); 1: number(b)
+#: src/components/LogMessage.svelte
+msgid "Submission unconfirmed. Retrying request {0}/{1}…"
+msgstr "জমা নিশ্চিত নয়। অনুরোধ {0}/{1} পুনরায় চেষ্টা করা হচ্ছে…"
+
+#. 0: number(a); 1: number(b); 2: number(c)
+#: src/components/LogMessage.svelte
+msgid "Finished: {0} published, {1} awaiting approval, {2} failed or skipped."
+msgstr "সম্পন্ন হয়েছে: {0} প্রকাশিত, {1} অনুমোদনের অপেক্ষায়, {2} ব্যর্থ বা এড়ানো হয়েছে।"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Opening {0}…"
+msgstr "{0} খোলা হচ্ছে…"
+
+#. 0: number(a); 1: number(b)
+#: src/components/LogMessage.svelte
+msgid "Capturing image uploads ({0} of {1})…"
+msgstr "ছবি আপলোড করা হচ্ছে ({0} এর {1})…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Gemini rewrite failed (HTTP {0}). Check the key, model and account quota"
+msgstr "Gemini পুনর্লিখন ব্যর্থ হয়েছে (HTTP {0})। কী, মডেল এবং অ্যাকাউন্ট কোটা পরীক্ষা করুন"
+
+#. 0: code
+#: src/components/LogMessage.svelte
+msgid " (Code {0})"
+msgstr "(কোড {0})"
+
+#: src/components/PostingLogView.svelte
+msgid "Debug details"
+msgstr "ডিবাগ বিবরণ"
+
+#~ msgid ", "
+#~ msgstr ""
+
+#: src/components/ThemePicker.svelte
+msgid "Themes"
+msgstr "থিম"
+
+#: src/App.svelte
+msgid "Preferences & post"
+msgstr "পছন্দ ও পোস্ট"
+
+#: src/App.svelte
+#: src/App.svelte
+msgid "Set preferences, then post now or schedule"
+msgstr "পছন্দ নির্ধারণ করুন, তারপর এখনই পোস্ট করুন বা সময়সূচি নির্ধারণ করুন"

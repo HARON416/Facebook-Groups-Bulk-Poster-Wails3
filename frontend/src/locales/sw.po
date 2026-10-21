@@ -1,0 +1,1836 @@
+msgid ""
+msgstr ""
+"Source-Language: en\n"
+"Language: sw\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2\n"
+"X-Plurals-Order: one, other\n"
+
+#. 0: minimumInterval === maximumInterval ? minimumInterval \\: `${minimumInterval}–${maximumInterval}`; 1: rewriteState
+#: src/App.svelte
+msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
+msgstr "Mabadiliko yaliyohifadhiwa yametumika: {0} sekunde kati ya machapisho · Tena andika Gemini {1}."
+
+#: src/App.svelte
+msgid "Could not restore saved groups. Load groups to refresh the list."
+msgstr "Haiwezi kurejesha makundi yaliyohifadhiwa. Pakia makundi ili kusasisha orodha."
+
+#: src/App.svelte
+msgid "Choose a future date and time for your post."
+msgstr "Chagua tarehe na wakati wa baadaye kwa chapisho lako."
+
+#: src/App.svelte
+msgid "Saving your scheduled queue…"
+msgstr "Kuhifadhi safu yako iliyo ratibiwa…"
+
+#: src/App.svelte
+msgid "Opening a selected group to capture fresh posting requests…"
+msgstr "Kufungua kundi lililochaguliwa ili kuchukua maombi mapya ya chapisho…"
+
+#: src/App.svelte
+#: src/App.svelte
+#: src/components/LogMessage.svelte
+msgid "Posting stopped."
+msgstr "Kuchapisha kumesimama."
+
+#: src/App.svelte
+#: src/components/LogMessage.svelte
+msgid "Could not read a selected image"
+msgstr "Haiwezi kusoma picha iliyochaguliwa"
+
+#. 0: image.file.name
+#. 0: missingNames
+#. 0: unreadableNames
+#. 0: image.file.name
+#: src/App.svelte
+#: src/App.svelte
+#: src/components/PostComposer.svelte
+#: src/components/PostComposer.svelte
+msgid "Could not read {0}"
+msgstr "Haiwezi kusoma {0}"
+
+#: src/App.svelte
+msgid "Posting finished."
+msgstr "Kuchapisha kumekamilika."
+
+#. 0: scheduleLabel(scheduledFor)
+#. 0: date
+#: src/App.svelte
+#: src/components/LogMessage.svelte
+msgid "Scheduled for {0}. Keep Postika open and your computer awake."
+msgstr "Imewekwa kwa {0}. Weka Postika wazi na kompyuta yako ikiwa iko hai."
+
+#: src/App.svelte
+msgid "Could not restore this account’s draft. New edits will stay available while Postika is open."
+msgstr "Haiwezi kurejesha rasimu ya akaunti hii. Mabadiliko mapya yataendelea kuwepo wakati Postika iko wazi."
+
+#: src/App.svelte
+msgid "Could not add the dropped images. Try browsing for them instead."
+msgstr "Haiwezi kuongeza picha zilizofutwa. Jaribu kuzikatafuta badala yake."
+
+#: src/App.svelte
+msgid "Could not save this account’s draft to disk. Keep Postika open to retain your edits."
+msgstr "Haiwezi kuhifadhi rasimu ya akaunti hii kwenye diski. Weka Postika wazi ili kuhifadhi mabadiliko yako."
+
+#: src/App.svelte
+msgid "Start with your message. Add images to bring it to life."
+msgstr "Anza na ujumbe wako. Ongeza picha kuupa uhai."
+
+#: src/App.svelte
+msgid "Choose the groups you want to share your post with."
+msgstr "Chagua makundi unayotaka kushirikisha chapisho lako nao."
+
+#~ msgid "Review your post and preferences, then post now or schedule for later."
+#~ msgstr "Pitia chapisho lako na mapendeleo yako, kisha chapisha sasa au panga kwa wakati mwingine."
+
+#. 0: currentStep + 1; 1: steps.length
+#: src/App.svelte
+msgid "STEP {0} OF {1}"
+msgstr "HATUA {0} YA {1}"
+
+#: src/App.svelte
+msgid "Restoring account workspace…"
+msgstr "Kurejesha eneo la kazi la akaunti…"
+
+#: src/App.svelte
+msgid "Opening…"
+msgstr "Kufungua…"
+
+#: src/App.svelte
+msgid "Loading…"
+msgstr "Inapakia…"
+
+#: src/App.svelte
+msgid "Load groups"
+msgstr "Pakia vikundi"
+
+#: src/App.svelte
+msgid "Groups"
+msgstr "Vikundi"
+
+#: src/App.svelte
+msgid "Search groups…"
+msgstr "Tafuta vikundi…"
+
+#: src/App.svelte
+msgid "Clear group search"
+msgstr "Futa utafutaji wa kikundi"
+
+#: src/App.svelte
+msgid "Search groups"
+msgstr "Tafuta vikundi"
+
+#: src/App.svelte
+msgid "Select all groups"
+msgstr "Chagua vikundi vyote"
+
+#: src/App.svelte
+msgid "Unselect all groups"
+msgstr "Ondoa chaguo la vikundi vyote"
+
+#~ msgid "{0} selected{1}"
+#~ msgstr ""
+
+#: src/App.svelte
+msgid "Searching…"
+msgstr "Inatafuta…"
+
+#: src/App.svelte
+msgid "No groups found. Try another search."
+msgstr "Hakuna makundi yaliyopatikana. Jaribu utafutaji mwingine."
+
+#: src/App.svelte
+msgid "Joined groups"
+msgstr "Makundi uliyyojiunga nayo"
+
+#: src/App.svelte
+msgid "No groups loaded yet."
+msgstr "Hakuna makundi yaliyopakiwa bado."
+
+#: src/App.svelte
+msgid "Open your Facebook groups to get started."
+msgstr "Fungua makundi yako ya Facebook ili kuanza."
+
+#: src/App.svelte
+msgid "Posting settings"
+msgstr "Mipangilio ya kuchapisha"
+
+#: src/App.svelte
+msgid "Add a Gemini API key in Settings to enable rewriting."
+msgstr "Ongeza ufunguo wa Gemini API kwenye Mipangilio ili kuwezesha uandishi upya."
+
+#: src/App.svelte
+msgid "Applying defaults…"
+msgstr "Kutumia chaguo msingi…"
+
+#: src/App.svelte
+msgid "Use saved defaults"
+msgstr "Tumia chaguo msingi zilizohifadhiwa"
+
+#: src/App.svelte
+msgid "Open settings"
+msgstr "Fungua mipangilio"
+
+#~ msgid "Posting as <0/>"
+#~ msgstr "Kuchapisha kama <0/>"
+
+#~ msgid "Review your post<0>{0} images · {1} groups selected</0>"
+#~ msgstr "Pitia chapisho lako<0>{0} picha · {1} makundi yaliyochaguliwa</0>"
+
+#~ msgid "Original post"
+#~ msgstr "Chapisho la awali"
+
+#~ msgid "Your post"
+#~ msgstr "Chapisho lako"
+
+#~ msgid "Gemini will rewrite this body for each group using your instructions."
+#~ msgstr "Gemini itaunda upya mwili huu kwa kila kundi ikitumia maelekezo yako."
+
+#~ msgid "Selected groups ({0})"
+#~ msgstr "Makundi yaliyochaguliwa ({0})"
+
+#: src/App.svelte
+msgid "Schedule your queue"
+msgstr "Panga foleni yako"
+
+#. 0: Intl.DateTimeFormat().resolvedOptions().timeZone
+#: src/App.svelte
+msgid "Time zone: {0}. Keep Postika open and your computer awake. Facebook may ask you to sign in when posting starts."
+msgstr "Mkoa wa wakati: {0}. Weka Postika wazi na kompyuta yako ikiwe macho. Facebook inaweza kukuuliza uingie unapoanza kuchapisha."
+
+#: src/App.svelte
+#: src/Workspace.svelte
+msgid "Cancel"
+msgstr "Ghairi"
+
+#: src/App.svelte
+msgid "Confirm schedule"
+msgstr "Thibitisha ratiba"
+
+#: src/App.svelte
+msgid "Next <0/>"
+msgstr "Endelea <0/>"
+
+#: src/App.svelte
+msgid "View logs"
+msgstr "Angalia rekodi"
+
+#: src/App.svelte
+#: src/components/PostingLogView.svelte
+msgid "Stop"
+msgstr "Simamisha"
+
+#: src/App.svelte
+#: src/Workspace.svelte
+#: src/components/PostingLogView.svelte
+msgid "Scheduled"
+msgstr "Imepangwa"
+
+#: src/App.svelte
+msgid "Posting…"
+msgstr "Inachapisha…"
+
+#: src/App.svelte
+msgid "Post now"
+msgstr "Chapisha sasa"
+
+#: src/App.svelte
+msgid "Schedule"
+msgstr "Panga"
+
+#: src/App.svelte
+msgid "<0/> Previous"
+msgstr "<0/> Rudi"
+
+#: src/Workspace.svelte
+msgid "Application menu"
+msgstr "Menyu ya programu"
+
+#: src/Workspace.svelte
+msgid "Add account"
+msgstr "Ongeza akaunti"
+
+#: src/Workspace.svelte
+#: src/components/PostingLogView.svelte
+#: src/components/PostingLogView.svelte
+msgid "Posting logs"
+msgstr "Kumbukumbu za uchapishaji"
+
+#: src/Workspace.svelte
+#: src/components/Settings.svelte
+#: src/components/Settings.svelte
+msgid "Settings"
+msgstr "Mipangilio"
+
+#: src/Workspace.svelte
+msgid "Creating…"
+msgstr "Inaundwa…"
+
+#: src/Workspace.svelte
+msgid "Create & sign in"
+msgstr "Tengeneza na uingie"
+
+#: src/Workspace.svelte
+msgid "Account name"
+msgstr "Jina la akaunti"
+
+#: src/Workspace.svelte
+msgid "Sign in to Facebook in the new account’s browser window."
+msgstr "Ingia kwenye Facebook kupitia dirisha la kivinjari la akaunti mpya."
+
+#: src/Workspace.svelte
+msgid "Running"
+msgstr "Inakimbia"
+
+#: src/Workspace.svelte
+msgid "In the background: <0/>"
+msgstr "Kwenye nyuma: <0/>"
+
+#: src/Workspace.svelte
+msgid "Loading accounts…"
+msgstr "Inapakia akaunti…"
+
+#: src/components/AccountDropdown.svelte
+msgid "Loading accounts"
+msgstr "Inapakia akaunti"
+
+#. 0: current?.name ?? 'Loading accounts'
+#: src/components/AccountDropdown.svelte
+msgid "Account: {0}"
+msgstr "Akaunti: {0}"
+
+#: src/components/AccountDropdown.svelte
+msgid "Select account"
+msgstr "Chagua akaunti"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search accounts…"
+msgstr "Tafuta akaunti…"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search accounts"
+msgstr "Tafuta akaunti"
+
+#: src/components/AccountDropdown.svelte
+msgid "Clear account search"
+msgstr "Futa utafutaji wa akaunti"
+
+#: src/components/AccountDropdown.svelte
+msgid "All accounts"
+msgstr "Akaunti zote"
+
+#: src/components/AccountDropdown.svelte
+msgid "Accounts"
+msgstr "Akaunti"
+
+#: src/components/AccountDropdown.svelte
+msgid "No accounts found"
+msgstr "Hakuna akaunti zilizopatikana"
+
+#: src/components/AccountDropdown.svelte
+#: src/components/ThemePicker.svelte
+msgid "Try a different name."
+msgstr "Jaribu jina lingine."
+
+#: src/components/ConnectivityToast.svelte
+msgid "You’re back online"
+msgstr "Umerudi mtandaoni"
+
+#: src/components/ConnectivityToast.svelte
+msgid "Internet connection lost"
+msgstr "Muunganisho wa intaneti umepotea"
+
+#: src/components/ConnectivityToast.svelte
+msgid "Your queue is still manually paused."
+msgstr "Kila kitu cha foleni yako bado kimezimwa kwa mkono."
+
+#: src/components/ConnectivityToast.svelte
+msgid "Your queue will continue automatically."
+msgstr "Foleni yako itaendelea kiotomatiki."
+
+#: src/components/ConnectivityToast.svelte
+msgid "Your queue is paused. We’ll continue when the connection returns."
+msgstr "Foleni yako imezimwa. Tutaendelea muda muunganisho utakaporudi."
+
+#: src/components/ConnectivityToast.svelte
+msgid "Dismiss connection notification"
+msgstr "Futa taarifa ya muunganisho"
+
+#: src/components/DateTimePicker.svelte
+msgid "Choose a date and time"
+msgstr "Chagua tarehe na muda"
+
+#: src/components/DateTimePicker.svelte
+msgid "Select date"
+msgstr "Chagua tarehe"
+
+#: src/components/DateTimePicker.svelte
+msgid "Choose a weekday for this post"
+msgstr "Chagua siku ya wiki kwa chapisho hili"
+
+#. 0: day.description
+#: src/components/DateTimePicker.svelte
+msgid "Select {0}"
+msgstr "Chagua {0}"
+
+#: src/components/DateTimePicker.svelte
+msgid "Previous month"
+msgstr "Mwezi uliopita"
+
+#: src/components/DateTimePicker.svelte
+msgid "Next month"
+msgstr "Mwezi ujao"
+
+#: src/components/DateTimePicker.svelte
+#: src/components/DateTimePicker.svelte
+msgid "Select time"
+msgstr "Chagua wakati"
+
+#: src/components/DateTimePicker.svelte
+msgid "24-hour clock"
+msgstr "Saa ya saa 24"
+
+#: src/components/DateTimePicker.svelte
+msgid "Increase hour"
+msgstr "Ongeza saa"
+
+#: src/components/DateTimePicker.svelte
+#: src/components/DateTimePicker.svelte
+msgid "Hour"
+msgstr "Saa"
+
+#: src/components/DateTimePicker.svelte
+msgid "Decrease hour"
+msgstr "Punguza saa"
+
+#: src/components/DateTimePicker.svelte
+msgid "Increase minute"
+msgstr "Ongeza dakika"
+
+#: src/components/DateTimePicker.svelte
+#: src/components/DateTimePicker.svelte
+msgid "Minute"
+msgstr "Dakika"
+
+#: src/components/DateTimePicker.svelte
+msgid "Decrease minute"
+msgstr "Punguza dakika"
+
+#: src/components/DateTimePicker.svelte
+msgid "Choose a date and time in the future."
+msgstr "Chagua tarehe na wakati wa siku zijazo."
+
+#. 0: rejected.join(', ')
+#: src/components/PostComposer.svelte
+msgid "Unsupported files: {0}. Choose JPG, PNG, WebP, or GIF images."
+msgstr "Faili zisizoungwa mkono: {0}. Chagua picha za JPG, PNG, WebP, au GIF."
+
+#. 0: image.file.name
+#: src/components/PostComposer.svelte
+msgid "Could not preview {0}. Please choose another image."
+msgstr "Haiwezi kuonesha awali {0}. Tafadhali chagua picha nyingine."
+
+#. 0: images[index].file.name; 1: index + 1; 2: images.length
+#: src/components/PostComposer.svelte
+msgid "{0} moved to position {1} of {2}."
+msgstr "{0} ilihamishwa kwenye nafasi ya {1} kati ya {2}."
+
+#: src/components/PostComposer.svelte
+#: src/components/PostEditorContent.svelte
+msgid "Post body"
+msgstr "Maandishi ya chapisho"
+
+#: src/components/PostComposer.svelte
+#: src/components/PostComposer.svelte
+msgid "Required"
+msgstr "Inahitajika"
+
+#: src/components/PostComposer.svelte
+msgid "Images"
+msgstr "Picha"
+
+#: src/components/PostComposer.svelte
+msgid "Choose images"
+msgstr "Chagua picha"
+
+#: src/components/PostComposer.svelte
+msgid "Drop images here or <0>browse images</0>"
+msgstr "Mimina picha hapa au <0>vinjari picha</0>"
+
+#: src/components/PostComposer.svelte
+msgid "JPG, PNG, WebP, or GIF · Select multiple images"
+msgstr "JPG, PNG, WebP, au GIF · Chagua picha nyingi"
+
+#~ msgid "{0} {1} selected"
+#~ msgstr ""
+
+#: src/components/PostComposer.svelte
+msgid "Add more"
+msgstr "Ongeza zaidi"
+
+#: src/components/PostComposer.svelte
+msgid "Drag images to rearrange. Or focus an image and use Alt + Left / Right."
+msgstr "Vuta picha kupanga upya. Au zingatia picha na tumia Alt + Kushoto / Kulia."
+
+#: src/components/PostComposer.svelte
+msgid "Selected images"
+msgstr "Picha zilizochaguliwa"
+
+#. 0: image.file.name; 1: images.indexOf(image) + 1; 2: images.length
+#: src/components/PostComposer.svelte
+msgid "{0}, image {1} of {2}"
+msgstr "{0}, picha {1} ya {2}"
+
+#. 0: image.file.name
+#: src/components/PostComposer.svelte
+msgid "Remove {0}"
+msgstr "Ongeza {0}"
+
+#: src/components/PostComposer.svelte
+msgid "Drop more images here to add them."
+msgstr "Mimina picha zaidi hapa kuongeza."
+
+#. 0: error
+#: src/components/PostEditor.svelte
+msgid "Could not edit the post: {0}"
+msgstr "Haiwezi kuhariri chapisho: {0}"
+
+#: src/components/PostEditorContent.svelte
+msgid "Post editor controls"
+msgstr "Vikundi vya kuhariri chapisho"
+
+#: src/components/PostEditorContent.svelte
+msgid "Text formatting"
+msgstr "Ufafanuzi wa maandishi"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bold (Ctrl+B)"
+msgstr "Nguvu (Ctrl+B)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bold"
+msgstr "Nguvu"
+
+#: src/components/PostEditorContent.svelte
+msgid "Italic (Ctrl+I)"
+msgstr "Italic (Ctrl+I)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Italic"
+msgstr "Kiarabuni"
+
+#: src/components/PostEditorContent.svelte
+msgid "Heading 1"
+msgstr "Kichwa 1"
+
+#: src/components/PostEditorContent.svelte
+msgid "Heading 2"
+msgstr "Kichwa 2"
+
+#: src/components/PostEditorContent.svelte
+msgid "Quote"
+msgstr "Nukuu"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bullet list"
+msgstr "Orodha ya alama"
+
+#: src/components/PostEditorContent.svelte
+msgid "Numbered list"
+msgstr "Orodha nambari"
+
+#: src/components/PostEditorContent.svelte
+msgid "Undo (Ctrl+Z)"
+msgstr "Ghairi (Ctrl+Z)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Undo"
+msgstr "Ghairi"
+
+#: src/components/PostEditorContent.svelte
+msgid "Redo (Ctrl+Shift+Z)"
+msgstr "Rudia (Ctrl+Shift+Z)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Redo"
+msgstr "Rudia"
+
+#: src/components/PostEditorContent.svelte
+msgid "What would you like to share?"
+msgstr "Ungependa kushiriki nini?"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bold, italic, headings, quotes, and lists · Markdown shortcuts supported"
+msgstr "Nguvu, kiarabuni, vichwa, nukuu, na orodha · Njia za mkato za Markdown zinaungwa mkono"
+
+#. 0: body.length.toLocaleString(getLocale())
+#: src/components/PostEditorContent.svelte
+msgid "{0} characters"
+msgstr "{0} wahusika"
+
+#: src/components/LogMessage.svelte
+msgid "Ready to post."
+msgstr "Tayari kuchapisha."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook response copied."
+msgstr "Jibu la Facebook limeakibishwa."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook response received"
+msgstr "Jibu la Facebook limepokelewa"
+
+#: src/components/PostingLogView.svelte
+msgid "POSTIKA / ACTIVITY"
+msgstr "POSTIKA / SHUGHULI"
+
+#: src/components/PostingLogView.svelte
+msgid "Posting progress"
+msgstr "Kazi ya chapisho"
+
+#. 0: activity?.processed || 0; 1: activity?.total || 0
+#: src/components/PostingLogView.svelte
+msgid "{0}/{1} groups processed"
+msgstr "{0}/{1} makundi yamechakatwa"
+
+#. 0: percentage
+#: src/components/PostingLogView.svelte
+msgid "{0}% complete"
+msgstr "{0}% imekamilika"
+
+#: src/components/PostingLogView.svelte
+msgid "Groups processed"
+msgstr "Makundi yaliyoshughulikiwa"
+
+#: src/components/PostingLogView.svelte
+msgid "Published"
+msgstr "Yamechapishwa"
+
+#: src/components/PostingLogView.svelte
+msgid "Awaiting approval"
+msgstr "Kusubiri idhini"
+
+#: src/components/PostingLogView.svelte
+msgid "Failed or skipped"
+msgstr "Imeshindikana au imekwepa"
+
+#: src/components/PostingLogView.svelte
+msgid "Remaining"
+msgstr "Kilio"
+
+#. 0: number(a); 1: number(b); 2: c
+#. 0: activity.current; 1: activity.total; 2: activity.currentGroup.name
+#: src/components/LogMessage.svelte
+#: src/components/PostingLogView.svelte
+msgid "Group {0}/{1}: {2}"
+msgstr "Kundi {0}/{1}: {2}"
+
+#. 0: pauseRequested ? /* @wc-include */ ' · Paused' \\: ''
+#: src/components/PostingLogView.svelte
+msgid "Next post in <0/>{0}"
+msgstr "Chapisho lijalo kwenye <0/>{0}"
+
+#: src/components/PostingLogView.svelte
+msgid "Elapsed <0/>"
+msgstr "Iliyopita <0/>"
+
+#: src/components/PostingLogView.svelte
+msgid "Current group <0/>"
+msgstr "Kundi la sasa <0/>"
+
+#: src/components/PostingLogView.svelte
+msgid "Following latest"
+msgstr "Kufuata za hivi karibuni"
+
+#: src/components/PostingLogView.svelte
+msgid "Jump to latest"
+msgstr "Ruka hadi za hivi karibuni"
+
+#. 0.0: total
+#: src/components/PostingLogView.svelte
+msgid "Activity timeline <0>{0} logs</0>"
+msgstr "Mfuatano wa shughuli <0>{0} maandishi</0>"
+
+#: src/components/PostingLogView.svelte
+msgid "Posting activity"
+msgstr "Shughuli ya chapisho"
+
+#. 0: entryLabel(entry)
+#: src/components/PostingLogView.svelte
+msgid "{0} log"
+msgstr "{0} logi"
+
+#. 0: itemTime(entry.message)
+#: src/components/PostingLogView.svelte
+msgid "Took {0}"
+msgstr "Ilichukua {0}"
+
+#: src/components/PostingLogView.svelte
+#: src/components/PostingLogView.svelte
+msgid "Copy Facebook response"
+msgstr "Nakili jibu la Facebook"
+
+#: src/components/PostingLogView.svelte
+msgid "Response copied"
+msgstr "Jibu limenakiliwa"
+
+#: src/components/PostingLogView.svelte
+msgid "Copied"
+msgstr "Imenakiliwa"
+
+#: src/components/PostingLogView.svelte
+msgid "Copying…"
+msgstr "Kunanakili…"
+
+#: src/components/PostingLogView.svelte
+msgid "Copy response"
+msgstr "Nakili jibu"
+
+#. 0.0: entry.hasResponse ? /* @wc-include */ ' · Response available to copy' \\: ''
+#: src/components/PostingLogView.svelte
+msgid "Debug details<0>Original log message{0}</0>"
+msgstr "Maelezo ya kutatua tatizo<0>Ujumbe wa logi wa awali{0}</0>"
+
+#: src/components/PostingLogView.svelte
+msgid "Your activity will appear here"
+msgstr "Shughuli zako zitaonekana hapa"
+
+#: src/components/PostingLogView.svelte
+msgid "Start posting to follow uploads, results, and wait times."
+msgstr "Anza kuposti ili kufuata uploads, matokeo, na muda wa kusubiri."
+
+#: src/components/PostingLogView.svelte
+msgid "Log pages"
+msgstr "Kurasa za logi"
+
+#: src/components/PostingLogView.svelte
+msgid "Previous page"
+msgstr "Ukurasa uliotangulia"
+
+#. 0: number
+#: src/components/PostingLogView.svelte
+msgid "Page {0}"
+msgstr "Ukurasa {0}"
+
+#: src/components/PostingLogView.svelte
+msgid "Next page"
+msgstr "Ukurasa unaofuata"
+
+#: src/components/PostingLogView.svelte
+msgid "← Prev"
+msgstr "← Awali"
+
+#: src/components/PostingLogView.svelte
+msgid "Next →"
+msgstr "Ifuatayo →"
+
+#. 0: total ? (page - 1) * pageSize + 1 \\: 0; 1: Math.min(page * pageSize, total); 2: total
+#: src/components/PostingLogView.svelte
+msgid "{0}–{1} of {2} logs"
+msgstr "{0}–{1} ya logi {2}"
+
+#: src/components/PostingLogView.svelte
+msgid "Resume"
+msgstr "Endelea"
+
+#: src/components/PostingLogView.svelte
+msgid "Pause"
+msgstr "Sitisha"
+
+#: src/components/PostingLogView.svelte
+msgid "Stopping…"
+msgstr "Kukomesha…"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "POSTING PACE"
+msgstr "KASI YA KUPOSTI"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Interval between posts"
+msgstr "Kipindi kati ya posti"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Minimum (seconds)"
+msgstr "Chini kabisa (sekunde)"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Maximum (seconds)"
+msgstr "Juu kabisa (sekunde)"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Choose how long to wait before posting to the next group."
+msgstr "Chagua muda wa kusubiri kabla ya kuposti kwenye kundi la pili."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "At least 60 seconds. Use equal values for a fixed interval."
+msgstr "Angalau sekunde 60. Tumia thamani sawa kwa kipindi kilichowekwa."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "OPTIONAL · AI REWRITE"
+msgstr "HIARI · ANDIKA UPYA KWA AI"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "A fresh version for each group"
+msgstr "Tafsiri safi kwa kila kundi"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Rewrite each post body with Gemini"
+msgstr "Andika upya kila mwili wa posti kwa Gemini"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
+msgstr "Maelekezo ya kuandika upya<0>Chagua mtindo na maelezo ambayo Gemini inapaswa kuhifadhi.</0>"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Keep it concise and easy to scan. Preserve the price and contact details."
+msgstr "Hifadhi kuwa fupi na rahisi kusoma. Hifadhi bei na maelezo ya mawasiliano."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Rewrite instructions"
+msgstr "Maelekezo ya kuandika upya"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
+msgstr "Maandishi yako ya chapisho na maelekezo yanatumwa kwa Google Gemini. Picha hazitumwi. Kuandika upya kwa Gemini kunatumia maandishi ya kawaida."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
+msgstr "Ikiwa kuandika upya kunaishindwa, chapisho hilo litatumia maandishi yako ya awali. Chapisho linalofuata litajaribu tena Gemini."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Let Gemini rewrite your post using your instructions."
+msgstr "Wacha Gemini iandike upya chapisho lako kwa kutumia maelekezo yako."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Posting preferences"
+msgstr "Mapendeleo ya chapisho"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved defaults help"
+msgstr "Chaguo lililohifadhiwa husaidia"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "About saved defaults"
+msgstr "Kuhusu chaguo lililohifadhiwa"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved interval"
+msgstr "Kipindi kilichohifadhiwa"
+
+#. 0: settings.minimumInterval === settings.maximumInterval ? settings.minimumInterval \\: `${settings.minimumInterval}–${settings.maximumInterval}`
+#: src/components/SavedDefaultsInfo.svelte
+msgid "{0} seconds"
+msgstr "{0} sekunde"
+
+#: src/App.svelte
+#: src/components/SavedDefaultsInfo.svelte
+msgid "On"
+msgstr "On"
+
+#: src/App.svelte
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Off"
+msgstr "Off"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Gemini rewrite"
+msgstr "Kuandika upya kwa Gemini"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "No instructions saved."
+msgstr "Hakuna maelekezo yaliyo hifadhiwa."
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved rewrite instructions"
+msgstr "Maelekezo ya kuandika upya yaliyo hifadhiwa"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved values could not be loaded. Try “Use saved defaults” again."
+msgstr "Thamani zilizohifadhiwa haziwezi kupakuliwa. Jaribu “Tumia chaguo lililohifadhiwa” tena."
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "What does “Use saved defaults” do?"
+msgstr "“Nini hufanywa na ‘Tumia chaguo lililohifadhiwa’?”"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
+msgstr "Inabadilisha kipindi cha uchapishaji cha mlolongo huu, chaguo la kuandika upya la Gemini, na maagizo ya kuandika upya na thamani zilizo hifadhiwa katika Mipangilio."
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
+msgstr "Chaguo-msingi za awali: sekunde 60–120, kuandika upya Gemini imezimwa, na hakuna maagizo ya kuandika upya. Hifadhi mapendeleo yako katika Mipangilio ili kuyabadilisha."
+
+#: src/components/Settings.svelte
+msgid "Settings saved. New runs can use these defaults."
+msgstr "Mipangilio imahifadhiwa. Mlolongo mipya unaweza kutumia chaguo-msingi hizi."
+
+#: src/components/Settings.svelte
+msgid "Key saved · leave blank to keep it"
+msgstr "Kwa kufungua kuu · acha wazi ili kuendelea kuihifadhi"
+
+#: src/components/Settings.svelte
+msgid "Enter your Gemini API key"
+msgstr "Weka funguo yako ya API ya Gemini"
+
+#: src/components/Settings.svelte
+msgid "A key is saved on this device."
+msgstr "Kifaa hiki kimehifadhi funguo."
+
+#: src/components/Settings.svelte
+msgid "No API key saved."
+msgstr "Hakuna kiambatisho cha API kilichohifadhiwa."
+
+#: src/components/Settings.svelte
+msgid "Remove saved key"
+msgstr "Ondoa kiambatisho kilichohifadhiwa"
+
+#: src/components/Settings.svelte
+msgid "Gemini"
+msgstr "Gemini"
+
+#: src/components/Settings.svelte
+msgid "API key<0/>"
+msgstr "Funguo ya API<0/>"
+
+#. 0: keyConfigured ? 'A key is saved on this device.' \\: 'No API key saved.'
+#: src/components/Settings.svelte
+msgid "{0} The saved key is never displayed."
+msgstr "{0} Kifunguo kilichohifadhiwa hakionyeshwi kamwe."
+
+#: src/components/Settings.svelte
+msgid "Model<0/>"
+msgstr "Mfano<0/>"
+
+#: src/components/Settings.svelte
+msgid "Posting defaults"
+msgstr "Mipangilio chaguomsingi ya machapisho"
+
+#: src/components/Settings.svelte
+msgid "Applied when you start a new posting run."
+msgstr "Inatekelezwa unapoanzisha mlolongo mpya wa uchapishaji."
+
+#: src/components/Settings.svelte
+msgid "Saving…"
+msgstr "Inahifadhiwa…"
+
+#: src/components/Settings.svelte
+msgid "Save settings"
+msgstr "Hifadhi mipangilio"
+
+#: src/components/Settings.svelte
+msgid "YOUR PREFERENCES"
+msgstr "MAPENDELEO YAKO"
+
+#. 0: accountName
+#: src/components/Settings.svelte
+msgid "Set up Gemini and save posting defaults for {0}."
+msgstr "Sanidi Gemini na hifadhi chaguo-msingi za uchapishaji kwa {0}."
+
+#: src/components/StepProgress.svelte
+msgid "Completed"
+msgstr "Imekamilika"
+
+#: src/components/StepProgress.svelte
+msgid "Current"
+msgstr "Sasa"
+
+#: src/components/StepProgress.svelte
+msgid "Upcoming"
+msgstr "Ijayo"
+
+#. 0: index + 1; 1: steps.length; 2: completed || index < currentStep ? 'Completed' \\: index === currentStep ? 'Current' \\: 'Upcoming'
+#: src/components/StepProgress.svelte
+msgid "Step {0} of {1}: {2}"
+msgstr "Hatua {0} ya {1}: {2}"
+
+#: src/components/WindowControls.svelte
+msgid "Could not change the window. Please try again."
+msgstr "Haiwezi kubadilisha dirisha. Tafadhali jaribu tena."
+
+#: src/components/WindowControls.svelte
+msgid "Window controls"
+msgstr "Kontrola za dirisha"
+
+#: src/components/WindowControls.svelte
+msgid "Minimize window"
+msgstr "Punguza dirisha"
+
+#: src/components/WindowControls.svelte
+msgid "Restore window"
+msgstr "Rudisha dirisha"
+
+#: src/components/WindowControls.svelte
+msgid "Maximize window"
+msgstr "Panua dirisha"
+
+#: src/components/WindowControls.svelte
+msgid "Close window"
+msgstr "Funga dirisha"
+
+#: src/App.svelte
+msgid "Create post"
+msgstr "Tengeneza chapisho"
+
+#: src/App.svelte
+msgid "Write your post and add images"
+msgstr "Andika chapisho lako na ongeza picha"
+
+#: src/App.svelte
+msgid "Select groups"
+msgstr "Chagua vikundi"
+
+#: src/App.svelte
+msgid "Load groups and choose where to post"
+msgstr "Pakia makundi na chagua ambapo utachapisha"
+
+#~ msgid "Review & post"
+#~ msgstr "Kagua na uchapishe"
+
+#~ msgid "Review, set preferences, then post now or schedule"
+#~ msgstr "Angalia, weka mapendeleo, kisha chapisha sasa au panga muda"
+
+#: src/App.svelte
+msgid "Facebook session captured"
+msgstr "Kikao cha Facebook kimekamatwa"
+
+#: src/App.svelte
+msgid "The browser is closed. It will reopen when you click Post."
+msgstr "Kivinjari kimefungwa. Kitafunguliwa tena unabofya Chapisha."
+
+#: src/App.svelte
+msgid "Checking Facebook login"
+msgstr "Kukagua kuingia kwenye Facebook"
+
+#: src/App.svelte
+msgid "Finish signing in or any verification prompts in Chrome. Your login will be detected automatically."
+msgstr "Kamilisha kuingia au masharti yoyote ya uthibitisho kwenye Chrome. Kuingia kwako kutatambuliwa kiotomatiki."
+
+#: src/App.svelte
+msgid "Login required"
+msgstr "Inahitajika kuingia"
+
+#: src/App.svelte
+msgid "Please log in to Facebook in the Chrome window. Postika will detect when you’re signed in."
+msgstr "Tafadhali ingia kwenye Facebook kwenye dirisha la Chrome. Postika itatambua unapokuwa umeingia."
+
+#: src/App.svelte
+msgid "Complete Facebook verification"
+msgstr "Kamilisha uthibitisho wa Facebook"
+
+#: src/App.svelte
+msgid "Complete the login or verification prompts in Chrome to continue."
+msgstr "Kamilisha masharti ya kuingia au uthibitisho kwenye Chrome ili kuendelea."
+
+#: src/App.svelte
+msgid "Facebook connected"
+msgstr "Facebook imeunganishwa"
+
+#: src/App.svelte
+msgid "You’re logged in. Your session is ready."
+msgstr "Umeingia. Kikao chako kiko tayari."
+
+#: src/App.svelte
+msgid "Facebook window closed"
+msgstr "Dirisha la Facebook limefungwa"
+
+#: src/App.svelte
+msgid "Click Load groups to reopen Facebook and check your login."
+msgstr "Bofya Pakia makundi ili kufungua tena Facebook na kuangalia uingizaji wako."
+
+#. 0: current?.name ?? ''
+#: src/components/AccountDropdown.svelte
+msgid "Language: {0}"
+msgstr "Lugha: {0}"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search languages…"
+msgstr "Tafuta lugha…"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search languages"
+msgstr "Tafuta lugha"
+
+#: src/components/AccountDropdown.svelte
+msgid "Clear language search"
+msgstr "Futa utafutaji wa lugha"
+
+#. 0: matches.length
+#: src/components/AccountDropdown.svelte
+msgid "{0} result"
+msgstr "Matokeo {0}"
+
+#. 0: matches.length
+#: src/components/AccountDropdown.svelte
+msgid "{0} results"
+msgstr "Matokeo {0}"
+
+#: src/components/AccountDropdown.svelte
+msgid "All languages"
+msgstr "Lugha zote"
+
+#: src/components/AccountDropdown.svelte
+msgid "Languages"
+msgstr "Lugha"
+
+#: src/components/AccountDropdown.svelte
+msgid "No languages found"
+msgstr "Hakuna lugha zilizopatikana"
+
+#: src/components/DateTimePicker.svelte
+msgid "Morning"
+msgstr "Asubuhi"
+
+#: src/components/DateTimePicker.svelte
+msgid "Afternoon"
+msgstr "Mchana"
+
+#: src/components/DateTimePicker.svelte
+msgid "Evening"
+msgstr "Jioni"
+
+#: src/components/LanguageMenu.svelte
+msgid "Could not change the language. Please try again."
+msgstr "Haiwezi kubadilisha lugha. Tafadhali jaribu tena."
+
+#: src/components/Settings.svelte
+msgid "Language"
+msgstr "Lugha"
+
+#: src/components/PostingOptionsForm.svelte
+#: src/components/PostingOptionsForm.svelte
+msgid "seconds"
+msgstr "sekunde"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Minimum"
+msgstr "Chini kabisa"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Maximum"
+msgstr "Juu kabisa"
+
+#: src/components/StepProgress.svelte
+msgid "Post progress"
+msgstr "Hali ya chapisho"
+
+#. 0: visibleGroups.length
+#: src/App.svelte
+msgid "{0} shown"
+msgstr "{0} imeonyeshwa"
+
+#. 0: selectedGroupIds.length
+#: src/App.svelte
+msgid "{0} selected"
+msgstr "{0} imechaguliwa"
+
+#. 0: images.length
+#: src/components/PostComposer.svelte
+msgid "{0} images selected"
+msgstr "Picha {0} zimechaguliwa"
+
+#: src/components/PostingLogView.svelte
+msgid "WARN"
+msgstr "ONYO"
+
+#: src/components/PostingLogView.svelte
+msgid "INFO"
+msgstr "TAARIFA"
+
+#: src/components/PostingLogView.svelte
+msgid "ERROR"
+msgstr "KOSA"
+
+#: src/components/PostingLogView.svelte
+msgid "DEBUG"
+msgstr "ELEZA"
+
+#: src/components/PostingLogView.svelte
+msgid "PUBLISHED"
+msgstr "IMETOLEWA"
+
+#: src/components/PostingLogView.svelte
+msgid "PENDING"
+msgstr "INASUBIRI"
+
+#: src/components/PostingLogView.svelte
+msgid "FAILED"
+msgstr "IMEKATIKIA"
+
+#: src/components/PostingLogView.svelte
+msgid "SKIPPED"
+msgstr "IMEPITWA"
+
+#: src/components/PostingLogView.svelte
+msgid "UNCONFIRMED"
+msgstr "HAJATHIBITISHWA"
+
+#: src/Workspace.svelte
+msgid "e.g. Business"
+msgstr "mfano Biashara"
+
+#: src/components/PostComposer.svelte
+msgid "1 image selected"
+msgstr "Picha 1 imechaguliwa"
+
+#: src/components/PostingLogView.svelte
+msgid "Paused · Waiting for internet"
+msgstr "Imeachwa · Inasubiri mtandao"
+
+#: src/components/PostingLogView.svelte
+msgid "Pausing after the current operation"
+msgstr "Inaachwa baada ya operesheni ya sasa"
+
+#: src/components/PostingLogView.svelte
+msgid "Paused"
+msgstr "Imeachwa"
+
+#: src/components/PostingLogView.svelte
+msgid "Stopping"
+msgstr "Kuacha"
+
+#: src/components/PostingLogView.svelte
+msgid "Posting"
+msgstr "Inachapisha"
+
+#: src/components/PostingLogView.svelte
+msgid "Finished"
+msgstr "Imemalizika"
+
+#: src/components/PostingLogView.svelte
+msgid "Stopped"
+msgstr "Imeacha"
+
+#: src/components/PostingLogView.svelte
+msgid "Ready"
+msgstr "Tayari"
+
+#: src/components/PostingLogView.svelte
+msgid "CURRENT ACTIVITY"
+msgstr "SHUGHULI YA SASA"
+
+#: src/components/PostingLogView.svelte
+msgid "RUN STATUS"
+msgstr "HALI YA KUENDESHA"
+
+#: src/components/PostingLogView.svelte
+msgid " · Paused"
+msgstr " · Imesitishwa"
+
+#: src/components/PostingLogView.svelte
+msgid " · Response available to copy"
+msgstr " · Jibu lipo la kunakili"
+
+#: src/components/AccountLabel.svelte
+msgid "Default profile"
+msgstr "Wasifu chaguomsingi"
+
+#~ msgid "Switch to light mode"
+#~ msgstr "Badilisha hadi hali angavu"
+
+#~ msgid "Switch to dark mode"
+#~ msgstr "Badilisha hadi hali nyeusi"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Color themes"
+msgstr "Mandhari ya rangi"
+
+#: src/components/ThemePicker.svelte
+msgid "Close"
+msgstr "Funga"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Search themes…"
+msgstr "Tafuta mandhari…"
+
+#: src/components/ThemePicker.svelte
+msgid "No themes found"
+msgstr "Hakuna mandhari yaliyopatikana"
+
+#: src/components/LogMessage.svelte
+msgid "A selected group is no longer available. Load groups again"
+msgstr "Kikundi kilichochaguliwa hakipo tena. Pakia vikundi tena"
+
+#: src/components/LogMessage.svelte
+msgid "Add a Gemini API key in Settings before enabling rewriting"
+msgstr "Ongeza ufunguo wa Gemini API kwenye Mipangilio kabla ya kuwezesha uhariri upya"
+
+#: src/components/LogMessage.svelte
+msgid "Add a post body and at least one image"
+msgstr "Ongeza mwili wa chapisho na angalau picha moja"
+
+#: src/components/LogMessage.svelte
+msgid "All selected groups were already attempted. Review unconfirmed results on Facebook."
+msgstr "Vikundi vyote vilivyoteuliwa tayari vimejaribiwa. Kagua matokeo yasiyo thibitishwa kwenye Facebook."
+
+#: src/components/LogMessage.svelte
+msgid "An image upload failed in Chrome. Check the composer and retry Post"
+msgstr "Kupakia picha kumeshindikana kwenye Chrome. Angalia mhariri na jaribu tena Chapisho"
+
+#: src/components/LogMessage.svelte
+msgid "Attaching images…"
+msgstr "Kuweka picha zinapoendelea…"
+
+#: src/components/LogMessage.svelte
+msgid "Choose JPG, PNG, WebP, or GIF images"
+msgstr "Chagua picha za JPG, PNG, WebP, au GIF"
+
+#: src/components/LogMessage.svelte
+msgid "Choose a future date and time for your post"
+msgstr "Chagua tarehe na wakati wa baadaye kwa chapisho lako"
+
+#: src/components/LogMessage.svelte
+msgid "Closing Chrome and posting to the remaining groups…"
+msgstr "Kufunga Chrome na kuchapisha kwenye vikundi vilivyobaki…"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the complete create-post request"
+msgstr "Haikuwezekana kunasa ombi la kuunda chapisho kwa ukamilifu"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the completed image upload response"
+msgstr "Haikuwezekana kunasa jibu la kupakia picha lililokamilika"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the image upload form fields"
+msgstr "Haikuwezekana kunasa maeneo ya fomu ya kupakia picha"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the image upload form. Retry Post"
+msgstr "Haikuwezekana kunasa fomu ya kupakia picha. Jaribu tena Chapisho"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the upload endpoint"
+msgstr "Haikuwezekana kunasa nukta ya upakiaji"
+
+#: src/components/LogMessage.svelte
+msgid "Could not copy the Facebook response to the clipboard"
+msgstr "Haikuwezekana kunakili jibu la Facebook kwenye clipboard"
+
+#: src/components/LogMessage.svelte
+msgid "Could not enable create-post capture in Chrome"
+msgstr "Haiwezi kuwezesha kunasa kuunda-post kwenye Chrome"
+
+#: src/components/LogMessage.svelte
+msgid "Could not parse the captured create-post form"
+msgstr "Haiwezi kuchambua fomu ya kuunda-post iliyonaswa"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare image files"
+msgstr "Haiwezi kuandaa faili za picha"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare post images"
+msgstr "Haiwezi kuandaa picha za post"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare the Gemini request"
+msgstr "Haiwezi kuandaa ombi la Gemini"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare the image upload."
+msgstr "Haiwezi kuandaa kupakia picha."
+
+#: src/components/LogMessage.svelte
+msgid "Could not reach Gemini. Check your connection"
+msgstr "Haiwezi kufikia Gemini. Angalia muunganisho wako"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read Facebook's post confirmation"
+msgstr "Haiwezi kusoma uthibitisho wa post wa Facebook"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read the Gemini rewrite"
+msgstr "Haikuwezekana kusoma maandishi yaliyoandikwa upya na Gemini"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read the completed image upload response"
+msgstr "Haiwezi kusoma jibu la kupakia picha lililo kamilika"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read the selected image."
+msgstr "Haiwezi kusoma picha iliyochaguliwa."
+
+#: src/components/LogMessage.svelte
+msgid "Create-post capture ended before confirmation. Check Facebook before retrying"
+msgstr "Kunasa kuunda-post kumemalizika kabla ya uthibitisho. Angalia Facebook kabla ya kujaribu tena"
+
+#: src/components/LogMessage.svelte
+msgid "Create-post request detected. Capturing fresh form values…"
+msgstr "Ombi la kuunda-post limegundulika. Kunaswa thamani mpya za fomu…"
+
+#: src/components/LogMessage.svelte
+msgid "Create-post response complete. Waiting for captured session headers…"
+msgstr "Jibu la kuunda-post limekamilika. Kusubiri vichwa vya vikao vilivyokamatwa…"
+
+#: src/components/LogMessage.svelte
+msgid "Create-post response received. Waiting for its complete body…"
+msgstr "Jibu la kuunda-post limepokelewa. Kusubiri mwili wake kamili…"
+
+#: src/components/LogMessage.svelte
+msgid "Description inserted"
+msgstr "Maelezo yameingizwa"
+
+#: src/components/LogMessage.svelte
+msgid "Earlier submission is unconfirmed. Skipping this group and continuing with the remaining groups."
+msgstr "Uwasilishaji wa awali haujathibitishwa. Tukirukaje kundi hili na kuendelea na makundi yaliyosalia."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook could not post to this group. Continuing with the remaining groups."
+msgstr "Facebook haikuweza kuchapisha kwenye kundi hili. Kuendelea na makundi yaliyosalia."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook did not confirm all images. Check the composer."
+msgstr "Facebook haijathibitisha picha zote. Angalia mhariri."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook did not confirm the submission"
+msgstr "Facebook haijathibitisha uwasilishaji"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook did not confirm this post. Check the group before trying again."
+msgstr "Facebook haijathibitisha chapisho hili. Angalia kundi kabla ya kujaribu tena."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook has temporarily limited posting. Try again later."
+msgstr "Facebook kwa muda imepunguza chapisho. Jaribu tena baadaye."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook rejected this post."
+msgstr "Facebook imekataa chapisho hili."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook requires login or verification. Load groups again."
+msgstr "Facebook inahitaji ingia au uthibitisho. Pakua makundi tena."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook returned a story, but did not confirm its group or publication state. Posting stopped. Check Facebook before retrying."
+msgstr "Facebook imerudisha chapisho, lakini haijathibitisha kundi lake au hali ya uchapishaji. Uchapishaji umesimamishwa. Angalia Facebook kabla ya kujaribu tena."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook's confirmation exceeded the 16 MiB response limit; retained response is truncated"
+msgstr "Uthibitisho wa Facebook umepita kikomo cha majibu cha 16 MiB; jibu lililohifadhiwa limekatwa"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook's editor did not accept the formatted post. Posting was not submitted"
+msgstr "Mhariri wa Facebook hakukubali chapisho lililofomatiwa. Uwasilishaji haukuwasilishwa"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook's editor did not retain the formatted post text. Posting was not submitted"
+msgstr "Mhariri wa Facebook hakuhifadhi maandishi yaliyopewa mtindo. Uchapishaji haukufunguliwa"
+
+#: src/components/LogMessage.svelte
+msgid "First post confirmed. Waiting for the Facebook composer to close…"
+msgstr "Chapisho la kwanza limethibitishwa. Kusubiri mhariri wa Facebook kufunga…"
+
+#: src/components/LogMessage.svelte
+msgid "First submission unconfirmed. Retrying request 1/3 with the captured mutation ID…"
+msgstr "Uwasilishaji wa kwanza haujathibitishwa. Kuponya ombi 1/3 na kitambulisho cha mabadiliko kilichopatikana…"
+
+#: src/components/LogMessage.svelte
+msgid "Formatted post is too large"
+msgstr "Chapisho lililopangwa ni kubwa sana"
+
+#: src/components/LogMessage.svelte
+msgid "Found multiple matching post composers on the group page"
+msgstr "Kupata waandaaji wa chapisho kadhaa waliolingana kwenye ukurasa wa kikundi"
+
+#: src/components/LogMessage.svelte
+msgid "Fresh create-post form captured. Waiting for Facebook's response…"
+msgstr "Fomu mpya ya kuunda chapisho imechukuliwa. Kusubiri majibu ya Facebook…"
+
+#: src/components/LogMessage.svelte
+msgid "Gemini did not finish the rewrite"
+msgstr "Gemini haikukamilisha kuandika upya maandishi"
+
+#: src/components/LogMessage.svelte
+msgid "Gemini returned no rewritten text"
+msgstr "Gemini haikurudisha maandishi yaliyoandikwa upya"
+
+#: src/components/LogMessage.svelte
+msgid "Gemini rewrite completed."
+msgstr "Gemini imekamilisha kuandika upya maandishi."
+
+#: src/components/LogMessage.svelte
+msgid "Gemini rewrite failed. Using the original text for this post; Gemini will be tried again for the next post."
+msgstr "Gemini imeshindwa kuandika upya maandishi. Maandishi ya awali yatatumika kwa chapisho hili; Gemini itajaribiwa tena kwa chapisho linalofuata."
+
+#: src/components/LogMessage.svelte
+msgid "Image uploads belong to a different profile"
+msgstr "Kupakia picha ni mali ya wasifu tofauti"
+
+#: src/components/LogMessage.svelte
+msgid "Images inserted"
+msgstr "Picha zimeingizwa"
+
+#: src/components/LogMessage.svelte
+msgid "Inserting post body…"
+msgstr "Kuingiza mwili wa chapisho…"
+
+#: src/components/LogMessage.svelte
+msgid "Internet connection lost. Queue paused until the connection returns."
+msgstr "Muunganisho wa intaneti umepotea. Foleni imesitishwa kwa muda hadi muunganisho urejee."
+
+#: src/components/LogMessage.svelte
+msgid "Internet connection restored. Continuing the queue."
+msgstr "Muunganisho wa intaneti umerejea. Foleni inaendelea."
+
+#: src/components/LogMessage.svelte
+msgid "Internet connection restored. The queue remains manually paused."
+msgstr "Muunganisho wa intaneti umerejea. Foleni bado imesitishwa kwa muda kulingana na chaguo lako."
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured endpoint"
+msgstr "Mwisho usio sahihi ulioshikiliwa"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured formatted post"
+msgstr "Chapisho lililoandaliwa lisilo sahihi lililoshikiliwa"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured post form"
+msgstr "Fomu ya chapisho lisilo sahihi lililoshikiliwa"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured post variables"
+msgstr "Vigezo vya chapisho lisilo sahihi vilivyoshikiliwa"
+
+#: src/components/LogMessage.svelte
+msgid "Load your groups before opening a post"
+msgstr "Pakia makundi yako kabla ya kufungua chapisho"
+
+#: src/components/LogMessage.svelte
+msgid "Log in or complete Facebook verification in Chrome, then click Post again"
+msgstr "Ingia au kamilisha uthibitisho wa Facebook kwenye Chrome, kisha bofya Chapisha tena"
+
+#: src/components/LogMessage.svelte
+msgid "Multiple matching controls found in the post composer"
+msgstr "Udhibiti mwingi unaolingana umepatikana kwenye muundaji wa chapisho"
+
+#: src/components/LogMessage.svelte
+msgid "No Facebook response was captured for this entry"
+msgstr "Hakuna jibu la Facebook lililoshikiliwa kwa kipengele hiki"
+
+#: src/components/LogMessage.svelte
+msgid "No available post composer."
+msgstr "Hakuna muundaji wa chapisho uliopo."
+
+#: src/components/LogMessage.svelte
+msgid "No complete image upload request was captured."
+msgstr "Hakuna ombi la kupakia picha kamili lililoshikiliwa."
+
+#: src/components/LogMessage.svelte
+msgid "No fresh image upload request was captured."
+msgstr "Hakuna ombi jipya la kupakia picha lililoshikiliwa."
+
+#: src/components/LogMessage.svelte
+msgid "Opening browser…"
+msgstr "Kufungua kivinjari…"
+
+#: src/components/LogMessage.svelte
+msgid "Pause requested. The current operation will finish before pausing."
+msgstr "Ombi la kusitisha kwa muda limepokelewa. Hatua ya sasa itakamilika kabla ya kusitisha."
+
+#: src/components/LogMessage.svelte
+msgid "Post button clicked"
+msgstr "Kitufe cha Chapisha kimebonyezwa"
+
+#: src/components/LogMessage.svelte
+msgid "Post published."
+msgstr "Chapisho limechapishwa."
+
+#: src/components/LogMessage.svelte
+msgid "Postika is shutting down"
+msgstr "Postika inazima"
+
+#: src/components/LogMessage.svelte
+msgid "Posting is already running"
+msgstr "Uchapishaji tayari unaendelea"
+
+#: src/components/LogMessage.svelte
+msgid "Posting paused."
+msgstr "Uchapishaji umesitishwa kwa muda."
+
+#: src/components/LogMessage.svelte
+msgid "Posting resumed."
+msgstr "Uchapishaji umeendelea."
+
+#: src/components/LogMessage.svelte
+msgid "Posting stopped after the first post was confirmed"
+msgstr "Uchapishaji umeishia baada ya chapisho la kwanza kuthibitishwa"
+
+#: src/components/LogMessage.svelte
+msgid "Posting..."
+msgstr "Ukichapisha..."
+
+#: src/components/LogMessage.svelte
+msgid "Reading Facebook's create-post confirmation…"
+msgstr "Kusoma uthibitisho wa kuunda chapisho la Facebook…"
+
+#: src/components/LogMessage.svelte
+msgid "Rewriting the post body with Gemini…"
+msgstr "Kurekebisha maudhui ya chapisho na Gemini…"
+
+#: src/components/LogMessage.svelte
+msgid "Scheduled posting cancelled."
+msgstr "Uchapishaji uliopangwa umefutwa."
+
+#: src/components/LogMessage.svelte
+msgid "Scheduled time reached. Starting posting…"
+msgstr "Wakati uliopangwa umefikiwa. Kuanza kuchapisha…"
+
+#: src/components/LogMessage.svelte
+msgid "Select at least one group"
+msgstr "Chagua angalau kundi moja"
+
+#: src/components/LogMessage.svelte
+msgid "Setting up automatic posting using your first Facebook post..."
+msgstr "Kuweka mpangilio wa kuchapisha kiotomatiki ukitumia chapisho lako la kwanza la Facebook..."
+
+#: src/components/LogMessage.svelte
+msgid "Stopping posting…"
+msgstr "Kukomesha uchapishaji…"
+
+#: src/components/LogMessage.svelte
+msgid "Submitting the first post and capturing fresh request values…"
+msgstr "Kuwasilisha chapisho la kwanza na kushika maadili mapya ya ombi…"
+
+#: src/components/LogMessage.svelte
+#: src/components/LogMessage.svelte
+msgid "Technical details recorded. Open debug details to inspect the original message."
+msgstr "Maelezo ya kiufundi yameandikwa. Fungua maelezo ya ulinzi vipimo kuchunguza ujumbe wa asili."
+
+#: src/components/LogMessage.svelte
+msgid "The active Facebook profile changed or expired"
+msgstr "Profaili ya Facebook inayofanya kazi imebadilika au imemalizika"
+
+#: src/components/LogMessage.svelte
+msgid "The browser connection was lost. Check Facebook before retrying"
+msgstr "Muunganiko wa kivinjari umepotea. Angalia Facebook kabla ya kujaribu tena"
+
+#: src/components/LogMessage.svelte
+msgid "The browser profile changed while capturing posting requests"
+msgstr "Profaili ya kivinjari imebadilika wakati wa kushika maombi ya uchapishaji"
+
+#: src/components/LogMessage.svelte
+msgid "The captured formatted post body does not match your draft"
+msgstr "Mwili wa chapisho lililoshikiliwa ulioundwa hauendani na rasimu yako"
+
+#: src/components/LogMessage.svelte
+msgid "The captured image upload cookies do not match the Facebook profile"
+msgstr "Vikingi vya kupakia picha vilivyoshikiliwa havilingani na wasifu wa Facebook"
+
+#: src/components/LogMessage.svelte
+msgid "The captured image upload format is not supported"
+msgstr "Muundo wa kupakia picha ulioshikiliwa haunaungwa mkono"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post belongs to a different Facebook profile"
+msgstr "Chapisho lililoshikiliwa linamilikiwa na wasifu tofauti wa Facebook"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post body does not match your draft"
+msgstr "Mwili wa chapisho lililoshikiliwa hauendani na rasimu yako"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post cookies do not match the logged-in profile"
+msgstr "Vikingi vya chapisho lililoshikiliwa havilingani na wasifu uliyoingia"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post has no group target"
+msgstr "Chapisho lililoshikiliwa halina lengo la kikundi"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post target does not match the selected group"
+msgstr "Lengo la chapisho lililoshikiliwa haliendani na kikundi kilichochaguliwa"
+
+#: src/components/LogMessage.svelte
+msgid "The composer dialog was replaced while loading"
+msgstr "Dirisha la muundaji limebadilishwa wakati wa kupakia"
+
+#: src/components/LogMessage.svelte
+msgid "The create-post connection failed. Check Facebook before retrying"
+msgstr "Uunganisho wa kutengeneza chapisho umeshindikana. Angalia Facebook kabla ya kujaribu tena"
+
+#: src/components/LogMessage.svelte
+msgid "The current profile differs from the profile used to load groups. Load groups again."
+msgstr "Wasifu wa sasa ni tofauti na wasifu ulio tumika kupakia makundi. Pakia makundi tena."
+
+#: src/components/LogMessage.svelte
+msgid "The desktop application is not ready"
+msgstr "Programu ya kompyuta ya mezani bado haijajiandaa"
+
+#: src/components/LogMessage.svelte
+msgid "The desktop clipboard is not ready"
+msgstr "Ubao wa kubadilishia wa kompyuta ya mezani bado hauna tayari"
+
+#: src/components/LogMessage.svelte
+msgid "The expected composer control did not appear in Chrome"
+msgstr "Udhibiti wa muundaji uliotegemewa haujionyeshi katika Chrome"
+
+#: src/components/LogMessage.svelte
+msgid "The first post was confirmed, but Chrome's completion state could not be checked. Posting stopped"
+msgstr "Chapisho la kwanza limethibitishwa, lakini hali ya kukamilika kwenye Chrome haikuweza kukaguliwa. Uchapishaji umesimamishwa"
+
+#: src/components/LogMessage.svelte
+msgid "The image upload did not contain multipart form data"
+msgstr "Upakiaji wa picha haukujumuisha data ya fomu ya sehemu nyingi"
+
+#: src/components/LogMessage.svelte
+msgid "The image upload does not match its active Facebook profile"
+msgstr "Upakiaji wa picha hauendani na wasifu wake wa Facebook unaofanya kazi"
+
+#: src/components/LogMessage.svelte
+msgid "The image upload form belongs to a different Facebook profile"
+msgstr "Fomu ya upakiaji wa picha ni mali ya wasifu tofauti wa Facebook"
+
+#: src/components/LogMessage.svelte
+msgid "The selected group has an invalid Facebook URL. Load groups again"
+msgstr "Kikundi kilichochaguliwa kina URL batili ya Facebook. Pakia tena makundi"
+
+#: src/components/LogMessage.svelte
+msgid "The session could not be saved for posting retries and remaining groups."
+msgstr "Kikao hakikuweza kuhifadhiwa kwa majaribio ya upya ya uchapisho na makundi yaliyo baki."
+
+#: src/components/LogMessage.svelte
+msgid "This draft has already been submitted to the first group. It was not submitted again."
+msgstr "Rasimu hii tayari imetumwa kwa kikundi cha kwanza. Haikutumwa tena."
+
+#: src/components/LogMessage.svelte
+msgid "This group has no available post composer"
+msgstr "Kikundi hiki hakina mpangaji wa chapisho upatikane"
+
+#: src/components/LogMessage.svelte
+msgid "This group has reached its pending-content limit."
+msgstr "Kikundi hiki kimefikia kikomo chake cha yaliyomo yanayosubiri"
+
+#: src/components/LogMessage.svelte
+msgid "This post was submitted, but confirmation is uncertain. Check Facebook before retrying."
+msgstr "Chapisho hili limetumwa, lakini uthibitisho haujathibitishwa. Angalia Facebook kabla ya kujaribu upya."
+
+#: src/components/LogMessage.svelte
+msgid "This response is no longer available for the current run"
+msgstr "Jibu hili halipatikani tena kwa mzunguko wa sasa"
+
+#: src/components/LogMessage.svelte
+msgid "Upload and post captures must belong to the same logged-in profile"
+msgstr "Pakia na chapisha picha zilizopokelewa lazima ziwe za profaili ile ile iliyosajiliwa"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for Facebook's Post button…"
+msgstr "Inasubiri kitufe cha Chapisha cha Facebook…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the composer controls and layout…"
+msgstr "Inasubiri vidhibiti vya muundo na mpangilio wa mchapishaji…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the group page and opening its composer…"
+msgstr "Inasubiri ukurasa wa kikundi na kufungua mchapishaji wake…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the image previews and composer to settle…"
+msgstr "Inasubiri mapitio ya picha na mchapishaji kutulia…"
+
+#: src/components/LogMessage.svelte
+msgid "Your Facebook session needs login or verification. Load groups again."
+msgstr "Kikao chako cha Facebook kinahitaji kuingia au uthibitisho. Pakia tena makundi."
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Published to {0}."
+msgstr "Imechapishwa kwa {0}."
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "{0}: Awaiting admin approval."
+msgstr "{0}: Inasubiri idhini ya msimamizi."
+
+#. 0: number(a); 1: b
+#: src/components/LogMessage.svelte
+msgid "Waiting {0} seconds before posting to {1}."
+msgstr "Kusubiri sekunde {0} kabla ya kuchapisha kwa {1}."
+
+#. 0: a; 1: b
+#: src/components/LogMessage.svelte
+msgid "Next post in {0} · {1}"
+msgstr "Chapisho lijalo katika {0} · {1}"
+
+#. 0: a; 1: number(b); 2: number(c)
+#: src/components/LogMessage.svelte
+msgid "{0}: Uploading photo {1} of {2}…"
+msgstr "{0}: Inapakia picha {1} ya {2}…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Preparing a post for {0}…"
+msgstr "Inaandaa chapisho kwa {0}…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Uploading images for {0}…"
+msgstr "Inapakia picha kwa {0}…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Posting to {0}…"
+msgstr "Inachapisha kwa {0}…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Fresh upload and post request values captured from {0}."
+msgstr "Thamani mpya za ombi la kupakia na chapisho zimepokelewa kutoka kwa {0}."
+
+#. 0: number(a); 1: number(b)
+#: src/components/LogMessage.svelte
+msgid "Submission unconfirmed. Retrying request {0}/{1}…"
+msgstr "Uwasilishaji haujathibitishwa. Kujaribu tena ombi {0}/{1}…"
+
+#. 0: number(a); 1: number(b); 2: number(c)
+#: src/components/LogMessage.svelte
+msgid "Finished: {0} published, {1} awaiting approval, {2} failed or skipped."
+msgstr "Imekamilika: {0} imechapishwa, {1} inasubiri idhini, {2} imeshindwa au imeachwa."
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Opening {0}…"
+msgstr "Kufungua {0}…"
+
+#. 0: number(a); 1: number(b)
+#: src/components/LogMessage.svelte
+msgid "Capturing image uploads ({0} of {1})…"
+msgstr "Kushika kupakia picha ({0} kati ya {1})…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Gemini rewrite failed (HTTP {0}). Check the key, model and account quota"
+msgstr "Gemini imeshindwa kuandika upya maandishi (HTTP {0}). Angalia ufunguo, modeli na kiwango cha matumizi cha akaunti"
+
+#. 0: code
+#: src/components/LogMessage.svelte
+msgid " (Code {0})"
+msgstr "(Msimbo {0})"
+
+#: src/components/PostingLogView.svelte
+msgid "Debug details"
+msgstr "Maelezo ya kutatua tatizo"
+
+#~ msgid ", "
+#~ msgstr ""
+
+#: src/components/ThemePicker.svelte
+msgid "Themes"
+msgstr "Mandhari"
+
+#: src/App.svelte
+msgid "Preferences & post"
+msgstr "Mapendeleo na kuchapisha"
+
+#: src/App.svelte
+#: src/App.svelte
+msgid "Set preferences, then post now or schedule"
+msgstr "Weka mapendeleo, kisha chapisha sasa au ratibu"

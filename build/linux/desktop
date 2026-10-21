@@ -1,0 +1,17 @@
+[Desktop Entry]
+Type=Application
+Name=Postika
+Comment=Postika desktop application
+Exec=postika
+Icon=postika
+Categories=Utility;
+Terminal=false
+Keywords=Postika;Facebook;Groups;Posting;
+Version=1.0
+StartupNotify=false
+StartupWMClass=app.postika
+X-AppImage-Version=0.1.0
+X-Postika-Publisher=Postika Technologies
+X-Postika-Website=https://postika.softwrhq.com
+X-Postika-SupportEmail=haronkibetrutoh@gmail.com
+X-Postika-License=MIT

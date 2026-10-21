@@ -1,0 +1,1836 @@
+msgid ""
+msgstr ""
+"Source-Language: en\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2\n"
+"X-Plurals-Order: one, other\n"
+
+#. 0: minimumInterval === maximumInterval ? minimumInterval \\: `${minimumInterval}–${maximumInterval}`; 1: rewriteState
+#: src/App.svelte
+msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
+msgstr "Kaydedilen varsayılanlar uygulandı: Gönderiler arasında {0} saniye · Gemini yeniden yazma {1}."
+
+#: src/App.svelte
+msgid "Could not restore saved groups. Load groups to refresh the list."
+msgstr "Kaydedilen gruplar geri yüklenemedi. Listeyi yenilemek için grupları yükleyin."
+
+#: src/App.svelte
+msgid "Choose a future date and time for your post."
+msgstr "Gönderiniz için bir gelecek tarih ve saat seçin."
+
+#: src/App.svelte
+msgid "Saving your scheduled queue…"
+msgstr "Zamanlanmış kuyruğunuz kaydediliyor…"
+
+#: src/App.svelte
+msgid "Opening a selected group to capture fresh posting requests…"
+msgstr "Yeni gönderi isteklerini yakalamak için seçilen grup açılıyor…"
+
+#: src/App.svelte
+#: src/App.svelte
+#: src/components/LogMessage.svelte
+msgid "Posting stopped."
+msgstr "Gönderi durduruldu."
+
+#: src/App.svelte
+#: src/components/LogMessage.svelte
+msgid "Could not read a selected image"
+msgstr "Seçilen resim okunamadı"
+
+#. 0: image.file.name
+#. 0: missingNames
+#. 0: unreadableNames
+#. 0: image.file.name
+#: src/App.svelte
+#: src/App.svelte
+#: src/components/PostComposer.svelte
+#: src/components/PostComposer.svelte
+msgid "Could not read {0}"
+msgstr "{0} okunamadı"
+
+#: src/App.svelte
+msgid "Posting finished."
+msgstr "Gönderi tamamlandı."
+
+#. 0: scheduleLabel(scheduledFor)
+#. 0: date
+#: src/App.svelte
+#: src/components/LogMessage.svelte
+msgid "Scheduled for {0}. Keep Postika open and your computer awake."
+msgstr "{0} için planlandı. Postika açık ve bilgisayarınız uyanık olsun."
+
+#: src/App.svelte
+msgid "Could not restore this account’s draft. New edits will stay available while Postika is open."
+msgstr "Bu hesabın taslağı geri yüklenemedi. Yeni düzenlemeler, Postika açıkken kullanılabilir olacak."
+
+#: src/App.svelte
+msgid "Could not add the dropped images. Try browsing for them instead."
+msgstr "Bırakılan resimler eklenemedi. Bunun yerine onları göz atmayı deneyin."
+
+#: src/App.svelte
+msgid "Could not save this account’s draft to disk. Keep Postika open to retain your edits."
+msgstr "Bu hesabın taslağı diske kaydedilemedi. Düzenlemelerinizi korumak için Postika açık tutun."
+
+#: src/App.svelte
+msgid "Start with your message. Add images to bring it to life."
+msgstr "Mesajınızla başlayın. Canlı hale getirmek için resimler ekleyin."
+
+#: src/App.svelte
+msgid "Choose the groups you want to share your post with."
+msgstr "Gönderinizi paylaşmak istediğiniz grupları seçin."
+
+#~ msgid "Review your post and preferences, then post now or schedule for later."
+#~ msgstr "Gönderinizi ve tercihlerinizi gözden geçirin, sonra hemen gönderin veya daha sonra planlayın."
+
+#. 0: currentStep + 1; 1: steps.length
+#: src/App.svelte
+msgid "STEP {0} OF {1}"
+msgstr "ADIM {0} / {1}"
+
+#: src/App.svelte
+msgid "Restoring account workspace…"
+msgstr "Hesap çalışma alanı geri yükleniyor…"
+
+#: src/App.svelte
+msgid "Opening…"
+msgstr "Açılıyor…"
+
+#: src/App.svelte
+msgid "Loading…"
+msgstr "Yükleniyor…"
+
+#: src/App.svelte
+msgid "Load groups"
+msgstr "Grupları yükle"
+
+#: src/App.svelte
+msgid "Groups"
+msgstr "Gruplar"
+
+#: src/App.svelte
+msgid "Search groups…"
+msgstr "Grup ara…"
+
+#: src/App.svelte
+msgid "Clear group search"
+msgstr "Grup aramasını temizle"
+
+#: src/App.svelte
+msgid "Search groups"
+msgstr "Grup ara"
+
+#: src/App.svelte
+msgid "Select all groups"
+msgstr "Tüm grupları seç"
+
+#: src/App.svelte
+msgid "Unselect all groups"
+msgstr "Tüm grupların seçimini kaldır"
+
+#~ msgid "{0} selected{1}"
+#~ msgstr ""
+
+#: src/App.svelte
+msgid "Searching…"
+msgstr "Aranıyor…"
+
+#: src/App.svelte
+msgid "No groups found. Try another search."
+msgstr "Grup bulunamadı. Başka bir arama deneyin."
+
+#: src/App.svelte
+msgid "Joined groups"
+msgstr "Üye olunan gruplar"
+
+#: src/App.svelte
+msgid "No groups loaded yet."
+msgstr "Henüz grup yüklenmedi."
+
+#: src/App.svelte
+msgid "Open your Facebook groups to get started."
+msgstr "Başlamak için Facebook gruplarınızı açın."
+
+#: src/App.svelte
+msgid "Posting settings"
+msgstr "Gönderi ayarları"
+
+#: src/App.svelte
+msgid "Add a Gemini API key in Settings to enable rewriting."
+msgstr "Yeniden yazmayı etkinleştirmek için Ayarlar kısmına bir Gemini API anahtarı ekleyin."
+
+#: src/App.svelte
+msgid "Applying defaults…"
+msgstr "Varsayılanlar uygulanıyor…"
+
+#: src/App.svelte
+msgid "Use saved defaults"
+msgstr "Kaydedilmiş varsayılanları kullan"
+
+#: src/App.svelte
+msgid "Open settings"
+msgstr "Ayarları aç"
+
+#~ msgid "Posting as <0/>"
+#~ msgstr "Gönderim <0/> olarak"
+
+#~ msgid "Review your post<0>{0} images · {1} groups selected</0>"
+#~ msgstr "Gönderinizi gözden geçirin<0>{0} resim · {1} grup seçildi</0>"
+
+#~ msgid "Original post"
+#~ msgstr "Orijinal gönderi"
+
+#~ msgid "Your post"
+#~ msgstr "Sizin gönderiniz"
+
+#~ msgid "Gemini will rewrite this body for each group using your instructions."
+#~ msgstr "Gemini, talimatlarınızı kullanarak bu içeriği her grup için yeniden yazacak."
+
+#~ msgid "Selected groups ({0})"
+#~ msgstr "Seçilen gruplar ({0})"
+
+#: src/App.svelte
+msgid "Schedule your queue"
+msgstr "Kuyruğunuzu planlayın"
+
+#. 0: Intl.DateTimeFormat().resolvedOptions().timeZone
+#: src/App.svelte
+msgid "Time zone: {0}. Keep Postika open and your computer awake. Facebook may ask you to sign in when posting starts."
+msgstr "Saat dilimi: {0}. Postika’yı açık tutun ve bilgisayarınızın uyanık olmasını sağlayın. Gönderi başladığında Facebook sizden tekrar giriş yapmanızı isteyebilir."
+
+#: src/App.svelte
+#: src/Workspace.svelte
+msgid "Cancel"
+msgstr "İptal"
+
+#: src/App.svelte
+msgid "Confirm schedule"
+msgstr "Programı onayla"
+
+#: src/App.svelte
+msgid "Next <0/>"
+msgstr "İleri <0/>"
+
+#: src/App.svelte
+msgid "View logs"
+msgstr "Kayıtları görüntüle"
+
+#: src/App.svelte
+#: src/components/PostingLogView.svelte
+msgid "Stop"
+msgstr "Durdur"
+
+#: src/App.svelte
+#: src/Workspace.svelte
+#: src/components/PostingLogView.svelte
+msgid "Scheduled"
+msgstr "Planlandı"
+
+#: src/App.svelte
+msgid "Posting…"
+msgstr "Gönderiliyor…"
+
+#: src/App.svelte
+msgid "Post now"
+msgstr "Şimdi paylaş"
+
+#: src/App.svelte
+msgid "Schedule"
+msgstr "Zamanla"
+
+#: src/App.svelte
+msgid "<0/> Previous"
+msgstr "<0/> Geri"
+
+#: src/Workspace.svelte
+msgid "Application menu"
+msgstr "Uygulama menüsü"
+
+#: src/Workspace.svelte
+msgid "Add account"
+msgstr "Hesap ekle"
+
+#: src/Workspace.svelte
+#: src/components/PostingLogView.svelte
+#: src/components/PostingLogView.svelte
+msgid "Posting logs"
+msgstr "Paylaşım günlükleri"
+
+#: src/Workspace.svelte
+#: src/components/Settings.svelte
+#: src/components/Settings.svelte
+msgid "Settings"
+msgstr "Ayarlar"
+
+#: src/Workspace.svelte
+msgid "Creating…"
+msgstr "Oluşturuluyor…"
+
+#: src/Workspace.svelte
+msgid "Create & sign in"
+msgstr "Oluştur ve giriş yap"
+
+#: src/Workspace.svelte
+msgid "Account name"
+msgstr "Hesap adı"
+
+#: src/Workspace.svelte
+msgid "Sign in to Facebook in the new account’s browser window."
+msgstr "Yeni hesabın tarayıcı penceresinde Facebook’a giriş yapın."
+
+#: src/Workspace.svelte
+msgid "Running"
+msgstr "Çalışıyor"
+
+#: src/Workspace.svelte
+msgid "In the background: <0/>"
+msgstr "Arka planda: <0/>"
+
+#: src/Workspace.svelte
+msgid "Loading accounts…"
+msgstr "Hesaplar yükleniyor…"
+
+#: src/components/AccountDropdown.svelte
+msgid "Loading accounts"
+msgstr "Hesaplar yükleniyor"
+
+#. 0: current?.name ?? 'Loading accounts'
+#: src/components/AccountDropdown.svelte
+msgid "Account: {0}"
+msgstr "Hesap: {0}"
+
+#: src/components/AccountDropdown.svelte
+msgid "Select account"
+msgstr "Hesap seç"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search accounts…"
+msgstr "Hesap ara…"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search accounts"
+msgstr "Hesap ara"
+
+#: src/components/AccountDropdown.svelte
+msgid "Clear account search"
+msgstr "Hesap aramasını temizle"
+
+#: src/components/AccountDropdown.svelte
+msgid "All accounts"
+msgstr "Tüm hesaplar"
+
+#: src/components/AccountDropdown.svelte
+msgid "Accounts"
+msgstr "Hesaplar"
+
+#: src/components/AccountDropdown.svelte
+msgid "No accounts found"
+msgstr "Hesap bulunamadı"
+
+#: src/components/AccountDropdown.svelte
+#: src/components/ThemePicker.svelte
+msgid "Try a different name."
+msgstr "Farklı bir ad deneyin."
+
+#: src/components/ConnectivityToast.svelte
+msgid "You’re back online"
+msgstr "Tekrar çevrimiçisiniz"
+
+#: src/components/ConnectivityToast.svelte
+msgid "Internet connection lost"
+msgstr "İnternet bağlantısı kayboldu"
+
+#: src/components/ConnectivityToast.svelte
+msgid "Your queue is still manually paused."
+msgstr "Sıranız hâlâ manuel olarak duraklatıldı."
+
+#: src/components/ConnectivityToast.svelte
+msgid "Your queue will continue automatically."
+msgstr "Sıranız otomatik olarak devam edecek."
+
+#: src/components/ConnectivityToast.svelte
+msgid "Your queue is paused. We’ll continue when the connection returns."
+msgstr "Sıranız duraklatıldı. Bağlantı geri geldiğinde devam edeceğiz."
+
+#: src/components/ConnectivityToast.svelte
+msgid "Dismiss connection notification"
+msgstr "Bağlantı bildirimini kapat"
+
+#: src/components/DateTimePicker.svelte
+msgid "Choose a date and time"
+msgstr "Bir tarih ve saat seçin"
+
+#: src/components/DateTimePicker.svelte
+msgid "Select date"
+msgstr "Tarih seçin"
+
+#: src/components/DateTimePicker.svelte
+msgid "Choose a weekday for this post"
+msgstr "Bu gönderi için bir gün seçin"
+
+#. 0: day.description
+#: src/components/DateTimePicker.svelte
+msgid "Select {0}"
+msgstr "{0} seçin"
+
+#: src/components/DateTimePicker.svelte
+msgid "Previous month"
+msgstr "Önceki ay"
+
+#: src/components/DateTimePicker.svelte
+msgid "Next month"
+msgstr "Gelecek ay"
+
+#: src/components/DateTimePicker.svelte
+#: src/components/DateTimePicker.svelte
+msgid "Select time"
+msgstr "Saat seç"
+
+#: src/components/DateTimePicker.svelte
+msgid "24-hour clock"
+msgstr "24 saatlik saat"
+
+#: src/components/DateTimePicker.svelte
+msgid "Increase hour"
+msgstr "Saati artır"
+
+#: src/components/DateTimePicker.svelte
+#: src/components/DateTimePicker.svelte
+msgid "Hour"
+msgstr "Saat"
+
+#: src/components/DateTimePicker.svelte
+msgid "Decrease hour"
+msgstr "Saati azalt"
+
+#: src/components/DateTimePicker.svelte
+msgid "Increase minute"
+msgstr "Dakikayı artır"
+
+#: src/components/DateTimePicker.svelte
+#: src/components/DateTimePicker.svelte
+msgid "Minute"
+msgstr "Dakika"
+
+#: src/components/DateTimePicker.svelte
+msgid "Decrease minute"
+msgstr "Dakikayı azalt"
+
+#: src/components/DateTimePicker.svelte
+msgid "Choose a date and time in the future."
+msgstr "Gelecekte bir tarih ve saat seçin."
+
+#. 0: rejected.join(', ')
+#: src/components/PostComposer.svelte
+msgid "Unsupported files: {0}. Choose JPG, PNG, WebP, or GIF images."
+msgstr "Desteklenmeyen dosyalar: {0}. JPG, PNG, WebP veya GIF resimleri seçin."
+
+#. 0: image.file.name
+#: src/components/PostComposer.svelte
+msgid "Could not preview {0}. Please choose another image."
+msgstr "{0} önizlenemedi. Lütfen başka bir resim seçin."
+
+#. 0: images[index].file.name; 1: index + 1; 2: images.length
+#: src/components/PostComposer.svelte
+msgid "{0} moved to position {1} of {2}."
+msgstr "{0}, {2} içindeki {1}. konuma taşındı."
+
+#: src/components/PostComposer.svelte
+#: src/components/PostEditorContent.svelte
+msgid "Post body"
+msgstr "Gönderi metni"
+
+#: src/components/PostComposer.svelte
+#: src/components/PostComposer.svelte
+msgid "Required"
+msgstr "Gerekli"
+
+#: src/components/PostComposer.svelte
+msgid "Images"
+msgstr "Görseller"
+
+#: src/components/PostComposer.svelte
+msgid "Choose images"
+msgstr "Resimleri seç"
+
+#: src/components/PostComposer.svelte
+msgid "Drop images here or <0>browse images</0>"
+msgstr "Resimleri buraya bırakın veya <0>resimleri göz atın</0>"
+
+#: src/components/PostComposer.svelte
+msgid "JPG, PNG, WebP, or GIF · Select multiple images"
+msgstr "JPG, PNG, WebP veya GIF · Birden fazla resim seç"
+
+#~ msgid "{0} {1} selected"
+#~ msgstr ""
+
+#: src/components/PostComposer.svelte
+msgid "Add more"
+msgstr "Daha fazla ekle"
+
+#: src/components/PostComposer.svelte
+msgid "Drag images to rearrange. Or focus an image and use Alt + Left / Right."
+msgstr "Resimleri yeniden sıralamak için sürükleyin. Ya da bir resme odaklanın ve Alt + Sol / Sağ kullanın."
+
+#: src/components/PostComposer.svelte
+msgid "Selected images"
+msgstr "Seçilen resimler"
+
+#. 0: image.file.name; 1: images.indexOf(image) + 1; 2: images.length
+#: src/components/PostComposer.svelte
+msgid "{0}, image {1} of {2}"
+msgstr "{0}, {2} içindeki {1}. resim"
+
+#. 0: image.file.name
+#: src/components/PostComposer.svelte
+msgid "Remove {0}"
+msgstr "{0} kaldır"
+
+#: src/components/PostComposer.svelte
+msgid "Drop more images here to add them."
+msgstr "Eklemek için buraya daha fazla resim bırakın."
+
+#. 0: error
+#: src/components/PostEditor.svelte
+msgid "Could not edit the post: {0}"
+msgstr "Gönderi düzenlenemedi: {0}"
+
+#: src/components/PostEditorContent.svelte
+msgid "Post editor controls"
+msgstr "Gönderi düzenleyici kontrolleri"
+
+#: src/components/PostEditorContent.svelte
+msgid "Text formatting"
+msgstr "Metin biçimlendirme"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bold (Ctrl+B)"
+msgstr "Kalın (Ctrl+B)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bold"
+msgstr "Kalın"
+
+#: src/components/PostEditorContent.svelte
+msgid "Italic (Ctrl+I)"
+msgstr "İtalik (Ctrl+I)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Italic"
+msgstr "İtalik"
+
+#: src/components/PostEditorContent.svelte
+msgid "Heading 1"
+msgstr "Başlık 1"
+
+#: src/components/PostEditorContent.svelte
+msgid "Heading 2"
+msgstr "Başlık 2"
+
+#: src/components/PostEditorContent.svelte
+msgid "Quote"
+msgstr "Alıntı"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bullet list"
+msgstr "Madde işareti listesi"
+
+#: src/components/PostEditorContent.svelte
+msgid "Numbered list"
+msgstr "Numaralı liste"
+
+#: src/components/PostEditorContent.svelte
+msgid "Undo (Ctrl+Z)"
+msgstr "Geri al (Ctrl+Z)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Undo"
+msgstr "Geri al"
+
+#: src/components/PostEditorContent.svelte
+msgid "Redo (Ctrl+Shift+Z)"
+msgstr "Yinele (Ctrl+Shift+Z)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Redo"
+msgstr "Yinele"
+
+#: src/components/PostEditorContent.svelte
+msgid "What would you like to share?"
+msgstr "Ne paylaşmak istersiniz?"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bold, italic, headings, quotes, and lists · Markdown shortcuts supported"
+msgstr "Kalın, italik, başlıklar, alıntılar ve listeler · Markdown kısayolları destekleniyor"
+
+#. 0: body.length.toLocaleString(getLocale())
+#: src/components/PostEditorContent.svelte
+msgid "{0} characters"
+msgstr "{0} karakter"
+
+#: src/components/LogMessage.svelte
+msgid "Ready to post."
+msgstr "Gönderime hazır."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook response copied."
+msgstr "Facebook yanıtı kopyalandı."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook response received"
+msgstr "Facebook yanıtı alındı"
+
+#: src/components/PostingLogView.svelte
+msgid "POSTIKA / ACTIVITY"
+msgstr "POSTIKA / ETKİNLİK"
+
+#: src/components/PostingLogView.svelte
+msgid "Posting progress"
+msgstr "Gönderim ilerlemesi"
+
+#. 0: activity?.processed || 0; 1: activity?.total || 0
+#: src/components/PostingLogView.svelte
+msgid "{0}/{1} groups processed"
+msgstr "{0}/{1} grup işlendi"
+
+#. 0: percentage
+#: src/components/PostingLogView.svelte
+msgid "{0}% complete"
+msgstr "{0}% tamamlandı"
+
+#: src/components/PostingLogView.svelte
+msgid "Groups processed"
+msgstr "İşlenen gruplar"
+
+#: src/components/PostingLogView.svelte
+msgid "Published"
+msgstr "Yayınlandı"
+
+#: src/components/PostingLogView.svelte
+msgid "Awaiting approval"
+msgstr "Onay bekleniyor"
+
+#: src/components/PostingLogView.svelte
+msgid "Failed or skipped"
+msgstr "Başarısız veya atlandı"
+
+#: src/components/PostingLogView.svelte
+msgid "Remaining"
+msgstr "Kalan"
+
+#. 0: number(a); 1: number(b); 2: c
+#. 0: activity.current; 1: activity.total; 2: activity.currentGroup.name
+#: src/components/LogMessage.svelte
+#: src/components/PostingLogView.svelte
+msgid "Group {0}/{1}: {2}"
+msgstr "Grup {0}/{1}: {2}"
+
+#. 0: pauseRequested ? /* @wc-include */ ' · Paused' \\: ''
+#: src/components/PostingLogView.svelte
+msgid "Next post in <0/>{0}"
+msgstr "Sonraki gönderi <0/>{0}"
+
+#: src/components/PostingLogView.svelte
+msgid "Elapsed <0/>"
+msgstr "Geçen süre <0/>"
+
+#: src/components/PostingLogView.svelte
+msgid "Current group <0/>"
+msgstr "Mevcut grup <0/>"
+
+#: src/components/PostingLogView.svelte
+msgid "Following latest"
+msgstr "En sonu takip et"
+
+#: src/components/PostingLogView.svelte
+msgid "Jump to latest"
+msgstr "En sona git"
+
+#. 0.0: total
+#: src/components/PostingLogView.svelte
+msgid "Activity timeline <0>{0} logs</0>"
+msgstr "Etkinlik zaman çizelgesi <0>{0} kayıt</0>"
+
+#: src/components/PostingLogView.svelte
+msgid "Posting activity"
+msgstr "Gönderim etkinliği"
+
+#. 0: entryLabel(entry)
+#: src/components/PostingLogView.svelte
+msgid "{0} log"
+msgstr "{0} günlüğü"
+
+#. 0: itemTime(entry.message)
+#: src/components/PostingLogView.svelte
+msgid "Took {0}"
+msgstr "{0} alındı"
+
+#: src/components/PostingLogView.svelte
+#: src/components/PostingLogView.svelte
+msgid "Copy Facebook response"
+msgstr "Facebook yanıtını kopyala"
+
+#: src/components/PostingLogView.svelte
+msgid "Response copied"
+msgstr "Yanıt kopyalandı"
+
+#: src/components/PostingLogView.svelte
+msgid "Copied"
+msgstr "Kopyalandı"
+
+#: src/components/PostingLogView.svelte
+msgid "Copying…"
+msgstr "Kopyalanıyor…"
+
+#: src/components/PostingLogView.svelte
+msgid "Copy response"
+msgstr "Yanıtı kopyala"
+
+#. 0.0: entry.hasResponse ? /* @wc-include */ ' · Response available to copy' \\: ''
+#: src/components/PostingLogView.svelte
+msgid "Debug details<0>Original log message{0}</0>"
+msgstr "Hata ayıklama detayları<0>Orijinal günlük mesajı{0}</0>"
+
+#: src/components/PostingLogView.svelte
+msgid "Your activity will appear here"
+msgstr "Aktiviteniz burada görünecek"
+
+#: src/components/PostingLogView.svelte
+msgid "Start posting to follow uploads, results, and wait times."
+msgstr "Yüklemeleri, sonuçları ve bekleme sürelerini takip etmek için paylaşım yapmaya başlayın."
+
+#: src/components/PostingLogView.svelte
+msgid "Log pages"
+msgstr "Günlük sayfaları"
+
+#: src/components/PostingLogView.svelte
+msgid "Previous page"
+msgstr "Önceki sayfa"
+
+#. 0: number
+#: src/components/PostingLogView.svelte
+msgid "Page {0}"
+msgstr "Sayfa {0}"
+
+#: src/components/PostingLogView.svelte
+msgid "Next page"
+msgstr "Sonraki sayfa"
+
+#: src/components/PostingLogView.svelte
+msgid "← Prev"
+msgstr "← Önceki"
+
+#: src/components/PostingLogView.svelte
+msgid "Next →"
+msgstr "Sonraki →"
+
+#. 0: total ? (page - 1) * pageSize + 1 \\: 0; 1: Math.min(page * pageSize, total); 2: total
+#: src/components/PostingLogView.svelte
+msgid "{0}–{1} of {2} logs"
+msgstr "{0}–{1} / {2} günlük"
+
+#: src/components/PostingLogView.svelte
+msgid "Resume"
+msgstr "Devam et"
+
+#: src/components/PostingLogView.svelte
+msgid "Pause"
+msgstr "Duraklat"
+
+#: src/components/PostingLogView.svelte
+msgid "Stopping…"
+msgstr "Durduruluyor…"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "POSTING PACE"
+msgstr "PAYLAŞMA TEMPOSU"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Interval between posts"
+msgstr "Gönderiler arasındaki aralık"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Minimum (seconds)"
+msgstr "Minimum (saniye)"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Maximum (seconds)"
+msgstr "Maksimum (saniye)"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Choose how long to wait before posting to the next group."
+msgstr "Bir sonraki gruba paylaşım yapmadan önce ne kadar bekleyeceğinizi seçin."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "At least 60 seconds. Use equal values for a fixed interval."
+msgstr "En az 60 saniye. Sabit aralık için eşit değerler kullanın."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "OPTIONAL · AI REWRITE"
+msgstr "OPSİYONEL · AI YENİDEN YAZ"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "A fresh version for each group"
+msgstr "Her grup için taze bir versiyon"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Rewrite each post body with Gemini"
+msgstr "Her gönderi metnini Gemini ile yeniden yaz"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
+msgstr "Yeniden yazma talimatları<0>Gemini'nin koruması gereken tonu ve detayları seçin.</0>"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Keep it concise and easy to scan. Preserve the price and contact details."
+msgstr "Kısa ve kolay okunabilir tutun. Fiyat ve iletişim bilgilerini koruyun."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Rewrite instructions"
+msgstr "Yeniden yazma talimatları"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
+msgstr "Gönderi metniniz ve talimatlarınız Google Gemini'ye gönderilir. Görseller gönderilmez. Gemini'nin yeniden yazmaları düz metin kullanır."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
+msgstr "Yeniden yazma başarısız olursa, o gönderi orijinal metninizi kullanır. Bir sonraki gönderi Gemini'yi tekrar dener."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Let Gemini rewrite your post using your instructions."
+msgstr "Gemini talimatlarınızı kullanarak gönderinizi yeniden yazsın."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Posting preferences"
+msgstr "Gönderim tercihleri"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved defaults help"
+msgstr "Kaydedilmiş varsayılanlar yardımcı olur"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "About saved defaults"
+msgstr "Kaydedilmiş varsayılanlar hakkında"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved interval"
+msgstr "Kaydedilmiş aralık"
+
+#. 0: settings.minimumInterval === settings.maximumInterval ? settings.minimumInterval \\: `${settings.minimumInterval}–${settings.maximumInterval}`
+#: src/components/SavedDefaultsInfo.svelte
+msgid "{0} seconds"
+msgstr "{0} saniye"
+
+#: src/App.svelte
+#: src/components/SavedDefaultsInfo.svelte
+msgid "On"
+msgstr "Açık"
+
+#: src/App.svelte
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Off"
+msgstr "Kapalı"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Gemini rewrite"
+msgstr "Gemini yeniden yazması"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "No instructions saved."
+msgstr "Kaydedilmiş talimat yok."
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved rewrite instructions"
+msgstr "Kaydedilmiş yeniden yazma talimatları"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved values could not be loaded. Try “Use saved defaults” again."
+msgstr "Kaydedilmiş değerler yüklenemedi. “Kaydedilmiş varsayılanları kullan”ı tekrar deneyin."
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "What does “Use saved defaults” do?"
+msgstr "“Kaydedilmiş varsayılanları kullan” ne yapar?"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
+msgstr "Bu çalışmanın gönderim aralığını, Gemini yeniden yazım seçeneğini ve yeniden yazım talimatlarını Ayarlar'da kaydedilen değerlerle değiştirir."
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
+msgstr "Başlangıç varsayılanları: 60–120 saniye, Gemini yeniden yazım kapalı ve yeniden yazım talimatı yok. Bunları değiştirmek için kendi tercihlerinizi Ayarlar'da kaydedin."
+
+#: src/components/Settings.svelte
+msgid "Settings saved. New runs can use these defaults."
+msgstr "Ayarlar kaydedildi. Yeni çalışmalarda bu varsayılanlar kullanılabilir."
+
+#: src/components/Settings.svelte
+msgid "Key saved · leave blank to keep it"
+msgstr "Anahtar kaydedildi · korumak için boş bırakın"
+
+#: src/components/Settings.svelte
+msgid "Enter your Gemini API key"
+msgstr "Gemini API anahtarınızı girin"
+
+#: src/components/Settings.svelte
+msgid "A key is saved on this device."
+msgstr "Bu cihazda bir anahtar kaydedildi."
+
+#: src/components/Settings.svelte
+msgid "No API key saved."
+msgstr "Kaydedilmiş API anahtarı yok."
+
+#: src/components/Settings.svelte
+msgid "Remove saved key"
+msgstr "Kaydedilmiş anahtarı kaldır"
+
+#: src/components/Settings.svelte
+msgid "Gemini"
+msgstr "Gemini"
+
+#: src/components/Settings.svelte
+msgid "API key<0/>"
+msgstr "API anahtarı<0/>"
+
+#. 0: keyConfigured ? 'A key is saved on this device.' \\: 'No API key saved.'
+#: src/components/Settings.svelte
+msgid "{0} The saved key is never displayed."
+msgstr "{0} Kaydedilen anahtar asla gösterilmez."
+
+#: src/components/Settings.svelte
+msgid "Model<0/>"
+msgstr "Model<0/>"
+
+#: src/components/Settings.svelte
+msgid "Posting defaults"
+msgstr "Varsayılan paylaşım ayarları"
+
+#: src/components/Settings.svelte
+msgid "Applied when you start a new posting run."
+msgstr "Yeni bir gönderim çalışmasına başladığınızda uygulanır."
+
+#: src/components/Settings.svelte
+msgid "Saving…"
+msgstr "Kaydediliyor…"
+
+#: src/components/Settings.svelte
+msgid "Save settings"
+msgstr "Ayarları kaydet"
+
+#: src/components/Settings.svelte
+msgid "YOUR PREFERENCES"
+msgstr "TERCİHLERİNİZ"
+
+#. 0: accountName
+#: src/components/Settings.svelte
+msgid "Set up Gemini and save posting defaults for {0}."
+msgstr "Gemini’yi kurun ve {0} için gönderim varsayılanlarını kaydedin."
+
+#: src/components/StepProgress.svelte
+msgid "Completed"
+msgstr "Tamamlandı"
+
+#: src/components/StepProgress.svelte
+msgid "Current"
+msgstr "Mevcut"
+
+#: src/components/StepProgress.svelte
+msgid "Upcoming"
+msgstr "Yaklaşan"
+
+#. 0: index + 1; 1: steps.length; 2: completed || index < currentStep ? 'Completed' \\: index === currentStep ? 'Current' \\: 'Upcoming'
+#: src/components/StepProgress.svelte
+msgid "Step {0} of {1}: {2}"
+msgstr "Adım {0} / {1}: {2}"
+
+#: src/components/WindowControls.svelte
+msgid "Could not change the window. Please try again."
+msgstr "Pencere değiştirilemedi. Lütfen tekrar deneyin."
+
+#: src/components/WindowControls.svelte
+msgid "Window controls"
+msgstr "Pencere kontrolleri"
+
+#: src/components/WindowControls.svelte
+msgid "Minimize window"
+msgstr "Pencereyi küçült"
+
+#: src/components/WindowControls.svelte
+msgid "Restore window"
+msgstr "Pencereyi eski boyutuna getir"
+
+#: src/components/WindowControls.svelte
+msgid "Maximize window"
+msgstr "Pencereyi büyüt"
+
+#: src/components/WindowControls.svelte
+msgid "Close window"
+msgstr "Pencereyi kapat"
+
+#: src/App.svelte
+msgid "Create post"
+msgstr "Gönderi oluştur"
+
+#: src/App.svelte
+msgid "Write your post and add images"
+msgstr "Gönderinizi yazın ve resim ekleyin"
+
+#: src/App.svelte
+msgid "Select groups"
+msgstr "Grupları seç"
+
+#: src/App.svelte
+msgid "Load groups and choose where to post"
+msgstr "Grupları yükleyin ve nerede paylaşacağınıza karar verin"
+
+#~ msgid "Review & post"
+#~ msgstr "İncele ve paylaş"
+
+#~ msgid "Review, set preferences, then post now or schedule"
+#~ msgstr "Gözden geçirin, tercihleri ayarlayın, sonra şimdi gönder veya zamanlayın"
+
+#: src/App.svelte
+msgid "Facebook session captured"
+msgstr "Facebook oturumu yakalandı"
+
+#: src/App.svelte
+msgid "The browser is closed. It will reopen when you click Post."
+msgstr "Tarayıcı kapalı. Gönder'e tıkladığınızda tekrar açılacak."
+
+#: src/App.svelte
+msgid "Checking Facebook login"
+msgstr "Facebook giriş kontrolü"
+
+#: src/App.svelte
+msgid "Finish signing in or any verification prompts in Chrome. Your login will be detected automatically."
+msgstr "Chrome'da oturum açmayı veya herhangi bir doğrulama sorusunu tamamlayın. Girişiniz otomatik olarak tespit edilecek."
+
+#: src/App.svelte
+msgid "Login required"
+msgstr "Giriş gerekli"
+
+#: src/App.svelte
+msgid "Please log in to Facebook in the Chrome window. Postika will detect when you’re signed in."
+msgstr "Lütfen Chrome penceresinde Facebook'a giriş yapın. Postika giriş yaptığınızı algılayacak."
+
+#: src/App.svelte
+msgid "Complete Facebook verification"
+msgstr "Facebook doğrulamasını tamamlayın"
+
+#: src/App.svelte
+msgid "Complete the login or verification prompts in Chrome to continue."
+msgstr "Devam etmek için Chrome'da giriş veya doğrulama sorularını tamamlayın."
+
+#: src/App.svelte
+msgid "Facebook connected"
+msgstr "Facebook bağlı"
+
+#: src/App.svelte
+msgid "You’re logged in. Your session is ready."
+msgstr "Giriş yaptınız. Oturumunuz hazır."
+
+#: src/App.svelte
+msgid "Facebook window closed"
+msgstr "Facebook penceresi kapandı"
+
+#: src/App.svelte
+msgid "Click Load groups to reopen Facebook and check your login."
+msgstr "Facebook'u yeniden açmak ve girişinizi kontrol etmek için Grupları Yükle'ye tıklayın."
+
+#. 0: current?.name ?? ''
+#: src/components/AccountDropdown.svelte
+msgid "Language: {0}"
+msgstr "Dil: {0}"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search languages…"
+msgstr "Dil ara…"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search languages"
+msgstr "Dil ara"
+
+#: src/components/AccountDropdown.svelte
+msgid "Clear language search"
+msgstr "Dil aramasını temizle"
+
+#. 0: matches.length
+#: src/components/AccountDropdown.svelte
+msgid "{0} result"
+msgstr "{0} sonuç"
+
+#. 0: matches.length
+#: src/components/AccountDropdown.svelte
+msgid "{0} results"
+msgstr "{0} sonuçlar"
+
+#: src/components/AccountDropdown.svelte
+msgid "All languages"
+msgstr "Tüm diller"
+
+#: src/components/AccountDropdown.svelte
+msgid "Languages"
+msgstr "Diller"
+
+#: src/components/AccountDropdown.svelte
+msgid "No languages found"
+msgstr "Hiç dil bulunamadı"
+
+#: src/components/DateTimePicker.svelte
+msgid "Morning"
+msgstr "Sabah"
+
+#: src/components/DateTimePicker.svelte
+msgid "Afternoon"
+msgstr "Öğleden sonra"
+
+#: src/components/DateTimePicker.svelte
+msgid "Evening"
+msgstr "Akşam"
+
+#: src/components/LanguageMenu.svelte
+msgid "Could not change the language. Please try again."
+msgstr "Dil değiştirilemedi. Lütfen tekrar deneyin."
+
+#: src/components/Settings.svelte
+msgid "Language"
+msgstr "Dil"
+
+#: src/components/PostingOptionsForm.svelte
+#: src/components/PostingOptionsForm.svelte
+msgid "seconds"
+msgstr "saniye"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Minimum"
+msgstr "Minimum"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Maximum"
+msgstr "Maksimum"
+
+#: src/components/StepProgress.svelte
+msgid "Post progress"
+msgstr "Gönderi ilerlemesi"
+
+#. 0: visibleGroups.length
+#: src/App.svelte
+msgid "{0} shown"
+msgstr "{0} gösterildi"
+
+#. 0: selectedGroupIds.length
+#: src/App.svelte
+msgid "{0} selected"
+msgstr "{0} seçildi"
+
+#. 0: images.length
+#: src/components/PostComposer.svelte
+msgid "{0} images selected"
+msgstr "{0} resim seçildi"
+
+#: src/components/PostingLogView.svelte
+msgid "WARN"
+msgstr "UYARI"
+
+#: src/components/PostingLogView.svelte
+msgid "INFO"
+msgstr "BİLGİ"
+
+#: src/components/PostingLogView.svelte
+msgid "ERROR"
+msgstr "HATA"
+
+#: src/components/PostingLogView.svelte
+msgid "DEBUG"
+msgstr "HATA AYIKLAMA"
+
+#: src/components/PostingLogView.svelte
+msgid "PUBLISHED"
+msgstr "YAYINLANDI"
+
+#: src/components/PostingLogView.svelte
+msgid "PENDING"
+msgstr "BEKLEMEDE"
+
+#: src/components/PostingLogView.svelte
+msgid "FAILED"
+msgstr "BAŞARISIZ"
+
+#: src/components/PostingLogView.svelte
+msgid "SKIPPED"
+msgstr "ATLANAN"
+
+#: src/components/PostingLogView.svelte
+msgid "UNCONFIRMED"
+msgstr "ONAYLANMADI"
+
+#: src/Workspace.svelte
+msgid "e.g. Business"
+msgstr "ör. İş"
+
+#: src/components/PostComposer.svelte
+msgid "1 image selected"
+msgstr "1 resim seçildi"
+
+#: src/components/PostingLogView.svelte
+msgid "Paused · Waiting for internet"
+msgstr "Duraklatıldı · İnternet bekleniyor"
+
+#: src/components/PostingLogView.svelte
+msgid "Pausing after the current operation"
+msgstr "Mevcut işlemden sonra duraklatılıyor"
+
+#: src/components/PostingLogView.svelte
+msgid "Paused"
+msgstr "Duraklatıldı"
+
+#: src/components/PostingLogView.svelte
+msgid "Stopping"
+msgstr "Durduruluyor"
+
+#: src/components/PostingLogView.svelte
+msgid "Posting"
+msgstr "Paylaşılıyor"
+
+#: src/components/PostingLogView.svelte
+msgid "Finished"
+msgstr "Tamamlandı"
+
+#: src/components/PostingLogView.svelte
+msgid "Stopped"
+msgstr "Durduruldu"
+
+#: src/components/PostingLogView.svelte
+msgid "Ready"
+msgstr "Hazır"
+
+#: src/components/PostingLogView.svelte
+msgid "CURRENT ACTIVITY"
+msgstr "MEVCUT FAALİYET"
+
+#: src/components/PostingLogView.svelte
+msgid "RUN STATUS"
+msgstr "ÇALIŞMA DURUMU"
+
+#: src/components/PostingLogView.svelte
+msgid " · Paused"
+msgstr " · Duraklatıldı"
+
+#: src/components/PostingLogView.svelte
+msgid " · Response available to copy"
+msgstr " · Kopyalanabilir yanıt mevcut"
+
+#: src/components/AccountLabel.svelte
+msgid "Default profile"
+msgstr "Varsayılan profil"
+
+#~ msgid "Switch to light mode"
+#~ msgstr "Açık moda geç"
+
+#~ msgid "Switch to dark mode"
+#~ msgstr "Koyu moda geç"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Color themes"
+msgstr "Renk temaları"
+
+#: src/components/ThemePicker.svelte
+msgid "Close"
+msgstr "Kapat"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Search themes…"
+msgstr "Tema ara…"
+
+#: src/components/ThemePicker.svelte
+msgid "No themes found"
+msgstr "Tema bulunamadı"
+
+#: src/components/LogMessage.svelte
+msgid "A selected group is no longer available. Load groups again"
+msgstr "Seçilen grup artık mevcut değil. Grupları tekrar yükleyin"
+
+#: src/components/LogMessage.svelte
+msgid "Add a Gemini API key in Settings before enabling rewriting"
+msgstr "Yeniden yazmayı etkinleştirmeden önce Ayarlar'da bir Gemini API anahtarı ekleyin"
+
+#: src/components/LogMessage.svelte
+msgid "Add a post body and at least one image"
+msgstr "Bir gönderi gövdesi ve en az bir resim ekleyin"
+
+#: src/components/LogMessage.svelte
+msgid "All selected groups were already attempted. Review unconfirmed results on Facebook."
+msgstr "Seçilen tüm gruplar zaten denendi. Onaylanmamış sonuçları Facebook'ta gözden geçirin."
+
+#: src/components/LogMessage.svelte
+msgid "An image upload failed in Chrome. Check the composer and retry Post"
+msgstr "Chrome'da bir resim yüklemesi başarısız oldu. Gönderi oluşturucuyu kontrol edin ve tekrar gönderin"
+
+#: src/components/LogMessage.svelte
+msgid "Attaching images…"
+msgstr "Resimler ekleniyor…"
+
+#: src/components/LogMessage.svelte
+msgid "Choose JPG, PNG, WebP, or GIF images"
+msgstr "JPG, PNG, WebP veya GIF resimleri seçin"
+
+#: src/components/LogMessage.svelte
+msgid "Choose a future date and time for your post"
+msgstr "Gönderiniz için gelecekte bir tarih ve saat seçin"
+
+#: src/components/LogMessage.svelte
+msgid "Closing Chrome and posting to the remaining groups…"
+msgstr "Chrome’u kapatıyor ve kalan gruplara gönderi paylaşılıyor…"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the complete create-post request"
+msgstr "Tam create-post isteği yakalanamadı"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the completed image upload response"
+msgstr "Tamamlanmış resim yükleme yanıtı yakalanamadı"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the image upload form fields"
+msgstr "Resim yükleme formu alanları yakalanamadı"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the image upload form. Retry Post"
+msgstr "Resim yükleme formu yakalanamadı. Gönderiyi tekrar deneyin"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the upload endpoint"
+msgstr "Yükleme uç noktası yakalanamadı"
+
+#: src/components/LogMessage.svelte
+msgid "Could not copy the Facebook response to the clipboard"
+msgstr "Facebook yanıtı panoya kopyalanamadı"
+
+#: src/components/LogMessage.svelte
+msgid "Could not enable create-post capture in Chrome"
+msgstr "Chrome'da gönderi oluşturma yakalamasını etkinleştiremedim"
+
+#: src/components/LogMessage.svelte
+msgid "Could not parse the captured create-post form"
+msgstr "Yakalanan gönderi oluşturma formunu çözümleyemedim"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare image files"
+msgstr "Görüntü dosyalarını hazırlayamadım"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare post images"
+msgstr "Gönderi görüntülerini hazırlayamadım"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare the Gemini request"
+msgstr "Gemini isteğini hazırlayamadım"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare the image upload."
+msgstr "Görüntü yüklemesini hazırlayamadım."
+
+#: src/components/LogMessage.svelte
+msgid "Could not reach Gemini. Check your connection"
+msgstr "Gemini'ye ulaşılamadı. Bağlantınızı kontrol edin"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read Facebook's post confirmation"
+msgstr "Facebook'un gönderi onayını okuyamadım"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read the Gemini rewrite"
+msgstr "Gemini yeniden yazımını okuyamadım"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read the completed image upload response"
+msgstr "Tamamlanmış görüntü yükleme yanıtını okuyamadım"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read the selected image."
+msgstr "Seçilen görüntüyü okuyamadım."
+
+#: src/components/LogMessage.svelte
+msgid "Create-post capture ended before confirmation. Check Facebook before retrying"
+msgstr "Gönderi oluşturma yakalaması onaydan önce sona erdi. Yeniden denemeden önce Facebook'u kontrol edin"
+
+#: src/components/LogMessage.svelte
+msgid "Create-post request detected. Capturing fresh form values…"
+msgstr "Gönderi oluşturma isteği tespit edildi. Yeni form değerleri yakalanıyor..."
+
+#: src/components/LogMessage.svelte
+msgid "Create-post response complete. Waiting for captured session headers…"
+msgstr "Gönderi oluşturma yanıtı tamamlandı. Yakalanan oturum başlıkları bekleniyor..."
+
+#: src/components/LogMessage.svelte
+msgid "Create-post response received. Waiting for its complete body…"
+msgstr "Gönderi oluşturma yanıtı alındı. Tam gövdesi bekleniyor..."
+
+#: src/components/LogMessage.svelte
+msgid "Description inserted"
+msgstr "Açıklama eklendi"
+
+#: src/components/LogMessage.svelte
+msgid "Earlier submission is unconfirmed. Skipping this group and continuing with the remaining groups."
+msgstr "Önceki gönderim doğrulanmadı. Bu grup atlanıyor ve kalan gruplarla devam ediliyor."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook could not post to this group. Continuing with the remaining groups."
+msgstr "Facebook bu gruba gönderi paylaşamadı. Kalan gruplarla devam ediliyor."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook did not confirm all images. Check the composer."
+msgstr "Facebook tüm resimleri doğrulamadı. Besteciye bakın."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook did not confirm the submission"
+msgstr "Facebook gönderimi doğrulamadı."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook did not confirm this post. Check the group before trying again."
+msgstr "Facebook bu gönderiyi doğrulamadı. Tekrar denemeden önce gruba bakın."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook has temporarily limited posting. Try again later."
+msgstr "Facebook geçici olarak gönderim yapmayı sınırladı. Daha sonra tekrar deneyin."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook rejected this post."
+msgstr "Facebook bu gönderiyi reddetti."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook requires login or verification. Load groups again."
+msgstr "Facebook giriş veya doğrulama gerektiriyor. Grupları tekrar yükleyin."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook returned a story, but did not confirm its group or publication state. Posting stopped. Check Facebook before retrying."
+msgstr "Facebook bir hikaye döndürdü ancak grubunu veya yayın durumunu doğrulamadı. Gönderim durduruldu. Tekrar denemeden önce Facebook'a bakın."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook's confirmation exceeded the 16 MiB response limit; retained response is truncated"
+msgstr "Facebook'un doğrulaması 16 MiB yanıt sınırını aştı; tutulan yanıt kesildi."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook's editor did not accept the formatted post. Posting was not submitted"
+msgstr "Facebook'un düzenleyicisi formatlanmış gönderiyi kabul etmedi. Gönderim yapılmadı."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook's editor did not retain the formatted post text. Posting was not submitted"
+msgstr "Facebook'un editörü biçimlendirilmiş gönderi metnini saklamadı. Gönderim yapılmadı"
+
+#: src/components/LogMessage.svelte
+msgid "First post confirmed. Waiting for the Facebook composer to close…"
+msgstr "İlk gönderi onaylandı. Facebook oluşturucusunun kapanması bekleniyor…"
+
+#: src/components/LogMessage.svelte
+msgid "First submission unconfirmed. Retrying request 1/3 with the captured mutation ID…"
+msgstr "İlk gönderim onaylanmadı. Yakalanan değişim kimliği ile isteği 1/3 tekrar deneme…"
+
+#: src/components/LogMessage.svelte
+msgid "Formatted post is too large"
+msgstr "Biçimlendirilmiş gönderi çok büyük"
+
+#: src/components/LogMessage.svelte
+msgid "Found multiple matching post composers on the group page"
+msgstr "Grup sayfasında birden fazla eşleşen gönderi oluşturucu bulundu"
+
+#: src/components/LogMessage.svelte
+msgid "Fresh create-post form captured. Waiting for Facebook's response…"
+msgstr "Yeni gönderi oluşturma formu yakalandı. Facebook'un yanıtı bekleniyor…"
+
+#: src/components/LogMessage.svelte
+msgid "Gemini did not finish the rewrite"
+msgstr "Gemini yeniden yazmayı bitirmedi"
+
+#: src/components/LogMessage.svelte
+msgid "Gemini returned no rewritten text"
+msgstr "Gemini yeniden yazılmış metin döndürmedi"
+
+#: src/components/LogMessage.svelte
+msgid "Gemini rewrite completed."
+msgstr "Gemini yeniden yazımı tamamlandı."
+
+#: src/components/LogMessage.svelte
+msgid "Gemini rewrite failed. Using the original text for this post; Gemini will be tried again for the next post."
+msgstr "Gemini yeniden yazımı başarısız oldu. Bu gönderi için orijinal metin kullanılacak; Gemini bir sonraki gönderi için tekrar denenecek."
+
+#: src/components/LogMessage.svelte
+msgid "Image uploads belong to a different profile"
+msgstr "Resim yüklemeleri başka bir profile ait"
+
+#: src/components/LogMessage.svelte
+msgid "Images inserted"
+msgstr "Resimler eklendi"
+
+#: src/components/LogMessage.svelte
+msgid "Inserting post body…"
+msgstr "Gönderi gövdesi ekleniyor…"
+
+#: src/components/LogMessage.svelte
+msgid "Internet connection lost. Queue paused until the connection returns."
+msgstr "İnternet bağlantısı kaybedildi. Bağlantı geri dönene kadar sıra duraklatıldı."
+
+#: src/components/LogMessage.svelte
+msgid "Internet connection restored. Continuing the queue."
+msgstr "İnternet bağlantısı geri yüklendi. Kuyruğa devam ediliyor."
+
+#: src/components/LogMessage.svelte
+msgid "Internet connection restored. The queue remains manually paused."
+msgstr "İnternet bağlantısı geri yüklendi. Kuyruk elle duraklatılmış durumda."
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured endpoint"
+msgstr "Geçersiz yakalanmış uç nokta"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured formatted post"
+msgstr "Geçersiz yakalanmış biçimlendirilmiş gönderi"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured post form"
+msgstr "Geçersiz yakalanmış gönderi formu"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured post variables"
+msgstr "Geçersiz yakalanmış gönderi değişkenleri"
+
+#: src/components/LogMessage.svelte
+msgid "Load your groups before opening a post"
+msgstr "Bir gönderi açmadan önce gruplarınızı yükleyin"
+
+#: src/components/LogMessage.svelte
+msgid "Log in or complete Facebook verification in Chrome, then click Post again"
+msgstr "Chrome’da oturum açın veya Facebook doğrulamasını tamamlayın, sonra tekrar Gönder’e tıklayın"
+
+#: src/components/LogMessage.svelte
+msgid "Multiple matching controls found in the post composer"
+msgstr "Gönderi oluşturucuda birden fazla eşleşen kontrol bulundu"
+
+#: src/components/LogMessage.svelte
+msgid "No Facebook response was captured for this entry"
+msgstr "Bu giriş için Facebook yanıtı yakalanamadı"
+
+#: src/components/LogMessage.svelte
+msgid "No available post composer."
+msgstr "Mevcut gönderi oluşturucu yok."
+
+#: src/components/LogMessage.svelte
+msgid "No complete image upload request was captured."
+msgstr "Tam bir resim yükleme isteği yakalanmadı."
+
+#: src/components/LogMessage.svelte
+msgid "No fresh image upload request was captured."
+msgstr "Yeni bir resim yükleme isteği yakalanmadı."
+
+#: src/components/LogMessage.svelte
+msgid "Opening browser…"
+msgstr "Tarayıcı açılıyor…"
+
+#: src/components/LogMessage.svelte
+msgid "Pause requested. The current operation will finish before pausing."
+msgstr "Duraklatma istendi. Mevcut işlem duraklatmadan önce tamamlanacak."
+
+#: src/components/LogMessage.svelte
+msgid "Post button clicked"
+msgstr "Gönder düğmesine tıklandı"
+
+#: src/components/LogMessage.svelte
+msgid "Post published."
+msgstr "Gönderi yayınlandı."
+
+#: src/components/LogMessage.svelte
+msgid "Postika is shutting down"
+msgstr "Postika kapanıyor"
+
+#: src/components/LogMessage.svelte
+msgid "Posting is already running"
+msgstr "Gönderim zaten çalışıyor"
+
+#: src/components/LogMessage.svelte
+msgid "Posting paused."
+msgstr "Gönderim duraklatıldı."
+
+#: src/components/LogMessage.svelte
+msgid "Posting resumed."
+msgstr "Gönderim yeniden başladı."
+
+#: src/components/LogMessage.svelte
+msgid "Posting stopped after the first post was confirmed"
+msgstr "İlk gönderi onaylandıktan sonra gönderim durduruldu"
+
+#: src/components/LogMessage.svelte
+msgid "Posting..."
+msgstr "Gönderiliyor..."
+
+#: src/components/LogMessage.svelte
+msgid "Reading Facebook's create-post confirmation…"
+msgstr "Facebook'un gönderi oluşturma onayı okunuyor…"
+
+#: src/components/LogMessage.svelte
+msgid "Rewriting the post body with Gemini…"
+msgstr "Gönderi içeriği Gemini ile yeniden yazılıyor…"
+
+#: src/components/LogMessage.svelte
+msgid "Scheduled posting cancelled."
+msgstr "Zamanlanmış gönderim iptal edildi."
+
+#: src/components/LogMessage.svelte
+msgid "Scheduled time reached. Starting posting…"
+msgstr "Zamanlanmış saat geldi. Gönderim başlatılıyor…"
+
+#: src/components/LogMessage.svelte
+msgid "Select at least one group"
+msgstr "En az bir grup seçin"
+
+#: src/components/LogMessage.svelte
+msgid "Setting up automatic posting using your first Facebook post..."
+msgstr "İlk Facebook gönderinizi kullanarak otomatik gönderim ayarlanıyor..."
+
+#: src/components/LogMessage.svelte
+msgid "Stopping posting…"
+msgstr "Gönderim durduruluyor…"
+
+#: src/components/LogMessage.svelte
+msgid "Submitting the first post and capturing fresh request values…"
+msgstr "İlk gönderi gönderiliyor ve yeni istek değerleri alınıyor…"
+
+#: src/components/LogMessage.svelte
+#: src/components/LogMessage.svelte
+msgid "Technical details recorded. Open debug details to inspect the original message."
+msgstr "Teknik detaylar kaydedildi. Orijinal mesajı incelemek için hata ayıklama detaylarını açın."
+
+#: src/components/LogMessage.svelte
+msgid "The active Facebook profile changed or expired"
+msgstr "Aktif Facebook profili değişti veya süresi doldu"
+
+#: src/components/LogMessage.svelte
+msgid "The browser connection was lost. Check Facebook before retrying"
+msgstr "Tarayıcı bağlantısı kayboldu. Tekrar denemeden önce Facebook'u kontrol edin"
+
+#: src/components/LogMessage.svelte
+msgid "The browser profile changed while capturing posting requests"
+msgstr "Gönderi istekleri alınırken tarayıcı profili değişti"
+
+#: src/components/LogMessage.svelte
+msgid "The captured formatted post body does not match your draft"
+msgstr "Yakalanan biçimlendirilmiş gönderi içeriği taslağınızla eşleşmiyor"
+
+#: src/components/LogMessage.svelte
+msgid "The captured image upload cookies do not match the Facebook profile"
+msgstr "Yakalanan resim yükleme çerezleri Facebook profiliyle eşleşmiyor"
+
+#: src/components/LogMessage.svelte
+msgid "The captured image upload format is not supported"
+msgstr "Yakalanan resim yükleme formatı desteklenmiyor"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post belongs to a different Facebook profile"
+msgstr "Yakalanan gönderi farklı bir Facebook profiline ait"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post body does not match your draft"
+msgstr "Yakalanan gönderi içeriği taslağınızla eşleşmiyor"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post cookies do not match the logged-in profile"
+msgstr "Yakalanan gönderi çerezleri giriş yapılmış profil ile eşleşmiyor"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post has no group target"
+msgstr "Yakalanan gönderinin hedef grubu yok"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post target does not match the selected group"
+msgstr "Yakalanan gönderi hedefi seçilen grupla eşleşmiyor"
+
+#: src/components/LogMessage.svelte
+msgid "The composer dialog was replaced while loading"
+msgstr "Yükleme sırasında oluşturucu diyalogu değiştirildi"
+
+#: src/components/LogMessage.svelte
+msgid "The create-post connection failed. Check Facebook before retrying"
+msgstr "Gönderi oluşturma bağlantısı başarısız oldu. Tekrar denemeden önce Facebook'u kontrol edin"
+
+#: src/components/LogMessage.svelte
+msgid "The current profile differs from the profile used to load groups. Load groups again."
+msgstr "Geçerli profil, grupları yüklemek için kullanılan profilden farklı. Grupları tekrar yükleyin."
+
+#: src/components/LogMessage.svelte
+msgid "The desktop application is not ready"
+msgstr "Masaüstü uygulaması hazır değil"
+
+#: src/components/LogMessage.svelte
+msgid "The desktop clipboard is not ready"
+msgstr "Masaüstü pano hazır değil"
+
+#: src/components/LogMessage.svelte
+msgid "The expected composer control did not appear in Chrome"
+msgstr "Beklenen oluşturucu kontrolü Chrome'da görünmedi"
+
+#: src/components/LogMessage.svelte
+msgid "The first post was confirmed, but Chrome's completion state could not be checked. Posting stopped"
+msgstr "İlk gönderi onaylandı, ancak Chrome'un tamamlama durumu kontrol edilemedi. Gönderim durduruldu"
+
+#: src/components/LogMessage.svelte
+msgid "The image upload did not contain multipart form data"
+msgstr "Görsel yüklemesi çok parçalı form verisi içermiyordu"
+
+#: src/components/LogMessage.svelte
+msgid "The image upload does not match its active Facebook profile"
+msgstr "Görsel yüklemesi, aktif Facebook profili ile eşleşmiyor"
+
+#: src/components/LogMessage.svelte
+msgid "The image upload form belongs to a different Facebook profile"
+msgstr "Görsel yükleme formu farklı bir Facebook profiline ait"
+
+#: src/components/LogMessage.svelte
+msgid "The selected group has an invalid Facebook URL. Load groups again"
+msgstr "Seçilen grubun geçersiz bir Facebook URL'si var. Grupları tekrar yükleyin"
+
+#: src/components/LogMessage.svelte
+msgid "The session could not be saved for posting retries and remaining groups."
+msgstr "Oturum, gönderim yeniden denemeleri ve kalan gruplar için kaydedilemedi"
+
+#: src/components/LogMessage.svelte
+msgid "This draft has already been submitted to the first group. It was not submitted again."
+msgstr "Bu taslak zaten ilk gruba gönderildi. Tekrar gönderilmedi"
+
+#: src/components/LogMessage.svelte
+msgid "This group has no available post composer"
+msgstr "Bu grupta kullanılabilir bir gönderi oluşturucu yok"
+
+#: src/components/LogMessage.svelte
+msgid "This group has reached its pending-content limit."
+msgstr "Bu grup bekleyen içerik sınırına ulaştı"
+
+#: src/components/LogMessage.svelte
+msgid "This post was submitted, but confirmation is uncertain. Check Facebook before retrying."
+msgstr "Bu gönderi gönderildi, ancak onay belirsiz. Tekrar denemeden önce Facebook'u kontrol edin"
+
+#: src/components/LogMessage.svelte
+msgid "This response is no longer available for the current run"
+msgstr "Bu yanıt, mevcut çalıştırma için artık mevcut değil"
+
+#: src/components/LogMessage.svelte
+msgid "Upload and post captures must belong to the same logged-in profile"
+msgstr "Yükleme ve gönderim ekran görüntüleri aynı oturum açmış profile ait olmalıdır"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for Facebook's Post button…"
+msgstr "Facebook'un Gönder düğmesi bekleniyor…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the composer controls and layout…"
+msgstr "Yapıcı kontrolleri ve düzeni bekleniyor…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the group page and opening its composer…"
+msgstr "Grup sayfası bekleniyor ve yapıcısı açılıyor…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the image previews and composer to settle…"
+msgstr "Resim önizlemeleri ve yapıcının yerleşmesi bekleniyor…"
+
+#: src/components/LogMessage.svelte
+msgid "Your Facebook session needs login or verification. Load groups again."
+msgstr "Facebook oturumunuz giriş veya doğrulama gerektiriyor. Grupları tekrar yükleyin."
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Published to {0}."
+msgstr "{0} adresine yayınlandı."
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "{0}: Awaiting admin approval."
+msgstr "{0}: Yönetici onayı bekleniyor."
+
+#. 0: number(a); 1: b
+#: src/components/LogMessage.svelte
+msgid "Waiting {0} seconds before posting to {1}."
+msgstr "{1} adresine gönderimden önce {0} saniye bekleniyor."
+
+#. 0: a; 1: b
+#: src/components/LogMessage.svelte
+msgid "Next post in {0} · {1}"
+msgstr "Sonraki gönderi {0} · {1}"
+
+#. 0: a; 1: number(b); 2: number(c)
+#: src/components/LogMessage.svelte
+msgid "{0}: Uploading photo {1} of {2}…"
+msgstr "{0}: {1}/{2} fotoğraf yükleniyor…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Preparing a post for {0}…"
+msgstr "{0} için gönderi hazırlanıyor…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Uploading images for {0}…"
+msgstr "{0} için resimler yükleniyor…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Posting to {0}…"
+msgstr "{0} adresine gönderiliyor…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Fresh upload and post request values captured from {0}."
+msgstr "{0} adresinden taze yükleme ve gönderi istek değerleri alındı."
+
+#. 0: number(a); 1: number(b)
+#: src/components/LogMessage.svelte
+msgid "Submission unconfirmed. Retrying request {0}/{1}…"
+msgstr "Gönderim doğrulanmadı. İstek tekrar deneniyor {0}/{1}…"
+
+#. 0: number(a); 1: number(b); 2: number(c)
+#: src/components/LogMessage.svelte
+msgid "Finished: {0} published, {1} awaiting approval, {2} failed or skipped."
+msgstr "Tamamlandı: {0} yayınlandı, {1} onay bekliyor, {2} başarısız veya atlandı."
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Opening {0}…"
+msgstr "{0} açılıyor…"
+
+#. 0: number(a); 1: number(b)
+#: src/components/LogMessage.svelte
+msgid "Capturing image uploads ({0} of {1})…"
+msgstr "Görüntü yüklemeleri yakalanıyor ({0} / {1})…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Gemini rewrite failed (HTTP {0}). Check the key, model and account quota"
+msgstr "Gemini yeniden yazma başarısız oldu (HTTP {0}). Anahtarı, modeli ve hesap kotanızı kontrol edin"
+
+#. 0: code
+#: src/components/LogMessage.svelte
+msgid " (Code {0})"
+msgstr "(Kod {0})"
+
+#: src/components/PostingLogView.svelte
+msgid "Debug details"
+msgstr "Hata ayıklama detayları"
+
+#~ msgid ", "
+#~ msgstr ""
+
+#: src/components/ThemePicker.svelte
+msgid "Themes"
+msgstr "Temalar"
+
+#: src/App.svelte
+msgid "Preferences & post"
+msgstr "Tercihler ve paylaşım"
+
+#: src/App.svelte
+#: src/App.svelte
+msgid "Set preferences, then post now or schedule"
+msgstr "Tercihleri ayarlayın, ardından şimdi paylaşın veya zamanlayın"

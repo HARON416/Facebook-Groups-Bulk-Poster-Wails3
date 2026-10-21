@@ -1,0 +1,3 @@
+/** @typedef {('en'|'id'|'cs'|'da'|'de'|'es'|'fr'|'hr'|'it'|'sw'|'hu'|'nl'|'pl'|'pt-BR'|'ro'|'sk'|'sv'|'vi'|'tr'|'el'|'bg'|'ru'|'uk'|'ar'|'mr'|'hi'|'bn'|'te'|'th'|'ko'|'zh-CN'|'ja')} Locale */
+/** @type {[Locale, ...Locale[]]} */
+export const locales = ['en','id','cs','da','de','es','fr','hr','it','sw','hu','nl','pl','pt-BR','ro','sk','sv','vi','tr','el','bg','ru','uk','ar','mr','hi','bn','te','th','ko','zh-CN','ja']

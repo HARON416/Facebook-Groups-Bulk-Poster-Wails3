@@ -1,0 +1,9 @@
+# WebKit uses bubblewrap user namespaces for its subprocess sandbox.
+# Ubuntu 24.04+ requires an explicit application profile for this permission.
+abi <abi/4.0>,
+
+include <tunables/global>
+
+profile postika /usr{,/local}/bin/postika flags=(unconfined) {
+  userns,
+}

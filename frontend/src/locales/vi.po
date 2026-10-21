@@ -1,0 +1,1836 @@
+msgid ""
+msgstr ""
+"Source-Language: en\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1\n"
+"X-Plurals-Order: other\n"
+
+#. 0: minimumInterval === maximumInterval ? minimumInterval \\: `${minimumInterval}–${maximumInterval}`; 1: rewriteState
+#: src/App.svelte
+msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
+msgstr "Đã áp dụng mặc định đã lưu: {0} giây giữa các bài đăng · Gemini viết lại {1}."
+
+#: src/App.svelte
+msgid "Could not restore saved groups. Load groups to refresh the list."
+msgstr "Không thể khôi phục các nhóm đã lưu. Tải nhóm để làm mới danh sách."
+
+#: src/App.svelte
+msgid "Choose a future date and time for your post."
+msgstr "Chọn ngày và giờ trong tương lai cho bài đăng của bạn."
+
+#: src/App.svelte
+msgid "Saving your scheduled queue…"
+msgstr "Đang lưu hàng đợi đã lên lịch của bạn…"
+
+#: src/App.svelte
+msgid "Opening a selected group to capture fresh posting requests…"
+msgstr "Đang mở nhóm đã chọn để lấy các yêu cầu đăng bài mới…"
+
+#: src/App.svelte
+#: src/App.svelte
+#: src/components/LogMessage.svelte
+msgid "Posting stopped."
+msgstr "Đã dừng đăng."
+
+#: src/App.svelte
+#: src/components/LogMessage.svelte
+msgid "Could not read a selected image"
+msgstr "Không thể đọc hình ảnh đã chọn"
+
+#. 0: image.file.name
+#. 0: missingNames
+#. 0: unreadableNames
+#. 0: image.file.name
+#: src/App.svelte
+#: src/App.svelte
+#: src/components/PostComposer.svelte
+#: src/components/PostComposer.svelte
+msgid "Could not read {0}"
+msgstr "Không thể đọc {0}"
+
+#: src/App.svelte
+msgid "Posting finished."
+msgstr "Đăng bài hoàn tất."
+
+#. 0: scheduleLabel(scheduledFor)
+#. 0: date
+#: src/App.svelte
+#: src/components/LogMessage.svelte
+msgid "Scheduled for {0}. Keep Postika open and your computer awake."
+msgstr "Đã lên lịch cho {0}. Giữ Postika mở và máy tính của bạn hoạt động."
+
+#: src/App.svelte
+msgid "Could not restore this account’s draft. New edits will stay available while Postika is open."
+msgstr "Không thể khôi phục bản nháp của tài khoản này. Các chỉnh sửa mới sẽ vẫn có sẵn khi Postika mở."
+
+#: src/App.svelte
+msgid "Could not add the dropped images. Try browsing for them instead."
+msgstr "Không thể thêm các hình ảnh đã thả. Hãy thử tìm kiếm chúng thay vào đó."
+
+#: src/App.svelte
+msgid "Could not save this account’s draft to disk. Keep Postika open to retain your edits."
+msgstr "Không thể lưu bản nháp của tài khoản này vào đĩa. Giữ Postika mở để giữ các chỉnh sửa của bạn."
+
+#: src/App.svelte
+msgid "Start with your message. Add images to bring it to life."
+msgstr "Bắt đầu với tin nhắn của bạn. Thêm hình ảnh để làm nó sống động hơn."
+
+#: src/App.svelte
+msgid "Choose the groups you want to share your post with."
+msgstr "Chọn các nhóm mà bạn muốn chia sẻ bài đăng của mình."
+
+#~ msgid "Review your post and preferences, then post now or schedule for later."
+#~ msgstr "Xem lại bài đăng và các tùy chọn của bạn, sau đó đăng ngay hoặc lên lịch sau."
+
+#. 0: currentStep + 1; 1: steps.length
+#: src/App.svelte
+msgid "STEP {0} OF {1}"
+msgstr "BƯỚC {0} TRONG {1}"
+
+#: src/App.svelte
+msgid "Restoring account workspace…"
+msgstr "Khôi phục không gian làm việc tài khoản…"
+
+#: src/App.svelte
+msgid "Opening…"
+msgstr "Đang mở…"
+
+#: src/App.svelte
+msgid "Loading…"
+msgstr "Đang tải…"
+
+#: src/App.svelte
+msgid "Load groups"
+msgstr "Tải nhóm"
+
+#: src/App.svelte
+msgid "Groups"
+msgstr "Nhóm"
+
+#: src/App.svelte
+msgid "Search groups…"
+msgstr "Tìm nhóm…"
+
+#: src/App.svelte
+msgid "Clear group search"
+msgstr "Xóa tìm kiếm nhóm"
+
+#: src/App.svelte
+msgid "Search groups"
+msgstr "Tìm nhóm"
+
+#: src/App.svelte
+msgid "Select all groups"
+msgstr "Chọn tất cả nhóm"
+
+#: src/App.svelte
+msgid "Unselect all groups"
+msgstr "Bỏ chọn tất cả nhóm"
+
+#~ msgid "{0} selected{1}"
+#~ msgstr ""
+
+#: src/App.svelte
+msgid "Searching…"
+msgstr "Đang tìm kiếm…"
+
+#: src/App.svelte
+msgid "No groups found. Try another search."
+msgstr "Không tìm thấy nhóm nào. Thử tìm kiếm khác."
+
+#: src/App.svelte
+msgid "Joined groups"
+msgstr "Nhóm đã tham gia"
+
+#: src/App.svelte
+msgid "No groups loaded yet."
+msgstr "Chưa có nhóm nào được tải."
+
+#: src/App.svelte
+msgid "Open your Facebook groups to get started."
+msgstr "Mở các nhóm Facebook của bạn để bắt đầu."
+
+#: src/App.svelte
+msgid "Posting settings"
+msgstr "Cài đặt đăng bài"
+
+#: src/App.svelte
+msgid "Add a Gemini API key in Settings to enable rewriting."
+msgstr "Thêm khóa API Gemini trong Cài đặt để bật tính năng viết lại."
+
+#: src/App.svelte
+msgid "Applying defaults…"
+msgstr "Áp dụng mặc định…"
+
+#: src/App.svelte
+msgid "Use saved defaults"
+msgstr "Sử dụng mặc định đã lưu"
+
+#: src/App.svelte
+msgid "Open settings"
+msgstr "Mở cài đặt"
+
+#~ msgid "Posting as <0/>"
+#~ msgstr "Đăng bài dưới tên <0/>"
+
+#~ msgid "Review your post<0>{0} images · {1} groups selected</0>"
+#~ msgstr "Xem lại bài đăng của bạn<0>{0} hình ảnh · {1} nhóm đã chọn</0>"
+
+#~ msgid "Original post"
+#~ msgstr "Bài đăng gốc"
+
+#~ msgid "Your post"
+#~ msgstr "Bài đăng của bạn"
+
+#~ msgid "Gemini will rewrite this body for each group using your instructions."
+#~ msgstr "Gemini sẽ viết lại nội dung này cho từng nhóm theo hướng dẫn của bạn."
+
+#~ msgid "Selected groups ({0})"
+#~ msgstr "Nhóm đã chọn ({0})"
+
+#: src/App.svelte
+msgid "Schedule your queue"
+msgstr "Lên lịch hàng đợi của bạn"
+
+#. 0: Intl.DateTimeFormat().resolvedOptions().timeZone
+#: src/App.svelte
+msgid "Time zone: {0}. Keep Postika open and your computer awake. Facebook may ask you to sign in when posting starts."
+msgstr "Múi giờ: {0}. Giữ Postika mở và máy tính của bạn hoạt động. Facebook có thể yêu cầu bạn đăng nhập khi việc đăng bài bắt đầu."
+
+#: src/App.svelte
+#: src/Workspace.svelte
+msgid "Cancel"
+msgstr "Hủy"
+
+#: src/App.svelte
+msgid "Confirm schedule"
+msgstr "Xác nhận lịch trình"
+
+#: src/App.svelte
+msgid "Next <0/>"
+msgstr "Tiếp theo <0/>"
+
+#: src/App.svelte
+msgid "View logs"
+msgstr "Xem nhật ký"
+
+#: src/App.svelte
+#: src/components/PostingLogView.svelte
+msgid "Stop"
+msgstr "Dừng"
+
+#: src/App.svelte
+#: src/Workspace.svelte
+#: src/components/PostingLogView.svelte
+msgid "Scheduled"
+msgstr "Đã lên lịch"
+
+#: src/App.svelte
+msgid "Posting…"
+msgstr "Đang đăng…"
+
+#: src/App.svelte
+msgid "Post now"
+msgstr "Đăng ngay"
+
+#: src/App.svelte
+msgid "Schedule"
+msgstr "Lên lịch"
+
+#: src/App.svelte
+msgid "<0/> Previous"
+msgstr "<0/> Quay lại"
+
+#: src/Workspace.svelte
+msgid "Application menu"
+msgstr "Menu ứng dụng"
+
+#: src/Workspace.svelte
+msgid "Add account"
+msgstr "Thêm tài khoản"
+
+#: src/Workspace.svelte
+#: src/components/PostingLogView.svelte
+#: src/components/PostingLogView.svelte
+msgid "Posting logs"
+msgstr "Nhật ký đăng bài"
+
+#: src/Workspace.svelte
+#: src/components/Settings.svelte
+#: src/components/Settings.svelte
+msgid "Settings"
+msgstr "Cài đặt"
+
+#: src/Workspace.svelte
+msgid "Creating…"
+msgstr "Đang tạo…"
+
+#: src/Workspace.svelte
+msgid "Create & sign in"
+msgstr "Tạo và đăng nhập"
+
+#: src/Workspace.svelte
+msgid "Account name"
+msgstr "Tên tài khoản"
+
+#: src/Workspace.svelte
+msgid "Sign in to Facebook in the new account’s browser window."
+msgstr "Đăng nhập vào Facebook trong cửa sổ trình duyệt của tài khoản mới."
+
+#: src/Workspace.svelte
+msgid "Running"
+msgstr "Đang chạy"
+
+#: src/Workspace.svelte
+msgid "In the background: <0/>"
+msgstr "Trong nền: <0/>"
+
+#: src/Workspace.svelte
+msgid "Loading accounts…"
+msgstr "Đang tải tài khoản…"
+
+#: src/components/AccountDropdown.svelte
+msgid "Loading accounts"
+msgstr "Đang tải tài khoản"
+
+#. 0: current?.name ?? 'Loading accounts'
+#: src/components/AccountDropdown.svelte
+msgid "Account: {0}"
+msgstr "Tài khoản: {0}"
+
+#: src/components/AccountDropdown.svelte
+msgid "Select account"
+msgstr "Chọn tài khoản"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search accounts…"
+msgstr "Tìm tài khoản…"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search accounts"
+msgstr "Tìm tài khoản"
+
+#: src/components/AccountDropdown.svelte
+msgid "Clear account search"
+msgstr "Xóa tìm kiếm tài khoản"
+
+#: src/components/AccountDropdown.svelte
+msgid "All accounts"
+msgstr "Tất cả tài khoản"
+
+#: src/components/AccountDropdown.svelte
+msgid "Accounts"
+msgstr "Các tài khoản"
+
+#: src/components/AccountDropdown.svelte
+msgid "No accounts found"
+msgstr "Không tìm thấy tài khoản"
+
+#: src/components/AccountDropdown.svelte
+#: src/components/ThemePicker.svelte
+msgid "Try a different name."
+msgstr "Thử một tên khác."
+
+#: src/components/ConnectivityToast.svelte
+msgid "You’re back online"
+msgstr "Bạn đã trực tuyến trở lại"
+
+#: src/components/ConnectivityToast.svelte
+msgid "Internet connection lost"
+msgstr "Mất kết nối Internet"
+
+#: src/components/ConnectivityToast.svelte
+msgid "Your queue is still manually paused."
+msgstr "Hàng đợi của bạn vẫn đang tạm dừng thủ công."
+
+#: src/components/ConnectivityToast.svelte
+msgid "Your queue will continue automatically."
+msgstr "Hàng đợi của bạn sẽ tiếp tục tự động."
+
+#: src/components/ConnectivityToast.svelte
+msgid "Your queue is paused. We’ll continue when the connection returns."
+msgstr "Hàng đợi của bạn đang tạm dừng. Chúng tôi sẽ tiếp tục khi kết nối trở lại."
+
+#: src/components/ConnectivityToast.svelte
+msgid "Dismiss connection notification"
+msgstr "Đóng thông báo kết nối"
+
+#: src/components/DateTimePicker.svelte
+msgid "Choose a date and time"
+msgstr "Chọn ngày và giờ"
+
+#: src/components/DateTimePicker.svelte
+msgid "Select date"
+msgstr "Chọn ngày"
+
+#: src/components/DateTimePicker.svelte
+msgid "Choose a weekday for this post"
+msgstr "Chọn ngày trong tuần cho bài đăng này"
+
+#. 0: day.description
+#: src/components/DateTimePicker.svelte
+msgid "Select {0}"
+msgstr "Chọn {0}"
+
+#: src/components/DateTimePicker.svelte
+msgid "Previous month"
+msgstr "Tháng trước"
+
+#: src/components/DateTimePicker.svelte
+msgid "Next month"
+msgstr "Tháng sau"
+
+#: src/components/DateTimePicker.svelte
+#: src/components/DateTimePicker.svelte
+msgid "Select time"
+msgstr "Chọn thời gian"
+
+#: src/components/DateTimePicker.svelte
+msgid "24-hour clock"
+msgstr "Đồng hồ 24 giờ"
+
+#: src/components/DateTimePicker.svelte
+msgid "Increase hour"
+msgstr "Tăng giờ"
+
+#: src/components/DateTimePicker.svelte
+#: src/components/DateTimePicker.svelte
+msgid "Hour"
+msgstr "Giờ"
+
+#: src/components/DateTimePicker.svelte
+msgid "Decrease hour"
+msgstr "Giảm giờ"
+
+#: src/components/DateTimePicker.svelte
+msgid "Increase minute"
+msgstr "Tăng phút"
+
+#: src/components/DateTimePicker.svelte
+#: src/components/DateTimePicker.svelte
+msgid "Minute"
+msgstr "Phút"
+
+#: src/components/DateTimePicker.svelte
+msgid "Decrease minute"
+msgstr "Giảm phút"
+
+#: src/components/DateTimePicker.svelte
+msgid "Choose a date and time in the future."
+msgstr "Chọn ngày và giờ trong tương lai."
+
+#. 0: rejected.join(', ')
+#: src/components/PostComposer.svelte
+msgid "Unsupported files: {0}. Choose JPG, PNG, WebP, or GIF images."
+msgstr "Tệp không được hỗ trợ: {0}. Vui lòng chọn hình ảnh JPG, PNG, WebP hoặc GIF."
+
+#. 0: image.file.name
+#: src/components/PostComposer.svelte
+msgid "Could not preview {0}. Please choose another image."
+msgstr "Không thể xem trước {0}. Vui lòng chọn hình ảnh khác."
+
+#. 0: images[index].file.name; 1: index + 1; 2: images.length
+#: src/components/PostComposer.svelte
+msgid "{0} moved to position {1} of {2}."
+msgstr "{0} đã được di chuyển đến vị trí {1} trong {2}."
+
+#: src/components/PostComposer.svelte
+#: src/components/PostEditorContent.svelte
+msgid "Post body"
+msgstr "Nội dung bài viết"
+
+#: src/components/PostComposer.svelte
+#: src/components/PostComposer.svelte
+msgid "Required"
+msgstr "Bắt buộc"
+
+#: src/components/PostComposer.svelte
+msgid "Images"
+msgstr "Hình ảnh"
+
+#: src/components/PostComposer.svelte
+msgid "Choose images"
+msgstr "Chọn hình ảnh"
+
+#: src/components/PostComposer.svelte
+msgid "Drop images here or <0>browse images</0>"
+msgstr "Kéo thả hình ảnh vào đây hoặc <0>duyệt hình ảnh</0>"
+
+#: src/components/PostComposer.svelte
+msgid "JPG, PNG, WebP, or GIF · Select multiple images"
+msgstr "JPG, PNG, WebP hoặc GIF · Chọn nhiều hình ảnh"
+
+#~ msgid "{0} {1} selected"
+#~ msgstr ""
+
+#: src/components/PostComposer.svelte
+msgid "Add more"
+msgstr "Thêm ảnh"
+
+#: src/components/PostComposer.svelte
+msgid "Drag images to rearrange. Or focus an image and use Alt + Left / Right."
+msgstr "Kéo hình ảnh để sắp xếp lại. Hoặc tập trung vào một hình ảnh và dùng Alt + Trái / Phải."
+
+#: src/components/PostComposer.svelte
+msgid "Selected images"
+msgstr "Hình ảnh đã chọn"
+
+#. 0: image.file.name; 1: images.indexOf(image) + 1; 2: images.length
+#: src/components/PostComposer.svelte
+msgid "{0}, image {1} of {2}"
+msgstr "{0}, hình ảnh {1} trong {2}"
+
+#. 0: image.file.name
+#: src/components/PostComposer.svelte
+msgid "Remove {0}"
+msgstr "Xóa {0}"
+
+#: src/components/PostComposer.svelte
+msgid "Drop more images here to add them."
+msgstr "Kéo thêm hình ảnh vào đây để thêm chúng."
+
+#. 0: error
+#: src/components/PostEditor.svelte
+msgid "Could not edit the post: {0}"
+msgstr "Không thể chỉnh sửa bài viết: {0}"
+
+#: src/components/PostEditorContent.svelte
+msgid "Post editor controls"
+msgstr "Điều khiển trình chỉnh sửa bài viết"
+
+#: src/components/PostEditorContent.svelte
+msgid "Text formatting"
+msgstr "Định dạng văn bản"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bold (Ctrl+B)"
+msgstr "Đậm (Ctrl+B)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bold"
+msgstr "Đậm"
+
+#: src/components/PostEditorContent.svelte
+msgid "Italic (Ctrl+I)"
+msgstr "Nghiêng (Ctrl+I)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Italic"
+msgstr "In nghiêng"
+
+#: src/components/PostEditorContent.svelte
+msgid "Heading 1"
+msgstr "Tiêu đề 1"
+
+#: src/components/PostEditorContent.svelte
+msgid "Heading 2"
+msgstr "Tiêu đề 2"
+
+#: src/components/PostEditorContent.svelte
+msgid "Quote"
+msgstr "Trích dẫn"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bullet list"
+msgstr "Danh sách dấu chấm"
+
+#: src/components/PostEditorContent.svelte
+msgid "Numbered list"
+msgstr "Danh sách đánh số"
+
+#: src/components/PostEditorContent.svelte
+msgid "Undo (Ctrl+Z)"
+msgstr "Hoàn tác (Ctrl+Z)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Undo"
+msgstr "Hoàn tác"
+
+#: src/components/PostEditorContent.svelte
+msgid "Redo (Ctrl+Shift+Z)"
+msgstr "Làm lại (Ctrl+Shift+Z)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Redo"
+msgstr "Làm lại"
+
+#: src/components/PostEditorContent.svelte
+msgid "What would you like to share?"
+msgstr "Bạn muốn chia sẻ gì?"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bold, italic, headings, quotes, and lists · Markdown shortcuts supported"
+msgstr "Đậm, in nghiêng, tiêu đề, trích dẫn và danh sách · Hỗ trợ phím tắt Markdown"
+
+#. 0: body.length.toLocaleString(getLocale())
+#: src/components/PostEditorContent.svelte
+msgid "{0} characters"
+msgstr "{0} ký tự"
+
+#: src/components/LogMessage.svelte
+msgid "Ready to post."
+msgstr "Sẵn sàng đăng."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook response copied."
+msgstr "Đã sao chép phản hồi Facebook."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook response received"
+msgstr "Đã nhận phản hồi từ Facebook"
+
+#: src/components/PostingLogView.svelte
+msgid "POSTIKA / ACTIVITY"
+msgstr "POSTIKA / HOẠT ĐỘNG"
+
+#: src/components/PostingLogView.svelte
+msgid "Posting progress"
+msgstr "Tiến trình đăng"
+
+#. 0: activity?.processed || 0; 1: activity?.total || 0
+#: src/components/PostingLogView.svelte
+msgid "{0}/{1} groups processed"
+msgstr "{0}/{1} nhóm đã xử lý"
+
+#. 0: percentage
+#: src/components/PostingLogView.svelte
+msgid "{0}% complete"
+msgstr "Hoàn thành {0}%"
+
+#: src/components/PostingLogView.svelte
+msgid "Groups processed"
+msgstr "Nhóm đã xử lý"
+
+#: src/components/PostingLogView.svelte
+msgid "Published"
+msgstr "Đã xuất bản"
+
+#: src/components/PostingLogView.svelte
+msgid "Awaiting approval"
+msgstr "Chờ phê duyệt"
+
+#: src/components/PostingLogView.svelte
+msgid "Failed or skipped"
+msgstr "Thất bại hoặc bỏ qua"
+
+#: src/components/PostingLogView.svelte
+msgid "Remaining"
+msgstr "Còn lại"
+
+#. 0: number(a); 1: number(b); 2: c
+#. 0: activity.current; 1: activity.total; 2: activity.currentGroup.name
+#: src/components/LogMessage.svelte
+#: src/components/PostingLogView.svelte
+msgid "Group {0}/{1}: {2}"
+msgstr "Nhóm {0}/{1}: {2}"
+
+#. 0: pauseRequested ? /* @wc-include */ ' · Paused' \\: ''
+#: src/components/PostingLogView.svelte
+msgid "Next post in <0/>{0}"
+msgstr "Bài đăng tiếp theo trong <0/>{0}"
+
+#: src/components/PostingLogView.svelte
+msgid "Elapsed <0/>"
+msgstr "Đã trôi qua <0/>"
+
+#: src/components/PostingLogView.svelte
+msgid "Current group <0/>"
+msgstr "Nhóm hiện tại <0/>"
+
+#: src/components/PostingLogView.svelte
+msgid "Following latest"
+msgstr "Theo dõi mới nhất"
+
+#: src/components/PostingLogView.svelte
+msgid "Jump to latest"
+msgstr "Nhảy đến mới nhất"
+
+#. 0.0: total
+#: src/components/PostingLogView.svelte
+msgid "Activity timeline <0>{0} logs</0>"
+msgstr "Dòng thời gian hoạt động <0>{0} bản ghi</0>"
+
+#: src/components/PostingLogView.svelte
+msgid "Posting activity"
+msgstr "Hoạt động đăng"
+
+#. 0: entryLabel(entry)
+#: src/components/PostingLogView.svelte
+msgid "{0} log"
+msgstr "{0} nhật ký"
+
+#. 0: itemTime(entry.message)
+#: src/components/PostingLogView.svelte
+msgid "Took {0}"
+msgstr "Mất {0}"
+
+#: src/components/PostingLogView.svelte
+#: src/components/PostingLogView.svelte
+msgid "Copy Facebook response"
+msgstr "Sao chép phản hồi Facebook"
+
+#: src/components/PostingLogView.svelte
+msgid "Response copied"
+msgstr "Phản hồi đã được sao chép"
+
+#: src/components/PostingLogView.svelte
+msgid "Copied"
+msgstr "Đã sao chép"
+
+#: src/components/PostingLogView.svelte
+msgid "Copying…"
+msgstr "Đang sao chép…"
+
+#: src/components/PostingLogView.svelte
+msgid "Copy response"
+msgstr "Sao chép phản hồi"
+
+#. 0.0: entry.hasResponse ? /* @wc-include */ ' · Response available to copy' \\: ''
+#: src/components/PostingLogView.svelte
+msgid "Debug details<0>Original log message{0}</0>"
+msgstr "Chi tiết gỡ lỗi<0>Thông điệp nhật ký gốc{0}</0>"
+
+#: src/components/PostingLogView.svelte
+msgid "Your activity will appear here"
+msgstr "Hoạt động của bạn sẽ xuất hiện ở đây"
+
+#: src/components/PostingLogView.svelte
+msgid "Start posting to follow uploads, results, and wait times."
+msgstr "Bắt đầu đăng để theo dõi lượt tải lên, kết quả và thời gian chờ."
+
+#: src/components/PostingLogView.svelte
+msgid "Log pages"
+msgstr "Trang nhật ký"
+
+#: src/components/PostingLogView.svelte
+msgid "Previous page"
+msgstr "Trang trước"
+
+#. 0: number
+#: src/components/PostingLogView.svelte
+msgid "Page {0}"
+msgstr "Trang {0}"
+
+#: src/components/PostingLogView.svelte
+msgid "Next page"
+msgstr "Trang tiếp theo"
+
+#: src/components/PostingLogView.svelte
+msgid "← Prev"
+msgstr "← Trước"
+
+#: src/components/PostingLogView.svelte
+msgid "Next →"
+msgstr "Tiếp theo →"
+
+#. 0: total ? (page - 1) * pageSize + 1 \\: 0; 1: Math.min(page * pageSize, total); 2: total
+#: src/components/PostingLogView.svelte
+msgid "{0}–{1} of {2} logs"
+msgstr "{0}–{1} trong số {2} nhật ký"
+
+#: src/components/PostingLogView.svelte
+msgid "Resume"
+msgstr "Tiếp tục"
+
+#: src/components/PostingLogView.svelte
+msgid "Pause"
+msgstr "Tạm dừng"
+
+#: src/components/PostingLogView.svelte
+msgid "Stopping…"
+msgstr "Đang dừng…"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "POSTING PACE"
+msgstr "TỐC ĐỘ ĐĂNG"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Interval between posts"
+msgstr "Khoảng thời gian giữa các bài đăng"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Minimum (seconds)"
+msgstr "Tối thiểu (giây)"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Maximum (seconds)"
+msgstr "Tối đa (giây)"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Choose how long to wait before posting to the next group."
+msgstr "Chọn thời gian chờ trước khi đăng bài lên nhóm tiếp theo."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "At least 60 seconds. Use equal values for a fixed interval."
+msgstr "Ít nhất 60 giây. Sử dụng cùng giá trị để có khoảng thời gian cố định."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "OPTIONAL · AI REWRITE"
+msgstr "TÙY CHỌN · AI VIẾT LẠI"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "A fresh version for each group"
+msgstr "Một phiên bản mới cho mỗi nhóm"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Rewrite each post body with Gemini"
+msgstr "Viết lại mỗi nội dung bài đăng bằng Gemini"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
+msgstr "Hướng dẫn viết lại<0>Chọn giọng điệu và chi tiết mà Gemini nên giữ lại.</0>"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Keep it concise and easy to scan. Preserve the price and contact details."
+msgstr "Giữ ngắn gọn và dễ đọc. Giữ nguyên giá và thông tin liên hệ."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Rewrite instructions"
+msgstr "Hướng dẫn viết lại"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
+msgstr "Văn bản bài đăng và hướng dẫn của bạn được gửi đến Google Gemini. Hình ảnh sẽ không được gửi. Việc viết lại của Gemini sử dụng văn bản thuần."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
+msgstr "Nếu việc viết lại thất bại, bài đăng đó sẽ sử dụng văn bản gốc của bạn. Bài đăng tiếp theo sẽ thử lại với Gemini."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Let Gemini rewrite your post using your instructions."
+msgstr "Hãy để Gemini viết lại bài đăng của bạn theo hướng dẫn của bạn."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Posting preferences"
+msgstr "Tùy chọn đăng bài"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved defaults help"
+msgstr "Mặc định đã lưu giúp"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "About saved defaults"
+msgstr "Về mặc định đã lưu"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved interval"
+msgstr "Khoảng thời gian đã lưu"
+
+#. 0: settings.minimumInterval === settings.maximumInterval ? settings.minimumInterval \\: `${settings.minimumInterval}–${settings.maximumInterval}`
+#: src/components/SavedDefaultsInfo.svelte
+msgid "{0} seconds"
+msgstr "{0} giây"
+
+#: src/App.svelte
+#: src/components/SavedDefaultsInfo.svelte
+msgid "On"
+msgstr "Bật"
+
+#: src/App.svelte
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Off"
+msgstr "Tắt"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Gemini rewrite"
+msgstr "Viết lại bởi Gemini"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "No instructions saved."
+msgstr "Chưa lưu hướng dẫn nào."
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved rewrite instructions"
+msgstr "Hướng dẫn viết lại đã lưu"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved values could not be loaded. Try “Use saved defaults” again."
+msgstr "Không thể tải các giá trị đã lưu. Hãy thử “Sử dụng mặc định đã lưu” một lần nữa."
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "What does “Use saved defaults” do?"
+msgstr "“ Sử dụng mặc định đã lưu” làm gì?"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
+msgstr "Thay thế khoảng thời gian đăng bài của lần chạy này, tùy chọn viết lại Gemini, và hướng dẫn viết lại bằng các giá trị đã lưu trong Cài đặt."
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
+msgstr "Mặc định ban đầu: 60–120 giây, Gemini viết lại tắt, và không có hướng dẫn viết lại. Lưu các tùy chọn của riêng bạn trong Cài đặt để thay đổi chúng."
+
+#: src/components/Settings.svelte
+msgid "Settings saved. New runs can use these defaults."
+msgstr "Cài đặt đã được lưu. Các lần chạy mới có thể sử dụng các giá trị mặc định này."
+
+#: src/components/Settings.svelte
+msgid "Key saved · leave blank to keep it"
+msgstr "Khóa đã được lưu · để trống để giữ nguyên"
+
+#: src/components/Settings.svelte
+msgid "Enter your Gemini API key"
+msgstr "Nhập khóa API Gemini của bạn"
+
+#: src/components/Settings.svelte
+msgid "A key is saved on this device."
+msgstr "Một khóa đã được lưu trên thiết bị này."
+
+#: src/components/Settings.svelte
+msgid "No API key saved."
+msgstr "Không có khóa API nào được lưu."
+
+#: src/components/Settings.svelte
+msgid "Remove saved key"
+msgstr "Xóa khóa đã lưu"
+
+#: src/components/Settings.svelte
+msgid "Gemini"
+msgstr "Gemini"
+
+#: src/components/Settings.svelte
+msgid "API key<0/>"
+msgstr "Khóa API<0/>"
+
+#. 0: keyConfigured ? 'A key is saved on this device.' \\: 'No API key saved.'
+#: src/components/Settings.svelte
+msgid "{0} The saved key is never displayed."
+msgstr "{0} Khóa đã lưu sẽ không bao giờ hiển thị."
+
+#: src/components/Settings.svelte
+msgid "Model<0/>"
+msgstr "Mẫu<0/>"
+
+#: src/components/Settings.svelte
+msgid "Posting defaults"
+msgstr "Cài đặt đăng bài mặc định"
+
+#: src/components/Settings.svelte
+msgid "Applied when you start a new posting run."
+msgstr "Áp dụng khi bạn bắt đầu một lần chạy đăng bài mới."
+
+#: src/components/Settings.svelte
+msgid "Saving…"
+msgstr "Đang lưu…"
+
+#: src/components/Settings.svelte
+msgid "Save settings"
+msgstr "Lưu cài đặt"
+
+#: src/components/Settings.svelte
+msgid "YOUR PREFERENCES"
+msgstr "TÙY CHỌN CỦA BẠN"
+
+#. 0: accountName
+#: src/components/Settings.svelte
+msgid "Set up Gemini and save posting defaults for {0}."
+msgstr "Cài đặt Gemini và lưu các mặc định đăng bài cho {0}."
+
+#: src/components/StepProgress.svelte
+msgid "Completed"
+msgstr "Hoàn tất"
+
+#: src/components/StepProgress.svelte
+msgid "Current"
+msgstr "Hiện tại"
+
+#: src/components/StepProgress.svelte
+msgid "Upcoming"
+msgstr "Sắp tới"
+
+#. 0: index + 1; 1: steps.length; 2: completed || index < currentStep ? 'Completed' \\: index === currentStep ? 'Current' \\: 'Upcoming'
+#: src/components/StepProgress.svelte
+msgid "Step {0} of {1}: {2}"
+msgstr "Bước {0} trong {1}: {2}"
+
+#: src/components/WindowControls.svelte
+msgid "Could not change the window. Please try again."
+msgstr "Không thể thay đổi cửa sổ. Vui lòng thử lại."
+
+#: src/components/WindowControls.svelte
+msgid "Window controls"
+msgstr "Các điều khiển cửa sổ"
+
+#: src/components/WindowControls.svelte
+msgid "Minimize window"
+msgstr "Thu nhỏ cửa sổ"
+
+#: src/components/WindowControls.svelte
+msgid "Restore window"
+msgstr "Khôi phục cửa sổ"
+
+#: src/components/WindowControls.svelte
+msgid "Maximize window"
+msgstr "Phóng to cửa sổ"
+
+#: src/components/WindowControls.svelte
+msgid "Close window"
+msgstr "Đóng cửa sổ"
+
+#: src/App.svelte
+msgid "Create post"
+msgstr "Tạo bài viết"
+
+#: src/App.svelte
+msgid "Write your post and add images"
+msgstr "Viết bài và thêm hình ảnh"
+
+#: src/App.svelte
+msgid "Select groups"
+msgstr "Chọn nhóm"
+
+#: src/App.svelte
+msgid "Load groups and choose where to post"
+msgstr "Tải nhóm và chọn nơi đăng"
+
+#~ msgid "Review & post"
+#~ msgstr "Xem lại và đăng"
+
+#~ msgid "Review, set preferences, then post now or schedule"
+#~ msgstr "Xem lại, đặt tùy chọn, sau đó đăng ngay hoặc lên lịch"
+
+#: src/App.svelte
+msgid "Facebook session captured"
+msgstr "Phiên Facebook đã được ghi nhận"
+
+#: src/App.svelte
+msgid "The browser is closed. It will reopen when you click Post."
+msgstr "Trình duyệt đã đóng. Nó sẽ mở lại khi bạn nhấp Đăng bài."
+
+#: src/App.svelte
+msgid "Checking Facebook login"
+msgstr "Đang kiểm tra đăng nhập Facebook"
+
+#: src/App.svelte
+msgid "Finish signing in or any verification prompts in Chrome. Your login will be detected automatically."
+msgstr "Hoàn tất đăng nhập hoặc bất kỳ yêu cầu xác minh nào trong Chrome. Đăng nhập của bạn sẽ được phát hiện tự động."
+
+#: src/App.svelte
+msgid "Login required"
+msgstr "Cần đăng nhập"
+
+#: src/App.svelte
+msgid "Please log in to Facebook in the Chrome window. Postika will detect when you’re signed in."
+msgstr "Vui lòng đăng nhập Facebook trong cửa sổ Chrome. Postika sẽ phát hiện khi bạn đã đăng nhập."
+
+#: src/App.svelte
+msgid "Complete Facebook verification"
+msgstr "Hoàn tất xác minh Facebook"
+
+#: src/App.svelte
+msgid "Complete the login or verification prompts in Chrome to continue."
+msgstr "Hoàn tất các yêu cầu đăng nhập hoặc xác minh trong Chrome để tiếp tục."
+
+#: src/App.svelte
+msgid "Facebook connected"
+msgstr "Facebook đã kết nối"
+
+#: src/App.svelte
+msgid "You’re logged in. Your session is ready."
+msgstr "Bạn đã đăng nhập. Phiên của bạn đã sẵn sàng."
+
+#: src/App.svelte
+msgid "Facebook window closed"
+msgstr "Cửa sổ Facebook đã đóng"
+
+#: src/App.svelte
+msgid "Click Load groups to reopen Facebook and check your login."
+msgstr "Nhấn Tải nhóm để mở lại Facebook và kiểm tra đăng nhập của bạn."
+
+#. 0: current?.name ?? ''
+#: src/components/AccountDropdown.svelte
+msgid "Language: {0}"
+msgstr "Ngôn ngữ: {0}"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search languages…"
+msgstr "Tìm ngôn ngữ…"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search languages"
+msgstr "Tìm ngôn ngữ"
+
+#: src/components/AccountDropdown.svelte
+msgid "Clear language search"
+msgstr "Xóa tìm kiếm ngôn ngữ"
+
+#. 0: matches.length
+#: src/components/AccountDropdown.svelte
+msgid "{0} result"
+msgstr "{0} kết quả"
+
+#. 0: matches.length
+#: src/components/AccountDropdown.svelte
+msgid "{0} results"
+msgstr "{0} kết quả"
+
+#: src/components/AccountDropdown.svelte
+msgid "All languages"
+msgstr "Tất cả ngôn ngữ"
+
+#: src/components/AccountDropdown.svelte
+msgid "Languages"
+msgstr "Ngôn ngữ"
+
+#: src/components/AccountDropdown.svelte
+msgid "No languages found"
+msgstr "Không tìm thấy ngôn ngữ"
+
+#: src/components/DateTimePicker.svelte
+msgid "Morning"
+msgstr "Buổi sáng"
+
+#: src/components/DateTimePicker.svelte
+msgid "Afternoon"
+msgstr "Buổi chiều"
+
+#: src/components/DateTimePicker.svelte
+msgid "Evening"
+msgstr "Buổi tối"
+
+#: src/components/LanguageMenu.svelte
+msgid "Could not change the language. Please try again."
+msgstr "Không thể thay đổi ngôn ngữ. Vui lòng thử lại."
+
+#: src/components/Settings.svelte
+msgid "Language"
+msgstr "Ngôn ngữ"
+
+#: src/components/PostingOptionsForm.svelte
+#: src/components/PostingOptionsForm.svelte
+msgid "seconds"
+msgstr "giây"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Minimum"
+msgstr "Tối thiểu"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Maximum"
+msgstr "Tối đa"
+
+#: src/components/StepProgress.svelte
+msgid "Post progress"
+msgstr "Tiến trình bài đăng"
+
+#. 0: visibleGroups.length
+#: src/App.svelte
+msgid "{0} shown"
+msgstr "Đã hiển thị {0}"
+
+#. 0: selectedGroupIds.length
+#: src/App.svelte
+msgid "{0} selected"
+msgstr "Đã chọn {0}"
+
+#. 0: images.length
+#: src/components/PostComposer.svelte
+msgid "{0} images selected"
+msgstr "Đã chọn {0} hình ảnh"
+
+#: src/components/PostingLogView.svelte
+msgid "WARN"
+msgstr "CẢNH BÁO"
+
+#: src/components/PostingLogView.svelte
+msgid "INFO"
+msgstr "THÔNG TIN"
+
+#: src/components/PostingLogView.svelte
+msgid "ERROR"
+msgstr "LỖI"
+
+#: src/components/PostingLogView.svelte
+msgid "DEBUG"
+msgstr "GỠ LỖI"
+
+#: src/components/PostingLogView.svelte
+msgid "PUBLISHED"
+msgstr "ĐÃ ĐĂNG"
+
+#: src/components/PostingLogView.svelte
+msgid "PENDING"
+msgstr "ĐANG CHỜ"
+
+#: src/components/PostingLogView.svelte
+msgid "FAILED"
+msgstr "THẤT BẠI"
+
+#: src/components/PostingLogView.svelte
+msgid "SKIPPED"
+msgstr "BỎ QUA"
+
+#: src/components/PostingLogView.svelte
+msgid "UNCONFIRMED"
+msgstr "CHƯA XÁC NHẬN"
+
+#: src/Workspace.svelte
+msgid "e.g. Business"
+msgstr "ví dụ: Kinh doanh"
+
+#: src/components/PostComposer.svelte
+msgid "1 image selected"
+msgstr "Đã chọn 1 hình ảnh"
+
+#: src/components/PostingLogView.svelte
+msgid "Paused · Waiting for internet"
+msgstr "Tạm dừng · Đang chờ internet"
+
+#: src/components/PostingLogView.svelte
+msgid "Pausing after the current operation"
+msgstr "Tạm dừng sau thao tác hiện tại"
+
+#: src/components/PostingLogView.svelte
+msgid "Paused"
+msgstr "Đã tạm dừng"
+
+#: src/components/PostingLogView.svelte
+msgid "Stopping"
+msgstr "Đang dừng"
+
+#: src/components/PostingLogView.svelte
+msgid "Posting"
+msgstr "Đang đăng"
+
+#: src/components/PostingLogView.svelte
+msgid "Finished"
+msgstr "Đã hoàn tất"
+
+#: src/components/PostingLogView.svelte
+msgid "Stopped"
+msgstr "Đã dừng"
+
+#: src/components/PostingLogView.svelte
+msgid "Ready"
+msgstr "Sẵn sàng"
+
+#: src/components/PostingLogView.svelte
+msgid "CURRENT ACTIVITY"
+msgstr "HOẠT ĐỘNG HIỆN TẠI"
+
+#: src/components/PostingLogView.svelte
+msgid "RUN STATUS"
+msgstr "TRẠNG THÁI CHẠY"
+
+#: src/components/PostingLogView.svelte
+msgid " · Paused"
+msgstr " · Tạm dừng"
+
+#: src/components/PostingLogView.svelte
+msgid " · Response available to copy"
+msgstr " · Phản hồi có thể sao chép"
+
+#: src/components/AccountLabel.svelte
+msgid "Default profile"
+msgstr "Hồ sơ mặc định"
+
+#~ msgid "Switch to light mode"
+#~ msgstr "Chuyển sang chế độ sáng"
+
+#~ msgid "Switch to dark mode"
+#~ msgstr "Chuyển sang chế độ tối"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Color themes"
+msgstr "Chủ đề màu sắc"
+
+#: src/components/ThemePicker.svelte
+msgid "Close"
+msgstr "Đóng"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Search themes…"
+msgstr "Tìm chủ đề…"
+
+#: src/components/ThemePicker.svelte
+msgid "No themes found"
+msgstr "Không tìm thấy chủ đề"
+
+#: src/components/LogMessage.svelte
+msgid "A selected group is no longer available. Load groups again"
+msgstr "Nhóm đã chọn không còn khả dụng. Tải lại các nhóm"
+
+#: src/components/LogMessage.svelte
+msgid "Add a Gemini API key in Settings before enabling rewriting"
+msgstr "Thêm khóa API Gemini trong Cài đặt trước khi bật viết lại"
+
+#: src/components/LogMessage.svelte
+msgid "Add a post body and at least one image"
+msgstr "Thêm nội dung bài đăng và ít nhất một hình ảnh"
+
+#: src/components/LogMessage.svelte
+msgid "All selected groups were already attempted. Review unconfirmed results on Facebook."
+msgstr "Tất cả các nhóm đã chọn đã được thử. Xem lại kết quả chưa xác nhận trên Facebook."
+
+#: src/components/LogMessage.svelte
+msgid "An image upload failed in Chrome. Check the composer and retry Post"
+msgstr "Tải hình ảnh thất bại trong Chrome. Kiểm tra trình soạn thảo và thử đăng lại"
+
+#: src/components/LogMessage.svelte
+msgid "Attaching images…"
+msgstr "Đang đính kèm hình ảnh…"
+
+#: src/components/LogMessage.svelte
+msgid "Choose JPG, PNG, WebP, or GIF images"
+msgstr "Chọn hình ảnh JPG, PNG, WebP hoặc GIF"
+
+#: src/components/LogMessage.svelte
+msgid "Choose a future date and time for your post"
+msgstr "Chọn ngày và giờ trong tương lai cho bài đăng của bạn"
+
+#: src/components/LogMessage.svelte
+msgid "Closing Chrome and posting to the remaining groups…"
+msgstr "Đang đóng Chrome và đăng bài vào các nhóm còn lại…"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the complete create-post request"
+msgstr "Không thể ghi lại đầy đủ yêu cầu tạo bài đăng"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the completed image upload response"
+msgstr "Không thể ghi lại phản hồi tải hình ảnh hoàn tất"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the image upload form fields"
+msgstr "Không thể ghi lại các trường biểu mẫu tải hình ảnh"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the image upload form. Retry Post"
+msgstr "Không thể ghi lại biểu mẫu tải hình ảnh. Thử đăng lại"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the upload endpoint"
+msgstr "Không thể ghi lại điểm cuối tải lên"
+
+#: src/components/LogMessage.svelte
+msgid "Could not copy the Facebook response to the clipboard"
+msgstr "Không thể sao chép phản hồi của Facebook vào clipboard"
+
+#: src/components/LogMessage.svelte
+msgid "Could not enable create-post capture in Chrome"
+msgstr "Không thể bật tính năng tạo bài viết trong Chrome"
+
+#: src/components/LogMessage.svelte
+msgid "Could not parse the captured create-post form"
+msgstr "Không thể phân tích biểu mẫu tạo bài viết đã được chụp"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare image files"
+msgstr "Không thể chuẩn bị các tệp hình ảnh"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare post images"
+msgstr "Không thể chuẩn bị hình ảnh cho bài viết"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare the Gemini request"
+msgstr "Không thể chuẩn bị yêu cầu Gemini"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare the image upload."
+msgstr "Không thể chuẩn bị việc tải lên hình ảnh."
+
+#: src/components/LogMessage.svelte
+msgid "Could not reach Gemini. Check your connection"
+msgstr "Không thể kết nối với Gemini. Kiểm tra kết nối của bạn"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read Facebook's post confirmation"
+msgstr "Không thể đọc xác nhận bài viết của Facebook"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read the Gemini rewrite"
+msgstr "Không thể đọc bản chỉnh sửa của Gemini"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read the completed image upload response"
+msgstr "Không thể đọc phản hồi tải lên hình ảnh hoàn tất"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read the selected image."
+msgstr "Không thể đọc hình ảnh đã chọn."
+
+#: src/components/LogMessage.svelte
+msgid "Create-post capture ended before confirmation. Check Facebook before retrying"
+msgstr "Chụp tạo bài viết kết thúc trước khi xác nhận. Kiểm tra Facebook trước khi thử lại"
+
+#: src/components/LogMessage.svelte
+msgid "Create-post request detected. Capturing fresh form values…"
+msgstr "Yêu cầu tạo bài viết được phát hiện. Đang chụp các giá trị biểu mẫu mới…"
+
+#: src/components/LogMessage.svelte
+msgid "Create-post response complete. Waiting for captured session headers…"
+msgstr "Phản hồi tạo bài viết hoàn tất. Đang chờ tiêu đề phiên đã chụp…"
+
+#: src/components/LogMessage.svelte
+msgid "Create-post response received. Waiting for its complete body…"
+msgstr "Phản hồi tạo bài viết đã nhận. Đang chờ phần thân hoàn chỉnh của nó…"
+
+#: src/components/LogMessage.svelte
+msgid "Description inserted"
+msgstr "Mô tả đã được chèn"
+
+#: src/components/LogMessage.svelte
+msgid "Earlier submission is unconfirmed. Skipping this group and continuing with the remaining groups."
+msgstr "Bài gửi trước chưa được xác nhận. Bỏ qua nhóm này và tiếp tục với các nhóm còn lại."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook could not post to this group. Continuing with the remaining groups."
+msgstr "Facebook không thể đăng lên nhóm này. Tiếp tục với các nhóm còn lại."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook did not confirm all images. Check the composer."
+msgstr "Facebook chưa xác nhận tất cả hình ảnh. Kiểm tra trình soạn thảo."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook did not confirm the submission"
+msgstr "Facebook chưa xác nhận bài gửi."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook did not confirm this post. Check the group before trying again."
+msgstr "Facebook chưa xác nhận bài đăng này. Kiểm tra nhóm trước khi thử lại."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook has temporarily limited posting. Try again later."
+msgstr "Facebook tạm thời hạn chế đăng bài. Thử lại sau."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook rejected this post."
+msgstr "Facebook từ chối bài đăng này."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook requires login or verification. Load groups again."
+msgstr "Facebook yêu cầu đăng nhập hoặc xác minh. Tải lại các nhóm."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook returned a story, but did not confirm its group or publication state. Posting stopped. Check Facebook before retrying."
+msgstr "Facebook trả về một câu chuyện, nhưng chưa xác nhận nhóm hoặc trạng thái xuất bản. Việc đăng bài đã dừng lại. Kiểm tra Facebook trước khi thử lại."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook's confirmation exceeded the 16 MiB response limit; retained response is truncated"
+msgstr "Xác nhận của Facebook vượt quá giới hạn phản hồi 16 MiB; phản hồi giữ lại đã bị cắt bớt."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook's editor did not accept the formatted post. Posting was not submitted"
+msgstr "Trình chỉnh sửa của Facebook không chấp nhận bài đăng đã định dạng. Bài đăng chưa được gửi"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook's editor did not retain the formatted post text. Posting was not submitted"
+msgstr "Trình chỉnh sửa của Facebook đã không lưu giữ văn bản bài viết đã định dạng. Bài viết chưa được gửi đi"
+
+#: src/components/LogMessage.svelte
+msgid "First post confirmed. Waiting for the Facebook composer to close…"
+msgstr "Bài viết đầu tiên đã được xác nhận. Đang chờ trình soạn thảo Facebook đóng lại…"
+
+#: src/components/LogMessage.svelte
+msgid "First submission unconfirmed. Retrying request 1/3 with the captured mutation ID…"
+msgstr "Bài gửi đầu tiên chưa được xác nhận. Thử lại yêu cầu 1/3 với ID đột biến đã chụp…"
+
+#: src/components/LogMessage.svelte
+msgid "Formatted post is too large"
+msgstr "Bài viết đã định dạng quá lớn"
+
+#: src/components/LogMessage.svelte
+msgid "Found multiple matching post composers on the group page"
+msgstr "Tìm thấy nhiều trình soạn thảo bài viết khớp trên trang nhóm"
+
+#: src/components/LogMessage.svelte
+msgid "Fresh create-post form captured. Waiting for Facebook's response…"
+msgstr "Biểu mẫu tạo bài viết mới đã được chụp. Đang chờ phản hồi từ Facebook…"
+
+#: src/components/LogMessage.svelte
+msgid "Gemini did not finish the rewrite"
+msgstr "Gemini chưa hoàn thành việc viết lại"
+
+#: src/components/LogMessage.svelte
+msgid "Gemini returned no rewritten text"
+msgstr "Gemini không trả về văn bản đã viết lại"
+
+#: src/components/LogMessage.svelte
+msgid "Gemini rewrite completed."
+msgstr "Việc viết lại của Gemini đã hoàn thành."
+
+#: src/components/LogMessage.svelte
+msgid "Gemini rewrite failed. Using the original text for this post; Gemini will be tried again for the next post."
+msgstr "Việc viết lại của Gemini thất bại. Sử dụng văn bản gốc cho bài viết này; Gemini sẽ được thử lại cho bài viết tiếp theo."
+
+#: src/components/LogMessage.svelte
+msgid "Image uploads belong to a different profile"
+msgstr "Tải lên hình ảnh thuộc về hồ sơ khác"
+
+#: src/components/LogMessage.svelte
+msgid "Images inserted"
+msgstr "Hình ảnh đã được chèn"
+
+#: src/components/LogMessage.svelte
+msgid "Inserting post body…"
+msgstr "Đang chèn nội dung bài viết…"
+
+#: src/components/LogMessage.svelte
+msgid "Internet connection lost. Queue paused until the connection returns."
+msgstr "Mất kết nối Internet. Hàng đợi tạm dừng cho đến khi kết nối trở lại."
+
+#: src/components/LogMessage.svelte
+msgid "Internet connection restored. Continuing the queue."
+msgstr "Kết nối Internet đã được khôi phục. Tiếp tục hàng đợi."
+
+#: src/components/LogMessage.svelte
+msgid "Internet connection restored. The queue remains manually paused."
+msgstr "Kết nối Internet đã được khôi phục. Hàng đợi vẫn đang tạm dừng thủ công."
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured endpoint"
+msgstr "Điểm kết cuối bị bắt không hợp lệ"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured formatted post"
+msgstr "Bài đăng định dạng bị bắt không hợp lệ"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured post form"
+msgstr "Biểu mẫu bài đăng bị bắt không hợp lệ"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured post variables"
+msgstr "Các biến bài đăng bị bắt không hợp lệ"
+
+#: src/components/LogMessage.svelte
+msgid "Load your groups before opening a post"
+msgstr "Tải các nhóm của bạn trước khi mở một bài đăng"
+
+#: src/components/LogMessage.svelte
+msgid "Log in or complete Facebook verification in Chrome, then click Post again"
+msgstr "Đăng nhập hoặc hoàn thành xác minh Facebook trong Chrome, sau đó nhấn nút Đăng lại"
+
+#: src/components/LogMessage.svelte
+msgid "Multiple matching controls found in the post composer"
+msgstr "Nhiều điều khiển trùng khớp được tìm thấy trong bộ soạn thảo bài đăng"
+
+#: src/components/LogMessage.svelte
+msgid "No Facebook response was captured for this entry"
+msgstr "Không có phản hồi Facebook nào được ghi nhận cho mục này"
+
+#: src/components/LogMessage.svelte
+msgid "No available post composer."
+msgstr "Không có bộ soạn thảo bài đăng khả dụng."
+
+#: src/components/LogMessage.svelte
+msgid "No complete image upload request was captured."
+msgstr "Không có yêu cầu tải ảnh hoàn chỉnh nào được ghi nhận."
+
+#: src/components/LogMessage.svelte
+msgid "No fresh image upload request was captured."
+msgstr "Không có yêu cầu tải ảnh mới nào được ghi nhận."
+
+#: src/components/LogMessage.svelte
+msgid "Opening browser…"
+msgstr "Đang mở trình duyệt…"
+
+#: src/components/LogMessage.svelte
+msgid "Pause requested. The current operation will finish before pausing."
+msgstr "Yêu cầu tạm dừng. Hoạt động hiện tại sẽ hoàn tất trước khi tạm dừng."
+
+#: src/components/LogMessage.svelte
+msgid "Post button clicked"
+msgstr "Nút Đăng đã được nhấn"
+
+#: src/components/LogMessage.svelte
+msgid "Post published."
+msgstr "Bài đăng đã được xuất bản."
+
+#: src/components/LogMessage.svelte
+msgid "Postika is shutting down"
+msgstr "Postika đang tắt"
+
+#: src/components/LogMessage.svelte
+msgid "Posting is already running"
+msgstr "Đang đăng bài"
+
+#: src/components/LogMessage.svelte
+msgid "Posting paused."
+msgstr "Đăng bài tạm dừng."
+
+#: src/components/LogMessage.svelte
+msgid "Posting resumed."
+msgstr "Đăng bài tiếp tục."
+
+#: src/components/LogMessage.svelte
+msgid "Posting stopped after the first post was confirmed"
+msgstr "Đăng bài dừng sau khi bài đăng đầu tiên được xác nhận"
+
+#: src/components/LogMessage.svelte
+msgid "Posting..."
+msgstr "Đang đăng bài..."
+
+#: src/components/LogMessage.svelte
+msgid "Reading Facebook's create-post confirmation…"
+msgstr "Đang đọc xác nhận tạo bài đăng của Facebook…"
+
+#: src/components/LogMessage.svelte
+msgid "Rewriting the post body with Gemini…"
+msgstr "Đang viết lại nội dung bài đăng với Gemini…"
+
+#: src/components/LogMessage.svelte
+msgid "Scheduled posting cancelled."
+msgstr "Hẹn giờ đăng bài bị hủy."
+
+#: src/components/LogMessage.svelte
+msgid "Scheduled time reached. Starting posting…"
+msgstr "Đã đến thời gian đã hẹn. Bắt đầu đăng bài…"
+
+#: src/components/LogMessage.svelte
+msgid "Select at least one group"
+msgstr "Chọn ít nhất một nhóm"
+
+#: src/components/LogMessage.svelte
+msgid "Setting up automatic posting using your first Facebook post..."
+msgstr "Đang thiết lập đăng bài tự động sử dụng bài đăng Facebook đầu tiên của bạn..."
+
+#: src/components/LogMessage.svelte
+msgid "Stopping posting…"
+msgstr "Đang dừng việc đăng bài…"
+
+#: src/components/LogMessage.svelte
+msgid "Submitting the first post and capturing fresh request values…"
+msgstr "Đang gửi bài đăng đầu tiên và lấy giá trị yêu cầu mới…"
+
+#: src/components/LogMessage.svelte
+#: src/components/LogMessage.svelte
+msgid "Technical details recorded. Open debug details to inspect the original message."
+msgstr "Chi tiết kỹ thuật đã được ghi lại. Mở chi tiết gỡ lỗi để kiểm tra tin nhắn gốc."
+
+#: src/components/LogMessage.svelte
+msgid "The active Facebook profile changed or expired"
+msgstr "Hồ sơ Facebook đang sử dụng đã thay đổi hoặc hết hạn"
+
+#: src/components/LogMessage.svelte
+msgid "The browser connection was lost. Check Facebook before retrying"
+msgstr "Kết nối trình duyệt đã mất. Kiểm tra Facebook trước khi thử lại"
+
+#: src/components/LogMessage.svelte
+msgid "The browser profile changed while capturing posting requests"
+msgstr "Hồ sơ trình duyệt thay đổi trong khi đang lấy yêu cầu đăng bài"
+
+#: src/components/LogMessage.svelte
+msgid "The captured formatted post body does not match your draft"
+msgstr "Nội dung bài đăng đã được định dạng không khớp với bản thảo của bạn"
+
+#: src/components/LogMessage.svelte
+msgid "The captured image upload cookies do not match the Facebook profile"
+msgstr "Cookie tải ảnh đã chụp không khớp với hồ sơ Facebook"
+
+#: src/components/LogMessage.svelte
+msgid "The captured image upload format is not supported"
+msgstr "Định dạng tải ảnh đã chụp không được hỗ trợ"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post belongs to a different Facebook profile"
+msgstr "Bài đăng đã chụp thuộc về hồ sơ Facebook khác"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post body does not match your draft"
+msgstr "Nội dung bài đăng đã chụp không khớp với bản thảo của bạn"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post cookies do not match the logged-in profile"
+msgstr "Cookie bài đăng đã chụp không khớp với hồ sơ đã đăng nhập"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post has no group target"
+msgstr "Bài đăng đã chụp không có mục tiêu nhóm"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post target does not match the selected group"
+msgstr "Mục tiêu bài đăng đã chụp không khớp với nhóm đã chọn"
+
+#: src/components/LogMessage.svelte
+msgid "The composer dialog was replaced while loading"
+msgstr "Hộp thoại soạn thảo đã bị thay thế trong khi đang tải"
+
+#: src/components/LogMessage.svelte
+msgid "The create-post connection failed. Check Facebook before retrying"
+msgstr "Kết nối tạo bài đăng thất bại. Kiểm tra Facebook trước khi thử lại"
+
+#: src/components/LogMessage.svelte
+msgid "The current profile differs from the profile used to load groups. Load groups again."
+msgstr "Hồ sơ hiện tại khác với hồ sơ đã sử dụng để tải nhóm. Tải lại nhóm."
+
+#: src/components/LogMessage.svelte
+msgid "The desktop application is not ready"
+msgstr "Ứng dụng máy tính để bàn chưa sẵn sàng"
+
+#: src/components/LogMessage.svelte
+msgid "The desktop clipboard is not ready"
+msgstr "Bảng tạm máy tính để bàn chưa sẵn sàng"
+
+#: src/components/LogMessage.svelte
+msgid "The expected composer control did not appear in Chrome"
+msgstr "Điều khiển soạn thảo mong đợi không xuất hiện trong Chrome"
+
+#: src/components/LogMessage.svelte
+msgid "The first post was confirmed, but Chrome's completion state could not be checked. Posting stopped"
+msgstr "Bài đăng đầu tiên đã được xác nhận, nhưng trạng thái hoàn tất của Chrome không thể kiểm tra. Việc đăng bị dừng lại"
+
+#: src/components/LogMessage.svelte
+msgid "The image upload did not contain multipart form data"
+msgstr "Tải lên hình ảnh không chứa dữ liệu biểu mẫu đa phần"
+
+#: src/components/LogMessage.svelte
+msgid "The image upload does not match its active Facebook profile"
+msgstr "Tải lên hình ảnh không khớp với hồ sơ Facebook đang hoạt động"
+
+#: src/components/LogMessage.svelte
+msgid "The image upload form belongs to a different Facebook profile"
+msgstr "Biểu mẫu tải lên hình ảnh thuộc về một hồ sơ Facebook khác"
+
+#: src/components/LogMessage.svelte
+msgid "The selected group has an invalid Facebook URL. Load groups again"
+msgstr "Nhóm được chọn có URL Facebook không hợp lệ. Tải lại các nhóm"
+
+#: src/components/LogMessage.svelte
+msgid "The session could not be saved for posting retries and remaining groups."
+msgstr "Phiên làm việc không thể lưu để đăng lại các bài và nhóm còn lại."
+
+#: src/components/LogMessage.svelte
+msgid "This draft has already been submitted to the first group. It was not submitted again."
+msgstr "Bản nháp này đã được gửi đến nhóm đầu tiên. Nó không được gửi lại."
+
+#: src/components/LogMessage.svelte
+msgid "This group has no available post composer"
+msgstr "Nhóm này không có trình soạn thảo bài đăng khả dụng"
+
+#: src/components/LogMessage.svelte
+msgid "This group has reached its pending-content limit."
+msgstr "Nhóm này đã đạt giới hạn nội dung đang chờ."
+
+#: src/components/LogMessage.svelte
+msgid "This post was submitted, but confirmation is uncertain. Check Facebook before retrying."
+msgstr "Bài đăng này đã được gửi, nhưng việc xác nhận không chắc chắn. Kiểm tra Facebook trước khi thử lại."
+
+#: src/components/LogMessage.svelte
+msgid "This response is no longer available for the current run"
+msgstr "Phản hồi này không còn khả dụng cho lần chạy hiện tại"
+
+#: src/components/LogMessage.svelte
+msgid "Upload and post captures must belong to the same logged-in profile"
+msgstr "Tải lên và đăng các ảnh chụp phải thuộc cùng một hồ sơ đã đăng nhập"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for Facebook's Post button…"
+msgstr "Đang chờ nút Đăng của Facebook…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the composer controls and layout…"
+msgstr "Đang chờ các điều khiển và bố cục của trình soạn thảo…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the group page and opening its composer…"
+msgstr "Đang chờ trang nhóm và mở trình soạn thảo của nó…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the image previews and composer to settle…"
+msgstr "Đang chờ xem trước hình ảnh và trình soạn thảo ổn định…"
+
+#: src/components/LogMessage.svelte
+msgid "Your Facebook session needs login or verification. Load groups again."
+msgstr "Phiên Facebook của bạn cần đăng nhập hoặc xác minh. Tải lại các nhóm."
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Published to {0}."
+msgstr "Đã đăng lên {0}."
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "{0}: Awaiting admin approval."
+msgstr "{0}: Đang chờ phê duyệt từ quản trị viên."
+
+#. 0: number(a); 1: b
+#: src/components/LogMessage.svelte
+msgid "Waiting {0} seconds before posting to {1}."
+msgstr "Đang chờ {0} giây trước khi đăng lên {1}."
+
+#. 0: a; 1: b
+#: src/components/LogMessage.svelte
+msgid "Next post in {0} · {1}"
+msgstr "Bài đăng tiếp theo trong {0} · {1}"
+
+#. 0: a; 1: number(b); 2: number(c)
+#: src/components/LogMessage.svelte
+msgid "{0}: Uploading photo {1} of {2}…"
+msgstr "{0}: Đang tải ảnh {1} trong tổng số {2}…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Preparing a post for {0}…"
+msgstr "Chuẩn bị bài đăng cho {0}…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Uploading images for {0}…"
+msgstr "Đang tải hình ảnh cho {0}…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Posting to {0}…"
+msgstr "Đang đăng lên {0}…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Fresh upload and post request values captured from {0}."
+msgstr "Giá trị yêu cầu tải lên và đăng mới được lấy từ {0}."
+
+#. 0: number(a); 1: number(b)
+#: src/components/LogMessage.svelte
+msgid "Submission unconfirmed. Retrying request {0}/{1}…"
+msgstr "Gửi chưa xác nhận. Thử lại yêu cầu {0}/{1}…"
+
+#. 0: number(a); 1: number(b); 2: number(c)
+#: src/components/LogMessage.svelte
+msgid "Finished: {0} published, {1} awaiting approval, {2} failed or skipped."
+msgstr "Hoàn thành: {0} đã được đăng, {1} đang chờ phê duyệt, {2} thất bại hoặc bỏ qua."
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Opening {0}…"
+msgstr "Đang mở {0}…"
+
+#. 0: number(a); 1: number(b)
+#: src/components/LogMessage.svelte
+msgid "Capturing image uploads ({0} of {1})…"
+msgstr "Đang tải hình ảnh lên ({0} trên {1})…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Gemini rewrite failed (HTTP {0}). Check the key, model and account quota"
+msgstr "Việc viết lại Gemini thất bại (HTTP {0}). Kiểm tra khóa, mô hình và hạn mức tài khoản"
+
+#. 0: code
+#: src/components/LogMessage.svelte
+msgid " (Code {0})"
+msgstr "(Mã {0})"
+
+#: src/components/PostingLogView.svelte
+msgid "Debug details"
+msgstr "Chi tiết gỡ lỗi"
+
+#~ msgid ", "
+#~ msgstr ""
+
+#: src/components/ThemePicker.svelte
+msgid "Themes"
+msgstr "Chủ đề"
+
+#: src/App.svelte
+msgid "Preferences & post"
+msgstr "Tùy chọn và đăng bài"
+
+#: src/App.svelte
+#: src/App.svelte
+msgid "Set preferences, then post now or schedule"
+msgstr "Đặt tùy chọn, rồi đăng ngay hoặc lên lịch"
