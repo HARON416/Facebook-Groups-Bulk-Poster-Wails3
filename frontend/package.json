@@ -13,6 +13,7 @@
     "i18n:check": "wuchale check --full && node scripts/check-i18n.mjs",
     "i18n:coverage": "node scripts/check-i18n.mjs",
     "i18n:status": "wuchale status",
+    "i18n:test": "node --test scripts/locale-preferences.test.mjs",
     "precheck": "node scripts/generate-themes.mjs && wuchale && node scripts/check-i18n.mjs",
     "prebuild": "node scripts/generate-themes.mjs && wuchale && node scripts/check-i18n.mjs",
     "themes:generate": "node scripts/generate-themes.mjs",

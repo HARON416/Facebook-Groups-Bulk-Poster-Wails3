@@ -1,6 +1,7 @@
 import { loadLocale } from 'wuchale/load-utils';
 import '../locales/main.loader.svelte.js';
 import { languages } from '../locales/languages.js';
+import { matchSupportedLocale, preferredLocale } from './locale-preferences';
 
 export const localeStorageKey = 'postika:language';
 export const i18n = $state({ locale: 'en', changing: false });
@@ -11,8 +12,11 @@ export function supportedLocale(value: string | null) {
   return languages.some(({ code }) => code === value) ? value! : 'en';
 }
 function storedLocale() {
-  try { return supportedLocale(localStorage.getItem(localeStorageKey)); }
+  try { return matchSupportedLocale(localStorage.getItem(localeStorageKey)); }
   catch { return null; }
+}
+function initialLocale() {
+  return preferredLocale(storedLocale(), [...(navigator.languages ?? []), navigator.language]);
 }
 
 // Serialize loads: an older, slower catalog must never overwrite a newer choice.
@@ -34,12 +38,13 @@ export function setLocale(value: string, persist = true): Promise<void> {
 }
 
 export async function initializeLocale() {
-  try { await setLocale(storedLocale() ?? 'en', false); }
+  // Automatic choices remain unsaved, so only an explicit selection overrides
+  // the system's preferred languages on future launches.
+  try { await setLocale(initialLocale(), false); }
   catch { await setLocale('en', false); }
   window.addEventListener('storage', (event) => {
     if (event.key === localeStorageKey || event.key === null) {
-      const locale = storedLocale();
-      if (locale) void setLocale(locale, false).catch(() => {});
+      void setLocale(initialLocale(), false).catch(() => {});
     }
   });
   // Retained settings/log windows also catch up when shown or focused again.

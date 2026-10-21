@@ -20,6 +20,12 @@ and pause, resume, stop, progress, and response-copy controls.
 The interface supports **32 languages** and **189 themes**, including Postika
 Light and Dark. Language and theme choices sync across windows. App-generated
 logs are translated; original diagnostics remain under **Debug details**.
+Open **Features** in the top bar for a scrollable overview of the app’s features.
+Choose **How to use** in the same card for a detailed guide to accounts,
+composing posts, images, groups, intervals, Gemini, scheduling, logs, and troubleshooting.
+On first launch, the interface follows the browser or system’s preferred
+languages, falling back to English when none are supported. Choosing a language
+manually saves it for future launches and all windows. No location access is used.
 
 ## Saved data
 
@@ -68,6 +74,7 @@ calls require the desktop runtime.
 ```sh
 make check
 npm --prefix frontend run i18n:check
+npm --prefix frontend run i18n:test
 npm --prefix frontend run themes:test
 npm --prefix frontend run logs:test
 npm --prefix frontend run build

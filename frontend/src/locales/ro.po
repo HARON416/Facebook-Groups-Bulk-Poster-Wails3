@@ -79,6 +79,7 @@ msgid "Start with your message. Add images to bring it to life."
 msgstr "Începe cu mesajul tău. Adaugă imagini pentru a-l pune în valoare."
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
 msgid "Choose the groups you want to share your post with."
 msgstr "Alege grupurile cu care vrei să distribui postarea ta."
 
@@ -119,10 +120,12 @@ msgid "Clear group search"
 msgstr "Șterge căutarea grupului"
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
 msgid "Search groups"
 msgstr "Caută grupuri"
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
 msgid "Select all groups"
 msgstr "Selectează toate grupurile"
 
@@ -154,6 +157,7 @@ msgid "Open your Facebook groups to get started."
 msgstr "Deschide grupurile tale de Facebook pentru a începe."
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
 msgid "Posting settings"
 msgstr "Setări de postare"
 
@@ -166,6 +170,8 @@ msgid "Applying defaults…"
 msgstr "Se aplică implicitul..."
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
 msgid "Use saved defaults"
 msgstr "Folosește implicitul salvat"
 
@@ -192,6 +198,8 @@ msgstr "Deschide setările"
 #~ msgstr "Grupuri selectate ({0})"
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
 msgid "Schedule your queue"
 msgstr "Programează coada ta"
 
@@ -218,6 +226,7 @@ msgid "View logs"
 msgstr "Vezi jurnalele"
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 msgid "Stop"
 msgstr "Oprește"
@@ -233,6 +242,8 @@ msgid "Posting…"
 msgstr "Se postează…"
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
 msgid "Post now"
 msgstr "Publică acum"
 
@@ -249,18 +260,23 @@ msgid "Application menu"
 msgstr "Meniu aplicație"
 
 #: src/Workspace.svelte
+#: src/components/UsageGuide.svelte
 msgid "Add account"
 msgstr "Adaugă un cont"
 
 #: src/Workspace.svelte
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogView.svelte
+#: src/components/UsageGuide.svelte
 msgid "Posting logs"
 msgstr "Jurnal de publicare"
 
 #: src/Workspace.svelte
+#: src/components/FeaturesCard.svelte
 #: src/components/Settings.svelte
 #: src/components/Settings.svelte
+#: src/components/UsageGuide.svelte
 msgid "Settings"
 msgstr "Setări"
 
@@ -277,6 +293,7 @@ msgid "Account name"
 msgstr "Numele contului"
 
 #: src/Workspace.svelte
+#: src/components/UsageGuide.svelte
 msgid "Sign in to Facebook in the new account’s browser window."
 msgstr "Conectează-te la Facebook în fereastra browser-ului noului cont."
 
@@ -322,6 +339,7 @@ msgid "All accounts"
 msgstr "Toate conturile"
 
 #: src/components/AccountDropdown.svelte
+#: src/components/FeaturesCard.svelte
 msgid "Accounts"
 msgstr "Conturi"
 
@@ -448,6 +466,7 @@ msgid "Required"
 msgstr "Obligatoriu"
 
 #: src/components/PostComposer.svelte
+#: src/components/UsageGuide.svelte
 msgid "Images"
 msgstr "Imagini"
 
@@ -459,7 +478,9 @@ msgstr "Alege imagini"
 msgid "Drop images here or <0>browse images</0>"
 msgstr "Trage imaginile aici sau <0>răsfoiește imaginile</0>"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostComposer.svelte
+#: src/components/UsageGuide.svelte
 msgid "JPG, PNG, WebP, or GIF · Select multiple images"
 msgstr "JPG, PNG, WebP sau GIF · Selectează mai multe imagini"
 
@@ -470,7 +491,9 @@ msgstr "JPG, PNG, WebP sau GIF · Selectează mai multe imagini"
 msgid "Add more"
 msgstr "Adaugă mai multe"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostComposer.svelte
+#: src/components/UsageGuide.svelte
 msgid "Drag images to rearrange. Or focus an image and use Alt + Left / Right."
 msgstr "Trage imaginile pentru a le rearanja. Sau concentrează-te pe o imagine și folosește Alt + Săgeată Stânga / Dreapta."
 
@@ -561,7 +584,9 @@ msgstr "Refac"
 msgid "What would you like to share?"
 msgstr "Ce ai vrea să împărtășești?"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostEditorContent.svelte
+#: src/components/UsageGuide.svelte
 msgid "Bold, italic, headings, quotes, and lists · Markdown shortcuts supported"
 msgstr "Îngroș, italice, titluri, ghilimele și liste · Scurtături Markdown suportate"
 
@@ -586,7 +611,9 @@ msgstr "Răspuns pe Facebook primit"
 msgid "POSTIKA / ACTIVITY"
 msgstr "POSTIKA / ACTIVITATE"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
+#: src/components/UsageGuide.svelte
 msgid "Posting progress"
 msgstr "Progresul postărilor"
 
@@ -667,6 +694,7 @@ msgstr "{0} jurnal"
 msgid "Took {0}"
 msgstr "A durat {0}"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogView.svelte
 msgid "Copy Facebook response"
@@ -731,10 +759,12 @@ msgstr "Următor →"
 msgid "{0}–{1} of {2} logs"
 msgstr "{0}–{1} din {2} jurnale"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 msgid "Resume"
 msgstr "Reia"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 msgid "Pause"
 msgstr "Pauză"
@@ -747,7 +777,9 @@ msgstr "Se oprește…"
 msgid "POSTING PACE"
 msgstr "RITMUL POSTĂRILOR"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingOptionsForm.svelte
+#: src/components/UsageGuide.svelte
 msgid "Interval between posts"
 msgstr "Interval între postări"
 
@@ -760,10 +792,12 @@ msgid "Maximum (seconds)"
 msgstr "Maxim (secunde)"
 
 #: src/components/PostingOptionsForm.svelte
+#: src/components/UsageGuide.svelte
 msgid "Choose how long to wait before posting to the next group."
 msgstr "Alege cât timp să aștepți înainte de a posta în următorul grup."
 
 #: src/components/PostingOptionsForm.svelte
+#: src/components/UsageGuide.svelte
 msgid "At least 60 seconds. Use equal values for a fixed interval."
 msgstr "Cel puțin 60 de secunde. Folosește valori egale pentru un interval fix."
 
@@ -775,7 +809,9 @@ msgstr "OPȚIONAL · RESCRIERE AI"
 msgid "A fresh version for each group"
 msgstr "O versiune nouă pentru fiecare grup"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingOptionsForm.svelte
+#: src/components/UsageGuide.svelte
 msgid "Rewrite each post body with Gemini"
 msgstr "Rescrie corpul fiecărei postări cu Gemini"
 
@@ -791,7 +827,9 @@ msgstr "Păstrează concis și ușor de scanat. Păstrează prețul și detaliil
 msgid "Rewrite instructions"
 msgstr "Instrucțiuni de rescriere"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingOptionsForm.svelte
+#: src/components/UsageGuide.svelte
 msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
 msgstr "Textul postării și instrucțiunile tale sunt trimise la Google Gemini. Imaginile nu sunt trimise. Rescrierile Gemini folosesc text simplu."
 
@@ -855,10 +893,12 @@ msgid "What does “Use saved defaults” do?"
 msgstr "Ce face “Folosește implicit salvate”?"
 
 #: src/components/SavedDefaultsInfo.svelte
+#: src/components/UsageGuide.svelte
 msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
 msgstr "Înlocuiește intervalul de postare al acestei sesiuni, opțiunea de rescriere Gemini și instrucțiunile de rescriere cu valorile salvate în Setări."
 
 #: src/components/SavedDefaultsInfo.svelte
+#: src/components/UsageGuide.svelte
 msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
 msgstr "Valorile implicite inițiale: 60–120 secunde, rescriere Gemini dezactivată și fără instrucțiuni de rescriere. Salvați propriile preferințe în Setări pentru a le modifica."
 
@@ -970,6 +1010,8 @@ msgid "Close window"
 msgstr "Închide fereastra"
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
 msgid "Create post"
 msgstr "Creează o postare"
 
@@ -978,6 +1020,8 @@ msgid "Write your post and add images"
 msgstr "Scrieți postarea și adăugați imagini"
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
 msgid "Select groups"
 msgstr "Selectează grupuri"
 
@@ -1146,22 +1190,27 @@ msgstr "EROARE"
 msgid "DEBUG"
 msgstr "DEPAŃARE"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 msgid "PUBLISHED"
 msgstr "PUBLICAT"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 msgid "PENDING"
 msgstr "ÎN AȘTEPTARE"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 msgid "FAILED"
 msgstr "EȘUAT"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 msgid "SKIPPED"
 msgstr "OMIS"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 msgid "UNCONFIRMED"
 msgstr "NECONFIRMAT"
@@ -1238,6 +1287,7 @@ msgstr "Profil implicit"
 msgid "Color themes"
 msgstr "Teme de culori"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/ThemePicker.svelte
 msgid "Close"
 msgstr "Închide"
@@ -1456,6 +1506,7 @@ msgid "Gemini rewrite completed."
 msgstr "Rescrierea Gemini finalizată."
 
 #: src/components/LogMessage.svelte
+#: src/components/UsageGuide.svelte
 msgid "Gemini rewrite failed. Using the original text for this post; Gemini will be tried again for the next post."
 msgstr "Rescrierea Gemini a eșuat. Se folosește textul original pentru această postare; Gemini va fi încercat din nou pentru următoarea postare."
 
@@ -1709,6 +1760,7 @@ msgid "This group has reached its pending-content limit."
 msgstr "Acest grup a atins limita de conținut în așteptare."
 
 #: src/components/LogMessage.svelte
+#: src/components/UsageGuide.svelte
 msgid "This post was submitted, but confirmation is uncertain. Check Facebook before retrying."
 msgstr "Această postare a fost trimisă, dar confirmarea este incertă. Verifică Facebook înainte de a reîncerca."
 
@@ -1815,7 +1867,9 @@ msgstr "Rescrierea Gemini a eșuat (HTTP {0}). Verificați cheia, modelul și co
 msgid " (Code {0})"
 msgstr "(Cod {0})"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
+#: src/components/UsageGuide.svelte
 msgid "Debug details"
 msgstr "Detalii depanare"
 
@@ -1827,6 +1881,7 @@ msgid "Themes"
 msgstr "Teme"
 
 #: src/App.svelte
+#: src/components/UsageGuide.svelte
 msgid "Preferences & post"
 msgstr "Preferințe și publicare"
 
@@ -1834,3 +1889,135 @@ msgstr "Preferințe și publicare"
 #: src/App.svelte
 msgid "Set preferences, then post now or schedule"
 msgstr "Setați preferințele, apoi publicați acum sau programați publicarea"
+
+#~ msgid "Postika"
+#~ msgstr "Postika"
+
+#: src/components/FeaturesCard.svelte
+#: src/components/FeaturesCard.svelte
+msgid "Features"
+msgstr "Funcționalități"
+
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
+#: src/components/UsageGuide.svelte
+msgid "Draft text and image copies are saved automatically for each account."
+msgstr "Textul ciornei și copiile imaginilor sunt salvate automat pentru fiecare cont."
+
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
+msgid "Separate Facebook sessions, groups, drafts, settings, and queues for each account."
+msgstr "Sesiuni Facebook, grupuri, ciorne, setări și cozi separate pentru fiecare cont."
+
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
+msgid "Switch accounts while other queues keep running."
+msgstr "Schimbați contul în timp ce celelalte cozi continuă să ruleze."
+
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
+msgid "Loaded groups stay available between app sessions."
+msgstr "Grupurile încărcate rămân disponibile între sesiunile aplicației."
+
+#: src/components/FeaturesCard.svelte
+msgid "Minimum and maximum delays between posts."
+msgstr "Intervale minime și maxime între postări."
+
+#: src/components/FeaturesCard.svelte
+msgid "Custom instructions and a configurable Gemini model."
+msgstr "Instrucțiuni personalizate și un model Gemini configurabil."
+
+#. 0: languages.length; 1: themeOptions.length
+#: src/components/FeaturesCard.svelte
+msgid "{0} languages · {1} themes"
+msgstr "{0} limbi · {1} teme"
+
+#: src/components/FeaturesCard.svelte
+msgid "Language and theme choices sync across windows."
+msgstr "Opțiunile de limbă și temă se sincronizează între ferestre."
+
+#: src/components/FeaturesCard.svelte
+msgid "Windows and Linux"
+msgstr "Windows și Linux"
+
+#: src/components/FeaturesCard.svelte
+msgid "Post text and images to multiple Facebook groups."
+msgstr "Publicați text și imagini în mai multe grupuri Facebook."
+
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
+msgid "Keep Postika open and your computer awake. Queues and logs are not restored after quitting."
+msgstr "Păstrați Postika deschis și computerul activ. Cozile și jurnalele nu sunt restaurate după închidere."
+
+#: src/components/FeaturesCard.svelte
+msgid "<0/> Features"
+msgstr "<0/> Funcționalități"
+
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
+msgid "Browse or drop images, preview attachments, and remove images."
+msgstr "Selectați sau plasați imagini, previzualizați atașamentele și eliminați imagini."
+
+#: src/components/FeaturesCard.svelte
+msgid "Queues pause when offline and resume when the connection returns."
+msgstr "Cozile se întrerup fără internet și se reiau când conexiunea revine."
+
+#: src/components/FeaturesCard.svelte
+msgid "How to use"
+msgstr "Cum se utilizează"
+
+#: src/components/UsageGuide.svelte
+msgid "Choose Add account, enter an account name, and select Create & sign in. Use the account switcher to return to an existing account."
+msgstr "Alegeți Adaugă cont, introduceți un nume și selectați Creează și conectează-te. Folosiți selectorul pentru a reveni la un cont existent."
+
+#: src/components/UsageGuide.svelte
+msgid "Write your message and add at least one image; both are required. Use Next to move forward and Previous to edit an earlier step."
+msgstr "Scrieți mesajul și adăugați cel puțin o imagine; ambele sunt obligatorii. Următorul continuă, iar Anterior permite editarea unui pas precedent."
+
+#: src/components/UsageGuide.svelte
+msgid "Select Load groups and finish Facebook login or verification in Chrome. Search the loaded list, select the groups you want, then choose Next."
+msgstr "Selectați Încarcă grupurile și finalizați autentificarea sau verificarea Facebook în Chrome. Căutați în listă, selectați grupurile și alegeți Următorul."
+
+#: src/components/UsageGuide.svelte
+msgid "In Settings, enter this account’s Gemini API key and model, then Save settings. Enable rewriting for your run and describe the tone and details to preserve."
+msgstr "În Setări, introduceți cheia API Gemini și modelul acestui cont, apoi salvați. Activați rescrierea și descrieți tonul și detaliile de păstrat."
+
+#: src/components/UsageGuide.svelte
+msgid "Review the account, message, image order, selected groups, and posting intervals. Choose Post now and complete any Facebook login or verification prompts in Chrome."
+msgstr "Verificați contul, mesajul, ordinea imaginilor, grupurile și intervalele. Alegeți Publică acum și finalizați autentificarea sau verificarea Facebook în Chrome."
+
+#: src/components/UsageGuide.svelte
+msgid "Choose Schedule, select a future date and time in the displayed time zone, then Confirm schedule. Facebook may require login when the queue starts."
+msgstr "Alegeți Programează, selectați o dată și oră viitoare în fusul afișat și confirmați. Facebook poate cere autentificare când începe coada."
+
+#: src/components/UsageGuide.svelte
+msgid "Open Posting logs to follow progress. Its account selector lets you inspect other queues without switching the account in the main workspace."
+msgstr "Deschideți jurnalele de publicare pentru a urmări progresul. Selectorul lor permite verificarea altor cozi fără schimbarea contului din spațiul principal."
+
+#: src/components/UsageGuide.svelte
+msgid "Pause finishes the current operation before waiting. Resume continues the queue; Stop ends the remaining queue. Queues paused manually need Resume even after internet returns."
+msgstr "Pauză încheie operațiunea curentă înainte de a aștepta. Reia continuă coada; Oprește încheie restul. Cozile întrerupte manual necesită Reia chiar după revenirea internetului."
+
+#: src/components/UsageGuide.svelte
+msgid "Published means Facebook confirmed publication. Pending means admin approval is needed. Review failed or skipped entries; check unconfirmed submissions on Facebook before retrying to avoid duplicates."
+msgstr "Publicat înseamnă confirmare de la Facebook. În așteptare necesită aprobarea administratorului. Verificați erorile și elementele omise; controlați trimiterile neconfirmate pe Facebook înainte de reîncercare pentru a evita duplicatele."
+
+#: src/components/UsageGuide.svelte
+msgid "For problems, expand Debug details or Copy Facebook response in Posting logs. For expired logins, use Load groups and finish verification before trying again."
+msgstr "La probleme, extindeți detaliile de depanare sau copiați răspunsul Facebook din jurnale. Dacă autentificarea expiră, încărcați grupurile și finalizați verificarea înainte de a reîncerca."
+
+#: src/components/UsageGuide.svelte
+msgid "Use Language and Themes in the top bar. Your choices apply across windows."
+msgstr "Folosiți Limbă și Teme în bara de sus. Opțiunile se aplică tuturor ferestrelor."
+
+#: src/components/UsageGuide.svelte
+msgid "Adding another account is optional. Use it only when you want a separate Facebook login and workspace."
+msgstr "Adăugarea altui cont este opțională. Folosiți-o doar pentru o autentificare Facebook și un spațiu de lucru separate."
+
+#: src/components/UsageGuide.svelte
+msgid "You can use the default account without adding another one. Sign in to Facebook when you choose Load groups in step 2."
+msgstr "Puteți folosi contul implicit fără să adăugați altul. Conectați-vă la Facebook când alegeți Încarcă grupurile la pasul 2."
+
+#: src/components/FeaturesCard.svelte
+msgid "Features & How to Use"
+msgstr "Funcționalități și instrucțiuni de utilizare"

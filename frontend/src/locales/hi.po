@@ -79,6 +79,7 @@ msgid "Start with your message. Add images to bring it to life."
 msgstr "अपने संदेश से शुरू करें। इसे जीवंत बनाने के लिए इमेज जोड़ें।"
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
 msgid "Choose the groups you want to share your post with."
 msgstr "अपने पोस्ट को जिन समूहों के साथ साझा करना चाहते हैं उन्हें चुनें।"
 
@@ -119,10 +120,12 @@ msgid "Clear group search"
 msgstr "समूह खोज साफ़ करें"
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
 msgid "Search groups"
 msgstr "समूह खोजें"
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
 msgid "Select all groups"
 msgstr "सभी समूह चुनें"
 
@@ -154,6 +157,7 @@ msgid "Open your Facebook groups to get started."
 msgstr "शुरू करने के लिए अपने Facebook समूह खोलें।"
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
 msgid "Posting settings"
 msgstr "पोस्टिंग सेटिंग्स"
 
@@ -166,6 +170,8 @@ msgid "Applying defaults…"
 msgstr "डिफ़ॉल्ट लागू किया जा रहा है…"
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
 msgid "Use saved defaults"
 msgstr "सहेजे गए डिफ़ॉल्ट का उपयोग करें"
 
@@ -192,6 +198,8 @@ msgstr "सेटिंग्स खोलें"
 #~ msgstr "चुने गए समूह ({0})"
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
 msgid "Schedule your queue"
 msgstr "अपनी कतार शेड्यूल करें"
 
@@ -218,6 +226,7 @@ msgid "View logs"
 msgstr "लॉग देखें"
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 msgid "Stop"
 msgstr "रोकें"
@@ -233,6 +242,8 @@ msgid "Posting…"
 msgstr "पोस्टिंग…"
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
 msgid "Post now"
 msgstr "अभी पोस्ट करें"
 
@@ -249,18 +260,23 @@ msgid "Application menu"
 msgstr "एप्लिकेशन मेनू"
 
 #: src/Workspace.svelte
+#: src/components/UsageGuide.svelte
 msgid "Add account"
 msgstr "खाता जोड़ें"
 
 #: src/Workspace.svelte
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogView.svelte
+#: src/components/UsageGuide.svelte
 msgid "Posting logs"
 msgstr "पोस्ट लॉग"
 
 #: src/Workspace.svelte
+#: src/components/FeaturesCard.svelte
 #: src/components/Settings.svelte
 #: src/components/Settings.svelte
+#: src/components/UsageGuide.svelte
 msgid "Settings"
 msgstr "सेटिंग"
 
@@ -277,6 +293,7 @@ msgid "Account name"
 msgstr "खाते का नाम"
 
 #: src/Workspace.svelte
+#: src/components/UsageGuide.svelte
 msgid "Sign in to Facebook in the new account’s browser window."
 msgstr "नए अकाउंट के ब्राउज़र विंडो में फेसबुक में साइन इन करें।"
 
@@ -322,6 +339,7 @@ msgid "All accounts"
 msgstr "सभी खाते"
 
 #: src/components/AccountDropdown.svelte
+#: src/components/FeaturesCard.svelte
 msgid "Accounts"
 msgstr "खाते"
 
@@ -448,6 +466,7 @@ msgid "Required"
 msgstr "आवश्यक"
 
 #: src/components/PostComposer.svelte
+#: src/components/UsageGuide.svelte
 msgid "Images"
 msgstr "चित्र"
 
@@ -459,7 +478,9 @@ msgstr "छवियां चुनें"
 msgid "Drop images here or <0>browse images</0>"
 msgstr "छवियां यहाँ छोड़ें या <0>छवियां ब्राउज़ करें</0>"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostComposer.svelte
+#: src/components/UsageGuide.svelte
 msgid "JPG, PNG, WebP, or GIF · Select multiple images"
 msgstr "JPG, PNG, WebP, या GIF · कई छवियां चुनें"
 
@@ -470,7 +491,9 @@ msgstr "JPG, PNG, WebP, या GIF · कई छवियां चुनें"
 msgid "Add more"
 msgstr "और जोड़ें"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostComposer.svelte
+#: src/components/UsageGuide.svelte
 msgid "Drag images to rearrange. Or focus an image and use Alt + Left / Right."
 msgstr "पुनर्व्यवस्थित करने के लिए छवियों को खींचें। या किसी छवि पर फोकस करके Alt + Left / Right का उपयोग करें।"
 
@@ -561,7 +584,9 @@ msgstr "फिर से करें"
 msgid "What would you like to share?"
 msgstr "आप क्या साझा करना चाहेंगे?"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostEditorContent.svelte
+#: src/components/UsageGuide.svelte
 msgid "Bold, italic, headings, quotes, and lists · Markdown shortcuts supported"
 msgstr "बोल्ड, इटैलिक, शीर्षक, उद्धरण, और सूचियाँ · Markdown शॉर्टकट समर्थित"
 
@@ -586,7 +611,9 @@ msgstr "Facebook प्रतिक्रिया प्राप्त हु�
 msgid "POSTIKA / ACTIVITY"
 msgstr "POSTIKA / गतिविधि"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
+#: src/components/UsageGuide.svelte
 msgid "Posting progress"
 msgstr "पोस्टिंग प्रगति"
 
@@ -667,6 +694,7 @@ msgstr "{0} लोग"
 msgid "Took {0}"
 msgstr "{0} लिया"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogView.svelte
 msgid "Copy Facebook response"
@@ -731,10 +759,12 @@ msgstr "अगला →"
 msgid "{0}–{1} of {2} logs"
 msgstr "{0}–{1} में से {2} लॉग"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 msgid "Resume"
 msgstr "फिर शुरू करें"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 msgid "Pause"
 msgstr "विराम दें"
@@ -747,7 +777,9 @@ msgstr "रोक रहा है…"
 msgid "POSTING PACE"
 msgstr "पोस्टिंग गति"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingOptionsForm.svelte
+#: src/components/UsageGuide.svelte
 msgid "Interval between posts"
 msgstr "पोस्ट के बीच अंतराल"
 
@@ -760,10 +792,12 @@ msgid "Maximum (seconds)"
 msgstr "अधिकतम (सेकंड)"
 
 #: src/components/PostingOptionsForm.svelte
+#: src/components/UsageGuide.svelte
 msgid "Choose how long to wait before posting to the next group."
 msgstr "अगले समूह में पोस्ट करने से पहले प्रतीक्षा करने का समय चुनें।"
 
 #: src/components/PostingOptionsForm.svelte
+#: src/components/UsageGuide.svelte
 msgid "At least 60 seconds. Use equal values for a fixed interval."
 msgstr "कम से कम 60 सेकंड। स्थिर अंतराल के लिए समान मान का उपयोग करें।"
 
@@ -775,7 +809,9 @@ msgstr "वैकल्पिक · एआई पुनर्लेखन"
 msgid "A fresh version for each group"
 msgstr "हर समूह के लिए नई संस्करण"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingOptionsForm.svelte
+#: src/components/UsageGuide.svelte
 msgid "Rewrite each post body with Gemini"
 msgstr "प्रत्येक पोस्ट बॉडी को Gemini के साथ पुनर्लेखित करें"
 
@@ -791,7 +827,9 @@ msgstr "इसे संक्षिप्त और आसान स्कै�
 msgid "Rewrite instructions"
 msgstr "पुनर्लेखन निर्देश"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingOptionsForm.svelte
+#: src/components/UsageGuide.svelte
 msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
 msgstr "आपका पोस्ट टेक्स्ट और निर्देश गूगल Gemini को भेजे जाते हैं। चित्र नहीं भेजे जाते। Gemini पुनर्लेखन में केवल सामान्य पाठ का उपयोग करता है।"
 
@@ -855,10 +893,12 @@ msgid "What does “Use saved defaults” do?"
 msgstr "“सहेजे गए डिफ़ॉल्ट का उपयोग करें” क्या करता है?"
 
 #: src/components/SavedDefaultsInfo.svelte
+#: src/components/UsageGuide.svelte
 msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
 msgstr "इस रन के पोस्टिंग अंतराल, Gemini रीव्राइट विकल्प, और रीव्राइट निर्देशों को सेटिंग्स में सहेजे गए मानों से बदल देता है।"
 
 #: src/components/SavedDefaultsInfo.svelte
+#: src/components/UsageGuide.svelte
 msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
 msgstr "प्रारंभिक डिफ़ॉल्ट्स: 60–120 सेकंड, Gemini रीव्राइट बंद, और कोई रीव्राइट निर्देश नहीं। इन्हें बदलने के लिए अपनी पसंद सेटिंग्स में सहेजें।"
 
@@ -970,6 +1010,8 @@ msgid "Close window"
 msgstr "विंडो बंद करें"
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
 msgid "Create post"
 msgstr "पोस्ट बनाएँ"
 
@@ -978,6 +1020,8 @@ msgid "Write your post and add images"
 msgstr "अपना पोस्ट लिखें और चित्र जोड़ें"
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
 msgid "Select groups"
 msgstr "समूह चुनें"
 
@@ -1146,22 +1190,27 @@ msgstr "त्रुटि"
 msgid "DEBUG"
 msgstr "डिबग"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 msgid "PUBLISHED"
 msgstr "प्रकाशित"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 msgid "PENDING"
 msgstr "प्रतीक्षारत"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 msgid "FAILED"
 msgstr "विफल"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 msgid "SKIPPED"
 msgstr "छोड़ दिया गया"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 msgid "UNCONFIRMED"
 msgstr "असत्यापित"
@@ -1238,6 +1287,7 @@ msgstr "डिफ़ॉल्ट प्रोफ़ाइल"
 msgid "Color themes"
 msgstr "रंग थीम"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/ThemePicker.svelte
 msgid "Close"
 msgstr "बंद करें"
@@ -1456,6 +1506,7 @@ msgid "Gemini rewrite completed."
 msgstr "Gemini री-राइट पूरा हो गया।"
 
 #: src/components/LogMessage.svelte
+#: src/components/UsageGuide.svelte
 msgid "Gemini rewrite failed. Using the original text for this post; Gemini will be tried again for the next post."
 msgstr "Gemini री-राइट विफल रहा। इस पोस्ट के लिए मूल टेक्स्ट का उपयोग किया जा रहा है; अगली पोस्ट के लिए Gemini फिर से प्रयास किया जाएगा।"
 
@@ -1709,6 +1760,7 @@ msgid "This group has reached its pending-content limit."
 msgstr "इस समूह ने अपने लंबित-सामग्री की सीमा तक पहुँच लिया है।"
 
 #: src/components/LogMessage.svelte
+#: src/components/UsageGuide.svelte
 msgid "This post was submitted, but confirmation is uncertain. Check Facebook before retrying."
 msgstr "इस पोस्ट को भेजा गया था, लेकिन पुष्टि अनिश्चित है। पुनः प्रयास करने से पहले Facebook जाँचें।"
 
@@ -1815,7 +1867,9 @@ msgstr "Gemini पुनर्लेखन विफल (HTTP {0})। कुं�
 msgid " (Code {0})"
 msgstr "(कोड {0})"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
+#: src/components/UsageGuide.svelte
 msgid "Debug details"
 msgstr "डिबग विवरण"
 
@@ -1827,6 +1881,7 @@ msgid "Themes"
 msgstr "थीम"
 
 #: src/App.svelte
+#: src/components/UsageGuide.svelte
 msgid "Preferences & post"
 msgstr "प्राथमिकताएँ और पोस्ट"
 
@@ -1834,3 +1889,135 @@ msgstr "प्राथमिकताएँ और पोस्ट"
 #: src/App.svelte
 msgid "Set preferences, then post now or schedule"
 msgstr "प्राथमिकताएँ सेट करें, फिर अभी पोस्ट करें या शेड्यूल करें"
+
+#~ msgid "Postika"
+#~ msgstr "Postika"
+
+#: src/components/FeaturesCard.svelte
+#: src/components/FeaturesCard.svelte
+msgid "Features"
+msgstr "सुविधाएँ"
+
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
+#: src/components/UsageGuide.svelte
+msgid "Draft text and image copies are saved automatically for each account."
+msgstr "मसौदे का टेक्स्ट और तस्वीरों की प्रतियाँ हर खाते के लिए अपने आप सहेजी जाती हैं।"
+
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
+msgid "Separate Facebook sessions, groups, drafts, settings, and queues for each account."
+msgstr "हर खाते के लिए अलग Facebook सत्र, समूह, मसौदे, सेटिंग और कतारें।"
+
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
+msgid "Switch accounts while other queues keep running."
+msgstr "दूसरी कतारें चलती रहें, तब भी खाते बदलें।"
+
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
+msgid "Loaded groups stay available between app sessions."
+msgstr "लोड किए गए समूह ऐप के अगले सत्रों में भी उपलब्ध रहते हैं।"
+
+#: src/components/FeaturesCard.svelte
+msgid "Minimum and maximum delays between posts."
+msgstr "पोस्ट के बीच न्यूनतम और अधिकतम प्रतीक्षा समय।"
+
+#: src/components/FeaturesCard.svelte
+msgid "Custom instructions and a configurable Gemini model."
+msgstr "कस्टम निर्देश और कॉन्फ़िगर किया जा सकने वाला Gemini मॉडल।"
+
+#. 0: languages.length; 1: themeOptions.length
+#: src/components/FeaturesCard.svelte
+msgid "{0} languages · {1} themes"
+msgstr "{0} भाषाएँ · {1} थीम"
+
+#: src/components/FeaturesCard.svelte
+msgid "Language and theme choices sync across windows."
+msgstr "भाषा और थीम के विकल्प सभी विंडो में सिंक होते हैं।"
+
+#: src/components/FeaturesCard.svelte
+msgid "Windows and Linux"
+msgstr "Windows और Linux"
+
+#: src/components/FeaturesCard.svelte
+msgid "Post text and images to multiple Facebook groups."
+msgstr "कई Facebook समूहों में टेक्स्ट और तस्वीरें पोस्ट करें।"
+
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
+msgid "Keep Postika open and your computer awake. Queues and logs are not restored after quitting."
+msgstr "Postika खुला रखें और कंप्यूटर को स्लीप न होने दें। बंद करने के बाद कतारें और लॉग बहाल नहीं होते।"
+
+#: src/components/FeaturesCard.svelte
+msgid "<0/> Features"
+msgstr "<0/> सुविधाएँ"
+
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
+msgid "Browse or drop images, preview attachments, and remove images."
+msgstr "तस्वीरें चुनें या खींचकर छोड़ें, अटैचमेंट का प्रीव्यू देखें और तस्वीरें हटाएँ।"
+
+#: src/components/FeaturesCard.svelte
+msgid "Queues pause when offline and resume when the connection returns."
+msgstr "ऑफ़लाइन होने पर कतारें रुकती हैं और कनेक्शन लौटने पर फिर चलती हैं।"
+
+#: src/components/FeaturesCard.svelte
+msgid "How to use"
+msgstr "कैसे उपयोग करें"
+
+#: src/components/UsageGuide.svelte
+msgid "Choose Add account, enter an account name, and select Create & sign in. Use the account switcher to return to an existing account."
+msgstr "खाता जोड़ें चुनें, खाते का नाम लिखें और बनाएँ और साइन इन करें चुनें। पुराने खाते पर लौटने के लिए खाता स्विचर का उपयोग करें।"
+
+#: src/components/UsageGuide.svelte
+msgid "Write your message and add at least one image; both are required. Use Next to move forward and Previous to edit an earlier step."
+msgstr "संदेश लिखें और कम से कम एक तस्वीर जोड़ें; दोनों ज़रूरी हैं। आगे बढ़ने के लिए अगला और पिछला चरण बदलने के लिए पिछला चुनें।"
+
+#: src/components/UsageGuide.svelte
+msgid "Select Load groups and finish Facebook login or verification in Chrome. Search the loaded list, select the groups you want, then choose Next."
+msgstr "समूह लोड करें चुनें और Chrome में Facebook लॉगिन या सत्यापन पूरा करें। सूची में खोजें, समूह चुनें और अगला दबाएँ।"
+
+#: src/components/UsageGuide.svelte
+msgid "In Settings, enter this account’s Gemini API key and model, then Save settings. Enable rewriting for your run and describe the tone and details to preserve."
+msgstr "सेटिंग में इस खाते की Gemini API कुंजी और मॉडल भरकर सहेजें। पुनर्लेखन चालू करें और बताएं कि कौन-सा लहजा और विवरण बनाए रखने हैं।"
+
+#: src/components/UsageGuide.svelte
+msgid "Review the account, message, image order, selected groups, and posting intervals. Choose Post now and complete any Facebook login or verification prompts in Chrome."
+msgstr "खाता, संदेश, तस्वीरों का क्रम, समूह और अंतराल जाँचें। अभी पोस्ट करें चुनें और Chrome में Facebook लॉगिन या सत्यापन पूरा करें।"
+
+#: src/components/UsageGuide.svelte
+msgid "Choose Schedule, select a future date and time in the displayed time zone, then Confirm schedule. Facebook may require login when the queue starts."
+msgstr "शेड्यूल चुनें, दिखाई गई समय-सीमा में भविष्य की तारीख और समय तय करें और पुष्टि करें। कतार शुरू होते समय Facebook लॉगिन माँग सकता है।"
+
+#: src/components/UsageGuide.svelte
+msgid "Open Posting logs to follow progress. Its account selector lets you inspect other queues without switching the account in the main workspace."
+msgstr "प्रगति देखने के लिए पोस्टिंग लॉग खोलें। उसके खाता चयन से मुख्य कार्यक्षेत्र का खाता बदले बिना दूसरी कतारें देख सकते हैं।"
+
+#: src/components/UsageGuide.svelte
+msgid "Pause finishes the current operation before waiting. Resume continues the queue; Stop ends the remaining queue. Queues paused manually need Resume even after internet returns."
+msgstr "विराम मौजूदा काम पूरा करके रुकता है। फिर शुरू करें कतार चलाता है; रोकें बाकी कतार खत्म करता है। हाथ से रुकी कतार को इंटरनेट लौटने पर भी फिर शुरू करना होगा।"
+
+#: src/components/UsageGuide.svelte
+msgid "Published means Facebook confirmed publication. Pending means admin approval is needed. Review failed or skipped entries; check unconfirmed submissions on Facebook before retrying to avoid duplicates."
+msgstr "प्रकाशित का मतलब Facebook ने पुष्टि की। लंबित को व्यवस्थापक की मंज़ूरी चाहिए। विफल या छोड़ी गई प्रविष्टियाँ जाँचें; दोहराव से बचने के लिए अपुष्ट पोस्ट दोबारा भेजने से पहले Facebook पर देखें।"
+
+#: src/components/UsageGuide.svelte
+msgid "For problems, expand Debug details or Copy Facebook response in Posting logs. For expired logins, use Load groups and finish verification before trying again."
+msgstr "समस्या होने पर लॉग में डीबग विवरण खोलें या Facebook प्रतिक्रिया कॉपी करें। लॉगिन समाप्त होने पर समूह लोड करें और सत्यापन पूरा करके फिर कोशिश करें।"
+
+#: src/components/UsageGuide.svelte
+msgid "Use Language and Themes in the top bar. Your choices apply across windows."
+msgstr "ऊपर की पट्टी में भाषा और थीम चुनें। आपकी पसंद सभी विंडो पर लागू होती है।"
+
+#: src/components/UsageGuide.svelte
+msgid "Adding another account is optional. Use it only when you want a separate Facebook login and workspace."
+msgstr "दूसरा खाता जोड़ना वैकल्पिक है। इसे तभी इस्तेमाल करें जब अलग Facebook लॉगिन और कार्यक्षेत्र चाहिए।"
+
+#: src/components/UsageGuide.svelte
+msgid "You can use the default account without adding another one. Sign in to Facebook when you choose Load groups in step 2."
+msgstr "बिना दूसरा खाता जोड़े आप डिफ़ॉल्ट खाता इस्तेमाल कर सकते हैं। चरण 2 में समूह लोड करें चुनते समय Facebook में साइन इन करें।"
+
+#: src/components/FeaturesCard.svelte
+msgid "Features & How to Use"
+msgstr "सुविधाएँ और उपयोग का तरीका"

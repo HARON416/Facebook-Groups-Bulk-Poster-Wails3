@@ -79,6 +79,7 @@ msgid "Start with your message. Add images to bring it to life."
 msgstr "Почніть зі свого повідомлення. Додайте зображення, щоб оживити його."
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
 msgid "Choose the groups you want to share your post with."
 msgstr "Виберіть групи, з якими ви хочете поділитися своїм постом."
 
@@ -119,10 +120,12 @@ msgid "Clear group search"
 msgstr "Очистити пошук груп"
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
 msgid "Search groups"
 msgstr "Пошук груп"
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
 msgid "Select all groups"
 msgstr "Вибрати всі групи"
 
@@ -154,6 +157,7 @@ msgid "Open your Facebook groups to get started."
 msgstr "Відкрийте свої групи Facebook, щоб почати."
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
 msgid "Posting settings"
 msgstr "Налаштування публікацій"
 
@@ -166,6 +170,8 @@ msgid "Applying defaults…"
 msgstr "Застосування стандартних налаштувань…"
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
 msgid "Use saved defaults"
 msgstr "Використовувати збережені стандартні налаштування"
 
@@ -192,6 +198,8 @@ msgstr "Відкрити налаштування"
 #~ msgstr "Обрані групи ({0})"
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
 msgid "Schedule your queue"
 msgstr "Запланувати чергу"
 
@@ -218,6 +226,7 @@ msgid "View logs"
 msgstr "Переглянути журнали"
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 msgid "Stop"
 msgstr "Зупинити"
@@ -233,6 +242,8 @@ msgid "Posting…"
 msgstr "Публікація…"
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
 msgid "Post now"
 msgstr "Опублікувати зараз"
 
@@ -249,18 +260,23 @@ msgid "Application menu"
 msgstr "Меню додатка"
 
 #: src/Workspace.svelte
+#: src/components/UsageGuide.svelte
 msgid "Add account"
 msgstr "Додати обліковий запис"
 
 #: src/Workspace.svelte
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogView.svelte
+#: src/components/UsageGuide.svelte
 msgid "Posting logs"
 msgstr "Журнал публікацій"
 
 #: src/Workspace.svelte
+#: src/components/FeaturesCard.svelte
 #: src/components/Settings.svelte
 #: src/components/Settings.svelte
+#: src/components/UsageGuide.svelte
 msgid "Settings"
 msgstr "Налаштування"
 
@@ -277,6 +293,7 @@ msgid "Account name"
 msgstr "Назва облікового запису"
 
 #: src/Workspace.svelte
+#: src/components/UsageGuide.svelte
 msgid "Sign in to Facebook in the new account’s browser window."
 msgstr "Увійдіть у Facebook у вікні браузера нового облікового запису."
 
@@ -322,6 +339,7 @@ msgid "All accounts"
 msgstr "Усі облікові записи"
 
 #: src/components/AccountDropdown.svelte
+#: src/components/FeaturesCard.svelte
 msgid "Accounts"
 msgstr "Акаунти"
 
@@ -448,6 +466,7 @@ msgid "Required"
 msgstr "Обов’язково"
 
 #: src/components/PostComposer.svelte
+#: src/components/UsageGuide.svelte
 msgid "Images"
 msgstr "Зображення"
 
@@ -459,7 +478,9 @@ msgstr "Вибрати зображення"
 msgid "Drop images here or <0>browse images</0>"
 msgstr "Перетягніть сюди зображення або <0>перегляньте зображення</0>"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostComposer.svelte
+#: src/components/UsageGuide.svelte
 msgid "JPG, PNG, WebP, or GIF · Select multiple images"
 msgstr "JPG, PNG, WebP або GIF · Вибрати кілька зображень"
 
@@ -470,7 +491,9 @@ msgstr "JPG, PNG, WebP або GIF · Вибрати кілька зображе�
 msgid "Add more"
 msgstr "Додати ще"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostComposer.svelte
+#: src/components/UsageGuide.svelte
 msgid "Drag images to rearrange. Or focus an image and use Alt + Left / Right."
 msgstr "Перетягніть зображення для зміни порядку. Або виділіть зображення та використовуйте Alt + Стрілка вліво / вправо."
 
@@ -561,7 +584,9 @@ msgstr "Повторити"
 msgid "What would you like to share?"
 msgstr "Що ви хотіли б поділитися?"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostEditorContent.svelte
+#: src/components/UsageGuide.svelte
 msgid "Bold, italic, headings, quotes, and lists · Markdown shortcuts supported"
 msgstr "Жирний, курсив, заголовки, цитати та списки · Підтримка скорочень Markdown"
 
@@ -586,7 +611,9 @@ msgstr "Відповідь Facebook отримано"
 msgid "POSTIKA / ACTIVITY"
 msgstr "POSTIKA / АКТИВНІСТЬ"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
+#: src/components/UsageGuide.svelte
 msgid "Posting progress"
 msgstr "Прогрес публікації"
 
@@ -667,6 +694,7 @@ msgstr "{0} журнал"
 msgid "Took {0}"
 msgstr "Зайняло {0}"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogView.svelte
 msgid "Copy Facebook response"
@@ -731,10 +759,12 @@ msgstr "Наступна →"
 msgid "{0}–{1} of {2} logs"
 msgstr "{0}–{1} з {2} журналів"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 msgid "Resume"
 msgstr "Продовжити"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 msgid "Pause"
 msgstr "Призупинити"
@@ -747,7 +777,9 @@ msgstr "Зупиняємо…"
 msgid "POSTING PACE"
 msgstr "ШВИДКІСТЬ ПУБЛІКАЦІЇ"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingOptionsForm.svelte
+#: src/components/UsageGuide.svelte
 msgid "Interval between posts"
 msgstr "Інтервал між публікаціями"
 
@@ -760,10 +792,12 @@ msgid "Maximum (seconds)"
 msgstr "Максимум (секунди)"
 
 #: src/components/PostingOptionsForm.svelte
+#: src/components/UsageGuide.svelte
 msgid "Choose how long to wait before posting to the next group."
 msgstr "Виберіть, скільки чекати перед наступною публікацією у групі."
 
 #: src/components/PostingOptionsForm.svelte
+#: src/components/UsageGuide.svelte
 msgid "At least 60 seconds. Use equal values for a fixed interval."
 msgstr "Принаймні 60 секунд. Використовуйте однакові значення для фіксованого інтервалу."
 
@@ -775,7 +809,9 @@ msgstr "НЕОБОВ’ЯЗКОВО · AI ПЕРЕПИС"
 msgid "A fresh version for each group"
 msgstr "Свіжа версія для кожної групи"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingOptionsForm.svelte
+#: src/components/UsageGuide.svelte
 msgid "Rewrite each post body with Gemini"
 msgstr "Переписати кожен текст публікації за допомогою Gemini"
 
@@ -791,7 +827,9 @@ msgstr "Тримайте текст стислим і легко читаним.
 msgid "Rewrite instructions"
 msgstr "Інструкції щодо переписування"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingOptionsForm.svelte
+#: src/components/UsageGuide.svelte
 msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
 msgstr "Ваш текст допису та інструкції надсилаються до Google Gemini. Зображення не надсилаються. Переписування Gemini використовує простий текст."
 
@@ -855,10 +893,12 @@ msgid "What does “Use saved defaults” do?"
 msgstr "Що робить «Використати збережені значення за замовчуванням»?"
 
 #: src/components/SavedDefaultsInfo.svelte
+#: src/components/UsageGuide.svelte
 msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
 msgstr "Замінює інтервал публікації цього запуску, опцію перезапису Gemini та інструкції з перезапису на значення, збережені в Налаштуваннях."
 
 #: src/components/SavedDefaultsInfo.svelte
+#: src/components/UsageGuide.svelte
 msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
 msgstr "Початкові за замовчуванням: 60–120 секунд, перезапис Gemini вимкнено, інструкцій з перезапису немає. Збережіть власні налаштування в Налаштуваннях, щоб змінити їх."
 
@@ -970,6 +1010,8 @@ msgid "Close window"
 msgstr "Закрити вікно"
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
 msgid "Create post"
 msgstr "Створити допис"
 
@@ -978,6 +1020,8 @@ msgid "Write your post and add images"
 msgstr "Напишіть свій пост та додайте зображення"
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
 msgid "Select groups"
 msgstr "Вибрати групи"
 
@@ -1146,22 +1190,27 @@ msgstr "ПОМИЛКА"
 msgid "DEBUG"
 msgstr "ДЕБУГ"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 msgid "PUBLISHED"
 msgstr "ОПУБЛІКОВАНО"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 msgid "PENDING"
 msgstr "В ОЧІКУВАННІ"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 msgid "FAILED"
 msgstr "НЕВДАЛОСЯ"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 msgid "SKIPPED"
 msgstr "ПРОПУЩЕНО"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 msgid "UNCONFIRMED"
 msgstr "НЕПІДТВЕРДЖЕНО"
@@ -1238,6 +1287,7 @@ msgstr "Профіль за замовчуванням"
 msgid "Color themes"
 msgstr "Кольорові теми"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/ThemePicker.svelte
 msgid "Close"
 msgstr "Закрити"
@@ -1456,6 +1506,7 @@ msgid "Gemini rewrite completed."
 msgstr "Перезапис Gemini завершено."
 
 #: src/components/LogMessage.svelte
+#: src/components/UsageGuide.svelte
 msgid "Gemini rewrite failed. Using the original text for this post; Gemini will be tried again for the next post."
 msgstr "Перезапис Gemini не вдався. Використовується оригінальний текст для цієї публікації; Gemini буде спробовано знову для наступної публікації."
 
@@ -1709,6 +1760,7 @@ msgid "This group has reached its pending-content limit."
 msgstr "Ця група досягла ліміту очікуючого контенту"
 
 #: src/components/LogMessage.svelte
+#: src/components/UsageGuide.svelte
 msgid "This post was submitted, but confirmation is uncertain. Check Facebook before retrying."
 msgstr "Цей пост був надісланий, але підтвердження невідоме. Перевірте Facebook перед повторною спробою"
 
@@ -1815,7 +1867,9 @@ msgstr "Перезапис Gemini не вдався (HTTP {0}). Перевірт
 msgid " (Code {0})"
 msgstr "(Код {0})"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
+#: src/components/UsageGuide.svelte
 msgid "Debug details"
 msgstr "Деталі налагодження"
 
@@ -1827,6 +1881,7 @@ msgid "Themes"
 msgstr "Теми"
 
 #: src/App.svelte
+#: src/components/UsageGuide.svelte
 msgid "Preferences & post"
 msgstr "Налаштування й публікація"
 
@@ -1834,3 +1889,135 @@ msgstr "Налаштування й публікація"
 #: src/App.svelte
 msgid "Set preferences, then post now or schedule"
 msgstr "Задайте налаштування, потім опублікуйте зараз або заплануйте"
+
+#~ msgid "Postika"
+#~ msgstr "Postika"
+
+#: src/components/FeaturesCard.svelte
+#: src/components/FeaturesCard.svelte
+msgid "Features"
+msgstr "Можливості"
+
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
+#: src/components/UsageGuide.svelte
+msgid "Draft text and image copies are saved automatically for each account."
+msgstr "Текст чернетки та копії зображень автоматично зберігаються для кожного облікового запису."
+
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
+msgid "Separate Facebook sessions, groups, drafts, settings, and queues for each account."
+msgstr "Окремі сеанси Facebook, групи, чернетки, налаштування та черги для кожного облікового запису."
+
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
+msgid "Switch accounts while other queues keep running."
+msgstr "Перемикайте облікові записи, поки інші черги продовжують працювати."
+
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
+msgid "Loaded groups stay available between app sessions."
+msgstr "Завантажені групи залишаються доступними між запусками застосунку."
+
+#: src/components/FeaturesCard.svelte
+msgid "Minimum and maximum delays between posts."
+msgstr "Мінімальні та максимальні затримки між публікаціями."
+
+#: src/components/FeaturesCard.svelte
+msgid "Custom instructions and a configurable Gemini model."
+msgstr "Власні інструкції та налаштовувана модель Gemini."
+
+#. 0: languages.length; 1: themeOptions.length
+#: src/components/FeaturesCard.svelte
+msgid "{0} languages · {1} themes"
+msgstr "{0} мов · {1} тем"
+
+#: src/components/FeaturesCard.svelte
+msgid "Language and theme choices sync across windows."
+msgstr "Вибір мови й теми синхронізується між вікнами."
+
+#: src/components/FeaturesCard.svelte
+msgid "Windows and Linux"
+msgstr "Windows та Linux"
+
+#: src/components/FeaturesCard.svelte
+msgid "Post text and images to multiple Facebook groups."
+msgstr "Публікуйте текст і зображення в кількох групах Facebook."
+
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
+msgid "Keep Postika open and your computer awake. Queues and logs are not restored after quitting."
+msgstr "Залиште Postika відкритою, а комп’ютер активним. Черги й журнали не відновлюються після виходу."
+
+#: src/components/FeaturesCard.svelte
+msgid "<0/> Features"
+msgstr "<0/> Можливості"
+
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
+msgid "Browse or drop images, preview attachments, and remove images."
+msgstr "Вибирайте або перетягуйте зображення, переглядайте вкладення й видаляйте зображення."
+
+#: src/components/FeaturesCard.svelte
+msgid "Queues pause when offline and resume when the connection returns."
+msgstr "Черги призупиняються без інтернету та продовжуються після відновлення з’єднання."
+
+#: src/components/FeaturesCard.svelte
+msgid "How to use"
+msgstr "Як користуватися"
+
+#: src/components/UsageGuide.svelte
+msgid "Choose Add account, enter an account name, and select Create & sign in. Use the account switcher to return to an existing account."
+msgstr "Виберіть Додати обліковий запис, введіть назву й натисніть Створити та ввійти. Перемикач дозволяє повернутися до наявного облікового запису."
+
+#: src/components/UsageGuide.svelte
+msgid "Write your message and add at least one image; both are required. Use Next to move forward and Previous to edit an earlier step."
+msgstr "Напишіть повідомлення й додайте щонайменше одне зображення; обидва обов’язкові. Далі продовжує, а Назад дозволяє змінити попередній крок."
+
+#: src/components/UsageGuide.svelte
+msgid "Select Load groups and finish Facebook login or verification in Chrome. Search the loaded list, select the groups you want, then choose Next."
+msgstr "Виберіть Завантажити групи й завершіть вхід або перевірку Facebook у Chrome. Знайдіть потрібні групи, виберіть їх і натисніть Далі."
+
+#: src/components/UsageGuide.svelte
+msgid "In Settings, enter this account’s Gemini API key and model, then Save settings. Enable rewriting for your run and describe the tone and details to preserve."
+msgstr "У Налаштуваннях введіть API-ключ Gemini та модель цього облікового запису й збережіть. Увімкніть переписування та опишіть тон і деталі, які слід зберегти."
+
+#: src/components/UsageGuide.svelte
+msgid "Review the account, message, image order, selected groups, and posting intervals. Choose Post now and complete any Facebook login or verification prompts in Chrome."
+msgstr "Перевірте обліковий запис, повідомлення, порядок зображень, групи та інтервали. Виберіть Опублікувати зараз і завершіть вхід або перевірку Facebook у Chrome."
+
+#: src/components/UsageGuide.svelte
+msgid "Choose Schedule, select a future date and time in the displayed time zone, then Confirm schedule. Facebook may require login when the queue starts."
+msgstr "Виберіть Запланувати, задайте майбутні дату й час у вказаному поясі та підтвердьте. Facebook може вимагати вхід під час запуску черги."
+
+#: src/components/UsageGuide.svelte
+msgid "Open Posting logs to follow progress. Its account selector lets you inspect other queues without switching the account in the main workspace."
+msgstr "Відкрийте журнали публікацій для відстеження прогресу. Їхній вибір облікового запису показує інші черги без зміни облікового запису в головному вікні."
+
+#: src/components/UsageGuide.svelte
+msgid "Pause finishes the current operation before waiting. Resume continues the queue; Stop ends the remaining queue. Queues paused manually need Resume even after internet returns."
+msgstr "Пауза завершує поточну операцію перед очікуванням. Продовжити відновлює чергу; Зупинити завершує решту. Після ручної паузи потрібне Продовжити навіть після повернення інтернету."
+
+#: src/components/UsageGuide.svelte
+msgid "Published means Facebook confirmed publication. Pending means admin approval is needed. Review failed or skipped entries; check unconfirmed submissions on Facebook before retrying to avoid duplicates."
+msgstr "Опубліковано означає підтвердження Facebook. Очікує потребує схвалення адміністратора. Перегляньте помилки й пропуски; перевірте непідтверджені надсилання на Facebook перед повторенням, щоб уникнути дублікатів."
+
+#: src/components/UsageGuide.svelte
+msgid "For problems, expand Debug details or Copy Facebook response in Posting logs. For expired logins, use Load groups and finish verification before trying again."
+msgstr "У разі проблем розгорніть деталі налагодження або скопіюйте відповідь Facebook із журналу. Якщо вхід застарів, завантажте групи й завершіть перевірку перед повторною спробою."
+
+#: src/components/UsageGuide.svelte
+msgid "Use Language and Themes in the top bar. Your choices apply across windows."
+msgstr "Використовуйте Мову й Теми у верхній панелі. Вибір діє в усіх вікнах."
+
+#: src/components/UsageGuide.svelte
+msgid "Adding another account is optional. Use it only when you want a separate Facebook login and workspace."
+msgstr "Додавання іншого облікового запису необов’язкове. Використовуйте його лише для окремого входу у Facebook і робочого простору."
+
+#: src/components/UsageGuide.svelte
+msgid "You can use the default account without adding another one. Sign in to Facebook when you choose Load groups in step 2."
+msgstr "Можна використовувати типовий обліковий запис без додавання іншого. Увійдіть у Facebook, вибравши Завантажити групи на кроці 2."
+
+#: src/components/FeaturesCard.svelte
+msgid "Features & How to Use"
+msgstr "Можливості та інструкція"

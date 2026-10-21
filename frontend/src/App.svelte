@@ -483,25 +483,25 @@
 
   <footer class="step-actions">
         {#if currentStep === steps.length - 1 && scheduleOpen && !postingActive}
-        <button type="button" class="previous" onclick={() => { scheduleOpen = false; }}>Cancel</button>
-        <button type="submit" form="schedule-form" class="post" disabled={!scheduleValid || loadingDefaults || selectedGroupIds.length === 0 || !hasCompletePost || !validSettings}>Confirm schedule</button>
+        <button type="button" class="previous action-button action-button--secondary" onclick={() => { scheduleOpen = false; }}>Cancel</button>
+        <button type="submit" form="schedule-form" class="post action-button action-button--primary" disabled={!scheduleValid || loadingDefaults || selectedGroupIds.length === 0 || !hasCompletePost || !validSettings}>Confirm schedule</button>
         {:else}
-        <button type="button" class="previous" disabled={currentStep === 0 || postingActive} onclick={(event) => navigate(currentStep - 1, event)}>
+        <button type="button" class="previous action-button action-button--secondary" disabled={currentStep === 0 || postingActive} onclick={(event) => navigate(currentStep - 1, event)}>
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg>
           Previous
         </button>
         {#if currentStep < steps.length - 1}
-        <button type="button" class="next" disabled={!canContinue || postingActive} onclick={(event) => navigate(currentStep + 1, event)}>
+        <button type="button" class="next action-button action-button--primary" disabled={!canContinue || postingActive} onclick={(event) => navigate(currentStep + 1, event)}>
           Next
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg>
         </button>
         {:else}
-        {#if postMessage}<button type="button" class="previous" onclick={() => GroupsService.OpenPostingLogs()}>View logs</button>{/if}
-        {#if postingActive}<button type="button" class="previous" onclick={stopPosting}>Stop</button>{/if}
-        <button type="button" class="post" disabled={postingActive || loadingDefaults || selectedGroupIds.length === 0 || !hasCompletePost || !validSettings} onclick={openPost} aria-busy={postingActive}>
+        {#if postMessage}<button type="button" class="previous action-button action-button--secondary" onclick={() => GroupsService.OpenPostingLogs()}>View logs</button>{/if}
+        {#if postingActive}<button type="button" class="previous action-button action-button--secondary" onclick={stopPosting}>Stop</button>{/if}
+        <button type="button" class="post action-button action-button--primary" disabled={postingActive || loadingDefaults || selectedGroupIds.length === 0 || !hasCompletePost || !validSettings} onclick={openPost} aria-busy={postingActive}>
           {postingActive ? scheduledFor ? 'Scheduled' : 'Posting…' : 'Post now'}
         </button>
-        <button type="button" class="previous" disabled={postingActive || loadingDefaults || selectedGroupIds.length === 0 || !hasCompletePost || !validSettings} onclick={showSchedule}>Schedule</button>
+        <button type="button" class="previous action-button action-button--secondary" disabled={postingActive || loadingDefaults || selectedGroupIds.length === 0 || !hasCompletePost || !validSettings} onclick={showSchedule}>Schedule</button>
         {/if}
         {/if}
   </footer>
@@ -555,13 +555,6 @@
   h1:focus { outline: none; }
   .step-intro { margin-top: 0.9rem; color: var(--text-muted); font-size: 1.3rem; line-height: 1.6; }
   .step-actions { display: flex; flex: 0 0 8rem; align-items: center; justify-content: flex-end; width: 100%; max-width: 72rem; gap: 1rem; margin: 0 auto; border-top: 0.1rem solid var(--border); }
-  .step-actions button { display: flex; min-height: 4rem; padding: 0.9rem 1.6rem; align-items: center; justify-content: center; gap: 0.6rem; border: 0.1rem solid var(--border); border-radius: 0.7rem; font-size: 1.3rem; font-weight: 550; cursor: pointer; }
-  .previous { background: var(--surface); color: var(--text-secondary); }
-  .next, .post { border-color: var(--accent) !important; background: var(--accent); color: var(--on-accent); }
-  .previous:hover:not(:disabled) { background: var(--surface-hover); }
-  .next:hover:not(:disabled), .post:hover:not(:disabled) { background: var(--accent-hover); }
-  .step-actions button:disabled { opacity: 0.45; cursor: not-allowed; }
-  .step-actions button:focus-visible { outline: 0.2rem solid var(--accent); outline-offset: 0.3rem; }
   .step-actions svg { width: 1.5rem; height: 1.5rem; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
   .empty-step { padding: 3.2rem 0; }
   .empty-step h2 { margin-bottom: 1rem; font-size: 1.6rem; font-weight: 550; }

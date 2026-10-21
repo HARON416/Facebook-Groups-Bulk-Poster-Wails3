@@ -79,6 +79,7 @@ msgid "Start with your message. Add images to bring it to life."
 msgstr "เริ่มต้นด้วยข้อความของคุณ เพิ่มภาพเพื่อทำให้มันมีชีวิตชีวา."
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
 msgid "Choose the groups you want to share your post with."
 msgstr "เลือกกลุ่มที่คุณต้องการแชร์โพสต์ของคุณด้วย"
 
@@ -119,10 +120,12 @@ msgid "Clear group search"
 msgstr "ล้างการค้นหากลุ่ม"
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
 msgid "Search groups"
 msgstr "ค้นหากลุ่ม"
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
 msgid "Select all groups"
 msgstr "เลือกทุกกลุ่ม"
 
@@ -154,6 +157,7 @@ msgid "Open your Facebook groups to get started."
 msgstr "เปิดกลุ่ม Facebook ของคุณเพื่อเริ่มต้น"
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
 msgid "Posting settings"
 msgstr "การตั้งค่าโพสต์"
 
@@ -166,6 +170,8 @@ msgid "Applying defaults…"
 msgstr "กำลังใช้ค่าปริยาย..."
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
 msgid "Use saved defaults"
 msgstr "ใช้ค่าปริยายที่บันทึกไว้"
 
@@ -192,6 +198,8 @@ msgstr "เปิดการตั้งค่า"
 #~ msgstr "กลุ่มที่เลือก ({0})"
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
 msgid "Schedule your queue"
 msgstr "กำหนดเวลาคิวของคุณ"
 
@@ -218,6 +226,7 @@ msgid "View logs"
 msgstr "ดูบันทึก"
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 msgid "Stop"
 msgstr "หยุด"
@@ -233,6 +242,8 @@ msgid "Posting…"
 msgstr "กำลังโพสต์…"
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
 msgid "Post now"
 msgstr "โพสต์ตอนนี้"
 
@@ -249,18 +260,23 @@ msgid "Application menu"
 msgstr "เมนูแอปพลิเคชัน"
 
 #: src/Workspace.svelte
+#: src/components/UsageGuide.svelte
 msgid "Add account"
 msgstr "เพิ่มบัญชี"
 
 #: src/Workspace.svelte
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogView.svelte
+#: src/components/UsageGuide.svelte
 msgid "Posting logs"
 msgstr "บันทึกการโพสต์"
 
 #: src/Workspace.svelte
+#: src/components/FeaturesCard.svelte
 #: src/components/Settings.svelte
 #: src/components/Settings.svelte
+#: src/components/UsageGuide.svelte
 msgid "Settings"
 msgstr "การตั้งค่า"
 
@@ -277,6 +293,7 @@ msgid "Account name"
 msgstr "ชื่อบัญชี"
 
 #: src/Workspace.svelte
+#: src/components/UsageGuide.svelte
 msgid "Sign in to Facebook in the new account’s browser window."
 msgstr "ลงชื่อเข้าใช้ Facebook ในหน้าต่างเบราว์เซอร์ของบัญชีใหม่"
 
@@ -322,6 +339,7 @@ msgid "All accounts"
 msgstr "บัญชีทั้งหมด"
 
 #: src/components/AccountDropdown.svelte
+#: src/components/FeaturesCard.svelte
 msgid "Accounts"
 msgstr "บัญชี"
 
@@ -448,6 +466,7 @@ msgid "Required"
 msgstr "จำเป็น"
 
 #: src/components/PostComposer.svelte
+#: src/components/UsageGuide.svelte
 msgid "Images"
 msgstr "รูปภาพ"
 
@@ -459,7 +478,9 @@ msgstr "เลือกภาพ"
 msgid "Drop images here or <0>browse images</0>"
 msgstr "วางภาพที่นี่หรือ <0>เรียกดูภาพ</0>"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostComposer.svelte
+#: src/components/UsageGuide.svelte
 msgid "JPG, PNG, WebP, or GIF · Select multiple images"
 msgstr "JPG, PNG, WebP หรือ GIF · เลือกหลายภาพ"
 
@@ -470,7 +491,9 @@ msgstr "JPG, PNG, WebP หรือ GIF · เลือกหลายภาพ"
 msgid "Add more"
 msgstr "เพิ่มอีก"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostComposer.svelte
+#: src/components/UsageGuide.svelte
 msgid "Drag images to rearrange. Or focus an image and use Alt + Left / Right."
 msgstr "ลากภาพเพื่อจัดเรียงใหม่ หรือโฟกัสที่ภาพแล้วใช้ Alt + ซ้าย / ขวา"
 
@@ -561,7 +584,9 @@ msgstr "ทำซ้ำ"
 msgid "What would you like to share?"
 msgstr "คุณต้องการจะแบ่งปันอะไร?"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostEditorContent.svelte
+#: src/components/UsageGuide.svelte
 msgid "Bold, italic, headings, quotes, and lists · Markdown shortcuts supported"
 msgstr "ตัวหนา ตัวเอียง หัวข้อ ข้อความอ้างอิง และรายการ · รองรับทางลัด Markdown"
 
@@ -586,7 +611,9 @@ msgstr "ได้รับการตอบกลับจาก Facebook แ�
 msgid "POSTIKA / ACTIVITY"
 msgstr "POSTIKA / กิจกรรม"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
+#: src/components/UsageGuide.svelte
 msgid "Posting progress"
 msgstr "ความคืบหน้าการโพสต์"
 
@@ -667,6 +694,7 @@ msgstr "{0} บันทึก"
 msgid "Took {0}"
 msgstr "ใช้เวลา {0}"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogView.svelte
 msgid "Copy Facebook response"
@@ -731,10 +759,12 @@ msgstr "ถัดไป →"
 msgid "{0}–{1} of {2} logs"
 msgstr "{0}–{1} จาก {2} บันทึก"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 msgid "Resume"
 msgstr "ดำเนินการต่อ"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 msgid "Pause"
 msgstr "พัก"
@@ -747,7 +777,9 @@ msgstr "กำลังหยุด…"
 msgid "POSTING PACE"
 msgstr "จังหวะการโพสต์"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingOptionsForm.svelte
+#: src/components/UsageGuide.svelte
 msgid "Interval between posts"
 msgstr "ช่วงเวลาระหว่างการโพสต์"
 
@@ -760,10 +792,12 @@ msgid "Maximum (seconds)"
 msgstr "ค่าสูงสุด (วินาที)"
 
 #: src/components/PostingOptionsForm.svelte
+#: src/components/UsageGuide.svelte
 msgid "Choose how long to wait before posting to the next group."
 msgstr "เลือกเวลาที่จะรอก่อนโพสต์ไปยังกลุ่มถัดไป"
 
 #: src/components/PostingOptionsForm.svelte
+#: src/components/UsageGuide.svelte
 msgid "At least 60 seconds. Use equal values for a fixed interval."
 msgstr "อย่างน้อย 60 วินาที ใช้ค่าเท่ากันเพื่อช่วงเวลาคงที่"
 
@@ -775,7 +809,9 @@ msgstr "ไม่บังคับ · เขียนใหม่ด้วย A
 msgid "A fresh version for each group"
 msgstr "เวอร์ชันใหม่สำหรับแต่ละกลุ่ม"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingOptionsForm.svelte
+#: src/components/UsageGuide.svelte
 msgid "Rewrite each post body with Gemini"
 msgstr "เขียนข้อความโพสต์แต่ละอันใหม่ด้วย Gemini"
 
@@ -791,7 +827,9 @@ msgstr "ทำให้กระชับและอ่านง่าย ร�
 msgid "Rewrite instructions"
 msgstr "คำแนะนำการเขียนใหม่"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingOptionsForm.svelte
+#: src/components/UsageGuide.svelte
 msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
 msgstr "ข้อความโพสต์และคำแนะนำของคุณจะถูกส่งไปยัง Google Gemini ภาพจะไม่ถูกส่ง Gemini จะเขียนใหม่เป็นข้อความธรรมดา"
 
@@ -855,10 +893,12 @@ msgid "What does “Use saved defaults” do?"
 msgstr "“ใช้ค่าเริ่มต้นที่บันทึก” ทำอะไร?"
 
 #: src/components/SavedDefaultsInfo.svelte
+#: src/components/UsageGuide.svelte
 msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
 msgstr "แทนที่ช่วงเวลาการโพสต์ในรอบนี้ ตัวเลือกการเขียนซ้ำของ Gemini และคำสั่งเขียนซ้ำด้วยค่าที่บันทึกไว้ในการตั้งค่า"
 
 #: src/components/SavedDefaultsInfo.svelte
+#: src/components/UsageGuide.svelte
 msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
 msgstr "ค่าเริ่มต้น: 60–120 วินาที, ปิดการเขียนซ้ำของ Gemini, และไม่มีคำสั่งเขียนซ้ำ บันทึกค่าที่คุณต้องการในการตั้งค่าเพื่อเปลี่ยนแปลง"
 
@@ -970,6 +1010,8 @@ msgid "Close window"
 msgstr "ปิดหน้าต่าง"
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
 msgid "Create post"
 msgstr "สร้างโพสต์"
 
@@ -978,6 +1020,8 @@ msgid "Write your post and add images"
 msgstr "เขียนโพสต์ของคุณและเพิ่มรูปภาพ"
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
 msgid "Select groups"
 msgstr "เลือกกลุ่ม"
 
@@ -1146,22 +1190,27 @@ msgstr "ข้อผิดพลาด"
 msgid "DEBUG"
 msgstr "ดีบัก"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 msgid "PUBLISHED"
 msgstr "เผยแพร่แล้ว"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 msgid "PENDING"
 msgstr "รอดำเนินการ"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 msgid "FAILED"
 msgstr "ล้มเหลว"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 msgid "SKIPPED"
 msgstr "ข้าม"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 msgid "UNCONFIRMED"
 msgstr "ยังไม่ได้ยืนยัน"
@@ -1238,6 +1287,7 @@ msgstr "โปรไฟล์เริ่มต้น"
 msgid "Color themes"
 msgstr "ธีมสี"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/ThemePicker.svelte
 msgid "Close"
 msgstr "ปิด"
@@ -1456,6 +1506,7 @@ msgid "Gemini rewrite completed."
 msgstr "Gemini เขียนใหม่เสร็จเรียบร้อย"
 
 #: src/components/LogMessage.svelte
+#: src/components/UsageGuide.svelte
 msgid "Gemini rewrite failed. Using the original text for this post; Gemini will be tried again for the next post."
 msgstr "การเขียนใหม่ของ Gemini ล้มเหลว ใช้ข้อความเดิมสำหรับโพสต์นี้; Gemini จะถูกลองใหม่สำหรับโพสต์ถัดไป"
 
@@ -1709,6 +1760,7 @@ msgid "This group has reached its pending-content limit."
 msgstr "กลุ่มนี้ถึงขีดจำกัดเนื้อหาที่รอดำเนินการแล้ว"
 
 #: src/components/LogMessage.svelte
+#: src/components/UsageGuide.svelte
 msgid "This post was submitted, but confirmation is uncertain. Check Facebook before retrying."
 msgstr "โพสต์นี้ถูกส่งแล้ว แต่การยืนยันไม่แน่นอน ตรวจสอบ Facebook ก่อนลองใหม่"
 
@@ -1815,7 +1867,9 @@ msgstr "การเขียนใหม่ของ Gemini ล้มเหล�
 msgid " (Code {0})"
 msgstr "(รหัส {0})"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
+#: src/components/UsageGuide.svelte
 msgid "Debug details"
 msgstr "รายละเอียดดีบัก"
 
@@ -1827,6 +1881,7 @@ msgid "Themes"
 msgstr "ธีม"
 
 #: src/App.svelte
+#: src/components/UsageGuide.svelte
 msgid "Preferences & post"
 msgstr "การตั้งค่าและโพสต์"
 
@@ -1834,3 +1889,135 @@ msgstr "การตั้งค่าและโพสต์"
 #: src/App.svelte
 msgid "Set preferences, then post now or schedule"
 msgstr "ตั้งค่าตามต้องการ แล้วโพสต์ทันทีหรือกำหนดเวลา"
+
+#~ msgid "Postika"
+#~ msgstr "Postika"
+
+#: src/components/FeaturesCard.svelte
+#: src/components/FeaturesCard.svelte
+msgid "Features"
+msgstr "ฟีเจอร์"
+
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
+#: src/components/UsageGuide.svelte
+msgid "Draft text and image copies are saved automatically for each account."
+msgstr "ข้อความฉบับร่างและสำเนารูปภาพจะถูกบันทึกอัตโนมัติสำหรับแต่ละบัญชี"
+
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
+msgid "Separate Facebook sessions, groups, drafts, settings, and queues for each account."
+msgstr "แยกเซสชัน Facebook กลุ่ม ฉบับร่าง การตั้งค่า และคิวสำหรับแต่ละบัญชี"
+
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
+msgid "Switch accounts while other queues keep running."
+msgstr "สลับบัญชีได้ขณะที่คิวอื่นยังทำงานอยู่"
+
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
+msgid "Loaded groups stay available between app sessions."
+msgstr "กลุ่มที่โหลดแล้วยังคงใช้งานได้เมื่อเปิดแอปครั้งถัดไป"
+
+#: src/components/FeaturesCard.svelte
+msgid "Minimum and maximum delays between posts."
+msgstr "ระยะเวลารอขั้นต่ำและสูงสุดระหว่างโพสต์"
+
+#: src/components/FeaturesCard.svelte
+msgid "Custom instructions and a configurable Gemini model."
+msgstr "คำสั่งที่กำหนดเองและโมเดล Gemini ที่ปรับตั้งค่าได้"
+
+#. 0: languages.length; 1: themeOptions.length
+#: src/components/FeaturesCard.svelte
+msgid "{0} languages · {1} themes"
+msgstr "{0} ภาษา · {1} ธีม"
+
+#: src/components/FeaturesCard.svelte
+msgid "Language and theme choices sync across windows."
+msgstr "ตัวเลือกภาษาและธีมจะซิงค์ระหว่างหน้าต่าง"
+
+#: src/components/FeaturesCard.svelte
+msgid "Windows and Linux"
+msgstr "Windows และ Linux"
+
+#: src/components/FeaturesCard.svelte
+msgid "Post text and images to multiple Facebook groups."
+msgstr "โพสต์ข้อความและรูปภาพไปยังหลายกลุ่ม Facebook"
+
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
+msgid "Keep Postika open and your computer awake. Queues and logs are not restored after quitting."
+msgstr "เปิด Postika ไว้และอย่าให้คอมพิวเตอร์เข้าสู่โหมดพัก คิวและบันทึกจะไม่ถูกกู้คืนหลังออกจากแอป"
+
+#: src/components/FeaturesCard.svelte
+msgid "<0/> Features"
+msgstr "<0/> ฟีเจอร์"
+
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
+msgid "Browse or drop images, preview attachments, and remove images."
+msgstr "เลือกหรือลากวางรูปภาพ ดูตัวอย่างไฟล์แนบ และลบรูปภาพ"
+
+#: src/components/FeaturesCard.svelte
+msgid "Queues pause when offline and resume when the connection returns."
+msgstr "คิวจะหยุดชั่วคราวเมื่อออฟไลน์และทำงานต่อเมื่อการเชื่อมต่อกลับมา"
+
+#: src/components/FeaturesCard.svelte
+msgid "How to use"
+msgstr "วิธีใช้งาน"
+
+#: src/components/UsageGuide.svelte
+msgid "Choose Add account, enter an account name, and select Create & sign in. Use the account switcher to return to an existing account."
+msgstr "เลือกเพิ่มบัญชี ใส่ชื่อ แล้วเลือกสร้างและเข้าสู่ระบบ ใช้ตัวสลับบัญชีเพื่อกลับไปยังบัญชีเดิม"
+
+#: src/components/UsageGuide.svelte
+msgid "Write your message and add at least one image; both are required. Use Next to move forward and Previous to edit an earlier step."
+msgstr "เขียนข้อความและเพิ่มรูปภาพอย่างน้อยหนึ่งรูป ต้องมีทั้งสองอย่าง ใช้ถัดไปเพื่อดำเนินการต่อและก่อนหน้าเพื่อแก้ไขขั้นตอนก่อน"
+
+#: src/components/UsageGuide.svelte
+msgid "Select Load groups and finish Facebook login or verification in Chrome. Search the loaded list, select the groups you want, then choose Next."
+msgstr "เลือกโหลดกลุ่มและเข้าสู่ระบบหรือยืนยัน Facebook ใน Chrome ให้เสร็จ ค้นหาในรายการ เลือกกลุ่ม แล้วเลือกถัดไป"
+
+#: src/components/UsageGuide.svelte
+msgid "In Settings, enter this account’s Gemini API key and model, then Save settings. Enable rewriting for your run and describe the tone and details to preserve."
+msgstr "ในการตั้งค่า ใส่คีย์ API Gemini และโมเดลของบัญชีนี้แล้วบันทึก เปิดการเขียนใหม่และอธิบายน้ำเสียงกับรายละเอียดที่ต้องการรักษาไว้"
+
+#: src/components/UsageGuide.svelte
+msgid "Review the account, message, image order, selected groups, and posting intervals. Choose Post now and complete any Facebook login or verification prompts in Chrome."
+msgstr "ตรวจสอบบัญชี ข้อความ ลำดับรูปภาพ กลุ่ม และช่วงเวลา เลือกโพสต์ตอนนี้ แล้วทำการเข้าสู่ระบบหรือยืนยัน Facebook ใน Chrome ให้เสร็จ"
+
+#: src/components/UsageGuide.svelte
+msgid "Choose Schedule, select a future date and time in the displayed time zone, then Confirm schedule. Facebook may require login when the queue starts."
+msgstr "เลือกตั้งเวลา กำหนดวันและเวลาในอนาคตตามเขตเวลาที่แสดง แล้วยืนยัน Facebook อาจขอให้เข้าสู่ระบบเมื่อคิวเริ่มทำงาน"
+
+#: src/components/UsageGuide.svelte
+msgid "Open Posting logs to follow progress. Its account selector lets you inspect other queues without switching the account in the main workspace."
+msgstr "เปิดบันทึกการโพสต์เพื่อติดตามความคืบหน้า ตัวเลือกบัญชีในนั้นช่วยดูคิวอื่นได้โดยไม่เปลี่ยนบัญชีในพื้นที่หลัก"
+
+#: src/components/UsageGuide.svelte
+msgid "Pause finishes the current operation before waiting. Resume continues the queue; Stop ends the remaining queue. Queues paused manually need Resume even after internet returns."
+msgstr "หยุดชั่วคราวจะจบงานปัจจุบันก่อนรอ ดำเนินการต่อจะเดินคิวต่อ ส่วนหยุดจะจบงานที่เหลือ คิวที่หยุดเองต้องกดดำเนินการต่อแม้อินเทอร์เน็ตกลับมา"
+
+#: src/components/UsageGuide.svelte
+msgid "Published means Facebook confirmed publication. Pending means admin approval is needed. Review failed or skipped entries; check unconfirmed submissions on Facebook before retrying to avoid duplicates."
+msgstr "เผยแพร่แล้วหมายถึง Facebook ยืนยันการเผยแพร่ รอดำเนินการต้องรอแอดมินอนุมัติ ตรวจดูรายการล้มเหลวหรือข้าม และตรวจโพสต์ที่ยังไม่ยืนยันบน Facebook ก่อนลองใหม่เพื่อหลีกเลี่ยงโพสต์ซ้ำ"
+
+#: src/components/UsageGuide.svelte
+msgid "For problems, expand Debug details or Copy Facebook response in Posting logs. For expired logins, use Load groups and finish verification before trying again."
+msgstr "เมื่อมีปัญหา ให้เปิดรายละเอียดดีบักหรือคัดลอกคำตอบ Facebook จากบันทึก หากการเข้าสู่ระบบหมดอายุ ให้โหลดกลุ่มและยืนยันตัวตนก่อนลองใหม่"
+
+#: src/components/UsageGuide.svelte
+msgid "Use Language and Themes in the top bar. Your choices apply across windows."
+msgstr "ใช้ภาษาและธีมในแถบด้านบน ตัวเลือกจะใช้กับทุกหน้าต่าง"
+
+#: src/components/UsageGuide.svelte
+msgid "Adding another account is optional. Use it only when you want a separate Facebook login and workspace."
+msgstr "การเพิ่มบัญชีอื่นเป็นทางเลือก ใช้เมื่อต้องการแยกการเข้าสู่ระบบ Facebook และพื้นที่ทำงานเท่านั้น"
+
+#: src/components/UsageGuide.svelte
+msgid "You can use the default account without adding another one. Sign in to Facebook when you choose Load groups in step 2."
+msgstr "คุณใช้บัญชีเริ่มต้นได้โดยไม่ต้องเพิ่มบัญชีอื่น เข้าสู่ระบบ Facebook เมื่อเลือกโหลดกลุ่มในขั้นตอนที่ 2"
+
+#: src/components/FeaturesCard.svelte
+msgid "Features & How to Use"
+msgstr "ฟีเจอร์และวิธีใช้งาน"

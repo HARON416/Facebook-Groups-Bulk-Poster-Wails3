@@ -215,9 +215,9 @@ func TestAccountWorkspacesUI(t *testing.T) {
 		t.Helper()
 		target.MustActivate()
 		target.MustElement("[data-theme-picker]").MustClick()
-		awaitPage(target, `() => document.querySelector('dialog')?.open && document.querySelectorAll('#theme-options [role=option]').length===189`)
+		awaitPage(target, `() => document.querySelector('dialog[aria-labelledby="theme-picker-heading"]')?.open && document.querySelectorAll('#theme-options [role=option]').length===189`)
 		target.MustElement(fmt.Sprintf(`[data-theme-id="%s"]`, id)).MustClick()
-		awaitPage(target, `() => !document.querySelector('dialog').open`)
+		awaitPage(target, `() => !document.querySelector('dialog[aria-labelledby="theme-picker-heading"]').open`)
 	}
 
 	eval := func(script string) {
@@ -234,6 +234,65 @@ func TestAccountWorkspacesUI(t *testing.T) {
 		await(fmt.Sprintf(`() => document.querySelector('#account-profile').dataset.profileId===%q && !document.querySelector('#account-profile').disabled`, id))
 	}
 	await(`() => document.querySelector('#post-body[contenteditable=true]') !== null`)
+	// The feature card traps focus, scrolls independently, and returns focus on close.
+	page.MustElement("[data-features-card]").MustClick()
+	await(`() => {const d=document.querySelector('#features-dialog');return d.open && d.contains(document.activeElement) && d.querySelectorAll('section').length===6 && d.innerText.includes('32 languages · 189 themes')}`)
+	if err := page.Keyboard.Type(input.Tab); err != nil {
+		t.Fatal(err)
+	}
+	await(`() => document.activeElement.matches('.view-switch button[aria-pressed=true]')`)
+	if err := page.Keyboard.Type(input.Tab, input.Enter); err != nil {
+		t.Fatal(err)
+	}
+	await(`() => document.querySelector('#features-heading').textContent==='Features & How to Use' && [...document.querySelectorAll('.usage-guide section > h2')].map(h=>h.textContent).join('|')==='Create post|Select groups|Preferences & post' && document.querySelector('.usage-guide .introduction').textContent.includes('default account') && document.querySelector('.additional-accounts').textContent.includes('optional') && document.querySelector('.usage-guide').textContent.includes('both are required') && document.activeElement.matches('[data-usage-guide][aria-pressed=true]')`)
+	if *uiArtifactDir != "" {
+		data, err := page.Screenshot(false, &proto.PageCaptureScreenshot{})
+		if err != nil {
+			t.Fatal(err)
+		}
+		if err := os.WriteFile(filepath.Join(*uiArtifactDir, "postika-usage-guide.png"), data, 0600); err != nil {
+			t.Fatal(err)
+		}
+	}
+	if err := page.Keyboard.Type(input.Tab); err != nil {
+		t.Fatal(err)
+	}
+	await(`() => document.activeElement.matches('#features-dialog .feature-content')`)
+	if err := page.Keyboard.Type(input.End); err != nil {
+		t.Fatal(err)
+	}
+	await(`() => {const c=document.querySelector('#features-dialog .feature-content');return c.scrollTop>0 && document.documentElement.scrollTop===0}`)
+	page.MustElement(".view-switch button:first-child").MustClick()
+	await(`() => document.querySelector('#features-heading').textContent==='Features & How to Use' && document.querySelector('#features-content').scrollTop===0 && document.querySelectorAll('#features-content section').length===6 && !document.querySelector('.usage-guide')`)
+	if err := page.Keyboard.Type(input.Escape); err != nil {
+		t.Fatal(err)
+	}
+	await(`() => !document.querySelector('#features-dialog').open && document.activeElement.matches('[data-features-card]') && document.querySelector('[data-features-card]').getAttribute('aria-expanded')==='false'`)
+	page.MustElement("[data-features-card]").MustClick()
+	await(`() => document.querySelector('#features-dialog .feature-content').scrollTop===0`)
+	if *uiArtifactDir != "" {
+		data, err := page.Screenshot(false, &proto.PageCaptureScreenshot{})
+		if err != nil {
+			t.Fatal(err)
+		}
+		if err := os.WriteFile(filepath.Join(*uiArtifactDir, "postika-features.png"), data, 0600); err != nil {
+			t.Fatal(err)
+		}
+	}
+	if err := page.SetViewport(&proto.EmulationSetDeviceMetricsOverride{Width: 520, Height: 680, DeviceScaleFactor: 1}); err != nil {
+		t.Fatal(err)
+	}
+	await(`() => {const d=document.querySelector('#features-dialog'),r=d.getBoundingClientRect(),c=d.querySelector('.feature-content');return r.left>=0 && r.right<=innerWidth && r.top>=0 && r.bottom<=innerHeight && c.scrollWidth<=c.clientWidth && c.scrollHeight>c.clientHeight}`)
+	page.MustElement("[data-usage-guide]").MustClick()
+	await(`() => {const c=document.querySelector('#features-content');return document.querySelector('.usage-guide') && c.scrollWidth<=c.clientWidth && c.scrollHeight>c.clientHeight}`)
+	page.MustElement("#features-dialog .close").MustClick()
+	await(`() => !document.querySelector('#features-dialog').open && document.activeElement.matches('[data-features-card]')`)
+	if err := page.SetViewport(&proto.EmulationSetDeviceMetricsOverride{Width: 1200, Height: 800, DeviceScaleFactor: 1}); err != nil {
+		t.Fatal(err)
+	}
+	page.MustElement("[data-features-card]").MustClick()
+	eval(`() => document.querySelector('#features-dialog').dispatchEvent(new MouseEvent('click',{bubbles:true,clientX:0,clientY:0}))`)
+	await(`() => !document.querySelector('#features-dialog').open && document.activeElement.matches('[data-features-card]')`)
 	// Follow the OS until the user chooses a theme, then persist that choice.
 	setSystemTheme := func(mode string) {
 		t.Helper()
@@ -302,6 +361,10 @@ func TestAccountWorkspacesUI(t *testing.T) {
 	await(`() => document.querySelectorAll('[role=option]').length===0 && document.querySelector('.no-results')?.textContent.includes('No accounts found')`)
 	eval(`() => document.querySelector('[aria-label="Clear account search"]').click()`)
 	await(`() => document.querySelectorAll('[role=option]').length===2 && document.activeElement?.id==='account-search'`)
+	if err := page.Keyboard.Type(input.Tab); err != nil {
+		t.Fatal(err)
+	}
+	await(`() => document.querySelector('[role=listbox]')===null && document.activeElement.matches('[data-features-card]')`)
 	if err := page.Keyboard.Type(input.Tab); err != nil {
 		t.Fatal(err)
 	}
@@ -397,6 +460,12 @@ func TestAccountWorkspacesUI(t *testing.T) {
 	}
 	// Descriptions, editor help, counts, and all three stages must translate too.
 	changeLanguage("id")
+	page.MustElement("[data-features-card]").MustClick()
+	await(`() => document.querySelector('#features-heading').textContent==='Fitur & Cara Menggunakan' && document.querySelector('#features-dialog').innerText.includes('32 bahasa · 189 tema') && getComputedStyle(document.querySelector('#features-dialog')).backgroundColor===getComputedStyle(document.querySelector('.top-bar')).backgroundColor`)
+	page.MustElement("[data-usage-guide]").MustClick()
+	await(`() => document.querySelector('#features-heading').textContent==='Fitur & Cara Menggunakan' && document.querySelector('.usage-guide').textContent.includes('keduanya wajib') && !document.querySelector('.usage-guide').textContent.includes('Write your message') && document.querySelector('#post-body').textContent==='Business draft'`)
+	page.MustElement("#features-dialog .close").MustClick()
+	await(`() => !document.querySelector('#features-dialog').open`)
 	await(`() => document.querySelector('.eyebrow')?.textContent==='LANGKAH 1 DARI 3' && document.querySelector('.editor-footer')?.textContent.includes('karakter') && document.querySelector('.editor-footer')?.textContent.includes('Mendukung pintasan Markdown') && document.body.innerText.includes('Tulis postingan Anda dan tambahkan gambar') && document.body.innerText.includes('Mulai dengan pesan Anda.') && document.querySelector('[aria-label="Tebal"]') !== null && document.querySelector('#image-formats')?.textContent.includes('Pilih beberapa gambar')`)
 	selectAccount("default")
 	eval(`() => document.querySelector('.account-workspace:not([hidden]) .next').click()`)
@@ -602,6 +671,22 @@ func TestAccountWorkspacesUI(t *testing.T) {
 	changeLanguage("id")
 	awaitPage(settingsPage, `() => document.querySelector('h1')?.textContent==='Pengaturan' && document.querySelector('input[type=password]').placeholder==='Masukkan kunci API Gemini Anda' && document.querySelector('input[type=password]').value==='unsaved-test-key' && document.body.innerText.includes('Jeda antarpostingan') && document.body.innerText.includes('Kunci tersimpan tidak pernah ditampilkan.')`)
 	changeLanguage("ar")
+	page.MustActivate()
+	page.MustElement("[data-features-card]").MustClick()
+	await(`() => {const d=document.querySelector('#features-dialog');return d.open && document.querySelector('#features-heading').textContent==='الميزات وكيفية الاستخدام' && getComputedStyle(d).direction==='rtl' && d.innerText.includes('32 لغة · 189 سمة')}`)
+	page.MustElement("[data-usage-guide]").MustClick()
+	await(`() => document.querySelector('#features-heading').textContent==='الميزات وكيفية الاستخدام' && document.querySelector('.usage-guide').textContent.includes('كلاهما مطلوب') && getComputedStyle(document.querySelector('.usage-guide')).direction==='rtl'`)
+	if *uiArtifactDir != "" {
+		data, err := page.Screenshot(false, &proto.PageCaptureScreenshot{})
+		if err != nil {
+			t.Fatal(err)
+		}
+		if err := os.WriteFile(filepath.Join(*uiArtifactDir, "postika-usage-guide-arabic.png"), data, 0600); err != nil {
+			t.Fatal(err)
+		}
+	}
+	page.MustElement("#features-dialog .close").MustClick()
+	await(`() => !document.querySelector('#features-dialog').open`)
 	await(`() => document.documentElement.dir==='rtl' && document.querySelector('#step-heading')?.textContent==='إنشاء منشور' && document.querySelector('#post-body')?.textContent==='Business draft'`)
 	awaitPage(settingsPage, `() => document.querySelector('h1')?.textContent==='الإعدادات' && document.querySelector('input[type=password]').value==='unsaved-test-key'`)
 	if err := page.Reload(); err != nil {
@@ -631,6 +716,31 @@ func TestAccountWorkspacesUI(t *testing.T) {
 	}
 	await(`() => document.documentElement.lang==='en' && document.documentElement.dataset.theme==='light' && document.querySelector('#step-heading')?.textContent==='Create post'`)
 	if err := settingsPage.Close(); err != nil {
+		t.Fatal(err)
+	}
+	// First launch follows the webview's ordered language preferences without
+	// saving an automatic choice. An explicit choice must survive a restart.
+	removePreferredLanguages, err := page.EvalOnNewDocument(`Object.defineProperty(navigator,'languages',{configurable:true,get:()=>['fi-FI','sw-KE','en-US']});Object.defineProperty(navigator,'language',{configurable:true,get:()=> 'fi-FI'});`)
+	if err != nil {
+		t.Fatal(err)
+	}
+	eval(`() => localStorage.removeItem('postika:language')`)
+	if err := page.Reload(); err != nil {
+		t.Fatal(err)
+	}
+	await(`() => document.documentElement.lang==='sw' && document.documentElement.dir==='ltr' && document.querySelector('#post-body')?.textContent==='Business draft' && document.querySelector('[data-features-card]')?.textContent.includes('Vipengele') && localStorage.getItem('postika:language')===null`)
+	changeLanguage("en")
+	if err := page.Reload(); err != nil {
+		t.Fatal(err)
+	}
+	await(`() => document.documentElement.lang==='en' && document.querySelector('#step-heading')?.textContent==='Create post' && localStorage.getItem('postika:language')==='en'`)
+	eval(`() => localStorage.setItem('postika:language','unsupported-locale')`)
+	if err := page.Reload(); err != nil {
+		t.Fatal(err)
+	}
+	await(`() => document.documentElement.lang==='sw' && document.querySelector('#post-body')?.textContent==='Business draft'`)
+	changeLanguage("en")
+	if err := removePreferredLanguages(); err != nil {
 		t.Fatal(err)
 	}
 	// The add-account flow creates a fresh workspace and requests its own login.

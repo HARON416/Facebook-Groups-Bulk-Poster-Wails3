@@ -79,6 +79,7 @@ msgid "Start with your message. Add images to bring it to life."
 msgstr "Bắt đầu với tin nhắn của bạn. Thêm hình ảnh để làm nó sống động hơn."
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
 msgid "Choose the groups you want to share your post with."
 msgstr "Chọn các nhóm mà bạn muốn chia sẻ bài đăng của mình."
 
@@ -119,10 +120,12 @@ msgid "Clear group search"
 msgstr "Xóa tìm kiếm nhóm"
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
 msgid "Search groups"
 msgstr "Tìm nhóm"
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
 msgid "Select all groups"
 msgstr "Chọn tất cả nhóm"
 
@@ -154,6 +157,7 @@ msgid "Open your Facebook groups to get started."
 msgstr "Mở các nhóm Facebook của bạn để bắt đầu."
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
 msgid "Posting settings"
 msgstr "Cài đặt đăng bài"
 
@@ -166,6 +170,8 @@ msgid "Applying defaults…"
 msgstr "Áp dụng mặc định…"
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
 msgid "Use saved defaults"
 msgstr "Sử dụng mặc định đã lưu"
 
@@ -192,6 +198,8 @@ msgstr "Mở cài đặt"
 #~ msgstr "Nhóm đã chọn ({0})"
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
 msgid "Schedule your queue"
 msgstr "Lên lịch hàng đợi của bạn"
 
@@ -218,6 +226,7 @@ msgid "View logs"
 msgstr "Xem nhật ký"
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 msgid "Stop"
 msgstr "Dừng"
@@ -233,6 +242,8 @@ msgid "Posting…"
 msgstr "Đang đăng…"
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
 msgid "Post now"
 msgstr "Đăng ngay"
 
@@ -249,18 +260,23 @@ msgid "Application menu"
 msgstr "Menu ứng dụng"
 
 #: src/Workspace.svelte
+#: src/components/UsageGuide.svelte
 msgid "Add account"
 msgstr "Thêm tài khoản"
 
 #: src/Workspace.svelte
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogView.svelte
+#: src/components/UsageGuide.svelte
 msgid "Posting logs"
 msgstr "Nhật ký đăng bài"
 
 #: src/Workspace.svelte
+#: src/components/FeaturesCard.svelte
 #: src/components/Settings.svelte
 #: src/components/Settings.svelte
+#: src/components/UsageGuide.svelte
 msgid "Settings"
 msgstr "Cài đặt"
 
@@ -277,6 +293,7 @@ msgid "Account name"
 msgstr "Tên tài khoản"
 
 #: src/Workspace.svelte
+#: src/components/UsageGuide.svelte
 msgid "Sign in to Facebook in the new account’s browser window."
 msgstr "Đăng nhập vào Facebook trong cửa sổ trình duyệt của tài khoản mới."
 
@@ -322,6 +339,7 @@ msgid "All accounts"
 msgstr "Tất cả tài khoản"
 
 #: src/components/AccountDropdown.svelte
+#: src/components/FeaturesCard.svelte
 msgid "Accounts"
 msgstr "Các tài khoản"
 
@@ -448,6 +466,7 @@ msgid "Required"
 msgstr "Bắt buộc"
 
 #: src/components/PostComposer.svelte
+#: src/components/UsageGuide.svelte
 msgid "Images"
 msgstr "Hình ảnh"
 
@@ -459,7 +478,9 @@ msgstr "Chọn hình ảnh"
 msgid "Drop images here or <0>browse images</0>"
 msgstr "Kéo thả hình ảnh vào đây hoặc <0>duyệt hình ảnh</0>"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostComposer.svelte
+#: src/components/UsageGuide.svelte
 msgid "JPG, PNG, WebP, or GIF · Select multiple images"
 msgstr "JPG, PNG, WebP hoặc GIF · Chọn nhiều hình ảnh"
 
@@ -470,7 +491,9 @@ msgstr "JPG, PNG, WebP hoặc GIF · Chọn nhiều hình ảnh"
 msgid "Add more"
 msgstr "Thêm ảnh"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostComposer.svelte
+#: src/components/UsageGuide.svelte
 msgid "Drag images to rearrange. Or focus an image and use Alt + Left / Right."
 msgstr "Kéo hình ảnh để sắp xếp lại. Hoặc tập trung vào một hình ảnh và dùng Alt + Trái / Phải."
 
@@ -561,7 +584,9 @@ msgstr "Làm lại"
 msgid "What would you like to share?"
 msgstr "Bạn muốn chia sẻ gì?"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostEditorContent.svelte
+#: src/components/UsageGuide.svelte
 msgid "Bold, italic, headings, quotes, and lists · Markdown shortcuts supported"
 msgstr "Đậm, in nghiêng, tiêu đề, trích dẫn và danh sách · Hỗ trợ phím tắt Markdown"
 
@@ -586,7 +611,9 @@ msgstr "Đã nhận phản hồi từ Facebook"
 msgid "POSTIKA / ACTIVITY"
 msgstr "POSTIKA / HOẠT ĐỘNG"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
+#: src/components/UsageGuide.svelte
 msgid "Posting progress"
 msgstr "Tiến trình đăng"
 
@@ -667,6 +694,7 @@ msgstr "{0} nhật ký"
 msgid "Took {0}"
 msgstr "Mất {0}"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogView.svelte
 msgid "Copy Facebook response"
@@ -731,10 +759,12 @@ msgstr "Tiếp theo →"
 msgid "{0}–{1} of {2} logs"
 msgstr "{0}–{1} trong số {2} nhật ký"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 msgid "Resume"
 msgstr "Tiếp tục"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 msgid "Pause"
 msgstr "Tạm dừng"
@@ -747,7 +777,9 @@ msgstr "Đang dừng…"
 msgid "POSTING PACE"
 msgstr "TỐC ĐỘ ĐĂNG"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingOptionsForm.svelte
+#: src/components/UsageGuide.svelte
 msgid "Interval between posts"
 msgstr "Khoảng thời gian giữa các bài đăng"
 
@@ -760,10 +792,12 @@ msgid "Maximum (seconds)"
 msgstr "Tối đa (giây)"
 
 #: src/components/PostingOptionsForm.svelte
+#: src/components/UsageGuide.svelte
 msgid "Choose how long to wait before posting to the next group."
 msgstr "Chọn thời gian chờ trước khi đăng bài lên nhóm tiếp theo."
 
 #: src/components/PostingOptionsForm.svelte
+#: src/components/UsageGuide.svelte
 msgid "At least 60 seconds. Use equal values for a fixed interval."
 msgstr "Ít nhất 60 giây. Sử dụng cùng giá trị để có khoảng thời gian cố định."
 
@@ -775,7 +809,9 @@ msgstr "TÙY CHỌN · AI VIẾT LẠI"
 msgid "A fresh version for each group"
 msgstr "Một phiên bản mới cho mỗi nhóm"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingOptionsForm.svelte
+#: src/components/UsageGuide.svelte
 msgid "Rewrite each post body with Gemini"
 msgstr "Viết lại mỗi nội dung bài đăng bằng Gemini"
 
@@ -791,7 +827,9 @@ msgstr "Giữ ngắn gọn và dễ đọc. Giữ nguyên giá và thông tin li
 msgid "Rewrite instructions"
 msgstr "Hướng dẫn viết lại"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingOptionsForm.svelte
+#: src/components/UsageGuide.svelte
 msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
 msgstr "Văn bản bài đăng và hướng dẫn của bạn được gửi đến Google Gemini. Hình ảnh sẽ không được gửi. Việc viết lại của Gemini sử dụng văn bản thuần."
 
@@ -855,10 +893,12 @@ msgid "What does “Use saved defaults” do?"
 msgstr "“ Sử dụng mặc định đã lưu” làm gì?"
 
 #: src/components/SavedDefaultsInfo.svelte
+#: src/components/UsageGuide.svelte
 msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
 msgstr "Thay thế khoảng thời gian đăng bài của lần chạy này, tùy chọn viết lại Gemini, và hướng dẫn viết lại bằng các giá trị đã lưu trong Cài đặt."
 
 #: src/components/SavedDefaultsInfo.svelte
+#: src/components/UsageGuide.svelte
 msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
 msgstr "Mặc định ban đầu: 60–120 giây, Gemini viết lại tắt, và không có hướng dẫn viết lại. Lưu các tùy chọn của riêng bạn trong Cài đặt để thay đổi chúng."
 
@@ -970,6 +1010,8 @@ msgid "Close window"
 msgstr "Đóng cửa sổ"
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
 msgid "Create post"
 msgstr "Tạo bài viết"
 
@@ -978,6 +1020,8 @@ msgid "Write your post and add images"
 msgstr "Viết bài và thêm hình ảnh"
 
 #: src/App.svelte
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
 msgid "Select groups"
 msgstr "Chọn nhóm"
 
@@ -1146,22 +1190,27 @@ msgstr "LỖI"
 msgid "DEBUG"
 msgstr "GỠ LỖI"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 msgid "PUBLISHED"
 msgstr "ĐÃ ĐĂNG"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 msgid "PENDING"
 msgstr "ĐANG CHỜ"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 msgid "FAILED"
 msgstr "THẤT BẠI"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 msgid "SKIPPED"
 msgstr "BỎ QUA"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 msgid "UNCONFIRMED"
 msgstr "CHƯA XÁC NHẬN"
@@ -1238,6 +1287,7 @@ msgstr "Hồ sơ mặc định"
 msgid "Color themes"
 msgstr "Chủ đề màu sắc"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/ThemePicker.svelte
 msgid "Close"
 msgstr "Đóng"
@@ -1456,6 +1506,7 @@ msgid "Gemini rewrite completed."
 msgstr "Việc viết lại của Gemini đã hoàn thành."
 
 #: src/components/LogMessage.svelte
+#: src/components/UsageGuide.svelte
 msgid "Gemini rewrite failed. Using the original text for this post; Gemini will be tried again for the next post."
 msgstr "Việc viết lại của Gemini thất bại. Sử dụng văn bản gốc cho bài viết này; Gemini sẽ được thử lại cho bài viết tiếp theo."
 
@@ -1709,6 +1760,7 @@ msgid "This group has reached its pending-content limit."
 msgstr "Nhóm này đã đạt giới hạn nội dung đang chờ."
 
 #: src/components/LogMessage.svelte
+#: src/components/UsageGuide.svelte
 msgid "This post was submitted, but confirmation is uncertain. Check Facebook before retrying."
 msgstr "Bài đăng này đã được gửi, nhưng việc xác nhận không chắc chắn. Kiểm tra Facebook trước khi thử lại."
 
@@ -1815,7 +1867,9 @@ msgstr "Việc viết lại Gemini thất bại (HTTP {0}). Kiểm tra khóa, m�
 msgid " (Code {0})"
 msgstr "(Mã {0})"
 
+#: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
+#: src/components/UsageGuide.svelte
 msgid "Debug details"
 msgstr "Chi tiết gỡ lỗi"
 
@@ -1827,6 +1881,7 @@ msgid "Themes"
 msgstr "Chủ đề"
 
 #: src/App.svelte
+#: src/components/UsageGuide.svelte
 msgid "Preferences & post"
 msgstr "Tùy chọn và đăng bài"
 
@@ -1834,3 +1889,135 @@ msgstr "Tùy chọn và đăng bài"
 #: src/App.svelte
 msgid "Set preferences, then post now or schedule"
 msgstr "Đặt tùy chọn, rồi đăng ngay hoặc lên lịch"
+
+#~ msgid "Postika"
+#~ msgstr "Postika"
+
+#: src/components/FeaturesCard.svelte
+#: src/components/FeaturesCard.svelte
+msgid "Features"
+msgstr "Tính năng"
+
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
+#: src/components/UsageGuide.svelte
+msgid "Draft text and image copies are saved automatically for each account."
+msgstr "Văn bản nháp và bản sao hình ảnh được lưu tự động cho từng tài khoản."
+
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
+msgid "Separate Facebook sessions, groups, drafts, settings, and queues for each account."
+msgstr "Phiên Facebook, nhóm, bản nháp, cài đặt và hàng đợi riêng cho từng tài khoản."
+
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
+msgid "Switch accounts while other queues keep running."
+msgstr "Chuyển tài khoản trong khi các hàng đợi khác vẫn chạy."
+
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
+msgid "Loaded groups stay available between app sessions."
+msgstr "Các nhóm đã tải vẫn có sẵn giữa các phiên ứng dụng."
+
+#: src/components/FeaturesCard.svelte
+msgid "Minimum and maximum delays between posts."
+msgstr "Thời gian chờ tối thiểu và tối đa giữa các bài đăng."
+
+#: src/components/FeaturesCard.svelte
+msgid "Custom instructions and a configurable Gemini model."
+msgstr "Hướng dẫn tùy chỉnh và mô hình Gemini có thể cấu hình."
+
+#. 0: languages.length; 1: themeOptions.length
+#: src/components/FeaturesCard.svelte
+msgid "{0} languages · {1} themes"
+msgstr "{0} ngôn ngữ · {1} giao diện"
+
+#: src/components/FeaturesCard.svelte
+msgid "Language and theme choices sync across windows."
+msgstr "Lựa chọn ngôn ngữ và giao diện được đồng bộ giữa các cửa sổ."
+
+#: src/components/FeaturesCard.svelte
+msgid "Windows and Linux"
+msgstr "Windows và Linux"
+
+#: src/components/FeaturesCard.svelte
+msgid "Post text and images to multiple Facebook groups."
+msgstr "Đăng văn bản và hình ảnh lên nhiều nhóm Facebook."
+
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
+msgid "Keep Postika open and your computer awake. Queues and logs are not restored after quitting."
+msgstr "Giữ Postika mở và máy tính hoạt động. Hàng đợi và nhật ký không được khôi phục sau khi thoát."
+
+#: src/components/FeaturesCard.svelte
+msgid "<0/> Features"
+msgstr "<0/> Tính năng"
+
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
+msgid "Browse or drop images, preview attachments, and remove images."
+msgstr "Chọn hoặc thả hình ảnh, xem trước tệp đính kèm và xóa hình ảnh."
+
+#: src/components/FeaturesCard.svelte
+msgid "Queues pause when offline and resume when the connection returns."
+msgstr "Hàng đợi tạm dừng khi mất mạng và tiếp tục khi kết nối trở lại."
+
+#: src/components/FeaturesCard.svelte
+msgid "How to use"
+msgstr "Cách sử dụng"
+
+#: src/components/UsageGuide.svelte
+msgid "Choose Add account, enter an account name, and select Create & sign in. Use the account switcher to return to an existing account."
+msgstr "Chọn Thêm tài khoản, nhập tên rồi chọn Tạo và đăng nhập. Dùng bộ chuyển tài khoản để quay lại tài khoản đã có."
+
+#: src/components/UsageGuide.svelte
+msgid "Write your message and add at least one image; both are required. Use Next to move forward and Previous to edit an earlier step."
+msgstr "Viết tin nhắn và thêm ít nhất một hình ảnh; cả hai đều bắt buộc. Dùng Tiếp theo để tiếp tục và Trước để sửa bước trước đó."
+
+#: src/components/UsageGuide.svelte
+msgid "Select Load groups and finish Facebook login or verification in Chrome. Search the loaded list, select the groups you want, then choose Next."
+msgstr "Chọn Tải nhóm và hoàn tất đăng nhập hoặc xác minh Facebook trong Chrome. Tìm trong danh sách, chọn các nhóm rồi chọn Tiếp theo."
+
+#: src/components/UsageGuide.svelte
+msgid "In Settings, enter this account’s Gemini API key and model, then Save settings. Enable rewriting for your run and describe the tone and details to preserve."
+msgstr "Trong Cài đặt, nhập khóa API Gemini và mô hình cho tài khoản này rồi lưu. Bật viết lại và mô tả giọng văn cùng chi tiết cần giữ."
+
+#: src/components/UsageGuide.svelte
+msgid "Review the account, message, image order, selected groups, and posting intervals. Choose Post now and complete any Facebook login or verification prompts in Chrome."
+msgstr "Kiểm tra tài khoản, tin nhắn, thứ tự ảnh, nhóm và khoảng thời gian. Chọn Đăng ngay rồi hoàn tất đăng nhập hoặc xác minh Facebook trong Chrome."
+
+#: src/components/UsageGuide.svelte
+msgid "Choose Schedule, select a future date and time in the displayed time zone, then Confirm schedule. Facebook may require login when the queue starts."
+msgstr "Chọn Lên lịch, đặt ngày giờ trong tương lai theo múi giờ hiển thị rồi xác nhận. Facebook có thể yêu cầu đăng nhập khi hàng đợi bắt đầu."
+
+#: src/components/UsageGuide.svelte
+msgid "Open Posting logs to follow progress. Its account selector lets you inspect other queues without switching the account in the main workspace."
+msgstr "Mở nhật ký đăng bài để theo dõi tiến độ. Bộ chọn tài khoản ở đó giúp xem hàng đợi khác mà không đổi tài khoản trong không gian chính."
+
+#: src/components/UsageGuide.svelte
+msgid "Pause finishes the current operation before waiting. Resume continues the queue; Stop ends the remaining queue. Queues paused manually need Resume even after internet returns."
+msgstr "Tạm dừng hoàn tất thao tác hiện tại rồi chờ. Tiếp tục chạy tiếp hàng đợi; Dừng kết thúc phần còn lại. Hàng đợi tạm dừng thủ công cần Tiếp tục dù mạng đã trở lại."
+
+#: src/components/UsageGuide.svelte
+msgid "Published means Facebook confirmed publication. Pending means admin approval is needed. Review failed or skipped entries; check unconfirmed submissions on Facebook before retrying to avoid duplicates."
+msgstr "Đã đăng nghĩa là Facebook xác nhận xuất bản. Chờ duyệt cần quản trị viên phê duyệt. Xem mục lỗi hoặc bị bỏ qua; kiểm tra bài chưa xác nhận trên Facebook trước khi thử lại để tránh trùng lặp."
+
+#: src/components/UsageGuide.svelte
+msgid "For problems, expand Debug details or Copy Facebook response in Posting logs. For expired logins, use Load groups and finish verification before trying again."
+msgstr "Khi có lỗi, mở chi tiết gỡ lỗi hoặc sao chép phản hồi Facebook trong nhật ký. Nếu phiên đăng nhập hết hạn, tải nhóm và xác minh trước khi thử lại."
+
+#: src/components/UsageGuide.svelte
+msgid "Use Language and Themes in the top bar. Your choices apply across windows."
+msgstr "Dùng Ngôn ngữ và Giao diện ở thanh trên. Lựa chọn áp dụng cho mọi cửa sổ."
+
+#: src/components/UsageGuide.svelte
+msgid "Adding another account is optional. Use it only when you want a separate Facebook login and workspace."
+msgstr "Thêm tài khoản khác là tùy chọn. Chỉ dùng khi bạn muốn phiên đăng nhập Facebook và không gian làm việc riêng."
+
+#: src/components/UsageGuide.svelte
+msgid "You can use the default account without adding another one. Sign in to Facebook when you choose Load groups in step 2."
+msgstr "Bạn có thể dùng tài khoản mặc định mà không cần thêm tài khoản khác. Đăng nhập Facebook khi chọn Tải nhóm ở bước 2."
+
+#: src/components/FeaturesCard.svelte
+msgid "Features & How to Use"
+msgstr "Tính năng và cách sử dụng"

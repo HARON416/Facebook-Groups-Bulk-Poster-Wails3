@@ -10,6 +10,7 @@
   import { createAccountService } from './lib/accounts';
   import { accountLabel } from './components/AccountLabel.svelte';
   import ConnectivityToast from './components/ConnectivityToast.svelte';
+  import FeaturesCard from './components/FeaturesCard.svelte';
   import { pollWhileWindowOpen } from './lib/window-polling';
 
   let profiles = $state<ProfileActivity[]>([]);
@@ -74,6 +75,7 @@
     <div class="profile-control"><AccountDropdown profiles={displayProfiles} {selected} compact disabled={busy} onselect={select} /></div>
     <div class="drag-area" aria-hidden="true" ondblclick={() => windowControls?.toggleMaximise()}></div>
     <nav class="app-menu" aria-label="Application menu">
+      <FeaturesCard />
       <button type="button" disabled={busy} aria-expanded={adding} aria-controls={adding ? 'add-account-form' : undefined} onclick={() => { adding = !adding; error = ''; }}>Add account</button>
       <button type="button" disabled={busy || !selected} onclick={() => openAccountWindow('logs')}>Posting logs</button>
       <button type="button" disabled={busy || !selected} onclick={() => openAccountWindow('settings')}>Settings</button>

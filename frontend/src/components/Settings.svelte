@@ -42,7 +42,7 @@
     <section class="defaults"><h2>Posting defaults</h2><p class="defaults-hint">Applied when you start a new posting run.</p><PostingOptionsForm bind:minimumInterval bind:maximumInterval bind:rewrite bind:instructions disabled={busy} /></section>
     {#if error}<p class="error" role="alert">{error}</p>{/if}
     {#if message}<p class="success" role="status">{message}</p>{/if}
-    <footer><button type="submit" disabled={busy}>{busy ? 'Saving…' : 'Save settings'}</button></footer>
+    <footer><button type="submit" class="action-button action-button--primary" disabled={busy}>{busy ? 'Saving…' : 'Save settings'}</button></footer>
   </form>
 </main>
 </AuxiliaryWindow>
@@ -66,7 +66,5 @@
   .error, .success { font-size: 1.4rem; line-height: 1.6; color: var(--danger); }
   .success { color: var(--accent); }
   footer { display: flex; justify-content: flex-end; padding: 2rem 0; }
-  button { padding: 1.2rem 2rem; background: var(--accent); color: var(--on-accent); border: 0; border-radius: 0.6rem; cursor: pointer; }
-  button:disabled { opacity: 0.5; }
-  input:focus-visible, button:focus-visible { outline: 0.2rem solid var(--focus); outline-offset: 0.2rem; }
+  input:focus-visible { outline: 0.2rem solid var(--focus); outline-offset: 0.2rem; }
 </style>
