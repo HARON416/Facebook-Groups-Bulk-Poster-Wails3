@@ -90,7 +90,25 @@ sudo dpkg -i bin/postika.deb
 ```
 
 Install only after packaging succeeds. Stop active queues and restart Postika
-after updating. See the [release guide](docs/RELEASING.md) for platform packaging
+after updating.
+
+To build a Windows amd64 executable from Linux, run from the project root:
+
+```sh
+PATH="$PWD/.tools/bin:$PATH" .tools/bin/wails3 build GOOS=windows GOARCH=amd64
+```
+
+The executable is `bin/postika.exe`. To build a per-user Windows installer
+(requires NSIS, with `makensis` on `PATH`):
+
+```sh
+PATH="$PWD/.tools/bin:$PATH" .tools/bin/wails3 package GOOS=windows GOARCH=amd64 INSTALL_SCOPE=user
+```
+
+The unsigned installer is `bin/postika-amd64-installer.exe`. These commands
+rebuild the current version; they do not increment the release version metadata.
+
+See the [release guide](docs/RELEASING.md) for platform packaging
 and [translation guide](docs/I18N.md) for localization.
 
 ## Ubuntu sandbox troubleshooting
