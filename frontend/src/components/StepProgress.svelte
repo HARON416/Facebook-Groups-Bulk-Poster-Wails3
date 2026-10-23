@@ -78,11 +78,11 @@
   }
 
   li::before {
-    left: 0;
+    inset-inline-start: 0;
   }
 
   li::after {
-    right: 0;
+    inset-inline-end: 0;
   }
 
   li.completed::before,

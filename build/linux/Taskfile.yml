@@ -54,8 +54,8 @@ tasks:
       - task: common:generate:icons
       - task: generate:dotdesktop
     preconditions:
-      - sh: '{{if eq .OBFUSCATED "true"}}command -v garble >/dev/null 2>&1{{else}}true{{end}}'
-        msg: "garble is required for obfuscated builds. Install it with: go install mvdan.cc/garble@v0.16.0 (requires Go 1.24+). See https://github.com/burrowers/garble/releases for version/toolchain compatibility."
+      - sh: '{{if eq .OBFUSCATED "true"}}case "$(garble version 2>/dev/null)" in "mvdan.cc/garble v0.16.0"*) true ;; *) false ;; esac{{else}}true{{end}}'
+        msg: "Garble v0.16.0 is required for obfuscated builds. Run make install-garble (requires Go 1.26.2+). See https://github.com/burrowers/garble/releases for version/toolchain compatibility."
     cmds:
       - '{{if eq .OBFUSCATED "true"}}garble {{.GARBLE_ARGS}} build{{else}}go build{{end}} {{.BUILD_FLAGS}} -o {{.OUTPUT}}'
     vars:
@@ -106,6 +106,8 @@ tasks:
     cmds:
       - task: create:appimage
       - task: create:deb
+      - task: create:rpm
+      - task: create:aur
 
   create:appimage:
     summary: Creates an AppImage
@@ -151,18 +153,41 @@ tasks:
     # Packaging an old bin/postika silently omits recent source changes.
     deps:
       - task: build
+      - task: build:update-admin
     cmds:
       - wails3 tool package -name "{{.APP_NAME}}" -format deb -config ./build/linux/nfpm/nfpm.yaml -out {{.ROOT_DIR}}/bin
+    env:
+      GOARCH: '{{.ARCH | default ARCH}}'
 
   generate:rpm:
     summary: Creates a rpm package
+    deps:
+      - task: build
+      - task: build:update-admin
     cmds:
       - wails3 tool package -name "{{.APP_NAME}}" -format rpm -config ./build/linux/nfpm/nfpm.yaml -out {{.ROOT_DIR}}/bin
+    env:
+      GOARCH: '{{.ARCH | default ARCH}}'
 
   generate:aur:
     summary: Creates a arch linux packager package
+    deps:
+      - task: build
+      - task: build:update-admin
     cmds:
       - wails3 tool package -name "{{.APP_NAME}}" -format archlinux -config ./build/linux/nfpm/nfpm.yaml -out {{.ROOT_DIR}}/bin
+    env:
+      GOARCH: '{{.ARCH | default ARCH}}'
+
+  build:update-admin:
+    summary: Builds the package-installed update verification helper
+    run: once
+    cmds:
+      - go build -o "{{.BIN_DIR}}/postika-update-admin" ./build/linux/update-admin
+    env:
+      GOOS: linux
+      GOARCH: '{{.ARCH | default ARCH}}'
+      CGO_ENABLED: '0'
 
   generate:dotdesktop:
     summary: Uses the maintained Postika `.desktop` file

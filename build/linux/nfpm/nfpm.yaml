@@ -17,6 +17,10 @@ license: "MIT"
 release: "1"
 
 contents:
+  - src: "./bin/postika-update-admin"
+    dst: "/usr/lib/postika/update-admin"
+    file_info:
+      mode: 0755
   - src: "./build/linux/postika.apparmor"
     dst: "/etc/apparmor.d/postika"
     type: config
@@ -37,6 +41,7 @@ contents:
 
 # Default dependencies for the GTK4 + WebKitGTK 6.0 stack (Ubuntu 24.04+ / Debian 13+)
 depends:
+  - pkexec
   - libgtk-4-1
   - libwebkitgtk-6.0-4
 
@@ -45,12 +50,14 @@ overrides:
   # RPM packages for Fedora / RHEL / AlmaLinux / Rocky Linux
   rpm:
     depends:
+      - polkit
       - gtk4
       - webkitgtk6.0
 
   # Arch Linux packages
   archlinux:
     depends:
+      - polkit
       - gtk4
       - webkitgtk-6.0
 
@@ -62,31 +69,4 @@ scripts:
   # preremove: "./build/linux/nfpm/scripts/preremove.sh"
   # postremove: "./build/linux/nfpm/scripts/postremove.sh"
 
-# If you build your app with -tags gtk3 (legacy WebKit2GTK 4.1 stack — supported through v3.0.x, removed in v3.1),
-# replace the depends/overrides above with these:
-#
-# depends:
-#   - libgtk-3-0
-#   - libwebkit2gtk-4.1-0
-# overrides:
-#   rpm:
-#     depends:
-#       - gtk3
-#       - webkit2gtk4.1
-#   archlinux:
-#     depends:
-#       - gtk3
-#       - webkit2gtk-4.1
-#
-# replaces:
-#   - foobar
-# provides:
-#   - bar
-# recommends:
-#   - whatever
-# suggests:
-#   - something-else
-# conflicts:
-#   - not-foo
-#   - not-bar
-# changelog: "changelog.yaml"
+# GTK4 / WebKitGTK 6.0 only. No legacy GTK3 build is distributed.

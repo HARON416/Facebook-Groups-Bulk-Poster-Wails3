@@ -8,69 +8,59 @@ msgstr ""
 "Plural-Forms: nplurals=2\n"
 "X-Plurals-Order: one, other\n"
 
-#. 0: minimumInterval === maximumInterval ? minimumInterval \\: `${minimumInterval}–${maximumInterval}`; 1: rewriteState
+#. 0: appliedInterval; 1: rewriteState
 #: src/App.svelte
 msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
 msgstr "సేవ్ చేయబడిన డిఫాల్ట్స్ అన్వయించబడ్డాయి: పోస్ట్‌ల మధ్య {0} సెకన్లు · Gemini రీరైట్ {1}."
 
-#: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Could not restore saved groups. Load groups to refresh the list."
 msgstr "సేవ్ చేసిన గ్రూప్‌లను పున రుద్ధరించలేకపోయాము. జాబితాను రిఫ్రెష్ చేయడానికి గ్రూప్‌లను లోడ్ చేయండి."
 
-#: src/App.svelte
-msgid "Choose a future date and time for your post."
-msgstr "మీ పోస్ట్ కోసం భవిష్యత్తు తేదీ మరియు సమయాన్ని ఎంచుకోండి."
+#~ msgid "Choose a future date and time for your post."
+#~ msgstr "మీ పోస్ట్ కోసం భవిష్యత్తు తేదీ మరియు సమయాన్ని ఎంచుకోండి."
 
-#: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Saving your scheduled queue…"
 msgstr "మీ షెడ్యూల్ చేయబడిన క్యూను సేవ్ చేస్తోంది…"
 
-#: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Opening a selected group to capture fresh posting requests…"
 msgstr "తాజా పოს్టింగ్ వినతులను సేకరించడానికి ఎంచుకున్న గ్రూప్‌ను తెరవడం…"
 
-#: src/App.svelte
-#: src/App.svelte
 #: src/components/LogMessage.svelte
 msgid "Posting stopped."
 msgstr "పోస్టింగ్ ఆగిపోయింది."
 
-#: src/App.svelte
 #: src/components/LogMessage.svelte
 msgid "Could not read a selected image"
 msgstr "ఎంచుకున్న చిత్రాన్ని చదవలేకపోయాము"
 
+#. 0: a
 #. 0: image.file.name
-#. 0: missingNames
-#. 0: unreadableNames
-#. 0: image.file.name
-#: src/App.svelte
-#: src/App.svelte
-#: src/components/PostComposer.svelte
+#: src/components/LogMessage.svelte
 #: src/components/PostComposer.svelte
 msgid "Could not read {0}"
 msgstr "{0} ను చదవలేకపోయాము"
 
-#: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Posting finished."
 msgstr "పోస్టింగ్ పూర్తయింది."
 
-#. 0: scheduleLabel(scheduledFor)
 #. 0: date
-#: src/App.svelte
 #: src/components/LogMessage.svelte
 msgid "Scheduled for {0}. Keep Postika open and your computer awake."
 msgstr "{0} కు షెడ్యూల్ చేయబడింది. పోస్స్తికా తెరిచి ఉంచండి మరియు మీ కంప్యూటర్ జాగ్రత్తగా ఉంచండి."
 
-#: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Could not restore this account’s draft. New edits will stay available while Postika is open."
 msgstr "ఈ ఖాతాలోని డ్రాఫ్ట్‌ను పునఃస్థాపించలేము. కొత్త ఎడిట్లు పోస్టికా తెరిచి ఉండగా అందుబాటులో ఉంటాయి."
 
-#: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Could not add the dropped images. Try browsing for them instead."
 msgstr "డ్రాప్ చేసిన చిత్రాలను జోడించలేకపోయాము. వాటిని బ్రౌజ్ చేసి ప్రయత్నించండి."
 
-#: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Could not save this account’s draft to disk. Keep Postika open to retain your edits."
 msgstr "ఈ ఖాతాలోని డ్రాఫ్ట్‌ను డిస్క్‌కి సేవ్ చేయలేకపోయాము. మీ ఎడిట్లను ఉంచడానికి పోస్టికా తెరిచి ఉంచండి."
 
@@ -100,6 +90,7 @@ msgid "Opening…"
 msgstr "తీస్తోంది…"
 
 #: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Loading…"
 msgstr "లోడ్ అవుతోంది…"
 
@@ -210,6 +201,8 @@ msgstr "సమయ జోన్: {0}. పోస్టికా открыт ఉ�
 
 #: src/App.svelte
 #: src/Workspace.svelte
+#: src/components/FacebookPageDialog.svelte
+#: src/components/FetchedPostCard.svelte
 msgid "Cancel"
 msgstr "రద్దు చేయండి"
 
@@ -440,18 +433,18 @@ msgstr "నిమిషాన్ని తగ్గించండి"
 msgid "Choose a date and time in the future."
 msgstr "భవిష్యత్తులో తేదీ మరియు సమయాన్ని ఎంచుకోండి."
 
-#. 0: rejected.join(', ')
-#: src/components/PostComposer.svelte
+#. 0: a
+#: src/components/LogMessage.svelte
 msgid "Unsupported files: {0}. Choose JPG, PNG, WebP, or GIF images."
 msgstr "అనాబంధిత ఫైల్స్: {0}. JPG, PNG, WebP, లేదా GIF ఇమేజ్‌లను ఎంచుకోండి."
 
-#. 0: image.file.name
-#: src/components/PostComposer.svelte
+#. 0: a
+#: src/components/LogMessage.svelte
 msgid "Could not preview {0}. Please choose another image."
 msgstr "{0} ను ప్రివ్యూ చేయలేకపోయాం. దయచేసి మరొక ఇమేజ్ ను ఎంచుకోండి."
 
-#. 0: images[index].file.name; 1: index + 1; 2: images.length
-#: src/components/PostComposer.svelte
+#. 0: a; 1: number(b); 2: number(c)
+#: src/components/LogMessage.svelte
 msgid "{0} moved to position {1} of {2}."
 msgstr "{0} ను {2}లో {1} స్థానానికి తరలించారు."
 
@@ -515,7 +508,7 @@ msgstr "{0} ను తొలగించండి"
 msgid "Drop more images here to add them."
 msgstr "వేరే ఇమేజ్‌లను చేర్చడానికి ఇక్కడ డ్రాప్ చేయండి."
 
-#. 0: error
+#. 0: logMessage(error, true)
 #: src/components/PostEditor.svelte
 msgid "Could not edit the post: {0}"
 msgstr "పోస్ట్‌ను సవరించలేము: {0}"
@@ -902,7 +895,7 @@ msgstr "ఈ రన్ యొక్క పోస్టింగ్ ఇంటర�
 msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
 msgstr "ప్రారంభ డిఫాల్ట్స్: 60–120 సెకన్లు, Gemini రీరైట్ ఆఫ్, మరియు రీరైట్ సూచనలు లేవు. వాటిని మార్చడానికి మీ సొంత ప్రాధాన్యతలను సెట్టింగ్స్‌లో సేవ్ చేయండి."
 
-#: src/components/Settings.svelte
+#: src/components/LogMessage.svelte
 msgid "Settings saved. New runs can use these defaults."
 msgstr "సెట్టింగ్స్ సేవ్ చేయబడ్డాయి. కొత్త రన్లు ఈ డిఫాల్ట్స్‌ని ఉపయోగించవచ్చు."
 
@@ -985,7 +978,7 @@ msgstr "రాబోతోన్నవి"
 msgid "Step {0} of {1}: {2}"
 msgstr "దశ {0} లో {1}: {2}"
 
-#: src/components/WindowControls.svelte
+#: src/components/LogMessage.svelte
 msgid "Could not change the window. Please try again."
 msgstr "విండోను మార్చలేకపోయాం. దయచేసి మళ్లీ ప్రయత్నించండి."
 
@@ -1044,10 +1037,12 @@ msgid "The browser is closed. It will reopen when you click Post."
 msgstr "బ్రౌజర్ మూసివేసారు. మీరు పోస్ట్ పై క్లిక్ చేసినప్పుడు ఇది మళ్లీ తెరుచుకుంటుంది."
 
 #: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Checking Facebook login"
 msgstr "Facebook లాగిన్ ను తనిఖీ చేస్తోంది"
 
 #: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Finish signing in or any verification prompts in Chrome. Your login will be detected automatically."
 msgstr "Chrome లో సైన్ ఇన్ లేదా ఏదైనా ధృవీకరణ ప్రాంప్ట్ ను పూర్తి చేయండి. మీ లాగిన్ ఆటోమేటిక్ గా గుర్తించబడుతుంది."
 
@@ -1134,7 +1129,7 @@ msgstr "మధ్యాహ్నం"
 msgid "Evening"
 msgstr "సాయంత్రం"
 
-#: src/components/LanguageMenu.svelte
+#: src/components/LogMessage.svelte
 msgid "Could not change the language. Please try again."
 msgstr "భాష మార్చలేకపోయాము. దయచేసి మళ్ళీ ప్రయత్నించండి."
 
@@ -1287,8 +1282,10 @@ msgstr "డిఫాల్ట్ ప్రొఫైల్"
 msgid "Color themes"
 msgstr "రంగు థీమ్‌లు"
 
+#: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
 #: src/components/ThemePicker.svelte
+#: src/components/UpdateButton.svelte
 msgid "Close"
 msgstr "మూసివేయి"
 
@@ -1760,6 +1757,7 @@ msgid "This group has reached its pending-content limit."
 msgstr "ఈ గ్రూప్ తన పెండింగ్-కంటెంట్ పరిమితిని చేరుకుంది."
 
 #: src/components/LogMessage.svelte
+#: src/components/LogMessage.svelte
 #: src/components/UsageGuide.svelte
 msgid "This post was submitted, but confirmation is uncertain. Check Facebook before retrying."
 msgstr "ఈ పోస్ట్ సమర్పించబడింది, కానీ నిర్ధారణ అనిశ్చితంగా ఉంది. తిరిగి ప్రయత్నించడానికి ముందే Facebookని తనిఖీ చేయండి."
@@ -1867,8 +1865,10 @@ msgstr "Gemini పునర్రచనా విఫలమైంది (HTTP {0}
 msgid " (Code {0})"
 msgstr "(కోడ్ {0})"
 
+#: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
-#: src/components/PostingLogView.svelte
+#: src/components/LocalizedFeedback.svelte
+#: src/components/PostEditor.svelte
 #: src/components/UsageGuide.svelte
 msgid "Debug details"
 msgstr "డీబగ్ వివరాలు"
@@ -2021,3 +2021,373 @@ msgstr "మరొక ఖాతా జోడించకుండానే డి
 #: src/components/FeaturesCard.svelte
 msgid "Features & How to Use"
 msgstr "ఫీచర్లు మరియు వినియోగ విధానం"
+
+#~ msgid "Or post from any Facebook page"
+#~ msgstr ""
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Or click here to fetch posts from any Facebook page"
+msgstr "లేదా ఏ Facebook పేజీ నుంచైనా పోస్టులను పొందడానికి ఇక్కడ క్లిక్ చేయండి"
+
+#: src/components/LogMessage.svelte
+msgid "Enter a Facebook page URL, such as https://web.facebook.com/swiftlineMotors"
+msgstr "Facebook పేజీ URLను నమోదు చేయండి, ఉదాహరణకు https://web.facebook.com/swiftlineMotors"
+
+#~ msgid "Fetch Facebook posts"
+#~ msgstr ""
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Decrease number of posts"
+msgstr "పోస్టుల సంఖ్యను తగ్గించండి"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Increase number of posts"
+msgstr "పోస్టుల సంఖ్యను పెంచండి"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Facebook page URL"
+msgstr "Facebook పేజీ URL"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Number of posts to fetch"
+msgstr "పొందాల్సిన పోస్టుల సంఖ్య"
+
+#~ msgid "Done"
+#~ msgstr ""
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Fetch posts from a Facebook page"
+msgstr "Facebook పేజీ నుంచి పోస్టులను పొందండి"
+
+#: src/components/LogMessage.svelte
+msgid "Could not check fetch progress. Close this dialog and try again."
+msgstr "పోస్టులను పొందే పురోగతిని తనిఖీ చేయలేకపోయాము. ఈ డైలాగ్‌ను మూసి మళ్లీ ప్రయత్నించండి."
+
+#: src/components/LogMessage.svelte
+msgid "Could not stop fetching. Try again."
+msgstr "పోస్టులను పొందడం ఆపలేకపోయాము. మళ్లీ ప్రయత్నించండి."
+
+#: src/components/LogMessage.svelte
+msgid "Fetching stopped."
+msgstr "పోస్టులను పొందడం ఆపివేయబడింది."
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Facebook page fetch options"
+msgstr "Facebook పేజీ పోస్టులను పొందే ఎంపికలు"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Posts fetched"
+msgstr "పొందిన పోస్టులు"
+
+#: src/components/PostComposer.svelte
+msgid "Fetched posts"
+msgstr "పొందిన పోస్టులు"
+
+#: src/components/FetchedPostCard.svelte
+msgid "Post without text"
+msgstr "వచనం లేని పోస్ట్"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Fetching…"
+msgstr "పొందుతోంది…"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Fetch"
+msgstr "పొందండి"
+
+#: src/components/PostComposer.svelte
+msgid "Fetched posts <0/>"
+msgstr "పొందిన పోస్టులు <0/>"
+
+#: src/components/PostComposer.svelte
+msgid "Write a post instead"
+msgstr "బదులుగా పోస్ట్ రాయండి"
+
+#~ msgid "No posts were available from this Facebook page."
+#~ msgstr ""
+
+#: src/App.svelte
+msgid "Review the posts fetched from your Facebook page."
+msgstr "మీ Facebook పేజీ నుంచి పొందిన పోస్టులను సమీక్షించండి."
+
+#~ msgid "Post removed."
+#~ msgstr ""
+
+#: src/components/PostComposer.svelte
+msgid "No posts to show. Fetch posts or write a post instead."
+msgstr "చూపించడానికి పోస్టులు లేవు. పోస్టులను పొందండి లేదా కొత్త పోస్ట్ రాయండి."
+
+#. 0: index + 1
+#: src/components/FetchedPostCard.svelte
+msgid "Post {0}"
+msgstr "పోస్ట్ {0}"
+
+#. 0: index + 1
+#: src/components/FetchedPostCard.svelte
+msgid "Edit post {0}"
+msgstr "పోస్ట్ {0}ను సవరించండి"
+
+#: src/components/FetchedPostCard.svelte
+msgid "Edit"
+msgstr "సవరించండి"
+
+#. 0: index + 1
+#: src/components/FetchedPostCard.svelte
+msgid "Delete post {0}"
+msgstr "పోస్ట్ {0}ను తొలగించండి"
+
+#: src/components/FetchedPostCard.svelte
+msgid "Delete"
+msgstr "తొలగించండి"
+
+#: src/components/FetchedPostCard.svelte
+msgid "Post text"
+msgstr "పోస్ట్ వచనం"
+
+#. 0: imageIndex + 1; 1: index + 1
+#: src/components/FetchedPostCard.svelte
+msgid "Remove image {0} from post {1}"
+msgstr "పోస్ట్ {1} నుంచి చిత్రం {0}ను తీసివేయండి"
+
+#: src/components/FetchedPostCard.svelte
+msgid "Save changes"
+msgstr "మార్పులను సేవ్ చేయండి"
+
+#: src/components/LogMessage.svelte
+msgid "Could not fetch Facebook posts. Check Chrome and try again."
+msgstr "Facebook పోస్టులను పొందలేకపోయాము. Chromeను తనిఖీ చేసి మళ్లీ ప్రయత్నించండి."
+
+#: src/components/LogMessage.svelte
+msgid "Could not load full-size photos. Fetch the posts again."
+msgstr "పూర్తి పరిమాణ ఫోటోలను లోడ్ చేయలేకపోయాము. పోస్టులను మళ్లీ పొందండి."
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture Facebook requests. Check Chrome and fetch again."
+msgstr "Facebook అభ్యర్థనలను క్యాప్చర్ చేయలేకపోయాము. Chromeను తనిఖీ చేసి మళ్లీ పొందండి."
+
+#: src/components/LogMessage.svelte
+msgid "Enter a positive whole number of posts to fetch"
+msgstr "పొందాల్సిన పోస్టుల సంఖ్యకు ధన పూర్ణాంకాన్ని నమోదు చేయండి"
+
+#: src/components/LogMessage.svelte
+msgid "Wait for posting to finish before fetching Facebook posts"
+msgstr "Facebook పోస్టులను పొందే ముందు పోస్ట్ చేయడం పూర్తయ్యే వరకు వేచి ఉండండి"
+
+#: src/components/LogMessage.svelte
+msgid "Finish loading groups before fetching Facebook posts"
+msgstr "Facebook పోస్టులను పొందే ముందు గ్రూపుల లోడింగ్‌ను పూర్తి చేయండి"
+
+#: src/components/LogMessage.svelte
+msgid "Fetch at least one post before posting"
+msgstr "పోస్ట్ చేసే ముందు కనీసం ఒక పోస్ట్‌ను పొందండి"
+
+#: src/components/LogMessage.svelte
+msgid "Capturing Facebook posts…"
+msgstr "Facebook పోస్టులను క్యాప్చర్ చేస్తోంది…"
+
+#: src/components/LogMessage.svelte
+msgid "Capturing full-size photos…"
+msgstr "పూర్తి పరిమాణ ఫోటోలను క్యాప్చర్ చేస్తోంది…"
+
+#: src/components/LogMessage.svelte
+msgid "Reloading the photo page…"
+msgstr "ఫోటో పేజీని మళ్లీ లోడ్ చేస్తోంది…"
+
+#: src/components/LogMessage.svelte
+msgid "Opening the next photo…"
+msgstr "తదుపరి ఫోటోను తెరుస్తోంది…"
+
+#: src/components/LogMessage.svelte
+msgid "Fetching posts and full-size photos…"
+msgstr "పోస్టులు మరియు పూర్తి పరిమాణ ఫోటోలను పొందుతోంది…"
+
+#~ msgid "Facebook"
+#~ msgstr ""
+
+#. 0: number(a); 1: number(b)
+#: src/components/LogMessage.svelte
+msgid "Fetched {0} of {1} posts…"
+msgstr "{1} పోస్టులలో {0} పొందబడ్డాయి…"
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Fetched {0} posts."
+msgstr "{0} పోస్టులు పొందబడ్డాయి."
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Fetched {0} posts. No more posts are available."
+msgstr "{0} పోస్టులు పొందబడ్డాయి. మరిన్ని పోస్టులు అందుబాటులో లేవు."
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Add text to fetched post {0} before posting"
+msgstr "పోస్ట్ చేసే ముందు పొందిన పోస్ట్ {0}కు వచనం జోడించండి"
+
+#. 0: number(a); 1: number(b); 2: c
+#: src/components/LogMessage.svelte
+msgid "Preparing post {0}/{1} for {2}…"
+msgstr "{2} కోసం పోస్ట్ {0}/{1}ను సిద్ధం చేస్తోంది…"
+
+#. 0: number(a); 1: number(b); 2: c
+#: src/components/LogMessage.svelte
+msgid "Uploading images for post {0}/{1} to {2}…"
+msgstr "పోస్ట్ {0}/{1} చిత్రాలను {2}కు అప్‌లోడ్ చేస్తోంది…"
+
+#. 0: number(a); 1: number(b); 2: c
+#: src/components/LogMessage.svelte
+msgid "Posting post {0}/{1} to {2}…"
+msgstr "పోస్ట్ {0}/{1}ను {2}లో ప్రచురిస్తోంది…"
+
+#. 0: number(a); 1: number(b); 2: number(c); 3: number(d)
+#: src/components/LogMessage.svelte
+msgid "Downloading photo {0}/{1} for post {2}/{3}…"
+msgstr "పోస్ట్ {2}/{3} కోసం ఫోటో {0}/{1}ను డౌన్‌లోడ్ చేస్తోంది…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the groups request…"
+msgstr "గ్రూపుల అభ్యర్థన కోసం వేచి ఉంది…"
+
+#: src/components/LogMessage.svelte
+msgid "Groups request captured. Waiting for the page to finish loading…"
+msgstr "గ్రూపుల అభ్యర్థన సంగ్రహించబడింది. పేజీ పూర్తిగా లోడ్ అయ్యే వరకు వేచి ఉంది…"
+
+#: src/components/LogMessage.svelte
+msgid "Browser closed. Loading your groups…"
+msgstr "బ్రౌజర్ మూసివేయబడింది. మీ గ్రూపులు లోడ్ అవుతున్నాయి…"
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Loaded {0} groups…"
+msgstr "{0} గ్రూపులు లోడ్ అయ్యాయి…"
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Restored {0} saved groups. Load groups to refresh the list."
+msgstr "సేవ్ చేసిన {0} గ్రూపులు పునరుద్ధరించబడ్డాయి. జాబితాను రిఫ్రెష్ చేయడానికి గ్రూపులను లోడ్ చేయండి."
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Loaded and saved {0} groups."
+msgstr "{0} గ్రూపులు లోడ్ చేసి సేవ్ చేయబడ్డాయి."
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Loaded {0} groups, but could not save them. Load groups again to retry saving."
+msgstr "{0} గ్రూపులు లోడ్ అయ్యాయి, కానీ సేవ్ చేయలేకపోయింది. సేవ్ చేయడానికి మళ్లీ ప్రయత్నించేందుకు గ్రూపులను తిరిగి లోడ్ చేయండి."
+
+#: src/components/LogMessage.svelte
+msgid "Could not load groups. Check Chrome and try again."
+msgstr "గ్రూపులను లోడ్ చేయలేకపోయింది. Chromeను తనిఖీ చేసి మళ్లీ ప్రయత్నించండి."
+
+#: src/components/LogMessage.svelte
+msgid "Could not read Postika settings"
+msgstr "Postika సెట్టింగ్‌లను చదవలేకపోయింది"
+
+#: src/components/LogMessage.svelte
+msgid "Could not save Postika settings"
+msgstr "Postika సెట్టింగ్‌లను సేవ్ చేయలేకపోయింది"
+
+#: src/components/LogMessage.svelte
+msgid "Set an interval between 60 and 86400 seconds, with the maximum at least the minimum"
+msgstr "60 నుండి 86400 సెకన్ల మధ్య విరామాన్ని సెట్ చేయండి; గరిష్ఠ విలువ కనిష్ఠ విలువ కంటే తక్కువగా ఉండకూడదు"
+
+#: src/components/LogMessage.svelte
+msgid "Rewrite instructions are too long"
+msgstr "తిరగరాసే సూచనలు చాలా పొడవుగా ఉన్నాయి"
+
+#: src/components/LogMessage.svelte
+msgid "Enter a valid Gemini model name"
+msgstr "చెల్లుబాటు అయ్యే Gemini మోడల్ పేరును నమోదు చేయండి"
+
+#: src/components/LogMessage.svelte
+msgid "Enter an account name of 1 to 80 characters"
+msgstr "1 నుండి 80 అక్షరాల ఖాతా పేరును నమోదు చేయండి"
+
+#: src/components/LogMessage.svelte
+msgid "An account profile with this name already exists"
+msgstr "ఈ పేరుతో ఖాతా ప్రొఫైల్ ఇప్పటికే ఉంది"
+
+#: src/components/LogMessage.svelte
+msgid "Account profile was not found"
+msgstr "ఖాతా ప్రొఫైల్ కనుగొనబడలేదు"
+
+#: src/components/LogMessage.svelte
+msgid "Could not update accounts. Please try again."
+msgstr "ఖాతాలను నవీకరించలేకపోయింది. మళ్లీ ప్రయత్నించండి."
+
+#: src/components/LogMessage.svelte
+msgid "Chrome or Chromium was not found. Install a browser to open your Facebook groups"
+msgstr "Chrome లేదా Chromium కనుగొనబడలేదు. మీ Facebook గ్రూపులను తెరవడానికి బ్రౌజర్‌ను ఇన్‌స్టాల్ చేయండి"
+
+#: src/components/LogMessage.svelte
+msgid "Found multiple matching menus on the groups page. Please open the Sort menu in Chrome"
+msgstr "గ్రూపుల పేజీలో సరిపోలే అనేక మెనూలు కనుగొనబడ్డాయి. Chromeలో క్రమబద్ధీకరణ మెనూను తెరవండి"
+
+#: src/components/LogMessage.svelte
+msgid "Found multiple matching radio menus. Please choose a sort option in Chrome"
+msgstr "సరిపోలే అనేక ఎంపిక మెనూలు కనుగొనబడ్డాయి. Chromeలో క్రమబద్ధీకరణ ఎంపికను ఎంచుకోండి"
+
+#: src/components/LogMessage.svelte
+msgid "Could not open the link. Please try again."
+msgstr "లింక్‌ను తెరవలేకపోయింది. మళ్లీ ప్రయత్నించండి."
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "None of the {0} selected groups has an available post composer"
+msgstr "ఎంచుకున్న {0} గ్రూపుల్లో ఏ గ్రూపులోనూ పోస్ట్ ఎడిటర్ అందుబాటులో లేదు"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "{0} is not an image file. Drop individual images, not folders."
+msgstr "{0} చిత్ర ఫైల్ కాదు. ఫోల్డర్లను కాకుండా ఒక్కో చిత్రాన్ని వదలండి."
+
+#: src/components/LogMessage.svelte
+msgid "Could not complete this action. Please try again."
+msgstr "ఈ చర్యను పూర్తి చేయలేకపోయింది. మళ్లీ ప్రయత్నించండి."
+
+#~ msgid "{0}–{1}"
+#~ msgstr ""
+
+#: src/components/UpdateButton.svelte
+msgid "Update available"
+msgstr "నవీకరణ అందుబాటులో ఉంది"
+
+#: src/components/UpdateButton.svelte
+#: src/components/UpdateButton.svelte
+#: src/components/UpdateButton.svelte
+msgid "Updates"
+msgstr "నవీకరణలు"
+
+#: src/components/UpdateButton.svelte
+msgid "Checking for updates…"
+msgstr "నవీకరణల కోసం తనిఖీ చేస్తోంది…"
+
+#: src/components/UpdateButton.svelte
+msgid "Downloading update…"
+msgstr "నవీకరణ డౌన్‌లోడ్ అవుతోంది…"
+
+#: src/components/UpdateButton.svelte
+msgid "Update ready. Stop all posting queues before restarting."
+msgstr "నవీకరణ సిద్ధంగా ఉంది. పునఃప్రారంభించే ముందు అన్ని పోస్టింగ్ క్యూలను ఆపండి."
+
+#: src/components/UpdateButton.svelte
+msgid "Postika is up to date."
+msgstr "Postika తాజా సంస్కరణలో ఉంది."
+
+#: src/components/UpdateButton.svelte
+msgid "Download update"
+msgstr "నవీకరణను డౌన్‌లోడ్ చేయండి"
+
+#: src/components/UpdateButton.svelte
+#: src/components/UpdateButton.svelte
+msgid "Restart to update"
+msgstr "నవీకరించడానికి పునఃప్రారంభించండి"
+
+#: src/components/UpdateButton.svelte
+msgid "Check for updates"
+msgstr "నవీకరణల కోసం తనిఖీ చేయండి"
+
+#: src/components/UpdateButton.svelte
+msgid "Installing update…"
+msgstr "నవీకరణ ఇన్‌స్టాల్ అవుతోంది…"

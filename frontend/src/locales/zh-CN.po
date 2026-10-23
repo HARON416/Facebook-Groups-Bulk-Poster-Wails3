@@ -8,69 +8,59 @@ msgstr ""
 "Plural-Forms: nplurals=1\n"
 "X-Plurals-Order: other\n"
 
-#. 0: minimumInterval === maximumInterval ? minimumInterval \\: `${minimumInterval}–${maximumInterval}`; 1: rewriteState
+#. 0: appliedInterval; 1: rewriteState
 #: src/App.svelte
 msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
 msgstr "已应用保存的默认值：帖子间隔 {0} 秒 · Gemini 重写 {1}。"
 
-#: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Could not restore saved groups. Load groups to refresh the list."
 msgstr "无法恢复已保存的群组。加载群组以刷新列表。"
 
-#: src/App.svelte
-msgid "Choose a future date and time for your post."
-msgstr "选择帖子发布的未来日期和时间。"
+#~ msgid "Choose a future date and time for your post."
+#~ msgstr "选择帖子发布的未来日期和时间。"
 
-#: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Saving your scheduled queue…"
 msgstr "正在保存您的预定队列…"
 
-#: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Opening a selected group to capture fresh posting requests…"
 msgstr "正在打开选定群组以获取新的发布请求…"
 
-#: src/App.svelte
-#: src/App.svelte
 #: src/components/LogMessage.svelte
 msgid "Posting stopped."
 msgstr "发布已停止。"
 
-#: src/App.svelte
 #: src/components/LogMessage.svelte
 msgid "Could not read a selected image"
 msgstr "无法读取所选图片"
 
+#. 0: a
 #. 0: image.file.name
-#. 0: missingNames
-#. 0: unreadableNames
-#. 0: image.file.name
-#: src/App.svelte
-#: src/App.svelte
-#: src/components/PostComposer.svelte
+#: src/components/LogMessage.svelte
 #: src/components/PostComposer.svelte
 msgid "Could not read {0}"
 msgstr "无法读取 {0}"
 
-#: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Posting finished."
 msgstr "发布完成。"
 
-#. 0: scheduleLabel(scheduledFor)
 #. 0: date
-#: src/App.svelte
 #: src/components/LogMessage.svelte
 msgid "Scheduled for {0}. Keep Postika open and your computer awake."
 msgstr "已安排在 {0} 发布。请保持 Postika 打开并让计算机保持唤醒。"
 
-#: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Could not restore this account’s draft. New edits will stay available while Postika is open."
 msgstr "无法恢复此账户的草稿。只要 Postika 打开，新编辑内容仍可使用。"
 
-#: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Could not add the dropped images. Try browsing for them instead."
 msgstr "无法添加拖入的图片。请尝试通过浏览文件来添加。"
 
-#: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Could not save this account’s draft to disk. Keep Postika open to retain your edits."
 msgstr "无法将此账户的草稿保存到磁盘。保持 Postika 打开以保留您的编辑。"
 
@@ -100,6 +90,7 @@ msgid "Opening…"
 msgstr "正在打开…"
 
 #: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Loading…"
 msgstr "正在加载…"
 
@@ -210,6 +201,8 @@ msgstr "时区：{0}。保持 Postika 打开并让计算机保持唤醒。发布
 
 #: src/App.svelte
 #: src/Workspace.svelte
+#: src/components/FacebookPageDialog.svelte
+#: src/components/FetchedPostCard.svelte
 msgid "Cancel"
 msgstr "取消"
 
@@ -440,18 +433,18 @@ msgstr "减少分钟"
 msgid "Choose a date and time in the future."
 msgstr "选择未来的日期和时间。"
 
-#. 0: rejected.join(', ')
-#: src/components/PostComposer.svelte
+#. 0: a
+#: src/components/LogMessage.svelte
 msgid "Unsupported files: {0}. Choose JPG, PNG, WebP, or GIF images."
 msgstr "不支持的文件：{0}。请选择 JPG、PNG、WebP 或 GIF 图片。"
 
-#. 0: image.file.name
-#: src/components/PostComposer.svelte
+#. 0: a
+#: src/components/LogMessage.svelte
 msgid "Could not preview {0}. Please choose another image."
 msgstr "无法预览 {0}。请选择另一张图片。"
 
-#. 0: images[index].file.name; 1: index + 1; 2: images.length
-#: src/components/PostComposer.svelte
+#. 0: a; 1: number(b); 2: number(c)
+#: src/components/LogMessage.svelte
 msgid "{0} moved to position {1} of {2}."
 msgstr "{0} 移动到第 {2} 个位置的 {1}。"
 
@@ -515,7 +508,7 @@ msgstr "移除 {0}"
 msgid "Drop more images here to add them."
 msgstr "将更多图片拖到此处以添加。"
 
-#. 0: error
+#. 0: logMessage(error, true)
 #: src/components/PostEditor.svelte
 msgid "Could not edit the post: {0}"
 msgstr "无法编辑帖子：{0}"
@@ -902,7 +895,7 @@ msgstr "用设置中保存的值替换本次运行的发布间隔、Gemini 重�
 msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
 msgstr "初始默认值：60–120 秒，Gemini 重写关闭，无重写指令。保存您自己的偏好在设置中以进行更改。"
 
-#: src/components/Settings.svelte
+#: src/components/LogMessage.svelte
 msgid "Settings saved. New runs can use these defaults."
 msgstr "设置已保存。新运行可以使用这些默认值。"
 
@@ -985,7 +978,7 @@ msgstr "即将到来"
 msgid "Step {0} of {1}: {2}"
 msgstr "步骤 {0} / {1}：{2}"
 
-#: src/components/WindowControls.svelte
+#: src/components/LogMessage.svelte
 msgid "Could not change the window. Please try again."
 msgstr "无法更改窗口。请重试。"
 
@@ -1044,10 +1037,12 @@ msgid "The browser is closed. It will reopen when you click Post."
 msgstr "浏览器已关闭。点击发布时将重新打开。"
 
 #: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Checking Facebook login"
 msgstr "正在检查 Facebook 登录"
 
 #: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Finish signing in or any verification prompts in Chrome. Your login will be detected automatically."
 msgstr "在 Chrome 中完成登录或任何验证提示。您的登录信息将自动被检测。"
 
@@ -1134,7 +1129,7 @@ msgstr "下午"
 msgid "Evening"
 msgstr "晚上"
 
-#: src/components/LanguageMenu.svelte
+#: src/components/LogMessage.svelte
 msgid "Could not change the language. Please try again."
 msgstr "无法更改语言。请重试。"
 
@@ -1287,8 +1282,10 @@ msgstr "默认个人资料"
 msgid "Color themes"
 msgstr "配色主题"
 
+#: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
 #: src/components/ThemePicker.svelte
+#: src/components/UpdateButton.svelte
 msgid "Close"
 msgstr "关闭"
 
@@ -1760,6 +1757,7 @@ msgid "This group has reached its pending-content limit."
 msgstr "此群组已达到待定内容限制。"
 
 #: src/components/LogMessage.svelte
+#: src/components/LogMessage.svelte
 #: src/components/UsageGuide.svelte
 msgid "This post was submitted, but confirmation is uncertain. Check Facebook before retrying."
 msgstr "此帖子已提交，但确认不确定。重试前请检查 Facebook。"
@@ -1867,8 +1865,10 @@ msgstr "Gemini重写失败（HTTP {0}）。请检查密钥、模型和账户配�
 msgid " (Code {0})"
 msgstr "（代码 {0}）"
 
+#: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
-#: src/components/PostingLogView.svelte
+#: src/components/LocalizedFeedback.svelte
+#: src/components/PostEditor.svelte
 #: src/components/UsageGuide.svelte
 msgid "Debug details"
 msgstr "调试详情"
@@ -2021,3 +2021,373 @@ msgstr "无需添加其他账户即可使用默认账户。在第 2 步选择加
 #: src/components/FeaturesCard.svelte
 msgid "Features & How to Use"
 msgstr "功能与使用指南"
+
+#~ msgid "Or post from any Facebook page"
+#~ msgstr ""
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Or click here to fetch posts from any Facebook page"
+msgstr "或点击此处获取任意 Facebook 公共主页的帖子"
+
+#: src/components/LogMessage.svelte
+msgid "Enter a Facebook page URL, such as https://web.facebook.com/swiftlineMotors"
+msgstr "请输入 Facebook 公共主页网址，例如 https://web.facebook.com/swiftlineMotors"
+
+#~ msgid "Fetch Facebook posts"
+#~ msgstr ""
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Decrease number of posts"
+msgstr "减少帖子数量"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Increase number of posts"
+msgstr "增加帖子数量"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Facebook page URL"
+msgstr "Facebook 公共主页网址"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Number of posts to fetch"
+msgstr "要获取的帖子数量"
+
+#~ msgid "Done"
+#~ msgstr ""
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Fetch posts from a Facebook page"
+msgstr "从 Facebook 公共主页获取帖子"
+
+#: src/components/LogMessage.svelte
+msgid "Could not check fetch progress. Close this dialog and try again."
+msgstr "无法检查获取进度。请关闭此对话框后重试。"
+
+#: src/components/LogMessage.svelte
+msgid "Could not stop fetching. Try again."
+msgstr "无法停止获取。请重试。"
+
+#: src/components/LogMessage.svelte
+msgid "Fetching stopped."
+msgstr "已停止获取。"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Facebook page fetch options"
+msgstr "Facebook 公共主页帖子获取选项"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Posts fetched"
+msgstr "已获取的帖子"
+
+#: src/components/PostComposer.svelte
+msgid "Fetched posts"
+msgstr "已获取的帖子"
+
+#: src/components/FetchedPostCard.svelte
+msgid "Post without text"
+msgstr "无文字的帖子"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Fetching…"
+msgstr "正在获取…"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Fetch"
+msgstr "获取"
+
+#: src/components/PostComposer.svelte
+msgid "Fetched posts <0/>"
+msgstr "已获取的帖子 <0/>"
+
+#: src/components/PostComposer.svelte
+msgid "Write a post instead"
+msgstr "改为撰写帖子"
+
+#~ msgid "No posts were available from this Facebook page."
+#~ msgstr ""
+
+#: src/App.svelte
+msgid "Review the posts fetched from your Facebook page."
+msgstr "请检查从 Facebook 公共主页获取的帖子。"
+
+#~ msgid "Post removed."
+#~ msgstr ""
+
+#: src/components/PostComposer.svelte
+msgid "No posts to show. Fetch posts or write a post instead."
+msgstr "没有可显示的帖子。请获取帖子或撰写新帖子。"
+
+#. 0: index + 1
+#: src/components/FetchedPostCard.svelte
+msgid "Post {0}"
+msgstr "帖子 {0}"
+
+#. 0: index + 1
+#: src/components/FetchedPostCard.svelte
+msgid "Edit post {0}"
+msgstr "编辑帖子 {0}"
+
+#: src/components/FetchedPostCard.svelte
+msgid "Edit"
+msgstr "编辑"
+
+#. 0: index + 1
+#: src/components/FetchedPostCard.svelte
+msgid "Delete post {0}"
+msgstr "删除帖子 {0}"
+
+#: src/components/FetchedPostCard.svelte
+msgid "Delete"
+msgstr "删除"
+
+#: src/components/FetchedPostCard.svelte
+msgid "Post text"
+msgstr "帖子文字"
+
+#. 0: imageIndex + 1; 1: index + 1
+#: src/components/FetchedPostCard.svelte
+msgid "Remove image {0} from post {1}"
+msgstr "从帖子 {1} 中移除图片 {0}"
+
+#: src/components/FetchedPostCard.svelte
+msgid "Save changes"
+msgstr "保存更改"
+
+#: src/components/LogMessage.svelte
+msgid "Could not fetch Facebook posts. Check Chrome and try again."
+msgstr "无法获取 Facebook 帖子。请检查 Chrome 后重试。"
+
+#: src/components/LogMessage.svelte
+msgid "Could not load full-size photos. Fetch the posts again."
+msgstr "无法加载完整尺寸的照片。请重新获取帖子。"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture Facebook requests. Check Chrome and fetch again."
+msgstr "无法捕获 Facebook 请求。请检查 Chrome 后重新获取。"
+
+#: src/components/LogMessage.svelte
+msgid "Enter a positive whole number of posts to fetch"
+msgstr "请输入要获取的帖子数量，必须为正整数"
+
+#: src/components/LogMessage.svelte
+msgid "Wait for posting to finish before fetching Facebook posts"
+msgstr "请等待发布完成后再获取 Facebook 帖子"
+
+#: src/components/LogMessage.svelte
+msgid "Finish loading groups before fetching Facebook posts"
+msgstr "请先完成群组加载，再获取 Facebook 帖子"
+
+#: src/components/LogMessage.svelte
+msgid "Fetch at least one post before posting"
+msgstr "发布前请至少获取一条帖子"
+
+#: src/components/LogMessage.svelte
+msgid "Capturing Facebook posts…"
+msgstr "正在捕获 Facebook 帖子…"
+
+#: src/components/LogMessage.svelte
+msgid "Capturing full-size photos…"
+msgstr "正在捕获完整尺寸的照片…"
+
+#: src/components/LogMessage.svelte
+msgid "Reloading the photo page…"
+msgstr "正在重新加载照片页面…"
+
+#: src/components/LogMessage.svelte
+msgid "Opening the next photo…"
+msgstr "正在打开下一张照片…"
+
+#: src/components/LogMessage.svelte
+msgid "Fetching posts and full-size photos…"
+msgstr "正在获取帖子和完整尺寸的照片…"
+
+#~ msgid "Facebook"
+#~ msgstr ""
+
+#. 0: number(a); 1: number(b)
+#: src/components/LogMessage.svelte
+msgid "Fetched {0} of {1} posts…"
+msgstr "已获取 {0}/{1} 条帖子…"
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Fetched {0} posts."
+msgstr "已获取 {0} 条帖子。"
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Fetched {0} posts. No more posts are available."
+msgstr "已获取 {0} 条帖子。没有更多可用的帖子。"
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Add text to fetched post {0} before posting"
+msgstr "发布前请为已获取的帖子 {0} 添加文字"
+
+#. 0: number(a); 1: number(b); 2: c
+#: src/components/LogMessage.svelte
+msgid "Preparing post {0}/{1} for {2}…"
+msgstr "正在为 {2} 准备帖子 {0}/{1}…"
+
+#. 0: number(a); 1: number(b); 2: c
+#: src/components/LogMessage.svelte
+msgid "Uploading images for post {0}/{1} to {2}…"
+msgstr "正在将帖子 {0}/{1} 的图片上传至 {2}…"
+
+#. 0: number(a); 1: number(b); 2: c
+#: src/components/LogMessage.svelte
+msgid "Posting post {0}/{1} to {2}…"
+msgstr "正在向 {2} 发布帖子 {0}/{1}…"
+
+#. 0: number(a); 1: number(b); 2: number(c); 3: number(d)
+#: src/components/LogMessage.svelte
+msgid "Downloading photo {0}/{1} for post {2}/{3}…"
+msgstr "正在下载帖子 {2}/{3} 的照片 {0}/{1}…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the groups request…"
+msgstr "正在等待群组请求…"
+
+#: src/components/LogMessage.svelte
+msgid "Groups request captured. Waiting for the page to finish loading…"
+msgstr "已捕获群组请求。正在等待页面加载完成…"
+
+#: src/components/LogMessage.svelte
+msgid "Browser closed. Loading your groups…"
+msgstr "浏览器已关闭。正在加载你的群组…"
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Loaded {0} groups…"
+msgstr "已加载 {0} 个群组…"
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Restored {0} saved groups. Load groups to refresh the list."
+msgstr "已恢复 {0} 个已保存的群组。加载群组以刷新列表。"
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Loaded and saved {0} groups."
+msgstr "已加载并保存 {0} 个群组。"
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Loaded {0} groups, but could not save them. Load groups again to retry saving."
+msgstr "已加载 {0} 个群组，但未能保存。请重新加载群组以再次尝试保存。"
+
+#: src/components/LogMessage.svelte
+msgid "Could not load groups. Check Chrome and try again."
+msgstr "无法加载群组。请检查 Chrome 后重试。"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read Postika settings"
+msgstr "无法读取 Postika 设置"
+
+#: src/components/LogMessage.svelte
+msgid "Could not save Postika settings"
+msgstr "无法保存 Postika 设置"
+
+#: src/components/LogMessage.svelte
+msgid "Set an interval between 60 and 86400 seconds, with the maximum at least the minimum"
+msgstr "请设置 60 到 86400 秒之间的间隔，且最大值不得小于最小值"
+
+#: src/components/LogMessage.svelte
+msgid "Rewrite instructions are too long"
+msgstr "改写指令过长"
+
+#: src/components/LogMessage.svelte
+msgid "Enter a valid Gemini model name"
+msgstr "请输入有效的 Gemini 模型名称"
+
+#: src/components/LogMessage.svelte
+msgid "Enter an account name of 1 to 80 characters"
+msgstr "请输入 1 到 80 个字符的账号名称"
+
+#: src/components/LogMessage.svelte
+msgid "An account profile with this name already exists"
+msgstr "已存在同名的账号配置"
+
+#: src/components/LogMessage.svelte
+msgid "Account profile was not found"
+msgstr "未找到账号配置"
+
+#: src/components/LogMessage.svelte
+msgid "Could not update accounts. Please try again."
+msgstr "无法更新账号。请重试。"
+
+#: src/components/LogMessage.svelte
+msgid "Chrome or Chromium was not found. Install a browser to open your Facebook groups"
+msgstr "未找到 Chrome 或 Chromium。请安装浏览器以打开你的 Facebook 群组"
+
+#: src/components/LogMessage.svelte
+msgid "Found multiple matching menus on the groups page. Please open the Sort menu in Chrome"
+msgstr "在群组页面找到多个匹配的菜单。请在 Chrome 中打开排序菜单"
+
+#: src/components/LogMessage.svelte
+msgid "Found multiple matching radio menus. Please choose a sort option in Chrome"
+msgstr "找到多个匹配的单选菜单。请在 Chrome 中选择排序选项"
+
+#: src/components/LogMessage.svelte
+msgid "Could not open the link. Please try again."
+msgstr "无法打开链接。请重试。"
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "None of the {0} selected groups has an available post composer"
+msgstr "所选的 {0} 个群组均没有可用的帖子编辑器"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "{0} is not an image file. Drop individual images, not folders."
+msgstr "{0} 不是图片文件。请拖放单独的图片，而不是文件夹。"
+
+#: src/components/LogMessage.svelte
+msgid "Could not complete this action. Please try again."
+msgstr "无法完成此操作。请重试。"
+
+#~ msgid "{0}–{1}"
+#~ msgstr ""
+
+#: src/components/UpdateButton.svelte
+msgid "Update available"
+msgstr "有可用更新"
+
+#: src/components/UpdateButton.svelte
+#: src/components/UpdateButton.svelte
+#: src/components/UpdateButton.svelte
+msgid "Updates"
+msgstr "更新"
+
+#: src/components/UpdateButton.svelte
+msgid "Checking for updates…"
+msgstr "正在检查更新…"
+
+#: src/components/UpdateButton.svelte
+msgid "Downloading update…"
+msgstr "正在下载更新…"
+
+#: src/components/UpdateButton.svelte
+msgid "Update ready. Stop all posting queues before restarting."
+msgstr "更新已就绪。重新启动前请停止所有发帖队列。"
+
+#: src/components/UpdateButton.svelte
+msgid "Postika is up to date."
+msgstr "Postika 已是最新版本。"
+
+#: src/components/UpdateButton.svelte
+msgid "Download update"
+msgstr "下载更新"
+
+#: src/components/UpdateButton.svelte
+#: src/components/UpdateButton.svelte
+msgid "Restart to update"
+msgstr "重启以更新"
+
+#: src/components/UpdateButton.svelte
+msgid "Check for updates"
+msgstr "检查更新"
+
+#: src/components/UpdateButton.svelte
+msgid "Installing update…"
+msgstr "正在安装更新…"

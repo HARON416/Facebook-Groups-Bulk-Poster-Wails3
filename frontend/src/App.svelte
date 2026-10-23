@@ -1,16 +1,17 @@
 <script lang="ts">
-  import { getLocale } from './lib/i18n.svelte';
+  import { logMessage } from './components/LogMessage.svelte';
+  import LocalizedFeedback from './components/LocalizedFeedback.svelte';
   import StepProgress from './components/StepProgress.svelte';
   import PostComposer, { type PostImage } from './components/PostComposer.svelte';
   import { onDestroy, onMount, tick, untrack } from 'svelte';
-  import type { AccountProfile } from '../bindings/postika';
+  import type { AccountProfile, FacebookPagePost } from '../bindings/postika';
   import { createAccountService } from './lib/accounts';
   import { Events } from '@wailsio/runtime';
   import { readDraft, writeDraft, type AccountDraft } from './lib/drafts';
-  let { profile, active = true, connect = false } = $props<{ profile: AccountProfile; active?: boolean; connect?: boolean }>();
+  let { profile, active = true, connect = false, onGroupsLoadingChange } = $props<{ profile: AccountProfile; active?: boolean; connect?: boolean; onGroupsLoadingChange?: (loading: boolean) => void }>();
   const GroupsService = untrack(() => createAccountService(profile.id));
   const { GetSettings: getSettings, OpenSettings: openSettings, PublishRichPostWithOptions: publish } = GroupsService;
-  let draftReady = $state(false), draftError = $state(''), imageDropMessage = $state('');
+  let draftReady = $state(false), draftError = $state(''), imageDropMessage = $state<string | string[]>('');
   import PostingOptionsForm from './components/PostingOptionsForm.svelte';
   import DateTimePicker from './components/DateTimePicker.svelte';
   import SavedDefaultsInfo from './components/SavedDefaultsInfo.svelte';
@@ -27,19 +28,20 @@
   let currentStep = $state(0);
   let minimumInterval = $state(60), maximumInterval = $state(120), rewrite = $state(false), instructions = $state('');
   let keyConfigured = $state(false), settingsError = $state('');
-  let loadingDefaults = $state(false), defaultsMessage = $state('');
+  let loadingDefaults = $state(false);
+  let appliedDefaults = $state<{ minimum: number; maximum: number; rewrite: boolean } | null>(null);
+  const rewriteState = $derived(appliedDefaults?.rewrite ? /* @wc-include */ 'On' : /* @wc-include */ 'Off');
+  const appliedInterval = $derived(appliedDefaults ? appliedDefaults.minimum === appliedDefaults.maximum ? appliedDefaults.minimum : /* @wc-ignore */ `${appliedDefaults.minimum}–${appliedDefaults.maximum}` : '');
+  const defaultsMessage = $derived(appliedDefaults ? /* @wc-include */ `Saved defaults applied: ${appliedInterval} seconds between posts · Gemini rewrite ${rewriteState}.` : '');
   let savedDefaults = $state<AppSettings | null>(null);
   const validSettings = $derived(Number.isInteger(minimumInterval) && minimumInterval >= 60 && Number.isInteger(maximumInterval) && maximumInterval >= minimumInterval && maximumInterval <= 86400 && (!rewrite || keyConfigured));
   async function loadSettings(defaults = false, feedback = false, origin?: ConfettiOrigin) {
     if (defaults) loadingDefaults = true;
-    if (feedback) { defaultsMessage = ''; settingsError = ''; }
+    if (feedback) { appliedDefaults = null; settingsError = ''; }
     try {
       const settings = await getSettings(); savedDefaults = settings; keyConfigured = settings.keyConfigured; settingsError = '';
       if (defaults) { minimumInterval = settings.minimumInterval; maximumInterval = settings.maximumInterval; rewrite = settings.rewrite; instructions = settings.instructions; }
-      if (feedback) {
-        const rewriteState = rewrite ? /* @wc-include */ 'On' : /* @wc-include */ 'Off';
-        defaultsMessage = `Saved defaults applied: ${minimumInterval === maximumInterval ? minimumInterval : `${minimumInterval}–${maximumInterval}`} seconds between posts · Gemini rewrite ${rewriteState}.`;
-      }
+      if (feedback) appliedDefaults = { minimum: minimumInterval, maximum: maximumInterval, rewrite };
       if (feedback && origin) void confetti(origin);
     } catch (cause) { savedDefaults = null; settingsError = cause instanceof Error ? cause.message : String(cause); }
     finally { if (defaults) loadingDefaults = false; }
@@ -47,6 +49,7 @@
   let body = $state('');
   let bodyHTML = $state(''), bodyState = $state('');
   let images = $state<PostImage[]>([]);
+  let fetchedPosts = $state<FacebookPagePost[] | null>(null);
   let groupLoadMessage = $state('');
   let openingGroups = $state(false);
   let groupLoadFailed = $state(false);
@@ -73,16 +76,14 @@
     scheduleOpen = true;
     void tick().then(() => document.getElementById('schedule-time')?.focus());
   }
-  function scheduleLabel(value: string) {
-    return new Date(value).toLocaleString(getLocale(), { dateStyle: 'medium', timeStyle: 'short' });
-  }
+
   const postingActive = $derived(openingPost || backendPostingActive);
   let postMessage = $state('');
   let postFailed = $state(false);
   let postingFinished = $state(false);
   let postingCompleted = $state(false);
   let submittedDraft = $state('');
-  const currentDraft = $derived(JSON.stringify([body, bodyState, images.map((image) => image.id), selectedGroupIds]));
+  const currentDraft = $derived(JSON.stringify([body, bodyState, images.map((image) => image.id), fetchedPosts, selectedGroupIds]));
   $effect(() => {
     if (!openingPost && postingFinished && currentDraft !== submittedDraft) {
       postingFinished = false;
@@ -145,7 +146,11 @@
   };
   const loginInfo = $derived(loginLabels[loginState] ?? loginLabels.checking);
   let stepHeading = $state<HTMLHeadingElement>();
-  const hasCompletePost = $derived(body.trim().length > 0 && images.length > 0 && images.every(image => !image.unavailable));
+  const groupsBusy = $derived(openingGroups || groupsLoadState === 'loading' || (groupsLoadState === 'waiting' && loginState !== 'browser_closed'));
+  $effect(() => { onGroupsLoadingChange?.(groupsBusy); });
+  const hasCompletePost = $derived(fetchedPosts !== null
+    ? fetchedPosts.length > 0 && fetchedPosts.every(post => post.text.trim().length > 0)
+    : body.trim().length > 0 && images.length > 0 && images.every(image => !image.unavailable));
   const canContinue = $derived(draftReady && (currentStep === 0
     ? hasCompletePost
     : currentStep === 1 && selectedGroupIds.length > 0));
@@ -157,17 +162,18 @@
       if (generation !== loadGeneration || openingGroups || groupsBrowserOpened) return;
       groups = status.groups ?? [];
       groupsLoadState = status.state;
+      if (status.state === 'waiting' || status.state === 'loading') groupsBrowserOpened = true;
       groupLoadFailed = status.state === 'error';
       groupLoadMessage = status.message;
     } catch {
       if (generation === loadGeneration && !openingGroups && !groupsBrowserOpened) {
-        groupLoadMessage = 'Could not restore saved groups. Load groups to refresh the list.';
+        groupLoadMessage = /* @wc-ignore */ 'Could not restore saved groups. Load groups to refresh the list.';
       }
     }
   }
 
   async function loadGroups() {
-    if (postingActive || openingGroups || groupsLoadState === 'loading') return;
+    if (postingActive || groupsBusy) return;
     loadGeneration++;
     openingGroups = true;
     groupLoadFailed = false;
@@ -241,13 +247,13 @@
   }
 
   async function openPost(event: Event, scheduled = false) {
-    if (postingActive || selectedGroupIds.length === 0 || !hasCompletePost) return;
+    if (postingActive || groupsBusy || selectedGroupIds.length === 0 || !hasCompletePost) return;
     let scheduledAt = '';
     if (scheduled) {
       const date = new Date(scheduleTime);
       if (!Number.isFinite(date.getTime()) || date.getTime() <= Date.now()) {
         postFailed = true;
-        postMessage = 'Choose a future date and time for your post.';
+        postMessage = /* @wc-ignore */ 'Choose a future date and time for your post.';
         return;
       }
       scheduledAt = date.toISOString();
@@ -258,26 +264,31 @@
     if (event instanceof MouseEvent) void confetti(clickOrigin(event));
     stopRequested = false;
     postFailed = false;
-    postMessage = scheduled ? 'Saving your scheduled queue…' : 'Opening a selected group to capture fresh posting requests…';
+    postMessage = scheduled ? /* @wc-ignore */ 'Saving your scheduled queue…' : /* @wc-ignore */ 'Opening a selected group to capture fresh posting requests…';
     try {
       await GroupsService.OpenPostingLogs();
-      if (stopRequested) { postMessage = 'Posting stopped.'; return; }
-      const uploads = await Promise.all(images.map((image) => new Promise<{ name: string; data: string }>((resolve, reject) => {
+      if (stopRequested) { postMessage = /* @wc-ignore */ 'Posting stopped.'; return; }
+      const postsForRun = fetchedPosts?.map(post => ({id: post.id, text: post.text, url: post.url, images: [...post.images ?? []]})) ?? null;
+      const uploads = await Promise.all((postsForRun === null ? images : []).map((image) => new Promise<{ name: string; data: string }>((resolve, reject) => {
         const reader = new FileReader();
         reader.onload = () => {
-          if (typeof reader.result !== 'string') { reject(new Error('Could not read a selected image')); return; }
+          if (typeof reader.result !== 'string') { reject(new Error(/* @wc-ignore */ 'Could not read a selected image')); return; }
           resolve({ name: image.file.name, data: reader.result.slice(reader.result.indexOf(',') + 1) });
         };
-        reader.onerror = () => reject(new Error(`Could not read ${image.file.name}`));
+        reader.onerror = () => reject(new Error(/* @wc-ignore */ `Could not read ${image.file.name}`));
         reader.readAsDataURL(image.file);
       })));
-      if (stopRequested) { postMessage = 'Posting stopped.'; return; }
+      if (stopRequested) { postMessage = /* @wc-ignore */ 'Posting stopped.'; return; }
       scheduleOpen = false;
       const options = { minimumInterval, maximumInterval, rewrite, instructions };
-      const result = scheduled
+      const result = postsForRun !== null
+        ? scheduled
+          ? await GroupsService.ScheduleFacebookPostsWithOptions([...selectedGroupIds], postsForRun, options, scheduledAt)
+          : await GroupsService.PublishFacebookPostsWithOptions([...selectedGroupIds], postsForRun, options)
+        : scheduled
         ? await GroupsService.ScheduleRichPostWithOptions([...selectedGroupIds], body, bodyHTML, uploads, options, scheduledAt)
         : await publish([...selectedGroupIds], body, bodyHTML, uploads, options);
-      postMessage = result?.message ?? 'Posting finished.';
+      postMessage = result?.message ?? /* @wc-ignore */ 'Posting finished.';
       postFailed = result?.state === 'stopped';
       postingCompleted = result?.state === 'complete';
       postingFinished = postingCompleted || (result?.results?.length ?? 0) > 0;
@@ -306,7 +317,7 @@
       if (stopRequested && result.active && result.state !== 'stopping') await GroupsService.CancelPosting();
       if (result.active) {
         scheduledFor = result.state === 'scheduled' ? result.scheduledAt : '';
-        postMessage = scheduledFor ? `Scheduled for ${scheduleLabel(scheduledFor)}. Keep Postika open and your computer awake.` : result.message;
+        postMessage = result.message;
       }
     } catch { /* The main posting call reports browser and connection errors. */ }
     finally { checkingPostStatus = false; }
@@ -321,15 +332,16 @@
         if (disposed) return;
         if (draft) {
           body = draft.body; bodyHTML = draft.bodyHTML; bodyState = draft.bodyState;
+          fetchedPosts = draft.fetchedPosts ?? null;
           images = draft.images.map((image) => ({ ...image, url: image.unavailable ? '' : URL.createObjectURL(image.file) }));
           const missing = images.filter(image => image.unavailable);
           const missingNames = missing.map(image => image.file.name).join(', ');
-          if (missing.length) imageDropMessage = /* @wc-include */ `Could not read ${missingNames}`;
+          if (missing.length) imageDropMessage = /* @wc-ignore */ `Could not read ${missingNames}`;
           selectedGroupIds = draft.selectedGroupIds; currentStep = missing.length ? 0 : draft.currentStep;
           minimumInterval = draft.minimumInterval; maximumInterval = draft.maximumInterval;
           rewrite = draft.rewrite; instructions = draft.instructions; scheduleTime = draft.scheduleTime;
         }
-      } catch { draftError = 'Could not restore this account’s draft. New edits will stay available while Postika is open.'; }
+      } catch { draftError = /* @wc-ignore */ 'Could not restore this account’s draft. New edits will stay available while Postika is open.'; }
       if (disposed) return;
       await restoreGroups();
       draftReady = true;
@@ -348,8 +360,8 @@
           const addedImage = { id: replacement < 0 ? crypto.randomUUID() : images[replacement].id, file, url: URL.createObjectURL(file) };
           images = replacement < 0 ? [...images, addedImage] : images.map((entry, i) => i === replacement ? addedImage : entry);
         }
-        imageDropMessage = result.errors.join(' ');
-      } catch { imageDropMessage = 'Could not add the dropped images. Try browsing for them instead.'; }
+        imageDropMessage = result.errors;
+      } catch { imageDropMessage = /* @wc-ignore */ 'Could not add the dropped images. Try browsing for them instead.'; }
     });
     const settingsFocus = () => { if (active) void loadSettings(); };
     window.addEventListener('focus', settingsFocus);
@@ -359,6 +371,7 @@
   });
 
   async function navigate(step: number, event: MouseEvent) {
+    if (groupsBusy || postingActive) return;
     const origin = clickOrigin(event);
     currentStep = step;
     await tick();
@@ -371,12 +384,13 @@
     // Read reactive fields now; draft storage copies attachment bytes to IndexedDB.
     const draft: AccountDraft = {
       body, bodyHTML, bodyState, images: images.map(({ id, file, unavailable, recoveryKey }) => ({ id, file, unavailable, recoveryKey })),
+      fetchedPosts: fetchedPosts?.map(({ id, text, url, images }) => ({ id, text, url, images: [...images ?? []] })) ?? null,
       selectedGroupIds: [...selectedGroupIds], currentStep, minimumInterval, maximumInterval,
       rewrite, instructions, scheduleTime,
     };
     // Queue each edit immediately so a quick switch or close cannot lose a debounce.
     void writeDraft(profile.id, draft).then(() => { draftError = ''; }).catch(() => {
-      draftError = 'Could not save this account’s draft to disk. Keep Postika open to retain your edits.';
+      draftError = /* @wc-ignore */ 'Could not save this account’s draft to disk. Keep Postika open to retain your edits.';
     });
   });
 
@@ -389,25 +403,25 @@
     <StepProgress {steps} {currentStep} completed={postingCompleted} />
   </header>
   <main aria-labelledby="step-heading" data-step-scroll>
-    {#if draftError}<p class="group-status error" role="alert">{draftError}</p>{/if}
+    {#if draftError}<p class="group-status error" role="alert">{logMessage(draftError)}</p>{/if}
     <div class="step-content">
       <div class="step-heading">
         <p class="eyebrow">STEP {currentStep + 1} OF {steps.length}</p>
-        <h1 id="step-heading" bind:this={stepHeading} tabindex="-1">{steps[currentStep].title}</h1>
+        <h1 class="ui-title" id="step-heading" bind:this={stepHeading} tabindex="-1">{steps[currentStep].title}</h1>
         <p class="step-intro">
-          {currentStep === 0 ? 'Start with your message. Add images to bring it to life.' : currentStep === 1 ? 'Choose the groups you want to share your post with.' : 'Set preferences, then post now or schedule'}
+          {currentStep === 0 ? fetchedPosts === null ? 'Start with your message. Add images to bring it to life.' : 'Review the posts fetched from your Facebook page.' : currentStep === 1 ? 'Choose the groups you want to share your post with.' : 'Set preferences, then post now or schedule'}
         </p>
       </div>
 
       {#if !draftReady}
         <p class="group-status" role="status">Restoring account workspace…</p>
       {:else if currentStep === 0}
-        <PostComposer profileID={profile.id} bind:message={imageDropMessage} bind:body bind:bodyHTML bind:bodyState bind:images />
+        <PostComposer profileID={profile.id} bind:message={imageDropMessage} bind:body bind:bodyHTML bind:bodyState bind:images bind:fetchedPosts />
       {:else if currentStep === 1}
         <div class="groups-toolbar">
           <h2>Groups</h2>
-          <button type="button" class="load-groups" disabled={postingActive || openingGroups || groupsLoadState === 'loading'} aria-busy={openingGroups || groupsLoadState === 'loading'} onclick={loadGroups}>
-            {openingGroups ? 'Opening…' : groupsLoadState === 'loading' ? 'Loading…' : 'Load groups'}
+          <button type="button" class="load-groups" disabled={postingActive || groupsBusy} aria-busy={groupsBusy} onclick={loadGroups}>
+            {openingGroups ? 'Opening…' : groupsBusy ? 'Loading…' : 'Load groups'}
           </button>
         </div>
         {#if groupsBrowserOpened}
@@ -419,12 +433,12 @@
           </div>
         {/if}
         {#if groups.length > 0}
-          <p class="group-status" class:error={groupLoadFailed} role="status">{groupLoadMessage}</p>
+          <div class="group-status" class:error={groupLoadFailed} role="status"><LocalizedFeedback message={groupLoadMessage} technical={groupLoadFailed} /></div>
           <div class="group-search">
             <label class="visuallyhidden" for="group-search">Search groups</label>
-            <input id="group-search" type="text" placeholder="Search groups…" autocomplete="off" bind:value={groupQuery} bind:this={searchInput} onkeydown={(event) => { if (event.key === 'Escape') clearGroupSearch(); }} />
+            <input id="group-search" disabled={groupsBusy} type="text" placeholder="Search groups…" autocomplete="off" bind:value={groupQuery} bind:this={searchInput} onkeydown={(event) => { if (event.key === 'Escape') clearGroupSearch(); }} />
             {#if groupQuery}
-              <button class="clear-search" type="button" aria-label="Clear group search" onclick={clearGroupSearch}>
+              <button class="clear-search" disabled={groupsBusy} type="button" aria-label="Clear group search" onclick={clearGroupSearch}>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 256" aria-hidden="true"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z" /></svg>
               </button>
             {/if}
@@ -432,18 +446,18 @@
           <div class="group-selection-tools">
             <p class="selection-count" aria-live="polite"><span>{selectedGroupIds.length} selected</span>{#if groupQuery.trim()} · <span>{visibleGroups.length} shown</span>{/if}</p>
             <div class="bulk-actions">
-              <button type="button" disabled={allGroupsSelected || groupsLoadState === 'loading'} onclick={() => { selectedGroupIds = groups.map((group) => group.id); }}>Select all groups</button>
-              <button type="button" disabled={selectedGroupIds.length === 0} onclick={() => { selectedGroupIds = []; }}>Unselect all groups</button>
+              <button type="button" disabled={groupsBusy || allGroupsSelected} onclick={() => { selectedGroupIds = groups.map((group) => group.id); }}>Select all groups</button>
+              <button type="button" disabled={groupsBusy || selectedGroupIds.length === 0} onclick={() => { selectedGroupIds = []; }}>Unselect all groups</button>
             </div>
           </div>
           {#if searchingGroups}<p class="search-message" role="status">Searching…</p>
-          {:else if searchError}<p class="search-message error" role="status">{searchError}</p>
+          {:else if searchError}<div class="search-message error" role="status"><LocalizedFeedback message={searchError} /></div>
           {:else if groupQuery.trim() && visibleGroups.length === 0}<p class="search-message" role="status">No groups found. Try another search.</p>{/if}
           <ul class="groups-list" aria-label="Joined groups" aria-busy={searchingGroups || groupsLoadState === 'loading'}>
             {#each visibleGroups as group (group.id)}
               <li class="checkbox-wrapper-33" class:selected={selectedGroupIds.includes(group.id)}>
                 <label class="checkbox">
-                  <input class="checkbox__trigger visuallyhidden" type="checkbox" value={group.id} bind:group={selectedGroupIds} />
+                  <input class="checkbox__trigger visuallyhidden" type="checkbox" disabled={groupsBusy} value={group.id} bind:group={selectedGroupIds} />
                   <span class="checkbox__symbol">
                     <svg aria-hidden="true" class="icon-checkbox" viewBox="0 0 28 28" fill="none"><path d="M4 14l8 7L24 7" /></svg>
                   </span>
@@ -457,14 +471,14 @@
         <div class="empty-step">
           <h2>No groups loaded yet.</h2>
           <p>Open your Facebook groups to get started.</p>
-          <p class="group-status" class:error={groupLoadFailed} role="status">{groupLoadMessage}</p>
+          <div class="group-status" class:error={groupLoadFailed} role="status"><LocalizedFeedback message={groupLoadMessage} technical={groupLoadFailed} /></div>
         </div>
         {/if}
       {:else}
         <section class="run-settings" aria-label="Posting settings">
           <PostingOptionsForm bind:minimumInterval bind:maximumInterval bind:rewrite bind:instructions disabled={postingActive || loadingDefaults} />
           {#if rewrite && !keyConfigured}<p class="group-status error">Add a Gemini API key in Settings to enable rewriting.</p>{/if}
-          {#if settingsError}<p class="group-status error" role="alert">{settingsError}</p>{/if}
+          {#if settingsError}<div class="group-status error" role="alert"><LocalizedFeedback message={settingsError} /></div>{/if}
           <div class="settings-actions"><div class="defaults-actions"><button type="button" disabled={postingActive || loadingDefaults} aria-busy={loadingDefaults} onclick={(event) => loadSettings(true, true, clickOrigin(event))}>{loadingDefaults ? 'Applying defaults…' : 'Use saved defaults'}</button><SavedDefaultsInfo settings={savedDefaults} /></div><button type="button" onclick={() => openSettings()}>Open settings</button></div>
           <p class="defaults-feedback" role="status" aria-live="polite">{defaultsMessage}</p>
         </section>
@@ -475,7 +489,7 @@
             <p>Time zone: {Intl.DateTimeFormat().resolvedOptions().timeZone}. Keep Postika open and your computer awake. Facebook may ask you to sign in when posting starts.</p>
           </form>
         {/if}
-        {#if postMessage}<p class="group-status" class:error={postFailed} role="status">{postMessage}</p>{/if}
+        {#if postMessage}<div class="group-status post-feedback" class:error={postFailed} role="status"><LocalizedFeedback message={postMessage} technical={postFailed} /></div>{/if}
       {/if}
 
     </div>
@@ -484,24 +498,24 @@
   <footer class="step-actions">
         {#if currentStep === steps.length - 1 && scheduleOpen && !postingActive}
         <button type="button" class="previous action-button action-button--secondary" onclick={() => { scheduleOpen = false; }}>Cancel</button>
-        <button type="submit" form="schedule-form" class="post action-button action-button--primary" disabled={!scheduleValid || loadingDefaults || selectedGroupIds.length === 0 || !hasCompletePost || !validSettings}>Confirm schedule</button>
+        <button type="submit" form="schedule-form" class="post action-button action-button--primary" disabled={groupsBusy || !scheduleValid || loadingDefaults || selectedGroupIds.length === 0 || !hasCompletePost || !validSettings}>Confirm schedule</button>
         {:else}
-        <button type="button" class="previous action-button action-button--secondary" disabled={currentStep === 0 || postingActive} onclick={(event) => navigate(currentStep - 1, event)}>
+        <button type="button" class="previous action-button action-button--secondary" disabled={currentStep === 0 || postingActive || groupsBusy} onclick={(event) => navigate(currentStep - 1, event)}>
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg>
           Previous
         </button>
         {#if currentStep < steps.length - 1}
-        <button type="button" class="next action-button action-button--primary" disabled={!canContinue || postingActive} onclick={(event) => navigate(currentStep + 1, event)}>
+        <button type="button" class="next action-button action-button--primary" disabled={!canContinue || postingActive || groupsBusy} onclick={(event) => navigate(currentStep + 1, event)}>
           Next
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg>
         </button>
         {:else}
         {#if postMessage}<button type="button" class="previous action-button action-button--secondary" onclick={() => GroupsService.OpenPostingLogs()}>View logs</button>{/if}
         {#if postingActive}<button type="button" class="previous action-button action-button--secondary" onclick={stopPosting}>Stop</button>{/if}
-        <button type="button" class="post action-button action-button--primary" disabled={postingActive || loadingDefaults || selectedGroupIds.length === 0 || !hasCompletePost || !validSettings} onclick={openPost} aria-busy={postingActive}>
+        <button type="button" class="post action-button action-button--primary" disabled={postingActive || groupsBusy || loadingDefaults || selectedGroupIds.length === 0 || !hasCompletePost || !validSettings} onclick={openPost} aria-busy={postingActive}>
           {postingActive ? scheduledFor ? 'Scheduled' : 'Posting…' : 'Post now'}
         </button>
-        <button type="button" class="previous action-button action-button--secondary" disabled={postingActive || loadingDefaults || selectedGroupIds.length === 0 || !hasCompletePost || !validSettings} onclick={showSchedule}>Schedule</button>
+        <button type="button" class="previous action-button action-button--secondary" disabled={postingActive || groupsBusy || loadingDefaults || selectedGroupIds.length === 0 || !hasCompletePost || !validSettings} onclick={showSchedule}>Schedule</button>
         {/if}
         {/if}
   </footer>
@@ -510,7 +524,7 @@
 
 <style>
   .schedule-panel { margin-top: 2.4rem; padding: 2rem 2.4rem; border: 1px solid var(--border-accent); border-radius: 1rem; background: var(--surface-active); }
-  .schedule-panel h2 { font-size: 1.6rem; font-weight: 550; color: var(--text-strong); margin-bottom: 1.6rem; }
+  .schedule-panel h2 { font-size: var(--ui-title-size); font-weight: var(--ui-title-weight); color: var(--text-strong); margin-bottom: 1.6rem; }
   .schedule-panel p { margin-top: 1.2rem; font-size: 1.3rem; line-height: 1.6; color: var(--text-secondary); }
 
   .run-settings { margin: 2rem 0; }
@@ -519,7 +533,7 @@
   .settings-actions button { border: 1px solid var(--border-accent); border-radius: .6rem; color: var(--accent); background: var(--surface); font-size: 1.3rem; cursor: pointer; padding: 1rem 1.4rem; }
   .settings-actions button:disabled { opacity: 0.5; }
   .defaults-feedback { color: var(--accent); font-size: 1.3rem; line-height: 1.6; }
-  .defaults-feedback:not(:empty) { margin-top: 1.2rem; padding: 1rem 1.2rem; background: var(--surface-active); border-left: 2px solid var(--accent); border-radius: .4rem; }
+  .defaults-feedback:not(:empty) { margin-top: 1.2rem; padding: 1rem 1.2rem; background: var(--surface-active); border-inline-start: 2px solid var(--accent); border-radius: .4rem; }
   .app-shell {
     display: flex;
     flex-direction: column;
@@ -551,16 +565,16 @@
 
   .step-heading { margin-bottom: 3rem; }
   .eyebrow { margin-bottom: 0.8rem; color: var(--accent); font-size: 1rem; font-weight: 650; letter-spacing: 0.12rem; }
-  h1 { color: var(--text); font-size: 2.6rem; font-weight: 600; letter-spacing: -0.08rem; line-height: 1.3; }
   h1:focus { outline: none; }
   .step-intro { margin-top: 0.9rem; color: var(--text-muted); font-size: 1.3rem; line-height: 1.6; }
   .step-actions { display: flex; flex: 0 0 8rem; align-items: center; justify-content: flex-end; width: 100%; max-width: 72rem; gap: 1rem; margin: 0 auto; border-top: 0.1rem solid var(--border); }
   .step-actions svg { width: 1.5rem; height: 1.5rem; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+  :global(html[dir="rtl"]) .step-actions svg { transform: scaleX(-1); }
   .empty-step { padding: 3.2rem 0; }
   .empty-step h2 { margin-bottom: 1rem; font-size: 1.6rem; font-weight: 550; }
   .empty-step p { color: var(--text-muted); font-size: 1.3rem; line-height: 1.7; }
   .groups-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 1.6rem; padding-bottom: 1.6rem; border-bottom: 0.1rem solid var(--border); }
-  .groups-toolbar h2 { color: var(--text); font-size: 1.6rem; font-weight: 550; }
+  .groups-toolbar h2 { color: var(--text-strong); font-size: var(--ui-title-size); font-weight: var(--ui-title-weight); }
   .load-groups { display: flex; align-items: center; justify-content: center; gap: 0.8rem; min-height: 4rem; padding: 0.9rem 1.6rem; border: 0.1rem solid var(--accent); border-radius: 0.7rem; background: var(--accent); color: var(--on-accent); font-size: 1.3rem; font-weight: 550; cursor: pointer; }
   .load-groups:hover { background: var(--accent-hover); }
   .load-groups:disabled { opacity: 0.6; cursor: wait; }
@@ -573,10 +587,10 @@
   .groups-list { display: grid; gap: 1rem; margin-top: 1.6rem; list-style: none; }
   .selection-count { margin-top: 0.6rem; color: var(--text-secondary); font-size: 1.3rem; }
   .group-search { position: relative; margin-top: 1.6rem; }
-  .group-search input { width: 100%; min-height: 4.8rem; padding: 1.2rem 4.8rem 1.2rem 1.4rem; border: 0.2rem solid var(--border-strong); border-radius: 0.8rem; background: var(--surface); color: var(--text); font-size: 1.5rem; }
+  .group-search input { width: 100%; min-height: 4.8rem; padding-block: 1.2rem; padding-inline: 1.4rem 4.8rem; border: 0.2rem solid var(--border-strong); border-radius: 0.8rem; background: var(--surface); color: var(--text); font-size: 1.5rem; }
   .group-search input::placeholder { color: var(--text-muted); }
   .group-search input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 0.3rem var(--accent-faint); }
-  .clear-search { position: absolute; top: 50%; right: 0.6rem; display: grid; place-items: center; width: 3.6rem; height: 3.6rem; transform: translateY(-50%); border: 0; border-radius: 0.5rem; background: transparent; color: var(--text-secondary); cursor: pointer; }
+  .clear-search { position: absolute; top: 50%; inset-inline-end: 0.6rem; display: grid; place-items: center; width: 3.6rem; height: 3.6rem; transform: translateY(-50%); border: 0; border-radius: 0.5rem; background: transparent; color: var(--text-secondary); cursor: pointer; }
   .clear-search:hover { background: var(--surface-hover); }
   .clear-search svg { width: 2rem; height: 2rem; }
   .clear-search:focus-visible, .bulk-actions button:focus-visible { outline: 0.2rem solid var(--accent); outline-offset: 0.2rem; }

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { logMessage } from './LogMessage.svelte';
   import { untrack } from 'svelte';
   import { Composer, RichTextPlugin, HistoryPlugin, ListPlugin, HeadingNode, QuoteNode, ListNode, ListItemNode, MarkdownShortcutPlugin, BOLD_STAR, ITALIC_STAR, HEADING, QUOTE, UNORDERED_LIST, ORDERED_LIST } from 'svelte-lexical';
   import PostEditorContent from './PostEditorContent.svelte';
@@ -16,7 +17,7 @@
   <RichTextPlugin /><HistoryPlugin /><ListPlugin />
   <MarkdownShortcutPlugin transformers={[BOLD_STAR, ITALIC_STAR, facebookHeading, QUOTE, UNORDERED_LIST, ORDERED_LIST]} />
 </Composer>
-{#if error}<p class="editor-error" role="alert">Could not edit the post: {error}</p>{/if}
+{#if error}<p class="editor-error" role="alert">Could not edit the post: {logMessage(error, true)}</p><details><summary>Debug details</summary><p dir="auto">{error}</p></details>{/if}
 <style>
   .editor-error { padding: 1rem 1.8rem; color: var(--danger); font-size: 1.3rem; }
 </style>

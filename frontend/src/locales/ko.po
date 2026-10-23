@@ -8,69 +8,59 @@ msgstr ""
 "Plural-Forms: nplurals=1\n"
 "X-Plurals-Order: other\n"
 
-#. 0: minimumInterval === maximumInterval ? minimumInterval \\: `${minimumInterval}–${maximumInterval}`; 1: rewriteState
+#. 0: appliedInterval; 1: rewriteState
 #: src/App.svelte
 msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
 msgstr "저장된 기본값 적용됨: 게시물 간 {0}초 · Gemini 재작성 {1}."
 
-#: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Could not restore saved groups. Load groups to refresh the list."
 msgstr "저장된 그룹을 복원할 수 없습니다. 목록을 새로 고치려면 그룹을 불러오세요."
 
-#: src/App.svelte
-msgid "Choose a future date and time for your post."
-msgstr "게시물의 미래 날짜와 시간을 선택하세요."
+#~ msgid "Choose a future date and time for your post."
+#~ msgstr "게시물의 미래 날짜와 시간을 선택하세요."
 
-#: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Saving your scheduled queue…"
 msgstr "예약된 큐 저장 중…"
 
-#: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Opening a selected group to capture fresh posting requests…"
 msgstr "새 게시물 요청을 가져오기 위해 선택한 그룹 열기…"
 
-#: src/App.svelte
-#: src/App.svelte
 #: src/components/LogMessage.svelte
 msgid "Posting stopped."
 msgstr "게시 중지됨."
 
-#: src/App.svelte
 #: src/components/LogMessage.svelte
 msgid "Could not read a selected image"
 msgstr "선택한 이미지를 읽을 수 없습니다."
 
+#. 0: a
 #. 0: image.file.name
-#. 0: missingNames
-#. 0: unreadableNames
-#. 0: image.file.name
-#: src/App.svelte
-#: src/App.svelte
-#: src/components/PostComposer.svelte
+#: src/components/LogMessage.svelte
 #: src/components/PostComposer.svelte
 msgid "Could not read {0}"
 msgstr "{0}을(를) 읽을 수 없습니다."
 
-#: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Posting finished."
 msgstr "게시 완료."
 
-#. 0: scheduleLabel(scheduledFor)
 #. 0: date
-#: src/App.svelte
 #: src/components/LogMessage.svelte
 msgid "Scheduled for {0}. Keep Postika open and your computer awake."
 msgstr "{0}에 예약됨. Postika를 열어 두고 컴퓨터를 깨워 두세요."
 
-#: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Could not restore this account’s draft. New edits will stay available while Postika is open."
 msgstr "이 계정의 초안을 복원할 수 없습니다. Postika가 열려 있는 동안 새 편집 내용은 계속 사용할 수 있습니다."
 
-#: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Could not add the dropped images. Try browsing for them instead."
 msgstr "드롭된 이미지를 추가할 수 없습니다. 대신 찾아보기를 시도하세요."
 
-#: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Could not save this account’s draft to disk. Keep Postika open to retain your edits."
 msgstr "이 계정의 초안을 디스크에 저장할 수 없습니다. 편집 내용을 유지하려면 Postika를 열어 두세요."
 
@@ -100,6 +90,7 @@ msgid "Opening…"
 msgstr "열기 중…"
 
 #: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Loading…"
 msgstr "로딩 중…"
 
@@ -210,6 +201,8 @@ msgstr "시간대: {0}. Postika를 열어두고 컴퓨터를 깨워 두세요. �
 
 #: src/App.svelte
 #: src/Workspace.svelte
+#: src/components/FacebookPageDialog.svelte
+#: src/components/FetchedPostCard.svelte
 msgid "Cancel"
 msgstr "취소"
 
@@ -440,18 +433,18 @@ msgstr "분 내리기"
 msgid "Choose a date and time in the future."
 msgstr "미래의 날짜와 시간을 선택하세요."
 
-#. 0: rejected.join(', ')
-#: src/components/PostComposer.svelte
+#. 0: a
+#: src/components/LogMessage.svelte
 msgid "Unsupported files: {0}. Choose JPG, PNG, WebP, or GIF images."
 msgstr "지원되지 않는 파일: {0}. JPG, PNG, WebP 또는 GIF 이미지를 선택하세요."
 
-#. 0: image.file.name
-#: src/components/PostComposer.svelte
+#. 0: a
+#: src/components/LogMessage.svelte
 msgid "Could not preview {0}. Please choose another image."
 msgstr "{0}을(를) 미리 볼 수 없습니다. 다른 이미지를 선택하세요."
 
-#. 0: images[index].file.name; 1: index + 1; 2: images.length
-#: src/components/PostComposer.svelte
+#. 0: a; 1: number(b); 2: number(c)
+#: src/components/LogMessage.svelte
 msgid "{0} moved to position {1} of {2}."
 msgstr "{0}이(가) {2}개의 위치 중 {1} 위치로 이동되었습니다."
 
@@ -515,7 +508,7 @@ msgstr "{0} 제거"
 msgid "Drop more images here to add them."
 msgstr "여기에 더 많은 이미지를 드롭하여 추가할 수 있습니다."
 
-#. 0: error
+#. 0: logMessage(error, true)
 #: src/components/PostEditor.svelte
 msgid "Could not edit the post: {0}"
 msgstr "게시물 편집 실패: {0}"
@@ -902,7 +895,7 @@ msgstr "이 실행의 게시 간격, Gemini 재작성 옵션 및 재작성 지�
 msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
 msgstr "초기 기본값: 60–120초, Gemini 재작성 끄기, 재작성 지침 없음. 변경하려면 설정에서 직접 환경설정을 저장하세요."
 
-#: src/components/Settings.svelte
+#: src/components/LogMessage.svelte
 msgid "Settings saved. New runs can use these defaults."
 msgstr "설정이 저장되었습니다. 새로운 실행은 이 기본값을 사용할 수 있습니다."
 
@@ -985,7 +978,7 @@ msgstr "예정"
 msgid "Step {0} of {1}: {2}"
 msgstr "단계 {0} / {1}: {2}"
 
-#: src/components/WindowControls.svelte
+#: src/components/LogMessage.svelte
 msgid "Could not change the window. Please try again."
 msgstr "창을 변경할 수 없습니다. 다시 시도해 주세요."
 
@@ -1044,10 +1037,12 @@ msgid "The browser is closed. It will reopen when you click Post."
 msgstr "브라우저가 닫혔습니다. 게시를 클릭하면 다시 열립니다."
 
 #: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Checking Facebook login"
 msgstr "Facebook 로그인 확인 중"
 
 #: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Finish signing in or any verification prompts in Chrome. Your login will be detected automatically."
 msgstr "Chrome에서 로그인 완료 또는 인증 요청을 완료하세요. 로그인 상태가 자동으로 감지됩니다."
 
@@ -1134,7 +1129,7 @@ msgstr "오후"
 msgid "Evening"
 msgstr "저녁"
 
-#: src/components/LanguageMenu.svelte
+#: src/components/LogMessage.svelte
 msgid "Could not change the language. Please try again."
 msgstr "언어를 변경할 수 없습니다. 다시 시도하세요."
 
@@ -1287,8 +1282,10 @@ msgstr "기본 프로필"
 msgid "Color themes"
 msgstr "색상 테마"
 
+#: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
 #: src/components/ThemePicker.svelte
+#: src/components/UpdateButton.svelte
 msgid "Close"
 msgstr "닫기"
 
@@ -1760,6 +1757,7 @@ msgid "This group has reached its pending-content limit."
 msgstr "이 그룹은 현재 보류 중인 콘텐츠 한도에 도달했습니다."
 
 #: src/components/LogMessage.svelte
+#: src/components/LogMessage.svelte
 #: src/components/UsageGuide.svelte
 msgid "This post was submitted, but confirmation is uncertain. Check Facebook before retrying."
 msgstr "이 게시물은 제출되었지만 확인이 불확실합니다. 재시도 전에 Facebook을 확인하세요."
@@ -1867,8 +1865,10 @@ msgstr "제미니 재작성 실패 (HTTP {0}). 키, 모델 및 계정 한도를 
 msgid " (Code {0})"
 msgstr "(코드 {0})"
 
+#: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
-#: src/components/PostingLogView.svelte
+#: src/components/LocalizedFeedback.svelte
+#: src/components/PostEditor.svelte
 #: src/components/UsageGuide.svelte
 msgid "Debug details"
 msgstr "디버그 세부 정보"
@@ -2021,3 +2021,373 @@ msgstr "다른 계정을 추가하지 않고 기본 계정을 사용할 수 있�
 #: src/components/FeaturesCard.svelte
 msgid "Features & How to Use"
 msgstr "기능 및 사용 방법"
+
+#~ msgid "Or post from any Facebook page"
+#~ msgstr ""
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Or click here to fetch posts from any Facebook page"
+msgstr "또는 여기를 클릭하여 원하는 Facebook 페이지의 게시물을 가져오세요"
+
+#: src/components/LogMessage.svelte
+msgid "Enter a Facebook page URL, such as https://web.facebook.com/swiftlineMotors"
+msgstr "Facebook 페이지 URL을 입력하세요. 예: https://web.facebook.com/swiftlineMotors"
+
+#~ msgid "Fetch Facebook posts"
+#~ msgstr ""
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Decrease number of posts"
+msgstr "게시물 수 줄이기"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Increase number of posts"
+msgstr "게시물 수 늘리기"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Facebook page URL"
+msgstr "Facebook 페이지 URL"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Number of posts to fetch"
+msgstr "가져올 게시물 수"
+
+#~ msgid "Done"
+#~ msgstr ""
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Fetch posts from a Facebook page"
+msgstr "Facebook 페이지에서 게시물 가져오기"
+
+#: src/components/LogMessage.svelte
+msgid "Could not check fetch progress. Close this dialog and try again."
+msgstr "가져오기 진행 상황을 확인할 수 없습니다. 이 대화 상자를 닫고 다시 시도하세요."
+
+#: src/components/LogMessage.svelte
+msgid "Could not stop fetching. Try again."
+msgstr "가져오기를 중지할 수 없습니다. 다시 시도하세요."
+
+#: src/components/LogMessage.svelte
+msgid "Fetching stopped."
+msgstr "가져오기가 중지되었습니다."
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Facebook page fetch options"
+msgstr "Facebook 페이지 게시물 가져오기 옵션"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Posts fetched"
+msgstr "가져온 게시물"
+
+#: src/components/PostComposer.svelte
+msgid "Fetched posts"
+msgstr "가져온 게시물"
+
+#: src/components/FetchedPostCard.svelte
+msgid "Post without text"
+msgstr "텍스트 없는 게시물"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Fetching…"
+msgstr "가져오는 중…"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Fetch"
+msgstr "가져오기"
+
+#: src/components/PostComposer.svelte
+msgid "Fetched posts <0/>"
+msgstr "가져온 게시물 <0/>"
+
+#: src/components/PostComposer.svelte
+msgid "Write a post instead"
+msgstr "대신 게시물 작성"
+
+#~ msgid "No posts were available from this Facebook page."
+#~ msgstr ""
+
+#: src/App.svelte
+msgid "Review the posts fetched from your Facebook page."
+msgstr "Facebook 페이지에서 가져온 게시물을 검토하세요."
+
+#~ msgid "Post removed."
+#~ msgstr ""
+
+#: src/components/PostComposer.svelte
+msgid "No posts to show. Fetch posts or write a post instead."
+msgstr "표시할 게시물이 없습니다. 게시물을 가져오거나 새로 작성하세요."
+
+#. 0: index + 1
+#: src/components/FetchedPostCard.svelte
+msgid "Post {0}"
+msgstr "게시물 {0}"
+
+#. 0: index + 1
+#: src/components/FetchedPostCard.svelte
+msgid "Edit post {0}"
+msgstr "게시물 {0} 수정"
+
+#: src/components/FetchedPostCard.svelte
+msgid "Edit"
+msgstr "수정"
+
+#. 0: index + 1
+#: src/components/FetchedPostCard.svelte
+msgid "Delete post {0}"
+msgstr "게시물 {0} 삭제"
+
+#: src/components/FetchedPostCard.svelte
+msgid "Delete"
+msgstr "삭제"
+
+#: src/components/FetchedPostCard.svelte
+msgid "Post text"
+msgstr "게시물 텍스트"
+
+#. 0: imageIndex + 1; 1: index + 1
+#: src/components/FetchedPostCard.svelte
+msgid "Remove image {0} from post {1}"
+msgstr "게시물 {1}에서 이미지 {0} 제거"
+
+#: src/components/FetchedPostCard.svelte
+msgid "Save changes"
+msgstr "변경 사항 저장"
+
+#: src/components/LogMessage.svelte
+msgid "Could not fetch Facebook posts. Check Chrome and try again."
+msgstr "Facebook 게시물을 가져올 수 없습니다. Chrome을 확인하고 다시 시도하세요."
+
+#: src/components/LogMessage.svelte
+msgid "Could not load full-size photos. Fetch the posts again."
+msgstr "전체 크기 사진을 불러올 수 없습니다. 게시물을 다시 가져오세요."
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture Facebook requests. Check Chrome and fetch again."
+msgstr "Facebook 요청을 캡처할 수 없습니다. Chrome을 확인하고 다시 가져오세요."
+
+#: src/components/LogMessage.svelte
+msgid "Enter a positive whole number of posts to fetch"
+msgstr "가져올 게시물 수를 양의 정수로 입력하세요"
+
+#: src/components/LogMessage.svelte
+msgid "Wait for posting to finish before fetching Facebook posts"
+msgstr "게시가 완료된 후 Facebook 게시물을 가져오세요"
+
+#: src/components/LogMessage.svelte
+msgid "Finish loading groups before fetching Facebook posts"
+msgstr "그룹 불러오기를 완료한 후 Facebook 게시물을 가져오세요"
+
+#: src/components/LogMessage.svelte
+msgid "Fetch at least one post before posting"
+msgstr "게시하기 전에 게시물을 하나 이상 가져오세요"
+
+#: src/components/LogMessage.svelte
+msgid "Capturing Facebook posts…"
+msgstr "Facebook 게시물을 캡처하는 중…"
+
+#: src/components/LogMessage.svelte
+msgid "Capturing full-size photos…"
+msgstr "전체 크기 사진을 캡처하는 중…"
+
+#: src/components/LogMessage.svelte
+msgid "Reloading the photo page…"
+msgstr "사진 페이지를 새로고침하는 중…"
+
+#: src/components/LogMessage.svelte
+msgid "Opening the next photo…"
+msgstr "다음 사진을 여는 중…"
+
+#: src/components/LogMessage.svelte
+msgid "Fetching posts and full-size photos…"
+msgstr "게시물과 전체 크기 사진을 가져오는 중…"
+
+#~ msgid "Facebook"
+#~ msgstr ""
+
+#. 0: number(a); 1: number(b)
+#: src/components/LogMessage.svelte
+msgid "Fetched {0} of {1} posts…"
+msgstr "게시물 {1}개 중 {0}개를 가져왔습니다…"
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Fetched {0} posts."
+msgstr "게시물 {0}개를 가져왔습니다."
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Fetched {0} posts. No more posts are available."
+msgstr "게시물 {0}개를 가져왔습니다. 더 이상 가져올 게시물이 없습니다."
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Add text to fetched post {0} before posting"
+msgstr "게시하기 전에 가져온 게시물 {0}에 텍스트를 추가하세요"
+
+#. 0: number(a); 1: number(b); 2: c
+#: src/components/LogMessage.svelte
+msgid "Preparing post {0}/{1} for {2}…"
+msgstr "{2}에 올릴 게시물 {0}/{1} 준비 중…"
+
+#. 0: number(a); 1: number(b); 2: c
+#: src/components/LogMessage.svelte
+msgid "Uploading images for post {0}/{1} to {2}…"
+msgstr "게시물 {0}/{1}의 이미지를 {2}에 업로드하는 중…"
+
+#. 0: number(a); 1: number(b); 2: c
+#: src/components/LogMessage.svelte
+msgid "Posting post {0}/{1} to {2}…"
+msgstr "게시물 {0}/{1}을 {2}에 게시하는 중…"
+
+#. 0: number(a); 1: number(b); 2: number(c); 3: number(d)
+#: src/components/LogMessage.svelte
+msgid "Downloading photo {0}/{1} for post {2}/{3}…"
+msgstr "게시물 {2}/{3}의 사진 {0}/{1} 다운로드 중…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the groups request…"
+msgstr "그룹 요청을 기다리는 중…"
+
+#: src/components/LogMessage.svelte
+msgid "Groups request captured. Waiting for the page to finish loading…"
+msgstr "그룹 요청을 캡처했습니다. 페이지가 완전히 로드되기를 기다리는 중…"
+
+#: src/components/LogMessage.svelte
+msgid "Browser closed. Loading your groups…"
+msgstr "브라우저가 닫혔습니다. 그룹을 불러오는 중…"
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Loaded {0} groups…"
+msgstr "그룹 {0}개를 불러왔습니다…"
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Restored {0} saved groups. Load groups to refresh the list."
+msgstr "저장된 그룹 {0}개를 복원했습니다. 목록을 새로 고치려면 그룹을 불러오세요."
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Loaded and saved {0} groups."
+msgstr "그룹 {0}개를 불러와 저장했습니다."
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Loaded {0} groups, but could not save them. Load groups again to retry saving."
+msgstr "그룹 {0}개를 불러왔지만 저장하지 못했습니다. 저장을 다시 시도하려면 그룹을 다시 불러오세요."
+
+#: src/components/LogMessage.svelte
+msgid "Could not load groups. Check Chrome and try again."
+msgstr "그룹을 불러오지 못했습니다. Chrome을 확인하고 다시 시도하세요."
+
+#: src/components/LogMessage.svelte
+msgid "Could not read Postika settings"
+msgstr "Postika 설정을 읽지 못했습니다"
+
+#: src/components/LogMessage.svelte
+msgid "Could not save Postika settings"
+msgstr "Postika 설정을 저장하지 못했습니다"
+
+#: src/components/LogMessage.svelte
+msgid "Set an interval between 60 and 86400 seconds, with the maximum at least the minimum"
+msgstr "간격을 60~86400초로 설정하고 최댓값을 최솟값 이상으로 지정하세요"
+
+#: src/components/LogMessage.svelte
+msgid "Rewrite instructions are too long"
+msgstr "재작성 지침이 너무 깁니다"
+
+#: src/components/LogMessage.svelte
+msgid "Enter a valid Gemini model name"
+msgstr "올바른 Gemini 모델 이름을 입력하세요"
+
+#: src/components/LogMessage.svelte
+msgid "Enter an account name of 1 to 80 characters"
+msgstr "1~80자의 계정 이름을 입력하세요"
+
+#: src/components/LogMessage.svelte
+msgid "An account profile with this name already exists"
+msgstr "이 이름의 계정 프로필이 이미 있습니다"
+
+#: src/components/LogMessage.svelte
+msgid "Account profile was not found"
+msgstr "계정 프로필을 찾을 수 없습니다"
+
+#: src/components/LogMessage.svelte
+msgid "Could not update accounts. Please try again."
+msgstr "계정을 업데이트하지 못했습니다. 다시 시도하세요."
+
+#: src/components/LogMessage.svelte
+msgid "Chrome or Chromium was not found. Install a browser to open your Facebook groups"
+msgstr "Chrome 또는 Chromium을 찾을 수 없습니다. Facebook 그룹을 열려면 브라우저를 설치하세요"
+
+#: src/components/LogMessage.svelte
+msgid "Found multiple matching menus on the groups page. Please open the Sort menu in Chrome"
+msgstr "그룹 페이지에서 일치하는 메뉴가 여러 개 발견되었습니다. Chrome에서 정렬 메뉴를 여세요"
+
+#: src/components/LogMessage.svelte
+msgid "Found multiple matching radio menus. Please choose a sort option in Chrome"
+msgstr "일치하는 선택 메뉴가 여러 개 발견되었습니다. Chrome에서 정렬 옵션을 선택하세요"
+
+#: src/components/LogMessage.svelte
+msgid "Could not open the link. Please try again."
+msgstr "링크를 열지 못했습니다. 다시 시도하세요."
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "None of the {0} selected groups has an available post composer"
+msgstr "선택한 {0}개 그룹 모두 사용 가능한 게시물 편집기가 없습니다"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "{0} is not an image file. Drop individual images, not folders."
+msgstr "{0}은(는) 이미지 파일이 아닙니다. 폴더 대신 개별 이미지를 놓으세요."
+
+#: src/components/LogMessage.svelte
+msgid "Could not complete this action. Please try again."
+msgstr "이 작업을 완료하지 못했습니다. 다시 시도하세요."
+
+#~ msgid "{0}–{1}"
+#~ msgstr ""
+
+#: src/components/UpdateButton.svelte
+msgid "Update available"
+msgstr "업데이트 가능"
+
+#: src/components/UpdateButton.svelte
+#: src/components/UpdateButton.svelte
+#: src/components/UpdateButton.svelte
+msgid "Updates"
+msgstr "업데이트"
+
+#: src/components/UpdateButton.svelte
+msgid "Checking for updates…"
+msgstr "업데이트 확인 중…"
+
+#: src/components/UpdateButton.svelte
+msgid "Downloading update…"
+msgstr "업데이트 다운로드 중…"
+
+#: src/components/UpdateButton.svelte
+msgid "Update ready. Stop all posting queues before restarting."
+msgstr "업데이트가 준비되었습니다. 다시 시작하기 전에 모든 게시 대기열을 중지하세요."
+
+#: src/components/UpdateButton.svelte
+msgid "Postika is up to date."
+msgstr "Postika가 최신 버전입니다."
+
+#: src/components/UpdateButton.svelte
+msgid "Download update"
+msgstr "업데이트 다운로드"
+
+#: src/components/UpdateButton.svelte
+#: src/components/UpdateButton.svelte
+msgid "Restart to update"
+msgstr "다시 시작하여 업데이트"
+
+#: src/components/UpdateButton.svelte
+msgid "Check for updates"
+msgstr "업데이트 확인"
+
+#: src/components/UpdateButton.svelte
+msgid "Installing update…"
+msgstr "업데이트 설치 중…"

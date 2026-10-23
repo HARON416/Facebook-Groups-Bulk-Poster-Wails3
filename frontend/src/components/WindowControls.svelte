@@ -13,7 +13,7 @@
       if (action === 'minimise') await Window.Minimise();
       else if (action === 'close') await Window.Close();
       else { await Window.ToggleMaximise(); await readState(); }
-    } catch { onerror('Could not change the window. Please try again.'); }
+    } catch { onerror(/* @wc-ignore */ 'Could not change the window. Please try again.'); }
     finally { busy = false; }
   }
   export function toggleMaximise() { return act('maximise'); }

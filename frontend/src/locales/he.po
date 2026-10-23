@@ -1,0 +1,2393 @@
+msgid ""
+msgstr ""
+"Source-Language: en\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3\n"
+"X-Plurals-Order: one, two, other\n"
+
+#. 0: appliedInterval; 1: rewriteState
+#: src/App.svelte
+msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
+msgstr "ברירות המחדל השמורות הוחלו: {0} שניות בין פרסומים · שכתוב באמצעות Gemini: {1}."
+
+#: src/components/LogMessage.svelte
+msgid "Could not restore saved groups. Load groups to refresh the list."
+msgstr "לא ניתן לשחזר את הקבוצות השמורות. יש לטעון קבוצות כדי לרענן את הרשימה."
+
+#~ msgid "Choose a future date and time for your post."
+#~ msgstr "יש לבחור תאריך ושעה עתידיים לפרסום."
+
+#: src/components/LogMessage.svelte
+msgid "Saving your scheduled queue…"
+msgstr "תור הפרסומים המתוזמן נשמר…"
+
+#: src/components/LogMessage.svelte
+msgid "Opening a selected group to capture fresh posting requests…"
+msgstr "נפתחת קבוצה שנבחרה כדי ללכוד בקשות פרסום עדכניות…"
+
+#: src/components/LogMessage.svelte
+msgid "Posting stopped."
+msgstr "הפרסום הופסק."
+
+#: src/components/LogMessage.svelte
+msgid "Could not read a selected image"
+msgstr "לא ניתן לקרוא תמונה שנבחרה"
+
+#. 0: a
+#. 0: image.file.name
+#: src/components/LogMessage.svelte
+#: src/components/PostComposer.svelte
+msgid "Could not read {0}"
+msgstr "לא ניתן לקרוא את {0}"
+
+#: src/components/LogMessage.svelte
+msgid "Posting finished."
+msgstr "הפרסום הסתיים."
+
+#. 0: date
+#: src/components/LogMessage.svelte
+msgid "Scheduled for {0}. Keep Postika open and your computer awake."
+msgstr "מתוזמן ל־{0}. יש להשאיר את Postika פתוחה ואת המחשב ער."
+
+#: src/components/LogMessage.svelte
+msgid "Could not restore this account’s draft. New edits will stay available while Postika is open."
+msgstr "לא ניתן לשחזר את הטיוטה של חשבון זה. שינויים חדשים יישארו זמינים כל עוד Postika פתוחה."
+
+#: src/components/LogMessage.svelte
+msgid "Could not add the dropped images. Try browsing for them instead."
+msgstr "לא ניתן להוסיף את התמונות שנגררו. כדאי לנסות לבחור אותן באמצעות עיון בקבצים."
+
+#: src/components/LogMessage.svelte
+msgid "Could not save this account’s draft to disk. Keep Postika open to retain your edits."
+msgstr "לא ניתן לשמור את הטיוטה של חשבון זה בכונן. יש להשאיר את Postika פתוחה כדי לשמור על השינויים."
+
+#: src/App.svelte
+msgid "Start with your message. Add images to bring it to life."
+msgstr "מתחילים עם המסר שלכם. מוסיפים תמונות כדי להחיות אותו."
+
+#: src/App.svelte
+#: src/components/FeaturesCard.svelte
+msgid "Choose the groups you want to share your post with."
+msgstr "יש לבחור את הקבוצות שבהן תרצו לשתף את הפוסט."
+
+#~ msgid "Review your post and preferences, then post now or schedule for later."
+#~ msgstr ""
+
+#. 0: currentStep + 1; 1: steps.length
+#: src/App.svelte
+msgid "STEP {0} OF {1}"
+msgstr "שלב {0} מתוך {1}"
+
+#: src/App.svelte
+msgid "Restoring account workspace…"
+msgstr "סביבת העבודה של החשבון משוחזרת…"
+
+#: src/App.svelte
+msgid "Opening…"
+msgstr "נפתח…"
+
+#: src/App.svelte
+#: src/components/LogMessage.svelte
+msgid "Loading…"
+msgstr "בטעינה…"
+
+#: src/App.svelte
+msgid "Load groups"
+msgstr "טעינת קבוצות"
+
+#: src/App.svelte
+msgid "Groups"
+msgstr "קבוצות"
+
+#: src/App.svelte
+msgid "Search groups…"
+msgstr "חיפוש קבוצות…"
+
+#: src/App.svelte
+msgid "Clear group search"
+msgstr "ניקוי חיפוש הקבוצות"
+
+#: src/App.svelte
+#: src/components/FeaturesCard.svelte
+msgid "Search groups"
+msgstr "חיפוש קבוצות"
+
+#: src/App.svelte
+#: src/components/FeaturesCard.svelte
+msgid "Select all groups"
+msgstr "בחירת כל הקבוצות"
+
+#: src/App.svelte
+msgid "Unselect all groups"
+msgstr "ביטול בחירת כל הקבוצות"
+
+#~ msgid "{0} selected{1}"
+#~ msgstr ""
+
+#: src/App.svelte
+msgid "Searching…"
+msgstr "מתבצע חיפוש…"
+
+#: src/App.svelte
+msgid "No groups found. Try another search."
+msgstr "לא נמצאו קבוצות. כדאי לנסות חיפוש אחר."
+
+#: src/App.svelte
+msgid "Joined groups"
+msgstr "קבוצות שהצטרפתם אליהן"
+
+#: src/App.svelte
+msgid "No groups loaded yet."
+msgstr "עדיין לא נטענו קבוצות."
+
+#: src/App.svelte
+msgid "Open your Facebook groups to get started."
+msgstr "יש לפתוח את קבוצות הפייסבוק שלכם כדי להתחיל."
+
+#: src/App.svelte
+#: src/components/FeaturesCard.svelte
+msgid "Posting settings"
+msgstr "הגדרות פרסום"
+
+#: src/App.svelte
+msgid "Add a Gemini API key in Settings to enable rewriting."
+msgstr "יש להוסיף מפתח API של Gemini בהגדרות כדי להפעיל שכתוב."
+
+#: src/App.svelte
+msgid "Applying defaults…"
+msgstr "ברירות המחדל מוחלות…"
+
+#: src/App.svelte
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
+msgid "Use saved defaults"
+msgstr "שימוש בברירות המחדל השמורות"
+
+#: src/App.svelte
+msgid "Open settings"
+msgstr "פתיחת ההגדרות"
+
+#~ msgid "Posting as <0/>"
+#~ msgstr ""
+
+#~ msgid "Review your post<0>{0} images · {1} groups selected</0>"
+#~ msgstr ""
+
+#~ msgid "Original post"
+#~ msgstr ""
+
+#~ msgid "Your post"
+#~ msgstr ""
+
+#~ msgid "Gemini will rewrite this body for each group using your instructions."
+#~ msgstr ""
+
+#~ msgid "Selected groups ({0})"
+#~ msgstr ""
+
+#: src/App.svelte
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
+msgid "Schedule your queue"
+msgstr "תזמון תור הפרסומים"
+
+#. 0: Intl.DateTimeFormat().resolvedOptions().timeZone
+#: src/App.svelte
+msgid "Time zone: {0}. Keep Postika open and your computer awake. Facebook may ask you to sign in when posting starts."
+msgstr "אזור זמן: {0}. יש להשאיר את Postika פתוחה ואת המחשב ער. ייתכן שפייסבוק יבקש להתחבר כשהפרסום יתחיל."
+
+#: src/App.svelte
+#: src/Workspace.svelte
+#: src/components/FacebookPageDialog.svelte
+#: src/components/FetchedPostCard.svelte
+msgid "Cancel"
+msgstr "ביטול"
+
+#: src/App.svelte
+msgid "Confirm schedule"
+msgstr "אישור התזמון"
+
+#: src/App.svelte
+msgid "Next <0/>"
+msgstr "הבא <0/>"
+
+#: src/App.svelte
+msgid "View logs"
+msgstr "הצגת היומנים"
+
+#: src/App.svelte
+#: src/components/FeaturesCard.svelte
+#: src/components/PostingLogView.svelte
+msgid "Stop"
+msgstr "עצירה"
+
+#: src/App.svelte
+#: src/Workspace.svelte
+#: src/components/PostingLogView.svelte
+msgid "Scheduled"
+msgstr "מתוזמן"
+
+#: src/App.svelte
+msgid "Posting…"
+msgstr "מתפרסם…"
+
+#: src/App.svelte
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
+msgid "Post now"
+msgstr "פרסום כעת"
+
+#: src/App.svelte
+msgid "Schedule"
+msgstr "תזמון"
+
+#: src/App.svelte
+msgid "<0/> Previous"
+msgstr "<0/> הקודם"
+
+#: src/Workspace.svelte
+msgid "Application menu"
+msgstr "תפריט היישום"
+
+#: src/Workspace.svelte
+#: src/components/UsageGuide.svelte
+msgid "Add account"
+msgstr "הוספת חשבון"
+
+#: src/Workspace.svelte
+#: src/components/FeaturesCard.svelte
+#: src/components/PostingLogView.svelte
+#: src/components/PostingLogView.svelte
+#: src/components/UsageGuide.svelte
+msgid "Posting logs"
+msgstr "יומני פרסום"
+
+#: src/Workspace.svelte
+#: src/components/FeaturesCard.svelte
+#: src/components/Settings.svelte
+#: src/components/Settings.svelte
+#: src/components/UsageGuide.svelte
+msgid "Settings"
+msgstr "הגדרות"
+
+#: src/Workspace.svelte
+msgid "Creating…"
+msgstr "נוצר…"
+
+#: src/Workspace.svelte
+msgid "Create & sign in"
+msgstr "יצירה והתחברות"
+
+#: src/Workspace.svelte
+msgid "Account name"
+msgstr "שם החשבון"
+
+#: src/Workspace.svelte
+#: src/components/UsageGuide.svelte
+msgid "Sign in to Facebook in the new account’s browser window."
+msgstr "יש להתחבר לפייסבוק בחלון הדפדפן של החשבון החדש."
+
+#: src/Workspace.svelte
+msgid "Running"
+msgstr "פועל"
+
+#: src/Workspace.svelte
+msgid "In the background: <0/>"
+msgstr "ברקע: <0/>"
+
+#: src/Workspace.svelte
+msgid "Loading accounts…"
+msgstr "החשבונות נטענים…"
+
+#: src/components/AccountDropdown.svelte
+msgid "Loading accounts"
+msgstr "טעינת חשבונות"
+
+#. 0: current?.name ?? 'Loading accounts'
+#: src/components/AccountDropdown.svelte
+msgid "Account: {0}"
+msgstr "חשבון: {0}"
+
+#: src/components/AccountDropdown.svelte
+msgid "Select account"
+msgstr "בחירת חשבון"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search accounts…"
+msgstr "חיפוש חשבונות…"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search accounts"
+msgstr "חיפוש חשבונות"
+
+#: src/components/AccountDropdown.svelte
+msgid "Clear account search"
+msgstr "ניקוי חיפוש החשבונות"
+
+#: src/components/AccountDropdown.svelte
+msgid "All accounts"
+msgstr "כל החשבונות"
+
+#: src/components/AccountDropdown.svelte
+#: src/components/FeaturesCard.svelte
+msgid "Accounts"
+msgstr "חשבונות"
+
+#: src/components/AccountDropdown.svelte
+msgid "No accounts found"
+msgstr "לא נמצאו חשבונות"
+
+#: src/components/AccountDropdown.svelte
+#: src/components/ThemePicker.svelte
+msgid "Try a different name."
+msgstr "כדאי לנסות שם אחר."
+
+#: src/components/ConnectivityToast.svelte
+msgid "You’re back online"
+msgstr "החיבור לאינטרנט חזר"
+
+#: src/components/ConnectivityToast.svelte
+msgid "Internet connection lost"
+msgstr "החיבור לאינטרנט נותק"
+
+#: src/components/ConnectivityToast.svelte
+msgid "Your queue is still manually paused."
+msgstr "תור הפרסומים עדיין מושהה ידנית."
+
+#: src/components/ConnectivityToast.svelte
+msgid "Your queue will continue automatically."
+msgstr "תור הפרסומים ימשיך אוטומטית."
+
+#: src/components/ConnectivityToast.svelte
+msgid "Your queue is paused. We’ll continue when the connection returns."
+msgstr "תור הפרסומים מושהה. נמשיך כשהחיבור יחזור."
+
+#: src/components/ConnectivityToast.svelte
+msgid "Dismiss connection notification"
+msgstr "סגירת הודעת החיבור"
+
+#: src/components/DateTimePicker.svelte
+msgid "Choose a date and time"
+msgstr "בחירת תאריך ושעה"
+
+#: src/components/DateTimePicker.svelte
+msgid "Select date"
+msgstr "בחירת תאריך"
+
+#: src/components/DateTimePicker.svelte
+msgid "Choose a weekday for this post"
+msgstr "בחירת יום בשבוע לפרסום זה"
+
+#. 0: day.description
+#: src/components/DateTimePicker.svelte
+msgid "Select {0}"
+msgstr "בחירת {0}"
+
+#: src/components/DateTimePicker.svelte
+msgid "Previous month"
+msgstr "החודש הקודם"
+
+#: src/components/DateTimePicker.svelte
+msgid "Next month"
+msgstr "החודש הבא"
+
+#: src/components/DateTimePicker.svelte
+#: src/components/DateTimePicker.svelte
+msgid "Select time"
+msgstr "בחירת שעה"
+
+#: src/components/DateTimePicker.svelte
+msgid "24-hour clock"
+msgstr "שעון של 24 שעות"
+
+#: src/components/DateTimePicker.svelte
+msgid "Increase hour"
+msgstr "הגדלת השעה"
+
+#: src/components/DateTimePicker.svelte
+#: src/components/DateTimePicker.svelte
+msgid "Hour"
+msgstr "שעה"
+
+#: src/components/DateTimePicker.svelte
+msgid "Decrease hour"
+msgstr "הקטנת השעה"
+
+#: src/components/DateTimePicker.svelte
+msgid "Increase minute"
+msgstr "הגדלת הדקה"
+
+#: src/components/DateTimePicker.svelte
+#: src/components/DateTimePicker.svelte
+msgid "Minute"
+msgstr "דקה"
+
+#: src/components/DateTimePicker.svelte
+msgid "Decrease minute"
+msgstr "הקטנת הדקה"
+
+#: src/components/DateTimePicker.svelte
+msgid "Choose a date and time in the future."
+msgstr "יש לבחור תאריך ושעה בעתיד."
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Unsupported files: {0}. Choose JPG, PNG, WebP, or GIF images."
+msgstr "קבצים לא נתמכים: {0}. יש לבחור תמונות JPG, PNG, WebP או GIF."
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Could not preview {0}. Please choose another image."
+msgstr "לא ניתן להציג תצוגה מקדימה של {0}. יש לבחור תמונה אחרת."
+
+#. 0: a; 1: number(b); 2: number(c)
+#: src/components/LogMessage.svelte
+msgid "{0} moved to position {1} of {2}."
+msgstr "{0} הועברה למיקום {1} מתוך {2}."
+
+#: src/components/PostComposer.svelte
+#: src/components/PostEditorContent.svelte
+msgid "Post body"
+msgstr "תוכן הפוסט"
+
+#: src/components/PostComposer.svelte
+#: src/components/PostComposer.svelte
+msgid "Required"
+msgstr "חובה"
+
+#: src/components/PostComposer.svelte
+#: src/components/UsageGuide.svelte
+msgid "Images"
+msgstr "תמונות"
+
+#: src/components/PostComposer.svelte
+msgid "Choose images"
+msgstr "בחירת תמונות"
+
+#: src/components/PostComposer.svelte
+msgid "Drop images here or <0>browse images</0>"
+msgstr "אפשר לשחרר כאן תמונות או <0>לעיין בתמונות</0>"
+
+#: src/components/FeaturesCard.svelte
+#: src/components/PostComposer.svelte
+#: src/components/UsageGuide.svelte
+msgid "JPG, PNG, WebP, or GIF · Select multiple images"
+msgstr "JPG, PNG, WebP או GIF · ניתן לבחור מספר תמונות"
+
+#~ msgid "{0} {1} selected"
+#~ msgstr ""
+
+#: src/components/PostComposer.svelte
+msgid "Add more"
+msgstr "הוספת תמונות"
+
+#: src/components/FeaturesCard.svelte
+#: src/components/PostComposer.svelte
+#: src/components/UsageGuide.svelte
+msgid "Drag images to rearrange. Or focus an image and use Alt + Left / Right."
+msgstr "אפשר לגרור תמונות כדי לשנות את הסדר, או להתמקד בתמונה ולהשתמש ב־Alt + שמאלה / ימינה."
+
+#: src/components/PostComposer.svelte
+msgid "Selected images"
+msgstr "תמונות שנבחרו"
+
+#. 0: image.file.name; 1: images.indexOf(image) + 1; 2: images.length
+#: src/components/PostComposer.svelte
+msgid "{0}, image {1} of {2}"
+msgstr "{0}, תמונה {1} מתוך {2}"
+
+#. 0: image.file.name
+#: src/components/PostComposer.svelte
+msgid "Remove {0}"
+msgstr "הסרת {0}"
+
+#: src/components/PostComposer.svelte
+msgid "Drop more images here to add them."
+msgstr "אפשר לשחרר כאן תמונות נוספות כדי להוסיף אותן."
+
+#. 0: logMessage(error, true)
+#: src/components/PostEditor.svelte
+msgid "Could not edit the post: {0}"
+msgstr "לא ניתן לערוך את הפוסט: {0}"
+
+#: src/components/PostEditorContent.svelte
+msgid "Post editor controls"
+msgstr "פקדי עורך הפוסט"
+
+#: src/components/PostEditorContent.svelte
+msgid "Text formatting"
+msgstr "עיצוב טקסט"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bold (Ctrl+B)"
+msgstr "מודגש (Ctrl+B)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bold"
+msgstr "מודגש"
+
+#: src/components/PostEditorContent.svelte
+msgid "Italic (Ctrl+I)"
+msgstr "נטוי (Ctrl+I)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Italic"
+msgstr "נטוי"
+
+#: src/components/PostEditorContent.svelte
+msgid "Heading 1"
+msgstr "כותרת 1"
+
+#: src/components/PostEditorContent.svelte
+msgid "Heading 2"
+msgstr "כותרת 2"
+
+#: src/components/PostEditorContent.svelte
+msgid "Quote"
+msgstr "ציטוט"
+
+#: src/components/PostEditorContent.svelte
+msgid "Bullet list"
+msgstr "רשימת תבליטים"
+
+#: src/components/PostEditorContent.svelte
+msgid "Numbered list"
+msgstr "רשימה ממוספרת"
+
+#: src/components/PostEditorContent.svelte
+msgid "Undo (Ctrl+Z)"
+msgstr "ביטול פעולה (Ctrl+Z)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Undo"
+msgstr "ביטול פעולה"
+
+#: src/components/PostEditorContent.svelte
+msgid "Redo (Ctrl+Shift+Z)"
+msgstr "ביצוע חוזר (Ctrl+Shift+Z)"
+
+#: src/components/PostEditorContent.svelte
+msgid "Redo"
+msgstr "ביצוע חוזר"
+
+#: src/components/PostEditorContent.svelte
+msgid "What would you like to share?"
+msgstr "מה תרצו לשתף?"
+
+#: src/components/FeaturesCard.svelte
+#: src/components/PostEditorContent.svelte
+#: src/components/UsageGuide.svelte
+msgid "Bold, italic, headings, quotes, and lists · Markdown shortcuts supported"
+msgstr "מודגש, נטוי, כותרות, ציטוטים ורשימות · קיצורי Markdown נתמכים"
+
+#. 0: body.length.toLocaleString(getLocale())
+#: src/components/PostEditorContent.svelte
+msgid "{0} characters"
+msgstr "{0} תווים"
+
+#: src/components/LogMessage.svelte
+msgid "Ready to post."
+msgstr "מוכן לפרסום."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook response copied."
+msgstr "תגובת פייסבוק הועתקה."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook response received"
+msgstr "התקבלה תגובה מפייסבוק"
+
+#: src/components/PostingLogView.svelte
+msgid "POSTIKA / ACTIVITY"
+msgstr "POSTIKA / פעילות"
+
+#: src/components/FeaturesCard.svelte
+#: src/components/PostingLogView.svelte
+#: src/components/UsageGuide.svelte
+msgid "Posting progress"
+msgstr "התקדמות הפרסום"
+
+#. 0: activity?.processed || 0; 1: activity?.total || 0
+#: src/components/PostingLogView.svelte
+msgid "{0}/{1} groups processed"
+msgstr "טופלו {0}/{1} קבוצות"
+
+#. 0: percentage
+#: src/components/PostingLogView.svelte
+msgid "{0}% complete"
+msgstr "הושלמו {0}%"
+
+#: src/components/PostingLogView.svelte
+msgid "Groups processed"
+msgstr "קבוצות שטופלו"
+
+#: src/components/PostingLogView.svelte
+msgid "Published"
+msgstr "פורסמו"
+
+#: src/components/PostingLogView.svelte
+msgid "Awaiting approval"
+msgstr "ממתינים לאישור"
+
+#: src/components/PostingLogView.svelte
+msgid "Failed or skipped"
+msgstr "נכשלו או דולגו"
+
+#: src/components/PostingLogView.svelte
+msgid "Remaining"
+msgstr "נותרו"
+
+#. 0: number(a); 1: number(b); 2: c
+#. 0: activity.current; 1: activity.total; 2: activity.currentGroup.name
+#: src/components/LogMessage.svelte
+#: src/components/PostingLogView.svelte
+msgid "Group {0}/{1}: {2}"
+msgstr "קבוצה {0}/{1}: {2}"
+
+#. 0: pauseRequested ? /* @wc-include */ ' · Paused' \\: ''
+#: src/components/PostingLogView.svelte
+msgid "Next post in <0/>{0}"
+msgstr "הפרסום הבא בעוד <0/>{0}"
+
+#: src/components/PostingLogView.svelte
+msgid "Elapsed <0/>"
+msgstr "זמן שחלף <0/>"
+
+#: src/components/PostingLogView.svelte
+msgid "Current group <0/>"
+msgstr "הקבוצה הנוכחית <0/>"
+
+#: src/components/PostingLogView.svelte
+msgid "Following latest"
+msgstr "מעקב אחר העדכונים האחרונים"
+
+#: src/components/PostingLogView.svelte
+msgid "Jump to latest"
+msgstr "מעבר לעדכון האחרון"
+
+#. 0.0: total
+#: src/components/PostingLogView.svelte
+msgid "Activity timeline <0>{0} logs</0>"
+msgstr "ציר זמן הפעילות <0>{0} רשומות</0>"
+
+#: src/components/PostingLogView.svelte
+msgid "Posting activity"
+msgstr "פעילות הפרסום"
+
+#. 0: entryLabel(entry)
+#: src/components/PostingLogView.svelte
+msgid "{0} log"
+msgstr "{0} רשומה"
+
+#. 0: itemTime(entry.message)
+#: src/components/PostingLogView.svelte
+msgid "Took {0}"
+msgstr "משך הפעולה: {0}"
+
+#: src/components/FeaturesCard.svelte
+#: src/components/PostingLogView.svelte
+#: src/components/PostingLogView.svelte
+msgid "Copy Facebook response"
+msgstr "העתקת תגובת פייסבוק"
+
+#: src/components/PostingLogView.svelte
+msgid "Response copied"
+msgstr "התגובה הועתקה"
+
+#: src/components/PostingLogView.svelte
+msgid "Copied"
+msgstr "הועתק"
+
+#: src/components/PostingLogView.svelte
+msgid "Copying…"
+msgstr "מועתק…"
+
+#: src/components/PostingLogView.svelte
+msgid "Copy response"
+msgstr "העתקת התגובה"
+
+#. 0.0: entry.hasResponse ? /* @wc-include */ ' · Response available to copy' \\: ''
+#: src/components/PostingLogView.svelte
+msgid "Debug details<0>Original log message{0}</0>"
+msgstr "פרטי אבחון<0>הודעת היומן המקורית{0}</0>"
+
+#: src/components/PostingLogView.svelte
+msgid "Your activity will appear here"
+msgstr "הפעילות שלכם תופיע כאן"
+
+#: src/components/PostingLogView.svelte
+msgid "Start posting to follow uploads, results, and wait times."
+msgstr "יש להתחיל בפרסום כדי לעקוב אחר העלאות, תוצאות וזמני המתנה."
+
+#: src/components/PostingLogView.svelte
+msgid "Log pages"
+msgstr "עמודי היומן"
+
+#: src/components/PostingLogView.svelte
+msgid "Previous page"
+msgstr "העמוד הקודם"
+
+#. 0: number
+#: src/components/PostingLogView.svelte
+msgid "Page {0}"
+msgstr "עמוד {0}"
+
+#: src/components/PostingLogView.svelte
+msgid "Next page"
+msgstr "העמוד הבא"
+
+#: src/components/PostingLogView.svelte
+msgid "← Prev"
+msgstr "→ הקודם"
+
+#: src/components/PostingLogView.svelte
+msgid "Next →"
+msgstr "הבא ←"
+
+#. 0: total ? (page - 1) * pageSize + 1 \\: 0; 1: Math.min(page * pageSize, total); 2: total
+#: src/components/PostingLogView.svelte
+msgid "{0}–{1} of {2} logs"
+msgstr "{0}–{1} מתוך {2} רשומות"
+
+#: src/components/FeaturesCard.svelte
+#: src/components/PostingLogView.svelte
+msgid "Resume"
+msgstr "המשך"
+
+#: src/components/FeaturesCard.svelte
+#: src/components/PostingLogView.svelte
+msgid "Pause"
+msgstr "השהיה"
+
+#: src/components/PostingLogView.svelte
+msgid "Stopping…"
+msgstr "נעצר…"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "POSTING PACE"
+msgstr "קצב הפרסום"
+
+#: src/components/FeaturesCard.svelte
+#: src/components/PostingOptionsForm.svelte
+#: src/components/UsageGuide.svelte
+msgid "Interval between posts"
+msgstr "מרווח בין פרסומים"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Minimum (seconds)"
+msgstr "מינימום (שניות)"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Maximum (seconds)"
+msgstr "מקסימום (שניות)"
+
+#: src/components/PostingOptionsForm.svelte
+#: src/components/UsageGuide.svelte
+msgid "Choose how long to wait before posting to the next group."
+msgstr "יש לבחור כמה זמן להמתין לפני הפרסום בקבוצה הבאה."
+
+#: src/components/PostingOptionsForm.svelte
+#: src/components/UsageGuide.svelte
+msgid "At least 60 seconds. Use equal values for a fixed interval."
+msgstr "לפחות 60 שניות. ערכים זהים יוצרים מרווח קבוע."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "OPTIONAL · AI REWRITE"
+msgstr "אופציונלי · שכתוב באמצעות בינה מלאכותית"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "A fresh version for each group"
+msgstr "גרסה חדשה לכל קבוצה"
+
+#: src/components/FeaturesCard.svelte
+#: src/components/PostingOptionsForm.svelte
+#: src/components/UsageGuide.svelte
+msgid "Rewrite each post body with Gemini"
+msgstr "שכתוב התוכן של כל פוסט באמצעות Gemini"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
+msgstr "הנחיות לשכתוב<0>יש לבחור את הסגנון ואת הפרטים שעל Gemini לשמור.</0>"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Keep it concise and easy to scan. Preserve the price and contact details."
+msgstr "יש לנסח בקצרה ובאופן שקל לסרוק. יש לשמור על המחיר ופרטי הקשר."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Rewrite instructions"
+msgstr "הנחיות לשכתוב"
+
+#: src/components/FeaturesCard.svelte
+#: src/components/PostingOptionsForm.svelte
+#: src/components/UsageGuide.svelte
+msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
+msgstr "תוכן הפוסט וההנחיות נשלחים ל־Google Gemini. התמונות אינן נשלחות. השכתוב באמצעות Gemini משתמש בטקסט פשוט."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
+msgstr "אם השכתוב נכשל, הפוסט משתמש בטקסט המקורי. בפוסט הבא יתבצע ניסיון נוסף עם Gemini."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Let Gemini rewrite your post using your instructions."
+msgstr "אפשר לתת ל־Gemini לשכתב את הפוסט לפי ההנחיות שלכם."
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Posting preferences"
+msgstr "העדפות פרסום"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved defaults help"
+msgstr "עזרה בנושא ברירות המחדל השמורות"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "About saved defaults"
+msgstr "על ברירות המחדל השמורות"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved interval"
+msgstr "המרווח השמור"
+
+#. 0: settings.minimumInterval === settings.maximumInterval ? settings.minimumInterval \\: `${settings.minimumInterval}–${settings.maximumInterval}`
+#: src/components/SavedDefaultsInfo.svelte
+msgid "{0} seconds"
+msgstr "{0} שניות"
+
+#: src/App.svelte
+#: src/components/SavedDefaultsInfo.svelte
+msgid "On"
+msgstr "מופעל"
+
+#: src/App.svelte
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Off"
+msgstr "כבוי"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Gemini rewrite"
+msgstr "שכתוב באמצעות Gemini"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "No instructions saved."
+msgstr "לא נשמרו הנחיות."
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved rewrite instructions"
+msgstr "הנחיות השכתוב השמורות"
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "Saved values could not be loaded. Try “Use saved defaults” again."
+msgstr "לא ניתן לטעון את הערכים השמורים. יש לנסות שוב את האפשרות ״שימוש בברירות המחדל השמורות״."
+
+#: src/components/SavedDefaultsInfo.svelte
+msgid "What does “Use saved defaults” do?"
+msgstr "מה עושה האפשרות ״שימוש בברירות המחדל השמורות״?"
+
+#: src/components/SavedDefaultsInfo.svelte
+#: src/components/UsageGuide.svelte
+msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
+msgstr "מחליפה את מרווח הפרסום, אפשרות השכתוב של Gemini וההנחיות לשכתוב עבור ההפעלה הנוכחית בערכים שנשמרו בהגדרות."
+
+#: src/components/SavedDefaultsInfo.svelte
+#: src/components/UsageGuide.svelte
+msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
+msgstr "ברירות המחדל הראשוניות: 60–120 שניות, שכתוב באמצעות Gemini כבוי וללא הנחיות לשכתוב. אפשר לשמור העדפות אישיות בהגדרות כדי לשנות אותן."
+
+#: src/components/LogMessage.svelte
+msgid "Settings saved. New runs can use these defaults."
+msgstr "ההגדרות נשמרו. ניתן להשתמש בברירות המחדל האלה בהפעלות חדשות."
+
+#: src/components/Settings.svelte
+msgid "Key saved · leave blank to keep it"
+msgstr "המפתח נשמר · יש להשאיר ריק כדי לשמור עליו"
+
+#: src/components/Settings.svelte
+msgid "Enter your Gemini API key"
+msgstr "יש להזין את מפתח ה־API של Gemini"
+
+#: src/components/Settings.svelte
+msgid "A key is saved on this device."
+msgstr "מפתח שמור במכשיר זה."
+
+#: src/components/Settings.svelte
+msgid "No API key saved."
+msgstr "לא נשמר מפתח API."
+
+#: src/components/Settings.svelte
+msgid "Remove saved key"
+msgstr "הסרת המפתח השמור"
+
+#: src/components/Settings.svelte
+msgid "Gemini"
+msgstr "Gemini"
+
+#: src/components/Settings.svelte
+msgid "API key<0/>"
+msgstr "מפתח API<0/>"
+
+#. 0: keyConfigured ? 'A key is saved on this device.' \\: 'No API key saved.'
+#: src/components/Settings.svelte
+msgid "{0} The saved key is never displayed."
+msgstr "{0} המפתח השמור לעולם אינו מוצג."
+
+#: src/components/Settings.svelte
+msgid "Model<0/>"
+msgstr "מודל<0/>"
+
+#: src/components/Settings.svelte
+msgid "Posting defaults"
+msgstr "ברירות מחדל לפרסום"
+
+#: src/components/Settings.svelte
+msgid "Applied when you start a new posting run."
+msgstr "מוחלות בתחילת הפעלת פרסום חדשה."
+
+#: src/components/Settings.svelte
+msgid "Saving…"
+msgstr "נשמר…"
+
+#: src/components/Settings.svelte
+msgid "Save settings"
+msgstr "שמירת הגדרות"
+
+#: src/components/Settings.svelte
+msgid "YOUR PREFERENCES"
+msgstr "ההעדפות שלכם"
+
+#. 0: accountName
+#: src/components/Settings.svelte
+msgid "Set up Gemini and save posting defaults for {0}."
+msgstr "הגדרת Gemini ושמירת ברירות מחדל לפרסום עבור {0}."
+
+#: src/components/StepProgress.svelte
+msgid "Completed"
+msgstr "הושלם"
+
+#: src/components/StepProgress.svelte
+msgid "Current"
+msgstr "נוכחי"
+
+#: src/components/StepProgress.svelte
+msgid "Upcoming"
+msgstr "בהמשך"
+
+#. 0: index + 1; 1: steps.length; 2: completed || index < currentStep ? 'Completed' \\: index === currentStep ? 'Current' \\: 'Upcoming'
+#: src/components/StepProgress.svelte
+msgid "Step {0} of {1}: {2}"
+msgstr "שלב {0} מתוך {1}: {2}"
+
+#: src/components/LogMessage.svelte
+msgid "Could not change the window. Please try again."
+msgstr "לא ניתן לשנות את החלון. יש לנסות שוב."
+
+#: src/components/WindowControls.svelte
+msgid "Window controls"
+msgstr "פקדי החלון"
+
+#: src/components/WindowControls.svelte
+msgid "Minimize window"
+msgstr "מזעור החלון"
+
+#: src/components/WindowControls.svelte
+msgid "Restore window"
+msgstr "שחזור החלון"
+
+#: src/components/WindowControls.svelte
+msgid "Maximize window"
+msgstr "הגדלת החלון"
+
+#: src/components/WindowControls.svelte
+msgid "Close window"
+msgstr "סגירת החלון"
+
+#: src/App.svelte
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
+msgid "Create post"
+msgstr "יצירת פוסט"
+
+#: src/App.svelte
+msgid "Write your post and add images"
+msgstr "כתיבת הפוסט והוספת תמונות"
+
+#: src/App.svelte
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
+msgid "Select groups"
+msgstr "בחירת קבוצות"
+
+#: src/App.svelte
+msgid "Load groups and choose where to post"
+msgstr "טעינת קבוצות ובחירת יעדי הפרסום"
+
+#~ msgid "Review & post"
+#~ msgstr ""
+
+#~ msgid "Review, set preferences, then post now or schedule"
+#~ msgstr ""
+
+#: src/App.svelte
+msgid "Facebook session captured"
+msgstr "ההתחברות לפייסבוק נלכדה"
+
+#: src/App.svelte
+msgid "The browser is closed. It will reopen when you click Post."
+msgstr "הדפדפן סגור. הוא ייפתח מחדש בלחיצה על פרסום."
+
+#: src/App.svelte
+#: src/components/LogMessage.svelte
+msgid "Checking Facebook login"
+msgstr "ההתחברות לפייסבוק נבדקת"
+
+#: src/App.svelte
+#: src/components/LogMessage.svelte
+msgid "Finish signing in or any verification prompts in Chrome. Your login will be detected automatically."
+msgstr "יש להשלים את ההתחברות או את בקשות האימות ב־Chrome. ההתחברות תזוהה אוטומטית."
+
+#: src/App.svelte
+msgid "Login required"
+msgstr "נדרשת התחברות"
+
+#: src/App.svelte
+msgid "Please log in to Facebook in the Chrome window. Postika will detect when you’re signed in."
+msgstr "יש להתחבר לפייסבוק בחלון Chrome. Postika תזהה את ההתחברות."
+
+#: src/App.svelte
+msgid "Complete Facebook verification"
+msgstr "השלמת האימות בפייסבוק"
+
+#: src/App.svelte
+msgid "Complete the login or verification prompts in Chrome to continue."
+msgstr "יש להשלים את בקשות ההתחברות או האימות ב־Chrome כדי להמשיך."
+
+#: src/App.svelte
+msgid "Facebook connected"
+msgstr "פייסבוק מחובר"
+
+#: src/App.svelte
+msgid "You’re logged in. Your session is ready."
+msgstr "ההתחברות הושלמה. ההפעלה מוכנה."
+
+#: src/App.svelte
+msgid "Facebook window closed"
+msgstr "חלון פייסבוק נסגר"
+
+#: src/App.svelte
+msgid "Click Load groups to reopen Facebook and check your login."
+msgstr "יש ללחוץ על טעינת קבוצות כדי לפתוח מחדש את פייסבוק ולבדוק את ההתחברות."
+
+#. 0: current?.name ?? ''
+#: src/components/AccountDropdown.svelte
+msgid "Language: {0}"
+msgstr "שפה: {0}"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search languages…"
+msgstr "חיפוש שפות…"
+
+#: src/components/AccountDropdown.svelte
+msgid "Search languages"
+msgstr "חיפוש שפות"
+
+#: src/components/AccountDropdown.svelte
+msgid "Clear language search"
+msgstr "ניקוי חיפוש השפות"
+
+#. 0: matches.length
+#: src/components/AccountDropdown.svelte
+msgid "{0} result"
+msgstr "{0} תוצאה"
+
+#. 0: matches.length
+#: src/components/AccountDropdown.svelte
+msgid "{0} results"
+msgstr "{0} תוצאות"
+
+#: src/components/AccountDropdown.svelte
+msgid "All languages"
+msgstr "כל השפות"
+
+#: src/components/AccountDropdown.svelte
+msgid "Languages"
+msgstr "שפות"
+
+#: src/components/AccountDropdown.svelte
+msgid "No languages found"
+msgstr "לא נמצאו שפות"
+
+#: src/components/DateTimePicker.svelte
+msgid "Morning"
+msgstr "בוקר"
+
+#: src/components/DateTimePicker.svelte
+msgid "Afternoon"
+msgstr "אחר הצהריים"
+
+#: src/components/DateTimePicker.svelte
+msgid "Evening"
+msgstr "ערב"
+
+#: src/components/LogMessage.svelte
+msgid "Could not change the language. Please try again."
+msgstr "לא ניתן לשנות את השפה. יש לנסות שוב."
+
+#: src/components/Settings.svelte
+msgid "Language"
+msgstr "שפה"
+
+#: src/components/PostingOptionsForm.svelte
+#: src/components/PostingOptionsForm.svelte
+msgid "seconds"
+msgstr "שניות"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Minimum"
+msgstr "מינימום"
+
+#: src/components/PostingOptionsForm.svelte
+msgid "Maximum"
+msgstr "מקסימום"
+
+#: src/components/StepProgress.svelte
+msgid "Post progress"
+msgstr "התקדמות הפוסט"
+
+#. 0: visibleGroups.length
+#: src/App.svelte
+msgid "{0} shown"
+msgstr "{0} מוצגים"
+
+#. 0: selectedGroupIds.length
+#: src/App.svelte
+msgid "{0} selected"
+msgstr "{0} נבחרו"
+
+#. 0: images.length
+#: src/components/PostComposer.svelte
+msgid "{0} images selected"
+msgstr "נבחרו {0} תמונות"
+
+#: src/components/PostingLogView.svelte
+msgid "WARN"
+msgstr "אזהרה"
+
+#: src/components/PostingLogView.svelte
+msgid "INFO"
+msgstr "מידע"
+
+#: src/components/PostingLogView.svelte
+msgid "ERROR"
+msgstr "שגיאה"
+
+#: src/components/PostingLogView.svelte
+msgid "DEBUG"
+msgstr "אבחון"
+
+#: src/components/FeaturesCard.svelte
+#: src/components/PostingLogView.svelte
+msgid "PUBLISHED"
+msgstr "פורסם"
+
+#: src/components/FeaturesCard.svelte
+#: src/components/PostingLogView.svelte
+msgid "PENDING"
+msgstr "ממתין לאישור"
+
+#: src/components/FeaturesCard.svelte
+#: src/components/PostingLogView.svelte
+msgid "FAILED"
+msgstr "נכשל"
+
+#: src/components/FeaturesCard.svelte
+#: src/components/PostingLogView.svelte
+msgid "SKIPPED"
+msgstr "דולג"
+
+#: src/components/FeaturesCard.svelte
+#: src/components/PostingLogView.svelte
+msgid "UNCONFIRMED"
+msgstr "לא אושר"
+
+#: src/Workspace.svelte
+msgid "e.g. Business"
+msgstr "למשל, עסקי"
+
+#: src/components/PostComposer.svelte
+msgid "1 image selected"
+msgstr "נבחרה תמונה אחת"
+
+#: src/components/PostingLogView.svelte
+msgid "Paused · Waiting for internet"
+msgstr "מושהה · ממתין לאינטרנט"
+
+#: src/components/PostingLogView.svelte
+msgid "Pausing after the current operation"
+msgstr "מושהה לאחר הפעולה הנוכחית"
+
+#: src/components/PostingLogView.svelte
+msgid "Paused"
+msgstr "מושהה"
+
+#: src/components/PostingLogView.svelte
+msgid "Stopping"
+msgstr "נעצר"
+
+#: src/components/PostingLogView.svelte
+msgid "Posting"
+msgstr "מפרסם"
+
+#: src/components/PostingLogView.svelte
+msgid "Finished"
+msgstr "הסתיים"
+
+#: src/components/PostingLogView.svelte
+msgid "Stopped"
+msgstr "הופסק"
+
+#: src/components/PostingLogView.svelte
+msgid "Ready"
+msgstr "מוכן"
+
+#: src/components/PostingLogView.svelte
+msgid "CURRENT ACTIVITY"
+msgstr "הפעילות הנוכחית"
+
+#: src/components/PostingLogView.svelte
+msgid "RUN STATUS"
+msgstr "מצב ההפעלה"
+
+#: src/components/PostingLogView.svelte
+msgid " · Paused"
+msgstr " · מושהה"
+
+#: src/components/PostingLogView.svelte
+msgid " · Response available to copy"
+msgstr " · תגובה זמינה להעתקה"
+
+#: src/components/AccountLabel.svelte
+msgid "Default profile"
+msgstr "פרופיל ברירת מחדל"
+
+#~ msgid "Switch to light mode"
+#~ msgstr ""
+
+#~ msgid "Switch to dark mode"
+#~ msgstr ""
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Color themes"
+msgstr "ערכות צבעים"
+
+#: src/components/FacebookPageDialog.svelte
+#: src/components/FeaturesCard.svelte
+#: src/components/ThemePicker.svelte
+#: src/components/UpdateButton.svelte
+msgid "Close"
+msgstr "סגירה"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Search themes…"
+msgstr "חיפוש ערכות נושא…"
+
+#: src/components/ThemePicker.svelte
+msgid "No themes found"
+msgstr "לא נמצאו ערכות נושא"
+
+#: src/components/LogMessage.svelte
+msgid "A selected group is no longer available. Load groups again"
+msgstr "קבוצה שנבחרה אינה זמינה עוד. יש לטעון קבוצות מחדש"
+
+#: src/components/LogMessage.svelte
+msgid "Add a Gemini API key in Settings before enabling rewriting"
+msgstr "יש להוסיף מפתח API של Gemini בהגדרות לפני הפעלת השכתוב"
+
+#: src/components/LogMessage.svelte
+msgid "Add a post body and at least one image"
+msgstr "יש להוסיף תוכן לפוסט ולפחות תמונה אחת"
+
+#: src/components/LogMessage.svelte
+msgid "All selected groups were already attempted. Review unconfirmed results on Facebook."
+msgstr "כבר בוצע ניסיון פרסום בכל הקבוצות שנבחרו. יש לבדוק בפייסבוק את התוצאות שלא אושרו."
+
+#: src/components/LogMessage.svelte
+msgid "An image upload failed in Chrome. Check the composer and retry Post"
+msgstr "העלאת תמונה ב־Chrome נכשלה. יש לבדוק את עורך הפוסט ולנסות לפרסם שוב"
+
+#: src/components/LogMessage.svelte
+msgid "Attaching images…"
+msgstr "התמונות מצורפות…"
+
+#: src/components/LogMessage.svelte
+msgid "Choose JPG, PNG, WebP, or GIF images"
+msgstr "יש לבחור תמונות JPG, PNG, WebP או GIF"
+
+#: src/components/LogMessage.svelte
+msgid "Choose a future date and time for your post"
+msgstr "יש לבחור תאריך ושעה עתידיים לפרסום"
+
+#: src/components/LogMessage.svelte
+msgid "Closing Chrome and posting to the remaining groups…"
+msgstr "Chrome נסגר והפרסום בקבוצות הנותרות מתחיל…"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the complete create-post request"
+msgstr "לא ניתן ללכוד את הבקשה המלאה ליצירת הפוסט"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the completed image upload response"
+msgstr "לא ניתן ללכוד את התגובה המלאה להעלאת התמונה"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the image upload form fields"
+msgstr "לא ניתן ללכוד את שדות טופס העלאת התמונה"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the image upload form. Retry Post"
+msgstr "לא ניתן ללכוד את טופס העלאת התמונה. יש לנסות לפרסם שוב"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture the upload endpoint"
+msgstr "לא ניתן ללכוד את כתובת העלאת הקבצים"
+
+#: src/components/LogMessage.svelte
+msgid "Could not copy the Facebook response to the clipboard"
+msgstr "לא ניתן להעתיק את תגובת פייסבוק ללוח"
+
+#: src/components/LogMessage.svelte
+msgid "Could not enable create-post capture in Chrome"
+msgstr "לא ניתן להפעיל לכידת יצירת פוסט ב־Chrome"
+
+#: src/components/LogMessage.svelte
+msgid "Could not parse the captured create-post form"
+msgstr "לא ניתן לפענח את טופס יצירת הפוסט שנלכד"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare image files"
+msgstr "לא ניתן להכין את קובצי התמונות"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare post images"
+msgstr "לא ניתן להכין את תמונות הפוסט"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare the Gemini request"
+msgstr "לא ניתן להכין את הבקשה ל־Gemini"
+
+#: src/components/LogMessage.svelte
+msgid "Could not prepare the image upload."
+msgstr "לא ניתן להכין את העלאת התמונה."
+
+#: src/components/LogMessage.svelte
+msgid "Could not reach Gemini. Check your connection"
+msgstr "לא ניתן להתחבר ל־Gemini. יש לבדוק את החיבור"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read Facebook's post confirmation"
+msgstr "לא ניתן לקרוא את אישור הפרסום של פייסבוק"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read the Gemini rewrite"
+msgstr "לא ניתן לקרוא את השכתוב של Gemini"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read the completed image upload response"
+msgstr "לא ניתן לקרוא את התגובה המלאה להעלאת התמונה"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read the selected image."
+msgstr "לא ניתן לקרוא את התמונה שנבחרה."
+
+#: src/components/LogMessage.svelte
+msgid "Create-post capture ended before confirmation. Check Facebook before retrying"
+msgstr "לכידת יצירת הפוסט הסתיימה לפני קבלת אישור. יש לבדוק בפייסבוק לפני ניסיון נוסף"
+
+#: src/components/LogMessage.svelte
+msgid "Create-post request detected. Capturing fresh form values…"
+msgstr "זוהתה בקשה ליצירת פוסט. ערכי הטופס העדכניים נלכדים…"
+
+#: src/components/LogMessage.svelte
+msgid "Create-post response complete. Waiting for captured session headers…"
+msgstr "התגובה ליצירת הפוסט הושלמה. בהמתנה לכותרות ההפעלה שנלכדו…"
+
+#: src/components/LogMessage.svelte
+msgid "Create-post response received. Waiting for its complete body…"
+msgstr "התקבלה תגובה ליצירת הפוסט. בהמתנה לתוכן המלא שלה…"
+
+#: src/components/LogMessage.svelte
+msgid "Description inserted"
+msgstr "התיאור הוכנס"
+
+#: src/components/LogMessage.svelte
+msgid "Earlier submission is unconfirmed. Skipping this group and continuing with the remaining groups."
+msgstr "שליחה קודמת לא אושרה. מדלגים על קבוצה זו וממשיכים בקבוצות הנותרות."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook could not post to this group. Continuing with the remaining groups."
+msgstr "פייסבוק לא הצליח לפרסם בקבוצה זו. ממשיכים בקבוצות הנותרות."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook did not confirm all images. Check the composer."
+msgstr "פייסבוק לא אישר את כל התמונות. יש לבדוק את עורך הפוסט."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook did not confirm the submission"
+msgstr "פייסבוק לא אישר את השליחה"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook did not confirm this post. Check the group before trying again."
+msgstr "פייסבוק לא אישר פוסט זה. יש לבדוק בקבוצה לפני ניסיון נוסף."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook has temporarily limited posting. Try again later."
+msgstr "פייסבוק הגביל זמנית את הפרסום. יש לנסות שוב מאוחר יותר."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook rejected this post."
+msgstr "פייסבוק דחה פוסט זה."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook requires login or verification. Load groups again."
+msgstr "פייסבוק דורש התחברות או אימות. יש לטעון קבוצות מחדש."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook returned a story, but did not confirm its group or publication state. Posting stopped. Check Facebook before retrying."
+msgstr "פייסבוק החזיר פוסט אך לא אישר את הקבוצה שלו או את מצב הפרסום. הפרסום הופסק. יש לבדוק בפייסבוק לפני ניסיון נוסף."
+
+#: src/components/LogMessage.svelte
+msgid "Facebook's confirmation exceeded the 16 MiB response limit; retained response is truncated"
+msgstr "אישור פייסבוק חרג ממגבלת התגובה של 16 MiB; התגובה שנשמרה נקטעה"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook's editor did not accept the formatted post. Posting was not submitted"
+msgstr "העורך של פייסבוק לא קיבל את הפוסט המעוצב. הפוסט לא נשלח"
+
+#: src/components/LogMessage.svelte
+msgid "Facebook's editor did not retain the formatted post text. Posting was not submitted"
+msgstr "העורך של פייסבוק לא שמר על הטקסט המעוצב של הפוסט. הפוסט לא נשלח"
+
+#: src/components/LogMessage.svelte
+msgid "First post confirmed. Waiting for the Facebook composer to close…"
+msgstr "הפוסט הראשון אושר. בהמתנה לסגירת עורך הפוסט של פייסבוק…"
+
+#: src/components/LogMessage.svelte
+msgid "First submission unconfirmed. Retrying request 1/3 with the captured mutation ID…"
+msgstr "השליחה הראשונה לא אושרה. מתבצע ניסיון חוזר לבקשה 1/3 עם מזהה השינוי שנלכד…"
+
+#: src/components/LogMessage.svelte
+msgid "Formatted post is too large"
+msgstr "הפוסט המעוצב גדול מדי"
+
+#: src/components/LogMessage.svelte
+msgid "Found multiple matching post composers on the group page"
+msgstr "נמצאו מספר עורכי פוסטים תואמים בדף הקבוצה"
+
+#: src/components/LogMessage.svelte
+msgid "Fresh create-post form captured. Waiting for Facebook's response…"
+msgstr "נלכד טופס עדכני ליצירת פוסט. בהמתנה לתגובת פייסבוק…"
+
+#: src/components/LogMessage.svelte
+msgid "Gemini did not finish the rewrite"
+msgstr "Gemini לא השלים את השכתוב"
+
+#: src/components/LogMessage.svelte
+msgid "Gemini returned no rewritten text"
+msgstr "Gemini לא החזיר טקסט משוכתב"
+
+#: src/components/LogMessage.svelte
+msgid "Gemini rewrite completed."
+msgstr "השכתוב באמצעות Gemini הושלם."
+
+#: src/components/LogMessage.svelte
+#: src/components/UsageGuide.svelte
+msgid "Gemini rewrite failed. Using the original text for this post; Gemini will be tried again for the next post."
+msgstr "השכתוב באמצעות Gemini נכשל. הפוסט ישתמש בטקסט המקורי; בפוסט הבא יתבצע ניסיון נוסף עם Gemini."
+
+#: src/components/LogMessage.svelte
+msgid "Image uploads belong to a different profile"
+msgstr "העלאות התמונות שייכות לפרופיל אחר"
+
+#: src/components/LogMessage.svelte
+msgid "Images inserted"
+msgstr "התמונות הוכנסו"
+
+#: src/components/LogMessage.svelte
+msgid "Inserting post body…"
+msgstr "תוכן הפוסט מוכנס…"
+
+#: src/components/LogMessage.svelte
+msgid "Internet connection lost. Queue paused until the connection returns."
+msgstr "החיבור לאינטרנט נותק. תור הפרסומים מושהה עד שהחיבור יחזור."
+
+#: src/components/LogMessage.svelte
+msgid "Internet connection restored. Continuing the queue."
+msgstr "החיבור לאינטרנט חזר. תור הפרסומים ממשיך."
+
+#: src/components/LogMessage.svelte
+msgid "Internet connection restored. The queue remains manually paused."
+msgstr "החיבור לאינטרנט חזר. תור הפרסומים נשאר מושהה ידנית."
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured endpoint"
+msgstr "כתובת הבקשה שנלכדה אינה תקינה"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured formatted post"
+msgstr "הפוסט המעוצב שנלכד אינו תקין"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured post form"
+msgstr "טופס הפוסט שנלכד אינו תקין"
+
+#: src/components/LogMessage.svelte
+msgid "Invalid captured post variables"
+msgstr "משתני הפוסט שנלכדו אינם תקינים"
+
+#: src/components/LogMessage.svelte
+msgid "Load your groups before opening a post"
+msgstr "יש לטעון את הקבוצות לפני פתיחת פוסט"
+
+#: src/components/LogMessage.svelte
+msgid "Log in or complete Facebook verification in Chrome, then click Post again"
+msgstr "יש להתחבר לפייסבוק או להשלים אימות ב־Chrome, ואז ללחוץ שוב על פרסום"
+
+#: src/components/LogMessage.svelte
+msgid "Multiple matching controls found in the post composer"
+msgstr "נמצאו מספר פקדים תואמים בעורך הפוסט"
+
+#: src/components/LogMessage.svelte
+msgid "No Facebook response was captured for this entry"
+msgstr "לא נלכדה תגובת פייסבוק לרשומה זו"
+
+#: src/components/LogMessage.svelte
+msgid "No available post composer."
+msgstr "אין עורך פוסט זמין."
+
+#: src/components/LogMessage.svelte
+msgid "No complete image upload request was captured."
+msgstr "לא נלכדה בקשה מלאה להעלאת תמונה."
+
+#: src/components/LogMessage.svelte
+msgid "No fresh image upload request was captured."
+msgstr "לא נלכדה בקשה עדכנית להעלאת תמונה."
+
+#: src/components/LogMessage.svelte
+msgid "Opening browser…"
+msgstr "הדפדפן נפתח…"
+
+#: src/components/LogMessage.svelte
+msgid "Pause requested. The current operation will finish before pausing."
+msgstr "התבקשה השהיה. הפעולה הנוכחית תסתיים לפני ההשהיה."
+
+#: src/components/LogMessage.svelte
+msgid "Post button clicked"
+msgstr "כפתור הפרסום נלחץ"
+
+#: src/components/LogMessage.svelte
+msgid "Post published."
+msgstr "הפוסט פורסם."
+
+#: src/components/LogMessage.svelte
+msgid "Postika is shutting down"
+msgstr "Postika נסגרת"
+
+#: src/components/LogMessage.svelte
+msgid "Posting is already running"
+msgstr "הפרסום כבר פועל"
+
+#: src/components/LogMessage.svelte
+msgid "Posting paused."
+msgstr "הפרסום הושהה."
+
+#: src/components/LogMessage.svelte
+msgid "Posting resumed."
+msgstr "הפרסום חודש."
+
+#: src/components/LogMessage.svelte
+msgid "Posting stopped after the first post was confirmed"
+msgstr "הפרסום הופסק לאחר אישור הפוסט הראשון"
+
+#: src/components/LogMessage.svelte
+msgid "Posting..."
+msgstr "מתפרסם..."
+
+#: src/components/LogMessage.svelte
+msgid "Reading Facebook's create-post confirmation…"
+msgstr "אישור יצירת הפוסט של פייסבוק נקרא…"
+
+#: src/components/LogMessage.svelte
+msgid "Rewriting the post body with Gemini…"
+msgstr "תוכן הפוסט משוכתב באמצעות Gemini…"
+
+#: src/components/LogMessage.svelte
+msgid "Scheduled posting cancelled."
+msgstr "הפרסום המתוזמן בוטל."
+
+#: src/components/LogMessage.svelte
+msgid "Scheduled time reached. Starting posting…"
+msgstr "המועד המתוזמן הגיע. הפרסום מתחיל…"
+
+#: src/components/LogMessage.svelte
+msgid "Select at least one group"
+msgstr "יש לבחור לפחות קבוצה אחת"
+
+#: src/components/LogMessage.svelte
+msgid "Setting up automatic posting using your first Facebook post..."
+msgstr "הפרסום האוטומטי מוגדר באמצעות הפוסט הראשון שלכם בפייסבוק..."
+
+#: src/components/LogMessage.svelte
+msgid "Stopping posting…"
+msgstr "הפרסום נעצר…"
+
+#: src/components/LogMessage.svelte
+msgid "Submitting the first post and capturing fresh request values…"
+msgstr "הפוסט הראשון נשלח וערכי בקשה עדכניים נלכדים…"
+
+#: src/components/LogMessage.svelte
+#: src/components/LogMessage.svelte
+msgid "Technical details recorded. Open debug details to inspect the original message."
+msgstr "נרשמו פרטים טכניים. אפשר לפתוח את פרטי האבחון כדי לבדוק את ההודעה המקורית."
+
+#: src/components/LogMessage.svelte
+msgid "The active Facebook profile changed or expired"
+msgstr "פרופיל הפייסבוק הפעיל השתנה או שפג תוקף ההתחברות"
+
+#: src/components/LogMessage.svelte
+msgid "The browser connection was lost. Check Facebook before retrying"
+msgstr "החיבור לדפדפן נותק. יש לבדוק בפייסבוק לפני ניסיון נוסף"
+
+#: src/components/LogMessage.svelte
+msgid "The browser profile changed while capturing posting requests"
+msgstr "פרופיל הדפדפן השתנה במהלך לכידת בקשות הפרסום"
+
+#: src/components/LogMessage.svelte
+msgid "The captured formatted post body does not match your draft"
+msgstr "תוכן הפוסט המעוצב שנלכד אינו תואם לטיוטה שלכם"
+
+#: src/components/LogMessage.svelte
+msgid "The captured image upload cookies do not match the Facebook profile"
+msgstr "קובצי העוגיות של העלאת התמונה שנלכדה אינם תואמים לפרופיל הפייסבוק"
+
+#: src/components/LogMessage.svelte
+msgid "The captured image upload format is not supported"
+msgstr "פורמט העלאת התמונה שנלכד אינו נתמך"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post belongs to a different Facebook profile"
+msgstr "הפוסט שנלכד שייך לפרופיל פייסבוק אחר"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post body does not match your draft"
+msgstr "תוכן הפוסט שנלכד אינו תואם לטיוטה שלכם"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post cookies do not match the logged-in profile"
+msgstr "קובצי העוגיות של הפוסט שנלכד אינם תואמים לפרופיל המחובר"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post has no group target"
+msgstr "לפוסט שנלכד אין קבוצת יעד"
+
+#: src/components/LogMessage.svelte
+msgid "The captured post target does not match the selected group"
+msgstr "יעד הפוסט שנלכד אינו תואם לקבוצה שנבחרה"
+
+#: src/components/LogMessage.svelte
+msgid "The composer dialog was replaced while loading"
+msgstr "חלון עורך הפוסט הוחלף במהלך הטעינה"
+
+#: src/components/LogMessage.svelte
+msgid "The create-post connection failed. Check Facebook before retrying"
+msgstr "החיבור ליצירת הפוסט נכשל. יש לבדוק בפייסבוק לפני ניסיון נוסף"
+
+#: src/components/LogMessage.svelte
+msgid "The current profile differs from the profile used to load groups. Load groups again."
+msgstr "הפרופיל הנוכחי שונה מהפרופיל ששימש לטעינת הקבוצות. יש לטעון קבוצות מחדש."
+
+#: src/components/LogMessage.svelte
+msgid "The desktop application is not ready"
+msgstr "יישום שולחן העבודה אינו מוכן"
+
+#: src/components/LogMessage.svelte
+msgid "The desktop clipboard is not ready"
+msgstr "לוח ההעתקה של שולחן העבודה אינו מוכן"
+
+#: src/components/LogMessage.svelte
+msgid "The expected composer control did not appear in Chrome"
+msgstr "פקד העורך הצפוי לא הופיע ב־Chrome"
+
+#: src/components/LogMessage.svelte
+msgid "The first post was confirmed, but Chrome's completion state could not be checked. Posting stopped"
+msgstr "הפוסט הראשון אושר, אך לא ניתן לבדוק את מצב ההשלמה ב־Chrome. הפרסום הופסק"
+
+#: src/components/LogMessage.svelte
+msgid "The image upload did not contain multipart form data"
+msgstr "העלאת התמונה לא הכילה נתוני טופס מרובי חלקים"
+
+#: src/components/LogMessage.svelte
+msgid "The image upload does not match its active Facebook profile"
+msgstr "העלאת התמונה אינה תואמת לפרופיל הפייסבוק הפעיל שלה"
+
+#: src/components/LogMessage.svelte
+msgid "The image upload form belongs to a different Facebook profile"
+msgstr "טופס העלאת התמונה שייך לפרופיל פייסבוק אחר"
+
+#: src/components/LogMessage.svelte
+msgid "The selected group has an invalid Facebook URL. Load groups again"
+msgstr "כתובת הפייסבוק של הקבוצה שנבחרה אינה תקינה. יש לטעון קבוצות מחדש"
+
+#: src/components/LogMessage.svelte
+msgid "The session could not be saved for posting retries and remaining groups."
+msgstr "לא ניתן לשמור את ההתחברות לניסיונות פרסום חוזרים ולקבוצות הנותרות."
+
+#: src/components/LogMessage.svelte
+msgid "This draft has already been submitted to the first group. It was not submitted again."
+msgstr "טיוטה זו כבר נשלחה לקבוצה הראשונה. היא לא נשלחה שוב."
+
+#: src/components/LogMessage.svelte
+msgid "This group has no available post composer"
+msgstr "אין עורך פוסט זמין בקבוצה זו"
+
+#: src/components/LogMessage.svelte
+msgid "This group has reached its pending-content limit."
+msgstr "קבוצה זו הגיעה למגבלת התוכן הממתין לאישור."
+
+#: src/components/LogMessage.svelte
+#: src/components/LogMessage.svelte
+#: src/components/UsageGuide.svelte
+msgid "This post was submitted, but confirmation is uncertain. Check Facebook before retrying."
+msgstr "פוסט זה נשלח, אך האישור אינו ודאי. יש לבדוק בפייסבוק לפני ניסיון נוסף."
+
+#: src/components/LogMessage.svelte
+msgid "This response is no longer available for the current run"
+msgstr "תגובה זו אינה זמינה עוד להפעלה הנוכחית"
+
+#: src/components/LogMessage.svelte
+msgid "Upload and post captures must belong to the same logged-in profile"
+msgstr "לכידות ההעלאה והפוסט חייבות להשתייך לאותו פרופיל מחובר"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for Facebook's Post button…"
+msgstr "בהמתנה לכפתור הפרסום של פייסבוק…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the composer controls and layout…"
+msgstr "בהמתנה לפקדי עורך הפוסט ולפריסתו…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the group page and opening its composer…"
+msgstr "בהמתנה לדף הקבוצה ולפתיחת עורך הפוסט…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the image previews and composer to settle…"
+msgstr "בהמתנה להתייצבות תצוגות התמונות המקדימות ועורך הפוסט…"
+
+#: src/components/LogMessage.svelte
+msgid "Your Facebook session needs login or verification. Load groups again."
+msgstr "ההתחברות שלכם לפייסבוק דורשת כניסה מחדש או אימות. יש לטעון קבוצות מחדש."
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Published to {0}."
+msgstr "פורסם ב־{0}."
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "{0}: Awaiting admin approval."
+msgstr "{0}: בהמתנה לאישור מנהל."
+
+#. 0: number(a); 1: b
+#: src/components/LogMessage.svelte
+msgid "Waiting {0} seconds before posting to {1}."
+msgstr "המתנה של {0} שניות לפני הפרסום ב־{1}."
+
+#. 0: a; 1: b
+#: src/components/LogMessage.svelte
+msgid "Next post in {0} · {1}"
+msgstr "הפרסום הבא בעוד {0} · {1}"
+
+#. 0: a; 1: number(b); 2: number(c)
+#: src/components/LogMessage.svelte
+msgid "{0}: Uploading photo {1} of {2}…"
+msgstr "{0}: תמונה {1} מתוך {2} מועלת…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Preparing a post for {0}…"
+msgstr "פוסט עבור {0} בהכנה…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Uploading images for {0}…"
+msgstr "תמונות עבור {0} מועלות…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Posting to {0}…"
+msgstr "מתפרסם ב־{0}…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Fresh upload and post request values captured from {0}."
+msgstr "נלכדו ערכי בקשה עדכניים להעלאה ולפרסום מתוך {0}."
+
+#. 0: number(a); 1: number(b)
+#: src/components/LogMessage.svelte
+msgid "Submission unconfirmed. Retrying request {0}/{1}…"
+msgstr "השליחה לא אושרה. ניסיון חוזר לבקשה {0}/{1}…"
+
+#. 0: number(a); 1: number(b); 2: number(c)
+#: src/components/LogMessage.svelte
+msgid "Finished: {0} published, {1} awaiting approval, {2} failed or skipped."
+msgstr "הסתיים: {0} פורסמו, {1} ממתינים לאישור, {2} נכשלו או דולגו."
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Opening {0}…"
+msgstr "{0} נפתח…"
+
+#. 0: number(a); 1: number(b)
+#: src/components/LogMessage.svelte
+msgid "Capturing image uploads ({0} of {1})…"
+msgstr "העלאות התמונות נלכדות ({0} מתוך {1})…"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "Gemini rewrite failed (HTTP {0}). Check the key, model and account quota"
+msgstr "השכתוב באמצעות Gemini נכשל (HTTP {0}). יש לבדוק את המפתח, המודל ומכסת החשבון"
+
+#. 0: code
+#: src/components/LogMessage.svelte
+msgid " (Code {0})"
+msgstr " (קוד {0})"
+
+#: src/components/FacebookPageDialog.svelte
+#: src/components/FeaturesCard.svelte
+#: src/components/LocalizedFeedback.svelte
+#: src/components/PostEditor.svelte
+#: src/components/UsageGuide.svelte
+msgid "Debug details"
+msgstr "פרטי אבחון"
+
+#~ msgid ", "
+#~ msgstr ""
+
+#: src/components/ThemePicker.svelte
+msgid "Themes"
+msgstr "ערכות נושא"
+
+#: src/App.svelte
+#: src/components/UsageGuide.svelte
+msgid "Preferences & post"
+msgstr "העדפות ופרסום"
+
+#: src/App.svelte
+#: src/App.svelte
+msgid "Set preferences, then post now or schedule"
+msgstr "הגדרת העדפות, ולאחר מכן פרסום כעת או תזמון"
+
+#~ msgid "Postika"
+#~ msgstr ""
+
+#: src/components/FeaturesCard.svelte
+#: src/components/FeaturesCard.svelte
+msgid "Features"
+msgstr "תכונות"
+
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
+#: src/components/UsageGuide.svelte
+msgid "Draft text and image copies are saved automatically for each account."
+msgstr "טקסט הטיוטה ועותקי התמונות נשמרים אוטומטית לכל חשבון."
+
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
+msgid "Separate Facebook sessions, groups, drafts, settings, and queues for each account."
+msgstr "התחברויות לפייסבוק, קבוצות, טיוטות, הגדרות ותורי פרסום נפרדים לכל חשבון."
+
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
+msgid "Switch accounts while other queues keep running."
+msgstr "אפשר לעבור בין חשבונות בזמן שתורי פרסום אחרים ממשיכים לפעול."
+
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
+msgid "Loaded groups stay available between app sessions."
+msgstr "קבוצות שנטענו נשארות זמינות גם לאחר פתיחה מחדש של היישום."
+
+#: src/components/FeaturesCard.svelte
+msgid "Minimum and maximum delays between posts."
+msgstr "זמני המתנה מינימליים ומקסימליים בין פרסומים."
+
+#: src/components/FeaturesCard.svelte
+msgid "Custom instructions and a configurable Gemini model."
+msgstr "הנחיות מותאמות אישית ומודל Gemini לבחירתכם."
+
+#. 0: languages.length; 1: themeOptions.length
+#: src/components/FeaturesCard.svelte
+msgid "{0} languages · {1} themes"
+msgstr "{0} שפות · {1} ערכות נושא"
+
+#: src/components/FeaturesCard.svelte
+msgid "Language and theme choices sync across windows."
+msgstr "בחירת השפה וערכת הנושא מסתנכרנת בין החלונות."
+
+#: src/components/FeaturesCard.svelte
+msgid "Windows and Linux"
+msgstr "Windows ו־Linux"
+
+#: src/components/FeaturesCard.svelte
+msgid "Post text and images to multiple Facebook groups."
+msgstr "פרסום טקסט ותמונות במספר קבוצות פייסבוק."
+
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
+msgid "Keep Postika open and your computer awake. Queues and logs are not restored after quitting."
+msgstr "יש להשאיר את Postika פתוחה ואת המחשב ער. תורי הפרסום והיומנים אינם משוחזרים לאחר יציאה."
+
+#: src/components/FeaturesCard.svelte
+msgid "<0/> Features"
+msgstr "<0/> תכונות"
+
+#: src/components/FeaturesCard.svelte
+#: src/components/UsageGuide.svelte
+msgid "Browse or drop images, preview attachments, and remove images."
+msgstr "אפשר לעיין בתמונות או לגרור אותן, לצפות בתצוגה מקדימה של הקבצים המצורפים ולהסיר תמונות."
+
+#: src/components/FeaturesCard.svelte
+msgid "Queues pause when offline and resume when the connection returns."
+msgstr "תורי הפרסום מושהים כשאין חיבור לאינטרנט וממשיכים כשהחיבור חוזר."
+
+#: src/components/FeaturesCard.svelte
+msgid "How to use"
+msgstr "איך משתמשים"
+
+#: src/components/UsageGuide.svelte
+msgid "Choose Add account, enter an account name, and select Create & sign in. Use the account switcher to return to an existing account."
+msgstr "יש לבחור הוספת חשבון, להזין שם חשבון ולבחור יצירה והתחברות. אפשר לחזור לחשבון קיים באמצעות מחליף החשבונות."
+
+#: src/components/UsageGuide.svelte
+msgid "Write your message and add at least one image; both are required. Use Next to move forward and Previous to edit an earlier step."
+msgstr "יש לכתוב את ההודעה ולהוסיף לפחות תמונה אחת; שניהם נדרשים. משתמשים בהבא כדי להתקדם ובהקודם כדי לערוך שלב קודם."
+
+#: src/components/UsageGuide.svelte
+msgid "Select Load groups and finish Facebook login or verification in Chrome. Search the loaded list, select the groups you want, then choose Next."
+msgstr "יש לבחור טעינת קבוצות ולהשלים התחברות או אימות בפייסבוק ב־Chrome. מחפשים ברשימה שנטענה, בוחרים את הקבוצות הרצויות ולוחצים על הבא."
+
+#: src/components/UsageGuide.svelte
+msgid "In Settings, enter this account’s Gemini API key and model, then Save settings. Enable rewriting for your run and describe the tone and details to preserve."
+msgstr "בהגדרות יש להזין את מפתח ה־API של Gemini ואת המודל עבור חשבון זה, ואז לשמור את ההגדרות. מפעילים שכתוב עבור ההפעלה ומתארים את הסגנון והפרטים שיש לשמור."
+
+#: src/components/UsageGuide.svelte
+msgid "Review the account, message, image order, selected groups, and posting intervals. Choose Post now and complete any Facebook login or verification prompts in Chrome."
+msgstr "יש לבדוק את החשבון, ההודעה, סדר התמונות, הקבוצות שנבחרו ומרווחי הפרסום. בוחרים פרסום כעת ומשלימים בקשות התחברות או אימות בפייסבוק ב־Chrome."
+
+#: src/components/UsageGuide.svelte
+msgid "Choose Schedule, select a future date and time in the displayed time zone, then Confirm schedule. Facebook may require login when the queue starts."
+msgstr "יש לבחור תזמון, לבחור תאריך ושעה עתידיים באזור הזמן המוצג ולאשר את התזמון. ייתכן שפייסבוק ידרוש התחברות כשיתחיל תור הפרסומים."
+
+#: src/components/UsageGuide.svelte
+msgid "Open Posting logs to follow progress. Its account selector lets you inspect other queues without switching the account in the main workspace."
+msgstr "פותחים את יומני הפרסום כדי לעקוב אחר ההתקדמות. בורר החשבונות בחלון זה מאפשר לבדוק תורים אחרים בלי להחליף את החשבון בסביבת העבודה הראשית."
+
+#: src/components/UsageGuide.svelte
+msgid "Pause finishes the current operation before waiting. Resume continues the queue; Stop ends the remaining queue. Queues paused manually need Resume even after internet returns."
+msgstr "השהיה מאפשרת לפעולה הנוכחית להסתיים לפני ההמתנה. לחיצה על המשך מפעילה מחדש את תור הפרסומים; עצירה מסיימת את יתרת התור. תורים שהושהו ידנית דורשים לחיצה על המשך גם לאחר חזרת האינטרנט."
+
+#: src/components/UsageGuide.svelte
+msgid "Published means Facebook confirmed publication. Pending means admin approval is needed. Review failed or skipped entries; check unconfirmed submissions on Facebook before retrying to avoid duplicates."
+msgstr "פורסם פירושו שפייסבוק אישר את הפרסום. ממתין לאישור פירושו שנדרש אישור מנהל. יש לבדוק רשומות שנכשלו או דולגו; כדי למנוע כפילויות, יש לבדוק בפייסבוק שליחות שלא אושרו לפני ניסיון נוסף."
+
+#: src/components/UsageGuide.svelte
+msgid "For problems, expand Debug details or Copy Facebook response in Posting logs. For expired logins, use Load groups and finish verification before trying again."
+msgstr "במקרה של בעיות, אפשר להרחיב את פרטי האבחון או להעתיק את תגובת פייסבוק ביומני הפרסום. אם פג תוקף ההתחברות, יש לטעון קבוצות ולהשלים אימות לפני ניסיון נוסף."
+
+#: src/components/UsageGuide.svelte
+msgid "Use Language and Themes in the top bar. Your choices apply across windows."
+msgstr "אפשר להשתמש בשפה ובערכות נושא בסרגל העליון. הבחירות שלכם חלות בכל החלונות."
+
+#: src/components/UsageGuide.svelte
+msgid "Adding another account is optional. Use it only when you want a separate Facebook login and workspace."
+msgstr "הוספת חשבון נוסף היא אופציונלית. יש להשתמש בה רק כשרוצים התחברות נפרדת לפייסבוק וסביבת עבודה נפרדת."
+
+#: src/components/UsageGuide.svelte
+msgid "You can use the default account without adding another one. Sign in to Facebook when you choose Load groups in step 2."
+msgstr "אפשר להשתמש בחשבון ברירת המחדל בלי להוסיף חשבון נוסף. מתחברים לפייסבוק כשבוחרים טעינת קבוצות בשלב 2."
+
+#: src/components/FeaturesCard.svelte
+msgid "Features & How to Use"
+msgstr "תכונות ומדריך שימוש"
+
+#~ msgid "Or post from any Facebook page"
+#~ msgstr ""
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Or click here to fetch posts from any Facebook page"
+msgstr "או לחצו כאן כדי לייבא פוסטים מכל דף פייסבוק"
+
+#: src/components/LogMessage.svelte
+msgid "Enter a Facebook page URL, such as https://web.facebook.com/swiftlineMotors"
+msgstr "יש להזין כתובת של דף פייסבוק, למשל https://web.facebook.com/swiftlineMotors"
+
+#~ msgid "Fetch Facebook posts"
+#~ msgstr ""
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Decrease number of posts"
+msgstr "הקטנת מספר הפוסטים"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Increase number of posts"
+msgstr "הגדלת מספר הפוסטים"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Facebook page URL"
+msgstr "כתובת דף הפייסבוק"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Number of posts to fetch"
+msgstr "מספר הפוסטים לייבוא"
+
+#~ msgid "Done"
+#~ msgstr ""
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Fetch posts from a Facebook page"
+msgstr "ייבוא פוסטים מדף פייסבוק"
+
+#: src/components/LogMessage.svelte
+msgid "Could not check fetch progress. Close this dialog and try again."
+msgstr "לא ניתן לבדוק את התקדמות הייבוא. יש לסגור חלון זה ולנסות שוב."
+
+#: src/components/LogMessage.svelte
+msgid "Could not stop fetching. Try again."
+msgstr "לא ניתן לעצור את הייבוא. יש לנסות שוב."
+
+#: src/components/LogMessage.svelte
+msgid "Fetching stopped."
+msgstr "הייבוא הופסק."
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Facebook page fetch options"
+msgstr "אפשרויות ייבוא מדף פייסבוק"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Posts fetched"
+msgstr "פוסטים שיובאו"
+
+#: src/components/PostComposer.svelte
+msgid "Fetched posts"
+msgstr "פוסטים מיובאים"
+
+#: src/components/FetchedPostCard.svelte
+msgid "Post without text"
+msgstr "פוסט ללא טקסט"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Fetching…"
+msgstr "מתבצע ייבוא…"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Fetch"
+msgstr "ייבוא"
+
+#: src/components/PostComposer.svelte
+msgid "Fetched posts <0/>"
+msgstr "פוסטים מיובאים <0/>"
+
+#: src/components/PostComposer.svelte
+msgid "Write a post instead"
+msgstr "כתיבת פוסט במקום זאת"
+
+#~ msgid "No posts were available from this Facebook page."
+#~ msgstr ""
+
+#: src/App.svelte
+msgid "Review the posts fetched from your Facebook page."
+msgstr "סקירת הפוסטים שיובאו מדף הפייסבוק שלכם."
+
+#~ msgid "Post removed."
+#~ msgstr ""
+
+#: src/components/PostComposer.svelte
+msgid "No posts to show. Fetch posts or write a post instead."
+msgstr "אין פוסטים להצגה. אפשר לייבא פוסטים או לכתוב פוסט במקום זאת."
+
+#. 0: index + 1
+#: src/components/FetchedPostCard.svelte
+msgid "Post {0}"
+msgstr "פוסט {0}"
+
+#. 0: index + 1
+#: src/components/FetchedPostCard.svelte
+msgid "Edit post {0}"
+msgstr "עריכת פוסט {0}"
+
+#: src/components/FetchedPostCard.svelte
+msgid "Edit"
+msgstr "עריכה"
+
+#. 0: index + 1
+#: src/components/FetchedPostCard.svelte
+msgid "Delete post {0}"
+msgstr "מחיקת פוסט {0}"
+
+#: src/components/FetchedPostCard.svelte
+msgid "Delete"
+msgstr "מחיקה"
+
+#: src/components/FetchedPostCard.svelte
+msgid "Post text"
+msgstr "טקסט הפוסט"
+
+#. 0: imageIndex + 1; 1: index + 1
+#: src/components/FetchedPostCard.svelte
+msgid "Remove image {0} from post {1}"
+msgstr "הסרת תמונה {0} מפוסט {1}"
+
+#: src/components/FetchedPostCard.svelte
+msgid "Save changes"
+msgstr "שמירת שינויים"
+
+#: src/components/LogMessage.svelte
+msgid "Could not fetch Facebook posts. Check Chrome and try again."
+msgstr "לא ניתן לייבא פוסטים מפייסבוק. יש לבדוק את Chrome ולנסות שוב."
+
+#: src/components/LogMessage.svelte
+msgid "Could not load full-size photos. Fetch the posts again."
+msgstr "לא ניתן לטעון תמונות בגודל מלא. יש לייבא את הפוסטים שוב."
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture Facebook requests. Check Chrome and fetch again."
+msgstr "לא ניתן ללכוד בקשות פייסבוק. יש לבדוק את Chrome ולייבא שוב."
+
+#: src/components/LogMessage.svelte
+msgid "Enter a positive whole number of posts to fetch"
+msgstr "יש להזין מספר שלם וחיובי של פוסטים לייבוא"
+
+#: src/components/LogMessage.svelte
+msgid "Wait for posting to finish before fetching Facebook posts"
+msgstr "יש להמתין לסיום הפרסום לפני ייבוא פוסטים מפייסבוק"
+
+#: src/components/LogMessage.svelte
+msgid "Finish loading groups before fetching Facebook posts"
+msgstr "יש לסיים את טעינת הקבוצות לפני ייבוא פוסטים מפייסבוק"
+
+#: src/components/LogMessage.svelte
+msgid "Fetch at least one post before posting"
+msgstr "יש לייבא לפחות פוסט אחד לפני הפרסום"
+
+#: src/components/LogMessage.svelte
+msgid "Capturing Facebook posts…"
+msgstr "פוסטים מפייסבוק נלכדים…"
+
+#: src/components/LogMessage.svelte
+msgid "Capturing full-size photos…"
+msgstr "תמונות בגודל מלא נלכדות…"
+
+#: src/components/LogMessage.svelte
+msgid "Reloading the photo page…"
+msgstr "דף התמונה נטען מחדש…"
+
+#: src/components/LogMessage.svelte
+msgid "Opening the next photo…"
+msgstr "התמונה הבאה נפתחת…"
+
+#: src/components/LogMessage.svelte
+msgid "Fetching posts and full-size photos…"
+msgstr "פוסטים ותמונות בגודל מלא מיובאים…"
+
+#~ msgid "Facebook"
+#~ msgstr ""
+
+#. 0: number(a); 1: number(b)
+#: src/components/LogMessage.svelte
+msgid "Fetched {0} of {1} posts…"
+msgstr "יובאו {0} מתוך {1} פוסטים…"
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Fetched {0} posts."
+msgstr "יובאו {0} פוסטים."
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Fetched {0} posts. No more posts are available."
+msgstr "יובאו {0} פוסטים. אין פוסטים נוספים זמינים."
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Add text to fetched post {0} before posting"
+msgstr "יש להוסיף טקסט לפוסט המיובא {0} לפני הפרסום"
+
+#. 0: number(a); 1: number(b); 2: c
+#: src/components/LogMessage.svelte
+msgid "Preparing post {0}/{1} for {2}…"
+msgstr "פוסט {0}/{1} עבור {2} בהכנה…"
+
+#. 0: number(a); 1: number(b); 2: c
+#: src/components/LogMessage.svelte
+msgid "Uploading images for post {0}/{1} to {2}…"
+msgstr "תמונות לפוסט {0}/{1} עבור {2} מועלות…"
+
+#. 0: number(a); 1: number(b); 2: c
+#: src/components/LogMessage.svelte
+msgid "Posting post {0}/{1} to {2}…"
+msgstr "פוסט {0}/{1} מתפרסם ב־{2}…"
+
+#. 0: number(a); 1: number(b); 2: number(c); 3: number(d)
+#: src/components/LogMessage.svelte
+msgid "Downloading photo {0}/{1} for post {2}/{3}…"
+msgstr "תמונה {0}/{1} לפוסט {2}/{3} יורדת…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the groups request…"
+msgstr "בהמתנה לבקשת הקבוצות…"
+
+#: src/components/LogMessage.svelte
+msgid "Groups request captured. Waiting for the page to finish loading…"
+msgstr "בקשת הקבוצות נלכדה. בהמתנה לסיום טעינת הדף…"
+
+#: src/components/LogMessage.svelte
+msgid "Browser closed. Loading your groups…"
+msgstr "הדפדפן נסגר. הקבוצות שלכם נטענות…"
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Loaded {0} groups…"
+msgstr "נטענו {0} קבוצות…"
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Restored {0} saved groups. Load groups to refresh the list."
+msgstr "שוחזרו {0} קבוצות שמורות. יש לטעון קבוצות כדי לרענן את הרשימה."
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Loaded and saved {0} groups."
+msgstr "נטענו ונשמרו {0} קבוצות."
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Loaded {0} groups, but could not save them. Load groups again to retry saving."
+msgstr "נטענו {0} קבוצות, אך לא ניתן לשמור אותן. יש לטעון קבוצות שוב כדי לנסות לשמור מחדש."
+
+#: src/components/LogMessage.svelte
+msgid "Could not load groups. Check Chrome and try again."
+msgstr "לא ניתן לטעון קבוצות. יש לבדוק את Chrome ולנסות שוב."
+
+#: src/components/LogMessage.svelte
+msgid "Could not read Postika settings"
+msgstr "לא ניתן לקרוא את הגדרות Postika"
+
+#: src/components/LogMessage.svelte
+msgid "Could not save Postika settings"
+msgstr "לא ניתן לשמור את הגדרות Postika"
+
+#: src/components/LogMessage.svelte
+msgid "Set an interval between 60 and 86400 seconds, with the maximum at least the minimum"
+msgstr "יש להגדיר מרווח של 60 עד 86400 שניות, כאשר המקסימום אינו קטן מהמינימום"
+
+#: src/components/LogMessage.svelte
+msgid "Rewrite instructions are too long"
+msgstr "ההנחיות לשכתוב ארוכות מדי"
+
+#: src/components/LogMessage.svelte
+msgid "Enter a valid Gemini model name"
+msgstr "יש להזין שם תקין של מודל Gemini"
+
+#: src/components/LogMessage.svelte
+msgid "Enter an account name of 1 to 80 characters"
+msgstr "יש להזין שם חשבון באורך של 1 עד 80 תווים"
+
+#: src/components/LogMessage.svelte
+msgid "An account profile with this name already exists"
+msgstr "פרופיל חשבון בשם זה כבר קיים"
+
+#: src/components/LogMessage.svelte
+msgid "Account profile was not found"
+msgstr "פרופיל החשבון לא נמצא"
+
+#: src/components/LogMessage.svelte
+msgid "Could not update accounts. Please try again."
+msgstr "לא ניתן לעדכן חשבונות. יש לנסות שוב."
+
+#: src/components/LogMessage.svelte
+msgid "Chrome or Chromium was not found. Install a browser to open your Facebook groups"
+msgstr "Chrome או Chromium לא נמצאו. יש להתקין דפדפן כדי לפתוח את קבוצות הפייסבוק שלכם"
+
+#: src/components/LogMessage.svelte
+msgid "Found multiple matching menus on the groups page. Please open the Sort menu in Chrome"
+msgstr "נמצאו מספר תפריטים תואמים בדף הקבוצות. יש לפתוח את תפריט המיון ב־Chrome"
+
+#: src/components/LogMessage.svelte
+msgid "Found multiple matching radio menus. Please choose a sort option in Chrome"
+msgstr "נמצאו מספר תפריטי בחירה תואמים. יש לבחור אפשרות מיון ב־Chrome"
+
+#: src/components/LogMessage.svelte
+msgid "Could not open the link. Please try again."
+msgstr "לא ניתן לפתוח את הקישור. יש לנסות שוב."
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "None of the {0} selected groups has an available post composer"
+msgstr "אין עורך פוסט זמין באף אחת מ־{0} הקבוצות שנבחרו"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "{0} is not an image file. Drop individual images, not folders."
+msgstr "{0} אינו קובץ תמונה. יש לגרור תמונות בודדות, ולא תיקיות."
+
+#: src/components/LogMessage.svelte
+msgid "Could not complete this action. Please try again."
+msgstr "לא ניתן להשלים פעולה זו. יש לנסות שוב."
+
+#~ msgid "{0}–{1}"
+#~ msgstr ""
+
+#: src/components/UpdateButton.svelte
+msgid "Update available"
+msgstr "עדכון זמין"
+
+#: src/components/UpdateButton.svelte
+#: src/components/UpdateButton.svelte
+#: src/components/UpdateButton.svelte
+msgid "Updates"
+msgstr "עדכונים"
+
+#: src/components/UpdateButton.svelte
+msgid "Checking for updates…"
+msgstr "מחפש עדכונים…"
+
+#: src/components/UpdateButton.svelte
+msgid "Downloading update…"
+msgstr "מוריד עדכון…"
+
+#: src/components/UpdateButton.svelte
+msgid "Update ready. Stop all posting queues before restarting."
+msgstr "העדכון מוכן. יש לעצור את כל תורי הפרסום לפני ההפעלה מחדש."
+
+#: src/components/UpdateButton.svelte
+msgid "Postika is up to date."
+msgstr "Postika מעודכן."
+
+#: src/components/UpdateButton.svelte
+msgid "Download update"
+msgstr "הורדת עדכון"
+
+#: src/components/UpdateButton.svelte
+#: src/components/UpdateButton.svelte
+msgid "Restart to update"
+msgstr "הפעלה מחדש לעדכון"
+
+#: src/components/UpdateButton.svelte
+msgid "Check for updates"
+msgstr "בדיקת עדכונים"
+
+#: src/components/UpdateButton.svelte
+msgid "Installing update…"
+msgstr "מתקין עדכון…"

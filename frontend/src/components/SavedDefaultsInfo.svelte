@@ -35,7 +35,7 @@
   button:hover, button[aria-expanded=true] { background: var(--surface-active); }
   button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
   svg { width: 2rem; height: 2rem; fill: currentColor; }
-  .help { position: absolute; bottom: calc(100% + .7rem); left: -17rem; z-index: 5; width: min(40rem, calc(100vw - 6rem)); padding: 1.8rem; border: 1px solid var(--border-accent); border-radius: .8rem; background: var(--surface); box-shadow: 0 .6rem 2.4rem var(--shadow); color: var(--text-strong); font-size: 1.3rem; line-height: 1.6; }
+  .help { position: absolute; bottom: calc(100% + .7rem); inset-inline-start: -17rem; z-index: 5; width: min(40rem, calc(100vw - 6rem)); padding: 1.8rem; border: 1px solid var(--border-accent); border-radius: .8rem; background: var(--surface); box-shadow: 0 .6rem 2.4rem var(--shadow); color: var(--text-strong); font-size: 1.3rem; line-height: 1.6; }
   .help::after { content: ''; position: absolute; top: 100%; left: 0; right: 0; height: 1rem; }
   p { margin-top: .8rem; }
   dl { margin: 1.2rem 0; }
@@ -44,5 +44,5 @@
   dd { font-weight: 550; }
   .instructions { max-height: 12rem; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; padding: .8rem 1rem; border-radius: .4rem; background: var(--surface-subtle); }
   .note { color: var(--text-secondary); font-size: 1.2rem; border-top: 1px solid var(--border); padding-top: 1rem; }
-  @media (max-width: 540px) { .help { left: -18rem; } }
+  @media (max-width: 540px) { .help { inset-inline-start: -18rem; } }
 </style>

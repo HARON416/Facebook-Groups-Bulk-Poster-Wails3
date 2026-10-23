@@ -6,9 +6,48 @@
   export function logMessage(value: string, technical = false): string {
     const { key, args, prefix, code, url } = parseLogMessage(value);
     const number = (value: string) => new Intl.NumberFormat(getLocale()).format(Number(value));
-    const [a = '', b = '', c = ''] = args;
+    const [a = '', b = '', c = '', d = ''] = args;
     let translated: string;
     switch (key) {
+      case 'groups_wait': translated = /* @wc-include */ 'Waiting for the groups request…'; break;
+      case 'groups_captured': translated = /* @wc-include */ 'Groups request captured. Waiting for the page to finish loading…'; break;
+      case 'groups_loading': translated = /* @wc-include */ 'Browser closed. Loading your groups…'; break;
+      case 'loading': translated = /* @wc-include */ 'Loading…'; break;
+      case 'groups_progress': translated = /* @wc-include */ `Loaded ${number(a)} groups…`; break;
+      case 'groups_restored': translated = /* @wc-include */ `Restored ${number(a)} saved groups. Load groups to refresh the list.`; break;
+      case 'groups_saved': translated = /* @wc-include */ `Loaded and saved ${number(a)} groups.`; break;
+      case 'groups_unsaved': translated = /* @wc-include */ `Loaded ${number(a)} groups, but could not save them. Load groups again to retry saving.`; break;
+      case 'groups_error': translated = /* @wc-include */ 'Could not load groups. Check Chrome and try again.'; break;
+      case 'restore_groups': translated = /* @wc-include */ 'Could not restore saved groups. Load groups to refresh the list.'; break;
+      case 'settings_read': translated = /* @wc-include */ 'Could not read Postika settings'; break;
+      case 'settings_save': translated = /* @wc-include */ 'Could not save Postika settings'; break;
+      case 'settings_saved': translated = /* @wc-include */ 'Settings saved. New runs can use these defaults.'; break;
+      case 'settings_interval': translated = /* @wc-include */ 'Set an interval between 60 and 86400 seconds, with the maximum at least the minimum'; break;
+      case 'settings_instructions': translated = /* @wc-include */ 'Rewrite instructions are too long'; break;
+      case 'settings_model': translated = /* @wc-include */ 'Enter a valid Gemini model name'; break;
+      case 'account_name': translated = /* @wc-include */ 'Enter an account name of 1 to 80 characters'; break;
+      case 'account_duplicate': translated = /* @wc-include */ 'An account profile with this name already exists'; break;
+      case 'account_missing': translated = /* @wc-include */ 'Account profile was not found'; break;
+      case 'accounts_error': translated = /* @wc-include */ 'Could not update accounts. Please try again.'; break;
+      case 'post_uncertain': translated = /* @wc-include */ 'This post was submitted, but confirmation is uncertain. Check Facebook before retrying.'; break;
+      case 'browser_missing': translated = /* @wc-include */ 'Chrome or Chromium was not found. Install a browser to open your Facebook groups'; break;
+      case 'groups_sort_menu': translated = /* @wc-include */ 'Found multiple matching menus on the groups page. Please open the Sort menu in Chrome'; break;
+      case 'groups_sort_option': translated = /* @wc-include */ 'Found multiple matching radio menus. Please choose a sort option in Chrome'; break;
+      case 'window_error': translated = /* @wc-include */ 'Could not change the window. Please try again.'; break;
+      case 'language_error': translated = /* @wc-include */ 'Could not change the language. Please try again.'; break;
+      case 'link_error': translated = /* @wc-include */ 'Could not open the link. Please try again.'; break;
+      case 'posting_finished': translated = /* @wc-include */ 'Posting finished.'; break;
+      case 'saving_queue': translated = /* @wc-include */ 'Saving your scheduled queue…'; break;
+      case 'opening_post': translated = /* @wc-include */ 'Opening a selected group to capture fresh posting requests…'; break;
+      case 'no_composers': translated = /* @wc-include */ `None of the ${number(a)} selected groups has an available post composer`; break;
+      case 'image_read': translated = /* @wc-include */ `Could not read ${a}`; break;
+      case 'image_unsupported': translated = /* @wc-include */ `Unsupported files: ${a}. Choose JPG, PNG, WebP, or GIF images.`; break;
+      case 'image_not_file': translated = /* @wc-include */ `${a} is not an image file. Drop individual images, not folders.`; break;
+      case 'image_preview': translated = /* @wc-include */ `Could not preview ${a}. Please choose another image.`; break;
+      case 'image_position': translated = /* @wc-include */ `${a} moved to position ${number(b)} of ${number(c)}.`; break;
+      case 'draft_restore': translated = /* @wc-include */ 'Could not restore this account’s draft. New edits will stay available while Postika is open.'; break;
+      case 'draft_save': translated = /* @wc-include */ 'Could not save this account’s draft to disk. Keep Postika open to retain your edits.'; break;
+      case 'image_drop': translated = /* @wc-include */ 'Could not add the dropped images. Try browsing for them instead.'; break;
       case 'log_response_copied': translated = /* @wc-include */ 'Facebook response copied.'; break;
       case "log_90cc338cc01e": translated = /* @wc-include */ "A selected group is no longer available. Load groups again"; break;
       case "log_8873a4643650": translated = /* @wc-include */ "Add a Gemini API key in Settings before enabling rewriting"; break;
@@ -136,6 +175,32 @@
       case "log_97f8138b6b91": translated = /* @wc-include */ "Waiting for the group page and opening its composer…"; break;
       case "log_7161850a341d": translated = /* @wc-include */ "Waiting for the image previews and composer to settle…"; break;
       case "log_3f28dab3bc47": translated = /* @wc-include */ "Your Facebook session needs login or verification. Load groups again."; break;
+      case 'facebook_progress_error': translated = /* @wc-include */ 'Could not check fetch progress. Close this dialog and try again.'; break;
+      case 'facebook_stop_error': translated = /* @wc-include */ 'Could not stop fetching. Try again.'; break;
+      case "facebook_fetch_error": translated = /* @wc-include */ "Could not fetch Facebook posts. Check Chrome and try again."; break;
+      case "facebook_photo_error": translated = /* @wc-include */ "Could not load full-size photos. Fetch the posts again."; break;
+      case "facebook_capture_error": translated = /* @wc-include */ "Could not capture Facebook requests. Check Chrome and fetch again."; break;
+      case "facebook_count_error": translated = /* @wc-include */ "Enter a positive whole number of posts to fetch"; break;
+      case "facebook_wait_posting": translated = /* @wc-include */ "Wait for posting to finish before fetching Facebook posts"; break;
+      case "facebook_wait_groups": translated = /* @wc-include */ "Finish loading groups before fetching Facebook posts"; break;
+      case "facebook_empty_queue": translated = /* @wc-include */ "Fetch at least one post before posting"; break;
+      case "facebook_fetch_stopped": translated = /* @wc-include */ "Fetching stopped."; break;
+      case "facebook_timeline": translated = /* @wc-include */ "Capturing Facebook posts…"; break;
+      case "facebook_photos": translated = /* @wc-include */ "Capturing full-size photos…"; break;
+      case "facebook_reload": translated = /* @wc-include */ "Reloading the photo page…"; break;
+      case "facebook_next": translated = /* @wc-include */ "Opening the next photo…"; break;
+      case "facebook_fetching": translated = /* @wc-include */ "Fetching posts and full-size photos…"; break;
+      case "facebook_login": translated = /* @wc-include */ "Finish signing in or any verification prompts in Chrome. Your login will be detected automatically."; break;
+      case "facebook_check": translated = /* @wc-include */ "Checking Facebook login"; break;
+      case "facebook_url_error": translated = /* @wc-include */ "Enter a Facebook page URL, such as https://web.facebook.com/swiftlineMotors"; break;
+      case 'facebook_progress': translated = /* @wc-include */ `Fetched ${number(a)} of ${number(b)} posts…`; break;
+      case 'facebook_complete': translated = /* @wc-include */ `Fetched ${number(a)} posts.`; break;
+      case 'facebook_end': translated = /* @wc-include */ `Fetched ${number(a)} posts. No more posts are available.`; break;
+      case 'facebook_add_text': translated = /* @wc-include */ `Add text to fetched post ${number(a)} before posting`; break;
+      case 'rotate_prepare': translated = /* @wc-include */ `Preparing post ${number(a)}/${number(b)} for ${c}…`; break;
+      case 'rotate_uploads': translated = /* @wc-include */ `Uploading images for post ${number(a)}/${number(b)} to ${c}…`; break;
+      case 'rotate_submit': translated = /* @wc-include */ `Posting post ${number(a)}/${number(b)} to ${c}…`; break;
+      case 'facebook_download': translated = /* @wc-include */ `Downloading photo ${number(a)}/${number(b)} for post ${number(c)}/${number(d)}…`; break;
       case 'published': translated = /* @wc-include */ `Published to ${a}.`; break;
       case 'pending': translated = /* @wc-include */ `${a}: Awaiting admin approval.`; break;
       case 'group': translated = /* @wc-include */ `Group ${number(a)}/${number(b)}: ${c}`; break;
@@ -161,6 +226,9 @@
     }
     if (url) translated += ` ${url}`;
     return translated;
+  }
+  export function feedbackMessage(value: string): string {
+    return parseLogMessage(value).key ? logMessage(value) : /* @wc-include */ 'Could not complete this action. Please try again.';
   }
   export function scheduledLogMessage(timestamp: string): string {
     const date = new Date(timestamp).toLocaleString(getLocale(), { dateStyle: 'medium', timeStyle: 'short' });

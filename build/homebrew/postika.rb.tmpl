@@ -1,0 +1,22 @@
+# Release template: replace all @...@ values with the tested release metadata
+# before publishing as Casks/postika.rb in a public Homebrew tap.
+cask "postika" do
+  arch arm: "arm64", intel: "amd64"
+  version "@VERSION@"
+
+  on_arm do
+    sha256 "@ARM64_SHA256@"
+  end
+  on_intel do
+    sha256 "@AMD64_SHA256@"
+  end
+
+  url "https://postika.softwrhq.com/downloads/postika/#{version}/postika-#{version}-darwin-#{arch}.dmg"
+  name "Postika"
+  desc "Desktop app for posting text and images to Facebook groups"
+  homepage "https://postika.softwrhq.com"
+  auto_updates true
+
+  depends_on macos: ">= :monterey"
+  app "postika.app"
+end

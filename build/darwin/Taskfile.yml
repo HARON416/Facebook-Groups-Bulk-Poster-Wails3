@@ -38,8 +38,8 @@ tasks:
             ref: .DEV
       - task: common:generate:icons
     preconditions:
-      - sh: '{{if eq .OBFUSCATED "true"}}command -v garble >/dev/null 2>&1{{else}}true{{end}}'
-        msg: "garble is required for obfuscated builds. Install it with: go install mvdan.cc/garble@v0.16.0 (requires Go 1.24+). See https://github.com/burrowers/garble/releases for version/toolchain compatibility."
+      - sh: '{{if eq .OBFUSCATED "true"}}case "$(garble version 2>/dev/null)" in "mvdan.cc/garble v0.16.0"*) true ;; *) false ;; esac{{else}}true{{end}}'
+        msg: "Garble v0.16.0 is required for obfuscated builds. Run make install-garble (requires Go 1.26.2+). See https://github.com/burrowers/garble/releases for version/toolchain compatibility."
     cmds:
       - wails3 tool prepare-macos-output --dir "{{.BIN_DIR}}"
       - '{{if eq .OBFUSCATED "true"}}garble {{.GARBLE_ARGS}} build{{else}}go build{{end}} {{.BUILD_FLAGS}} -o "{{.OUTPUT}}"'
@@ -134,6 +134,24 @@ tasks:
       - task: package
     cmds:
       - task: create:dmg
+
+  package:all:
+    summary: Creates the app bundle, DMG and updater ZIP without Developer ID signing
+    preconditions:
+      - sh: '{{if eq OS "darwin"}}true{{else}}false{{end}}'
+        msg: "DMG packaging requires macOS. Cross-build the app with darwin:package instead."
+    deps:
+      - task: package
+    cmds:
+      - task: create:dmg
+      - task: create:update:zip
+
+  create:update:zip:
+    summary: Archives an existing app bundle for the Wails updater
+    cmds:
+      - go run ./build/darwin/updatezip -app "{{.BIN_DIR}}/{{.APP_NAME}}.app" -out "{{.BIN_DIR}}/{{.APP_NAME}}-darwin-{{.ARCH}}.app.zip"
+    vars:
+      ARCH: '{{if .ARCH}}{{.ARCH}}{{else if eq OS "darwin"}}{{ARCH}}{{else}}arm64{{end}}'
 
   create:dmg:
     summary: Creates a configurable `.dmg` from the `.app` bundle

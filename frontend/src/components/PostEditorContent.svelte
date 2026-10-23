@@ -86,6 +86,6 @@
   .divider { height: 2rem; border-left: 1px solid var(--border); margin: 0 .5rem; }
   .writing { position: relative; }
   :global(.post-editable) { min-height: 22rem; padding: 1.8rem; outline: none; }
-  .placeholder { position: absolute; left: 1.8rem; top: 1.8rem; color: var(--text-muted); font-size: 1.5rem; pointer-events: none; }
+  .placeholder { position: absolute; inset-inline-start: 1.8rem; top: 1.8rem; color: var(--text-muted); font-size: 1.5rem; pointer-events: none; }
   .editor-footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; padding: 1.2rem 1.8rem; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 1.1rem; }
 </style>

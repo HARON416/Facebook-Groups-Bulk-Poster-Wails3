@@ -360,7 +360,7 @@ func TestGroupSearchAndBulkSelectionUI(t *testing.T) {
 	eval(`() => document.querySelector('.checkbox__trigger').click()`)
 	await(`() => !document.querySelector('button.next').disabled`)
 	eval(`() => document.querySelector('button.next').click()`)
-	await(`() => document.querySelector('.preview-body')?.textContent === 'Draft' && document.querySelector('.preview-body strong')?.textContent === 'Draft' && document.querySelectorAll('.preview-group').length === 1 && document.querySelector('.preview-group').textContent === 'Kahawa West'`)
+	await(`() => document.querySelector('#step-heading')?.textContent === 'Preferences & post' && !!document.querySelector('.run-settings')`)
 	await(`() => !document.querySelector('button.post').disabled`)
 	eval(`() => { const input=document.querySelector('input[aria-label="Minimum (seconds)"]'); input.value='90'; input.dispatchEvent(new Event('input',{bubbles:true})); }`)
 	eval(`() => document.querySelector('button[aria-label="About saved defaults"]').click()`)

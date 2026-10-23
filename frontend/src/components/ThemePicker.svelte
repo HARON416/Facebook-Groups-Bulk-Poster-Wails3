@@ -48,9 +48,9 @@
   Themes
 </button>
 
-<dialog bind:this={dialog} aria-labelledby="theme-picker-heading" onclose={() => { expanded = false; }} onclick={(event) => { if (event.target === dialog) { const r = dialog.getBoundingClientRect(); if (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) close(); } }}>
+<dialog class="ui-dialog" bind:this={dialog} aria-labelledby="theme-picker-heading" onclose={() => { expanded = false; }} onclick={(event) => { if (event.target === dialog) { const r = dialog.getBoundingClientRect(); if (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) close(); } }}>
   {#if expanded}
-  <div class="picker-heading"><h2 id="theme-picker-heading">Color themes</h2><button type="button" class="close-picker" aria-label="Close" onclick={close}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
+  <div class="picker-heading ui-dialog-heading"><h2 class="ui-title" id="theme-picker-heading">Color themes</h2><button type="button" class="close-picker ui-dialog-close" aria-label="Close" onclick={close}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
   <div class="search-row"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m13 13 4 4"/></svg>
     <input type="search" placeholder="Search themes…" aria-label="Search themes…" role="combobox" aria-autocomplete="list" aria-expanded="true" aria-controls="theme-options" aria-activedescendant={highlighted ? `theme-${highlighted}` : undefined} bind:this={search} bind:value={query} onkeydown={searchKey} />
   </div>
@@ -70,14 +70,10 @@
   .picker-trigger { --wails-draggable: no-drag; display: grid; place-items: center; flex-shrink: 0; height: 3.2rem; padding: .7rem 1rem; font-size: 1.2rem; white-space: nowrap; border: 0; border-radius: .5rem; background: transparent; color: var(--text-secondary); cursor: pointer; }
   .picker-trigger:hover { background: var(--surface-hover); color: var(--accent); }
   button:focus-visible { outline: 2px solid var(--focus); outline-offset: -2px; }
-  dialog { --wails-draggable: no-drag; position: fixed; inset: 0; margin: auto; padding: 0; width: min(52rem, calc(100vw - 3.2rem)); max-height: min(64rem, calc(100dvh - 3.2rem)); color: var(--text); background: var(--surface); border: 1px solid var(--border-strong); border-radius: 1rem; box-shadow: 0 1rem 5rem var(--shadow-strong); overflow: hidden; }
+  dialog { width: min(52rem, calc(100vw - 3.2rem)); max-height: min(64rem, calc(100dvh - 3.2rem)); overflow: hidden; }
   dialog[open] { display: flex; flex-direction: column; }
-  dialog::backdrop { background: rgb(0 0 0 / 40%); }
-  .picker-heading { display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 1.6rem .8rem; }
-  h2 { font-size: 1.5rem; font-weight: 600; }
-  .close-picker { display: grid; place-items: center; width: 2.8rem; height: 2.8rem; padding: .6rem; border: 0; border-radius: .4rem; background: transparent; color: var(--text-secondary); cursor: pointer; }
-  .close-picker:hover { background: var(--surface-hover); }
-  .close-picker svg, .search-row svg { width: 1.6rem; height: 1.6rem; fill: none; stroke: currentColor; stroke-width: 1.5; }
+
+  .search-row svg { width: 1.6rem; height: 1.6rem; fill: none; stroke: currentColor; stroke-width: 1.5; }
   .search-row { display: flex; align-items: center; gap: 1rem; padding: .8rem 1.6rem 1.2rem; border-bottom: 1px solid var(--border); color: var(--text-muted); }
   input { flex: 1; min-width: 0; padding: .5rem 0; background: transparent; border: 0; outline: 0; color: var(--text); font-size: 1.3rem; }
   .search-row:focus-within { box-shadow: inset 0 -2px var(--focus); }

@@ -29,6 +29,14 @@ tasks:
     cmds:
       - task: "{{.GOOS}}:package"
 
+  package:all:
+    summary: Packages every supported desktop format without publisher signing
+    preconditions:
+      - sh: '[ "{{.GOOS}}" = "windows" ] || [ "{{.GOOS}}" = "darwin" ] || [ "{{.GOOS}}" = "linux" ]'
+        msg: "package:all supports windows, darwin, and linux"
+    cmds:
+      - task: '{{if eq .GOOS "linux"}}linux:package{{else}}{{.GOOS}}:package:all{{end}}'
+
   run:
     summary: Runs the application
     cmds:

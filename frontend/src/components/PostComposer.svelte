@@ -1,8 +1,13 @@
 <script lang="ts">
   import { onDestroy, tick } from 'svelte';
+  import { logMessage } from './LogMessage.svelte';
+  import LocalizedFeedback from './LocalizedFeedback.svelte';
   import PostEditor from './PostEditor.svelte';
+  import FacebookPageDialog from './FacebookPageDialog.svelte';
+  import FetchedPostCard from './FetchedPostCard.svelte';
   import { reorder } from '../lib/reorder';
   import { snapshotImage, type DraftImage } from '../lib/drafts';
+  import type { FacebookPagePost } from '../../bindings/postika/models';
 
   export interface PostImage extends DraftImage {
     url: string;
@@ -10,15 +15,33 @@
 
   interface Props {
     profileID: string;
-    message: string;
+    message: string | string[];
     body: string;
     bodyHTML: string;
     bodyState: string;
     images: PostImage[];
+    fetchedPosts?: FacebookPagePost[] | null;
   }
 
-  let { profileID, message = $bindable(), body = $bindable(), bodyHTML = $bindable(), bodyState = $bindable(), images = $bindable() }: Props = $props();
-  let fileInput: HTMLInputElement;
+  let { profileID, message = $bindable(), body = $bindable(), bodyHTML = $bindable(), bodyState = $bindable(), images = $bindable(), fetchedPosts = $bindable(null) }: Props = $props();
+  let fileInput = $state<HTMLInputElement>();
+  let entranceBatch = $state(0);
+  let composer = $state<HTMLDivElement>();
+
+  async function deleteFetchedPost(id: string) {
+    if (!fetchedPosts) return;
+    const index = fetchedPosts.findIndex(post => post.id === id);
+    if (index < 0) return;
+    const remaining = fetchedPosts.filter(post => post.id !== id);
+    fetchedPosts = remaining.length ? remaining : null;
+    await tick();
+    if (!remaining.length) {
+      const pane = composer?.closest<HTMLElement>('[data-step-scroll]');
+      pane?.querySelector<HTMLElement>('#step-heading')?.focus({ preventScroll: true });
+      pane?.scrollTo({ top: 0, behavior: 'instant' });
+    }
+  }
+
   let draggedId = $state<string | null>(null);
   let dropTarget = $state<string | null>(null);
   let dropSide = $state<'before' | 'after'>('before');
@@ -53,9 +76,10 @@
         images = replacement < 0 ? [...images, image] : images.map((entry, i) => i === replacement ? image : entry);
       } catch { unreadable.push(file.name); }
     }
-    message = rejected.length ? `Unsupported files: ${rejected.join(', ')}. Choose JPG, PNG, WebP, or GIF images.` : '';
-    const unreadableNames = unreadable.join(', ');
-    if (unreadable.length) message += (message ? ' ' : '') + /* @wc-include */ `Could not read ${unreadableNames}`;
+    message = [
+      ...(rejected.length ? [/* @wc-ignore */ `Unsupported files: ${rejected.join(', ')}. Choose JPG, PNG, WebP, or GIF images.`] : []),
+      ...(unreadable.length ? [/* @wc-ignore */ `Could not read ${unreadable.join(', ')}`] : []),
+    ];
   }
 
 
@@ -68,7 +92,7 @@
 
   function imageFailed(id: string) {
     const image = images.find((image) => image.id === id);
-    if (image) message = `Could not preview ${image.file.name}. Please choose another image.`;
+    if (image) message = /* @wc-ignore */ `Could not preview ${image.file.name}. Please choose another image.`;
     removeImage(id);
   }
 
@@ -152,7 +176,7 @@
 
   function announceMove(id: string) {
     const index = images.findIndex((image) => image.id === id);
-    if (index >= 0) reorderMessage = `${images[index].file.name} moved to position ${index + 1} of ${images.length}.`;
+    if (index >= 0) reorderMessage = /* @wc-ignore */ `${images[index].file.name} moved to position ${index + 1} of ${images.length}.`;
   }
 
   async function endPointer(event: PointerEvent) {
@@ -194,7 +218,8 @@
   onkeydown={(event) => { if (event.key === 'Escape') resetDrag(); }}
 />
 
-<div class="composer">
+<div bind:this={composer} class="composer">
+  {#if fetchedPosts === null}
   <div class="field">
     <div class="field-heading">
       <span class="field-label">Post body</span>
@@ -217,7 +242,7 @@
       accept="image/jpeg,image/png,image/webp,image/gif"
       multiple
       aria-label="Choose images"
-      onchange={() => { addImages(fileInput.files); fileInput.value = ''; }}
+      onchange={(event) => { addImages(event.currentTarget.files); event.currentTarget.value = ''; }}
     />
     {#if images.length === 0}
     <button
@@ -225,7 +250,7 @@
       class="image-selector"
       aria-labelledby="images-label browse-instruction"
       aria-describedby="image-formats"
-      onclick={() => fileInput.click()}
+      onclick={() => fileInput?.click()}
     >
       <span class="image-icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="none">
@@ -238,18 +263,18 @@
       <span id="image-formats" class="formats">JPG, PNG, WebP, or GIF · Select multiple images</span>
     </button>
     {/if}
-    <p class="file-message" role="status">{message}</p>
+    <div class="file-message" role="status">{#if Array.isArray(message)}{#each message as item, index}{#if index}<br />{/if}<LocalizedFeedback message={item} technical={false} />{/each}{:else}{logMessage(message)}{/if}</div>
 
     {#if images.length}
       <div class="preview-heading">
         <span>{images.length === 1 ? /* @wc-include */ '1 image selected' : `${images.length} images selected`}</span>
-        <button type="button" class="add-images" onclick={() => fileInput.click()}>Add more</button>
+        <button type="button" class="add-images" onclick={() => fileInput?.click()}>Add more</button>
       </div>
       <p class="drop-help">Drop more images here to add them.</p>
       {#if images.length > 1}
         <p class="reorder-help" id="reorder-help">Drag images to rearrange. Or focus an image and use Alt + Left / Right.</p>
       {/if}
-      <p class="sr-only" role="status">{reorderMessage}</p>
+      <p class="sr-only" role="status">{logMessage(reorderMessage)}</p>
       <ul class="previews" aria-label="Selected images">
         {#each images as image (image.id)}
           <li
@@ -269,7 +294,7 @@
                 onlostpointercapture={() => { if (pointer) resetDrag(); }}
                 ondragstart={(event) => event.preventDefault()}
                 onkeydown={(event) => keyboardMove(event, image.id)}
-                onclick={() => { if (image.unavailable) fileInput.click(); }}
+                onclick={() => { if (image.unavailable) fileInput?.click(); }}
               >
                 {#if image.unavailable}<span class="unavailable-image">Could not read {image.file.name}</span>{:else}<img src={image.url} alt={image.file.name} draggable="false" onerror={() => imageFailed(image.id)} />{/if}
               </button>
@@ -290,6 +315,31 @@
       </ul>
     {/if}
   </div>
+  {/if}
+  <div class="facebook-source" class:has-posts={fetchedPosts !== null}>
+    <FacebookPageDialog {profileID} onfetched={(posts) => { resetDrag(); entranceBatch++; fetchedPosts = posts; }} />
+  </div>
+  {#if fetchedPosts !== null}
+    <section class="fetched-section" aria-labelledby={`fetched-posts-heading-${profileID}`}>
+      <div class="fetched-heading">
+        <h2 id={`fetched-posts-heading-${profileID}`}>Fetched posts <span>{fetchedPosts.length}</span></h2>
+        <button type="button" class="write-instead" onclick={() => { fetchedPosts = null; }}>Write a post instead</button>
+      </div>
+      {#if fetchedPosts.length}
+        {#key entranceBatch}
+        <ol class="fetched-posts" aria-label="Fetched posts">
+          {#each fetchedPosts as post, index (post.id)}
+            <li class="fetched-post-card">
+              <FetchedPostCard {post} {index} onsave={(updated) => { fetchedPosts = fetchedPosts!.map(entry => entry.id === updated.id ? updated : entry); }} ondelete={() => deleteFetchedPost(post.id)} />
+            </li>
+          {/each}
+        </ol>
+        {/key}
+      {:else}
+        <p class="no-fetched-posts">No posts to show. Fetch posts or write a post instead.</p>
+      {/if}
+    </section>
+  {/if}
 </div>
 
 {#if preview}
@@ -308,6 +358,17 @@
 <style>
   .unavailable-image { display: flex; height: 100%; align-items: center; padding: 1rem; border: 1px dashed var(--danger); border-radius: .7rem; color: var(--danger); background: var(--danger-bg); font-size: 1.1rem; line-height: 1.5; overflow-wrap: anywhere; }
   .composer { display: grid; gap: 2.8rem; }
+  .facebook-source { display: grid; margin-top: -1.2rem; }
+  .facebook-source.has-posts { margin-top: 0; }
+  .fetched-section { min-width: 0; }
+  .fetched-heading { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: var(--ui-space); }
+  .fetched-heading h2 { color: var(--text-strong); font-size: var(--ui-title-size); font-weight: var(--ui-title-weight); line-height: 1.5; }
+  .fetched-heading h2 span { margin-inline-start: .8rem; color: var(--text-muted); font-size: var(--ui-small-size); font-weight: 400; }
+  .write-instead { padding: .4rem 0; border: 0; background: transparent; color: var(--accent); font-size: var(--ui-small-size); cursor: pointer; }
+  .write-instead:hover { text-decoration: underline; }
+  .fetched-posts { display: grid; gap: var(--ui-space); list-style: none; }
+  .fetched-post-card { min-width: 0; }
+  .no-fetched-posts { color: var(--text-secondary); font-size: var(--ui-body-size); line-height: 1.6; }
   .image-drop-zone { border-radius: 1rem; transition: background-color 0.2s, outline-color 0.2s; }
   .image-drop-zone:global(.file-drop-target-active) { outline: 0.2rem dashed var(--accent); outline-offset: 0.7rem; background: var(--surface-active); }
   .image-drop-zone:global(.file-drop-target-active) .image-selector { border-color: var(--accent); background: var(--surface-active); }

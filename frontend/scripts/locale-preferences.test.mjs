@@ -1,13 +1,23 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { matchSupportedLocale, preferredLocale } from '../src/lib/locale-preferences.ts';
+import { localeDirection, matchSupportedLocale, preferredLocale } from '../src/lib/locale-preferences.ts';
 
 test('regional system languages select an available catalog', () => {
   for (const [preference, expected] of [
     ['sw-KE', 'sw'], ['en-KE', 'en'], ['fr-CA', 'fr'], ['ar-EG', 'ar'],
     ['pt-BR', 'pt-BR'], ['pt-PT', 'pt-BR'], ['zh-Hans-CN', 'zh-CN'],
     ['ZH-cn', 'zh-CN'], ['de_DE', 'de'], [' es-MX ', 'es'],
+    ['he-IL', 'he'], ['iw-IL', 'he'],
   ]) assert.equal(matchSupportedLocale(preference), expected, preference);
+});
+
+test('Hebrew choices and direction apply to regional and legacy language tags', () => {
+  assert.equal(preferredLocale('he', ['en-US']), 'he');
+  assert.equal(preferredLocale(null, ['he-IL', 'en-US']), 'he');
+  for (const locale of ['he', 'he-IL', 'iw-IL', 'ar', 'ar-EG']) {
+    assert.equal(localeDirection(locale), 'rtl', locale);
+  }
+  for (const locale of ['en', 'sw', 'fr-CA']) assert.equal(localeDirection(locale), 'ltr', locale);
 });
 
 test('user language order is preserved and unsupported preferences are skipped', () => {

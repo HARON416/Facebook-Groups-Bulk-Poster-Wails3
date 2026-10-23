@@ -1,5 +1,6 @@
 <script lang="ts">
   import { getLocale } from '../lib/i18n.svelte';
+  import { localeDirection } from '../lib/locale-preferences';
   import { onMount, tick } from 'svelte';
 
   let { value = $bindable(''), valid = $bindable(false) }: { value?: string; valid?: boolean } = $props();
@@ -84,7 +85,8 @@
   }
   async function moveDay(event: KeyboardEvent, date: Date) {
     const next = new Date(date);
-    const shifts: Record<string, number> = { ArrowLeft: -1, ArrowRight: 1, ArrowUp: -7, ArrowDown: 7, Home: -((date.getDay() + 6) % 7), End: 6 - ((date.getDay() + 6) % 7) };
+    const horizontal = localeDirection(getLocale()) === 'rtl' ? -1 : 1;
+    const shifts: Record<string, number> = { ArrowLeft: -horizontal, ArrowRight: horizontal, ArrowUp: -7, ArrowDown: 7, Home: -((date.getDay() + 6) % 7), End: 6 - ((date.getDay() + 6) % 7) };
     if (event.key in shifts) next.setDate(next.getDate() + shifts[event.key]);
     else if (event.key === 'PageUp' || event.key === 'PageDown') {
       const day = next.getDate();
@@ -151,7 +153,7 @@
   .date-time-picker { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); border: 1px solid var(--border); border-radius: 1.2rem; background: var(--surface); box-shadow: 0 4px 16px var(--shadow-soft); overflow: hidden; }
   .date-time-picker:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
   section { padding: 1.8rem; min-width: 0; }
-  .date-section { border-right: 1px solid var(--border); }
+  .date-section { border-inline-end: 1px solid var(--border); }
   button { font: inherit; cursor: pointer; border: 0; color: var(--text-secondary); background: transparent; }
   button:disabled { opacity: .3; cursor: not-allowed; }
   button:focus-visible, input:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
@@ -174,7 +176,9 @@
   .calendar .selected.today::after { background: var(--on-accent); }
   .time-heading { display: flex; align-items: center; justify-content: space-between; gap: .5rem; margin-top: .5rem; }
   .time-heading > span { font-size: 1rem; color: var(--text-muted); }
-  .time-controls { display: flex; justify-content: center; align-items: center; gap: 1.4rem; margin: 2rem 0; padding: .8rem; border-radius: 1rem; background: var(--surface-hover); }
+  .time-controls { direction: ltr; display: flex; justify-content: center; align-items: center; gap: 1.4rem; margin: 2rem 0; padding: .8rem; border-radius: 1rem; background: var(--surface-hover); }
+  .selection-summary strong { direction: ltr; }
+  :global(html[dir="rtl"]) .month-navigation button svg { transform: scaleX(-1); }
   .time-unit { display: flex; flex-direction: column; align-items: center; gap: .4rem; }
   .time-unit button { width: 4.8rem; height: 2.4rem; border-radius: .5rem; font-size: 2rem; color: var(--text-muted); }
   .time-unit button:hover { background: var(--surface-hover); color: var(--accent); }
@@ -189,5 +193,5 @@
   .selection-summary span { display: flex; flex: 1; justify-content: space-between; align-items: center; gap: 1rem; }
   .selection-summary strong { font-size: 1.4rem; font-weight: 600; font-variant-numeric: tabular-nums; }
   .validation { grid-column: 1 / -1; padding: 1rem 1.8rem; font-size: 1.2rem; color: var(--danger); border-top: 1px solid var(--danger-border); }
-  @media (max-width: 600px) { .date-time-picker { grid-template-columns: 1fr; } .date-section { border-right: 0; border-bottom: 1px solid var(--border); } }
+  @media (max-width: 600px) { .date-time-picker { grid-template-columns: 1fr; } .date-section { border-inline-end: 0; border-bottom: 1px solid var(--border); } }
 </style>

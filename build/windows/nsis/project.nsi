@@ -17,15 +17,9 @@ Unicode true
 ## If they are defined here, "wails_tools.nsh" will not touch them. This allows you to use this project.nsi manually
 ## from outside of Wails for debugging and development of the installer.
 ## 
-## For development first make a wails nsis build to populate the "wails_tools.nsh":
-## > wails build --target windows/amd64 --nsis
-## Then you can call makensis on this file with specifying the path to your binary:
-## For a AMD64 only installer:
-## > makensis -DARG_WAILS_AMD64_BINARY=..\..\bin\app.exe
-## For a ARM64 only installer:
-## > makensis -DARG_WAILS_ARM64_BINARY=..\..\bin\app.exe
-## For a installer with both architectures:
-## > makensis -DARG_WAILS_AMD64_BINARY=..\..\bin\app-amd64.exe -DARG_WAILS_ARM64_BINARY=..\..\bin\app-arm64.exe
+## Wails v3 entry point: wails3 package GOOS=windows GOARCH=amd64 INSTALL_SCOPE=user
+## The Taskfile generates resources, builds the executable, downloads the
+## WebView2 bootstrapper, and passes ARG_WAILS_AMD64_BINARY/ARM64_BINARY to NSIS.
 ####
 ## The following information is taken from the wails_tools.nsh file, but they can be overwritten here.
 ####

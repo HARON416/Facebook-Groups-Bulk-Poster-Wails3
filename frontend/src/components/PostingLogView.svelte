@@ -1,5 +1,7 @@
 <script lang="ts">
   import { getLocale } from '../lib/i18n.svelte';
+  import LocalizedFeedback from './LocalizedFeedback.svelte';
+  import { hasLogDetails } from '../lib/log-message';
   import { logMessage, scheduledLogMessage } from './LogMessage.svelte';
   import { onMount, tick, untrack } from 'svelte';
   import { createAccountService } from '../lib/accounts';
@@ -128,9 +130,9 @@
 {#snippet actions()}
   <span class="run-state" dir="auto" class:running={active && !pauseRequested}><span class="state-text">{stateLabel}</span></span>
 {/snippet}
-<div class="logs-window">
+<div class="logs-window ui-window">
   <header>
-    <div class="heading"><div><p class="eyebrow">POSTIKA / ACTIVITY</p><h1>Posting logs</h1></div></div>
+    <div class="heading"><div><p class="eyebrow">POSTIKA / ACTIVITY</p><h1 class="ui-title">Posting logs</h1></div></div>
     <section class="activity" aria-label="Posting progress">
       <div class="progress-label"><strong>{activity?.processed || 0}/{activity?.total || 0} groups processed</strong><span>{percentage}% complete</span></div>
       <progress max="100" value={percentage} aria-label="Groups processed">{percentage}%</progress>
@@ -139,12 +141,12 @@
         <div class="current-action">
           <p class="eyebrow">{active ? /* @wc-include */ 'CURRENT ACTIVITY' : /* @wc-include */ 'RUN STATUS'}</p>
           {#if activity?.currentGroup?.name}<p class="current-group">Group {activity.current}/{activity.total}: {activity.currentGroup.name}</p>{/if}
-          {#if activity?.waitSeconds && active}<div class="countdown" class:paused={pauseRequested}>Next post in <strong>{formatDuration(activity.waitSeconds)}</strong>{pauseRequested ? /* @wc-include */ ' · Paused' : ''}</div>{:else}<p class="action-message" role="status">{jobState === 'scheduled' && activity?.scheduledAt ? scheduledLogMessage(activity.scheduledAt) : logMessage(message)}</p>{/if}
+          {#if activity?.waitSeconds && active}<div class="countdown" class:paused={pauseRequested}>Next post in <strong>{formatDuration(activity.waitSeconds)}</strong>{pauseRequested ? /* @wc-include */ ' · Paused' : ''}</div>{:else}<p class="action-message" role="status">{jobState === 'scheduled' && activity?.scheduledAt ? scheduledLogMessage(activity.scheduledAt) : logMessage(message, true)}</p>{/if}
         </div>
         <div class="timing"><span>Elapsed <strong>{formatDuration(activity?.elapsedSeconds || 0)}</strong></span><span>Current group <strong>{formatDuration(activity?.itemSeconds || 0)}</strong></span></div>
       </div>
     </section>
-    {#if error}<div class="error" role="alert"><p>{logMessage(error, true)}</p><details><summary>Debug details</summary><p>{error}</p></details></div>{/if}
+    {#if error}<div class="error" role="alert"><LocalizedFeedback message={error} /></div>{/if}
   </header>
   <div class="feed-heading"><h2>Activity timeline <span>{total} logs</span></h2><button class="follow" class:following={followLatest} onclick={() => goToPage(pages)}>{followLatest ? 'Following latest' : 'Jump to latest'} <span aria-hidden="true">↓</span></button></div>
   <main aria-label="Posting activity" bind:this={logScroller}>
@@ -155,8 +157,8 @@
             <article class="log-card" aria-label={`${entryLabel(entry)} log`}>
               <div class="log-meta"><span class="level">{entryLabel(entry)}</span>{#if entry.outcome}<span class="severity">{levelLabel(entry.level)}</span>{/if}<time datetime={entry.timestamp} title={new Date(entry.timestamp).toLocaleString(getLocale())}>{timestamp(entry.timestamp)}</time>{#if itemTime(entry.message)}<span class="item-time">Took {itemTime(entry.message)}</span>{/if}</div>
               <div class="message-cell"><p class="log-title">{logMessage(entry.message, entry.level === 'debug' || entry.level === 'error')}</p>{#if entry.hasResponse}<button class="copy-response" disabled={copyingId !== null} aria-label="Copy Facebook response" title={copiedId === entry.id ? 'Response copied' : 'Copy Facebook response'} onclick={() => copyResponse(entry)}><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 256 256" aria-hidden="true"><path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"></path></svg><span>{copiedId === entry.id ? 'Copied' : copyingId === entry.id ? 'Copying…' : 'Copy response'}</span></button>{/if}</div>
-              {#if logMessage(entry.message, entry.level === 'debug' || entry.level === 'error') !== entry.message || entry.hasResponse || entry.diagnostic}
-                <details class="debug-details"><summary><span>Debug details<small>Original log message{entry.hasResponse ? /* @wc-include */ ' · Response available to copy' : ''}</small></span><span class="chevron" aria-hidden="true">⌄</span></summary><p class:technical={entry.message.startsWith('API confirmation:')}>{entry.message}</p>{#if entry.diagnostic}<p class="technical">{entry.diagnostic}</p>{/if}</details>
+              {#if hasLogDetails(entry.message) || entry.hasResponse || entry.diagnostic}
+                <details class="debug-details"><summary><span>Debug details<small>Original log message{entry.hasResponse ? /* @wc-include */ ' · Response available to copy' : ''}</small></span><span class="chevron" aria-hidden="true">⌄</span></summary><p dir="auto" class:technical={hasLogDetails(entry.message)}>{hasLogDetails(entry.message) ? entry.message : logMessage(entry.message)}</p>{#if entry.diagnostic}<p class="technical" dir="auto">{entry.diagnostic}</p>{/if}</details>
               {/if}
             </article>
           </li>
@@ -189,13 +191,13 @@
   .logs-window {
     height:100%;
     width:100%;
-    padding:2.4rem 3rem 0;
+    padding:var(--ui-space) var(--ui-space) 0;
     display:flex;
     flex-direction:column;
     overflow:hidden;
     overflow:clip;
     color:var(--text-strong);
-    background:var(--bg);
+    background:var(--surface);
   }
   header {
     flex:0 0 auto;
@@ -218,9 +220,6 @@
   }
   h1 {
     margin-top:.5rem;
-    font-size:2.4rem;
-    font-weight:650;
-    letter-spacing:-.04em;
   }
   .run-state {
     display:inline-flex;
@@ -306,7 +305,7 @@
     align-items:center;
     gap:2rem;
     border:1px solid var(--border-accent);
-    border-left:3px solid var(--accent);
+    border-inline-start:3px solid var(--accent);
     background:var(--surface-active);
     border-radius:.4rem;
   }
@@ -365,13 +364,13 @@
     margin-bottom:1rem;
   }
   h2 {
-    font-size:1.4rem;
-    font-weight:600;
+    font-size:var(--ui-title-size);
+    font-weight:var(--ui-title-weight);
   }
   h2 span {
     font-size:1.1rem;
     font-weight:400;
-    margin-left:.8rem;
+    margin-inline-start:.8rem;
     color:var(--text-muted);
   }
   .follow {
@@ -391,11 +390,12 @@
     min-height:0;
     overflow:auto;
     overscroll-behavior:contain;
-    padding:.2rem .8rem 1rem 0;
+    padding-block:.2rem 1rem;
+    padding-inline:0 .8rem;
   }
   .timeline {
     list-style:none;
-    padding-left:4rem;
+    padding-inline-start:4rem;
   }
   .timeline-item {
     --log-color:var(--accent);
@@ -426,7 +426,7 @@
   .timeline-item::before {
     content:'';
     position:absolute;
-    left:-2.4rem;
+    inset-inline-start:-2.4rem;
     top:2.6rem;
     bottom:-2.6rem;
     width:1px;
@@ -437,7 +437,7 @@
   }
   .timeline-icon {
     position:absolute;
-    left:-4rem;
+    inset-inline-start:-4rem;
     top:1rem;
     width:3.2rem;
     height:3.2rem;
@@ -451,7 +451,7 @@
   .log-card {
     background:var(--surface);
     border:1px solid var(--border);
-    border-left:3px solid var(--log-color);
+    border-inline-start:3px solid var(--log-color);
     border-radius:.5rem;
     padding:1.2rem 1.5rem;
   }
@@ -473,7 +473,7 @@
     font-weight:700;
   }
   .item-time {
-    margin-left:auto;
+    margin-inline-start:auto;
   }
   .message-cell {
     display:flex;
@@ -504,7 +504,7 @@
   .debug-details {
     margin-top:1rem;
     border:1px solid var(--border);
-    border-left:2px solid var(--log-color);
+    border-inline-start:2px solid var(--log-color);
     background:var(--surface-subtle);
   }
   .debug-details summary {
@@ -611,14 +611,15 @@
     color:var(--accent);
   }
   button {
-    min-height:3.6rem;
-    min-width:3.6rem;
-    padding:.7rem 1.2rem;
+    min-height:4rem;
+    min-width:4rem;
+    padding:.9rem 1.6rem;
     border:1px solid var(--border);
     background:var(--surface);
-    border-radius:.5rem;
-    color:var(--text-strong);
-    font-size:1.2rem;
+    border-radius:.7rem;
+    color:var(--text-secondary);
+    font-size:var(--ui-body-size);
+    font-weight:var(--ui-label-weight);
     cursor:pointer;
   }
   button:hover:enabled {
@@ -653,7 +654,7 @@
   }
   @media(max-width:900px) {
     .logs-window {
-      padding:1.6rem 1.8rem 0;
+      padding:var(--ui-space) var(--ui-space) 0;
     }
     .counts div {
       display:block;

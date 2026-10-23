@@ -35,10 +35,10 @@ type postReplay struct {
 }
 
 func newPostReplay(cookies []*proto.NetworkCookie, upload capturedPhotoUpload, post capturedPost) (*postReplay, error) {
-	if upload.User != post.User || cookieUser(upload.Headers.Get("Cookie")) != post.User || cookieUser(post.Headers.Get("Cookie")) != post.User {
+	if post.User == "" || cookieUser(post.Headers.Get("Cookie")) != post.User || upload.URL != "" && (upload.User != post.User || cookieUser(upload.Headers.Get("Cookie")) != post.User) {
 		return nil, errors.New("Upload and post captures must belong to the same logged-in profile")
 	}
-	if !isFacebookPhotoUploadURL(upload.URL) || len(upload.Files) != 1 || upload.Files[0].Field == "" {
+	if upload.URL != "" && (!isFacebookPhotoUploadURL(upload.URL) || len(upload.Files) != 1 || upload.Files[0].Field == "") {
 		return nil, errors.New("The captured image upload format is not supported")
 	}
 	jar, _ := cookiejar.New(nil)
@@ -48,6 +48,9 @@ func newPostReplay(cookies []*proto.NetworkCookie, upload capturedPhotoUpload, p
 		jar.SetCookies(u, []*http.Cookie{{Name: cookie.Name, Value: cookie.Value, Domain: cookie.Domain, Path: cookie.Path, Secure: cookie.Secure, HttpOnly: cookie.HTTPOnly}})
 	}
 	for _, endpoint := range []string{upload.URL, post.URL} {
+		if endpoint == "" {
+			continue
+		}
 		u, _ := url.Parse(endpoint)
 		if cookieUser(cookieHeader(jar.Cookies(u)).Get("Cookie")) != post.User {
 			return nil, errors.New("The browser profile changed while capturing posting requests")

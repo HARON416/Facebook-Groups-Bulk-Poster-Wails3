@@ -19,49 +19,55 @@ const joinedGroupsURL = "https://web.facebook.com/groups/joins/?nav_source=tab&o
 
 // GroupsService owns one browser and a persistent profile dedicated to Postika.
 type GroupsService struct {
-	mu                  sync.Mutex
-	postMu              sync.Mutex
-	postStatus          string
-	postRunMu           sync.Mutex
-	posting             PostingStatus
-	postingCancel       context.CancelFunc
-	postingPaused       bool
-	connectivity        ConnectivityStatus
-	connectivityEnabled bool
-	connectivityCheckMu sync.Mutex
-	connectivityProbe   func(context.Context) bool
-	postingChanged      chan struct{}
-	postingLogs         []PostingLog
-	postingRunID        uint64
-	postingStarted      time.Time
-	postingItemStarted  time.Time
-	settingsMu          sync.Mutex
-	settingsPath        string
-	windowMu            sync.Mutex
-	app                 *application.App
-	postLedger          map[string]PostOutcome
-	photoUploads        *photoUploadCapture
-	photoUploadWatcher  func(context.Context, *rod.Page) *photoUploadCapture
-	workMu              sync.Mutex
-	workCtx             context.Context
-	workCancel          context.CancelFunc
-	browser             *rod.Browser
-	page                *rod.Page
-	launcher            *launcher.Launcher
-	cancel              context.CancelFunc
-	closed              bool
-	profileDir          string
-	profileID           string
-	profileName         string
-	postImageDir        string
-	chromePath          string
-	targetURL           string
-	headless            bool
-	sortMenuOpened      bool
-	sortOptionSelected  bool
-	groupsLoad          *groupsLoad
-	groupsCachePath     string
-	groupsCacheLoaded   bool
+	updateGate             *sync.RWMutex
+	mu                     sync.Mutex
+	postMu                 sync.Mutex
+	postStatus             string
+	postRunMu              sync.Mutex
+	posting                PostingStatus
+	postingCancel          context.CancelFunc
+	postingPaused          bool
+	connectivity           ConnectivityStatus
+	connectivityEnabled    bool
+	connectivityCheckMu    sync.Mutex
+	connectivityProbe      func(context.Context) bool
+	connectivityWake       chan struct{}
+	connectivityFailures   int
+	connectivityGeneration uint64
+	postingChanged         chan struct{}
+	postingLogs            []PostingLog
+	postingRunID           uint64
+	postingStarted         time.Time
+	postingItemStarted     time.Time
+	settingsMu             sync.Mutex
+	settingsPath           string
+	windowMu               sync.Mutex
+	app                    *application.App
+	postLedger             map[string]PostOutcome
+	photoUploads           *photoUploadCapture
+	photoUploadWatcher     func(context.Context, *rod.Page) *photoUploadCapture
+	workMu                 sync.Mutex
+	workCtx                context.Context
+	workCancel             context.CancelFunc
+	browser                *rod.Browser
+	page                   *rod.Page
+	launcher               *launcher.Launcher
+	cancel                 context.CancelFunc
+	closed                 bool
+	profileDir             string
+	profileID              string
+	profileName            string
+	postImageDir           string
+	chromePath             string
+	targetURL              string
+	headless               bool
+	sortMenuOpened         bool
+	sortOptionSelected     bool
+	groupsLoad             *groupsLoad
+	groupsCachePath        string
+	groupsCacheLoaded      bool
+	facebookPageLoad       *facebookPageLoad
+	facebookPageRunID      uint64
 }
 
 func (s *GroupsService) OpenJoinedGroups(ctx context.Context) error {
@@ -73,6 +79,7 @@ func (s *GroupsService) OpenJoinedGroups(ctx context.Context) error {
 		return errors.New("Postika is shutting down")
 	}
 	s.stopGroupsCapture()
+	s.stopFacebookPageFetch()
 
 	if err := s.ensureBrowserPage(ctx); err != nil {
 		return err
@@ -165,6 +172,7 @@ func (s *GroupsService) launchBrowser(ctx context.Context) error {
 // closeBrowser is called with the service mutex held. Never call launcher.Cleanup:
 // it would delete the persistent profile, including the user's Facebook login.
 func (s *GroupsService) closeBrowser() {
+	s.stopFacebookPageFetch()
 	s.stopGroupsCapture()
 	s.closeBrowserConnection()
 }

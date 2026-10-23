@@ -2,6 +2,31 @@ package main
 
 import "context"
 
+func (m *ProfileService) StartFacebookPageFetch(ctx context.Context, profileID, pageURL string, count int) (FacebookPageFetchStatus, error) {
+	s, err := m.session(profileID)
+	if err != nil {
+		return FacebookPageFetchStatus{}, err
+	}
+	return s.StartFacebookPageFetch(ctx, pageURL, count)
+}
+
+func (m *ProfileService) GetFacebookPageFetchStatus(profileID string) (FacebookPageFetchStatus, error) {
+	s, err := m.session(profileID)
+	if err != nil {
+		return FacebookPageFetchStatus{}, err
+	}
+	return s.GetFacebookPageFetchStatus(), nil
+}
+
+func (m *ProfileService) CancelFacebookPageFetch(profileID string, runID uint64) error {
+	s, err := m.session(profileID)
+	if err != nil {
+		return err
+	}
+	s.CancelFacebookPageFetch(runID)
+	return nil
+}
+
 // Account operations always resolve a session before starting work.
 
 func (m *ProfileService) GetConnectivityStatus(profileID string) (ConnectivityStatus, error) {
@@ -203,5 +228,29 @@ func (m *ProfileService) ResumePosting(profileID string) error {
 		return err
 	}
 	s.ResumePosting()
+	return nil
+}
+
+func (m *ProfileService) PublishFacebookPostsWithOptions(ctx context.Context, profileID string, selected []string, posts []FacebookPagePost, options PostingOptions) (*PostingStatus, error) {
+	s, err := m.session(profileID)
+	if err != nil {
+		return nil, err
+	}
+	return s.PublishFacebookPostsWithOptions(ctx, selected, posts, options)
+}
+func (m *ProfileService) ScheduleFacebookPostsWithOptions(ctx context.Context, profileID string, selected []string, posts []FacebookPagePost, options PostingOptions, scheduledAt string) (*PostingStatus, error) {
+	s, err := m.session(profileID)
+	if err != nil {
+		return nil, err
+	}
+	return s.ScheduleFacebookPostsWithOptions(ctx, selected, posts, options, scheduledAt)
+}
+
+func (m *ProfileService) RefreshConnectivity(profileID string) error {
+	s, err := m.session(profileID)
+	if err != nil {
+		return err
+	}
+	s.RefreshConnectivity()
 	return nil
 }

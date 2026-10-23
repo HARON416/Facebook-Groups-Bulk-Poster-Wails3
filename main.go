@@ -6,6 +6,7 @@ import (
 
 	"github.com/wailsapp/wails/v3/pkg/application"
 	"github.com/wailsapp/wails/v3/pkg/events"
+	"github.com/wailsapp/wails/v3/pkg/updater"
 )
 
 //go:embed all:frontend/dist
@@ -15,6 +16,8 @@ var assets embed.FS
 var appIcon []byte
 
 func main() {
+	handlePlatformUpdateHelper()
+	updater.HandleHelperMode()
 	profiles, err := newProfileService("")
 	if err != nil {
 		log.Fatal(err)
@@ -23,6 +26,17 @@ func main() {
 		Name:        "Postika",
 		Description: "Postika desktop application",
 		Icon:        appIcon,
+		SingleInstance: &application.SingleInstanceOptions{
+			UniqueID: "app.postika.desktop",
+			OnSecondInstanceLaunch: func(_ application.SecondInstanceData) {
+				if window, ok := application.Get().Window.GetByName("postika-main"); ok {
+					if window.IsMinimised() {
+						window.UnMinimise()
+					}
+					window.Show().Focus()
+				}
+			},
+		},
 		Linux: application.LinuxOptions{
 			// Match the launcher basename so GNOME can associate every window
 			// with Postika's installed icon on Wayland and X11.
@@ -41,6 +55,11 @@ func main() {
 	})
 	profiles.app = app
 	profiles.monitor = true
+	updates, err := newUpdateService(app, profiles)
+	if err != nil {
+		log.Fatal(err)
+	}
+	app.RegisterService(application.NewService(updates))
 
 	window := app.Window.NewWithOptions(application.WebviewWindowOptions{
 		Name:             "postika-main",

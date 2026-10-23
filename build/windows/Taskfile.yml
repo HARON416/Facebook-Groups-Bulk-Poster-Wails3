@@ -45,8 +45,8 @@ tasks:
             ref: .DEV
       - task: common:generate:icons
     preconditions:
-      - sh: '{{if eq .OBFUSCATED "true"}}command -v garble >/dev/null 2>&1{{else}}true{{end}}'
-        msg: "garble is required for obfuscated builds. Install it with: go install mvdan.cc/garble@v0.16.0 (requires Go 1.24+). See https://github.com/burrowers/garble/releases for version/toolchain compatibility."
+      - sh: '{{if eq .OBFUSCATED "true"}}case "$(garble version 2>/dev/null)" in "mvdan.cc/garble v0.16.0"*) true ;; *) false ;; esac{{else}}true{{end}}'
+        msg: "Garble v0.16.0 is required for obfuscated builds. Run make install-garble (requires Go 1.26.2+). See https://github.com/burrowers/garble/releases for version/toolchain compatibility."
     cmds:
       - task: generate:syso
         vars:
@@ -96,13 +96,33 @@ tasks:
 
   package:
     summary: Packages the application
+    preconditions:
+      - sh: '[ "{{.FORMAT}}" = "nsis" ] || [ "{{.FORMAT}}" = "zip" ] || [ "{{.FORMAT}}" = "msix" ]'
+        msg: "FORMAT must be nsis, zip, or msix"
     cmds:
-      - task: '{{if eq (.FORMAT | default "nsis") "msix"}}create:msix:package{{else}}create:nsis:installer{{end}}'
+      - task: '{{if eq .FORMAT "msix"}}create:msix:package{{else if eq .FORMAT "zip"}}create:portable:zip{{else}}create:nsis:installer{{end}}'
         vars:
-          INSTALL_SCOPE: '{{.INSTALL_SCOPE | default "machine"}}'
+          INSTALL_SCOPE: '{{.INSTALL_SCOPE | default "user"}}'
     vars:
       FORMAT: '{{.FORMAT | default "nsis"}}'
-      INSTALL_SCOPE: '{{.INSTALL_SCOPE | default "machine"}}'
+      INSTALL_SCOPE: '{{.INSTALL_SCOPE | default "user"}}'
+
+  package:all:
+    summary: Creates unsigned per-user NSIS and portable ZIP releases
+    cmds:
+      - task: create:nsis:installer
+        vars:
+          INSTALL_SCOPE: user
+      - task: create:portable:zip
+
+  create:portable:zip:
+    summary: Creates a portable Windows ZIP with the executable and license
+    deps:
+      - task: build
+    cmds:
+      - go run ./build/windows/portable -exe "{{.BIN_DIR}}/{{.APP_NAME}}.exe" -license "{{.ROOT_DIR}}/LICENSE" -out "{{.BIN_DIR}}/{{.APP_NAME}}-windows-{{.ARCH}}-portable.zip"
+    vars:
+      ARCH: '{{.ARCH | default "amd64"}}'
 
   generate:syso:
     summary: Generates Windows `.syso` file
@@ -132,10 +152,10 @@ tasks:
     vars:
       ARCH: '{{.ARCH | default ARCH}}'
       ARG_FLAG: '{{if eq .ARCH "amd64"}}AMD64{{else}}ARM64{{end}}'
-      INSTALL_SCOPE: '{{.INSTALL_SCOPE | default "machine"}}'
+      INSTALL_SCOPE: '{{.INSTALL_SCOPE | default "user"}}'
 
   create:msix:package:
-    summary: Creates an MSIX package
+    summary: Creates an MSIX artifact (normal installation requires signing)
     deps:
       - task: build
     cmds:

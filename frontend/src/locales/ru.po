@@ -8,69 +8,59 @@ msgstr ""
 "Plural-Forms: nplurals=4\n"
 "X-Plurals-Order: one, few, many, other\n"
 
-#. 0: minimumInterval === maximumInterval ? minimumInterval \\: `${minimumInterval}–${maximumInterval}`; 1: rewriteState
+#. 0: appliedInterval; 1: rewriteState
 #: src/App.svelte
 msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
 msgstr "Применены сохраненные значения по умолчанию: {0} секунд между публикациями · Переписывание Gemini {1}."
 
-#: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Could not restore saved groups. Load groups to refresh the list."
 msgstr "Не удалось восстановить сохраненные группы. Загрузите группы для обновления списка."
 
-#: src/App.svelte
-msgid "Choose a future date and time for your post."
-msgstr "Выберите будущую дату и время для вашей публикации."
+#~ msgid "Choose a future date and time for your post."
+#~ msgstr "Выберите будущую дату и время для вашей публикации."
 
-#: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Saving your scheduled queue…"
 msgstr "Сохранение вашего запланированного очереди…"
 
-#: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Opening a selected group to capture fresh posting requests…"
 msgstr "Открытие выбранной группы для получения новых запросов на публикацию…"
 
-#: src/App.svelte
-#: src/App.svelte
 #: src/components/LogMessage.svelte
 msgid "Posting stopped."
 msgstr "Публикация остановлена."
 
-#: src/App.svelte
 #: src/components/LogMessage.svelte
 msgid "Could not read a selected image"
 msgstr "Не удалось прочитать выбранное изображение"
 
+#. 0: a
 #. 0: image.file.name
-#. 0: missingNames
-#. 0: unreadableNames
-#. 0: image.file.name
-#: src/App.svelte
-#: src/App.svelte
-#: src/components/PostComposer.svelte
+#: src/components/LogMessage.svelte
 #: src/components/PostComposer.svelte
 msgid "Could not read {0}"
 msgstr "Не удалось прочитать {0}"
 
-#: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Posting finished."
 msgstr "Публикация завершена."
 
-#. 0: scheduleLabel(scheduledFor)
 #. 0: date
-#: src/App.svelte
 #: src/components/LogMessage.svelte
 msgid "Scheduled for {0}. Keep Postika open and your computer awake."
 msgstr "Запланировано на {0}. Держите Postika открытой и ваш компьютер включенным."
 
-#: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Could not restore this account’s draft. New edits will stay available while Postika is open."
 msgstr "Не удалось восстановить черновик этой учетной записи. Новые изменения будут доступны, пока Postika открыта."
 
-#: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Could not add the dropped images. Try browsing for them instead."
 msgstr "Не удалось добавить перемещенные изображения. Попробуйте найти их через браузер."
 
-#: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Could not save this account’s draft to disk. Keep Postika open to retain your edits."
 msgstr "Не удалось сохранить черновик этой учетной записи на диск. Держите Postika открытой, чтобы сохранить ваши изменения."
 
@@ -100,6 +90,7 @@ msgid "Opening…"
 msgstr "Открытие…"
 
 #: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Loading…"
 msgstr "Загрузка…"
 
@@ -210,6 +201,8 @@ msgstr "Часовой пояс: {0}. Держите Postika открытым и
 
 #: src/App.svelte
 #: src/Workspace.svelte
+#: src/components/FacebookPageDialog.svelte
+#: src/components/FetchedPostCard.svelte
 msgid "Cancel"
 msgstr "Отмена"
 
@@ -440,18 +433,18 @@ msgstr "Уменьшить минуту"
 msgid "Choose a date and time in the future."
 msgstr "Выберите дату и время в будущем."
 
-#. 0: rejected.join(', ')
-#: src/components/PostComposer.svelte
+#. 0: a
+#: src/components/LogMessage.svelte
 msgid "Unsupported files: {0}. Choose JPG, PNG, WebP, or GIF images."
 msgstr "Неподдерживаемые файлы: {0}. Выберите изображения JPG, PNG, WebP или GIF."
 
-#. 0: image.file.name
-#: src/components/PostComposer.svelte
+#. 0: a
+#: src/components/LogMessage.svelte
 msgid "Could not preview {0}. Please choose another image."
 msgstr "Не удалось предварительно просмотреть {0}. Пожалуйста, выберите другое изображение."
 
-#. 0: images[index].file.name; 1: index + 1; 2: images.length
-#: src/components/PostComposer.svelte
+#. 0: a; 1: number(b); 2: number(c)
+#: src/components/LogMessage.svelte
 msgid "{0} moved to position {1} of {2}."
 msgstr "{0} перемещён на позицию {1} из {2}."
 
@@ -515,7 +508,7 @@ msgstr "Удалить {0}"
 msgid "Drop more images here to add them."
 msgstr "Перетащите сюда больше изображений, чтобы добавить их."
 
-#. 0: error
+#. 0: logMessage(error, true)
 #: src/components/PostEditor.svelte
 msgid "Could not edit the post: {0}"
 msgstr "Не удалось отредактировать пост: {0}"
@@ -902,7 +895,7 @@ msgstr "Заменяет интервал публикации этого зап
 msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
 msgstr "Начальные значения по умолчанию: 60–120 секунд, переписывание Gemini выключено и инструкции по переписыванию отсутствуют. Сохраните свои предпочтения в Настройках, чтобы изменить их."
 
-#: src/components/Settings.svelte
+#: src/components/LogMessage.svelte
 msgid "Settings saved. New runs can use these defaults."
 msgstr "Настройки сохранены. Новые запуски могут использовать эти значения по умолчанию."
 
@@ -985,7 +978,7 @@ msgstr "Предстоящий"
 msgid "Step {0} of {1}: {2}"
 msgstr "Шаг {0} из {1}: {2}"
 
-#: src/components/WindowControls.svelte
+#: src/components/LogMessage.svelte
 msgid "Could not change the window. Please try again."
 msgstr "Не удалось изменить окно. Пожалуйста, попробуйте снова."
 
@@ -1044,10 +1037,12 @@ msgid "The browser is closed. It will reopen when you click Post."
 msgstr "Браузер закрыт. Он откроется снова, когда вы нажмете «Опубликовать»."
 
 #: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Checking Facebook login"
 msgstr "Проверка входа в Facebook"
 
 #: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Finish signing in or any verification prompts in Chrome. Your login will be detected automatically."
 msgstr "Завершите вход или любые запросы подтверждения в Chrome. Ваш вход будет обнаружен автоматически."
 
@@ -1134,7 +1129,7 @@ msgstr "День"
 msgid "Evening"
 msgstr "Вечер"
 
-#: src/components/LanguageMenu.svelte
+#: src/components/LogMessage.svelte
 msgid "Could not change the language. Please try again."
 msgstr "Не удалось изменить язык. Пожалуйста, попробуйте снова."
 
@@ -1287,8 +1282,10 @@ msgstr "Профиль по умолчанию"
 msgid "Color themes"
 msgstr "Цветовые темы"
 
+#: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
 #: src/components/ThemePicker.svelte
+#: src/components/UpdateButton.svelte
 msgid "Close"
 msgstr "Закрыть"
 
@@ -1760,6 +1757,7 @@ msgid "This group has reached its pending-content limit."
 msgstr "Эта группа достигла предела ожидающего контента."
 
 #: src/components/LogMessage.svelte
+#: src/components/LogMessage.svelte
 #: src/components/UsageGuide.svelte
 msgid "This post was submitted, but confirmation is uncertain. Check Facebook before retrying."
 msgstr "Этот пост был отправлен, но подтверждение неясно. Проверьте Facebook перед повторной попыткой."
@@ -1867,8 +1865,10 @@ msgstr "Перезапись Gemini не удалась (HTTP {0}). Провер
 msgid " (Code {0})"
 msgstr "(Код {0})"
 
+#: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
-#: src/components/PostingLogView.svelte
+#: src/components/LocalizedFeedback.svelte
+#: src/components/PostEditor.svelte
 #: src/components/UsageGuide.svelte
 msgid "Debug details"
 msgstr "Детали отладки"
@@ -2021,3 +2021,373 @@ msgstr "Можно использовать аккаунт по умолчани
 #: src/components/FeaturesCard.svelte
 msgid "Features & How to Use"
 msgstr "Возможности и руководство"
+
+#~ msgid "Or post from any Facebook page"
+#~ msgstr ""
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Or click here to fetch posts from any Facebook page"
+msgstr "Или нажмите здесь, чтобы загрузить публикации с любой страницы Facebook"
+
+#: src/components/LogMessage.svelte
+msgid "Enter a Facebook page URL, such as https://web.facebook.com/swiftlineMotors"
+msgstr "Введите URL страницы Facebook, например https://web.facebook.com/swiftlineMotors"
+
+#~ msgid "Fetch Facebook posts"
+#~ msgstr ""
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Decrease number of posts"
+msgstr "Уменьшить число публикаций"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Increase number of posts"
+msgstr "Увеличить число публикаций"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Facebook page URL"
+msgstr "URL страницы Facebook"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Number of posts to fetch"
+msgstr "Количество публикаций для загрузки"
+
+#~ msgid "Done"
+#~ msgstr ""
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Fetch posts from a Facebook page"
+msgstr "Загрузить публикации со страницы Facebook"
+
+#: src/components/LogMessage.svelte
+msgid "Could not check fetch progress. Close this dialog and try again."
+msgstr "Не удалось проверить ход загрузки. Закройте это окно и повторите попытку."
+
+#: src/components/LogMessage.svelte
+msgid "Could not stop fetching. Try again."
+msgstr "Не удалось остановить загрузку. Повторите попытку."
+
+#: src/components/LogMessage.svelte
+msgid "Fetching stopped."
+msgstr "Загрузка остановлена."
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Facebook page fetch options"
+msgstr "Параметры загрузки публикаций со страницы Facebook"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Posts fetched"
+msgstr "Загруженные публикации"
+
+#: src/components/PostComposer.svelte
+msgid "Fetched posts"
+msgstr "Загруженные публикации"
+
+#: src/components/FetchedPostCard.svelte
+msgid "Post without text"
+msgstr "Публикация без текста"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Fetching…"
+msgstr "Загрузка…"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Fetch"
+msgstr "Загрузить"
+
+#: src/components/PostComposer.svelte
+msgid "Fetched posts <0/>"
+msgstr "Загруженные публикации <0/>"
+
+#: src/components/PostComposer.svelte
+msgid "Write a post instead"
+msgstr "Вместо этого написать публикацию"
+
+#~ msgid "No posts were available from this Facebook page."
+#~ msgstr ""
+
+#: src/App.svelte
+msgid "Review the posts fetched from your Facebook page."
+msgstr "Проверьте публикации, загруженные с вашей страницы Facebook."
+
+#~ msgid "Post removed."
+#~ msgstr ""
+
+#: src/components/PostComposer.svelte
+msgid "No posts to show. Fetch posts or write a post instead."
+msgstr "Нет публикаций для показа. Загрузите публикации или напишите новую."
+
+#. 0: index + 1
+#: src/components/FetchedPostCard.svelte
+msgid "Post {0}"
+msgstr "Публикация {0}"
+
+#. 0: index + 1
+#: src/components/FetchedPostCard.svelte
+msgid "Edit post {0}"
+msgstr "Редактировать публикацию {0}"
+
+#: src/components/FetchedPostCard.svelte
+msgid "Edit"
+msgstr "Редактировать"
+
+#. 0: index + 1
+#: src/components/FetchedPostCard.svelte
+msgid "Delete post {0}"
+msgstr "Удалить публикацию {0}"
+
+#: src/components/FetchedPostCard.svelte
+msgid "Delete"
+msgstr "Удалить"
+
+#: src/components/FetchedPostCard.svelte
+msgid "Post text"
+msgstr "Текст публикации"
+
+#. 0: imageIndex + 1; 1: index + 1
+#: src/components/FetchedPostCard.svelte
+msgid "Remove image {0} from post {1}"
+msgstr "Удалить изображение {0} из публикации {1}"
+
+#: src/components/FetchedPostCard.svelte
+msgid "Save changes"
+msgstr "Сохранить изменения"
+
+#: src/components/LogMessage.svelte
+msgid "Could not fetch Facebook posts. Check Chrome and try again."
+msgstr "Не удалось загрузить публикации Facebook. Проверьте Chrome и повторите попытку."
+
+#: src/components/LogMessage.svelte
+msgid "Could not load full-size photos. Fetch the posts again."
+msgstr "Не удалось загрузить фотографии в полном размере. Загрузите публикации заново."
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture Facebook requests. Check Chrome and fetch again."
+msgstr "Не удалось перехватить запросы Facebook. Проверьте Chrome и повторите загрузку."
+
+#: src/components/LogMessage.svelte
+msgid "Enter a positive whole number of posts to fetch"
+msgstr "Введите положительное целое число публикаций для загрузки"
+
+#: src/components/LogMessage.svelte
+msgid "Wait for posting to finish before fetching Facebook posts"
+msgstr "Дождитесь завершения отправки, прежде чем загружать публикации Facebook"
+
+#: src/components/LogMessage.svelte
+msgid "Finish loading groups before fetching Facebook posts"
+msgstr "Завершите загрузку групп, прежде чем загружать публикации Facebook"
+
+#: src/components/LogMessage.svelte
+msgid "Fetch at least one post before posting"
+msgstr "Перед отправкой загрузите хотя бы одну публикацию"
+
+#: src/components/LogMessage.svelte
+msgid "Capturing Facebook posts…"
+msgstr "Перехват публикаций Facebook…"
+
+#: src/components/LogMessage.svelte
+msgid "Capturing full-size photos…"
+msgstr "Перехват фотографий в полном размере…"
+
+#: src/components/LogMessage.svelte
+msgid "Reloading the photo page…"
+msgstr "Перезагрузка страницы фотографии…"
+
+#: src/components/LogMessage.svelte
+msgid "Opening the next photo…"
+msgstr "Открытие следующей фотографии…"
+
+#: src/components/LogMessage.svelte
+msgid "Fetching posts and full-size photos…"
+msgstr "Загрузка публикаций и фотографий в полном размере…"
+
+#~ msgid "Facebook"
+#~ msgstr ""
+
+#. 0: number(a); 1: number(b)
+#: src/components/LogMessage.svelte
+msgid "Fetched {0} of {1} posts…"
+msgstr "Загружено {0} из {1} публикаций…"
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Fetched {0} posts."
+msgstr "Загружено публикаций: {0}."
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Fetched {0} posts. No more posts are available."
+msgstr "Загружено публикаций: {0}. Больше доступных публикаций нет."
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Add text to fetched post {0} before posting"
+msgstr "Добавьте текст в загруженную публикацию {0} перед отправкой"
+
+#. 0: number(a); 1: number(b); 2: c
+#: src/components/LogMessage.svelte
+msgid "Preparing post {0}/{1} for {2}…"
+msgstr "Подготовка публикации {0}/{1} для {2}…"
+
+#. 0: number(a); 1: number(b); 2: c
+#: src/components/LogMessage.svelte
+msgid "Uploading images for post {0}/{1} to {2}…"
+msgstr "Загрузка изображений публикации {0}/{1} в {2}…"
+
+#. 0: number(a); 1: number(b); 2: c
+#: src/components/LogMessage.svelte
+msgid "Posting post {0}/{1} to {2}…"
+msgstr "Отправка публикации {0}/{1} в {2}…"
+
+#. 0: number(a); 1: number(b); 2: number(c); 3: number(d)
+#: src/components/LogMessage.svelte
+msgid "Downloading photo {0}/{1} for post {2}/{3}…"
+msgstr "Скачивание фотографии {0}/{1} для публикации {2}/{3}…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the groups request…"
+msgstr "Ожидание запроса групп…"
+
+#: src/components/LogMessage.svelte
+msgid "Groups request captured. Waiting for the page to finish loading…"
+msgstr "Запрос групп перехвачен. Ожидание завершения загрузки страницы…"
+
+#: src/components/LogMessage.svelte
+msgid "Browser closed. Loading your groups…"
+msgstr "Браузер закрыт. Загрузка ваших групп…"
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Loaded {0} groups…"
+msgstr "Загружено групп: {0}…"
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Restored {0} saved groups. Load groups to refresh the list."
+msgstr "Восстановлено сохранённых групп: {0}. Загрузите группы, чтобы обновить список."
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Loaded and saved {0} groups."
+msgstr "Загружено и сохранено групп: {0}."
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Loaded {0} groups, but could not save them. Load groups again to retry saving."
+msgstr "Загружено групп: {0}, но сохранить их не удалось. Загрузите группы снова, чтобы повторить сохранение."
+
+#: src/components/LogMessage.svelte
+msgid "Could not load groups. Check Chrome and try again."
+msgstr "Не удалось загрузить группы. Проверьте Chrome и повторите попытку."
+
+#: src/components/LogMessage.svelte
+msgid "Could not read Postika settings"
+msgstr "Не удалось прочитать настройки Postika"
+
+#: src/components/LogMessage.svelte
+msgid "Could not save Postika settings"
+msgstr "Не удалось сохранить настройки Postika"
+
+#: src/components/LogMessage.svelte
+msgid "Set an interval between 60 and 86400 seconds, with the maximum at least the minimum"
+msgstr "Задайте интервал от 60 до 86400 секунд, при этом максимум должен быть не меньше минимума"
+
+#: src/components/LogMessage.svelte
+msgid "Rewrite instructions are too long"
+msgstr "Инструкции по переформулировке слишком длинные"
+
+#: src/components/LogMessage.svelte
+msgid "Enter a valid Gemini model name"
+msgstr "Введите допустимое название модели Gemini"
+
+#: src/components/LogMessage.svelte
+msgid "Enter an account name of 1 to 80 characters"
+msgstr "Введите название аккаунта длиной от 1 до 80 символов"
+
+#: src/components/LogMessage.svelte
+msgid "An account profile with this name already exists"
+msgstr "Профиль аккаунта с таким названием уже существует"
+
+#: src/components/LogMessage.svelte
+msgid "Account profile was not found"
+msgstr "Профиль аккаунта не найден"
+
+#: src/components/LogMessage.svelte
+msgid "Could not update accounts. Please try again."
+msgstr "Не удалось обновить аккаунты. Повторите попытку."
+
+#: src/components/LogMessage.svelte
+msgid "Chrome or Chromium was not found. Install a browser to open your Facebook groups"
+msgstr "Chrome или Chromium не найден. Установите браузер, чтобы открыть свои группы Facebook"
+
+#: src/components/LogMessage.svelte
+msgid "Found multiple matching menus on the groups page. Please open the Sort menu in Chrome"
+msgstr "На странице групп найдено несколько подходящих меню. Откройте меню сортировки в Chrome"
+
+#: src/components/LogMessage.svelte
+msgid "Found multiple matching radio menus. Please choose a sort option in Chrome"
+msgstr "Найдено несколько подходящих меню выбора. Выберите вариант сортировки в Chrome"
+
+#: src/components/LogMessage.svelte
+msgid "Could not open the link. Please try again."
+msgstr "Не удалось открыть ссылку. Повторите попытку."
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "None of the {0} selected groups has an available post composer"
+msgstr "Ни в одной из выбранных групп ({0}) нет доступного редактора публикаций"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "{0} is not an image file. Drop individual images, not folders."
+msgstr "{0} — не файл изображения. Перетаскивайте отдельные изображения, а не папки."
+
+#: src/components/LogMessage.svelte
+msgid "Could not complete this action. Please try again."
+msgstr "Не удалось выполнить это действие. Повторите попытку."
+
+#~ msgid "{0}–{1}"
+#~ msgstr ""
+
+#: src/components/UpdateButton.svelte
+msgid "Update available"
+msgstr "Доступно обновление"
+
+#: src/components/UpdateButton.svelte
+#: src/components/UpdateButton.svelte
+#: src/components/UpdateButton.svelte
+msgid "Updates"
+msgstr "Обновления"
+
+#: src/components/UpdateButton.svelte
+msgid "Checking for updates…"
+msgstr "Проверка обновлений…"
+
+#: src/components/UpdateButton.svelte
+msgid "Downloading update…"
+msgstr "Загрузка обновления…"
+
+#: src/components/UpdateButton.svelte
+msgid "Update ready. Stop all posting queues before restarting."
+msgstr "Обновление готово. Перед перезапуском остановите все очереди публикаций."
+
+#: src/components/UpdateButton.svelte
+msgid "Postika is up to date."
+msgstr "Установлена актуальная версия Postika."
+
+#: src/components/UpdateButton.svelte
+msgid "Download update"
+msgstr "Скачать обновление"
+
+#: src/components/UpdateButton.svelte
+#: src/components/UpdateButton.svelte
+msgid "Restart to update"
+msgstr "Перезапустить для обновления"
+
+#: src/components/UpdateButton.svelte
+msgid "Check for updates"
+msgstr "Проверить обновления"
+
+#: src/components/UpdateButton.svelte
+msgid "Installing update…"
+msgstr "Установка обновления…"

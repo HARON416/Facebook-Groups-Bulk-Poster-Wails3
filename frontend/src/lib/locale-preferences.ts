@@ -1,5 +1,10 @@
 import { languages } from '../locales/languages.js';
 
+export function localeDirection(locale: string): 'rtl' | 'ltr' {
+  const language = locale.toLowerCase().split(/[-_]/)[0];
+  return language === 'ar' || language === 'he' || language === 'iw' ? 'rtl' : 'ltr';
+}
+
 // Webviews usually expose regional tags (fr-CA, sw-KE), while most of our
 // catalogs use a language tag. Match the available regional catalog first.
 export function matchSupportedLocale(value: string | null): string | null {

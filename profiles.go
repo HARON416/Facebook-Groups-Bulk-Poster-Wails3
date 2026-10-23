@@ -40,13 +40,14 @@ type profileRegistry struct {
 // ProfileService routes every operation by an explicit, stable profile ID.
 // Switching the visible workspace never changes a session's storage or jobs.
 type ProfileService struct {
-	mu       sync.Mutex
-	root     string
-	registry profileRegistry
-	sessions map[string]*GroupsService
-	app      *application.App
-	monitor  bool
-	closed   bool
+	updateGate sync.RWMutex
+	mu         sync.Mutex
+	root       string
+	registry   profileRegistry
+	sessions   map[string]*GroupsService
+	app        *application.App
+	monitor    bool
+	closed     bool
 }
 
 func newProfileService(root string) (*ProfileService, error) {
@@ -132,6 +133,7 @@ func (m *ProfileService) session(id string) (*GroupsService, error) {
 		}
 		s := &GroupsService{profileID: id, profileName: profile.Name, app: m.app,
 			profileDir: browser, settingsPath: filepath.Join(dir, "settings.json"), groupsCachePath: filepath.Join(dir, "groups.json")}
+		s.updateGate = &m.updateGate
 		m.sessions[id] = s
 		if m.monitor {
 			s.startConnectivityMonitor()

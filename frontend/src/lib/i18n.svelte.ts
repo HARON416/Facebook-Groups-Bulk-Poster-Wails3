@@ -1,7 +1,7 @@
 import { loadLocale } from 'wuchale/load-utils';
 import '../locales/main.loader.svelte.js';
 import { languages } from '../locales/languages.js';
-import { matchSupportedLocale, preferredLocale } from './locale-preferences';
+import { localeDirection, matchSupportedLocale, preferredLocale } from './locale-preferences';
 
 export const localeStorageKey = 'postika:language';
 export const i18n = $state({ locale: 'en', changing: false });
@@ -27,7 +27,7 @@ export function setLocale(value: string, persist = true): Promise<void> {
     await loadLocale(locale);
     i18n.locale = locale;
     document.documentElement.lang = locale;
-    document.documentElement.dir = locale === 'ar' ? 'rtl' : 'ltr';
+    document.documentElement.dir = localeDirection(locale);
     if (persist) {
       try { localStorage.setItem(localeStorageKey, locale); }
       catch { /* The selected language still works when browser storage is unavailable. */ }

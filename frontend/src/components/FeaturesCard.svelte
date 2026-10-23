@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { tick } from 'svelte';
   import UsageGuide from './UsageGuide.svelte';
   import { languages } from '../locales/languages.js';
   import { themeOptions } from '../lib/theme-options';
   import { getLocale } from '../lib/i18n.svelte';
+  import { localeDirection } from '../lib/locale-preferences';
 
   let dialog: HTMLDialogElement;
   let trigger: HTMLButtonElement;
@@ -17,10 +17,8 @@
     dialog.querySelector('.feature-content')?.scrollTo(0, 0);
   }
   function close() { dialog.close(); }
-  async function showView(next: 'features' | 'guide') {
+  function showView(next: 'features' | 'guide') {
     view = next;
-    await tick();
-    dialog.querySelector('.feature-content')?.scrollTo(0, 0);
   }
   function backdrop(event: MouseEvent) {
     if (event.target !== dialog) return;
@@ -34,15 +32,17 @@
   Features
 </button>
 
-<dialog id="features-dialog" bind:this={dialog} dir={getLocale() === 'ar' ? 'rtl' : 'ltr'} aria-labelledby="features-heading" onclick={backdrop} onclose={() => { expanded = false; trigger.focus(); }}>
-  <header class="feature-header">
-    <h1 id="features-heading">Features &amp; How to Use</h1>
-    <button class="close" type="button" aria-label="Close" onclick={close}><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
+<dialog class="ui-dialog" id="features-dialog" bind:this={dialog} dir={localeDirection(getLocale())} aria-labelledby="features-heading" onclick={backdrop} onclose={() => { expanded = false; trigger.focus(); }}>
+  <header class="feature-header ui-dialog-heading">
+    <h1 class="ui-title" id="features-heading">Features &amp; How to Use</h1>
+    <button class="close ui-dialog-close" type="button" aria-label="Close" onclick={close}><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
   </header>
   <div class="view-switch" role="group" aria-label="Features">
     <button type="button" aria-pressed={view === 'features'} aria-controls="features-content" onclick={() => showView('features')}>Features</button>
     <button type="button" data-usage-guide aria-pressed={view === 'guide'} aria-controls="features-content" onclick={() => showView('guide')}>How to use</button>
   </div>
+  <!-- A fresh pane resets scrolling and cancels keyboard scrolling from the previous view. -->
+  {#key view}
   <!-- The scroll pane needs a tab stop so keyboard users can scroll the full feature list. -->
   <!-- svelte-ignore a11y_no_noninteractive_tabindex -->
   <div id="features-content" class="feature-content" tabindex="0" role="region" aria-labelledby="features-heading">
@@ -93,37 +93,32 @@
       <UsageGuide />
     {/if}
   </div>
+  {/key}
 </dialog>
 
 <style>
   .features-trigger { --wails-draggable: no-drag; display: inline-flex; align-items: center; gap: .6rem; flex-shrink: 0; padding: .6rem .9rem; margin-inline: .4rem; border: 1px solid var(--border-accent); border-radius: .6rem; background: var(--accent-faint); color: var(--accent); font-size: 1.2rem; cursor: pointer; white-space: nowrap; }
   .features-trigger:hover, .features-trigger[aria-expanded=true] { background: var(--surface-active); border-color: var(--accent); }
-  dialog { --wails-draggable: no-drag; position: fixed; inset: 0; margin: auto; padding: 0; width: min(88rem, calc(100vw - 4rem)); max-width: none; max-height: min(86rem, calc(100dvh - 6rem)); border: 1px solid var(--border-strong); border-radius: 1.6rem; background: var(--surface); color: var(--text); box-shadow: 0 2.4rem 8rem #0005; overflow: hidden; }
+  dialog { width: min(88rem, calc(100vw - 3.2rem)); max-height: min(86rem, calc(100dvh - 3.2rem)); overflow: hidden; }
   dialog[open] { display: flex; flex-direction: column; }
-  dialog::backdrop { background: #0009; backdrop-filter: blur(4px); }
-  .feature-header { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-shrink: 0; padding: 2rem 3.2rem; border-bottom: 1px solid var(--border); }
-  h1 { color: var(--accent); font-size: 2.4rem; line-height: 1.2; font-weight: 500; }
-  .close { display: grid; place-items: center; flex-shrink: 0; width: 3.6rem; height: 3.6rem; border: 1px solid var(--border); border-radius: .7rem; background: transparent; color: var(--text-secondary); cursor: pointer; }
-  .close:hover { background: var(--surface-hover); color: var(--text); }
-  .view-switch { display: flex; flex-shrink: 0; gap: .6rem; padding: 1.2rem 3.2rem; border-bottom: 1px solid var(--border); }
+
+  .view-switch { display: flex; flex-shrink: 0; gap: .6rem; padding: 1.2rem var(--ui-space); border-bottom: 1px solid var(--border); }
   .view-switch button { padding: .7rem 1.2rem; border: 1px solid transparent; border-radius: .6rem; background: transparent; color: var(--text-secondary); font-size: 1.3rem; cursor: pointer; }
   .view-switch button:hover { background: var(--surface-hover); color: var(--text); }
   .view-switch button[aria-pressed=true] { border-color: var(--border-accent); background: var(--accent-faint); color: var(--accent); }
-  .feature-content { min-height: 0; padding: 2.4rem 3.2rem 3.2rem; overflow-y: auto; overscroll-behavior: contain; font-size: 1.4rem; line-height: 1.8; overflow-wrap: anywhere; }
-  .intro { color: var(--text-strong); font-size: 1.6rem; }
-  section { margin-top: 2.8rem; }
-  h2 { margin-bottom: .8rem; color: var(--text-muted); font-size: 1.5rem; font-weight: 500; }
+  .feature-content { min-height: 0; padding: var(--ui-space); overflow-y: auto; overscroll-behavior: contain; font-size: var(--ui-body-size); line-height: 1.6; overflow-wrap: anywhere; }
+  .intro { color: var(--text-strong); font-size: var(--ui-body-size); }
+  section { margin-top: 2.4rem; }
+  h2 { margin-bottom: .8rem; color: var(--text-strong); font-size: var(--ui-title-size); font-weight: var(--ui-title-weight); line-height: 1.5; }
   ul { list-style: none; }
   li { position: relative; padding-inline-start: 1.8rem; margin-block: .6rem; }
   li::before { content: '–'; position: absolute; inset-inline-start: 0; color: var(--accent); }
   strong { color: var(--text-strong); font-weight: 600; }
   .muted { margin-top: .4rem; color: var(--text-muted); font-size: 1.2rem; }
-  .session-note { margin-top: 3rem; padding-top: 1.8rem; border-top: 1px solid var(--border); color: var(--text-secondary); font-size: 1.2rem; }
-  button:focus-visible, .feature-content:focus-visible { outline: 2px solid var(--focus); outline-offset: -3px; }
+  .session-note { margin-top: 2.4rem; padding-top: var(--ui-space); border-top: 1px solid var(--border); color: var(--text-secondary); font-size: 1.2rem; }
+  .features-trigger:focus-visible, .view-switch button:focus-visible, .feature-content:focus-visible { outline: 2px solid var(--focus); outline-offset: -3px; }
   @media (max-width: 600px) {
     dialog { width: calc(100vw - 2rem); max-height: calc(100dvh - 2rem); border-radius: 1rem; }
-    .feature-header { padding: 2rem; }
-    .view-switch { padding-inline: 2rem; }
-    .feature-content { padding: 2rem; font-size: 1.3rem; }
+
   }
 </style>

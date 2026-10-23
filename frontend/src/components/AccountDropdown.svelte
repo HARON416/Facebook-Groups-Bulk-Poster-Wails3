@@ -1,5 +1,7 @@
 <script lang="ts">
   import { tick } from 'svelte';
+  import { getLocale } from '../lib/i18n.svelte';
+  import { localeDirection } from '../lib/locale-preferences';
 
   interface Props {
     profiles: { id: string; name: string; flag?: string }[];
@@ -66,7 +68,7 @@
 
 <svelte:window onpointerdown={(event) => { if (expanded && event.target instanceof Node && !root.contains(event.target)) close(); }} />
 
-<div class="account-dropdown" class:compact bind:this={root} onfocusout={(event) => { if (!root.contains(event.relatedTarget as Node | null)) close(); }}>
+<div class="account-dropdown" class:compact dir={localeDirection(getLocale())} bind:this={root} onfocusout={(event) => { if (!root.contains(event.relatedTarget as Node | null)) close(); }}>
   <button id={`${id}-profile`} class="account-trigger" type="button" bind:this={trigger}
     data-profile-id={selected} aria-label={language ? `Language: ${current?.name ?? ''}` : `Account: ${current?.name ?? 'Loading accounts'}`}
     aria-haspopup="listbox" aria-expanded={expanded} aria-controls={expanded ? `${id}-options` : undefined}
@@ -120,7 +122,7 @@
   .account-dropdown { position: relative; width: 24rem; max-width: 50vw; font-size: 1.3rem; }
   button, input { font: inherit; }
   button { cursor: pointer; }
-  .account-trigger { display: flex; align-items: center; gap: 1rem; width: 100%; min-height: 4rem; padding: .9rem 1.4rem; border: 1px solid var(--border); border-radius: .7rem; color: var(--text-secondary); background: var(--surface); text-align: left; }
+  .account-trigger { display: flex; align-items: center; gap: 1rem; width: 100%; min-height: 4rem; padding: .9rem 1.4rem; border: 1px solid var(--border); border-radius: .7rem; color: var(--text-secondary); background: var(--surface); text-align: start; }
   .account-trigger:hover:not(:disabled), .account-trigger[aria-expanded=true] { border-color: var(--border-strong); }
   .account-trigger:disabled { opacity: .5; cursor: default; }
   .compact { width: 22rem; font-size: 1.2rem; }
@@ -129,14 +131,14 @@
   .flag { flex-shrink: 0; font-size: 1.4rem; }
   svg { flex-shrink: 0; width: 1.5rem; height: 1.5rem; stroke: currentColor; stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; }
   .account-trigger .chevron { width: 1.4rem; height: 1.4rem; fill: currentColor; stroke: none; }
-  .account-menu { position: absolute; right: 0; top: calc(100% + .5rem); z-index: 50; width: 100%; border: 1px solid var(--border); border-radius: .7rem; background: var(--surface); box-shadow: 0 3px 12px var(--shadow-soft); overflow: hidden; }
+  .account-menu { position: absolute; inset-inline-end: 0; top: calc(100% + .5rem); z-index: 50; width: 100%; border: 1px solid var(--border); border-radius: .7rem; background: var(--surface); box-shadow: 0 3px 12px var(--shadow-soft); overflow: hidden; }
   .search-row { display: flex; align-items: center; gap: .8rem; min-height: 4.1rem; padding: .8rem 1.2rem; border-bottom: 1px solid var(--border); color: var(--text-muted); }
   .search-row input { min-width: 0; flex: 1; width: 100%; padding: 0; border: 0; outline: none; background: transparent; color: var(--text); }
   .search-row input::placeholder { color: var(--text-muted); }
   .clear-search { display: grid; place-items: center; padding: .2rem; border: 0; border-radius: .3rem; background: transparent; color: var(--text-muted); }
   .menu-heading { padding: 1.1rem 1.2rem .5rem; color: var(--text-muted); font-size: 1.05rem; }
   [role=listbox] { max-height: min(28rem, 50dvh); padding: 0 .5rem .6rem; overflow-y: auto; }
-  [role=option] { display: flex; align-items: center; gap: .8rem; width: 100%; min-height: 3rem; padding: .6rem .7rem; border: 0; border-radius: .3rem; background: var(--surface); color: var(--text); text-align: left; }
+  [role=option] { display: flex; align-items: center; gap: .8rem; width: 100%; min-height: 3rem; padding: .6rem .7rem; border: 0; border-radius: .3rem; background: var(--surface); color: var(--text); text-align: start; }
   [role=option]:hover, [role=option].highlighted, [role=option].selected { background: var(--surface-hover); }
   .check { color: var(--text-secondary); }
   .no-results { display: flex; align-items: center; flex-direction: column; gap: .8rem; padding: 2.5rem 1.5rem 3rem; text-align: center; }

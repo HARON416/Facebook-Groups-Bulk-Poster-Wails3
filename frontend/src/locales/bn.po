@@ -8,69 +8,59 @@ msgstr ""
 "Plural-Forms: nplurals=2\n"
 "X-Plurals-Order: one, other\n"
 
-#. 0: minimumInterval === maximumInterval ? minimumInterval \\: `${minimumInterval}–${maximumInterval}`; 1: rewriteState
+#. 0: appliedInterval; 1: rewriteState
 #: src/App.svelte
 msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
 msgstr "সংরক্ষিত ডিফল্ট প্রয়োগ করা হয়েছে: পোস্টগুলির মধ্যে {0} সেকেন্ড · Gemini পুনর্লিখন {1}।"
 
-#: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Could not restore saved groups. Load groups to refresh the list."
 msgstr "সংরক্ষিত গ্রুপগুলি পুনঃস্থাপন করতে পারিনি। তালিকাটি রিফ্রেশ করতে গ্রুপগুলি লোড করুন।"
 
-#: src/App.svelte
-msgid "Choose a future date and time for your post."
-msgstr "আপনার পোস্টের জন্য ভবিষ্যতের তারিখ এবং সময় নির্বাচন করুন।"
+#~ msgid "Choose a future date and time for your post."
+#~ msgstr "আপনার পোস্টের জন্য ভবিষ্যতের তারিখ এবং সময় নির্বাচন করুন।"
 
-#: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Saving your scheduled queue…"
 msgstr "আপনার নির্ধারিত কিউ সংরক্ষণ করা হচ্ছে…"
 
-#: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Opening a selected group to capture fresh posting requests…"
 msgstr "নতুন পোস্টিং অনুরোধ ক্যাপচার করতে নির্বাচিত গ্রুপটি খুলুন…"
 
-#: src/App.svelte
-#: src/App.svelte
 #: src/components/LogMessage.svelte
 msgid "Posting stopped."
 msgstr "পোস্টিং বন্ধ হয়েছে।"
 
-#: src/App.svelte
 #: src/components/LogMessage.svelte
 msgid "Could not read a selected image"
 msgstr "নির্বাচিত ছবি পড়া যায়নি"
 
+#. 0: a
 #. 0: image.file.name
-#. 0: missingNames
-#. 0: unreadableNames
-#. 0: image.file.name
-#: src/App.svelte
-#: src/App.svelte
-#: src/components/PostComposer.svelte
+#: src/components/LogMessage.svelte
 #: src/components/PostComposer.svelte
 msgid "Could not read {0}"
 msgstr "{0} পড়তে পারিনি"
 
-#: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Posting finished."
 msgstr "পোস্টিং সমাপ্ত হয়েছে।"
 
-#. 0: scheduleLabel(scheduledFor)
 #. 0: date
-#: src/App.svelte
 #: src/components/LogMessage.svelte
 msgid "Scheduled for {0}. Keep Postika open and your computer awake."
 msgstr "{0} জন্য নির্ধারিত। Postika খোলা রাখুন এবং আপনার কম্পিউটার সক্রিয় রাখুন।"
 
-#: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Could not restore this account’s draft. New edits will stay available while Postika is open."
 msgstr "এই অ্যাকাউন্টের খসড়া পুনঃস্থাপন করতে পারিনি। নতুন সম্পাদনা Postika খোলা থাকা অবস্থায় উপলব্ধ থাকবে।"
 
-#: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Could not add the dropped images. Try browsing for them instead."
 msgstr "ড্রপ করা ছবিগুলি যোগ করতে পারিনি। পরিবর্তে সেগুলির জন্য ব্রাউজ করার চেষ্টা করুন।"
 
-#: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Could not save this account’s draft to disk. Keep Postika open to retain your edits."
 msgstr "এই অ্যাকাউন্টের খসড়া ডিস্কে সংরক্ষণ করতে পারিনি। আপনার সম্পাদনা বজায় রাখতে Postika খোলা রাখুন।"
 
@@ -100,6 +90,7 @@ msgid "Opening…"
 msgstr "খোলা হচ্ছে…"
 
 #: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Loading…"
 msgstr "লোড হচ্ছে…"
 
@@ -210,6 +201,8 @@ msgstr "টাইম জোন: {0}. পোস্টিকা খোলা র�
 
 #: src/App.svelte
 #: src/Workspace.svelte
+#: src/components/FacebookPageDialog.svelte
+#: src/components/FetchedPostCard.svelte
 msgid "Cancel"
 msgstr "বাতিল"
 
@@ -440,18 +433,18 @@ msgstr "মিনিট কমান"
 msgid "Choose a date and time in the future."
 msgstr "ভবিষ্যতের একটি তারিখ এবং সময় নির্বাচন করুন।"
 
-#. 0: rejected.join(', ')
-#: src/components/PostComposer.svelte
+#. 0: a
+#: src/components/LogMessage.svelte
 msgid "Unsupported files: {0}. Choose JPG, PNG, WebP, or GIF images."
 msgstr "সমর্থনহীন ফাইল: {0}. JPG, PNG, WebP, বা GIF চিত্র নির্বাচন করুন।"
 
-#. 0: image.file.name
-#: src/components/PostComposer.svelte
+#. 0: a
+#: src/components/LogMessage.svelte
 msgid "Could not preview {0}. Please choose another image."
 msgstr "{0} প্রিভিউ করা সম্ভব নয়। অনুগ্রহ করে অন্য একটি চিত্র নির্বাচন করুন।"
 
-#. 0: images[index].file.name; 1: index + 1; 2: images.length
-#: src/components/PostComposer.svelte
+#. 0: a; 1: number(b); 2: number(c)
+#: src/components/LogMessage.svelte
 msgid "{0} moved to position {1} of {2}."
 msgstr "{0} {2}-এর {1} অবস্থানে স্থানান্তরিত হয়েছে।"
 
@@ -515,7 +508,7 @@ msgstr "{0} সরানো"
 msgid "Drop more images here to add them."
 msgstr "চিত্র যোগ করতে আরও চিত্র এখানে ড্রপ করুন।"
 
-#. 0: error
+#. 0: logMessage(error, true)
 #: src/components/PostEditor.svelte
 msgid "Could not edit the post: {0}"
 msgstr "পোস্ট সম্পাদনা করা সম্ভব নয়: {0}"
@@ -902,7 +895,7 @@ msgstr "এই রানটির পোস্টিং ইন্টারভা
 msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
 msgstr "প্রাথমিক ডিফল্ট: ৬০–১২০ সেকেন্ড, Gemini পুনর্লিখন বন্ধ, এবং কোনো পুনর্লিখন নির্দেশনা নেই। এগুলি পরিবর্তন করতে আপনার পছন্দসই সেটিংসে সংরক্ষণ করুন।"
 
-#: src/components/Settings.svelte
+#: src/components/LogMessage.svelte
 msgid "Settings saved. New runs can use these defaults."
 msgstr "সেটিংস সংরক্ষিত হয়েছে। নতুন রানের জন্য এই ডিফল্ট মানগুলি ব্যবহার করা যেতে পারে।"
 
@@ -985,7 +978,7 @@ msgstr "আনার্সূচি"
 msgid "Step {0} of {1}: {2}"
 msgstr "ধাপ {0} এর {1}: {2}"
 
-#: src/components/WindowControls.svelte
+#: src/components/LogMessage.svelte
 msgid "Could not change the window. Please try again."
 msgstr "উইন্ডো পরিবর্তন করা যায়নি। অনুগ্রহ করে আবার চেষ্টা করুন।"
 
@@ -1044,10 +1037,12 @@ msgid "The browser is closed. It will reopen when you click Post."
 msgstr "ব্রাউজার বন্ধ আছে। আপনি পোস্টে ক্লিক করলে এটি পুনরায় খোলা হবে।"
 
 #: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Checking Facebook login"
 msgstr "ফেসবুক লগইন যাচাই করা হচ্ছে"
 
 #: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Finish signing in or any verification prompts in Chrome. Your login will be detected automatically."
 msgstr "ক্রোমে সাইন ইন সম্পন্ন করুন বা যে কোনো যাচাইকরণের নির্দেশ অনুসরণ করুন। আপনার লগইন স্বয়ংক্রিয়ভাবে শনাক্ত হবে।"
 
@@ -1134,7 +1129,7 @@ msgstr "দুপুর"
 msgid "Evening"
 msgstr "সন্ধ্যা"
 
-#: src/components/LanguageMenu.svelte
+#: src/components/LogMessage.svelte
 msgid "Could not change the language. Please try again."
 msgstr "ভাষা পরিবর্তন করতে পারিনি। অনুগ্রহ করে পুনরায় চেষ্টা করুন।"
 
@@ -1287,8 +1282,10 @@ msgstr "ডিফল্ট প্রোফাইল"
 msgid "Color themes"
 msgstr "রঙের থিম"
 
+#: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
 #: src/components/ThemePicker.svelte
+#: src/components/UpdateButton.svelte
 msgid "Close"
 msgstr "বন্ধ করুন"
 
@@ -1760,6 +1757,7 @@ msgid "This group has reached its pending-content limit."
 msgstr "এই গ্রুপ তার মুলতুবি-কনটেন্ট সীমায় পৌঁছেছে।"
 
 #: src/components/LogMessage.svelte
+#: src/components/LogMessage.svelte
 #: src/components/UsageGuide.svelte
 msgid "This post was submitted, but confirmation is uncertain. Check Facebook before retrying."
 msgstr "এই পোস্টটি জমা দেওয়া হয়েছে, কিন্তু নিশ্চিতকরণ অনিশ্চিত। পুনরায় চেষ্টা করার আগে ফেসবুক পরীক্ষা করুন।"
@@ -1867,8 +1865,10 @@ msgstr "Gemini পুনর্লিখন ব্যর্থ হয়েছে
 msgid " (Code {0})"
 msgstr "(কোড {0})"
 
+#: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
-#: src/components/PostingLogView.svelte
+#: src/components/LocalizedFeedback.svelte
+#: src/components/PostEditor.svelte
 #: src/components/UsageGuide.svelte
 msgid "Debug details"
 msgstr "ডিবাগ বিবরণ"
@@ -2021,3 +2021,373 @@ msgstr "অন্য অ্যাকাউন্ট যোগ না করে�
 #: src/components/FeaturesCard.svelte
 msgid "Features & How to Use"
 msgstr "বৈশিষ্ট্য ও ব্যবহারের নির্দেশনা"
+
+#~ msgid "Or post from any Facebook page"
+#~ msgstr ""
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Or click here to fetch posts from any Facebook page"
+msgstr "অথবা যেকোনো Facebook পেজ থেকে পোস্ট আনতে এখানে ক্লিক করুন"
+
+#: src/components/LogMessage.svelte
+msgid "Enter a Facebook page URL, such as https://web.facebook.com/swiftlineMotors"
+msgstr "Facebook পেজের URL লিখুন, যেমন https://web.facebook.com/swiftlineMotors"
+
+#~ msgid "Fetch Facebook posts"
+#~ msgstr ""
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Decrease number of posts"
+msgstr "পোস্টের সংখ্যা কমান"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Increase number of posts"
+msgstr "পোস্টের সংখ্যা বাড়ান"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Facebook page URL"
+msgstr "Facebook পেজের URL"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Number of posts to fetch"
+msgstr "যতগুলো পোস্ট আনতে চান"
+
+#~ msgid "Done"
+#~ msgstr ""
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Fetch posts from a Facebook page"
+msgstr "Facebook পেজ থেকে পোস্ট আনুন"
+
+#: src/components/LogMessage.svelte
+msgid "Could not check fetch progress. Close this dialog and try again."
+msgstr "পোস্ট আনার অগ্রগতি দেখা যায়নি। এই ডায়ালগ বন্ধ করে আবার চেষ্টা করুন।"
+
+#: src/components/LogMessage.svelte
+msgid "Could not stop fetching. Try again."
+msgstr "পোস্ট আনা বন্ধ করা যায়নি। আবার চেষ্টা করুন।"
+
+#: src/components/LogMessage.svelte
+msgid "Fetching stopped."
+msgstr "পোস্ট আনা বন্ধ হয়েছে।"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Facebook page fetch options"
+msgstr "Facebook পেজ থেকে পোস্ট আনার বিকল্প"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Posts fetched"
+msgstr "আনা পোস্ট"
+
+#: src/components/PostComposer.svelte
+msgid "Fetched posts"
+msgstr "আনা পোস্ট"
+
+#: src/components/FetchedPostCard.svelte
+msgid "Post without text"
+msgstr "লেখাবিহীন পোস্ট"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Fetching…"
+msgstr "পোস্ট আনা হচ্ছে…"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Fetch"
+msgstr "আনুন"
+
+#: src/components/PostComposer.svelte
+msgid "Fetched posts <0/>"
+msgstr "আনা পোস্ট <0/>"
+
+#: src/components/PostComposer.svelte
+msgid "Write a post instead"
+msgstr "এর বদলে পোস্ট লিখুন"
+
+#~ msgid "No posts were available from this Facebook page."
+#~ msgstr ""
+
+#: src/App.svelte
+msgid "Review the posts fetched from your Facebook page."
+msgstr "আপনার Facebook পেজ থেকে আনা পোস্টগুলো পর্যালোচনা করুন।"
+
+#~ msgid "Post removed."
+#~ msgstr ""
+
+#: src/components/PostComposer.svelte
+msgid "No posts to show. Fetch posts or write a post instead."
+msgstr "দেখানোর মতো পোস্ট নেই। পোস্ট আনুন অথবা নতুন পোস্ট লিখুন।"
+
+#. 0: index + 1
+#: src/components/FetchedPostCard.svelte
+msgid "Post {0}"
+msgstr "পোস্ট {0}"
+
+#. 0: index + 1
+#: src/components/FetchedPostCard.svelte
+msgid "Edit post {0}"
+msgstr "পোস্ট {0} সম্পাদনা করুন"
+
+#: src/components/FetchedPostCard.svelte
+msgid "Edit"
+msgstr "সম্পাদনা করুন"
+
+#. 0: index + 1
+#: src/components/FetchedPostCard.svelte
+msgid "Delete post {0}"
+msgstr "পোস্ট {0} মুছুন"
+
+#: src/components/FetchedPostCard.svelte
+msgid "Delete"
+msgstr "মুছুন"
+
+#: src/components/FetchedPostCard.svelte
+msgid "Post text"
+msgstr "পোস্টের লেখা"
+
+#. 0: imageIndex + 1; 1: index + 1
+#: src/components/FetchedPostCard.svelte
+msgid "Remove image {0} from post {1}"
+msgstr "পোস্ট {1} থেকে ছবি {0} সরান"
+
+#: src/components/FetchedPostCard.svelte
+msgid "Save changes"
+msgstr "পরিবর্তন সংরক্ষণ করুন"
+
+#: src/components/LogMessage.svelte
+msgid "Could not fetch Facebook posts. Check Chrome and try again."
+msgstr "Facebook পোস্ট আনা যায়নি। Chrome পরীক্ষা করে আবার চেষ্টা করুন।"
+
+#: src/components/LogMessage.svelte
+msgid "Could not load full-size photos. Fetch the posts again."
+msgstr "পূর্ণ আকারের ছবি লোড করা যায়নি। পোস্টগুলো আবার আনুন।"
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture Facebook requests. Check Chrome and fetch again."
+msgstr "Facebook অনুরোধ ক্যাপচার করা যায়নি। Chrome পরীক্ষা করে পোস্টগুলো আবার আনুন।"
+
+#: src/components/LogMessage.svelte
+msgid "Enter a positive whole number of posts to fetch"
+msgstr "আনার জন্য পোস্টের সংখ্যা ধনাত্মক পূর্ণসংখ্যায় লিখুন"
+
+#: src/components/LogMessage.svelte
+msgid "Wait for posting to finish before fetching Facebook posts"
+msgstr "Facebook পোস্ট আনার আগে পোস্ট করা শেষ হওয়া পর্যন্ত অপেক্ষা করুন"
+
+#: src/components/LogMessage.svelte
+msgid "Finish loading groups before fetching Facebook posts"
+msgstr "Facebook পোস্ট আনার আগে গ্রুপ লোড করা শেষ করুন"
+
+#: src/components/LogMessage.svelte
+msgid "Fetch at least one post before posting"
+msgstr "পোস্ট করার আগে অন্তত একটি পোস্ট আনুন"
+
+#: src/components/LogMessage.svelte
+msgid "Capturing Facebook posts…"
+msgstr "Facebook পোস্ট ক্যাপচার করা হচ্ছে…"
+
+#: src/components/LogMessage.svelte
+msgid "Capturing full-size photos…"
+msgstr "পূর্ণ আকারের ছবি ক্যাপচার করা হচ্ছে…"
+
+#: src/components/LogMessage.svelte
+msgid "Reloading the photo page…"
+msgstr "ছবির পেজ আবার লোড হচ্ছে…"
+
+#: src/components/LogMessage.svelte
+msgid "Opening the next photo…"
+msgstr "পরের ছবি খোলা হচ্ছে…"
+
+#: src/components/LogMessage.svelte
+msgid "Fetching posts and full-size photos…"
+msgstr "পোস্ট ও পূর্ণ আকারের ছবি আনা হচ্ছে…"
+
+#~ msgid "Facebook"
+#~ msgstr ""
+
+#. 0: number(a); 1: number(b)
+#: src/components/LogMessage.svelte
+msgid "Fetched {0} of {1} posts…"
+msgstr "{1}টির মধ্যে {0}টি পোস্ট আনা হয়েছে…"
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Fetched {0} posts."
+msgstr "{0}টি পোস্ট আনা হয়েছে।"
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Fetched {0} posts. No more posts are available."
+msgstr "{0}টি পোস্ট আনা হয়েছে। আর কোনো পোস্ট পাওয়া যাচ্ছে না।"
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Add text to fetched post {0} before posting"
+msgstr "পোস্ট করার আগে আনা পোস্ট {0}-এ লেখা যোগ করুন"
+
+#. 0: number(a); 1: number(b); 2: c
+#: src/components/LogMessage.svelte
+msgid "Preparing post {0}/{1} for {2}…"
+msgstr "{2}-এর জন্য পোস্ট {0}/{1} তৈরি হচ্ছে…"
+
+#. 0: number(a); 1: number(b); 2: c
+#: src/components/LogMessage.svelte
+msgid "Uploading images for post {0}/{1} to {2}…"
+msgstr "পোস্ট {0}/{1}-এর ছবি {2}-এ আপলোড হচ্ছে…"
+
+#. 0: number(a); 1: number(b); 2: c
+#: src/components/LogMessage.svelte
+msgid "Posting post {0}/{1} to {2}…"
+msgstr "পোস্ট {0}/{1} {2}-এ প্রকাশ করা হচ্ছে…"
+
+#. 0: number(a); 1: number(b); 2: number(c); 3: number(d)
+#: src/components/LogMessage.svelte
+msgid "Downloading photo {0}/{1} for post {2}/{3}…"
+msgstr "পোস্ট {2}/{3}-এর ছবি {0}/{1} ডাউনলোড হচ্ছে…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the groups request…"
+msgstr "গ্রুপের অনুরোধের জন্য অপেক্ষা করা হচ্ছে…"
+
+#: src/components/LogMessage.svelte
+msgid "Groups request captured. Waiting for the page to finish loading…"
+msgstr "গ্রুপের অনুরোধ ধরা হয়েছে। পৃষ্ঠা সম্পূর্ণ লোড হওয়ার জন্য অপেক্ষা করা হচ্ছে…"
+
+#: src/components/LogMessage.svelte
+msgid "Browser closed. Loading your groups…"
+msgstr "ব্রাউজার বন্ধ হয়েছে। আপনার গ্রুপগুলো লোড হচ্ছে…"
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Loaded {0} groups…"
+msgstr "{0}টি গ্রুপ লোড হয়েছে…"
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Restored {0} saved groups. Load groups to refresh the list."
+msgstr "সংরক্ষিত {0}টি গ্রুপ পুনরুদ্ধার করা হয়েছে। তালিকা হালনাগাদ করতে গ্রুপ লোড করুন।"
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Loaded and saved {0} groups."
+msgstr "{0}টি গ্রুপ লোড ও সংরক্ষণ করা হয়েছে।"
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Loaded {0} groups, but could not save them. Load groups again to retry saving."
+msgstr "{0}টি গ্রুপ লোড হয়েছে, কিন্তু সংরক্ষণ করা যায়নি। সংরক্ষণের জন্য আবার চেষ্টা করতে গ্রুপ পুনরায় লোড করুন।"
+
+#: src/components/LogMessage.svelte
+msgid "Could not load groups. Check Chrome and try again."
+msgstr "গ্রুপ লোড করা যায়নি। Chrome পরীক্ষা করে আবার চেষ্টা করুন।"
+
+#: src/components/LogMessage.svelte
+msgid "Could not read Postika settings"
+msgstr "Postika সেটিংস পড়া যায়নি"
+
+#: src/components/LogMessage.svelte
+msgid "Could not save Postika settings"
+msgstr "Postika সেটিংস সংরক্ষণ করা যায়নি"
+
+#: src/components/LogMessage.svelte
+msgid "Set an interval between 60 and 86400 seconds, with the maximum at least the minimum"
+msgstr "60 থেকে 86400 সেকেন্ডের মধ্যে বিরতি নির্ধারণ করুন, যেখানে সর্বোচ্চ মান সর্বনিম্নের চেয়ে কম হবে না"
+
+#: src/components/LogMessage.svelte
+msgid "Rewrite instructions are too long"
+msgstr "পুনর্লিখনের নির্দেশনা অত্যন্ত দীর্ঘ"
+
+#: src/components/LogMessage.svelte
+msgid "Enter a valid Gemini model name"
+msgstr "একটি বৈধ Gemini মডেলের নাম লিখুন"
+
+#: src/components/LogMessage.svelte
+msgid "Enter an account name of 1 to 80 characters"
+msgstr "1 থেকে 80 অক্ষরের অ্যাকাউন্টের নাম লিখুন"
+
+#: src/components/LogMessage.svelte
+msgid "An account profile with this name already exists"
+msgstr "এই নামের একটি অ্যাকাউন্ট প্রোফাইল আগে থেকেই আছে"
+
+#: src/components/LogMessage.svelte
+msgid "Account profile was not found"
+msgstr "অ্যাকাউন্ট প্রোফাইল পাওয়া যায়নি"
+
+#: src/components/LogMessage.svelte
+msgid "Could not update accounts. Please try again."
+msgstr "অ্যাকাউন্ট হালনাগাদ করা যায়নি। আবার চেষ্টা করুন।"
+
+#: src/components/LogMessage.svelte
+msgid "Chrome or Chromium was not found. Install a browser to open your Facebook groups"
+msgstr "Chrome বা Chromium পাওয়া যায়নি। আপনার Facebook গ্রুপ খুলতে একটি ব্রাউজার ইনস্টল করুন"
+
+#: src/components/LogMessage.svelte
+msgid "Found multiple matching menus on the groups page. Please open the Sort menu in Chrome"
+msgstr "গ্রুপের পৃষ্ঠায় একাধিক মিলে যাওয়া মেনু পাওয়া গেছে। Chrome-এ সাজানোর মেনু খুলুন"
+
+#: src/components/LogMessage.svelte
+msgid "Found multiple matching radio menus. Please choose a sort option in Chrome"
+msgstr "একাধিক মিলে যাওয়া নির্বাচন মেনু পাওয়া গেছে। Chrome-এ সাজানোর বিকল্প বেছে নিন"
+
+#: src/components/LogMessage.svelte
+msgid "Could not open the link. Please try again."
+msgstr "লিংক খোলা যায়নি। আবার চেষ্টা করুন।"
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "None of the {0} selected groups has an available post composer"
+msgstr "নির্বাচিত {0}টি গ্রুপের কোনোটিতেই পোস্ট সম্পাদক উপলব্ধ নেই"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "{0} is not an image file. Drop individual images, not folders."
+msgstr "{0} একটি ছবির ফাইল নয়। ফোল্ডারের পরিবর্তে পৃথক ছবি ছেড়ে দিন।"
+
+#: src/components/LogMessage.svelte
+msgid "Could not complete this action. Please try again."
+msgstr "এই কাজটি সম্পন্ন করা যায়নি। আবার চেষ্টা করুন।"
+
+#~ msgid "{0}–{1}"
+#~ msgstr ""
+
+#: src/components/UpdateButton.svelte
+msgid "Update available"
+msgstr "আপডেট উপলব্ধ"
+
+#: src/components/UpdateButton.svelte
+#: src/components/UpdateButton.svelte
+#: src/components/UpdateButton.svelte
+msgid "Updates"
+msgstr "আপডেট"
+
+#: src/components/UpdateButton.svelte
+msgid "Checking for updates…"
+msgstr "আপডেট খোঁজা হচ্ছে…"
+
+#: src/components/UpdateButton.svelte
+msgid "Downloading update…"
+msgstr "আপডেট ডাউনলোড হচ্ছে…"
+
+#: src/components/UpdateButton.svelte
+msgid "Update ready. Stop all posting queues before restarting."
+msgstr "আপডেট প্রস্তুত। পুনরায় চালুর আগে সব পোস্টের সারি বন্ধ করুন।"
+
+#: src/components/UpdateButton.svelte
+msgid "Postika is up to date."
+msgstr "Postika হালনাগাদ আছে।"
+
+#: src/components/UpdateButton.svelte
+msgid "Download update"
+msgstr "আপডেট ডাউনলোড করুন"
+
+#: src/components/UpdateButton.svelte
+#: src/components/UpdateButton.svelte
+msgid "Restart to update"
+msgstr "আপডেট করতে পুনরায় চালু করুন"
+
+#: src/components/UpdateButton.svelte
+msgid "Check for updates"
+msgstr "আপডেট খুঁজুন"
+
+#: src/components/UpdateButton.svelte
+msgid "Installing update…"
+msgstr "আপডেট ইনস্টল হচ্ছে…"

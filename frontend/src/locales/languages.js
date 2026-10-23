@@ -24,6 +24,7 @@ export const languages = [
   { code: 'ru', name: 'Русский', flag: '🇷🇺' },
   { code: 'uk', name: 'Українська', flag: '🇺🇦' },
   { code: 'ar', name: 'العربية', flag: '🇦🇪' },
+  { code: 'he', name: 'עברית', flag: '🇮🇱' },
   { code: 'mr', name: 'मराठी', flag: '🇮🇳' },
   { code: 'hi', name: 'हिन्दी', flag: '🇮🇳' },
   { code: 'bn', name: 'বাংলা', flag: '🇧🇩' },

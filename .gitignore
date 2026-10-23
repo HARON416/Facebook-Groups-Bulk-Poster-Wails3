@@ -41,6 +41,7 @@ xcuserdata/
 *.xcuserstate
 
 # Local signing keys
+/.update-keys/
 *.keystore
 *.jks
 *.p12

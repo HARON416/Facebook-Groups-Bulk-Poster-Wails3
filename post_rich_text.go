@@ -17,8 +17,10 @@ func capturedRichPostText(raw, draft string) (string, error) {
 	form, err := url.ParseQuery(raw)
 	var variables struct {
 		Input struct {
-			Message *struct{ Text string }
-		}
+			Message *struct {
+				Text string `json:"text"`
+			} `json:"message"`
+		} `json:"input"`
 	}
 	if err != nil || json.Unmarshal([]byte(form.Get("variables")), &variables) != nil || variables.Input.Message == nil {
 		return "", errors.New("Invalid captured formatted post")

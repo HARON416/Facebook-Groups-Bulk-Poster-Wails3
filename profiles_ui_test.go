@@ -27,6 +27,15 @@ import (
 // Native window operations are recorded and Facebook navigation is stubbed;
 // no real accounts or external requests are used.
 func TestAccountWorkspacesUI(t *testing.T) {
+	testAccountWorkspacesUI(t, false)
+}
+
+func TestFacebookPageFetchDialogUI(t *testing.T) {
+	testAccountWorkspacesUI(t, true)
+}
+
+func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool) {
+	t.Helper()
 	if !*browserIntegration {
 		t.Skip("enable with -browser-integration; build frontend first")
 	}
@@ -65,6 +74,16 @@ func TestAccountWorkspacesUI(t *testing.T) {
 	var nativeTitles, windowActions sync.Map
 	var copiedLogProfile atomic.Value
 	var uploadedImages atomic.Value
+	var pageFetches sync.Map
+	var pageFetchStarts atomic.Int64
+	var fakeGroupsOpened, fakeGroupsLoading atomic.Bool
+	var postedFacebookCards, scheduledFacebookCards atomic.Value
+	var stoppedFacebookPost atomic.Bool
+	var settingsFailure atomic.Value
+	var stallConnectivity atomic.Bool
+	connectivityStarted := make(chan struct{})
+	connectivityRelease := make(chan struct{})
+	var releaseConnectivity sync.Once
 	files := http.FileServer(http.Dir("frontend/dist"))
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		if r.URL.Path != "/wails/runtime" {
@@ -85,6 +104,60 @@ func TestAccountWorkspacesUI(t *testing.T) {
 			return
 		}
 		w.Header().Set("Content-Type", "application/json")
+		if call.Args.MethodID == 1578609276 {
+			if message, _ := settingsFailure.Load().(string); message != "" {
+				w.WriteHeader(http.StatusInternalServerError)
+				_ = json.NewEncoder(w).Encode(map[string]string{"message": message})
+				return
+			}
+		}
+		if call.Object == 10 {
+			_ = json.NewEncoder(w).Encode(nil)
+			return
+		}
+		if pageFetchOnly && call.Args.MethodID == 4101159777 && stallConnectivity.CompareAndSwap(true, false) {
+			close(connectivityStarted)
+			select {
+			case <-connectivityRelease:
+			case <-r.Context().Done():
+				return
+			}
+			_ = json.NewEncoder(w).Encode(ConnectivityStatus{Known: true, Online: false})
+			return
+		}
+
+		if call.Args.MethodID == 3662562897 || call.Args.MethodID == 3704090331 || call.Args.MethodID == 714486655 {
+			var id string
+			_ = json.Unmarshal(call.Args.Args[0], &id)
+			status := FacebookPageFetchStatus{State: "idle", Posts: []FacebookPagePost{}}
+			if saved, ok := pageFetches.Load(id); ok {
+				status = saved.(FacebookPageFetchStatus)
+			}
+			switch call.Args.MethodID {
+			case 3662562897:
+				var target string
+				var count int
+				_ = json.Unmarshal(call.Args.Args[1], &target)
+				_ = json.Unmarshal(call.Args.Args[2], &count)
+				if id != "default" || target != "https://web.facebook.com/swiftlineMotors" || count != 2 {
+					t.Errorf("unexpected fetch account/options: %s %s %d", id, target, count)
+				}
+				status = FacebookPageFetchStatus{RunID: uint64(pageFetchStarts.Add(1)), State: "logged_out", Target: count, Message: "Finish signing in in Chrome. Postika will continue automatically.", Posts: []FacebookPagePost{}}
+				pageFetches.Store(id, status)
+			case 714486655:
+				var runID uint64
+				_ = json.Unmarshal(call.Args.Args[1], &runID)
+				if runID != status.RunID {
+					t.Error("cancelled the wrong page fetch")
+				}
+				status.State = "cancelled"
+				pageFetches.Store(id, status)
+				_ = json.NewEncoder(w).Encode(nil)
+				return
+			}
+			_ = json.NewEncoder(w).Encode(status)
+			return
+		}
 		if call.Object == 6 {
 			windowActions.Store(fmt.Sprintf("%s#%d", r.Referer(), call.Method), true)
 			var result any
@@ -120,6 +193,53 @@ func TestAccountWorkspacesUI(t *testing.T) {
 			copiedLogProfile.Store(id)
 			_ = json.NewEncoder(w).Encode(nil)
 			return
+		}
+		if pageFetchOnly {
+			switch call.Args.MethodID {
+			case 3411990957:
+				fakeGroupsOpened.Store(true)
+				fakeGroupsLoading.Store(true)
+				_ = json.NewEncoder(w).Encode(nil)
+				return
+			case 2512580126:
+				_ = json.NewEncoder(w).Encode("session_captured")
+				return
+			case 4280265894:
+				if fakeGroupsOpened.Load() {
+					state := "complete"
+					if fakeGroupsLoading.Load() {
+						state = "loading"
+					}
+					_ = json.NewEncoder(w).Encode(GroupsLoadStatus{State: state, Message: "Loaded 2 groups…", Groups: []Group{{ID: "personal-user", Name: "Personal group"}, {ID: "second-group", Name: "Second group"}}})
+					return
+				}
+			case 3098564704, 1560895530:
+				var profileID string
+				var selected []string
+				var posts []FacebookPagePost
+				_ = json.Unmarshal(call.Args.Args[0], &profileID)
+				_ = json.Unmarshal(call.Args.Args[1], &selected)
+				_ = json.Unmarshal(call.Args.Args[2], &posts)
+				if profileID != "default" || len(selected) != 2 || len(posts) != 2 || posts[0].Text != "First fetched post" || len(posts[0].Images) != 2 || posts[1].Text != "Second fetched post" || len(posts[1].Images) != 0 {
+					t.Error("fetched cards or selected groups were lost before posting")
+				}
+				if call.Args.MethodID == 3098564704 {
+					postedFacebookCards.Store(posts)
+				} else {
+					var at string
+					_ = json.Unmarshal(call.Args.Args[4], &at)
+					if _, err := parsePostingSchedule(at, time.Now()); err != nil {
+						t.Error(err)
+					}
+					scheduledFacebookCards.Store(posts)
+				}
+				if stoppedFacebookPost.Load() {
+					_ = json.NewEncoder(w).Encode(PostingStatus{State: "stopped", Message: "Posting stopped."})
+					return
+				}
+				_ = json.NewEncoder(w).Encode(PostingStatus{State: "complete", Message: "Posting finished."})
+				return
+			}
 		}
 		if call.Args.MethodID == 2067197279 {
 			var uploads []PostUpload
@@ -170,6 +290,7 @@ func TestAccountWorkspacesUI(t *testing.T) {
 		_ = json.NewEncoder(w).Encode(result)
 	}))
 	defer server.Close()
+	defer releaseConnectivity.Do(func() { close(connectivityRelease) })
 	ctx, cancel := context.WithTimeout(context.Background(), 45*time.Second)
 	defer cancel()
 	launch := launcher.New().Bin(chrome).UserDataDir(t.TempDir()).Headless(true)
@@ -200,11 +321,11 @@ func TestAccountWorkspacesUI(t *testing.T) {
 			}
 			select {
 			case <-ctx.Done():
-				snapshot, _ := target.Context(context.Background()).Timeout(time.Second).Eval(`() => ({text:document.body.innerText.slice(0,2000),inputs:[...document.querySelectorAll('input')].map(i=>({type:i.type,disabled:i.disabled})),errors:[...document.querySelectorAll('.error')].map(e=>e.textContent)})`)
+				snapshot, _ := target.Context(context.Background()).Timeout(time.Second).Eval(`() => ({text:document.body.innerText.slice(0,2000),featureScroll:document.querySelector('#features-content')?.scrollTop,active:document.activeElement?.outerHTML.slice(0,250),account:{disabled:document.querySelector('#account-profile')?.disabled,expanded:document.querySelector('#account-profile')?.getAttribute('aria-expanded'),menuDisabled:document.querySelector('.menu-controls')?.disabled},inputs:[...document.querySelectorAll('input')].map(i=>({type:i.type,disabled:i.disabled,validation:i.validationMessage})),errors:[...document.querySelectorAll('.error')].map(e=>e.textContent)})`)
 				t.Fatalf("UI timed out: %s (%v), snapshot: %v", predicate, err, snapshot)
 			case <-time.After(25 * time.Millisecond):
 				if time.Now().After(deadline) {
-					snapshot, _ := target.Context(context.Background()).Timeout(time.Second).Eval(`() => ({text:document.body.innerText.slice(0,2000),inputs:[...document.querySelectorAll('input')].map(i=>({type:i.type,disabled:i.disabled}))})`)
+					snapshot, _ := target.Context(context.Background()).Timeout(time.Second).Eval(`() => ({text:document.body.innerText.slice(0,2000),featureScroll:document.querySelector('#features-content')?.scrollTop,active:document.activeElement?.outerHTML.slice(0,250),account:{disabled:document.querySelector('#account-profile')?.disabled,expanded:document.querySelector('#account-profile')?.getAttribute('aria-expanded'),menuDisabled:document.querySelector('.menu-controls')?.disabled},inputs:[...document.querySelectorAll('input')].map(i=>({type:i.type,disabled:i.disabled,validation:i.validationMessage}))})`)
 					t.Fatalf("UI did not settle: %s, snapshot: %v", predicate, snapshot)
 				}
 			}
@@ -228,15 +349,209 @@ func TestAccountWorkspacesUI(t *testing.T) {
 	}
 	selectAccount := func(id string) {
 		t.Helper()
+		await(`() => !document.querySelector('#features-dialog')?.open && document.querySelector('[data-features-card]')?.getAttribute('aria-expanded')==='false'`)
 		eval(`() => document.querySelector('#account-profile').click()`)
 		await(`() => document.querySelector('[role=listbox]') !== null`)
 		eval(fmt.Sprintf(`() => document.querySelector('[role=option][data-profile-id="%s"]').click()`, id))
 		await(fmt.Sprintf(`() => document.querySelector('#account-profile').dataset.profileId===%q && !document.querySelector('#account-profile').disabled`, id))
 	}
 	await(`() => document.querySelector('#post-body[contenteditable=true]') !== null`)
+	if pageFetchOnly {
+		// Page fetching validates inputs, keeps login/progress visible, renders
+		// successful results outside the dialog, and retains the manual draft.
+		page.MustElement("#post-body").MustInput("Keep this manual draft")
+		page.MustElement(".facebook-page-option").MustClick()
+		await(`() => document.querySelector('dialog[id^="facebook-page-dialog-"]')?.open`)
+		page.MustElement(`input[type="url"]`).MustInput("https://example.test/page")
+		eval(`() => { const f=document.querySelector('dialog[id^="facebook-page-dialog-"] form'); if(f.reportValidity()) throw new Error('External URL accepted'); }`)
+		eval(`() => {localStorage.setItem('postika:language','he');window.dispatchEvent(new StorageEvent('storage',{key:'postika:language'}));}`)
+		await(`() => document.documentElement.lang==='he'`)
+		eval(`() => {const u=document.querySelector('dialog input[type=url]'),n=document.querySelector('dialog input[type=number]');n.value='-1';n.dispatchEvent(new Event('input',{bubbles:true}));u.checkValidity();n.checkValidity();}`)
+		await(`() => document.querySelector('dialog input[type=url]').validationMessage.startsWith('יש להזין כתובת של דף פייסבוק') && document.querySelector('dialog input[type=number]').validationMessage==='יש להזין מספר שלם וחיובי של פוסטים לייבוא'`)
+		page.MustElement(`[aria-label="הגדלת מספר הפוסטים"]`).MustClick()
+		await(`() => document.querySelector('dialog input[type=number]').value==='1' && document.querySelector('dialog input[type=number]').validity.valid`)
+		eval(`() => {const n=document.querySelector('dialog input[type=number]');n.value='1';n.dispatchEvent(new Event('input',{bubbles:true}));localStorage.setItem('postika:language','en');window.dispatchEvent(new StorageEvent('storage',{key:'postika:language'}));}`)
+		await(`() => document.documentElement.lang==='en'`)
+		eval(`() => { const e=document.querySelector('dialog input[type="url"]'); e.value=''; e.dispatchEvent(new Event('input',{bubbles:true})); }`)
+		page.MustElement(`dialog input[type="url"]`).MustInput("https://web.facebook.com/swiftlineMotors")
+		eval(`() => { const e=document.querySelector('dialog input[type="number"]'); e.value='1'; e.dispatchEvent(new Event('input',{bubbles:true})); }`)
+		page.MustElement(`[aria-label="Increase number of posts"]`).MustClick()
+		await(`() => document.querySelector('dialog input[type="number"]').value==='2'`)
+		page.MustElement(`dialog[id^="facebook-page-dialog-"] button[type="submit"]`).MustClick()
+		await(`() => document.querySelector('dialog .fetch-status')?.innerText.includes('Finish signing in') && document.querySelector('dialog button[type="submit"]').disabled && document.querySelector('dialog input[type="url"]').matches(':disabled')`)
+		pixel := "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+		pageFetches.Store("default", FacebookPageFetchStatus{RunID: 1, State: "complete", Target: 2, Message: "Fetched 2 posts.", Posts: []FacebookPagePost{{ID: "first", Text: "First fetched post", Images: []string{pixel, pixel}}, {ID: "second", Text: "Second fetched post"}}})
+		await(`() => !document.querySelector('dialog[id^="facebook-page-dialog-"]').open && document.querySelectorAll('.fetched-posts li').length===2 && document.querySelector('.fetched-posts').innerText.includes('First fetched post') && !document.querySelector('#post-body') && !document.querySelector('[data-file-drop-target]') && !document.querySelector('dialog .fetched-posts')`)
+		await(`() => { const cards=[...document.querySelectorAll('.post-card.animate__slideInLeft')];return cards.length===2 && cards.every(card=>getComputedStyle(card).animationName==='slideInLeft') && getComputedStyle(cards[0]).animationDelay==='0s' && getComputedStyle(cards[1]).animationDelay==='0.08s'; }`)
+		await(`() => !document.querySelector('.post-card.animate__slideInLeft')`)
+		eval(`() => { const trigger=document.querySelector('.facebook-page-option'), cards=document.querySelector('.fetched-posts'); if(trigger.getBoundingClientRect().bottom >= cards.getBoundingClientRect().top) throw new Error('Cards should follow the fetch button'); }`)
+		// New labels and backend progress update in retained UI on locale changes;
+		// fetched post text and the supplied page URL stay untouched.
+		eval(`() => {localStorage.setItem('postika:language','sw');window.dispatchEvent(new StorageEvent('storage',{key:'postika:language',newValue:'sw'}));}`)
+		await(`() => document.documentElement.lang==='sw' && document.querySelector('.facebook-page-option').textContent.includes('Au bofya hapa') && document.querySelector('.fetched-heading h2').textContent.includes('Machapisho yaliyoletwa') && document.querySelector('.post-card .card-action').textContent==='Hariri' && document.querySelector('.post-card').getAttribute('aria-label')==='Chapisho 1' && document.querySelector('.post-text').textContent==='First fetched post'`)
+		pageFetches.Store("default", FacebookPageFetchStatus{RunID: 1, State: "loading", Target: 2, Message: "Fetched 1 of 2 posts…", Posts: []FacebookPagePost{{ID: "first", Text: "First fetched post"}}})
+		page.MustElement(".facebook-page-option").MustClick()
+		await(`() => document.querySelector('dialog[id^="facebook-page-dialog-"]')?.open && document.querySelector('dialog .fetch-status > p')?.textContent==='Yameletwa machapisho 1 kati ya 2…' && document.querySelector('dialog[id^="facebook-page-dialog-"] h2').textContent==='Leta machapisho kutoka ukurasa wa Facebook' && document.querySelector('dialog button[type="submit"]').textContent==='Inaleta…' && document.querySelector('dialog input[type="url"]').value==='https://web.facebook.com/swiftlineMotors'`)
+		pageFetches.Store("default", FacebookPageFetchStatus{RunID: 1, State: "capturing", Target: 2, Message: "No photo query appeared after opening the image. Reloading the photo page to capture fresh values…"})
+		await(`() => document.querySelector('dialog .fetch-status > p')?.textContent==='Inapakia upya ukurasa wa picha…'`)
+		eval(`() => {localStorage.setItem('postika:language','ar');window.dispatchEvent(new StorageEvent('storage',{key:'postika:language',newValue:'ar'}));}`)
+		await(`() => document.documentElement.lang==='ar' && document.documentElement.dir==='rtl' && document.querySelector('dialog .fetch-status > p')?.textContent==='جارٍ إعادة تحميل صفحة الصورة…' && document.querySelector('dialog[id^="facebook-page-dialog-"] h2').textContent==='جلب منشورات من صفحة فيسبوك' && document.querySelector('dialog input[type="url"]').value==='https://web.facebook.com/swiftlineMotors' && document.querySelector('.post-text').textContent==='First fetched post'`)
+		eval(`() => {localStorage.setItem('postika:language','he');window.dispatchEvent(new StorageEvent('storage',{key:'postika:language',newValue:'he'}));}`)
+		await(`() => document.documentElement.lang==='he' && document.documentElement.dir==='rtl' && document.querySelector('dialog .fetch-status > p')?.textContent==='דף התמונה נטען מחדש…' && document.querySelector('dialog[id^="facebook-page-dialog-"] h2').textContent==='ייבוא פוסטים מדף פייסבוק' && document.querySelector('.post-card .card-action').textContent==='עריכה' && document.querySelector('.post-card').getAttribute('aria-label')==='פוסט 1' && document.querySelector('dialog input[type="url"]').value==='https://web.facebook.com/swiftlineMotors' && getComputedStyle(document.querySelector('dialog input[type="url"]')).direction==='ltr' && document.querySelector('.post-text').textContent==='First fetched post'`)
+		eval(`() => {const d=document.querySelector('dialog[id^="facebook-page-dialog-"]'),r=d.getBoundingClientRect();if(r.left<0 || r.right>innerWidth || d.scrollWidth>d.clientWidth)throw new Error('Localized dialog overflows');}`)
+		page.MustElement(`dialog[id^="facebook-page-dialog-"] .action-button--secondary`).MustClick()
+		await(`() => !document.querySelector('dialog[id^="facebook-page-dialog-"]').open`)
+		eval(`() => {localStorage.setItem('postika:language','en');window.dispatchEvent(new StorageEvent('storage',{key:'postika:language',newValue:'en'}));}`)
+		await(`() => document.documentElement.lang==='en' && document.documentElement.dir==='ltr' && document.querySelector('.post-card .card-action').textContent==='Edit' && document.querySelector('.fetched-posts').innerText.includes('Second fetched post')`)
+		// Group-loading progress locks navigation, group actions and the app menu.
+		await(`() => !document.querySelector('button.next').disabled`)
+		page.MustElement("button.next").MustClick()
+		await(`() => document.querySelector('#step-heading')?.textContent==='Select groups'`)
+		page.MustElement("button.load-groups").MustClick()
+		await(`() => document.querySelector('.groups-list')?.getAttribute('aria-busy')==='true' && document.querySelector('button.previous').disabled && document.querySelector('button.next').disabled && [...document.querySelectorAll('.groups-toolbar button,.bulk-actions button,.app-menu button')].every(b=>b.matches(':disabled')) && document.querySelector('#group-search').disabled && [...document.querySelectorAll('.groups-list input')].every(e=>e.disabled)`)
+		eval(`() => {localStorage.setItem('postika:language','he');window.dispatchEvent(new StorageEvent('storage',{key:'postika:language'}));}`)
+		await(`() => document.documentElement.lang==='he' && document.querySelector('.group-status')?.textContent==='נטענו 2 קבוצות…' && !document.querySelector('.group-status details')`)
+		eval(`() => {localStorage.setItem('postika:language','en');window.dispatchEvent(new StorageEvent('storage',{key:'postika:language'}));}`)
+		await(`() => document.documentElement.lang==='en'`)
+		fakeGroupsLoading.Store(false)
+		await(`() => !document.querySelector('button.previous').disabled && !document.querySelector('.bulk-actions button').disabled`)
+		page.MustElement(".bulk-actions button").MustClick()
+		await(`() => document.querySelector('.selection-count').textContent.includes('2 selected') && !document.querySelector('button.next').disabled`)
+		page.MustElement("button.next").MustClick()
+		await(`() => document.querySelector('#step-heading')?.textContent==='Preferences & post' && [...document.querySelectorAll('.step-actions button')].filter(b=>['Post now','Schedule'].includes(b.textContent.trim())).length===2 && [...document.querySelectorAll('.step-actions button')].filter(b=>['Post now','Schedule'].includes(b.textContent.trim())).every(b=>!b.disabled)`)
+		eval(`() => [...document.querySelectorAll('.step-actions button')].find(b=>b.textContent.trim()==='Schedule').click()`)
+		await(`() => !!document.querySelector('#schedule-form') && !document.querySelector('button[form="schedule-form"]').disabled`)
+		page.MustElement(`button[form="schedule-form"]`).MustClick()
+		await(`() => !document.querySelector('#schedule-form') && document.querySelector('.step-content').textContent.includes('Posting finished.')`)
+		if _, ok := scheduledFacebookCards.Load().([]FacebookPagePost); !ok {
+			t.Fatal("scheduled queue omitted fetched cards")
+		}
+		eval(`() => [...document.querySelectorAll('.step-actions button')].find(b=>b.textContent.trim()==='Post now').click()`)
+		await(`() => !document.querySelector('.step-actions button.post').disabled && document.querySelector('.step-content').textContent.includes('Posting finished.')`)
+		if _, ok := postedFacebookCards.Load().([]FacebookPagePost); !ok {
+			t.Fatal("posting queue omitted fetched cards")
+		}
+		// A stopped result must stay translated with no English debug duplicate
+		// while an existing status is switched through every offered language.
+		stoppedFacebookPost.Store(true)
+		page.MustElement("button.post").MustClick()
+		await(`() => document.querySelector('.post-feedback')?.textContent==='Posting stopped.' && !document.querySelector('.post-feedback details')`)
+		page.MustElement("#language-profile").MustClick()
+		await(`() => document.querySelectorAll('#language-options [data-profile-id]').length===33`)
+		localeCodes, err := page.Eval(`() => [...document.querySelectorAll('#language-options [data-profile-id]')].map(el=>el.dataset.profileId)`)
+		if err != nil {
+			t.Fatal(err)
+		}
+		eval(`() => document.querySelector('#language-profile').click()`)
+		for _, code := range localeCodes.Value.Arr() {
+			locale := code.Str()
+			eval(fmt.Sprintf(`() => {localStorage.setItem('postika:language',%q);window.dispatchEvent(new StorageEvent('storage',{key:'postika:language'}));}`, locale))
+			await(fmt.Sprintf(`() => document.documentElement.lang===%q && !document.querySelector('.post-feedback details') && document.querySelector('.post-feedback').textContent.trim().length>0 && (%q==='en' || !document.querySelector('.post-feedback').textContent.includes('Posting stopped.'))`, locale, locale))
+		}
+		eval(`() => {localStorage.setItem('postika:language','en');window.dispatchEvent(new StorageEvent('storage',{key:'postika:language'}));}`)
+		await(`() => document.documentElement.lang==='en'`)
+		stoppedFacebookPost.Store(false)
+		page.MustElement("button.previous").MustClick()
+		await(`() => document.querySelector('#step-heading')?.textContent==='Select groups'`)
+		page.MustElement("button.previous").MustClick()
+		await(`() => document.querySelectorAll('.fetched-posts li').length===2 && document.querySelector('.fetched-posts').innerText.includes('First fetched post') && document.querySelector('.fetched-posts').innerText.includes('Second fetched post') && !document.querySelector('button.next').disabled`)
+		// Reopening a completed fetch lets the user fetch again; it does not
+		// immediately close the dialog or reapply the old result.
+		page.MustElement(".facebook-page-option").MustClick()
+		await(`() => document.querySelector('dialog[id^="facebook-page-dialog-"]').open`)
+		page.MustElement(`dialog input[type="url"]`).MustInput("https://web.facebook.com/swiftlineMotors")
+		eval(`() => { const e=document.querySelector('dialog input[type="number"]');e.value='2';e.dispatchEvent(new Event('input',{bubbles:true})); }`)
+		page.MustElement(`dialog[id^="facebook-page-dialog-"] button[type="submit"]`).MustClick()
+		await(`() => document.querySelector('dialog .fetch-status')?.innerText.includes('Finish signing in')`)
+		pageFetches.Store("default", FacebookPageFetchStatus{RunID: 2, State: "error", Target: 2, Message: "Could not fetch the next page.", Posts: []FacebookPagePost{{ID: "partial", Text: "Partial result must not replace cards"}}})
+		await(`() => document.querySelector('dialog .fetch-status.error') && document.querySelector('dialog[id^="facebook-page-dialog-"]').open && document.querySelectorAll('.fetched-posts li').length===2 && !document.querySelector('.fetched-posts').innerText.includes('Partial result')`)
+		page.MustElement(`dialog[id^="facebook-page-dialog-"] button[type="submit"]`).MustClick()
+		await(`() => document.querySelector('dialog .fetch-status')?.innerText.includes('Finish signing in')`)
+		if err := page.Keyboard.Type(input.Escape); err != nil {
+			t.Fatal(err)
+		}
+		await(`() => !document.querySelector('dialog[id^="facebook-page-dialog-"]').open && document.activeElement.matches('.facebook-page-option')`)
+		if saved, _ := pageFetches.Load("default"); saved.(FacebookPageFetchStatus).State != "cancelled" || pageFetchStarts.Load() != 3 {
+			t.Fatal("page fetch was not cancelled")
+		}
+		// Card edits commit on Save, Cancel discards pending changes, and
+		// deletion commits directly without an Undo message.
+		page.MustElement(`[aria-label="Edit post 1"]`).MustClick()
+		await(`() => document.activeElement.matches('.fetched-posts textarea')`)
+		eval(`() => { const input=document.querySelector('.fetched-posts textarea'); input.value='Edited fetched post'; input.dispatchEvent(new Event('input',{bubbles:true})); }`)
+		page.MustElement(`[aria-label="Remove image 1 from post 1"]`).MustClick()
+		page.MustElement(`.fetched-posts button[type="submit"]`).MustClick()
+		await(`() => document.querySelector('.fetched-posts .post-text').textContent==='Edited fetched post' && document.querySelectorAll('.fetched-posts li:first-child img').length===1 && document.activeElement.matches('[aria-label="Edit post 1"]')`)
+		page.MustElement(`[aria-label="Edit post 1"]`).MustClick()
+		eval(`() => { const input=document.querySelector('.fetched-posts textarea'); input.value='Discard this edit'; input.dispatchEvent(new Event('input',{bubbles:true})); document.querySelector('.fetched-posts footer button[type="button"]').click(); }`)
+		await(`() => !document.querySelector('.fetched-posts textarea') && document.querySelector('.fetched-posts .post-text').textContent==='Edited fetched post'`)
+		page.MustElement(`[aria-label="Delete post 2"]`).MustClick()
+		await(`() => { const card=document.querySelector('.post-card.animate__animated.animate__fadeOutLeft');return !!card && getComputedStyle(card).animationName==='fadeOutLeft' && card.querySelector('.delete').disabled && document.querySelectorAll('.fetched-posts li').length===2; }`)
+		await(`() => document.querySelectorAll('.fetched-posts li').length===1 && !document.querySelector('.delete-feedback') && !document.querySelector('.facebook-source').textContent.includes('Post removed') && !document.querySelector('button.next').disabled`)
+
+		await(`async () => { const db=await new Promise((resolve,reject)=>{const request=indexedDB.open('postika-account-drafts',2);request.onsuccess=()=>resolve(request.result);request.onerror=()=>reject(request.error)}); const draft=await new Promise(resolve=>{const request=db.transaction('drafts').objectStore('drafts').get('default');request.onsuccess=()=>resolve(request.result)});db.close();return draft?.fetchedPosts?.length===1 && draft.fetchedPosts[0].text==='Edited fetched post' && draft.fetchedPosts[0].images.length===1; }`)
+		// Cards and mode are saved independently for the active account.
+		selectAccount(business.ID)
+		await(`() => document.querySelector('.account-workspace:not([hidden]) #post-body') && !document.querySelector('.account-workspace:not([hidden]) .fetched-posts')`)
+		selectAccount("default")
+		await(`() => document.querySelectorAll('.account-workspace:not([hidden]) .fetched-posts li').length===1 && document.querySelector('.account-workspace:not([hidden]) .post-text').textContent==='Edited fetched post'`)
+		if err := (proto.EmulationSetEmulatedMedia{Features: []*proto.EmulationMediaFeature{{Name: "prefers-reduced-motion", Value: "reduce"}}}).Call(page); err != nil {
+			t.Fatal(err)
+		}
+		page.MustElement(`.account-workspace:not([hidden]) [aria-label="Delete post 1"]`).MustClick()
+		await(`() => !document.querySelector('.account-workspace:not([hidden]) .fetched-section') && !!document.querySelector('.account-workspace:not([hidden]) #post-body') && !!document.querySelector('.account-workspace:not([hidden]) [data-file-drop-target]') && document.querySelector('.account-workspace:not([hidden]) [data-step-scroll]').scrollTop===0`)
+		await(`() => document.querySelector('.account-workspace:not([hidden]) #post-body')?.innerText.includes('Keep this manual draft') && !document.querySelector('.delete-feedback') && document.querySelector('.account-workspace:not([hidden]) button.next').disabled`)
+
+		// An old bridge response must not pin the toast offline after a new
+		// network event and a later successful poll.
+		service, _ := m.session("default")
+		service.postMu.Lock()
+		service.connectivityEnabled = true
+		service.connectivity = ConnectivityStatus{Known: true, Online: false}
+		service.connectivityWake = make(chan struct{}, 1)
+		wake := service.connectivityWake
+		service.postMu.Unlock()
+		await(`() => !!document.querySelector('.connection-toast:not(.online)') && !document.querySelector('.connection-toast p')`)
+		stallConnectivity.Store(true)
+		select {
+		case <-connectivityStarted:
+		case <-time.After(3 * time.Second):
+			t.Fatal("connectivity poll did not start")
+		}
+		eval(`() => window.dispatchEvent(new Event('online'))`)
+		select {
+		case <-wake:
+		case <-time.After(time.Second):
+			t.Fatal("network event did not request a fresh backend check")
+		}
+		eval(`() => {if(!document.querySelector('.connection-toast:not(.online)'))throw new Error('Browser online hint was trusted without verification')}`)
+		service.postMu.Lock()
+		service.connectivity.Online = true
+		service.postMu.Unlock()
+		await(`() => !!document.querySelector('.connection-toast.online') && !document.querySelector('.connection-toast p')`)
+		releaseConnectivity.Do(func() { close(connectivityRelease) })
+		eval(`async () => {await new Promise(r=>setTimeout(r,200));if(!document.querySelector('.connection-toast.online'))throw new Error('Stale poll restored the offline toast')}`)
+		// A real active queue gets pause/recovery details; a manual pause is
+		// retained when connectivity returns and changes without another outage.
+		_, cancelPosting := testPostingContext(service)
+		defer cancelPosting()
+		service.postMu.Lock()
+		service.connectivity.Online = false
+		service.postMu.Unlock()
+		await(`() => document.querySelector('.connection-toast:not(.online) p')?.textContent.includes('Your queue is paused')`)
+		service.PausePosting()
+		service.postMu.Lock()
+		service.connectivity.Online = true
+		service.postMu.Unlock()
+		await(`() => document.querySelector('.connection-toast.online p')?.textContent==='Your queue is still manually paused.'`)
+		service.ResumePosting()
+		await(`() => document.querySelector('.connection-toast.online p')?.textContent==='Your queue will continue automatically.'`)
+
+		return
+	}
 	// The feature card traps focus, scrolls independently, and returns focus on close.
 	page.MustElement("[data-features-card]").MustClick()
-	await(`() => {const d=document.querySelector('#features-dialog');return d.open && d.contains(document.activeElement) && d.querySelectorAll('section').length===6 && d.innerText.includes('32 languages · 189 themes')}`)
+	await(`() => {const d=document.querySelector('#features-dialog');return d.open && d.contains(document.activeElement) && d.querySelectorAll('section').length===6 && d.innerText.includes('33 languages · 189 themes')}`)
 	if err := page.Keyboard.Type(input.Tab); err != nil {
 		t.Fatal(err)
 	}
@@ -461,7 +776,7 @@ func TestAccountWorkspacesUI(t *testing.T) {
 	// Descriptions, editor help, counts, and all three stages must translate too.
 	changeLanguage("id")
 	page.MustElement("[data-features-card]").MustClick()
-	await(`() => document.querySelector('#features-heading').textContent==='Fitur & Cara Menggunakan' && document.querySelector('#features-dialog').innerText.includes('32 bahasa · 189 tema') && getComputedStyle(document.querySelector('#features-dialog')).backgroundColor===getComputedStyle(document.querySelector('.top-bar')).backgroundColor`)
+	await(`() => document.querySelector('#features-heading').textContent==='Fitur & Cara Menggunakan' && document.querySelector('#features-dialog').innerText.includes('33 bahasa · 189 tema') && getComputedStyle(document.querySelector('#features-dialog')).backgroundColor===getComputedStyle(document.querySelector('.top-bar')).backgroundColor`)
 	page.MustElement("[data-usage-guide]").MustClick()
 	await(`() => document.querySelector('#features-heading').textContent==='Fitur & Cara Menggunakan' && document.querySelector('.usage-guide').textContent.includes('keduanya wajib') && !document.querySelector('.usage-guide').textContent.includes('Write your message') && document.querySelector('#post-body').textContent==='Business draft'`)
 	page.MustElement("#features-dialog .close").MustClick()
@@ -673,7 +988,7 @@ func TestAccountWorkspacesUI(t *testing.T) {
 	changeLanguage("ar")
 	page.MustActivate()
 	page.MustElement("[data-features-card]").MustClick()
-	await(`() => {const d=document.querySelector('#features-dialog');return d.open && document.querySelector('#features-heading').textContent==='الميزات وكيفية الاستخدام' && getComputedStyle(d).direction==='rtl' && d.innerText.includes('32 لغة · 189 سمة')}`)
+	await(`() => {const d=document.querySelector('#features-dialog');return d.open && document.querySelector('#features-heading').textContent==='الميزات وكيفية الاستخدام' && getComputedStyle(d).direction==='rtl' && d.innerText.includes('33 لغة · 189 سمة')}`)
 	page.MustElement("[data-usage-guide]").MustClick()
 	await(`() => document.querySelector('#features-heading').textContent==='الميزات وكيفية الاستخدام' && document.querySelector('.usage-guide').textContent.includes('كلاهما مطلوب') && getComputedStyle(document.querySelector('.usage-guide')).direction==='rtl'`)
 	if *uiArtifactDir != "" {
@@ -693,10 +1008,62 @@ func TestAccountWorkspacesUI(t *testing.T) {
 		t.Fatal(err)
 	}
 	await(`() => document.documentElement.lang==='ar' && document.documentElement.dir==='rtl' && document.documentElement.dataset.theme==='dark' && document.querySelector('#post-body')?.textContent==='Business draft'`)
+	// Hebrew updates every retained window and dialog without changing drafts.
+	changeLanguage("he")
+	await(`() => document.documentElement.dir==='rtl' && document.querySelector('#step-heading')?.textContent==='יצירת פוסט' && document.querySelector('#post-body')?.textContent==='Business draft' && getComputedStyle(document.querySelector('#language-profile')).direction==='rtl'`)
+	awaitPage(settingsPage, `() => document.documentElement.lang==='he' && document.documentElement.dir==='rtl' && document.querySelector('h1')?.textContent==='הגדרות' && document.querySelector('input[type=password]').value==='unsaved-test-key' && document.querySelector('input[type=password]').placeholder==='יש להזין את מפתח ה־API של Gemini' && getComputedStyle(document.querySelector('input[type=password]')).direction==='ltr'`)
+	settingsFailure.Store("Could not save Postika settings")
+	settingsPage.MustEval(`() => document.querySelector('form').requestSubmit()`)
+	awaitPage(settingsPage, `() => document.querySelector('.error')?.textContent==='לא ניתן לשמור את הגדרות Postika' && !document.querySelector('.error details') && document.querySelector('input[type=password]').value==='unsaved-test-key'`)
+	settingsPage.MustEval(`() => {const m=document.querySelector('.gemini-card input[pattern]'),n=document.querySelector('.intervals input');window.auditModel=m.value;window.auditMinimum=n.value;m.value='bad model';n.value='59';for(const e of [m,n]){e.dispatchEvent(new Event('input',{bubbles:true}));e.checkValidity();}}`)
+	awaitPage(settingsPage, `() => document.querySelector('.gemini-card input[pattern]').validationMessage==='יש להזין שם תקין של מודל Gemini' && document.querySelector('.intervals input').validationMessage.startsWith('יש להגדיר מרווח של 60 עד 86400 שניות')`)
+	eval(`() => [...document.querySelectorAll('.app-menu button')].find(b=>b.textContent==='הוספת חשבון').click()`)
+	page.MustElement("#account-name").MustInput("Business")
+	page.MustElement(".add-account button").MustClick()
+	await(`() => document.querySelector('.profile-error')?.textContent==='פרופיל חשבון בשם זה כבר קיים' && !document.querySelector('.profile-error details')`)
+	page.MustElement(".add-account button[type=button]").MustClick()
+
+	page.MustElement("[data-features-card]").MustClick()
+	await(`() => {const d=document.querySelector('#features-dialog');return d.open && getComputedStyle(d).direction==='rtl' && document.querySelector('#features-heading').textContent==='תכונות ומדריך שימוש' && d.innerText.includes('33 שפות · 189 ערכות נושא')}`)
+	page.MustElement("[data-usage-guide]").MustClick()
+	await(`() => document.querySelector('.usage-guide').textContent.includes('שניהם נדרשים') && getComputedStyle(document.querySelector('.usage-guide')).direction==='rtl'`)
+	page.MustElement("#features-dialog .close").MustClick()
+	await(`() => !document.querySelector('#features-dialog').open && document.querySelector('[data-features-card]').getAttribute('aria-expanded')==='false'`)
+	page.MustElement("[data-theme-picker]").MustClick()
+	await(`() => {const d=document.querySelector('dialog:has(#theme-picker-heading)');return d.open && getComputedStyle(d).direction==='rtl' && document.querySelector('#theme-picker-heading').textContent==='ערכות צבעים'}`)
+	eval(`() => document.querySelector('dialog:has(#theme-picker-heading)').close()`)
+	selectAccount("default")
+	await(`() => document.querySelector('.account-workspace:not([hidden]) #post-body')?.textContent==='Personal draft' && !document.querySelector('.account-workspace:not([hidden]) .next').disabled`)
+	eval(`() => document.querySelector('.account-workspace:not([hidden]) .next').click()`)
+	await(`() => document.querySelector('#step-heading')?.textContent==='בחירת קבוצות' && document.querySelector('#group-search')?.placeholder==='חיפוש קבוצות…'`)
+	eval(`() => document.querySelector('.account-workspace:not([hidden]) .next').click()`)
+	await(`() => document.querySelector('#step-heading')?.textContent==='העדפות ופרסום' && document.body.innerText.includes('מרווח בין פרסומים')`)
+	eval(`() => [...document.querySelectorAll('.account-workspace:not([hidden]) .step-actions button')].find(b=>b.textContent==='תזמון').click()`)
+	await(`() => document.querySelector('.date-time-picker') && document.querySelector('.month-navigation [aria-label="החודש הבא"]') && getComputedStyle(document.querySelector('.time-controls')).direction==='ltr'`)
+	eval(`() => {const current=document.querySelector('.calendar .selected');window.hebrewSelectedDay=current.dataset.date;current.dispatchEvent(new KeyboardEvent('keydown',{key:'ArrowLeft',bubbles:true}));}`)
+	await(`() => {const next=new Date(window.hebrewSelectedDay+'T12:00:00');next.setDate(next.getDate()+1);const day=next.getFullYear()+'-'+String(next.getMonth()+1).padStart(2,'0')+'-'+String(next.getDate()).padStart(2,'0');return document.querySelector('.calendar .selected').dataset.date===day;}`)
+	eval(`() => document.querySelector('.account-workspace:not([hidden]) .previous').click()`)
+	eval(`() => document.querySelector('.account-workspace:not([hidden]) .previous').click()`)
+	eval(`() => document.querySelector('.account-workspace:not([hidden]) .previous').click()`)
+	selectAccount(business.ID)
+	hebrewLogs, err := browser.Page(proto.TargetCreateTarget{URL: server.URL + "/?view=posting-logs&profile=" + business.ID + "&account=Business"})
+	if err != nil {
+		t.Fatal(err)
+	}
+	awaitPage(hebrewLogs, `() => document.documentElement.lang==='he' && document.documentElement.dir==='rtl' && document.querySelector('h1')?.textContent==='יומני פרסום' && document.querySelector('[aria-label="התקדמות הפרסום"]') && document.querySelector('progress[aria-label="קבוצות שטופלו"]') && document.querySelector('.window-account')===null && getComputedStyle(document.querySelector('.timeline')).direction==='rtl'`)
+	page.MustActivate()
+	if err := page.Reload(); err != nil {
+		t.Fatal(err)
+	}
+	await(`() => document.documentElement.lang==='he' && document.documentElement.dir==='rtl' && document.querySelector('#step-heading')?.textContent==='יצירת פוסט' && document.querySelector('#post-body')?.textContent==='Business draft'`)
 	changeLanguage("ja")
 	await(`() => document.documentElement.dir==='ltr' && document.querySelector('#step-heading')?.textContent==='投稿を作成'`)
+	awaitPage(hebrewLogs, `() => document.documentElement.lang==='ja' && document.documentElement.dir==='ltr' && document.querySelector('h1')?.textContent==='投稿ログ'`)
+	if err := hebrewLogs.Close(); err != nil {
+		t.Fatal(err)
+	}
 	// Exercise every bundled catalog; locale loading must work without external services.
-	for _, code := range []string{"id", "cs", "da", "de", "en", "es", "fr", "hr", "it", "sw", "hu", "nl", "pl", "pt-BR", "ro", "sk", "sv", "vi", "tr", "el", "bg", "ru", "uk", "ar", "mr", "hi", "bn", "te", "th", "ko", "zh-CN", "ja"} {
+	for _, code := range []string{"id", "cs", "da", "de", "en", "es", "fr", "hr", "it", "sw", "hu", "nl", "pl", "pt-BR", "ro", "sk", "sv", "vi", "tr", "el", "bg", "ru", "uk", "ar", "he", "mr", "hi", "bn", "te", "th", "ko", "zh-CN", "ja"} {
 		changeLanguage(code)
 		await(`() => document.querySelector('#post-body')?.textContent==='Business draft' && document.querySelector('#step-heading')?.textContent.length>0`)
 		if code != "en" {
@@ -705,10 +1072,16 @@ func TestAccountWorkspacesUI(t *testing.T) {
 			await(`() => document.querySelector('#account-options [data-profile-id="default"] .account-name')?.textContent !== 'Default profile' && document.querySelector('#account-options [data-profile-id="default"] .account-name')?.textContent.length > 0 && document.querySelector('#account-profile .account-name')?.textContent==='Business'`)
 			eval(`() => document.querySelector('#account-profile').click()`)
 			await(`() => !document.querySelector('.account-workspace:not([hidden])').innerText.includes('Write your post and add images') && !document.querySelector('.account-workspace:not([hidden])').innerText.includes('Load groups and choose where to post') && !document.querySelector('.account-workspace:not([hidden])').innerText.includes('Review, set preferences, then post now or schedule') && !document.querySelector('.editor-footer')?.textContent.includes('characters') && !document.querySelector('#image-formats')?.textContent.includes('Select multiple images')`)
+			awaitPage(settingsPage, `() => document.querySelector('.error')?.textContent.length>0 && !document.querySelector('.error').textContent.includes('Could not save Postika settings') && !document.querySelector('.error details')`)
+			settingsPage.MustEval(`() => {document.querySelector('.gemini-card input[pattern]').checkValidity();document.querySelector('.intervals input').checkValidity();}`)
+			awaitPage(settingsPage, `() => {const m=document.querySelector('.gemini-card input[pattern]').validationMessage,n=document.querySelector('.intervals input').validationMessage;return m.length>0 && n.length>0 && m!=='Enter a valid Gemini model name' && !n.startsWith('Set an interval between');}`)
 			awaitPage(settingsPage, fmt.Sprintf(`() => document.documentElement.lang===%q && document.querySelector('input[type=password]').value==='unsaved-test-key' && document.querySelector('input[type=password]').placeholder!=='Enter your Gemini API key' && !document.body.innerText.includes('Choose how long to wait before posting to the next group.')`, code))
 			awaitPage(settingsPage, `() => document.querySelector('.window-label')?.textContent===document.querySelector('h1')?.textContent && document.querySelector('.window-account')?.textContent==='Business' && document.title===document.querySelector('h1').textContent+' · Business · Postika'`)
 		}
 	}
+	settingsFailure.Store("")
+	settingsPage.MustEval(`() => {const m=document.querySelector('.gemini-card input[pattern]'),n=document.querySelector('.intervals input');m.value=window.auditModel;n.value=window.auditMinimum;for(const e of [m,n])e.dispatchEvent(new Event('input',{bubbles:true}));}`)
+	awaitPage(settingsPage, `() => document.querySelector('form').checkValidity()`)
 	// Unsupported saved preferences recover to source English on restart.
 	eval(`() => {localStorage.setItem('postika:language','unsupported-locale');localStorage.setItem('postika:theme','unsupported-theme')}`)
 	if err := page.Reload(); err != nil {

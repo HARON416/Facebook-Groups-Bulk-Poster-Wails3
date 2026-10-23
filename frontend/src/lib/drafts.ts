@@ -1,3 +1,5 @@
+import type { FacebookPagePost } from '../../bindings/postika/models';
+
 // Store independent bytes: a structured-cloned File may retain a WebKit disk
 // reference that is no longer readable after restarting or replacing the app.
 export interface DraftImage { id: string; file: File; unavailable?: boolean; recoveryKey?: string }
@@ -6,6 +8,7 @@ export interface AccountDraft {
   bodyHTML: string;
   bodyState: string;
   images: DraftImage[];
+  fetchedPosts?: FacebookPagePost[] | null;
   selectedGroupIds: string[];
   currentStep: number;
   minimumInterval: number;
@@ -141,6 +144,13 @@ export function writeDraft(profileID: string, draft: AccountDraft): Promise<void
   const pending = (writes.get(profileID) ?? Promise.resolve()).catch(() => {}).then(() => persistDraft(profileID, draft));
   writes.set(profileID, pending);
   const cleanup = () => { if (writes.get(profileID) === pending) writes.delete(profileID); };
-  void pending.then(cleanup, cleanup);
+  void pending.then(() => { failedDraftWrites.delete(profileID); cleanup(); }, () => { failedDraftWrites.add(profileID); cleanup(); });
   return pending;
+}
+
+const failedDraftWrites = new Set<string>();
+
+export async function flushDrafts(): Promise<void> {
+  await Promise.all([...writes.values()]);
+  if (failedDraftWrites.size) throw new Error('Could not save all drafts. Keep Postika open and try again before restarting.');
 }

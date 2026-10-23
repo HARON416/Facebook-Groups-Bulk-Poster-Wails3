@@ -8,69 +8,59 @@ msgstr ""
 "Plural-Forms: nplurals=4\n"
 "X-Plurals-Order: one, few, many, other\n"
 
-#. 0: minimumInterval === maximumInterval ? minimumInterval \\: `${minimumInterval}–${maximumInterval}`; 1: rewriteState
+#. 0: appliedInterval; 1: rewriteState
 #: src/App.svelte
 msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
 msgstr "Použity uložené výchozí hodnoty: {0} sekund mezi příspěvky · Přepis Gemini {1}."
 
-#: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Could not restore saved groups. Load groups to refresh the list."
 msgstr "Nepodařilo se obnovit uložené skupiny. Načtěte skupiny pro obnovení seznamu."
 
-#: src/App.svelte
-msgid "Choose a future date and time for your post."
-msgstr "Vyberte budoucí datum a čas pro svůj příspěvek."
+#~ msgid "Choose a future date and time for your post."
+#~ msgstr "Vyberte budoucí datum a čas pro svůj příspěvek."
 
-#: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Saving your scheduled queue…"
 msgstr "Ukládám váš naplánovaný pořad…"
 
-#: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Opening a selected group to capture fresh posting requests…"
 msgstr "Otevírám vybranou skupinu pro zachycení nových žádostí o příspěvky…"
 
-#: src/App.svelte
-#: src/App.svelte
 #: src/components/LogMessage.svelte
 msgid "Posting stopped."
 msgstr "Přidávání příspěvků zastaveno."
 
-#: src/App.svelte
 #: src/components/LogMessage.svelte
 msgid "Could not read a selected image"
 msgstr "Nepodařilo se přečíst vybraný obrázek"
 
+#. 0: a
 #. 0: image.file.name
-#. 0: missingNames
-#. 0: unreadableNames
-#. 0: image.file.name
-#: src/App.svelte
-#: src/App.svelte
-#: src/components/PostComposer.svelte
+#: src/components/LogMessage.svelte
 #: src/components/PostComposer.svelte
 msgid "Could not read {0}"
 msgstr "Nepodařilo se přečíst {0}"
 
-#: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Posting finished."
 msgstr "Přidávání příspěvků dokončeno."
 
-#. 0: scheduleLabel(scheduledFor)
 #. 0: date
-#: src/App.svelte
 #: src/components/LogMessage.svelte
 msgid "Scheduled for {0}. Keep Postika open and your computer awake."
 msgstr "Naplánováno na {0}. Nechte Postiku otevřenou a počítač probuzený."
 
-#: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Could not restore this account’s draft. New edits will stay available while Postika is open."
 msgstr "Nepodařilo se obnovit koncept tohoto účtu. Nové úpravy zůstanou dostupné, dokud bude Postika otevřená."
 
-#: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Could not add the dropped images. Try browsing for them instead."
 msgstr "Nepodařilo se přidat přetažené obrázky. Zkuste je místo toho vyhledat."
 
-#: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Could not save this account’s draft to disk. Keep Postika open to retain your edits."
 msgstr "Nepodařilo se uložit koncept tohoto účtu na disk. Nechte Postiku otevřenou, abyste si udrželi úpravy."
 
@@ -100,6 +90,7 @@ msgid "Opening…"
 msgstr "Otevírání…"
 
 #: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Loading…"
 msgstr "Načítání…"
 
@@ -210,6 +201,8 @@ msgstr "Časové pásmo: {0}. Nechte Postiku otevřenou a počítač probuzený.
 
 #: src/App.svelte
 #: src/Workspace.svelte
+#: src/components/FacebookPageDialog.svelte
+#: src/components/FetchedPostCard.svelte
 msgid "Cancel"
 msgstr "Zrušit"
 
@@ -440,18 +433,18 @@ msgstr "Snížit minutu"
 msgid "Choose a date and time in the future."
 msgstr "Vyberte datum a čas v budoucnu."
 
-#. 0: rejected.join(', ')
-#: src/components/PostComposer.svelte
+#. 0: a
+#: src/components/LogMessage.svelte
 msgid "Unsupported files: {0}. Choose JPG, PNG, WebP, or GIF images."
 msgstr "Nepodporované soubory: {0}. Vyberte obrázky ve formátu JPG, PNG, WebP nebo GIF."
 
-#. 0: image.file.name
-#: src/components/PostComposer.svelte
+#. 0: a
+#: src/components/LogMessage.svelte
 msgid "Could not preview {0}. Please choose another image."
 msgstr "Nebylo možné zobrazit náhled {0}. Prosím vyberte jiný obrázek."
 
-#. 0: images[index].file.name; 1: index + 1; 2: images.length
-#: src/components/PostComposer.svelte
+#. 0: a; 1: number(b); 2: number(c)
+#: src/components/LogMessage.svelte
 msgid "{0} moved to position {1} of {2}."
 msgstr "{0} přesunuto na pozici {1} z {2}."
 
@@ -515,7 +508,7 @@ msgstr "Odstranit {0}"
 msgid "Drop more images here to add them."
 msgstr "Přetáhněte sem další obrázky pro jejich přidání."
 
-#. 0: error
+#. 0: logMessage(error, true)
 #: src/components/PostEditor.svelte
 msgid "Could not edit the post: {0}"
 msgstr "Nepodařilo se upravit příspěvek: {0}"
@@ -902,7 +895,7 @@ msgstr "Nahrazuje interval zveřejňování tohoto běhu, možnost přepisu Gemi
 msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
 msgstr "Počáteční výchozí hodnoty: 60–120 sekund, přepis Gemini vypnut, žádné instrukce pro přepis. Uložte si vlastní preference v Nastavení, chcete-li je změnit."
 
-#: src/components/Settings.svelte
+#: src/components/LogMessage.svelte
 msgid "Settings saved. New runs can use these defaults."
 msgstr "Nastavení uloženo. Nové běhy mohou používat tyto výchozí hodnoty."
 
@@ -985,7 +978,7 @@ msgstr "Nadcházející"
 msgid "Step {0} of {1}: {2}"
 msgstr "Krok {0} z {1}: {2}"
 
-#: src/components/WindowControls.svelte
+#: src/components/LogMessage.svelte
 msgid "Could not change the window. Please try again."
 msgstr "Nepodařilo se změnit okno. Zkuste to prosím znovu."
 
@@ -1044,10 +1037,12 @@ msgid "The browser is closed. It will reopen when you click Post."
 msgstr "Prohlížeč je uzavřen. Znovu se otevře, když kliknete na Zveřejnit."
 
 #: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Checking Facebook login"
 msgstr "Kontrola přihlášení na Facebook"
 
 #: src/App.svelte
+#: src/components/LogMessage.svelte
 msgid "Finish signing in or any verification prompts in Chrome. Your login will be detected automatically."
 msgstr "Dokončete přihlášení nebo jakékoli ověřovací výzvy v Chrome. Vaše přihlášení bude automaticky detekováno."
 
@@ -1134,7 +1129,7 @@ msgstr "Odpoledne"
 msgid "Evening"
 msgstr "Večer"
 
-#: src/components/LanguageMenu.svelte
+#: src/components/LogMessage.svelte
 msgid "Could not change the language. Please try again."
 msgstr "Nepodařilo se změnit jazyk. Zkuste to prosím znovu."
 
@@ -1287,8 +1282,10 @@ msgstr "Výchozí profil"
 msgid "Color themes"
 msgstr "Barevná témata"
 
+#: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
 #: src/components/ThemePicker.svelte
+#: src/components/UpdateButton.svelte
 msgid "Close"
 msgstr "Zavřít"
 
@@ -1760,6 +1757,7 @@ msgid "This group has reached its pending-content limit."
 msgstr "Tato skupina dosáhla svého limitu čekajícího obsahu."
 
 #: src/components/LogMessage.svelte
+#: src/components/LogMessage.svelte
 #: src/components/UsageGuide.svelte
 msgid "This post was submitted, but confirmation is uncertain. Check Facebook before retrying."
 msgstr "Tento příspěvek byl odeslán, ale potvrzení je nejisté. Zkontrolujte Facebook před opakovaným pokusem."
@@ -1867,8 +1865,10 @@ msgstr "Přepsání Gemini selhalo (HTTP {0}). Zkontrolujte klíč, model a kvó
 msgid " (Code {0})"
 msgstr "(Kód {0})"
 
+#: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
-#: src/components/PostingLogView.svelte
+#: src/components/LocalizedFeedback.svelte
+#: src/components/PostEditor.svelte
 #: src/components/UsageGuide.svelte
 msgid "Debug details"
 msgstr "Podrobnosti ladění"
@@ -2021,3 +2021,373 @@ msgstr "Výchozí účet můžete používat bez přidání dalšího. K Faceboo
 #: src/components/FeaturesCard.svelte
 msgid "Features & How to Use"
 msgstr "Funkce a návod k použití"
+
+#~ msgid "Or post from any Facebook page"
+#~ msgstr ""
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Or click here to fetch posts from any Facebook page"
+msgstr "Nebo klikněte sem a načtěte příspěvky z libovolné stránky na Facebooku"
+
+#: src/components/LogMessage.svelte
+msgid "Enter a Facebook page URL, such as https://web.facebook.com/swiftlineMotors"
+msgstr "Zadejte URL stránky na Facebooku, například https://web.facebook.com/swiftlineMotors"
+
+#~ msgid "Fetch Facebook posts"
+#~ msgstr ""
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Decrease number of posts"
+msgstr "Snížit počet příspěvků"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Increase number of posts"
+msgstr "Zvýšit počet příspěvků"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Facebook page URL"
+msgstr "URL stránky na Facebooku"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Number of posts to fetch"
+msgstr "Počet příspěvků k načtení"
+
+#~ msgid "Done"
+#~ msgstr ""
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Fetch posts from a Facebook page"
+msgstr "Načíst příspěvky ze stránky na Facebooku"
+
+#: src/components/LogMessage.svelte
+msgid "Could not check fetch progress. Close this dialog and try again."
+msgstr "Průběh načítání se nepodařilo ověřit. Zavřete toto okno a zkuste to znovu."
+
+#: src/components/LogMessage.svelte
+msgid "Could not stop fetching. Try again."
+msgstr "Načítání se nepodařilo zastavit. Zkuste to znovu."
+
+#: src/components/LogMessage.svelte
+msgid "Fetching stopped."
+msgstr "Načítání zastaveno."
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Facebook page fetch options"
+msgstr "Možnosti načítání příspěvků z Facebooku"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Posts fetched"
+msgstr "Načtené příspěvky"
+
+#: src/components/PostComposer.svelte
+msgid "Fetched posts"
+msgstr "Načtené příspěvky"
+
+#: src/components/FetchedPostCard.svelte
+msgid "Post without text"
+msgstr "Příspěvek bez textu"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Fetching…"
+msgstr "Načítání…"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "Fetch"
+msgstr "Načíst"
+
+#: src/components/PostComposer.svelte
+msgid "Fetched posts <0/>"
+msgstr "Načtené příspěvky <0/>"
+
+#: src/components/PostComposer.svelte
+msgid "Write a post instead"
+msgstr "Místo toho napsat příspěvek"
+
+#~ msgid "No posts were available from this Facebook page."
+#~ msgstr ""
+
+#: src/App.svelte
+msgid "Review the posts fetched from your Facebook page."
+msgstr "Zkontrolujte příspěvky načtené z vaší stránky na Facebooku."
+
+#~ msgid "Post removed."
+#~ msgstr ""
+
+#: src/components/PostComposer.svelte
+msgid "No posts to show. Fetch posts or write a post instead."
+msgstr "Žádné příspěvky k zobrazení. Načtěte příspěvky nebo napište nový."
+
+#. 0: index + 1
+#: src/components/FetchedPostCard.svelte
+msgid "Post {0}"
+msgstr "Příspěvek {0}"
+
+#. 0: index + 1
+#: src/components/FetchedPostCard.svelte
+msgid "Edit post {0}"
+msgstr "Upravit příspěvek {0}"
+
+#: src/components/FetchedPostCard.svelte
+msgid "Edit"
+msgstr "Upravit"
+
+#. 0: index + 1
+#: src/components/FetchedPostCard.svelte
+msgid "Delete post {0}"
+msgstr "Smazat příspěvek {0}"
+
+#: src/components/FetchedPostCard.svelte
+msgid "Delete"
+msgstr "Smazat"
+
+#: src/components/FetchedPostCard.svelte
+msgid "Post text"
+msgstr "Text příspěvku"
+
+#. 0: imageIndex + 1; 1: index + 1
+#: src/components/FetchedPostCard.svelte
+msgid "Remove image {0} from post {1}"
+msgstr "Odebrat obrázek {0} z příspěvku {1}"
+
+#: src/components/FetchedPostCard.svelte
+msgid "Save changes"
+msgstr "Uložit změny"
+
+#: src/components/LogMessage.svelte
+msgid "Could not fetch Facebook posts. Check Chrome and try again."
+msgstr "Příspěvky z Facebooku se nepodařilo načíst. Zkontrolujte Chrome a zkuste to znovu."
+
+#: src/components/LogMessage.svelte
+msgid "Could not load full-size photos. Fetch the posts again."
+msgstr "Fotografie v plné velikosti se nepodařilo načíst. Načtěte příspěvky znovu."
+
+#: src/components/LogMessage.svelte
+msgid "Could not capture Facebook requests. Check Chrome and fetch again."
+msgstr "Požadavky Facebooku se nepodařilo zachytit. Zkontrolujte Chrome a opakujte načtení."
+
+#: src/components/LogMessage.svelte
+msgid "Enter a positive whole number of posts to fetch"
+msgstr "Zadejte kladné celé číslo určující počet příspěvků k načtení"
+
+#: src/components/LogMessage.svelte
+msgid "Wait for posting to finish before fetching Facebook posts"
+msgstr "Před načítáním příspěvků z Facebooku počkejte na dokončení publikování"
+
+#: src/components/LogMessage.svelte
+msgid "Finish loading groups before fetching Facebook posts"
+msgstr "Před načítáním příspěvků z Facebooku dokončete načítání skupin"
+
+#: src/components/LogMessage.svelte
+msgid "Fetch at least one post before posting"
+msgstr "Před publikováním načtěte alespoň jeden příspěvek"
+
+#: src/components/LogMessage.svelte
+msgid "Capturing Facebook posts…"
+msgstr "Zachytávání příspěvků z Facebooku…"
+
+#: src/components/LogMessage.svelte
+msgid "Capturing full-size photos…"
+msgstr "Zachytávání fotografií v plné velikosti…"
+
+#: src/components/LogMessage.svelte
+msgid "Reloading the photo page…"
+msgstr "Opětovné načítání stránky fotografie…"
+
+#: src/components/LogMessage.svelte
+msgid "Opening the next photo…"
+msgstr "Otevírání další fotografie…"
+
+#: src/components/LogMessage.svelte
+msgid "Fetching posts and full-size photos…"
+msgstr "Načítání příspěvků a fotografií v plné velikosti…"
+
+#~ msgid "Facebook"
+#~ msgstr ""
+
+#. 0: number(a); 1: number(b)
+#: src/components/LogMessage.svelte
+msgid "Fetched {0} of {1} posts…"
+msgstr "Načteno {0} z {1} příspěvků…"
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Fetched {0} posts."
+msgstr "Počet načtených příspěvků: {0}."
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Fetched {0} posts. No more posts are available."
+msgstr "Počet načtených příspěvků: {0}. Další příspěvky nejsou k dispozici."
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Add text to fetched post {0} before posting"
+msgstr "Před publikováním přidejte text k načtenému příspěvku {0}"
+
+#. 0: number(a); 1: number(b); 2: c
+#: src/components/LogMessage.svelte
+msgid "Preparing post {0}/{1} for {2}…"
+msgstr "Příprava příspěvku {0}/{1} pro {2}…"
+
+#. 0: number(a); 1: number(b); 2: c
+#: src/components/LogMessage.svelte
+msgid "Uploading images for post {0}/{1} to {2}…"
+msgstr "Nahrávání obrázků příspěvku {0}/{1} do {2}…"
+
+#. 0: number(a); 1: number(b); 2: c
+#: src/components/LogMessage.svelte
+msgid "Posting post {0}/{1} to {2}…"
+msgstr "Publikování příspěvku {0}/{1} do {2}…"
+
+#. 0: number(a); 1: number(b); 2: number(c); 3: number(d)
+#: src/components/LogMessage.svelte
+msgid "Downloading photo {0}/{1} for post {2}/{3}…"
+msgstr "Stahování fotografie {0}/{1} pro příspěvek {2}/{3}…"
+
+#: src/components/LogMessage.svelte
+msgid "Waiting for the groups request…"
+msgstr "Čekání na požadavek skupin…"
+
+#: src/components/LogMessage.svelte
+msgid "Groups request captured. Waiting for the page to finish loading…"
+msgstr "Požadavek skupin zachycen. Čekání na dokončení načítání stránky…"
+
+#: src/components/LogMessage.svelte
+msgid "Browser closed. Loading your groups…"
+msgstr "Prohlížeč zavřen. Načítání vašich skupin…"
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Loaded {0} groups…"
+msgstr "Načteno {0} skupin…"
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Restored {0} saved groups. Load groups to refresh the list."
+msgstr "Obnoveno {0} uložených skupin. Načtěte skupiny pro aktualizaci seznamu."
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Loaded and saved {0} groups."
+msgstr "Načteno a uloženo {0} skupin."
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "Loaded {0} groups, but could not save them. Load groups again to retry saving."
+msgstr "Načteno {0} skupin, ale nepodařilo se je uložit. Načtěte skupiny znovu a opakujte uložení."
+
+#: src/components/LogMessage.svelte
+msgid "Could not load groups. Check Chrome and try again."
+msgstr "Skupiny se nepodařilo načíst. Zkontrolujte Chrome a zkuste to znovu."
+
+#: src/components/LogMessage.svelte
+msgid "Could not read Postika settings"
+msgstr "Nastavení Postika se nepodařilo přečíst"
+
+#: src/components/LogMessage.svelte
+msgid "Could not save Postika settings"
+msgstr "Nastavení Postika se nepodařilo uložit"
+
+#: src/components/LogMessage.svelte
+msgid "Set an interval between 60 and 86400 seconds, with the maximum at least the minimum"
+msgstr "Nastavte interval mezi 60 a 86400 sekundami, přičemž maximum musí být alespoň rovno minimu"
+
+#: src/components/LogMessage.svelte
+msgid "Rewrite instructions are too long"
+msgstr "Pokyny k přeformulování jsou příliš dlouhé"
+
+#: src/components/LogMessage.svelte
+msgid "Enter a valid Gemini model name"
+msgstr "Zadejte platný název modelu Gemini"
+
+#: src/components/LogMessage.svelte
+msgid "Enter an account name of 1 to 80 characters"
+msgstr "Zadejte název účtu o délce 1 až 80 znaků"
+
+#: src/components/LogMessage.svelte
+msgid "An account profile with this name already exists"
+msgstr "Profil účtu s tímto názvem již existuje"
+
+#: src/components/LogMessage.svelte
+msgid "Account profile was not found"
+msgstr "Profil účtu nebyl nalezen"
+
+#: src/components/LogMessage.svelte
+msgid "Could not update accounts. Please try again."
+msgstr "Účty se nepodařilo aktualizovat. Zkuste to znovu."
+
+#: src/components/LogMessage.svelte
+msgid "Chrome or Chromium was not found. Install a browser to open your Facebook groups"
+msgstr "Chrome ani Chromium nebyl nalezen. Nainstalujte prohlížeč pro otevření svých skupin na Facebooku"
+
+#: src/components/LogMessage.svelte
+msgid "Found multiple matching menus on the groups page. Please open the Sort menu in Chrome"
+msgstr "Na stránce skupin bylo nalezeno více odpovídajících nabídek. Otevřete nabídku řazení v Chromu"
+
+#: src/components/LogMessage.svelte
+msgid "Found multiple matching radio menus. Please choose a sort option in Chrome"
+msgstr "Bylo nalezeno více odpovídajících nabídek výběru. Vyberte možnost řazení v Chromu"
+
+#: src/components/LogMessage.svelte
+msgid "Could not open the link. Please try again."
+msgstr "Odkaz se nepodařilo otevřít. Zkuste to znovu."
+
+#. 0: number(a)
+#: src/components/LogMessage.svelte
+msgid "None of the {0} selected groups has an available post composer"
+msgstr "Žádná z {0} vybraných skupin nemá dostupný editor příspěvků"
+
+#. 0: a
+#: src/components/LogMessage.svelte
+msgid "{0} is not an image file. Drop individual images, not folders."
+msgstr "{0} není soubor obrázku. Přetáhněte jednotlivé obrázky, nikoli složky."
+
+#: src/components/LogMessage.svelte
+msgid "Could not complete this action. Please try again."
+msgstr "Tuto akci se nepodařilo dokončit. Zkuste to znovu."
+
+#~ msgid "{0}–{1}"
+#~ msgstr ""
+
+#: src/components/UpdateButton.svelte
+msgid "Update available"
+msgstr "Aktualizace je dostupná"
+
+#: src/components/UpdateButton.svelte
+#: src/components/UpdateButton.svelte
+#: src/components/UpdateButton.svelte
+msgid "Updates"
+msgstr "Aktualizace"
+
+#: src/components/UpdateButton.svelte
+msgid "Checking for updates…"
+msgstr "Kontrola aktualizací…"
+
+#: src/components/UpdateButton.svelte
+msgid "Downloading update…"
+msgstr "Stahování aktualizace…"
+
+#: src/components/UpdateButton.svelte
+msgid "Update ready. Stop all posting queues before restarting."
+msgstr "Aktualizace je připravena. Před restartováním zastavte všechny fronty příspěvků."
+
+#: src/components/UpdateButton.svelte
+msgid "Postika is up to date."
+msgstr "Postika je aktuální."
+
+#: src/components/UpdateButton.svelte
+msgid "Download update"
+msgstr "Stáhnout aktualizaci"
+
+#: src/components/UpdateButton.svelte
+#: src/components/UpdateButton.svelte
+msgid "Restart to update"
+msgstr "Restartovat a aktualizovat"
+
+#: src/components/UpdateButton.svelte
+msgid "Check for updates"
+msgstr "Vyhledat aktualizace"
+
+#: src/components/UpdateButton.svelte
+msgid "Installing update…"
+msgstr "Instalace aktualizace…"

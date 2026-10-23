@@ -15,6 +15,15 @@
 }
 
 :root {
+  --ui-title-size: 1.5rem;
+  --ui-body-size: 1.3rem;
+  --ui-small-size: 1.2rem;
+  --ui-title-weight: 600;
+  --ui-label-weight: 550;
+  --ui-space: 1.6rem;
+  --ui-field-gap: .8rem;
+  --ui-panel-radius: 1rem;
+  --ui-input-radius: .6rem;
   font-family: "InterVariable", system-ui, sans-serif;
   font-optical-sizing: auto;
   color: var(--text);
@@ -33,6 +42,11 @@
 html {
   font-size: 62.5%;
 }
+
+/* Title bars keep the desktop window controls in their usual positions.
+   Dialogs opened from those bars still follow the selected reading direction. */
+html[dir="rtl"] .ui-dialog { direction: rtl; }
+html[dir="ltr"] .ui-dialog { direction: ltr; }
 
 /* Native windows own the viewport. Only their content panes may scroll.
    Unlike hidden, clip also stops focus/scrollIntoView from scrolling a frame;
@@ -97,8 +111,8 @@ select {
   gap: .6rem;
   border: .1rem solid var(--border);
   border-radius: .7rem;
-  font-size: 1.3rem;
-  font-weight: 550;
+  font-size: var(--ui-body-size);
+  font-weight: var(--ui-label-weight);
   cursor: pointer;
 }
 
@@ -121,13 +135,41 @@ textarea::placeholder {
   opacity: 1;
 }
 
+/* Shared dialog chrome follows the Facebook page dialog. Components own
+   their widths and scrolling layouts; typography and controls stay shared. */
+.ui-dialog {
+  --wails-draggable: no-drag;
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  padding: 0;
+  max-width: none;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--ui-panel-radius);
+  background: var(--surface);
+  color: var(--text);
+  font-size: var(--ui-body-size);
+  box-shadow: 0 1rem 5rem var(--shadow-strong);
+}
+.ui-dialog::backdrop { background: rgb(0 0 0 / 40%); }
+.ui-dialog-heading { display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; gap: var(--ui-space); padding: 1.2rem var(--ui-space) .8rem; }
+.ui-title { color: var(--text-strong); font-size: var(--ui-title-size); font-weight: var(--ui-title-weight); line-height: 1.5; letter-spacing: normal; }
+.ui-dialog-close { display: grid; place-items: center; width: 2.8rem; height: 2.8rem; flex-shrink: 0; padding: .6rem; border: 0; border-radius: .4rem; background: transparent; color: var(--text-secondary); cursor: pointer; }
+.ui-dialog-close:hover { background: var(--surface-hover); }
+.ui-dialog-close svg { width: 1.6rem; height: 1.6rem; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.ui-dialog-close:focus-visible { outline: 2px solid var(--focus); outline-offset: -2px; }
+.ui-dialog-footer { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 1rem; padding: var(--ui-space); border-top: 1px solid var(--border); }
+.ui-window { background: var(--surface); color: var(--text); font-size: var(--ui-body-size); }
+.ui-input { width: 100%; min-width: 0; padding: 1.2rem; border: 1px solid var(--border-strong); border-radius: var(--ui-input-radius); background: var(--surface); color: var(--text); font-size: var(--ui-body-size); }
+.ui-input:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
 .post-rich-content { color: var(--text); font-size: 1.5rem; line-height: 1.7; overflow-wrap: anywhere; }
 .post-rich-content p { margin: 0 0 .8rem; min-height: 1.7em; }
 .post-rich-content strong, .post-bold { font-weight: 700; }
 .post-rich-content em, .post-italic { font-style: italic; }
 .post-rich-content h1 { font-size: 2.5rem; line-height: 1.35; margin: 1.2rem 0 .8rem; }
 .post-rich-content h2 { font-size: 2rem; line-height: 1.4; margin: 1rem 0 .6rem; }
-.post-rich-content ul, .post-rich-content ol { padding-left: 2.6rem; margin: .8rem 0; }
+.post-rich-content ul, .post-rich-content ol { padding-inline-start: 2.6rem; margin: .8rem 0; }
 .post-rich-content ul { list-style: disc; }
 .post-rich-content ol { list-style: decimal; }
-.post-rich-content blockquote { border-left: 3px solid var(--border-accent); padding-left: 1.4rem; margin: 1rem 0; color: var(--text-secondary); }
+.post-rich-content blockquote { border-inline-start: 3px solid var(--border-accent); padding-inline-start: 1.4rem; margin: 1rem 0; color: var(--text-secondary); }

@@ -103,11 +103,18 @@ func draftFingerprint(body string, images []PostUpload) string {
 // templates for the remaining selected groups. Unconfirmed requests get up to
 // three retries with the same mutation ID, then the queue proceeds.
 func (s *GroupsService) PublishPostWithOptions(ctx context.Context, selected []string, body string, images []PostUpload, options PostingOptions) (*PostingStatus, error) {
+	if s.updateGate != nil {
+		if !s.updateGate.TryRLock() {
+			return nil, errors.New("Postika is restarting to install an update")
+		}
+		defer s.updateGate.RUnlock()
+	}
 	if !s.postRunMu.TryLock() {
 		return nil, errors.New("Posting is already running")
 	}
 	defer s.postRunMu.Unlock()
-	if strings.TrimSpace(body) == "" || len(images) == 0 {
+	sourcePosts, rotating := ctx.Value(facebookPostingQueueKey{}).([]FacebookPagePost)
+	if strings.TrimSpace(body) == "" || !rotating && len(images) == 0 {
 		return nil, errors.New("Add a post body and at least one image")
 	}
 	if err := validatePostingOptions(options); err != nil {
@@ -185,6 +192,16 @@ func (s *GroupsService) PublishPostWithOptions(ctx context.Context, selected []s
 			return finish("stopped", "Scheduled posting cancelled."), nil
 		}
 	}
+	drafts := []postingDraft{{body: body, images: images}}
+	if rotating {
+		var err error
+		drafts, err = s.facebookPostingDrafts(ctx, sourcePosts)
+		if err != nil {
+			return finish("stopped", err.Error()), nil
+		}
+		body, images = drafts[0].body, drafts[0].images
+	}
+	runFingerprint := postingDraftFingerprint(drafts)
 	// Previously submitted groups are accounted for without blocking other groups.
 	// A prior uncertain submission has no retained request to retry safely here.
 	s.mu.Lock()
@@ -194,7 +211,7 @@ func (s *GroupsService) PublishPostWithOptions(ctx context.Context, selected []s
 		ownerBefore = s.groupsLoad.user
 		s.groupsLoad.mu.Unlock()
 	}
-	priorFingerprint := ownerBefore + ":" + draftFingerprint(body, images) + ":"
+	priorFingerprint := ownerBefore + ":" + runFingerprint + ":"
 	remaining := []string{}
 	seenSelected := map[string]bool{}
 	for _, id := range selected {
@@ -234,32 +251,31 @@ func (s *GroupsService) PublishPostWithOptions(ctx context.Context, selected []s
 	s.mu.Lock()
 	defer s.mu.Unlock()
 	page := s.page.Context(ctx)
-	if s.photoUploads == nil {
-		return finish("stopped", "No fresh image upload request was captured."), nil
-	}
-	s.photoUploads.mu.Lock()
 	var upload *capturedPhotoUpload
-	for _, entry := range s.photoUploads.requests {
-		if entry.wire && entry.finished {
-			copy := *entry
-			upload = &copy
-			break
+	if s.photoUploads != nil {
+		s.photoUploads.mu.Lock()
+		for _, entry := range s.photoUploads.requests {
+			if entry.wire && entry.finished {
+				copy := *entry
+				upload = &copy
+				break
+			}
 		}
+		s.photoUploads.mu.Unlock()
 	}
-	s.photoUploads.mu.Unlock()
-	if upload == nil {
+	if len(images) > 0 && upload == nil {
 		return finish("stopped", "No complete image upload request was captured."), nil
 	}
 	s.groupsLoad.mu.Lock()
 	owner := s.groupsLoad.user
 	s.groupsLoad.mu.Unlock()
-	if owner == "" || owner != upload.User {
+	if owner == "" || upload != nil && owner != upload.User {
 		return finish("stopped", "The current profile differs from the profile used to load groups. Load groups again."), nil
 	}
 	if s.postLedger == nil {
 		s.postLedger = map[string]PostOutcome{}
 	}
-	fingerprint := upload.User + ":" + draftFingerprint(originalBody, images) + ":"
+	fingerprint := owner + ":" + runFingerprint + ":"
 	for _, group := range prepared.Skipped {
 		s.recordOutcome(PostOutcome{Group: group, State: "skipped", Message: "No available post composer."})
 	}
@@ -270,22 +286,28 @@ func (s *GroupsService) PublishPostWithOptions(ctx context.Context, selected []s
 		return finish("stopped", "This draft has already been submitted to the first group. It was not submitted again."), nil
 	}
 	// Confirm every browser upload, not just a successful HTTP status.
-	s.photoUploads.mu.Lock()
-	for _, entry := range s.photoUploads.requests {
-		if entry.User != owner {
-			err = errors.New("Image uploads belong to a different profile")
-			break
-		}
-		if entry.finished {
-			if id, _ := parseUploadedPhoto(entry.Response, entry.Status); id == "" {
-				err = errors.New("Facebook did not confirm all images. Check the composer.")
+	if s.photoUploads != nil {
+		s.photoUploads.mu.Lock()
+		for _, entry := range s.photoUploads.requests {
+			if entry.User != owner {
+				err = errors.New("Image uploads belong to a different profile")
 				break
 			}
+			if entry.finished {
+				if id, _ := parseUploadedPhoto(entry.Response, entry.Status); id == "" {
+					err = errors.New("Facebook did not confirm all images. Check the composer.")
+					break
+				}
+			}
 		}
+		s.photoUploads.mu.Unlock()
 	}
-	s.photoUploads.mu.Unlock()
 	if err != nil {
 		return finish("stopped", err.Error()), nil
+	}
+	sessionCookies, sessionErr := s.browser.Context(ctx).GetCookies()
+	if sessionErr != nil || browserUser(sessionCookies) != owner {
+		return finish("stopped", "The Facebook profile changed. Load groups again."), nil
 	}
 	// Arm capture before waiting for the action so an enabled button can be
 	// clicked immediately, without waiting for the entire dialog to settle.
@@ -326,11 +348,15 @@ func (s *GroupsService) PublishPostWithOptions(ctx context.Context, selected []s
 	if err != nil {
 		return finish("stopped", "The session could not be saved for posting retries and remaining groups."), nil
 	}
-	replay, err := newPostReplay(cookies, *upload, *template)
+	uploadTemplate := capturedPhotoUpload{}
+	if upload != nil {
+		uploadTemplate = *upload
+	}
+	replay, err := newPostReplay(cookies, uploadTemplate, *template)
 	if err != nil {
 		return finish("stopped", err.Error()), nil
 	}
-	replay.allowRewrite = options.Rewrite
+	replay.allowRewrite = options.Rewrite || rotating
 	replay.progress = s.setPostStatus
 	first := parsePostResponseForGroup(template.Response, template.Status, prepared.OpenedGroup.ID)
 	if captureErr != nil {
@@ -382,6 +408,7 @@ func (s *GroupsService) PublishPostWithOptions(ctx context.Context, selected []s
 	for _, group := range prepared.Skipped {
 		skipped[group.ID] = true
 	}
+	rotationIndex := 1
 	for _, group := range prepared.Groups {
 		if skipped[group.ID] {
 			continue
@@ -392,6 +419,8 @@ func (s *GroupsService) PublishPostWithOptions(ctx context.Context, selected []s
 		if ctx.Err() != nil {
 			return finish("stopped", "Posting stopped."), nil
 		}
+		draft, draftIndex := rotatingPostingDraft(drafts, rotationIndex)
+		rotationIndex++
 		key = fingerprint + group.ID
 		if previous, ok := s.postLedger[key]; ok {
 			s.recordOutcome(previous)
@@ -402,21 +431,67 @@ func (s *GroupsService) PublishPostWithOptions(ctx context.Context, selected []s
 			return finish("stopped", "Posting stopped."), nil
 		}
 		postBody := body
+		postImages := images
+		if rotating {
+			postBody = draft.body
+			postImages = draft.images
+		}
 		if options.Rewrite {
-			postBody, err = s.rewriteForRun(ctx, originalBody, options, &settings)
+			rewriteBody := originalBody
+			if rotating {
+				rewriteBody = draft.body
+			}
+			postBody, err = s.rewriteForRun(ctx, rewriteBody, options, &settings)
 			if err != nil {
 				return finish("stopped", err.Error()), nil
 			}
 		}
+		if len(postImages) > 0 && replay.upload.URL == "" {
+			// A text-only first card has no upload template. Prepare the first
+			// image-bearing card in Chrome without submitting it, then use its
+			// fresh upload request with the already captured create template.
+			s.mu.Unlock()
+			_, prepareErr := s.OpenPostComposer(ctx, []string{group.ID}, postBody, postImages)
+			s.mu.Lock()
+			if prepareErr != nil {
+				return finish("stopped", prepareErr.Error()), nil
+			}
+			var freshUpload *capturedPhotoUpload
+			if s.photoUploads != nil {
+				s.photoUploads.mu.Lock()
+				for _, entry := range s.photoUploads.requests {
+					if entry.wire && entry.finished {
+						copy := *entry
+						freshUpload = &copy
+						break
+					}
+				}
+				s.photoUploads.mu.Unlock()
+			}
+			if freshUpload == nil {
+				return finish("stopped", "No fresh image upload request was captured."), nil
+			}
+			freshCookies, cookieErr := s.browser.Context(ctx).GetCookies()
+			if cookieErr != nil {
+				return finish("stopped", "Could not preserve the Facebook upload session."), nil
+			}
+			freshReplay, replayErr := newPostReplay(freshCookies, *freshUpload, *template)
+			if replayErr != nil {
+				return finish("stopped", replayErr.Error()), nil
+			}
+			replay.upload = freshReplay.upload
+			replay.client.Jar = freshReplay.client.Jar
+			s.closeBrowserConnection()
+		}
 		photos := []string{}
 		failed := false
-		s.setPostStatus("Preparing post 1/1 for " + group.Name + "...")
-		s.setPostStatus("Uploading images from post 1/1 for " + group.Name + "...")
-		for imageIndex, image := range images {
+		s.setPostStatus(fmt.Sprintf("Preparing post %d/%d for %s...", draftIndex+1, len(drafts), group.Name))
+		s.setPostStatus(fmt.Sprintf("Uploading images from post %d/%d for %s...", draftIndex+1, len(drafts), group.Name))
+		for imageIndex, image := range postImages {
 			if err := postingCheckpoint(ctx); err != nil {
 				return finish("stopped", "Posting stopped."), nil
 			}
-			s.setPostStatus(fmt.Sprintf("%s: uploading image %d of %d…", group.Name, imageIndex+1, len(images)))
+			s.setPostStatus(fmt.Sprintf("%s: uploading image %d of %d…", group.Name, imageIndex+1, len(postImages)))
 			id, outcome := replay.uploadImage(ctx, image)
 			if id == "" {
 				outcome.Group = group
@@ -432,7 +507,7 @@ func (s *GroupsService) PublishPostWithOptions(ctx context.Context, selected []s
 		if failed {
 			continue
 		}
-		s.setPostStatus("Posting reusable post 1/1 to " + group.Name + "...")
+		s.setPostStatus(fmt.Sprintf("Posting post %d/%d to %s...", draftIndex+1, len(drafts), group.Name))
 		if err := postingCheckpoint(ctx); err != nil {
 			return finish("stopped", "Posting stopped."), nil
 		}

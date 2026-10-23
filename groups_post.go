@@ -73,6 +73,7 @@ func (s *GroupsService) OpenPostComposer(ctx context.Context, selectedIDs []stri
 	if err != nil {
 		return nil, err
 	}
+	s.stopFacebookPageFetch()
 	skipped := []Group{}
 	for _, group := range selected {
 		if err := postingCheckpoint(ctx); err != nil {

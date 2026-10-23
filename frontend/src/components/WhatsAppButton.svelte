@@ -6,8 +6,8 @@
 
   function open(event: MouseEvent) {
     event.preventDefault();
-    void Browser.OpenURL(url).catch((cause) => {
-      onerror(cause instanceof Error ? cause.message : String(cause));
+    void Browser.OpenURL(url).catch(() => {
+      onerror(/* @wc-ignore */ 'Could not open the link. Please try again.');
     });
   }
 </script>
