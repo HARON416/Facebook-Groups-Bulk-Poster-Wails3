@@ -1,0 +1,26 @@
+{{define "head"}}<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="{{.Description}}"><meta name="htmx-config" content='{"allowEval":false,"includeIndicatorStyles":false}'><meta name="theme-color" content="#ffffff"><title>{{.Title}}</title><link rel="canonical" href="{{.Canonical}}"><meta property="og:type" content="website"><meta property="og:site_name" content="Postika"><meta property="og:title" content="{{.Title}}"><meta property="og:description" content="{{.Description}}"><meta property="og:url" content="{{.Canonical}}"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="{{.Title}}"><meta name="twitter:description" content="{{.Description}}"><link rel="icon" href="/static/appicon.png" type="image/png"><link rel="preload" href="/static/fonts/inter/InterVariable.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/static/fonts/satoshi/Satoshi-Black.otf" as="font" type="font/otf" crossorigin><script src="/static/js/theme-init.js"></script><link rel="stylesheet" href="/static/css/global.css"><link rel="stylesheet" href="/static/css/themes.css"><link rel="stylesheet" href="/static/css/site.css"><script src="/static/vendor/htmx.min.js" defer></script><script src="/static/js/main.js" defer></script></head><body><a class="skip-link" href="#main">Skip to content</a>{{template "topnav"}}{{end}}
+{{define "brand"}}<a class="brand" href="/" aria-label="Postika home"><img src="/static/appicon.png" width="32" height="32" alt="">postika</a>{{end}}
+{{define "cta"}}<a class="button button-primary" href="/downloads"><span data-download-label>Download Postika</span></a><a class="text-link platform-link" href="/downloads">Windows, macOS &amp; Linux</a>{{end}}
+{{define "footer"}}<footer class="footer"><div>{{template "brand"}}<p>A little less busywork. A little more time.</p></div><div class="footer-links"><a href="/downloads">Downloads</a><a href="mailto:haronkibetrutoh@gmail.com">Get in touch</a><span>© {{/* Kept independent of release dates. */}}2026 Postika Technologies</span></div></footer>{{template "theme-picker"}}</body></html>{{end}}
+{{define "release"}}<div id="release-details" class="release-details">{{if .Version}}<p class="release-meta">Version {{.Version}} ({{.Date}})</p>{{if .Notes}}<ul>{{range .Notes}}<li>{{.}}</li>{{end}}</ul>{{else}}<p>Release notes will be added here.</p>{{end}}{{else}}<p>Our first public release is being prepared. Download links and release notes will appear here when the builds are ready.</p>{{end}}</div>{{end}}
+
+{{define "topnav"}}
+<header class="site-header">
+  <nav class="site-nav wrap" aria-label="Main navigation">
+    {{template "brand"}}
+    <div class="nav-links"><a href="/#features">Features</a><a href="/#questions">Questions</a></div>
+    <button class="theme-trigger" type="button" data-theme-picker hidden aria-label="Color themes" aria-haspopup="dialog" aria-expanded="false" aria-controls="theme-picker">Themes</button>
+    <a class="button button-primary nav-download" href="/downloads" aria-label="Download Postika"><span class="nav-download-long">Download Postika</span><span class="nav-download-short" aria-hidden="true">Download</span></a>
+  </nav>
+</header>
+{{end}}
+
+{{define "theme-picker"}}
+<dialog class="theme-picker" id="theme-picker" aria-labelledby="theme-picker-heading">
+  <div class="theme-picker-heading"><h2 id="theme-picker-heading">Color themes</h2><button type="button" class="theme-close" data-close-themes aria-label="Close themes"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
+  <div class="theme-search"><label for="theme-search">Search themes</label><input id="theme-search" type="search" placeholder="Search by name…" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="true" aria-controls="theme-options" aria-describedby="theme-count"></div>
+  <p id="theme-count" class="theme-count" role="status" aria-live="polite"></p>
+  <div class="theme-options" id="theme-options" role="listbox" aria-label="Color themes"></div>
+</dialog>
+{{end}}

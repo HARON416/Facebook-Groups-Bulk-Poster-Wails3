@@ -97,6 +97,7 @@ msgid "Load groups"
 msgstr "加载群组"
 
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "Groups"
 msgstr "群组"
 
@@ -300,7 +301,9 @@ msgid "Loading accounts"
 msgstr "正在加载账户"
 
 #. 0: current?.name ?? 'Loading accounts'
+#. 0: accountLabel(profile)
 #: src/components/AccountDropdown.svelte
+#: src/components/QueueReview.svelte
 msgid "Account: {0}"
 msgstr "账户：{0}"
 
@@ -452,6 +455,8 @@ msgid "Required"
 msgstr "必填"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Images"
 msgstr "图片"
@@ -759,9 +764,8 @@ msgstr "暂停"
 msgid "Stopping…"
 msgstr "正在停止…"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "POSTING PACE"
-msgstr "发帖间隔"
+#~ msgid "POSTING PACE"
+#~ msgstr "发帖间隔"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/PostingOptionsForm.svelte
@@ -950,6 +954,7 @@ msgstr "关闭窗口"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Create post"
 msgstr "创建帖子"
@@ -960,6 +965,7 @@ msgstr "撰写帖子并添加图片"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select groups"
 msgstr "选择群组"
@@ -1105,7 +1111,9 @@ msgid "{0} shown"
 msgstr "显示 {0}"
 
 #. 0: selectedGroupIds.length
+#. 0: groups.length
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "{0} selected"
 msgstr "已选择 {0}"
 
@@ -1893,13 +1901,13 @@ msgid "Post text and images to multiple Facebook groups."
 msgstr "向多个 Facebook 群组发布文本和图片。"
 
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Keep Postika open and your computer awake. Queues and logs are not restored after quitting."
 msgstr "请保持 Postika 开启并让电脑保持唤醒。退出后不会恢复队列和日志。"
 
-#: src/components/FeaturesCard.svelte
-msgid "<0/> Features"
-msgstr "<0/> 功能"
+#~ msgid "<0/> Features"
+#~ msgstr "<0/> 功能"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/UsageGuide.svelte
@@ -2041,6 +2049,7 @@ msgid "Fetch"
 msgstr "获取"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
 msgid "Fetched posts <0/>"
 msgstr "已获取的帖子 <0/>"
 
@@ -2073,6 +2082,8 @@ msgid "Edit post {0}"
 msgstr "编辑帖子 {0}"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 msgid "Edit"
 msgstr "编辑"
 
@@ -2088,6 +2099,7 @@ msgid "Delete"
 msgstr "删除"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
 msgid "Post text"
 msgstr "帖子文字"
 
@@ -2381,3 +2393,12 @@ msgstr "这将永久删除此个人资料的 Facebook 登录信息、群组、�
 #: src/components/DeleteProfileDialog.svelte
 msgid "Deleting…"
 msgstr "正在删除…"
+
+#: src/components/FeaturesCard.svelte
+msgid "<0/> How to use"
+msgstr "<0/> 使用指南"
+
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
+msgid "Review your queue"
+msgstr "检查发布队列"

@@ -97,6 +97,7 @@ msgid "Load groups"
 msgstr "Muat grup"
 
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "Groups"
 msgstr "Grup"
 
@@ -300,7 +301,9 @@ msgid "Loading accounts"
 msgstr "Memuat akun"
 
 #. 0: current?.name ?? 'Loading accounts'
+#. 0: accountLabel(profile)
 #: src/components/AccountDropdown.svelte
+#: src/components/QueueReview.svelte
 msgid "Account: {0}"
 msgstr "Akun: {0}"
 
@@ -452,6 +455,8 @@ msgid "Required"
 msgstr "Wajib"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Images"
 msgstr "Gambar"
@@ -759,9 +764,8 @@ msgstr "Jeda"
 msgid "Stopping…"
 msgstr "Menghentikan…"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "POSTING PACE"
-msgstr "JEDA PENGIRIMAN"
+#~ msgid "POSTING PACE"
+#~ msgstr "JEDA PENGIRIMAN"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/PostingOptionsForm.svelte
@@ -950,6 +954,7 @@ msgstr "Tutup jendela"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Create post"
 msgstr "Buat postingan"
@@ -960,6 +965,7 @@ msgstr "Tulis postingan Anda dan tambahkan gambar"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select groups"
 msgstr "Pilih grup"
@@ -1105,7 +1111,9 @@ msgid "{0} shown"
 msgstr "{0} ditampilkan"
 
 #. 0: selectedGroupIds.length
+#. 0: groups.length
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "{0} selected"
 msgstr "{0} dipilih"
 
@@ -1893,13 +1901,13 @@ msgid "Post text and images to multiple Facebook groups."
 msgstr "Posting teks dan gambar ke beberapa grup Facebook."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Keep Postika open and your computer awake. Queues and logs are not restored after quitting."
 msgstr "Biarkan Postika terbuka dan komputer tetap aktif. Antrean dan log tidak dipulihkan setelah keluar."
 
-#: src/components/FeaturesCard.svelte
-msgid "<0/> Features"
-msgstr "<0/> Fitur"
+#~ msgid "<0/> Features"
+#~ msgstr "<0/> Fitur"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/UsageGuide.svelte
@@ -2041,6 +2049,7 @@ msgid "Fetch"
 msgstr "Ambil"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
 msgid "Fetched posts <0/>"
 msgstr "Postingan yang diambil <0/>"
 
@@ -2073,6 +2082,8 @@ msgid "Edit post {0}"
 msgstr "Edit postingan {0}"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 msgid "Edit"
 msgstr "Edit"
 
@@ -2088,6 +2099,7 @@ msgid "Delete"
 msgstr "Hapus"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
 msgid "Post text"
 msgstr "Teks postingan"
 
@@ -2381,3 +2393,12 @@ msgstr "Ini menghapus login Facebook, grup, draf, gambar, pengaturan, dan log pr
 #: src/components/DeleteProfileDialog.svelte
 msgid "Deleting…"
 msgstr "Menghapus…"
+
+#: src/components/FeaturesCard.svelte
+msgid "<0/> How to use"
+msgstr "<0/> Cara menggunakan"
+
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
+msgid "Review your queue"
+msgstr "Tinjau antrean Anda"

@@ -97,6 +97,7 @@ msgid "Load groups"
 msgstr "Načíst skupiny"
 
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "Groups"
 msgstr "Skupiny"
 
@@ -300,7 +301,9 @@ msgid "Loading accounts"
 msgstr "Načítání účtů"
 
 #. 0: current?.name ?? 'Loading accounts'
+#. 0: accountLabel(profile)
 #: src/components/AccountDropdown.svelte
+#: src/components/QueueReview.svelte
 msgid "Account: {0}"
 msgstr "Účet: {0}"
 
@@ -452,6 +455,8 @@ msgid "Required"
 msgstr "Povinné"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Images"
 msgstr "Obrázky"
@@ -759,9 +764,8 @@ msgstr "Pozastavit"
 msgid "Stopping…"
 msgstr "Zastavuji…"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "POSTING PACE"
-msgstr "RYCHLOST ZVEŘEJNĚNÍ"
+#~ msgid "POSTING PACE"
+#~ msgstr "RYCHLOST ZVEŘEJNĚNÍ"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/PostingOptionsForm.svelte
@@ -950,6 +954,7 @@ msgstr "Zavřít okno"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Create post"
 msgstr "Vytvořit příspěvek"
@@ -960,6 +965,7 @@ msgstr "Napište svůj příspěvek a přidejte obrázky"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select groups"
 msgstr "Vybrat skupiny"
@@ -1105,7 +1111,9 @@ msgid "{0} shown"
 msgstr "Zobrazeno {0}"
 
 #. 0: selectedGroupIds.length
+#. 0: groups.length
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "{0} selected"
 msgstr "Vybráno {0}"
 
@@ -1893,13 +1901,13 @@ msgid "Post text and images to multiple Facebook groups."
 msgstr "Publikujte text a obrázky do více skupin na Facebooku."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Keep Postika open and your computer awake. Queues and logs are not restored after quitting."
 msgstr "Nechte Postiku otevřenou a počítač vzhůru. Fronty a protokoly se po ukončení neobnovují."
 
-#: src/components/FeaturesCard.svelte
-msgid "<0/> Features"
-msgstr "<0/> Funkce"
+#~ msgid "<0/> Features"
+#~ msgstr "<0/> Funkce"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/UsageGuide.svelte
@@ -2041,6 +2049,7 @@ msgid "Fetch"
 msgstr "Načíst"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
 msgid "Fetched posts <0/>"
 msgstr "Načtené příspěvky <0/>"
 
@@ -2073,6 +2082,8 @@ msgid "Edit post {0}"
 msgstr "Upravit příspěvek {0}"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 msgid "Edit"
 msgstr "Upravit"
 
@@ -2088,6 +2099,7 @@ msgid "Delete"
 msgstr "Smazat"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
 msgid "Post text"
 msgstr "Text příspěvku"
 
@@ -2381,3 +2393,12 @@ msgstr "Trvale smaže přihlášení k Facebooku, skupiny, koncepty, obrázky, n
 #: src/components/DeleteProfileDialog.svelte
 msgid "Deleting…"
 msgstr "Mazání…"
+
+#: src/components/FeaturesCard.svelte
+msgid "<0/> How to use"
+msgstr "<0/> Jak používat"
+
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
+msgid "Review your queue"
+msgstr "Zkontrolujte svou frontu"

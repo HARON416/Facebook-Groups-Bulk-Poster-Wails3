@@ -97,6 +97,7 @@ msgid "Load groups"
 msgstr "गट लोड करा"
 
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "Groups"
 msgstr "गट"
 
@@ -300,7 +301,9 @@ msgid "Loading accounts"
 msgstr "खाते लोड करत आहे"
 
 #. 0: current?.name ?? 'Loading accounts'
+#. 0: accountLabel(profile)
 #: src/components/AccountDropdown.svelte
+#: src/components/QueueReview.svelte
 msgid "Account: {0}"
 msgstr "खाते: {0}"
 
@@ -452,6 +455,8 @@ msgid "Required"
 msgstr "आवश्यक"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Images"
 msgstr "प्रतिमा"
@@ -759,9 +764,8 @@ msgstr "विराम द्या"
 msgid "Stopping…"
 msgstr "थांबवत आहे…"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "POSTING PACE"
-msgstr "पोस्टिंग गती"
+#~ msgid "POSTING PACE"
+#~ msgstr "पोस्टिंग गती"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/PostingOptionsForm.svelte
@@ -950,6 +954,7 @@ msgstr "विंडो बंद करा"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Create post"
 msgstr "पोस्ट तयार करा"
@@ -960,6 +965,7 @@ msgstr "आपला पोस्ट लिहा आणि प्रतिम�
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select groups"
 msgstr "गट निवडा"
@@ -1105,7 +1111,9 @@ msgid "{0} shown"
 msgstr "{0} दाखवले"
 
 #. 0: selectedGroupIds.length
+#. 0: groups.length
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "{0} selected"
 msgstr "{0} निवडले"
 
@@ -1893,13 +1901,13 @@ msgid "Post text and images to multiple Facebook groups."
 msgstr "अनेक Facebook गटांमध्ये मजकूर आणि प्रतिमा पोस्ट करा."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Keep Postika open and your computer awake. Queues and logs are not restored after quitting."
 msgstr "Postika उघडे ठेवा आणि संगणक जागा ठेवा. बंद केल्यानंतर रांगा आणि नोंदी पुन्हा मिळत नाहीत."
 
-#: src/components/FeaturesCard.svelte
-msgid "<0/> Features"
-msgstr "<0/> वैशिष्ट्ये"
+#~ msgid "<0/> Features"
+#~ msgstr "<0/> वैशिष्ट्ये"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/UsageGuide.svelte
@@ -2041,6 +2049,7 @@ msgid "Fetch"
 msgstr "आणा"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
 msgid "Fetched posts <0/>"
 msgstr "आणलेल्या पोस्ट <0/>"
 
@@ -2073,6 +2082,8 @@ msgid "Edit post {0}"
 msgstr "पोस्ट {0} संपादित करा"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 msgid "Edit"
 msgstr "संपादित करा"
 
@@ -2088,6 +2099,7 @@ msgid "Delete"
 msgstr "हटवा"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
 msgid "Post text"
 msgstr "पोस्टचा मजकूर"
 
@@ -2381,3 +2393,12 @@ msgstr "यामुळे या प्रोफाइलचे Facebook लॉ
 #: src/components/DeleteProfileDialog.svelte
 msgid "Deleting…"
 msgstr "हटवत आहे…"
+
+#: src/components/FeaturesCard.svelte
+msgid "<0/> How to use"
+msgstr "<0/> कसे वापरावे"
+
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
+msgid "Review your queue"
+msgstr "तुमच्या रांगेचे पुनरावलोकन करा"

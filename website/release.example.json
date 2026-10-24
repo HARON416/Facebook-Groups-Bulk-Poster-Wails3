@@ -1,0 +1,15 @@
+{
+  "version": "",
+  "date": "",
+  "notes": [],
+  "downloads": [
+    {"os": "windows", "name": "Windows installer", "detail": "Windows x64 · .exe", "url": ""},
+    {"os": "windows", "name": "Windows portable", "detail": "Windows x64 · .zip", "url": ""},
+    {"os": "macos", "name": "Apple Silicon", "detail": "M-series Macs · .dmg", "url": ""},
+    {"os": "macos", "name": "Intel Mac", "detail": "Intel Macs · .dmg", "url": ""},
+    {"os": "linux", "name": "AppImage", "detail": "Linux x64 · portable", "url": ""},
+    {"os": "linux", "name": "Debian / Ubuntu", "detail": "Linux x64 · .deb", "url": ""},
+    {"os": "linux", "name": "Fedora / RPM", "detail": "Linux x64 · .rpm", "url": ""},
+    {"os": "linux", "name": "Arch Linux", "detail": "Linux x64 · .pkg.tar.zst", "url": ""}
+  ]
+}

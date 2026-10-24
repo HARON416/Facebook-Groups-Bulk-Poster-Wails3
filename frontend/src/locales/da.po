@@ -97,6 +97,7 @@ msgid "Load groups"
 msgstr "Indlæs grupper"
 
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "Groups"
 msgstr "Grupper"
 
@@ -300,7 +301,9 @@ msgid "Loading accounts"
 msgstr "Indlæser konti"
 
 #. 0: current?.name ?? 'Loading accounts'
+#. 0: accountLabel(profile)
 #: src/components/AccountDropdown.svelte
+#: src/components/QueueReview.svelte
 msgid "Account: {0}"
 msgstr "Konto: {0}"
 
@@ -452,6 +455,8 @@ msgid "Required"
 msgstr "Påkrævet"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Images"
 msgstr "Billeder"
@@ -759,9 +764,8 @@ msgstr "Pause"
 msgid "Stopping…"
 msgstr "Stopper…"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "POSTING PACE"
-msgstr "POSTHASTIGHED"
+#~ msgid "POSTING PACE"
+#~ msgstr "POSTHASTIGHED"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/PostingOptionsForm.svelte
@@ -950,6 +954,7 @@ msgstr "Luk vindue"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Create post"
 msgstr "Opret opslag"
@@ -960,6 +965,7 @@ msgstr "Skriv dit indlæg og tilføj billeder"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select groups"
 msgstr "Vælg grupper"
@@ -1105,7 +1111,9 @@ msgid "{0} shown"
 msgstr "{0} vist"
 
 #. 0: selectedGroupIds.length
+#. 0: groups.length
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "{0} selected"
 msgstr "{0} valgt"
 
@@ -1893,13 +1901,13 @@ msgid "Post text and images to multiple Facebook groups."
 msgstr "Udgiv tekst og billeder i flere Facebook-grupper."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Keep Postika open and your computer awake. Queues and logs are not restored after quitting."
 msgstr "Hold Postika åben og computeren vågen. Køer og logfiler gendannes ikke efter afslutning."
 
-#: src/components/FeaturesCard.svelte
-msgid "<0/> Features"
-msgstr "<0/> Funktioner"
+#~ msgid "<0/> Features"
+#~ msgstr "<0/> Funktioner"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/UsageGuide.svelte
@@ -2041,6 +2049,7 @@ msgid "Fetch"
 msgstr "Hent"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
 msgid "Fetched posts <0/>"
 msgstr "Hentede opslag <0/>"
 
@@ -2073,6 +2082,8 @@ msgid "Edit post {0}"
 msgstr "Rediger opslag {0}"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 msgid "Edit"
 msgstr "Rediger"
 
@@ -2088,6 +2099,7 @@ msgid "Delete"
 msgstr "Slet"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
 msgid "Post text"
 msgstr "Opslagets tekst"
 
@@ -2381,3 +2393,12 @@ msgstr "Dette sletter permanent profilens Facebook-login, grupper, kladder, bill
 #: src/components/DeleteProfileDialog.svelte
 msgid "Deleting…"
 msgstr "Sletter…"
+
+#: src/components/FeaturesCard.svelte
+msgid "<0/> How to use"
+msgstr "<0/> Sådan bruges appen"
+
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
+msgid "Review your queue"
+msgstr "Gennemgå din kø"

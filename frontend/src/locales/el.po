@@ -97,6 +97,7 @@ msgid "Load groups"
 msgstr "Φόρτωση ομάδων"
 
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "Groups"
 msgstr "Ομάδες"
 
@@ -300,7 +301,9 @@ msgid "Loading accounts"
 msgstr "Φόρτωση λογαριασμών"
 
 #. 0: current?.name ?? 'Loading accounts'
+#. 0: accountLabel(profile)
 #: src/components/AccountDropdown.svelte
+#: src/components/QueueReview.svelte
 msgid "Account: {0}"
 msgstr "Λογαριασμός: {0}"
 
@@ -452,6 +455,8 @@ msgid "Required"
 msgstr "Υποχρεωτικό"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Images"
 msgstr "Εικόνες"
@@ -759,9 +764,8 @@ msgstr "Παύση"
 msgid "Stopping…"
 msgstr "Διακοπή…"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "POSTING PACE"
-msgstr "ΡΥΘΜΟΣ ΑΝΑΡΤΗΣΗΣ"
+#~ msgid "POSTING PACE"
+#~ msgstr "ΡΥΘΜΟΣ ΑΝΑΡΤΗΣΗΣ"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/PostingOptionsForm.svelte
@@ -950,6 +954,7 @@ msgstr "Κλείσιμο παραθύρου"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Create post"
 msgstr "Δημιουργία ανάρτησης"
@@ -960,6 +965,7 @@ msgstr "Γράψτε την ανάρτησή σας και προσθέστε ε
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select groups"
 msgstr "Επιλογή ομάδων"
@@ -1105,7 +1111,9 @@ msgid "{0} shown"
 msgstr "Εμφανίστηκαν {0}"
 
 #. 0: selectedGroupIds.length
+#. 0: groups.length
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "{0} selected"
 msgstr "Επιλέχθηκαν {0}"
 
@@ -1893,13 +1901,13 @@ msgid "Post text and images to multiple Facebook groups."
 msgstr "Δημοσιεύστε κείμενο και εικόνες σε πολλές ομάδες Facebook."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Keep Postika open and your computer awake. Queues and logs are not restored after quitting."
 msgstr "Κρατήστε το Postika ανοιχτό και τον υπολογιστή ενεργό. Οι ουρές και τα αρχεία καταγραφής δεν επαναφέρονται μετά την έξοδο."
 
-#: src/components/FeaturesCard.svelte
-msgid "<0/> Features"
-msgstr "<0/> Δυνατότητες"
+#~ msgid "<0/> Features"
+#~ msgstr "<0/> Δυνατότητες"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/UsageGuide.svelte
@@ -2041,6 +2049,7 @@ msgid "Fetch"
 msgstr "Λήψη"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
 msgid "Fetched posts <0/>"
 msgstr "Ληφθείσες αναρτήσεις <0/>"
 
@@ -2073,6 +2082,8 @@ msgid "Edit post {0}"
 msgstr "Επεξεργασία ανάρτησης {0}"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 msgid "Edit"
 msgstr "Επεξεργασία"
 
@@ -2088,6 +2099,7 @@ msgid "Delete"
 msgstr "Διαγραφή"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
 msgid "Post text"
 msgstr "Κείμενο ανάρτησης"
 
@@ -2381,3 +2393,12 @@ msgstr "Αυτό διαγράφει οριστικά τη σύνδεση Faceboo
 #: src/components/DeleteProfileDialog.svelte
 msgid "Deleting…"
 msgstr "Διαγραφή…"
+
+#: src/components/FeaturesCard.svelte
+msgid "<0/> How to use"
+msgstr "<0/> Οδηγίες χρήσης"
+
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
+msgid "Review your queue"
+msgstr "Ελέγξτε την ουρά σας"

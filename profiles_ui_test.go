@@ -404,22 +404,36 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool) {
 		await(`() => !document.querySelector('dialog[id^="facebook-page-dialog-"]').open`)
 		eval(`() => {localStorage.setItem('postika:language','en');window.dispatchEvent(new StorageEvent('storage',{key:'postika:language',newValue:'en'}));}`)
 		await(`() => document.documentElement.lang==='en' && document.documentElement.dir==='ltr' && document.querySelector('.post-card .card-action').textContent==='Edit' && document.querySelector('.fetched-posts').innerText.includes('Second fetched post')`)
-		// Group-loading progress locks navigation, group actions and the app menu.
+		// Group-loading locks conflicting actions, while navigation and utilities remain usable.
 		await(`() => !document.querySelector('button.next').disabled`)
 		page.MustElement("button.next").MustClick()
 		await(`() => document.querySelector('#step-heading')?.textContent==='Select groups'`)
 		page.MustElement("button.load-groups").MustClick()
-		await(`() => document.querySelector('.groups-list')?.getAttribute('aria-busy')==='true' && document.querySelector('button.previous').disabled && document.querySelector('button.next').disabled && [...document.querySelectorAll('.groups-toolbar button,.bulk-actions button,.app-menu button')].every(b=>b.matches(':disabled')) && document.querySelector('#group-search').disabled && [...document.querySelectorAll('.groups-list input')].every(e=>e.disabled)`)
+		await(`() => document.querySelector('.groups-list')?.getAttribute('aria-busy')==='true' && !document.querySelector('button.previous').disabled && document.querySelector('button.next').disabled && !document.querySelector('#account-profile').disabled && !document.querySelector('.menu-controls').disabled && [...document.querySelectorAll('.groups-toolbar button,.bulk-actions button')].every(b=>b.matches(':disabled')) && document.querySelector('#group-search').disabled && [...document.querySelectorAll('.groups-list input')].every(e=>e.disabled)`)
 		eval(`() => {localStorage.setItem('postika:language','he');window.dispatchEvent(new StorageEvent('storage',{key:'postika:language'}));}`)
 		await(`() => document.documentElement.lang==='he' && document.querySelector('.group-status')?.textContent==='נטענו 2 קבוצות…' && !document.querySelector('.group-status details')`)
 		eval(`() => {localStorage.setItem('postika:language','en');window.dispatchEvent(new StorageEvent('storage',{key:'postika:language'}));}`)
 		await(`() => document.documentElement.lang==='en'`)
+		page.MustElement("[data-features-card]").MustClick()
+		await(`() => document.querySelector('#features-dialog').open && !!document.querySelector('.usage-guide')`)
+		page.MustElement("#features-dialog .close").MustClick()
+		page.MustElement("button.previous").MustClick()
+		await(`() => !!document.querySelector('.fetched-posts') && !document.querySelector('.click-confetti') && document.querySelector('.facebook-page-option').disabled && !document.querySelector('button.next').disabled`)
+		page.MustElement("button.next").MustClick()
+		await(`() => !!document.querySelector('.groups-toolbar') && document.querySelector('button.next').disabled`)
+		selectAccount(business.ID)
+		selectAccount("default")
+		await(`() => !!document.querySelector('.groups-toolbar') && document.querySelector('button.next').disabled`)
+		page.MustElement("button.previous").MustClick()
 		fakeGroupsLoading.Store(false)
+		await(`() => !document.querySelector('button.next').disabled`)
+		page.MustElement("button.next").MustClick()
 		await(`() => !document.querySelector('button.previous').disabled && !document.querySelector('.bulk-actions button').disabled`)
 		page.MustElement(".bulk-actions button").MustClick()
 		await(`() => document.querySelector('.selection-count').textContent.includes('2 selected') && !document.querySelector('button.next').disabled`)
 		page.MustElement("button.next").MustClick()
 		await(`() => document.querySelector('#step-heading')?.textContent==='Post or schedule' && [...document.querySelectorAll('.step-actions button')].filter(b=>['Post now','Schedule'].includes(b.textContent.trim())).length===2 && [...document.querySelectorAll('.step-actions button')].filter(b=>['Post now','Schedule'].includes(b.textContent.trim())).every(b=>!b.disabled)`)
+		await(`() => {const review=document.querySelector('.queue-review');return review?.textContent.includes('Fetched posts') && review.textContent.includes('First fetched post') && review.textContent.includes('Second fetched post') && review.textContent.includes('2 selected');}`)
 		eval(`() => [...document.querySelectorAll('.step-actions button')].find(b=>b.textContent.trim()==='Schedule').click()`)
 		await(`() => !!document.querySelector('#schedule-form') && !document.querySelector('button[form="schedule-form"]').disabled`)
 		page.MustElement(`button[form="schedule-form"]`).MustClick()
@@ -555,6 +569,8 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool) {
 	}
 	// The feature card traps focus, scrolls independently, and returns focus on close.
 	page.MustElement("[data-features-card]").MustClick()
+	await(`() => document.querySelector('[data-features-card]').textContent.includes('How to use') && document.querySelector('#features-dialog').open && !!document.querySelector('.usage-guide')`)
+	eval(`() => document.querySelector('.view-switch button:first-child').click()`)
 	await(`() => {const d=document.querySelector('#features-dialog');return d.open && d.contains(document.activeElement) && d.querySelectorAll('section').length===6 && d.innerText.includes('33 languages · 189 themes')}`)
 	if err := page.Keyboard.Type(input.Tab); err != nil {
 		t.Fatal(err)
@@ -788,6 +804,7 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool) {
 	// Descriptions, editor help, counts, and all three stages must translate too.
 	changeLanguage("id")
 	page.MustElement("[data-features-card]").MustClick()
+	eval(`() => document.querySelector('.view-switch button:first-child').click()`)
 	await(`() => document.querySelector('#features-heading').textContent==='Fitur & Cara Menggunakan' && document.querySelector('#features-dialog').innerText.includes('33 bahasa · 189 tema') && getComputedStyle(document.querySelector('#features-dialog')).backgroundColor===getComputedStyle(document.querySelector('.top-bar')).backgroundColor`)
 	page.MustElement("[data-usage-guide]").MustClick()
 	await(`() => document.querySelector('#features-heading').textContent==='Fitur & Cara Menggunakan' && document.querySelector('.usage-guide').textContent.includes('keduanya wajib') && !document.querySelector('.usage-guide').textContent.includes('Write your message') && document.querySelector('#post-body').textContent==='Business draft'`)
@@ -950,6 +967,7 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool) {
 	changeLanguage("ar")
 	page.MustActivate()
 	page.MustElement("[data-features-card]").MustClick()
+	eval(`() => document.querySelector('.view-switch button:first-child').click()`)
 	await(`() => {const d=document.querySelector('#features-dialog');return d.open && document.querySelector('#features-heading').textContent==='الميزات وكيفية الاستخدام' && getComputedStyle(d).direction==='rtl' && d.innerText.includes('33 لغة · 189 سمة')}`)
 	page.MustElement("[data-usage-guide]").MustClick()
 	await(`() => document.querySelector('#features-heading').textContent==='الميزات وكيفية الاستخدام' && document.querySelector('.usage-guide').textContent.includes('كلاهما مطلوب') && getComputedStyle(document.querySelector('.usage-guide')).direction==='rtl'`)
@@ -979,6 +997,7 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool) {
 	page.MustElement(".add-account .action-button--secondary").MustClick()
 
 	page.MustElement("[data-features-card]").MustClick()
+	eval(`() => document.querySelector('.view-switch button:first-child').click()`)
 	await(`() => {const d=document.querySelector('#features-dialog');return d.open && getComputedStyle(d).direction==='rtl' && document.querySelector('#features-heading').textContent==='תכונות ומדריך שימוש' && d.innerText.includes('33 שפות · 189 ערכות נושא')}`)
 	page.MustElement("[data-usage-guide]").MustClick()
 	await(`() => document.querySelector('.usage-guide').textContent.includes('שניהם נדרשים') && getComputedStyle(document.querySelector('.usage-guide')).direction==='rtl'`)
@@ -1045,7 +1064,7 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool) {
 	if err := page.Reload(); err != nil {
 		t.Fatal(err)
 	}
-	await(`() => document.documentElement.lang==='sw' && document.documentElement.dir==='ltr' && document.querySelector('#post-body')?.textContent==='Business draft' && document.querySelector('[data-features-card]')?.textContent.includes('Vipengele') && localStorage.getItem('postika:language')===null`)
+	await(`() => document.documentElement.lang==='sw' && document.documentElement.dir==='ltr' && document.querySelector('#post-body')?.textContent==='Business draft' && document.querySelector('[data-features-card]')?.textContent.includes('Jinsi ya kutumia') && localStorage.getItem('postika:language')===null`)
 	changeLanguage("en")
 	if err := page.Reload(); err != nil {
 		t.Fatal(err)

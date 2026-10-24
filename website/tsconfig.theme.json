@@ -1,0 +1,5 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": { "outFile": "static/js/theme-init.js" },
+  "include": ["src/theme-types.d.ts", "src/theme-data.ts", "src/theme-init.ts"]
+}

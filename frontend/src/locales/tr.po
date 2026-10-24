@@ -97,6 +97,7 @@ msgid "Load groups"
 msgstr "Grupları yükle"
 
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "Groups"
 msgstr "Gruplar"
 
@@ -300,7 +301,9 @@ msgid "Loading accounts"
 msgstr "Hesaplar yükleniyor"
 
 #. 0: current?.name ?? 'Loading accounts'
+#. 0: accountLabel(profile)
 #: src/components/AccountDropdown.svelte
+#: src/components/QueueReview.svelte
 msgid "Account: {0}"
 msgstr "Hesap: {0}"
 
@@ -452,6 +455,8 @@ msgid "Required"
 msgstr "Gerekli"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Images"
 msgstr "Görseller"
@@ -759,9 +764,8 @@ msgstr "Duraklat"
 msgid "Stopping…"
 msgstr "Durduruluyor…"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "POSTING PACE"
-msgstr "PAYLAŞMA TEMPOSU"
+#~ msgid "POSTING PACE"
+#~ msgstr "PAYLAŞMA TEMPOSU"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/PostingOptionsForm.svelte
@@ -950,6 +954,7 @@ msgstr "Pencereyi kapat"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Create post"
 msgstr "Gönderi oluştur"
@@ -960,6 +965,7 @@ msgstr "Gönderinizi yazın ve resim ekleyin"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select groups"
 msgstr "Grupları seç"
@@ -1105,7 +1111,9 @@ msgid "{0} shown"
 msgstr "{0} gösterildi"
 
 #. 0: selectedGroupIds.length
+#. 0: groups.length
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "{0} selected"
 msgstr "{0} seçildi"
 
@@ -1893,13 +1901,13 @@ msgid "Post text and images to multiple Facebook groups."
 msgstr "Birden fazla Facebook grubunda metin ve görsel paylaşın."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Keep Postika open and your computer awake. Queues and logs are not restored after quitting."
 msgstr "Postika’yı açık, bilgisayarınızı uyanık tutun. Çıkıştan sonra kuyruklar ve günlükler geri yüklenmez."
 
-#: src/components/FeaturesCard.svelte
-msgid "<0/> Features"
-msgstr "<0/> Özellikler"
+#~ msgid "<0/> Features"
+#~ msgstr "<0/> Özellikler"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/UsageGuide.svelte
@@ -2041,6 +2049,7 @@ msgid "Fetch"
 msgstr "Al"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
 msgid "Fetched posts <0/>"
 msgstr "Alınan gönderiler <0/>"
 
@@ -2073,6 +2082,8 @@ msgid "Edit post {0}"
 msgstr "Gönderi {0} düzenle"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 msgid "Edit"
 msgstr "Düzenle"
 
@@ -2088,6 +2099,7 @@ msgid "Delete"
 msgstr "Sil"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
 msgid "Post text"
 msgstr "Gönderi metni"
 
@@ -2381,3 +2393,12 @@ msgstr "Bu işlem profilin Facebook oturumunu, gruplarını, taslaklarını, gö
 #: src/components/DeleteProfileDialog.svelte
 msgid "Deleting…"
 msgstr "Siliniyor…"
+
+#: src/components/FeaturesCard.svelte
+msgid "<0/> How to use"
+msgstr "<0/> Nasıl kullanılır"
+
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
+msgid "Review your queue"
+msgstr "Kuyruğunuzu gözden geçirin"

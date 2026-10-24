@@ -97,6 +97,7 @@ msgid "Load groups"
 msgstr "그룹 불러오기"
 
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "Groups"
 msgstr "그룹"
 
@@ -300,7 +301,9 @@ msgid "Loading accounts"
 msgstr "계정 불러오기"
 
 #. 0: current?.name ?? 'Loading accounts'
+#. 0: accountLabel(profile)
 #: src/components/AccountDropdown.svelte
+#: src/components/QueueReview.svelte
 msgid "Account: {0}"
 msgstr "계정: {0}"
 
@@ -452,6 +455,8 @@ msgid "Required"
 msgstr "필수"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Images"
 msgstr "이미지"
@@ -759,9 +764,8 @@ msgstr "일시 중지"
 msgid "Stopping…"
 msgstr "중지 중…"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "POSTING PACE"
-msgstr "게시 속도"
+#~ msgid "POSTING PACE"
+#~ msgstr "게시 속도"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/PostingOptionsForm.svelte
@@ -950,6 +954,7 @@ msgstr "창 닫기"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Create post"
 msgstr "게시물 작성"
@@ -960,6 +965,7 @@ msgstr "게시물 작성 및 이미지 추가"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select groups"
 msgstr "그룹 선택"
@@ -1105,7 +1111,9 @@ msgid "{0} shown"
 msgstr "{0} 표시됨"
 
 #. 0: selectedGroupIds.length
+#. 0: groups.length
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "{0} selected"
 msgstr "{0} 선택됨"
 
@@ -1893,13 +1901,13 @@ msgid "Post text and images to multiple Facebook groups."
 msgstr "여러 Facebook 그룹에 텍스트와 이미지를 게시하세요."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Keep Postika open and your computer awake. Queues and logs are not restored after quitting."
 msgstr "Postika를 열어 두고 컴퓨터가 절전 모드로 전환되지 않게 하세요. 종료 후에는 대기열과 로그가 복원되지 않습니다."
 
-#: src/components/FeaturesCard.svelte
-msgid "<0/> Features"
-msgstr "<0/> 기능"
+#~ msgid "<0/> Features"
+#~ msgstr "<0/> 기능"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/UsageGuide.svelte
@@ -2041,6 +2049,7 @@ msgid "Fetch"
 msgstr "가져오기"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
 msgid "Fetched posts <0/>"
 msgstr "가져온 게시물 <0/>"
 
@@ -2073,6 +2082,8 @@ msgid "Edit post {0}"
 msgstr "게시물 {0} 수정"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 msgid "Edit"
 msgstr "수정"
 
@@ -2088,6 +2099,7 @@ msgid "Delete"
 msgstr "삭제"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
 msgid "Post text"
 msgstr "게시물 텍스트"
 
@@ -2381,3 +2393,12 @@ msgstr "이 프로필의 Facebook 로그인, 그룹, 초안, 이미지, 설정 �
 #: src/components/DeleteProfileDialog.svelte
 msgid "Deleting…"
 msgstr "삭제 중…"
+
+#: src/components/FeaturesCard.svelte
+msgid "<0/> How to use"
+msgstr "<0/> 사용 방법"
+
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
+msgid "Review your queue"
+msgstr "대기열 검토"

@@ -97,6 +97,7 @@ msgid "Load groups"
 msgstr "Läs in grupper"
 
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "Groups"
 msgstr "Grupper"
 
@@ -300,7 +301,9 @@ msgid "Loading accounts"
 msgstr "Laddar konton"
 
 #. 0: current?.name ?? 'Loading accounts'
+#. 0: accountLabel(profile)
 #: src/components/AccountDropdown.svelte
+#: src/components/QueueReview.svelte
 msgid "Account: {0}"
 msgstr "Konto: {0}"
 
@@ -452,6 +455,8 @@ msgid "Required"
 msgstr "Obligatoriskt"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Images"
 msgstr "Bilder"
@@ -759,9 +764,8 @@ msgstr "Pausa"
 msgid "Stopping…"
 msgstr "Stoppar…"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "POSTING PACE"
-msgstr "POSTNINGSTAKT"
+#~ msgid "POSTING PACE"
+#~ msgstr "POSTNINGSTAKT"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/PostingOptionsForm.svelte
@@ -950,6 +954,7 @@ msgstr "Stäng fönster"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Create post"
 msgstr "Skapa inlägg"
@@ -960,6 +965,7 @@ msgstr "Skriv ditt inlägg och lägg till bilder"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select groups"
 msgstr "Välj grupper"
@@ -1105,7 +1111,9 @@ msgid "{0} shown"
 msgstr "{0} visade"
 
 #. 0: selectedGroupIds.length
+#. 0: groups.length
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "{0} selected"
 msgstr "{0} valda"
 
@@ -1893,13 +1901,13 @@ msgid "Post text and images to multiple Facebook groups."
 msgstr "Publicera text och bilder i flera Facebook-grupper."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Keep Postika open and your computer awake. Queues and logs are not restored after quitting."
 msgstr "Håll Postika öppet och datorn vaken. Köer och loggar återställs inte efter avslut."
 
-#: src/components/FeaturesCard.svelte
-msgid "<0/> Features"
-msgstr "<0/> Funktioner"
+#~ msgid "<0/> Features"
+#~ msgstr "<0/> Funktioner"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/UsageGuide.svelte
@@ -2041,6 +2049,7 @@ msgid "Fetch"
 msgstr "Hämta"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
 msgid "Fetched posts <0/>"
 msgstr "Hämtade inlägg <0/>"
 
@@ -2073,6 +2082,8 @@ msgid "Edit post {0}"
 msgstr "Redigera inlägg {0}"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 msgid "Edit"
 msgstr "Redigera"
 
@@ -2088,6 +2099,7 @@ msgid "Delete"
 msgstr "Ta bort"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
 msgid "Post text"
 msgstr "Inläggstext"
 
@@ -2381,3 +2393,12 @@ msgstr "Detta tar permanent bort profilens Facebook-inloggning, grupper, utkast,
 #: src/components/DeleteProfileDialog.svelte
 msgid "Deleting…"
 msgstr "Tar bort…"
+
+#: src/components/FeaturesCard.svelte
+msgid "<0/> How to use"
+msgstr "<0/> Så använder du appen"
+
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
+msgid "Review your queue"
+msgstr "Granska din kö"

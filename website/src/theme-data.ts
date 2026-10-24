@@ -1,0 +1,1704 @@
+// Generated from the desktop themes. Run npm run themes:sync to refresh.
+const siteThemeOptions: SiteThemeOption[] = [
+  {
+    "id": "light",
+    "name": "Postika Light",
+    "bg": "#f8f9fa",
+    "main": "#087f75",
+    "sub": "#687a71",
+    "text": "#26332f",
+    "mode": "light"
+  },
+  {
+    "id": "dark",
+    "name": "Postika Dark",
+    "bg": "#151c19",
+    "main": "#60d4bc",
+    "sub": "#a1b5a8",
+    "text": "#e1eae4",
+    "mode": "dark"
+  },
+  {
+    "name": "8008",
+    "bg": "#333a45",
+    "main": "#f44c7f",
+    "sub": "#939eae",
+    "text": "#e9ecf0",
+    "id": "palette:8008",
+    "mode": "dark"
+  },
+  {
+    "name": "80s after dark",
+    "bg": "#1b1d36",
+    "main": "#fca6d1",
+    "sub": "#99d6ea",
+    "text": "#e1e7ec",
+    "id": "palette:80s-after-dark",
+    "mode": "dark"
+  },
+  {
+    "name": "9009",
+    "bg": "#eeebe2",
+    "main": "#080909",
+    "sub": "#99947f",
+    "text": "#080909",
+    "id": "palette:9009",
+    "mode": "light"
+  },
+  {
+    "name": "aether",
+    "bg": "#101820",
+    "main": "#eedaea",
+    "sub": "#cf6bdd",
+    "text": "#eedaea",
+    "id": "palette:aether",
+    "mode": "dark"
+  },
+  {
+    "name": "alduin",
+    "bg": "#1c1c1c",
+    "main": "#dfd7af",
+    "sub": "#444444",
+    "text": "#f5f3ed",
+    "id": "palette:alduin",
+    "mode": "dark"
+  },
+  {
+    "name": "alpine",
+    "bg": "#6c687f",
+    "main": "#ffffff",
+    "sub": "#9994b8",
+    "text": "#ffffff",
+    "id": "palette:alpine",
+    "mode": "dark"
+  },
+  {
+    "name": "anti hero",
+    "bg": "#00002e",
+    "main": "#ffadad",
+    "sub": "#ff3d8b",
+    "text": "#f1deef",
+    "id": "palette:anti-hero",
+    "mode": "dark"
+  },
+  {
+    "name": "arch",
+    "bg": "#0c0d11",
+    "main": "#7ebab5",
+    "sub": "#454864",
+    "text": "#f6f5f5",
+    "id": "palette:arch",
+    "mode": "dark"
+  },
+  {
+    "name": "aurora",
+    "bg": "#011926",
+    "main": "#00e980",
+    "sub": "#245c69",
+    "text": "#fff",
+    "id": "palette:aurora",
+    "mode": "dark"
+  },
+  {
+    "name": "beach",
+    "bg": "#ffeead",
+    "main": "#96ceb4",
+    "sub": "#ffcc5c",
+    "text": "#5b7869",
+    "id": "palette:beach",
+    "mode": "light"
+  },
+  {
+    "name": "bento",
+    "bg": "#2d394d",
+    "main": "#ff7a90",
+    "sub": "#4a768d",
+    "text": "#fffaf8",
+    "id": "palette:bento",
+    "mode": "dark"
+  },
+  {
+    "name": "bingsu",
+    "bg": "#b8a7aa",
+    "main": "#83616e",
+    "sub": "#48373d",
+    "text": "#ebe6ea",
+    "id": "palette:bingsu",
+    "mode": "light"
+  },
+  {
+    "name": "bliss",
+    "bg": "#262727",
+    "main": "#f0d3c9",
+    "sub": "#665957",
+    "text": "#fff",
+    "id": "palette:bliss",
+    "mode": "dark"
+  },
+  {
+    "name": "blue dolphin",
+    "bg": "#003950",
+    "main": "#ffcefb",
+    "sub": "#00e4ff",
+    "text": "#82eaff",
+    "id": "palette:blue-dolphin",
+    "mode": "dark"
+  },
+  {
+    "name": "blueberry dark",
+    "bg": "#212b42",
+    "main": "#add7ff",
+    "sub": "#5c7da5",
+    "text": "#91b4d5",
+    "id": "palette:blueberry-dark",
+    "mode": "dark"
+  },
+  {
+    "name": "blueberry light",
+    "bg": "#dae0f5",
+    "main": "#506477",
+    "sub": "#92a4be",
+    "text": "#678198",
+    "id": "palette:blueberry-light",
+    "mode": "light"
+  },
+  {
+    "name": "botanical",
+    "bg": "#7b9c98",
+    "main": "#eaf1f3",
+    "sub": "#495755",
+    "text": "#eaf1f3",
+    "id": "palette:botanical",
+    "mode": "light"
+  },
+  {
+    "name": "bouquet",
+    "bg": "#173f35",
+    "main": "#eaa09c",
+    "sub": "#408e7b",
+    "text": "#e9e0d2",
+    "id": "palette:bouquet",
+    "mode": "dark"
+  },
+  {
+    "name": "breeze",
+    "bg": "#e8d5c4",
+    "main": "#7d67a9",
+    "sub": "#3a98b9",
+    "text": "#1b4c5e",
+    "id": "palette:breeze",
+    "mode": "light"
+  },
+  {
+    "name": "bushido",
+    "bg": "#242933",
+    "main": "#ec4c56",
+    "sub": "#596172",
+    "text": "#f6f0e9",
+    "id": "palette:bushido",
+    "mode": "dark"
+  },
+  {
+    "name": "cafe",
+    "bg": "#ceb18d",
+    "main": "#14120f",
+    "sub": "#d4d2d1",
+    "text": "#14120f",
+    "id": "palette:cafe",
+    "mode": "light"
+  },
+  {
+    "name": "camping",
+    "bg": "#faf1e4",
+    "main": "#618c56",
+    "sub": "#c2b8aa",
+    "text": "#3c403b",
+    "id": "palette:camping",
+    "mode": "light"
+  },
+  {
+    "name": "carbon",
+    "bg": "#313131",
+    "main": "#f66e0d",
+    "sub": "#616161",
+    "text": "#f5e6c8",
+    "id": "palette:carbon",
+    "mode": "dark"
+  },
+  {
+    "name": "catppuccin",
+    "bg": "#1e1e2e",
+    "main": "#cba6f7",
+    "sub": "#7f849c",
+    "text": "#cdd6f4",
+    "id": "palette:catppuccin",
+    "mode": "dark"
+  },
+  {
+    "name": "chaos theory",
+    "bg": "#141221",
+    "main": "#fd77d7",
+    "sub": "#676e8a",
+    "text": "#dde5ed",
+    "id": "palette:chaos-theory",
+    "mode": "dark"
+  },
+  {
+    "name": "cheesecake",
+    "bg": "#fdf0d5",
+    "main": "#8e2949",
+    "sub": "#d91c81",
+    "text": "#3a3335",
+    "id": "palette:cheesecake",
+    "mode": "light"
+  },
+  {
+    "name": "cherry blossom",
+    "bg": "#323437",
+    "main": "#d65ccc",
+    "sub": "#787d82",
+    "text": "#d1d0c5",
+    "id": "palette:cherry-blossom",
+    "mode": "dark"
+  },
+  {
+    "name": "comfy",
+    "bg": "#4a5b6e",
+    "main": "#f8cdc6",
+    "sub": "#9ec1cc",
+    "text": "#f5efee",
+    "id": "palette:comfy",
+    "mode": "dark"
+  },
+  {
+    "name": "copper",
+    "bg": "#442f29",
+    "main": "#b46a55",
+    "sub": "#7ebab5",
+    "text": "#e7e0de",
+    "id": "palette:copper",
+    "mode": "dark"
+  },
+  {
+    "name": "creamsicle",
+    "bg": "#ff9869",
+    "main": "#fcfcf8",
+    "sub": "#ff661f",
+    "text": "#fcfcf8",
+    "id": "palette:creamsicle",
+    "mode": "light"
+  },
+  {
+    "name": "cy red",
+    "bg": "#6e2626",
+    "main": "#e55050",
+    "sub": "#ff6060",
+    "text": "#ffaaaa",
+    "id": "palette:cy-red",
+    "mode": "dark"
+  },
+  {
+    "name": "cyberspace",
+    "bg": "#181c18",
+    "main": "#00ce7c",
+    "sub": "#9578d3",
+    "text": "#c2fbe1",
+    "id": "palette:cyberspace",
+    "mode": "dark"
+  },
+  {
+    "name": "dark",
+    "bg": "#111",
+    "main": "#eee",
+    "sub": "#444",
+    "text": "#eee",
+    "id": "palette:dark",
+    "mode": "dark"
+  },
+  {
+    "name": "dark magic girl",
+    "bg": "#091f2c",
+    "main": "#f5b1cc",
+    "sub": "#93e8d3",
+    "text": "#a288d9",
+    "id": "palette:dark-magic-girl",
+    "mode": "dark"
+  },
+  {
+    "name": "dark note",
+    "bg": "#1f1f1f",
+    "main": "#f2c17b",
+    "sub": "#768f95",
+    "text": "#d2dff4",
+    "id": "palette:dark-note",
+    "mode": "dark"
+  },
+  {
+    "name": "darling",
+    "bg": "#fec8cd",
+    "main": "#ffffff",
+    "sub": "#a30000",
+    "text": "#ffffff",
+    "id": "palette:darling",
+    "mode": "light"
+  },
+  {
+    "name": "deku",
+    "bg": "#058b8c",
+    "main": "#b63530",
+    "sub": "#255458",
+    "text": "#f7f2ea",
+    "id": "palette:deku",
+    "mode": "light"
+  },
+  {
+    "name": "desert oasis",
+    "bg": "#fff2d5",
+    "main": "#d19d01",
+    "sub": "#0061fe",
+    "text": "#332800",
+    "id": "palette:desert-oasis",
+    "mode": "light"
+  },
+  {
+    "name": "dev",
+    "bg": "#1b2028",
+    "main": "#23a9d5",
+    "sub": "#4b5975",
+    "text": "#ccccb5",
+    "id": "palette:dev",
+    "mode": "dark"
+  },
+  {
+    "name": "diner",
+    "bg": "#537997",
+    "main": "#c3af5b",
+    "sub": "#445c7f",
+    "text": "#dfdbc8",
+    "id": "palette:diner",
+    "mode": "dark"
+  },
+  {
+    "name": "dino",
+    "bg": "#ffffff",
+    "main": "#40d672",
+    "sub": "#d5d5d5",
+    "text": "#1d221f",
+    "id": "palette:dino",
+    "mode": "light"
+  },
+  {
+    "name": "discord",
+    "bg": "#313338",
+    "main": "#5a65ea",
+    "sub": "#565861",
+    "text": "#dcdee3",
+    "id": "palette:discord",
+    "mode": "dark"
+  },
+  {
+    "name": "dmg",
+    "bg": "#dadbdc",
+    "main": "#ae185e",
+    "sub": "#3846b1",
+    "text": "#414141",
+    "id": "palette:dmg",
+    "mode": "light"
+  },
+  {
+    "name": "dollar",
+    "bg": "#e4e4d4",
+    "main": "#6b886b",
+    "sub": "#8a9b69",
+    "text": "#555a56",
+    "id": "palette:dollar",
+    "mode": "light"
+  },
+  {
+    "name": "dots",
+    "bg": "#121520",
+    "main": "#fff",
+    "sub": "#676e8a",
+    "text": "#fff",
+    "id": "palette:dots",
+    "mode": "dark"
+  },
+  {
+    "name": "dracula",
+    "bg": "#282a36",
+    "main": "#bd93f9",
+    "sub": "#6272a4",
+    "text": "#f8f8f2",
+    "id": "palette:dracula",
+    "mode": "dark"
+  },
+  {
+    "name": "drowning",
+    "bg": "#191826",
+    "main": "#4a6fb5",
+    "sub": "#50688c",
+    "text": "#9393a7",
+    "id": "palette:drowning",
+    "mode": "dark"
+  },
+  {
+    "name": "dualshot",
+    "bg": "#737373",
+    "main": "#212222",
+    "sub": "#aaaaaa",
+    "text": "#212222",
+    "id": "palette:dualshot",
+    "mode": "dark"
+  },
+  {
+    "name": "earthsong",
+    "bg": "#292521",
+    "main": "#509452",
+    "sub": "#f5ae2d",
+    "text": "#e6c7a8",
+    "id": "palette:earthsong",
+    "mode": "dark"
+  },
+  {
+    "name": "everblush",
+    "bg": "#141b1e",
+    "main": "#8ccf7e",
+    "sub": "#838887",
+    "text": "#dadada",
+    "id": "palette:everblush",
+    "mode": "dark"
+  },
+  {
+    "name": "evil eye",
+    "bg": "#0084c2",
+    "main": "#f7f2ea",
+    "sub": "#01589f",
+    "text": "#171718",
+    "id": "palette:evil-eye",
+    "mode": "light"
+  },
+  {
+    "name": "ez mode",
+    "bg": "#0068c6",
+    "main": "#fa62d5",
+    "sub": "#138bf7",
+    "text": "#ffffff",
+    "id": "palette:ez-mode",
+    "mode": "dark"
+  },
+  {
+    "name": "fire",
+    "bg": "#0f0000",
+    "main": "#b31313",
+    "sub": "#683434",
+    "text": "#ffffff",
+    "id": "palette:fire",
+    "mode": "dark"
+  },
+  {
+    "name": "fledgling",
+    "bg": "#3b363f",
+    "main": "#fc6e83",
+    "sub": "#8e5568",
+    "text": "#e6d5d3",
+    "id": "palette:fledgling",
+    "mode": "dark"
+  },
+  {
+    "name": "fleuriste",
+    "bg": "#c6b294",
+    "main": "#405a52",
+    "sub": "#64374d",
+    "text": "#091914",
+    "id": "palette:fleuriste",
+    "mode": "light"
+  },
+  {
+    "name": "floret",
+    "bg": "#00272c",
+    "main": "#ffdd6d",
+    "sub": "#779097",
+    "text": "#e5e5e5",
+    "id": "palette:floret",
+    "mode": "dark"
+  },
+  {
+    "name": "froyo",
+    "bg": "#e1dacb",
+    "main": "#7b7d7d",
+    "sub": "#b29c5e",
+    "text": "#7b7d7d",
+    "id": "palette:froyo",
+    "mode": "light"
+  },
+  {
+    "name": "frozen llama",
+    "bg": "#9bf2ea",
+    "main": "#6d44a6",
+    "sub": "#b690fd",
+    "text": "#ffffff",
+    "id": "palette:frozen-llama",
+    "mode": "light"
+  },
+  {
+    "name": "fruit chew",
+    "bg": "#d6d3d6",
+    "main": "#5c1e5f",
+    "sub": "#b49cb5",
+    "text": "#282528",
+    "id": "palette:fruit-chew",
+    "mode": "light"
+  },
+  {
+    "name": "fundamentals",
+    "bg": "#727474",
+    "main": "#7fa482",
+    "sub": "#cac4be",
+    "text": "#131313",
+    "id": "palette:fundamentals",
+    "mode": "dark"
+  },
+  {
+    "name": "future funk",
+    "bg": "#2e1a47",
+    "main": "#f7f2ea",
+    "sub": "#c18fff",
+    "text": "#f7f2ea",
+    "id": "palette:future-funk",
+    "mode": "dark"
+  },
+  {
+    "name": "github",
+    "bg": "#212830",
+    "main": "#41ce5c",
+    "sub": "#788386",
+    "text": "#ccdae6",
+    "id": "palette:github",
+    "mode": "dark"
+  },
+  {
+    "name": "godspeed",
+    "bg": "#eae4cf",
+    "main": "#9abbcd",
+    "sub": "#ada998",
+    "text": "#646669",
+    "id": "palette:godspeed",
+    "mode": "light"
+  },
+  {
+    "name": "graen",
+    "bg": "#303c36",
+    "main": "#a59682",
+    "sub": "#181d1a",
+    "text": "#a59682",
+    "id": "palette:graen",
+    "mode": "dark"
+  },
+  {
+    "name": "grand prix",
+    "bg": "#36475c",
+    "main": "#c0d036",
+    "sub": "#5c6c80",
+    "text": "#c1c7d7",
+    "id": "palette:grand-prix",
+    "mode": "dark"
+  },
+  {
+    "name": "grape",
+    "bg": "#2c003e",
+    "main": "#ff8f00",
+    "sub": "#6e225e",
+    "text": "#fff",
+    "id": "palette:grape",
+    "mode": "dark"
+  },
+  {
+    "name": "gruvbox dark",
+    "bg": "#282828",
+    "main": "#d79921",
+    "sub": "#665c54",
+    "text": "#ebdbb2",
+    "id": "palette:gruvbox-dark",
+    "mode": "dark"
+  },
+  {
+    "name": "gruvbox light",
+    "bg": "#fbf1c7",
+    "main": "#689d6a",
+    "sub": "#a89984",
+    "text": "#3c3836",
+    "id": "palette:gruvbox-light",
+    "mode": "light"
+  },
+  {
+    "name": "hammerhead",
+    "bg": "#030613",
+    "main": "#4fcdb9",
+    "sub": "#213c53",
+    "text": "#e2f1f5",
+    "id": "palette:hammerhead",
+    "mode": "dark"
+  },
+  {
+    "name": "hanok",
+    "bg": "#d8d2c3",
+    "main": "#513a2a",
+    "sub": "#8b6f5c",
+    "text": "#393b3b",
+    "id": "palette:hanok",
+    "mode": "light"
+  },
+  {
+    "name": "hedge",
+    "bg": "#415e31",
+    "main": "#6a994e",
+    "sub": "#ede5b4",
+    "text": "#f7f1d6",
+    "id": "palette:hedge",
+    "mode": "dark"
+  },
+  {
+    "name": "honey",
+    "bg": "#f2aa00",
+    "main": "#fff546",
+    "sub": "#a66b00",
+    "text": "#f3eecb",
+    "id": "palette:honey",
+    "mode": "light"
+  },
+  {
+    "name": "horizon",
+    "bg": "#1c1e26",
+    "main": "#c4a88a",
+    "sub": "#db886f",
+    "text": "#bbbbbb",
+    "id": "palette:horizon",
+    "mode": "dark"
+  },
+  {
+    "name": "husqy",
+    "bg": "#000000",
+    "main": "#c58aff",
+    "sub": "#972fff",
+    "text": "#ebd7ff",
+    "id": "palette:husqy",
+    "mode": "dark"
+  },
+  {
+    "name": "iceberg dark",
+    "bg": "#161821",
+    "main": "#84a0c6",
+    "sub": "#595e76",
+    "text": "#c6c8d1",
+    "id": "palette:iceberg-dark",
+    "mode": "dark"
+  },
+  {
+    "name": "iceberg light",
+    "bg": "#e8e9ec",
+    "main": "#2d539e",
+    "sub": "#adb1c4",
+    "text": "#33374c",
+    "id": "palette:iceberg-light",
+    "mode": "light"
+  },
+  {
+    "name": "incognito",
+    "bg": "#0e0e0e",
+    "main": "#ff9900",
+    "sub": "#555555",
+    "text": "#c6c6c6",
+    "id": "palette:incognito",
+    "mode": "dark"
+  },
+  {
+    "name": "ishtar",
+    "bg": "#202020",
+    "main": "#91170c",
+    "sub": "#847869",
+    "text": "#fae1c3",
+    "id": "palette:ishtar",
+    "mode": "dark"
+  },
+  {
+    "name": "iv clover",
+    "bg": "#a0a0a0",
+    "main": "#573e40",
+    "sub": "#353535",
+    "text": "#3b2d3b",
+    "id": "palette:iv-clover",
+    "mode": "light"
+  },
+  {
+    "name": "iv spade",
+    "bg": "#0c0c0c",
+    "main": "#b7976a",
+    "sub": "#404040",
+    "text": "#d3c2c3",
+    "id": "palette:iv-spade",
+    "mode": "dark"
+  },
+  {
+    "name": "joker",
+    "bg": "#1a0e25",
+    "main": "#99de1e",
+    "sub": "#7554a3",
+    "text": "#e9e2f5",
+    "id": "palette:joker",
+    "mode": "dark"
+  },
+  {
+    "name": "laser",
+    "bg": "#221b44",
+    "main": "#009eaf",
+    "sub": "#b82356",
+    "text": "#dbe7e8",
+    "id": "palette:laser",
+    "mode": "dark"
+  },
+  {
+    "name": "lavender",
+    "bg": "#ada6c2",
+    "main": "#e4e3e9",
+    "sub": "#e4e3e9",
+    "text": "#2f2a41",
+    "id": "palette:lavender",
+    "mode": "light"
+  },
+  {
+    "name": "leather",
+    "bg": "#a86948",
+    "main": "#ffe4bc",
+    "sub": "#81482b",
+    "text": "#ffe4bc",
+    "id": "palette:leather",
+    "mode": "light"
+  },
+  {
+    "name": "lil dragon",
+    "bg": "#ebe1ef",
+    "main": "#8a5bd6",
+    "sub": "#a28db8",
+    "text": "#212b43",
+    "id": "palette:lil-dragon",
+    "mode": "light"
+  },
+  {
+    "name": "lilac mist",
+    "bg": "#fffbfe",
+    "main": "#b94189",
+    "sub": "#e094c2",
+    "text": "#5c2954",
+    "id": "palette:lilac-mist",
+    "mode": "light"
+  },
+  {
+    "name": "lime",
+    "bg": "#7c878e",
+    "main": "#93c247",
+    "sub": "#4b5257",
+    "text": "#bfcfdc",
+    "id": "palette:lime",
+    "mode": "light"
+  },
+  {
+    "name": "luna",
+    "bg": "#221c35",
+    "main": "#f67599",
+    "sub": "#5a3a7e",
+    "text": "#ffe3eb",
+    "id": "palette:luna",
+    "mode": "dark"
+  },
+  {
+    "name": "macroblank",
+    "bg": "#b2d2c8",
+    "main": "#c13117",
+    "sub": "#717977",
+    "text": "#490909",
+    "id": "palette:macroblank",
+    "mode": "light"
+  },
+  {
+    "name": "magic girl",
+    "bg": "#ffffff",
+    "main": "#f5b1cc",
+    "sub": "#93e8d3",
+    "text": "#00ac8c",
+    "id": "palette:magic-girl",
+    "mode": "light"
+  },
+  {
+    "name": "mashu",
+    "bg": "#2b2b2c",
+    "main": "#76689a",
+    "sub": "#d8a0a6",
+    "text": "#f1e2e4",
+    "id": "palette:mashu",
+    "mode": "dark"
+  },
+  {
+    "name": "matcha moccha",
+    "bg": "#523525",
+    "main": "#7ec160",
+    "sub": "#9e6749",
+    "text": "#ecddcc",
+    "id": "palette:matcha-moccha",
+    "mode": "dark"
+  },
+  {
+    "name": "material",
+    "bg": "#263238",
+    "main": "#80cbc4",
+    "sub": "#4c6772",
+    "text": "#e6edf3",
+    "id": "palette:material",
+    "mode": "dark"
+  },
+  {
+    "name": "matrix",
+    "bg": "#000000",
+    "main": "#15ff00",
+    "sub": "#006500",
+    "text": "#d1ffcd",
+    "id": "palette:matrix",
+    "mode": "dark"
+  },
+  {
+    "name": "menthol",
+    "bg": "#00c18c",
+    "main": "#ffffff",
+    "sub": "#186544",
+    "text": "#ffffff",
+    "id": "palette:menthol",
+    "mode": "light"
+  },
+  {
+    "name": "metaverse",
+    "bg": "#232323",
+    "main": "#d82934",
+    "sub": "#5e5e5e",
+    "text": "#e8e8e8",
+    "id": "palette:metaverse",
+    "mode": "dark"
+  },
+  {
+    "name": "metropolis",
+    "bg": "#0f1f2c",
+    "main": "#56c3b7",
+    "sub": "#326984",
+    "text": "#e4edf1",
+    "id": "palette:metropolis",
+    "mode": "dark"
+  },
+  {
+    "name": "mexican",
+    "bg": "#f8ad34",
+    "main": "#b12189",
+    "sub": "#333",
+    "text": "#eee",
+    "id": "palette:mexican",
+    "mode": "light"
+  },
+  {
+    "name": "miami",
+    "bg": "#f35588",
+    "main": "#05dfd7",
+    "sub": "#94294c",
+    "text": "#f0e9ec",
+    "id": "palette:miami",
+    "mode": "light"
+  },
+  {
+    "name": "miami nights",
+    "bg": "#18181a",
+    "main": "#e4609b",
+    "sub": "#47bac0",
+    "text": "#fff",
+    "id": "palette:miami-nights",
+    "mode": "dark"
+  },
+  {
+    "name": "midnight",
+    "bg": "#0b0e13",
+    "main": "#60759f",
+    "sub": "#394760",
+    "text": "#9fadc6",
+    "id": "palette:midnight",
+    "mode": "dark"
+  },
+  {
+    "name": "milkshake",
+    "bg": "#ffffff",
+    "main": "#212b43",
+    "sub": "#62cfe6",
+    "text": "#212b43",
+    "id": "palette:milkshake",
+    "mode": "light"
+  },
+  {
+    "name": "mint",
+    "bg": "#05385b",
+    "main": "#5cdb95",
+    "sub": "#20688a",
+    "text": "#edf5e1",
+    "id": "palette:mint",
+    "mode": "dark"
+  },
+  {
+    "name": "mizu",
+    "bg": "#afcbdd",
+    "main": "#fcfbf6",
+    "sub": "#85a5bb",
+    "text": "#1a2633",
+    "id": "palette:mizu",
+    "mode": "light"
+  },
+  {
+    "name": "modern dolch",
+    "bg": "#2d2e30",
+    "main": "#7eddd3",
+    "sub": "#54585c",
+    "text": "#e3e6eb",
+    "id": "palette:modern-dolch",
+    "mode": "dark"
+  },
+  {
+    "name": "modern dolch light",
+    "bg": "#dbdbdb",
+    "main": "#8fd1c3",
+    "sub": "#a3a2a2",
+    "text": "#454545",
+    "id": "palette:modern-dolch-light",
+    "mode": "light"
+  },
+  {
+    "name": "modern ink",
+    "bg": "#ffffff",
+    "main": "#ff360d",
+    "sub": "#b7b7b7",
+    "text": "#000000",
+    "id": "palette:modern-ink",
+    "mode": "light"
+  },
+  {
+    "name": "monokai",
+    "bg": "#272822",
+    "main": "#a6e22e",
+    "sub": "#e6db74",
+    "text": "#e2e2dc",
+    "id": "palette:monokai",
+    "mode": "dark"
+  },
+  {
+    "name": "moonlight",
+    "bg": "#191f28",
+    "main": "#c69f68",
+    "sub": "#4b5975",
+    "text": "#ccccb5",
+    "id": "palette:moonlight",
+    "mode": "dark"
+  },
+  {
+    "name": "mountain",
+    "bg": "#0f0f0f",
+    "main": "#e7e7e7",
+    "sub": "#4c4c4c",
+    "text": "#e7e7e7",
+    "id": "palette:mountain",
+    "mode": "dark"
+  },
+  {
+    "name": "mr sleeves",
+    "bg": "#d1d7da",
+    "main": "#daa99b",
+    "sub": "#9a9fa1",
+    "text": "#1d1d1d",
+    "id": "palette:mr-sleeves",
+    "mode": "light"
+  },
+  {
+    "name": "ms cupcakes",
+    "bg": "#ffffff",
+    "main": "#5ed5f3",
+    "sub": "#d64090",
+    "text": "#0a282f",
+    "id": "palette:ms-cupcakes",
+    "mode": "light"
+  },
+  {
+    "name": "muted",
+    "bg": "#525252",
+    "main": "#c5b4e3",
+    "sub": "#939eae",
+    "text": "#b1e4e3",
+    "id": "palette:muted",
+    "mode": "dark"
+  },
+  {
+    "name": "nautilus",
+    "bg": "#132237",
+    "main": "#ebb723",
+    "sub": "#0b4c6c",
+    "text": "#1cbaac",
+    "id": "palette:nautilus",
+    "mode": "dark"
+  },
+  {
+    "name": "nebula",
+    "bg": "#212135",
+    "main": "#be3c88",
+    "sub": "#19b3b8",
+    "text": "#838686",
+    "id": "palette:nebula",
+    "mode": "dark"
+  },
+  {
+    "name": "night runner",
+    "bg": "#212121",
+    "main": "#feff04",
+    "sub": "#5c4a9c",
+    "text": "#e8e8e8",
+    "id": "palette:night-runner",
+    "mode": "dark"
+  },
+  {
+    "name": "nord",
+    "bg": "#242933",
+    "main": "#88c0d0",
+    "sub": "#929aaa",
+    "text": "#d8dee9",
+    "id": "palette:nord",
+    "mode": "dark"
+  },
+  {
+    "name": "nord light",
+    "bg": "#eceff4",
+    "main": "#8fbcbb",
+    "sub": "#6a7791",
+    "text": "#8fbcbb",
+    "id": "palette:nord-light",
+    "mode": "light"
+  },
+  {
+    "name": "norse",
+    "bg": "#242425",
+    "main": "#2b5f6d",
+    "sub": "#505b5e",
+    "text": "#ccc2b1",
+    "id": "palette:norse",
+    "mode": "dark"
+  },
+  {
+    "name": "oblivion",
+    "bg": "#313231",
+    "main": "#a5a096",
+    "sub": "#5d6263",
+    "text": "#f7f5f1",
+    "id": "palette:oblivion",
+    "mode": "dark"
+  },
+  {
+    "name": "olive",
+    "bg": "#e9e5cc",
+    "main": "#92946f",
+    "sub": "#b7b39e",
+    "text": "#373731",
+    "id": "palette:olive",
+    "mode": "light"
+  },
+  {
+    "name": "olivia",
+    "bg": "#1c1b1d",
+    "main": "#deaf9d",
+    "sub": "#4e3e3e",
+    "text": "#f2efed",
+    "id": "palette:olivia",
+    "mode": "dark"
+  },
+  {
+    "name": "onedark",
+    "bg": "#2f343f",
+    "main": "#61afef",
+    "sub": "#eceff4",
+    "text": "#98c379",
+    "id": "palette:onedark",
+    "mode": "dark"
+  },
+  {
+    "name": "our theme",
+    "bg": "#ce1226",
+    "main": "#fcd116",
+    "sub": "#6d0f19",
+    "text": "#ffffff",
+    "id": "palette:our-theme",
+    "mode": "dark"
+  },
+  {
+    "name": "pale nimbus",
+    "bg": "#433e4c",
+    "main": "#94ffc2",
+    "sub": "#ffaca3",
+    "text": "#feffdb",
+    "id": "palette:pale-nimbus",
+    "mode": "dark"
+  },
+  {
+    "name": "paper",
+    "bg": "#eeeeee",
+    "main": "#444444",
+    "sub": "#b2b2b2",
+    "text": "#444444",
+    "id": "palette:paper",
+    "mode": "light"
+  },
+  {
+    "name": "passion fruit",
+    "bg": "#7c2142",
+    "main": "#f4a3b4",
+    "sub": "#9994b8",
+    "text": "#ffffff",
+    "id": "palette:passion-fruit",
+    "mode": "dark"
+  },
+  {
+    "name": "pastel",
+    "bg": "#e0b2bd",
+    "main": "#fbf4b6",
+    "sub": "#b4e9ff",
+    "text": "#6d5c6f",
+    "id": "palette:pastel",
+    "mode": "light"
+  },
+  {
+    "name": "peach blossom",
+    "bg": "#292929",
+    "main": "#99b898",
+    "sub": "#616161",
+    "text": "#fecea8",
+    "id": "palette:peach-blossom",
+    "mode": "dark"
+  },
+  {
+    "name": "peaches",
+    "bg": "#e0d7c1",
+    "main": "#dd7a5f",
+    "sub": "#e7b28e",
+    "text": "#5f4c41",
+    "id": "palette:peaches",
+    "mode": "light"
+  },
+  {
+    "name": "phantom",
+    "bg": "#001",
+    "main": "#7aa2f7",
+    "sub": "#414868",
+    "text": "#c0caf5",
+    "id": "palette:phantom",
+    "mode": "dark"
+  },
+  {
+    "name": "pink lemonade",
+    "bg": "#f6d992",
+    "main": "#f6a192",
+    "sub": "#f6b092",
+    "text": "#fcfcf8",
+    "id": "palette:pink-lemonade",
+    "mode": "light"
+  },
+  {
+    "name": "pulse",
+    "bg": "#181818",
+    "main": "#17b8bd",
+    "sub": "#53565a",
+    "text": "#e5f4f4",
+    "id": "palette:pulse",
+    "mode": "dark"
+  },
+  {
+    "name": "purpleish",
+    "bg": "#1e1e32",
+    "main": "#7a52cc",
+    "sub": "#5c5c99",
+    "text": "#a3a3cc",
+    "id": "palette:purpleish",
+    "mode": "dark"
+  },
+  {
+    "name": "rainbow trail",
+    "bg": "#f5f5f5",
+    "main": "#363636",
+    "sub": "#4f4f4f",
+    "text": "#1f1f1f",
+    "id": "palette:rainbow-trail",
+    "mode": "light"
+  },
+  {
+    "name": "red dragon",
+    "bg": "#1a0b0c",
+    "main": "#ff3a32",
+    "sub": "#e2a528",
+    "text": "#4a4d4e",
+    "id": "palette:red-dragon",
+    "mode": "dark"
+  },
+  {
+    "name": "red samurai",
+    "bg": "#84202c",
+    "main": "#c79e6e",
+    "sub": "#55131b",
+    "text": "#e2dad0",
+    "id": "palette:red-samurai",
+    "mode": "dark"
+  },
+  {
+    "name": "repose dark",
+    "bg": "#2f3338",
+    "main": "#d6d2bc",
+    "sub": "#8f8e84",
+    "text": "#d6d2bc",
+    "id": "palette:repose-dark",
+    "mode": "dark"
+  },
+  {
+    "name": "repose light",
+    "bg": "#efead0",
+    "main": "#5f605e",
+    "sub": "#8f8e84",
+    "text": "#333538",
+    "id": "palette:repose-light",
+    "mode": "light"
+  },
+  {
+    "name": "retro",
+    "bg": "#dad3c1",
+    "main": "#1d1b17",
+    "sub": "#918b7d",
+    "text": "#1d1b17",
+    "id": "palette:retro",
+    "mode": "light"
+  },
+  {
+    "name": "retrocast",
+    "bg": "#07737a",
+    "main": "#88dbdf",
+    "sub": "#f3e03b",
+    "text": "#ffffff",
+    "id": "palette:retrocast",
+    "mode": "dark"
+  },
+  {
+    "name": "rgb",
+    "bg": "#111",
+    "main": "#eee",
+    "sub": "#444",
+    "text": "#eee",
+    "id": "palette:rgb",
+    "mode": "dark"
+  },
+  {
+    "name": "rose pine",
+    "bg": "#1f1d27",
+    "main": "#9ccfd8",
+    "sub": "#c4a7e7",
+    "text": "#e0def4",
+    "id": "palette:rose-pine",
+    "mode": "dark"
+  },
+  {
+    "name": "rose pine dawn",
+    "bg": "#fffaf3",
+    "main": "#56949f",
+    "sub": "#c4a7e7",
+    "text": "#286983",
+    "id": "palette:rose-pine-dawn",
+    "mode": "light"
+  },
+  {
+    "name": "rose pine moon",
+    "bg": "#2a273f",
+    "main": "#9ccfd8",
+    "sub": "#c4a7e7",
+    "text": "#e0def4",
+    "id": "palette:rose-pine-moon",
+    "mode": "dark"
+  },
+  {
+    "name": "rudy",
+    "bg": "#1a2b3e",
+    "main": "#af8f5c",
+    "sub": "#3a506c",
+    "text": "#c9c8bf",
+    "id": "palette:rudy",
+    "mode": "dark"
+  },
+  {
+    "name": "ryujinscales",
+    "bg": "#081426",
+    "main": "#f17754",
+    "sub": "#ffbc90",
+    "text": "#ffe4bc",
+    "id": "palette:ryujinscales",
+    "mode": "dark"
+  },
+  {
+    "name": "serika",
+    "bg": "#e1e1e3",
+    "main": "#e2b714",
+    "sub": "#aaaeb3",
+    "text": "#323437",
+    "id": "palette:serika",
+    "mode": "light"
+  },
+  {
+    "name": "serika dark",
+    "bg": "#323437",
+    "main": "#e2b714",
+    "sub": "#646669",
+    "text": "#d1d0c5",
+    "id": "palette:serika-dark",
+    "mode": "dark"
+  },
+  {
+    "name": "sewing tin",
+    "bg": "#241963",
+    "main": "#f2ce83",
+    "sub": "#446ad5",
+    "text": "#ffffff",
+    "id": "palette:sewing-tin",
+    "mode": "dark"
+  },
+  {
+    "name": "sewing tin light",
+    "bg": "#ffffff",
+    "main": "#2d2076",
+    "sub": "#385eca",
+    "text": "#2d2076",
+    "id": "palette:sewing-tin-light",
+    "mode": "light"
+  },
+  {
+    "name": "shadow",
+    "bg": "#000",
+    "main": "#eee",
+    "sub": "#444",
+    "text": "#eee",
+    "id": "palette:shadow",
+    "mode": "dark"
+  },
+  {
+    "name": "shoko",
+    "bg": "#ced7e0",
+    "main": "#81c4dd",
+    "sub": "#7599b1",
+    "text": "#3b4c58",
+    "id": "palette:shoko",
+    "mode": "light"
+  },
+  {
+    "name": "slambook",
+    "bg": "#fffdde",
+    "main": "#03001c",
+    "sub": "#1c82adc4",
+    "text": "#13005a",
+    "id": "palette:slambook",
+    "mode": "light"
+  },
+  {
+    "name": "snes",
+    "bg": "#bfbec2",
+    "main": "#553d94",
+    "sub": "#9f8ad4",
+    "text": "#2e2e2e",
+    "id": "palette:snes",
+    "mode": "light"
+  },
+  {
+    "name": "soaring skies",
+    "bg": "#fff9f2",
+    "main": "#55c6f0",
+    "sub": "#1e107a",
+    "text": "#1d1e1e",
+    "id": "palette:soaring-skies",
+    "mode": "light"
+  },
+  {
+    "name": "solarized dark",
+    "bg": "#002b36",
+    "main": "#859900",
+    "sub": "#2aa198",
+    "text": "#268bd2",
+    "id": "palette:solarized-dark",
+    "mode": "dark"
+  },
+  {
+    "name": "solarized light",
+    "bg": "#fdf6e3",
+    "main": "#859900",
+    "sub": "#2aa198",
+    "text": "#181819",
+    "id": "palette:solarized-light",
+    "mode": "light"
+  },
+  {
+    "name": "solarized osaka",
+    "bg": "#00141a",
+    "main": "#859900",
+    "sub": "#2aa198",
+    "text": "#eee8d5",
+    "id": "palette:solarized-osaka",
+    "mode": "dark"
+  },
+  {
+    "name": "sonokai",
+    "bg": "#2c2e34",
+    "main": "#9ed072",
+    "sub": "#e7c664",
+    "text": "#e2e2e3",
+    "id": "palette:sonokai",
+    "mode": "dark"
+  },
+  {
+    "name": "spiderman",
+    "bg": "#0d1219",
+    "main": "#e23636",
+    "sub": "#0476f2",
+    "text": "#f0f0f0",
+    "id": "palette:spiderman",
+    "mode": "dark"
+  },
+  {
+    "name": "stealth",
+    "bg": "#010203",
+    "main": "#383e42",
+    "sub": "#5e676e",
+    "text": "#383e42",
+    "id": "palette:stealth",
+    "mode": "dark"
+  },
+  {
+    "name": "strawberry",
+    "bg": "#f37f83",
+    "main": "#fcfcf8",
+    "sub": "#e53c58",
+    "text": "#fcfcf8",
+    "id": "palette:strawberry",
+    "mode": "light"
+  },
+  {
+    "name": "striker",
+    "bg": "#124883",
+    "main": "#d7dcda",
+    "sub": "#0f2d4e",
+    "text": "#d6dbd9",
+    "id": "palette:striker",
+    "mode": "dark"
+  },
+  {
+    "name": "suisei",
+    "bg": "#3b4a62",
+    "main": "#bef0ff",
+    "sub": "#fe9841",
+    "text": "#dbdeeb",
+    "id": "palette:suisei",
+    "mode": "dark"
+  },
+  {
+    "name": "sunset",
+    "bg": "#211e24",
+    "main": "#f79777",
+    "sub": "#5b578e",
+    "text": "#f4e0c9",
+    "id": "palette:sunset",
+    "mode": "dark"
+  },
+  {
+    "name": "superuser",
+    "bg": "#262a33",
+    "main": "#43ffaf",
+    "sub": "#526777",
+    "text": "#e5f7ef",
+    "id": "palette:superuser",
+    "mode": "dark"
+  },
+  {
+    "name": "sweden",
+    "bg": "#0058a3",
+    "main": "#ffcc02",
+    "sub": "#57abdb",
+    "text": "#ffffff",
+    "id": "palette:sweden",
+    "mode": "dark"
+  },
+  {
+    "name": "tangerine",
+    "bg": "#ffede0",
+    "main": "#fe5503",
+    "sub": "#ff9562",
+    "text": "#3d1705",
+    "id": "palette:tangerine",
+    "mode": "light"
+  },
+  {
+    "name": "taro",
+    "bg": "#b3baff",
+    "main": "#130f1a",
+    "sub": "#6f6c91",
+    "text": "#130f1a",
+    "id": "palette:taro",
+    "mode": "light"
+  },
+  {
+    "name": "terminal",
+    "bg": "#191a1b",
+    "main": "#79a617",
+    "sub": "#48494b",
+    "text": "#e7eae0",
+    "id": "palette:terminal",
+    "mode": "dark"
+  },
+  {
+    "name": "terra",
+    "bg": "#0c100e",
+    "main": "#89c559",
+    "sub": "#436029",
+    "text": "#f0edd1",
+    "id": "palette:terra",
+    "mode": "dark"
+  },
+  {
+    "name": "terrazzo",
+    "bg": "#f1e5da",
+    "main": "#e0794e",
+    "sub": "#688e8f",
+    "text": "#023e3b",
+    "id": "palette:terrazzo",
+    "mode": "light"
+  },
+  {
+    "name": "terror below",
+    "bg": "#0b1e1a",
+    "main": "#66ac92",
+    "sub": "#015c53",
+    "text": "#dceae5",
+    "id": "palette:terror-below",
+    "mode": "dark"
+  },
+  {
+    "name": "tiramisu",
+    "bg": "#cfc6b9",
+    "main": "#c0976f",
+    "sub": "#c0976f",
+    "text": "#7d5448",
+    "id": "palette:tiramisu",
+    "mode": "light"
+  },
+  {
+    "name": "trackday",
+    "bg": "#464d66",
+    "main": "#e0513e",
+    "sub": "#5c7eb9",
+    "text": "#cfcfcf",
+    "id": "palette:trackday",
+    "mode": "dark"
+  },
+  {
+    "name": "trance",
+    "bg": "#00021b",
+    "main": "#e51376",
+    "sub": "#3c4c79",
+    "text": "#fff",
+    "id": "palette:trance",
+    "mode": "dark"
+  },
+  {
+    "name": "tron orange",
+    "bg": "#0d1c1c",
+    "main": "#f0e800",
+    "sub": "#ff6600",
+    "text": "#ffffff",
+    "id": "palette:tron-orange",
+    "mode": "dark"
+  },
+  {
+    "name": "vaporwave",
+    "bg": "#a4a7ea",
+    "main": "#e368da",
+    "sub": "#7c7faf",
+    "text": "#f1ebf1",
+    "id": "palette:vaporwave",
+    "mode": "light"
+  },
+  {
+    "name": "vesper",
+    "bg": "#101010",
+    "main": "#ffc799",
+    "sub": "#a0a0a0",
+    "text": "#ffffff",
+    "id": "palette:vesper",
+    "mode": "dark"
+  },
+  {
+    "name": "vesper light",
+    "bg": "#ffffff",
+    "main": "#fb7100",
+    "sub": "#a0a0a0",
+    "text": "#000000",
+    "id": "palette:vesper-light",
+    "mode": "light"
+  },
+  {
+    "name": "viridescent",
+    "bg": "#2c3333",
+    "main": "#95d5b2",
+    "sub": "#84a98c",
+    "text": "#e9f5db",
+    "id": "palette:viridescent",
+    "mode": "dark"
+  },
+  {
+    "name": "voc",
+    "bg": "#190618",
+    "main": "#e0caac",
+    "sub": "#4c1e48",
+    "text": "#eeeae4",
+    "id": "palette:voc",
+    "mode": "dark"
+  },
+  {
+    "name": "vscode",
+    "bg": "#1e1e1e",
+    "main": "#007acc",
+    "sub": "#4d4d4d",
+    "text": "#d4d4d4",
+    "id": "palette:vscode",
+    "mode": "dark"
+  },
+  {
+    "name": "watermelon",
+    "bg": "#1f4437",
+    "main": "#d6686f",
+    "sub": "#3e7a65",
+    "text": "#cdc6bc",
+    "id": "palette:watermelon",
+    "mode": "dark"
+  },
+  {
+    "name": "wavez",
+    "bg": "#1c292f",
+    "main": "#6bde3b",
+    "sub": "#1f5e6b",
+    "text": "#e9efe6",
+    "id": "palette:wavez",
+    "mode": "dark"
+  },
+  {
+    "name": "witch girl",
+    "bg": "#f3dbda",
+    "main": "#56786a",
+    "sub": "#ddb4a7",
+    "text": "#56786a",
+    "id": "palette:witch-girl",
+    "mode": "light"
+  }
+];

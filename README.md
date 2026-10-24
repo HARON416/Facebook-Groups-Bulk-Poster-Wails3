@@ -32,7 +32,7 @@ published. The website at `postika.softwrhq.com` is planned.
   and 189 themes. Language and theme choices sync across windows. App-generated
   log messages are translated, with original diagnostics under Debug details.
 
-Open **Features → How to use** inside the app for the detailed workflow.
+Open **How to use** inside the app for the detailed workflow.
 
 ## Using the app
 

@@ -97,6 +97,7 @@ msgid "Load groups"
 msgstr "グループを読み込む"
 
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "Groups"
 msgstr "グループ"
 
@@ -300,7 +301,9 @@ msgid "Loading accounts"
 msgstr "アカウントを読み込み中"
 
 #. 0: current?.name ?? 'Loading accounts'
+#. 0: accountLabel(profile)
 #: src/components/AccountDropdown.svelte
+#: src/components/QueueReview.svelte
 msgid "Account: {0}"
 msgstr "アカウント: {0}"
 
@@ -452,6 +455,8 @@ msgid "Required"
 msgstr "必須"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Images"
 msgstr "画像"
@@ -759,9 +764,8 @@ msgstr "一時停止"
 msgid "Stopping…"
 msgstr "停止中…"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "POSTING PACE"
-msgstr "投稿間隔"
+#~ msgid "POSTING PACE"
+#~ msgstr "投稿間隔"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/PostingOptionsForm.svelte
@@ -950,6 +954,7 @@ msgstr "ウィンドウを閉じる"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Create post"
 msgstr "投稿を作成"
@@ -960,6 +965,7 @@ msgstr "投稿を書いて画像を追加"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select groups"
 msgstr "グループを選択"
@@ -1105,7 +1111,9 @@ msgid "{0} shown"
 msgstr "{0} 表示"
 
 #. 0: selectedGroupIds.length
+#. 0: groups.length
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "{0} selected"
 msgstr "{0} 選択済み"
 
@@ -1893,13 +1901,13 @@ msgid "Post text and images to multiple Facebook groups."
 msgstr "複数の Facebook グループにテキストと画像を投稿できます。"
 
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Keep Postika open and your computer awake. Queues and logs are not restored after quitting."
 msgstr "Postika を開いたままにし、パソコンをスリープさせないでください。終了後にキューやログは復元されません。"
 
-#: src/components/FeaturesCard.svelte
-msgid "<0/> Features"
-msgstr "<0/> 機能"
+#~ msgid "<0/> Features"
+#~ msgstr "<0/> 機能"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/UsageGuide.svelte
@@ -2041,6 +2049,7 @@ msgid "Fetch"
 msgstr "取得"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
 msgid "Fetched posts <0/>"
 msgstr "取得済みの投稿 <0/>"
 
@@ -2073,6 +2082,8 @@ msgid "Edit post {0}"
 msgstr "投稿{0}を編集"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 msgid "Edit"
 msgstr "編集"
 
@@ -2088,6 +2099,7 @@ msgid "Delete"
 msgstr "削除"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
 msgid "Post text"
 msgstr "投稿のテキスト"
 
@@ -2381,3 +2393,12 @@ msgstr "このプロフィールのFacebookログイン情報、グループ、�
 #: src/components/DeleteProfileDialog.svelte
 msgid "Deleting…"
 msgstr "削除中…"
+
+#: src/components/FeaturesCard.svelte
+msgid "<0/> How to use"
+msgstr "<0/> 使い方"
+
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
+msgid "Review your queue"
+msgstr "投稿キューを確認"

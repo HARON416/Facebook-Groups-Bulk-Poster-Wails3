@@ -97,6 +97,7 @@ msgid "Load groups"
 msgstr "טעינת קבוצות"
 
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "Groups"
 msgstr "קבוצות"
 
@@ -300,7 +301,9 @@ msgid "Loading accounts"
 msgstr "טעינת חשבונות"
 
 #. 0: current?.name ?? 'Loading accounts'
+#. 0: accountLabel(profile)
 #: src/components/AccountDropdown.svelte
+#: src/components/QueueReview.svelte
 msgid "Account: {0}"
 msgstr "חשבון: {0}"
 
@@ -452,6 +455,8 @@ msgid "Required"
 msgstr "חובה"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Images"
 msgstr "תמונות"
@@ -759,9 +764,8 @@ msgstr "השהיה"
 msgid "Stopping…"
 msgstr "נעצר…"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "POSTING PACE"
-msgstr "קצב הפרסום"
+#~ msgid "POSTING PACE"
+#~ msgstr "קצב הפרסום"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/PostingOptionsForm.svelte
@@ -950,6 +954,7 @@ msgstr "סגירת החלון"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Create post"
 msgstr "יצירת פוסט"
@@ -960,6 +965,7 @@ msgstr "כתיבת הפוסט והוספת תמונות"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select groups"
 msgstr "בחירת קבוצות"
@@ -1105,7 +1111,9 @@ msgid "{0} shown"
 msgstr "{0} מוצגים"
 
 #. 0: selectedGroupIds.length
+#. 0: groups.length
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "{0} selected"
 msgstr "{0} נבחרו"
 
@@ -1893,13 +1901,13 @@ msgid "Post text and images to multiple Facebook groups."
 msgstr "פרסום טקסט ותמונות במספר קבוצות פייסבוק."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Keep Postika open and your computer awake. Queues and logs are not restored after quitting."
 msgstr "יש להשאיר את Postika פתוחה ואת המחשב ער. תורי הפרסום והיומנים אינם משוחזרים לאחר יציאה."
 
-#: src/components/FeaturesCard.svelte
-msgid "<0/> Features"
-msgstr "<0/> תכונות"
+#~ msgid "<0/> Features"
+#~ msgstr "<0/> תכונות"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/UsageGuide.svelte
@@ -2041,6 +2049,7 @@ msgid "Fetch"
 msgstr "ייבוא"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
 msgid "Fetched posts <0/>"
 msgstr "פוסטים מיובאים <0/>"
 
@@ -2073,6 +2082,8 @@ msgid "Edit post {0}"
 msgstr "עריכת פוסט {0}"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 msgid "Edit"
 msgstr "עריכה"
 
@@ -2088,6 +2099,7 @@ msgid "Delete"
 msgstr "מחיקה"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
 msgid "Post text"
 msgstr "טקסט הפוסט"
 
@@ -2381,3 +2393,12 @@ msgstr "פעולה זו מוחקת לצמיתות את ההתחברות לפיי
 #: src/components/DeleteProfileDialog.svelte
 msgid "Deleting…"
 msgstr "מוחק…"
+
+#: src/components/FeaturesCard.svelte
+msgid "<0/> How to use"
+msgstr "<0/> איך משתמשים"
+
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
+msgid "Review your queue"
+msgstr "בדיקת תור הפרסום"

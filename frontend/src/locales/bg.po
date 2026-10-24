@@ -97,6 +97,7 @@ msgid "Load groups"
 msgstr "Зареждане на групи"
 
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "Groups"
 msgstr "Групи"
 
@@ -300,7 +301,9 @@ msgid "Loading accounts"
 msgstr "Зареждане на акаунти"
 
 #. 0: current?.name ?? 'Loading accounts'
+#. 0: accountLabel(profile)
 #: src/components/AccountDropdown.svelte
+#: src/components/QueueReview.svelte
 msgid "Account: {0}"
 msgstr "Акаунт: {0}"
 
@@ -452,6 +455,8 @@ msgid "Required"
 msgstr "Задължително"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Images"
 msgstr "Изображения"
@@ -759,9 +764,8 @@ msgstr "Пауза"
 msgid "Stopping…"
 msgstr "Спиране…"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "POSTING PACE"
-msgstr "РИТЪМ НА ПУБЛИКУВАНЕ"
+#~ msgid "POSTING PACE"
+#~ msgstr "РИТЪМ НА ПУБЛИКУВАНЕ"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/PostingOptionsForm.svelte
@@ -950,6 +954,7 @@ msgstr "Затвори прозореца"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Create post"
 msgstr "Създаване на публикация"
@@ -960,6 +965,7 @@ msgstr "Напишете своя пост и добавете изображе�
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select groups"
 msgstr "Избор на групи"
@@ -1105,7 +1111,9 @@ msgid "{0} shown"
 msgstr "{0} показани"
 
 #. 0: selectedGroupIds.length
+#. 0: groups.length
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "{0} selected"
 msgstr "{0} избрани"
 
@@ -1893,13 +1901,13 @@ msgid "Post text and images to multiple Facebook groups."
 msgstr "Публикувайте текст и изображения в няколко Facebook групи."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Keep Postika open and your computer awake. Queues and logs are not restored after quitting."
 msgstr "Дръжте Postika отворена и компютъра буден. Опашките и дневниците не се възстановяват след излизане."
 
-#: src/components/FeaturesCard.svelte
-msgid "<0/> Features"
-msgstr "<0/> Функции"
+#~ msgid "<0/> Features"
+#~ msgstr "<0/> Функции"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/UsageGuide.svelte
@@ -2041,6 +2049,7 @@ msgid "Fetch"
 msgstr "Извличане"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
 msgid "Fetched posts <0/>"
 msgstr "Извлечени публикации <0/>"
 
@@ -2073,6 +2082,8 @@ msgid "Edit post {0}"
 msgstr "Редактиране на публикация {0}"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 msgid "Edit"
 msgstr "Редактиране"
 
@@ -2088,6 +2099,7 @@ msgid "Delete"
 msgstr "Изтриване"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
 msgid "Post text"
 msgstr "Текст на публикацията"
 
@@ -2381,3 +2393,12 @@ msgstr "Това изтрива завинаги входа във Facebook, г�
 #: src/components/DeleteProfileDialog.svelte
 msgid "Deleting…"
 msgstr "Изтриване…"
+
+#: src/components/FeaturesCard.svelte
+msgid "<0/> How to use"
+msgstr "<0/> Как се използва"
+
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
+msgid "Review your queue"
+msgstr "Прегледайте опашката си"

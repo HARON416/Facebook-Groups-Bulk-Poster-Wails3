@@ -97,6 +97,7 @@ msgid "Load groups"
 msgstr "গ্রুপ লোড করুন"
 
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "Groups"
 msgstr "গ্রুপ"
 
@@ -300,7 +301,9 @@ msgid "Loading accounts"
 msgstr "অ্যাকাউন্ট লোড হচ্ছে"
 
 #. 0: current?.name ?? 'Loading accounts'
+#. 0: accountLabel(profile)
 #: src/components/AccountDropdown.svelte
+#: src/components/QueueReview.svelte
 msgid "Account: {0}"
 msgstr "অ্যাকাউন্ট: {0}"
 
@@ -452,6 +455,8 @@ msgid "Required"
 msgstr "আবশ্যক"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Images"
 msgstr "ছবি"
@@ -759,9 +764,8 @@ msgstr "বিরতি দিন"
 msgid "Stopping…"
 msgstr "থামছে…"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "POSTING PACE"
-msgstr "পোস্টিং গতি"
+#~ msgid "POSTING PACE"
+#~ msgstr "পোস্টিং গতি"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/PostingOptionsForm.svelte
@@ -950,6 +954,7 @@ msgstr "উইন্ডো বন্ধ করুন"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Create post"
 msgstr "পোস্ট তৈরি করুন"
@@ -960,6 +965,7 @@ msgstr "আপনার পোস্ট লিখুন এবং ছবি য�
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select groups"
 msgstr "গ্রুপ বাছুন"
@@ -1105,7 +1111,9 @@ msgid "{0} shown"
 msgstr "{0} প্রদর্শিত"
 
 #. 0: selectedGroupIds.length
+#. 0: groups.length
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "{0} selected"
 msgstr "{0} নির্বাচন করা হয়েছে"
 
@@ -1893,13 +1901,13 @@ msgid "Post text and images to multiple Facebook groups."
 msgstr "একাধিক Facebook গ্রুপে লেখা ও ছবি পোস্ট করুন।"
 
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Keep Postika open and your computer awake. Queues and logs are not restored after quitting."
 msgstr "Postika খোলা রাখুন এবং কম্পিউটার সক্রিয় রাখুন। বন্ধ করার পর সারি ও লগ পুনরুদ্ধার হয় না।"
 
-#: src/components/FeaturesCard.svelte
-msgid "<0/> Features"
-msgstr "<0/> বৈশিষ্ট্য"
+#~ msgid "<0/> Features"
+#~ msgstr "<0/> বৈশিষ্ট্য"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/UsageGuide.svelte
@@ -2041,6 +2049,7 @@ msgid "Fetch"
 msgstr "আনুন"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
 msgid "Fetched posts <0/>"
 msgstr "আনা পোস্ট <0/>"
 
@@ -2073,6 +2082,8 @@ msgid "Edit post {0}"
 msgstr "পোস্ট {0} সম্পাদনা করুন"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 msgid "Edit"
 msgstr "সম্পাদনা করুন"
 
@@ -2088,6 +2099,7 @@ msgid "Delete"
 msgstr "মুছুন"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
 msgid "Post text"
 msgstr "পোস্টের লেখা"
 
@@ -2381,3 +2393,12 @@ msgstr "এতে এই প্রোফাইলের Facebook লগইন, �
 #: src/components/DeleteProfileDialog.svelte
 msgid "Deleting…"
 msgstr "মুছে ফেলা হচ্ছে…"
+
+#: src/components/FeaturesCard.svelte
+msgid "<0/> How to use"
+msgstr "<0/> ব্যবহারের নির্দেশনা"
+
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
+msgid "Review your queue"
+msgstr "আপনার সারি পর্যালোচনা করুন"

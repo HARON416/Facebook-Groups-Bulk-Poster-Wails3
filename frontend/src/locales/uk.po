@@ -97,6 +97,7 @@ msgid "Load groups"
 msgstr "Завантажити групи"
 
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "Groups"
 msgstr "Групи"
 
@@ -300,7 +301,9 @@ msgid "Loading accounts"
 msgstr "Завантаження акаунтів"
 
 #. 0: current?.name ?? 'Loading accounts'
+#. 0: accountLabel(profile)
 #: src/components/AccountDropdown.svelte
+#: src/components/QueueReview.svelte
 msgid "Account: {0}"
 msgstr "Акаунт: {0}"
 
@@ -452,6 +455,8 @@ msgid "Required"
 msgstr "Обов’язково"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Images"
 msgstr "Зображення"
@@ -759,9 +764,8 @@ msgstr "Призупинити"
 msgid "Stopping…"
 msgstr "Зупиняємо…"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "POSTING PACE"
-msgstr "ШВИДКІСТЬ ПУБЛІКАЦІЇ"
+#~ msgid "POSTING PACE"
+#~ msgstr "ШВИДКІСТЬ ПУБЛІКАЦІЇ"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/PostingOptionsForm.svelte
@@ -950,6 +954,7 @@ msgstr "Закрити вікно"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Create post"
 msgstr "Створити допис"
@@ -960,6 +965,7 @@ msgstr "Напишіть свій пост та додайте зображен�
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select groups"
 msgstr "Вибрати групи"
@@ -1105,7 +1111,9 @@ msgid "{0} shown"
 msgstr "Показано {0}"
 
 #. 0: selectedGroupIds.length
+#. 0: groups.length
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "{0} selected"
 msgstr "Вибрано {0}"
 
@@ -1893,13 +1901,13 @@ msgid "Post text and images to multiple Facebook groups."
 msgstr "Публікуйте текст і зображення в кількох групах Facebook."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Keep Postika open and your computer awake. Queues and logs are not restored after quitting."
 msgstr "Залиште Postika відкритою, а комп’ютер активним. Черги й журнали не відновлюються після виходу."
 
-#: src/components/FeaturesCard.svelte
-msgid "<0/> Features"
-msgstr "<0/> Можливості"
+#~ msgid "<0/> Features"
+#~ msgstr "<0/> Можливості"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/UsageGuide.svelte
@@ -2041,6 +2049,7 @@ msgid "Fetch"
 msgstr "Завантажити"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
 msgid "Fetched posts <0/>"
 msgstr "Завантажені дописи <0/>"
 
@@ -2073,6 +2082,8 @@ msgid "Edit post {0}"
 msgstr "Редагувати допис {0}"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 msgid "Edit"
 msgstr "Редагувати"
 
@@ -2088,6 +2099,7 @@ msgid "Delete"
 msgstr "Видалити"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
 msgid "Post text"
 msgstr "Текст допису"
 
@@ -2381,3 +2393,12 @@ msgstr "Це назавжди видалить вхід у Facebook, групи,
 #: src/components/DeleteProfileDialog.svelte
 msgid "Deleting…"
 msgstr "Видалення…"
+
+#: src/components/FeaturesCard.svelte
+msgid "<0/> How to use"
+msgstr "<0/> Як користуватися"
+
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
+msgid "Review your queue"
+msgstr "Перевірте свою чергу"

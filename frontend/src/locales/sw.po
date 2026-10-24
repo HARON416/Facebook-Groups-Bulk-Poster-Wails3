@@ -97,6 +97,7 @@ msgid "Load groups"
 msgstr "Pakia vikundi"
 
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "Groups"
 msgstr "Vikundi"
 
@@ -300,7 +301,9 @@ msgid "Loading accounts"
 msgstr "Inapakia akaunti"
 
 #. 0: current?.name ?? 'Loading accounts'
+#. 0: accountLabel(profile)
 #: src/components/AccountDropdown.svelte
+#: src/components/QueueReview.svelte
 msgid "Account: {0}"
 msgstr "Akaunti: {0}"
 
@@ -452,6 +455,8 @@ msgid "Required"
 msgstr "Inahitajika"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Images"
 msgstr "Picha"
@@ -759,9 +764,8 @@ msgstr "Sitisha"
 msgid "Stopping…"
 msgstr "Kukomesha…"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "POSTING PACE"
-msgstr "KASI YA KUPOSTI"
+#~ msgid "POSTING PACE"
+#~ msgstr "KASI YA KUPOSTI"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/PostingOptionsForm.svelte
@@ -950,6 +954,7 @@ msgstr "Funga dirisha"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Create post"
 msgstr "Tengeneza chapisho"
@@ -960,6 +965,7 @@ msgstr "Andika chapisho lako na ongeza picha"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select groups"
 msgstr "Chagua vikundi"
@@ -1105,7 +1111,9 @@ msgid "{0} shown"
 msgstr "{0} imeonyeshwa"
 
 #. 0: selectedGroupIds.length
+#. 0: groups.length
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "{0} selected"
 msgstr "{0} imechaguliwa"
 
@@ -1893,13 +1901,13 @@ msgid "Post text and images to multiple Facebook groups."
 msgstr "Chapisha maandishi na picha kwenye vikundi vingi vya Facebook."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Keep Postika open and your computer awake. Queues and logs are not restored after quitting."
 msgstr "Weka Postika wazi na kompyuta yako ikiwa macho. Foleni na kumbukumbu hazirejeshwi baada ya kufunga programu."
 
-#: src/components/FeaturesCard.svelte
-msgid "<0/> Features"
-msgstr "<0/> Vipengele"
+#~ msgid "<0/> Features"
+#~ msgstr "<0/> Vipengele"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/UsageGuide.svelte
@@ -2041,6 +2049,7 @@ msgid "Fetch"
 msgstr "Leta"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
 msgid "Fetched posts <0/>"
 msgstr "Machapisho yaliyoletwa <0/>"
 
@@ -2073,6 +2082,8 @@ msgid "Edit post {0}"
 msgstr "Hariri chapisho {0}"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 msgid "Edit"
 msgstr "Hariri"
 
@@ -2088,6 +2099,7 @@ msgid "Delete"
 msgstr "Futa"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
 msgid "Post text"
 msgstr "Maandishi ya chapisho"
 
@@ -2381,3 +2393,12 @@ msgstr "Hii inafuta kabisa kuingia kwa Facebook, vikundi, rasimu, picha, mipangi
 #: src/components/DeleteProfileDialog.svelte
 msgid "Deleting…"
 msgstr "Inafuta…"
+
+#: src/components/FeaturesCard.svelte
+msgid "<0/> How to use"
+msgstr "<0/> Jinsi ya kutumia"
+
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
+msgid "Review your queue"
+msgstr "Kagua foleni yako"

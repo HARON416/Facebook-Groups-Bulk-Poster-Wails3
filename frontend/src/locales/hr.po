@@ -97,6 +97,7 @@ msgid "Load groups"
 msgstr "Učitaj grupe"
 
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "Groups"
 msgstr "Grupe"
 
@@ -300,7 +301,9 @@ msgid "Loading accounts"
 msgstr "Učitavanje računa"
 
 #. 0: current?.name ?? 'Loading accounts'
+#. 0: accountLabel(profile)
 #: src/components/AccountDropdown.svelte
+#: src/components/QueueReview.svelte
 msgid "Account: {0}"
 msgstr "Račun: {0}"
 
@@ -452,6 +455,8 @@ msgid "Required"
 msgstr "Obavezno"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Images"
 msgstr "Slike"
@@ -759,9 +764,8 @@ msgstr "Pauziraj"
 msgid "Stopping…"
 msgstr "Zaustavljanje…"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "POSTING PACE"
-msgstr "BRZINA OBJAVLJIVANJA"
+#~ msgid "POSTING PACE"
+#~ msgstr "BRZINA OBJAVLJIVANJA"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/PostingOptionsForm.svelte
@@ -950,6 +954,7 @@ msgstr "Zatvori prozor"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Create post"
 msgstr "Izradi objavu"
@@ -960,6 +965,7 @@ msgstr "Napišite svoj post i dodajte slike"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select groups"
 msgstr "Odaberi grupe"
@@ -1105,7 +1111,9 @@ msgid "{0} shown"
 msgstr "{0} prikazan"
 
 #. 0: selectedGroupIds.length
+#. 0: groups.length
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "{0} selected"
 msgstr "{0} odabrani"
 
@@ -1893,13 +1901,13 @@ msgid "Post text and images to multiple Facebook groups."
 msgstr "Objavite tekst i slike u više Facebook grupa."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Keep Postika open and your computer awake. Queues and logs are not restored after quitting."
 msgstr "Ostavite Postiku otvorenom i računalo budnim. Redovi i zapisnici ne vraćaju se nakon izlaska."
 
-#: src/components/FeaturesCard.svelte
-msgid "<0/> Features"
-msgstr "<0/> Značajke"
+#~ msgid "<0/> Features"
+#~ msgstr "<0/> Značajke"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/UsageGuide.svelte
@@ -2041,6 +2049,7 @@ msgid "Fetch"
 msgstr "Dohvati"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
 msgid "Fetched posts <0/>"
 msgstr "Dohvaćene objave <0/>"
 
@@ -2073,6 +2082,8 @@ msgid "Edit post {0}"
 msgstr "Uredi objavu {0}"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 msgid "Edit"
 msgstr "Uredi"
 
@@ -2088,6 +2099,7 @@ msgid "Delete"
 msgstr "Izbriši"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
 msgid "Post text"
 msgstr "Tekst objave"
 
@@ -2381,3 +2393,12 @@ msgstr "Ovo trajno briše Facebook prijavu, grupe, skice, slike, postavke i zapi
 #: src/components/DeleteProfileDialog.svelte
 msgid "Deleting…"
 msgstr "Brisanje…"
+
+#: src/components/FeaturesCard.svelte
+msgid "<0/> How to use"
+msgstr "<0/> Kako koristiti"
+
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
+msgid "Review your queue"
+msgstr "Pregledajte svoj red čekanja"

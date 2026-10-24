@@ -97,6 +97,7 @@ msgid "Load groups"
 msgstr "تحميل المجموعات"
 
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "Groups"
 msgstr "المجموعات"
 
@@ -300,7 +301,9 @@ msgid "Loading accounts"
 msgstr "جارٍ تحميل الحسابات"
 
 #. 0: current?.name ?? 'Loading accounts'
+#. 0: accountLabel(profile)
 #: src/components/AccountDropdown.svelte
+#: src/components/QueueReview.svelte
 msgid "Account: {0}"
 msgstr "الحساب: {0}"
 
@@ -452,6 +455,8 @@ msgid "Required"
 msgstr "مطلوب"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Images"
 msgstr "الصور"
@@ -759,9 +764,8 @@ msgstr "إيقاف مؤقت"
 msgid "Stopping…"
 msgstr "التوقف…"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "POSTING PACE"
-msgstr "سرعة النشر"
+#~ msgid "POSTING PACE"
+#~ msgstr "سرعة النشر"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/PostingOptionsForm.svelte
@@ -950,6 +954,7 @@ msgstr "إغلاق النافذة"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Create post"
 msgstr "إنشاء منشور"
@@ -960,6 +965,7 @@ msgstr "اكتب منشورك وأضف الصور"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select groups"
 msgstr "اختيار المجموعات"
@@ -1105,7 +1111,9 @@ msgid "{0} shown"
 msgstr "{0} معروض"
 
 #. 0: selectedGroupIds.length
+#. 0: groups.length
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "{0} selected"
 msgstr "{0} محدد"
 
@@ -1893,13 +1901,13 @@ msgid "Post text and images to multiple Facebook groups."
 msgstr "انشر النصوص والصور في مجموعات Facebook متعددة."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Keep Postika open and your computer awake. Queues and logs are not restored after quitting."
 msgstr "أبقِ Postika مفتوحًا والكمبيوتر مستيقظًا. لا تُستعاد قوائم الانتظار والسجلات بعد الخروج."
 
-#: src/components/FeaturesCard.svelte
-msgid "<0/> Features"
-msgstr "<0/> الميزات"
+#~ msgid "<0/> Features"
+#~ msgstr "<0/> الميزات"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/UsageGuide.svelte
@@ -2041,6 +2049,7 @@ msgid "Fetch"
 msgstr "جلب"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
 msgid "Fetched posts <0/>"
 msgstr "المنشورات المجلوبة <0/>"
 
@@ -2073,6 +2082,8 @@ msgid "Edit post {0}"
 msgstr "تعديل المنشور {0}"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 msgid "Edit"
 msgstr "تعديل"
 
@@ -2088,6 +2099,7 @@ msgid "Delete"
 msgstr "حذف"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
 msgid "Post text"
 msgstr "نص المنشور"
 
@@ -2381,3 +2393,12 @@ msgstr "سيؤدي هذا إلى حذف تسجيل الدخول إلى Facebook 
 #: src/components/DeleteProfileDialog.svelte
 msgid "Deleting…"
 msgstr "جارٍ الحذف…"
+
+#: src/components/FeaturesCard.svelte
+msgid "<0/> How to use"
+msgstr "<0/> كيفية الاستخدام"
+
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
+msgid "Review your queue"
+msgstr "راجع قائمة الانتظار"

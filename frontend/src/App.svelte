@@ -8,12 +8,13 @@
   import { createAccountService } from './lib/accounts';
   import { Events } from '@wailsio/runtime';
   import { readDraft, writeDraft, type AccountDraft } from './lib/drafts';
-  let { profile, active = true, connect = false, onGroupsLoadingChange } = $props<{ profile: AccountProfile; active?: boolean; connect?: boolean; onGroupsLoadingChange?: (loading: boolean) => void }>();
+  let { profile, active = true, connect = false } = $props<{ profile: AccountProfile; active?: boolean; connect?: boolean }>();
   const GroupsService = untrack(() => createAccountService(profile.id));
   const { PublishRichPostWithOptions: publish } = GroupsService;
   let draftReady = $state(false), draftError = $state(''), imageDropMessage = $state<string | string[]>('');
   import PostingOptionsForm from './components/PostingOptionsForm.svelte';
   import DateTimePicker from './components/DateTimePicker.svelte';
+  import QueueReview from './components/QueueReview.svelte';
   import { confetti, clickOrigin } from './lib/confetti';
   import { pollWhileWindowOpen } from './lib/window-polling';
 
@@ -84,6 +85,10 @@
     return searchHits.flatMap((hit) => { const group = byId.get(hit.id); return group ? [{ ...group, parts: hit.parts }] : []; });
   });
   const allGroupsSelected = $derived(groups.length > 0 && selectedGroupIds.length === groups.length);
+  const reviewGroups = $derived.by(() => {
+    const byId = new Map(groups.map(group => [group.id, group.name]));
+    return selectedGroupIds.map(id => ({ id, name: byId.get(id) ?? id }));
+  });
 
   $effect(() => {
     const query = groupQuery.trim();
@@ -127,7 +132,6 @@
   const loginInfo = $derived(loginLabels[loginState] ?? loginLabels.checking);
   let stepHeading = $state<HTMLHeadingElement>();
   const groupsBusy = $derived(openingGroups || groupsLoadState === 'loading' || (groupsLoadState === 'waiting' && loginState !== 'browser_closed'));
-  $effect(() => { onGroupsLoadingChange?.(groupsBusy); });
   const hasCompletePost = $derived(fetchedPosts !== null
     ? fetchedPosts.length > 0 && fetchedPosts.every(post => post.text.trim().length > 0)
     : body.trim().length > 0 && images.length > 0 && images.every(image => !image.unavailable));
@@ -162,8 +166,6 @@
     loginState = 'checking';
     sortMenuOpened = false;
     sortOptionSelected = false;
-    groups = [];
-    selectedGroupIds = [];
     groupQuery = '';
     groupsLoadState = 'idle';
     try {
@@ -179,7 +181,7 @@
   }
 
   async function checkLogin() {
-    if (!active || currentStep !== 1 || !groupsBrowserOpened || openingGroups || checkingLogin) return;
+    if (!groupsBrowserOpened || openingGroups || checkingLogin || postingActive || groupsLoadState === 'complete' || groupsLoadState === 'error') return;
     checkingLogin = true;
     const generation = loadGeneration;
     try {
@@ -209,8 +211,10 @@
       const status = await GroupsService.GetGroupsLoadStatus();
       if (generation !== loadGeneration) return;
       const nextGroups = status.groups ?? [];
-      if (nextGroups.length !== groups.length || nextGroups.some((group, index) => group.id !== groups[index].id || group.name !== groups[index].name || group.picture !== groups[index].picture)) {
+      if ((nextGroups.length > 0 || status.state === 'complete') && (nextGroups.length !== groups.length || nextGroups.some((group, index) => group.id !== groups[index].id || group.name !== groups[index].name || group.picture !== groups[index].picture))) {
         groups = nextGroups;
+      }
+      if (status.state === 'complete') {
         const currentIds = new Set(groups.map((group) => group.id));
         selectedGroupIds = selectedGroupIds.filter((id) => currentIds.has(id));
       }
@@ -227,7 +231,8 @@
   }
 
   async function openPost(event: Event, scheduled = false) {
-    if (postingActive || groupsBusy || selectedGroupIds.length === 0 || !hasCompletePost) return;
+    if (postingActive || groupsBusy || selectedGroupIds.length === 0 || !hasCompletePost || !validSettings) return;
+    const celebrationOrigin = event instanceof MouseEvent ? clickOrigin(event) : null;
     let scheduledAt = '';
     if (scheduled) {
       const date = new Date(scheduleTime);
@@ -241,7 +246,6 @@
     openingPost = true;
     scheduledFor = scheduledAt;
     postingCompleted = false;
-    if (event instanceof MouseEvent) void confetti(clickOrigin(event));
     stopRequested = false;
     postFailed = false;
     postMessage = scheduled ? /* @wc-ignore */ 'Saving your scheduled queue…' : /* @wc-ignore */ 'Opening a selected group to capture fresh posting requests…';
@@ -273,6 +277,7 @@
       postingCompleted = result?.state === 'complete';
       postingFinished = postingCompleted || (result?.results?.length ?? 0) > 0;
       submittedDraft = currentDraft;
+      if (active && celebrationOrigin && result?.state === 'complete' && result.results?.length && result.results.every(entry => entry.state === 'posted')) void confetti(celebrationOrigin);
     } catch (error) {
       postFailed = true;
       postMessage = error instanceof Error ? error.message : String(error);
@@ -347,13 +352,11 @@
     return () => { disposed = true; stopImageDrops(); stopLoginPolling(); stopPostingPolling(); };
   });
 
-  async function navigate(step: number, event: MouseEvent) {
-    if (groupsBusy || postingActive) return;
-    const origin = clickOrigin(event);
+  async function navigate(step: number) {
+    if (postingActive || (groupsBusy && currentStep === 1 && step > currentStep)) return;
     currentStep = step;
     await tick();
     stepHeading?.focus();
-    void confetti(origin);
   }
 
   $effect(() => {
@@ -393,7 +396,7 @@
       {#if !draftReady}
         <p class="group-status" role="status">Restoring account workspace…</p>
       {:else if currentStep === 0}
-        <PostComposer profileID={profile.id} bind:message={imageDropMessage} bind:body bind:bodyHTML bind:bodyState bind:images bind:fetchedPosts />
+        <PostComposer profileID={profile.id} groupsLoading={groupsBusy} bind:message={imageDropMessage} bind:body bind:bodyHTML bind:bodyState bind:images bind:fetchedPosts />
       {:else if currentStep === 1}
         <div class="groups-toolbar">
           <h2>Groups</h2>
@@ -452,6 +455,7 @@
         </div>
         {/if}
       {:else}
+        <QueueReview {profile} {body} imageCount={images.length} {fetchedPosts} groups={reviewGroups} disabled={postingActive} oneditpost={() => navigate(0)} oneditgroups={() => navigate(1)} />
         <section class="run-settings" aria-label="Posting settings">
           <PostingOptionsForm bind:minimumInterval bind:maximumInterval disabled={postingActive} />
         </section>
@@ -473,12 +477,12 @@
         <button type="button" class="previous action-button action-button--secondary" onclick={() => { scheduleOpen = false; }}>Cancel</button>
         <button type="submit" form="schedule-form" class="post action-button action-button--primary" disabled={groupsBusy || !scheduleValid || selectedGroupIds.length === 0 || !hasCompletePost || !validSettings}>Confirm schedule</button>
         {:else}
-        <button type="button" class="previous action-button action-button--secondary" disabled={currentStep === 0 || postingActive || groupsBusy} onclick={(event) => navigate(currentStep - 1, event)}>
+        <button type="button" class="previous action-button action-button--secondary" disabled={currentStep === 0 || postingActive} onclick={() => navigate(currentStep - 1)}>
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg>
           Previous
         </button>
         {#if currentStep < steps.length - 1}
-        <button type="button" class="next action-button action-button--primary" disabled={!canContinue || postingActive || groupsBusy} onclick={(event) => navigate(currentStep + 1, event)}>
+        <button type="button" class="next action-button action-button--primary" disabled={!canContinue || postingActive || (groupsBusy && currentStep === 1)} onclick={() => navigate(currentStep + 1)}>
           Next
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg>
         </button>

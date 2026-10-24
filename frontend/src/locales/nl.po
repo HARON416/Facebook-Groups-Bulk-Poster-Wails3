@@ -97,6 +97,7 @@ msgid "Load groups"
 msgstr "Groepen laden"
 
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "Groups"
 msgstr "Groepen"
 
@@ -300,7 +301,9 @@ msgid "Loading accounts"
 msgstr "Accounts laden"
 
 #. 0: current?.name ?? 'Loading accounts'
+#. 0: accountLabel(profile)
 #: src/components/AccountDropdown.svelte
+#: src/components/QueueReview.svelte
 msgid "Account: {0}"
 msgstr "Account: {0}"
 
@@ -452,6 +455,8 @@ msgid "Required"
 msgstr "Verplicht"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Images"
 msgstr "Afbeeldingen"
@@ -759,9 +764,8 @@ msgstr "Pauzeren"
 msgid "Stopping…"
 msgstr "Bezig met stoppen…"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "POSTING PACE"
-msgstr "POSTSHTEMPO"
+#~ msgid "POSTING PACE"
+#~ msgstr "POSTSHTEMPO"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/PostingOptionsForm.svelte
@@ -950,6 +954,7 @@ msgstr "Venster sluiten"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Create post"
 msgstr "Bericht maken"
@@ -960,6 +965,7 @@ msgstr "Schrijf je bericht en voeg afbeeldingen toe"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select groups"
 msgstr "Groepen selecteren"
@@ -1105,7 +1111,9 @@ msgid "{0} shown"
 msgstr "{0} getoond"
 
 #. 0: selectedGroupIds.length
+#. 0: groups.length
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "{0} selected"
 msgstr "{0} geselecteerd"
 
@@ -1893,13 +1901,13 @@ msgid "Post text and images to multiple Facebook groups."
 msgstr "Plaats tekst en afbeeldingen in meerdere Facebook-groepen."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Keep Postika open and your computer awake. Queues and logs are not restored after quitting."
 msgstr "Houd Postika open en uw computer wakker. Wachtrijen en logboeken worden na afsluiten niet hersteld."
 
-#: src/components/FeaturesCard.svelte
-msgid "<0/> Features"
-msgstr "<0/> Functies"
+#~ msgid "<0/> Features"
+#~ msgstr "<0/> Functies"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/UsageGuide.svelte
@@ -2041,6 +2049,7 @@ msgid "Fetch"
 msgstr "Ophalen"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
 msgid "Fetched posts <0/>"
 msgstr "Opgehaalde berichten <0/>"
 
@@ -2073,6 +2082,8 @@ msgid "Edit post {0}"
 msgstr "Bericht {0} bewerken"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 msgid "Edit"
 msgstr "Bewerken"
 
@@ -2088,6 +2099,7 @@ msgid "Delete"
 msgstr "Verwijderen"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
 msgid "Post text"
 msgstr "Berichttekst"
 
@@ -2381,3 +2393,12 @@ msgstr "Dit verwijdert de Facebook-aanmelding, groepen, concepten, afbeeldingen,
 #: src/components/DeleteProfileDialog.svelte
 msgid "Deleting…"
 msgstr "Verwijderen…"
+
+#: src/components/FeaturesCard.svelte
+msgid "<0/> How to use"
+msgstr "<0/> Gebruiksaanwijzing"
+
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
+msgid "Review your queue"
+msgstr "Controleer je wachtrij"

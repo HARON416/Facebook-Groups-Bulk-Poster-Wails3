@@ -1,0 +1,1 @@
+{"name":"postika-website","private":true,"scripts":{"test":"node scripts/themes.test.mjs","themes:sync":"node scripts/sync-themes.mjs","build":"npm run themes:sync && tsc -p tsconfig.theme.json && tsc -p tsconfig.json","check":"tsc -p tsconfig.theme.json --noEmit && tsc -p tsconfig.json --noEmit"},"devDependencies":{"typescript":"~5.9.3"}}

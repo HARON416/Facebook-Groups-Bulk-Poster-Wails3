@@ -8,10 +8,10 @@
   let dialog: HTMLDialogElement;
   let trigger: HTMLButtonElement;
   let expanded = $state(false);
-  let view = $state<'features' | 'guide'>('features');
+  let view = $state<'features' | 'guide'>('guide');
 
   function open() {
-    view = 'features';
+    view = 'guide';
     dialog.showModal();
     expanded = true;
     dialog.querySelector('.feature-content')?.scrollTo(0, 0);
@@ -28,8 +28,8 @@
 </script>
 
 <button class="features-trigger" type="button" bind:this={trigger} data-features-card aria-haspopup="dialog" aria-expanded={expanded} aria-controls="features-dialog" onclick={open}>
-  <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.6 6.4L21 12l-6.4 2.6L12 21l-2.6-6.4L3 12l6.4-2.6L12 3Z" /></svg>
-  Features
+  <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" /><path d="M9.5 9a2.5 2.5 0 0 1 5 0c0 2-2.5 2-2.5 4m0 3h.01" /></svg>
+  How to use
 </button>
 
 <dialog class="ui-dialog" id="features-dialog" bind:this={dialog} dir={localeDirection(getLocale())} aria-labelledby="features-heading" onclick={backdrop} onclose={() => { expanded = false; trigger.focus(); }}>

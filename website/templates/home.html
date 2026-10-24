@@ -1,0 +1,110 @@
+{{define "home"}}{{template "head" .}}
+<main id="main">
+  <section class="hero wrap">
+
+    <h1>Facebook Groups <span class="accent-word">Bulk Poster</span></h1>
+    <p class="hero-copy">Post to multiple Facebook groups without repeating the same steps. Write once, choose your groups, and post now or schedule for later.</p>
+    <div class="hero-actions">{{template "cta"}}</div>
+  </section>
+
+  <section class="feature-cards wrap" id="features" aria-label="Postika features">
+    <article class="feature-card feature-card-lead" aria-labelledby="compose-title">
+      <figure class="card-screenshot">
+        <img src="/static/screenshots/compose.svg" alt="Placeholder for the Postika composer and group selection screenshot" width="900" height="650" fetchpriority="high">
+        <figcaption>Composer and groups (screenshot placeholder)</figcaption>
+      </figure>
+      <div class="card-copy">
+
+        <h2 id="compose-title">One good post. All the right groups.</h2>
+        <p>Skip opening every group and pasting the same thing again. Write your post with rich text, add and reorder your images, then search and select the Facebook groups you want to share with. Your draft stays saved while you get it right.</p>
+      </div>
+    </article>
+
+    <article class="feature-card" aria-labelledby="accounts-title">
+      <figure class="card-screenshot">
+        <img src="/static/screenshots/accounts.svg" alt="Placeholder for the account selector and separate account workspaces" loading="lazy" width="900" height="650">
+        <figcaption>Multiple accounts (screenshot placeholder)</figcaption>
+      </figure>
+      <div class="card-copy">
+
+        <h2 id="accounts-title">Several accounts. Posting at the same time.</h2>
+        <p>Run posting queues for multiple Facebook accounts at the same time. Each account keeps its own browser session, groups, drafts, and posting settings, so you can prepare another post or check progress without interrupting the other accounts.</p>
+      </div>
+    </article>
+
+
+    <article class="feature-card" aria-labelledby="languages-title">
+      <figure class="card-screenshot">
+        <img src="/static/screenshots/languages.svg" alt="Placeholder for the language selector and localized Postika interface" loading="lazy" width="900" height="650">
+        <figcaption>Languages (screenshot placeholder)</figcaption>
+      </figure>
+      <div class="card-copy">
+
+        <h2 id="languages-title">Work in the language you think in.</h2>
+        <p>Choose from 33 interface languages, including right-to-left layouts. Menus, controls, and app-generated log messages follow your choice across windows. And with 189 themes, you can make Postika feel like your own.</p>
+      </div>
+    </article>
+
+    <article class="feature-card feature-card-wide" aria-labelledby="logs-title">
+      <figure class="card-screenshot card-screenshot-wide">
+        <img src="/static/screenshots/logs.svg" alt="Placeholder for posting logs with per-group results and pause, resume, and stop controls" loading="lazy" width="1400" height="680">
+        <figcaption>Posting logs (screenshot placeholder)</figcaption>
+      </figure>
+      <div class="card-copy">
+
+        <h2 id="logs-title">See where every post stands.</h2>
+        <p>Follow progress group by group. See what’s published, what’s awaiting approval, and what needs attention, including failed, skipped, and unconfirmed submissions. Pause, resume, or stop your queue from the same window.</p>
+      </div>
+    </article>
+
+    <article class="feature-card" aria-labelledby="schedule-title">
+      <figure class="card-screenshot">
+        <img src="/static/screenshots/schedule.svg" alt="Placeholder for the scheduling and posting interval controls" loading="lazy" width="900" height="650">
+        <figcaption>Scheduling and intervals (screenshot placeholder)</figcaption>
+      </figure>
+      <div class="card-copy">
+
+        <h2 id="schedule-title">Set your pace. Leave room between posts.</h2>
+        <p>Post now or schedule a time to begin. Choose your own minimum and maximum interval between posts to avoid posting in rapid succession and help reduce the risk of rate limits or account restrictions. Follow progress as the queue runs, and pause whenever you need to.</p>
+        <p class="small-note">Posting intervals don’t guarantee protection from Facebook restrictions or bans.</p>
+        <p class="small-note">Keep Postika open and your computer awake for scheduled and active queues.</p>
+      </div>
+    </article>
+
+    <article class="feature-card" aria-labelledby="imports-title">
+      <figure class="card-screenshot">
+        <img src="/static/screenshots/imports.svg" alt="Placeholder for importing and reviewing Facebook page posts" loading="lazy" width="900" height="650">
+        <figcaption>Facebook page imports (screenshot placeholder)</figcaption>
+      </figure>
+      <div class="card-copy">
+
+        <h2 id="imports-title">Bring your page posts along.</h2>
+        <p>Already have a post worth sharing? Import posts from a Facebook page your signed-in account can access. Review the text and images, make your edits, and add the posts you want to your queue.</p>
+      </div>
+    </article>
+
+    <article class="feature-card feature-card-end" aria-labelledby="updates-title">
+      <figure class="card-screenshot">
+        <img src="/static/screenshots/updates.svg" alt="Placeholder for the in-app Restart to update button" loading="lazy" width="900" height="650">
+        <figcaption>Automatic updates (screenshot placeholder)</figcaption>
+      </figure>
+      <div class="card-copy">
+
+        <h2 id="updates-title">An update without the download hunt.</h2>
+        <p>Postika is designed to check for updates and download them in the background. When your queues are clear, choose Restart to update and get back to your workspace. Linux system packages may ask for administrator authorization.</p>
+        <p class="small-note">Update delivery is being verified for the first public release.</p>
+      </div>
+    </article>
+  </section>
+
+  <section class="faq wrap" id="questions" aria-labelledby="questions-heading">
+    <h2 id="questions-heading">A few things to know</h2>
+
+    <details><summary>What is a Facebook group auto poster?<span>+</span></summary><p>A Facebook group auto poster helps you share a prepared post across the groups you select. Postika combines a post editor, group selection, scheduling, and posting logs in one desktop app.</p></details>
+    <details><summary>Is Postika a Chrome extension?<span>+</span></summary><p>Postika is a desktop app for Windows, macOS, and Linux. It uses an installed Chrome or Chromium browser for your Facebook sessions.</p></details>
+    <details><summary>What do I need to run Postika?<span>+</span></summary><p>A supported Windows, macOS, or Linux computer, an installed Chrome or Chromium browser, and your Facebook account. Platform downloads are listed on the downloads page.</p></details>
+    <details><summary>Can multiple Facebook accounts post at the same time?<span>+</span></summary><p>Yes. Multiple accounts can run their posting queues in parallel. Each account has a separate browser session, groups, drafts, and posting settings. Switching accounts doesn’t interrupt the other queues.</p></details>
+    <details><summary>Does my computer need to stay on?<span>+</span></summary><p>Yes. Keep Postika open and your computer awake while a queue is scheduled or running. Queues and posting logs are not restored after quitting.</p></details>
+    <details><summary>Does a submission mean my post is published?<span>+</span></summary><p>Some groups require approval. Posting logs distinguish published posts, pending approval, failed, skipped, and unconfirmed submissions. Check unconfirmed results on Facebook before retrying.</p></details>
+  </section>
+</main>{{template "footer"}}{{end}}

@@ -97,6 +97,7 @@ msgid "Load groups"
 msgstr "Încarcă grupuri"
 
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "Groups"
 msgstr "Grupuri"
 
@@ -300,7 +301,9 @@ msgid "Loading accounts"
 msgstr "Se încarcă conturile"
 
 #. 0: current?.name ?? 'Loading accounts'
+#. 0: accountLabel(profile)
 #: src/components/AccountDropdown.svelte
+#: src/components/QueueReview.svelte
 msgid "Account: {0}"
 msgstr "Cont: {0}"
 
@@ -452,6 +455,8 @@ msgid "Required"
 msgstr "Obligatoriu"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Images"
 msgstr "Imagini"
@@ -759,9 +764,8 @@ msgstr "Pauză"
 msgid "Stopping…"
 msgstr "Se oprește…"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "POSTING PACE"
-msgstr "RITMUL POSTĂRILOR"
+#~ msgid "POSTING PACE"
+#~ msgstr "RITMUL POSTĂRILOR"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/PostingOptionsForm.svelte
@@ -950,6 +954,7 @@ msgstr "Închide fereastra"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Create post"
 msgstr "Creează o postare"
@@ -960,6 +965,7 @@ msgstr "Scrieți postarea și adăugați imagini"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select groups"
 msgstr "Selectează grupuri"
@@ -1105,7 +1111,9 @@ msgid "{0} shown"
 msgstr "{0} afișate"
 
 #. 0: selectedGroupIds.length
+#. 0: groups.length
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "{0} selected"
 msgstr "{0} selectate"
 
@@ -1893,13 +1901,13 @@ msgid "Post text and images to multiple Facebook groups."
 msgstr "Publicați text și imagini în mai multe grupuri Facebook."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Keep Postika open and your computer awake. Queues and logs are not restored after quitting."
 msgstr "Păstrați Postika deschis și computerul activ. Cozile și jurnalele nu sunt restaurate după închidere."
 
-#: src/components/FeaturesCard.svelte
-msgid "<0/> Features"
-msgstr "<0/> Funcționalități"
+#~ msgid "<0/> Features"
+#~ msgstr "<0/> Funcționalități"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/UsageGuide.svelte
@@ -2041,6 +2049,7 @@ msgid "Fetch"
 msgstr "Preia"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
 msgid "Fetched posts <0/>"
 msgstr "Postări preluate <0/>"
 
@@ -2073,6 +2082,8 @@ msgid "Edit post {0}"
 msgstr "Editează postarea {0}"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 msgid "Edit"
 msgstr "Editează"
 
@@ -2088,6 +2099,7 @@ msgid "Delete"
 msgstr "Șterge"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
 msgid "Post text"
 msgstr "Textul postării"
 
@@ -2381,3 +2393,12 @@ msgstr "Aceasta șterge definitiv autentificarea Facebook, grupurile, ciornele, 
 #: src/components/DeleteProfileDialog.svelte
 msgid "Deleting…"
 msgstr "Se șterge…"
+
+#: src/components/FeaturesCard.svelte
+msgid "<0/> How to use"
+msgstr "<0/> Cum se utilizează"
+
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
+msgid "Review your queue"
+msgstr "Verifică lista de publicare"

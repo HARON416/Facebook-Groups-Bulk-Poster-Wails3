@@ -97,6 +97,7 @@ msgid "Load groups"
 msgstr "Tải nhóm"
 
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "Groups"
 msgstr "Nhóm"
 
@@ -300,7 +301,9 @@ msgid "Loading accounts"
 msgstr "Đang tải tài khoản"
 
 #. 0: current?.name ?? 'Loading accounts'
+#. 0: accountLabel(profile)
 #: src/components/AccountDropdown.svelte
+#: src/components/QueueReview.svelte
 msgid "Account: {0}"
 msgstr "Tài khoản: {0}"
 
@@ -452,6 +455,8 @@ msgid "Required"
 msgstr "Bắt buộc"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Images"
 msgstr "Hình ảnh"
@@ -759,9 +764,8 @@ msgstr "Tạm dừng"
 msgid "Stopping…"
 msgstr "Đang dừng…"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "POSTING PACE"
-msgstr "TỐC ĐỘ ĐĂNG"
+#~ msgid "POSTING PACE"
+#~ msgstr "TỐC ĐỘ ĐĂNG"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/PostingOptionsForm.svelte
@@ -950,6 +954,7 @@ msgstr "Đóng cửa sổ"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Create post"
 msgstr "Tạo bài viết"
@@ -960,6 +965,7 @@ msgstr "Viết bài và thêm hình ảnh"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select groups"
 msgstr "Chọn nhóm"
@@ -1105,7 +1111,9 @@ msgid "{0} shown"
 msgstr "Đã hiển thị {0}"
 
 #. 0: selectedGroupIds.length
+#. 0: groups.length
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "{0} selected"
 msgstr "Đã chọn {0}"
 
@@ -1893,13 +1901,13 @@ msgid "Post text and images to multiple Facebook groups."
 msgstr "Đăng văn bản và hình ảnh lên nhiều nhóm Facebook."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Keep Postika open and your computer awake. Queues and logs are not restored after quitting."
 msgstr "Giữ Postika mở và máy tính hoạt động. Hàng đợi và nhật ký không được khôi phục sau khi thoát."
 
-#: src/components/FeaturesCard.svelte
-msgid "<0/> Features"
-msgstr "<0/> Tính năng"
+#~ msgid "<0/> Features"
+#~ msgstr "<0/> Tính năng"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/UsageGuide.svelte
@@ -2041,6 +2049,7 @@ msgid "Fetch"
 msgstr "Lấy bài"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
 msgid "Fetched posts <0/>"
 msgstr "Bài viết đã lấy <0/>"
 
@@ -2073,6 +2082,8 @@ msgid "Edit post {0}"
 msgstr "Sửa bài viết {0}"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 msgid "Edit"
 msgstr "Sửa"
 
@@ -2088,6 +2099,7 @@ msgid "Delete"
 msgstr "Xóa"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
 msgid "Post text"
 msgstr "Nội dung bài viết"
 
@@ -2381,3 +2393,12 @@ msgstr "Thao tác này xóa vĩnh viễn thông tin đăng nhập Facebook, nhó
 #: src/components/DeleteProfileDialog.svelte
 msgid "Deleting…"
 msgstr "Đang xóa…"
+
+#: src/components/FeaturesCard.svelte
+msgid "<0/> How to use"
+msgstr "<0/> Cách sử dụng"
+
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
+msgid "Review your queue"
+msgstr "Xem lại hàng đợi của bạn"

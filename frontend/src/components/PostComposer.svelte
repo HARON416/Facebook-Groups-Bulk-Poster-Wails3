@@ -15,6 +15,7 @@
 
   interface Props {
     profileID: string;
+    groupsLoading?: boolean;
     message: string | string[];
     body: string;
     bodyHTML: string;
@@ -23,7 +24,7 @@
     fetchedPosts?: FacebookPagePost[] | null;
   }
 
-  let { profileID, message = $bindable(), body = $bindable(), bodyHTML = $bindable(), bodyState = $bindable(), images = $bindable(), fetchedPosts = $bindable(null) }: Props = $props();
+  let { profileID, groupsLoading = false, message = $bindable(), body = $bindable(), bodyHTML = $bindable(), bodyState = $bindable(), images = $bindable(), fetchedPosts = $bindable(null) }: Props = $props();
   let fileInput = $state<HTMLInputElement>();
   let entranceBatch = $state(0);
   let composer = $state<HTMLDivElement>();
@@ -317,7 +318,7 @@
   </div>
   {/if}
   <div class="facebook-source" class:has-posts={fetchedPosts !== null}>
-    <FacebookPageDialog {profileID} onfetched={(posts) => { resetDrag(); entranceBatch++; fetchedPosts = posts; }} />
+    <FacebookPageDialog {profileID} disabled={groupsLoading} onfetched={(posts) => { resetDrag(); entranceBatch++; fetchedPosts = posts; }} />
   </div>
   {#if fetchedPosts !== null}
     <section class="fetched-section" aria-labelledby={`fetched-posts-heading-${profileID}`}>

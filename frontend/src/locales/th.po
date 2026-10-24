@@ -97,6 +97,7 @@ msgid "Load groups"
 msgstr "โหลดกลุ่ม"
 
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "Groups"
 msgstr "กลุ่ม"
 
@@ -300,7 +301,9 @@ msgid "Loading accounts"
 msgstr "กำลังโหลดบัญชี"
 
 #. 0: current?.name ?? 'Loading accounts'
+#. 0: accountLabel(profile)
 #: src/components/AccountDropdown.svelte
+#: src/components/QueueReview.svelte
 msgid "Account: {0}"
 msgstr "บัญชี: {0}"
 
@@ -452,6 +455,8 @@ msgid "Required"
 msgstr "จำเป็น"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Images"
 msgstr "รูปภาพ"
@@ -759,9 +764,8 @@ msgstr "พัก"
 msgid "Stopping…"
 msgstr "กำลังหยุด…"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "POSTING PACE"
-msgstr "จังหวะการโพสต์"
+#~ msgid "POSTING PACE"
+#~ msgstr "จังหวะการโพสต์"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/PostingOptionsForm.svelte
@@ -950,6 +954,7 @@ msgstr "ปิดหน้าต่าง"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Create post"
 msgstr "สร้างโพสต์"
@@ -960,6 +965,7 @@ msgstr "เขียนโพสต์ของคุณและเพิ่ม
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select groups"
 msgstr "เลือกกลุ่ม"
@@ -1105,7 +1111,9 @@ msgid "{0} shown"
 msgstr "แสดง {0}"
 
 #. 0: selectedGroupIds.length
+#. 0: groups.length
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "{0} selected"
 msgstr "เลือก {0}"
 
@@ -1893,13 +1901,13 @@ msgid "Post text and images to multiple Facebook groups."
 msgstr "โพสต์ข้อความและรูปภาพไปยังหลายกลุ่ม Facebook"
 
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Keep Postika open and your computer awake. Queues and logs are not restored after quitting."
 msgstr "เปิด Postika ไว้และอย่าให้คอมพิวเตอร์เข้าสู่โหมดพัก คิวและบันทึกจะไม่ถูกกู้คืนหลังออกจากแอป"
 
-#: src/components/FeaturesCard.svelte
-msgid "<0/> Features"
-msgstr "<0/> ฟีเจอร์"
+#~ msgid "<0/> Features"
+#~ msgstr "<0/> ฟีเจอร์"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/UsageGuide.svelte
@@ -2041,6 +2049,7 @@ msgid "Fetch"
 msgstr "ดึงโพสต์"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
 msgid "Fetched posts <0/>"
 msgstr "โพสต์ที่ดึงมา <0/>"
 
@@ -2073,6 +2082,8 @@ msgid "Edit post {0}"
 msgstr "แก้ไขโพสต์ {0}"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 msgid "Edit"
 msgstr "แก้ไข"
 
@@ -2088,6 +2099,7 @@ msgid "Delete"
 msgstr "ลบ"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
 msgid "Post text"
 msgstr "ข้อความโพสต์"
 
@@ -2381,3 +2393,12 @@ msgstr "การดำเนินการนี้จะลบการเข
 #: src/components/DeleteProfileDialog.svelte
 msgid "Deleting…"
 msgstr "กำลังลบ…"
+
+#: src/components/FeaturesCard.svelte
+msgid "<0/> How to use"
+msgstr "<0/> วิธีใช้งาน"
+
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
+msgid "Review your queue"
+msgstr "ตรวจสอบคิวของคุณ"

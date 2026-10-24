@@ -306,23 +306,8 @@ func TestGroupSearchAndBulkSelectionUI(t *testing.T) {
 		}
 	}
 
-	eval(`() => { const button=document.querySelector('button.next'); const rect=button.getBoundingClientRect(); window.confettiOrigin={x:rect.left+rect.width/2,y:rect.top+rect.height/2}; button.click(); }`)
-	await(`() => document.querySelector('.load-groups') !== null`)
-	await(`() => { const effect=document.querySelector('.click-confetti'); return effect !== null && effect.querySelector('svg') !== null && Math.abs(parseFloat(effect.style.left)-window.confettiOrigin.x)<1 && Math.abs(parseFloat(effect.style.top)-window.confettiOrigin.y)<1 && getComputedStyle(effect).pointerEvents==='none'; }`)
-	await(`() => { const effect=document.querySelector('.click-confetti'); const viewBox=effect?.querySelector('svg')?.viewBox.baseVal; return effect !== null && viewBox && Math.abs(parseFloat(effect.style.width)/parseFloat(effect.style.height)-viewBox.width/viewBox.height)<.01 && effect.style.transform.includes('px'); }`)
-	if dir := *uiArtifactDir; dir != "" {
-		if err := os.MkdirAll(dir, 0700); err != nil {
-			t.Fatal(err)
-		}
-		data, err := page.Screenshot(false, &proto.PageCaptureScreenshot{})
-		if err != nil {
-			t.Fatal(err)
-		}
-		if err = os.WriteFile(filepath.Join(dir, "postika-confetti.png"), data, 0600); err != nil {
-			t.Fatal(err)
-		}
-	}
-	await(`() => document.querySelector('.click-confetti') === null`)
+	page.MustElement("button.next").MustClick()
+	await(`() => document.querySelector('.load-groups') !== null && document.querySelector('.click-confetti') === null`)
 	if err := (proto.EmulationSetEmulatedMedia{Features: []*proto.EmulationMediaFeature{{Name: "prefers-reduced-motion", Value: "reduce"}}}).Call(page); err != nil {
 		t.Fatal(err)
 	}
@@ -362,6 +347,21 @@ func TestGroupSearchAndBulkSelectionUI(t *testing.T) {
 	eval(`() => document.querySelector('button.next').click()`)
 	await(`() => document.querySelector('#step-heading')?.textContent === 'Post or schedule' && !!document.querySelector('.run-settings')`)
 	await(`() => !document.querySelector('button.post').disabled`)
+	// Review the actual draft and destination without navigating away.
+	await(`() => {const review=document.querySelector('.queue-review');return review?.textContent.includes('Account: Default profile') && review.textContent.includes('Draft') && review.querySelector('.image-count dd')?.textContent==='1' && review.textContent.includes('Kahawa West') && review.textContent.includes('not restored after quitting');}`)
+	// Invalid, empty, and out-of-range intervals explain why publishing is disabled.
+	for _, value := range []string{"180", "", "59", "86401", "60.5"} {
+		eval(fmt.Sprintf(`() => {const input=document.querySelector('input[aria-label="Minimum (seconds)"]');input.value=%q;input.dispatchEvent(new Event('input',{bubbles:true}));}`, value))
+		await(`() => {const error=document.querySelector('.interval-error'),min=document.querySelector('input[aria-label="Minimum (seconds)"]'),max=document.querySelector('input[aria-label="Maximum (seconds)"]');return document.querySelector('button.post').disabled && error.textContent.includes('86400') && [min,max].some(field=>field.getAttribute('aria-invalid')==='true' && field.getAttribute('aria-describedby').split(' ').includes(error.id));}`)
+	}
+	eval(`() => {const input=document.querySelector('input[aria-label="Minimum (seconds)"]');input.value='60';input.dispatchEvent(new Event('input',{bubbles:true}));}`)
+	await(`() => !document.querySelector('button.post').disabled && document.querySelector('.interval-error').textContent==='' && [...document.querySelectorAll('.intervals input')].every(input=>input.getAttribute('aria-invalid')==='false')`)
+	page.MustElement(`.queue-review button[aria-label="Create post"]`).MustClick()
+	await(`() => document.querySelector('#post-body')?.textContent==='Draft' && document.activeElement.id==='step-heading'`)
+	page.MustElement("button.next").MustClick()
+	await(`() => document.querySelector('.checkbox__trigger')?.checked`)
+	page.MustElement("button.next").MustClick()
+	await(`() => !!document.querySelector('.queue-review')`)
 	eval(`() => { const input=document.querySelector('input[aria-label="Minimum (seconds)"]'); input.value='90'; input.dispatchEvent(new Event('input',{bubbles:true})); }`)
 	await(`() => !document.querySelector('.rewrite-card') && !document.querySelector('#rewrite-instructions') && !document.querySelector('.settings-actions') && ![...document.querySelectorAll('.app-menu button')].some(b=>b.textContent==='Settings')`)
 	// Legacy drafts must not silently turn rewriting back on after an update.
@@ -381,12 +381,29 @@ func TestGroupSearchAndBulkSelectionUI(t *testing.T) {
 			t.Fatal(err)
 		}
 	}
+	// The recap must fit the smallest supported desktop window, including RTL.
+	page.MustSetViewport(800, 600, 1, false)
+	eval(`() => {localStorage.setItem('postika:language','ar');window.dispatchEvent(new StorageEvent('storage',{key:'postika:language',newValue:'ar'}));}`)
+	await(`() => {const review=document.querySelector('.queue-review'),actions=document.querySelector('.step-actions').getBoundingClientRect();return document.documentElement.dir==='rtl' && review.querySelector('h2').textContent==='راجع قائمة الانتظار' && review.textContent.includes('Draft') && review.scrollWidth<=review.clientWidth && actions.left>=0 && actions.right<=innerWidth && actions.bottom<=innerHeight;}`)
+	if dir := *uiArtifactDir; dir != "" {
+		data, err := page.Screenshot(false, &proto.PageCaptureScreenshot{})
+		if err != nil {
+			t.Fatal(err)
+		}
+		if err := os.WriteFile(filepath.Join(dir, "postika-review-compact-arabic.png"), data, 0600); err != nil {
+			t.Fatal(err)
+		}
+	}
+	eval(`() => {localStorage.setItem('postika:language','en');window.dispatchEvent(new StorageEvent('storage',{key:'postika:language',newValue:'en'}));}`)
+	await(`() => document.documentElement.dir==='ltr' && document.querySelector('.queue-review h2').textContent==='Review your queue'`)
+	page.MustSetViewport(1200, 1000, 1, false)
 	await(`() => !document.querySelector('nav[aria-label="Post progress"] li:last-child').classList.contains('completed')`)
 	eval(`() => document.querySelector('button.post').click()`)
-	await(`() => document.querySelector('button.post').disabled && document.querySelector('button.post').textContent.includes('Posting')`)
+	await(`() => document.querySelector('button.post').disabled && document.querySelector('button.post').textContent.includes('Posting') && !document.querySelector('.click-confetti')`)
 	await(`() => !document.querySelector('nav[aria-label="Post progress"] li:last-child').classList.contains('completed')`)
 	await(`() => document.querySelector('.group-status')?.textContent.includes('1 published') && !document.querySelector('button.post').disabled && !document.querySelector('.posting-results') && [...document.querySelectorAll('.step-actions button')].some(button => button.textContent.trim() === 'View logs')`)
 	await(`() => document.querySelectorAll('nav[aria-label="Post progress"] li.completed').length===3 && document.querySelector('nav[aria-label="Post progress"] li:last-child .sr-only').textContent.includes('Completed') && !document.querySelector('nav[aria-label="Post progress"] [aria-current]')`)
+	await(`() => !!document.querySelector('.click-confetti svg')`)
 	// Navigation retains the completed run; changing the selected groups resets it.
 	eval(`() => document.querySelector('button.previous').click()`)
 	await(`() => document.querySelector('.checkbox__trigger')?.checked && document.querySelectorAll('nav[aria-label="Post progress"] li.completed').length===3`)

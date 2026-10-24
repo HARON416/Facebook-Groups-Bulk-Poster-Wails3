@@ -97,6 +97,7 @@ msgid "Load groups"
 msgstr "సమూహాలను లోడ్ చేయండి"
 
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "Groups"
 msgstr "సమూహాలు"
 
@@ -300,7 +301,9 @@ msgid "Loading accounts"
 msgstr "ఖాతాలను లోడ్ చేయడం"
 
 #. 0: current?.name ?? 'Loading accounts'
+#. 0: accountLabel(profile)
 #: src/components/AccountDropdown.svelte
+#: src/components/QueueReview.svelte
 msgid "Account: {0}"
 msgstr "ఖాతా: {0}"
 
@@ -452,6 +455,8 @@ msgid "Required"
 msgstr "అవసరం"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Images"
 msgstr "చిత్రాలు"
@@ -759,9 +764,8 @@ msgstr "పాజ్ చేయండి"
 msgid "Stopping…"
 msgstr "ఆపడం…"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "POSTING PACE"
-msgstr "పోస్టింగ్ వేగం"
+#~ msgid "POSTING PACE"
+#~ msgstr "పోస్టింగ్ వేగం"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/PostingOptionsForm.svelte
@@ -950,6 +954,7 @@ msgstr "విండోను మూసివేయండి"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Create post"
 msgstr "పోస్ట్ సృష్టించండి"
@@ -960,6 +965,7 @@ msgstr "మీ పోస్ట్ రాయండి మరియు చిత�
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select groups"
 msgstr "సమూహాలను ఎంచుకోండి"
@@ -1105,7 +1111,9 @@ msgid "{0} shown"
 msgstr "{0} చూపించబడింది"
 
 #. 0: selectedGroupIds.length
+#. 0: groups.length
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "{0} selected"
 msgstr "{0} ఎంచుకోబడింది"
 
@@ -1893,13 +1901,13 @@ msgid "Post text and images to multiple Facebook groups."
 msgstr "అనేక Facebook గ్రూపులకు వచనం మరియు చిత్రాలను పోస్ట్ చేయండి."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Keep Postika open and your computer awake. Queues and logs are not restored after quitting."
 msgstr "Postika తెరిచి ఉంచండి, కంప్యూటర్ మేల్కొని ఉండేలా చూడండి. మూసివేసిన తర్వాత క్యూలు మరియు లాగ్‌లు పునరుద్ధరించబడవు."
 
-#: src/components/FeaturesCard.svelte
-msgid "<0/> Features"
-msgstr "<0/> ఫీచర్లు"
+#~ msgid "<0/> Features"
+#~ msgstr "<0/> ఫీచర్లు"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/UsageGuide.svelte
@@ -2041,6 +2049,7 @@ msgid "Fetch"
 msgstr "పొందండి"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
 msgid "Fetched posts <0/>"
 msgstr "పొందిన పోస్టులు <0/>"
 
@@ -2073,6 +2082,8 @@ msgid "Edit post {0}"
 msgstr "పోస్ట్ {0}ను సవరించండి"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 msgid "Edit"
 msgstr "సవరించండి"
 
@@ -2088,6 +2099,7 @@ msgid "Delete"
 msgstr "తొలగించండి"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
 msgid "Post text"
 msgstr "పోస్ట్ వచనం"
 
@@ -2381,3 +2393,12 @@ msgstr "ఇది ఈ ప్రొఫైల్ యొక్క Facebook లా�
 #: src/components/DeleteProfileDialog.svelte
 msgid "Deleting…"
 msgstr "తొలగిస్తోంది…"
+
+#: src/components/FeaturesCard.svelte
+msgid "<0/> How to use"
+msgstr "<0/> ఎలా ఉపయోగించాలి"
+
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
+msgid "Review your queue"
+msgstr "మీ క్యూను సమీక్షించండి"

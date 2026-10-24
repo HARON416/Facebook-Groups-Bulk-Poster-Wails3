@@ -97,6 +97,7 @@ msgid "Load groups"
 msgstr "Cargar grupos"
 
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "Groups"
 msgstr "Grupos"
 
@@ -300,7 +301,9 @@ msgid "Loading accounts"
 msgstr "Cargando cuentas"
 
 #. 0: current?.name ?? 'Loading accounts'
+#. 0: accountLabel(profile)
 #: src/components/AccountDropdown.svelte
+#: src/components/QueueReview.svelte
 msgid "Account: {0}"
 msgstr "Cuenta: {0}"
 
@@ -452,6 +455,8 @@ msgid "Required"
 msgstr "Obligatorio"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Images"
 msgstr "Imágenes"
@@ -759,9 +764,8 @@ msgstr "Pausar"
 msgid "Stopping…"
 msgstr "Deteniéndose…"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "POSTING PACE"
-msgstr "RITMO DE PUBLICACIÓN"
+#~ msgid "POSTING PACE"
+#~ msgstr "RITMO DE PUBLICACIÓN"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/PostingOptionsForm.svelte
@@ -950,6 +954,7 @@ msgstr "Cerrar ventana"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Create post"
 msgstr "Crear publicación"
@@ -960,6 +965,7 @@ msgstr "Escribe tu publicación y agrega imágenes"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select groups"
 msgstr "Seleccionar grupos"
@@ -1105,7 +1111,9 @@ msgid "{0} shown"
 msgstr "{0} mostrado"
 
 #. 0: selectedGroupIds.length
+#. 0: groups.length
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "{0} selected"
 msgstr "{0} seleccionado"
 
@@ -1893,13 +1901,13 @@ msgid "Post text and images to multiple Facebook groups."
 msgstr "Publica texto e imágenes en varios grupos de Facebook."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Keep Postika open and your computer awake. Queues and logs are not restored after quitting."
 msgstr "Mantén Postika abierto y el ordenador activo. Las colas y los registros no se restauran después de salir."
 
-#: src/components/FeaturesCard.svelte
-msgid "<0/> Features"
-msgstr "<0/> Funciones"
+#~ msgid "<0/> Features"
+#~ msgstr "<0/> Funciones"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/UsageGuide.svelte
@@ -2041,6 +2049,7 @@ msgid "Fetch"
 msgstr "Obtener"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
 msgid "Fetched posts <0/>"
 msgstr "Publicaciones obtenidas <0/>"
 
@@ -2073,6 +2082,8 @@ msgid "Edit post {0}"
 msgstr "Editar publicación {0}"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 msgid "Edit"
 msgstr "Editar"
 
@@ -2088,6 +2099,7 @@ msgid "Delete"
 msgstr "Eliminar"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
 msgid "Post text"
 msgstr "Texto de la publicación"
 
@@ -2381,3 +2393,12 @@ msgstr "Esto elimina permanentemente el inicio de sesión de Facebook, los grupo
 #: src/components/DeleteProfileDialog.svelte
 msgid "Deleting…"
 msgstr "Eliminando…"
+
+#: src/components/FeaturesCard.svelte
+msgid "<0/> How to use"
+msgstr "<0/> Cómo usar"
+
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
+msgid "Review your queue"
+msgstr "Revisa tu cola"

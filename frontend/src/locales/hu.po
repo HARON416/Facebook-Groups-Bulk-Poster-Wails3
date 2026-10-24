@@ -97,6 +97,7 @@ msgid "Load groups"
 msgstr "Csoportok betöltése"
 
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "Groups"
 msgstr "Csoportok"
 
@@ -300,7 +301,9 @@ msgid "Loading accounts"
 msgstr "Fiókok betöltése"
 
 #. 0: current?.name ?? 'Loading accounts'
+#. 0: accountLabel(profile)
 #: src/components/AccountDropdown.svelte
+#: src/components/QueueReview.svelte
 msgid "Account: {0}"
 msgstr "Fiók: {0}"
 
@@ -452,6 +455,8 @@ msgid "Required"
 msgstr "Kötelező"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Images"
 msgstr "Képek"
@@ -759,9 +764,8 @@ msgstr "Szünet"
 msgid "Stopping…"
 msgstr "Leállítás…"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "POSTING PACE"
-msgstr "POSZTOLÁSI ÜTEM"
+#~ msgid "POSTING PACE"
+#~ msgstr "POSZTOLÁSI ÜTEM"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/PostingOptionsForm.svelte
@@ -950,6 +954,7 @@ msgstr "Ablak bezárása"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Create post"
 msgstr "Bejegyzés létrehozása"
@@ -960,6 +965,7 @@ msgstr "Írja meg bejegyzését és adjon hozzá képeket"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select groups"
 msgstr "Csoportok kiválasztása"
@@ -1105,7 +1111,9 @@ msgid "{0} shown"
 msgstr "{0} megjelenítve"
 
 #. 0: selectedGroupIds.length
+#. 0: groups.length
 #: src/App.svelte
+#: src/components/QueueReview.svelte
 msgid "{0} selected"
 msgstr "{0} kiválasztva"
 
@@ -1893,13 +1901,13 @@ msgid "Post text and images to multiple Facebook groups."
 msgstr "Tegyen közzé szöveget és képeket több Facebook-csoportban."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Keep Postika open and your computer awake. Queues and logs are not restored after quitting."
 msgstr "Tartsa nyitva a Postikát, a számítógépet pedig ébren. Kilépés után a várólisták és naplók nem állnak helyre."
 
-#: src/components/FeaturesCard.svelte
-msgid "<0/> Features"
-msgstr "<0/> Funkciók"
+#~ msgid "<0/> Features"
+#~ msgstr "<0/> Funkciók"
 
 #: src/components/FeaturesCard.svelte
 #: src/components/UsageGuide.svelte
@@ -2041,6 +2049,7 @@ msgid "Fetch"
 msgstr "Lekérés"
 
 #: src/components/PostComposer.svelte
+#: src/components/QueueReview.svelte
 msgid "Fetched posts <0/>"
 msgstr "Lekért bejegyzések <0/>"
 
@@ -2073,6 +2082,8 @@ msgid "Edit post {0}"
 msgstr "{0}. bejegyzés szerkesztése"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
 msgid "Edit"
 msgstr "Szerkesztés"
 
@@ -2088,6 +2099,7 @@ msgid "Delete"
 msgstr "Törlés"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/QueueReview.svelte
 msgid "Post text"
 msgstr "Bejegyzés szövege"
 
@@ -2381,3 +2393,12 @@ msgstr "Ez véglegesen törli a profil Facebook-bejelentkezését, csoportjait, 
 #: src/components/DeleteProfileDialog.svelte
 msgid "Deleting…"
 msgstr "Törlés…"
+
+#: src/components/FeaturesCard.svelte
+msgid "<0/> How to use"
+msgstr "<0/> Használati útmutató"
+
+#: src/components/QueueReview.svelte
+#: src/components/QueueReview.svelte
+msgid "Review your queue"
+msgstr "Várólista áttekintése"

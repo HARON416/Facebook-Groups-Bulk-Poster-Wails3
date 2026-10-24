@@ -22,8 +22,6 @@
   let adding = $state(false), busy = $state(false), error = $state('');
   let addTrigger: HTMLButtonElement;
   let windowControls = $state<WindowControls>();
-  let groupsLoading = $state<Record<string, boolean>>({});
-  const groupsBusy = $derived(groupsLoading[selected] ?? false);
   const current = $derived(profiles.find((profile) => profile.id === selected));
   const background = $derived(profiles.filter((profile) => profile.active && profile.id !== selected));
 
@@ -54,7 +52,7 @@
   }
 
   async function openPostingLogs() {
-    if (!selected || busy || groupsBusy) return;
+    if (!selected || busy) return;
     error = '';
     const account = createAccountService(selected);
     try { await account.OpenPostingLogs(); }
@@ -62,7 +60,7 @@
   }
 
   async function select(id: string) {
-    if (busy || groupsBusy || id === selected) return;
+    if (busy || id === selected) return;
     busy = true; error = '';
     try {
       await ProfileService.SelectProfile(id);
@@ -72,7 +70,7 @@
     finally { busy = false; }
   }
   function showAddAccount() {
-    if (!adding && !busy && !groupsBusy) adding = true;
+    if (!adding && !busy) adding = true;
   }
   function profileCreated(profile: AccountProfile) {
     profiles = [...profiles, { ...profile, active: false, state: '' }];
@@ -83,14 +81,14 @@
 
 <div class="workspace ui-window">
   <header class="top-bar">
-    <div class="profile-control"><AccountDropdown {profiles} {selected} compact disabled={busy || groupsBusy} onselect={select} onrenamed={profileRenamed} oncreated={profileCreated} ondeleted={() => void refresh()} /></div>
+    <div class="profile-control"><AccountDropdown {profiles} {selected} compact disabled={busy} onselect={select} onrenamed={profileRenamed} oncreated={profileCreated} ondeleted={() => void refresh()} /></div>
     <div class="drag-area" aria-hidden="true" ondblclick={() => windowControls?.toggleMaximise()}></div>
     <nav class="app-menu" aria-label="Application menu">
-    <fieldset class="menu-controls" disabled={groupsBusy}>
+    <fieldset class="menu-controls">
       <UpdateButton />
       <FeaturesCard />
-      <button type="button" disabled={busy || groupsBusy} aria-expanded={adding} bind:this={addTrigger} aria-haspopup="dialog" aria-controls="add-account-dialog" onclick={showAddAccount}>Add account</button>
-      <button type="button" disabled={busy || groupsBusy || !selected} onclick={() => openPostingLogs()}>Posting logs</button>
+      <button type="button" disabled={busy} aria-expanded={adding} bind:this={addTrigger} aria-haspopup="dialog" aria-controls="add-account-dialog" onclick={showAddAccount}>Add account</button>
+      <button type="button" disabled={busy || !selected} onclick={() => openPostingLogs()}>Posting logs</button>
       <LanguageMenu />
       <ThemeMenu />
       <WhatsAppButton onerror={(message) => { error = message; }} />
@@ -102,12 +100,12 @@
   {#if error}<div class="profile-error" role="alert"><LocalizedFeedback message={error} /></div>{/if}
   {#if background.length}
     <div class="background-jobs" role="status">In the background:
-      {#each background as profile (profile.id)}<button type="button" disabled={busy || groupsBusy} onclick={() => select(profile.id)}>{accountLabel(profile)} · {profile.state === 'scheduled' ? 'Scheduled' : 'Running'}</button>{/each}
+      {#each background as profile (profile.id)}<button type="button" disabled={busy} onclick={() => select(profile.id)}>{accountLabel(profile)} · {profile.state === 'scheduled' ? 'Scheduled' : 'Running'}</button>{/each}
     </div>
   {/if}
   {#each opened as profile (profile.id)}
     <div class="account-workspace" hidden={profile.id !== selected}>
-      <App {profile} active={profile.id === selected} connect={profile.connect} onGroupsLoadingChange={(loading) => { groupsLoading[profile.id] = loading; }} />
+      <App {profile} active={profile.id === selected} connect={profile.connect} />
     </div>
   {/each}
   {#if !selected && !error}<p class="loading" role="status">{profiles.length ? 'Loading accounts…' : 'Add an account to get started.'}</p>{/if}
