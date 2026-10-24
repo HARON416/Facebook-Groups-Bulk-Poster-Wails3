@@ -79,7 +79,6 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool) {
 	var fakeGroupsOpened, fakeGroupsLoading atomic.Bool
 	var postedFacebookCards, scheduledFacebookCards atomic.Value
 	var stoppedFacebookPost atomic.Bool
-	var settingsFailure atomic.Value
 	var stallConnectivity atomic.Bool
 	connectivityStarted := make(chan struct{})
 	connectivityRelease := make(chan struct{})
@@ -104,13 +103,6 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool) {
 			return
 		}
 		w.Header().Set("Content-Type", "application/json")
-		if call.Args.MethodID == 1578609276 {
-			if message, _ := settingsFailure.Load().(string); message != "" {
-				w.WriteHeader(http.StatusInternalServerError)
-				_ = json.NewEncoder(w).Encode(map[string]string{"message": message})
-				return
-			}
-		}
 		if call.Object == 10 {
 			_ = json.NewEncoder(w).Encode(nil)
 			return
@@ -291,7 +283,7 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool) {
 	}))
 	defer server.Close()
 	defer releaseConnectivity.Do(func() { close(connectivityRelease) })
-	ctx, cancel := context.WithTimeout(context.Background(), 45*time.Second)
+	ctx, cancel := context.WithTimeout(context.Background(), 90*time.Second)
 	defer cancel()
 	launch := launcher.New().Bin(chrome).UserDataDir(t.TempDir()).Headless(true)
 	control, err := launch.Launch()
@@ -357,6 +349,12 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool) {
 	}
 	await(`() => document.querySelector('#post-body[contenteditable=true]') !== null`)
 	if pageFetchOnly {
+		// An inactive account dialog must not process an unrelated submission.
+		eval(`async () => {const form=document.querySelector('#add-account-form');if(form){const input=form.querySelector('input');input.value='Unintended account';input.dispatchEvent(new Event('input',{bubbles:true}));form.requestSubmit();}await new Promise(resolve=>setTimeout(resolve,400));}`)
+		if list := m.GetProfiles(); len(list.Profiles) != 2 || list.Selected != "default" {
+			t.Fatalf("inactive account form created or selected a profile: %+v", list)
+		}
+		await(`() => !document.querySelector('#add-account-form') && !document.querySelector('#account-name')`)
 		// Page fetching validates inputs, keeps login/progress visible, renders
 		// successful results outside the dialog, and retains the manual draft.
 		page.MustElement("#post-body").MustInput("Keep this manual draft")
@@ -366,19 +364,22 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool) {
 		eval(`() => { const f=document.querySelector('dialog[id^="facebook-page-dialog-"] form'); if(f.reportValidity()) throw new Error('External URL accepted'); }`)
 		eval(`() => {localStorage.setItem('postika:language','he');window.dispatchEvent(new StorageEvent('storage',{key:'postika:language'}));}`)
 		await(`() => document.documentElement.lang==='he'`)
-		eval(`() => {const u=document.querySelector('dialog input[type=url]'),n=document.querySelector('dialog input[type=number]');n.value='-1';n.dispatchEvent(new Event('input',{bubbles:true}));u.checkValidity();n.checkValidity();}`)
-		await(`() => document.querySelector('dialog input[type=url]').validationMessage.startsWith('יש להזין כתובת של דף פייסבוק') && document.querySelector('dialog input[type=number]').validationMessage==='יש להזין מספר שלם וחיובי של פוסטים לייבוא'`)
-		page.MustElement(`[aria-label="הגדלת מספר הפוסטים"]`).MustClick()
-		await(`() => document.querySelector('dialog input[type=number]').value==='1' && document.querySelector('dialog input[type=number]').validity.valid`)
-		eval(`() => {const n=document.querySelector('dialog input[type=number]');n.value='1';n.dispatchEvent(new Event('input',{bubbles:true}));localStorage.setItem('postika:language','en');window.dispatchEvent(new StorageEvent('storage',{key:'postika:language'}));}`)
+		eval(`() => {const u=document.querySelector('dialog[open] input[type=url]'),n=document.querySelector('dialog[open] input[type=number]');n.value='-1';n.dispatchEvent(new Event('input',{bubbles:true}));u.checkValidity();n.checkValidity();}`)
+		await(`() => document.querySelector('dialog[open] input[type=url]').validationMessage.startsWith('יש להזין כתובת של דף פייסבוק') && document.querySelector('dialog[open] input[type=number]').validationMessage==='יש להזין מספר שלם וחיובי של פוסטים לייבוא'`)
+		page.MustElement(`dialog[open] input[type=number]`).MustSelectAllText().MustInput("1")
+		await(`() => document.querySelector('dialog[open] input[type=number]').value==='1' && document.querySelector('dialog[open] input[type=number]').validity.valid`)
+		eval(`() => {const n=document.querySelector('dialog[open] input[type=number]');n.value='1';n.dispatchEvent(new Event('input',{bubbles:true}));localStorage.setItem('postika:language','en');window.dispatchEvent(new StorageEvent('storage',{key:'postika:language'}));}`)
 		await(`() => document.documentElement.lang==='en'`)
-		eval(`() => { const e=document.querySelector('dialog input[type="url"]'); e.value=''; e.dispatchEvent(new Event('input',{bubbles:true})); }`)
-		page.MustElement(`dialog input[type="url"]`).MustInput("https://web.facebook.com/swiftlineMotors")
-		eval(`() => { const e=document.querySelector('dialog input[type="number"]'); e.value='1'; e.dispatchEvent(new Event('input',{bubbles:true})); }`)
-		page.MustElement(`[aria-label="Increase number of posts"]`).MustClick()
-		await(`() => document.querySelector('dialog input[type="number"]').value==='2'`)
+		eval(`() => { const e=document.querySelector('dialog[open] input[type="url"]'); e.value=''; e.dispatchEvent(new Event('input',{bubbles:true})); }`)
+		page.MustElement(`dialog[open] input[type="url"]`).MustInput("https://web.facebook.com/swiftlineMotors")
+		eval(`() => { const e=document.querySelector('dialog[open] input[type="number"]'); e.value='1'; e.dispatchEvent(new Event('input',{bubbles:true})); }`)
+		page.MustElement(`dialog[open] input[type=number]`).MustFocus()
+		if err := page.Keyboard.Type(input.ArrowUp); err != nil {
+			t.Fatal(err)
+		}
+		await(`() => document.querySelector('dialog[open] input[type="number"]').value==='2'`)
 		page.MustElement(`dialog[id^="facebook-page-dialog-"] button[type="submit"]`).MustClick()
-		await(`() => document.querySelector('dialog .fetch-status')?.innerText.includes('Finish signing in') && document.querySelector('dialog button[type="submit"]').disabled && document.querySelector('dialog input[type="url"]').matches(':disabled')`)
+		await(`() => document.querySelector('dialog[open] .fetch-status')?.innerText.includes('Finish signing in') && document.querySelector('dialog[open] button[type="submit"]').disabled && document.querySelector('dialog[open] input[type="url"]').matches(':disabled')`)
 		pixel := "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
 		pageFetches.Store("default", FacebookPageFetchStatus{RunID: 1, State: "complete", Target: 2, Message: "Fetched 2 posts.", Posts: []FacebookPagePost{{ID: "first", Text: "First fetched post", Images: []string{pixel, pixel}}, {ID: "second", Text: "Second fetched post"}}})
 		await(`() => !document.querySelector('dialog[id^="facebook-page-dialog-"]').open && document.querySelectorAll('.fetched-posts li').length===2 && document.querySelector('.fetched-posts').innerText.includes('First fetched post') && !document.querySelector('#post-body') && !document.querySelector('[data-file-drop-target]') && !document.querySelector('dialog .fetched-posts')`)
@@ -391,13 +392,13 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool) {
 		await(`() => document.documentElement.lang==='sw' && document.querySelector('.facebook-page-option').textContent.includes('Au bofya hapa') && document.querySelector('.fetched-heading h2').textContent.includes('Machapisho yaliyoletwa') && document.querySelector('.post-card .card-action').textContent==='Hariri' && document.querySelector('.post-card').getAttribute('aria-label')==='Chapisho 1' && document.querySelector('.post-text').textContent==='First fetched post'`)
 		pageFetches.Store("default", FacebookPageFetchStatus{RunID: 1, State: "loading", Target: 2, Message: "Fetched 1 of 2 posts…", Posts: []FacebookPagePost{{ID: "first", Text: "First fetched post"}}})
 		page.MustElement(".facebook-page-option").MustClick()
-		await(`() => document.querySelector('dialog[id^="facebook-page-dialog-"]')?.open && document.querySelector('dialog .fetch-status > p')?.textContent==='Yameletwa machapisho 1 kati ya 2…' && document.querySelector('dialog[id^="facebook-page-dialog-"] h2').textContent==='Leta machapisho kutoka ukurasa wa Facebook' && document.querySelector('dialog button[type="submit"]').textContent==='Inaleta…' && document.querySelector('dialog input[type="url"]').value==='https://web.facebook.com/swiftlineMotors'`)
+		await(`() => document.querySelector('dialog[id^="facebook-page-dialog-"]')?.open && document.querySelector('dialog[open] .fetch-status > p')?.textContent==='Yameletwa machapisho 1 kati ya 2…' && document.querySelector('dialog[id^="facebook-page-dialog-"] h2').textContent==='Leta machapisho kutoka ukurasa wa Facebook' && document.querySelector('dialog[open] button[type="submit"]').textContent==='Inaleta…' && document.querySelector('dialog[open] input[type="url"]').value==='https://web.facebook.com/swiftlineMotors'`)
 		pageFetches.Store("default", FacebookPageFetchStatus{RunID: 1, State: "capturing", Target: 2, Message: "No photo query appeared after opening the image. Reloading the photo page to capture fresh values…"})
-		await(`() => document.querySelector('dialog .fetch-status > p')?.textContent==='Inapakia upya ukurasa wa picha…'`)
+		await(`() => document.querySelector('dialog[open] .fetch-status > p')?.textContent==='Inapakia upya ukurasa wa picha…'`)
 		eval(`() => {localStorage.setItem('postika:language','ar');window.dispatchEvent(new StorageEvent('storage',{key:'postika:language',newValue:'ar'}));}`)
-		await(`() => document.documentElement.lang==='ar' && document.documentElement.dir==='rtl' && document.querySelector('dialog .fetch-status > p')?.textContent==='جارٍ إعادة تحميل صفحة الصورة…' && document.querySelector('dialog[id^="facebook-page-dialog-"] h2').textContent==='جلب منشورات من صفحة فيسبوك' && document.querySelector('dialog input[type="url"]').value==='https://web.facebook.com/swiftlineMotors' && document.querySelector('.post-text').textContent==='First fetched post'`)
+		await(`() => document.documentElement.lang==='ar' && document.documentElement.dir==='rtl' && document.querySelector('dialog[open] .fetch-status > p')?.textContent==='جارٍ إعادة تحميل صفحة الصورة…' && document.querySelector('dialog[id^="facebook-page-dialog-"] h2').textContent==='جلب منشورات من صفحة فيسبوك' && document.querySelector('dialog[open] input[type="url"]').value==='https://web.facebook.com/swiftlineMotors' && document.querySelector('.post-text').textContent==='First fetched post'`)
 		eval(`() => {localStorage.setItem('postika:language','he');window.dispatchEvent(new StorageEvent('storage',{key:'postika:language',newValue:'he'}));}`)
-		await(`() => document.documentElement.lang==='he' && document.documentElement.dir==='rtl' && document.querySelector('dialog .fetch-status > p')?.textContent==='דף התמונה נטען מחדש…' && document.querySelector('dialog[id^="facebook-page-dialog-"] h2').textContent==='ייבוא פוסטים מדף פייסבוק' && document.querySelector('.post-card .card-action').textContent==='עריכה' && document.querySelector('.post-card').getAttribute('aria-label')==='פוסט 1' && document.querySelector('dialog input[type="url"]').value==='https://web.facebook.com/swiftlineMotors' && getComputedStyle(document.querySelector('dialog input[type="url"]')).direction==='ltr' && document.querySelector('.post-text').textContent==='First fetched post'`)
+		await(`() => document.documentElement.lang==='he' && document.documentElement.dir==='rtl' && document.querySelector('dialog[open] .fetch-status > p')?.textContent==='דף התמונה נטען מחדש…' && document.querySelector('dialog[id^="facebook-page-dialog-"] h2').textContent==='ייבוא פוסטים מדף פייסבוק' && document.querySelector('.post-card .card-action').textContent==='עריכה' && document.querySelector('.post-card').getAttribute('aria-label')==='פוסט 1' && document.querySelector('dialog[open] input[type="url"]').value==='https://web.facebook.com/swiftlineMotors' && getComputedStyle(document.querySelector('dialog[open] input[type="url"]')).direction==='ltr' && document.querySelector('.post-text').textContent==='First fetched post'`)
 		eval(`() => {const d=document.querySelector('dialog[id^="facebook-page-dialog-"]'),r=d.getBoundingClientRect();if(r.left<0 || r.right>innerWidth || d.scrollWidth>d.clientWidth)throw new Error('Localized dialog overflows');}`)
 		page.MustElement(`dialog[id^="facebook-page-dialog-"] .action-button--secondary`).MustClick()
 		await(`() => !document.querySelector('dialog[id^="facebook-page-dialog-"]').open`)
@@ -418,7 +419,7 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool) {
 		page.MustElement(".bulk-actions button").MustClick()
 		await(`() => document.querySelector('.selection-count').textContent.includes('2 selected') && !document.querySelector('button.next').disabled`)
 		page.MustElement("button.next").MustClick()
-		await(`() => document.querySelector('#step-heading')?.textContent==='Preferences & post' && [...document.querySelectorAll('.step-actions button')].filter(b=>['Post now','Schedule'].includes(b.textContent.trim())).length===2 && [...document.querySelectorAll('.step-actions button')].filter(b=>['Post now','Schedule'].includes(b.textContent.trim())).every(b=>!b.disabled)`)
+		await(`() => document.querySelector('#step-heading')?.textContent==='Post or schedule' && [...document.querySelectorAll('.step-actions button')].filter(b=>['Post now','Schedule'].includes(b.textContent.trim())).length===2 && [...document.querySelectorAll('.step-actions button')].filter(b=>['Post now','Schedule'].includes(b.textContent.trim())).every(b=>!b.disabled)`)
 		eval(`() => [...document.querySelectorAll('.step-actions button')].find(b=>b.textContent.trim()==='Schedule').click()`)
 		await(`() => !!document.querySelector('#schedule-form') && !document.querySelector('button[form="schedule-form"]').disabled`)
 		page.MustElement(`button[form="schedule-form"]`).MustClick()
@@ -459,20 +460,23 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool) {
 		// immediately close the dialog or reapply the old result.
 		page.MustElement(".facebook-page-option").MustClick()
 		await(`() => document.querySelector('dialog[id^="facebook-page-dialog-"]').open`)
-		page.MustElement(`dialog input[type="url"]`).MustInput("https://web.facebook.com/swiftlineMotors")
-		eval(`() => { const e=document.querySelector('dialog input[type="number"]');e.value='2';e.dispatchEvent(new Event('input',{bubbles:true})); }`)
+		page.MustElement(`dialog[open] input[type="url"]`).MustInput("https://web.facebook.com/swiftlineMotors")
+		eval(`() => { const e=document.querySelector('dialog[open] input[type="number"]');e.value='2';e.dispatchEvent(new Event('input',{bubbles:true})); }`)
 		page.MustElement(`dialog[id^="facebook-page-dialog-"] button[type="submit"]`).MustClick()
-		await(`() => document.querySelector('dialog .fetch-status')?.innerText.includes('Finish signing in')`)
+		await(`() => document.querySelector('dialog[open] .fetch-status')?.innerText.includes('Finish signing in')`)
 		pageFetches.Store("default", FacebookPageFetchStatus{RunID: 2, State: "error", Target: 2, Message: "Could not fetch the next page.", Posts: []FacebookPagePost{{ID: "partial", Text: "Partial result must not replace cards"}}})
-		await(`() => document.querySelector('dialog .fetch-status.error') && document.querySelector('dialog[id^="facebook-page-dialog-"]').open && document.querySelectorAll('.fetched-posts li').length===2 && !document.querySelector('.fetched-posts').innerText.includes('Partial result')`)
+		await(`() => document.querySelector('dialog[open] .fetch-status.error') && document.querySelector('dialog[id^="facebook-page-dialog-"]').open && document.querySelectorAll('.fetched-posts li').length===2 && !document.querySelector('.fetched-posts').innerText.includes('Partial result')`)
 		page.MustElement(`dialog[id^="facebook-page-dialog-"] button[type="submit"]`).MustClick()
-		await(`() => document.querySelector('dialog .fetch-status')?.innerText.includes('Finish signing in')`)
+		await(`() => document.querySelector('dialog[open] .fetch-status')?.innerText.includes('Finish signing in')`)
 		if err := page.Keyboard.Type(input.Escape); err != nil {
 			t.Fatal(err)
 		}
 		await(`() => !document.querySelector('dialog[id^="facebook-page-dialog-"]').open && document.activeElement.matches('.facebook-page-option')`)
 		if saved, _ := pageFetches.Load("default"); saved.(FacebookPageFetchStatus).State != "cancelled" || pageFetchStarts.Load() != 3 {
 			t.Fatal("page fetch was not cancelled")
+		}
+		if list := m.GetProfiles(); len(list.Profiles) != 2 || list.Selected != "default" {
+			t.Fatalf("page imports created or selected an account: %+v", list)
 		}
 		// Card edits commit on Save, Cancel discards pending changes, and
 		// deletion commits directly without an Undo message.
@@ -559,7 +563,7 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool) {
 	if err := page.Keyboard.Type(input.Tab, input.Enter); err != nil {
 		t.Fatal(err)
 	}
-	await(`() => document.querySelector('#features-heading').textContent==='Features & How to Use' && [...document.querySelectorAll('.usage-guide section > h2')].map(h=>h.textContent).join('|')==='Create post|Select groups|Preferences & post' && document.querySelector('.usage-guide .introduction').textContent.includes('default account') && document.querySelector('.additional-accounts').textContent.includes('optional') && document.querySelector('.usage-guide').textContent.includes('both are required') && document.activeElement.matches('[data-usage-guide][aria-pressed=true]')`)
+	await(`() => document.querySelector('#features-heading').textContent==='Features & How to Use' && [...document.querySelectorAll('.usage-guide section > h2')].map(h=>h.textContent).join('|')==='Create post|Select groups|Post or schedule' && document.querySelector('.usage-guide .introduction').textContent.includes('default account') && document.querySelector('.additional-accounts').textContent.includes('optional') && document.querySelector('.usage-guide').textContent.includes('both are required') && document.activeElement.matches('[data-usage-guide][aria-pressed=true]')`)
 	if *uiArtifactDir != "" {
 		data, err := page.Screenshot(false, &proto.PageCaptureScreenshot{})
 		if err != nil {
@@ -679,6 +683,14 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool) {
 	if err := page.Keyboard.Type(input.Tab); err != nil {
 		t.Fatal(err)
 	}
+	await(`() => document.activeElement?.matches('[data-add-account]') && document.querySelector('[role=listbox]')!==null`)
+	if err := page.Keyboard.Type(input.Tab); err != nil {
+		t.Fatal(err)
+	}
+	await(`() => document.querySelector('[role=listbox]')===null && document.activeElement?.textContent==='Updates'`)
+	if err := page.Keyboard.Type(input.Tab); err != nil {
+		t.Fatal(err)
+	}
 	await(`() => document.querySelector('[role=listbox]')===null && document.activeElement.matches('[data-features-card]')`)
 	if err := page.Keyboard.Type(input.Tab); err != nil {
 		t.Fatal(err)
@@ -709,7 +721,7 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool) {
 	}
 	await(fmt.Sprintf(`() => document.querySelector('#account-profile').dataset.profileId===%q && !document.querySelector('#account-profile').disabled && document.querySelector('[role=listbox]')===null`, business.ID))
 	await(`() => document.querySelector('#post-body')?.textContent==='' && document.querySelectorAll('.previews .thumbnail').length===0`)
-	eval(`() => [...document.querySelectorAll('.app-menu button')].find(b=>b.textContent==='Settings').click()`)
+	await(`() => ![...document.querySelectorAll('.app-menu button')].some(b=>b.textContent==='Settings')`)
 	await(`() => !document.querySelector('.profile-error')`)
 	eval(`() => [...document.querySelectorAll('.app-menu button')].find(b=>b.textContent==='Posting logs').click()`)
 	await(`() => !document.querySelector('.profile-error')`)
@@ -786,7 +798,7 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool) {
 	eval(`() => document.querySelector('.account-workspace:not([hidden]) .next').click()`)
 	await(`() => document.querySelector('#group-search')?.placeholder==='Cari grup…' && document.querySelector('.selection-count')?.textContent.includes('dipilih')`)
 	eval(`() => document.querySelector('.account-workspace:not([hidden]) .next').click()`)
-	await(`() => document.querySelector('#step-heading')?.textContent==='Preferensi & kirim' && document.querySelector('.account-context') === null && document.body.innerText.includes('Jeda antarpostingan') && document.body.innerText.includes('Kirim sekarang') && document.querySelector('[aria-label="Minimum (detik)"]') !== null`)
+	await(`() => document.querySelector('#step-heading')?.textContent==='Posting atau jadwalkan' && document.querySelector('.account-context') === null && document.body.innerText.includes('Jeda antarpostingan') && document.body.innerText.includes('Kirim sekarang') && document.querySelector('[aria-label="Minimum (detik)"]') !== null`)
 	// Scheduling and selected calendar days use the same dark palette.
 	eval(`() => [...document.querySelectorAll('.account-workspace:not([hidden]) .step-actions button')].find(b=>b.textContent==='Jadwalkan').click()`)
 	await(`() => document.querySelector('.date-time-picker') && document.documentElement.dataset.theme==='dark' && getComputedStyle(document.querySelector('.date-time-picker')).backgroundColor===getComputedStyle(document.querySelector('.option-card')).backgroundColor && getComputedStyle(document.querySelector('.calendar .selected')).color!==getComputedStyle(document.querySelector('.calendar .selected')).backgroundColor`)
@@ -806,25 +818,8 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool) {
 	selectAccount(business.ID)
 	changeLanguage("sw")
 	await(`() => document.querySelector('#step-heading')?.textContent==='Tengeneza chapisho' && document.querySelector('#post-body')?.textContent==='Business draft'`)
-	settingsPage, err := browser.Page(proto.TargetCreateTarget{URL: server.URL + "/?view=settings&profile=" + business.ID + "&account=Business"})
-	if err != nil {
-		t.Fatal(err)
-	}
-	awaitPage(settingsPage, `() => document.querySelector('h1')?.textContent==='Mipangilio' && document.documentElement.lang==='sw'`)
-	settingsPage.MustElement(`input[type=password]`).MustInput("unsaved-test-key")
-	awaitPage(settingsPage, `() => document.documentElement.dataset.theme==='dark'`)
-	chooseTheme(settingsPage, "light")
-	await(`() => document.documentElement.dataset.theme==='light' && document.querySelector('#post-body')?.textContent==='Business draft'`)
-	awaitPage(settingsPage, `() => document.documentElement.dataset.theme==='light' && document.querySelector('input[type=password]').value==='unsaved-test-key'`)
-	chooseTheme(page, "dark")
-	awaitPage(settingsPage, `() => document.documentElement.dataset.theme==='dark' && document.querySelector('input[type=password]').value==='unsaved-test-key'`)
-	settingsPage.MustEval(`() => {window.dispatchEvent(new Event('postika:window-hidden'));localStorage.setItem('postika:theme','light');window.dispatchEvent(new Event('postika:window-shown'));}`)
-	awaitPage(settingsPage, `() => document.documentElement.dataset.theme==='light' && document.querySelector('input[type=password]').value==='unsaved-test-key'`)
-	await(`() => document.documentElement.dataset.theme==='light'`)
-	chooseTheme(page, "dark")
-	awaitPage(settingsPage, `() => document.documentElement.dataset.theme==='dark'`)
 	// Auxiliary titlebars share the controls and localize the default account.
-	for _, view := range []struct{ query, title, screenshot string }{{"settings", "Mipangilio", "postika-settings-titlebar.png"}, {"posting-logs", "Kumbukumbu za uchapishaji", "postika-logs-titlebar.png"}} {
+	for _, view := range []struct{ query, title, screenshot string }{{"posting-logs", "Kumbukumbu za uchapishaji", "postika-logs-titlebar.png"}} {
 		auxURL := server.URL + "/?view=" + view.query + "&profile=default&account=Default%20profile"
 		aux, err := browser.Page(proto.TargetCreateTarget{URL: auxURL})
 		if err != nil {
@@ -835,24 +830,9 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool) {
 		}
 		awaitPage(aux, `() => (document.querySelector('.window-account')?.textContent==='Wasifu chaguomsingi' || document.querySelector('.window-profile .account-name')?.textContent==='Wasifu chaguomsingi') && document.querySelectorAll('.window-controls button').length===3 && getComputedStyle(document.querySelector('.window-caption')).getPropertyValue('--wails-draggable').trim()==='drag' && !document.querySelector('.window-controls [title]') && document.title.includes('Wasifu chaguomsingi')`)
 		awaitPage(aux, `() => document.documentElement.dataset.theme==='dark' && getComputedStyle(document.querySelector('.auxiliary-window')).borderTopWidth==='2px' && document.documentElement.scrollWidth<=innerWidth && document.documentElement.scrollHeight<=innerHeight`)
-		if view.query == "settings" {
-			if err := aux.SetViewport(&proto.EmulationSetDeviceMetricsOverride{Width: 600, Height: 480, DeviceScaleFactor: 1}); err != nil {
-				t.Fatal(err)
-			}
-			awaitPage(aux, `() => !document.querySelector('input[type=checkbox]').disabled`)
-			assertWindowScrollContained(t, aux, ".auxiliary-content", ".auxiliary-title-bar")
-			aux.MustEval(`() => document.querySelector('input[type=checkbox]').click()`)
-			awaitPage(aux, `() => document.querySelector('textarea')!==null`)
-			assertTextareaScrollContained(t, aux)
-			aux.MustEval(`() => {document.querySelector('input[type=checkbox]').click();document.querySelector('.auxiliary-content').scrollTop=0;}`)
-			if err := aux.SetViewport(&proto.EmulationSetDeviceMetricsOverride{Width: 760, Height: 760, DeviceScaleFactor: 1}); err != nil {
-				t.Fatal(err)
-			}
-		}
 		if view.query == "posting-logs" {
 			chooseTheme(aux, "light")
 			await(`() => document.documentElement.dataset.theme==='light'`)
-			awaitPage(settingsPage, `() => document.documentElement.dataset.theme==='light' && document.querySelector('input[type=password]').value==='unsaved-test-key'`)
 			chooseTheme(aux, "dark")
 			await(`() => document.documentElement.dataset.theme==='dark'`)
 		}
@@ -884,23 +864,22 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool) {
 		if view.query == "posting-logs" {
 			// Imported themes share the existing persistence and cross-window sync.
 			aux.MustElement("[data-theme-picker]").MustClick()
-			awaitPage(aux, `() => document.querySelectorAll('#theme-options [role=option]').length===189 && document.activeElement.matches('dialog input')`)
-			aux.MustElement("dialog input").MustInput("no-theme-matches-this")
+			awaitPage(aux, `() => document.querySelectorAll('#theme-options [role=option]').length===189 && document.activeElement.matches('dialog[open] input')`)
+			aux.MustElement("dialog[open] input").MustInput("no-theme-matches-this")
 			awaitPage(aux, `() => document.querySelectorAll('#theme-options [role=option]').length===0 && document.querySelector('.no-results')!==null`)
-			aux.MustEval(`() => document.querySelector('dialog input').focus()`)
+			aux.MustEval(`() => document.querySelector('dialog[open] input').focus()`)
 			if err := aux.Keyboard.Type(input.Escape); err != nil {
 				t.Fatal(err)
 			}
 			awaitPage(aux, `() => !document.querySelector('dialog').open && document.activeElement.matches('[data-theme-picker]') && !document.documentElement.dataset.palette`)
 			aux.MustElement("[data-theme-picker]").MustClick()
-			aux.MustElement("dialog input").MustInput("CATPPUCCIN")
+			aux.MustElement("dialog[open] input").MustInput("CATPPUCCIN")
 			awaitPage(aux, `() => document.querySelectorAll('#theme-options [role=option]').length===1`)
 			if err := aux.Keyboard.Type(input.Enter); err != nil {
 				t.Fatal(err)
 			}
 			awaitPage(aux, `() => !document.querySelector('dialog').open && document.documentElement.dataset.palette==='palette:catppuccin' && getComputedStyle(document.documentElement).backgroundColor==='rgb(30, 30, 46)' && localStorage.getItem('postika:theme')==='palette:catppuccin'`)
 			await(`() => document.documentElement.dataset.palette==='palette:catppuccin' && document.querySelector('#post-body')?.textContent==='Business draft'`)
-			awaitPage(settingsPage, `() => document.documentElement.dataset.palette==='palette:catppuccin' && document.querySelector('input[type=password]').value==='unsaved-test-key'`)
 			if err := aux.Reload(); err != nil {
 				t.Fatal(err)
 			}
@@ -916,14 +895,13 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool) {
 					t.Fatal(err)
 				}
 			}
-			aux.MustElement("dialog input").MustInput("Postika Dark")
+			aux.MustElement("dialog[open] input").MustInput("Postika Dark")
 			awaitPage(aux, `() => document.querySelectorAll('#theme-options [role=option]').length===1`)
 			if err := aux.Keyboard.Type(input.Enter); err != nil {
 				t.Fatal(err)
 			}
 			awaitPage(aux, `() => !document.documentElement.dataset.palette && document.documentElement.dataset.theme==='dark' && getComputedStyle(document.documentElement).backgroundColor==='rgb(21, 28, 25)'`)
 			await(`() => !document.documentElement.dataset.palette && document.documentElement.dataset.theme==='dark'`)
-			awaitPage(settingsPage, `() => !document.documentElement.dataset.palette && document.documentElement.dataset.theme==='dark'`)
 			// Same run/entry IDs across accounts must never mix their data or actions.
 			for _, id := range []string{"default", business.ID} {
 				s, _ := m.session(id)
@@ -968,23 +946,7 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool) {
 			t.Fatal(err)
 		}
 	}
-	// A user account with the same literal name is user data, not a UI label.
-	customNamePage, err := browser.Page(proto.TargetCreateTarget{URL: server.URL + "/?view=settings&profile=" + business.ID + "&account=Default%20profile"})
-	if err != nil {
-		t.Fatal(err)
-	}
-	awaitPage(customNamePage, `() => document.querySelector('.window-account')?.textContent==='Default profile' && document.documentElement.lang==='sw'`)
-	// A blocked storage write still allows theme changes for the current session.
-	customNamePage.MustEval(`() => {Storage.prototype.setItem=function(){throw new DOMException('Storage blocked for test','QuotaExceededError')};}`)
-	chooseTheme(customNamePage, "light")
-	customNamePage.MustEval(`() => {window.dispatchEvent(new Event('focus'));window.dispatchEvent(new Event('postika:window-shown'));}`)
-	awaitPage(customNamePage, `() => document.documentElement.dataset.theme==='light'`)
-	await(`() => document.documentElement.dataset.theme==='dark'`)
-	if err := customNamePage.Close(); err != nil {
-		t.Fatal(err)
-	}
 	changeLanguage("id")
-	awaitPage(settingsPage, `() => document.querySelector('h1')?.textContent==='Pengaturan' && document.querySelector('input[type=password]').placeholder==='Masukkan kunci API Gemini Anda' && document.querySelector('input[type=password]').value==='unsaved-test-key' && document.body.innerText.includes('Jeda antarpostingan') && document.body.innerText.includes('Kunci tersimpan tidak pernah ditampilkan.')`)
 	changeLanguage("ar")
 	page.MustActivate()
 	page.MustElement("[data-features-card]").MustClick()
@@ -1003,7 +965,6 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool) {
 	page.MustElement("#features-dialog .close").MustClick()
 	await(`() => !document.querySelector('#features-dialog').open`)
 	await(`() => document.documentElement.dir==='rtl' && document.querySelector('#step-heading')?.textContent==='إنشاء منشور' && document.querySelector('#post-body')?.textContent==='Business draft'`)
-	awaitPage(settingsPage, `() => document.querySelector('h1')?.textContent==='الإعدادات' && document.querySelector('input[type=password]').value==='unsaved-test-key'`)
 	if err := page.Reload(); err != nil {
 		t.Fatal(err)
 	}
@@ -1011,17 +972,11 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool) {
 	// Hebrew updates every retained window and dialog without changing drafts.
 	changeLanguage("he")
 	await(`() => document.documentElement.dir==='rtl' && document.querySelector('#step-heading')?.textContent==='יצירת פוסט' && document.querySelector('#post-body')?.textContent==='Business draft' && getComputedStyle(document.querySelector('#language-profile')).direction==='rtl'`)
-	awaitPage(settingsPage, `() => document.documentElement.lang==='he' && document.documentElement.dir==='rtl' && document.querySelector('h1')?.textContent==='הגדרות' && document.querySelector('input[type=password]').value==='unsaved-test-key' && document.querySelector('input[type=password]').placeholder==='יש להזין את מפתח ה־API של Gemini' && getComputedStyle(document.querySelector('input[type=password]')).direction==='ltr'`)
-	settingsFailure.Store("Could not save Postika settings")
-	settingsPage.MustEval(`() => document.querySelector('form').requestSubmit()`)
-	awaitPage(settingsPage, `() => document.querySelector('.error')?.textContent==='לא ניתן לשמור את הגדרות Postika' && !document.querySelector('.error details') && document.querySelector('input[type=password]').value==='unsaved-test-key'`)
-	settingsPage.MustEval(`() => {const m=document.querySelector('.gemini-card input[pattern]'),n=document.querySelector('.intervals input');window.auditModel=m.value;window.auditMinimum=n.value;m.value='bad model';n.value='59';for(const e of [m,n]){e.dispatchEvent(new Event('input',{bubbles:true}));e.checkValidity();}}`)
-	awaitPage(settingsPage, `() => document.querySelector('.gemini-card input[pattern]').validationMessage==='יש להזין שם תקין של מודל Gemini' && document.querySelector('.intervals input').validationMessage.startsWith('יש להגדיר מרווח של 60 עד 86400 שניות')`)
 	eval(`() => [...document.querySelectorAll('.app-menu button')].find(b=>b.textContent==='הוספת חשבון').click()`)
 	page.MustElement("#account-name").MustInput("Business")
-	page.MustElement(".add-account button").MustClick()
+	page.MustElement(".add-account button[type=submit]").MustClick()
 	await(`() => document.querySelector('.profile-error')?.textContent==='פרופיל חשבון בשם זה כבר קיים' && !document.querySelector('.profile-error details')`)
-	page.MustElement(".add-account button[type=button]").MustClick()
+	page.MustElement(".add-account .action-button--secondary").MustClick()
 
 	page.MustElement("[data-features-card]").MustClick()
 	await(`() => {const d=document.querySelector('#features-dialog');return d.open && getComputedStyle(d).direction==='rtl' && document.querySelector('#features-heading').textContent==='תכונות ומדריך שימוש' && d.innerText.includes('33 שפות · 189 ערכות נושא')}`)
@@ -1037,7 +992,7 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool) {
 	eval(`() => document.querySelector('.account-workspace:not([hidden]) .next').click()`)
 	await(`() => document.querySelector('#step-heading')?.textContent==='בחירת קבוצות' && document.querySelector('#group-search')?.placeholder==='חיפוש קבוצות…'`)
 	eval(`() => document.querySelector('.account-workspace:not([hidden]) .next').click()`)
-	await(`() => document.querySelector('#step-heading')?.textContent==='העדפות ופרסום' && document.body.innerText.includes('מרווח בין פרסומים')`)
+	await(`() => document.querySelector('#step-heading')?.textContent==='פרסום או תזמון' && document.body.innerText.includes('מרווח בין פרסומים')`)
 	eval(`() => [...document.querySelectorAll('.account-workspace:not([hidden]) .step-actions button')].find(b=>b.textContent==='תזמון').click()`)
 	await(`() => document.querySelector('.date-time-picker') && document.querySelector('.month-navigation [aria-label="החודש הבא"]') && getComputedStyle(document.querySelector('.time-controls')).direction==='ltr'`)
 	eval(`() => {const current=document.querySelector('.calendar .selected');window.hebrewSelectedDay=current.dataset.date;current.dispatchEvent(new KeyboardEvent('keydown',{key:'ArrowLeft',bubbles:true}));}`)
@@ -1072,25 +1027,14 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool) {
 			await(`() => document.querySelector('#account-options [data-profile-id="default"] .account-name')?.textContent !== 'Default profile' && document.querySelector('#account-options [data-profile-id="default"] .account-name')?.textContent.length > 0 && document.querySelector('#account-profile .account-name')?.textContent==='Business'`)
 			eval(`() => document.querySelector('#account-profile').click()`)
 			await(`() => !document.querySelector('.account-workspace:not([hidden])').innerText.includes('Write your post and add images') && !document.querySelector('.account-workspace:not([hidden])').innerText.includes('Load groups and choose where to post') && !document.querySelector('.account-workspace:not([hidden])').innerText.includes('Review, set preferences, then post now or schedule') && !document.querySelector('.editor-footer')?.textContent.includes('characters') && !document.querySelector('#image-formats')?.textContent.includes('Select multiple images')`)
-			awaitPage(settingsPage, `() => document.querySelector('.error')?.textContent.length>0 && !document.querySelector('.error').textContent.includes('Could not save Postika settings') && !document.querySelector('.error details')`)
-			settingsPage.MustEval(`() => {document.querySelector('.gemini-card input[pattern]').checkValidity();document.querySelector('.intervals input').checkValidity();}`)
-			awaitPage(settingsPage, `() => {const m=document.querySelector('.gemini-card input[pattern]').validationMessage,n=document.querySelector('.intervals input').validationMessage;return m.length>0 && n.length>0 && m!=='Enter a valid Gemini model name' && !n.startsWith('Set an interval between');}`)
-			awaitPage(settingsPage, fmt.Sprintf(`() => document.documentElement.lang===%q && document.querySelector('input[type=password]').value==='unsaved-test-key' && document.querySelector('input[type=password]').placeholder!=='Enter your Gemini API key' && !document.body.innerText.includes('Choose how long to wait before posting to the next group.')`, code))
-			awaitPage(settingsPage, `() => document.querySelector('.window-label')?.textContent===document.querySelector('h1')?.textContent && document.querySelector('.window-account')?.textContent==='Business' && document.title===document.querySelector('h1').textContent+' · Business · Postika'`)
 		}
 	}
-	settingsFailure.Store("")
-	settingsPage.MustEval(`() => {const m=document.querySelector('.gemini-card input[pattern]'),n=document.querySelector('.intervals input');m.value=window.auditModel;n.value=window.auditMinimum;for(const e of [m,n])e.dispatchEvent(new Event('input',{bubbles:true}));}`)
-	awaitPage(settingsPage, `() => document.querySelector('form').checkValidity()`)
 	// Unsupported saved preferences recover to source English on restart.
 	eval(`() => {localStorage.setItem('postika:language','unsupported-locale');localStorage.setItem('postika:theme','unsupported-theme')}`)
 	if err := page.Reload(); err != nil {
 		t.Fatal(err)
 	}
 	await(`() => document.documentElement.lang==='en' && document.documentElement.dataset.theme==='light' && document.querySelector('#step-heading')?.textContent==='Create post'`)
-	if err := settingsPage.Close(); err != nil {
-		t.Fatal(err)
-	}
 	// First launch follows the webview's ordered language preferences without
 	// saving an automatic choice. An explicit choice must survive a restart.
 	removePreferredLanguages, err := page.EvalOnNewDocument(`Object.defineProperty(navigator,'languages',{configurable:true,get:()=>['fi-FI','sw-KE','en-US']});Object.defineProperty(navigator,'language',{configurable:true,get:()=> 'fi-FI'});`)
@@ -1118,13 +1062,105 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool) {
 	}
 	// The add-account flow creates a fresh workspace and requests its own login.
 	eval(`() => [...document.querySelectorAll('.app-menu button')].find(b=>b.textContent==='Add account').click()`)
-	page.MustElement("#account-name").MustInput("Third account")
-	page.MustElement(".add-account button").MustClick()
-	await(`() => document.querySelector('#account-profile .account-name')?.textContent==='Third account' && document.querySelector('#step-heading')?.textContent==='Select groups' && !document.querySelector('.groups-list')`)
+	await(`() => document.querySelector('#add-account-dialog')?.open && document.activeElement.id==='account-name' && getComputedStyle(document.querySelector('#add-account-dialog')).backgroundColor===getComputedStyle(document.querySelector('.top-bar')).backgroundColor && document.querySelector('#add-account-dialog .action-button--primary').disabled`)
+	if err := page.Keyboard.Type(input.Escape); err != nil {
+		t.Fatal(err)
+	}
+	await(`() => !document.querySelector('#add-account-dialog')?.open && document.activeElement.textContent==='Add account'`)
+	eval(`() => [...document.querySelectorAll('.app-menu button')].find(b=>b.textContent==='Add account').click()`)
+	page.MustElement("#account-name").MustInput("https://web.facebook.com/swiftlineMotors")
+	page.MustElement(".add-account button[type=submit]").MustClick()
+	await(`() => document.querySelector('#add-account-dialog')?.open && document.querySelector('#account-name').validationMessage==='Account names cannot be URLs'`)
+	page.MustElement("#account-name").MustSelectAllText().MustInput("Third account")
+	eval(`async () => {document.querySelector('#add-account-form').requestSubmit();await new Promise(resolve=>setTimeout(resolve,300));}`)
+	if list := m.GetProfiles(); len(list.Profiles) != 2 {
+		t.Fatal("account creation accepted a submission without its Create button")
+	}
+
+	if *uiArtifactDir != "" {
+		data, err := page.Screenshot(false, &proto.PageCaptureScreenshot{})
+		if err != nil {
+			t.Fatal(err)
+		}
+		if err := os.WriteFile(filepath.Join(*uiArtifactDir, "postika-add-account.png"), data, 0600); err != nil {
+			t.Fatal(err)
+		}
+	}
+	page.MustElement("#account-name").MustFocus()
+	if err := page.Keyboard.Type(input.Enter); err != nil {
+		t.Fatal(err)
+	}
+	await(`() => !document.querySelector('#add-account-dialog')?.open && document.querySelector('#account-profile .account-name')?.textContent==='Third account' && document.querySelector('#step-heading')?.textContent==='Select groups' && !document.querySelector('.groups-list')`)
 	changeLanguage("id")
 	eval(`() => document.querySelector('.account-workspace:not([hidden]) .previous').click()`)
 	await(`() => document.querySelector('.placeholder')?.textContent==='Apa yang ingin Anda bagikan?' && document.querySelector('.editor-footer')?.textContent.includes('0 karakter') && document.querySelector('#browse-instruction')?.textContent.includes('telusuri gambar')`)
 	changeLanguage("en")
+	// Rename from the hovered row without switching accounts or replacing its
+	// draft, and keep the same operation available in the shared logs window.
+	thirdID := m.GetProfiles().Selected
+	page.MustElement("#post-body").MustInput("Draft kept through rename")
+	page.MustElement("#account-profile").MustClick()
+	page.MustElement(fmt.Sprintf(`#account-options [data-profile-id="%s"]`, business.ID)).MustHover()
+	await(fmt.Sprintf(`() => getComputedStyle(document.querySelector('[data-rename-profile="%s"]')).opacity==='1'`, business.ID))
+	page.MustElement(fmt.Sprintf(`[data-rename-profile="%s"]`, business.ID)).MustClick()
+	await(`() => document.querySelector('#rename-profile-dialog')?.open && document.activeElement.id==='rename-profile-name' && document.querySelector('#rename-profile-name').value==='Business' && document.querySelector('#account-profile .account-name').textContent==='Third account'`)
+	page.MustElement("#rename-profile-name").MustSelectAllText().MustInput("Business renamed")
+	if *uiArtifactDir != "" {
+		data, err := page.Screenshot(false, &proto.PageCaptureScreenshot{})
+		if err != nil {
+			t.Fatal(err)
+		}
+		if err := os.WriteFile(filepath.Join(*uiArtifactDir, "postika-rename-profile.png"), data, 0600); err != nil {
+			t.Fatal(err)
+		}
+	}
+	if err := page.Keyboard.Type(input.Enter); err != nil {
+		t.Fatal(err)
+	}
+	await(`() => !document.querySelector('#rename-profile-dialog') && document.activeElement.id==='account-profile' && document.querySelector('#account-profile .account-name').textContent==='Third account' && document.querySelector('#post-body').textContent==='Draft kept through rename'`)
+	if list := m.GetProfiles(); list.Selected != thirdID || len(list.Profiles) != 3 || list.Profiles[1].ID != business.ID || list.Profiles[1].Name != "Business renamed" {
+		t.Fatalf("rename changed identity or selection: %+v", list)
+	}
+	page.MustElement("#account-profile").MustClick()
+	page.MustElement("#account-search").MustInput("Business renamed")
+	await(`() => document.querySelectorAll('#account-options [role=option]').length===1`)
+	if err := page.Keyboard.Type(input.F2); err != nil {
+		t.Fatal(err)
+	}
+	await(`() => document.querySelector('#rename-profile-name')?.value==='Business renamed'`)
+	page.MustElement("#rename-profile-name").MustSelectAllText().MustInput("Third account")
+	page.MustElement(`#rename-profile-dialog button[type=submit]`).MustClick()
+	await(`() => document.querySelector('#rename-profile-dialog [role=alert]')?.textContent==='An account profile with this name already exists'`)
+	if err := page.Keyboard.Type(input.Escape); err != nil {
+		t.Fatal(err)
+	}
+	await(`() => !document.querySelector('#rename-profile-dialog') && document.activeElement.id==='account-profile'`)
+	if m.GetProfiles().Profiles[1].Name != "Business renamed" {
+		t.Fatal("cancelled duplicate rename changed profile")
+	}
+	renameLogs, err := browser.Page(proto.TargetCreateTarget{URL: server.URL + "/?view=posting-logs&profile=" + business.ID + "&account=Business%20renamed"})
+	if err != nil {
+		t.Fatal(err)
+	}
+	awaitPage(renameLogs, `() => document.querySelector('#account-profile .account-name')?.textContent==='Business renamed'`)
+	renameLogs.MustElement("#account-profile").MustClick()
+	renameLogs.MustElement(fmt.Sprintf(`#account-options [data-profile-id="%s"]`, business.ID)).MustHover()
+	renameLogs.MustElement(fmt.Sprintf(`[data-rename-profile="%s"]`, business.ID)).MustClick()
+	awaitPage(renameLogs, `() => document.querySelector('#rename-profile-name')?.value==='Business renamed'`)
+	renameLogs.MustElement("#rename-profile-name").MustSelectAllText().MustInput("Business logs")
+	renameLogs.MustElement(`#rename-profile-dialog button[type=submit]`).MustClick()
+	awaitPage(renameLogs, `() => !document.querySelector('#rename-profile-dialog') && document.querySelector('#account-profile .account-name').textContent==='Business logs' && document.title.includes('Business logs') && new URLSearchParams(location.search).get('account')==='Business logs'`)
+	if err := renameLogs.Close(); err != nil {
+		t.Fatal(err)
+	}
+	page.MustElement("#account-profile").MustClick()
+	await(fmt.Sprintf(`() => document.querySelector('#account-options [data-profile-id="%s"] .account-name')?.textContent==='Business logs'`, business.ID))
+	if err := page.Keyboard.Type(input.Escape); err != nil {
+		t.Fatal(err)
+	}
+	if list := m.GetProfiles(); list.Selected != thirdID || len(list.Profiles) != 3 {
+		t.Fatal("log-window rename changed selected profile")
+	}
 	closed.Store(false)
 	eval(`() => document.querySelector('[aria-label="Close window"]').click()`)
 	await(`() => !document.querySelector('[aria-label="Close window"]').disabled`)
@@ -1134,4 +1170,81 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool) {
 	if len(m.GetProfiles().Profiles) != 3 {
 		t.Fatal("add account did not persist profile")
 	}
+	// The switcher adds accounts through the same modal, leaving the top-bar
+	// entry available. Escape and cancelled deletion must leave every draft intact.
+	page.MustElement("#account-profile").MustClick()
+	page.MustElement("[data-add-account]").MustClick()
+	await(`() => document.querySelector('#add-account-dialog')?.open && document.activeElement.id==='account-name'`)
+	if err := page.Keyboard.Type(input.Escape); err != nil {
+		t.Fatal(err)
+	}
+	await(`() => !document.querySelector('#add-account-dialog') && document.activeElement.id==='account-profile'`)
+	page.MustElement("#account-profile").MustClick()
+	page.MustElement(fmt.Sprintf(`#account-options [data-profile-id="%s"]`, business.ID)).MustHover()
+	page.MustElement(fmt.Sprintf(`[data-delete-profile="%s"]`, business.ID)).MustClick()
+	await(`() => document.querySelector('#delete-profile-dialog')?.open && document.querySelector('#delete-profile-dialog .profile-name').textContent==='Business logs' && document.activeElement.textContent==='Cancel'`)
+	if *uiArtifactDir != "" {
+		data, err := page.Screenshot(false, &proto.PageCaptureScreenshot{})
+		if err != nil {
+			t.Fatal(err)
+		}
+		if err := os.WriteFile(filepath.Join(*uiArtifactDir, "postika-delete-profile.png"), data, 0600); err != nil {
+			t.Fatal(err)
+		}
+	}
+	if err := page.Keyboard.Type(input.Escape); err != nil {
+		t.Fatal(err)
+	}
+	await(`() => !document.querySelector('#delete-profile-dialog') && document.querySelector('#post-body').textContent==='Draft kept through rename'`)
+	if len(m.GetProfiles().Profiles) != 3 {
+		t.Fatal("cancel deleted a profile")
+	}
+	// Delete from another window while the main workspace still has the profile
+	// mounted. Its pending autosaves must not restore the removed draft/images.
+	deleteLogs, err := browser.Page(proto.TargetCreateTarget{URL: server.URL + "/?view=posting-logs&profile=" + business.ID})
+	if err != nil {
+		t.Fatal(err)
+	}
+	awaitPage(deleteLogs, `() => document.querySelector('#account-profile .account-name')?.textContent==='Business logs'`)
+	deleteLogs.MustElement("#account-profile").MustClick()
+	deleteLogs.MustElement(fmt.Sprintf(`#account-options [data-profile-id="%s"]`, business.ID)).MustHover()
+	deleteLogs.MustElement(fmt.Sprintf(`[data-delete-profile="%s"]`, business.ID)).MustClick()
+	deleteLogs.MustElement("#delete-profile-dialog .delete-confirm").MustClick()
+	awaitPage(deleteLogs, `() => !document.querySelector('#delete-profile-dialog') && document.querySelector('#account-profile .account-name')?.textContent==='Third account'`)
+	await(fmt.Sprintf(`() => !document.querySelector('.account-workspace [data-profile-id="%s"]') && document.querySelector('#post-body').textContent==='Draft kept through rename'`, business.ID))
+	await(fmt.Sprintf(`async () => {const db=await new Promise(r=>{const q=indexedDB.open('postika-account-drafts',2);q.onsuccess=()=>r(q.result)});const draft=await new Promise(r=>{const q=db.transaction('drafts').objectStore('drafts').get('%s');q.onsuccess=()=>r(q.result)});const keys=await new Promise(r=>{const q=db.transaction('images').objectStore('images').getAllKeys();q.onsuccess=()=>r(q.result)});db.close();return !draft && !keys.some(key=>key.startsWith('%s:'));}`, business.ID, business.ID))
+	if len(m.GetProfiles().Profiles) != 2 || m.GetProfiles().Selected != thirdID {
+		t.Fatal("deleting background profile changed main selection")
+	}
+	// Deleting the selected account selects the surviving account; deleting the
+	// last account leaves an empty switcher with a working Add account action.
+	if _, err := page.Activate(); err != nil {
+		t.Fatal(err)
+	}
+	for _, id := range []string{thirdID, "default"} {
+		await(`() => !document.querySelector('#account-profile').disabled && !document.querySelector('dialog[open]')`)
+		page.MustElement("#account-profile").MustClick()
+		page.MustElement(fmt.Sprintf(`#account-options [data-profile-id="%s"]`, id)).MustHover()
+		page.MustElement(fmt.Sprintf(`[data-delete-profile="%s"]`, id)).MustClick()
+		page.MustElement("#delete-profile-dialog .delete-confirm").MustClick()
+		await(`() => !document.querySelector('#delete-profile-dialog')`)
+	}
+	await(`() => !document.querySelector('.account-workspace') && document.querySelector('.loading')?.textContent==='Add an account to get started.'`)
+	awaitPage(deleteLogs, `() => !document.querySelector('.logs-window') && document.body.textContent.includes('Add an account to get started.')`)
+	if err := page.Reload(); err != nil {
+		t.Fatal(err)
+	}
+	await(`() => document.querySelector('.loading')?.textContent==='Add an account to get started.' && !document.querySelector('#account-profile').disabled`)
+	page.MustElement("#account-profile").MustClick()
+	page.MustElement("[data-add-account]").MustClick()
+	page.MustElement("#account-name").MustInput("Fresh account")
+	page.MustElement("#add-account-dialog button[type=submit]").MustClick()
+	await(`() => !document.querySelector('#add-account-dialog') && document.querySelector('#account-profile .account-name')?.textContent==='Fresh account' && [...document.querySelectorAll('.app-menu button')].some(button=>button.textContent==='Add account')`)
+	if list := m.GetProfiles(); len(list.Profiles) != 1 || list.Selected == "default" {
+		t.Fatal("fresh profile reused deleted login", list)
+	}
+	if err := deleteLogs.Close(); err != nil {
+		t.Fatal(err)
+	}
+
 }

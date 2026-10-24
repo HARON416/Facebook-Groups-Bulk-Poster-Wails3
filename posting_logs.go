@@ -146,16 +146,19 @@ func (s *GroupsService) OpenPostingLogs() error {
 	if s.app == nil {
 		return errors.New("The desktop application is not ready")
 	}
+	s.profileNameMu.RLock()
+	accountName := s.profileName
+	s.profileNameMu.RUnlock()
 	name := "postika-posting-logs"
 	url := "/?view=posting-logs"
 	title := "Postika · Posting logs"
 	if s.profileID != "" {
-		url += "&profile=" + s.profileID + "&account=" + urlpkg.QueryEscape(s.profileName)
-		title += " · " + s.profileName
+		url += "&profile=" + s.profileID + "&account=" + urlpkg.QueryEscape(accountName)
+		title += " · " + accountName
 	}
 	if window, ok := s.app.Window.GetByName(name); ok {
 		profileID, _ := json.Marshal(s.profileID)
-		profileName, _ := json.Marshal(s.profileName)
+		profileName, _ := json.Marshal(accountName)
 		window.ExecJS(`(() => { const url = new URL(window.location.href); url.searchParams.set('profile', ` + string(profileID) + ` || 'default'); url.searchParams.set('account', ` + string(profileName) + ` || 'Default profile'); window.history.replaceState(null, '', url); window.dispatchEvent(new Event('postika:logs-profile')); })()`)
 		showAuxiliaryWindow(window)
 		return nil

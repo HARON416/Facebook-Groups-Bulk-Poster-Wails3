@@ -8,10 +8,8 @@ msgstr ""
 "Plural-Forms: nplurals=2\n"
 "X-Plurals-Order: one, other\n"
 
-#. 0: appliedInterval; 1: rewriteState
-#: src/App.svelte
-msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
-msgstr "Opgeslagen standaardinstellingen toegepast: {0} seconden tussen berichten · Gemini herschrijven {1}."
+#~ msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
+#~ msgstr "Opgeslagen standaardinstellingen toegepast: {0} seconden tussen berichten · Gemini herschrijven {1}."
 
 #: src/components/LogMessage.svelte
 msgid "Could not restore saved groups. Load groups to refresh the list."
@@ -152,23 +150,17 @@ msgstr "Open je Facebook-groepen om te beginnen."
 msgid "Posting settings"
 msgstr "Plaatsingsinstellingen"
 
-#: src/App.svelte
-msgid "Add a Gemini API key in Settings to enable rewriting."
-msgstr "Voeg een Gemini API-sleutel toe in Instellingen om herschrijven in te schakelen."
+#~ msgid "Add a Gemini API key in Settings to enable rewriting."
+#~ msgstr "Voeg een Gemini API-sleutel toe in Instellingen om herschrijven in te schakelen."
 
-#: src/App.svelte
-msgid "Applying defaults…"
-msgstr "Standaardinstellingen toepassen…"
+#~ msgid "Applying defaults…"
+#~ msgstr "Standaardinstellingen toepassen…"
 
-#: src/App.svelte
-#: src/components/FeaturesCard.svelte
-#: src/components/UsageGuide.svelte
-msgid "Use saved defaults"
-msgstr "Gebruik opgeslagen standaardwaarden"
+#~ msgid "Use saved defaults"
+#~ msgstr "Gebruik opgeslagen standaardwaarden"
 
-#: src/App.svelte
-msgid "Open settings"
-msgstr "Open instellingen"
+#~ msgid "Open settings"
+#~ msgstr "Open instellingen"
 
 #~ msgid "Posting as <0/>"
 #~ msgstr "Plaatsen als <0/>"
@@ -200,9 +192,11 @@ msgid "Time zone: {0}. Keep Postika open and your computer awake. Facebook may a
 msgstr "Tijdzone: {0}. Houd Postika open en je computer wakker. Facebook kan je vragen in te loggen wanneer het plaatsen begint."
 
 #: src/App.svelte
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FetchedPostCard.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Cancel"
 msgstr "Annuleren"
 
@@ -253,6 +247,8 @@ msgid "Application menu"
 msgstr "Applicatiemenu"
 
 #: src/Workspace.svelte
+#: src/components/AccountDropdown.svelte
+#: src/components/AddAccountDialog.svelte
 #: src/components/UsageGuide.svelte
 msgid "Add account"
 msgstr "Account toevoegen"
@@ -261,31 +257,28 @@ msgstr "Account toevoegen"
 #: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogView.svelte
+#: src/components/PostingLogs.svelte
 #: src/components/UsageGuide.svelte
 msgid "Posting logs"
 msgstr "Plaatsingslogboek"
 
-#: src/Workspace.svelte
-#: src/components/FeaturesCard.svelte
-#: src/components/Settings.svelte
-#: src/components/Settings.svelte
-#: src/components/UsageGuide.svelte
-msgid "Settings"
-msgstr "Instellingen"
+#~ msgid "Settings"
+#~ msgstr "Instellingen"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "Creating…"
 msgstr "Bezig met maken…"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "Create & sign in"
 msgstr "Aanmaken en inloggen"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Account name"
 msgstr "Accountnaam"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 #: src/components/UsageGuide.svelte
 msgid "Sign in to Facebook in the new account’s browser window."
 msgstr "Log in op Facebook in het browservenster van het nieuwe account."
@@ -794,172 +787,125 @@ msgstr "Kies hoelang te wachten voordat je naar de volgende groep post."
 msgid "At least 60 seconds. Use equal values for a fixed interval."
 msgstr "Minimaal 60 seconden. Gebruik gelijke waarden voor een vaste interval."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "OPTIONAL · AI REWRITE"
-msgstr "OPTIONEEL · AI HERSCHRIJVEN"
+#~ msgid "OPTIONAL · AI REWRITE"
+#~ msgstr "OPTIONEEL · AI HERSCHRIJVEN"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "A fresh version for each group"
-msgstr "Een nieuwe versie voor elke groep"
+#~ msgid "A fresh version for each group"
+#~ msgstr "Een nieuwe versie voor elke groep"
 
-#: src/components/FeaturesCard.svelte
-#: src/components/PostingOptionsForm.svelte
-#: src/components/UsageGuide.svelte
-msgid "Rewrite each post body with Gemini"
-msgstr "Herschrijf de inhoud van elke post met Gemini"
+#~ msgid "Rewrite each post body with Gemini"
+#~ msgstr "Herschrijf de inhoud van elke post met Gemini"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
-msgstr "Herschrijf instructies<0>Kies de toon en details die Gemini moet behouden.</0>"
+#~ msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
+#~ msgstr "Herschrijf instructies<0>Kies de toon en details die Gemini moet behouden.</0>"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Keep it concise and easy to scan. Preserve the price and contact details."
-msgstr "Houd het beknopt en gemakkelijk te scannen. Behoud de prijs en contactgegevens."
+#~ msgid "Keep it concise and easy to scan. Preserve the price and contact details."
+#~ msgstr "Houd het beknopt en gemakkelijk te scannen. Behoud de prijs en contactgegevens."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Rewrite instructions"
-msgstr "Herschrijf instructies"
+#~ msgid "Rewrite instructions"
+#~ msgstr "Herschrijf instructies"
 
-#: src/components/FeaturesCard.svelte
-#: src/components/PostingOptionsForm.svelte
-#: src/components/UsageGuide.svelte
-msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
-msgstr "Je berichttekst en instructies worden naar Google Gemini gestuurd. Afbeeldingen worden niet gestuurd. Gemini herschrijvingen gebruiken platte tekst."
+#~ msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
+#~ msgstr "Je berichttekst en instructies worden naar Google Gemini gestuurd. Afbeeldingen worden niet gestuurd. Gemini herschrijvingen gebruiken platte tekst."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
-msgstr "Als het herschrijven faalt, gebruikt dat bericht je originele tekst. Het volgende bericht probeert Gemini opnieuw."
+#~ msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
+#~ msgstr "Als het herschrijven faalt, gebruikt dat bericht je originele tekst. Het volgende bericht probeert Gemini opnieuw."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Let Gemini rewrite your post using your instructions."
-msgstr "Laat Gemini je bericht herschrijven met je instructies."
+#~ msgid "Let Gemini rewrite your post using your instructions."
+#~ msgstr "Laat Gemini je bericht herschrijven met je instructies."
 
 #: src/components/PostingOptionsForm.svelte
 msgid "Posting preferences"
 msgstr "Postvoorkeuren"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved defaults help"
-msgstr "Opgeslagen standaardwaarden helpen"
+#~ msgid "Saved defaults help"
+#~ msgstr "Opgeslagen standaardwaarden helpen"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "About saved defaults"
-msgstr "Over opgeslagen standaardwaarden"
+#~ msgid "About saved defaults"
+#~ msgstr "Over opgeslagen standaardwaarden"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved interval"
-msgstr "Opgeslagen interval"
+#~ msgid "Saved interval"
+#~ msgstr "Opgeslagen interval"
 
-#. 0: settings.minimumInterval === settings.maximumInterval ? settings.minimumInterval \\: `${settings.minimumInterval}–${settings.maximumInterval}`
-#: src/components/SavedDefaultsInfo.svelte
-msgid "{0} seconds"
-msgstr "{0} seconden"
+#~ msgid "{0} seconds"
+#~ msgstr "{0} seconden"
 
-#: src/App.svelte
-#: src/components/SavedDefaultsInfo.svelte
-msgid "On"
-msgstr "Aan"
+#~ msgid "On"
+#~ msgstr "Aan"
 
-#: src/App.svelte
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Off"
-msgstr "Uit"
+#~ msgid "Off"
+#~ msgstr "Uit"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Gemini rewrite"
-msgstr "Gemini herschrijven"
+#~ msgid "Gemini rewrite"
+#~ msgstr "Gemini herschrijven"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "No instructions saved."
-msgstr "Geen instructies opgeslagen."
+#~ msgid "No instructions saved."
+#~ msgstr "Geen instructies opgeslagen."
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved rewrite instructions"
-msgstr "Opgeslagen herschrijf-instructies"
+#~ msgid "Saved rewrite instructions"
+#~ msgstr "Opgeslagen herschrijf-instructies"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved values could not be loaded. Try “Use saved defaults” again."
-msgstr "Opgeslagen waarden konden niet worden geladen. Probeer opnieuw \"Gebruik opgeslagen standaardwaarden\"."
+#~ msgid "Saved values could not be loaded. Try “Use saved defaults” again."
+#~ msgstr "Opgeslagen waarden konden niet worden geladen. Probeer opnieuw \"Gebruik opgeslagen standaardwaarden\"."
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "What does “Use saved defaults” do?"
-msgstr "Wat doet “Gebruik opgeslagen standaardwaarden”?"
+#~ msgid "What does “Use saved defaults” do?"
+#~ msgstr "Wat doet “Gebruik opgeslagen standaardwaarden”?"
 
-#: src/components/SavedDefaultsInfo.svelte
-#: src/components/UsageGuide.svelte
-msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
-msgstr "Vervangt het plaatsingsinterval van deze run, Gemini-herschrijfoptie en herschrijf-instructies door de in Instellingen opgeslagen waarden."
+#~ msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
+#~ msgstr "Vervangt het plaatsingsinterval van deze run, Gemini-herschrijfoptie en herschrijf-instructies door de in Instellingen opgeslagen waarden."
 
-#: src/components/SavedDefaultsInfo.svelte
-#: src/components/UsageGuide.svelte
-msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
-msgstr "Standaardinstellingen: 60–120 seconden, Gemini-herschrijven uit, en geen herschrijf-instructies. Sla uw eigen voorkeuren op in Instellingen om deze te wijzigen."
+#~ msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
+#~ msgstr "Standaardinstellingen: 60–120 seconden, Gemini-herschrijven uit, en geen herschrijf-instructies. Sla uw eigen voorkeuren op in Instellingen om deze te wijzigen."
 
 #: src/components/LogMessage.svelte
 msgid "Settings saved. New runs can use these defaults."
 msgstr "Instellingen opgeslagen. Nieuwe runs kunnen deze standaardwaarden gebruiken."
 
-#: src/components/Settings.svelte
-msgid "Key saved · leave blank to keep it"
-msgstr "Sleutel opgeslagen · laat leeg om te behouden"
+#~ msgid "Key saved · leave blank to keep it"
+#~ msgstr "Sleutel opgeslagen · laat leeg om te behouden"
 
-#: src/components/Settings.svelte
-msgid "Enter your Gemini API key"
-msgstr "Voer uw Gemini API-sleutel in"
+#~ msgid "Enter your Gemini API key"
+#~ msgstr "Voer uw Gemini API-sleutel in"
 
-#: src/components/Settings.svelte
-msgid "A key is saved on this device."
-msgstr "Een sleutel is op dit apparaat opgeslagen."
+#~ msgid "A key is saved on this device."
+#~ msgstr "Een sleutel is op dit apparaat opgeslagen."
 
-#: src/components/Settings.svelte
-msgid "No API key saved."
-msgstr "Geen API-sleutel opgeslagen."
+#~ msgid "No API key saved."
+#~ msgstr "Geen API-sleutel opgeslagen."
 
-#: src/components/Settings.svelte
-msgid "Remove saved key"
-msgstr "Verwijder opgeslagen sleutel"
+#~ msgid "Remove saved key"
+#~ msgstr "Verwijder opgeslagen sleutel"
 
-#: src/components/Settings.svelte
-msgid "Gemini"
-msgstr "Gemini"
+#~ msgid "Gemini"
+#~ msgstr "Gemini"
 
-#: src/components/Settings.svelte
-msgid "API key<0/>"
-msgstr "API-sleutel<0/>"
+#~ msgid "API key<0/>"
+#~ msgstr "API-sleutel<0/>"
 
-#. 0: keyConfigured ? 'A key is saved on this device.' \\: 'No API key saved.'
-#: src/components/Settings.svelte
-msgid "{0} The saved key is never displayed."
-msgstr "{0} De opgeslagen sleutel wordt nooit weergegeven."
+#~ msgid "{0} The saved key is never displayed."
+#~ msgstr "{0} De opgeslagen sleutel wordt nooit weergegeven."
 
-#: src/components/Settings.svelte
-msgid "Model<0/>"
-msgstr "Model<0/>"
+#~ msgid "Model<0/>"
+#~ msgstr "Model<0/>"
 
-#: src/components/Settings.svelte
-msgid "Posting defaults"
-msgstr "Standaardinstellingen voor berichten"
+#~ msgid "Posting defaults"
+#~ msgstr "Standaardinstellingen voor berichten"
 
-#: src/components/Settings.svelte
-msgid "Applied when you start a new posting run."
-msgstr "Toegepast wanneer u een nieuwe plaatsingsrun start."
+#~ msgid "Applied when you start a new posting run."
+#~ msgstr "Toegepast wanneer u een nieuwe plaatsingsrun start."
 
-#: src/components/Settings.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Saving…"
 msgstr "Bezig met opslaan…"
 
-#: src/components/Settings.svelte
-msgid "Save settings"
-msgstr "Instellingen opslaan"
+#~ msgid "Save settings"
+#~ msgstr "Instellingen opslaan"
 
-#: src/components/Settings.svelte
-msgid "YOUR PREFERENCES"
-msgstr "UW VOORKEUREN"
+#~ msgid "YOUR PREFERENCES"
+#~ msgstr "UW VOORKEUREN"
 
-#. 0: accountName
-#: src/components/Settings.svelte
-msgid "Set up Gemini and save posting defaults for {0}."
-msgstr "Stel Gemini in en sla standaardplaatsingen op voor {0}."
+#~ msgid "Set up Gemini and save posting defaults for {0}."
+#~ msgstr "Stel Gemini in en sla standaardplaatsingen op voor {0}."
 
 #: src/components/StepProgress.svelte
 msgid "Completed"
@@ -1133,9 +1079,8 @@ msgstr "Avond"
 msgid "Could not change the language. Please try again."
 msgstr "Kon de taal niet veranderen. Probeer het alsjeblieft opnieuw."
 
-#: src/components/Settings.svelte
-msgid "Language"
-msgstr "Taal"
+#~ msgid "Language"
+#~ msgstr "Taal"
 
 #: src/components/PostingOptionsForm.svelte
 #: src/components/PostingOptionsForm.svelte
@@ -1210,7 +1155,7 @@ msgstr "OVERGESLAGEN"
 msgid "UNCONFIRMED"
 msgstr "ONBEVESTIGD"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "e.g. Business"
 msgstr "bijvoorbeeld Zakelijk"
 
@@ -1282,8 +1227,11 @@ msgstr "Standaardprofiel"
 msgid "Color themes"
 msgstr "Kleurthema’s"
 
+#: src/components/AddAccountDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/RenameProfileDialog.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UpdateButton.svelte
 msgid "Close"
@@ -1503,7 +1451,6 @@ msgid "Gemini rewrite completed."
 msgstr "Gemini herschrijf voltooid."
 
 #: src/components/LogMessage.svelte
-#: src/components/UsageGuide.svelte
 msgid "Gemini rewrite failed. Using the original text for this post; Gemini will be tried again for the next post."
 msgstr "Gemini herschrijf mislukt. De oorspronkelijke tekst wordt gebruikt voor dit bericht; Gemini zal opnieuw geprobeerd worden voor het volgende bericht."
 
@@ -1876,19 +1823,21 @@ msgstr "Debuggegevens"
 #~ msgid ", "
 #~ msgstr ""
 
+#: src/components/FeaturesCard.svelte
 #: src/components/ThemePicker.svelte
+#: src/components/UsageGuide.svelte
 msgid "Themes"
 msgstr "Thema’s"
 
 #: src/App.svelte
 #: src/components/UsageGuide.svelte
-msgid "Preferences & post"
-msgstr "Voorkeuren en plaatsen"
+msgid "Post or schedule"
+msgstr "Plaatsen of plannen"
 
 #: src/App.svelte
 #: src/App.svelte
-msgid "Set preferences, then post now or schedule"
-msgstr "Stel voorkeuren in en plaats nu of plan de publicatie"
+msgid "Choose the time between posts, then post now or schedule for later."
+msgstr "Kies de tijd tussen berichten en plaats ze daarna direct of plan ze voor later."
 
 #~ msgid "Postika"
 #~ msgstr "Postika"
@@ -1923,9 +1872,8 @@ msgstr "Geladen groepen blijven beschikbaar tussen app-sessies."
 msgid "Minimum and maximum delays between posts."
 msgstr "Minimale en maximale wachttijd tussen berichten."
 
-#: src/components/FeaturesCard.svelte
-msgid "Custom instructions and a configurable Gemini model."
-msgstr "Eigen instructies en een instelbaar Gemini-model."
+#~ msgid "Custom instructions and a configurable Gemini model."
+#~ msgstr "Eigen instructies en een instelbaar Gemini-model."
 
 #. 0: languages.length; 1: themeOptions.length
 #: src/components/FeaturesCard.svelte
@@ -1978,9 +1926,8 @@ msgstr "Schrijf uw bericht en voeg minstens één afbeelding toe; beide zijn ver
 msgid "Select Load groups and finish Facebook login or verification in Chrome. Search the loaded list, select the groups you want, then choose Next."
 msgstr "Kies Groepen laden en voltooi de Facebook-aanmelding of verificatie in Chrome. Doorzoek de lijst, selecteer groepen en kies Volgende."
 
-#: src/components/UsageGuide.svelte
-msgid "In Settings, enter this account’s Gemini API key and model, then Save settings. Enable rewriting for your run and describe the tone and details to preserve."
-msgstr "Voer in Instellingen de Gemini-API-sleutel en het model voor dit account in en sla op. Schakel herschrijven in en beschrijf de gewenste toon en te behouden details."
+#~ msgid "In Settings, enter this account’s Gemini API key and model, then Save settings. Enable rewriting for your run and describe the tone and details to preserve."
+#~ msgstr "Voer in Instellingen de Gemini-API-sleutel en het model voor dit account in en sla op. Schakel herschrijven in en beschrijf de gewenste toon en te behouden details."
 
 #: src/components/UsageGuide.svelte
 msgid "Review the account, message, image order, selected groups, and posting intervals. Choose Post now and complete any Facebook login or verification prompts in Chrome."
@@ -2036,13 +1983,11 @@ msgstr "Voer de URL van een Facebook-pagina in, bijvoorbeeld https://web.faceboo
 #~ msgid "Fetch Facebook posts"
 #~ msgstr ""
 
-#: src/components/FacebookPageDialog.svelte
-msgid "Decrease number of posts"
-msgstr "Aantal berichten verlagen"
+#~ msgid "Decrease number of posts"
+#~ msgstr "Aantal berichten verlagen"
 
-#: src/components/FacebookPageDialog.svelte
-msgid "Increase number of posts"
-msgstr "Aantal berichten verhogen"
+#~ msgid "Increase number of posts"
+#~ msgstr "Aantal berichten verhogen"
 
 #: src/components/FacebookPageDialog.svelte
 msgid "Facebook page URL"
@@ -2136,6 +2081,8 @@ msgstr "Bewerken"
 msgid "Delete post {0}"
 msgstr "Bericht {0} verwijderen"
 
+#: src/components/AccountDropdown.svelte
+#: src/components/AccountDropdown.svelte
 #: src/components/FetchedPostCard.svelte
 msgid "Delete"
 msgstr "Verwijderen"
@@ -2150,6 +2097,7 @@ msgid "Remove image {0} from post {1}"
 msgstr "Afbeelding {0} uit bericht {1} verwijderen"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Save changes"
 msgstr "Wijzigingen opslaan"
 
@@ -2391,3 +2339,45 @@ msgstr "Controleren op updates"
 #: src/components/UpdateButton.svelte
 msgid "Installing update…"
 msgstr "Update installeren…"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "posts"
+msgstr "berichten"
+
+#: src/components/LogMessage.svelte
+msgid "Account names cannot be URLs"
+msgstr "Accountnamen mogen geen URL’s zijn"
+
+#: src/components/LogMessage.svelte
+msgid "First post confirmed. Remaining groups stopped because the formatted text could not be verified."
+msgstr "Het eerste bericht is bevestigd. Het plaatsen in de overige groepen is gestopt omdat de opgemaakte tekst niet kon worden gecontroleerd."
+
+#: src/components/AccountDropdown.svelte
+#: src/components/RenameProfileDialog.svelte
+msgid "Rename profile"
+msgstr "Profiel hernoemen"
+
+#: src/Workspace.svelte
+#: src/components/PostingLogs.svelte
+msgid "Add an account to get started."
+msgstr "Voeg een account toe om te beginnen."
+
+#: src/components/AccountDropdown.svelte
+#: src/components/DeleteProfileDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
+msgid "Delete profile"
+msgstr "Profiel verwijderen"
+
+#~ msgid "<0/> Add account"
+#~ msgstr ""
+
+#~ msgid "Delete profile?"
+#~ msgstr ""
+
+#: src/components/DeleteProfileDialog.svelte
+msgid "This permanently deletes this profile’s Facebook login, groups, drafts, images, settings, and logs. Any running or scheduled queue will stop. Posts already on Facebook are kept."
+msgstr "Dit verwijdert de Facebook-aanmelding, groepen, concepten, afbeeldingen, instellingen en logboeken van dit profiel permanent. Actieve of geplande wachtrijen worden gestopt. Berichten die al op Facebook staan, blijven behouden."
+
+#: src/components/DeleteProfileDialog.svelte
+msgid "Deleting…"
+msgstr "Verwijderen…"

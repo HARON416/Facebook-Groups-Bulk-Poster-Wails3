@@ -9,9 +9,8 @@
   import AccountDropdown from './AccountDropdown.svelte';
   import { accountLabel } from './AccountLabel.svelte';
 
-  let { profile, profiles, onselect }: { profile: AccountProfile; profiles: AccountProfile[]; onselect: (id: string) => void } = $props();
+  let { profile, profiles, onselect, onrenamed, oncreated, ondeleted }: { profile: AccountProfile; profiles: AccountProfile[]; onselect: (id: string) => void; onrenamed?: (profile: AccountProfile) => void; oncreated?: (profile: AccountProfile) => void; ondeleted?: (id: string) => void } = $props();
   const GroupsService = untrack(() => createAccountService(profile.id));
-  const displayProfiles = $derived(profiles.map((item) => ({ ...item, name: accountLabel(item) })));
   import AuxiliaryWindow from './AuxiliaryWindow.svelte';
   import { formatDuration, type Activity } from '../lib/posting';
   import { pollWhileWindowOpen } from '../lib/window-polling';
@@ -125,7 +124,7 @@
 
 <AuxiliaryWindow title="Posting logs" account={accountLabel(profile)}>
 {#snippet profileSwitcher()}
-  <AccountDropdown profiles={displayProfiles} selected={profile.id} {onselect} compact />
+  <AccountDropdown {profiles} selected={profile.id} {onselect} {onrenamed} {oncreated} {ondeleted} compact />
 {/snippet}
 {#snippet actions()}
   <span class="run-state" dir="auto" class:running={active && !pauseRequested}><span class="state-text">{stateLabel}</span></span>

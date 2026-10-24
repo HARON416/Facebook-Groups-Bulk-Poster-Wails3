@@ -246,6 +246,9 @@ func (s *GroupsService) PublishPostWithOptions(ctx context.Context, selected []s
 	}
 	prepared, err := s.OpenPostComposer(ctx, selected, body, images)
 	if err != nil {
+		if ctx.Err() != nil {
+			return finish("stopped", "Posting stopped."), nil
+		}
 		return finish("stopped", err.Error()), nil
 	}
 	s.mu.Lock()
@@ -285,7 +288,8 @@ func (s *GroupsService) PublishPostWithOptions(ctx context.Context, selected []s
 		s.recordOutcome(previous)
 		return finish("stopped", "This draft has already been submitted to the first group. It was not submitted again."), nil
 	}
-	// Confirm every browser upload, not just a successful HTTP status.
+	// Confirm the reusable upload template, not just its HTTP status. Facebook's
+	// composer and enabled Post button govern the remaining browser attachments.
 	if s.photoUploads != nil {
 		s.photoUploads.mu.Lock()
 		for _, entry := range s.photoUploads.requests {
@@ -390,11 +394,23 @@ func (s *GroupsService) PublishPostWithOptions(ctx context.Context, selected []s
 			return finish("stopped", err.Error()), nil
 		}
 	}
+	// No replay template is needed when this was the last available group.
+	if len(prepared.Groups) == len(prepared.Skipped)+1 {
+		capture.stop()
+		s.closeBrowserConnection()
+		status := s.GetPostingStatus()
+		return finish("complete", fmt.Sprintf("Finished: %d published, %d awaiting approval, %d failed or skipped.", status.Posted, status.Pending, status.Failed)), nil
+	}
 	if _, formatted := ctx.Value(richPostBodyKey{}).(richPostBody); formatted {
-		body, err = capturedRichPostText(template.Body, body)
+		var replayBody string
+		replayBody, err = capturedRichPostText(template.Body)
 		if err != nil {
+			if first.State == "posted" || first.State == "pending" {
+				return finish("stopped", "First post confirmed. Remaining groups stopped because the formatted text could not be verified."), nil
+			}
 			return finish("stopped", err.Error()), nil
 		}
+		body = replayBody
 	}
 	// Validate body/serialization before any further uploads or publication.
 	if _, err = buildReplayPost(template.Body, body, prepared.OpenedGroup.ID, []string{}); err != nil {
@@ -454,6 +470,9 @@ func (s *GroupsService) PublishPostWithOptions(ctx context.Context, selected []s
 			_, prepareErr := s.OpenPostComposer(ctx, []string{group.ID}, postBody, postImages)
 			s.mu.Lock()
 			if prepareErr != nil {
+				if ctx.Err() != nil {
+					return finish("stopped", "Posting stopped."), nil
+				}
 				return finish("stopped", prepareErr.Error()), nil
 			}
 			var freshUpload *capturedPhotoUpload

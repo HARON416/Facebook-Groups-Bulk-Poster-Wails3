@@ -8,10 +8,8 @@ msgstr ""
 "Plural-Forms: nplurals=2\n"
 "X-Plurals-Order: one, other\n"
 
-#. 0: appliedInterval; 1: rewriteState
-#: src/App.svelte
-msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
-msgstr "Kaydedilen varsayılanlar uygulandı: Gönderiler arasında {0} saniye · Gemini yeniden yazma {1}."
+#~ msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
+#~ msgstr "Kaydedilen varsayılanlar uygulandı: Gönderiler arasında {0} saniye · Gemini yeniden yazma {1}."
 
 #: src/components/LogMessage.svelte
 msgid "Could not restore saved groups. Load groups to refresh the list."
@@ -152,23 +150,17 @@ msgstr "Başlamak için Facebook gruplarınızı açın."
 msgid "Posting settings"
 msgstr "Gönderi ayarları"
 
-#: src/App.svelte
-msgid "Add a Gemini API key in Settings to enable rewriting."
-msgstr "Yeniden yazmayı etkinleştirmek için Ayarlar kısmına bir Gemini API anahtarı ekleyin."
+#~ msgid "Add a Gemini API key in Settings to enable rewriting."
+#~ msgstr "Yeniden yazmayı etkinleştirmek için Ayarlar kısmına bir Gemini API anahtarı ekleyin."
 
-#: src/App.svelte
-msgid "Applying defaults…"
-msgstr "Varsayılanlar uygulanıyor…"
+#~ msgid "Applying defaults…"
+#~ msgstr "Varsayılanlar uygulanıyor…"
 
-#: src/App.svelte
-#: src/components/FeaturesCard.svelte
-#: src/components/UsageGuide.svelte
-msgid "Use saved defaults"
-msgstr "Kaydedilmiş varsayılanları kullan"
+#~ msgid "Use saved defaults"
+#~ msgstr "Kaydedilmiş varsayılanları kullan"
 
-#: src/App.svelte
-msgid "Open settings"
-msgstr "Ayarları aç"
+#~ msgid "Open settings"
+#~ msgstr "Ayarları aç"
 
 #~ msgid "Posting as <0/>"
 #~ msgstr "Gönderim <0/> olarak"
@@ -200,9 +192,11 @@ msgid "Time zone: {0}. Keep Postika open and your computer awake. Facebook may a
 msgstr "Saat dilimi: {0}. Postika’yı açık tutun ve bilgisayarınızın uyanık olmasını sağlayın. Gönderi başladığında Facebook sizden tekrar giriş yapmanızı isteyebilir."
 
 #: src/App.svelte
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FetchedPostCard.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Cancel"
 msgstr "İptal"
 
@@ -253,6 +247,8 @@ msgid "Application menu"
 msgstr "Uygulama menüsü"
 
 #: src/Workspace.svelte
+#: src/components/AccountDropdown.svelte
+#: src/components/AddAccountDialog.svelte
 #: src/components/UsageGuide.svelte
 msgid "Add account"
 msgstr "Hesap ekle"
@@ -261,31 +257,28 @@ msgstr "Hesap ekle"
 #: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogView.svelte
+#: src/components/PostingLogs.svelte
 #: src/components/UsageGuide.svelte
 msgid "Posting logs"
 msgstr "Paylaşım günlükleri"
 
-#: src/Workspace.svelte
-#: src/components/FeaturesCard.svelte
-#: src/components/Settings.svelte
-#: src/components/Settings.svelte
-#: src/components/UsageGuide.svelte
-msgid "Settings"
-msgstr "Ayarlar"
+#~ msgid "Settings"
+#~ msgstr "Ayarlar"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "Creating…"
 msgstr "Oluşturuluyor…"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "Create & sign in"
 msgstr "Oluştur ve giriş yap"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Account name"
 msgstr "Hesap adı"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 #: src/components/UsageGuide.svelte
 msgid "Sign in to Facebook in the new account’s browser window."
 msgstr "Yeni hesabın tarayıcı penceresinde Facebook’a giriş yapın."
@@ -794,172 +787,125 @@ msgstr "Bir sonraki gruba paylaşım yapmadan önce ne kadar bekleyeceğinizi se
 msgid "At least 60 seconds. Use equal values for a fixed interval."
 msgstr "En az 60 saniye. Sabit aralık için eşit değerler kullanın."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "OPTIONAL · AI REWRITE"
-msgstr "OPSİYONEL · AI YENİDEN YAZ"
+#~ msgid "OPTIONAL · AI REWRITE"
+#~ msgstr "OPSİYONEL · AI YENİDEN YAZ"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "A fresh version for each group"
-msgstr "Her grup için taze bir versiyon"
+#~ msgid "A fresh version for each group"
+#~ msgstr "Her grup için taze bir versiyon"
 
-#: src/components/FeaturesCard.svelte
-#: src/components/PostingOptionsForm.svelte
-#: src/components/UsageGuide.svelte
-msgid "Rewrite each post body with Gemini"
-msgstr "Her gönderi metnini Gemini ile yeniden yaz"
+#~ msgid "Rewrite each post body with Gemini"
+#~ msgstr "Her gönderi metnini Gemini ile yeniden yaz"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
-msgstr "Yeniden yazma talimatları<0>Gemini'nin koruması gereken tonu ve detayları seçin.</0>"
+#~ msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
+#~ msgstr "Yeniden yazma talimatları<0>Gemini'nin koruması gereken tonu ve detayları seçin.</0>"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Keep it concise and easy to scan. Preserve the price and contact details."
-msgstr "Kısa ve kolay okunabilir tutun. Fiyat ve iletişim bilgilerini koruyun."
+#~ msgid "Keep it concise and easy to scan. Preserve the price and contact details."
+#~ msgstr "Kısa ve kolay okunabilir tutun. Fiyat ve iletişim bilgilerini koruyun."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Rewrite instructions"
-msgstr "Yeniden yazma talimatları"
+#~ msgid "Rewrite instructions"
+#~ msgstr "Yeniden yazma talimatları"
 
-#: src/components/FeaturesCard.svelte
-#: src/components/PostingOptionsForm.svelte
-#: src/components/UsageGuide.svelte
-msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
-msgstr "Gönderi metniniz ve talimatlarınız Google Gemini'ye gönderilir. Görseller gönderilmez. Gemini'nin yeniden yazmaları düz metin kullanır."
+#~ msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
+#~ msgstr "Gönderi metniniz ve talimatlarınız Google Gemini'ye gönderilir. Görseller gönderilmez. Gemini'nin yeniden yazmaları düz metin kullanır."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
-msgstr "Yeniden yazma başarısız olursa, o gönderi orijinal metninizi kullanır. Bir sonraki gönderi Gemini'yi tekrar dener."
+#~ msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
+#~ msgstr "Yeniden yazma başarısız olursa, o gönderi orijinal metninizi kullanır. Bir sonraki gönderi Gemini'yi tekrar dener."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Let Gemini rewrite your post using your instructions."
-msgstr "Gemini talimatlarınızı kullanarak gönderinizi yeniden yazsın."
+#~ msgid "Let Gemini rewrite your post using your instructions."
+#~ msgstr "Gemini talimatlarınızı kullanarak gönderinizi yeniden yazsın."
 
 #: src/components/PostingOptionsForm.svelte
 msgid "Posting preferences"
 msgstr "Gönderim tercihleri"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved defaults help"
-msgstr "Kaydedilmiş varsayılanlar yardımcı olur"
+#~ msgid "Saved defaults help"
+#~ msgstr "Kaydedilmiş varsayılanlar yardımcı olur"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "About saved defaults"
-msgstr "Kaydedilmiş varsayılanlar hakkında"
+#~ msgid "About saved defaults"
+#~ msgstr "Kaydedilmiş varsayılanlar hakkında"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved interval"
-msgstr "Kaydedilmiş aralık"
+#~ msgid "Saved interval"
+#~ msgstr "Kaydedilmiş aralık"
 
-#. 0: settings.minimumInterval === settings.maximumInterval ? settings.minimumInterval \\: `${settings.minimumInterval}–${settings.maximumInterval}`
-#: src/components/SavedDefaultsInfo.svelte
-msgid "{0} seconds"
-msgstr "{0} saniye"
+#~ msgid "{0} seconds"
+#~ msgstr "{0} saniye"
 
-#: src/App.svelte
-#: src/components/SavedDefaultsInfo.svelte
-msgid "On"
-msgstr "Açık"
+#~ msgid "On"
+#~ msgstr "Açık"
 
-#: src/App.svelte
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Off"
-msgstr "Kapalı"
+#~ msgid "Off"
+#~ msgstr "Kapalı"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Gemini rewrite"
-msgstr "Gemini yeniden yazması"
+#~ msgid "Gemini rewrite"
+#~ msgstr "Gemini yeniden yazması"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "No instructions saved."
-msgstr "Kaydedilmiş talimat yok."
+#~ msgid "No instructions saved."
+#~ msgstr "Kaydedilmiş talimat yok."
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved rewrite instructions"
-msgstr "Kaydedilmiş yeniden yazma talimatları"
+#~ msgid "Saved rewrite instructions"
+#~ msgstr "Kaydedilmiş yeniden yazma talimatları"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved values could not be loaded. Try “Use saved defaults” again."
-msgstr "Kaydedilmiş değerler yüklenemedi. “Kaydedilmiş varsayılanları kullan”ı tekrar deneyin."
+#~ msgid "Saved values could not be loaded. Try “Use saved defaults” again."
+#~ msgstr "Kaydedilmiş değerler yüklenemedi. “Kaydedilmiş varsayılanları kullan”ı tekrar deneyin."
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "What does “Use saved defaults” do?"
-msgstr "“Kaydedilmiş varsayılanları kullan” ne yapar?"
+#~ msgid "What does “Use saved defaults” do?"
+#~ msgstr "“Kaydedilmiş varsayılanları kullan” ne yapar?"
 
-#: src/components/SavedDefaultsInfo.svelte
-#: src/components/UsageGuide.svelte
-msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
-msgstr "Bu çalışmanın gönderim aralığını, Gemini yeniden yazım seçeneğini ve yeniden yazım talimatlarını Ayarlar'da kaydedilen değerlerle değiştirir."
+#~ msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
+#~ msgstr "Bu çalışmanın gönderim aralığını, Gemini yeniden yazım seçeneğini ve yeniden yazım talimatlarını Ayarlar'da kaydedilen değerlerle değiştirir."
 
-#: src/components/SavedDefaultsInfo.svelte
-#: src/components/UsageGuide.svelte
-msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
-msgstr "Başlangıç varsayılanları: 60–120 saniye, Gemini yeniden yazım kapalı ve yeniden yazım talimatı yok. Bunları değiştirmek için kendi tercihlerinizi Ayarlar'da kaydedin."
+#~ msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
+#~ msgstr "Başlangıç varsayılanları: 60–120 saniye, Gemini yeniden yazım kapalı ve yeniden yazım talimatı yok. Bunları değiştirmek için kendi tercihlerinizi Ayarlar'da kaydedin."
 
 #: src/components/LogMessage.svelte
 msgid "Settings saved. New runs can use these defaults."
 msgstr "Ayarlar kaydedildi. Yeni çalışmalarda bu varsayılanlar kullanılabilir."
 
-#: src/components/Settings.svelte
-msgid "Key saved · leave blank to keep it"
-msgstr "Anahtar kaydedildi · korumak için boş bırakın"
+#~ msgid "Key saved · leave blank to keep it"
+#~ msgstr "Anahtar kaydedildi · korumak için boş bırakın"
 
-#: src/components/Settings.svelte
-msgid "Enter your Gemini API key"
-msgstr "Gemini API anahtarınızı girin"
+#~ msgid "Enter your Gemini API key"
+#~ msgstr "Gemini API anahtarınızı girin"
 
-#: src/components/Settings.svelte
-msgid "A key is saved on this device."
-msgstr "Bu cihazda bir anahtar kaydedildi."
+#~ msgid "A key is saved on this device."
+#~ msgstr "Bu cihazda bir anahtar kaydedildi."
 
-#: src/components/Settings.svelte
-msgid "No API key saved."
-msgstr "Kaydedilmiş API anahtarı yok."
+#~ msgid "No API key saved."
+#~ msgstr "Kaydedilmiş API anahtarı yok."
 
-#: src/components/Settings.svelte
-msgid "Remove saved key"
-msgstr "Kaydedilmiş anahtarı kaldır"
+#~ msgid "Remove saved key"
+#~ msgstr "Kaydedilmiş anahtarı kaldır"
 
-#: src/components/Settings.svelte
-msgid "Gemini"
-msgstr "Gemini"
+#~ msgid "Gemini"
+#~ msgstr "Gemini"
 
-#: src/components/Settings.svelte
-msgid "API key<0/>"
-msgstr "API anahtarı<0/>"
+#~ msgid "API key<0/>"
+#~ msgstr "API anahtarı<0/>"
 
-#. 0: keyConfigured ? 'A key is saved on this device.' \\: 'No API key saved.'
-#: src/components/Settings.svelte
-msgid "{0} The saved key is never displayed."
-msgstr "{0} Kaydedilen anahtar asla gösterilmez."
+#~ msgid "{0} The saved key is never displayed."
+#~ msgstr "{0} Kaydedilen anahtar asla gösterilmez."
 
-#: src/components/Settings.svelte
-msgid "Model<0/>"
-msgstr "Model<0/>"
+#~ msgid "Model<0/>"
+#~ msgstr "Model<0/>"
 
-#: src/components/Settings.svelte
-msgid "Posting defaults"
-msgstr "Varsayılan paylaşım ayarları"
+#~ msgid "Posting defaults"
+#~ msgstr "Varsayılan paylaşım ayarları"
 
-#: src/components/Settings.svelte
-msgid "Applied when you start a new posting run."
-msgstr "Yeni bir gönderim çalışmasına başladığınızda uygulanır."
+#~ msgid "Applied when you start a new posting run."
+#~ msgstr "Yeni bir gönderim çalışmasına başladığınızda uygulanır."
 
-#: src/components/Settings.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Saving…"
 msgstr "Kaydediliyor…"
 
-#: src/components/Settings.svelte
-msgid "Save settings"
-msgstr "Ayarları kaydet"
+#~ msgid "Save settings"
+#~ msgstr "Ayarları kaydet"
 
-#: src/components/Settings.svelte
-msgid "YOUR PREFERENCES"
-msgstr "TERCİHLERİNİZ"
+#~ msgid "YOUR PREFERENCES"
+#~ msgstr "TERCİHLERİNİZ"
 
-#. 0: accountName
-#: src/components/Settings.svelte
-msgid "Set up Gemini and save posting defaults for {0}."
-msgstr "Gemini’yi kurun ve {0} için gönderim varsayılanlarını kaydedin."
+#~ msgid "Set up Gemini and save posting defaults for {0}."
+#~ msgstr "Gemini’yi kurun ve {0} için gönderim varsayılanlarını kaydedin."
 
 #: src/components/StepProgress.svelte
 msgid "Completed"
@@ -1133,9 +1079,8 @@ msgstr "Akşam"
 msgid "Could not change the language. Please try again."
 msgstr "Dil değiştirilemedi. Lütfen tekrar deneyin."
 
-#: src/components/Settings.svelte
-msgid "Language"
-msgstr "Dil"
+#~ msgid "Language"
+#~ msgstr "Dil"
 
 #: src/components/PostingOptionsForm.svelte
 #: src/components/PostingOptionsForm.svelte
@@ -1210,7 +1155,7 @@ msgstr "ATLANAN"
 msgid "UNCONFIRMED"
 msgstr "ONAYLANMADI"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "e.g. Business"
 msgstr "ör. İş"
 
@@ -1282,8 +1227,11 @@ msgstr "Varsayılan profil"
 msgid "Color themes"
 msgstr "Renk temaları"
 
+#: src/components/AddAccountDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/RenameProfileDialog.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UpdateButton.svelte
 msgid "Close"
@@ -1503,7 +1451,6 @@ msgid "Gemini rewrite completed."
 msgstr "Gemini yeniden yazımı tamamlandı."
 
 #: src/components/LogMessage.svelte
-#: src/components/UsageGuide.svelte
 msgid "Gemini rewrite failed. Using the original text for this post; Gemini will be tried again for the next post."
 msgstr "Gemini yeniden yazımı başarısız oldu. Bu gönderi için orijinal metin kullanılacak; Gemini bir sonraki gönderi için tekrar denenecek."
 
@@ -1876,19 +1823,21 @@ msgstr "Hata ayıklama detayları"
 #~ msgid ", "
 #~ msgstr ""
 
+#: src/components/FeaturesCard.svelte
 #: src/components/ThemePicker.svelte
+#: src/components/UsageGuide.svelte
 msgid "Themes"
 msgstr "Temalar"
 
 #: src/App.svelte
 #: src/components/UsageGuide.svelte
-msgid "Preferences & post"
-msgstr "Tercihler ve paylaşım"
+msgid "Post or schedule"
+msgstr "Paylaş veya zamanla"
 
 #: src/App.svelte
 #: src/App.svelte
-msgid "Set preferences, then post now or schedule"
-msgstr "Tercihleri ayarlayın, ardından şimdi paylaşın veya zamanlayın"
+msgid "Choose the time between posts, then post now or schedule for later."
+msgstr "Gönderiler arasındaki süreyi seçin, ardından şimdi paylaşın veya daha sonrası için zamanlayın."
 
 #~ msgid "Postika"
 #~ msgstr "Postika"
@@ -1923,9 +1872,8 @@ msgstr "Yüklenen gruplar uygulama oturumları arasında kullanılabilir kalır.
 msgid "Minimum and maximum delays between posts."
 msgstr "Gönderiler arasında en kısa ve en uzun bekleme süreleri."
 
-#: src/components/FeaturesCard.svelte
-msgid "Custom instructions and a configurable Gemini model."
-msgstr "Özel talimatlar ve yapılandırılabilir Gemini modeli."
+#~ msgid "Custom instructions and a configurable Gemini model."
+#~ msgstr "Özel talimatlar ve yapılandırılabilir Gemini modeli."
 
 #. 0: languages.length; 1: themeOptions.length
 #: src/components/FeaturesCard.svelte
@@ -1978,9 +1926,8 @@ msgstr "Mesajınızı yazın ve en az bir görsel ekleyin; ikisi de gereklidir. 
 msgid "Select Load groups and finish Facebook login or verification in Chrome. Search the loaded list, select the groups you want, then choose Next."
 msgstr "Grupları yükle’yi seçip Chrome’da Facebook girişini veya doğrulamayı tamamlayın. Listede arama yapın, grupları seçin ve İleri’ye basın."
 
-#: src/components/UsageGuide.svelte
-msgid "In Settings, enter this account’s Gemini API key and model, then Save settings. Enable rewriting for your run and describe the tone and details to preserve."
-msgstr "Ayarlar’da bu hesabın Gemini API anahtarını ve modelini girip kaydedin. Yeniden yazmayı etkinleştirin; korunacak üslup ve ayrıntıları açıklayın."
+#~ msgid "In Settings, enter this account’s Gemini API key and model, then Save settings. Enable rewriting for your run and describe the tone and details to preserve."
+#~ msgstr "Ayarlar’da bu hesabın Gemini API anahtarını ve modelini girip kaydedin. Yeniden yazmayı etkinleştirin; korunacak üslup ve ayrıntıları açıklayın."
 
 #: src/components/UsageGuide.svelte
 msgid "Review the account, message, image order, selected groups, and posting intervals. Choose Post now and complete any Facebook login or verification prompts in Chrome."
@@ -2036,13 +1983,11 @@ msgstr "Bir Facebook sayfası URL’si girin, örneğin https://web.facebook.com
 #~ msgid "Fetch Facebook posts"
 #~ msgstr ""
 
-#: src/components/FacebookPageDialog.svelte
-msgid "Decrease number of posts"
-msgstr "Gönderi sayısını azalt"
+#~ msgid "Decrease number of posts"
+#~ msgstr "Gönderi sayısını azalt"
 
-#: src/components/FacebookPageDialog.svelte
-msgid "Increase number of posts"
-msgstr "Gönderi sayısını artır"
+#~ msgid "Increase number of posts"
+#~ msgstr "Gönderi sayısını artır"
 
 #: src/components/FacebookPageDialog.svelte
 msgid "Facebook page URL"
@@ -2136,6 +2081,8 @@ msgstr "Düzenle"
 msgid "Delete post {0}"
 msgstr "Gönderi {0} sil"
 
+#: src/components/AccountDropdown.svelte
+#: src/components/AccountDropdown.svelte
 #: src/components/FetchedPostCard.svelte
 msgid "Delete"
 msgstr "Sil"
@@ -2150,6 +2097,7 @@ msgid "Remove image {0} from post {1}"
 msgstr "Gönderi {1} içindeki resim {0} kaldır"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Save changes"
 msgstr "Değişiklikleri kaydet"
 
@@ -2391,3 +2339,45 @@ msgstr "Güncellemeleri denetle"
 #: src/components/UpdateButton.svelte
 msgid "Installing update…"
 msgstr "Güncelleme yükleniyor…"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "posts"
+msgstr "gönderi"
+
+#: src/components/LogMessage.svelte
+msgid "Account names cannot be URLs"
+msgstr "Hesap adları URL olamaz"
+
+#: src/components/LogMessage.svelte
+msgid "First post confirmed. Remaining groups stopped because the formatted text could not be verified."
+msgstr "İlk gönderi onaylandı. Biçimlendirilmiş metin doğrulanamadığı için kalan gruplara gönderim durduruldu."
+
+#: src/components/AccountDropdown.svelte
+#: src/components/RenameProfileDialog.svelte
+msgid "Rename profile"
+msgstr "Profil adını değiştir"
+
+#: src/Workspace.svelte
+#: src/components/PostingLogs.svelte
+msgid "Add an account to get started."
+msgstr "Başlamak için bir hesap ekleyin."
+
+#: src/components/AccountDropdown.svelte
+#: src/components/DeleteProfileDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
+msgid "Delete profile"
+msgstr "Profili sil"
+
+#~ msgid "<0/> Add account"
+#~ msgstr ""
+
+#~ msgid "Delete profile?"
+#~ msgstr ""
+
+#: src/components/DeleteProfileDialog.svelte
+msgid "This permanently deletes this profile’s Facebook login, groups, drafts, images, settings, and logs. Any running or scheduled queue will stop. Posts already on Facebook are kept."
+msgstr "Bu işlem profilin Facebook oturumunu, gruplarını, taslaklarını, görsellerini, ayarlarını ve günlüklerini kalıcı olarak siler. Çalışan veya zamanlanmış kuyruklar durur. Facebook’ta zaten yayımlanmış gönderiler korunur."
+
+#: src/components/DeleteProfileDialog.svelte
+msgid "Deleting…"
+msgstr "Siliniyor…"

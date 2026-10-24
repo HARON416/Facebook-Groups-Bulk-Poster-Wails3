@@ -41,6 +41,7 @@ type GroupsService struct {
 	postingItemStarted     time.Time
 	settingsMu             sync.Mutex
 	settingsPath           string
+	settingsDeleted        bool
 	windowMu               sync.Mutex
 	app                    *application.App
 	postLedger             map[string]PostOutcome
@@ -57,6 +58,7 @@ type GroupsService struct {
 	profileDir             string
 	profileID              string
 	profileName            string
+	profileNameMu          sync.RWMutex
 	postImageDir           string
 	chromePath             string
 	targetURL              string
@@ -196,7 +198,9 @@ func (s *GroupsService) closeBrowserConnection() {
 	}
 }
 
-func (s *GroupsService) ServiceShutdown() error {
+func (s *GroupsService) ServiceShutdown() error { return s.shutdown(false) }
+
+func (s *GroupsService) shutdown(removeBrowserData bool) error {
 	s.workMu.Lock()
 	if s.workCancel != nil {
 		s.workCancel()
@@ -205,7 +209,11 @@ func (s *GroupsService) ServiceShutdown() error {
 	s.mu.Lock()
 	defer s.mu.Unlock()
 	s.closed = true
+	launch := s.launcher
 	s.closeBrowser()
+	if removeBrowserData && launch != nil {
+		launch.Cleanup() // Wait for Chrome to exit before removing its login data.
+	}
 	return nil
 }
 

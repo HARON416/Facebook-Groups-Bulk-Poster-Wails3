@@ -246,8 +246,8 @@ func TestPostingLogsUI(t *testing.T) {
 	jar.SetCookies(endpoint, []*http.Cookie{{Name: "c_user", Value: "fixture-user", Path: "/"}})
 	replay := &postReplay{client: &http.Client{Jar: jar}, user: "fixture-user", post: capturedPost{URL: server.URL + "/create", Body: postFixtureForm(), Headers: http.Header{"Content-Type": {"application/x-www-form-urlencoded"}}}}
 	for _, test := range []struct{ id, name, state, visible string }{
-		{"published-group", "Published replay group", "posted", "Posted successfully to Published replay group."},
-		{"pending-group", "Pending replay group", "pending", "Pending replay group: Your post is pending"},
+		{"published-group", "Published replay group", "posted", "Published to Published replay group."},
+		{"pending-group", "Pending replay group", "pending", "Pending replay group: Awaiting admin approval."},
 		{"failed-group", "Failed replay group", "failed", "Failed replay group: Facebook could not post to this group."},
 	} {
 		outcome := replay.create(job, "First\nSecond", nil, test.id)
@@ -271,7 +271,7 @@ func TestPostingLogsUI(t *testing.T) {
 	await(`() => document.querySelector('.timeline-item.error .debug-details[open] .technical')?.textContent.includes('API confirmation: HTTP 200')`)
 	await(`() => {const card=document.querySelector('.timeline-item.error .log-card'), badge=document.querySelector('.timeline-item.error .level'); return card && getComputedStyle(card).borderLeftColor===getComputedStyle(badge).color && badge.textContent==='FAILED';}`)
 	await(`() => {const pending=document.querySelector('.timeline-item.warning .log-card'), published=document.querySelector('.timeline-item.published .log-card'), debug=document.querySelector('.timeline-item.debug .log-card'),cards=[pending,published,debug]; return pending?.querySelector('.level').textContent==='PENDING' && pending.querySelector('.severity').textContent==='INFO' && published?.querySelector('.level').textContent==='PUBLISHED' && debug?.querySelector('.level').textContent==='DEBUG' && cards.every(card=>getComputedStyle(card).borderLeftColor===getComputedStyle(card.querySelector('.level')).color) && new Set(cards.map(card=>getComputedStyle(card).borderLeftColor)).size===3;}`)
-	eval(`() => [...document.querySelectorAll('.timeline-item')].find(r=>r.textContent.includes('Posted successfully to Published replay group.')).querySelector('[aria-label="Copy Facebook response"]').click()`)
+	eval(`() => [...document.querySelectorAll('.timeline-item')].find(r=>r.textContent.includes('Published to Published replay group.')).querySelector('[aria-label="Copy Facebook response"]').click()`)
 	await(`() => document.querySelector('[role="status"].copy-feedback')?.textContent==='Facebook response copied.'`)
 	text, ok := copiedResponse.Load().(string)
 	if !ok || !strings.Contains(text, `"post_id": "replayed-post"`) || !strings.Contains(text, `"id": "published-group"`) {
@@ -342,31 +342,6 @@ func TestPostingLogsUI(t *testing.T) {
 			}
 		}
 	}
-	if err = page.Navigate(server.URL + "/?view=settings"); err != nil {
-		t.Fatal(err)
-	}
-	await(`() => document.querySelector('input[type=password]') && !document.querySelector('input[type=password]').disabled`)
-	eval(`() => {const key=document.querySelector('input[type=password]');key.value='fixture-ui-key';key.dispatchEvent(new Event('input',{bubbles:true}));const max=document.querySelectorAll('input[type=number]')[1];max.value='180';max.dispatchEvent(new Event('input',{bubbles:true}));document.querySelector('input[type=checkbox]').click();}`)
-	await(`() => document.querySelector('textarea') !== null`)
-	eval(`() => {const input=document.querySelector('textarea');input.value='Keep it concise';input.dispatchEvent(new Event('input',{bubbles:true}));document.querySelector('button[type=submit]').click();}`)
-	await(`() => document.querySelector('.success')?.textContent.includes('Settings saved') && document.querySelector('input[type=password]').value==='' && document.querySelector('.hint')?.textContent.includes('A key is saved')`)
-	settings, err := s.GetSettings()
-	if err != nil || !settings.KeyConfigured || settings.MaximumInterval != 180 || !settings.Rewrite || settings.Instructions != "Keep it concise" {
-		t.Fatalf("UI settings not saved: %#v %v", settings, err)
-	}
-	if dir := *uiArtifactDir; dir != "" {
-		data, err := page.Screenshot(true, &proto.PageCaptureScreenshot{})
-		if err != nil {
-			t.Fatal(err)
-		}
-		if err = os.WriteFile(filepath.Join(dir, "postika-settings.png"), data, 0600); err != nil {
-			t.Fatal(err)
-		}
-	}
-	if err = page.Navigate(server.URL + "/?view=settings"); err != nil {
-		t.Fatal(err)
-	}
-	await(`() => document.querySelector('input[type=password]')?.placeholder.includes('Key saved') && document.querySelector('textarea')?.value==='Keep it concise' && document.querySelectorAll('input[type=number]')[1]?.value==='180'`)
 	rewriteServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) { w.WriteHeader(http.StatusServiceUnavailable) }))
 	defer rewriteServer.Close()
 	rewriteCtx, cancelRewrite := testPostingContext(s)

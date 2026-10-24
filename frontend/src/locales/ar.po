@@ -8,10 +8,8 @@ msgstr ""
 "Plural-Forms: nplurals=6\n"
 "X-Plurals-Order: zero, one, two, few, many, other\n"
 
-#. 0: appliedInterval; 1: rewriteState
-#: src/App.svelte
-msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
-msgstr "تم تطبيق الإعدادات الافتراضية المحفوظة: {0} ثوانٍ بين المشاركات · إعادة كتابة Gemini {1}."
+#~ msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
+#~ msgstr "تم تطبيق الإعدادات الافتراضية المحفوظة: {0} ثوانٍ بين المشاركات · إعادة كتابة Gemini {1}."
 
 #: src/components/LogMessage.svelte
 msgid "Could not restore saved groups. Load groups to refresh the list."
@@ -152,23 +150,17 @@ msgstr "افتح مجموعات فيسبوك الخاصة بك للبدء."
 msgid "Posting settings"
 msgstr "إعدادات النشر"
 
-#: src/App.svelte
-msgid "Add a Gemini API key in Settings to enable rewriting."
-msgstr "أضف مفتاح API من Gemini في الإعدادات لتمكين إعادة الكتابة."
+#~ msgid "Add a Gemini API key in Settings to enable rewriting."
+#~ msgstr "أضف مفتاح API من Gemini في الإعدادات لتمكين إعادة الكتابة."
 
-#: src/App.svelte
-msgid "Applying defaults…"
-msgstr "تطبيق الإعدادات الافتراضية…"
+#~ msgid "Applying defaults…"
+#~ msgstr "تطبيق الإعدادات الافتراضية…"
 
-#: src/App.svelte
-#: src/components/FeaturesCard.svelte
-#: src/components/UsageGuide.svelte
-msgid "Use saved defaults"
-msgstr "استخدام الإعدادات الافتراضية المحفوظة"
+#~ msgid "Use saved defaults"
+#~ msgstr "استخدام الإعدادات الافتراضية المحفوظة"
 
-#: src/App.svelte
-msgid "Open settings"
-msgstr "افتح الإعدادات"
+#~ msgid "Open settings"
+#~ msgstr "افتح الإعدادات"
 
 #~ msgid "Posting as <0/>"
 #~ msgstr "النشر بصفتك <0/>"
@@ -200,9 +192,11 @@ msgid "Time zone: {0}. Keep Postika open and your computer awake. Facebook may a
 msgstr "المنطقة الزمنية: {0}. احتفظ بـ Postika مفتوحًا وجهاز الكمبيوتر في وضع التشغيل. قد يطلب منك فيسبوك تسجيل الدخول عند بدء النشر."
 
 #: src/App.svelte
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FetchedPostCard.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Cancel"
 msgstr "إلغاء"
 
@@ -253,6 +247,8 @@ msgid "Application menu"
 msgstr "قائمة التطبيق"
 
 #: src/Workspace.svelte
+#: src/components/AccountDropdown.svelte
+#: src/components/AddAccountDialog.svelte
 #: src/components/UsageGuide.svelte
 msgid "Add account"
 msgstr "إضافة حساب"
@@ -261,31 +257,28 @@ msgstr "إضافة حساب"
 #: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogView.svelte
+#: src/components/PostingLogs.svelte
 #: src/components/UsageGuide.svelte
 msgid "Posting logs"
 msgstr "سجل النشر"
 
-#: src/Workspace.svelte
-#: src/components/FeaturesCard.svelte
-#: src/components/Settings.svelte
-#: src/components/Settings.svelte
-#: src/components/UsageGuide.svelte
-msgid "Settings"
-msgstr "الإعدادات"
+#~ msgid "Settings"
+#~ msgstr "الإعدادات"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "Creating…"
 msgstr "جارٍ الإنشاء…"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "Create & sign in"
 msgstr "إنشاء وتسجيل الدخول"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Account name"
 msgstr "اسم الحساب"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 #: src/components/UsageGuide.svelte
 msgid "Sign in to Facebook in the new account’s browser window."
 msgstr "سجّل الدخول إلى فيسبوك في نافذة المتصفح للحساب الجديد."
@@ -794,172 +787,125 @@ msgstr "اختر مدة الانتظار قبل النشر في المجموعة
 msgid "At least 60 seconds. Use equal values for a fixed interval."
 msgstr "ما لا يقل عن 60 ثانية. استخدم نفس القيم لفاصل ثابت."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "OPTIONAL · AI REWRITE"
-msgstr "اختياري · إعادة صياغة بالذكاء الاصطناعي"
+#~ msgid "OPTIONAL · AI REWRITE"
+#~ msgstr "اختياري · إعادة صياغة بالذكاء الاصطناعي"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "A fresh version for each group"
-msgstr "نسخة جديدة لكل مجموعة"
+#~ msgid "A fresh version for each group"
+#~ msgstr "نسخة جديدة لكل مجموعة"
 
-#: src/components/FeaturesCard.svelte
-#: src/components/PostingOptionsForm.svelte
-#: src/components/UsageGuide.svelte
-msgid "Rewrite each post body with Gemini"
-msgstr "إعادة صياغة محتوى كل منشور باستخدام Gemini"
+#~ msgid "Rewrite each post body with Gemini"
+#~ msgstr "إعادة صياغة محتوى كل منشور باستخدام Gemini"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
-msgstr "إعادة كتابة التعليمات<0>اختر الأسلوب والتفاصيل التي يجب أن يحتفظ بها Gemini.</0>"
+#~ msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
+#~ msgstr "إعادة كتابة التعليمات<0>اختر الأسلوب والتفاصيل التي يجب أن يحتفظ بها Gemini.</0>"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Keep it concise and easy to scan. Preserve the price and contact details."
-msgstr "حافظ على الاختصار وسهولة المسح. احفظ السعر وتفاصيل الاتصال."
+#~ msgid "Keep it concise and easy to scan. Preserve the price and contact details."
+#~ msgstr "حافظ على الاختصار وسهولة المسح. احفظ السعر وتفاصيل الاتصال."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Rewrite instructions"
-msgstr "إعادة كتابة التعليمات"
+#~ msgid "Rewrite instructions"
+#~ msgstr "إعادة كتابة التعليمات"
 
-#: src/components/FeaturesCard.svelte
-#: src/components/PostingOptionsForm.svelte
-#: src/components/UsageGuide.svelte
-msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
-msgstr "يتم إرسال نص منشورك وتعليماتك إلى جوجل Gemini. لا يتم إرسال الصور. تستخدم إعادة الكتابة في Gemini النص العادي."
+#~ msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
+#~ msgstr "يتم إرسال نص منشورك وتعليماتك إلى جوجل Gemini. لا يتم إرسال الصور. تستخدم إعادة الكتابة في Gemini النص العادي."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
-msgstr "إذا فشلت إعادة الكتابة، يستخدم المنشور النص الأصلي الخاص بك. المنشور التالي يحاول استخدام Gemini مرة أخرى."
+#~ msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
+#~ msgstr "إذا فشلت إعادة الكتابة، يستخدم المنشور النص الأصلي الخاص بك. المنشور التالي يحاول استخدام Gemini مرة أخرى."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Let Gemini rewrite your post using your instructions."
-msgstr "دع Gemini يعيد كتابة منشورك باستخدام تعليماتك."
+#~ msgid "Let Gemini rewrite your post using your instructions."
+#~ msgstr "دع Gemini يعيد كتابة منشورك باستخدام تعليماتك."
 
 #: src/components/PostingOptionsForm.svelte
 msgid "Posting preferences"
 msgstr "تفضيلات النشر"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved defaults help"
-msgstr "تساعد الإعدادات الافتراضية المحفوظة"
+#~ msgid "Saved defaults help"
+#~ msgstr "تساعد الإعدادات الافتراضية المحفوظة"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "About saved defaults"
-msgstr "حول الإعدادات الافتراضية المحفوظة"
+#~ msgid "About saved defaults"
+#~ msgstr "حول الإعدادات الافتراضية المحفوظة"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved interval"
-msgstr "الفاصل المحفوظ"
+#~ msgid "Saved interval"
+#~ msgstr "الفاصل المحفوظ"
 
-#. 0: settings.minimumInterval === settings.maximumInterval ? settings.minimumInterval \\: `${settings.minimumInterval}–${settings.maximumInterval}`
-#: src/components/SavedDefaultsInfo.svelte
-msgid "{0} seconds"
-msgstr "{0} ثانية"
+#~ msgid "{0} seconds"
+#~ msgstr "{0} ثانية"
 
-#: src/App.svelte
-#: src/components/SavedDefaultsInfo.svelte
-msgid "On"
-msgstr "تشغيل"
+#~ msgid "On"
+#~ msgstr "تشغيل"
 
-#: src/App.svelte
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Off"
-msgstr "إيقاف"
+#~ msgid "Off"
+#~ msgstr "إيقاف"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Gemini rewrite"
-msgstr "إعادة كتابة Gemini"
+#~ msgid "Gemini rewrite"
+#~ msgstr "إعادة كتابة Gemini"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "No instructions saved."
-msgstr "لم يتم حفظ تعليمات."
+#~ msgid "No instructions saved."
+#~ msgstr "لم يتم حفظ تعليمات."
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved rewrite instructions"
-msgstr "تعليمات إعادة الكتابة المحفوظة"
+#~ msgid "Saved rewrite instructions"
+#~ msgstr "تعليمات إعادة الكتابة المحفوظة"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved values could not be loaded. Try “Use saved defaults” again."
-msgstr "تعذر تحميل القيم المحفوظة. جرب \"استخدام الإعدادات الافتراضية المحفوظة\" مرة أخرى."
+#~ msgid "Saved values could not be loaded. Try “Use saved defaults” again."
+#~ msgstr "تعذر تحميل القيم المحفوظة. جرب \"استخدام الإعدادات الافتراضية المحفوظة\" مرة أخرى."
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "What does “Use saved defaults” do?"
-msgstr "ماذا يفعل \"استخدام الإعدادات الافتراضية المحفوظة\"؟"
+#~ msgid "What does “Use saved defaults” do?"
+#~ msgstr "ماذا يفعل \"استخدام الإعدادات الافتراضية المحفوظة\"؟"
 
-#: src/components/SavedDefaultsInfo.svelte
-#: src/components/UsageGuide.svelte
-msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
-msgstr "يستبدل فترة النشر لهذه الجولة، وخيار إعادة كتابة Gemini، وتعليمات إعادة الكتابة بالقيم المحفوظة في الإعدادات."
+#~ msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
+#~ msgstr "يستبدل فترة النشر لهذه الجولة، وخيار إعادة كتابة Gemini، وتعليمات إعادة الكتابة بالقيم المحفوظة في الإعدادات."
 
-#: src/components/SavedDefaultsInfo.svelte
-#: src/components/UsageGuide.svelte
-msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
-msgstr "الإعدادات الافتراضية الأولية: 60–120 ثانية، إعادة كتابة Gemini مغلقة، ولا توجد تعليمات إعادة كتابة. احفظ تفضيلاتك الخاصة في الإعدادات لتغييرها."
+#~ msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
+#~ msgstr "الإعدادات الافتراضية الأولية: 60–120 ثانية، إعادة كتابة Gemini مغلقة، ولا توجد تعليمات إعادة كتابة. احفظ تفضيلاتك الخاصة في الإعدادات لتغييرها."
 
 #: src/components/LogMessage.svelte
 msgid "Settings saved. New runs can use these defaults."
 msgstr "تم حفظ الإعدادات. يمكن للجولات الجديدة استخدام هذه القيم الافتراضية."
 
-#: src/components/Settings.svelte
-msgid "Key saved · leave blank to keep it"
-msgstr "تم حفظ المفتاح · اتركه فارغًا للاحتفاظ به"
+#~ msgid "Key saved · leave blank to keep it"
+#~ msgstr "تم حفظ المفتاح · اتركه فارغًا للاحتفاظ به"
 
-#: src/components/Settings.svelte
-msgid "Enter your Gemini API key"
-msgstr "أدخل مفتاح Gemini API الخاص بك"
+#~ msgid "Enter your Gemini API key"
+#~ msgstr "أدخل مفتاح Gemini API الخاص بك"
 
-#: src/components/Settings.svelte
-msgid "A key is saved on this device."
-msgstr "تم حفظ مفتاح على هذا الجهاز."
+#~ msgid "A key is saved on this device."
+#~ msgstr "تم حفظ مفتاح على هذا الجهاز."
 
-#: src/components/Settings.svelte
-msgid "No API key saved."
-msgstr "لا يوجد مفتاح API محفوظ."
+#~ msgid "No API key saved."
+#~ msgstr "لا يوجد مفتاح API محفوظ."
 
-#: src/components/Settings.svelte
-msgid "Remove saved key"
-msgstr "إزالة المفتاح المحفوظ"
+#~ msgid "Remove saved key"
+#~ msgstr "إزالة المفتاح المحفوظ"
 
-#: src/components/Settings.svelte
-msgid "Gemini"
-msgstr "Gemini"
+#~ msgid "Gemini"
+#~ msgstr "Gemini"
 
-#: src/components/Settings.svelte
-msgid "API key<0/>"
-msgstr "مفتاح API<0/>"
+#~ msgid "API key<0/>"
+#~ msgstr "مفتاح API<0/>"
 
-#. 0: keyConfigured ? 'A key is saved on this device.' \\: 'No API key saved.'
-#: src/components/Settings.svelte
-msgid "{0} The saved key is never displayed."
-msgstr "{0} المفتاح المحفوظ لا يتم عرضه أبدًا."
+#~ msgid "{0} The saved key is never displayed."
+#~ msgstr "{0} المفتاح المحفوظ لا يتم عرضه أبدًا."
 
-#: src/components/Settings.svelte
-msgid "Model<0/>"
-msgstr "النموذج<0/>"
+#~ msgid "Model<0/>"
+#~ msgstr "النموذج<0/>"
 
-#: src/components/Settings.svelte
-msgid "Posting defaults"
-msgstr "إعدادات النشر الافتراضية"
+#~ msgid "Posting defaults"
+#~ msgstr "إعدادات النشر الافتراضية"
 
-#: src/components/Settings.svelte
-msgid "Applied when you start a new posting run."
-msgstr "يتم تطبيقه عند بدء جولة نشر جديدة."
+#~ msgid "Applied when you start a new posting run."
+#~ msgstr "يتم تطبيقه عند بدء جولة نشر جديدة."
 
-#: src/components/Settings.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Saving…"
 msgstr "جارٍ الحفظ…"
 
-#: src/components/Settings.svelte
-msgid "Save settings"
-msgstr "حفظ الإعدادات"
+#~ msgid "Save settings"
+#~ msgstr "حفظ الإعدادات"
 
-#: src/components/Settings.svelte
-msgid "YOUR PREFERENCES"
-msgstr "تفضيلاتك"
+#~ msgid "YOUR PREFERENCES"
+#~ msgstr "تفضيلاتك"
 
-#. 0: accountName
-#: src/components/Settings.svelte
-msgid "Set up Gemini and save posting defaults for {0}."
-msgstr "قم بإعداد Gemini وحفظ إعدادات النشر الافتراضية لـ {0}."
+#~ msgid "Set up Gemini and save posting defaults for {0}."
+#~ msgstr "قم بإعداد Gemini وحفظ إعدادات النشر الافتراضية لـ {0}."
 
 #: src/components/StepProgress.svelte
 msgid "Completed"
@@ -1133,9 +1079,8 @@ msgstr "مساءً"
 msgid "Could not change the language. Please try again."
 msgstr "تعذر تغيير اللغة. يرجى المحاولة مرة أخرى."
 
-#: src/components/Settings.svelte
-msgid "Language"
-msgstr "اللغة"
+#~ msgid "Language"
+#~ msgstr "اللغة"
 
 #: src/components/PostingOptionsForm.svelte
 #: src/components/PostingOptionsForm.svelte
@@ -1210,7 +1155,7 @@ msgstr "تم التخطي"
 msgid "UNCONFIRMED"
 msgstr "غير مؤكد"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "e.g. Business"
 msgstr "مثال: عمل"
 
@@ -1282,8 +1227,11 @@ msgstr "الملف الشخصي الافتراضي"
 msgid "Color themes"
 msgstr "سمات الألوان"
 
+#: src/components/AddAccountDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/RenameProfileDialog.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UpdateButton.svelte
 msgid "Close"
@@ -1503,7 +1451,6 @@ msgid "Gemini rewrite completed."
 msgstr "تمت إعادة كتابة Gemini."
 
 #: src/components/LogMessage.svelte
-#: src/components/UsageGuide.svelte
 msgid "Gemini rewrite failed. Using the original text for this post; Gemini will be tried again for the next post."
 msgstr "فشلت إعادة كتابة Gemini. استخدام النص الأصلي لهذا المنشور؛ سيتم تجربة Gemini مرة أخرى للمنشور التالي."
 
@@ -1876,19 +1823,21 @@ msgstr "تفاصيل التصحيح"
 #~ msgid ", "
 #~ msgstr ""
 
+#: src/components/FeaturesCard.svelte
 #: src/components/ThemePicker.svelte
+#: src/components/UsageGuide.svelte
 msgid "Themes"
 msgstr "السمات"
 
 #: src/App.svelte
 #: src/components/UsageGuide.svelte
-msgid "Preferences & post"
-msgstr "التفضيلات والنشر"
+msgid "Post or schedule"
+msgstr "انشر أو جدوِل"
 
 #: src/App.svelte
 #: src/App.svelte
-msgid "Set preferences, then post now or schedule"
-msgstr "اضبط التفضيلات، ثم انشر الآن أو جدوِل النشر"
+msgid "Choose the time between posts, then post now or schedule for later."
+msgstr "اختر المدة بين المنشورات، ثم انشر الآن أو جدوِل للنشر لاحقًا."
 
 #~ msgid "Postika"
 #~ msgstr "Postika"
@@ -1923,9 +1872,8 @@ msgstr "تبقى المجموعات المحمّلة متاحة بين جلسا�
 msgid "Minimum and maximum delays between posts."
 msgstr "الحد الأدنى والأقصى للانتظار بين المنشورات."
 
-#: src/components/FeaturesCard.svelte
-msgid "Custom instructions and a configurable Gemini model."
-msgstr "تعليمات مخصصة ونموذج Gemini قابل للتهيئة."
+#~ msgid "Custom instructions and a configurable Gemini model."
+#~ msgstr "تعليمات مخصصة ونموذج Gemini قابل للتهيئة."
 
 #. 0: languages.length; 1: themeOptions.length
 #: src/components/FeaturesCard.svelte
@@ -1978,9 +1926,8 @@ msgstr "اكتب رسالتك وأضف صورة واحدة على الأقل؛ �
 msgid "Select Load groups and finish Facebook login or verification in Chrome. Search the loaded list, select the groups you want, then choose Next."
 msgstr "اختر تحميل المجموعات وأكمل تسجيل الدخول إلى Facebook أو التحقق في Chrome. ابحث في القائمة، وحدد المجموعات المطلوبة، ثم اختر التالي."
 
-#: src/components/UsageGuide.svelte
-msgid "In Settings, enter this account’s Gemini API key and model, then Save settings. Enable rewriting for your run and describe the tone and details to preserve."
-msgstr "في الإعدادات، أدخل مفتاح API الخاص بـ Gemini والنموذج لهذا الحساب ثم احفظ الإعدادات. فعّل إعادة الصياغة وحدد النبرة والتفاصيل التي يجب الحفاظ عليها."
+#~ msgid "In Settings, enter this account’s Gemini API key and model, then Save settings. Enable rewriting for your run and describe the tone and details to preserve."
+#~ msgstr "في الإعدادات، أدخل مفتاح API الخاص بـ Gemini والنموذج لهذا الحساب ثم احفظ الإعدادات. فعّل إعادة الصياغة وحدد النبرة والتفاصيل التي يجب الحفاظ عليها."
 
 #: src/components/UsageGuide.svelte
 msgid "Review the account, message, image order, selected groups, and posting intervals. Choose Post now and complete any Facebook login or verification prompts in Chrome."
@@ -2036,13 +1983,11 @@ msgstr "أدخل رابط صفحة فيسبوك، مثل https://web.facebook.co
 #~ msgid "Fetch Facebook posts"
 #~ msgstr ""
 
-#: src/components/FacebookPageDialog.svelte
-msgid "Decrease number of posts"
-msgstr "تقليل عدد المنشورات"
+#~ msgid "Decrease number of posts"
+#~ msgstr "تقليل عدد المنشورات"
 
-#: src/components/FacebookPageDialog.svelte
-msgid "Increase number of posts"
-msgstr "زيادة عدد المنشورات"
+#~ msgid "Increase number of posts"
+#~ msgstr "زيادة عدد المنشورات"
 
 #: src/components/FacebookPageDialog.svelte
 msgid "Facebook page URL"
@@ -2136,6 +2081,8 @@ msgstr "تعديل"
 msgid "Delete post {0}"
 msgstr "حذف المنشور {0}"
 
+#: src/components/AccountDropdown.svelte
+#: src/components/AccountDropdown.svelte
 #: src/components/FetchedPostCard.svelte
 msgid "Delete"
 msgstr "حذف"
@@ -2150,6 +2097,7 @@ msgid "Remove image {0} from post {1}"
 msgstr "إزالة الصورة {0} من المنشور {1}"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Save changes"
 msgstr "حفظ التغييرات"
 
@@ -2391,3 +2339,45 @@ msgstr "البحث عن تحديثات"
 #: src/components/UpdateButton.svelte
 msgid "Installing update…"
 msgstr "جارٍ تثبيت التحديث…"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "posts"
+msgstr "منشورات"
+
+#: src/components/LogMessage.svelte
+msgid "Account names cannot be URLs"
+msgstr "لا يمكن أن تكون أسماء الحسابات عناوين URL"
+
+#: src/components/LogMessage.svelte
+msgid "First post confirmed. Remaining groups stopped because the formatted text could not be verified."
+msgstr "تم تأكيد المنشور الأول. توقف النشر في المجموعات المتبقية لتعذر التحقق من النص المنسق."
+
+#: src/components/AccountDropdown.svelte
+#: src/components/RenameProfileDialog.svelte
+msgid "Rename profile"
+msgstr "إعادة تسمية الملف الشخصي"
+
+#: src/Workspace.svelte
+#: src/components/PostingLogs.svelte
+msgid "Add an account to get started."
+msgstr "أضف حسابًا للبدء."
+
+#: src/components/AccountDropdown.svelte
+#: src/components/DeleteProfileDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
+msgid "Delete profile"
+msgstr "حذف الملف الشخصي"
+
+#~ msgid "<0/> Add account"
+#~ msgstr ""
+
+#~ msgid "Delete profile?"
+#~ msgstr ""
+
+#: src/components/DeleteProfileDialog.svelte
+msgid "This permanently deletes this profile’s Facebook login, groups, drafts, images, settings, and logs. Any running or scheduled queue will stop. Posts already on Facebook are kept."
+msgstr "سيؤدي هذا إلى حذف تسجيل الدخول إلى Facebook والمجموعات والمسودات والصور والإعدادات والسجلات لهذا الملف الشخصي نهائيًا. ستتوقف أي قائمة نشر قيد التشغيل أو مجدولة. ستبقى المنشورات الموجودة على Facebook."
+
+#: src/components/DeleteProfileDialog.svelte
+msgid "Deleting…"
+msgstr "جارٍ الحذف…"

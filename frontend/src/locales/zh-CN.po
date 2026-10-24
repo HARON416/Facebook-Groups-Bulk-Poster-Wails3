@@ -8,10 +8,8 @@ msgstr ""
 "Plural-Forms: nplurals=1\n"
 "X-Plurals-Order: other\n"
 
-#. 0: appliedInterval; 1: rewriteState
-#: src/App.svelte
-msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
-msgstr "已应用保存的默认值：帖子间隔 {0} 秒 · Gemini 重写 {1}。"
+#~ msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
+#~ msgstr "已应用保存的默认值：帖子间隔 {0} 秒 · Gemini 重写 {1}。"
 
 #: src/components/LogMessage.svelte
 msgid "Could not restore saved groups. Load groups to refresh the list."
@@ -152,23 +150,17 @@ msgstr "打开您的 Facebook 群组以开始操作。"
 msgid "Posting settings"
 msgstr "发布设置"
 
-#: src/App.svelte
-msgid "Add a Gemini API key in Settings to enable rewriting."
-msgstr "在设置中添加 Gemini API 密钥以启用重写功能。"
+#~ msgid "Add a Gemini API key in Settings to enable rewriting."
+#~ msgstr "在设置中添加 Gemini API 密钥以启用重写功能。"
 
-#: src/App.svelte
-msgid "Applying defaults…"
-msgstr "正在应用默认设置…"
+#~ msgid "Applying defaults…"
+#~ msgstr "正在应用默认设置…"
 
-#: src/App.svelte
-#: src/components/FeaturesCard.svelte
-#: src/components/UsageGuide.svelte
-msgid "Use saved defaults"
-msgstr "使用已保存的默认值"
+#~ msgid "Use saved defaults"
+#~ msgstr "使用已保存的默认值"
 
-#: src/App.svelte
-msgid "Open settings"
-msgstr "打开设置"
+#~ msgid "Open settings"
+#~ msgstr "打开设置"
 
 #~ msgid "Posting as <0/>"
 #~ msgstr "以 <0/> 发布"
@@ -200,9 +192,11 @@ msgid "Time zone: {0}. Keep Postika open and your computer awake. Facebook may a
 msgstr "时区：{0}。保持 Postika 打开并让计算机保持唤醒。发布开始时，Facebook 可能会要求你登录。"
 
 #: src/App.svelte
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FetchedPostCard.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Cancel"
 msgstr "取消"
 
@@ -253,6 +247,8 @@ msgid "Application menu"
 msgstr "应用菜单"
 
 #: src/Workspace.svelte
+#: src/components/AccountDropdown.svelte
+#: src/components/AddAccountDialog.svelte
 #: src/components/UsageGuide.svelte
 msgid "Add account"
 msgstr "添加账号"
@@ -261,31 +257,28 @@ msgstr "添加账号"
 #: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogView.svelte
+#: src/components/PostingLogs.svelte
 #: src/components/UsageGuide.svelte
 msgid "Posting logs"
 msgstr "发布日志"
 
-#: src/Workspace.svelte
-#: src/components/FeaturesCard.svelte
-#: src/components/Settings.svelte
-#: src/components/Settings.svelte
-#: src/components/UsageGuide.svelte
-msgid "Settings"
-msgstr "设置"
+#~ msgid "Settings"
+#~ msgstr "设置"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "Creating…"
 msgstr "正在创建…"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "Create & sign in"
 msgstr "创建并登录"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Account name"
 msgstr "账号名称"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 #: src/components/UsageGuide.svelte
 msgid "Sign in to Facebook in the new account’s browser window."
 msgstr "在新账户的浏览器窗口中登录 Facebook。"
@@ -794,172 +787,125 @@ msgstr "选择在发帖至下一组前等待的时间。"
 msgid "At least 60 seconds. Use equal values for a fixed interval."
 msgstr "至少 60 秒。使用相同数值可设固定间隔。"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "OPTIONAL · AI REWRITE"
-msgstr "可选 · AI 重写"
+#~ msgid "OPTIONAL · AI REWRITE"
+#~ msgstr "可选 · AI 重写"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "A fresh version for each group"
-msgstr "为每组生成新的版本"
+#~ msgid "A fresh version for each group"
+#~ msgstr "为每组生成新的版本"
 
-#: src/components/FeaturesCard.svelte
-#: src/components/PostingOptionsForm.svelte
-#: src/components/UsageGuide.svelte
-msgid "Rewrite each post body with Gemini"
-msgstr "使用 Gemini 重写每个帖子正文"
+#~ msgid "Rewrite each post body with Gemini"
+#~ msgstr "使用 Gemini 重写每个帖子正文"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
-msgstr "重写指令<0>选择Gemini应保留的语气和细节。</0>"
+#~ msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
+#~ msgstr "重写指令<0>选择Gemini应保留的语气和细节。</0>"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Keep it concise and easy to scan. Preserve the price and contact details."
-msgstr "保持简洁，便于浏览。保留价格和联系方式。"
+#~ msgid "Keep it concise and easy to scan. Preserve the price and contact details."
+#~ msgstr "保持简洁，便于浏览。保留价格和联系方式。"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Rewrite instructions"
-msgstr "重写指令"
+#~ msgid "Rewrite instructions"
+#~ msgstr "重写指令"
 
-#: src/components/FeaturesCard.svelte
-#: src/components/PostingOptionsForm.svelte
-#: src/components/UsageGuide.svelte
-msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
-msgstr "您的帖子文本和指令将发送到 Google Gemini。图片不发送。Gemini 的重写使用纯文本。"
+#~ msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
+#~ msgstr "您的帖子文本和指令将发送到 Google Gemini。图片不发送。Gemini 的重写使用纯文本。"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
-msgstr "如果重写失败，该帖子将使用您的原始文本。下一次发布再尝试 Gemini。"
+#~ msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
+#~ msgstr "如果重写失败，该帖子将使用您的原始文本。下一次发布再尝试 Gemini。"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Let Gemini rewrite your post using your instructions."
-msgstr "让 Gemini 根据您的指令重写您的帖子。"
+#~ msgid "Let Gemini rewrite your post using your instructions."
+#~ msgstr "让 Gemini 根据您的指令重写您的帖子。"
 
 #: src/components/PostingOptionsForm.svelte
 msgid "Posting preferences"
 msgstr "发布偏好"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved defaults help"
-msgstr "已保存的默认值有帮助"
+#~ msgid "Saved defaults help"
+#~ msgstr "已保存的默认值有帮助"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "About saved defaults"
-msgstr "关于已保存的默认值"
+#~ msgid "About saved defaults"
+#~ msgstr "关于已保存的默认值"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved interval"
-msgstr "已保存的间隔"
+#~ msgid "Saved interval"
+#~ msgstr "已保存的间隔"
 
-#. 0: settings.minimumInterval === settings.maximumInterval ? settings.minimumInterval \\: `${settings.minimumInterval}–${settings.maximumInterval}`
-#: src/components/SavedDefaultsInfo.svelte
-msgid "{0} seconds"
-msgstr "{0} 秒"
+#~ msgid "{0} seconds"
+#~ msgstr "{0} 秒"
 
-#: src/App.svelte
-#: src/components/SavedDefaultsInfo.svelte
-msgid "On"
-msgstr "开"
+#~ msgid "On"
+#~ msgstr "开"
 
-#: src/App.svelte
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Off"
-msgstr "关"
+#~ msgid "Off"
+#~ msgstr "关"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Gemini rewrite"
-msgstr "Gemini 重写"
+#~ msgid "Gemini rewrite"
+#~ msgstr "Gemini 重写"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "No instructions saved."
-msgstr "没有保存的指令。"
+#~ msgid "No instructions saved."
+#~ msgstr "没有保存的指令。"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved rewrite instructions"
-msgstr "已保存的重写指令"
+#~ msgid "Saved rewrite instructions"
+#~ msgstr "已保存的重写指令"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved values could not be loaded. Try “Use saved defaults” again."
-msgstr "无法加载已保存的值。请再试一次“使用已保存的默认值”。"
+#~ msgid "Saved values could not be loaded. Try “Use saved defaults” again."
+#~ msgstr "无法加载已保存的值。请再试一次“使用已保存的默认值”。"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "What does “Use saved defaults” do?"
-msgstr "“使用已保存的默认值”是做什么的？"
+#~ msgid "What does “Use saved defaults” do?"
+#~ msgstr "“使用已保存的默认值”是做什么的？"
 
-#: src/components/SavedDefaultsInfo.svelte
-#: src/components/UsageGuide.svelte
-msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
-msgstr "用设置中保存的值替换本次运行的发布间隔、Gemini 重写选项和重写指令。"
+#~ msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
+#~ msgstr "用设置中保存的值替换本次运行的发布间隔、Gemini 重写选项和重写指令。"
 
-#: src/components/SavedDefaultsInfo.svelte
-#: src/components/UsageGuide.svelte
-msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
-msgstr "初始默认值：60–120 秒，Gemini 重写关闭，无重写指令。保存您自己的偏好在设置中以进行更改。"
+#~ msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
+#~ msgstr "初始默认值：60–120 秒，Gemini 重写关闭，无重写指令。保存您自己的偏好在设置中以进行更改。"
 
 #: src/components/LogMessage.svelte
 msgid "Settings saved. New runs can use these defaults."
 msgstr "设置已保存。新运行可以使用这些默认值。"
 
-#: src/components/Settings.svelte
-msgid "Key saved · leave blank to keep it"
-msgstr "密钥已保存 · 留空以保留它"
+#~ msgid "Key saved · leave blank to keep it"
+#~ msgstr "密钥已保存 · 留空以保留它"
 
-#: src/components/Settings.svelte
-msgid "Enter your Gemini API key"
-msgstr "输入您的 Gemini API 密钥"
+#~ msgid "Enter your Gemini API key"
+#~ msgstr "输入您的 Gemini API 密钥"
 
-#: src/components/Settings.svelte
-msgid "A key is saved on this device."
-msgstr "此设备上已保存密钥。"
+#~ msgid "A key is saved on this device."
+#~ msgstr "此设备上已保存密钥。"
 
-#: src/components/Settings.svelte
-msgid "No API key saved."
-msgstr "没有保存 API 密钥。"
+#~ msgid "No API key saved."
+#~ msgstr "没有保存 API 密钥。"
 
-#: src/components/Settings.svelte
-msgid "Remove saved key"
-msgstr "移除已保存的密钥"
+#~ msgid "Remove saved key"
+#~ msgstr "移除已保存的密钥"
 
-#: src/components/Settings.svelte
-msgid "Gemini"
-msgstr "Gemini"
+#~ msgid "Gemini"
+#~ msgstr "Gemini"
 
-#: src/components/Settings.svelte
-msgid "API key<0/>"
-msgstr "API 密钥<0/>"
+#~ msgid "API key<0/>"
+#~ msgstr "API 密钥<0/>"
 
-#. 0: keyConfigured ? 'A key is saved on this device.' \\: 'No API key saved.'
-#: src/components/Settings.svelte
-msgid "{0} The saved key is never displayed."
-msgstr "{0} 已保存的密钥从不显示。"
+#~ msgid "{0} The saved key is never displayed."
+#~ msgstr "{0} 已保存的密钥从不显示。"
 
-#: src/components/Settings.svelte
-msgid "Model<0/>"
-msgstr "模型<0/>"
+#~ msgid "Model<0/>"
+#~ msgstr "模型<0/>"
 
-#: src/components/Settings.svelte
-msgid "Posting defaults"
-msgstr "默认发布设置"
+#~ msgid "Posting defaults"
+#~ msgstr "默认发布设置"
 
-#: src/components/Settings.svelte
-msgid "Applied when you start a new posting run."
-msgstr "应用于您开始新的发布运行时。"
+#~ msgid "Applied when you start a new posting run."
+#~ msgstr "应用于您开始新的发布运行时。"
 
-#: src/components/Settings.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Saving…"
 msgstr "正在保存…"
 
-#: src/components/Settings.svelte
-msgid "Save settings"
-msgstr "保存设置"
+#~ msgid "Save settings"
+#~ msgstr "保存设置"
 
-#: src/components/Settings.svelte
-msgid "YOUR PREFERENCES"
-msgstr "您的偏好"
+#~ msgid "YOUR PREFERENCES"
+#~ msgstr "您的偏好"
 
-#. 0: accountName
-#: src/components/Settings.svelte
-msgid "Set up Gemini and save posting defaults for {0}."
-msgstr "设置 Gemini 并保存 {0} 的发布默认值。"
+#~ msgid "Set up Gemini and save posting defaults for {0}."
+#~ msgstr "设置 Gemini 并保存 {0} 的发布默认值。"
 
 #: src/components/StepProgress.svelte
 msgid "Completed"
@@ -1133,9 +1079,8 @@ msgstr "晚上"
 msgid "Could not change the language. Please try again."
 msgstr "无法更改语言。请重试。"
 
-#: src/components/Settings.svelte
-msgid "Language"
-msgstr "语言"
+#~ msgid "Language"
+#~ msgstr "语言"
 
 #: src/components/PostingOptionsForm.svelte
 #: src/components/PostingOptionsForm.svelte
@@ -1210,7 +1155,7 @@ msgstr "已跳过"
 msgid "UNCONFIRMED"
 msgstr "未确认"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "e.g. Business"
 msgstr "例如：商业"
 
@@ -1282,8 +1227,11 @@ msgstr "默认个人资料"
 msgid "Color themes"
 msgstr "配色主题"
 
+#: src/components/AddAccountDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/RenameProfileDialog.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UpdateButton.svelte
 msgid "Close"
@@ -1503,7 +1451,6 @@ msgid "Gemini rewrite completed."
 msgstr "Gemini 重写完成。"
 
 #: src/components/LogMessage.svelte
-#: src/components/UsageGuide.svelte
 msgid "Gemini rewrite failed. Using the original text for this post; Gemini will be tried again for the next post."
 msgstr "Gemini 重写失败。使用该帖子的原始文本；下一条帖子将再次尝试 Gemini。"
 
@@ -1876,19 +1823,21 @@ msgstr "调试详情"
 #~ msgid ", "
 #~ msgstr ""
 
+#: src/components/FeaturesCard.svelte
 #: src/components/ThemePicker.svelte
+#: src/components/UsageGuide.svelte
 msgid "Themes"
 msgstr "主题"
 
 #: src/App.svelte
 #: src/components/UsageGuide.svelte
-msgid "Preferences & post"
-msgstr "偏好设置与发布"
+msgid "Post or schedule"
+msgstr "发布或定时发布"
 
 #: src/App.svelte
 #: src/App.svelte
-msgid "Set preferences, then post now or schedule"
-msgstr "设置偏好，然后立即发布或定时发布"
+msgid "Choose the time between posts, then post now or schedule for later."
+msgstr "选择帖子之间的间隔，然后立即发布或安排稍后发布。"
 
 #~ msgid "Postika"
 #~ msgstr "Postika"
@@ -1923,9 +1872,8 @@ msgstr "已加载的群组在下次启动应用时仍然可用。"
 msgid "Minimum and maximum delays between posts."
 msgstr "设置帖子之间的最短和最长等待时间。"
 
-#: src/components/FeaturesCard.svelte
-msgid "Custom instructions and a configurable Gemini model."
-msgstr "自定义指令和可配置的 Gemini 模型。"
+#~ msgid "Custom instructions and a configurable Gemini model."
+#~ msgstr "自定义指令和可配置的 Gemini 模型。"
 
 #. 0: languages.length; 1: themeOptions.length
 #: src/components/FeaturesCard.svelte
@@ -1978,9 +1926,8 @@ msgstr "输入消息并至少添加一张图片，两者均为必填。选择下
 msgid "Select Load groups and finish Facebook login or verification in Chrome. Search the loaded list, select the groups you want, then choose Next."
 msgstr "选择加载群组，在 Chrome 中完成 Facebook 登录或验证。搜索已加载的列表，选中目标群组，然后选择下一步。"
 
-#: src/components/UsageGuide.svelte
-msgid "In Settings, enter this account’s Gemini API key and model, then Save settings. Enable rewriting for your run and describe the tone and details to preserve."
-msgstr "在设置中输入此账户的 Gemini API 密钥和模型，然后保存设置。为本次任务启用改写，并说明希望保留的语气和细节。"
+#~ msgid "In Settings, enter this account’s Gemini API key and model, then Save settings. Enable rewriting for your run and describe the tone and details to preserve."
+#~ msgstr "在设置中输入此账户的 Gemini API 密钥和模型，然后保存设置。为本次任务启用改写，并说明希望保留的语气和细节。"
 
 #: src/components/UsageGuide.svelte
 msgid "Review the account, message, image order, selected groups, and posting intervals. Choose Post now and complete any Facebook login or verification prompts in Chrome."
@@ -2036,13 +1983,11 @@ msgstr "请输入 Facebook 公共主页网址，例如 https://web.facebook.com/
 #~ msgid "Fetch Facebook posts"
 #~ msgstr ""
 
-#: src/components/FacebookPageDialog.svelte
-msgid "Decrease number of posts"
-msgstr "减少帖子数量"
+#~ msgid "Decrease number of posts"
+#~ msgstr "减少帖子数量"
 
-#: src/components/FacebookPageDialog.svelte
-msgid "Increase number of posts"
-msgstr "增加帖子数量"
+#~ msgid "Increase number of posts"
+#~ msgstr "增加帖子数量"
 
 #: src/components/FacebookPageDialog.svelte
 msgid "Facebook page URL"
@@ -2136,6 +2081,8 @@ msgstr "编辑"
 msgid "Delete post {0}"
 msgstr "删除帖子 {0}"
 
+#: src/components/AccountDropdown.svelte
+#: src/components/AccountDropdown.svelte
 #: src/components/FetchedPostCard.svelte
 msgid "Delete"
 msgstr "删除"
@@ -2150,6 +2097,7 @@ msgid "Remove image {0} from post {1}"
 msgstr "从帖子 {1} 中移除图片 {0}"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Save changes"
 msgstr "保存更改"
 
@@ -2391,3 +2339,45 @@ msgstr "检查更新"
 #: src/components/UpdateButton.svelte
 msgid "Installing update…"
 msgstr "正在安装更新…"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "posts"
+msgstr "篇帖子"
+
+#: src/components/LogMessage.svelte
+msgid "Account names cannot be URLs"
+msgstr "账户名称不能是网址"
+
+#: src/components/LogMessage.svelte
+msgid "First post confirmed. Remaining groups stopped because the formatted text could not be verified."
+msgstr "首条帖子已确认。由于无法验证格式化文本，已停止向其余群组发帖。"
+
+#: src/components/AccountDropdown.svelte
+#: src/components/RenameProfileDialog.svelte
+msgid "Rename profile"
+msgstr "重命名个人资料"
+
+#: src/Workspace.svelte
+#: src/components/PostingLogs.svelte
+msgid "Add an account to get started."
+msgstr "添加账号以开始使用。"
+
+#: src/components/AccountDropdown.svelte
+#: src/components/DeleteProfileDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
+msgid "Delete profile"
+msgstr "删除个人资料"
+
+#~ msgid "<0/> Add account"
+#~ msgstr ""
+
+#~ msgid "Delete profile?"
+#~ msgstr ""
+
+#: src/components/DeleteProfileDialog.svelte
+msgid "This permanently deletes this profile’s Facebook login, groups, drafts, images, settings, and logs. Any running or scheduled queue will stop. Posts already on Facebook are kept."
+msgstr "这将永久删除此个人资料的 Facebook 登录信息、群组、草稿、图片、设置和日志。所有正在运行或已定时的队列都将停止。已发布到 Facebook 的帖子会保留。"
+
+#: src/components/DeleteProfileDialog.svelte
+msgid "Deleting…"
+msgstr "正在删除…"

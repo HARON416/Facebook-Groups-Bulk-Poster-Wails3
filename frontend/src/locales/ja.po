@@ -8,10 +8,8 @@ msgstr ""
 "Plural-Forms: nplurals=1\n"
 "X-Plurals-Order: other\n"
 
-#. 0: appliedInterval; 1: rewriteState
-#: src/App.svelte
-msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
-msgstr "保存されたデフォルトが適用されました: 投稿間 {0} 秒 · Gemini リライト {1}。"
+#~ msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
+#~ msgstr "保存されたデフォルトが適用されました: 投稿間 {0} 秒 · Gemini リライト {1}。"
 
 #: src/components/LogMessage.svelte
 msgid "Could not restore saved groups. Load groups to refresh the list."
@@ -152,23 +150,17 @@ msgstr "Facebookのグループを開いて開始してください。"
 msgid "Posting settings"
 msgstr "投稿設定"
 
-#: src/App.svelte
-msgid "Add a Gemini API key in Settings to enable rewriting."
-msgstr "書き換えを有効にするには、設定でGemini APIキーを追加してください。"
+#~ msgid "Add a Gemini API key in Settings to enable rewriting."
+#~ msgstr "書き換えを有効にするには、設定でGemini APIキーを追加してください。"
 
-#: src/App.svelte
-msgid "Applying defaults…"
-msgstr "デフォルトを適用中…"
+#~ msgid "Applying defaults…"
+#~ msgstr "デフォルトを適用中…"
 
-#: src/App.svelte
-#: src/components/FeaturesCard.svelte
-#: src/components/UsageGuide.svelte
-msgid "Use saved defaults"
-msgstr "保存済みのデフォルトを使用"
+#~ msgid "Use saved defaults"
+#~ msgstr "保存済みのデフォルトを使用"
 
-#: src/App.svelte
-msgid "Open settings"
-msgstr "設定を開く"
+#~ msgid "Open settings"
+#~ msgstr "設定を開く"
 
 #~ msgid "Posting as <0/>"
 #~ msgstr "<0/>として投稿"
@@ -200,9 +192,11 @@ msgid "Time zone: {0}. Keep Postika open and your computer awake. Facebook may a
 msgstr "タイムゾーン: {0}。Postikaを開いたままにし、コンピューターをスリープさせないでください。投稿が始まると、Facebookがサインインを求める場合があります。"
 
 #: src/App.svelte
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FetchedPostCard.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Cancel"
 msgstr "キャンセル"
 
@@ -253,6 +247,8 @@ msgid "Application menu"
 msgstr "アプリケーションメニュー"
 
 #: src/Workspace.svelte
+#: src/components/AccountDropdown.svelte
+#: src/components/AddAccountDialog.svelte
 #: src/components/UsageGuide.svelte
 msgid "Add account"
 msgstr "アカウントを追加"
@@ -261,31 +257,28 @@ msgstr "アカウントを追加"
 #: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogView.svelte
+#: src/components/PostingLogs.svelte
 #: src/components/UsageGuide.svelte
 msgid "Posting logs"
 msgstr "投稿ログ"
 
-#: src/Workspace.svelte
-#: src/components/FeaturesCard.svelte
-#: src/components/Settings.svelte
-#: src/components/Settings.svelte
-#: src/components/UsageGuide.svelte
-msgid "Settings"
-msgstr "設定"
+#~ msgid "Settings"
+#~ msgstr "設定"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "Creating…"
 msgstr "作成中…"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "Create & sign in"
 msgstr "作成してログイン"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Account name"
 msgstr "アカウント名"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 #: src/components/UsageGuide.svelte
 msgid "Sign in to Facebook in the new account’s browser window."
 msgstr "新しいアカウントのブラウザウィンドウでFacebookにサインインしてください。"
@@ -794,172 +787,125 @@ msgstr "次のグループに投稿する前に待つ時間を選択してくだ
 msgid "At least 60 seconds. Use equal values for a fixed interval."
 msgstr "最低60秒。固定間隔には同じ値を使用してください。"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "OPTIONAL · AI REWRITE"
-msgstr "オプション · AI リライト"
+#~ msgid "OPTIONAL · AI REWRITE"
+#~ msgstr "オプション · AI リライト"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "A fresh version for each group"
-msgstr "各グループの新しいバージョン"
+#~ msgid "A fresh version for each group"
+#~ msgstr "各グループの新しいバージョン"
 
-#: src/components/FeaturesCard.svelte
-#: src/components/PostingOptionsForm.svelte
-#: src/components/UsageGuide.svelte
-msgid "Rewrite each post body with Gemini"
-msgstr "Geminiで各投稿本文をリライト"
+#~ msgid "Rewrite each post body with Gemini"
+#~ msgstr "Geminiで各投稿本文をリライト"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
-msgstr "書き換え指示<0>Geminiが保持すべきトーンと詳細を選択してください。</0>"
+#~ msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
+#~ msgstr "書き換え指示<0>Geminiが保持すべきトーンと詳細を選択してください。</0>"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Keep it concise and easy to scan. Preserve the price and contact details."
-msgstr "簡潔で見やすく保ちます。価格や連絡先の詳細は保持してください。"
+#~ msgid "Keep it concise and easy to scan. Preserve the price and contact details."
+#~ msgstr "簡潔で見やすく保ちます。価格や連絡先の詳細は保持してください。"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Rewrite instructions"
-msgstr "書き換え指示"
+#~ msgid "Rewrite instructions"
+#~ msgstr "書き換え指示"
 
-#: src/components/FeaturesCard.svelte
-#: src/components/PostingOptionsForm.svelte
-#: src/components/UsageGuide.svelte
-msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
-msgstr "投稿テキストと指示はGoogle Geminiに送信されます。画像は送信されません。Geminiの書き換えはプレーンテキストを使用します。"
+#~ msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
+#~ msgstr "投稿テキストと指示はGoogle Geminiに送信されます。画像は送信されません。Geminiの書き換えはプレーンテキストを使用します。"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
-msgstr "書き換えに失敗した場合、その投稿は元のテキストが使用されます。次の投稿で再度Geminiを試します。"
+#~ msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
+#~ msgstr "書き換えに失敗した場合、その投稿は元のテキストが使用されます。次の投稿で再度Geminiを試します。"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Let Gemini rewrite your post using your instructions."
-msgstr "Geminiにあなたの指示を使って投稿を書き換えさせます。"
+#~ msgid "Let Gemini rewrite your post using your instructions."
+#~ msgstr "Geminiにあなたの指示を使って投稿を書き換えさせます。"
 
 #: src/components/PostingOptionsForm.svelte
 msgid "Posting preferences"
 msgstr "投稿設定"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved defaults help"
-msgstr "保存されたデフォルトが役立ちます"
+#~ msgid "Saved defaults help"
+#~ msgstr "保存されたデフォルトが役立ちます"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "About saved defaults"
-msgstr "保存されたデフォルトについて"
+#~ msgid "About saved defaults"
+#~ msgstr "保存されたデフォルトについて"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved interval"
-msgstr "保存間隔"
+#~ msgid "Saved interval"
+#~ msgstr "保存間隔"
 
-#. 0: settings.minimumInterval === settings.maximumInterval ? settings.minimumInterval \\: `${settings.minimumInterval}–${settings.maximumInterval}`
-#: src/components/SavedDefaultsInfo.svelte
-msgid "{0} seconds"
-msgstr "{0}秒"
+#~ msgid "{0} seconds"
+#~ msgstr "{0}秒"
 
-#: src/App.svelte
-#: src/components/SavedDefaultsInfo.svelte
-msgid "On"
-msgstr "オン"
+#~ msgid "On"
+#~ msgstr "オン"
 
-#: src/App.svelte
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Off"
-msgstr "オフ"
+#~ msgid "Off"
+#~ msgstr "オフ"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Gemini rewrite"
-msgstr "Gemini書き換え"
+#~ msgid "Gemini rewrite"
+#~ msgstr "Gemini書き換え"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "No instructions saved."
-msgstr "保存された指示はありません。"
+#~ msgid "No instructions saved."
+#~ msgstr "保存された指示はありません。"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved rewrite instructions"
-msgstr "保存された書き換え指示"
+#~ msgid "Saved rewrite instructions"
+#~ msgstr "保存された書き換え指示"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved values could not be loaded. Try “Use saved defaults” again."
-msgstr "保存された値を読み込めませんでした。「保存済みデフォルトを使用」を再度試してください。"
+#~ msgid "Saved values could not be loaded. Try “Use saved defaults” again."
+#~ msgstr "保存された値を読み込めませんでした。「保存済みデフォルトを使用」を再度試してください。"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "What does “Use saved defaults” do?"
-msgstr "「保存済みデフォルトを使用」とは何ですか？"
+#~ msgid "What does “Use saved defaults” do?"
+#~ msgstr "「保存済みデフォルトを使用」とは何ですか？"
 
-#: src/components/SavedDefaultsInfo.svelte
-#: src/components/UsageGuide.svelte
-msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
-msgstr "この実行の投稿間隔、Geminiの書き換えオプション、および書き換え指示を設定に保存された値に置き換えます。"
+#~ msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
+#~ msgstr "この実行の投稿間隔、Geminiの書き換えオプション、および書き換え指示を設定に保存された値に置き換えます。"
 
-#: src/components/SavedDefaultsInfo.svelte
-#: src/components/UsageGuide.svelte
-msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
-msgstr "初期デフォルト: 60～120秒、Gemini書き換えオフ、書き換え指示なし。自分の設定を変更するには、設定で保存してください。"
+#~ msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
+#~ msgstr "初期デフォルト: 60～120秒、Gemini書き換えオフ、書き換え指示なし。自分の設定を変更するには、設定で保存してください。"
 
 #: src/components/LogMessage.svelte
 msgid "Settings saved. New runs can use these defaults."
 msgstr "設定が保存されました。新しい実行でこれらのデフォルトを使用できます。"
 
-#: src/components/Settings.svelte
-msgid "Key saved · leave blank to keep it"
-msgstr "キーが保存されました · 残す場合は空欄のままにしてください"
+#~ msgid "Key saved · leave blank to keep it"
+#~ msgstr "キーが保存されました · 残す場合は空欄のままにしてください"
 
-#: src/components/Settings.svelte
-msgid "Enter your Gemini API key"
-msgstr "Gemini APIキーを入力してください"
+#~ msgid "Enter your Gemini API key"
+#~ msgstr "Gemini APIキーを入力してください"
 
-#: src/components/Settings.svelte
-msgid "A key is saved on this device."
-msgstr "このデバイスにキーが保存されています。"
+#~ msgid "A key is saved on this device."
+#~ msgstr "このデバイスにキーが保存されています。"
 
-#: src/components/Settings.svelte
-msgid "No API key saved."
-msgstr "保存されたAPIキーはありません。"
+#~ msgid "No API key saved."
+#~ msgstr "保存されたAPIキーはありません。"
 
-#: src/components/Settings.svelte
-msgid "Remove saved key"
-msgstr "保存されたキーを削除"
+#~ msgid "Remove saved key"
+#~ msgstr "保存されたキーを削除"
 
-#: src/components/Settings.svelte
-msgid "Gemini"
-msgstr "Gemini"
+#~ msgid "Gemini"
+#~ msgstr "Gemini"
 
-#: src/components/Settings.svelte
-msgid "API key<0/>"
-msgstr "APIキー<0/>"
+#~ msgid "API key<0/>"
+#~ msgstr "APIキー<0/>"
 
-#. 0: keyConfigured ? 'A key is saved on this device.' \\: 'No API key saved.'
-#: src/components/Settings.svelte
-msgid "{0} The saved key is never displayed."
-msgstr "{0} 保存されたキーは表示されません。"
+#~ msgid "{0} The saved key is never displayed."
+#~ msgstr "{0} 保存されたキーは表示されません。"
 
-#: src/components/Settings.svelte
-msgid "Model<0/>"
-msgstr "モデル<0/>"
+#~ msgid "Model<0/>"
+#~ msgstr "モデル<0/>"
 
-#: src/components/Settings.svelte
-msgid "Posting defaults"
-msgstr "投稿の既定値"
+#~ msgid "Posting defaults"
+#~ msgstr "投稿の既定値"
 
-#: src/components/Settings.svelte
-msgid "Applied when you start a new posting run."
-msgstr "新しい投稿実行を開始する際に適用されます。"
+#~ msgid "Applied when you start a new posting run."
+#~ msgstr "新しい投稿実行を開始する際に適用されます。"
 
-#: src/components/Settings.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Saving…"
 msgstr "保存中…"
 
-#: src/components/Settings.svelte
-msgid "Save settings"
-msgstr "設定を保存"
+#~ msgid "Save settings"
+#~ msgstr "設定を保存"
 
-#: src/components/Settings.svelte
-msgid "YOUR PREFERENCES"
-msgstr "あなたの設定"
+#~ msgid "YOUR PREFERENCES"
+#~ msgstr "あなたの設定"
 
-#. 0: accountName
-#: src/components/Settings.svelte
-msgid "Set up Gemini and save posting defaults for {0}."
-msgstr "Geminiを設定し、{0}の投稿デフォルトを保存します。"
+#~ msgid "Set up Gemini and save posting defaults for {0}."
+#~ msgstr "Geminiを設定し、{0}の投稿デフォルトを保存します。"
 
 #: src/components/StepProgress.svelte
 msgid "Completed"
@@ -1133,9 +1079,8 @@ msgstr "夕方"
 msgid "Could not change the language. Please try again."
 msgstr "言語を変更できませんでした。もう一度お試しください。"
 
-#: src/components/Settings.svelte
-msgid "Language"
-msgstr "言語"
+#~ msgid "Language"
+#~ msgstr "言語"
 
 #: src/components/PostingOptionsForm.svelte
 #: src/components/PostingOptionsForm.svelte
@@ -1210,7 +1155,7 @@ msgstr "スキップ済み"
 msgid "UNCONFIRMED"
 msgstr "未確認"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "e.g. Business"
 msgstr "例: ビジネス"
 
@@ -1282,8 +1227,11 @@ msgstr "デフォルトプロフィール"
 msgid "Color themes"
 msgstr "カラーテーマ"
 
+#: src/components/AddAccountDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/RenameProfileDialog.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UpdateButton.svelte
 msgid "Close"
@@ -1503,7 +1451,6 @@ msgid "Gemini rewrite completed."
 msgstr "Geminiのリライトが完了しました。"
 
 #: src/components/LogMessage.svelte
-#: src/components/UsageGuide.svelte
 msgid "Gemini rewrite failed. Using the original text for this post; Gemini will be tried again for the next post."
 msgstr "Geminiのリライトに失敗しました。この投稿には元のテキストを使用します；次の投稿で再度Geminiを試します。"
 
@@ -1876,19 +1823,21 @@ msgstr "デバッグ詳細"
 #~ msgid ", "
 #~ msgstr ""
 
+#: src/components/FeaturesCard.svelte
 #: src/components/ThemePicker.svelte
+#: src/components/UsageGuide.svelte
 msgid "Themes"
 msgstr "テーマ"
 
 #: src/App.svelte
 #: src/components/UsageGuide.svelte
-msgid "Preferences & post"
-msgstr "設定と投稿"
+msgid "Post or schedule"
+msgstr "投稿または予約"
 
 #: src/App.svelte
 #: src/App.svelte
-msgid "Set preferences, then post now or schedule"
-msgstr "設定を調整して、今すぐ投稿するか予約してください"
+msgid "Choose the time between posts, then post now or schedule for later."
+msgstr "投稿の間隔を選び、今すぐ投稿するか、後で投稿するよう予約します。"
 
 #~ msgid "Postika"
 #~ msgstr "Postika"
@@ -1923,9 +1872,8 @@ msgstr "読み込んだグループはアプリを再起動しても利用でき
 msgid "Minimum and maximum delays between posts."
 msgstr "投稿間の最短・最長待機時間。"
 
-#: src/components/FeaturesCard.svelte
-msgid "Custom instructions and a configurable Gemini model."
-msgstr "独自の指示と設定可能な Gemini モデル。"
+#~ msgid "Custom instructions and a configurable Gemini model."
+#~ msgstr "独自の指示と設定可能な Gemini モデル。"
 
 #. 0: languages.length; 1: themeOptions.length
 #: src/components/FeaturesCard.svelte
@@ -1978,9 +1926,8 @@ msgstr "メッセージを入力し、画像を1枚以上追加します。ど�
 msgid "Select Load groups and finish Facebook login or verification in Chrome. Search the loaded list, select the groups you want, then choose Next."
 msgstr "グループを読み込むを選び、ChromeでFacebookのログインや認証を完了します。一覧を検索してグループを選び、次へを押します。"
 
-#: src/components/UsageGuide.svelte
-msgid "In Settings, enter this account’s Gemini API key and model, then Save settings. Enable rewriting for your run and describe the tone and details to preserve."
-msgstr "設定でこのアカウントのGemini APIキーとモデルを入力して保存します。書き換えを有効にし、維持する文体と詳細を指定します。"
+#~ msgid "In Settings, enter this account’s Gemini API key and model, then Save settings. Enable rewriting for your run and describe the tone and details to preserve."
+#~ msgstr "設定でこのアカウントのGemini APIキーとモデルを入力して保存します。書き換えを有効にし、維持する文体と詳細を指定します。"
 
 #: src/components/UsageGuide.svelte
 msgid "Review the account, message, image order, selected groups, and posting intervals. Choose Post now and complete any Facebook login or verification prompts in Chrome."
@@ -2036,13 +1983,11 @@ msgstr "FacebookページのURLを入力してください（例：https://web.f
 #~ msgid "Fetch Facebook posts"
 #~ msgstr ""
 
-#: src/components/FacebookPageDialog.svelte
-msgid "Decrease number of posts"
-msgstr "投稿数を減らす"
+#~ msgid "Decrease number of posts"
+#~ msgstr "投稿数を減らす"
 
-#: src/components/FacebookPageDialog.svelte
-msgid "Increase number of posts"
-msgstr "投稿数を増やす"
+#~ msgid "Increase number of posts"
+#~ msgstr "投稿数を増やす"
 
 #: src/components/FacebookPageDialog.svelte
 msgid "Facebook page URL"
@@ -2136,6 +2081,8 @@ msgstr "編集"
 msgid "Delete post {0}"
 msgstr "投稿{0}を削除"
 
+#: src/components/AccountDropdown.svelte
+#: src/components/AccountDropdown.svelte
 #: src/components/FetchedPostCard.svelte
 msgid "Delete"
 msgstr "削除"
@@ -2150,6 +2097,7 @@ msgid "Remove image {0} from post {1}"
 msgstr "投稿{1}から画像{0}を削除"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Save changes"
 msgstr "変更を保存"
 
@@ -2391,3 +2339,45 @@ msgstr "更新を確認"
 #: src/components/UpdateButton.svelte
 msgid "Installing update…"
 msgstr "更新をインストール中…"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "posts"
+msgstr "件の投稿"
+
+#: src/components/LogMessage.svelte
+msgid "Account names cannot be URLs"
+msgstr "アカウント名にURLは使用できません"
+
+#: src/components/LogMessage.svelte
+msgid "First post confirmed. Remaining groups stopped because the formatted text could not be verified."
+msgstr "最初の投稿が確認されました。書式付きテキストを検証できなかったため、残りのグループへの投稿を停止しました。"
+
+#: src/components/AccountDropdown.svelte
+#: src/components/RenameProfileDialog.svelte
+msgid "Rename profile"
+msgstr "プロフィール名を変更"
+
+#: src/Workspace.svelte
+#: src/components/PostingLogs.svelte
+msgid "Add an account to get started."
+msgstr "アカウントを追加して始めましょう。"
+
+#: src/components/AccountDropdown.svelte
+#: src/components/DeleteProfileDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
+msgid "Delete profile"
+msgstr "プロフィールを削除"
+
+#~ msgid "<0/> Add account"
+#~ msgstr ""
+
+#~ msgid "Delete profile?"
+#~ msgstr ""
+
+#: src/components/DeleteProfileDialog.svelte
+msgid "This permanently deletes this profile’s Facebook login, groups, drafts, images, settings, and logs. Any running or scheduled queue will stop. Posts already on Facebook are kept."
+msgstr "このプロフィールのFacebookログイン情報、グループ、下書き、画像、設定、ログを完全に削除します。実行中または予約済みのキューは停止します。Facebookにすでに投稿された内容は残ります。"
+
+#: src/components/DeleteProfileDialog.svelte
+msgid "Deleting…"
+msgstr "削除中…"

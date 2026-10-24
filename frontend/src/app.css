@@ -101,7 +101,7 @@ select {
   font: inherit;
 }
 
-/* Shared sizing and states for workflow and settings actions. */
+/* Shared sizing and states for workflow actions. */
 .action-button {
   display: flex;
   min-height: 4rem;

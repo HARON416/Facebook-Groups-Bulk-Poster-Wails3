@@ -26,6 +26,8 @@
       case 'settings_instructions': translated = /* @wc-include */ 'Rewrite instructions are too long'; break;
       case 'settings_model': translated = /* @wc-include */ 'Enter a valid Gemini model name'; break;
       case 'account_name': translated = /* @wc-include */ 'Enter an account name of 1 to 80 characters'; break;
+      case 'account_name_url': translated = /* @wc-include */ 'Account names cannot be URLs'; break;
+      case 'rich_post_unvalidated': translated = /* @wc-include */ 'First post confirmed. Remaining groups stopped because the formatted text could not be verified.'; break;
       case 'account_duplicate': translated = /* @wc-include */ 'An account profile with this name already exists'; break;
       case 'account_missing': translated = /* @wc-include */ 'Account profile was not found'; break;
       case 'accounts_error': translated = /* @wc-include */ 'Could not update accounts. Please try again.'; break;

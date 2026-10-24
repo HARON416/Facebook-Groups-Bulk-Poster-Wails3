@@ -8,10 +8,8 @@ msgstr ""
 "Plural-Forms: nplurals=4\n"
 "X-Plurals-Order: one, few, many, other\n"
 
-#. 0: appliedInterval; 1: rewriteState
-#: src/App.svelte
-msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
-msgstr "Застосовано збережені значення за замовчуванням: {0} секунд між публікаціями · Переписування Gemini {1}."
+#~ msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
+#~ msgstr "Застосовано збережені значення за замовчуванням: {0} секунд між публікаціями · Переписування Gemini {1}."
 
 #: src/components/LogMessage.svelte
 msgid "Could not restore saved groups. Load groups to refresh the list."
@@ -152,23 +150,17 @@ msgstr "Відкрийте свої групи Facebook, щоб почати."
 msgid "Posting settings"
 msgstr "Налаштування публікацій"
 
-#: src/App.svelte
-msgid "Add a Gemini API key in Settings to enable rewriting."
-msgstr "Додайте ключ API Gemini у Налаштування, щоб увімкнути переписування."
+#~ msgid "Add a Gemini API key in Settings to enable rewriting."
+#~ msgstr "Додайте ключ API Gemini у Налаштування, щоб увімкнути переписування."
 
-#: src/App.svelte
-msgid "Applying defaults…"
-msgstr "Застосування стандартних налаштувань…"
+#~ msgid "Applying defaults…"
+#~ msgstr "Застосування стандартних налаштувань…"
 
-#: src/App.svelte
-#: src/components/FeaturesCard.svelte
-#: src/components/UsageGuide.svelte
-msgid "Use saved defaults"
-msgstr "Використовувати збережені стандартні налаштування"
+#~ msgid "Use saved defaults"
+#~ msgstr "Використовувати збережені стандартні налаштування"
 
-#: src/App.svelte
-msgid "Open settings"
-msgstr "Відкрити налаштування"
+#~ msgid "Open settings"
+#~ msgstr "Відкрити налаштування"
 
 #~ msgid "Posting as <0/>"
 #~ msgstr "Публікування від імені <0/>"
@@ -200,9 +192,11 @@ msgid "Time zone: {0}. Keep Postika open and your computer awake. Facebook may a
 msgstr "Часовий пояс: {0}. Тримайте Postika відкритим і комп’ютер увімкненим. Facebook може попросити вас увійти, коли розпочнеться публікація."
 
 #: src/App.svelte
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FetchedPostCard.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Cancel"
 msgstr "Скасувати"
 
@@ -253,6 +247,8 @@ msgid "Application menu"
 msgstr "Меню додатка"
 
 #: src/Workspace.svelte
+#: src/components/AccountDropdown.svelte
+#: src/components/AddAccountDialog.svelte
 #: src/components/UsageGuide.svelte
 msgid "Add account"
 msgstr "Додати обліковий запис"
@@ -261,31 +257,28 @@ msgstr "Додати обліковий запис"
 #: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogView.svelte
+#: src/components/PostingLogs.svelte
 #: src/components/UsageGuide.svelte
 msgid "Posting logs"
 msgstr "Журнал публікацій"
 
-#: src/Workspace.svelte
-#: src/components/FeaturesCard.svelte
-#: src/components/Settings.svelte
-#: src/components/Settings.svelte
-#: src/components/UsageGuide.svelte
-msgid "Settings"
-msgstr "Налаштування"
+#~ msgid "Settings"
+#~ msgstr "Налаштування"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "Creating…"
 msgstr "Створення…"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "Create & sign in"
 msgstr "Створити й увійти"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Account name"
 msgstr "Назва облікового запису"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 #: src/components/UsageGuide.svelte
 msgid "Sign in to Facebook in the new account’s browser window."
 msgstr "Увійдіть у Facebook у вікні браузера нового облікового запису."
@@ -794,172 +787,125 @@ msgstr "Виберіть, скільки чекати перед наступн�
 msgid "At least 60 seconds. Use equal values for a fixed interval."
 msgstr "Принаймні 60 секунд. Використовуйте однакові значення для фіксованого інтервалу."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "OPTIONAL · AI REWRITE"
-msgstr "НЕОБОВ’ЯЗКОВО · AI ПЕРЕПИС"
+#~ msgid "OPTIONAL · AI REWRITE"
+#~ msgstr "НЕОБОВ’ЯЗКОВО · AI ПЕРЕПИС"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "A fresh version for each group"
-msgstr "Свіжа версія для кожної групи"
+#~ msgid "A fresh version for each group"
+#~ msgstr "Свіжа версія для кожної групи"
 
-#: src/components/FeaturesCard.svelte
-#: src/components/PostingOptionsForm.svelte
-#: src/components/UsageGuide.svelte
-msgid "Rewrite each post body with Gemini"
-msgstr "Переписати кожен текст публікації за допомогою Gemini"
+#~ msgid "Rewrite each post body with Gemini"
+#~ msgstr "Переписати кожен текст публікації за допомогою Gemini"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
-msgstr "Інструкції щодо переписування<0>Виберіть тон і деталі, які Gemini слід зберегти.</0>"
+#~ msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
+#~ msgstr "Інструкції щодо переписування<0>Виберіть тон і деталі, які Gemini слід зберегти.</0>"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Keep it concise and easy to scan. Preserve the price and contact details."
-msgstr "Тримайте текст стислим і легко читаним. Збережіть ціну та контактні дані."
+#~ msgid "Keep it concise and easy to scan. Preserve the price and contact details."
+#~ msgstr "Тримайте текст стислим і легко читаним. Збережіть ціну та контактні дані."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Rewrite instructions"
-msgstr "Інструкції щодо переписування"
+#~ msgid "Rewrite instructions"
+#~ msgstr "Інструкції щодо переписування"
 
-#: src/components/FeaturesCard.svelte
-#: src/components/PostingOptionsForm.svelte
-#: src/components/UsageGuide.svelte
-msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
-msgstr "Ваш текст допису та інструкції надсилаються до Google Gemini. Зображення не надсилаються. Переписування Gemini використовує простий текст."
+#~ msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
+#~ msgstr "Ваш текст допису та інструкції надсилаються до Google Gemini. Зображення не надсилаються. Переписування Gemini використовує простий текст."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
-msgstr "Якщо переписування не вдалося, цей допис використовує ваш оригінальний текст. Наступний допис знову намагається використати Gemini."
+#~ msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
+#~ msgstr "Якщо переписування не вдалося, цей допис використовує ваш оригінальний текст. Наступний допис знову намагається використати Gemini."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Let Gemini rewrite your post using your instructions."
-msgstr "Дозвольте Gemini переписати ваш допис за вашими інструкціями."
+#~ msgid "Let Gemini rewrite your post using your instructions."
+#~ msgstr "Дозвольте Gemini переписати ваш допис за вашими інструкціями."
 
 #: src/components/PostingOptionsForm.svelte
 msgid "Posting preferences"
 msgstr "Налаштування публікації"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved defaults help"
-msgstr "Збережені значення за замовчуванням допомагають"
+#~ msgid "Saved defaults help"
+#~ msgstr "Збережені значення за замовчуванням допомагають"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "About saved defaults"
-msgstr "Про збережені значення за замовчуванням"
+#~ msgid "About saved defaults"
+#~ msgstr "Про збережені значення за замовчуванням"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved interval"
-msgstr "Збережений інтервал"
+#~ msgid "Saved interval"
+#~ msgstr "Збережений інтервал"
 
-#. 0: settings.minimumInterval === settings.maximumInterval ? settings.minimumInterval \\: `${settings.minimumInterval}–${settings.maximumInterval}`
-#: src/components/SavedDefaultsInfo.svelte
-msgid "{0} seconds"
-msgstr "{0} секунд"
+#~ msgid "{0} seconds"
+#~ msgstr "{0} секунд"
 
-#: src/App.svelte
-#: src/components/SavedDefaultsInfo.svelte
-msgid "On"
-msgstr "Увімкнено"
+#~ msgid "On"
+#~ msgstr "Увімкнено"
 
-#: src/App.svelte
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Off"
-msgstr "Вимкнено"
+#~ msgid "Off"
+#~ msgstr "Вимкнено"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Gemini rewrite"
-msgstr "Переписування Gemini"
+#~ msgid "Gemini rewrite"
+#~ msgstr "Переписування Gemini"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "No instructions saved."
-msgstr "Інструкції не збережено."
+#~ msgid "No instructions saved."
+#~ msgstr "Інструкції не збережено."
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved rewrite instructions"
-msgstr "Збережені інструкції щодо переписування"
+#~ msgid "Saved rewrite instructions"
+#~ msgstr "Збережені інструкції щодо переписування"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved values could not be loaded. Try “Use saved defaults” again."
-msgstr "Не вдалося завантажити збережені значення. Спробуйте знову «Використати збережені значення за замовчуванням»."
+#~ msgid "Saved values could not be loaded. Try “Use saved defaults” again."
+#~ msgstr "Не вдалося завантажити збережені значення. Спробуйте знову «Використати збережені значення за замовчуванням»."
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "What does “Use saved defaults” do?"
-msgstr "Що робить «Використати збережені значення за замовчуванням»?"
+#~ msgid "What does “Use saved defaults” do?"
+#~ msgstr "Що робить «Використати збережені значення за замовчуванням»?"
 
-#: src/components/SavedDefaultsInfo.svelte
-#: src/components/UsageGuide.svelte
-msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
-msgstr "Замінює інтервал публікації цього запуску, опцію перезапису Gemini та інструкції з перезапису на значення, збережені в Налаштуваннях."
+#~ msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
+#~ msgstr "Замінює інтервал публікації цього запуску, опцію перезапису Gemini та інструкції з перезапису на значення, збережені в Налаштуваннях."
 
-#: src/components/SavedDefaultsInfo.svelte
-#: src/components/UsageGuide.svelte
-msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
-msgstr "Початкові за замовчуванням: 60–120 секунд, перезапис Gemini вимкнено, інструкцій з перезапису немає. Збережіть власні налаштування в Налаштуваннях, щоб змінити їх."
+#~ msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
+#~ msgstr "Початкові за замовчуванням: 60–120 секунд, перезапис Gemini вимкнено, інструкцій з перезапису немає. Збережіть власні налаштування в Налаштуваннях, щоб змінити їх."
 
 #: src/components/LogMessage.svelte
 msgid "Settings saved. New runs can use these defaults."
 msgstr "Налаштування збережено. Нові запуски можуть використовувати ці значення за замовчуванням."
 
-#: src/components/Settings.svelte
-msgid "Key saved · leave blank to keep it"
-msgstr "Ключ збережено · залиште порожнім, щоб зберегти його"
+#~ msgid "Key saved · leave blank to keep it"
+#~ msgstr "Ключ збережено · залиште порожнім, щоб зберегти його"
 
-#: src/components/Settings.svelte
-msgid "Enter your Gemini API key"
-msgstr "Введіть свій API-ключ Gemini"
+#~ msgid "Enter your Gemini API key"
+#~ msgstr "Введіть свій API-ключ Gemini"
 
-#: src/components/Settings.svelte
-msgid "A key is saved on this device."
-msgstr "На цьому пристрої збережено ключ."
+#~ msgid "A key is saved on this device."
+#~ msgstr "На цьому пристрої збережено ключ."
 
-#: src/components/Settings.svelte
-msgid "No API key saved."
-msgstr "API-ключ не збережено."
+#~ msgid "No API key saved."
+#~ msgstr "API-ключ не збережено."
 
-#: src/components/Settings.svelte
-msgid "Remove saved key"
-msgstr "Видалити збережений ключ"
+#~ msgid "Remove saved key"
+#~ msgstr "Видалити збережений ключ"
 
-#: src/components/Settings.svelte
-msgid "Gemini"
-msgstr "Gemini"
+#~ msgid "Gemini"
+#~ msgstr "Gemini"
 
-#: src/components/Settings.svelte
-msgid "API key<0/>"
-msgstr "API-ключ<0/>"
+#~ msgid "API key<0/>"
+#~ msgstr "API-ключ<0/>"
 
-#. 0: keyConfigured ? 'A key is saved on this device.' \\: 'No API key saved.'
-#: src/components/Settings.svelte
-msgid "{0} The saved key is never displayed."
-msgstr "{0} Збережений ключ ніколи не відображається."
+#~ msgid "{0} The saved key is never displayed."
+#~ msgstr "{0} Збережений ключ ніколи не відображається."
 
-#: src/components/Settings.svelte
-msgid "Model<0/>"
-msgstr "Модель<0/>"
+#~ msgid "Model<0/>"
+#~ msgstr "Модель<0/>"
 
-#: src/components/Settings.svelte
-msgid "Posting defaults"
-msgstr "Типові налаштування публікацій"
+#~ msgid "Posting defaults"
+#~ msgstr "Типові налаштування публікацій"
 
-#: src/components/Settings.svelte
-msgid "Applied when you start a new posting run."
-msgstr "Застосовується при запуску нового процесу публікації."
+#~ msgid "Applied when you start a new posting run."
+#~ msgstr "Застосовується при запуску нового процесу публікації."
 
-#: src/components/Settings.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Saving…"
 msgstr "Збереження…"
 
-#: src/components/Settings.svelte
-msgid "Save settings"
-msgstr "Зберегти налаштування"
+#~ msgid "Save settings"
+#~ msgstr "Зберегти налаштування"
 
-#: src/components/Settings.svelte
-msgid "YOUR PREFERENCES"
-msgstr "ВАШІ ПЕРЕВАГИ"
+#~ msgid "YOUR PREFERENCES"
+#~ msgstr "ВАШІ ПЕРЕВАГИ"
 
-#. 0: accountName
-#: src/components/Settings.svelte
-msgid "Set up Gemini and save posting defaults for {0}."
-msgstr "Налаштуйте Gemini і збережіть налаштування публікацій для {0}."
+#~ msgid "Set up Gemini and save posting defaults for {0}."
+#~ msgstr "Налаштуйте Gemini і збережіть налаштування публікацій для {0}."
 
 #: src/components/StepProgress.svelte
 msgid "Completed"
@@ -1133,9 +1079,8 @@ msgstr "Вечір"
 msgid "Could not change the language. Please try again."
 msgstr "Не вдалося змінити мову. Будь ласка, спробуйте ще раз."
 
-#: src/components/Settings.svelte
-msgid "Language"
-msgstr "Мова"
+#~ msgid "Language"
+#~ msgstr "Мова"
 
 #: src/components/PostingOptionsForm.svelte
 #: src/components/PostingOptionsForm.svelte
@@ -1210,7 +1155,7 @@ msgstr "ПРОПУЩЕНО"
 msgid "UNCONFIRMED"
 msgstr "НЕПІДТВЕРДЖЕНО"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "e.g. Business"
 msgstr "напр., Бізнес"
 
@@ -1282,8 +1227,11 @@ msgstr "Профіль за замовчуванням"
 msgid "Color themes"
 msgstr "Кольорові теми"
 
+#: src/components/AddAccountDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/RenameProfileDialog.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UpdateButton.svelte
 msgid "Close"
@@ -1503,7 +1451,6 @@ msgid "Gemini rewrite completed."
 msgstr "Перезапис Gemini завершено."
 
 #: src/components/LogMessage.svelte
-#: src/components/UsageGuide.svelte
 msgid "Gemini rewrite failed. Using the original text for this post; Gemini will be tried again for the next post."
 msgstr "Перезапис Gemini не вдався. Використовується оригінальний текст для цієї публікації; Gemini буде спробовано знову для наступної публікації."
 
@@ -1876,19 +1823,21 @@ msgstr "Деталі налагодження"
 #~ msgid ", "
 #~ msgstr ""
 
+#: src/components/FeaturesCard.svelte
 #: src/components/ThemePicker.svelte
+#: src/components/UsageGuide.svelte
 msgid "Themes"
 msgstr "Теми"
 
 #: src/App.svelte
 #: src/components/UsageGuide.svelte
-msgid "Preferences & post"
-msgstr "Налаштування й публікація"
+msgid "Post or schedule"
+msgstr "Опублікувати або запланувати"
 
 #: src/App.svelte
 #: src/App.svelte
-msgid "Set preferences, then post now or schedule"
-msgstr "Задайте налаштування, потім опублікуйте зараз або заплануйте"
+msgid "Choose the time between posts, then post now or schedule for later."
+msgstr "Виберіть інтервал між дописами, а потім опублікуйте зараз або заплануйте на пізніше."
 
 #~ msgid "Postika"
 #~ msgstr "Postika"
@@ -1923,9 +1872,8 @@ msgstr "Завантажені групи залишаються доступн�
 msgid "Minimum and maximum delays between posts."
 msgstr "Мінімальні та максимальні затримки між публікаціями."
 
-#: src/components/FeaturesCard.svelte
-msgid "Custom instructions and a configurable Gemini model."
-msgstr "Власні інструкції та налаштовувана модель Gemini."
+#~ msgid "Custom instructions and a configurable Gemini model."
+#~ msgstr "Власні інструкції та налаштовувана модель Gemini."
 
 #. 0: languages.length; 1: themeOptions.length
 #: src/components/FeaturesCard.svelte
@@ -1978,9 +1926,8 @@ msgstr "Напишіть повідомлення й додайте щонайм
 msgid "Select Load groups and finish Facebook login or verification in Chrome. Search the loaded list, select the groups you want, then choose Next."
 msgstr "Виберіть Завантажити групи й завершіть вхід або перевірку Facebook у Chrome. Знайдіть потрібні групи, виберіть їх і натисніть Далі."
 
-#: src/components/UsageGuide.svelte
-msgid "In Settings, enter this account’s Gemini API key and model, then Save settings. Enable rewriting for your run and describe the tone and details to preserve."
-msgstr "У Налаштуваннях введіть API-ключ Gemini та модель цього облікового запису й збережіть. Увімкніть переписування та опишіть тон і деталі, які слід зберегти."
+#~ msgid "In Settings, enter this account’s Gemini API key and model, then Save settings. Enable rewriting for your run and describe the tone and details to preserve."
+#~ msgstr "У Налаштуваннях введіть API-ключ Gemini та модель цього облікового запису й збережіть. Увімкніть переписування та опишіть тон і деталі, які слід зберегти."
 
 #: src/components/UsageGuide.svelte
 msgid "Review the account, message, image order, selected groups, and posting intervals. Choose Post now and complete any Facebook login or verification prompts in Chrome."
@@ -2036,13 +1983,11 @@ msgstr "Введіть URL сторінки Facebook, наприклад https:/
 #~ msgid "Fetch Facebook posts"
 #~ msgstr ""
 
-#: src/components/FacebookPageDialog.svelte
-msgid "Decrease number of posts"
-msgstr "Зменшити кількість дописів"
+#~ msgid "Decrease number of posts"
+#~ msgstr "Зменшити кількість дописів"
 
-#: src/components/FacebookPageDialog.svelte
-msgid "Increase number of posts"
-msgstr "Збільшити кількість дописів"
+#~ msgid "Increase number of posts"
+#~ msgstr "Збільшити кількість дописів"
 
 #: src/components/FacebookPageDialog.svelte
 msgid "Facebook page URL"
@@ -2136,6 +2081,8 @@ msgstr "Редагувати"
 msgid "Delete post {0}"
 msgstr "Видалити допис {0}"
 
+#: src/components/AccountDropdown.svelte
+#: src/components/AccountDropdown.svelte
 #: src/components/FetchedPostCard.svelte
 msgid "Delete"
 msgstr "Видалити"
@@ -2150,6 +2097,7 @@ msgid "Remove image {0} from post {1}"
 msgstr "Видалити зображення {0} з допису {1}"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Save changes"
 msgstr "Зберегти зміни"
 
@@ -2391,3 +2339,45 @@ msgstr "Перевірити оновлення"
 #: src/components/UpdateButton.svelte
 msgid "Installing update…"
 msgstr "Встановлення оновлення…"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "posts"
+msgstr "дописів"
+
+#: src/components/LogMessage.svelte
+msgid "Account names cannot be URLs"
+msgstr "Назви облікових записів не можуть бути URL-адресами"
+
+#: src/components/LogMessage.svelte
+msgid "First post confirmed. Remaining groups stopped because the formatted text could not be verified."
+msgstr "Першу публікацію підтверджено. Публікацію в решті груп зупинено, оскільки не вдалося перевірити форматований текст."
+
+#: src/components/AccountDropdown.svelte
+#: src/components/RenameProfileDialog.svelte
+msgid "Rename profile"
+msgstr "Перейменувати профіль"
+
+#: src/Workspace.svelte
+#: src/components/PostingLogs.svelte
+msgid "Add an account to get started."
+msgstr "Додайте обліковий запис, щоб почати."
+
+#: src/components/AccountDropdown.svelte
+#: src/components/DeleteProfileDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
+msgid "Delete profile"
+msgstr "Видалити профіль"
+
+#~ msgid "<0/> Add account"
+#~ msgstr ""
+
+#~ msgid "Delete profile?"
+#~ msgstr ""
+
+#: src/components/DeleteProfileDialog.svelte
+msgid "This permanently deletes this profile’s Facebook login, groups, drafts, images, settings, and logs. Any running or scheduled queue will stop. Posts already on Facebook are kept."
+msgstr "Це назавжди видалить вхід у Facebook, групи, чернетки, зображення, налаштування й журнали цього профілю. Активні та заплановані черги зупиняться. Уже опубліковані у Facebook дописи залишаться."
+
+#: src/components/DeleteProfileDialog.svelte
+msgid "Deleting…"
+msgstr "Видалення…"

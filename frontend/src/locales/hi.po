@@ -8,10 +8,8 @@ msgstr ""
 "Plural-Forms: nplurals=2\n"
 "X-Plurals-Order: one, other\n"
 
-#. 0: appliedInterval; 1: rewriteState
-#: src/App.svelte
-msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
-msgstr "सहेजे गए डिफ़ॉल्ट लागू किए गए: पोस्टों के बीच {0} सेकंड · Gemini रीराइट {1}।"
+#~ msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
+#~ msgstr "सहेजे गए डिफ़ॉल्ट लागू किए गए: पोस्टों के बीच {0} सेकंड · Gemini रीराइट {1}।"
 
 #: src/components/LogMessage.svelte
 msgid "Could not restore saved groups. Load groups to refresh the list."
@@ -152,23 +150,17 @@ msgstr "शुरू करने के लिए अपने Facebook सम�
 msgid "Posting settings"
 msgstr "पोस्टिंग सेटिंग्स"
 
-#: src/App.svelte
-msgid "Add a Gemini API key in Settings to enable rewriting."
-msgstr "रीराइटिंग सक्षम करने के लिए सेटिंग्स में Gemini API की जोड़ें।"
+#~ msgid "Add a Gemini API key in Settings to enable rewriting."
+#~ msgstr "रीराइटिंग सक्षम करने के लिए सेटिंग्स में Gemini API की जोड़ें।"
 
-#: src/App.svelte
-msgid "Applying defaults…"
-msgstr "डिफ़ॉल्ट लागू किया जा रहा है…"
+#~ msgid "Applying defaults…"
+#~ msgstr "डिफ़ॉल्ट लागू किया जा रहा है…"
 
-#: src/App.svelte
-#: src/components/FeaturesCard.svelte
-#: src/components/UsageGuide.svelte
-msgid "Use saved defaults"
-msgstr "सहेजे गए डिफ़ॉल्ट का उपयोग करें"
+#~ msgid "Use saved defaults"
+#~ msgstr "सहेजे गए डिफ़ॉल्ट का उपयोग करें"
 
-#: src/App.svelte
-msgid "Open settings"
-msgstr "सेटिंग्स खोलें"
+#~ msgid "Open settings"
+#~ msgstr "सेटिंग्स खोलें"
 
 #~ msgid "Posting as <0/>"
 #~ msgstr "पोस्टिंग के रूप में <0/>"
@@ -200,9 +192,11 @@ msgid "Time zone: {0}. Keep Postika open and your computer awake. Facebook may a
 msgstr "समय क्षेत्र: {0}. Postika को खुला रखें और अपने कंप्यूटर को जागरूक रखें। पोस्टिंग शुरू होने पर फेसबुक आपसे साइन इन करने के लिए कह सकता है।"
 
 #: src/App.svelte
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FetchedPostCard.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Cancel"
 msgstr "रद्द करें"
 
@@ -253,6 +247,8 @@ msgid "Application menu"
 msgstr "एप्लिकेशन मेनू"
 
 #: src/Workspace.svelte
+#: src/components/AccountDropdown.svelte
+#: src/components/AddAccountDialog.svelte
 #: src/components/UsageGuide.svelte
 msgid "Add account"
 msgstr "खाता जोड़ें"
@@ -261,31 +257,28 @@ msgstr "खाता जोड़ें"
 #: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogView.svelte
+#: src/components/PostingLogs.svelte
 #: src/components/UsageGuide.svelte
 msgid "Posting logs"
 msgstr "पोस्ट लॉग"
 
-#: src/Workspace.svelte
-#: src/components/FeaturesCard.svelte
-#: src/components/Settings.svelte
-#: src/components/Settings.svelte
-#: src/components/UsageGuide.svelte
-msgid "Settings"
-msgstr "सेटिंग"
+#~ msgid "Settings"
+#~ msgstr "सेटिंग"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "Creating…"
 msgstr "बनाया जा रहा है…"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "Create & sign in"
 msgstr "बनाएँ और साइन इन करें"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Account name"
 msgstr "खाते का नाम"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 #: src/components/UsageGuide.svelte
 msgid "Sign in to Facebook in the new account’s browser window."
 msgstr "नए अकाउंट के ब्राउज़र विंडो में फेसबुक में साइन इन करें।"
@@ -794,172 +787,125 @@ msgstr "अगले समूह में पोस्ट करने से 
 msgid "At least 60 seconds. Use equal values for a fixed interval."
 msgstr "कम से कम 60 सेकंड। स्थिर अंतराल के लिए समान मान का उपयोग करें।"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "OPTIONAL · AI REWRITE"
-msgstr "वैकल्पिक · एआई पुनर्लेखन"
+#~ msgid "OPTIONAL · AI REWRITE"
+#~ msgstr "वैकल्पिक · एआई पुनर्लेखन"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "A fresh version for each group"
-msgstr "हर समूह के लिए नई संस्करण"
+#~ msgid "A fresh version for each group"
+#~ msgstr "हर समूह के लिए नई संस्करण"
 
-#: src/components/FeaturesCard.svelte
-#: src/components/PostingOptionsForm.svelte
-#: src/components/UsageGuide.svelte
-msgid "Rewrite each post body with Gemini"
-msgstr "प्रत्येक पोस्ट बॉडी को Gemini के साथ पुनर्लेखित करें"
+#~ msgid "Rewrite each post body with Gemini"
+#~ msgstr "प्रत्येक पोस्ट बॉडी को Gemini के साथ पुनर्लेखित करें"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
-msgstr "पुनर्लेखन निर्देश<0>टोन और विवरण चुनें जिन्हें Gemini को बनाए रखना चाहिए।</0>"
+#~ msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
+#~ msgstr "पुनर्लेखन निर्देश<0>टोन और विवरण चुनें जिन्हें Gemini को बनाए रखना चाहिए।</0>"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Keep it concise and easy to scan. Preserve the price and contact details."
-msgstr "इसे संक्षिप्त और आसान स्कैन करने योग्य रखें। मूल्य और संपर्क विवरण बनाए रखें।"
+#~ msgid "Keep it concise and easy to scan. Preserve the price and contact details."
+#~ msgstr "इसे संक्षिप्त और आसान स्कैन करने योग्य रखें। मूल्य और संपर्क विवरण बनाए रखें।"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Rewrite instructions"
-msgstr "पुनर्लेखन निर्देश"
+#~ msgid "Rewrite instructions"
+#~ msgstr "पुनर्लेखन निर्देश"
 
-#: src/components/FeaturesCard.svelte
-#: src/components/PostingOptionsForm.svelte
-#: src/components/UsageGuide.svelte
-msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
-msgstr "आपका पोस्ट टेक्स्ट और निर्देश गूगल Gemini को भेजे जाते हैं। चित्र नहीं भेजे जाते। Gemini पुनर्लेखन में केवल सामान्य पाठ का उपयोग करता है।"
+#~ msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
+#~ msgstr "आपका पोस्ट टेक्स्ट और निर्देश गूगल Gemini को भेजे जाते हैं। चित्र नहीं भेजे जाते। Gemini पुनर्लेखन में केवल सामान्य पाठ का उपयोग करता है।"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
-msgstr "यदि पुनर्लेखन विफल हो जाता है, तो उस पोस्ट में आपका मूल पाठ उपयोग किया जाएगा। अगला पोस्ट Gemini को फिर से कोशिश करने देगा।"
+#~ msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
+#~ msgstr "यदि पुनर्लेखन विफल हो जाता है, तो उस पोस्ट में आपका मूल पाठ उपयोग किया जाएगा। अगला पोस्ट Gemini को फिर से कोशिश करने देगा।"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Let Gemini rewrite your post using your instructions."
-msgstr "Gemini आपके निर्देशों का उपयोग करके आपका पोस्ट पुनर्लेखन करे।"
+#~ msgid "Let Gemini rewrite your post using your instructions."
+#~ msgstr "Gemini आपके निर्देशों का उपयोग करके आपका पोस्ट पुनर्लेखन करे।"
 
 #: src/components/PostingOptionsForm.svelte
 msgid "Posting preferences"
 msgstr "पोस्टिंग प्राथमिकताएँ"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved defaults help"
-msgstr "सहेजे गए डिफ़ॉल्ट मदद करते हैं"
+#~ msgid "Saved defaults help"
+#~ msgstr "सहेजे गए डिफ़ॉल्ट मदद करते हैं"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "About saved defaults"
-msgstr "सहेजे गए डिफ़ॉल्ट के बारे में"
+#~ msgid "About saved defaults"
+#~ msgstr "सहेजे गए डिफ़ॉल्ट के बारे में"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved interval"
-msgstr "सहेजा गया अंतराल"
+#~ msgid "Saved interval"
+#~ msgstr "सहेजा गया अंतराल"
 
-#. 0: settings.minimumInterval === settings.maximumInterval ? settings.minimumInterval \\: `${settings.minimumInterval}–${settings.maximumInterval}`
-#: src/components/SavedDefaultsInfo.svelte
-msgid "{0} seconds"
-msgstr "{0} सेकंड"
+#~ msgid "{0} seconds"
+#~ msgstr "{0} सेकंड"
 
-#: src/App.svelte
-#: src/components/SavedDefaultsInfo.svelte
-msgid "On"
-msgstr "चालू"
+#~ msgid "On"
+#~ msgstr "चालू"
 
-#: src/App.svelte
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Off"
-msgstr "बंद"
+#~ msgid "Off"
+#~ msgstr "बंद"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Gemini rewrite"
-msgstr "Gemini पुनर्लेखन"
+#~ msgid "Gemini rewrite"
+#~ msgstr "Gemini पुनर्लेखन"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "No instructions saved."
-msgstr "कोई निर्देश सहेजे नहीं गए।"
+#~ msgid "No instructions saved."
+#~ msgstr "कोई निर्देश सहेजे नहीं गए।"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved rewrite instructions"
-msgstr "सहेजे गए पुनर्लेखन निर्देश"
+#~ msgid "Saved rewrite instructions"
+#~ msgstr "सहेजे गए पुनर्लेखन निर्देश"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved values could not be loaded. Try “Use saved defaults” again."
-msgstr "सहेजे गए मान लोड नहीं किए जा सकते। फिर से “सहेजे गए डिफ़ॉल्ट का उपयोग करें” आज़माएँ।"
+#~ msgid "Saved values could not be loaded. Try “Use saved defaults” again."
+#~ msgstr "सहेजे गए मान लोड नहीं किए जा सकते। फिर से “सहेजे गए डिफ़ॉल्ट का उपयोग करें” आज़माएँ।"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "What does “Use saved defaults” do?"
-msgstr "“सहेजे गए डिफ़ॉल्ट का उपयोग करें” क्या करता है?"
+#~ msgid "What does “Use saved defaults” do?"
+#~ msgstr "“सहेजे गए डिफ़ॉल्ट का उपयोग करें” क्या करता है?"
 
-#: src/components/SavedDefaultsInfo.svelte
-#: src/components/UsageGuide.svelte
-msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
-msgstr "इस रन के पोस्टिंग अंतराल, Gemini रीव्राइट विकल्प, और रीव्राइट निर्देशों को सेटिंग्स में सहेजे गए मानों से बदल देता है।"
+#~ msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
+#~ msgstr "इस रन के पोस्टिंग अंतराल, Gemini रीव्राइट विकल्प, और रीव्राइट निर्देशों को सेटिंग्स में सहेजे गए मानों से बदल देता है।"
 
-#: src/components/SavedDefaultsInfo.svelte
-#: src/components/UsageGuide.svelte
-msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
-msgstr "प्रारंभिक डिफ़ॉल्ट्स: 60–120 सेकंड, Gemini रीव्राइट बंद, और कोई रीव्राइट निर्देश नहीं। इन्हें बदलने के लिए अपनी पसंद सेटिंग्स में सहेजें।"
+#~ msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
+#~ msgstr "प्रारंभिक डिफ़ॉल्ट्स: 60–120 सेकंड, Gemini रीव्राइट बंद, और कोई रीव्राइट निर्देश नहीं। इन्हें बदलने के लिए अपनी पसंद सेटिंग्स में सहेजें।"
 
 #: src/components/LogMessage.svelte
 msgid "Settings saved. New runs can use these defaults."
 msgstr "सेटिंग्स सहेजी गईं। नए रन इन डिफ़ॉल्ट्स का उपयोग कर सकते हैं।"
 
-#: src/components/Settings.svelte
-msgid "Key saved · leave blank to keep it"
-msgstr "की सहेजी गई · इसे रखने के लिए खाली छोड़ें"
+#~ msgid "Key saved · leave blank to keep it"
+#~ msgstr "की सहेजी गई · इसे रखने के लिए खाली छोड़ें"
 
-#: src/components/Settings.svelte
-msgid "Enter your Gemini API key"
-msgstr "अपना Gemini API की दर्ज करें"
+#~ msgid "Enter your Gemini API key"
+#~ msgstr "अपना Gemini API की दर्ज करें"
 
-#: src/components/Settings.svelte
-msgid "A key is saved on this device."
-msgstr "इस डिवाइस पर एक की सहेजी गई है।"
+#~ msgid "A key is saved on this device."
+#~ msgstr "इस डिवाइस पर एक की सहेजी गई है।"
 
-#: src/components/Settings.svelte
-msgid "No API key saved."
-msgstr "कोई API की सहेजी नहीं गई।"
+#~ msgid "No API key saved."
+#~ msgstr "कोई API की सहेजी नहीं गई।"
 
-#: src/components/Settings.svelte
-msgid "Remove saved key"
-msgstr "सहेजी गई की हटाएँ"
+#~ msgid "Remove saved key"
+#~ msgstr "सहेजी गई की हटाएँ"
 
-#: src/components/Settings.svelte
-msgid "Gemini"
-msgstr "Gemini"
+#~ msgid "Gemini"
+#~ msgstr "Gemini"
 
-#: src/components/Settings.svelte
-msgid "API key<0/>"
-msgstr "API की<0/>"
+#~ msgid "API key<0/>"
+#~ msgstr "API की<0/>"
 
-#. 0: keyConfigured ? 'A key is saved on this device.' \\: 'No API key saved.'
-#: src/components/Settings.svelte
-msgid "{0} The saved key is never displayed."
-msgstr "{0} सहेजी गई की कभी प्रदर्शित नहीं की जाती।"
+#~ msgid "{0} The saved key is never displayed."
+#~ msgstr "{0} सहेजी गई की कभी प्रदर्शित नहीं की जाती।"
 
-#: src/components/Settings.svelte
-msgid "Model<0/>"
-msgstr "मॉडल<0/>"
+#~ msgid "Model<0/>"
+#~ msgstr "मॉडल<0/>"
 
-#: src/components/Settings.svelte
-msgid "Posting defaults"
-msgstr "पोस्ट की डिफ़ॉल्ट सेटिंग"
+#~ msgid "Posting defaults"
+#~ msgstr "पोस्ट की डिफ़ॉल्ट सेटिंग"
 
-#: src/components/Settings.svelte
-msgid "Applied when you start a new posting run."
-msgstr "नए पोस्टिंग रन शुरू करने पर लागू होता है।"
+#~ msgid "Applied when you start a new posting run."
+#~ msgstr "नए पोस्टिंग रन शुरू करने पर लागू होता है।"
 
-#: src/components/Settings.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Saving…"
 msgstr "सहेजा जा रहा है…"
 
-#: src/components/Settings.svelte
-msgid "Save settings"
-msgstr "सेटिंग सहेजें"
+#~ msgid "Save settings"
+#~ msgstr "सेटिंग सहेजें"
 
-#: src/components/Settings.svelte
-msgid "YOUR PREFERENCES"
-msgstr "आपकी प्राथमिकताएँ"
+#~ msgid "YOUR PREFERENCES"
+#~ msgstr "आपकी प्राथमिकताएँ"
 
-#. 0: accountName
-#: src/components/Settings.svelte
-msgid "Set up Gemini and save posting defaults for {0}."
-msgstr "Gemini सेट करें और {0} के लिए पोस्टिंग डिफ़ॉल्ट्स सहेजें।"
+#~ msgid "Set up Gemini and save posting defaults for {0}."
+#~ msgstr "Gemini सेट करें और {0} के लिए पोस्टिंग डिफ़ॉल्ट्स सहेजें।"
 
 #: src/components/StepProgress.svelte
 msgid "Completed"
@@ -1133,9 +1079,8 @@ msgstr "शाम"
 msgid "Could not change the language. Please try again."
 msgstr "भाषा बदलने में असमर्थ। कृपया पुनः प्रयास करें।"
 
-#: src/components/Settings.svelte
-msgid "Language"
-msgstr "भाषा"
+#~ msgid "Language"
+#~ msgstr "भाषा"
 
 #: src/components/PostingOptionsForm.svelte
 #: src/components/PostingOptionsForm.svelte
@@ -1210,7 +1155,7 @@ msgstr "छोड़ दिया गया"
 msgid "UNCONFIRMED"
 msgstr "असत्यापित"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "e.g. Business"
 msgstr "जैसे व्यापार"
 
@@ -1282,8 +1227,11 @@ msgstr "डिफ़ॉल्ट प्रोफ़ाइल"
 msgid "Color themes"
 msgstr "रंग थीम"
 
+#: src/components/AddAccountDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/RenameProfileDialog.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UpdateButton.svelte
 msgid "Close"
@@ -1503,7 +1451,6 @@ msgid "Gemini rewrite completed."
 msgstr "Gemini री-राइट पूरा हो गया।"
 
 #: src/components/LogMessage.svelte
-#: src/components/UsageGuide.svelte
 msgid "Gemini rewrite failed. Using the original text for this post; Gemini will be tried again for the next post."
 msgstr "Gemini री-राइट विफल रहा। इस पोस्ट के लिए मूल टेक्स्ट का उपयोग किया जा रहा है; अगली पोस्ट के लिए Gemini फिर से प्रयास किया जाएगा।"
 
@@ -1876,19 +1823,21 @@ msgstr "डिबग विवरण"
 #~ msgid ", "
 #~ msgstr ""
 
+#: src/components/FeaturesCard.svelte
 #: src/components/ThemePicker.svelte
+#: src/components/UsageGuide.svelte
 msgid "Themes"
 msgstr "थीम"
 
 #: src/App.svelte
 #: src/components/UsageGuide.svelte
-msgid "Preferences & post"
-msgstr "प्राथमिकताएँ और पोस्ट"
+msgid "Post or schedule"
+msgstr "पोस्ट करें या समय तय करें"
 
 #: src/App.svelte
 #: src/App.svelte
-msgid "Set preferences, then post now or schedule"
-msgstr "प्राथमिकताएँ सेट करें, फिर अभी पोस्ट करें या शेड्यूल करें"
+msgid "Choose the time between posts, then post now or schedule for later."
+msgstr "पोस्ट के बीच का समय चुनें, फिर अभी पोस्ट करें या बाद के लिए समय तय करें।"
 
 #~ msgid "Postika"
 #~ msgstr "Postika"
@@ -1923,9 +1872,8 @@ msgstr "लोड किए गए समूह ऐप के अगले स�
 msgid "Minimum and maximum delays between posts."
 msgstr "पोस्ट के बीच न्यूनतम और अधिकतम प्रतीक्षा समय।"
 
-#: src/components/FeaturesCard.svelte
-msgid "Custom instructions and a configurable Gemini model."
-msgstr "कस्टम निर्देश और कॉन्फ़िगर किया जा सकने वाला Gemini मॉडल।"
+#~ msgid "Custom instructions and a configurable Gemini model."
+#~ msgstr "कस्टम निर्देश और कॉन्फ़िगर किया जा सकने वाला Gemini मॉडल।"
 
 #. 0: languages.length; 1: themeOptions.length
 #: src/components/FeaturesCard.svelte
@@ -1978,9 +1926,8 @@ msgstr "संदेश लिखें और कम से कम एक त�
 msgid "Select Load groups and finish Facebook login or verification in Chrome. Search the loaded list, select the groups you want, then choose Next."
 msgstr "समूह लोड करें चुनें और Chrome में Facebook लॉगिन या सत्यापन पूरा करें। सूची में खोजें, समूह चुनें और अगला दबाएँ।"
 
-#: src/components/UsageGuide.svelte
-msgid "In Settings, enter this account’s Gemini API key and model, then Save settings. Enable rewriting for your run and describe the tone and details to preserve."
-msgstr "सेटिंग में इस खाते की Gemini API कुंजी और मॉडल भरकर सहेजें। पुनर्लेखन चालू करें और बताएं कि कौन-सा लहजा और विवरण बनाए रखने हैं।"
+#~ msgid "In Settings, enter this account’s Gemini API key and model, then Save settings. Enable rewriting for your run and describe the tone and details to preserve."
+#~ msgstr "सेटिंग में इस खाते की Gemini API कुंजी और मॉडल भरकर सहेजें। पुनर्लेखन चालू करें और बताएं कि कौन-सा लहजा और विवरण बनाए रखने हैं।"
 
 #: src/components/UsageGuide.svelte
 msgid "Review the account, message, image order, selected groups, and posting intervals. Choose Post now and complete any Facebook login or verification prompts in Chrome."
@@ -2036,13 +1983,11 @@ msgstr "Facebook पेज का URL दर्ज करें, जैसे ht
 #~ msgid "Fetch Facebook posts"
 #~ msgstr ""
 
-#: src/components/FacebookPageDialog.svelte
-msgid "Decrease number of posts"
-msgstr "पोस्ट की संख्या घटाएँ"
+#~ msgid "Decrease number of posts"
+#~ msgstr "पोस्ट की संख्या घटाएँ"
 
-#: src/components/FacebookPageDialog.svelte
-msgid "Increase number of posts"
-msgstr "पोस्ट की संख्या बढ़ाएँ"
+#~ msgid "Increase number of posts"
+#~ msgstr "पोस्ट की संख्या बढ़ाएँ"
 
 #: src/components/FacebookPageDialog.svelte
 msgid "Facebook page URL"
@@ -2136,6 +2081,8 @@ msgstr "संपादित करें"
 msgid "Delete post {0}"
 msgstr "पोस्ट {0} हटाएँ"
 
+#: src/components/AccountDropdown.svelte
+#: src/components/AccountDropdown.svelte
 #: src/components/FetchedPostCard.svelte
 msgid "Delete"
 msgstr "हटाएँ"
@@ -2150,6 +2097,7 @@ msgid "Remove image {0} from post {1}"
 msgstr "पोस्ट {1} से चित्र {0} हटाएँ"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Save changes"
 msgstr "बदलाव सहेजें"
 
@@ -2391,3 +2339,45 @@ msgstr "अपडेट की जाँच करें"
 #: src/components/UpdateButton.svelte
 msgid "Installing update…"
 msgstr "अपडेट इंस्टॉल हो रहा है…"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "posts"
+msgstr "पोस्ट"
+
+#: src/components/LogMessage.svelte
+msgid "Account names cannot be URLs"
+msgstr "खाते के नाम URL नहीं हो सकते"
+
+#: src/components/LogMessage.svelte
+msgid "First post confirmed. Remaining groups stopped because the formatted text could not be verified."
+msgstr "पहली पोस्ट की पुष्टि हो गई। फ़ॉर्मैट किए गए टेक्स्ट की पुष्टि न हो पाने के कारण बाकी समूहों में पोस्ट करना रोक दिया गया।"
+
+#: src/components/AccountDropdown.svelte
+#: src/components/RenameProfileDialog.svelte
+msgid "Rename profile"
+msgstr "प्रोफ़ाइल का नाम बदलें"
+
+#: src/Workspace.svelte
+#: src/components/PostingLogs.svelte
+msgid "Add an account to get started."
+msgstr "शुरू करने के लिए खाता जोड़ें।"
+
+#: src/components/AccountDropdown.svelte
+#: src/components/DeleteProfileDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
+msgid "Delete profile"
+msgstr "प्रोफ़ाइल हटाएँ"
+
+#~ msgid "<0/> Add account"
+#~ msgstr ""
+
+#~ msgid "Delete profile?"
+#~ msgstr ""
+
+#: src/components/DeleteProfileDialog.svelte
+msgid "This permanently deletes this profile’s Facebook login, groups, drafts, images, settings, and logs. Any running or scheduled queue will stop. Posts already on Facebook are kept."
+msgstr "इससे इस प्रोफ़ाइल का Facebook लॉगिन, समूह, ड्राफ़्ट, चित्र, सेटिंग और लॉग स्थायी रूप से हट जाएँगे। चल रही या निर्धारित कतार रुक जाएगी। Facebook पर पहले से मौजूद पोस्ट बने रहेंगे।"
+
+#: src/components/DeleteProfileDialog.svelte
+msgid "Deleting…"
+msgstr "हटाया जा रहा है…"

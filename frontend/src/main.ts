@@ -14,12 +14,11 @@ initializeTheme();
 const windowViews = {
   workspace: () => import('./Workspace.svelte'),
   'posting-logs': () => import('./components/PostingLogs.svelte'),
-  settings: () => import('./components/Settings.svelte'),
 };
-const windowView = view === 'posting-logs' || view === 'settings' ? view : 'workspace';
+const windowView = view === 'posting-logs' ? view : 'workspace';
 void Promise.all([initializeLocale(), windowViews[windowView]()]).then(([, { default: WindowView }]) => {
   mount(WindowView, { target: document.getElementById('app')! })
-  if (view === 'settings' || view === 'posting-logs') mount(ConnectivityToast, { target: document.getElementById('app')! })
+  if (view === 'posting-logs') mount(ConnectivityToast, { target: document.getElementById('app')! })
 }).catch(() => {
   document.getElementById('app')!.textContent = 'Could not load the interface. Please restart Postika.';
 })

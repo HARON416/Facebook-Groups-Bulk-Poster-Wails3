@@ -86,7 +86,7 @@ func TestGroupSearchAndBulkSelectionUI(t *testing.T) {
 			_ = json.Unmarshal(call.Args.Args[1], &body)
 			_ = json.Unmarshal(call.Args.Args[3], &uploads)
 			var options PostingOptions
-			if json.Unmarshal(call.Args.Args[4], &options) != nil || options.MinimumInterval != 60 || options.MaximumInterval != 120 || options.Rewrite {
+			if json.Unmarshal(call.Args.Args[4], &options) != nil || options.MinimumInterval != 90 || options.MaximumInterval != 120 || options.Rewrite || options.Instructions != "" {
 				t.Error("posting settings not passed to backend")
 			}
 			if body != "Draft" || len(uploads) != 1 || uploads[0].Name != "test.png" || uploads[0].Data != fixturePNG {
@@ -360,23 +360,19 @@ func TestGroupSearchAndBulkSelectionUI(t *testing.T) {
 	eval(`() => document.querySelector('.checkbox__trigger').click()`)
 	await(`() => !document.querySelector('button.next').disabled`)
 	eval(`() => document.querySelector('button.next').click()`)
-	await(`() => document.querySelector('#step-heading')?.textContent === 'Preferences & post' && !!document.querySelector('.run-settings')`)
+	await(`() => document.querySelector('#step-heading')?.textContent === 'Post or schedule' && !!document.querySelector('.run-settings')`)
 	await(`() => !document.querySelector('button.post').disabled`)
 	eval(`() => { const input=document.querySelector('input[aria-label="Minimum (seconds)"]'); input.value='90'; input.dispatchEvent(new Event('input',{bubbles:true})); }`)
-	eval(`() => document.querySelector('button[aria-label="About saved defaults"]').click()`)
-	await(`() => !document.querySelector('#saved-defaults-help').hidden && document.querySelector('#saved-defaults-help').textContent.includes('60–120 seconds') && document.querySelector('input[aria-label="Minimum (seconds)"]').value==='90'`)
-	eval(`() => document.querySelector('button[aria-label="About saved defaults"]').dispatchEvent(new KeyboardEvent('keydown',{key:'Escape',bubbles:true}))`)
-	await(`() => document.querySelector('#saved-defaults-help').hidden`)
-	eval(`() => [...document.querySelectorAll('.settings-actions button')].find(button=>button.textContent==='Use saved defaults').click()`)
-	await(`() => document.querySelector('input[aria-label="Minimum (seconds)"]').value==='60' && document.querySelector('.defaults-feedback').textContent.includes('Saved defaults applied: 60–120 seconds between posts') && !document.querySelector('.settings-actions button').disabled`)
+	await(`() => !document.querySelector('.rewrite-card') && !document.querySelector('#rewrite-instructions') && !document.querySelector('.settings-actions') && ![...document.querySelectorAll('.app-menu button')].some(b=>b.textContent==='Settings')`)
+	// Legacy drafts must not silently turn rewriting back on after an update.
+	eval(`async () => {const db=await new Promise((resolve,reject)=>{const r=indexedDB.open('postika-account-drafts',2);r.onsuccess=()=>resolve(r.result);r.onerror=reject;});await new Promise((resolve,reject)=>{const tx=db.transaction('drafts','readwrite'),store=tx.objectStore('drafts'),r=store.get('default');r.onsuccess=()=>store.put({...r.result,minimumInterval:90,rewrite:true,instructions:'Legacy rewrite instructions'},'default');tx.oncomplete=resolve;tx.onerror=reject;});db.close();}`)
+	page.MustReload().MustWaitLoad()
+	await(`() => document.querySelector('#step-heading')?.textContent==='Post or schedule' && document.querySelector('input[aria-label="Minimum (seconds)"]')?.value==='90' && !document.querySelector('button.post').disabled`)
 	if dir := *uiArtifactDir; dir != "" {
 		if err := os.MkdirAll(dir, 0700); err != nil {
 			t.Fatal(err)
 		}
-		eval(`() => document.querySelector('.rewrite-card input[type=checkbox]').click()`)
-		await(`() => document.querySelector('#rewrite-instructions') !== null`)
 		page.MustSetViewport(1200, 1000, 1, false)
-		await(`() => getComputedStyle(document.querySelector('.rewrite-card .symbol path')).strokeDashoffset === '0px'`)
 		data, err := page.Screenshot(false, &proto.PageCaptureScreenshot{})
 		if err != nil {
 			t.Fatal(err)
@@ -384,8 +380,6 @@ func TestGroupSearchAndBulkSelectionUI(t *testing.T) {
 		if err = os.WriteFile(filepath.Join(dir, "postika-posting-preferences.png"), data, 0600); err != nil {
 			t.Fatal(err)
 		}
-		eval(`() => document.querySelector('.rewrite-card input[type=checkbox]').click()`)
-		await(`() => document.querySelector('#rewrite-instructions') === null`)
 	}
 	await(`() => !document.querySelector('nav[aria-label="Post progress"] li:last-child').classList.contains('completed')`)
 	eval(`() => document.querySelector('button.post').click()`)
@@ -410,18 +404,7 @@ func TestGroupSearchAndBulkSelectionUI(t *testing.T) {
 	await(`() => !document.querySelector('button.post').disabled && document.querySelector('.group-status')?.textContent==='Posting stopped.' && !document.querySelector('nav[aria-label="Post progress"] li:last-child').classList.contains('completed')`)
 	eval(`() => document.querySelector('button.previous').click()`)
 	await(`() => document.querySelector('.checkbox__trigger')?.checked && !document.querySelector('button.next').disabled`)
-	if dir := *uiArtifactDir; dir != "" {
-		page.MustNavigate(server.URL + "/?view=settings").MustWaitLoad()
-		await(`() => document.querySelector('.rewrite-card input[type=checkbox]') !== null && !document.querySelector('button[type=submit]').disabled`)
-		eval(`() => document.querySelector('.rewrite-card input[type=checkbox]').click()`)
-		await(`() => document.querySelector('#rewrite-instructions') !== null`)
-		await(`() => getComputedStyle(document.querySelector('.rewrite-card .symbol path')).strokeDashoffset === '0px'`)
-		data, err := page.Screenshot(true, &proto.PageCaptureScreenshot{})
-		if err != nil {
-			t.Fatal(err)
-		}
-		if err = os.WriteFile(filepath.Join(dir, "postika-settings.png"), data, 0600); err != nil {
-			t.Fatal(err)
-		}
-	}
+	// Old settings URLs must no longer expose a settings window.
+	page.MustNavigate(server.URL + "/?view=settings").MustWaitLoad()
+	await(`() => document.querySelector('.top-bar') && !document.querySelector('input[type=password]')`)
 }

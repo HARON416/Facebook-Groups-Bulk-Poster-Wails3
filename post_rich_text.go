@@ -5,15 +5,15 @@ import (
 	"encoding/json"
 	"errors"
 	"net/url"
-	"strings"
 )
 
 type richPostBodyKey struct{}
 type richPostBody struct{ text, html string }
 
-// Block editors can serialize paragraph breaks differently. Validate the text
-// content, then reuse Facebook's exact text so replay never rebuilds its styles.
-func capturedRichPostText(raw, draft string) (string, error) {
+// Reuse Facebook's exact captured text for subsequent groups. Its structured
+// text and style offsets stay untouched; the submitted draft is not compared
+// against Facebook's serialized representation after publication.
+func capturedRichPostText(raw string) (string, error) {
 	form, err := url.ParseQuery(raw)
 	var variables struct {
 		Input struct {
@@ -25,11 +25,7 @@ func capturedRichPostText(raw, draft string) (string, error) {
 	if err != nil || json.Unmarshal([]byte(form.Get("variables")), &variables) != nil || variables.Input.Message == nil {
 		return "", errors.New("Invalid captured formatted post")
 	}
-	text := variables.Input.Message.Text
-	if strings.Join(strings.Fields(text), " ") != strings.Join(strings.Fields(draft), " ") {
-		return "", errors.New("The captured formatted post body does not match your draft")
-	}
-	return text, nil
+	return variables.Input.Message.Text, nil
 }
 
 // PublishRichPostWithOptions lets Facebook's own editor translate supported

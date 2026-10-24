@@ -8,10 +8,8 @@ msgstr ""
 "Plural-Forms: nplurals=1\n"
 "X-Plurals-Order: other\n"
 
-#. 0: appliedInterval; 1: rewriteState
-#: src/App.svelte
-msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
-msgstr "Pengaturan bawaan diterapkan: jeda {0} detik antarpostingan · Penulisan ulang Gemini {1}."
+#~ msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
+#~ msgstr "Pengaturan bawaan diterapkan: jeda {0} detik antarpostingan · Penulisan ulang Gemini {1}."
 
 #: src/components/LogMessage.svelte
 msgid "Could not restore saved groups. Load groups to refresh the list."
@@ -152,23 +150,17 @@ msgstr "Buka grup Facebook Anda untuk memulai."
 msgid "Posting settings"
 msgstr "Pengaturan postingan"
 
-#: src/App.svelte
-msgid "Add a Gemini API key in Settings to enable rewriting."
-msgstr "Tambahkan kunci API Gemini di Pengaturan untuk mengaktifkan penulisan ulang."
+#~ msgid "Add a Gemini API key in Settings to enable rewriting."
+#~ msgstr "Tambahkan kunci API Gemini di Pengaturan untuk mengaktifkan penulisan ulang."
 
-#: src/App.svelte
-msgid "Applying defaults…"
-msgstr "Menerapkan pengaturan bawaan…"
+#~ msgid "Applying defaults…"
+#~ msgstr "Menerapkan pengaturan bawaan…"
 
-#: src/App.svelte
-#: src/components/FeaturesCard.svelte
-#: src/components/UsageGuide.svelte
-msgid "Use saved defaults"
-msgstr "Gunakan pengaturan bawaan tersimpan"
+#~ msgid "Use saved defaults"
+#~ msgstr "Gunakan pengaturan bawaan tersimpan"
 
-#: src/App.svelte
-msgid "Open settings"
-msgstr "Buka pengaturan"
+#~ msgid "Open settings"
+#~ msgstr "Buka pengaturan"
 
 #~ msgid "Posting as <0/>"
 #~ msgstr "Mengirim sebagai <0/>"
@@ -200,9 +192,11 @@ msgid "Time zone: {0}. Keep Postika open and your computer awake. Facebook may a
 msgstr "Zona waktu: {0}. Biarkan Postika tetap terbuka dan komputer tetap aktif. Facebook mungkin meminta Anda masuk saat pengiriman dimulai."
 
 #: src/App.svelte
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FetchedPostCard.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Cancel"
 msgstr "Batal"
 
@@ -253,6 +247,8 @@ msgid "Application menu"
 msgstr "Menu aplikasi"
 
 #: src/Workspace.svelte
+#: src/components/AccountDropdown.svelte
+#: src/components/AddAccountDialog.svelte
 #: src/components/UsageGuide.svelte
 msgid "Add account"
 msgstr "Tambah akun"
@@ -261,31 +257,28 @@ msgstr "Tambah akun"
 #: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogView.svelte
+#: src/components/PostingLogs.svelte
 #: src/components/UsageGuide.svelte
 msgid "Posting logs"
 msgstr "Log postingan"
 
-#: src/Workspace.svelte
-#: src/components/FeaturesCard.svelte
-#: src/components/Settings.svelte
-#: src/components/Settings.svelte
-#: src/components/UsageGuide.svelte
-msgid "Settings"
-msgstr "Pengaturan"
+#~ msgid "Settings"
+#~ msgstr "Pengaturan"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "Creating…"
 msgstr "Membuat…"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "Create & sign in"
 msgstr "Buat & masuk"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Account name"
 msgstr "Nama akun"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 #: src/components/UsageGuide.svelte
 msgid "Sign in to Facebook in the new account’s browser window."
 msgstr "Masuk ke Facebook di jendela browser akun baru."
@@ -794,172 +787,125 @@ msgstr "Pilih waktu tunggu sebelum mengirim ke grup berikutnya."
 msgid "At least 60 seconds. Use equal values for a fixed interval."
 msgstr "Minimal 60 detik. Gunakan nilai yang sama untuk jeda tetap."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "OPTIONAL · AI REWRITE"
-msgstr "OPSIONAL · PENULISAN ULANG AI"
+#~ msgid "OPTIONAL · AI REWRITE"
+#~ msgstr "OPSIONAL · PENULISAN ULANG AI"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "A fresh version for each group"
-msgstr "Versi baru untuk setiap grup"
+#~ msgid "A fresh version for each group"
+#~ msgstr "Versi baru untuk setiap grup"
 
-#: src/components/FeaturesCard.svelte
-#: src/components/PostingOptionsForm.svelte
-#: src/components/UsageGuide.svelte
-msgid "Rewrite each post body with Gemini"
-msgstr "Tulis ulang isi setiap postingan dengan Gemini"
+#~ msgid "Rewrite each post body with Gemini"
+#~ msgstr "Tulis ulang isi setiap postingan dengan Gemini"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
-msgstr "Instruksi penulisan ulang<0>Pilih gaya bahasa dan detail yang harus dipertahankan Gemini.</0>"
+#~ msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
+#~ msgstr "Instruksi penulisan ulang<0>Pilih gaya bahasa dan detail yang harus dipertahankan Gemini.</0>"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Keep it concise and easy to scan. Preserve the price and contact details."
-msgstr "Buat ringkas dan mudah dibaca. Pertahankan harga dan detail kontak."
+#~ msgid "Keep it concise and easy to scan. Preserve the price and contact details."
+#~ msgstr "Buat ringkas dan mudah dibaca. Pertahankan harga dan detail kontak."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Rewrite instructions"
-msgstr "Instruksi penulisan ulang"
+#~ msgid "Rewrite instructions"
+#~ msgstr "Instruksi penulisan ulang"
 
-#: src/components/FeaturesCard.svelte
-#: src/components/PostingOptionsForm.svelte
-#: src/components/UsageGuide.svelte
-msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
-msgstr "Teks postingan dan instruksi Anda dikirim ke Google Gemini. Gambar tidak dikirim. Gemini menulis ulang dalam teks biasa."
+#~ msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
+#~ msgstr "Teks postingan dan instruksi Anda dikirim ke Google Gemini. Gambar tidak dikirim. Gemini menulis ulang dalam teks biasa."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
-msgstr "Jika penulisan ulang gagal, postingan tersebut menggunakan teks asli Anda. Postingan berikutnya akan mencoba Gemini lagi."
+#~ msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
+#~ msgstr "Jika penulisan ulang gagal, postingan tersebut menggunakan teks asli Anda. Postingan berikutnya akan mencoba Gemini lagi."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Let Gemini rewrite your post using your instructions."
-msgstr "Biarkan Gemini menulis ulang postingan sesuai instruksi Anda."
+#~ msgid "Let Gemini rewrite your post using your instructions."
+#~ msgstr "Biarkan Gemini menulis ulang postingan sesuai instruksi Anda."
 
 #: src/components/PostingOptionsForm.svelte
 msgid "Posting preferences"
 msgstr "Preferensi postingan"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved defaults help"
-msgstr "Bantuan pengaturan bawaan tersimpan"
+#~ msgid "Saved defaults help"
+#~ msgstr "Bantuan pengaturan bawaan tersimpan"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "About saved defaults"
-msgstr "Tentang pengaturan bawaan tersimpan"
+#~ msgid "About saved defaults"
+#~ msgstr "Tentang pengaturan bawaan tersimpan"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved interval"
-msgstr "Jeda tersimpan"
+#~ msgid "Saved interval"
+#~ msgstr "Jeda tersimpan"
 
-#. 0: settings.minimumInterval === settings.maximumInterval ? settings.minimumInterval \\: `${settings.minimumInterval}–${settings.maximumInterval}`
-#: src/components/SavedDefaultsInfo.svelte
-msgid "{0} seconds"
-msgstr "{0} detik"
+#~ msgid "{0} seconds"
+#~ msgstr "{0} detik"
 
-#: src/App.svelte
-#: src/components/SavedDefaultsInfo.svelte
-msgid "On"
-msgstr "Aktif"
+#~ msgid "On"
+#~ msgstr "Aktif"
 
-#: src/App.svelte
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Off"
-msgstr "Nonaktif"
+#~ msgid "Off"
+#~ msgstr "Nonaktif"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Gemini rewrite"
-msgstr "Penulisan ulang Gemini"
+#~ msgid "Gemini rewrite"
+#~ msgstr "Penulisan ulang Gemini"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "No instructions saved."
-msgstr "Belum ada instruksi tersimpan."
+#~ msgid "No instructions saved."
+#~ msgstr "Belum ada instruksi tersimpan."
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved rewrite instructions"
-msgstr "Instruksi penulisan ulang tersimpan"
+#~ msgid "Saved rewrite instructions"
+#~ msgstr "Instruksi penulisan ulang tersimpan"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved values could not be loaded. Try “Use saved defaults” again."
-msgstr "Nilai tersimpan tidak dapat dimuat. Coba “Gunakan pengaturan bawaan tersimpan” lagi."
+#~ msgid "Saved values could not be loaded. Try “Use saved defaults” again."
+#~ msgstr "Nilai tersimpan tidak dapat dimuat. Coba “Gunakan pengaturan bawaan tersimpan” lagi."
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "What does “Use saved defaults” do?"
-msgstr "Apa fungsi “Gunakan pengaturan bawaan tersimpan”?"
+#~ msgid "What does “Use saved defaults” do?"
+#~ msgstr "Apa fungsi “Gunakan pengaturan bawaan tersimpan”?"
 
-#: src/components/SavedDefaultsInfo.svelte
-#: src/components/UsageGuide.svelte
-msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
-msgstr "Mengganti jeda pengiriman, opsi penulisan ulang Gemini, dan instruksi penulisan ulang untuk sesi ini dengan nilai yang disimpan di Pengaturan."
+#~ msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
+#~ msgstr "Mengganti jeda pengiriman, opsi penulisan ulang Gemini, dan instruksi penulisan ulang untuk sesi ini dengan nilai yang disimpan di Pengaturan."
 
-#: src/components/SavedDefaultsInfo.svelte
-#: src/components/UsageGuide.svelte
-msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
-msgstr "Pengaturan awal: 60–120 detik, penulisan ulang Gemini nonaktif, dan tanpa instruksi penulisan ulang. Simpan preferensi Anda di Pengaturan untuk mengubahnya."
+#~ msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
+#~ msgstr "Pengaturan awal: 60–120 detik, penulisan ulang Gemini nonaktif, dan tanpa instruksi penulisan ulang. Simpan preferensi Anda di Pengaturan untuk mengubahnya."
 
 #: src/components/LogMessage.svelte
 msgid "Settings saved. New runs can use these defaults."
 msgstr "Pengaturan disimpan. Sesi baru dapat menggunakan pengaturan bawaan ini."
 
-#: src/components/Settings.svelte
-msgid "Key saved · leave blank to keep it"
-msgstr "Kunci tersimpan · biarkan kosong untuk mempertahankannya"
+#~ msgid "Key saved · leave blank to keep it"
+#~ msgstr "Kunci tersimpan · biarkan kosong untuk mempertahankannya"
 
-#: src/components/Settings.svelte
-msgid "Enter your Gemini API key"
-msgstr "Masukkan kunci API Gemini Anda"
+#~ msgid "Enter your Gemini API key"
+#~ msgstr "Masukkan kunci API Gemini Anda"
 
-#: src/components/Settings.svelte
-msgid "A key is saved on this device."
-msgstr "Kunci tersimpan di perangkat ini."
+#~ msgid "A key is saved on this device."
+#~ msgstr "Kunci tersimpan di perangkat ini."
 
-#: src/components/Settings.svelte
-msgid "No API key saved."
-msgstr "Belum ada kunci API tersimpan."
+#~ msgid "No API key saved."
+#~ msgstr "Belum ada kunci API tersimpan."
 
-#: src/components/Settings.svelte
-msgid "Remove saved key"
-msgstr "Hapus kunci tersimpan"
+#~ msgid "Remove saved key"
+#~ msgstr "Hapus kunci tersimpan"
 
-#: src/components/Settings.svelte
-msgid "Gemini"
-msgstr "Gemini"
+#~ msgid "Gemini"
+#~ msgstr "Gemini"
 
-#: src/components/Settings.svelte
-msgid "API key<0/>"
-msgstr "Kunci API<0/>"
+#~ msgid "API key<0/>"
+#~ msgstr "Kunci API<0/>"
 
-#. 0: keyConfigured ? 'A key is saved on this device.' \\: 'No API key saved.'
-#: src/components/Settings.svelte
-msgid "{0} The saved key is never displayed."
-msgstr "{0} Kunci tersimpan tidak pernah ditampilkan."
+#~ msgid "{0} The saved key is never displayed."
+#~ msgstr "{0} Kunci tersimpan tidak pernah ditampilkan."
 
-#: src/components/Settings.svelte
-msgid "Model<0/>"
-msgstr "Model<0/>"
+#~ msgid "Model<0/>"
+#~ msgstr "Model<0/>"
 
-#: src/components/Settings.svelte
-msgid "Posting defaults"
-msgstr "Pengaturan bawaan postingan"
+#~ msgid "Posting defaults"
+#~ msgstr "Pengaturan bawaan postingan"
 
-#: src/components/Settings.svelte
-msgid "Applied when you start a new posting run."
-msgstr "Diterapkan saat Anda memulai sesi pengiriman baru."
+#~ msgid "Applied when you start a new posting run."
+#~ msgstr "Diterapkan saat Anda memulai sesi pengiriman baru."
 
-#: src/components/Settings.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Saving…"
 msgstr "Menyimpan…"
 
-#: src/components/Settings.svelte
-msgid "Save settings"
-msgstr "Simpan pengaturan"
+#~ msgid "Save settings"
+#~ msgstr "Simpan pengaturan"
 
-#: src/components/Settings.svelte
-msgid "YOUR PREFERENCES"
-msgstr "PREFERENSI ANDA"
+#~ msgid "YOUR PREFERENCES"
+#~ msgstr "PREFERENSI ANDA"
 
-#. 0: accountName
-#: src/components/Settings.svelte
-msgid "Set up Gemini and save posting defaults for {0}."
-msgstr "Siapkan Gemini dan simpan pengaturan bawaan postingan untuk {0}."
+#~ msgid "Set up Gemini and save posting defaults for {0}."
+#~ msgstr "Siapkan Gemini dan simpan pengaturan bawaan postingan untuk {0}."
 
 #: src/components/StepProgress.svelte
 msgid "Completed"
@@ -1133,9 +1079,8 @@ msgstr "Sore"
 msgid "Could not change the language. Please try again."
 msgstr "Bahasa tidak dapat diubah. Silakan coba lagi."
 
-#: src/components/Settings.svelte
-msgid "Language"
-msgstr "Bahasa"
+#~ msgid "Language"
+#~ msgstr "Bahasa"
 
 #: src/components/PostingOptionsForm.svelte
 #: src/components/PostingOptionsForm.svelte
@@ -1210,7 +1155,7 @@ msgstr "DILEWATI"
 msgid "UNCONFIRMED"
 msgstr "BELUM TERKONFIRMASI"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "e.g. Business"
 msgstr "mis. Bisnis"
 
@@ -1282,8 +1227,11 @@ msgstr "Profil bawaan"
 msgid "Color themes"
 msgstr "Tema warna"
 
+#: src/components/AddAccountDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/RenameProfileDialog.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UpdateButton.svelte
 msgid "Close"
@@ -1503,7 +1451,6 @@ msgid "Gemini rewrite completed."
 msgstr "Penulisan ulang Gemini selesai."
 
 #: src/components/LogMessage.svelte
-#: src/components/UsageGuide.svelte
 msgid "Gemini rewrite failed. Using the original text for this post; Gemini will be tried again for the next post."
 msgstr "Penulisan ulang Gemini gagal. Menggunakan teks asli untuk posting ini; Gemini akan dicoba lagi untuk posting berikutnya."
 
@@ -1876,19 +1823,21 @@ msgstr "Detail debug"
 #~ msgid ", "
 #~ msgstr ""
 
+#: src/components/FeaturesCard.svelte
 #: src/components/ThemePicker.svelte
+#: src/components/UsageGuide.svelte
 msgid "Themes"
 msgstr "Tema"
 
 #: src/App.svelte
 #: src/components/UsageGuide.svelte
-msgid "Preferences & post"
-msgstr "Preferensi & kirim"
+msgid "Post or schedule"
+msgstr "Posting atau jadwalkan"
 
 #: src/App.svelte
 #: src/App.svelte
-msgid "Set preferences, then post now or schedule"
-msgstr "Atur preferensi, lalu kirim sekarang atau jadwalkan"
+msgid "Choose the time between posts, then post now or schedule for later."
+msgstr "Pilih jeda antar postingan, lalu posting sekarang atau jadwalkan untuk nanti."
 
 #~ msgid "Postika"
 #~ msgstr "Postika"
@@ -1923,9 +1872,8 @@ msgstr "Grup yang dimuat tetap tersedia di antara sesi aplikasi."
 msgid "Minimum and maximum delays between posts."
 msgstr "Jeda minimum dan maksimum antar postingan."
 
-#: src/components/FeaturesCard.svelte
-msgid "Custom instructions and a configurable Gemini model."
-msgstr "Instruksi khusus dan model Gemini yang dapat dikonfigurasi."
+#~ msgid "Custom instructions and a configurable Gemini model."
+#~ msgstr "Instruksi khusus dan model Gemini yang dapat dikonfigurasi."
 
 #. 0: languages.length; 1: themeOptions.length
 #: src/components/FeaturesCard.svelte
@@ -1978,9 +1926,8 @@ msgstr "Tulis pesan dan tambahkan setidaknya satu gambar; keduanya wajib. Gunaka
 msgid "Select Load groups and finish Facebook login or verification in Chrome. Search the loaded list, select the groups you want, then choose Next."
 msgstr "Pilih Muat grup dan selesaikan login Facebook atau verifikasi di Chrome. Cari di daftar yang dimuat, pilih grup tujuan, lalu Berikutnya."
 
-#: src/components/UsageGuide.svelte
-msgid "In Settings, enter this account’s Gemini API key and model, then Save settings. Enable rewriting for your run and describe the tone and details to preserve."
-msgstr "Di Pengaturan, masukkan kunci API Gemini dan model untuk akun ini, lalu Simpan pengaturan. Aktifkan penulisan ulang dan jelaskan nada serta detail yang harus dipertahankan."
+#~ msgid "In Settings, enter this account’s Gemini API key and model, then Save settings. Enable rewriting for your run and describe the tone and details to preserve."
+#~ msgstr "Di Pengaturan, masukkan kunci API Gemini dan model untuk akun ini, lalu Simpan pengaturan. Aktifkan penulisan ulang dan jelaskan nada serta detail yang harus dipertahankan."
 
 #: src/components/UsageGuide.svelte
 msgid "Review the account, message, image order, selected groups, and posting intervals. Choose Post now and complete any Facebook login or verification prompts in Chrome."
@@ -2036,13 +1983,11 @@ msgstr "Masukkan URL halaman Facebook, misalnya https://web.facebook.com/swiftli
 #~ msgid "Fetch Facebook posts"
 #~ msgstr ""
 
-#: src/components/FacebookPageDialog.svelte
-msgid "Decrease number of posts"
-msgstr "Kurangi jumlah postingan"
+#~ msgid "Decrease number of posts"
+#~ msgstr "Kurangi jumlah postingan"
 
-#: src/components/FacebookPageDialog.svelte
-msgid "Increase number of posts"
-msgstr "Tambah jumlah postingan"
+#~ msgid "Increase number of posts"
+#~ msgstr "Tambah jumlah postingan"
 
 #: src/components/FacebookPageDialog.svelte
 msgid "Facebook page URL"
@@ -2136,6 +2081,8 @@ msgstr "Edit"
 msgid "Delete post {0}"
 msgstr "Hapus postingan {0}"
 
+#: src/components/AccountDropdown.svelte
+#: src/components/AccountDropdown.svelte
 #: src/components/FetchedPostCard.svelte
 msgid "Delete"
 msgstr "Hapus"
@@ -2150,6 +2097,7 @@ msgid "Remove image {0} from post {1}"
 msgstr "Hapus gambar {0} dari postingan {1}"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Save changes"
 msgstr "Simpan perubahan"
 
@@ -2391,3 +2339,45 @@ msgstr "Periksa pembaruan"
 #: src/components/UpdateButton.svelte
 msgid "Installing update…"
 msgstr "Memasang pembaruan…"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "posts"
+msgstr "postingan"
+
+#: src/components/LogMessage.svelte
+msgid "Account names cannot be URLs"
+msgstr "Nama akun tidak boleh berupa URL"
+
+#: src/components/LogMessage.svelte
+msgid "First post confirmed. Remaining groups stopped because the formatted text could not be verified."
+msgstr "Postingan pertama dikonfirmasi. Grup lainnya dihentikan karena teks berformat tidak dapat diverifikasi."
+
+#: src/components/AccountDropdown.svelte
+#: src/components/RenameProfileDialog.svelte
+msgid "Rename profile"
+msgstr "Ubah nama profil"
+
+#: src/Workspace.svelte
+#: src/components/PostingLogs.svelte
+msgid "Add an account to get started."
+msgstr "Tambahkan akun untuk memulai."
+
+#: src/components/AccountDropdown.svelte
+#: src/components/DeleteProfileDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
+msgid "Delete profile"
+msgstr "Hapus profil"
+
+#~ msgid "<0/> Add account"
+#~ msgstr ""
+
+#~ msgid "Delete profile?"
+#~ msgstr ""
+
+#: src/components/DeleteProfileDialog.svelte
+msgid "This permanently deletes this profile’s Facebook login, groups, drafts, images, settings, and logs. Any running or scheduled queue will stop. Posts already on Facebook are kept."
+msgstr "Ini menghapus login Facebook, grup, draf, gambar, pengaturan, dan log profil ini secara permanen. Antrean yang berjalan atau terjadwal akan berhenti. Postingan yang sudah ada di Facebook tetap disimpan."
+
+#: src/components/DeleteProfileDialog.svelte
+msgid "Deleting…"
+msgstr "Menghapus…"

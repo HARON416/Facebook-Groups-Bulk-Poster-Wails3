@@ -8,10 +8,8 @@ msgstr ""
 "Plural-Forms: nplurals=3\n"
 "X-Plurals-Order: one, few, other\n"
 
-#. 0: appliedInterval; 1: rewriteState
-#: src/App.svelte
-msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
-msgstr "Valorile implicite salvate au fost aplicate: {0} secunde între postări · Rescriere Gemini {1}."
+#~ msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
+#~ msgstr "Valorile implicite salvate au fost aplicate: {0} secunde între postări · Rescriere Gemini {1}."
 
 #: src/components/LogMessage.svelte
 msgid "Could not restore saved groups. Load groups to refresh the list."
@@ -152,23 +150,17 @@ msgstr "Deschide grupurile tale de Facebook pentru a începe."
 msgid "Posting settings"
 msgstr "Setări de postare"
 
-#: src/App.svelte
-msgid "Add a Gemini API key in Settings to enable rewriting."
-msgstr "Adaugă o cheie API Gemini în Setări pentru a activa rescrierea."
+#~ msgid "Add a Gemini API key in Settings to enable rewriting."
+#~ msgstr "Adaugă o cheie API Gemini în Setări pentru a activa rescrierea."
 
-#: src/App.svelte
-msgid "Applying defaults…"
-msgstr "Se aplică implicitul..."
+#~ msgid "Applying defaults…"
+#~ msgstr "Se aplică implicitul..."
 
-#: src/App.svelte
-#: src/components/FeaturesCard.svelte
-#: src/components/UsageGuide.svelte
-msgid "Use saved defaults"
-msgstr "Folosește implicitul salvat"
+#~ msgid "Use saved defaults"
+#~ msgstr "Folosește implicitul salvat"
 
-#: src/App.svelte
-msgid "Open settings"
-msgstr "Deschide setările"
+#~ msgid "Open settings"
+#~ msgstr "Deschide setările"
 
 #~ msgid "Posting as <0/>"
 #~ msgstr "Postează ca <0/>"
@@ -200,9 +192,11 @@ msgid "Time zone: {0}. Keep Postika open and your computer awake. Facebook may a
 msgstr "Fus orar: {0}. Păstrează Postika deschis și calculatorul activ. Facebook poate să îți ceară să te conectezi când începe postarea."
 
 #: src/App.svelte
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FetchedPostCard.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Cancel"
 msgstr "Anulează"
 
@@ -253,6 +247,8 @@ msgid "Application menu"
 msgstr "Meniu aplicație"
 
 #: src/Workspace.svelte
+#: src/components/AccountDropdown.svelte
+#: src/components/AddAccountDialog.svelte
 #: src/components/UsageGuide.svelte
 msgid "Add account"
 msgstr "Adaugă un cont"
@@ -261,31 +257,28 @@ msgstr "Adaugă un cont"
 #: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogView.svelte
+#: src/components/PostingLogs.svelte
 #: src/components/UsageGuide.svelte
 msgid "Posting logs"
 msgstr "Jurnal de publicare"
 
-#: src/Workspace.svelte
-#: src/components/FeaturesCard.svelte
-#: src/components/Settings.svelte
-#: src/components/Settings.svelte
-#: src/components/UsageGuide.svelte
-msgid "Settings"
-msgstr "Setări"
+#~ msgid "Settings"
+#~ msgstr "Setări"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "Creating…"
 msgstr "Se creează…"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "Create & sign in"
 msgstr "Creează și conectează-te"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Account name"
 msgstr "Numele contului"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 #: src/components/UsageGuide.svelte
 msgid "Sign in to Facebook in the new account’s browser window."
 msgstr "Conectează-te la Facebook în fereastra browser-ului noului cont."
@@ -794,172 +787,125 @@ msgstr "Alege cât timp să aștepți înainte de a posta în următorul grup."
 msgid "At least 60 seconds. Use equal values for a fixed interval."
 msgstr "Cel puțin 60 de secunde. Folosește valori egale pentru un interval fix."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "OPTIONAL · AI REWRITE"
-msgstr "OPȚIONAL · RESCRIERE AI"
+#~ msgid "OPTIONAL · AI REWRITE"
+#~ msgstr "OPȚIONAL · RESCRIERE AI"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "A fresh version for each group"
-msgstr "O versiune nouă pentru fiecare grup"
+#~ msgid "A fresh version for each group"
+#~ msgstr "O versiune nouă pentru fiecare grup"
 
-#: src/components/FeaturesCard.svelte
-#: src/components/PostingOptionsForm.svelte
-#: src/components/UsageGuide.svelte
-msgid "Rewrite each post body with Gemini"
-msgstr "Rescrie corpul fiecărei postări cu Gemini"
+#~ msgid "Rewrite each post body with Gemini"
+#~ msgstr "Rescrie corpul fiecărei postări cu Gemini"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
-msgstr "Instrucțiuni de rescriere<0>Alege tonul și detaliile pe care Gemini ar trebui să le păstreze.</0>"
+#~ msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
+#~ msgstr "Instrucțiuni de rescriere<0>Alege tonul și detaliile pe care Gemini ar trebui să le păstreze.</0>"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Keep it concise and easy to scan. Preserve the price and contact details."
-msgstr "Păstrează concis și ușor de scanat. Păstrează prețul și detaliile de contact."
+#~ msgid "Keep it concise and easy to scan. Preserve the price and contact details."
+#~ msgstr "Păstrează concis și ușor de scanat. Păstrează prețul și detaliile de contact."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Rewrite instructions"
-msgstr "Instrucțiuni de rescriere"
+#~ msgid "Rewrite instructions"
+#~ msgstr "Instrucțiuni de rescriere"
 
-#: src/components/FeaturesCard.svelte
-#: src/components/PostingOptionsForm.svelte
-#: src/components/UsageGuide.svelte
-msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
-msgstr "Textul postării și instrucțiunile tale sunt trimise la Google Gemini. Imaginile nu sunt trimise. Rescrierile Gemini folosesc text simplu."
+#~ msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
+#~ msgstr "Textul postării și instrucțiunile tale sunt trimise la Google Gemini. Imaginile nu sunt trimise. Rescrierile Gemini folosesc text simplu."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
-msgstr "Dacă rescrierea eșuează, postarea utilizează textul tău original. Postarea următoare încearcă din nou Gemini."
+#~ msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
+#~ msgstr "Dacă rescrierea eșuează, postarea utilizează textul tău original. Postarea următoare încearcă din nou Gemini."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Let Gemini rewrite your post using your instructions."
-msgstr "Lasă Gemini să rescrie postarea ta folosind instrucțiunile tale."
+#~ msgid "Let Gemini rewrite your post using your instructions."
+#~ msgstr "Lasă Gemini să rescrie postarea ta folosind instrucțiunile tale."
 
 #: src/components/PostingOptionsForm.svelte
 msgid "Posting preferences"
 msgstr "Preferințe de postare"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved defaults help"
-msgstr "Implicit salvate ajută"
+#~ msgid "Saved defaults help"
+#~ msgstr "Implicit salvate ajută"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "About saved defaults"
-msgstr "Despre implicit salvate"
+#~ msgid "About saved defaults"
+#~ msgstr "Despre implicit salvate"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved interval"
-msgstr "Interval salvat"
+#~ msgid "Saved interval"
+#~ msgstr "Interval salvat"
 
-#. 0: settings.minimumInterval === settings.maximumInterval ? settings.minimumInterval \\: `${settings.minimumInterval}–${settings.maximumInterval}`
-#: src/components/SavedDefaultsInfo.svelte
-msgid "{0} seconds"
-msgstr "{0} secunde"
+#~ msgid "{0} seconds"
+#~ msgstr "{0} secunde"
 
-#: src/App.svelte
-#: src/components/SavedDefaultsInfo.svelte
-msgid "On"
-msgstr "Activat"
+#~ msgid "On"
+#~ msgstr "Activat"
 
-#: src/App.svelte
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Off"
-msgstr "Dezactivat"
+#~ msgid "Off"
+#~ msgstr "Dezactivat"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Gemini rewrite"
-msgstr "Rescriere Gemini"
+#~ msgid "Gemini rewrite"
+#~ msgstr "Rescriere Gemini"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "No instructions saved."
-msgstr "Nicio instrucțiune salvată."
+#~ msgid "No instructions saved."
+#~ msgstr "Nicio instrucțiune salvată."
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved rewrite instructions"
-msgstr "Instrucțiuni de rescriere salvate"
+#~ msgid "Saved rewrite instructions"
+#~ msgstr "Instrucțiuni de rescriere salvate"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved values could not be loaded. Try “Use saved defaults” again."
-msgstr "Valorile salvate nu au putut fi încărcate. Încearcă din nou “Folosește implicit salvate”."
+#~ msgid "Saved values could not be loaded. Try “Use saved defaults” again."
+#~ msgstr "Valorile salvate nu au putut fi încărcate. Încearcă din nou “Folosește implicit salvate”."
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "What does “Use saved defaults” do?"
-msgstr "Ce face “Folosește implicit salvate”?"
+#~ msgid "What does “Use saved defaults” do?"
+#~ msgstr "Ce face “Folosește implicit salvate”?"
 
-#: src/components/SavedDefaultsInfo.svelte
-#: src/components/UsageGuide.svelte
-msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
-msgstr "Înlocuiește intervalul de postare al acestei sesiuni, opțiunea de rescriere Gemini și instrucțiunile de rescriere cu valorile salvate în Setări."
+#~ msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
+#~ msgstr "Înlocuiește intervalul de postare al acestei sesiuni, opțiunea de rescriere Gemini și instrucțiunile de rescriere cu valorile salvate în Setări."
 
-#: src/components/SavedDefaultsInfo.svelte
-#: src/components/UsageGuide.svelte
-msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
-msgstr "Valorile implicite inițiale: 60–120 secunde, rescriere Gemini dezactivată și fără instrucțiuni de rescriere. Salvați propriile preferințe în Setări pentru a le modifica."
+#~ msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
+#~ msgstr "Valorile implicite inițiale: 60–120 secunde, rescriere Gemini dezactivată și fără instrucțiuni de rescriere. Salvați propriile preferințe în Setări pentru a le modifica."
 
 #: src/components/LogMessage.svelte
 msgid "Settings saved. New runs can use these defaults."
 msgstr "Setările au fost salvate. Noile sesiuni pot folosi aceste valori implicite."
 
-#: src/components/Settings.svelte
-msgid "Key saved · leave blank to keep it"
-msgstr "Cheie salvată · lăsați gol pentru a o păstra"
+#~ msgid "Key saved · leave blank to keep it"
+#~ msgstr "Cheie salvată · lăsați gol pentru a o păstra"
 
-#: src/components/Settings.svelte
-msgid "Enter your Gemini API key"
-msgstr "Introduceți cheia API Gemini"
+#~ msgid "Enter your Gemini API key"
+#~ msgstr "Introduceți cheia API Gemini"
 
-#: src/components/Settings.svelte
-msgid "A key is saved on this device."
-msgstr "O cheie este salvată pe acest dispozitiv."
+#~ msgid "A key is saved on this device."
+#~ msgstr "O cheie este salvată pe acest dispozitiv."
 
-#: src/components/Settings.svelte
-msgid "No API key saved."
-msgstr "Nicio cheie API salvată."
+#~ msgid "No API key saved."
+#~ msgstr "Nicio cheie API salvată."
 
-#: src/components/Settings.svelte
-msgid "Remove saved key"
-msgstr "Eliminați cheia salvată"
+#~ msgid "Remove saved key"
+#~ msgstr "Eliminați cheia salvată"
 
-#: src/components/Settings.svelte
-msgid "Gemini"
-msgstr "Gemini"
+#~ msgid "Gemini"
+#~ msgstr "Gemini"
 
-#: src/components/Settings.svelte
-msgid "API key<0/>"
-msgstr "Cheie API<0/>"
+#~ msgid "API key<0/>"
+#~ msgstr "Cheie API<0/>"
 
-#. 0: keyConfigured ? 'A key is saved on this device.' \\: 'No API key saved.'
-#: src/components/Settings.svelte
-msgid "{0} The saved key is never displayed."
-msgstr "{0} Cheia salvată nu este niciodată afișată."
+#~ msgid "{0} The saved key is never displayed."
+#~ msgstr "{0} Cheia salvată nu este niciodată afișată."
 
-#: src/components/Settings.svelte
-msgid "Model<0/>"
-msgstr "Model<0/>"
+#~ msgid "Model<0/>"
+#~ msgstr "Model<0/>"
 
-#: src/components/Settings.svelte
-msgid "Posting defaults"
-msgstr "Setări implicite de publicare"
+#~ msgid "Posting defaults"
+#~ msgstr "Setări implicite de publicare"
 
-#: src/components/Settings.svelte
-msgid "Applied when you start a new posting run."
-msgstr "Se aplică atunci când începeți o nouă sesiune de postare."
+#~ msgid "Applied when you start a new posting run."
+#~ msgstr "Se aplică atunci când începeți o nouă sesiune de postare."
 
-#: src/components/Settings.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Saving…"
 msgstr "Se salvează…"
 
-#: src/components/Settings.svelte
-msgid "Save settings"
-msgstr "Salvează setările"
+#~ msgid "Save settings"
+#~ msgstr "Salvează setările"
 
-#: src/components/Settings.svelte
-msgid "YOUR PREFERENCES"
-msgstr "PREFERINȚELE DUMNEAVOASTRĂ"
+#~ msgid "YOUR PREFERENCES"
+#~ msgstr "PREFERINȚELE DUMNEAVOASTRĂ"
 
-#. 0: accountName
-#: src/components/Settings.svelte
-msgid "Set up Gemini and save posting defaults for {0}."
-msgstr "Configurați Gemini și salvați valorile implicite de postare pentru {0}."
+#~ msgid "Set up Gemini and save posting defaults for {0}."
+#~ msgstr "Configurați Gemini și salvați valorile implicite de postare pentru {0}."
 
 #: src/components/StepProgress.svelte
 msgid "Completed"
@@ -1133,9 +1079,8 @@ msgstr "Seară"
 msgid "Could not change the language. Please try again."
 msgstr "Nu s-a putut schimba limba. Vă rugăm să încercați din nou."
 
-#: src/components/Settings.svelte
-msgid "Language"
-msgstr "Limbă"
+#~ msgid "Language"
+#~ msgstr "Limbă"
 
 #: src/components/PostingOptionsForm.svelte
 #: src/components/PostingOptionsForm.svelte
@@ -1210,7 +1155,7 @@ msgstr "OMIS"
 msgid "UNCONFIRMED"
 msgstr "NECONFIRMAT"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "e.g. Business"
 msgstr "ex. Afaceri"
 
@@ -1282,8 +1227,11 @@ msgstr "Profil implicit"
 msgid "Color themes"
 msgstr "Teme de culori"
 
+#: src/components/AddAccountDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/RenameProfileDialog.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UpdateButton.svelte
 msgid "Close"
@@ -1503,7 +1451,6 @@ msgid "Gemini rewrite completed."
 msgstr "Rescrierea Gemini finalizată."
 
 #: src/components/LogMessage.svelte
-#: src/components/UsageGuide.svelte
 msgid "Gemini rewrite failed. Using the original text for this post; Gemini will be tried again for the next post."
 msgstr "Rescrierea Gemini a eșuat. Se folosește textul original pentru această postare; Gemini va fi încercat din nou pentru următoarea postare."
 
@@ -1876,19 +1823,21 @@ msgstr "Detalii depanare"
 #~ msgid ", "
 #~ msgstr ""
 
+#: src/components/FeaturesCard.svelte
 #: src/components/ThemePicker.svelte
+#: src/components/UsageGuide.svelte
 msgid "Themes"
 msgstr "Teme"
 
 #: src/App.svelte
 #: src/components/UsageGuide.svelte
-msgid "Preferences & post"
-msgstr "Preferințe și publicare"
+msgid "Post or schedule"
+msgstr "Publică sau programează"
 
 #: src/App.svelte
 #: src/App.svelte
-msgid "Set preferences, then post now or schedule"
-msgstr "Setați preferințele, apoi publicați acum sau programați publicarea"
+msgid "Choose the time between posts, then post now or schedule for later."
+msgstr "Alege intervalul dintre postări, apoi publică acum sau programează pentru mai târziu."
 
 #~ msgid "Postika"
 #~ msgstr "Postika"
@@ -1923,9 +1872,8 @@ msgstr "Grupurile încărcate rămân disponibile între sesiunile aplicației."
 msgid "Minimum and maximum delays between posts."
 msgstr "Intervale minime și maxime între postări."
 
-#: src/components/FeaturesCard.svelte
-msgid "Custom instructions and a configurable Gemini model."
-msgstr "Instrucțiuni personalizate și un model Gemini configurabil."
+#~ msgid "Custom instructions and a configurable Gemini model."
+#~ msgstr "Instrucțiuni personalizate și un model Gemini configurabil."
 
 #. 0: languages.length; 1: themeOptions.length
 #: src/components/FeaturesCard.svelte
@@ -1978,9 +1926,8 @@ msgstr "Scrieți mesajul și adăugați cel puțin o imagine; ambele sunt obliga
 msgid "Select Load groups and finish Facebook login or verification in Chrome. Search the loaded list, select the groups you want, then choose Next."
 msgstr "Selectați Încarcă grupurile și finalizați autentificarea sau verificarea Facebook în Chrome. Căutați în listă, selectați grupurile și alegeți Următorul."
 
-#: src/components/UsageGuide.svelte
-msgid "In Settings, enter this account’s Gemini API key and model, then Save settings. Enable rewriting for your run and describe the tone and details to preserve."
-msgstr "În Setări, introduceți cheia API Gemini și modelul acestui cont, apoi salvați. Activați rescrierea și descrieți tonul și detaliile de păstrat."
+#~ msgid "In Settings, enter this account’s Gemini API key and model, then Save settings. Enable rewriting for your run and describe the tone and details to preserve."
+#~ msgstr "În Setări, introduceți cheia API Gemini și modelul acestui cont, apoi salvați. Activați rescrierea și descrieți tonul și detaliile de păstrat."
 
 #: src/components/UsageGuide.svelte
 msgid "Review the account, message, image order, selected groups, and posting intervals. Choose Post now and complete any Facebook login or verification prompts in Chrome."
@@ -2036,13 +1983,11 @@ msgstr "Introdu adresa URL a unei pagini Facebook, de exemplu https://web.facebo
 #~ msgid "Fetch Facebook posts"
 #~ msgstr ""
 
-#: src/components/FacebookPageDialog.svelte
-msgid "Decrease number of posts"
-msgstr "Micșorează numărul de postări"
+#~ msgid "Decrease number of posts"
+#~ msgstr "Micșorează numărul de postări"
 
-#: src/components/FacebookPageDialog.svelte
-msgid "Increase number of posts"
-msgstr "Mărește numărul de postări"
+#~ msgid "Increase number of posts"
+#~ msgstr "Mărește numărul de postări"
 
 #: src/components/FacebookPageDialog.svelte
 msgid "Facebook page URL"
@@ -2136,6 +2081,8 @@ msgstr "Editează"
 msgid "Delete post {0}"
 msgstr "Șterge postarea {0}"
 
+#: src/components/AccountDropdown.svelte
+#: src/components/AccountDropdown.svelte
 #: src/components/FetchedPostCard.svelte
 msgid "Delete"
 msgstr "Șterge"
@@ -2150,6 +2097,7 @@ msgid "Remove image {0} from post {1}"
 msgstr "Elimină imaginea {0} din postarea {1}"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Save changes"
 msgstr "Salvează modificările"
 
@@ -2391,3 +2339,45 @@ msgstr "Caută actualizări"
 #: src/components/UpdateButton.svelte
 msgid "Installing update…"
 msgstr "Se instalează actualizarea…"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "posts"
+msgstr "postări"
+
+#: src/components/LogMessage.svelte
+msgid "Account names cannot be URLs"
+msgstr "Numele conturilor nu pot fi adrese URL"
+
+#: src/components/LogMessage.svelte
+msgid "First post confirmed. Remaining groups stopped because the formatted text could not be verified."
+msgstr "Prima postare a fost confirmată. Publicarea în grupurile rămase a fost oprită deoarece textul formatat nu a putut fi verificat."
+
+#: src/components/AccountDropdown.svelte
+#: src/components/RenameProfileDialog.svelte
+msgid "Rename profile"
+msgstr "Redenumește profilul"
+
+#: src/Workspace.svelte
+#: src/components/PostingLogs.svelte
+msgid "Add an account to get started."
+msgstr "Adaugă un cont pentru a începe."
+
+#: src/components/AccountDropdown.svelte
+#: src/components/DeleteProfileDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
+msgid "Delete profile"
+msgstr "Șterge profilul"
+
+#~ msgid "<0/> Add account"
+#~ msgstr ""
+
+#~ msgid "Delete profile?"
+#~ msgstr ""
+
+#: src/components/DeleteProfileDialog.svelte
+msgid "This permanently deletes this profile’s Facebook login, groups, drafts, images, settings, and logs. Any running or scheduled queue will stop. Posts already on Facebook are kept."
+msgstr "Aceasta șterge definitiv autentificarea Facebook, grupurile, ciornele, imaginile, setările și jurnalele acestui profil. Cozile active sau programate vor fi oprite. Postările deja pe Facebook sunt păstrate."
+
+#: src/components/DeleteProfileDialog.svelte
+msgid "Deleting…"
+msgstr "Se șterge…"

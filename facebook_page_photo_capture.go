@@ -21,6 +21,9 @@ func captureFacebookPhotoQuery(ctx context.Context, page *rod.Page, timeline tim
 	}
 	var target string
 	for attempt := 0; attempt < 10; attempt++ {
+		if facebookLoginBlocked(page) {
+			return nil, errFacebookSessionExpired
+		}
 		result, err := page.Eval(`() => {
   const main = document.querySelector('[role="main"]') || document;
   for (const a of main.querySelectorAll('a[href]')) {
@@ -77,10 +80,19 @@ func captureFacebookPhotoQuery(ctx context.Context, page *rod.Page, timeline tim
 	// Reload once with the listener already armed to request fresh viewer data.
 	reloadTimer := time.NewTimer(4 * time.Second)
 	defer reloadTimer.Stop()
+	loginTicker := time.NewTicker(500 * time.Millisecond)
+	defer loginTicker.Stop()
 	reloaded := false
 	for {
 		select {
+		case <-loginTicker.C:
+			if facebookLoginBlocked(page.Context(ctx)) {
+				return nil, errFacebookSessionExpired
+			}
 		case <-reloadTimer.C:
+			if facebookLoginBlocked(page.Context(ctx)) {
+				return nil, errFacebookSessionExpired
+			}
 			select {
 			case result := <-capture.results:
 				if result.err != nil {
@@ -134,8 +146,14 @@ func captureFacebookPhotoQuery(ctx context.Context, page *rod.Page, timeline tim
 			if ctx.Err() != nil {
 				return nil, ctx.Err()
 			}
+			if facebookLoginBlocked(page.Context(ctx)) {
+				return nil, errFacebookSessionExpired
+			}
 			return nil, errors.New("No fresh photo-viewer query appeared after reloading the photo page. Check Chrome and fetch again")
 		case result := <-capture.results:
+			if facebookLoginBlocked(page.Context(ctx)) {
+				return nil, errFacebookSessionExpired
+			}
 			if result.err != nil {
 				return nil, result.err
 			}

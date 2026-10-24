@@ -326,6 +326,9 @@ func replayFacebookPhoto(ctx context.Context, client *http.Client, jar http.Cook
 			request.AddCookie(cookie)
 		}
 		if captured.User == "" || cookieUser(request.Header.Get("Cookie")) != captured.User {
+			if user := cookieUser(request.Header.Get("Cookie")); user == "" || user == "0" {
+				return facebookPhotoImage{}, errFacebookSessionExpired
+			}
 			return facebookPhotoImage{}, errors.New("The Facebook session changed while fetching photos. Fetch again")
 		}
 		response, err := client.Do(request)
@@ -336,6 +339,9 @@ func replayFacebookPhoto(ctx context.Context, client *http.Client, jar http.Cook
 		jar.SetCookies(endpoint, response.Cookies())
 		if cookieUser(cookieHeader(jar.Cookies(endpoint)).Get("Cookie")) != captured.User {
 			response.Body.Close()
+			if user := cookieUser(cookieHeader(jar.Cookies(endpoint)).Get("Cookie")); user == "" || user == "0" {
+				return facebookPhotoImage{}, errFacebookSessionExpired
+			}
 			return facebookPhotoImage{}, errors.New("The Facebook session changed while fetching photos. Fetch again")
 		}
 		if response.StatusCode != http.StatusOK {

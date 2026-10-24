@@ -8,10 +8,8 @@ msgstr ""
 "Plural-Forms: nplurals=1\n"
 "X-Plurals-Order: other\n"
 
-#. 0: appliedInterval; 1: rewriteState
-#: src/App.svelte
-msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
-msgstr "Đã áp dụng mặc định đã lưu: {0} giây giữa các bài đăng · Gemini viết lại {1}."
+#~ msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
+#~ msgstr "Đã áp dụng mặc định đã lưu: {0} giây giữa các bài đăng · Gemini viết lại {1}."
 
 #: src/components/LogMessage.svelte
 msgid "Could not restore saved groups. Load groups to refresh the list."
@@ -152,23 +150,17 @@ msgstr "Mở các nhóm Facebook của bạn để bắt đầu."
 msgid "Posting settings"
 msgstr "Cài đặt đăng bài"
 
-#: src/App.svelte
-msgid "Add a Gemini API key in Settings to enable rewriting."
-msgstr "Thêm khóa API Gemini trong Cài đặt để bật tính năng viết lại."
+#~ msgid "Add a Gemini API key in Settings to enable rewriting."
+#~ msgstr "Thêm khóa API Gemini trong Cài đặt để bật tính năng viết lại."
 
-#: src/App.svelte
-msgid "Applying defaults…"
-msgstr "Áp dụng mặc định…"
+#~ msgid "Applying defaults…"
+#~ msgstr "Áp dụng mặc định…"
 
-#: src/App.svelte
-#: src/components/FeaturesCard.svelte
-#: src/components/UsageGuide.svelte
-msgid "Use saved defaults"
-msgstr "Sử dụng mặc định đã lưu"
+#~ msgid "Use saved defaults"
+#~ msgstr "Sử dụng mặc định đã lưu"
 
-#: src/App.svelte
-msgid "Open settings"
-msgstr "Mở cài đặt"
+#~ msgid "Open settings"
+#~ msgstr "Mở cài đặt"
 
 #~ msgid "Posting as <0/>"
 #~ msgstr "Đăng bài dưới tên <0/>"
@@ -200,9 +192,11 @@ msgid "Time zone: {0}. Keep Postika open and your computer awake. Facebook may a
 msgstr "Múi giờ: {0}. Giữ Postika mở và máy tính của bạn hoạt động. Facebook có thể yêu cầu bạn đăng nhập khi việc đăng bài bắt đầu."
 
 #: src/App.svelte
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FetchedPostCard.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Cancel"
 msgstr "Hủy"
 
@@ -253,6 +247,8 @@ msgid "Application menu"
 msgstr "Menu ứng dụng"
 
 #: src/Workspace.svelte
+#: src/components/AccountDropdown.svelte
+#: src/components/AddAccountDialog.svelte
 #: src/components/UsageGuide.svelte
 msgid "Add account"
 msgstr "Thêm tài khoản"
@@ -261,31 +257,28 @@ msgstr "Thêm tài khoản"
 #: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogView.svelte
+#: src/components/PostingLogs.svelte
 #: src/components/UsageGuide.svelte
 msgid "Posting logs"
 msgstr "Nhật ký đăng bài"
 
-#: src/Workspace.svelte
-#: src/components/FeaturesCard.svelte
-#: src/components/Settings.svelte
-#: src/components/Settings.svelte
-#: src/components/UsageGuide.svelte
-msgid "Settings"
-msgstr "Cài đặt"
+#~ msgid "Settings"
+#~ msgstr "Cài đặt"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "Creating…"
 msgstr "Đang tạo…"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "Create & sign in"
 msgstr "Tạo và đăng nhập"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Account name"
 msgstr "Tên tài khoản"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 #: src/components/UsageGuide.svelte
 msgid "Sign in to Facebook in the new account’s browser window."
 msgstr "Đăng nhập vào Facebook trong cửa sổ trình duyệt của tài khoản mới."
@@ -794,172 +787,125 @@ msgstr "Chọn thời gian chờ trước khi đăng bài lên nhóm tiếp theo
 msgid "At least 60 seconds. Use equal values for a fixed interval."
 msgstr "Ít nhất 60 giây. Sử dụng cùng giá trị để có khoảng thời gian cố định."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "OPTIONAL · AI REWRITE"
-msgstr "TÙY CHỌN · AI VIẾT LẠI"
+#~ msgid "OPTIONAL · AI REWRITE"
+#~ msgstr "TÙY CHỌN · AI VIẾT LẠI"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "A fresh version for each group"
-msgstr "Một phiên bản mới cho mỗi nhóm"
+#~ msgid "A fresh version for each group"
+#~ msgstr "Một phiên bản mới cho mỗi nhóm"
 
-#: src/components/FeaturesCard.svelte
-#: src/components/PostingOptionsForm.svelte
-#: src/components/UsageGuide.svelte
-msgid "Rewrite each post body with Gemini"
-msgstr "Viết lại mỗi nội dung bài đăng bằng Gemini"
+#~ msgid "Rewrite each post body with Gemini"
+#~ msgstr "Viết lại mỗi nội dung bài đăng bằng Gemini"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
-msgstr "Hướng dẫn viết lại<0>Chọn giọng điệu và chi tiết mà Gemini nên giữ lại.</0>"
+#~ msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
+#~ msgstr "Hướng dẫn viết lại<0>Chọn giọng điệu và chi tiết mà Gemini nên giữ lại.</0>"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Keep it concise and easy to scan. Preserve the price and contact details."
-msgstr "Giữ ngắn gọn và dễ đọc. Giữ nguyên giá và thông tin liên hệ."
+#~ msgid "Keep it concise and easy to scan. Preserve the price and contact details."
+#~ msgstr "Giữ ngắn gọn và dễ đọc. Giữ nguyên giá và thông tin liên hệ."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Rewrite instructions"
-msgstr "Hướng dẫn viết lại"
+#~ msgid "Rewrite instructions"
+#~ msgstr "Hướng dẫn viết lại"
 
-#: src/components/FeaturesCard.svelte
-#: src/components/PostingOptionsForm.svelte
-#: src/components/UsageGuide.svelte
-msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
-msgstr "Văn bản bài đăng và hướng dẫn của bạn được gửi đến Google Gemini. Hình ảnh sẽ không được gửi. Việc viết lại của Gemini sử dụng văn bản thuần."
+#~ msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
+#~ msgstr "Văn bản bài đăng và hướng dẫn của bạn được gửi đến Google Gemini. Hình ảnh sẽ không được gửi. Việc viết lại của Gemini sử dụng văn bản thuần."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
-msgstr "Nếu việc viết lại thất bại, bài đăng đó sẽ sử dụng văn bản gốc của bạn. Bài đăng tiếp theo sẽ thử lại với Gemini."
+#~ msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
+#~ msgstr "Nếu việc viết lại thất bại, bài đăng đó sẽ sử dụng văn bản gốc của bạn. Bài đăng tiếp theo sẽ thử lại với Gemini."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Let Gemini rewrite your post using your instructions."
-msgstr "Hãy để Gemini viết lại bài đăng của bạn theo hướng dẫn của bạn."
+#~ msgid "Let Gemini rewrite your post using your instructions."
+#~ msgstr "Hãy để Gemini viết lại bài đăng của bạn theo hướng dẫn của bạn."
 
 #: src/components/PostingOptionsForm.svelte
 msgid "Posting preferences"
 msgstr "Tùy chọn đăng bài"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved defaults help"
-msgstr "Mặc định đã lưu giúp"
+#~ msgid "Saved defaults help"
+#~ msgstr "Mặc định đã lưu giúp"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "About saved defaults"
-msgstr "Về mặc định đã lưu"
+#~ msgid "About saved defaults"
+#~ msgstr "Về mặc định đã lưu"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved interval"
-msgstr "Khoảng thời gian đã lưu"
+#~ msgid "Saved interval"
+#~ msgstr "Khoảng thời gian đã lưu"
 
-#. 0: settings.minimumInterval === settings.maximumInterval ? settings.minimumInterval \\: `${settings.minimumInterval}–${settings.maximumInterval}`
-#: src/components/SavedDefaultsInfo.svelte
-msgid "{0} seconds"
-msgstr "{0} giây"
+#~ msgid "{0} seconds"
+#~ msgstr "{0} giây"
 
-#: src/App.svelte
-#: src/components/SavedDefaultsInfo.svelte
-msgid "On"
-msgstr "Bật"
+#~ msgid "On"
+#~ msgstr "Bật"
 
-#: src/App.svelte
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Off"
-msgstr "Tắt"
+#~ msgid "Off"
+#~ msgstr "Tắt"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Gemini rewrite"
-msgstr "Viết lại bởi Gemini"
+#~ msgid "Gemini rewrite"
+#~ msgstr "Viết lại bởi Gemini"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "No instructions saved."
-msgstr "Chưa lưu hướng dẫn nào."
+#~ msgid "No instructions saved."
+#~ msgstr "Chưa lưu hướng dẫn nào."
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved rewrite instructions"
-msgstr "Hướng dẫn viết lại đã lưu"
+#~ msgid "Saved rewrite instructions"
+#~ msgstr "Hướng dẫn viết lại đã lưu"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved values could not be loaded. Try “Use saved defaults” again."
-msgstr "Không thể tải các giá trị đã lưu. Hãy thử “Sử dụng mặc định đã lưu” một lần nữa."
+#~ msgid "Saved values could not be loaded. Try “Use saved defaults” again."
+#~ msgstr "Không thể tải các giá trị đã lưu. Hãy thử “Sử dụng mặc định đã lưu” một lần nữa."
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "What does “Use saved defaults” do?"
-msgstr "“ Sử dụng mặc định đã lưu” làm gì?"
+#~ msgid "What does “Use saved defaults” do?"
+#~ msgstr "“ Sử dụng mặc định đã lưu” làm gì?"
 
-#: src/components/SavedDefaultsInfo.svelte
-#: src/components/UsageGuide.svelte
-msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
-msgstr "Thay thế khoảng thời gian đăng bài của lần chạy này, tùy chọn viết lại Gemini, và hướng dẫn viết lại bằng các giá trị đã lưu trong Cài đặt."
+#~ msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
+#~ msgstr "Thay thế khoảng thời gian đăng bài của lần chạy này, tùy chọn viết lại Gemini, và hướng dẫn viết lại bằng các giá trị đã lưu trong Cài đặt."
 
-#: src/components/SavedDefaultsInfo.svelte
-#: src/components/UsageGuide.svelte
-msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
-msgstr "Mặc định ban đầu: 60–120 giây, Gemini viết lại tắt, và không có hướng dẫn viết lại. Lưu các tùy chọn của riêng bạn trong Cài đặt để thay đổi chúng."
+#~ msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
+#~ msgstr "Mặc định ban đầu: 60–120 giây, Gemini viết lại tắt, và không có hướng dẫn viết lại. Lưu các tùy chọn của riêng bạn trong Cài đặt để thay đổi chúng."
 
 #: src/components/LogMessage.svelte
 msgid "Settings saved. New runs can use these defaults."
 msgstr "Cài đặt đã được lưu. Các lần chạy mới có thể sử dụng các giá trị mặc định này."
 
-#: src/components/Settings.svelte
-msgid "Key saved · leave blank to keep it"
-msgstr "Khóa đã được lưu · để trống để giữ nguyên"
+#~ msgid "Key saved · leave blank to keep it"
+#~ msgstr "Khóa đã được lưu · để trống để giữ nguyên"
 
-#: src/components/Settings.svelte
-msgid "Enter your Gemini API key"
-msgstr "Nhập khóa API Gemini của bạn"
+#~ msgid "Enter your Gemini API key"
+#~ msgstr "Nhập khóa API Gemini của bạn"
 
-#: src/components/Settings.svelte
-msgid "A key is saved on this device."
-msgstr "Một khóa đã được lưu trên thiết bị này."
+#~ msgid "A key is saved on this device."
+#~ msgstr "Một khóa đã được lưu trên thiết bị này."
 
-#: src/components/Settings.svelte
-msgid "No API key saved."
-msgstr "Không có khóa API nào được lưu."
+#~ msgid "No API key saved."
+#~ msgstr "Không có khóa API nào được lưu."
 
-#: src/components/Settings.svelte
-msgid "Remove saved key"
-msgstr "Xóa khóa đã lưu"
+#~ msgid "Remove saved key"
+#~ msgstr "Xóa khóa đã lưu"
 
-#: src/components/Settings.svelte
-msgid "Gemini"
-msgstr "Gemini"
+#~ msgid "Gemini"
+#~ msgstr "Gemini"
 
-#: src/components/Settings.svelte
-msgid "API key<0/>"
-msgstr "Khóa API<0/>"
+#~ msgid "API key<0/>"
+#~ msgstr "Khóa API<0/>"
 
-#. 0: keyConfigured ? 'A key is saved on this device.' \\: 'No API key saved.'
-#: src/components/Settings.svelte
-msgid "{0} The saved key is never displayed."
-msgstr "{0} Khóa đã lưu sẽ không bao giờ hiển thị."
+#~ msgid "{0} The saved key is never displayed."
+#~ msgstr "{0} Khóa đã lưu sẽ không bao giờ hiển thị."
 
-#: src/components/Settings.svelte
-msgid "Model<0/>"
-msgstr "Mẫu<0/>"
+#~ msgid "Model<0/>"
+#~ msgstr "Mẫu<0/>"
 
-#: src/components/Settings.svelte
-msgid "Posting defaults"
-msgstr "Cài đặt đăng bài mặc định"
+#~ msgid "Posting defaults"
+#~ msgstr "Cài đặt đăng bài mặc định"
 
-#: src/components/Settings.svelte
-msgid "Applied when you start a new posting run."
-msgstr "Áp dụng khi bạn bắt đầu một lần chạy đăng bài mới."
+#~ msgid "Applied when you start a new posting run."
+#~ msgstr "Áp dụng khi bạn bắt đầu một lần chạy đăng bài mới."
 
-#: src/components/Settings.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Saving…"
 msgstr "Đang lưu…"
 
-#: src/components/Settings.svelte
-msgid "Save settings"
-msgstr "Lưu cài đặt"
+#~ msgid "Save settings"
+#~ msgstr "Lưu cài đặt"
 
-#: src/components/Settings.svelte
-msgid "YOUR PREFERENCES"
-msgstr "TÙY CHỌN CỦA BẠN"
+#~ msgid "YOUR PREFERENCES"
+#~ msgstr "TÙY CHỌN CỦA BẠN"
 
-#. 0: accountName
-#: src/components/Settings.svelte
-msgid "Set up Gemini and save posting defaults for {0}."
-msgstr "Cài đặt Gemini và lưu các mặc định đăng bài cho {0}."
+#~ msgid "Set up Gemini and save posting defaults for {0}."
+#~ msgstr "Cài đặt Gemini và lưu các mặc định đăng bài cho {0}."
 
 #: src/components/StepProgress.svelte
 msgid "Completed"
@@ -1133,9 +1079,8 @@ msgstr "Buổi tối"
 msgid "Could not change the language. Please try again."
 msgstr "Không thể thay đổi ngôn ngữ. Vui lòng thử lại."
 
-#: src/components/Settings.svelte
-msgid "Language"
-msgstr "Ngôn ngữ"
+#~ msgid "Language"
+#~ msgstr "Ngôn ngữ"
 
 #: src/components/PostingOptionsForm.svelte
 #: src/components/PostingOptionsForm.svelte
@@ -1210,7 +1155,7 @@ msgstr "BỎ QUA"
 msgid "UNCONFIRMED"
 msgstr "CHƯA XÁC NHẬN"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "e.g. Business"
 msgstr "ví dụ: Kinh doanh"
 
@@ -1282,8 +1227,11 @@ msgstr "Hồ sơ mặc định"
 msgid "Color themes"
 msgstr "Chủ đề màu sắc"
 
+#: src/components/AddAccountDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/RenameProfileDialog.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UpdateButton.svelte
 msgid "Close"
@@ -1503,7 +1451,6 @@ msgid "Gemini rewrite completed."
 msgstr "Việc viết lại của Gemini đã hoàn thành."
 
 #: src/components/LogMessage.svelte
-#: src/components/UsageGuide.svelte
 msgid "Gemini rewrite failed. Using the original text for this post; Gemini will be tried again for the next post."
 msgstr "Việc viết lại của Gemini thất bại. Sử dụng văn bản gốc cho bài viết này; Gemini sẽ được thử lại cho bài viết tiếp theo."
 
@@ -1876,19 +1823,21 @@ msgstr "Chi tiết gỡ lỗi"
 #~ msgid ", "
 #~ msgstr ""
 
+#: src/components/FeaturesCard.svelte
 #: src/components/ThemePicker.svelte
+#: src/components/UsageGuide.svelte
 msgid "Themes"
 msgstr "Chủ đề"
 
 #: src/App.svelte
 #: src/components/UsageGuide.svelte
-msgid "Preferences & post"
-msgstr "Tùy chọn và đăng bài"
+msgid "Post or schedule"
+msgstr "Đăng hoặc lên lịch"
 
 #: src/App.svelte
 #: src/App.svelte
-msgid "Set preferences, then post now or schedule"
-msgstr "Đặt tùy chọn, rồi đăng ngay hoặc lên lịch"
+msgid "Choose the time between posts, then post now or schedule for later."
+msgstr "Chọn khoảng thời gian giữa các bài đăng, rồi đăng ngay hoặc lên lịch cho sau này."
 
 #~ msgid "Postika"
 #~ msgstr "Postika"
@@ -1923,9 +1872,8 @@ msgstr "Các nhóm đã tải vẫn có sẵn giữa các phiên ứng dụng."
 msgid "Minimum and maximum delays between posts."
 msgstr "Thời gian chờ tối thiểu và tối đa giữa các bài đăng."
 
-#: src/components/FeaturesCard.svelte
-msgid "Custom instructions and a configurable Gemini model."
-msgstr "Hướng dẫn tùy chỉnh và mô hình Gemini có thể cấu hình."
+#~ msgid "Custom instructions and a configurable Gemini model."
+#~ msgstr "Hướng dẫn tùy chỉnh và mô hình Gemini có thể cấu hình."
 
 #. 0: languages.length; 1: themeOptions.length
 #: src/components/FeaturesCard.svelte
@@ -1978,9 +1926,8 @@ msgstr "Viết tin nhắn và thêm ít nhất một hình ảnh; cả hai đề
 msgid "Select Load groups and finish Facebook login or verification in Chrome. Search the loaded list, select the groups you want, then choose Next."
 msgstr "Chọn Tải nhóm và hoàn tất đăng nhập hoặc xác minh Facebook trong Chrome. Tìm trong danh sách, chọn các nhóm rồi chọn Tiếp theo."
 
-#: src/components/UsageGuide.svelte
-msgid "In Settings, enter this account’s Gemini API key and model, then Save settings. Enable rewriting for your run and describe the tone and details to preserve."
-msgstr "Trong Cài đặt, nhập khóa API Gemini và mô hình cho tài khoản này rồi lưu. Bật viết lại và mô tả giọng văn cùng chi tiết cần giữ."
+#~ msgid "In Settings, enter this account’s Gemini API key and model, then Save settings. Enable rewriting for your run and describe the tone and details to preserve."
+#~ msgstr "Trong Cài đặt, nhập khóa API Gemini và mô hình cho tài khoản này rồi lưu. Bật viết lại và mô tả giọng văn cùng chi tiết cần giữ."
 
 #: src/components/UsageGuide.svelte
 msgid "Review the account, message, image order, selected groups, and posting intervals. Choose Post now and complete any Facebook login or verification prompts in Chrome."
@@ -2036,13 +1983,11 @@ msgstr "Nhập URL trang Facebook, ví dụ https://web.facebook.com/swiftlineMo
 #~ msgid "Fetch Facebook posts"
 #~ msgstr ""
 
-#: src/components/FacebookPageDialog.svelte
-msgid "Decrease number of posts"
-msgstr "Giảm số bài viết"
+#~ msgid "Decrease number of posts"
+#~ msgstr "Giảm số bài viết"
 
-#: src/components/FacebookPageDialog.svelte
-msgid "Increase number of posts"
-msgstr "Tăng số bài viết"
+#~ msgid "Increase number of posts"
+#~ msgstr "Tăng số bài viết"
 
 #: src/components/FacebookPageDialog.svelte
 msgid "Facebook page URL"
@@ -2136,6 +2081,8 @@ msgstr "Sửa"
 msgid "Delete post {0}"
 msgstr "Xóa bài viết {0}"
 
+#: src/components/AccountDropdown.svelte
+#: src/components/AccountDropdown.svelte
 #: src/components/FetchedPostCard.svelte
 msgid "Delete"
 msgstr "Xóa"
@@ -2150,6 +2097,7 @@ msgid "Remove image {0} from post {1}"
 msgstr "Xóa ảnh {0} khỏi bài viết {1}"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Save changes"
 msgstr "Lưu thay đổi"
 
@@ -2391,3 +2339,45 @@ msgstr "Kiểm tra bản cập nhật"
 #: src/components/UpdateButton.svelte
 msgid "Installing update…"
 msgstr "Đang cài đặt bản cập nhật…"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "posts"
+msgstr "bài viết"
+
+#: src/components/LogMessage.svelte
+msgid "Account names cannot be URLs"
+msgstr "Tên tài khoản không được là URL"
+
+#: src/components/LogMessage.svelte
+msgid "First post confirmed. Remaining groups stopped because the formatted text could not be verified."
+msgstr "Bài đăng đầu tiên đã được xác nhận. Việc đăng vào các nhóm còn lại đã dừng vì không thể xác minh văn bản có định dạng."
+
+#: src/components/AccountDropdown.svelte
+#: src/components/RenameProfileDialog.svelte
+msgid "Rename profile"
+msgstr "Đổi tên hồ sơ"
+
+#: src/Workspace.svelte
+#: src/components/PostingLogs.svelte
+msgid "Add an account to get started."
+msgstr "Thêm tài khoản để bắt đầu."
+
+#: src/components/AccountDropdown.svelte
+#: src/components/DeleteProfileDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
+msgid "Delete profile"
+msgstr "Xóa hồ sơ"
+
+#~ msgid "<0/> Add account"
+#~ msgstr ""
+
+#~ msgid "Delete profile?"
+#~ msgstr ""
+
+#: src/components/DeleteProfileDialog.svelte
+msgid "This permanently deletes this profile’s Facebook login, groups, drafts, images, settings, and logs. Any running or scheduled queue will stop. Posts already on Facebook are kept."
+msgstr "Thao tác này xóa vĩnh viễn thông tin đăng nhập Facebook, nhóm, bản nháp, hình ảnh, cài đặt và nhật ký của hồ sơ này. Mọi hàng đợi đang chạy hoặc đã lên lịch sẽ dừng. Các bài đăng đã có trên Facebook được giữ lại."
+
+#: src/components/DeleteProfileDialog.svelte
+msgid "Deleting…"
+msgstr "Đang xóa…"

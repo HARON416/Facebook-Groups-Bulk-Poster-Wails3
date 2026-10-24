@@ -121,6 +121,9 @@ func fetchTimelinePage(ctx context.Context, client *http.Client, jar http.Cookie
 			jar.SetCookies(endpoint, response.Cookies())
 			if cookieUser(cookieHeader(jar.Cookies(endpoint)).Get("Cookie")) != captured.User {
 				response.Body.Close()
+				if user := cookieUser(cookieHeader(jar.Cookies(endpoint)).Get("Cookie")); user == "" || user == "0" {
+					return nil, "", false, errFacebookSessionExpired
+				}
 				return nil, "", false, errors.New("The Facebook session changed while fetching posts. Fetch again")
 			}
 			if response.StatusCode == http.StatusOK {
@@ -187,6 +190,9 @@ func replayFacebookTimeline(ctx context.Context, captured timelineRequest, cooki
 			return posts, err
 		}
 		if captured.User == "" || cookieUser(captured.Headers.Get("Cookie")) != captured.User || cookieUser(cookieHeader(jar.Cookies(endpoint)).Get("Cookie")) != captured.User {
+			if user := cookieUser(cookieHeader(jar.Cookies(endpoint)).Get("Cookie")); user == "" || user == "0" {
+				return posts, errFacebookSessionExpired
+			}
 			return nil, errors.New("The Facebook session changed. Fetch again with the current account")
 		}
 		body, err := timelineBody(captured.Body, cursor)

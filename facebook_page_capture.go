@@ -151,6 +151,11 @@ func startFacebookQueryCapture(ctx context.Context, page *rod.Page, location *ti
 		if err != nil || form.Get("fb_api_req_friendly_name") != query {
 			return false
 		}
+		// Public pages can issue these queries behind a login popup. They are
+		// not authenticated templates and must never start an import replay.
+		if form.Get("__user") == "" || form.Get("__user") == "0" {
+			return false
+		}
 		var variables struct {
 			ID       string `json:"id"`
 			Location string `json:"feedLocation"`

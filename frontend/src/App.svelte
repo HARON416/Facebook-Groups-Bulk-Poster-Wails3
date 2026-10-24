@@ -10,42 +10,22 @@
   import { readDraft, writeDraft, type AccountDraft } from './lib/drafts';
   let { profile, active = true, connect = false, onGroupsLoadingChange } = $props<{ profile: AccountProfile; active?: boolean; connect?: boolean; onGroupsLoadingChange?: (loading: boolean) => void }>();
   const GroupsService = untrack(() => createAccountService(profile.id));
-  const { GetSettings: getSettings, OpenSettings: openSettings, PublishRichPostWithOptions: publish } = GroupsService;
+  const { PublishRichPostWithOptions: publish } = GroupsService;
   let draftReady = $state(false), draftError = $state(''), imageDropMessage = $state<string | string[]>('');
   import PostingOptionsForm from './components/PostingOptionsForm.svelte';
   import DateTimePicker from './components/DateTimePicker.svelte';
-  import SavedDefaultsInfo from './components/SavedDefaultsInfo.svelte';
-  import type { AppSettings } from './lib/posting';
-  import { confetti, clickOrigin, type ConfettiOrigin } from './lib/confetti';
+  import { confetti, clickOrigin } from './lib/confetti';
   import { pollWhileWindowOpen } from './lib/window-polling';
 
   const steps = [
     { id: 'create', title: 'Create post', description: 'Write your post and add images' },
     { id: 'groups', title: 'Select groups', description: 'Load groups and choose where to post' },
-    { id: 'settings', title: 'Preferences & post', description: 'Set preferences, then post now or schedule' },
+    { id: 'settings', title: 'Post or schedule', description: 'Choose the time between posts, then post now or schedule for later.' },
   ];
 
   let currentStep = $state(0);
-  let minimumInterval = $state(60), maximumInterval = $state(120), rewrite = $state(false), instructions = $state('');
-  let keyConfigured = $state(false), settingsError = $state('');
-  let loadingDefaults = $state(false);
-  let appliedDefaults = $state<{ minimum: number; maximum: number; rewrite: boolean } | null>(null);
-  const rewriteState = $derived(appliedDefaults?.rewrite ? /* @wc-include */ 'On' : /* @wc-include */ 'Off');
-  const appliedInterval = $derived(appliedDefaults ? appliedDefaults.minimum === appliedDefaults.maximum ? appliedDefaults.minimum : /* @wc-ignore */ `${appliedDefaults.minimum}–${appliedDefaults.maximum}` : '');
-  const defaultsMessage = $derived(appliedDefaults ? /* @wc-include */ `Saved defaults applied: ${appliedInterval} seconds between posts · Gemini rewrite ${rewriteState}.` : '');
-  let savedDefaults = $state<AppSettings | null>(null);
-  const validSettings = $derived(Number.isInteger(minimumInterval) && minimumInterval >= 60 && Number.isInteger(maximumInterval) && maximumInterval >= minimumInterval && maximumInterval <= 86400 && (!rewrite || keyConfigured));
-  async function loadSettings(defaults = false, feedback = false, origin?: ConfettiOrigin) {
-    if (defaults) loadingDefaults = true;
-    if (feedback) { appliedDefaults = null; settingsError = ''; }
-    try {
-      const settings = await getSettings(); savedDefaults = settings; keyConfigured = settings.keyConfigured; settingsError = '';
-      if (defaults) { minimumInterval = settings.minimumInterval; maximumInterval = settings.maximumInterval; rewrite = settings.rewrite; instructions = settings.instructions; }
-      if (feedback) appliedDefaults = { minimum: minimumInterval, maximum: maximumInterval, rewrite };
-      if (feedback && origin) void confetti(origin);
-    } catch (cause) { savedDefaults = null; settingsError = cause instanceof Error ? cause.message : String(cause); }
-    finally { if (defaults) loadingDefaults = false; }
-  }
+  let minimumInterval = $state(60), maximumInterval = $state(120);
+  const validSettings = $derived(Number.isInteger(minimumInterval) && minimumInterval >= 60 && Number.isInteger(maximumInterval) && maximumInterval >= minimumInterval && maximumInterval <= 86400);
   let body = $state('');
   let bodyHTML = $state(''), bodyState = $state('');
   let images = $state<PostImage[]>([]);
@@ -280,7 +260,7 @@
       })));
       if (stopRequested) { postMessage = /* @wc-ignore */ 'Posting stopped.'; return; }
       scheduleOpen = false;
-      const options = { minimumInterval, maximumInterval, rewrite, instructions };
+      const options = { minimumInterval, maximumInterval, rewrite: false, instructions: '' };
       const result = postsForRun !== null
         ? scheduled
           ? await GroupsService.ScheduleFacebookPostsWithOptions([...selectedGroupIds], postsForRun, options, scheduledAt)
@@ -326,7 +306,6 @@
   onMount(() => {
     let disposed = false;
     async function initialize() {
-      await loadSettings(true);
       try {
         const draft = await readDraft(profile.id);
         if (disposed) return;
@@ -339,7 +318,7 @@
           if (missing.length) imageDropMessage = /* @wc-ignore */ `Could not read ${missingNames}`;
           selectedGroupIds = draft.selectedGroupIds; currentStep = missing.length ? 0 : draft.currentStep;
           minimumInterval = draft.minimumInterval; maximumInterval = draft.maximumInterval;
-          rewrite = draft.rewrite; instructions = draft.instructions; scheduleTime = draft.scheduleTime;
+          scheduleTime = draft.scheduleTime;
         }
       } catch { draftError = /* @wc-ignore */ 'Could not restore this account’s draft. New edits will stay available while Postika is open.'; }
       if (disposed) return;
@@ -363,11 +342,9 @@
         imageDropMessage = result.errors;
       } catch { imageDropMessage = /* @wc-ignore */ 'Could not add the dropped images. Try browsing for them instead.'; }
     });
-    const settingsFocus = () => { if (active) void loadSettings(); };
-    window.addEventListener('focus', settingsFocus);
     const stopLoginPolling = pollWhileWindowOpen(checkLogin, 1500);
     const stopPostingPolling = pollWhileWindowOpen(checkPostStatus, 500);
-    return () => { disposed = true; stopImageDrops(); stopLoginPolling(); stopPostingPolling(); window.removeEventListener('focus', settingsFocus); };
+    return () => { disposed = true; stopImageDrops(); stopLoginPolling(); stopPostingPolling(); };
   });
 
   async function navigate(step: number, event: MouseEvent) {
@@ -386,7 +363,7 @@
       body, bodyHTML, bodyState, images: images.map(({ id, file, unavailable, recoveryKey }) => ({ id, file, unavailable, recoveryKey })),
       fetchedPosts: fetchedPosts?.map(({ id, text, url, images }) => ({ id, text, url, images: [...images ?? []] })) ?? null,
       selectedGroupIds: [...selectedGroupIds], currentStep, minimumInterval, maximumInterval,
-      rewrite, instructions, scheduleTime,
+      scheduleTime,
     };
     // Queue each edit immediately so a quick switch or close cannot lose a debounce.
     void writeDraft(profile.id, draft).then(() => { draftError = ''; }).catch(() => {
@@ -409,7 +386,7 @@
         <p class="eyebrow">STEP {currentStep + 1} OF {steps.length}</p>
         <h1 class="ui-title" id="step-heading" bind:this={stepHeading} tabindex="-1">{steps[currentStep].title}</h1>
         <p class="step-intro">
-          {currentStep === 0 ? fetchedPosts === null ? 'Start with your message. Add images to bring it to life.' : 'Review the posts fetched from your Facebook page.' : currentStep === 1 ? 'Choose the groups you want to share your post with.' : 'Set preferences, then post now or schedule'}
+          {currentStep === 0 ? fetchedPosts === null ? 'Start with your message. Add images to bring it to life.' : 'Review the posts fetched from your Facebook page.' : currentStep === 1 ? 'Choose the groups you want to share your post with.' : 'Choose the time between posts, then post now or schedule for later.'}
         </p>
       </div>
 
@@ -476,11 +453,7 @@
         {/if}
       {:else}
         <section class="run-settings" aria-label="Posting settings">
-          <PostingOptionsForm bind:minimumInterval bind:maximumInterval bind:rewrite bind:instructions disabled={postingActive || loadingDefaults} />
-          {#if rewrite && !keyConfigured}<p class="group-status error">Add a Gemini API key in Settings to enable rewriting.</p>{/if}
-          {#if settingsError}<div class="group-status error" role="alert"><LocalizedFeedback message={settingsError} /></div>{/if}
-          <div class="settings-actions"><div class="defaults-actions"><button type="button" disabled={postingActive || loadingDefaults} aria-busy={loadingDefaults} onclick={(event) => loadSettings(true, true, clickOrigin(event))}>{loadingDefaults ? 'Applying defaults…' : 'Use saved defaults'}</button><SavedDefaultsInfo settings={savedDefaults} /></div><button type="button" onclick={() => openSettings()}>Open settings</button></div>
-          <p class="defaults-feedback" role="status" aria-live="polite">{defaultsMessage}</p>
+          <PostingOptionsForm bind:minimumInterval bind:maximumInterval disabled={postingActive} />
         </section>
         {#if scheduleOpen && !postingActive}
           <form id="schedule-form" class="schedule-panel" onsubmit={(event) => { event.preventDefault(); void openPost(event, true); }}>
@@ -498,7 +471,7 @@
   <footer class="step-actions">
         {#if currentStep === steps.length - 1 && scheduleOpen && !postingActive}
         <button type="button" class="previous action-button action-button--secondary" onclick={() => { scheduleOpen = false; }}>Cancel</button>
-        <button type="submit" form="schedule-form" class="post action-button action-button--primary" disabled={groupsBusy || !scheduleValid || loadingDefaults || selectedGroupIds.length === 0 || !hasCompletePost || !validSettings}>Confirm schedule</button>
+        <button type="submit" form="schedule-form" class="post action-button action-button--primary" disabled={groupsBusy || !scheduleValid || selectedGroupIds.length === 0 || !hasCompletePost || !validSettings}>Confirm schedule</button>
         {:else}
         <button type="button" class="previous action-button action-button--secondary" disabled={currentStep === 0 || postingActive || groupsBusy} onclick={(event) => navigate(currentStep - 1, event)}>
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg>
@@ -512,10 +485,10 @@
         {:else}
         {#if postMessage}<button type="button" class="previous action-button action-button--secondary" onclick={() => GroupsService.OpenPostingLogs()}>View logs</button>{/if}
         {#if postingActive}<button type="button" class="previous action-button action-button--secondary" onclick={stopPosting}>Stop</button>{/if}
-        <button type="button" class="post action-button action-button--primary" disabled={postingActive || groupsBusy || loadingDefaults || selectedGroupIds.length === 0 || !hasCompletePost || !validSettings} onclick={openPost} aria-busy={postingActive}>
+        <button type="button" class="post action-button action-button--primary" disabled={postingActive || groupsBusy || selectedGroupIds.length === 0 || !hasCompletePost || !validSettings} onclick={openPost} aria-busy={postingActive}>
           {postingActive ? scheduledFor ? 'Scheduled' : 'Posting…' : 'Post now'}
         </button>
-        <button type="button" class="previous action-button action-button--secondary" disabled={postingActive || groupsBusy || loadingDefaults || selectedGroupIds.length === 0 || !hasCompletePost || !validSettings} onclick={showSchedule}>Schedule</button>
+        <button type="button" class="previous action-button action-button--secondary" disabled={postingActive || groupsBusy || selectedGroupIds.length === 0 || !hasCompletePost || !validSettings} onclick={showSchedule}>Schedule</button>
         {/if}
         {/if}
   </footer>
@@ -528,12 +501,6 @@
   .schedule-panel p { margin-top: 1.2rem; font-size: 1.3rem; line-height: 1.6; color: var(--text-secondary); }
 
   .run-settings { margin: 2rem 0; }
-  .settings-actions { display: flex; justify-content: space-between; gap: 1rem; margin-top: 2rem; }
-  .defaults-actions { display: flex; align-items: center; gap: .4rem; }
-  .settings-actions button { border: 1px solid var(--border-accent); border-radius: .6rem; color: var(--accent); background: var(--surface); font-size: 1.3rem; cursor: pointer; padding: 1rem 1.4rem; }
-  .settings-actions button:disabled { opacity: 0.5; }
-  .defaults-feedback { color: var(--accent); font-size: 1.3rem; line-height: 1.6; }
-  .defaults-feedback:not(:empty) { margin-top: 1.2rem; padding: 1rem 1.2rem; background: var(--surface-active); border-inline-start: 2px solid var(--accent); border-radius: .4rem; }
   .app-shell {
     display: flex;
     flex-direction: column;

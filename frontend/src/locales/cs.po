@@ -8,10 +8,8 @@ msgstr ""
 "Plural-Forms: nplurals=4\n"
 "X-Plurals-Order: one, few, many, other\n"
 
-#. 0: appliedInterval; 1: rewriteState
-#: src/App.svelte
-msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
-msgstr "Použity uložené výchozí hodnoty: {0} sekund mezi příspěvky · Přepis Gemini {1}."
+#~ msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
+#~ msgstr "Použity uložené výchozí hodnoty: {0} sekund mezi příspěvky · Přepis Gemini {1}."
 
 #: src/components/LogMessage.svelte
 msgid "Could not restore saved groups. Load groups to refresh the list."
@@ -152,23 +150,17 @@ msgstr "Otevřete své Facebook skupiny a začněte."
 msgid "Posting settings"
 msgstr "Nastavení zveřejňování"
 
-#: src/App.svelte
-msgid "Add a Gemini API key in Settings to enable rewriting."
-msgstr "Přidejte klíč Gemini API v nastavení pro povolení přepisování."
+#~ msgid "Add a Gemini API key in Settings to enable rewriting."
+#~ msgstr "Přidejte klíč Gemini API v nastavení pro povolení přepisování."
 
-#: src/App.svelte
-msgid "Applying defaults…"
-msgstr "Použití výchozích hodnot…"
+#~ msgid "Applying defaults…"
+#~ msgstr "Použití výchozích hodnot…"
 
-#: src/App.svelte
-#: src/components/FeaturesCard.svelte
-#: src/components/UsageGuide.svelte
-msgid "Use saved defaults"
-msgstr "Použít uložené výchozí hodnoty"
+#~ msgid "Use saved defaults"
+#~ msgstr "Použít uložené výchozí hodnoty"
 
-#: src/App.svelte
-msgid "Open settings"
-msgstr "Otevřít nastavení"
+#~ msgid "Open settings"
+#~ msgstr "Otevřít nastavení"
 
 #~ msgid "Posting as <0/>"
 #~ msgstr "Publikování jako <0/>"
@@ -200,9 +192,11 @@ msgid "Time zone: {0}. Keep Postika open and your computer awake. Facebook may a
 msgstr "Časové pásmo: {0}. Nechte Postiku otevřenou a počítač probuzený. Facebook se může zeptat, abyste se přihlásili, když začnete s publikováním."
 
 #: src/App.svelte
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FetchedPostCard.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Cancel"
 msgstr "Zrušit"
 
@@ -253,6 +247,8 @@ msgid "Application menu"
 msgstr "Menu aplikace"
 
 #: src/Workspace.svelte
+#: src/components/AccountDropdown.svelte
+#: src/components/AddAccountDialog.svelte
 #: src/components/UsageGuide.svelte
 msgid "Add account"
 msgstr "Přidat účet"
@@ -261,31 +257,28 @@ msgstr "Přidat účet"
 #: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogView.svelte
+#: src/components/PostingLogs.svelte
 #: src/components/UsageGuide.svelte
 msgid "Posting logs"
 msgstr "Protokol publikování"
 
-#: src/Workspace.svelte
-#: src/components/FeaturesCard.svelte
-#: src/components/Settings.svelte
-#: src/components/Settings.svelte
-#: src/components/UsageGuide.svelte
-msgid "Settings"
-msgstr "Nastavení"
+#~ msgid "Settings"
+#~ msgstr "Nastavení"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "Creating…"
 msgstr "Vytváření…"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "Create & sign in"
 msgstr "Vytvořit a přihlásit se"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Account name"
 msgstr "Název účtu"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 #: src/components/UsageGuide.svelte
 msgid "Sign in to Facebook in the new account’s browser window."
 msgstr "Přihlaste se na Facebook v okně prohlížeče nového účtu."
@@ -794,172 +787,125 @@ msgstr "Zvolte, jak dlouho čekat před zveřejněním příspěvku do další s
 msgid "At least 60 seconds. Use equal values for a fixed interval."
 msgstr "Minimálně 60 sekund. Použijte stejné hodnoty pro pevný interval."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "OPTIONAL · AI REWRITE"
-msgstr "VOLITELNÉ · PŘEPIS AI"
+#~ msgid "OPTIONAL · AI REWRITE"
+#~ msgstr "VOLITELNÉ · PŘEPIS AI"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "A fresh version for each group"
-msgstr "Nová verze pro každou skupinu"
+#~ msgid "A fresh version for each group"
+#~ msgstr "Nová verze pro každou skupinu"
 
-#: src/components/FeaturesCard.svelte
-#: src/components/PostingOptionsForm.svelte
-#: src/components/UsageGuide.svelte
-msgid "Rewrite each post body with Gemini"
-msgstr "Přepište tělo každého příspěvku pomocí Gemini"
+#~ msgid "Rewrite each post body with Gemini"
+#~ msgstr "Přepište tělo každého příspěvku pomocí Gemini"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
-msgstr "Přepište pokyny<0>Vyberte tón a detaily, které by měl Gemini zachovat.</0>"
+#~ msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
+#~ msgstr "Přepište pokyny<0>Vyberte tón a detaily, které by měl Gemini zachovat.</0>"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Keep it concise and easy to scan. Preserve the price and contact details."
-msgstr "Udržujte stručné a snadno čitelné. Zachovejte cenu a kontaktní údaje."
+#~ msgid "Keep it concise and easy to scan. Preserve the price and contact details."
+#~ msgstr "Udržujte stručné a snadno čitelné. Zachovejte cenu a kontaktní údaje."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Rewrite instructions"
-msgstr "Přepište pokyny"
+#~ msgid "Rewrite instructions"
+#~ msgstr "Přepište pokyny"
 
-#: src/components/FeaturesCard.svelte
-#: src/components/PostingOptionsForm.svelte
-#: src/components/UsageGuide.svelte
-msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
-msgstr "Text vašeho příspěvku a pokyny jsou zaslány do Google Gemini. Obrázky nejsou zasílány. Přepisy od Gemini používají prostý text."
+#~ msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
+#~ msgstr "Text vašeho příspěvku a pokyny jsou zaslány do Google Gemini. Obrázky nejsou zasílány. Přepisy od Gemini používají prostý text."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
-msgstr "Pokud přepis selže, příspěvek použije váš původní text. Další příspěvek se pokusí o přepis znovu pomocí Gemini."
+#~ msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
+#~ msgstr "Pokud přepis selže, příspěvek použije váš původní text. Další příspěvek se pokusí o přepis znovu pomocí Gemini."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Let Gemini rewrite your post using your instructions."
-msgstr "Nechte Gemini přepsat váš příspěvek podle vašich pokynů."
+#~ msgid "Let Gemini rewrite your post using your instructions."
+#~ msgstr "Nechte Gemini přepsat váš příspěvek podle vašich pokynů."
 
 #: src/components/PostingOptionsForm.svelte
 msgid "Posting preferences"
 msgstr "Nastavení zveřejňování"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved defaults help"
-msgstr "Uložené výchozí hodnoty pomáhají"
+#~ msgid "Saved defaults help"
+#~ msgstr "Uložené výchozí hodnoty pomáhají"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "About saved defaults"
-msgstr "O uložených výchozích hodnotách"
+#~ msgid "About saved defaults"
+#~ msgstr "O uložených výchozích hodnotách"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved interval"
-msgstr "Uložený interval"
+#~ msgid "Saved interval"
+#~ msgstr "Uložený interval"
 
-#. 0: settings.minimumInterval === settings.maximumInterval ? settings.minimumInterval \\: `${settings.minimumInterval}–${settings.maximumInterval}`
-#: src/components/SavedDefaultsInfo.svelte
-msgid "{0} seconds"
-msgstr "{0} sekund"
+#~ msgid "{0} seconds"
+#~ msgstr "{0} sekund"
 
-#: src/App.svelte
-#: src/components/SavedDefaultsInfo.svelte
-msgid "On"
-msgstr "Zapnuto"
+#~ msgid "On"
+#~ msgstr "Zapnuto"
 
-#: src/App.svelte
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Off"
-msgstr "Vypnuto"
+#~ msgid "Off"
+#~ msgstr "Vypnuto"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Gemini rewrite"
-msgstr "Přepis Gemini"
+#~ msgid "Gemini rewrite"
+#~ msgstr "Přepis Gemini"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "No instructions saved."
-msgstr "Žádné pokyny nejsou uloženy."
+#~ msgid "No instructions saved."
+#~ msgstr "Žádné pokyny nejsou uloženy."
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved rewrite instructions"
-msgstr "Uložené pokyny pro přepis"
+#~ msgid "Saved rewrite instructions"
+#~ msgstr "Uložené pokyny pro přepis"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved values could not be loaded. Try “Use saved defaults” again."
-msgstr "Nepodařilo se načíst uložené hodnoty. Zkuste znovu „Použít uložené výchozí hodnoty“."
+#~ msgid "Saved values could not be loaded. Try “Use saved defaults” again."
+#~ msgstr "Nepodařilo se načíst uložené hodnoty. Zkuste znovu „Použít uložené výchozí hodnoty“."
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "What does “Use saved defaults” do?"
-msgstr "Co dělá „Použít uložené výchozí hodnoty“?"
+#~ msgid "What does “Use saved defaults” do?"
+#~ msgstr "Co dělá „Použít uložené výchozí hodnoty“?"
 
-#: src/components/SavedDefaultsInfo.svelte
-#: src/components/UsageGuide.svelte
-msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
-msgstr "Nahrazuje interval zveřejňování tohoto běhu, možnost přepisu Gemini a instrukce pro přepis hodnotami uloženými v Nastavení."
+#~ msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
+#~ msgstr "Nahrazuje interval zveřejňování tohoto běhu, možnost přepisu Gemini a instrukce pro přepis hodnotami uloženými v Nastavení."
 
-#: src/components/SavedDefaultsInfo.svelte
-#: src/components/UsageGuide.svelte
-msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
-msgstr "Počáteční výchozí hodnoty: 60–120 sekund, přepis Gemini vypnut, žádné instrukce pro přepis. Uložte si vlastní preference v Nastavení, chcete-li je změnit."
+#~ msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
+#~ msgstr "Počáteční výchozí hodnoty: 60–120 sekund, přepis Gemini vypnut, žádné instrukce pro přepis. Uložte si vlastní preference v Nastavení, chcete-li je změnit."
 
 #: src/components/LogMessage.svelte
 msgid "Settings saved. New runs can use these defaults."
 msgstr "Nastavení uloženo. Nové běhy mohou používat tyto výchozí hodnoty."
 
-#: src/components/Settings.svelte
-msgid "Key saved · leave blank to keep it"
-msgstr "Klíč uložen · ponechte prázdné pro jeho zachování"
+#~ msgid "Key saved · leave blank to keep it"
+#~ msgstr "Klíč uložen · ponechte prázdné pro jeho zachování"
 
-#: src/components/Settings.svelte
-msgid "Enter your Gemini API key"
-msgstr "Zadejte svůj API klíč Gemini"
+#~ msgid "Enter your Gemini API key"
+#~ msgstr "Zadejte svůj API klíč Gemini"
 
-#: src/components/Settings.svelte
-msgid "A key is saved on this device."
-msgstr "Klíč je uložen na tomto zařízení."
+#~ msgid "A key is saved on this device."
+#~ msgstr "Klíč je uložen na tomto zařízení."
 
-#: src/components/Settings.svelte
-msgid "No API key saved."
-msgstr "Žádný API klíč není uložen."
+#~ msgid "No API key saved."
+#~ msgstr "Žádný API klíč není uložen."
 
-#: src/components/Settings.svelte
-msgid "Remove saved key"
-msgstr "Odstranit uložený klíč"
+#~ msgid "Remove saved key"
+#~ msgstr "Odstranit uložený klíč"
 
-#: src/components/Settings.svelte
-msgid "Gemini"
-msgstr "Gemini"
+#~ msgid "Gemini"
+#~ msgstr "Gemini"
 
-#: src/components/Settings.svelte
-msgid "API key<0/>"
-msgstr "API klíč<0/>"
+#~ msgid "API key<0/>"
+#~ msgstr "API klíč<0/>"
 
-#. 0: keyConfigured ? 'A key is saved on this device.' \\: 'No API key saved.'
-#: src/components/Settings.svelte
-msgid "{0} The saved key is never displayed."
-msgstr "{0} Uložený klíč se nikdy nezobrazuje."
+#~ msgid "{0} The saved key is never displayed."
+#~ msgstr "{0} Uložený klíč se nikdy nezobrazuje."
 
-#: src/components/Settings.svelte
-msgid "Model<0/>"
-msgstr "Model<0/>"
+#~ msgid "Model<0/>"
+#~ msgstr "Model<0/>"
 
-#: src/components/Settings.svelte
-msgid "Posting defaults"
-msgstr "Výchozí nastavení příspěvků"
+#~ msgid "Posting defaults"
+#~ msgstr "Výchozí nastavení příspěvků"
 
-#: src/components/Settings.svelte
-msgid "Applied when you start a new posting run."
-msgstr "Použije se při zahájení nového běhu zveřejňování."
+#~ msgid "Applied when you start a new posting run."
+#~ msgstr "Použije se při zahájení nového běhu zveřejňování."
 
-#: src/components/Settings.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Saving…"
 msgstr "Ukládání…"
 
-#: src/components/Settings.svelte
-msgid "Save settings"
-msgstr "Uložit nastavení"
+#~ msgid "Save settings"
+#~ msgstr "Uložit nastavení"
 
-#: src/components/Settings.svelte
-msgid "YOUR PREFERENCES"
-msgstr "VAŠE PREFERENCE"
+#~ msgid "YOUR PREFERENCES"
+#~ msgstr "VAŠE PREFERENCE"
 
-#. 0: accountName
-#: src/components/Settings.svelte
-msgid "Set up Gemini and save posting defaults for {0}."
-msgstr "Nastavte Gemini a uložte výchozí hodnoty zveřejňování pro {0}."
+#~ msgid "Set up Gemini and save posting defaults for {0}."
+#~ msgstr "Nastavte Gemini a uložte výchozí hodnoty zveřejňování pro {0}."
 
 #: src/components/StepProgress.svelte
 msgid "Completed"
@@ -1133,9 +1079,8 @@ msgstr "Večer"
 msgid "Could not change the language. Please try again."
 msgstr "Nepodařilo se změnit jazyk. Zkuste to prosím znovu."
 
-#: src/components/Settings.svelte
-msgid "Language"
-msgstr "Jazyk"
+#~ msgid "Language"
+#~ msgstr "Jazyk"
 
 #: src/components/PostingOptionsForm.svelte
 #: src/components/PostingOptionsForm.svelte
@@ -1210,7 +1155,7 @@ msgstr "PŘESKOČENO"
 msgid "UNCONFIRMED"
 msgstr "NEPOTVRZENO"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "e.g. Business"
 msgstr "např. Podnikání"
 
@@ -1282,8 +1227,11 @@ msgstr "Výchozí profil"
 msgid "Color themes"
 msgstr "Barevná témata"
 
+#: src/components/AddAccountDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/RenameProfileDialog.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UpdateButton.svelte
 msgid "Close"
@@ -1503,7 +1451,6 @@ msgid "Gemini rewrite completed."
 msgstr "Přepis Gemini dokončen."
 
 #: src/components/LogMessage.svelte
-#: src/components/UsageGuide.svelte
 msgid "Gemini rewrite failed. Using the original text for this post; Gemini will be tried again for the next post."
 msgstr "Přepis Gemini selhal. Používá se původní text tohoto příspěvku; Gemini bude zkuseno znovu pro další příspěvek."
 
@@ -1876,19 +1823,21 @@ msgstr "Podrobnosti ladění"
 #~ msgid ", "
 #~ msgstr ""
 
+#: src/components/FeaturesCard.svelte
 #: src/components/ThemePicker.svelte
+#: src/components/UsageGuide.svelte
 msgid "Themes"
 msgstr "Motivy"
 
 #: src/App.svelte
 #: src/components/UsageGuide.svelte
-msgid "Preferences & post"
-msgstr "Předvolby a zveřejnění"
+msgid "Post or schedule"
+msgstr "Publikovat nebo naplánovat"
 
 #: src/App.svelte
 #: src/App.svelte
-msgid "Set preferences, then post now or schedule"
-msgstr "Nastavte předvolby a pak příspěvek zveřejněte nebo naplánujte"
+msgid "Choose the time between posts, then post now or schedule for later."
+msgstr "Zvolte interval mezi příspěvky a poté publikujte hned nebo naplánujte na později."
 
 #~ msgid "Postika"
 #~ msgstr "Postika"
@@ -1923,9 +1872,8 @@ msgstr "Načtené skupiny zůstávají dostupné i po opětovném spuštění ap
 msgid "Minimum and maximum delays between posts."
 msgstr "Minimální a maximální prodleva mezi příspěvky."
 
-#: src/components/FeaturesCard.svelte
-msgid "Custom instructions and a configurable Gemini model."
-msgstr "Vlastní pokyny a nastavitelný model Gemini."
+#~ msgid "Custom instructions and a configurable Gemini model."
+#~ msgstr "Vlastní pokyny a nastavitelný model Gemini."
 
 #. 0: languages.length; 1: themeOptions.length
 #: src/components/FeaturesCard.svelte
@@ -1978,9 +1926,8 @@ msgstr "Napište zprávu a přidejte alespoň jeden obrázek; obojí je povinné
 msgid "Select Load groups and finish Facebook login or verification in Chrome. Search the loaded list, select the groups you want, then choose Next."
 msgstr "Zvolte Načíst skupiny a dokončete přihlášení nebo ověření Facebooku v Chromu. Prohledejte načtený seznam, vyberte skupiny a zvolte Další."
 
-#: src/components/UsageGuide.svelte
-msgid "In Settings, enter this account’s Gemini API key and model, then Save settings. Enable rewriting for your run and describe the tone and details to preserve."
-msgstr "V Nastavení zadejte klíč API Gemini a model pro tento účet a uložte nastavení. Zapněte přepisování a popište tón a údaje, které se mají zachovat."
+#~ msgid "In Settings, enter this account’s Gemini API key and model, then Save settings. Enable rewriting for your run and describe the tone and details to preserve."
+#~ msgstr "V Nastavení zadejte klíč API Gemini a model pro tento účet a uložte nastavení. Zapněte přepisování a popište tón a údaje, které se mají zachovat."
 
 #: src/components/UsageGuide.svelte
 msgid "Review the account, message, image order, selected groups, and posting intervals. Choose Post now and complete any Facebook login or verification prompts in Chrome."
@@ -2036,13 +1983,11 @@ msgstr "Zadejte URL stránky na Facebooku, například https://web.facebook.com/
 #~ msgid "Fetch Facebook posts"
 #~ msgstr ""
 
-#: src/components/FacebookPageDialog.svelte
-msgid "Decrease number of posts"
-msgstr "Snížit počet příspěvků"
+#~ msgid "Decrease number of posts"
+#~ msgstr "Snížit počet příspěvků"
 
-#: src/components/FacebookPageDialog.svelte
-msgid "Increase number of posts"
-msgstr "Zvýšit počet příspěvků"
+#~ msgid "Increase number of posts"
+#~ msgstr "Zvýšit počet příspěvků"
 
 #: src/components/FacebookPageDialog.svelte
 msgid "Facebook page URL"
@@ -2136,6 +2081,8 @@ msgstr "Upravit"
 msgid "Delete post {0}"
 msgstr "Smazat příspěvek {0}"
 
+#: src/components/AccountDropdown.svelte
+#: src/components/AccountDropdown.svelte
 #: src/components/FetchedPostCard.svelte
 msgid "Delete"
 msgstr "Smazat"
@@ -2150,6 +2097,7 @@ msgid "Remove image {0} from post {1}"
 msgstr "Odebrat obrázek {0} z příspěvku {1}"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Save changes"
 msgstr "Uložit změny"
 
@@ -2391,3 +2339,45 @@ msgstr "Vyhledat aktualizace"
 #: src/components/UpdateButton.svelte
 msgid "Installing update…"
 msgstr "Instalace aktualizace…"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "posts"
+msgstr "příspěvků"
+
+#: src/components/LogMessage.svelte
+msgid "Account names cannot be URLs"
+msgstr "Názvy účtů nesmí být adresy URL"
+
+#: src/components/LogMessage.svelte
+msgid "First post confirmed. Remaining groups stopped because the formatted text could not be verified."
+msgstr "První příspěvek byl potvrzen. Publikování do zbývajících skupin se zastavilo, protože formátovaný text nebylo možné ověřit."
+
+#: src/components/AccountDropdown.svelte
+#: src/components/RenameProfileDialog.svelte
+msgid "Rename profile"
+msgstr "Přejmenovat profil"
+
+#: src/Workspace.svelte
+#: src/components/PostingLogs.svelte
+msgid "Add an account to get started."
+msgstr "Začněte přidáním účtu."
+
+#: src/components/AccountDropdown.svelte
+#: src/components/DeleteProfileDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
+msgid "Delete profile"
+msgstr "Smazat profil"
+
+#~ msgid "<0/> Add account"
+#~ msgstr ""
+
+#~ msgid "Delete profile?"
+#~ msgstr ""
+
+#: src/components/DeleteProfileDialog.svelte
+msgid "This permanently deletes this profile’s Facebook login, groups, drafts, images, settings, and logs. Any running or scheduled queue will stop. Posts already on Facebook are kept."
+msgstr "Trvale smaže přihlášení k Facebooku, skupiny, koncepty, obrázky, nastavení a protokoly tohoto profilu. Běžící i naplánované fronty se zastaví. Příspěvky již na Facebooku zůstanou."
+
+#: src/components/DeleteProfileDialog.svelte
+msgid "Deleting…"
+msgstr "Mazání…"

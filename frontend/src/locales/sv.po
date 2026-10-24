@@ -8,10 +8,8 @@ msgstr ""
 "Plural-Forms: nplurals=2\n"
 "X-Plurals-Order: one, other\n"
 
-#. 0: appliedInterval; 1: rewriteState
-#: src/App.svelte
-msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
-msgstr "Sparade standardinställningar tillämpade: {0} sekunder mellan inlägg · Gemini omskrivning {1}."
+#~ msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
+#~ msgstr "Sparade standardinställningar tillämpade: {0} sekunder mellan inlägg · Gemini omskrivning {1}."
 
 #: src/components/LogMessage.svelte
 msgid "Could not restore saved groups. Load groups to refresh the list."
@@ -152,23 +150,17 @@ msgstr "Öppna dina Facebook-grupper för att komma igång."
 msgid "Posting settings"
 msgstr "Inläggsinställningar"
 
-#: src/App.svelte
-msgid "Add a Gemini API key in Settings to enable rewriting."
-msgstr "Lägg till en Gemini API-nyckel i Inställningar för att aktivera omskrivning."
+#~ msgid "Add a Gemini API key in Settings to enable rewriting."
+#~ msgstr "Lägg till en Gemini API-nyckel i Inställningar för att aktivera omskrivning."
 
-#: src/App.svelte
-msgid "Applying defaults…"
-msgstr "Tillämpa standardinställningar…"
+#~ msgid "Applying defaults…"
+#~ msgstr "Tillämpa standardinställningar…"
 
-#: src/App.svelte
-#: src/components/FeaturesCard.svelte
-#: src/components/UsageGuide.svelte
-msgid "Use saved defaults"
-msgstr "Använd sparade standardinställningar"
+#~ msgid "Use saved defaults"
+#~ msgstr "Använd sparade standardinställningar"
 
-#: src/App.svelte
-msgid "Open settings"
-msgstr "Öppna inställningar"
+#~ msgid "Open settings"
+#~ msgstr "Öppna inställningar"
 
 #~ msgid "Posting as <0/>"
 #~ msgstr "Publicera som <0/>"
@@ -200,9 +192,11 @@ msgid "Time zone: {0}. Keep Postika open and your computer awake. Facebook may a
 msgstr "Tidszon: {0}. Håll Postika öppen och datorn vaken. Facebook kan be dig logga in när publiceringen startar."
 
 #: src/App.svelte
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FetchedPostCard.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Cancel"
 msgstr "Avbryt"
 
@@ -253,6 +247,8 @@ msgid "Application menu"
 msgstr "Programmeny"
 
 #: src/Workspace.svelte
+#: src/components/AccountDropdown.svelte
+#: src/components/AddAccountDialog.svelte
 #: src/components/UsageGuide.svelte
 msgid "Add account"
 msgstr "Lägg till konto"
@@ -261,31 +257,28 @@ msgstr "Lägg till konto"
 #: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogView.svelte
+#: src/components/PostingLogs.svelte
 #: src/components/UsageGuide.svelte
 msgid "Posting logs"
 msgstr "Publiceringslogg"
 
-#: src/Workspace.svelte
-#: src/components/FeaturesCard.svelte
-#: src/components/Settings.svelte
-#: src/components/Settings.svelte
-#: src/components/UsageGuide.svelte
-msgid "Settings"
-msgstr "Inställningar"
+#~ msgid "Settings"
+#~ msgstr "Inställningar"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "Creating…"
 msgstr "Skapar…"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "Create & sign in"
 msgstr "Skapa och logga in"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Account name"
 msgstr "Kontonamn"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 #: src/components/UsageGuide.svelte
 msgid "Sign in to Facebook in the new account’s browser window."
 msgstr "Logga in på Facebook i det nya kontoets webbläsarfönster."
@@ -794,172 +787,125 @@ msgstr "Välj hur länge du ska vänta innan du postar till nästa grupp."
 msgid "At least 60 seconds. Use equal values for a fixed interval."
 msgstr "Minst 60 sekunder. Använd samma värden för ett fast intervall."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "OPTIONAL · AI REWRITE"
-msgstr "VALFRITT · AI-OMSKRIVNING"
+#~ msgid "OPTIONAL · AI REWRITE"
+#~ msgstr "VALFRITT · AI-OMSKRIVNING"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "A fresh version for each group"
-msgstr "En ny version för varje grupp"
+#~ msgid "A fresh version for each group"
+#~ msgstr "En ny version för varje grupp"
 
-#: src/components/FeaturesCard.svelte
-#: src/components/PostingOptionsForm.svelte
-#: src/components/UsageGuide.svelte
-msgid "Rewrite each post body with Gemini"
-msgstr "Omskriv varje inläggstext med Gemini"
+#~ msgid "Rewrite each post body with Gemini"
+#~ msgstr "Omskriv varje inläggstext med Gemini"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
-msgstr "Omskrivningsinstruktioner<0>Välj tonen och detaljerna som Gemini ska bevara.</0>"
+#~ msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
+#~ msgstr "Omskrivningsinstruktioner<0>Välj tonen och detaljerna som Gemini ska bevara.</0>"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Keep it concise and easy to scan. Preserve the price and contact details."
-msgstr "Håll det kortfattat och lätt att skumma. Bevara priset och kontaktuppgifterna."
+#~ msgid "Keep it concise and easy to scan. Preserve the price and contact details."
+#~ msgstr "Håll det kortfattat och lätt att skumma. Bevara priset och kontaktuppgifterna."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Rewrite instructions"
-msgstr "Omskrivningsinstruktioner"
+#~ msgid "Rewrite instructions"
+#~ msgstr "Omskrivningsinstruktioner"
 
-#: src/components/FeaturesCard.svelte
-#: src/components/PostingOptionsForm.svelte
-#: src/components/UsageGuide.svelte
-msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
-msgstr "Din inläggstext och instruktioner skickas till Google Gemini. Bilder skickas inte. Gemini skriver om använder vanlig text."
+#~ msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
+#~ msgstr "Din inläggstext och instruktioner skickas till Google Gemini. Bilder skickas inte. Gemini skriver om använder vanlig text."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
-msgstr "Om omskrivningen misslyckas, används ditt ursprungliga textinlägg. Nästa inlägg försöker Gemini igen."
+#~ msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
+#~ msgstr "Om omskrivningen misslyckas, används ditt ursprungliga textinlägg. Nästa inlägg försöker Gemini igen."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Let Gemini rewrite your post using your instructions."
-msgstr "Låt Gemini skriva om ditt inlägg med dina instruktioner."
+#~ msgid "Let Gemini rewrite your post using your instructions."
+#~ msgstr "Låt Gemini skriva om ditt inlägg med dina instruktioner."
 
 #: src/components/PostingOptionsForm.svelte
 msgid "Posting preferences"
 msgstr "Inställningar för inlägg"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved defaults help"
-msgstr "Sparade standardinställningar hjälper"
+#~ msgid "Saved defaults help"
+#~ msgstr "Sparade standardinställningar hjälper"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "About saved defaults"
-msgstr "Om sparade standardinställningar"
+#~ msgid "About saved defaults"
+#~ msgstr "Om sparade standardinställningar"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved interval"
-msgstr "Sparad intervall"
+#~ msgid "Saved interval"
+#~ msgstr "Sparad intervall"
 
-#. 0: settings.minimumInterval === settings.maximumInterval ? settings.minimumInterval \\: `${settings.minimumInterval}–${settings.maximumInterval}`
-#: src/components/SavedDefaultsInfo.svelte
-msgid "{0} seconds"
-msgstr "{0} sekunder"
+#~ msgid "{0} seconds"
+#~ msgstr "{0} sekunder"
 
-#: src/App.svelte
-#: src/components/SavedDefaultsInfo.svelte
-msgid "On"
-msgstr "På"
+#~ msgid "On"
+#~ msgstr "På"
 
-#: src/App.svelte
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Off"
-msgstr "Av"
+#~ msgid "Off"
+#~ msgstr "Av"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Gemini rewrite"
-msgstr "Gemini-omskrivning"
+#~ msgid "Gemini rewrite"
+#~ msgstr "Gemini-omskrivning"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "No instructions saved."
-msgstr "Inga instruktioner sparade."
+#~ msgid "No instructions saved."
+#~ msgstr "Inga instruktioner sparade."
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved rewrite instructions"
-msgstr "Sparade omskrivningsinstruktioner"
+#~ msgid "Saved rewrite instructions"
+#~ msgstr "Sparade omskrivningsinstruktioner"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved values could not be loaded. Try “Use saved defaults” again."
-msgstr "Sparade värden kunde inte läsas in. Försök med \"Använd sparade standardinställningar\" igen."
+#~ msgid "Saved values could not be loaded. Try “Use saved defaults” again."
+#~ msgstr "Sparade värden kunde inte läsas in. Försök med \"Använd sparade standardinställningar\" igen."
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "What does “Use saved defaults” do?"
-msgstr "Vad gör \"Använd sparade standardinställningar\"?"
+#~ msgid "What does “Use saved defaults” do?"
+#~ msgstr "Vad gör \"Använd sparade standardinställningar\"?"
 
-#: src/components/SavedDefaultsInfo.svelte
-#: src/components/UsageGuide.svelte
-msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
-msgstr "Ersätter denna körs postintervall, Gemini-omskrivningsalternativ och omskrivningsinstruktioner med värdena sparade i Inställningarna."
+#~ msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
+#~ msgstr "Ersätter denna körs postintervall, Gemini-omskrivningsalternativ och omskrivningsinstruktioner med värdena sparade i Inställningarna."
 
-#: src/components/SavedDefaultsInfo.svelte
-#: src/components/UsageGuide.svelte
-msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
-msgstr "Initiala standardinställningar: 60–120 sekunder, Gemini-omskrivning och inga omskrivningsinstruktioner. Spara dina egna inställningar i Inställningar för att ändra dem."
+#~ msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
+#~ msgstr "Initiala standardinställningar: 60–120 sekunder, Gemini-omskrivning och inga omskrivningsinstruktioner. Spara dina egna inställningar i Inställningar för att ändra dem."
 
 #: src/components/LogMessage.svelte
 msgid "Settings saved. New runs can use these defaults."
 msgstr "Inställningar sparade. Nya genomspelningar kan använda dessa standardinställningar."
 
-#: src/components/Settings.svelte
-msgid "Key saved · leave blank to keep it"
-msgstr "Nyckeln sparad · lämna den tom för att behålla den"
+#~ msgid "Key saved · leave blank to keep it"
+#~ msgstr "Nyckeln sparad · lämna den tom för att behålla den"
 
-#: src/components/Settings.svelte
-msgid "Enter your Gemini API key"
-msgstr "Ange din Gemini API-nyckel"
+#~ msgid "Enter your Gemini API key"
+#~ msgstr "Ange din Gemini API-nyckel"
 
-#: src/components/Settings.svelte
-msgid "A key is saved on this device."
-msgstr "En nyckel sparas på denna enhet."
+#~ msgid "A key is saved on this device."
+#~ msgstr "En nyckel sparas på denna enhet."
 
-#: src/components/Settings.svelte
-msgid "No API key saved."
-msgstr "Ingen API-nyckel sparad."
+#~ msgid "No API key saved."
+#~ msgstr "Ingen API-nyckel sparad."
 
-#: src/components/Settings.svelte
-msgid "Remove saved key"
-msgstr "Ta bort sparad nyckel"
+#~ msgid "Remove saved key"
+#~ msgstr "Ta bort sparad nyckel"
 
-#: src/components/Settings.svelte
-msgid "Gemini"
-msgstr "Gemini"
+#~ msgid "Gemini"
+#~ msgstr "Gemini"
 
-#: src/components/Settings.svelte
-msgid "API key<0/>"
-msgstr "API key<0/>"
+#~ msgid "API key<0/>"
+#~ msgstr "API key<0/>"
 
-#. 0: keyConfigured ? 'A key is saved on this device.' \\: 'No API key saved.'
-#: src/components/Settings.svelte
-msgid "{0} The saved key is never displayed."
-msgstr "{0} Den sparade nyckeln visas aldrig."
+#~ msgid "{0} The saved key is never displayed."
+#~ msgstr "{0} Den sparade nyckeln visas aldrig."
 
-#: src/components/Settings.svelte
-msgid "Model<0/>"
-msgstr "Model<0/>"
+#~ msgid "Model<0/>"
+#~ msgstr "Model<0/>"
 
-#: src/components/Settings.svelte
-msgid "Posting defaults"
-msgstr "Standardinställningar för inlägg"
+#~ msgid "Posting defaults"
+#~ msgstr "Standardinställningar för inlägg"
 
-#: src/components/Settings.svelte
-msgid "Applied when you start a new posting run."
-msgstr "Ansökt när du startar en ny postningsrunda."
+#~ msgid "Applied when you start a new posting run."
+#~ msgstr "Ansökt när du startar en ny postningsrunda."
 
-#: src/components/Settings.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Saving…"
 msgstr "Rädda..."
 
-#: src/components/Settings.svelte
-msgid "Save settings"
-msgstr "Spara inställningar"
+#~ msgid "Save settings"
+#~ msgstr "Spara inställningar"
 
-#: src/components/Settings.svelte
-msgid "YOUR PREFERENCES"
-msgstr "DINA PREFERENSER"
+#~ msgid "YOUR PREFERENCES"
+#~ msgstr "DINA PREFERENSER"
 
-#. 0: accountName
-#: src/components/Settings.svelte
-msgid "Set up Gemini and save posting defaults for {0}."
-msgstr "Ställ in Gemini och spara poststandardinställningar för {0}."
+#~ msgid "Set up Gemini and save posting defaults for {0}."
+#~ msgstr "Ställ in Gemini och spara poststandardinställningar för {0}."
 
 #: src/components/StepProgress.svelte
 msgid "Completed"
@@ -1133,9 +1079,8 @@ msgstr "Kväll"
 msgid "Could not change the language. Please try again."
 msgstr "Kunde inte ändra språket. Vänligen försök igen."
 
-#: src/components/Settings.svelte
-msgid "Language"
-msgstr "Språk"
+#~ msgid "Language"
+#~ msgstr "Språk"
 
 #: src/components/PostingOptionsForm.svelte
 #: src/components/PostingOptionsForm.svelte
@@ -1210,7 +1155,7 @@ msgstr "HOPPAD"
 msgid "UNCONFIRMED"
 msgstr "OBEKRÄFTAD"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "e.g. Business"
 msgstr "t.ex. Företag"
 
@@ -1282,8 +1227,11 @@ msgstr "Standardprofil"
 msgid "Color themes"
 msgstr "Färgteman"
 
+#: src/components/AddAccountDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/RenameProfileDialog.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UpdateButton.svelte
 msgid "Close"
@@ -1503,7 +1451,6 @@ msgid "Gemini rewrite completed."
 msgstr "Gemini omskrivning klar."
 
 #: src/components/LogMessage.svelte
-#: src/components/UsageGuide.svelte
 msgid "Gemini rewrite failed. Using the original text for this post; Gemini will be tried again for the next post."
 msgstr "Gemini omskrivning misslyckades. Använder den ursprungliga texten för detta inlägg; Gemini kommer att prövas igen för nästa inlägg."
 
@@ -1876,19 +1823,21 @@ msgstr "Felsökningsdetaljer"
 #~ msgid ", "
 #~ msgstr ""
 
+#: src/components/FeaturesCard.svelte
 #: src/components/ThemePicker.svelte
+#: src/components/UsageGuide.svelte
 msgid "Themes"
 msgstr "Teman"
 
 #: src/App.svelte
 #: src/components/UsageGuide.svelte
-msgid "Preferences & post"
-msgstr "Inställningar och publicering"
+msgid "Post or schedule"
+msgstr "Publicera eller schemalägg"
 
 #: src/App.svelte
 #: src/App.svelte
-msgid "Set preferences, then post now or schedule"
-msgstr "Ange inställningar och publicera nu eller schemalägg"
+msgid "Choose the time between posts, then post now or schedule for later."
+msgstr "Välj tiden mellan inläggen och publicera sedan nu eller schemalägg till senare."
 
 #~ msgid "Postika"
 #~ msgstr "Postika"
@@ -1923,9 +1872,8 @@ msgstr "Inlästa grupper finns kvar mellan appsessioner."
 msgid "Minimum and maximum delays between posts."
 msgstr "Minsta och längsta väntetid mellan inlägg."
 
-#: src/components/FeaturesCard.svelte
-msgid "Custom instructions and a configurable Gemini model."
-msgstr "Egna instruktioner och en konfigurerbar Gemini-modell."
+#~ msgid "Custom instructions and a configurable Gemini model."
+#~ msgstr "Egna instruktioner och en konfigurerbar Gemini-modell."
 
 #. 0: languages.length; 1: themeOptions.length
 #: src/components/FeaturesCard.svelte
@@ -1978,9 +1926,8 @@ msgstr "Skriv meddelandet och lägg till minst en bild; båda krävs. Nästa gå
 msgid "Select Load groups and finish Facebook login or verification in Chrome. Search the loaded list, select the groups you want, then choose Next."
 msgstr "Välj Läs in grupper och slutför Facebook-inloggning eller verifiering i Chrome. Sök i listan, välj grupper och sedan Nästa."
 
-#: src/components/UsageGuide.svelte
-msgid "In Settings, enter this account’s Gemini API key and model, then Save settings. Enable rewriting for your run and describe the tone and details to preserve."
-msgstr "Ange kontots Gemini-API-nyckel och modell i Inställningar och spara. Aktivera omskrivning och beskriv tonen och detaljerna som ska bevaras."
+#~ msgid "In Settings, enter this account’s Gemini API key and model, then Save settings. Enable rewriting for your run and describe the tone and details to preserve."
+#~ msgstr "Ange kontots Gemini-API-nyckel och modell i Inställningar och spara. Aktivera omskrivning och beskriv tonen och detaljerna som ska bevaras."
 
 #: src/components/UsageGuide.svelte
 msgid "Review the account, message, image order, selected groups, and posting intervals. Choose Post now and complete any Facebook login or verification prompts in Chrome."
@@ -2036,13 +1983,11 @@ msgstr "Ange URL:en till en Facebook-sida, till exempel https://web.facebook.com
 #~ msgid "Fetch Facebook posts"
 #~ msgstr ""
 
-#: src/components/FacebookPageDialog.svelte
-msgid "Decrease number of posts"
-msgstr "Minska antal inlägg"
+#~ msgid "Decrease number of posts"
+#~ msgstr "Minska antal inlägg"
 
-#: src/components/FacebookPageDialog.svelte
-msgid "Increase number of posts"
-msgstr "Öka antal inlägg"
+#~ msgid "Increase number of posts"
+#~ msgstr "Öka antal inlägg"
 
 #: src/components/FacebookPageDialog.svelte
 msgid "Facebook page URL"
@@ -2136,6 +2081,8 @@ msgstr "Redigera"
 msgid "Delete post {0}"
 msgstr "Ta bort inlägg {0}"
 
+#: src/components/AccountDropdown.svelte
+#: src/components/AccountDropdown.svelte
 #: src/components/FetchedPostCard.svelte
 msgid "Delete"
 msgstr "Ta bort"
@@ -2150,6 +2097,7 @@ msgid "Remove image {0} from post {1}"
 msgstr "Ta bort bild {0} från inlägg {1}"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Save changes"
 msgstr "Spara ändringar"
 
@@ -2391,3 +2339,45 @@ msgstr "Sök efter uppdateringar"
 #: src/components/UpdateButton.svelte
 msgid "Installing update…"
 msgstr "Installerar uppdatering…"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "posts"
+msgstr "inlägg"
+
+#: src/components/LogMessage.svelte
+msgid "Account names cannot be URLs"
+msgstr "Kontonamn får inte vara webbadresser"
+
+#: src/components/LogMessage.svelte
+msgid "First post confirmed. Remaining groups stopped because the formatted text could not be verified."
+msgstr "Det första inlägget har bekräftats. Publiceringen i resterande grupper stoppades eftersom den formaterade texten inte kunde verifieras."
+
+#: src/components/AccountDropdown.svelte
+#: src/components/RenameProfileDialog.svelte
+msgid "Rename profile"
+msgstr "Byt namn på profil"
+
+#: src/Workspace.svelte
+#: src/components/PostingLogs.svelte
+msgid "Add an account to get started."
+msgstr "Lägg till ett konto för att komma igång."
+
+#: src/components/AccountDropdown.svelte
+#: src/components/DeleteProfileDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
+msgid "Delete profile"
+msgstr "Ta bort profil"
+
+#~ msgid "<0/> Add account"
+#~ msgstr ""
+
+#~ msgid "Delete profile?"
+#~ msgstr ""
+
+#: src/components/DeleteProfileDialog.svelte
+msgid "This permanently deletes this profile’s Facebook login, groups, drafts, images, settings, and logs. Any running or scheduled queue will stop. Posts already on Facebook are kept."
+msgstr "Detta tar permanent bort profilens Facebook-inloggning, grupper, utkast, bilder, inställningar och loggar. Aktiva eller schemalagda köer stoppas. Inlägg som redan finns på Facebook behålls."
+
+#: src/components/DeleteProfileDialog.svelte
+msgid "Deleting…"
+msgstr "Tar bort…"

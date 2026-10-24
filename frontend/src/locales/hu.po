@@ -8,10 +8,8 @@ msgstr ""
 "Plural-Forms: nplurals=2\n"
 "X-Plurals-Order: one, other\n"
 
-#. 0: appliedInterval; 1: rewriteState
-#: src/App.svelte
-msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
-msgstr "Mentett alapbeállítások alkalmazva: {0} másodperc a bejegyzések között · Gemini újraírás {1}."
+#~ msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
+#~ msgstr "Mentett alapbeállítások alkalmazva: {0} másodperc a bejegyzések között · Gemini újraírás {1}."
 
 #: src/components/LogMessage.svelte
 msgid "Could not restore saved groups. Load groups to refresh the list."
@@ -152,23 +150,17 @@ msgstr "Nyisd meg a Facebook-csoportjaidat a kezdéshez."
 msgid "Posting settings"
 msgstr "Bejegyzés beállításai"
 
-#: src/App.svelte
-msgid "Add a Gemini API key in Settings to enable rewriting."
-msgstr "Adj hozzá egy Gemini API kulcsot a Beállításokban a átírás engedélyezéséhez."
+#~ msgid "Add a Gemini API key in Settings to enable rewriting."
+#~ msgstr "Adj hozzá egy Gemini API kulcsot a Beállításokban a átírás engedélyezéséhez."
 
-#: src/App.svelte
-msgid "Applying defaults…"
-msgstr "Alapértelmezett értékek alkalmazása…"
+#~ msgid "Applying defaults…"
+#~ msgstr "Alapértelmezett értékek alkalmazása…"
 
-#: src/App.svelte
-#: src/components/FeaturesCard.svelte
-#: src/components/UsageGuide.svelte
-msgid "Use saved defaults"
-msgstr "Mentett alapértelmezett értékek használata"
+#~ msgid "Use saved defaults"
+#~ msgstr "Mentett alapértelmezett értékek használata"
 
-#: src/App.svelte
-msgid "Open settings"
-msgstr "Beállítások megnyitása"
+#~ msgid "Open settings"
+#~ msgstr "Beállítások megnyitása"
 
 #~ msgid "Posting as <0/>"
 #~ msgstr "Beküldés mint <0/>"
@@ -200,9 +192,11 @@ msgid "Time zone: {0}. Keep Postika open and your computer awake. Facebook may a
 msgstr "Időzóna: {0}. Tartsd nyitva a Postikát és a számítógéped ébren. A Facebook esetleg kérni fogja a bejelentkezést, amikor a közzététel elindul."
 
 #: src/App.svelte
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FetchedPostCard.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Cancel"
 msgstr "Mégse"
 
@@ -253,6 +247,8 @@ msgid "Application menu"
 msgstr "Alkalmazás menü"
 
 #: src/Workspace.svelte
+#: src/components/AccountDropdown.svelte
+#: src/components/AddAccountDialog.svelte
 #: src/components/UsageGuide.svelte
 msgid "Add account"
 msgstr "Fiók hozzáadása"
@@ -261,31 +257,28 @@ msgstr "Fiók hozzáadása"
 #: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogView.svelte
+#: src/components/PostingLogs.svelte
 #: src/components/UsageGuide.svelte
 msgid "Posting logs"
 msgstr "Közzétételi napló"
 
-#: src/Workspace.svelte
-#: src/components/FeaturesCard.svelte
-#: src/components/Settings.svelte
-#: src/components/Settings.svelte
-#: src/components/UsageGuide.svelte
-msgid "Settings"
-msgstr "Beállítások"
+#~ msgid "Settings"
+#~ msgstr "Beállítások"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "Creating…"
 msgstr "Létrehozás…"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "Create & sign in"
 msgstr "Létrehozás és bejelentkezés"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Account name"
 msgstr "Fióknév"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 #: src/components/UsageGuide.svelte
 msgid "Sign in to Facebook in the new account’s browser window."
 msgstr "Jelentkezz be a Facebookra az új fiók böngészőablakában."
@@ -794,172 +787,125 @@ msgstr "Válaszd ki, mennyi ideig várj a következő csoporthoz való posztolá
 msgid "At least 60 seconds. Use equal values for a fixed interval."
 msgstr "Legalább 60 másodperc. Használj egyenlő értékeket fix időközhöz."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "OPTIONAL · AI REWRITE"
-msgstr "OPCIONÁLIS · AI ÁTÍRÁS"
+#~ msgid "OPTIONAL · AI REWRITE"
+#~ msgstr "OPCIONÁLIS · AI ÁTÍRÁS"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "A fresh version for each group"
-msgstr "Friss verzió minden csoporthoz"
+#~ msgid "A fresh version for each group"
+#~ msgstr "Friss verzió minden csoporthoz"
 
-#: src/components/FeaturesCard.svelte
-#: src/components/PostingOptionsForm.svelte
-#: src/components/UsageGuide.svelte
-msgid "Rewrite each post body with Gemini"
-msgstr "Írd át minden poszt tartalmát a Gemini segítségével"
+#~ msgid "Rewrite each post body with Gemini"
+#~ msgstr "Írd át minden poszt tartalmát a Gemini segítségével"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
-msgstr "Írási utasítások újraírása<0>Válassza ki a hangnemet és azokat a részleteket, amelyeket a Gemini meg kell őrizzen.</0>"
+#~ msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
+#~ msgstr "Írási utasítások újraírása<0>Válassza ki a hangnemet és azokat a részleteket, amelyeket a Gemini meg kell őrizzen.</0>"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Keep it concise and easy to scan. Preserve the price and contact details."
-msgstr "Tartsa tömören és könnyen áttekinthetően. Őrizze meg az árat és az elérhetőségi adatokat."
+#~ msgid "Keep it concise and easy to scan. Preserve the price and contact details."
+#~ msgstr "Tartsa tömören és könnyen áttekinthetően. Őrizze meg az árat és az elérhetőségi adatokat."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Rewrite instructions"
-msgstr "Írási utasítások újraírása"
+#~ msgid "Rewrite instructions"
+#~ msgstr "Írási utasítások újraírása"
 
-#: src/components/FeaturesCard.svelte
-#: src/components/PostingOptionsForm.svelte
-#: src/components/UsageGuide.svelte
-msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
-msgstr "Az Ön bejegyzésszövege és utasításai a Google Gemininek kerülnek elküldésre. Képek nem kerülnek elküldésre. A Gemini újraírása sima szöveget használ."
+#~ msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
+#~ msgstr "Az Ön bejegyzésszövege és utasításai a Google Gemininek kerülnek elküldésre. Képek nem kerülnek elküldésre. A Gemini újraírása sima szöveget használ."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
-msgstr "Ha az újraírás nem sikerül, az adott bejegyzés az eredeti szöveget használja. A következő bejegyzésnél a Gemini újra próbálkozik."
+#~ msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
+#~ msgstr "Ha az újraírás nem sikerül, az adott bejegyzés az eredeti szöveget használja. A következő bejegyzésnél a Gemini újra próbálkozik."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Let Gemini rewrite your post using your instructions."
-msgstr "Hagyd, hogy a Gemini az utasításaid alapján írja újra a bejegyzésedet."
+#~ msgid "Let Gemini rewrite your post using your instructions."
+#~ msgstr "Hagyd, hogy a Gemini az utasításaid alapján írja újra a bejegyzésedet."
 
 #: src/components/PostingOptionsForm.svelte
 msgid "Posting preferences"
 msgstr "Bejegyzési beállítások"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved defaults help"
-msgstr "A mentett alapértelmezett értékek segítenek"
+#~ msgid "Saved defaults help"
+#~ msgstr "A mentett alapértelmezett értékek segítenek"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "About saved defaults"
-msgstr "A mentett alapértelmezésekről"
+#~ msgid "About saved defaults"
+#~ msgstr "A mentett alapértelmezésekről"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved interval"
-msgstr "Mentett időköz"
+#~ msgid "Saved interval"
+#~ msgstr "Mentett időköz"
 
-#. 0: settings.minimumInterval === settings.maximumInterval ? settings.minimumInterval \\: `${settings.minimumInterval}–${settings.maximumInterval}`
-#: src/components/SavedDefaultsInfo.svelte
-msgid "{0} seconds"
-msgstr "{0} másodperc"
+#~ msgid "{0} seconds"
+#~ msgstr "{0} másodperc"
 
-#: src/App.svelte
-#: src/components/SavedDefaultsInfo.svelte
-msgid "On"
-msgstr "Be"
+#~ msgid "On"
+#~ msgstr "Be"
 
-#: src/App.svelte
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Off"
-msgstr "Ki"
+#~ msgid "Off"
+#~ msgstr "Ki"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Gemini rewrite"
-msgstr "Gemini újraírás"
+#~ msgid "Gemini rewrite"
+#~ msgstr "Gemini újraírás"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "No instructions saved."
-msgstr "Nincsenek mentett utasítások."
+#~ msgid "No instructions saved."
+#~ msgstr "Nincsenek mentett utasítások."
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved rewrite instructions"
-msgstr "Mentett írási utasítások"
+#~ msgid "Saved rewrite instructions"
+#~ msgstr "Mentett írási utasítások"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved values could not be loaded. Try “Use saved defaults” again."
-msgstr "A mentett értékek betöltése nem sikerült. Próbáld újra a „Mentett alapértelmezések használata” lehetőséget."
+#~ msgid "Saved values could not be loaded. Try “Use saved defaults” again."
+#~ msgstr "A mentett értékek betöltése nem sikerült. Próbáld újra a „Mentett alapértelmezések használata” lehetőséget."
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "What does “Use saved defaults” do?"
-msgstr "Mit csinál a „Mentett alapértelmezések használata”?"
+#~ msgid "What does “Use saved defaults” do?"
+#~ msgstr "Mit csinál a „Mentett alapértelmezések használata”?"
 
-#: src/components/SavedDefaultsInfo.svelte
-#: src/components/UsageGuide.svelte
-msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
-msgstr "Ezzel lecseréli a jelen futás közzétételi intervallumát, a Gemini újraírási opciót és az újraírási utasításokat a Beállításokban mentett értékekre."
+#~ msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
+#~ msgstr "Ezzel lecseréli a jelen futás közzétételi intervallumát, a Gemini újraírási opciót és az újraírási utasításokat a Beállításokban mentett értékekre."
 
-#: src/components/SavedDefaultsInfo.svelte
-#: src/components/UsageGuide.svelte
-msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
-msgstr "Kezdeti alapértelmezett értékek: 60–120 másodperc, Gemini újraírás ki, és nincs újraírási utasítás. Mentse saját preferenciáit a Beállításokban a módosításhoz."
+#~ msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
+#~ msgstr "Kezdeti alapértelmezett értékek: 60–120 másodperc, Gemini újraírás ki, és nincs újraírási utasítás. Mentse saját preferenciáit a Beállításokban a módosításhoz."
 
 #: src/components/LogMessage.svelte
 msgid "Settings saved. New runs can use these defaults."
 msgstr "Beállítások elmentve. Az új futások használhatják ezeket az alapértelmezett értékeket."
 
-#: src/components/Settings.svelte
-msgid "Key saved · leave blank to keep it"
-msgstr "Kulcs elmentve · hagyja üresen a megtartáshoz"
+#~ msgid "Key saved · leave blank to keep it"
+#~ msgstr "Kulcs elmentve · hagyja üresen a megtartáshoz"
 
-#: src/components/Settings.svelte
-msgid "Enter your Gemini API key"
-msgstr "Írja be a Gemini API kulcsát"
+#~ msgid "Enter your Gemini API key"
+#~ msgstr "Írja be a Gemini API kulcsát"
 
-#: src/components/Settings.svelte
-msgid "A key is saved on this device."
-msgstr "Egy kulcs elmentve ezen az eszközön."
+#~ msgid "A key is saved on this device."
+#~ msgstr "Egy kulcs elmentve ezen az eszközön."
 
-#: src/components/Settings.svelte
-msgid "No API key saved."
-msgstr "Nincs elmentett API kulcs."
+#~ msgid "No API key saved."
+#~ msgstr "Nincs elmentett API kulcs."
 
-#: src/components/Settings.svelte
-msgid "Remove saved key"
-msgstr "Elmentett kulcs eltávolítása"
+#~ msgid "Remove saved key"
+#~ msgstr "Elmentett kulcs eltávolítása"
 
-#: src/components/Settings.svelte
-msgid "Gemini"
-msgstr "Gemini"
+#~ msgid "Gemini"
+#~ msgstr "Gemini"
 
-#: src/components/Settings.svelte
-msgid "API key<0/>"
-msgstr "API kulcs<0/>"
+#~ msgid "API key<0/>"
+#~ msgstr "API kulcs<0/>"
 
-#. 0: keyConfigured ? 'A key is saved on this device.' \\: 'No API key saved.'
-#: src/components/Settings.svelte
-msgid "{0} The saved key is never displayed."
-msgstr "{0} Az elmentett kulcs soha nem kerül megjelenítésre."
+#~ msgid "{0} The saved key is never displayed."
+#~ msgstr "{0} Az elmentett kulcs soha nem kerül megjelenítésre."
 
-#: src/components/Settings.svelte
-msgid "Model<0/>"
-msgstr "Modell<0/>"
+#~ msgid "Model<0/>"
+#~ msgstr "Modell<0/>"
 
-#: src/components/Settings.svelte
-msgid "Posting defaults"
-msgstr "Alapértelmezett közzétételi beállítások"
+#~ msgid "Posting defaults"
+#~ msgstr "Alapértelmezett közzétételi beállítások"
 
-#: src/components/Settings.svelte
-msgid "Applied when you start a new posting run."
-msgstr "Alkalmazva, amikor új közzétételi futást indít."
+#~ msgid "Applied when you start a new posting run."
+#~ msgstr "Alkalmazva, amikor új közzétételi futást indít."
 
-#: src/components/Settings.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Saving…"
 msgstr "Mentés…"
 
-#: src/components/Settings.svelte
-msgid "Save settings"
-msgstr "Beállítások mentése"
+#~ msgid "Save settings"
+#~ msgstr "Beállítások mentése"
 
-#: src/components/Settings.svelte
-msgid "YOUR PREFERENCES"
-msgstr "ÖN PREFERENCIÁI"
+#~ msgid "YOUR PREFERENCES"
+#~ msgstr "ÖN PREFERENCIÁI"
 
-#. 0: accountName
-#: src/components/Settings.svelte
-msgid "Set up Gemini and save posting defaults for {0}."
-msgstr "Állítsa be a Gemini-t és mentse a közzétételi alapértelmezéseket {0} számára."
+#~ msgid "Set up Gemini and save posting defaults for {0}."
+#~ msgstr "Állítsa be a Gemini-t és mentse a közzétételi alapértelmezéseket {0} számára."
 
 #: src/components/StepProgress.svelte
 msgid "Completed"
@@ -1133,9 +1079,8 @@ msgstr "Este"
 msgid "Could not change the language. Please try again."
 msgstr "A nyelvet nem sikerült megváltoztatni. Kérjük, próbáld újra."
 
-#: src/components/Settings.svelte
-msgid "Language"
-msgstr "Nyelv"
+#~ msgid "Language"
+#~ msgstr "Nyelv"
 
 #: src/components/PostingOptionsForm.svelte
 #: src/components/PostingOptionsForm.svelte
@@ -1210,7 +1155,7 @@ msgstr "KIHAGYVA"
 msgid "UNCONFIRMED"
 msgstr "MEGERŐSÍTETLEN"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "e.g. Business"
 msgstr "például Üzlet"
 
@@ -1282,8 +1227,11 @@ msgstr "Alapértelmezett profil"
 msgid "Color themes"
 msgstr "Színtémák"
 
+#: src/components/AddAccountDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/RenameProfileDialog.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UpdateButton.svelte
 msgid "Close"
@@ -1503,7 +1451,6 @@ msgid "Gemini rewrite completed."
 msgstr "A Gemini átdolgozás befejezve."
 
 #: src/components/LogMessage.svelte
-#: src/components/UsageGuide.svelte
 msgid "Gemini rewrite failed. Using the original text for this post; Gemini will be tried again for the next post."
 msgstr "A Gemini átdolgozás sikertelen. Az eredeti szöveget használjuk ehhez a bejegyzéshez; a Geminit a következő bejegyzésnél újra megpróbáljuk."
 
@@ -1876,19 +1823,21 @@ msgstr "Hibakeresési részletek"
 #~ msgid ", "
 #~ msgstr ""
 
+#: src/components/FeaturesCard.svelte
 #: src/components/ThemePicker.svelte
+#: src/components/UsageGuide.svelte
 msgid "Themes"
 msgstr "Témák"
 
 #: src/App.svelte
 #: src/components/UsageGuide.svelte
-msgid "Preferences & post"
-msgstr "Beállítások és közzététel"
+msgid "Post or schedule"
+msgstr "Közzététel vagy ütemezés"
 
 #: src/App.svelte
 #: src/App.svelte
-msgid "Set preferences, then post now or schedule"
-msgstr "Állítsa be a lehetőségeket, majd tegye közzé most vagy ütemezze"
+msgid "Choose the time between posts, then post now or schedule for later."
+msgstr "Válassza ki a bejegyzések közötti időt, majd tegye közzé most, vagy ütemezze későbbre."
 
 #~ msgid "Postika"
 #~ msgstr "Postika"
@@ -1923,9 +1872,8 @@ msgstr "A betöltött csoportok az alkalmazás újraindítása után is elérhet
 msgid "Minimum and maximum delays between posts."
 msgstr "Minimális és maximális várakozás a bejegyzések között."
 
-#: src/components/FeaturesCard.svelte
-msgid "Custom instructions and a configurable Gemini model."
-msgstr "Egyéni utasítások és beállítható Gemini-modell."
+#~ msgid "Custom instructions and a configurable Gemini model."
+#~ msgstr "Egyéni utasítások és beállítható Gemini-modell."
 
 #. 0: languages.length; 1: themeOptions.length
 #: src/components/FeaturesCard.svelte
@@ -1978,9 +1926,8 @@ msgstr "Írja meg az üzenetet, és adjon hozzá legalább egy képet; mindkett�
 msgid "Select Load groups and finish Facebook login or verification in Chrome. Search the loaded list, select the groups you want, then choose Next."
 msgstr "Válassza a Csoportok betöltése lehetőséget, és fejezze be a Facebook-bejelentkezést vagy ellenőrzést a Chrome-ban. Keressen a listában, válassza ki a csoportokat, majd Tovább."
 
-#: src/components/UsageGuide.svelte
-msgid "In Settings, enter this account’s Gemini API key and model, then Save settings. Enable rewriting for your run and describe the tone and details to preserve."
-msgstr "A Beállításokban adja meg a fiók Gemini API-kulcsát és modelljét, majd mentse. Kapcsolja be az átírást, és írja le a megőrzendő hangnemet és részleteket."
+#~ msgid "In Settings, enter this account’s Gemini API key and model, then Save settings. Enable rewriting for your run and describe the tone and details to preserve."
+#~ msgstr "A Beállításokban adja meg a fiók Gemini API-kulcsát és modelljét, majd mentse. Kapcsolja be az átírást, és írja le a megőrzendő hangnemet és részleteket."
 
 #: src/components/UsageGuide.svelte
 msgid "Review the account, message, image order, selected groups, and posting intervals. Choose Post now and complete any Facebook login or verification prompts in Chrome."
@@ -2036,13 +1983,11 @@ msgstr "Add meg egy Facebook-oldal URL-címét, például https://web.facebook.c
 #~ msgid "Fetch Facebook posts"
 #~ msgstr ""
 
-#: src/components/FacebookPageDialog.svelte
-msgid "Decrease number of posts"
-msgstr "Bejegyzések számának csökkentése"
+#~ msgid "Decrease number of posts"
+#~ msgstr "Bejegyzések számának csökkentése"
 
-#: src/components/FacebookPageDialog.svelte
-msgid "Increase number of posts"
-msgstr "Bejegyzések számának növelése"
+#~ msgid "Increase number of posts"
+#~ msgstr "Bejegyzések számának növelése"
 
 #: src/components/FacebookPageDialog.svelte
 msgid "Facebook page URL"
@@ -2136,6 +2081,8 @@ msgstr "Szerkesztés"
 msgid "Delete post {0}"
 msgstr "{0}. bejegyzés törlése"
 
+#: src/components/AccountDropdown.svelte
+#: src/components/AccountDropdown.svelte
 #: src/components/FetchedPostCard.svelte
 msgid "Delete"
 msgstr "Törlés"
@@ -2150,6 +2097,7 @@ msgid "Remove image {0} from post {1}"
 msgstr "{0}. kép eltávolítása a(z) {1}. bejegyzésből"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Save changes"
 msgstr "Módosítások mentése"
 
@@ -2391,3 +2339,45 @@ msgstr "Frissítések keresése"
 #: src/components/UpdateButton.svelte
 msgid "Installing update…"
 msgstr "Frissítés telepítése…"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "posts"
+msgstr "bejegyzés"
+
+#: src/components/LogMessage.svelte
+msgid "Account names cannot be URLs"
+msgstr "A fióknevek nem lehetnek URL-címek"
+
+#: src/components/LogMessage.svelte
+msgid "First post confirmed. Remaining groups stopped because the formatted text could not be verified."
+msgstr "Az első bejegyzés megerősítve. A többi csoportban a közzététel leállt, mert a formázott szöveget nem sikerült ellenőrizni."
+
+#: src/components/AccountDropdown.svelte
+#: src/components/RenameProfileDialog.svelte
+msgid "Rename profile"
+msgstr "Profil átnevezése"
+
+#: src/Workspace.svelte
+#: src/components/PostingLogs.svelte
+msgid "Add an account to get started."
+msgstr "A kezdéshez adjon hozzá egy fiókot."
+
+#: src/components/AccountDropdown.svelte
+#: src/components/DeleteProfileDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
+msgid "Delete profile"
+msgstr "Profil törlése"
+
+#~ msgid "<0/> Add account"
+#~ msgstr ""
+
+#~ msgid "Delete profile?"
+#~ msgstr ""
+
+#: src/components/DeleteProfileDialog.svelte
+msgid "This permanently deletes this profile’s Facebook login, groups, drafts, images, settings, and logs. Any running or scheduled queue will stop. Posts already on Facebook are kept."
+msgstr "Ez véglegesen törli a profil Facebook-bejelentkezését, csoportjait, piszkozatait, képeit, beállításait és naplóit. Minden futó vagy ütemezett várólista leáll. A Facebookon már közzétett bejegyzések megmaradnak."
+
+#: src/components/DeleteProfileDialog.svelte
+msgid "Deleting…"
+msgstr "Törlés…"

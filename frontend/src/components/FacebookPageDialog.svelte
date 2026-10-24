@@ -49,6 +49,7 @@
 
   async function fetchPosts(event: SubmitEvent) {
     event.preventDefault();
+    event.stopPropagation();
     if (busy || !postCount || !Number.isSafeInteger(postCount)) return;
     generation++; starting = true; error = ''; status = null;
     try {
@@ -86,10 +87,6 @@
     } catch { /* The field's validation message covers malformed URLs. */ }
     input.setCustomValidity(valid ? '' : logMessage(/* @wc-ignore */ 'Enter a Facebook page URL, such as https://web.facebook.com/swiftlineMotors'));
   }
-  function adjustCount(change: number) {
-    postCount = Math.max(1, Math.min(Number.MAX_SAFE_INTEGER, Math.trunc(postCount || 1) + change));
-    dialog.querySelector<HTMLInputElement>('input[type="number"]')?.setCustomValidity('');
-  }
   function backdrop(event: MouseEvent) {
     if (event.target !== dialog) return;
     const bounds = dialog.getBoundingClientRect();
@@ -116,9 +113,8 @@
       <div class="field">
         <label for={`${dialogID}-count`}>Number of posts to fetch</label>
         <div class="number-control">
-          <button type="button" aria-label="Decrease number of posts" disabled={postCount !== undefined && postCount <= 1} onclick={() => adjustCount(-1)}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h12" /></svg></button>
           <input id={`${dialogID}-count`} type="number" bind:value={postCount} min="1" max={Number.MAX_SAFE_INTEGER} step="1" required oninvalid={(event) => event.currentTarget.setCustomValidity(logMessage(/* @wc-ignore */ 'Enter a positive whole number of posts to fetch'))} oninput={(event) => event.currentTarget.setCustomValidity('')} />
-          <button type="button" aria-label="Increase number of posts" disabled={postCount !== undefined && postCount >= Number.MAX_SAFE_INTEGER} onclick={() => adjustCount(1)}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h12M12 6v12" /></svg></button>
+          <span>posts</span>
         </div>
       </div>
     </fieldset>
@@ -152,14 +148,10 @@
   progress { display: block; width: 100%; height: .6rem; margin-top: 1rem; accent-color: var(--accent); }
   .field { display: grid; min-width: 0; gap: var(--ui-field-gap); }
   label { color: var(--text); font-size: var(--ui-body-size); font-weight: var(--ui-label-weight); }
-  .number-control { display: flex; width: 16rem; max-width: 100%; overflow: hidden; border: 1px solid var(--border-strong); border-radius: .6rem; }
-  .number-control button { display: grid; place-items: center; width: 4rem; min-height: 4rem; flex-shrink: 0; border: 0; background: transparent; color: var(--text-secondary); cursor: pointer; }
-  .number-control button:hover:not(:disabled) { background: var(--surface-hover); }
-  .number-control button:disabled { opacity: .45; cursor: not-allowed; }
-  .number-control input { width: 100%; min-width: 0; border: 0; background: var(--surface); text-align: center; font-size: 1.3rem; font-variant-numeric: tabular-nums; appearance: textfield; -moz-appearance: textfield; }
-  .number-control input::-webkit-inner-spin-button, .number-control input::-webkit-outer-spin-button { appearance: none; margin: 0; }
+  .number-control { display: flex; align-items: center; overflow: hidden; border: 1px solid var(--border-strong); border-radius: .6rem; }
+  .number-control input { width: 100%; min-width: 0; padding: 1.2rem; border: 0; background: transparent; color: var(--text); font-size: var(--ui-body-size); }
+  .number-control > span { padding-inline-end: 1.2rem; font-size: 1.2rem; color: var(--text-muted); font-weight: 400; }
   .facebook-page-option:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
   .number-control:focus-within { outline: 2px solid var(--focus); outline-offset: 2px; }
   .number-control input:focus { outline: none; }
-  .number-control button:focus-visible { outline: 2px solid var(--focus); outline-offset: -2px; }
 </style>

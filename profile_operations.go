@@ -187,14 +187,6 @@ func (m *ProfileService) SaveSettings(profileID string, settings AppSettings, ke
 	return s.SaveSettings(settings, key, clearKey)
 }
 
-func (m *ProfileService) OpenSettings(profileID string) error {
-	s, err := m.session(profileID)
-	if err != nil {
-		return err
-	}
-	return s.OpenSettings()
-}
-
 func (m *ProfileService) PublishPost(ctx context.Context, profileID string, selected []string, body string, images []PostUpload) (*PostingStatus, error) {
 	s, err := m.session(profileID)
 	if err != nil {

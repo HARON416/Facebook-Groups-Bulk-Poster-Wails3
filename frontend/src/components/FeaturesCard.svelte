@@ -71,8 +71,6 @@
     <section aria-labelledby="features-posting"><h2 id="features-posting">Posting settings</h2><ul>
       <li><span>Post now</span> · <span>Schedule your queue</span></li>
       <li><strong>Interval between posts</strong><p>Minimum and maximum delays between posts.</p></li>
-      <li><strong>Rewrite each post body with Gemini</strong><p>Custom instructions and a configurable Gemini model.</p><p class="muted">Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text.</p></li>
-      <li>Use saved defaults</li>
     </ul></section>
 
     <section aria-labelledby="features-logs"><h2 id="features-logs">Posting logs</h2><ul>
@@ -82,7 +80,7 @@
       <li>Queues pause when offline and resume when the connection returns.</li>
     </ul></section>
 
-    <section aria-labelledby="features-preferences"><h2 id="features-preferences">Settings</h2><ul>
+    <section aria-labelledby="features-preferences"><h2 id="features-preferences">Themes</h2><ul>
       <li>{languages.length} languages · {themeOptions.length} themes</li>
       <li>Language and theme choices sync across windows.</li>
       <li>Windows and Linux</li>
@@ -114,7 +112,6 @@
   li { position: relative; padding-inline-start: 1.8rem; margin-block: .6rem; }
   li::before { content: '–'; position: absolute; inset-inline-start: 0; color: var(--accent); }
   strong { color: var(--text-strong); font-weight: 600; }
-  .muted { margin-top: .4rem; color: var(--text-muted); font-size: 1.2rem; }
   .session-note { margin-top: 2.4rem; padding-top: var(--ui-space); border-top: 1px solid var(--border); color: var(--text-secondary); font-size: 1.2rem; }
   .features-trigger:focus-visible, .view-switch button:focus-visible, .feature-content:focus-visible { outline: 2px solid var(--focus); outline-offset: -3px; }
   @media (max-width: 600px) {

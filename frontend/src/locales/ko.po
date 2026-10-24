@@ -8,10 +8,8 @@ msgstr ""
 "Plural-Forms: nplurals=1\n"
 "X-Plurals-Order: other\n"
 
-#. 0: appliedInterval; 1: rewriteState
-#: src/App.svelte
-msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
-msgstr "저장된 기본값 적용됨: 게시물 간 {0}초 · Gemini 재작성 {1}."
+#~ msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
+#~ msgstr "저장된 기본값 적용됨: 게시물 간 {0}초 · Gemini 재작성 {1}."
 
 #: src/components/LogMessage.svelte
 msgid "Could not restore saved groups. Load groups to refresh the list."
@@ -152,23 +150,17 @@ msgstr "시작하려면 Facebook 그룹을 열어보세요."
 msgid "Posting settings"
 msgstr "게시 설정"
 
-#: src/App.svelte
-msgid "Add a Gemini API key in Settings to enable rewriting."
-msgstr "재작성 기능을 사용하려면 설정에서 Gemini API 키를 추가하세요."
+#~ msgid "Add a Gemini API key in Settings to enable rewriting."
+#~ msgstr "재작성 기능을 사용하려면 설정에서 Gemini API 키를 추가하세요."
 
-#: src/App.svelte
-msgid "Applying defaults…"
-msgstr "기본값 적용 중…"
+#~ msgid "Applying defaults…"
+#~ msgstr "기본값 적용 중…"
 
-#: src/App.svelte
-#: src/components/FeaturesCard.svelte
-#: src/components/UsageGuide.svelte
-msgid "Use saved defaults"
-msgstr "저장된 기본값 사용"
+#~ msgid "Use saved defaults"
+#~ msgstr "저장된 기본값 사용"
 
-#: src/App.svelte
-msgid "Open settings"
-msgstr "설정 열기"
+#~ msgid "Open settings"
+#~ msgstr "설정 열기"
 
 #~ msgid "Posting as <0/>"
 #~ msgstr "<0/>로 게시 중"
@@ -200,9 +192,11 @@ msgid "Time zone: {0}. Keep Postika open and your computer awake. Facebook may a
 msgstr "시간대: {0}. Postika를 열어두고 컴퓨터를 깨워 두세요. 게시가 시작될 때 Facebook이 로그인하라고 요청할 수 있습니다."
 
 #: src/App.svelte
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FetchedPostCard.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Cancel"
 msgstr "취소"
 
@@ -253,6 +247,8 @@ msgid "Application menu"
 msgstr "애플리케이션 메뉴"
 
 #: src/Workspace.svelte
+#: src/components/AccountDropdown.svelte
+#: src/components/AddAccountDialog.svelte
 #: src/components/UsageGuide.svelte
 msgid "Add account"
 msgstr "계정 추가"
@@ -261,31 +257,28 @@ msgstr "계정 추가"
 #: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogView.svelte
+#: src/components/PostingLogs.svelte
 #: src/components/UsageGuide.svelte
 msgid "Posting logs"
 msgstr "게시 로그"
 
-#: src/Workspace.svelte
-#: src/components/FeaturesCard.svelte
-#: src/components/Settings.svelte
-#: src/components/Settings.svelte
-#: src/components/UsageGuide.svelte
-msgid "Settings"
-msgstr "설정"
+#~ msgid "Settings"
+#~ msgstr "설정"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "Creating…"
 msgstr "생성 중…"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "Create & sign in"
 msgstr "만들고 로그인"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Account name"
 msgstr "계정 이름"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 #: src/components/UsageGuide.svelte
 msgid "Sign in to Facebook in the new account’s browser window."
 msgstr "새 계정의 브라우저 창에서 Facebook에 로그인하세요."
@@ -794,172 +787,125 @@ msgstr "다음 그룹에 게시하기 전에 기다릴 시간을 선택하세요
 msgid "At least 60 seconds. Use equal values for a fixed interval."
 msgstr "최소 60초. 고정 간격을 위해 동일한 값을 사용하세요."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "OPTIONAL · AI REWRITE"
-msgstr "선택 사항 · AI 재작성"
+#~ msgid "OPTIONAL · AI REWRITE"
+#~ msgstr "선택 사항 · AI 재작성"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "A fresh version for each group"
-msgstr "각 그룹별 새 버전"
+#~ msgid "A fresh version for each group"
+#~ msgstr "각 그룹별 새 버전"
 
-#: src/components/FeaturesCard.svelte
-#: src/components/PostingOptionsForm.svelte
-#: src/components/UsageGuide.svelte
-msgid "Rewrite each post body with Gemini"
-msgstr "각 게시물 본문을 Gemini로 재작성"
+#~ msgid "Rewrite each post body with Gemini"
+#~ msgstr "각 게시물 본문을 Gemini로 재작성"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
-msgstr "다시 쓰기 지침<0>Gemini가 유지해야 할 톤과 세부사항을 선택하세요.</0>"
+#~ msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
+#~ msgstr "다시 쓰기 지침<0>Gemini가 유지해야 할 톤과 세부사항을 선택하세요.</0>"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Keep it concise and easy to scan. Preserve the price and contact details."
-msgstr "간결하게 작성하고 쉽게 볼 수 있도록 합니다. 가격과 연락처 정보는 유지하세요."
+#~ msgid "Keep it concise and easy to scan. Preserve the price and contact details."
+#~ msgstr "간결하게 작성하고 쉽게 볼 수 있도록 합니다. 가격과 연락처 정보는 유지하세요."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Rewrite instructions"
-msgstr "다시 쓰기 지침"
+#~ msgid "Rewrite instructions"
+#~ msgstr "다시 쓰기 지침"
 
-#: src/components/FeaturesCard.svelte
-#: src/components/PostingOptionsForm.svelte
-#: src/components/UsageGuide.svelte
-msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
-msgstr "귀하의 게시물 텍스트와 지침은 Google Gemini로 전송됩니다. 이미지는 전송되지 않습니다. Gemini는 일반 텍스트를 사용하여 다시 씁니다."
+#~ msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
+#~ msgstr "귀하의 게시물 텍스트와 지침은 Google Gemini로 전송됩니다. 이미지는 전송되지 않습니다. Gemini는 일반 텍스트를 사용하여 다시 씁니다."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
-msgstr "다시 쓰기에 실패하면 해당 게시물은 원래 텍스트를 사용합니다. 다음 게시물에서 Gemini를 다시 시도합니다."
+#~ msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
+#~ msgstr "다시 쓰기에 실패하면 해당 게시물은 원래 텍스트를 사용합니다. 다음 게시물에서 Gemini를 다시 시도합니다."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Let Gemini rewrite your post using your instructions."
-msgstr "Gemini가 귀하의 지침을 사용하여 게시물을 다시 작성하게 합니다."
+#~ msgid "Let Gemini rewrite your post using your instructions."
+#~ msgstr "Gemini가 귀하의 지침을 사용하여 게시물을 다시 작성하게 합니다."
 
 #: src/components/PostingOptionsForm.svelte
 msgid "Posting preferences"
 msgstr "게시 설정"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved defaults help"
-msgstr "저장된 기본값 사용 도움말"
+#~ msgid "Saved defaults help"
+#~ msgstr "저장된 기본값 사용 도움말"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "About saved defaults"
-msgstr "저장된 기본값 정보"
+#~ msgid "About saved defaults"
+#~ msgstr "저장된 기본값 정보"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved interval"
-msgstr "저장된 간격"
+#~ msgid "Saved interval"
+#~ msgstr "저장된 간격"
 
-#. 0: settings.minimumInterval === settings.maximumInterval ? settings.minimumInterval \\: `${settings.minimumInterval}–${settings.maximumInterval}`
-#: src/components/SavedDefaultsInfo.svelte
-msgid "{0} seconds"
-msgstr "{0}초"
+#~ msgid "{0} seconds"
+#~ msgstr "{0}초"
 
-#: src/App.svelte
-#: src/components/SavedDefaultsInfo.svelte
-msgid "On"
-msgstr "켜기"
+#~ msgid "On"
+#~ msgstr "켜기"
 
-#: src/App.svelte
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Off"
-msgstr "끄기"
+#~ msgid "Off"
+#~ msgstr "끄기"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Gemini rewrite"
-msgstr "Gemini 다시 쓰기"
+#~ msgid "Gemini rewrite"
+#~ msgstr "Gemini 다시 쓰기"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "No instructions saved."
-msgstr "저장된 지침이 없습니다."
+#~ msgid "No instructions saved."
+#~ msgstr "저장된 지침이 없습니다."
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved rewrite instructions"
-msgstr "저장된 다시 쓰기 지침"
+#~ msgid "Saved rewrite instructions"
+#~ msgstr "저장된 다시 쓰기 지침"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved values could not be loaded. Try “Use saved defaults” again."
-msgstr "저장된 값을 불러올 수 없습니다. “저장된 기본값 사용”을 다시 시도하세요."
+#~ msgid "Saved values could not be loaded. Try “Use saved defaults” again."
+#~ msgstr "저장된 값을 불러올 수 없습니다. “저장된 기본값 사용”을 다시 시도하세요."
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "What does “Use saved defaults” do?"
-msgstr "“저장된 기본값 사용”은 무엇을 하나요?"
+#~ msgid "What does “Use saved defaults” do?"
+#~ msgstr "“저장된 기본값 사용”은 무엇을 하나요?"
 
-#: src/components/SavedDefaultsInfo.svelte
-#: src/components/UsageGuide.svelte
-msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
-msgstr "이 실행의 게시 간격, Gemini 재작성 옵션 및 재작성 지침을 설정에 저장된 값으로 대체합니다."
+#~ msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
+#~ msgstr "이 실행의 게시 간격, Gemini 재작성 옵션 및 재작성 지침을 설정에 저장된 값으로 대체합니다."
 
-#: src/components/SavedDefaultsInfo.svelte
-#: src/components/UsageGuide.svelte
-msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
-msgstr "초기 기본값: 60–120초, Gemini 재작성 끄기, 재작성 지침 없음. 변경하려면 설정에서 직접 환경설정을 저장하세요."
+#~ msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
+#~ msgstr "초기 기본값: 60–120초, Gemini 재작성 끄기, 재작성 지침 없음. 변경하려면 설정에서 직접 환경설정을 저장하세요."
 
 #: src/components/LogMessage.svelte
 msgid "Settings saved. New runs can use these defaults."
 msgstr "설정이 저장되었습니다. 새로운 실행은 이 기본값을 사용할 수 있습니다."
 
-#: src/components/Settings.svelte
-msgid "Key saved · leave blank to keep it"
-msgstr "키가 저장됨 · 그대로 두면 유지됩니다"
+#~ msgid "Key saved · leave blank to keep it"
+#~ msgstr "키가 저장됨 · 그대로 두면 유지됩니다"
 
-#: src/components/Settings.svelte
-msgid "Enter your Gemini API key"
-msgstr "Gemini API 키를 입력하세요"
+#~ msgid "Enter your Gemini API key"
+#~ msgstr "Gemini API 키를 입력하세요"
 
-#: src/components/Settings.svelte
-msgid "A key is saved on this device."
-msgstr "이 장치에 키가 저장되어 있습니다."
+#~ msgid "A key is saved on this device."
+#~ msgstr "이 장치에 키가 저장되어 있습니다."
 
-#: src/components/Settings.svelte
-msgid "No API key saved."
-msgstr "저장된 API 키가 없습니다."
+#~ msgid "No API key saved."
+#~ msgstr "저장된 API 키가 없습니다."
 
-#: src/components/Settings.svelte
-msgid "Remove saved key"
-msgstr "저장된 키 삭제"
+#~ msgid "Remove saved key"
+#~ msgstr "저장된 키 삭제"
 
-#: src/components/Settings.svelte
-msgid "Gemini"
-msgstr "Gemini"
+#~ msgid "Gemini"
+#~ msgstr "Gemini"
 
-#: src/components/Settings.svelte
-msgid "API key<0/>"
-msgstr "API 키<0/>"
+#~ msgid "API key<0/>"
+#~ msgstr "API 키<0/>"
 
-#. 0: keyConfigured ? 'A key is saved on this device.' \\: 'No API key saved.'
-#: src/components/Settings.svelte
-msgid "{0} The saved key is never displayed."
-msgstr "{0} 저장된 키는 절대 표시되지 않습니다."
+#~ msgid "{0} The saved key is never displayed."
+#~ msgstr "{0} 저장된 키는 절대 표시되지 않습니다."
 
-#: src/components/Settings.svelte
-msgid "Model<0/>"
-msgstr "모델<0/>"
+#~ msgid "Model<0/>"
+#~ msgstr "모델<0/>"
 
-#: src/components/Settings.svelte
-msgid "Posting defaults"
-msgstr "게시 기본 설정"
+#~ msgid "Posting defaults"
+#~ msgstr "게시 기본 설정"
 
-#: src/components/Settings.svelte
-msgid "Applied when you start a new posting run."
-msgstr "새 게시 실행을 시작할 때 적용됩니다."
+#~ msgid "Applied when you start a new posting run."
+#~ msgstr "새 게시 실행을 시작할 때 적용됩니다."
 
-#: src/components/Settings.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Saving…"
 msgstr "저장 중…"
 
-#: src/components/Settings.svelte
-msgid "Save settings"
-msgstr "설정 저장"
+#~ msgid "Save settings"
+#~ msgstr "설정 저장"
 
-#: src/components/Settings.svelte
-msgid "YOUR PREFERENCES"
-msgstr "환경설정"
+#~ msgid "YOUR PREFERENCES"
+#~ msgstr "환경설정"
 
-#. 0: accountName
-#: src/components/Settings.svelte
-msgid "Set up Gemini and save posting defaults for {0}."
-msgstr "Gemini를 설정하고 {0}의 게시 기본값을 저장하세요."
+#~ msgid "Set up Gemini and save posting defaults for {0}."
+#~ msgstr "Gemini를 설정하고 {0}의 게시 기본값을 저장하세요."
 
 #: src/components/StepProgress.svelte
 msgid "Completed"
@@ -1133,9 +1079,8 @@ msgstr "저녁"
 msgid "Could not change the language. Please try again."
 msgstr "언어를 변경할 수 없습니다. 다시 시도하세요."
 
-#: src/components/Settings.svelte
-msgid "Language"
-msgstr "언어"
+#~ msgid "Language"
+#~ msgstr "언어"
 
 #: src/components/PostingOptionsForm.svelte
 #: src/components/PostingOptionsForm.svelte
@@ -1210,7 +1155,7 @@ msgstr "건너뜀"
 msgid "UNCONFIRMED"
 msgstr "확인되지 않음"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "e.g. Business"
 msgstr "예: 비즈니스"
 
@@ -1282,8 +1227,11 @@ msgstr "기본 프로필"
 msgid "Color themes"
 msgstr "색상 테마"
 
+#: src/components/AddAccountDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/RenameProfileDialog.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UpdateButton.svelte
 msgid "Close"
@@ -1503,7 +1451,6 @@ msgid "Gemini rewrite completed."
 msgstr "Gemini 재작성 완료."
 
 #: src/components/LogMessage.svelte
-#: src/components/UsageGuide.svelte
 msgid "Gemini rewrite failed. Using the original text for this post; Gemini will be tried again for the next post."
 msgstr "Gemini 재작성 실패. 이 게시물에는 원본 텍스트를 사용합니다; 다음 게시물에는 Gemini를 다시 시도할 예정입니다."
 
@@ -1876,19 +1823,21 @@ msgstr "디버그 세부 정보"
 #~ msgid ", "
 #~ msgstr ""
 
+#: src/components/FeaturesCard.svelte
 #: src/components/ThemePicker.svelte
+#: src/components/UsageGuide.svelte
 msgid "Themes"
 msgstr "테마"
 
 #: src/App.svelte
 #: src/components/UsageGuide.svelte
-msgid "Preferences & post"
-msgstr "환경설정 및 게시"
+msgid "Post or schedule"
+msgstr "게시 또는 예약"
 
 #: src/App.svelte
 #: src/App.svelte
-msgid "Set preferences, then post now or schedule"
-msgstr "환경설정을 지정한 후 지금 게시하거나 예약하세요"
+msgid "Choose the time between posts, then post now or schedule for later."
+msgstr "게시물 간 간격을 선택한 다음 지금 게시하거나 나중으로 예약하세요."
 
 #~ msgid "Postika"
 #~ msgstr "Postika"
@@ -1923,9 +1872,8 @@ msgstr "불러온 그룹은 앱을 다시 실행해도 사용할 수 있습니�
 msgid "Minimum and maximum delays between posts."
 msgstr "게시물 사이의 최소 및 최대 대기 시간."
 
-#: src/components/FeaturesCard.svelte
-msgid "Custom instructions and a configurable Gemini model."
-msgstr "사용자 지정 지침과 설정 가능한 Gemini 모델."
+#~ msgid "Custom instructions and a configurable Gemini model."
+#~ msgstr "사용자 지정 지침과 설정 가능한 Gemini 모델."
 
 #. 0: languages.length; 1: themeOptions.length
 #: src/components/FeaturesCard.svelte
@@ -1978,9 +1926,8 @@ msgstr "메시지를 쓰고 이미지를 하나 이상 추가하세요. 둘 다 
 msgid "Select Load groups and finish Facebook login or verification in Chrome. Search the loaded list, select the groups you want, then choose Next."
 msgstr "그룹 불러오기를 선택하고 Chrome에서 Facebook 로그인 또는 인증을 완료하세요. 목록을 검색해 그룹을 선택한 뒤 다음을 누르세요."
 
-#: src/components/UsageGuide.svelte
-msgid "In Settings, enter this account’s Gemini API key and model, then Save settings. Enable rewriting for your run and describe the tone and details to preserve."
-msgstr "설정에서 이 계정의 Gemini API 키와 모델을 입력하고 저장하세요. 다시 쓰기를 켜고 유지할 어조와 세부 정보를 설명하세요."
+#~ msgid "In Settings, enter this account’s Gemini API key and model, then Save settings. Enable rewriting for your run and describe the tone and details to preserve."
+#~ msgstr "설정에서 이 계정의 Gemini API 키와 모델을 입력하고 저장하세요. 다시 쓰기를 켜고 유지할 어조와 세부 정보를 설명하세요."
 
 #: src/components/UsageGuide.svelte
 msgid "Review the account, message, image order, selected groups, and posting intervals. Choose Post now and complete any Facebook login or verification prompts in Chrome."
@@ -2036,13 +1983,11 @@ msgstr "Facebook 페이지 URL을 입력하세요. 예: https://web.facebook.com
 #~ msgid "Fetch Facebook posts"
 #~ msgstr ""
 
-#: src/components/FacebookPageDialog.svelte
-msgid "Decrease number of posts"
-msgstr "게시물 수 줄이기"
+#~ msgid "Decrease number of posts"
+#~ msgstr "게시물 수 줄이기"
 
-#: src/components/FacebookPageDialog.svelte
-msgid "Increase number of posts"
-msgstr "게시물 수 늘리기"
+#~ msgid "Increase number of posts"
+#~ msgstr "게시물 수 늘리기"
 
 #: src/components/FacebookPageDialog.svelte
 msgid "Facebook page URL"
@@ -2136,6 +2081,8 @@ msgstr "수정"
 msgid "Delete post {0}"
 msgstr "게시물 {0} 삭제"
 
+#: src/components/AccountDropdown.svelte
+#: src/components/AccountDropdown.svelte
 #: src/components/FetchedPostCard.svelte
 msgid "Delete"
 msgstr "삭제"
@@ -2150,6 +2097,7 @@ msgid "Remove image {0} from post {1}"
 msgstr "게시물 {1}에서 이미지 {0} 제거"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Save changes"
 msgstr "변경 사항 저장"
 
@@ -2391,3 +2339,45 @@ msgstr "업데이트 확인"
 #: src/components/UpdateButton.svelte
 msgid "Installing update…"
 msgstr "업데이트 설치 중…"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "posts"
+msgstr "게시물"
+
+#: src/components/LogMessage.svelte
+msgid "Account names cannot be URLs"
+msgstr "계정 이름은 URL일 수 없습니다"
+
+#: src/components/LogMessage.svelte
+msgid "First post confirmed. Remaining groups stopped because the formatted text could not be verified."
+msgstr "첫 게시물이 확인되었습니다. 서식이 적용된 텍스트를 확인할 수 없어 나머지 그룹의 게시가 중단되었습니다."
+
+#: src/components/AccountDropdown.svelte
+#: src/components/RenameProfileDialog.svelte
+msgid "Rename profile"
+msgstr "프로필 이름 변경"
+
+#: src/Workspace.svelte
+#: src/components/PostingLogs.svelte
+msgid "Add an account to get started."
+msgstr "시작하려면 계정을 추가하세요."
+
+#: src/components/AccountDropdown.svelte
+#: src/components/DeleteProfileDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
+msgid "Delete profile"
+msgstr "프로필 삭제"
+
+#~ msgid "<0/> Add account"
+#~ msgstr ""
+
+#~ msgid "Delete profile?"
+#~ msgstr ""
+
+#: src/components/DeleteProfileDialog.svelte
+msgid "This permanently deletes this profile’s Facebook login, groups, drafts, images, settings, and logs. Any running or scheduled queue will stop. Posts already on Facebook are kept."
+msgstr "이 프로필의 Facebook 로그인, 그룹, 초안, 이미지, 설정 및 로그가 영구적으로 삭제됩니다. 실행 중이거나 예약된 대기열은 중지됩니다. 이미 Facebook에 게시된 글은 유지됩니다."
+
+#: src/components/DeleteProfileDialog.svelte
+msgid "Deleting…"
+msgstr "삭제 중…"

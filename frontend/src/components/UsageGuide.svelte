@@ -16,17 +16,10 @@
     <p class="tip">Loaded groups stay available between app sessions.</p>
   </section>
 
-  <section><h2>Preferences & post</h2>
+  <section><h2>Post or schedule</h2>
     <h3>Interval between posts</h3>
     <p>Choose how long to wait before posting to the next group.</p>
     <p>At least 60 seconds. Use equal values for a fixed interval.</p>
-    <p class="tip">Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them.</p>
-    <h3>Use saved defaults</h3>
-    <p>Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings.</p>
-    <h3>Rewrite each post body with Gemini</h3>
-    <p>In Settings, enter this account’s Gemini API key and model, then Save settings. Enable rewriting for your run and describe the tone and details to preserve.</p>
-    <p>Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text.</p>
-    <p class="tip">Gemini rewrite failed. Using the original text for this post; Gemini will be tried again for the next post.</p>
     <h3>Post now</h3>
     <p>Review the account, message, image order, selected groups, and posting intervals. Choose Post now and complete any Facebook login or verification prompts in Chrome.</p>
     <p class="tip">Switch accounts while other queues keep running.</p>
@@ -54,7 +47,7 @@
     <p class="tip">This post was submitted, but confirmation is uncertain. Check Facebook before retrying.</p>
   </aside>
 
-  <aside><h2>Settings</h2>
+  <aside><h2>Themes</h2>
     <p>Use Language and Themes in the top bar. Your choices apply across windows.</p>
     <p class="tip">Draft text and image copies are saved automatically for each account.</p>
   </aside>

@@ -27,7 +27,8 @@ type PostPreparation struct {
 }
 
 // OpenPostComposer tries the shuffled queue until it finds a composer, then fills
-// that draft without submitting. Login, navigation and ambiguous controls stop it.
+// that draft without submitting. Expired sessions wait for the user to log in;
+// navigation failures and ambiguous controls stop it.
 func (s *GroupsService) OpenPostComposer(ctx context.Context, selectedIDs []string, body string, images []PostUpload) (*PostPreparation, error) {
 	ctx, cancel := s.operationContext(ctx)
 	defer cancel()
@@ -94,6 +95,31 @@ func (s *GroupsService) OpenPostComposer(ctx context.Context, selectedIDs []stri
 		}
 		s.setPostStatus("Waiting for the group page and opening its composer…")
 		err = clickGroupComposer(ctx, page)
+		for errors.Is(err, errFacebookLoginRequired) {
+			s.setPostStatus(facebookLoginWaitMessage)
+			if err = waitForFacebookLogin(ctx, page, s.setPostStatus); err != nil {
+				return nil, err
+			}
+			// Reauthentication can land on the home page instead of the group.
+			// Never fill a composer belonging to a different Facebook account.
+			s.groupsLoad.mu.Lock()
+			owner := s.groupsLoad.user
+			s.groupsLoad.mu.Unlock()
+			if owner != "" {
+				cookies, cookieErr := s.browser.Context(ctx).GetCookies()
+				if cookieErr != nil {
+					return nil, cookieErr
+				}
+				if browserUser(cookies) != owner {
+					return nil, errors.New("The current profile differs from the profile used to load groups. Load groups again.")
+				}
+			}
+			s.setPostStatus("Waiting for the group page and opening its composer…")
+			if err = page.Navigate(target); err != nil {
+				return nil, fmt.Errorf("open selected group: %w", err)
+			}
+			err = clickGroupComposer(ctx, page)
+		}
 		if errors.Is(err, errGroupComposerUnavailable) && ctx.Err() == nil {
 			skipped = append(skipped, group)
 			continue
@@ -115,7 +141,7 @@ func (s *GroupsService) OpenPostComposer(ctx context.Context, selectedIDs []stri
 		if uploads != nil {
 			count := 0
 			if err == nil {
-				count, err = uploads.wait(ctx, len(images), s.setPostStatus)
+				count, err = uploads.wait(ctx, s.setPostStatus)
 			}
 			uploads.stop()
 			if err != nil {
@@ -159,7 +185,7 @@ func clickGroupComposer(ctx context.Context, page *rod.Page) error {
 		return fmt.Errorf("inspect group login: %w", err)
 	}
 	if login.Value.Str() == "logged_out" || login.Value.Str() == "login_required" {
-		return errors.New("Log in or complete Facebook verification in Chrome, then click Post again")
+		return errFacebookLoginRequired
 	}
 	if err := postingCheckpoint(ctx); err != nil {
 		return err

@@ -13,8 +13,6 @@ export interface AccountDraft {
   currentStep: number;
   minimumInterval: number;
   maximumInterval: number;
-  rewrite: boolean;
-  instructions: string;
   scheduleTime: string;
 }
 
@@ -124,10 +122,18 @@ async function persistDraft(profileID: string, draft: AccountDraft): Promise<voi
   const db = await openDatabase();
   return new Promise((resolve, reject) => {
     const transaction = db.transaction(['drafts', 'images'], 'readwrite');
-    for (const image of changed) transaction.objectStore('images').put(image.data, image.key);
-    for (const key of removed) transaction.objectStore('images').delete(key);
-    transaction.objectStore('drafts').put(stored, profileID);
+    // The marker shares this transaction so another window cannot recreate a
+    // deleted draft with a save that was already reading its image bytes.
+    let skipped = false;
+    const marker = transaction.objectStore('drafts').get(`deleted:${profileID}`);
+    marker.onsuccess = () => {
+      if (marker.result) { skipped = true; return; }
+      for (const image of changed) transaction.objectStore('images').put(image.data, image.key);
+      for (const key of removed) transaction.objectStore('images').delete(key);
+      transaction.objectStore('drafts').put(stored, profileID);
+    };
     transaction.oncomplete = () => {
+      if (skipped) { resolve(); return; }
       for (const image of changed) savedFiles.set(image.key, image.file);
       for (const key of removed) savedFiles.delete(key);
       savedKeys.set(profileID, keys);
@@ -153,4 +159,23 @@ const failedDraftWrites = new Set<string>();
 export async function flushDrafts(): Promise<void> {
   await Promise.all([...writes.values()]);
   if (failedDraftWrites.size) throw new Error('Could not save all drafts. Keep Postika open and try again before restarting.');
+}
+
+// Profile IDs are never reused. Keep a small marker to block late autosaves
+// from retained workspaces in other windows, including after an app restart.
+export async function deleteDraft(profileID: string): Promise<void> {
+  const db = await openDatabase();
+  await new Promise<void>((resolve, reject) => {
+    const transaction = db.transaction(['drafts', 'images'], 'readwrite');
+    transaction.objectStore('drafts').put(true, `deleted:${profileID}`);
+    transaction.objectStore('drafts').delete(profileID);
+    const prefix = `${profileID}:`;
+    transaction.objectStore('images').delete(IDBKeyRange.bound(prefix, `${prefix}\uffff`));
+    transaction.oncomplete = () => resolve();
+    transaction.onabort = () => reject(transaction.error);
+    transaction.onerror = () => reject(transaction.error);
+  });
+  savedKeys.delete(profileID);
+  for (const key of savedFiles.keys()) if (key.startsWith(`${profileID}:`)) savedFiles.delete(key);
+  failedDraftWrites.delete(profileID);
 }

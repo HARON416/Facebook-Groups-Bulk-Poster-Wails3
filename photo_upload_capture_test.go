@@ -22,6 +22,8 @@ func TestPhotoUploadCaptureIntegration(t *testing.T) {
 		t.Fatal("Chrome required")
 	}
 	var preflights, posts atomic.Int32
+	secondStarted := make(chan struct{})
+	releaseSecond := make(chan struct{})
 	var origin string
 	uploadServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Access-Control-Allow-Origin", origin)
@@ -39,11 +41,20 @@ func TestPhotoUploadCaptureIntegration(t *testing.T) {
 		}
 		if r.MultipartForm != nil {
 			defer r.MultipartForm.RemoveAll()
+			if files := r.MultipartForm.File["farr"]; len(files) > 0 && files[0].Filename == "second.png" {
+				close(secondStarted)
+				select {
+				case <-releaseSecond:
+				case <-r.Context().Done():
+					return
+				}
+			}
 		}
 		w.Header().Set("Content-Type", "application/json")
-		fmt.Fprint(w, `{"payload":{"photo_id":"fixture-photo"}}`)
+		fmt.Fprint(w, `{"__ar":1,"payload":{"photoID":"fixture-photo"}}`)
 	}))
 	defer uploadServer.Close()
+	defer close(releaseSecond)
 	endpoint := uploadServer.URL + "/ajax/react_composer/attachments/photo/upload"
 	fixture := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		http.SetCookie(w, &http.Cookie{Name: "c_user", Value: "fresh-user", Path: "/", HttpOnly: true})
@@ -76,17 +87,23 @@ func TestPhotoUploadCaptureIntegration(t *testing.T) {
 	if err := input.SetFiles(paths); err != nil {
 		t.Fatal(err)
 	}
-	count, err := capture.wait(ctx, 2, func(string) {})
+	count, err := capture.wait(ctx, func(string) {})
 	if err != nil {
 		t.Fatal(err)
 	}
-	if count != 2 || posts.Load() != 2 || preflights.Load() == 0 {
+	// Template capture must finish while the second browser upload is pending.
+	select {
+	case <-secondStarted:
+	case <-ctx.Done():
+		t.Fatal("the second selected image was not uploaded by Chrome")
+	}
+	if count != 1 || posts.Load() != 2 || preflights.Load() == 0 {
 		t.Fatalf("uploads=%d posts=%d preflights=%d", count, posts.Load(), preflights.Load())
 	}
 	capture.mu.Lock()
 	defer capture.mu.Unlock()
-	if len(capture.requests) != 2 {
-		t.Fatal("preflight was captured as an image upload")
+	if len(capture.requests) != 1 {
+		t.Fatal("captured preflight or more than one image upload template")
 	}
 	for _, upload := range capture.requests {
 		if upload.User != "fresh-user" || upload.Fields.Get("profile_id") != "fresh-user" || upload.Fields.Get("source") != "8" || upload.Fields.Get("upload_id") == "" || upload.Headers.Get("X-Upload-Test") != "fresh-header" || cookieUser(upload.Headers.Get("Cookie")) != "fresh-user" || len(upload.Files) != 1 || len(upload.Response) == 0 {

@@ -14,16 +14,17 @@
   import FeaturesCard from './components/FeaturesCard.svelte';
   import { pollWhileWindowOpen } from './lib/window-polling';
   import LocalizedFeedback from './components/LocalizedFeedback.svelte';
+  import AddAccountDialog from './components/AddAccountDialog.svelte';
 
   let profiles = $state<ProfileActivity[]>([]);
   let opened = $state<(AccountProfile & { connect: boolean })[]>([]);
   let selected = $state('');
-  let adding = $state(false), name = $state(''), busy = $state(false), error = $state('');
+  let adding = $state(false), busy = $state(false), error = $state('');
+  let addTrigger: HTMLButtonElement;
   let windowControls = $state<WindowControls>();
   let groupsLoading = $state<Record<string, boolean>>({});
   const groupsBusy = $derived(groupsLoading[selected] ?? false);
   const current = $derived(profiles.find((profile) => profile.id === selected));
-  const displayProfiles = $derived(profiles.map((profile) => ({ ...profile, name: accountLabel(profile) })));
   const background = $derived(profiles.filter((profile) => profile.active && profile.id !== selected));
 
   function open(profile: AccountProfile, connect = false) {
@@ -34,7 +35,12 @@
     try {
       const result = await ProfileService.GetProfiles();
       profiles = result.profiles ?? [];
-      if (!selected) {
+      opened = opened.filter(entry => profiles.some(profile => profile.id === entry.id)).map(entry => {
+        const name = profiles.find(profile => profile.id === entry.id)?.name;
+        return name !== undefined && name !== entry.name ? { ...entry, name } : entry;
+      });
+      if (!profiles.some(profile => profile.id === selected)) {
+        selected = '';
         const profile = profiles.find((profile) => profile.id === result.selected);
         if (profile) open(profile);
       }
@@ -42,11 +48,16 @@
   }
   onMount(() => pollWhileWindowOpen(refresh, 2000));
 
-  async function openAccountWindow(view: 'settings' | 'logs') {
+  function profileRenamed(profile: AccountProfile) {
+    profiles = profiles.map(entry => entry.id === profile.id ? { ...entry, name: profile.name } : entry);
+    opened = opened.map(entry => entry.id === profile.id ? { ...entry, name: profile.name } : entry);
+  }
+
+  async function openPostingLogs() {
     if (!selected || busy || groupsBusy) return;
     error = '';
     const account = createAccountService(selected);
-    try { await (view === 'settings' ? account.OpenSettings() : account.OpenPostingLogs()); }
+    try { await account.OpenPostingLogs(); }
     catch (cause) { error = cause instanceof Error ? cause.message : String(cause); }
   }
 
@@ -60,31 +71,26 @@
     } catch (cause) { error = cause instanceof Error ? cause.message : String(cause); }
     finally { busy = false; }
   }
-  async function add(event: SubmitEvent) {
-    event.preventDefault();
-    if (busy || groupsBusy) return;
-    busy = true; error = '';
-    try {
-      const profile = await ProfileService.CreateProfile(name);
-      profiles = [...profiles, { ...profile, active: false, state: '' }];
-      open(profile, true);
-      adding = false; name = '';
-    } catch (cause) { error = cause instanceof Error ? cause.message : String(cause); }
-    finally { busy = false; }
+  function showAddAccount() {
+    if (!adding && !busy && !groupsBusy) adding = true;
   }
+  function profileCreated(profile: AccountProfile) {
+    profiles = [...profiles, { ...profile, active: false, state: '' }];
+    open(profile, true);
+  }
+
 </script>
 
 <div class="workspace ui-window">
   <header class="top-bar">
-    <div class="profile-control"><AccountDropdown profiles={displayProfiles} {selected} compact disabled={busy || groupsBusy} onselect={select} /></div>
+    <div class="profile-control"><AccountDropdown {profiles} {selected} compact disabled={busy || groupsBusy} onselect={select} onrenamed={profileRenamed} oncreated={profileCreated} ondeleted={() => void refresh()} /></div>
     <div class="drag-area" aria-hidden="true" ondblclick={() => windowControls?.toggleMaximise()}></div>
     <nav class="app-menu" aria-label="Application menu">
     <fieldset class="menu-controls" disabled={groupsBusy}>
       <UpdateButton />
       <FeaturesCard />
-      <button type="button" disabled={busy || groupsBusy} aria-expanded={adding} aria-controls={adding ? 'add-account-form' : undefined} onclick={() => { adding = !adding; error = ''; }}>Add account</button>
-      <button type="button" disabled={busy || groupsBusy || !selected} onclick={() => openAccountWindow('logs')}>Posting logs</button>
-      <button type="button" disabled={busy || groupsBusy || !selected} onclick={() => openAccountWindow('settings')}>Settings</button>
+      <button type="button" disabled={busy || groupsBusy} aria-expanded={adding} bind:this={addTrigger} aria-haspopup="dialog" aria-controls="add-account-dialog" onclick={showAddAccount}>Add account</button>
+      <button type="button" disabled={busy || groupsBusy || !selected} onclick={() => openPostingLogs()}>Posting logs</button>
       <LanguageMenu />
       <ThemeMenu />
       <WhatsAppButton onerror={(message) => { error = message; }} />
@@ -92,15 +98,7 @@
     </nav>
     <WindowControls bind:this={windowControls} onerror={(message) => { error = message; }} />
   </header>
-  {#if adding}
-    <form id="add-account-form" class="add-account" onsubmit={add}>
-      <label for="account-name">Account name</label>
-      <input id="account-name" bind:value={name} placeholder={/* @wc-include */ 'e.g. Business'} required maxlength="80" disabled={busy || groupsBusy} />
-      <button disabled={busy || groupsBusy || !name.trim()}>{busy ? 'Creating…' : 'Create & sign in'}</button>
-      <button type="button" disabled={busy || groupsBusy} onclick={() => { adding = false; }}>Cancel</button>
-      <p>Sign in to Facebook in the new account’s browser window.</p>
-    </form>
-  {/if}
+  {#if adding}<AddAccountDialog oncreated={profileCreated} onclose={() => { adding = false; addTrigger?.focus(); }} />{/if}
   {#if error}<div class="profile-error" role="alert"><LocalizedFeedback message={error} /></div>{/if}
   {#if background.length}
     <div class="background-jobs" role="status">In the background:
@@ -112,7 +110,7 @@
       <App {profile} active={profile.id === selected} connect={profile.connect} onGroupsLoadingChange={(loading) => { groupsLoading[profile.id] = loading; }} />
     </div>
   {/each}
-  {#if !selected && !error}<p class="loading" role="status">Loading accounts…</p>{/if}
+  {#if !selected && !error}<p class="loading" role="status">{profiles.length ? 'Loading accounts…' : 'Add an account to get started.'}</p>{/if}
   {#if current}{#key current.id}<ConnectivityToast profileID={current.id} />{/key}{/if}
 </div>
 
@@ -123,14 +121,11 @@
   .drag-area { --wails-draggable: drag; align-self: stretch; flex: 1; min-width: 4rem; }
   .app-menu { --wails-draggable: no-drag; display: flex; min-width: 0; align-self: stretch; align-items: center; gap: .2rem; padding-right: 1rem; margin-right: .4rem; border-right: 1px solid var(--border); }
   .menu-controls { display: contents; }
-  .app-menu button { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; padding: .7rem 1rem; border: 0; border-radius: .4rem; background: transparent; color: var(--text-secondary); font-size: 1.2rem; }
+  .app-menu button { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; padding: .7rem 1rem; border: 0; border-radius: .4rem; background: transparent; color: var(--text-secondary); font-size: 1.2rem; cursor: pointer; }
   .app-menu button:hover:not(:disabled), .app-menu button[aria-expanded=true] { background: var(--surface-hover); color: var(--text); }
-  input { background: var(--surface); color: var(--text-strong); border: 1px solid var(--border-strong); border-radius: .6rem; padding: .8rem 1rem; font: inherit; max-width: 28rem; }
-  button { border: 1px solid var(--border); background: var(--surface); color: var(--accent); padding: .8rem 1.2rem; border-radius: .6rem; font: inherit; cursor: pointer; }
-  button:disabled { opacity: .5; cursor: default; }
-  button:focus-visible, input:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
-  .add-account { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem; padding: 1.6rem 2.4rem; font-size: 1.3rem; background: var(--surface-active); }
-  .add-account p { width: 100%; color: var(--text-secondary); }
+  .background-jobs button { border: 1px solid var(--border); background: var(--surface); color: var(--accent); padding: .8rem 1.2rem; border-radius: .6rem; font: inherit; cursor: pointer; }
+  .background-jobs button:disabled, .app-menu button:disabled { opacity: .5; cursor: default; }
+  .background-jobs button:focus-visible, .app-menu button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
   .account-workspace { flex: 1; min-height: 0; overflow: hidden; overflow: clip; }
   .account-workspace[hidden] { display: none; }
   .profile-error, .loading { padding: 1.2rem 2.4rem; font-size: 1.4rem; color: var(--danger); }

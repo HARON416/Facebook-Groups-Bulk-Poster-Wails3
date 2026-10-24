@@ -4,13 +4,10 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
-	urlpkg "net/url"
 	"os"
 	"path/filepath"
 	"regexp"
 	"strings"
-
-	"github.com/wailsapp/wails/v3/pkg/application"
 )
 
 type PostingOptions struct {
@@ -55,6 +52,9 @@ func (s *GroupsService) settingsFile() (string, error) {
 // Called with settingsMu held. The API key never appears in returned UI settings.
 func (s *GroupsService) readSettings() (storedSettings, error) {
 	result := storedSettings{AppSettings: defaultSettings()}
+	if s.settingsDeleted {
+		return result, errors.New("Account profile was not found")
+	}
 	path, err := s.settingsFile()
 	if err != nil {
 		return result, err
@@ -128,28 +128,6 @@ func (s *GroupsService) SaveSettings(settings AppSettings, key string, clearKey 
 	if err != nil {
 		return errors.New("Could not save Postika settings")
 	}
-	return nil
-}
-func (s *GroupsService) OpenSettings() error {
-	s.windowMu.Lock()
-	defer s.windowMu.Unlock()
-	if s.app == nil {
-		return errors.New("The desktop application is not ready")
-	}
-	name := "postika-settings"
-	url := "/?view=settings"
-	title := "Postika · Settings"
-	if s.profileID != "" {
-		name += "-" + s.profileID
-		url += "&profile=" + s.profileID + "&account=" + urlpkg.QueryEscape(s.profileName)
-		title += " · " + s.profileName
-	}
-	if window, ok := s.app.Window.GetByName(name); ok {
-		showAuxiliaryWindow(window)
-		return nil
-	}
-	window := s.app.Window.NewWithOptions(application.WebviewWindowOptions{Name: name, Title: title, Frameless: true, Width: 760, Height: 760, MinWidth: 600, MinHeight: 480, URL: url, BackgroundColour: application.NewRGB(248, 249, 250)})
-	retainAuxiliaryWindow(s.app, window)
 	return nil
 }
 

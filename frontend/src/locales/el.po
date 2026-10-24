@@ -8,10 +8,8 @@ msgstr ""
 "Plural-Forms: nplurals=2\n"
 "X-Plurals-Order: one, other\n"
 
-#. 0: appliedInterval; 1: rewriteState
-#: src/App.svelte
-msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
-msgstr "Εφαρμόστηκαν αποθηκευμένες προεπιλογές: {0} δευτερόλεπτα μεταξύ αναρτήσεων · Επανεγγραφή Gemini {1}."
+#~ msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
+#~ msgstr "Εφαρμόστηκαν αποθηκευμένες προεπιλογές: {0} δευτερόλεπτα μεταξύ αναρτήσεων · Επανεγγραφή Gemini {1}."
 
 #: src/components/LogMessage.svelte
 msgid "Could not restore saved groups. Load groups to refresh the list."
@@ -152,23 +150,17 @@ msgstr "Ανοίξτε τις ομάδες σας στο Facebook για να ξ
 msgid "Posting settings"
 msgstr "Ρυθμίσεις δημοσίευσης"
 
-#: src/App.svelte
-msgid "Add a Gemini API key in Settings to enable rewriting."
-msgstr "Προσθέστε ένα κλειδί Gemini API στις Ρυθμίσεις για να ενεργοποιήσετε την επανεγγραφή."
+#~ msgid "Add a Gemini API key in Settings to enable rewriting."
+#~ msgstr "Προσθέστε ένα κλειδί Gemini API στις Ρυθμίσεις για να ενεργοποιήσετε την επανεγγραφή."
 
-#: src/App.svelte
-msgid "Applying defaults…"
-msgstr "Εφαρμογή προεπιλογών…"
+#~ msgid "Applying defaults…"
+#~ msgstr "Εφαρμογή προεπιλογών…"
 
-#: src/App.svelte
-#: src/components/FeaturesCard.svelte
-#: src/components/UsageGuide.svelte
-msgid "Use saved defaults"
-msgstr "Χρήση αποθηκευμένων προεπιλογών"
+#~ msgid "Use saved defaults"
+#~ msgstr "Χρήση αποθηκευμένων προεπιλογών"
 
-#: src/App.svelte
-msgid "Open settings"
-msgstr "Άνοιγμα ρυθμίσεων"
+#~ msgid "Open settings"
+#~ msgstr "Άνοιγμα ρυθμίσεων"
 
 #~ msgid "Posting as <0/>"
 #~ msgstr "Δημοσίευση ως <0/>"
@@ -200,9 +192,11 @@ msgid "Time zone: {0}. Keep Postika open and your computer awake. Facebook may a
 msgstr "Ζώνη ώρας: {0}. Κρατήστε το Postika ανοιχτό και τον υπολογιστή σας ενεργό. Το Facebook ενδέχεται να σας ζητήσει να συνδεθείτε όταν ξεκινήσει η ανάρτηση."
 
 #: src/App.svelte
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FetchedPostCard.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Cancel"
 msgstr "Ακύρωση"
 
@@ -253,6 +247,8 @@ msgid "Application menu"
 msgstr "Μενού εφαρμογής"
 
 #: src/Workspace.svelte
+#: src/components/AccountDropdown.svelte
+#: src/components/AddAccountDialog.svelte
 #: src/components/UsageGuide.svelte
 msgid "Add account"
 msgstr "Προσθήκη λογαριασμού"
@@ -261,31 +257,28 @@ msgstr "Προσθήκη λογαριασμού"
 #: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogView.svelte
+#: src/components/PostingLogs.svelte
 #: src/components/UsageGuide.svelte
 msgid "Posting logs"
 msgstr "Αρχείο δημοσιεύσεων"
 
-#: src/Workspace.svelte
-#: src/components/FeaturesCard.svelte
-#: src/components/Settings.svelte
-#: src/components/Settings.svelte
-#: src/components/UsageGuide.svelte
-msgid "Settings"
-msgstr "Ρυθμίσεις"
+#~ msgid "Settings"
+#~ msgstr "Ρυθμίσεις"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "Creating…"
 msgstr "Δημιουργία…"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "Create & sign in"
 msgstr "Δημιουργία και σύνδεση"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Account name"
 msgstr "Όνομα λογαριασμού"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 #: src/components/UsageGuide.svelte
 msgid "Sign in to Facebook in the new account’s browser window."
 msgstr "Συνδεθείτε στο Facebook στο παράθυρο του προγράμματος περιήγησης του νέου λογαριασμού."
@@ -794,172 +787,125 @@ msgstr "Επιλέξτε πόσο να περιμένετε πριν την αν
 msgid "At least 60 seconds. Use equal values for a fixed interval."
 msgstr "Τουλάχιστον 60 δευτερόλεπτα. Χρησιμοποιήστε ίσες τιμές για σταθερό διάστημα."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "OPTIONAL · AI REWRITE"
-msgstr "ΠΡΟΑΙΡΕΤΙΚΟ · ΕΠΑΝΑΓΡΑΦΗ ΜΕ AI"
+#~ msgid "OPTIONAL · AI REWRITE"
+#~ msgstr "ΠΡΟΑΙΡΕΤΙΚΟ · ΕΠΑΝΑΓΡΑΦΗ ΜΕ AI"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "A fresh version for each group"
-msgstr "Μια νέα έκδοση για κάθε ομάδα"
+#~ msgid "A fresh version for each group"
+#~ msgstr "Μια νέα έκδοση για κάθε ομάδα"
 
-#: src/components/FeaturesCard.svelte
-#: src/components/PostingOptionsForm.svelte
-#: src/components/UsageGuide.svelte
-msgid "Rewrite each post body with Gemini"
-msgstr "Επαναγράψτε κάθε κείμενο ανάρτησης με Gemini"
+#~ msgid "Rewrite each post body with Gemini"
+#~ msgstr "Επαναγράψτε κάθε κείμενο ανάρτησης με Gemini"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
-msgstr "Οδηγίες επανεγγραφής<0>Επιλέξτε τον τόνο και τις λεπτομέρειες που πρέπει να διατηρήσει το Gemini.</0>"
+#~ msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
+#~ msgstr "Οδηγίες επανεγγραφής<0>Επιλέξτε τον τόνο και τις λεπτομέρειες που πρέπει να διατηρήσει το Gemini.</0>"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Keep it concise and easy to scan. Preserve the price and contact details."
-msgstr "Διατηρήστε το συνοπτικό και εύκολο στην ανάγνωση. Διατηρήστε την τιμή και τα στοιχεία επικοινωνίας."
+#~ msgid "Keep it concise and easy to scan. Preserve the price and contact details."
+#~ msgstr "Διατηρήστε το συνοπτικό και εύκολο στην ανάγνωση. Διατηρήστε την τιμή και τα στοιχεία επικοινωνίας."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Rewrite instructions"
-msgstr "Οδηγίες επανεγγραφής"
+#~ msgid "Rewrite instructions"
+#~ msgstr "Οδηγίες επανεγγραφής"
 
-#: src/components/FeaturesCard.svelte
-#: src/components/PostingOptionsForm.svelte
-#: src/components/UsageGuide.svelte
-msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
-msgstr "Το κείμενο της ανάρτησής σας και οι οδηγίες αποστέλλονται στο Google Gemini. Οι εικόνες δεν αποστέλλονται. Οι επανεγγραφές του Gemini χρησιμοποιούν απλό κείμενο."
+#~ msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
+#~ msgstr "Το κείμενο της ανάρτησής σας και οι οδηγίες αποστέλλονται στο Google Gemini. Οι εικόνες δεν αποστέλλονται. Οι επανεγγραφές του Gemini χρησιμοποιούν απλό κείμενο."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
-msgstr "Αν η επανεγγραφή αποτύχει, η ανάρτηση χρησιμοποιεί το αρχικό σας κείμενο. Η επόμενη ανάρτηση προσπαθεί ξανά με το Gemini."
+#~ msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
+#~ msgstr "Αν η επανεγγραφή αποτύχει, η ανάρτηση χρησιμοποιεί το αρχικό σας κείμενο. Η επόμενη ανάρτηση προσπαθεί ξανά με το Gemini."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Let Gemini rewrite your post using your instructions."
-msgstr "Αφήστε το Gemini να επανεγγράψει την ανάρτησή σας χρησιμοποιώντας τις οδηγίες σας."
+#~ msgid "Let Gemini rewrite your post using your instructions."
+#~ msgstr "Αφήστε το Gemini να επανεγγράψει την ανάρτησή σας χρησιμοποιώντας τις οδηγίες σας."
 
 #: src/components/PostingOptionsForm.svelte
 msgid "Posting preferences"
 msgstr "Προτιμήσεις ανάρτησης"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved defaults help"
-msgstr "Οι αποθηκευμένες προεπιλογές βοηθούν"
+#~ msgid "Saved defaults help"
+#~ msgstr "Οι αποθηκευμένες προεπιλογές βοηθούν"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "About saved defaults"
-msgstr "Σχετικά με τις αποθηκευμένες προεπιλογές"
+#~ msgid "About saved defaults"
+#~ msgstr "Σχετικά με τις αποθηκευμένες προεπιλογές"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved interval"
-msgstr "Αποθηκευμένο διάστημα"
+#~ msgid "Saved interval"
+#~ msgstr "Αποθηκευμένο διάστημα"
 
-#. 0: settings.minimumInterval === settings.maximumInterval ? settings.minimumInterval \\: `${settings.minimumInterval}–${settings.maximumInterval}`
-#: src/components/SavedDefaultsInfo.svelte
-msgid "{0} seconds"
-msgstr "{0} δευτερόλεπτα"
+#~ msgid "{0} seconds"
+#~ msgstr "{0} δευτερόλεπτα"
 
-#: src/App.svelte
-#: src/components/SavedDefaultsInfo.svelte
-msgid "On"
-msgstr "Ενεργό"
+#~ msgid "On"
+#~ msgstr "Ενεργό"
 
-#: src/App.svelte
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Off"
-msgstr "Ανενεργό"
+#~ msgid "Off"
+#~ msgstr "Ανενεργό"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Gemini rewrite"
-msgstr "Επανεγγραφή Gemini"
+#~ msgid "Gemini rewrite"
+#~ msgstr "Επανεγγραφή Gemini"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "No instructions saved."
-msgstr "Δεν έχουν αποθηκευτεί οδηγίες."
+#~ msgid "No instructions saved."
+#~ msgstr "Δεν έχουν αποθηκευτεί οδηγίες."
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved rewrite instructions"
-msgstr "Αποθηκευμένες οδηγίες επανεγγραφής"
+#~ msgid "Saved rewrite instructions"
+#~ msgstr "Αποθηκευμένες οδηγίες επανεγγραφής"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved values could not be loaded. Try “Use saved defaults” again."
-msgstr "Δεν ήταν δυνατή η φόρτωση των αποθηκευμένων τιμών. Δοκιμάστε ξανά «Χρήση αποθηκευμένων προεπιλογών»."
+#~ msgid "Saved values could not be loaded. Try “Use saved defaults” again."
+#~ msgstr "Δεν ήταν δυνατή η φόρτωση των αποθηκευμένων τιμών. Δοκιμάστε ξανά «Χρήση αποθηκευμένων προεπιλογών»."
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "What does “Use saved defaults” do?"
-msgstr "Τι κάνει η «Χρήση αποθηκευμένων προεπιλογών»;"
+#~ msgid "What does “Use saved defaults” do?"
+#~ msgstr "Τι κάνει η «Χρήση αποθηκευμένων προεπιλογών»;"
 
-#: src/components/SavedDefaultsInfo.svelte
-#: src/components/UsageGuide.svelte
-msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
-msgstr "Αντικαθιστά το διάστημα ανάρτησης αυτού του τρεξίματος, την επιλογή επανεγγραφής Gemini και τις οδηγίες επανεγγραφής με τις τιμές που έχουν αποθηκευτεί στις Ρυθμίσεις."
+#~ msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
+#~ msgstr "Αντικαθιστά το διάστημα ανάρτησης αυτού του τρεξίματος, την επιλογή επανεγγραφής Gemini και τις οδηγίες επανεγγραφής με τις τιμές που έχουν αποθηκευτεί στις Ρυθμίσεις."
 
-#: src/components/SavedDefaultsInfo.svelte
-#: src/components/UsageGuide.svelte
-msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
-msgstr "Αρχικές προεπιλογές: 60–120 δευτερόλεπτα, επανεγγραφή Gemini απενεργοποιημένη και χωρίς οδηγίες επανεγγραφής. Αποθηκεύστε τις δικές σας προτιμήσεις στις Ρυθμίσεις για να τις αλλάξετε."
+#~ msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
+#~ msgstr "Αρχικές προεπιλογές: 60–120 δευτερόλεπτα, επανεγγραφή Gemini απενεργοποιημένη και χωρίς οδηγίες επανεγγραφής. Αποθηκεύστε τις δικές σας προτιμήσεις στις Ρυθμίσεις για να τις αλλάξετε."
 
 #: src/components/LogMessage.svelte
 msgid "Settings saved. New runs can use these defaults."
 msgstr "Ρυθμίσεις αποθηκεύτηκαν. Νέα τρεξίματα μπορούν να χρησιμοποιήσουν αυτές τις προεπιλογές."
 
-#: src/components/Settings.svelte
-msgid "Key saved · leave blank to keep it"
-msgstr "Κλειδί αποθηκεύτηκε · αφήστε κενό για να το διατηρήσετε"
+#~ msgid "Key saved · leave blank to keep it"
+#~ msgstr "Κλειδί αποθηκεύτηκε · αφήστε κενό για να το διατηρήσετε"
 
-#: src/components/Settings.svelte
-msgid "Enter your Gemini API key"
-msgstr "Εισαγάγετε το κλειδί API Gemini σας"
+#~ msgid "Enter your Gemini API key"
+#~ msgstr "Εισαγάγετε το κλειδί API Gemini σας"
 
-#: src/components/Settings.svelte
-msgid "A key is saved on this device."
-msgstr "Ένα κλειδί έχει αποθηκευτεί σε αυτή τη συσκευή."
+#~ msgid "A key is saved on this device."
+#~ msgstr "Ένα κλειδί έχει αποθηκευτεί σε αυτή τη συσκευή."
 
-#: src/components/Settings.svelte
-msgid "No API key saved."
-msgstr "Κανένα κλειδί API δεν έχει αποθηκευτεί."
+#~ msgid "No API key saved."
+#~ msgstr "Κανένα κλειδί API δεν έχει αποθηκευτεί."
 
-#: src/components/Settings.svelte
-msgid "Remove saved key"
-msgstr "Αφαιρέστε το αποθηκευμένο κλειδί"
+#~ msgid "Remove saved key"
+#~ msgstr "Αφαιρέστε το αποθηκευμένο κλειδί"
 
-#: src/components/Settings.svelte
-msgid "Gemini"
-msgstr "Gemini"
+#~ msgid "Gemini"
+#~ msgstr "Gemini"
 
-#: src/components/Settings.svelte
-msgid "API key<0/>"
-msgstr "Κλειδί API<0/>"
+#~ msgid "API key<0/>"
+#~ msgstr "Κλειδί API<0/>"
 
-#. 0: keyConfigured ? 'A key is saved on this device.' \\: 'No API key saved.'
-#: src/components/Settings.svelte
-msgid "{0} The saved key is never displayed."
-msgstr "{0} Το αποθηκευμένο κλειδί δεν προβάλλεται ποτέ."
+#~ msgid "{0} The saved key is never displayed."
+#~ msgstr "{0} Το αποθηκευμένο κλειδί δεν προβάλλεται ποτέ."
 
-#: src/components/Settings.svelte
-msgid "Model<0/>"
-msgstr "Μοντέλο<0/>"
+#~ msgid "Model<0/>"
+#~ msgstr "Μοντέλο<0/>"
 
-#: src/components/Settings.svelte
-msgid "Posting defaults"
-msgstr "Προεπιλογές δημοσίευσης"
+#~ msgid "Posting defaults"
+#~ msgstr "Προεπιλογές δημοσίευσης"
 
-#: src/components/Settings.svelte
-msgid "Applied when you start a new posting run."
-msgstr "Εφαρμόζεται όταν ξεκινάτε ένα νέο τρέξιμο ανάρτησης."
+#~ msgid "Applied when you start a new posting run."
+#~ msgstr "Εφαρμόζεται όταν ξεκινάτε ένα νέο τρέξιμο ανάρτησης."
 
-#: src/components/Settings.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Saving…"
 msgstr "Αποθήκευση…"
 
-#: src/components/Settings.svelte
-msgid "Save settings"
-msgstr "Αποθήκευση ρυθμίσεων"
+#~ msgid "Save settings"
+#~ msgstr "Αποθήκευση ρυθμίσεων"
 
-#: src/components/Settings.svelte
-msgid "YOUR PREFERENCES"
-msgstr "ΟΙ ΠΡΟΤΙΜΗΣΕΙΣ ΣΑΣ"
+#~ msgid "YOUR PREFERENCES"
+#~ msgstr "ΟΙ ΠΡΟΤΙΜΗΣΕΙΣ ΣΑΣ"
 
-#. 0: accountName
-#: src/components/Settings.svelte
-msgid "Set up Gemini and save posting defaults for {0}."
-msgstr "Ρυθμίστε το Gemini και αποθηκεύστε τις προεπιλογές ανάρτησης για {0}."
+#~ msgid "Set up Gemini and save posting defaults for {0}."
+#~ msgstr "Ρυθμίστε το Gemini και αποθηκεύστε τις προεπιλογές ανάρτησης για {0}."
 
 #: src/components/StepProgress.svelte
 msgid "Completed"
@@ -1133,9 +1079,8 @@ msgstr "Βράδυ"
 msgid "Could not change the language. Please try again."
 msgstr "Δεν ήταν δυνατή η αλλαγή της γλώσσας. Παρακαλώ δοκιμάστε ξανά."
 
-#: src/components/Settings.svelte
-msgid "Language"
-msgstr "Γλώσσα"
+#~ msgid "Language"
+#~ msgstr "Γλώσσα"
 
 #: src/components/PostingOptionsForm.svelte
 #: src/components/PostingOptionsForm.svelte
@@ -1210,7 +1155,7 @@ msgstr "ΠΑΡΑΛΕΙΦΘΗΚΕ"
 msgid "UNCONFIRMED"
 msgstr "ΜΗ ΕΠΙΒΕΒΑΙΩΜΕΝΟ"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "e.g. Business"
 msgstr "π.χ. Επιχείρηση"
 
@@ -1282,8 +1227,11 @@ msgstr "Προεπιλεγμένο προφίλ"
 msgid "Color themes"
 msgstr "Χρωματικά θέματα"
 
+#: src/components/AddAccountDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/RenameProfileDialog.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UpdateButton.svelte
 msgid "Close"
@@ -1503,7 +1451,6 @@ msgid "Gemini rewrite completed."
 msgstr "Η επανεγγραφή του Gemini ολοκληρώθηκε."
 
 #: src/components/LogMessage.svelte
-#: src/components/UsageGuide.svelte
 msgid "Gemini rewrite failed. Using the original text for this post; Gemini will be tried again for the next post."
 msgstr "Η επανεγγραφή του Gemini απέτυχε. Χρήση του αρχικού κειμένου για αυτή τη δημοσίευση. Ο Gemini θα δοκιμαστεί ξανά για την επόμενη δημοσίευση."
 
@@ -1876,19 +1823,21 @@ msgstr "Λεπτομέρειες εντοπισμού σφαλμάτων"
 #~ msgid ", "
 #~ msgstr ""
 
+#: src/components/FeaturesCard.svelte
 #: src/components/ThemePicker.svelte
+#: src/components/UsageGuide.svelte
 msgid "Themes"
 msgstr "Θέματα"
 
 #: src/App.svelte
 #: src/components/UsageGuide.svelte
-msgid "Preferences & post"
-msgstr "Προτιμήσεις και δημοσίευση"
+msgid "Post or schedule"
+msgstr "Δημοσίευση ή προγραμματισμός"
 
 #: src/App.svelte
 #: src/App.svelte
-msgid "Set preferences, then post now or schedule"
-msgstr "Ορίστε προτιμήσεις και μετά δημοσιεύστε τώρα ή προγραμματίστε"
+msgid "Choose the time between posts, then post now or schedule for later."
+msgstr "Επιλέξτε το διάστημα μεταξύ δημοσιεύσεων και μετά δημοσιεύστε τώρα ή προγραμματίστε για αργότερα."
 
 #~ msgid "Postika"
 #~ msgstr "Postika"
@@ -1923,9 +1872,8 @@ msgstr "Οι φορτωμένες ομάδες παραμένουν διαθέσ
 msgid "Minimum and maximum delays between posts."
 msgstr "Ελάχιστη και μέγιστη καθυστέρηση μεταξύ αναρτήσεων."
 
-#: src/components/FeaturesCard.svelte
-msgid "Custom instructions and a configurable Gemini model."
-msgstr "Προσαρμοσμένες οδηγίες και ρυθμιζόμενο μοντέλο Gemini."
+#~ msgid "Custom instructions and a configurable Gemini model."
+#~ msgstr "Προσαρμοσμένες οδηγίες και ρυθμιζόμενο μοντέλο Gemini."
 
 #. 0: languages.length; 1: themeOptions.length
 #: src/components/FeaturesCard.svelte
@@ -1978,9 +1926,8 @@ msgstr "Γράψτε το μήνυμα και προσθέστε τουλάχι�
 msgid "Select Load groups and finish Facebook login or verification in Chrome. Search the loaded list, select the groups you want, then choose Next."
 msgstr "Επιλέξτε Φόρτωση ομάδων και ολοκληρώστε τη σύνδεση ή επαλήθευση Facebook στο Chrome. Αναζητήστε στη λίστα, επιλέξτε ομάδες και πατήστε Επόμενο."
 
-#: src/components/UsageGuide.svelte
-msgid "In Settings, enter this account’s Gemini API key and model, then Save settings. Enable rewriting for your run and describe the tone and details to preserve."
-msgstr "Στις Ρυθμίσεις εισαγάγετε το κλειδί API Gemini και το μοντέλο του λογαριασμού και αποθηκεύστε. Ενεργοποιήστε την αναδιατύπωση και περιγράψτε τόνο και λεπτομέρειες προς διατήρηση."
+#~ msgid "In Settings, enter this account’s Gemini API key and model, then Save settings. Enable rewriting for your run and describe the tone and details to preserve."
+#~ msgstr "Στις Ρυθμίσεις εισαγάγετε το κλειδί API Gemini και το μοντέλο του λογαριασμού και αποθηκεύστε. Ενεργοποιήστε την αναδιατύπωση και περιγράψτε τόνο και λεπτομέρειες προς διατήρηση."
 
 #: src/components/UsageGuide.svelte
 msgid "Review the account, message, image order, selected groups, and posting intervals. Choose Post now and complete any Facebook login or verification prompts in Chrome."
@@ -2036,13 +1983,11 @@ msgstr "Εισαγάγετε το URL μιας σελίδας Facebook, π.χ. h
 #~ msgid "Fetch Facebook posts"
 #~ msgstr ""
 
-#: src/components/FacebookPageDialog.svelte
-msgid "Decrease number of posts"
-msgstr "Μείωση αριθμού αναρτήσεων"
+#~ msgid "Decrease number of posts"
+#~ msgstr "Μείωση αριθμού αναρτήσεων"
 
-#: src/components/FacebookPageDialog.svelte
-msgid "Increase number of posts"
-msgstr "Αύξηση αριθμού αναρτήσεων"
+#~ msgid "Increase number of posts"
+#~ msgstr "Αύξηση αριθμού αναρτήσεων"
 
 #: src/components/FacebookPageDialog.svelte
 msgid "Facebook page URL"
@@ -2136,6 +2081,8 @@ msgstr "Επεξεργασία"
 msgid "Delete post {0}"
 msgstr "Διαγραφή ανάρτησης {0}"
 
+#: src/components/AccountDropdown.svelte
+#: src/components/AccountDropdown.svelte
 #: src/components/FetchedPostCard.svelte
 msgid "Delete"
 msgstr "Διαγραφή"
@@ -2150,6 +2097,7 @@ msgid "Remove image {0} from post {1}"
 msgstr "Αφαίρεση εικόνας {0} από την ανάρτηση {1}"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Save changes"
 msgstr "Αποθήκευση αλλαγών"
 
@@ -2391,3 +2339,45 @@ msgstr "Έλεγχος για ενημερώσεις"
 #: src/components/UpdateButton.svelte
 msgid "Installing update…"
 msgstr "Εγκατάσταση ενημέρωσης…"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "posts"
+msgstr "αναρτήσεις"
+
+#: src/components/LogMessage.svelte
+msgid "Account names cannot be URLs"
+msgstr "Τα ονόματα λογαριασμών δεν μπορούν να είναι URL"
+
+#: src/components/LogMessage.svelte
+msgid "First post confirmed. Remaining groups stopped because the formatted text could not be verified."
+msgstr "Η πρώτη δημοσίευση επιβεβαιώθηκε. Η δημοσίευση στις υπόλοιπες ομάδες σταμάτησε επειδή δεν ήταν δυνατή η επαλήθευση του μορφοποιημένου κειμένου."
+
+#: src/components/AccountDropdown.svelte
+#: src/components/RenameProfileDialog.svelte
+msgid "Rename profile"
+msgstr "Μετονομασία προφίλ"
+
+#: src/Workspace.svelte
+#: src/components/PostingLogs.svelte
+msgid "Add an account to get started."
+msgstr "Προσθέστε έναν λογαριασμό για να ξεκινήσετε."
+
+#: src/components/AccountDropdown.svelte
+#: src/components/DeleteProfileDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
+msgid "Delete profile"
+msgstr "Διαγραφή προφίλ"
+
+#~ msgid "<0/> Add account"
+#~ msgstr ""
+
+#~ msgid "Delete profile?"
+#~ msgstr ""
+
+#: src/components/DeleteProfileDialog.svelte
+msgid "This permanently deletes this profile’s Facebook login, groups, drafts, images, settings, and logs. Any running or scheduled queue will stop. Posts already on Facebook are kept."
+msgstr "Αυτό διαγράφει οριστικά τη σύνδεση Facebook, τις ομάδες, τα πρόχειρα, τις εικόνες, τις ρυθμίσεις και τα αρχεία καταγραφής αυτού του προφίλ. Οι ενεργές ή προγραμματισμένες ουρές θα σταματήσουν. Οι αναρτήσεις που υπάρχουν ήδη στο Facebook διατηρούνται."
+
+#: src/components/DeleteProfileDialog.svelte
+msgid "Deleting…"
+msgstr "Διαγραφή…"

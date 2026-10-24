@@ -1,4 +1,6 @@
 {
+  "First post confirmed. Remaining groups stopped because the formatted text could not be verified.": "rich_post_unvalidated",
+  "Account names cannot be URLs": "account_name_url",
   "A fetched image URL is invalid. Fetch the posts again": "facebook_photo_error",
   "A selected group is no longer available. Load groups again": "log_90cc338cc01e",
   "Account profile was not found": "account_missing",

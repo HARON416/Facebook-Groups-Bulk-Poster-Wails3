@@ -15,18 +15,19 @@ published. The website at `postika.softwrhq.com` is planned.
   shortcuts. Attach JPG, PNG, WebP, or GIF images, preview them, and reorder them
   by dragging or with Alt + Left / Right.
 - **Import Facebook page posts:** enter a page URL and the number of posts to
-  fetch. Review the results, edit text, remove images, or delete posts before
+  fetch using the number field with up/down arrows and a “posts” suffix.
+  Review the results, edit text, remove images, or delete posts before
   adding them to your posting queue. Fetching depends on what the signed-in
   Facebook account can access.
-- **Manage accounts:** each account has its own Facebook browser session,
-  groups, drafts, settings, and queue. Switch accounts while other queues run.
+- **Manage accounts:** use the default account or choose **Add account** in the
+  top bar to open a popup, enter a name, and choose **Create & sign in**. Each
+  account has its own Facebook browser session, groups, drafts, posting
+  preferences, and queue. Switch accounts while other queues run.
 - **Choose groups:** load your groups, search them, and select individual groups
   or all matching results. Loaded groups are saved between sessions.
 - **Control posting:** post now or schedule a queue, configure minimum and
   maximum delays, and pause, resume, or stop from the shared Posting logs window.
   Queues wait while offline and resume when connectivity returns.
-- **Rewrite with Gemini:** optionally rewrite each post with custom instructions
-  and a configurable model. Rewriting uses plain text; images are not sent.
 - **Personalize the interface:** 33 languages, including right-to-left layouts,
   and 189 themes. Language and theme choices sync across windows. App-generated
   log messages are translated, with original diagnostics under Debug details.
@@ -35,15 +36,49 @@ Open **Features → How to use** inside the app for the detailed workflow.
 
 ## Using the app
 
-1. Add or select an account, then sign in through the Chrome/Chromium window
-   when prompted. Postika keeps a separate browser profile for each account.
-2. Write a post and add images, or fetch posts from a Facebook page and review
-   the imported content.
-3. Load your groups, search, and select the destinations.
-4. Choose posting intervals, optional Gemini rewriting, and whether to post now
-   or schedule the queue.
-5. Follow progress in **Posting logs**. Switch its account selector to inspect
-   another queue without interrupting the current one.
+Start with the default account or select an existing account from the top bar.
+Adding another account is optional: choose **Add account**, enter its name in
+the popup, and select **Create & sign in**. Finish Facebook login in the new
+account’s Chrome/Chromium window. Cancel, Escape, the close button, or clicking
+outside dismisses the popup before creation starts; errors appear inside it.
+
+To rename a profile, open the account selector, hover over its row, and choose
+the pen icon. Edit the account name in the popup and select **Save changes**.
+You can also highlight a profile with the arrow keys and press **F2**. Renaming
+is available in the main window and Posting logs, and keeps the account’s login,
+drafts, groups, and running queue intact.
+
+The account selector also has **Add account** below the profile list; the top-bar
+button opens the same popup. To delete a profile, hover over its row and choose
+the trash icon, then confirm **Delete profile**. This stops its queue, closes its
+browser, and permanently removes its saved Facebook login, groups, drafts,
+images, preferences, and logs. Existing Facebook posts stay on Facebook. Deleting
+the last profile leaves the list empty; choose **Add account** for a fresh login.
+
+The main workspace has three steps:
+
+1. **Create post:** write your message and add at least one image, or fetch
+   posts from a Facebook page and review the imported content.
+2. **Select groups:** choose **Load groups**, finish Facebook login if prompted,
+   then search and select the destinations.
+3. **Post or schedule:** set the minimum and maximum interval between posts
+   (60–86400 seconds), then choose **Post now** or **Schedule**. Equal values
+   give a fixed interval. Posting preferences stay with each account’s draft.
+
+Follow progress in **Posting logs**. Switch its account selector to inspect
+another queue without interrupting the current one. Language and theme controls
+are in the top bar and apply across windows. Popups use the same theme, fields,
+and button styles as the rest of the app.
+
+If Facebook requests login or verification while opening a group for posting,
+finish it in Chrome. Postika keeps the queue active, waits for login, and
+continues automatically with the selected group and draft. **Stop** cancels the
+wait; closing the Facebook tab stops preparation.
+
+Page imports also wait for login and show a prompt in the import popup. If the
+session expires while fetching posts or photos, Postika reopens Chrome and
+continues the same import after you sign back into the same Facebook account.
+Use **Cancel** in the import popup to stop waiting.
 
 Keep Postika open and the computer awake for scheduled or active queues.
 **Queues and posting logs are not restored after quitting.**
@@ -65,11 +100,6 @@ content, selected groups, posting preferences, imported post data, and independe
 copies of locally attached image bytes. Imported images retain Facebook CDN
 URLs and may need to be fetched again if those URLs expire. Drafts survive
 updates when the app's data and webview storage are retained.
-
-Gemini receives post text and rewrite instructions only when rewriting is
-enabled. A failed rewrite falls back to the original text. The saved API key is
-stored in the account's local settings file and is not returned to the frontend
-when settings are loaded. It is not stored in an encrypted OS credential vault.
 
 ## Automatic updates
 
@@ -128,6 +158,11 @@ make dev
 `make install-cli` installs the pinned CLI in `.tools/bin`. Make adds that
 directory to PATH for its tasks; the export also makes it available to direct
 `wails3` commands and their child tasks. `make run` is an alias for `make dev`.
+
+Close any installed Postika instance before running `make dev`. Installed and
+development builds share the same single-instance ID: if Postika is already
+running, the development build focuses that instance and exits instead of
+opening a new window. A successful build alone does not replace the running app.
 
 On Windows, use PowerShell to install and run the same CLI without Make:
 
@@ -312,7 +347,7 @@ setup required by Garble.
 | --- | --- |
 | `main.go`, `profiles.go`, `profile_operations.go` | Wails app setup and account service bindings |
 | `groups_*.go`, `facebook_page_*.go` | Facebook browser sessions, groups, and page imports |
-| `posting*.go`, `post_*.go` | Posting queues, request capture/replay, formatting, and Gemini |
+| `posting*.go`, `post_*.go` | Posting queues, request capture/replay, and formatting |
 | `updates*.go`, `internal/updateauth/` | Update polling, verification, and platform installation |
 | `frontend/src/` | Svelte interface, editor, drafts, themes, and localization |
 | `frontend/bindings/` | Generated Wails service bindings and models |

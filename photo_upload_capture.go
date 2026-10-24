@@ -123,6 +123,14 @@ func startPhotoUploadCapture(ctx context.Context, page *rod.Page, match func(str
 		if headers.Get("Access-Control-Request-Method") != "" {
 			return
 		}
+		// One real upload supplies the reusable multipart/session template.
+		// Facebook still uploads the remaining attachments in its composer.
+		capture.mu.Lock()
+		captured := len(capture.requests) != 0
+		capture.mu.Unlock()
+		if captured {
+			return
+		}
 		u, err := url.Parse(request.URL)
 		if err != nil {
 			fail(errors.New("Could not capture the upload endpoint"))
@@ -157,6 +165,7 @@ func startPhotoUploadCapture(ctx context.Context, page *rod.Page, match func(str
 			delete(capture.extras, event.RequestID)
 		}
 		capture.requests[event.RequestID] = entry
+		clear(capture.extras)
 		capture.mu.Unlock()
 		signal()
 	}, func(event *proto.NetworkRequestWillBeSentExtraInfo) {
@@ -164,7 +173,7 @@ func startPhotoUploadCapture(ctx context.Context, page *rod.Page, match func(str
 		if entry := capture.requests[event.RequestID]; entry != nil {
 			entry.Headers = captureUploadHeaders(entry.Headers, event.Headers)
 			entry.wire = true
-		} else {
+		} else if len(capture.requests) == 0 {
 			if len(capture.extras) >= 256 {
 				for id := range capture.extras {
 					delete(capture.extras, id)
@@ -219,7 +228,7 @@ func startPhotoUploadCapture(ctx context.Context, page *rod.Page, match func(str
 	return capture
 }
 func (capture *photoUploadCapture) stop() { capture.cancel(); <-capture.done }
-func (capture *photoUploadCapture) wait(ctx context.Context, expected int, progress func(string)) (int, error) {
+func (capture *photoUploadCapture) wait(ctx context.Context, progress func(string)) (int, error) {
 	for {
 		capture.mu.Lock()
 		err := capture.err
@@ -236,16 +245,22 @@ func (capture *photoUploadCapture) wait(ctx context.Context, expected int, progr
 				err = fmt.Errorf("Chrome image upload returned HTTP %d", entry.Status)
 				break
 			}
+			if id, _ := parseUploadedPhoto(entry.Response, entry.Status); id == "" {
+				err = errors.New("Facebook did not confirm all images. Check the composer.")
+				break
+			}
 			complete++
 		}
 		capture.mu.Unlock()
 		if err != nil {
 			return complete, err
 		}
-		if complete >= expected {
+		if complete >= 1 {
 			return complete, nil
 		}
-		progress(fmt.Sprintf("Capturing image uploads (%d of %d)…", complete, expected))
+		if progress != nil {
+			progress(fmt.Sprintf("Capturing image uploads (%d of %d)…", complete, 1))
+		}
 		select {
 		case <-ctx.Done():
 			return complete, ctx.Err()

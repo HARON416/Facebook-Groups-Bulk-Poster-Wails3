@@ -8,10 +8,8 @@ msgstr ""
 "Plural-Forms: nplurals=1\n"
 "X-Plurals-Order: other\n"
 
-#. 0: appliedInterval; 1: rewriteState
-#: src/App.svelte
-msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
-msgstr "ค่าตั้งต้นที่บันทึกไว้ถูกนำมาใช้: {0} วินาทีระหว่างโพสต์ · Gemini rewrite {1}."
+#~ msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
+#~ msgstr "ค่าตั้งต้นที่บันทึกไว้ถูกนำมาใช้: {0} วินาทีระหว่างโพสต์ · Gemini rewrite {1}."
 
 #: src/components/LogMessage.svelte
 msgid "Could not restore saved groups. Load groups to refresh the list."
@@ -152,23 +150,17 @@ msgstr "เปิดกลุ่ม Facebook ของคุณเพื่อ�
 msgid "Posting settings"
 msgstr "การตั้งค่าโพสต์"
 
-#: src/App.svelte
-msgid "Add a Gemini API key in Settings to enable rewriting."
-msgstr "เพิ่มคีย์ Gemini API ในการตั้งค่าเพื่อเปิดใช้งานการเขียนใหม่"
+#~ msgid "Add a Gemini API key in Settings to enable rewriting."
+#~ msgstr "เพิ่มคีย์ Gemini API ในการตั้งค่าเพื่อเปิดใช้งานการเขียนใหม่"
 
-#: src/App.svelte
-msgid "Applying defaults…"
-msgstr "กำลังใช้ค่าปริยาย..."
+#~ msgid "Applying defaults…"
+#~ msgstr "กำลังใช้ค่าปริยาย..."
 
-#: src/App.svelte
-#: src/components/FeaturesCard.svelte
-#: src/components/UsageGuide.svelte
-msgid "Use saved defaults"
-msgstr "ใช้ค่าปริยายที่บันทึกไว้"
+#~ msgid "Use saved defaults"
+#~ msgstr "ใช้ค่าปริยายที่บันทึกไว้"
 
-#: src/App.svelte
-msgid "Open settings"
-msgstr "เปิดการตั้งค่า"
+#~ msgid "Open settings"
+#~ msgstr "เปิดการตั้งค่า"
 
 #~ msgid "Posting as <0/>"
 #~ msgstr "โพสต์ในนาม <0/>"
@@ -200,9 +192,11 @@ msgid "Time zone: {0}. Keep Postika open and your computer awake. Facebook may a
 msgstr "เขตเวลา: {0} รักษา Postika ให้เปิดอยู่และคอมพิวเตอร์ของคุณให้ตื่นอยู่ Facebook อาจขอให้คุณลงชื่อเข้าใช้เมื่อการโพสต์เริ่มต้น"
 
 #: src/App.svelte
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FetchedPostCard.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Cancel"
 msgstr "ยกเลิก"
 
@@ -253,6 +247,8 @@ msgid "Application menu"
 msgstr "เมนูแอปพลิเคชัน"
 
 #: src/Workspace.svelte
+#: src/components/AccountDropdown.svelte
+#: src/components/AddAccountDialog.svelte
 #: src/components/UsageGuide.svelte
 msgid "Add account"
 msgstr "เพิ่มบัญชี"
@@ -261,31 +257,28 @@ msgstr "เพิ่มบัญชี"
 #: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogView.svelte
+#: src/components/PostingLogs.svelte
 #: src/components/UsageGuide.svelte
 msgid "Posting logs"
 msgstr "บันทึกการโพสต์"
 
-#: src/Workspace.svelte
-#: src/components/FeaturesCard.svelte
-#: src/components/Settings.svelte
-#: src/components/Settings.svelte
-#: src/components/UsageGuide.svelte
-msgid "Settings"
-msgstr "การตั้งค่า"
+#~ msgid "Settings"
+#~ msgstr "การตั้งค่า"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "Creating…"
 msgstr "กำลังสร้าง…"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "Create & sign in"
 msgstr "สร้างและเข้าสู่ระบบ"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Account name"
 msgstr "ชื่อบัญชี"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 #: src/components/UsageGuide.svelte
 msgid "Sign in to Facebook in the new account’s browser window."
 msgstr "ลงชื่อเข้าใช้ Facebook ในหน้าต่างเบราว์เซอร์ของบัญชีใหม่"
@@ -794,172 +787,125 @@ msgstr "เลือกเวลาที่จะรอก่อนโพสต
 msgid "At least 60 seconds. Use equal values for a fixed interval."
 msgstr "อย่างน้อย 60 วินาที ใช้ค่าเท่ากันเพื่อช่วงเวลาคงที่"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "OPTIONAL · AI REWRITE"
-msgstr "ไม่บังคับ · เขียนใหม่ด้วย AI"
+#~ msgid "OPTIONAL · AI REWRITE"
+#~ msgstr "ไม่บังคับ · เขียนใหม่ด้วย AI"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "A fresh version for each group"
-msgstr "เวอร์ชันใหม่สำหรับแต่ละกลุ่ม"
+#~ msgid "A fresh version for each group"
+#~ msgstr "เวอร์ชันใหม่สำหรับแต่ละกลุ่ม"
 
-#: src/components/FeaturesCard.svelte
-#: src/components/PostingOptionsForm.svelte
-#: src/components/UsageGuide.svelte
-msgid "Rewrite each post body with Gemini"
-msgstr "เขียนข้อความโพสต์แต่ละอันใหม่ด้วย Gemini"
+#~ msgid "Rewrite each post body with Gemini"
+#~ msgstr "เขียนข้อความโพสต์แต่ละอันใหม่ด้วย Gemini"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
-msgstr "คำแนะนำการเขียนใหม่<0>เลือกโทนเสียงและรายละเอียดที่ Gemini ควรรักษาไว้.</0>"
+#~ msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
+#~ msgstr "คำแนะนำการเขียนใหม่<0>เลือกโทนเสียงและรายละเอียดที่ Gemini ควรรักษาไว้.</0>"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Keep it concise and easy to scan. Preserve the price and contact details."
-msgstr "ทำให้กระชับและอ่านง่าย รักษาราคาและรายละเอียดการติดต่อไว้"
+#~ msgid "Keep it concise and easy to scan. Preserve the price and contact details."
+#~ msgstr "ทำให้กระชับและอ่านง่าย รักษาราคาและรายละเอียดการติดต่อไว้"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Rewrite instructions"
-msgstr "คำแนะนำการเขียนใหม่"
+#~ msgid "Rewrite instructions"
+#~ msgstr "คำแนะนำการเขียนใหม่"
 
-#: src/components/FeaturesCard.svelte
-#: src/components/PostingOptionsForm.svelte
-#: src/components/UsageGuide.svelte
-msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
-msgstr "ข้อความโพสต์และคำแนะนำของคุณจะถูกส่งไปยัง Google Gemini ภาพจะไม่ถูกส่ง Gemini จะเขียนใหม่เป็นข้อความธรรมดา"
+#~ msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
+#~ msgstr "ข้อความโพสต์และคำแนะนำของคุณจะถูกส่งไปยัง Google Gemini ภาพจะไม่ถูกส่ง Gemini จะเขียนใหม่เป็นข้อความธรรมดา"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
-msgstr "หากการเขียนใหม่ล้มเหลว โพสต์นั้นจะใช้ข้อความต้นฉบับของคุณ โพสต์ถัดไปจะพยายามใช้ Gemini อีกครั้ง"
+#~ msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
+#~ msgstr "หากการเขียนใหม่ล้มเหลว โพสต์นั้นจะใช้ข้อความต้นฉบับของคุณ โพสต์ถัดไปจะพยายามใช้ Gemini อีกครั้ง"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Let Gemini rewrite your post using your instructions."
-msgstr "ให้ Gemini เขียนโพสต์ของคุณใหม่ตามคำแนะนำของคุณ"
+#~ msgid "Let Gemini rewrite your post using your instructions."
+#~ msgstr "ให้ Gemini เขียนโพสต์ของคุณใหม่ตามคำแนะนำของคุณ"
 
 #: src/components/PostingOptionsForm.svelte
 msgid "Posting preferences"
 msgstr "ตัวเลือกการโพสต์"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved defaults help"
-msgstr "ค่าเริ่มต้นที่บันทึกช่วยได้"
+#~ msgid "Saved defaults help"
+#~ msgstr "ค่าเริ่มต้นที่บันทึกช่วยได้"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "About saved defaults"
-msgstr "เกี่ยวกับค่าเริ่มต้นที่บันทึก"
+#~ msgid "About saved defaults"
+#~ msgstr "เกี่ยวกับค่าเริ่มต้นที่บันทึก"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved interval"
-msgstr "ช่วงเวลาที่บันทึก"
+#~ msgid "Saved interval"
+#~ msgstr "ช่วงเวลาที่บันทึก"
 
-#. 0: settings.minimumInterval === settings.maximumInterval ? settings.minimumInterval \\: `${settings.minimumInterval}–${settings.maximumInterval}`
-#: src/components/SavedDefaultsInfo.svelte
-msgid "{0} seconds"
-msgstr "{0} วินาที"
+#~ msgid "{0} seconds"
+#~ msgstr "{0} วินาที"
 
-#: src/App.svelte
-#: src/components/SavedDefaultsInfo.svelte
-msgid "On"
-msgstr "เปิด"
+#~ msgid "On"
+#~ msgstr "เปิด"
 
-#: src/App.svelte
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Off"
-msgstr "ปิด"
+#~ msgid "Off"
+#~ msgstr "ปิด"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Gemini rewrite"
-msgstr "การเขียนใหม่ด้วย Gemini"
+#~ msgid "Gemini rewrite"
+#~ msgstr "การเขียนใหม่ด้วย Gemini"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "No instructions saved."
-msgstr "ยังไม่มีคำแนะนำถูกบันทึก"
+#~ msgid "No instructions saved."
+#~ msgstr "ยังไม่มีคำแนะนำถูกบันทึก"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved rewrite instructions"
-msgstr "คำแนะนำการเขียนที่บันทึกไว้"
+#~ msgid "Saved rewrite instructions"
+#~ msgstr "คำแนะนำการเขียนที่บันทึกไว้"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved values could not be loaded. Try “Use saved defaults” again."
-msgstr "ไม่สามารถโหลดค่าที่บันทึกไว้ได้ ลอง “ใช้ค่าเริ่มต้นที่บันทึก” อีกครั้ง"
+#~ msgid "Saved values could not be loaded. Try “Use saved defaults” again."
+#~ msgstr "ไม่สามารถโหลดค่าที่บันทึกไว้ได้ ลอง “ใช้ค่าเริ่มต้นที่บันทึก” อีกครั้ง"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "What does “Use saved defaults” do?"
-msgstr "“ใช้ค่าเริ่มต้นที่บันทึก” ทำอะไร?"
+#~ msgid "What does “Use saved defaults” do?"
+#~ msgstr "“ใช้ค่าเริ่มต้นที่บันทึก” ทำอะไร?"
 
-#: src/components/SavedDefaultsInfo.svelte
-#: src/components/UsageGuide.svelte
-msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
-msgstr "แทนที่ช่วงเวลาการโพสต์ในรอบนี้ ตัวเลือกการเขียนซ้ำของ Gemini และคำสั่งเขียนซ้ำด้วยค่าที่บันทึกไว้ในการตั้งค่า"
+#~ msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
+#~ msgstr "แทนที่ช่วงเวลาการโพสต์ในรอบนี้ ตัวเลือกการเขียนซ้ำของ Gemini และคำสั่งเขียนซ้ำด้วยค่าที่บันทึกไว้ในการตั้งค่า"
 
-#: src/components/SavedDefaultsInfo.svelte
-#: src/components/UsageGuide.svelte
-msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
-msgstr "ค่าเริ่มต้น: 60–120 วินาที, ปิดการเขียนซ้ำของ Gemini, และไม่มีคำสั่งเขียนซ้ำ บันทึกค่าที่คุณต้องการในการตั้งค่าเพื่อเปลี่ยนแปลง"
+#~ msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
+#~ msgstr "ค่าเริ่มต้น: 60–120 วินาที, ปิดการเขียนซ้ำของ Gemini, และไม่มีคำสั่งเขียนซ้ำ บันทึกค่าที่คุณต้องการในการตั้งค่าเพื่อเปลี่ยนแปลง"
 
 #: src/components/LogMessage.svelte
 msgid "Settings saved. New runs can use these defaults."
 msgstr "การตั้งค่าถูกบันทึก รันใหม่สามารถใช้ค่ามาตรฐานเหล่านี้ได้"
 
-#: src/components/Settings.svelte
-msgid "Key saved · leave blank to keep it"
-msgstr "คีย์ถูกบันทึก · เว้นว่างเพื่อเก็บไว้"
+#~ msgid "Key saved · leave blank to keep it"
+#~ msgstr "คีย์ถูกบันทึก · เว้นว่างเพื่อเก็บไว้"
 
-#: src/components/Settings.svelte
-msgid "Enter your Gemini API key"
-msgstr "ป้อนคีย์ API ของ Gemini ของคุณ"
+#~ msgid "Enter your Gemini API key"
+#~ msgstr "ป้อนคีย์ API ของ Gemini ของคุณ"
 
-#: src/components/Settings.svelte
-msgid "A key is saved on this device."
-msgstr "มีการบันทึกคีย์บนอุปกรณ์นี้"
+#~ msgid "A key is saved on this device."
+#~ msgstr "มีการบันทึกคีย์บนอุปกรณ์นี้"
 
-#: src/components/Settings.svelte
-msgid "No API key saved."
-msgstr "ไม่มีการบันทึกคีย์ API"
+#~ msgid "No API key saved."
+#~ msgstr "ไม่มีการบันทึกคีย์ API"
 
-#: src/components/Settings.svelte
-msgid "Remove saved key"
-msgstr "ลบคีย์ที่บันทึกไว้"
+#~ msgid "Remove saved key"
+#~ msgstr "ลบคีย์ที่บันทึกไว้"
 
-#: src/components/Settings.svelte
-msgid "Gemini"
-msgstr "Gemini"
+#~ msgid "Gemini"
+#~ msgstr "Gemini"
 
-#: src/components/Settings.svelte
-msgid "API key<0/>"
-msgstr "คีย์ API<0/>"
+#~ msgid "API key<0/>"
+#~ msgstr "คีย์ API<0/>"
 
-#. 0: keyConfigured ? 'A key is saved on this device.' \\: 'No API key saved.'
-#: src/components/Settings.svelte
-msgid "{0} The saved key is never displayed."
-msgstr "{0} คีย์ที่บันทึกจะไม่เคยถูกแสดง"
+#~ msgid "{0} The saved key is never displayed."
+#~ msgstr "{0} คีย์ที่บันทึกจะไม่เคยถูกแสดง"
 
-#: src/components/Settings.svelte
-msgid "Model<0/>"
-msgstr "รุ่น<0/>"
+#~ msgid "Model<0/>"
+#~ msgstr "รุ่น<0/>"
 
-#: src/components/Settings.svelte
-msgid "Posting defaults"
-msgstr "ค่าเริ่มต้นการโพสต์"
+#~ msgid "Posting defaults"
+#~ msgstr "ค่าเริ่มต้นการโพสต์"
 
-#: src/components/Settings.svelte
-msgid "Applied when you start a new posting run."
-msgstr "ใช้เมื่อคุณเริ่มรอบการโพสต์ใหม่"
+#~ msgid "Applied when you start a new posting run."
+#~ msgstr "ใช้เมื่อคุณเริ่มรอบการโพสต์ใหม่"
 
-#: src/components/Settings.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Saving…"
 msgstr "กำลังบันทึก…"
 
-#: src/components/Settings.svelte
-msgid "Save settings"
-msgstr "บันทึกการตั้งค่า"
+#~ msgid "Save settings"
+#~ msgstr "บันทึกการตั้งค่า"
 
-#: src/components/Settings.svelte
-msgid "YOUR PREFERENCES"
-msgstr "ค่าที่คุณต้องการ"
+#~ msgid "YOUR PREFERENCES"
+#~ msgstr "ค่าที่คุณต้องการ"
 
-#. 0: accountName
-#: src/components/Settings.svelte
-msgid "Set up Gemini and save posting defaults for {0}."
-msgstr "ตั้งค่า Gemini และบันทึกค่าการโพสต์เริ่มต้นสำหรับ {0}"
+#~ msgid "Set up Gemini and save posting defaults for {0}."
+#~ msgstr "ตั้งค่า Gemini และบันทึกค่าการโพสต์เริ่มต้นสำหรับ {0}"
 
 #: src/components/StepProgress.svelte
 msgid "Completed"
@@ -1133,9 +1079,8 @@ msgstr "เย็น"
 msgid "Could not change the language. Please try again."
 msgstr "ไม่สามารถเปลี่ยนภาษาได้ กรุณาลองอีกครั้ง"
 
-#: src/components/Settings.svelte
-msgid "Language"
-msgstr "ภาษา"
+#~ msgid "Language"
+#~ msgstr "ภาษา"
 
 #: src/components/PostingOptionsForm.svelte
 #: src/components/PostingOptionsForm.svelte
@@ -1210,7 +1155,7 @@ msgstr "ข้าม"
 msgid "UNCONFIRMED"
 msgstr "ยังไม่ได้ยืนยัน"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "e.g. Business"
 msgstr "เช่น ธุรกิจ"
 
@@ -1282,8 +1227,11 @@ msgstr "โปรไฟล์เริ่มต้น"
 msgid "Color themes"
 msgstr "ธีมสี"
 
+#: src/components/AddAccountDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/RenameProfileDialog.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UpdateButton.svelte
 msgid "Close"
@@ -1503,7 +1451,6 @@ msgid "Gemini rewrite completed."
 msgstr "Gemini เขียนใหม่เสร็จเรียบร้อย"
 
 #: src/components/LogMessage.svelte
-#: src/components/UsageGuide.svelte
 msgid "Gemini rewrite failed. Using the original text for this post; Gemini will be tried again for the next post."
 msgstr "การเขียนใหม่ของ Gemini ล้มเหลว ใช้ข้อความเดิมสำหรับโพสต์นี้; Gemini จะถูกลองใหม่สำหรับโพสต์ถัดไป"
 
@@ -1876,19 +1823,21 @@ msgstr "รายละเอียดดีบัก"
 #~ msgid ", "
 #~ msgstr ""
 
+#: src/components/FeaturesCard.svelte
 #: src/components/ThemePicker.svelte
+#: src/components/UsageGuide.svelte
 msgid "Themes"
 msgstr "ธีม"
 
 #: src/App.svelte
 #: src/components/UsageGuide.svelte
-msgid "Preferences & post"
-msgstr "การตั้งค่าและโพสต์"
+msgid "Post or schedule"
+msgstr "โพสต์หรือตั้งเวลา"
 
 #: src/App.svelte
 #: src/App.svelte
-msgid "Set preferences, then post now or schedule"
-msgstr "ตั้งค่าตามต้องการ แล้วโพสต์ทันทีหรือกำหนดเวลา"
+msgid "Choose the time between posts, then post now or schedule for later."
+msgstr "เลือกระยะเวลาระหว่างโพสต์ จากนั้นโพสต์ทันทีหรือตั้งเวลาไว้ภายหลัง"
 
 #~ msgid "Postika"
 #~ msgstr "Postika"
@@ -1923,9 +1872,8 @@ msgstr "กลุ่มที่โหลดแล้วยังคงใช้
 msgid "Minimum and maximum delays between posts."
 msgstr "ระยะเวลารอขั้นต่ำและสูงสุดระหว่างโพสต์"
 
-#: src/components/FeaturesCard.svelte
-msgid "Custom instructions and a configurable Gemini model."
-msgstr "คำสั่งที่กำหนดเองและโมเดล Gemini ที่ปรับตั้งค่าได้"
+#~ msgid "Custom instructions and a configurable Gemini model."
+#~ msgstr "คำสั่งที่กำหนดเองและโมเดล Gemini ที่ปรับตั้งค่าได้"
 
 #. 0: languages.length; 1: themeOptions.length
 #: src/components/FeaturesCard.svelte
@@ -1978,9 +1926,8 @@ msgstr "เขียนข้อความและเพิ่มรูปภ
 msgid "Select Load groups and finish Facebook login or verification in Chrome. Search the loaded list, select the groups you want, then choose Next."
 msgstr "เลือกโหลดกลุ่มและเข้าสู่ระบบหรือยืนยัน Facebook ใน Chrome ให้เสร็จ ค้นหาในรายการ เลือกกลุ่ม แล้วเลือกถัดไป"
 
-#: src/components/UsageGuide.svelte
-msgid "In Settings, enter this account’s Gemini API key and model, then Save settings. Enable rewriting for your run and describe the tone and details to preserve."
-msgstr "ในการตั้งค่า ใส่คีย์ API Gemini และโมเดลของบัญชีนี้แล้วบันทึก เปิดการเขียนใหม่และอธิบายน้ำเสียงกับรายละเอียดที่ต้องการรักษาไว้"
+#~ msgid "In Settings, enter this account’s Gemini API key and model, then Save settings. Enable rewriting for your run and describe the tone and details to preserve."
+#~ msgstr "ในการตั้งค่า ใส่คีย์ API Gemini และโมเดลของบัญชีนี้แล้วบันทึก เปิดการเขียนใหม่และอธิบายน้ำเสียงกับรายละเอียดที่ต้องการรักษาไว้"
 
 #: src/components/UsageGuide.svelte
 msgid "Review the account, message, image order, selected groups, and posting intervals. Choose Post now and complete any Facebook login or verification prompts in Chrome."
@@ -2036,13 +1983,11 @@ msgstr "ป้อน URL ของเพจ Facebook เช่น https://web.fa
 #~ msgid "Fetch Facebook posts"
 #~ msgstr ""
 
-#: src/components/FacebookPageDialog.svelte
-msgid "Decrease number of posts"
-msgstr "ลดจำนวนโพสต์"
+#~ msgid "Decrease number of posts"
+#~ msgstr "ลดจำนวนโพสต์"
 
-#: src/components/FacebookPageDialog.svelte
-msgid "Increase number of posts"
-msgstr "เพิ่มจำนวนโพสต์"
+#~ msgid "Increase number of posts"
+#~ msgstr "เพิ่มจำนวนโพสต์"
 
 #: src/components/FacebookPageDialog.svelte
 msgid "Facebook page URL"
@@ -2136,6 +2081,8 @@ msgstr "แก้ไข"
 msgid "Delete post {0}"
 msgstr "ลบโพสต์ {0}"
 
+#: src/components/AccountDropdown.svelte
+#: src/components/AccountDropdown.svelte
 #: src/components/FetchedPostCard.svelte
 msgid "Delete"
 msgstr "ลบ"
@@ -2150,6 +2097,7 @@ msgid "Remove image {0} from post {1}"
 msgstr "นำรูปภาพ {0} ออกจากโพสต์ {1}"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Save changes"
 msgstr "บันทึกการเปลี่ยนแปลง"
 
@@ -2391,3 +2339,45 @@ msgstr "ตรวจหาการอัปเดต"
 #: src/components/UpdateButton.svelte
 msgid "Installing update…"
 msgstr "กำลังติดตั้งอัปเดต…"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "posts"
+msgstr "โพสต์"
+
+#: src/components/LogMessage.svelte
+msgid "Account names cannot be URLs"
+msgstr "ชื่อบัญชีต้องไม่ใช่ URL"
+
+#: src/components/LogMessage.svelte
+msgid "First post confirmed. Remaining groups stopped because the formatted text could not be verified."
+msgstr "ยืนยันโพสต์แรกแล้ว หยุดการโพสต์ในกลุ่มที่เหลือเนื่องจากไม่สามารถตรวจสอบข้อความที่จัดรูปแบบได้"
+
+#: src/components/AccountDropdown.svelte
+#: src/components/RenameProfileDialog.svelte
+msgid "Rename profile"
+msgstr "เปลี่ยนชื่อโปรไฟล์"
+
+#: src/Workspace.svelte
+#: src/components/PostingLogs.svelte
+msgid "Add an account to get started."
+msgstr "เพิ่มบัญชีเพื่อเริ่มต้น"
+
+#: src/components/AccountDropdown.svelte
+#: src/components/DeleteProfileDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
+msgid "Delete profile"
+msgstr "ลบโปรไฟล์"
+
+#~ msgid "<0/> Add account"
+#~ msgstr ""
+
+#~ msgid "Delete profile?"
+#~ msgstr ""
+
+#: src/components/DeleteProfileDialog.svelte
+msgid "This permanently deletes this profile’s Facebook login, groups, drafts, images, settings, and logs. Any running or scheduled queue will stop. Posts already on Facebook are kept."
+msgstr "การดำเนินการนี้จะลบการเข้าสู่ระบบ Facebook กลุ่ม ฉบับร่าง รูปภาพ การตั้งค่า และบันทึกของโปรไฟล์นี้อย่างถาวร คิวที่กำลังทำงานหรือตั้งเวลาไว้จะหยุด โพสต์ที่อยู่บน Facebook แล้วจะยังคงอยู่"
+
+#: src/components/DeleteProfileDialog.svelte
+msgid "Deleting…"
+msgstr "กำลังลบ…"

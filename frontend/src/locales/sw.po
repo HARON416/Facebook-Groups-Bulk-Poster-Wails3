@@ -8,10 +8,8 @@ msgstr ""
 "Plural-Forms: nplurals=2\n"
 "X-Plurals-Order: one, other\n"
 
-#. 0: appliedInterval; 1: rewriteState
-#: src/App.svelte
-msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
-msgstr "Mabadiliko yaliyohifadhiwa yametumika: {0} sekunde kati ya machapisho · Tena andika Gemini {1}."
+#~ msgid "Saved defaults applied: {0} seconds between posts · Gemini rewrite {1}."
+#~ msgstr "Mabadiliko yaliyohifadhiwa yametumika: {0} sekunde kati ya machapisho · Tena andika Gemini {1}."
 
 #: src/components/LogMessage.svelte
 msgid "Could not restore saved groups. Load groups to refresh the list."
@@ -152,23 +150,17 @@ msgstr "Fungua makundi yako ya Facebook ili kuanza."
 msgid "Posting settings"
 msgstr "Mipangilio ya kuchapisha"
 
-#: src/App.svelte
-msgid "Add a Gemini API key in Settings to enable rewriting."
-msgstr "Ongeza ufunguo wa Gemini API kwenye Mipangilio ili kuwezesha uandishi upya."
+#~ msgid "Add a Gemini API key in Settings to enable rewriting."
+#~ msgstr "Ongeza ufunguo wa Gemini API kwenye Mipangilio ili kuwezesha uandishi upya."
 
-#: src/App.svelte
-msgid "Applying defaults…"
-msgstr "Kutumia chaguo msingi…"
+#~ msgid "Applying defaults…"
+#~ msgstr "Kutumia chaguo msingi…"
 
-#: src/App.svelte
-#: src/components/FeaturesCard.svelte
-#: src/components/UsageGuide.svelte
-msgid "Use saved defaults"
-msgstr "Tumia chaguo msingi zilizohifadhiwa"
+#~ msgid "Use saved defaults"
+#~ msgstr "Tumia chaguo msingi zilizohifadhiwa"
 
-#: src/App.svelte
-msgid "Open settings"
-msgstr "Fungua mipangilio"
+#~ msgid "Open settings"
+#~ msgstr "Fungua mipangilio"
 
 #~ msgid "Posting as <0/>"
 #~ msgstr "Kuchapisha kama <0/>"
@@ -200,9 +192,11 @@ msgid "Time zone: {0}. Keep Postika open and your computer awake. Facebook may a
 msgstr "Mkoa wa wakati: {0}. Weka Postika wazi na kompyuta yako ikiwe macho. Facebook inaweza kukuuliza uingie unapoanza kuchapisha."
 
 #: src/App.svelte
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FetchedPostCard.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Cancel"
 msgstr "Ghairi"
 
@@ -253,6 +247,8 @@ msgid "Application menu"
 msgstr "Menyu ya programu"
 
 #: src/Workspace.svelte
+#: src/components/AccountDropdown.svelte
+#: src/components/AddAccountDialog.svelte
 #: src/components/UsageGuide.svelte
 msgid "Add account"
 msgstr "Ongeza akaunti"
@@ -261,31 +257,28 @@ msgstr "Ongeza akaunti"
 #: src/components/FeaturesCard.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogView.svelte
+#: src/components/PostingLogs.svelte
 #: src/components/UsageGuide.svelte
 msgid "Posting logs"
 msgstr "Kumbukumbu za uchapishaji"
 
-#: src/Workspace.svelte
-#: src/components/FeaturesCard.svelte
-#: src/components/Settings.svelte
-#: src/components/Settings.svelte
-#: src/components/UsageGuide.svelte
-msgid "Settings"
-msgstr "Mipangilio"
+#~ msgid "Settings"
+#~ msgstr "Mipangilio"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "Creating…"
 msgstr "Inaundwa…"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "Create & sign in"
 msgstr "Tengeneza na uingie"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Account name"
 msgstr "Jina la akaunti"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 #: src/components/UsageGuide.svelte
 msgid "Sign in to Facebook in the new account’s browser window."
 msgstr "Ingia kwenye Facebook kupitia dirisha la kivinjari la akaunti mpya."
@@ -794,172 +787,125 @@ msgstr "Chagua muda wa kusubiri kabla ya kuposti kwenye kundi la pili."
 msgid "At least 60 seconds. Use equal values for a fixed interval."
 msgstr "Angalau sekunde 60. Tumia thamani sawa kwa kipindi kilichowekwa."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "OPTIONAL · AI REWRITE"
-msgstr "HIARI · ANDIKA UPYA KWA AI"
+#~ msgid "OPTIONAL · AI REWRITE"
+#~ msgstr "HIARI · ANDIKA UPYA KWA AI"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "A fresh version for each group"
-msgstr "Tafsiri safi kwa kila kundi"
+#~ msgid "A fresh version for each group"
+#~ msgstr "Tafsiri safi kwa kila kundi"
 
-#: src/components/FeaturesCard.svelte
-#: src/components/PostingOptionsForm.svelte
-#: src/components/UsageGuide.svelte
-msgid "Rewrite each post body with Gemini"
-msgstr "Andika upya kila mwili wa posti kwa Gemini"
+#~ msgid "Rewrite each post body with Gemini"
+#~ msgstr "Andika upya kila mwili wa posti kwa Gemini"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
-msgstr "Maelekezo ya kuandika upya<0>Chagua mtindo na maelezo ambayo Gemini inapaswa kuhifadhi.</0>"
+#~ msgid "Rewrite instructions<0>Choose the tone and details Gemini should preserve.</0>"
+#~ msgstr "Maelekezo ya kuandika upya<0>Chagua mtindo na maelezo ambayo Gemini inapaswa kuhifadhi.</0>"
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Keep it concise and easy to scan. Preserve the price and contact details."
-msgstr "Hifadhi kuwa fupi na rahisi kusoma. Hifadhi bei na maelezo ya mawasiliano."
+#~ msgid "Keep it concise and easy to scan. Preserve the price and contact details."
+#~ msgstr "Hifadhi kuwa fupi na rahisi kusoma. Hifadhi bei na maelezo ya mawasiliano."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Rewrite instructions"
-msgstr "Maelekezo ya kuandika upya"
+#~ msgid "Rewrite instructions"
+#~ msgstr "Maelekezo ya kuandika upya"
 
-#: src/components/FeaturesCard.svelte
-#: src/components/PostingOptionsForm.svelte
-#: src/components/UsageGuide.svelte
-msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
-msgstr "Maandishi yako ya chapisho na maelekezo yanatumwa kwa Google Gemini. Picha hazitumwi. Kuandika upya kwa Gemini kunatumia maandishi ya kawaida."
+#~ msgid "Your post text and instructions are sent to Google Gemini. Images are not sent. Gemini rewrites use plain text."
+#~ msgstr "Maandishi yako ya chapisho na maelekezo yanatumwa kwa Google Gemini. Picha hazitumwi. Kuandika upya kwa Gemini kunatumia maandishi ya kawaida."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
-msgstr "Ikiwa kuandika upya kunaishindwa, chapisho hilo litatumia maandishi yako ya awali. Chapisho linalofuata litajaribu tena Gemini."
+#~ msgid "If rewriting fails, that post uses your original text. The next post tries Gemini again."
+#~ msgstr "Ikiwa kuandika upya kunaishindwa, chapisho hilo litatumia maandishi yako ya awali. Chapisho linalofuata litajaribu tena Gemini."
 
-#: src/components/PostingOptionsForm.svelte
-msgid "Let Gemini rewrite your post using your instructions."
-msgstr "Wacha Gemini iandike upya chapisho lako kwa kutumia maelekezo yako."
+#~ msgid "Let Gemini rewrite your post using your instructions."
+#~ msgstr "Wacha Gemini iandike upya chapisho lako kwa kutumia maelekezo yako."
 
 #: src/components/PostingOptionsForm.svelte
 msgid "Posting preferences"
 msgstr "Mapendeleo ya chapisho"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved defaults help"
-msgstr "Chaguo lililohifadhiwa husaidia"
+#~ msgid "Saved defaults help"
+#~ msgstr "Chaguo lililohifadhiwa husaidia"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "About saved defaults"
-msgstr "Kuhusu chaguo lililohifadhiwa"
+#~ msgid "About saved defaults"
+#~ msgstr "Kuhusu chaguo lililohifadhiwa"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved interval"
-msgstr "Kipindi kilichohifadhiwa"
+#~ msgid "Saved interval"
+#~ msgstr "Kipindi kilichohifadhiwa"
 
-#. 0: settings.minimumInterval === settings.maximumInterval ? settings.minimumInterval \\: `${settings.minimumInterval}–${settings.maximumInterval}`
-#: src/components/SavedDefaultsInfo.svelte
-msgid "{0} seconds"
-msgstr "{0} sekunde"
+#~ msgid "{0} seconds"
+#~ msgstr "{0} sekunde"
 
-#: src/App.svelte
-#: src/components/SavedDefaultsInfo.svelte
-msgid "On"
-msgstr "On"
+#~ msgid "On"
+#~ msgstr "On"
 
-#: src/App.svelte
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Off"
-msgstr "Off"
+#~ msgid "Off"
+#~ msgstr "Off"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Gemini rewrite"
-msgstr "Kuandika upya kwa Gemini"
+#~ msgid "Gemini rewrite"
+#~ msgstr "Kuandika upya kwa Gemini"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "No instructions saved."
-msgstr "Hakuna maelekezo yaliyo hifadhiwa."
+#~ msgid "No instructions saved."
+#~ msgstr "Hakuna maelekezo yaliyo hifadhiwa."
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved rewrite instructions"
-msgstr "Maelekezo ya kuandika upya yaliyo hifadhiwa"
+#~ msgid "Saved rewrite instructions"
+#~ msgstr "Maelekezo ya kuandika upya yaliyo hifadhiwa"
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "Saved values could not be loaded. Try “Use saved defaults” again."
-msgstr "Thamani zilizohifadhiwa haziwezi kupakuliwa. Jaribu “Tumia chaguo lililohifadhiwa” tena."
+#~ msgid "Saved values could not be loaded. Try “Use saved defaults” again."
+#~ msgstr "Thamani zilizohifadhiwa haziwezi kupakuliwa. Jaribu “Tumia chaguo lililohifadhiwa” tena."
 
-#: src/components/SavedDefaultsInfo.svelte
-msgid "What does “Use saved defaults” do?"
-msgstr "“Nini hufanywa na ‘Tumia chaguo lililohifadhiwa’?”"
+#~ msgid "What does “Use saved defaults” do?"
+#~ msgstr "“Nini hufanywa na ‘Tumia chaguo lililohifadhiwa’?”"
 
-#: src/components/SavedDefaultsInfo.svelte
-#: src/components/UsageGuide.svelte
-msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
-msgstr "Inabadilisha kipindi cha uchapishaji cha mlolongo huu, chaguo la kuandika upya la Gemini, na maagizo ya kuandika upya na thamani zilizo hifadhiwa katika Mipangilio."
+#~ msgid "Replaces this run’s posting interval, Gemini rewrite option, and rewrite instructions with the values saved in Settings."
+#~ msgstr "Inabadilisha kipindi cha uchapishaji cha mlolongo huu, chaguo la kuandika upya la Gemini, na maagizo ya kuandika upya na thamani zilizo hifadhiwa katika Mipangilio."
 
-#: src/components/SavedDefaultsInfo.svelte
-#: src/components/UsageGuide.svelte
-msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
-msgstr "Chaguo-msingi za awali: sekunde 60–120, kuandika upya Gemini imezimwa, na hakuna maagizo ya kuandika upya. Hifadhi mapendeleo yako katika Mipangilio ili kuyabadilisha."
+#~ msgid "Initial defaults: 60–120 seconds, Gemini rewrite off, and no rewrite instructions. Save your own preferences in Settings to change them."
+#~ msgstr "Chaguo-msingi za awali: sekunde 60–120, kuandika upya Gemini imezimwa, na hakuna maagizo ya kuandika upya. Hifadhi mapendeleo yako katika Mipangilio ili kuyabadilisha."
 
 #: src/components/LogMessage.svelte
 msgid "Settings saved. New runs can use these defaults."
 msgstr "Mipangilio imahifadhiwa. Mlolongo mipya unaweza kutumia chaguo-msingi hizi."
 
-#: src/components/Settings.svelte
-msgid "Key saved · leave blank to keep it"
-msgstr "Kwa kufungua kuu · acha wazi ili kuendelea kuihifadhi"
+#~ msgid "Key saved · leave blank to keep it"
+#~ msgstr "Kwa kufungua kuu · acha wazi ili kuendelea kuihifadhi"
 
-#: src/components/Settings.svelte
-msgid "Enter your Gemini API key"
-msgstr "Weka funguo yako ya API ya Gemini"
+#~ msgid "Enter your Gemini API key"
+#~ msgstr "Weka funguo yako ya API ya Gemini"
 
-#: src/components/Settings.svelte
-msgid "A key is saved on this device."
-msgstr "Kifaa hiki kimehifadhi funguo."
+#~ msgid "A key is saved on this device."
+#~ msgstr "Kifaa hiki kimehifadhi funguo."
 
-#: src/components/Settings.svelte
-msgid "No API key saved."
-msgstr "Hakuna kiambatisho cha API kilichohifadhiwa."
+#~ msgid "No API key saved."
+#~ msgstr "Hakuna kiambatisho cha API kilichohifadhiwa."
 
-#: src/components/Settings.svelte
-msgid "Remove saved key"
-msgstr "Ondoa kiambatisho kilichohifadhiwa"
+#~ msgid "Remove saved key"
+#~ msgstr "Ondoa kiambatisho kilichohifadhiwa"
 
-#: src/components/Settings.svelte
-msgid "Gemini"
-msgstr "Gemini"
+#~ msgid "Gemini"
+#~ msgstr "Gemini"
 
-#: src/components/Settings.svelte
-msgid "API key<0/>"
-msgstr "Funguo ya API<0/>"
+#~ msgid "API key<0/>"
+#~ msgstr "Funguo ya API<0/>"
 
-#. 0: keyConfigured ? 'A key is saved on this device.' \\: 'No API key saved.'
-#: src/components/Settings.svelte
-msgid "{0} The saved key is never displayed."
-msgstr "{0} Kifunguo kilichohifadhiwa hakionyeshwi kamwe."
+#~ msgid "{0} The saved key is never displayed."
+#~ msgstr "{0} Kifunguo kilichohifadhiwa hakionyeshwi kamwe."
 
-#: src/components/Settings.svelte
-msgid "Model<0/>"
-msgstr "Mfano<0/>"
+#~ msgid "Model<0/>"
+#~ msgstr "Mfano<0/>"
 
-#: src/components/Settings.svelte
-msgid "Posting defaults"
-msgstr "Mipangilio chaguomsingi ya machapisho"
+#~ msgid "Posting defaults"
+#~ msgstr "Mipangilio chaguomsingi ya machapisho"
 
-#: src/components/Settings.svelte
-msgid "Applied when you start a new posting run."
-msgstr "Inatekelezwa unapoanzisha mlolongo mpya wa uchapishaji."
+#~ msgid "Applied when you start a new posting run."
+#~ msgstr "Inatekelezwa unapoanzisha mlolongo mpya wa uchapishaji."
 
-#: src/components/Settings.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Saving…"
 msgstr "Inahifadhiwa…"
 
-#: src/components/Settings.svelte
-msgid "Save settings"
-msgstr "Hifadhi mipangilio"
+#~ msgid "Save settings"
+#~ msgstr "Hifadhi mipangilio"
 
-#: src/components/Settings.svelte
-msgid "YOUR PREFERENCES"
-msgstr "MAPENDELEO YAKO"
+#~ msgid "YOUR PREFERENCES"
+#~ msgstr "MAPENDELEO YAKO"
 
-#. 0: accountName
-#: src/components/Settings.svelte
-msgid "Set up Gemini and save posting defaults for {0}."
-msgstr "Sanidi Gemini na hifadhi chaguo-msingi za uchapishaji kwa {0}."
+#~ msgid "Set up Gemini and save posting defaults for {0}."
+#~ msgstr "Sanidi Gemini na hifadhi chaguo-msingi za uchapishaji kwa {0}."
 
 #: src/components/StepProgress.svelte
 msgid "Completed"
@@ -1133,9 +1079,8 @@ msgstr "Jioni"
 msgid "Could not change the language. Please try again."
 msgstr "Haiwezi kubadilisha lugha. Tafadhali jaribu tena."
 
-#: src/components/Settings.svelte
-msgid "Language"
-msgstr "Lugha"
+#~ msgid "Language"
+#~ msgstr "Lugha"
 
 #: src/components/PostingOptionsForm.svelte
 #: src/components/PostingOptionsForm.svelte
@@ -1210,7 +1155,7 @@ msgstr "IMEPITWA"
 msgid "UNCONFIRMED"
 msgstr "HAJATHIBITISHWA"
 
-#: src/Workspace.svelte
+#: src/components/AddAccountDialog.svelte
 msgid "e.g. Business"
 msgstr "mfano Biashara"
 
@@ -1282,8 +1227,11 @@ msgstr "Wasifu chaguomsingi"
 msgid "Color themes"
 msgstr "Mandhari ya rangi"
 
+#: src/components/AddAccountDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/RenameProfileDialog.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UpdateButton.svelte
 msgid "Close"
@@ -1503,7 +1451,6 @@ msgid "Gemini rewrite completed."
 msgstr "Gemini imekamilisha kuandika upya maandishi."
 
 #: src/components/LogMessage.svelte
-#: src/components/UsageGuide.svelte
 msgid "Gemini rewrite failed. Using the original text for this post; Gemini will be tried again for the next post."
 msgstr "Gemini imeshindwa kuandika upya maandishi. Maandishi ya awali yatatumika kwa chapisho hili; Gemini itajaribiwa tena kwa chapisho linalofuata."
 
@@ -1876,19 +1823,21 @@ msgstr "Maelezo ya kutatua tatizo"
 #~ msgid ", "
 #~ msgstr ""
 
+#: src/components/FeaturesCard.svelte
 #: src/components/ThemePicker.svelte
+#: src/components/UsageGuide.svelte
 msgid "Themes"
 msgstr "Mandhari"
 
 #: src/App.svelte
 #: src/components/UsageGuide.svelte
-msgid "Preferences & post"
-msgstr "Mapendeleo na kuchapisha"
+msgid "Post or schedule"
+msgstr "Chapisha au ratibu"
 
 #: src/App.svelte
 #: src/App.svelte
-msgid "Set preferences, then post now or schedule"
-msgstr "Weka mapendeleo, kisha chapisha sasa au ratibu"
+msgid "Choose the time between posts, then post now or schedule for later."
+msgstr "Chagua muda kati ya machapisho, kisha chapisha sasa au ratibu kwa baadaye."
 
 #~ msgid "Postika"
 #~ msgstr "Postika"
@@ -1923,9 +1872,8 @@ msgstr "Vikundi vilivyopakiwa hubaki vinapatikana kati ya vipindi vya programu."
 msgid "Minimum and maximum delays between posts."
 msgstr "Muda wa chini na wa juu wa kusubiri kati ya machapisho."
 
-#: src/components/FeaturesCard.svelte
-msgid "Custom instructions and a configurable Gemini model."
-msgstr "Maagizo maalumu na modeli ya Gemini inayoweza kusanidiwa."
+#~ msgid "Custom instructions and a configurable Gemini model."
+#~ msgstr "Maagizo maalumu na modeli ya Gemini inayoweza kusanidiwa."
 
 #. 0: languages.length; 1: themeOptions.length
 #: src/components/FeaturesCard.svelte
@@ -1978,9 +1926,8 @@ msgstr "Andika ujumbe na uongeze angalau picha moja; vyote vinahitajika. Tumia I
 msgid "Select Load groups and finish Facebook login or verification in Chrome. Search the loaded list, select the groups you want, then choose Next."
 msgstr "Chagua Pakia vikundi na ukamilishe kuingia Facebook au uthibitishaji katika Chrome. Tafuta kwenye orodha iliyopakiwa, chagua vikundi unavyotaka, kisha Inayofuata."
 
-#: src/components/UsageGuide.svelte
-msgid "In Settings, enter this account’s Gemini API key and model, then Save settings. Enable rewriting for your run and describe the tone and details to preserve."
-msgstr "Katika Mipangilio, ingiza ufunguo wa API wa Gemini na modeli ya akaunti hii, kisha Hifadhi mipangilio. Washa uandishi upya na ueleze mtindo na maelezo ya kuhifadhi."
+#~ msgid "In Settings, enter this account’s Gemini API key and model, then Save settings. Enable rewriting for your run and describe the tone and details to preserve."
+#~ msgstr "Katika Mipangilio, ingiza ufunguo wa API wa Gemini na modeli ya akaunti hii, kisha Hifadhi mipangilio. Washa uandishi upya na ueleze mtindo na maelezo ya kuhifadhi."
 
 #: src/components/UsageGuide.svelte
 msgid "Review the account, message, image order, selected groups, and posting intervals. Choose Post now and complete any Facebook login or verification prompts in Chrome."
@@ -2036,13 +1983,11 @@ msgstr "Ingiza URL ya ukurasa wa Facebook, kwa mfano https://web.facebook.com/sw
 #~ msgid "Fetch Facebook posts"
 #~ msgstr ""
 
-#: src/components/FacebookPageDialog.svelte
-msgid "Decrease number of posts"
-msgstr "Punguza idadi ya machapisho"
+#~ msgid "Decrease number of posts"
+#~ msgstr "Punguza idadi ya machapisho"
 
-#: src/components/FacebookPageDialog.svelte
-msgid "Increase number of posts"
-msgstr "Ongeza idadi ya machapisho"
+#~ msgid "Increase number of posts"
+#~ msgstr "Ongeza idadi ya machapisho"
 
 #: src/components/FacebookPageDialog.svelte
 msgid "Facebook page URL"
@@ -2136,6 +2081,8 @@ msgstr "Hariri"
 msgid "Delete post {0}"
 msgstr "Futa chapisho {0}"
 
+#: src/components/AccountDropdown.svelte
+#: src/components/AccountDropdown.svelte
 #: src/components/FetchedPostCard.svelte
 msgid "Delete"
 msgstr "Futa"
@@ -2150,6 +2097,7 @@ msgid "Remove image {0} from post {1}"
 msgstr "Ondoa picha {0} kwenye chapisho {1}"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/RenameProfileDialog.svelte
 msgid "Save changes"
 msgstr "Hifadhi mabadiliko"
 
@@ -2391,3 +2339,45 @@ msgstr "Tafuta masasisho"
 #: src/components/UpdateButton.svelte
 msgid "Installing update…"
 msgstr "Inasakinisha sasisho…"
+
+#: src/components/FacebookPageDialog.svelte
+msgid "posts"
+msgstr "machapisho"
+
+#: src/components/LogMessage.svelte
+msgid "Account names cannot be URLs"
+msgstr "Majina ya akaunti hayawezi kuwa URL"
+
+#: src/components/LogMessage.svelte
+msgid "First post confirmed. Remaining groups stopped because the formatted text could not be verified."
+msgstr "Chapisho la kwanza limethibitishwa. Uchapishaji kwa makundi yaliyobaki umesimamishwa kwa sababu maandishi yenye muundo hayakuweza kuthibitishwa."
+
+#: src/components/AccountDropdown.svelte
+#: src/components/RenameProfileDialog.svelte
+msgid "Rename profile"
+msgstr "Badilisha jina la wasifu"
+
+#: src/Workspace.svelte
+#: src/components/PostingLogs.svelte
+msgid "Add an account to get started."
+msgstr "Ongeza akaunti ili kuanza."
+
+#: src/components/AccountDropdown.svelte
+#: src/components/DeleteProfileDialog.svelte
+#: src/components/DeleteProfileDialog.svelte
+msgid "Delete profile"
+msgstr "Futa wasifu"
+
+#~ msgid "<0/> Add account"
+#~ msgstr ""
+
+#~ msgid "Delete profile?"
+#~ msgstr ""
+
+#: src/components/DeleteProfileDialog.svelte
+msgid "This permanently deletes this profile’s Facebook login, groups, drafts, images, settings, and logs. Any running or scheduled queue will stop. Posts already on Facebook are kept."
+msgstr "Hii inafuta kabisa kuingia kwa Facebook, vikundi, rasimu, picha, mipangilio na kumbukumbu za wasifu huu. Foleni yoyote inayoendelea au iliyoratibiwa itasimama. Machapisho ambayo tayari yako Facebook yatabaki."
+
+#: src/components/DeleteProfileDialog.svelte
+msgid "Deleting…"
+msgstr "Inafuta…"

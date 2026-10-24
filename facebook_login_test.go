@@ -40,9 +40,17 @@ func TestFacebookLoginSelectorsIntegration(t *testing.T) {
 		{"pasted login form", "", `<form id="login_form"><input name="email"><input name="pass" type="password"></form>`, "logged_out"},
 		{"pasted test id", "", `<div data-testid="royal_login_form">Connexion</div>`, "logged_out"},
 		{"login fields in same form", "", `<form><input name="email"><input name="pass" type="password"></form>`, "logged_out"},
+		{"login popup overrides authenticated shell", "UIPage_LoggedIn", `<div role="dialog" aria-modal="true"><form id="login_popup_cta_form" action="/login/device-based/regular/login/"><input name="email"><input name="pass" type="password"></form></div><div data-pagelet="CometSettingsDropdownTrigger"></div>`, "logged_out"},
+		{"login popup without loaded fields", "UIPage_LoggedIn", `<div role="dialog"><form id="login_popup_cta_form"></form></div>`, "logged_out"},
 		{"signed in body", "UIPage_LoggedIn Locale_ar_AR", "<p>مرحبا</p>", "logged_in"},
 		{"signed in account control", "", `<div data-pagelet="CometSettingsDropdownTrigger"></div>`, "logged_in"},
 		{"signed in shell", "", `<header role="banner"><div data-pagelet="CometNotificationsDropdown"></div><div data-pagelet="CometProfileDropdown"></div></header>`, "logged_in"},
+		{"current signed in navigation without pagelets", "_6s5d _71pn system-fonts--body", facebookAccountNavigationFixture, "logged_in"},
+		{"login popup overrides current navigation", "", facebookAccountNavigationFixture + `<form id="login_popup_cta_form"><input name="email"><input name="pass" type="password"></form>`, "logged_out"},
+		{"verification overrides current navigation", "", facebookAccountNavigationFixture + `<form action="/checkpoint/"></form>`, "login_required"},
+		{"hidden navigation is not login evidence", "", `<div hidden>` + facebookAccountNavigationFixture + `</div>`, "checking"},
+		{"public avatar alone is not login evidence", "", `<header role="banner"><nav role="navigation"><div role="button" tabindex="0" aria-haspopup="dialog" aria-expanded="false"><svg><image></image></svg></div></nav></header>`, "checking"},
+		{"navigation without avatar is not login evidence", "", `<header role="banner"><nav role="navigation"><div role="button" tabindex="0" aria-haspopup="dialog" aria-expanded="false"></div><div role="button" tabindex="0" aria-haspopup="dialog" aria-expanded="false"></div><div role="button" tabindex="0" aria-haspopup="dialog" aria-expanded="false"></div></nav></header>`, "checking"},
 		{"logout control", "", `<form action="/logout.php"></form>`, "logged_in"},
 		{"verification takes priority", "UIPage_LoggedIn", `<form action="/checkpoint/"></form>`, "login_required"},
 		{"logged out takes priority", "UIPage_LoggedOut", `<div data-pagelet="CometSettingsDropdownTrigger"></div>`, "logged_out"},
@@ -82,3 +90,11 @@ func TestFacebookLoginSelectorsIntegration(t *testing.T) {
 		t.Fatalf("closed tab: state=%q, error=%v", state, err)
 	}
 }
+
+// Structural excerpt of the live signed-in header: no legacy body classes,
+// pagelets, translated labels, image URLs, or user identifiers.
+const facebookAccountNavigationFixture = `<div role="banner"><div role="navigation">
+<div role="button" tabindex="0" aria-haspopup="dialog" aria-expanded="false"></div>
+<div role="button" tabindex="0" aria-haspopup="dialog" aria-expanded="false"></div>
+<div role="button" tabindex="0" aria-haspopup="dialog" aria-expanded="false"><svg><image></image></svg></div>
+</div></div>`

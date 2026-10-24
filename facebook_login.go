@@ -2,9 +2,17 @@ package main
 
 import (
 	"context"
+	"errors"
+	"time"
 
+	"github.com/go-rod/rod"
 	"github.com/go-rod/rod/lib/proto"
 )
+
+var errFacebookLoginRequired = errors.New("Facebook login is required")
+var errFacebookSessionExpired = errors.New("The active Facebook profile changed or expired")
+
+const facebookLoginWaitMessage = "Checking Facebook login. Finish signing in or any verification prompts in Chrome; Postika will continue automatically."
 
 // DOM-only detection: never inspect translated text, aria-labels, or credentials.
 // An absent login form is not sufficient evidence of an authenticated session.
@@ -13,7 +21,7 @@ const facebookLoginSelectorScript = `() => {
   if (has('form[action*="/checkpoint"], #checkpointSubmitButton, input[name="approvals_code"], input[name="recovery_code"]')) {
     return 'login_required';
   }
-  const loggedOut = has('body.UIPage_LoggedOut, #login_form, [data-testid="royal_login_form"]') ||
+  const loggedOut = has('body.UIPage_LoggedOut, #login_form, #login_popup_cta_form, [data-testid="royal_login_form"]') ||
     Array.from(document.querySelectorAll('form')).some(form =>
       form.querySelector('input[name="email"], input[data-testid="royal-email"]') &&
       form.querySelector('input[name="pass"][type="password"], input[data-testid="royal-pass"]')
@@ -28,8 +36,52 @@ const facebookLoginSelectorScript = `() => {
       has('[role="banner"] [data-pagelet="CometProfileDropdown"]')) {
     return 'logged_in';
   }
+  // Current Facebook omits those pagelets. Its account/navigation region has
+  // an avatar dropdown alongside other interactive dropdowns. Require the
+  // complete visible structure, not a feed avatar or a generic public header.
+  const accountControls = [...document.querySelectorAll('[role="banner"] [role="navigation"] [role="button"][aria-haspopup="dialog"][aria-expanded][tabindex="0"]')]
+    .filter(control => control.getClientRects().length && !control.closest('[hidden], [aria-hidden="true"]'));
+  if (accountControls.length >= 3 && accountControls.some(control => control.querySelector('svg image, img'))) {
+    return 'logged_in';
+  }
   return 'checking';
 }`
+
+func facebookLoginBlocked(page *rod.Page) bool {
+	login, err := page.Eval(facebookLoginSelectorScript)
+	return err == nil && (login.Value.Str() == "logged_out" || login.Value.Str() == "login_required")
+}
+
+// Called after a login form or verification checkpoint is detected. Keep the
+// browser available for the user and require positive evidence of login before
+// resuming. Navigation can replace the JS context, so failed evaluations retry.
+func waitForFacebookLogin(ctx context.Context, page *rod.Page, progress func(string)) error {
+	ticker := time.NewTicker(500 * time.Millisecond)
+	defer ticker.Stop()
+	for {
+		if err := postingCheckpoint(ctx); err != nil {
+			return err
+		}
+		if _, err := (proto.TargetGetTargetInfo{TargetID: page.TargetID}).Call(page.Browser().Context(ctx)); err != nil {
+			if ctx.Err() != nil {
+				return ctx.Err()
+			}
+			return errors.New("Posting stopped.")
+		}
+		login, err := page.Context(ctx).Eval(facebookLoginSelectorScript)
+		if err == nil && login.Value.Str() == "logged_in" {
+			return postingCheckpoint(ctx)
+		}
+		if progress != nil {
+			progress(facebookLoginWaitMessage)
+		}
+		select {
+		case <-ctx.Done():
+			return ctx.Err()
+		case <-ticker.C:
+		}
+	}
+}
 
 func (s *GroupsService) GetLoginState(ctx context.Context) (string, error) {
 	ctx, cancel := s.operationContext(ctx)

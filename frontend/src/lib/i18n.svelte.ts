@@ -47,7 +47,7 @@ export async function initializeLocale() {
       void setLocale(initialLocale(), false).catch(() => {});
     }
   });
-  // Retained settings/log windows also catch up when shown or focused again.
+  // Retained log windows also catch up when shown or focused again.
   const refresh = () => {
     const locale = storedLocale();
     if (locale && locale !== i18n.locale) void setLocale(locale, false).catch(() => {});

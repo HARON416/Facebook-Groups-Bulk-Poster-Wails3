@@ -84,15 +84,10 @@ func (s *GroupsService) startFacebookPageFetch(ctx context.Context, target strin
 	s.facebookPageRunID++
 	load := &facebookPageLoad{cancel: cancel, done: make(chan struct{}), status: FacebookPageFetchStatus{RunID: s.facebookPageRunID, State: "opening", Message: "Opening Facebook…", Target: count, Posts: []FacebookPagePost{}}}
 	s.facebookPageLoad = load
-	// Arm before navigation so the first query cannot race the listener.
-	page := s.page
-	location := &timelineLocation{provided: target, current: target}
-	capture := startTimelineCapture(job, page, location, match)
 	go func() {
 		defer close(load.done)
 		defer cancel()
-		defer capture.stop()
-		posts, err := s.fetchFacebookPage(job, page, load, capture, location, target, count)
+		posts, err := s.runFacebookPageFetch(job, load, target, count, match)
 		if job.Err() != nil {
 			load.set("cancelled", "Fetching stopped.", posts)
 			return
@@ -139,8 +134,42 @@ func (s *GroupsService) stopFacebookPageFetch() {
 	}
 }
 
-func (s *GroupsService) fetchFacebookPage(ctx context.Context, browserPage *rod.Page, load *facebookPageLoad, capture *timelineCapture, location *timelineLocation, target string, count int) ([]FacebookPagePost, error) {
+// Imports are read-only, so an expired session can restart capture and replay
+// within the same run. Keep the authenticated owner pinned across retries.
+func (s *GroupsService) runFacebookPageFetch(ctx context.Context, load *facebookPageLoad, target string, count int, match func(*url.URL) bool) ([]FacebookPagePost, error) {
+	owner := ""
+	for {
+		s.mu.Lock()
+		if s.facebookPageLoad != load || ctx.Err() != nil {
+			s.mu.Unlock()
+			return nil, context.Canceled
+		}
+		err := s.ensureBrowserPage(ctx)
+		page := s.page
+		s.mu.Unlock()
+		if err != nil {
+			return nil, err
+		}
+		posts, err := s.fetchFacebookPage(ctx, page, load, target, count, match, &owner)
+		if !errors.Is(err, errFacebookSessionExpired) || ctx.Err() != nil {
+			return posts, err
+		}
+		load.set("checking", facebookLoginWaitMessage, nil)
+	}
+}
+
+func (s *GroupsService) fetchFacebookPage(ctx context.Context, browserPage *rod.Page, load *facebookPageLoad, target string, count int, match func(*url.URL) bool, owner *string) ([]FacebookPagePost, error) {
 	page := browserPage.Context(ctx)
+	location := &timelineLocation{provided: target, current: target}
+	// Arm before navigation so the first query cannot race the listener.
+	capture := startTimelineCapture(ctx, page, location, match)
+	defer func() { capture.stop() }()
+	var results <-chan timelineCaptureResult = capture.results
+	resetCapture := func() {
+		capture.stop()
+		capture = startTimelineCapture(ctx, page, location, match)
+		results = capture.results
+	}
 	if err := page.Navigate(target); err != nil {
 		return nil, errors.New("Could not open the Facebook page. Fetch again")
 	}
@@ -156,17 +185,44 @@ func (s *GroupsService) fetchFacebookPage(ctx context.Context, browserPage *rod.
 		select {
 		case <-ctx.Done():
 			return nil, ctx.Err()
-		case result := <-capture.results:
+		case result := <-results:
+			login, loginErr := page.Eval(facebookLoginSelectorScript)
+			blocked := loginErr == nil && (login.Value.Str() == "logged_out" || login.Value.Str() == "login_required")
+			if result.err != nil && result.request.URL == "" && !blocked {
+				return nil, result.err
+			}
+			if loginErr != nil || login.Value.Str() != "logged_in" {
+				// Discard a public/stale capture even if it arrived before the
+				// login poll. Recapture after positive login detection.
+				capture.stop()
+				results = nil
+				wasBlocked = true
+				load.set("logged_out", facebookLoginWaitMessage, nil)
+				continue
+			}
 			if result.err != nil {
 				return nil, result.err
 			}
+			cookies, err := (proto.NetworkGetCookies{Urls: []string{result.request.URL}}).Call(page)
+			if err != nil {
+				return nil, errors.New("Could not preserve the current Facebook session. Fetch again")
+			}
+			if user := browserUser(cookies.Cookies); user == "" || user == "0" {
+				return nil, errFacebookSessionExpired
+			} else if user != result.request.User || *owner != "" && user != *owner {
+				return nil, errors.New("The captured Facebook session does not match the logged-in account. Fetch again")
+			}
+			*owner = result.request.User
 			load.set("capturing", "Timeline query captured. Opening a post photo to capture the full-size photo query…", nil)
 			photoQuery, err := captureFacebookPhotoQuery(ctx, page, result.request, func(message string) { load.set("capturing", message, nil) })
 			if err != nil {
 				return nil, err
 			}
 			result.request.PhotoQuery = photoQuery
-			cookies, err := (proto.NetworkGetCookies{Urls: []string{result.request.URL}}).Call(page)
+			cookies, err = (proto.NetworkGetCookies{Urls: []string{result.request.URL}}).Call(page)
+			if err == nil && (browserUser(cookies.Cookies) == "" || browserUser(cookies.Cookies) == "0") {
+				return nil, errFacebookSessionExpired
+			}
 			if err != nil || browserUser(cookies.Cookies) != result.request.User {
 				return nil, errors.New("Could not preserve the current Facebook session. Fetch again")
 			}
@@ -192,6 +248,10 @@ func (s *GroupsService) fetchFacebookPage(ctx context.Context, browserPage *rod.
 			} // Login/navigation replaces the JS context.
 			switch login.Value.Str() {
 			case "logged_out", "login_required":
+				if !wasBlocked {
+					capture.stop()
+					results = nil
+				}
 				wasBlocked = true
 				scrolls = 0
 				load.set(login.Value.Str(), "Finish signing in or any verification prompts in Chrome. Postika will detect your login and continue to the Facebook page automatically.", nil)
@@ -204,6 +264,7 @@ func (s *GroupsService) fetchFacebookPage(ctx context.Context, browserPage *rod.
 				if wasBlocked || !location.matches(info.URL) {
 					wasBlocked = false
 					scrolls = 0
+					resetCapture()
 					load.set("opening", "Login detected. Opening the Facebook page…", nil)
 					if err := page.Navigate(target); err != nil {
 						return nil, errors.New("Could not continue to the Facebook page after login. Fetch again")

@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"errors"
 	"reflect"
 	"strings"
 	"sync/atomic"
@@ -75,7 +76,7 @@ func TestPostComposerBrowserIntegration(t *testing.T) {
 		}
 		documents.Add(1)
 		if loggedOut.Load() {
-			h.Response.SetHeader("Content-Type", "text/html").SetBody("<body class='UIPage_LoggedOut'><form id='login_form'></form>")
+			h.Response.SetHeader("Content-Type", "text/html").SetBody(`<body class="UIPage_LoggedIn"><div role="dialog" aria-modal="true"><form id="login_popup_cta_form" action="/login/device-based/regular/login/"><input name="email"><input name="pass" type="password"></form></div>`)
 			return
 		}
 		if missingFirst.Swap(false) || missingAll.Load() {
@@ -202,10 +203,114 @@ func TestPostComposerBrowserIntegration(t *testing.T) {
 		t.Fatalf("exhausted groups: %v", err)
 	}
 	missingAll.Store(false)
-	loggedOut.Store(true)
-	if _, err := service.OpenPostComposer(ctx, []string{"one"}, "Draft", nil); err == nil || !strings.Contains(err.Error(), "Log in") {
-		t.Fatalf("logout: %v", err)
+	// Once login is required, removing its form is insufficient: keep waiting
+	// through loading and verification until authenticated UI appears.
+	type preparationResult struct {
+		prepared *PostPreparation
+		err      error
 	}
+	startWaiting := func(t *testing.T) (<-chan preparationResult, context.CancelFunc) {
+		t.Helper()
+		loggedOut.Store(true)
+		service.setPostStatus("")
+		postingCtx, stop := testPostingContext(service)
+		waitCtx, deadline := context.WithTimeout(postingCtx, 15*time.Second)
+		t.Cleanup(func() { stop(); deadline() })
+		done := make(chan preparationResult, 1)
+		go func() {
+			prepared, err := service.OpenPostComposer(waitCtx, []string{"one"}, "Resumed draft", nil)
+			done <- preparationResult{prepared, err}
+		}()
+		until := time.Now().Add(5 * time.Second)
+		for service.GetPostPreparationStatus() != facebookLoginWaitMessage && time.Now().Before(until) {
+			select {
+			case result := <-done:
+				t.Fatalf("login stopped preparation: %+v", result)
+			case <-time.After(10 * time.Millisecond):
+			}
+		}
+		if service.GetPostPreparationStatus() != facebookLoginWaitMessage || !service.GetPostingStatus().Active {
+			t.Fatal("login wait did not keep the queue active with a login prompt")
+		}
+		return done, stop
+	}
+	assertWaiting := func(t *testing.T, done <-chan preparationResult) {
+		t.Helper()
+		select {
+		case result := <-done:
+			t.Fatalf("preparation continued before login/resume: %+v", result)
+		case <-time.After(650 * time.Millisecond):
+		}
+	}
+	finishWaiting := func(t *testing.T, done <-chan preparationResult) preparationResult {
+		t.Helper()
+		select {
+		case result := <-done:
+			return result
+		case <-time.After(5 * time.Second):
+			t.Fatal("preparation did not finish after login or cancellation")
+			return preparationResult{}
+		}
+	}
+	t.Run("login resumes the same group without another Post click", func(t *testing.T) {
+		service.groupsLoad.user = "fixture-owner"
+		done, _ := startWaiting(t)
+		if _, err := originalPage.Context(ctx).Eval(`() => { document.body.className=''; document.body.innerHTML='<main>Loading</main>'; }`); err != nil {
+			t.Fatal(err)
+		}
+		assertWaiting(t, done)
+		if _, err := originalPage.Context(ctx).Eval(`() => { document.body.className='UIPage_LoggedIn'; document.body.innerHTML='<form action="/checkpoint/"></form>'; }`); err != nil {
+			t.Fatal(err)
+		}
+		assertWaiting(t, done)
+		service.PausePosting()
+		loggedOut.Store(false)
+		if err := originalPage.Context(ctx).Navigate("https://web.facebook.com/"); err != nil {
+			t.Fatal(err)
+		}
+		assertWaiting(t, done)
+		service.ResumePosting()
+		result := finishWaiting(t, done)
+		if result.err != nil || result.prepared == nil || result.prepared.OpenedGroup.ID != "one" || len(result.prepared.Skipped) != 0 {
+			t.Fatalf("login did not resume selected group: %+v", result)
+		}
+		info, err := originalPage.Context(ctx).Info()
+		if err != nil || info.URL != groups[0].URL {
+			t.Fatalf("login did not return from home to selected group: %+v %v", info, err)
+		}
+		filled, err := originalPage.Context(ctx).Eval(`() => document.querySelector('#editor').textContent==='Resumed draft' && window.clicked===1 && !window.submitted`)
+		if err != nil || !filled.Value.Bool() {
+			t.Fatalf("resumed draft was not prepared exactly once: %v %v", filled, err)
+		}
+	})
+	t.Run("different account does not resume", func(t *testing.T) {
+		done, _ := startWaiting(t)
+		if _, err := originalPage.Context(ctx).Eval(`() => { document.cookie='c_user=other-owner;domain=.facebook.com;path=/'; document.body.innerHTML=''; document.body.className='UIPage_LoggedIn'; }`); err != nil {
+			t.Fatal(err)
+		}
+		result := finishWaiting(t, done)
+		if result.err == nil || !strings.Contains(result.err.Error(), "current profile differs") || result.prepared != nil {
+			t.Fatalf("resumed with a different account: %+v", result)
+		}
+	})
+	t.Run("Stop cancels login wait", func(t *testing.T) {
+		done, _ := startWaiting(t)
+		service.CancelPosting()
+		result := finishWaiting(t, done)
+		if !errors.Is(result.err, context.Canceled) || result.prepared != nil {
+			t.Fatalf("Stop did not cancel login wait: %+v", result)
+		}
+	})
+	t.Run("closing the login tab ends the wait", func(t *testing.T) {
+		done, _ := startWaiting(t)
+		if err := originalPage.Context(ctx).Close(); err != nil {
+			t.Fatal(err)
+		}
+		result := finishWaiting(t, done)
+		if result.err == nil || result.prepared != nil {
+			t.Fatalf("closed browser left login waiting: %+v", result)
+		}
+	})
 }
 
 // A real PNG signature and body, decoded and sniffed by the backend.
