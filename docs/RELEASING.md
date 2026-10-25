@@ -117,6 +117,17 @@ make release-all
 
 One-time setup: install and authenticate GitHub CLI with `gh auth login`, enable
 Actions, and merge `.github/workflows/distribution.yml` into the default branch.
+On Ubuntu/Debian, the local CLI setup is:
+
+```sh
+sudo apt-get install gh
+gh auth login
+```
+
+GitHub CLI starts and downloads the remote workflow; it is not part of the
+Wails compiler or packager. `make package-all` remains the local, current-OS
+packaging command and does not require GitHub CLI or a GitHub account.
+
 Commit and push the application changes you want to distribute. The launcher
 rejects a dirty checkout and a remote branch whose commit differs from HEAD.
 It never commits, pushes, publishes, or installs an application for you.
@@ -149,6 +160,19 @@ bundles are separate optional targets. Native install/login/update testing,
 updater manifest signing, Homebrew tap publication, website metadata, and hosting
 uploads remain separate release steps. No publisher keys are required by this
 workflow; macOS retains its existing ad-hoc signature.
+
+The application build and package tasks follow Wails v3's Taskfile pipeline:
+NSIS on Windows, native app bundles and Wails DMG tooling on macOS, and Wails
+AppImage/nFPM tooling on Linux. Our `package:all` tasks, portable/updater ZIP
+helpers, CI orchestration, staging, and checksums are project additions around
+that pipeline, not an alternative application builder. Publisher signing and
+notarization are not invoked. macOS's existing ad-hoc bundle signature remains;
+it is not a Developer ID signature or notarization.
+
+References: [Wails build pipeline](https://v3.wails.io/guides/build/building/),
+[Windows packaging](https://v3.wails.io/guides/build/windows/),
+[macOS packaging](https://v3.wails.io/guides/build/macos/), and
+[Linux packaging](https://v3.wails.io/guides/build/linux/).
 
 Preview without dispatching: `node scripts/release-all.mjs --plan`.
 For a single target on its native host, run, for example,

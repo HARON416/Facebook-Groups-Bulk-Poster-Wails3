@@ -3,7 +3,14 @@ import assert from 'node:assert/strict';
 import { mkdtempSync, rmSync } from 'node:fs';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
-import { releaseAll } from './release-all.mjs';
+import { command, releaseAll } from './release-all.mjs';
+
+test('missing GitHub CLI explains installation, login, and local packaging', () => {
+  assert.throws(() => command('.', 'gh', ['auth', 'status'], false, () => ({ error: { code: 'ENOENT' } })), error => {
+    for (const instruction of ['sudo apt-get install gh', 'gh auth login', 'make release-all', 'make package-all']) assert.ok(error.message.includes(instruction));
+    return true;
+  });
+});
 
 function fixture(t, override = () => undefined) {
   const root = mkdtempSync(join(tmpdir(), 'postika-dispatch-'));

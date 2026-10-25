@@ -6,8 +6,11 @@ import { fileURLToPath } from 'node:url';
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const workflow = 'distribution.yml';
-function command(root, name, args, inherit = false) {
-  const result = spawnSync(name, args, { cwd: root, encoding: 'utf8', stdio: inherit ? 'inherit' : 'pipe' });
+export function command(root, name, args, inherit = false, spawn = spawnSync) {
+  const result = spawn(name, args, { cwd: root, encoding: 'utf8', stdio: inherit ? 'inherit' : 'pipe' });
+  if (result.error?.code === 'ENOENT' && name === 'gh') {
+    throw new Error('GitHub CLI (gh) is required to start and download the multi-OS builds. On Ubuntu/Debian, install it with: sudo apt-get install gh\nThen authenticate with: gh auth login\nRetry: make release-all\nFor local packages without GitHub, use: make package-all');
+  }
   if (result.error) throw new Error(`${name} is unavailable: ${result.error.message}`);
   if (result.status !== 0) throw new Error(`${name} ${args[0]} failed. ${result.stderr?.trim() ?? ''}`);
   return result.stdout?.trim() ?? '';
