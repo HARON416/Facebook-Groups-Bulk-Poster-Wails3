@@ -64,6 +64,8 @@ jobs:
           CGO_ENABLED=0 GOBIN="$GITHUB_WORKSPACE/.tools/bin" go install "github.com/wailsapp/wails/v3/cmd/wails3@$WAILS_VERSION"
           echo "$GITHUB_WORKSPACE/.tools/bin" >> "$GITHUB_PATH"
       - run: npm ci --prefix frontend
+      - name: Build frontend and generate Wails bindings
+        run: wails3 task common:build:frontend
       - run: npm --prefix frontend run check
       - run: node --test scripts/package-release.test.mjs scripts/release-all.test.mjs
       - run: go test -buildvcs=false -timeout 120s ./...
