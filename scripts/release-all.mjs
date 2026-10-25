@@ -6,6 +6,8 @@ import { fileURLToPath } from 'node:url';
 import { releaseVersion } from './package-release.mjs';
 import { flattenRelease } from './flatten-release.mjs';
 import { bumpVersion, nextVersion, syncVersions } from './version.mjs';
+import { generateWebsiteRelease } from './website-release.mjs';
+import { preflightPublish, publishRelease } from './publish-release.mjs';
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const workflow = 'distribution.yml';
@@ -64,6 +66,7 @@ export async function releaseAll({ root = projectRoot, run = (...args) => comman
     mkdirSync(download, { recursive: true });
     run('gh', ['run', 'download', String(selectedRun.databaseId), '--pattern', 'postika-*', '--dir', download], true);
     const output = flattenRelease(root, download, version);
+    log(`Website download metadata generated: ${generateWebsiteRelease(root)}`);
     log(`Release ready to upload: ${output} (flat packages, one license, combined SHA256SUMS)`);
     return output;
   } catch (error) {
@@ -79,7 +82,13 @@ if (process.argv[1] && realpathSync(resolve(process.argv[1])) === realpathSync(f
       console.log('Choose BUMP=minor, BUMP=major, VERSION=X.Y.Z, or BUMP=none to rebuild the existing version.');
       console.log('Build Linux x64, Windows x64, macOS arm64 and macOS amd64 on native GitHub runners.');
       console.log('Wait for all jobs, verify and flatten packages into bin/releases/<version>/ with one license and combined SHA256SUMS.');
-      console.log('Requires a clean, pushed branch, the workflow on the default branch, and authenticated GitHub CLI. Does not publish a release.');
-    } else await releaseAll();
+      console.log('Generate website/releases/<version>.json and current.json automatically; rebuild/deploy the website to use them.');
+      console.log('PUBLISH=1 also signs update feeds, uploads packages to downloads/<version>/ on Bunny, verifies them publicly, then replaces updates/*.json.');
+      console.log('Requires a clean, pushed branch, the workflow on the default branch, and authenticated GitHub CLI. Publishing also requires .env and the existing update signing key.');
+    } else {
+      const client = process.env.POSTIKA_PUBLISH === '1' ? await preflightPublish(projectRoot) : null;
+      await releaseAll();
+      if (client) await publishRelease({ root: projectRoot, client });
+    }
   } catch (error) { console.error(error.message); process.exitCode = 1; }
 }

@@ -158,5 +158,9 @@ test('real local Git remote receives only the version commit used for the build'
   assert.equal(git('--git-dir', remote, 'rev-parse', 'refs/heads/main'), git('rev-parse', 'HEAD'));
   assert.deepEqual(git('diff', '--name-only', 'HEAD~', 'HEAD').split('\n').sort(), [...versionFiles].sort());
   assert.equal(readFileSync(join(root, 'application.txt'), 'utf8'), 'Original app source');
-  assert.equal(git('status', '--porcelain'), '');
+  assert.equal(git('diff', '--name-only'), '');
+  const metadata = JSON.parse(readFileSync(join(root, 'website/releases/current.json'), 'utf8'));
+  assert.equal(metadata.version, '0.1.1');
+  assert.ok(metadata.downloads.every(download => download.url.includes('/downloads/0.1.1/')));
+  assert.equal(git('status', '--porcelain'), '?? website/');
 });

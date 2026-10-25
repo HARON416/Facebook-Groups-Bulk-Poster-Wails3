@@ -7,6 +7,8 @@ WAILS_VERSION := $(shell awk '$$1 == "require" && $$2 == "github.com/wailsapp/wa
 .PHONY: help dev run build check doctor install-cli install-garble package-all release-all version-check version-sync version-bump version-set
 
 BUMP ?= patch
+PUBLISH ?= 0
+export POSTIKA_PUBLISH := $(PUBLISH)
 export POSTIKA_RELEASE_BUMP := $(BUMP)
 export POSTIKA_RELEASE_VERSION := $(VERSION)
 
@@ -15,6 +17,7 @@ help:
 	@printf '%s\n' '  make release-all  Bump patch, commit/push version metadata, build all OS packages and flatten downloads' '                    BUMP=minor|major|none or VERSION=0.3.2 selects the version policy'
 	@printf '%s\n' '  make version-check Check all platform versions agree' '  make version-sync  Sync platform metadata from build/config.yml' '  make version-bump  Increment patch; BUMP=minor or BUMP=major also supported' '  make version-set VERSION=0.2.0  Set a higher version across all platforms'
 	@printf '%s\n' '  make update-feeds Sign and verify update feeds for the current downloaded release'
+	@printf '%s\n' '  make release-all PUBLISH=1  Build, generate website links, sign feeds, and publish to Bunny' '  make publish-release  Publish/retry the current downloaded release without a bump' '  make website-release  Regenerate website metadata for the current downloaded release'
 
 dev run:
 	wails3 dev
@@ -40,7 +43,14 @@ package-all: version-check
 	wails3 task package:all
 
 release-all:
-	node scripts/release-all.mjs
+	node --env-file-if-exists=.env scripts/release-all.mjs
+
+.PHONY: publish-release website-release
+publish-release:
+	node --env-file-if-exists=.env scripts/publish-release.mjs
+
+website-release:
+	node scripts/website-release.mjs
 
 .PHONY: update-feeds
 update-feeds:

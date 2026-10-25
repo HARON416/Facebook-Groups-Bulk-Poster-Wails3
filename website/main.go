@@ -14,7 +14,7 @@ import (
 //go:embed templates/*.html static
 var assets embed.FS
 
-//go:embed releases/0.1.2.json
+//go:embed releases/current.json
 var defaultRelease []byte
 
 var pages = template.Must(template.ParseFS(assets, "templates/*.html"))

@@ -5,10 +5,10 @@ groups with separate accounts, saved drafts, scheduling, and posting controls.
 It uses an installed Chrome or Chromium browser for Facebook sessions and is
 built with **Wails v3, Go, Svelte 5, TypeScript, and Lexical**.
 
-The project is under active development. Release `0.1.2` has Windows, macOS,
-and Linux distribution packages and signed update feeds prepared for Bunny CDN.
-Release assets are hosted at `https://postika-desktop-application.b-cdn.net`.
-Deployment of the website and update routes at `postika.softwrhq.com` is pending.
+The project is under active development. The website and update routes are
+deployed at `https://postika.softwrhq.com/`. Windows, macOS, and Linux release
+assets and signed update feeds are hosted on Bunny CDN at
+`https://postika-desktop-application.b-cdn.net`.
 
 ## Features
 
@@ -117,9 +117,9 @@ administrator authorization. Updates stay inside the app.
 
 Payloads require SHA-512 checksums and Ed25519ph signatures. These authenticate
 updates independently of OS publisher code signing. Signed `0.1.2` feeds have
-been generated and verified against the embedded public key. **End-to-end update
-delivery still requires the website update routes to be deployed over HTTPS,
-working DNS, and native old-to-new installation tests.**
+been generated and verified against the embedded public key. Live website
+redirects and all five feeds have been checked, including CDN cache bypass.
+**Native old-to-new installation tests remain necessary for release acceptance.**
 See [Releasing](docs/RELEASING.md) for artifact formats, signing keys, feeds,
 and release acceptance checks.
 
@@ -229,7 +229,8 @@ Start with committed, pushed application changes. The launcher checks the
 checkout and GitHub authentication, synchronizes the version, commits only the
 version metadata, pushes that commit to the current branch on `origin`, and
 builds it. A failed CI build keeps the reserved version; use `BUMP=none` to retry.
-This does not publish a GitHub release or upload anything to the website.
+Without `PUBLISH=1`, this builds packages and generates website metadata without
+uploading to Bunny. It does not create a GitHub release.
 
 For manual version preparation, the standalone helpers remain available:
 
@@ -277,8 +278,9 @@ latest release. Failed downloads retain the previous complete release.
 Install and authenticate GitHub CLI (`gh auth login`)
 first. The workflow must already exist on the repository's default branch, and
 the selected remote branch must match your local commit. It builds artifacts;
-it does not publish a GitHub release, upload to the website, or generate updater
-feeds. MSIX and universal Mac bundles remain separate optional targets.
+it generates website metadata but only uploads packages and signs/publishes
+update feeds when `PUBLISH=1` is supplied. It does not create a GitHub release.
+MSIX and universal Mac bundles remain separate optional targets.
 
 Use `node scripts/release-all.mjs --plan` to see the plan without starting a run.
 The complete setup and limitations are in [Releasing](docs/RELEASING.md#one-command-build-for-all-desktop-targets).
@@ -351,56 +353,118 @@ current OS; it is not needed again after a successful all-OS release.
 
 ### Publishing a release to Bunny
 
-After committing and pushing application changes, run from the repository root:
+Run the release commands below from the **repository root**.
+
+#### First-time setup
+
+1. Install the development tools described above, including Node.js 24, the
+   project-local Wails CLI (`make install-cli`), and GitHub CLI. Authenticate GitHub
+   CLI with `gh auth login`.
+2. If `.env` does not exist, copy `.env.example` to `.env`. Keep an existing `.env`;
+   do not overwrite its credentials. For this Frankfurt storage zone, configure:
+
+   ```dotenv
+   BUNNY_STORAGE_ZONE=postika-desktop-application
+   BUNNY_STORAGE_HOST=storage.bunnycdn.com
+   BUNNY_STORAGE_PASSWORD=your-storage-zone-password
+   ```
+
+   Use the **Storage Zone password**, not the global Bunny account API key.
+   `de-s3.storage.bunnycdn.com` is Frankfurt's S3 endpoint; this uploader uses the
+   HTTP API at `storage.bunnycdn.com`. The hostname has no `https://` prefix.
+3. Restore the existing update signing key at `.update-keys/updater.key` and keep
+   it backed up privately. Do not generate a replacement key for an app already
+   distributed with the existing public key.
+4. Commit and push the application and release-automation changes. The all-OS
+   build command requires a clean checkout matching the remote branch.
+
+The Make commands load `.env` automatically. `.env` and `.update-keys/` are
+ignored by Git; never commit either. `.env.example` contains placeholders only.
+
+#### Which command to use
+
+| Situation | Command |
+| --- | --- |
+| New release: bump version, build every OS, and upload packages and feeds | `make release-all PUBLISH=1` |
+| Current version is already built and downloaded: publish it or retry a failed upload | `make publish-release` |
+| Build failed: retry the same version, then publish it | `make release-all BUMP=none PUBLISH=1` |
+| Build a new release for testing before uploading | `make release-all` |
+
+For the normal new-release workflow, after committing and pushing changes:
 
 ```sh
-make release-all     # Automatically bumps patch, builds all OS packages, downloads and verifies them
-make update-feeds    # Signs and verifies all five update feeds for that version
+make release-all PUBLISH=1
 ```
 
-For a retry of the same release version, use `make release-all BUMP=none`.
-`make update-feeds` does not change the version, rebuild packages, or upload
-anything. It requires the project-local Wails CLI and the existing private key
-at `.update-keys/updater.key`. It verifies the complete release's SHA256SUMS,
-creates signed manifests, and verifies them against
-`internal/updateauth/public-key.pem`, the public key embedded in the app.
-An existing `bin/updates/<version>/` folder is preserved rather than overwritten.
-Keep using the same signing key; back it up privately and never upload it.
+This checks Bunny credentials and signing-key availability before reserving the
+next version, bumps patch by default, builds all four targets using GitHub
+Actions, downloads and verifies the packages, generates website metadata, signs
+and verifies the five feeds, and publishes to Bunny. For example, if
+`build/config.yml` contains `0.1.3`, the next patch release is `0.1.4`.
+`BUMP=minor`, `BUMP=major`, and `VERSION=X.Y.Z` select another version policy.
+`BUMP=none` keeps the already reserved version.
 
-For each release, publish in this order:
+To test packages before publishing:
 
-1. Test the packages and the native update paths for the platforms being published.
-2. Upload every file **inside** `bin/releases/<version>/` to Bunny's `downloads/`
-   folder. Keep the versioned filenames; do not upload the local version folder.
-   Include `SHA256SUMS`, `LICENSE.txt`, and the update payloads as well as installers.
-3. Confirm the new payload URLs work before changing any feeds.
-4. Upload the five JSON files **inside** `bin/updates/<version>/` to Bunny's
-   `updates/` folder, replacing the previous JSON files with the same names.
-5. Purge Bunny's cached update JSON files. Serve `/updates/*.json` as
-   `application/json` with `Cache-Control: no-cache` and configure the CDN to
-   avoid stale feed caching. Query parameters must be accepted.
-6. Update the website's release metadata and deploy it as described below.
+```sh
+make release-all
+# Install and test the generated packages, then:
+make publish-release
+```
+
+Do not run `make release-all PUBLISH=1` again just to retry an upload: it starts
+another version. Use `make publish-release` instead. It uses the complete
+`bin/releases/<current-version>/` folder and never bumps, commits, pushes, or
+rebuilds the app. It cannot publish a version whose build/download is incomplete.
+Existing feeds are reused only after signature verification and validation
+against the expected versioned URLs. `make package-all` is not needed after a
+successful all-OS build.
+
+The private signing key stays local. Run only one publisher at a time, including
+across machines. A local lock prevents two publishers in the same checkout;
+after a crash, check it stopped before removing `bin/.publish.lock`.
+
+The publisher uploads packages to `downloads/<version>/`, creating the versioned
+folder through the Storage API upload paths. It sends SHA-256 checksums with each
+upload and downloads each public CDN URL to verify the bytes before touching any
+stable feed. This public verification downloads roughly one release's size in
+addition to the upload. It uploads `SHA256SUMS` after the packages, stores website
+metadata as `downloads/<version>/release.json`, then replaces the five JSON feeds
+in `updates/`. Feeds are checked publicly for matching bytes, JSON content type,
+and no-cache headers. CDN replication/cache failures stop publishing and give a
+retry command. A failure partway through publishing feeds can leave some platforms
+on the previous version; retry the same release to finish.
 
 The Bunny base URL is `https://postika-desktop-application.b-cdn.net`:
 
 | Hosted path | Contents |
 | --- | --- |
-| `/downloads/` | Versioned installers, portable archives, update payloads, `SHA256SUMS`, and `LICENSE.txt` |
+| `/downloads/<version>/` | Versioned packages, `SHA256SUMS`, `LICENSE.txt`, and `release.json` |
 | `/updates/stable.json` | Windows raw EXE, macOS app-bundle ZIPs for both architectures, and Linux AppImage |
 | `/updates/stable-deb.json` | Linux DEB |
 | `/updates/stable-rpm.json` | Linux RPM |
 | `/updates/stable-arch.json` | Linux Arch package |
 | `/updates/stable-binary.json` | Standalone Linux ELF |
 
-For example, the current Arch feed is
-`https://postika-desktop-application.b-cdn.net/updates/stable-arch.json`, and the
-Windows installer is
-`https://postika-desktop-application.b-cdn.net/downloads/postika-0.1.2-windows-amd64-installer.exe`.
-The JSON filenames remain constant; their version, payload URLs, hashes, and
-signatures change for each release. Package filenames include the version.
-Keep older remote payloads available while clients may still be downloading
-them. Automatic cleanup of older **local** release folders does not delete
-anything from Bunny.
+For example, a `0.1.4` installer URL will be
+`https://postika-desktop-application.b-cdn.net/downloads/0.1.4/postika-0.1.4-windows-amd64-installer.exe`.
+The feed URLs stay the same; their version, payload URLs, hashes, and signatures
+change. Existing `0.1.2` files at the old flat `/downloads/` URLs remain valid
+and should stay in place. The publisher never deletes old remote releases and
+refuses newer-to-older feed changes or different payloads under a published
+version. Local release cleanup does not delete anything from Bunny.
+
+Bunny's `/updates/*.json` rule must continue serving `application/json` with
+`Cache-Control: no-cache` or `no-store` and bypassing CDN caching. Purge old cached
+feeds when first configuring that rule. Normal publishing uses the storage
+password only and does not need an account API key to purge caches. The already
+configured cache bypass makes future feed replacements visible without a purge.
+
+`make update-feeds` remains available to sign and verify feeds without uploading.
+`make website-release` regenerates download metadata for a complete downloaded
+release. Neither command changes the app version. The build and upload commands
+can be previewed without network writes using `node scripts/release-all.mjs --plan`
+and `node scripts/publish-release.mjs --plan`.
 
 Initial-download archives and updater payloads differ for Windows and macOS:
 feeds reference the raw Windows EXE or macOS app-bundle ZIP, never the NSIS
@@ -418,20 +482,28 @@ redirects. Deploy the website handler behind HTTPS and configure DNS for
 These routes remain the same for future releases; only Bunny's JSON contents
 need replacing.
 
-Download-page metadata is separate from the signed update feeds. The current
-`website/releases/0.1.2.json` is embedded in the website executable, so all eight
-download buttons work by default without environment variables:
+Download-page metadata is separate from the signed update feeds. The website
+embeds `website/releases/current.json`, so download buttons work without
+environment variables:
 
 ```sh
 cd website
 make run
 ```
 
-For each new release, prepare `website/releases/<version>.json` with its version,
-date, release notes, and versioned Bunny download URLs. Update the default
-`go:embed` release path in `website/main.go`, then rebuild and deploy the website.
-`make release-all` and `make update-feeds` do not generate this website metadata
-or deploy the website. Release notes appear when the metadata includes notes.
+After a successful `make release-all`, `website/releases/<version>.json` and
+`website/releases/current.json` are generated automatically with all eight
+versioned Bunny download URLs. No source-code embed path or URLs need editing.
+Release notes start empty; edit the version's `notes` array and run
+`make website-release` to copy the notes into `current.json`. Existing release
+dates and notes are preserved when regenerating metadata. Commit generated
+metadata with your next source changes before starting another all-OS build.
+
+After publishing the packages and feeds, rebuild and deploy the website binary
+so it embeds the new metadata. This automation does not deploy to the VPS;
+the running website keeps its embedded release until replaced. The published
+`downloads/<version>/release.json` is a metadata copy, not a live source for the
+website. Release notes appear when the metadata includes notes.
 
 An optional `RELEASE_FILE` overrides the embedded metadata at startup. Use a path
 relative to the website process's working directory, or an absolute path. When
@@ -442,9 +514,21 @@ the website to load changes. For example:
 RELEASE_FILE=releases/0.1.2.json make run
 ```
 
-For a Go executable deployment, build with `make build` from `website/`. The
-default release data is included in the executable. Configure the server's
-address using `ADDR` (default `127.0.0.1:8080`) behind your HTTPS reverse proxy.
+After a successful publication, build the website for your Linux x64 VPS from
+the repository root:
+
+```sh
+GOOS=linux GOARCH=amd64 CGO_ENABLED=0 make -C website build
+```
+
+Upload `website/postika-website` to the VPS, replace the deployed binary, and
+restart its website service. The binary includes the generated download links;
+there is no separate JSON file to upload unless you explicitly use `RELEASE_FILE`.
+Check `/downloads` for the new version after restarting. The existing update
+redirect routes and DNS do not need changing for each release.
+
+Configure the server's address using `ADDR` (default `127.0.0.1:8080`) behind
+your HTTPS reverse proxy.
 
 Before declaring auto updates available, verify the deployed website routes,
 Bunny feeds, and native old-to-new installation flows. An app already running

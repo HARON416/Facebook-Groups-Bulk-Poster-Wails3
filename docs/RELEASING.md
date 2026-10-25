@@ -234,9 +234,10 @@ the repository's Actions access rules; no public release is created. CI artifact
 expire after 30 days; copy verified releases to your permanent hosting.
 
 This covers the current unsigned distribution set. MSIX and universal Mac
-bundles are separate optional targets. Native install/login/update testing,
-updater manifest signing, Homebrew tap publication, website metadata, and hosting
-uploads remain separate release steps. No publisher keys are required by this
+bundles are separate optional targets. Native install/login/update testing
+and Homebrew tap publication remain separate release steps. Website metadata is
+generated automatically. `make release-all PUBLISH=1` also signs and publishes
+feeds/packages to Bunny; see the publishing section below. No publisher keys are required by this
 workflow; macOS retains its existing ad-hoc signature.
 
 The application build and package tasks follow Wails v3's Taskfile pipeline:
@@ -413,48 +414,92 @@ make update-feeds
 ```
 
 This uses the project-local Wails CLI and existing `.update-keys/updater.key` to
-create all five feeds in `bin/updates/<version>/`. It first verifies the release's
-SHA256SUMS, selects compatible payloads for each feed, then verifies each digest
+create all five feeds in `bin/updates/<version>/`. It verifies the release's
+SHA256SUMS, selects compatible payloads for each feed, then verifies every digest
 and signature against the public key embedded in the app. Signing runs locally;
-the private key is never included in release files or uploaded. An existing feed
-folder is preserved; move it explicitly if regeneration is required. This command
-does not bump the version or rebuild the app.
+the private key is never uploaded. Existing feeds are reused after verification;
+incorrect signatures, versions or URLs stop the command. This does not bump the
+version or rebuild the app.
 
-For the current `0.1.2` release, upload the **five JSON files inside**
-`bin/updates/0.1.2/` to the Bunny storage folder `updates/`. Do not include
-the local version folder in the remote path. The public main feed URL must be:
+### Automated Bunny publishing
+
+Configure ignored `.env` from `.env.example` with your Storage Zone
+name, regional Storage API hostname and **Storage Zone password**. A global
+Bunny API key is not used. The regional hostname is shown in FTP & API Access;
+do not substitute the public CDN hostname. Environment variables take precedence
+over values in the file. See [Bunny's Storage HTTP API](https://bunny.net/docs/storage/http)
+for authentication, regional endpoints, raw-body PUT uploads, and uppercase
+SHA-256 Checksum headers.
+
+```sh
+make release-all PUBLISH=1   # Build the next version and publish it
+make publish-release        # Publish/retry the current downloaded version only
+```
+
+The first command checks credentials and key availability before starting the
+normal version bump/build. Default patch versioning means `0.1.3` becomes `0.1.4`.
+For native testing before publishing, use plain `make release-all`, test the
+packages, then `make publish-release`. The publisher verifies local packages and
+signatures, checks existing feeds to prevent a rollback or same-version payload
+replacement, and uploads every package to `downloads/<version>/`. Upload paths
+create the versioned storage folder. Every public package URL is fetched and
+SHA-256 verified before any stable feed is changed, so publishing transfers the
+release both up to storage and back down through the CDN. `SHA256SUMS` is uploaded
+after the package files, followed by a `release.json` metadata copy.
+
+The publisher then overwrites the five `updates/stable*.json` files and verifies
+their public contents and JSON/no-cache headers. Remote older packages are never
+deleted. It uses a local lock; run only one publisher across all machines. A
+partial feed upload can temporarily leave platforms on different releases;
+`make publish-release` resumes the same version without another bump. Different
+same-version payloads require a new version. If a process crashed, confirm it has
+stopped before removing `bin/.publish.lock`.
+
+For example, a `0.1.4` Windows installer is hosted at:
+
+```text
+https://postika-desktop-application.b-cdn.net/downloads/0.1.4/postika-0.1.4-windows-amd64-installer.exe
+```
+
+The main feed URL remains:
 
 ```text
 https://postika-desktop-application.b-cdn.net/updates/stable.json
 ```
 
-The other four feed filenames use the same directory. Payload URLs point to
-`https://postika-desktop-application.b-cdn.net/downloads/` with versioned filenames.
-Upload and test all payloads before replacing any stable feeds. Preserve remote
-older payloads while clients may still have feeds/downloads in progress; local
-release cleanup does not imply remote deletion is safe.
+The other four feeds use the same `updates/` directory. Keep legacy `0.1.2`
+packages at their already-published flat `/downloads/` URLs. Do not move them
+when introducing versioned folders for new releases.
 
-Configure Bunny to serve `/updates/*.json` as `application/json`, with
-`Cache-Control: no-cache` and no stale CDN caching; purge cached feeds after
-replacing them. Query parameters for platform/arch/version/channel must be
-accepted. Never cache a missing feed. Before publishing a feed, return 404 or 204.
+Keep Bunny's `/updates/*.json` cache bypass rule enabled, with `application/json`
+and `Cache-Control: no-cache` or `no-store`. The publisher requires those response
+headers. Purge stale feeds when first configuring the rule. With cache bypass
+active, normal publication does not require cache-purge API credentials. Query
+parameters for platform/arch/version/channel must be accepted.
 
 Already-built apps request `https://postika.softwrhq.com/updates/postika/`.
-The website now has five exact GET/HEAD routes that temporarily redirect those
-requests over HTTPS to Bunny while preserving the query string. Deploy this
-website handler behind HTTPS and configure DNS for `postika.softwrhq.com` so
-those routes are reachable. Creating feeds alone does not connect installed apps.
-The app's HTTP client follows HTTPS redirects. Other feed paths return 404.
-Check the public URLs after deployment, then perform native old-to-new update
-tests before advertising working auto updates. An app already on the published
-version correctly has no new update to install.
+The website's five exact GET/HEAD routes temporarily redirect those requests
+over HTTPS to Bunny's `updates/` folder, preserving the query string. Those
+routes do not change for each release. Check the public URLs and perform native
+old-to-new update tests before advertising working auto updates. An app already
+on the published version correctly has no new update to install.
 
-The website embeds `website/releases/0.1.2.json` as its default download metadata.
-Plain `make run` from `website/` and the compiled executable show download links
-without environment variables. For a new release, prepare its JSON metadata,
-update the `go:embed` release path in `website/main.go`, and rebuild/deploy.
-`RELEASE_FILE` remains an optional startup override for an external JSON file.
-Download metadata is independent of the signed update feeds.
+### Generated website metadata
+
+After all four build targets download and verify, `make release-all` generates
+`website/releases/<version>.json` and `website/releases/current.json` with all
+eight public download URLs. The website always embeds `current.json`; there is
+no Go source-code path or download URL to edit for each version. To regenerate
+metadata for the current complete local release, use `make website-release`.
+Release dates and notes in an existing version JSON are preserved; add actual
+release notes there and regenerate before rebuilding the website. Commit the
+generated metadata with your next app changes before another all-OS release.
+
+Rebuild and deploy the website after successful package/feed publication. This
+workflow does not upload or restart the VPS binary. The running binary keeps
+its embedded metadata until replaced; the `release.json` copy on Bunny is not
+a live metadata source. `RELEASE_FILE` remains an optional external-file startup
+override. Plain `make run` from `website/` needs no environment variables.
 
 On macOS, the release packaging task creates `.app.zip` with one top-level bundle,
 preserving executable modes and symlinks via `build/darwin/updatezip`. Do not
