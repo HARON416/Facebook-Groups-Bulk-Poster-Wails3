@@ -1236,6 +1236,7 @@ msgid "Color themes"
 msgstr "سمات الألوان"
 
 #: src/components/AddAccountDialog.svelte
+#: src/components/ContactButton.svelte
 #: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
@@ -1919,6 +1920,7 @@ msgid "Queues pause when offline and resume when the connection returns."
 msgstr "تتوقف قوائم الانتظار مؤقتًا دون اتصال وتُستأنف عند عودة الاتصال."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/FeaturesCard.svelte
 msgid "How to use"
 msgstr "كيفية الاستخدام"
 
@@ -2179,7 +2181,9 @@ msgstr "عدد المنشورات التي تم جلبها: {0}."
 msgid "Fetched {0} posts. No more posts are available."
 msgstr "عدد المنشورات التي تم جلبها: {0}. لا توجد منشورات أخرى متاحة."
 
+#. 0: incompleteFetchedPost + 1
 #. 0: number(a)
+#: src/App.svelte
 #: src/components/LogMessage.svelte
 msgid "Add text to fetched post {0} before posting"
 msgstr "أضف نصًا إلى المنشور المجلوب {0} قبل النشر"
@@ -2394,11 +2398,56 @@ msgstr "سيؤدي هذا إلى حذف تسجيل الدخول إلى Facebook 
 msgid "Deleting…"
 msgstr "جارٍ الحذف…"
 
-#: src/components/FeaturesCard.svelte
-msgid "<0/> How to use"
-msgstr "<0/> كيفية الاستخدام"
+#~ msgid "<0/> How to use"
+#~ msgstr "<0/> كيفية الاستخدام"
 
 #: src/components/QueueReview.svelte
 #: src/components/QueueReview.svelte
 msgid "Review your queue"
 msgstr "راجع قائمة الانتظار"
+
+#: src/components/ContactButton.svelte
+msgid "Question"
+msgstr "سؤال"
+
+#: src/components/ContactButton.svelte
+msgid "Feedback"
+msgstr "ملاحظات"
+
+#: src/components/ContactButton.svelte
+msgid "Bug report"
+msgstr "الإبلاغ عن خطأ"
+
+#: src/components/ContactButton.svelte
+msgid "Account help"
+msgstr "مساعدة الحساب"
+
+#: src/components/ContactButton.svelte
+msgid "Business inquiry"
+msgstr "استفسار تجاري"
+
+#: src/components/ContactButton.svelte
+#: src/components/ContactButton.svelte
+msgid "Other"
+msgstr "أخرى"
+
+#: src/components/ContactButton.svelte
+#: src/components/ContactButton.svelte
+msgid "Contact"
+msgstr "تواصل"
+
+#: src/components/ContactButton.svelte
+msgid "Could not open your email app. Copy the address above to send an email."
+msgstr "تعذر فتح تطبيق البريد الإلكتروني. انسخ العنوان أعلاه لإرسال رسالة."
+
+#~ msgid "Choose a topic to open your email app."
+#~ msgstr "اختر موضوعًا لفتح تطبيق البريد الإلكتروني."
+
+#~ msgid "Bug"
+#~ msgstr ""
+
+#~ msgid "Account"
+#~ msgstr ""
+
+#~ msgid "Business"
+#~ msgstr ""

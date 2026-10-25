@@ -1236,6 +1236,7 @@ msgid "Color themes"
 msgstr "Kleurthema’s"
 
 #: src/components/AddAccountDialog.svelte
+#: src/components/ContactButton.svelte
 #: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
@@ -1919,6 +1920,7 @@ msgid "Queues pause when offline and resume when the connection returns."
 msgstr "Wachtrijen pauzeren offline en gaan verder zodra de verbinding terug is."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/FeaturesCard.svelte
 msgid "How to use"
 msgstr "Gebruiksaanwijzing"
 
@@ -2179,7 +2181,9 @@ msgstr "{0} berichten opgehaald."
 msgid "Fetched {0} posts. No more posts are available."
 msgstr "{0} berichten opgehaald. Er zijn geen verdere berichten beschikbaar."
 
+#. 0: incompleteFetchedPost + 1
 #. 0: number(a)
+#: src/App.svelte
 #: src/components/LogMessage.svelte
 msgid "Add text to fetched post {0} before posting"
 msgstr "Voeg tekst toe aan opgehaald bericht {0} voordat je het plaatst"
@@ -2394,11 +2398,56 @@ msgstr "Dit verwijdert de Facebook-aanmelding, groepen, concepten, afbeeldingen,
 msgid "Deleting…"
 msgstr "Verwijderen…"
 
-#: src/components/FeaturesCard.svelte
-msgid "<0/> How to use"
-msgstr "<0/> Gebruiksaanwijzing"
+#~ msgid "<0/> How to use"
+#~ msgstr "<0/> Gebruiksaanwijzing"
 
 #: src/components/QueueReview.svelte
 #: src/components/QueueReview.svelte
 msgid "Review your queue"
 msgstr "Controleer je wachtrij"
+
+#: src/components/ContactButton.svelte
+msgid "Question"
+msgstr "Vraag"
+
+#: src/components/ContactButton.svelte
+msgid "Feedback"
+msgstr "Feedback"
+
+#: src/components/ContactButton.svelte
+msgid "Bug report"
+msgstr "Bug melden"
+
+#: src/components/ContactButton.svelte
+msgid "Account help"
+msgstr "Hulp met account"
+
+#: src/components/ContactButton.svelte
+msgid "Business inquiry"
+msgstr "Zakelijke vraag"
+
+#: src/components/ContactButton.svelte
+#: src/components/ContactButton.svelte
+msgid "Other"
+msgstr "Overig"
+
+#: src/components/ContactButton.svelte
+#: src/components/ContactButton.svelte
+msgid "Contact"
+msgstr "Contact"
+
+#: src/components/ContactButton.svelte
+msgid "Could not open your email app. Copy the address above to send an email."
+msgstr "Je e-mailapp kon niet worden geopend. Kopieer het bovenstaande adres om een e-mail te sturen."
+
+#~ msgid "Choose a topic to open your email app."
+#~ msgstr "Kies een onderwerp om je e-mailapp te openen."
+
+#~ msgid "Bug"
+#~ msgstr ""
+
+#~ msgid "Account"
+#~ msgstr ""
+
+#~ msgid "Business"
+#~ msgstr ""

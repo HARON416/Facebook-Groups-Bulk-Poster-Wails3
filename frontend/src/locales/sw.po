@@ -1236,6 +1236,7 @@ msgid "Color themes"
 msgstr "Mandhari ya rangi"
 
 #: src/components/AddAccountDialog.svelte
+#: src/components/ContactButton.svelte
 #: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
@@ -1919,6 +1920,7 @@ msgid "Queues pause when offline and resume when the connection returns."
 msgstr "Foleni husitishwa bila mtandao na kuendelea muunganisho unaporudi."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/FeaturesCard.svelte
 msgid "How to use"
 msgstr "Jinsi ya kutumia"
 
@@ -2179,7 +2181,9 @@ msgstr "Yameletwa machapisho {0}."
 msgid "Fetched {0} posts. No more posts are available."
 msgstr "Yameletwa machapisho {0}. Hakuna machapisho mengine yanayopatikana."
 
+#. 0: incompleteFetchedPost + 1
 #. 0: number(a)
+#: src/App.svelte
 #: src/components/LogMessage.svelte
 msgid "Add text to fetched post {0} before posting"
 msgstr "Ongeza maandishi kwenye chapisho lililoletwa {0} kabla ya kuchapisha"
@@ -2394,11 +2398,56 @@ msgstr "Hii inafuta kabisa kuingia kwa Facebook, vikundi, rasimu, picha, mipangi
 msgid "Deleting…"
 msgstr "Inafuta…"
 
-#: src/components/FeaturesCard.svelte
-msgid "<0/> How to use"
-msgstr "<0/> Jinsi ya kutumia"
+#~ msgid "<0/> How to use"
+#~ msgstr "<0/> Jinsi ya kutumia"
 
 #: src/components/QueueReview.svelte
 #: src/components/QueueReview.svelte
 msgid "Review your queue"
 msgstr "Kagua foleni yako"
+
+#: src/components/ContactButton.svelte
+msgid "Question"
+msgstr "Swali"
+
+#: src/components/ContactButton.svelte
+msgid "Feedback"
+msgstr "Maoni"
+
+#: src/components/ContactButton.svelte
+msgid "Bug report"
+msgstr "Ripoti hitilafu"
+
+#: src/components/ContactButton.svelte
+msgid "Account help"
+msgstr "Msaada wa akaunti"
+
+#: src/components/ContactButton.svelte
+msgid "Business inquiry"
+msgstr "Swali la biashara"
+
+#: src/components/ContactButton.svelte
+#: src/components/ContactButton.svelte
+msgid "Other"
+msgstr "Nyingine"
+
+#: src/components/ContactButton.svelte
+#: src/components/ContactButton.svelte
+msgid "Contact"
+msgstr "Wasiliana"
+
+#: src/components/ContactButton.svelte
+msgid "Could not open your email app. Copy the address above to send an email."
+msgstr "Imeshindikana kufungua programu yako ya barua pepe. Nakili anwani iliyo juu ili kutuma barua pepe."
+
+#~ msgid "Choose a topic to open your email app."
+#~ msgstr "Chagua mada ili kufungua programu yako ya barua pepe."
+
+#~ msgid "Bug"
+#~ msgstr ""
+
+#~ msgid "Account"
+#~ msgstr ""
+
+#~ msgid "Business"
+#~ msgstr ""

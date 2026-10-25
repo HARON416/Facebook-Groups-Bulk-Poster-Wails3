@@ -1236,6 +1236,7 @@ msgid "Color themes"
 msgstr "Temas de color"
 
 #: src/components/AddAccountDialog.svelte
+#: src/components/ContactButton.svelte
 #: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
@@ -1919,6 +1920,7 @@ msgid "Queues pause when offline and resume when the connection returns."
 msgstr "Las colas se pausan sin conexión y se reanudan cuando vuelve la conexión."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/FeaturesCard.svelte
 msgid "How to use"
 msgstr "Cómo usar"
 
@@ -2179,7 +2181,9 @@ msgstr "Se han obtenido {0} publicaciones."
 msgid "Fetched {0} posts. No more posts are available."
 msgstr "Se han obtenido {0} publicaciones. No hay más publicaciones disponibles."
 
+#. 0: incompleteFetchedPost + 1
 #. 0: number(a)
+#: src/App.svelte
 #: src/components/LogMessage.svelte
 msgid "Add text to fetched post {0} before posting"
 msgstr "Añade texto a la publicación obtenida {0} antes de publicar"
@@ -2394,11 +2398,56 @@ msgstr "Esto elimina permanentemente el inicio de sesión de Facebook, los grupo
 msgid "Deleting…"
 msgstr "Eliminando…"
 
-#: src/components/FeaturesCard.svelte
-msgid "<0/> How to use"
-msgstr "<0/> Cómo usar"
+#~ msgid "<0/> How to use"
+#~ msgstr "<0/> Cómo usar"
 
 #: src/components/QueueReview.svelte
 #: src/components/QueueReview.svelte
 msgid "Review your queue"
 msgstr "Revisa tu cola"
+
+#: src/components/ContactButton.svelte
+msgid "Question"
+msgstr "Pregunta"
+
+#: src/components/ContactButton.svelte
+msgid "Feedback"
+msgstr "Comentarios"
+
+#: src/components/ContactButton.svelte
+msgid "Bug report"
+msgstr "Informar de un error"
+
+#: src/components/ContactButton.svelte
+msgid "Account help"
+msgstr "Ayuda con la cuenta"
+
+#: src/components/ContactButton.svelte
+msgid "Business inquiry"
+msgstr "Consulta comercial"
+
+#: src/components/ContactButton.svelte
+#: src/components/ContactButton.svelte
+msgid "Other"
+msgstr "Otro"
+
+#: src/components/ContactButton.svelte
+#: src/components/ContactButton.svelte
+msgid "Contact"
+msgstr "Contacto"
+
+#: src/components/ContactButton.svelte
+msgid "Could not open your email app. Copy the address above to send an email."
+msgstr "No se pudo abrir tu aplicación de correo. Copia la dirección de arriba para enviar un correo."
+
+#~ msgid "Choose a topic to open your email app."
+#~ msgstr "Elige un tema para abrir tu aplicación de correo."
+
+#~ msgid "Bug"
+#~ msgstr ""
+
+#~ msgid "Account"
+#~ msgstr ""
+
+#~ msgid "Business"
+#~ msgstr ""

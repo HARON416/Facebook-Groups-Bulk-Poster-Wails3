@@ -212,7 +212,7 @@
     gap:2rem;
   }
   .eyebrow {
-    font-size:1rem;
+    font-size: var(--ui-small-size);
     font-weight:650;
     letter-spacing:.13em;
     color:var(--text-muted);
@@ -226,14 +226,14 @@
     max-width:100%;
     align-items:center;
     padding:.7rem 1.2rem;
-    font-size:1.2rem;
+    font-size: var(--ui-small-size);
     color:var(--text-secondary);
   }
   .state-text { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .run-state.running { color:var(--accent); }
   .activity {
     margin-top:1.8rem;
-    font-size:1.2rem;
+    font-size: var(--ui-small-size);
   }
   .progress-label {
     display:flex;
@@ -285,7 +285,7 @@
   }
   .counts span {
     color:var(--text-secondary);
-    font-size:1.2rem;
+    font-size: var(--ui-small-size);
   }
   .counts .published strong {
     color:var(--accent);
@@ -314,14 +314,14 @@
   }
   .current-group {
     margin-top:.5rem;
-    font-size:1.3rem;
+    font-size: var(--ui-body-size);
     line-height:1.5;
     font-weight:600;
     overflow-wrap:anywhere;
   }
   .action-message,.countdown {
     margin-top:.4rem;
-    font-size:1.3rem;
+    font-size: var(--ui-body-size);
     line-height:1.5;
     color:var(--text-secondary);
   }
@@ -338,7 +338,7 @@
     gap:2.4rem;
   }
   .timing span {
-    font-size:1rem;
+    font-size: var(--ui-small-size);
     color:var(--text-secondary);
   }
   .timing strong {
@@ -352,7 +352,7 @@
   header>.error {
     margin-top:1rem;
     color:var(--danger);
-    font-size:1.3rem;
+    font-size: var(--ui-body-size);
   }
   .feed-heading {
     flex-shrink:0;
@@ -367,7 +367,7 @@
     font-weight:var(--ui-title-weight);
   }
   h2 span {
-    font-size:1.1rem;
+    font-size: var(--ui-small-size);
     font-weight:400;
     margin-inline-start:.8rem;
     color:var(--text-muted);
@@ -375,7 +375,7 @@
   .follow {
     min-height:3rem;
     padding:.4rem .9rem;
-    font-size:1.1rem;
+    font-size: var(--ui-small-size);
     color:var(--text-secondary);
     background:transparent;
   }
@@ -419,7 +419,7 @@
     --log-tint: var(--border);
   }
   .severity {
-    font-size: 0.95rem;
+    font-size: var(--ui-small-size);
     letter-spacing: 0.04em;
   }
   .timeline-item::before {
@@ -458,7 +458,7 @@
     display:flex;
     align-items:center;
     gap:1rem;
-    font-size:1.05rem;
+    font-size: var(--ui-small-size);
     color:var(--text-muted);
     font-variant-numeric:tabular-nums;
   }
@@ -467,7 +467,7 @@
     color:var(--log-color);
     background:var(--log-tint);
     border-radius:.3rem;
-    font-size:.95rem;
+    font-size: var(--ui-small-size);
     letter-spacing:.05em;
     font-weight:700;
   }
@@ -484,7 +484,7 @@
   .log-title {
     flex:1;
     min-width:0;
-    font-size:1.3rem;
+    font-size: var(--ui-body-size);
     font-weight:500;
     line-height:1.6;
     overflow-wrap:anywhere;
@@ -498,7 +498,7 @@
     min-height:3.2rem;
     padding:.5rem .8rem;
     color:var(--accent);
-    font-size:1.1rem;
+    font-size: var(--ui-small-size);
   }
   .debug-details {
     margin-top:1rem;
@@ -514,7 +514,7 @@
     gap:1rem;
     padding:.9rem 1.1rem;
     cursor:pointer;
-    font-size:1.1rem;
+    font-size: var(--ui-small-size);
     font-weight:600;
   }
   .debug-details summary::-webkit-details-marker {
@@ -523,7 +523,7 @@
   .debug-details small {
     display:block;
     margin-top:.3rem;
-    font-size:1rem;
+    font-size: var(--ui-small-size);
     font-weight:400;
     color:var(--text-muted);
   }
@@ -542,7 +542,7 @@
   .debug-details>p {
     border-top:1px solid var(--border);
     padding:1.1rem;
-    font-size:1.2rem;
+    font-size: var(--ui-small-size);
     color:var(--text-secondary);
     line-height:1.7;
     overflow-wrap:anywhere;
@@ -551,13 +551,13 @@
   }
   .debug-details>p.technical {
     font-family:ui-monospace,monospace;
-    font-size:1.1rem;
+    font-size: var(--ui-small-size);
   }
   .empty {
     padding:5rem 2rem;
     text-align:center;
     color:var(--text-secondary);
-    font-size:1.3rem;
+    font-size: var(--ui-body-size);
   }
   .empty strong {
     color:var(--text-strong);
@@ -599,7 +599,7 @@
     padding:.5rem .9rem;
   }
   .pagination p,.copy-feedback {
-    font-size:1.1rem;
+    font-size: var(--ui-small-size);
     color:var(--text-secondary);
   }
   .pagination p {
@@ -649,7 +649,7 @@
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:1.2rem;
+    font-size: var(--ui-small-size);
   }
   @media(max-width:900px) {
     .logs-window {
@@ -662,7 +662,7 @@
     .counts span {
       display:block;
       margin-top:.3rem;
-      font-size:1.1rem;
+      font-size: var(--ui-small-size);
     }
     .timing {
       gap:1.4rem;

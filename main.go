@@ -45,6 +45,7 @@ func main() {
 		},
 		Services: []application.Service{
 			application.NewService(profiles),
+			application.NewService(&ContactService{}),
 		},
 		Assets: application.AssetOptions{
 			Handler: application.AssetFileServerFS(assets),

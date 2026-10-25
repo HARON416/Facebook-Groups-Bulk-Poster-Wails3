@@ -1236,6 +1236,7 @@ msgid "Color themes"
 msgstr "Кольорові теми"
 
 #: src/components/AddAccountDialog.svelte
+#: src/components/ContactButton.svelte
 #: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
@@ -1919,6 +1920,7 @@ msgid "Queues pause when offline and resume when the connection returns."
 msgstr "Черги призупиняються без інтернету та продовжуються після відновлення з’єднання."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/FeaturesCard.svelte
 msgid "How to use"
 msgstr "Як користуватися"
 
@@ -2179,7 +2181,9 @@ msgstr "Завантажено дописів: {0}."
 msgid "Fetched {0} posts. No more posts are available."
 msgstr "Завантажено дописів: {0}. Більше доступних дописів немає."
 
+#. 0: incompleteFetchedPost + 1
 #. 0: number(a)
+#: src/App.svelte
 #: src/components/LogMessage.svelte
 msgid "Add text to fetched post {0} before posting"
 msgstr "Додайте текст до завантаженого допису {0} перед публікуванням"
@@ -2394,11 +2398,56 @@ msgstr "Це назавжди видалить вхід у Facebook, групи,
 msgid "Deleting…"
 msgstr "Видалення…"
 
-#: src/components/FeaturesCard.svelte
-msgid "<0/> How to use"
-msgstr "<0/> Як користуватися"
+#~ msgid "<0/> How to use"
+#~ msgstr "<0/> Як користуватися"
 
 #: src/components/QueueReview.svelte
 #: src/components/QueueReview.svelte
 msgid "Review your queue"
 msgstr "Перевірте свою чергу"
+
+#: src/components/ContactButton.svelte
+msgid "Question"
+msgstr "Запитання"
+
+#: src/components/ContactButton.svelte
+msgid "Feedback"
+msgstr "Відгук"
+
+#: src/components/ContactButton.svelte
+msgid "Bug report"
+msgstr "Повідомити про помилку"
+
+#: src/components/ContactButton.svelte
+msgid "Account help"
+msgstr "Допомога з обліковим записом"
+
+#: src/components/ContactButton.svelte
+msgid "Business inquiry"
+msgstr "Діловий запит"
+
+#: src/components/ContactButton.svelte
+#: src/components/ContactButton.svelte
+msgid "Other"
+msgstr "Інше"
+
+#: src/components/ContactButton.svelte
+#: src/components/ContactButton.svelte
+msgid "Contact"
+msgstr "Зв’язатися"
+
+#: src/components/ContactButton.svelte
+msgid "Could not open your email app. Copy the address above to send an email."
+msgstr "Не вдалося відкрити поштовий застосунок. Скопіюйте адресу вище, щоб надіслати листа."
+
+#~ msgid "Choose a topic to open your email app."
+#~ msgstr "Виберіть тему, щоб відкрити поштовий застосунок."
+
+#~ msgid "Bug"
+#~ msgstr ""
+
+#~ msgid "Account"
+#~ msgstr ""
+
+#~ msgid "Business"
+#~ msgstr ""

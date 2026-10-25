@@ -1236,6 +1236,7 @@ msgid "Color themes"
 msgstr "Renk temaları"
 
 #: src/components/AddAccountDialog.svelte
+#: src/components/ContactButton.svelte
 #: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
@@ -1919,6 +1920,7 @@ msgid "Queues pause when offline and resume when the connection returns."
 msgstr "Kuyruklar çevrimdışıyken duraklatılır ve bağlantı geri geldiğinde devam eder."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/FeaturesCard.svelte
 msgid "How to use"
 msgstr "Nasıl kullanılır"
 
@@ -2179,7 +2181,9 @@ msgstr "{0} gönderi alındı."
 msgid "Fetched {0} posts. No more posts are available."
 msgstr "{0} gönderi alındı. Kullanılabilir başka gönderi yok."
 
+#. 0: incompleteFetchedPost + 1
 #. 0: number(a)
+#: src/App.svelte
 #: src/components/LogMessage.svelte
 msgid "Add text to fetched post {0} before posting"
 msgstr "Paylaşmadan önce alınan {0} numaralı gönderiye metin ekleyin"
@@ -2394,11 +2398,56 @@ msgstr "Bu işlem profilin Facebook oturumunu, gruplarını, taslaklarını, gö
 msgid "Deleting…"
 msgstr "Siliniyor…"
 
-#: src/components/FeaturesCard.svelte
-msgid "<0/> How to use"
-msgstr "<0/> Nasıl kullanılır"
+#~ msgid "<0/> How to use"
+#~ msgstr "<0/> Nasıl kullanılır"
 
 #: src/components/QueueReview.svelte
 #: src/components/QueueReview.svelte
 msgid "Review your queue"
 msgstr "Kuyruğunuzu gözden geçirin"
+
+#: src/components/ContactButton.svelte
+msgid "Question"
+msgstr "Soru"
+
+#: src/components/ContactButton.svelte
+msgid "Feedback"
+msgstr "Geri bildirim"
+
+#: src/components/ContactButton.svelte
+msgid "Bug report"
+msgstr "Hata bildirimi"
+
+#: src/components/ContactButton.svelte
+msgid "Account help"
+msgstr "Hesap yardımı"
+
+#: src/components/ContactButton.svelte
+msgid "Business inquiry"
+msgstr "İş talebi"
+
+#: src/components/ContactButton.svelte
+#: src/components/ContactButton.svelte
+msgid "Other"
+msgstr "Diğer"
+
+#: src/components/ContactButton.svelte
+#: src/components/ContactButton.svelte
+msgid "Contact"
+msgstr "İletişim"
+
+#: src/components/ContactButton.svelte
+msgid "Could not open your email app. Copy the address above to send an email."
+msgstr "E-posta uygulamanız açılamadı. E-posta göndermek için yukarıdaki adresi kopyalayın."
+
+#~ msgid "Choose a topic to open your email app."
+#~ msgstr "E-posta uygulamanızı açmak için bir konu seçin."
+
+#~ msgid "Bug"
+#~ msgstr ""
+
+#~ msgid "Account"
+#~ msgstr ""
+
+#~ msgid "Business"
+#~ msgstr ""

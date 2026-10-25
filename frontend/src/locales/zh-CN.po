@@ -1236,6 +1236,7 @@ msgid "Color themes"
 msgstr "配色主题"
 
 #: src/components/AddAccountDialog.svelte
+#: src/components/ContactButton.svelte
 #: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
@@ -1919,6 +1920,7 @@ msgid "Queues pause when offline and resume when the connection returns."
 msgstr "离线时队列会暂停，连接恢复后继续运行。"
 
 #: src/components/FeaturesCard.svelte
+#: src/components/FeaturesCard.svelte
 msgid "How to use"
 msgstr "使用指南"
 
@@ -2179,7 +2181,9 @@ msgstr "已获取 {0} 条帖子。"
 msgid "Fetched {0} posts. No more posts are available."
 msgstr "已获取 {0} 条帖子。没有更多可用的帖子。"
 
+#. 0: incompleteFetchedPost + 1
 #. 0: number(a)
+#: src/App.svelte
 #: src/components/LogMessage.svelte
 msgid "Add text to fetched post {0} before posting"
 msgstr "发布前请为已获取的帖子 {0} 添加文字"
@@ -2394,11 +2398,56 @@ msgstr "这将永久删除此个人资料的 Facebook 登录信息、群组、�
 msgid "Deleting…"
 msgstr "正在删除…"
 
-#: src/components/FeaturesCard.svelte
-msgid "<0/> How to use"
-msgstr "<0/> 使用指南"
+#~ msgid "<0/> How to use"
+#~ msgstr "<0/> 使用指南"
 
 #: src/components/QueueReview.svelte
 #: src/components/QueueReview.svelte
 msgid "Review your queue"
 msgstr "检查发布队列"
+
+#: src/components/ContactButton.svelte
+msgid "Question"
+msgstr "问题"
+
+#: src/components/ContactButton.svelte
+msgid "Feedback"
+msgstr "反馈"
+
+#: src/components/ContactButton.svelte
+msgid "Bug report"
+msgstr "报告错误"
+
+#: src/components/ContactButton.svelte
+msgid "Account help"
+msgstr "账户帮助"
+
+#: src/components/ContactButton.svelte
+msgid "Business inquiry"
+msgstr "商务咨询"
+
+#: src/components/ContactButton.svelte
+#: src/components/ContactButton.svelte
+msgid "Other"
+msgstr "其他"
+
+#: src/components/ContactButton.svelte
+#: src/components/ContactButton.svelte
+msgid "Contact"
+msgstr "联系"
+
+#: src/components/ContactButton.svelte
+msgid "Could not open your email app. Copy the address above to send an email."
+msgstr "无法打开邮件应用。请复制上方地址发送邮件。"
+
+#~ msgid "Choose a topic to open your email app."
+#~ msgstr "选择主题以打开邮件应用。"
+
+#~ msgid "Bug"
+#~ msgstr ""
+
+#~ msgid "Account"
+#~ msgstr ""
+
+#~ msgid "Business"
+#~ msgstr ""

@@ -1236,6 +1236,7 @@ msgid "Color themes"
 msgstr "Цветови теми"
 
 #: src/components/AddAccountDialog.svelte
+#: src/components/ContactButton.svelte
 #: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
@@ -1919,6 +1920,7 @@ msgid "Queues pause when offline and resume when the connection returns."
 msgstr "Опашките се паузират без интернет и продължават при възстановяване на връзката."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/FeaturesCard.svelte
 msgid "How to use"
 msgstr "Как се използва"
 
@@ -2179,7 +2181,9 @@ msgstr "Извлечени публикации: {0}."
 msgid "Fetched {0} posts. No more posts are available."
 msgstr "Извлечени публикации: {0}. Няма повече налични публикации."
 
+#. 0: incompleteFetchedPost + 1
 #. 0: number(a)
+#: src/App.svelte
 #: src/components/LogMessage.svelte
 msgid "Add text to fetched post {0} before posting"
 msgstr "Добавете текст към извлечената публикация {0}, преди да публикувате"
@@ -2394,11 +2398,56 @@ msgstr "Това изтрива завинаги входа във Facebook, г�
 msgid "Deleting…"
 msgstr "Изтриване…"
 
-#: src/components/FeaturesCard.svelte
-msgid "<0/> How to use"
-msgstr "<0/> Как се използва"
+#~ msgid "<0/> How to use"
+#~ msgstr "<0/> Как се използва"
 
 #: src/components/QueueReview.svelte
 #: src/components/QueueReview.svelte
 msgid "Review your queue"
 msgstr "Прегледайте опашката си"
+
+#: src/components/ContactButton.svelte
+msgid "Question"
+msgstr "Въпрос"
+
+#: src/components/ContactButton.svelte
+msgid "Feedback"
+msgstr "Обратна връзка"
+
+#: src/components/ContactButton.svelte
+msgid "Bug report"
+msgstr "Доклад за грешка"
+
+#: src/components/ContactButton.svelte
+msgid "Account help"
+msgstr "Помощ за акаунта"
+
+#: src/components/ContactButton.svelte
+msgid "Business inquiry"
+msgstr "Бизнес запитване"
+
+#: src/components/ContactButton.svelte
+#: src/components/ContactButton.svelte
+msgid "Other"
+msgstr "Друго"
+
+#: src/components/ContactButton.svelte
+#: src/components/ContactButton.svelte
+msgid "Contact"
+msgstr "Контакт"
+
+#: src/components/ContactButton.svelte
+msgid "Could not open your email app. Copy the address above to send an email."
+msgstr "Приложението за имейл не може да се отвори. Копирайте адреса по-горе, за да изпратите имейл."
+
+#~ msgid "Choose a topic to open your email app."
+#~ msgstr "Изберете тема, за да отворите приложението си за имейл."
+
+#~ msgid "Bug"
+#~ msgstr ""
+
+#~ msgid "Account"
+#~ msgstr ""
+
+#~ msgid "Business"
+#~ msgstr ""

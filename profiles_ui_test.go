@@ -494,6 +494,36 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool) {
 		}
 		// Card edits commit on Save, Cancel discards pending changes, and
 		// deletion commits directly without an Undo message.
+		// A blank post anywhere in the import blocks the whole batch. Explain
+		// which post needs text, and clear the blocker as edits repair the batch.
+		for _, postNumber := range []int{2, 1} {
+			page.MustElement(fmt.Sprintf(`[aria-label="Edit post %d"]`, postNumber)).MustClick()
+			eval(`() => { const input=document.querySelector('.fetched-posts textarea'); input.value='  \n '; input.dispatchEvent(new Event('input',{bubbles:true})); document.querySelector('.fetched-posts button[type="submit"]').click(); }`)
+			await(fmt.Sprintf(`() => document.querySelector('button.next').disabled && document.querySelector('button.next').getAttribute('aria-describedby')==='next-blocker' && document.querySelector('#next-blocker')?.textContent==='Add text to fetched post %d before posting'`, postNumber))
+		}
+		if *uiArtifactDir != "" {
+			if err := os.MkdirAll(*uiArtifactDir, 0755); err != nil {
+				t.Fatal(err)
+			}
+			data, err := page.Screenshot(false, &proto.PageCaptureScreenshot{})
+			if err != nil {
+				t.Fatal(err)
+			}
+			if err := os.WriteFile(filepath.Join(*uiArtifactDir, "postika-import-next-blocker.png"), data, 0600); err != nil {
+				t.Fatal(err)
+			}
+		}
+		for _, post := range []struct {
+			number int
+			text   string
+		}{{1, "First fetched post"}, {2, "Second fetched post"}} {
+			page.MustElement(fmt.Sprintf(`[aria-label="Edit post %d"]`, post.number)).MustClick()
+			eval(fmt.Sprintf(`() => { const input=document.querySelector('.fetched-posts textarea'); input.value=%q; input.dispatchEvent(new Event('input',{bubbles:true})); document.querySelector('.fetched-posts button[type="submit"]').click(); }`, post.text))
+			if post.number == 1 {
+				await(`() => document.querySelector('button.next').disabled && document.querySelector('#next-blocker')?.textContent==='Add text to fetched post 2 before posting'`)
+			}
+		}
+		await(`() => !document.querySelector('button.next').disabled && !document.querySelector('#next-blocker') && !document.querySelector('button.next').hasAttribute('aria-describedby')`)
 		page.MustElement(`[aria-label="Edit post 1"]`).MustClick()
 		await(`() => document.activeElement.matches('.fetched-posts textarea')`)
 		eval(`() => { const input=document.querySelector('.fetched-posts textarea'); input.value='Edited fetched post'; input.dispatchEvent(new Event('input',{bubbles:true})); }`)

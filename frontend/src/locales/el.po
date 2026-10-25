@@ -1236,6 +1236,7 @@ msgid "Color themes"
 msgstr "Χρωματικά θέματα"
 
 #: src/components/AddAccountDialog.svelte
+#: src/components/ContactButton.svelte
 #: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
@@ -1919,6 +1920,7 @@ msgid "Queues pause when offline and resume when the connection returns."
 msgstr "Οι ουρές παύουν εκτός σύνδεσης και συνεχίζουν όταν επανέλθει η σύνδεση."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/FeaturesCard.svelte
 msgid "How to use"
 msgstr "Οδηγίες χρήσης"
 
@@ -2179,7 +2181,9 @@ msgstr "Αναρτήσεις που ελήφθησαν: {0}."
 msgid "Fetched {0} posts. No more posts are available."
 msgstr "Αναρτήσεις που ελήφθησαν: {0}. Δεν υπάρχουν άλλες διαθέσιμες αναρτήσεις."
 
+#. 0: incompleteFetchedPost + 1
 #. 0: number(a)
+#: src/App.svelte
 #: src/components/LogMessage.svelte
 msgid "Add text to fetched post {0} before posting"
 msgstr "Προσθέστε κείμενο στη ληφθείσα ανάρτηση {0} πριν τη δημοσίευση"
@@ -2394,11 +2398,56 @@ msgstr "Αυτό διαγράφει οριστικά τη σύνδεση Faceboo
 msgid "Deleting…"
 msgstr "Διαγραφή…"
 
-#: src/components/FeaturesCard.svelte
-msgid "<0/> How to use"
-msgstr "<0/> Οδηγίες χρήσης"
+#~ msgid "<0/> How to use"
+#~ msgstr "<0/> Οδηγίες χρήσης"
 
 #: src/components/QueueReview.svelte
 #: src/components/QueueReview.svelte
 msgid "Review your queue"
 msgstr "Ελέγξτε την ουρά σας"
+
+#: src/components/ContactButton.svelte
+msgid "Question"
+msgstr "Ερώτηση"
+
+#: src/components/ContactButton.svelte
+msgid "Feedback"
+msgstr "Σχόλια"
+
+#: src/components/ContactButton.svelte
+msgid "Bug report"
+msgstr "Αναφορά σφάλματος"
+
+#: src/components/ContactButton.svelte
+msgid "Account help"
+msgstr "Βοήθεια λογαριασμού"
+
+#: src/components/ContactButton.svelte
+msgid "Business inquiry"
+msgstr "Επαγγελματική επικοινωνία"
+
+#: src/components/ContactButton.svelte
+#: src/components/ContactButton.svelte
+msgid "Other"
+msgstr "Άλλο"
+
+#: src/components/ContactButton.svelte
+#: src/components/ContactButton.svelte
+msgid "Contact"
+msgstr "Επικοινωνία"
+
+#: src/components/ContactButton.svelte
+msgid "Could not open your email app. Copy the address above to send an email."
+msgstr "Δεν ήταν δυνατό το άνοιγμα της εφαρμογής email. Αντιγράψτε την παραπάνω διεύθυνση για να στείλετε email."
+
+#~ msgid "Choose a topic to open your email app."
+#~ msgstr "Επιλέξτε θέμα για να ανοίξετε την εφαρμογή email."
+
+#~ msgid "Bug"
+#~ msgstr ""
+
+#~ msgid "Account"
+#~ msgstr ""
+
+#~ msgid "Business"
+#~ msgstr ""

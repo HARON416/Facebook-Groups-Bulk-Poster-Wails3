@@ -42,7 +42,8 @@ From this monorepo, the existing frontend compiler can also build the script:
 
 ## Website themes
 
-The **Themes** button opens the same searchable selection of 189 palettes as
+The header selector shows the palette icon and current theme name, and opens
+the same searchable selection of 189 palettes as
 Postika's desktop app. Use the arrow keys and Enter to select a result, or
 Escape to close the picker. Swatches are rectangular.
 
@@ -62,27 +63,32 @@ preference, persistence, storage failure, and synchronization tests.
 
 ## Screenshots
 
-The illustrations are explicitly labeled placeholders. Replace these images
-with real, sanitized app captures:
+Click a screenshot to open an enlarged image with a floating close button and
+no surrounding title, footer, or panel. Escape, the close
+button, or the backdrop dismisses it and returns focus to the screenshot link.
+Without JavaScript, screenshot links open the original image directly.
+
+The composer, accounts, languages, posting logs, posting intervals, page imports,
+and scheduling use owner-supplied Bunny-hosted screenshots:
 
 | Section | File | Aspect ratio |
 | --- | --- | --- |
-| Composer and groups | `static/screenshots/compose.svg` | 900:650 |
-| Accounts | `static/screenshots/accounts.svg` | 900:650 |
-| Posting logs | `static/screenshots/logs.svg` | 1400:680 |
-| Languages | `static/screenshots/languages.svg` | 900:650 |
-| Scheduling | `static/screenshots/schedule.svg` | 900:650 |
-| Page imports | `static/screenshots/imports.svg` | 900:650 |
-| Automatic updates | `static/screenshots/updates.svg` | 900:650 |
+| Composer and groups | [Bunny-hosted WebP](https://postika-desktop-application.b-cdn.net/Screenshot%20From%202026-10-25%2011-40-59.webp) | 771:829 |
+| Accounts | [Bunny-hosted WebP](https://postika-desktop-application.b-cdn.net/screenshot_highlight_accounts.webp) | 1188:797 |
+| Posting logs | [Bunny-hosted WebP](https://postika-desktop-application.b-cdn.net/Screenshot%20From%202026-10-25%2013-14-06.webp) | 1188:797 |
+| Languages | [Bunny-hosted WebP](https://postika-desktop-application.b-cdn.net/screenshot_highlight_languages.webp) | 1188:797 |
+| Posting intervals | [Bunny-hosted WebP](https://postika-desktop-application.b-cdn.net/screenshot_highlight_interval.webp) | 1188:797 |
+| Page imports | [Bunny-hosted WebP](https://postika-desktop-application.b-cdn.net/Screenshot%20From%202026-10-25%2013-31-04.webp) | 1188:797 |
+| Scheduling | [Bunny-hosted WebP](https://postika-desktop-application.b-cdn.net/screenshot_highlight_schedule.webp) | 1188:797 |
 
-For PNG/WebP captures, update the corresponding image paths in
-`templates/home.html`, preserve the intrinsic dimensions/aspect ratio, and
-remove the placeholder captions. The composer and updates use split screenshot-and-copy sections on desktop;
-accounts/languages and scheduling/imports form paired rows, with posting logs
-spanning the page. All sections stack screenshot first on phones. Screenshot frames contain
-the complete image without cropping. The site uses white, black, and the
-desktop app's light-theme teal (`#087f75`, hover `#096d65`). No personal account
-names or actual customer content should appear in public screenshots.
+When replacing screenshots, update the image and its original-image link in
+`templates/home.html` and keep the real intrinsic dimensions. Each feature has
+one full-width card in a vertical flow: copy on the left, image on the right on
+desktop; copy followed by the image on phones. Screenshots have no visible
+captions, colored frames, or padded wrappers, and remain clickable for an
+image-only modal preview. Use owner-approved captures for publication. The
+image policy permits the supplied Bunny hostname; other external image hosts
+require an explicit policy entry.
 
 ## Downloads and releases
 

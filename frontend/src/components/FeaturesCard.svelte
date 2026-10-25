@@ -28,7 +28,6 @@
 </script>
 
 <button class="features-trigger" type="button" bind:this={trigger} data-features-card aria-haspopup="dialog" aria-expanded={expanded} aria-controls="features-dialog" onclick={open}>
-  <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" /><path d="M9.5 9a2.5 2.5 0 0 1 5 0c0 2-2.5 2-2.5 4m0 3h.01" /></svg>
   How to use
 </button>
 
@@ -95,13 +94,13 @@
 </dialog>
 
 <style>
-  .features-trigger { --wails-draggable: no-drag; display: inline-flex; align-items: center; gap: .6rem; flex-shrink: 0; padding: .6rem .9rem; margin-inline: .4rem; border: 1px solid var(--border-accent); border-radius: .6rem; background: var(--accent-faint); color: var(--accent); font-size: 1.2rem; cursor: pointer; white-space: nowrap; }
-  .features-trigger:hover, .features-trigger[aria-expanded=true] { background: var(--surface-active); border-color: var(--accent); }
+  .features-trigger { --wails-draggable: no-drag; display: inline-flex; align-items: center; flex-shrink: 0; min-height: 3.2rem; padding: .6rem 1rem; border: 0; border-radius: .4rem; background: transparent; color: var(--text-secondary); font-size: var(--ui-small-size); font-weight: 400; cursor: pointer; white-space: nowrap; }
+  .features-trigger:hover, .features-trigger[aria-expanded=true] { background: var(--surface-hover); color: var(--text); }
   dialog { width: min(88rem, calc(100vw - 3.2rem)); max-height: min(86rem, calc(100dvh - 3.2rem)); overflow: hidden; }
   dialog[open] { display: flex; flex-direction: column; }
 
   .view-switch { display: flex; flex-shrink: 0; gap: .6rem; padding: 1.2rem var(--ui-space); border-bottom: 1px solid var(--border); }
-  .view-switch button { padding: .7rem 1.2rem; border: 1px solid transparent; border-radius: .6rem; background: transparent; color: var(--text-secondary); font-size: 1.3rem; cursor: pointer; }
+  .view-switch button { padding: .7rem 1.2rem; border: 1px solid transparent; border-radius: .6rem; background: transparent; color: var(--text-secondary); font-size: var(--ui-body-size); cursor: pointer; }
   .view-switch button:hover { background: var(--surface-hover); color: var(--text); }
   .view-switch button[aria-pressed=true] { border-color: var(--border-accent); background: var(--accent-faint); color: var(--accent); }
   .feature-content { min-height: 0; padding: var(--ui-space); overflow-y: auto; overscroll-behavior: contain; font-size: var(--ui-body-size); line-height: 1.6; overflow-wrap: anywhere; }
@@ -112,7 +111,7 @@
   li { position: relative; padding-inline-start: 1.8rem; margin-block: .6rem; }
   li::before { content: '–'; position: absolute; inset-inline-start: 0; color: var(--accent); }
   strong { color: var(--text-strong); font-weight: 600; }
-  .session-note { margin-top: 2.4rem; padding-top: var(--ui-space); border-top: 1px solid var(--border); color: var(--text-secondary); font-size: 1.2rem; }
+  .session-note { margin-top: 2.4rem; padding-top: var(--ui-space); border-top: 1px solid var(--border); color: var(--text-secondary); font-size: var(--ui-small-size); }
   .features-trigger:focus-visible, .view-switch button:focus-visible, .feature-content:focus-visible { outline: 2px solid var(--focus); outline-offset: -3px; }
   @media (max-width: 600px) {
     dialog { width: calc(100vw - 2rem); max-height: calc(100dvh - 2rem); border-radius: 1rem; }

@@ -136,7 +136,7 @@
   </form>
 </dialog>
 <style>
-  .facebook-page-option { justify-self: start; padding: 0; border: 0; background: transparent; color: var(--accent); font-size: 1.2rem; font-weight: 700; line-height: 1.5; text-align: start; text-decoration: underline; text-underline-offset: .2rem; cursor: pointer; }
+  .facebook-page-option { justify-self: start; padding: 0; border: 0; background: transparent; color: var(--accent); font-size: var(--ui-small-size); font-weight: 700; line-height: 1.5; text-align: start; text-decoration: underline; text-underline-offset: .2rem; cursor: pointer; }
   .facebook-page-option:hover { color: var(--accent-hover); }
   dialog { width: min(48rem, calc(100vw - 3.2rem)); max-height: calc(100dvh - 3.2rem); overflow-y: auto; overscroll-behavior: contain; }
   svg { width: 1.6rem; height: 1.6rem; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
@@ -150,7 +150,7 @@
   label { color: var(--text); font-size: var(--ui-body-size); font-weight: var(--ui-label-weight); }
   .number-control { display: flex; align-items: center; overflow: hidden; border: 1px solid var(--border-strong); border-radius: .6rem; }
   .number-control input { width: 100%; min-width: 0; padding: 1.2rem; border: 0; background: transparent; color: var(--text); font-size: var(--ui-body-size); }
-  .number-control > span { padding-inline-end: 1.2rem; font-size: 1.2rem; color: var(--text-muted); font-weight: 400; }
+  .number-control > span { padding-inline-end: 1.2rem; font-size: var(--ui-small-size); color: var(--text-muted); font-weight: 400; }
   .facebook-page-option:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
   .number-control:focus-within { outline: 2px solid var(--focus); outline-offset: 2px; }
   .number-control input:focus { outline: none; }

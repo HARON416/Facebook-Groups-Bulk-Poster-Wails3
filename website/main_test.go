@@ -38,3 +38,26 @@ func TestPublicPagesAndAssets(t *testing.T) {
 		t.Fatalf("unknown page status %d", response.Code)
 	}
 }
+
+func TestDownloadGroups(t *testing.T) {
+	// Release metadata may interleave platforms. Keep each format with its OS.
+	release := Release{Downloads: []Download{
+		{OS: "linux", Name: "AppImage", URL: "https://example.com/postika.AppImage"},
+		{OS: "windows", Name: "Windows installer", URL: "https://example.com/postika.exe"},
+		{OS: "linux", Name: "Debian / Ubuntu"},
+	}}
+	response := httptest.NewRecorder()
+	newHandler(release).ServeHTTP(response, httptest.NewRequest("GET", "/downloads", nil))
+	body := response.Body.String()
+	if strings.Count(body, `id="platform-linux"`) != 1 || strings.Contains(body, `id="platform-macos"`) {
+		t.Fatal("expected one Linux group and no empty macOS group")
+	}
+	for _, name := range []string{"AppImage", "Windows installer", "Debian / Ubuntu"} {
+		if strings.Count(body, "<h3>"+name+"</h3>") != 1 {
+			t.Fatalf("format %q missing or repeated", name)
+		}
+	}
+	if !strings.Contains(body, `href="https://example.com/postika.exe" aria-label="Download Windows installer"`) || !strings.Contains(body, "Coming soon") {
+		t.Fatal("expected configured download links and an unavailable format")
+	}
+}

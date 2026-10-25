@@ -1236,6 +1236,7 @@ msgid "Color themes"
 msgstr "रंग थीम"
 
 #: src/components/AddAccountDialog.svelte
+#: src/components/ContactButton.svelte
 #: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
@@ -1919,6 +1920,7 @@ msgid "Queues pause when offline and resume when the connection returns."
 msgstr "इंटरनेट नसताना रांगा थांबतात आणि जोडणी परत आल्यावर सुरू होतात."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/FeaturesCard.svelte
 msgid "How to use"
 msgstr "कसे वापरावे"
 
@@ -2179,7 +2181,9 @@ msgstr "आणलेल्या पोस्ट: {0}."
 msgid "Fetched {0} posts. No more posts are available."
 msgstr "आणलेल्या पोस्ट: {0}. आणखी पोस्ट उपलब्ध नाहीत."
 
+#. 0: incompleteFetchedPost + 1
 #. 0: number(a)
+#: src/App.svelte
 #: src/components/LogMessage.svelte
 msgid "Add text to fetched post {0} before posting"
 msgstr "पोस्ट करण्यापूर्वी आणलेल्या पोस्ट {0} मध्ये मजकूर जोडा"
@@ -2394,11 +2398,56 @@ msgstr "यामुळे या प्रोफाइलचे Facebook लॉ
 msgid "Deleting…"
 msgstr "हटवत आहे…"
 
-#: src/components/FeaturesCard.svelte
-msgid "<0/> How to use"
-msgstr "<0/> कसे वापरावे"
+#~ msgid "<0/> How to use"
+#~ msgstr "<0/> कसे वापरावे"
 
 #: src/components/QueueReview.svelte
 #: src/components/QueueReview.svelte
 msgid "Review your queue"
 msgstr "तुमच्या रांगेचे पुनरावलोकन करा"
+
+#: src/components/ContactButton.svelte
+msgid "Question"
+msgstr "प्रश्न"
+
+#: src/components/ContactButton.svelte
+msgid "Feedback"
+msgstr "अभिप्राय"
+
+#: src/components/ContactButton.svelte
+msgid "Bug report"
+msgstr "त्रुटी नोंदवा"
+
+#: src/components/ContactButton.svelte
+msgid "Account help"
+msgstr "खात्यासाठी मदत"
+
+#: src/components/ContactButton.svelte
+msgid "Business inquiry"
+msgstr "व्यावसायिक चौकशी"
+
+#: src/components/ContactButton.svelte
+#: src/components/ContactButton.svelte
+msgid "Other"
+msgstr "इतर"
+
+#: src/components/ContactButton.svelte
+#: src/components/ContactButton.svelte
+msgid "Contact"
+msgstr "संपर्क"
+
+#: src/components/ContactButton.svelte
+msgid "Could not open your email app. Copy the address above to send an email."
+msgstr "तुमचे ईमेल ॲप उघडता आले नाही. ईमेल पाठवण्यासाठी वरील पत्ता कॉपी करा."
+
+#~ msgid "Choose a topic to open your email app."
+#~ msgstr "तुमचे ईमेल ॲप उघडण्यासाठी विषय निवडा."
+
+#~ msgid "Bug"
+#~ msgstr ""
+
+#~ msgid "Account"
+#~ msgstr ""
+
+#~ msgid "Business"
+#~ msgstr ""

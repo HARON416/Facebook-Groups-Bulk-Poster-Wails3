@@ -58,10 +58,10 @@
   section { position: relative; padding-inline-start: 4rem; margin-top: 2.8rem; }
   .introduction { color: var(--text-secondary); }
   aside { margin-top: 2.8rem; padding-top: 2rem; border-top: 1px solid var(--border); }
-  section::before { counter-increment: step; content: counter(step, decimal-leading-zero); position: absolute; inset-inline-start: 0; top: .1rem; color: var(--accent); font-size: 1.2rem; font-weight: 600; font-variant-numeric: tabular-nums; }
-  h2 { margin-bottom: .8rem; color: var(--text-strong); font-size: 1.5rem; font-weight: 600; }
-  h3 { margin-top: 1.6rem; margin-bottom: .6rem; color: var(--text-secondary); font-size: 1.3rem; font-weight: 600; }
+  section::before { counter-increment: step; content: counter(step, decimal-leading-zero); position: absolute; inset-inline-start: 0; top: .1rem; color: var(--accent); font-size: var(--ui-small-size); font-weight: var(--ui-title-weight); font-variant-numeric: tabular-nums; }
+  h2 { margin-bottom: .8rem; color: var(--text-strong); font-size: var(--ui-title-size); font-weight: var(--ui-title-weight); }
+  h3 { margin-top: 1.6rem; margin-bottom: .6rem; color: var(--text-secondary); font-size: var(--ui-body-size); font-weight: var(--ui-title-weight); }
   p + p { margin-top: .8rem; }
-  .tip { color: var(--text-muted); padding-inline-start: 1.2rem; border-inline-start: 2px solid var(--border-accent); font-size: 1.3rem; }
+  .tip { color: var(--text-muted); padding-inline-start: 1.2rem; border-inline-start: 2px solid var(--border-accent); font-size: var(--ui-body-size); }
   @media (max-width: 600px) { section { padding-inline-start: 3rem; } }
 </style>

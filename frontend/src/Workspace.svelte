@@ -7,7 +7,7 @@
   import UpdateButton from './components/UpdateButton.svelte';
   import LanguageMenu from './components/LanguageMenu.svelte';
   import ThemeMenu from './components/ThemeMenu.svelte';
-  import WhatsAppButton from './components/WhatsAppButton.svelte';
+  import ContactButton from './components/ContactButton.svelte';
   import { createAccountService } from './lib/accounts';
   import { accountLabel } from './components/AccountLabel.svelte';
   import ConnectivityToast from './components/ConnectivityToast.svelte';
@@ -91,7 +91,7 @@
       <button type="button" disabled={busy || !selected} onclick={() => openPostingLogs()}>Posting logs</button>
       <LanguageMenu />
       <ThemeMenu />
-      <WhatsAppButton onerror={(message) => { error = message; }} />
+      <ContactButton />
     </fieldset>
     </nav>
     <WindowControls bind:this={windowControls} onerror={(message) => { error = message; }} />
@@ -126,7 +126,7 @@
   .background-jobs button:focus-visible, .app-menu button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
   .account-workspace { flex: 1; min-height: 0; overflow: hidden; overflow: clip; }
   .account-workspace[hidden] { display: none; }
-  .profile-error, .loading { padding: 1.2rem 2.4rem; font-size: 1.4rem; color: var(--danger); }
+  .profile-error, .loading { padding: 1.2rem 2.4rem; font-size: var(--ui-body-size); color: var(--danger); }
   .background-jobs { display: flex; align-items: center; flex-wrap: wrap; gap: .8rem; padding: .8rem 2.4rem; font-size: 1.2rem; background: var(--surface-active); color: var(--text-strong); }
   @media (max-width: 1000px) {
     .profile-control :global(.account-dropdown) { width: 17rem; }

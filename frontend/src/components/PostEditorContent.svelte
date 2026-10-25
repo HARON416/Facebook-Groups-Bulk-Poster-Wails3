@@ -77,7 +77,7 @@
   .toolbar { display: flex; align-items: center; flex-wrap: wrap; gap: .8rem; padding: .8rem 1rem; border-bottom: 1px solid var(--border); background: var(--surface-subtle); }
   .formatting { display: flex; align-items: center; gap: .4rem; }
   .formatting { flex-wrap: wrap; }
-  button { min-height: 3.4rem; border: 0; border-radius: .5rem; background: transparent; color: var(--text-secondary); font-size: 1.3rem; cursor: pointer; padding: .6rem 1rem; }
+  button { min-height: 3.4rem; border: 0; border-radius: .5rem; background: transparent; color: var(--text-secondary); font-size: var(--ui-body-size); cursor: pointer; padding: .6rem 1rem; }
   .formatting button { display: inline-flex; align-items: center; justify-content: center; min-width: 3.4rem; font-size: 1.7rem; }
   button:hover:not(:disabled) { background: var(--surface-hover); }
   button[aria-pressed=true] { background: var(--surface-active); color: var(--accent); }
@@ -87,5 +87,5 @@
   .writing { position: relative; }
   :global(.post-editable) { min-height: 22rem; padding: 1.8rem; outline: none; }
   .placeholder { position: absolute; inset-inline-start: 1.8rem; top: 1.8rem; color: var(--text-muted); font-size: 1.5rem; pointer-events: none; }
-  .editor-footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; padding: 1.2rem 1.8rem; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 1.1rem; }
+  .editor-footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; padding: 1.2rem 1.8rem; border-top: 1px solid var(--border); color: var(--text-muted); font-size: var(--ui-small-size); }
 </style>

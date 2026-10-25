@@ -61,8 +61,9 @@ Group search is built into Postika and requires no separate server or executable
 - **Signing deferred:** Windows and Linux installers are intentionally unsigned
   for this release. Package-signing tasks are optional and are not invoked by
   the default release packaging commands.
-- **Release automation:** native release CI still needs to be configured.
-  Set up native build jobs before relying on automated builds.
+- **Release automation:** `.github/workflows/distribution.yml` defines native
+  package jobs for all four targets. Its first remote build and native install
+  tests still need to run before relying on the generated packages.
 - **Updates:** the app checks signed website feeds ten seconds after launch and
   every minute while open, automatically downloads verified payloads, and offers
   Restart to update. All supported formats have an installation path; native
@@ -107,6 +108,54 @@ for obfuscation, use a regular Go 1.26.2 installation outside the module cache
 and put its bin directory on PATH (with GOTOOLCHAIN=local).
 
 ## Packaging commands
+
+### One-command build for all desktop targets
+
+```sh
+make release-all
+```
+
+One-time setup: install and authenticate GitHub CLI with `gh auth login`, enable
+Actions, and merge `.github/workflows/distribution.yml` into the default branch.
+Commit and push the application changes you want to distribute. The launcher
+rejects a dirty checkout and a remote branch whose commit differs from HEAD.
+It never commits, pushes, publishes, or installs an application for you.
+
+The workflow builds these targets independently on native GitHub-hosted runners:
+
+| Target | Packaged artifacts |
+| --- | --- |
+| Linux amd64 | AppImage, DEB, RPM, Arch package, raw executable |
+| Windows amd64 | Per-user NSIS EXE, portable ZIP, raw updater EXE |
+| macOS arm64 | DMG and app-bundle ZIP |
+| macOS amd64 | DMG and app-bundle ZIP |
+
+Each job installs the Go version from `go.mod`, Node 24, and the Wails CLI version
+matching the Go dependency, then checks the frontend and runs Go and release
+script tests before packaging. It stages versioned filenames with `LICENSE.txt`
+and `SHA256SUMS`. The app bundle is retained locally by the staging script;
+CI transports it inside its app ZIP to preserve file modes and symlinks.
+The current package metadata version is used; this command does not bump it.
+Keep all OS metadata versions synchronized before a new release.
+
+The launcher watches the particular run it requested, checks that it builds
+the intended commit, and downloads only after all jobs succeed. Downloaded
+artifacts land in `bin/releases/ci-<run-id>/postika-<target>/`. Access follows
+the repository's Actions access rules; no public release is created. CI artifacts
+expire after 30 days; copy verified releases to your permanent hosting.
+
+This covers the current unsigned distribution set. MSIX and universal Mac
+bundles are separate optional targets. Native install/login/update testing,
+updater manifest signing, Homebrew tap publication, website metadata, and hosting
+uploads remain separate release steps. No publisher keys are required by this
+workflow; macOS retains its existing ad-hoc signature.
+
+Preview without dispatching: `node scripts/release-all.mjs --plan`.
+For a single target on its native host, run, for example,
+`node scripts/package-release.mjs linux-amd64`. Existing staged version/target
+directories are preserved; move one before deliberately rebuilding it.
+
+### Individual packaging commands
 
 Run from the project root with the pinned `wails3` executable on PATH. On this
 checkout it is `.tools/bin/wails3`. Signing commands require configured identities.

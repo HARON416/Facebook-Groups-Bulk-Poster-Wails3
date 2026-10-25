@@ -132,8 +132,9 @@
   const loginInfo = $derived(loginLabels[loginState] ?? loginLabels.checking);
   let stepHeading = $state<HTMLHeadingElement>();
   const groupsBusy = $derived(openingGroups || groupsLoadState === 'loading' || (groupsLoadState === 'waiting' && loginState !== 'browser_closed'));
+  const incompleteFetchedPost = $derived(fetchedPosts?.findIndex(post => !post.text.trim()) ?? -1);
   const hasCompletePost = $derived(fetchedPosts !== null
-    ? fetchedPosts.length > 0 && fetchedPosts.every(post => post.text.trim().length > 0)
+    ? fetchedPosts.length > 0 && incompleteFetchedPost === -1
     : body.trim().length > 0 && images.length > 0 && images.every(image => !image.unavailable));
   const canContinue = $derived(draftReady && (currentStep === 0
     ? hasCompletePost
@@ -473,6 +474,11 @@
   </main>
 
   <footer class="step-actions">
+        {#if currentStep === 0 && draftReady && incompleteFetchedPost !== -1}
+        <p id="next-blocker" class="next-blocker" role="status"><LocalizedFeedback message={`Add text to fetched post ${incompleteFetchedPost + 1} before posting`} /></p>
+        {:else if currentStep < steps.length - 1 && postingActive && postMessage}
+        <p id="next-blocker" class="next-blocker" role="status"><LocalizedFeedback message={postMessage} /></p>
+        {/if}
         {#if currentStep === steps.length - 1 && scheduleOpen && !postingActive}
         <button type="button" class="previous action-button action-button--secondary" onclick={() => { scheduleOpen = false; }}>Cancel</button>
         <button type="submit" form="schedule-form" class="post action-button action-button--primary" disabled={groupsBusy || !scheduleValid || selectedGroupIds.length === 0 || !hasCompletePost || !validSettings}>Confirm schedule</button>
@@ -482,7 +488,7 @@
           Previous
         </button>
         {#if currentStep < steps.length - 1}
-        <button type="button" class="next action-button action-button--primary" disabled={!canContinue || postingActive || (groupsBusy && currentStep === 1)} onclick={() => navigate(currentStep + 1)}>
+        <button type="button" class="next action-button action-button--primary" aria-describedby={currentStep === 0 && incompleteFetchedPost !== -1 || postingActive && postMessage ? 'next-blocker' : undefined} disabled={!canContinue || postingActive || (groupsBusy && currentStep === 1)} onclick={() => navigate(currentStep + 1)}>
           Next
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg>
         </button>
@@ -535,14 +541,15 @@
   }
 
   .step-heading { margin-bottom: 3rem; }
-  .eyebrow { margin-bottom: 0.8rem; color: var(--accent); font-size: 1rem; font-weight: 650; letter-spacing: 0.12rem; }
+  .eyebrow { margin-bottom: 0.8rem; color: var(--accent); font-size: var(--ui-small-size); font-weight: var(--ui-label-weight); letter-spacing: normal; }
   h1:focus { outline: none; }
   .step-intro { margin-top: 0.9rem; color: var(--text-muted); font-size: 1.3rem; line-height: 1.6; }
-  .step-actions { display: flex; flex: 0 0 8rem; align-items: center; justify-content: flex-end; width: 100%; max-width: 72rem; gap: 1rem; margin: 0 auto; border-top: 0.1rem solid var(--border); }
+  .step-actions { display: flex; flex: 0 0 auto; min-height: 8rem; flex-wrap: wrap; padding-block: 1rem; align-items: center; justify-content: flex-end; width: 100%; max-width: 72rem; gap: 1rem; margin: 0 auto; border-top: 0.1rem solid var(--border); }
+  .next-blocker { flex: 1 1 25rem; margin: 0; color: var(--text); font-size: var(--ui-small-size); line-height: 1.5; overflow-wrap: anywhere; }
   .step-actions svg { width: 1.5rem; height: 1.5rem; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
   :global(html[dir="rtl"]) .step-actions svg { transform: scaleX(-1); }
   .empty-step { padding: 3.2rem 0; }
-  .empty-step h2 { margin-bottom: 1rem; font-size: 1.6rem; font-weight: 550; }
+  .empty-step h2 { margin-bottom: 1rem; font-size: var(--ui-title-size); font-weight: var(--ui-title-weight); }
   .empty-step p { color: var(--text-muted); font-size: 1.3rem; line-height: 1.7; }
   .groups-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 1.6rem; padding-bottom: 1.6rem; border-bottom: 0.1rem solid var(--border); }
   .groups-toolbar h2 { color: var(--text-strong); font-size: var(--ui-title-size); font-weight: var(--ui-title-weight); }

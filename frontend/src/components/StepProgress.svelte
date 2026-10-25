@@ -180,8 +180,8 @@
     width: 100%;
     padding: 0 0.8rem;
     color: var(--text-strong);
-    font-size: 1.5rem;
-    font-weight: 650;
+    font-size: var(--ui-title-size);
+    font-weight: var(--ui-title-weight);
     line-height: 1.5;
   }
 
@@ -190,7 +190,7 @@
     margin-top: 0.5rem;
     padding: 0 0.8rem;
     color: var(--text-muted);
-    font-size: 1.3rem;
+    font-size: var(--ui-body-size);
     line-height: 1.5;
   }
 
@@ -210,11 +210,11 @@
     }
 
     .step-title {
-      font-size: 1.3rem;
+      font-size: var(--ui-body-size);
     }
 
     .step-description {
-      font-size: 1.1rem;
+      font-size: var(--ui-small-size);
     }
   }
 </style>

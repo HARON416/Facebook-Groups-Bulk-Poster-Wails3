@@ -224,6 +224,24 @@ wails3 build GOOS=windows GOARCH=amd64     # Windows executable from Linux/macOS
 `make build` and `make package-all` provide the corresponding shortcuts.
 Outputs are written to `bin/`.
 
+For all four release targets with one command, after committing and pushing:
+
+```sh
+make release-all
+```
+
+This starts `.github/workflows/distribution.yml` on native Linux, Windows,
+Apple Silicon, and Intel Mac runners, waits for completion, and downloads the
+versioned packages, licenses, and SHA-256 checksums into
+`bin/releases/ci-<run-id>/`. Install and authenticate GitHub CLI (`gh auth login`)
+first. The workflow must already exist on the repository's default branch, and
+the selected remote branch must match your local commit. It builds artifacts;
+it does not publish a GitHub release, upload to the website, or generate updater
+feeds. MSIX and universal Mac bundles remain separate optional targets.
+
+Use `node scripts/release-all.mjs --plan` to see the plan without starting a run.
+The complete setup and limitations are in [Releasing](docs/RELEASING.md#one-command-build-for-all-desktop-targets).
+
 | Platform | Packaging task | Outputs |
 | --- | --- | --- |
 | Windows x64 | `wails3 task windows:package:all ARCH=amd64` | Per-user NSIS installer and portable ZIP |

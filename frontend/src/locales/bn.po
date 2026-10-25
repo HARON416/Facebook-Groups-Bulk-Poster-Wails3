@@ -1236,6 +1236,7 @@ msgid "Color themes"
 msgstr "রঙের থিম"
 
 #: src/components/AddAccountDialog.svelte
+#: src/components/ContactButton.svelte
 #: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
@@ -1919,6 +1920,7 @@ msgid "Queues pause when offline and resume when the connection returns."
 msgstr "ইন্টারনেট না থাকলে সারি থামে এবং সংযোগ ফিরলে আবার চলে।"
 
 #: src/components/FeaturesCard.svelte
+#: src/components/FeaturesCard.svelte
 msgid "How to use"
 msgstr "ব্যবহারের নির্দেশনা"
 
@@ -2179,7 +2181,9 @@ msgstr "{0}টি পোস্ট আনা হয়েছে।"
 msgid "Fetched {0} posts. No more posts are available."
 msgstr "{0}টি পোস্ট আনা হয়েছে। আর কোনো পোস্ট পাওয়া যাচ্ছে না।"
 
+#. 0: incompleteFetchedPost + 1
 #. 0: number(a)
+#: src/App.svelte
 #: src/components/LogMessage.svelte
 msgid "Add text to fetched post {0} before posting"
 msgstr "পোস্ট করার আগে আনা পোস্ট {0}-এ লেখা যোগ করুন"
@@ -2394,11 +2398,56 @@ msgstr "এতে এই প্রোফাইলের Facebook লগইন, �
 msgid "Deleting…"
 msgstr "মুছে ফেলা হচ্ছে…"
 
-#: src/components/FeaturesCard.svelte
-msgid "<0/> How to use"
-msgstr "<0/> ব্যবহারের নির্দেশনা"
+#~ msgid "<0/> How to use"
+#~ msgstr "<0/> ব্যবহারের নির্দেশনা"
 
 #: src/components/QueueReview.svelte
 #: src/components/QueueReview.svelte
 msgid "Review your queue"
 msgstr "আপনার সারি পর্যালোচনা করুন"
+
+#: src/components/ContactButton.svelte
+msgid "Question"
+msgstr "প্রশ্ন"
+
+#: src/components/ContactButton.svelte
+msgid "Feedback"
+msgstr "মতামত"
+
+#: src/components/ContactButton.svelte
+msgid "Bug report"
+msgstr "ত্রুটি জানান"
+
+#: src/components/ContactButton.svelte
+msgid "Account help"
+msgstr "অ্যাকাউন্ট সহায়তা"
+
+#: src/components/ContactButton.svelte
+msgid "Business inquiry"
+msgstr "ব্যবসায়িক অনুসন্ধান"
+
+#: src/components/ContactButton.svelte
+#: src/components/ContactButton.svelte
+msgid "Other"
+msgstr "অন্যান্য"
+
+#: src/components/ContactButton.svelte
+#: src/components/ContactButton.svelte
+msgid "Contact"
+msgstr "যোগাযোগ"
+
+#: src/components/ContactButton.svelte
+msgid "Could not open your email app. Copy the address above to send an email."
+msgstr "আপনার ইমেল অ্যাপ খোলা যায়নি। ইমেল পাঠাতে উপরের ঠিকানাটি কপি করুন।"
+
+#~ msgid "Choose a topic to open your email app."
+#~ msgstr "আপনার ইমেল অ্যাপ খুলতে একটি বিষয় বেছে নিন।"
+
+#~ msgid "Bug"
+#~ msgstr ""
+
+#~ msgid "Account"
+#~ msgstr ""
+
+#~ msgid "Business"
+#~ msgstr ""

@@ -1236,6 +1236,7 @@ msgid "Color themes"
 msgstr "Barevná témata"
 
 #: src/components/AddAccountDialog.svelte
+#: src/components/ContactButton.svelte
 #: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
@@ -1919,6 +1920,7 @@ msgid "Queues pause when offline and resume when the connection returns."
 msgstr "Fronty se při ztrátě připojení pozastaví a po jeho obnovení pokračují."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/FeaturesCard.svelte
 msgid "How to use"
 msgstr "Jak používat"
 
@@ -2179,7 +2181,9 @@ msgstr "Počet načtených příspěvků: {0}."
 msgid "Fetched {0} posts. No more posts are available."
 msgstr "Počet načtených příspěvků: {0}. Další příspěvky nejsou k dispozici."
 
+#. 0: incompleteFetchedPost + 1
 #. 0: number(a)
+#: src/App.svelte
 #: src/components/LogMessage.svelte
 msgid "Add text to fetched post {0} before posting"
 msgstr "Před publikováním přidejte text k načtenému příspěvku {0}"
@@ -2394,11 +2398,56 @@ msgstr "Trvale smaže přihlášení k Facebooku, skupiny, koncepty, obrázky, n
 msgid "Deleting…"
 msgstr "Mazání…"
 
-#: src/components/FeaturesCard.svelte
-msgid "<0/> How to use"
-msgstr "<0/> Jak používat"
+#~ msgid "<0/> How to use"
+#~ msgstr "<0/> Jak používat"
 
 #: src/components/QueueReview.svelte
 #: src/components/QueueReview.svelte
 msgid "Review your queue"
 msgstr "Zkontrolujte svou frontu"
+
+#: src/components/ContactButton.svelte
+msgid "Question"
+msgstr "Dotaz"
+
+#: src/components/ContactButton.svelte
+msgid "Feedback"
+msgstr "Zpětná vazba"
+
+#: src/components/ContactButton.svelte
+msgid "Bug report"
+msgstr "Nahlásit chybu"
+
+#: src/components/ContactButton.svelte
+msgid "Account help"
+msgstr "Pomoc s účtem"
+
+#: src/components/ContactButton.svelte
+msgid "Business inquiry"
+msgstr "Obchodní dotaz"
+
+#: src/components/ContactButton.svelte
+#: src/components/ContactButton.svelte
+msgid "Other"
+msgstr "Jiné"
+
+#: src/components/ContactButton.svelte
+#: src/components/ContactButton.svelte
+msgid "Contact"
+msgstr "Kontakt"
+
+#: src/components/ContactButton.svelte
+msgid "Could not open your email app. Copy the address above to send an email."
+msgstr "E-mailovou aplikaci se nepodařilo otevřít. Zkopírujte výše uvedenou adresu a odešlete e-mail."
+
+#~ msgid "Choose a topic to open your email app."
+#~ msgstr "Vyberte téma pro otevření e-mailové aplikace."
+
+#~ msgid "Bug"
+#~ msgstr ""
+
+#~ msgid "Account"
+#~ msgstr ""
+
+#~ msgid "Business"
+#~ msgstr ""

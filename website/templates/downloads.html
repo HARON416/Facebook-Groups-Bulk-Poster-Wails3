@@ -1,9 +1,47 @@
-{{define "downloads"}}{{template "head" .}}<main id="main" class="downloads wrap"><div class="download-brand"><a class="text-link" href="/">Back to the overview</a></div><h1>Make room for<br><span class="accent-word">less busywork.</span></h1><p class="download-intro">Download Postika, the Facebook group auto poster for Windows, macOS, and Linux. Choose the format that works for you.</p>{{if .Version}}<p class="release-version">Latest release: <strong>{{.Version}}</strong> <span>{{.Date}}</span></p>{{end}}<aside class="release-banner" aria-label="Early support"><p><strong>Early support:</strong> Windows installers are unsigned and may trigger SmartScreen. Updates are currently manual. Queues and posting logs aren’t restored after quitting. Please <a href="mailto:haronkibetrutoh@gmail.com">report what breaks</a>.</p></aside>
+{{define "downloads"}}
+{{template "head" .}}
+<main id="main" class="downloads wrap">
+  <header class="download-heading">
+    <h1>Download Postika</h1>
+    <p class="download-intro">Choose a version for your computer. Requires Chrome or Chromium.</p>
+    {{if .Version}}<p class="release-version">Version <strong>{{.Version}}</strong><span>{{.Date}}</span></p>{{else}}<p class="download-status">The first public release is being prepared. Downloads aren’t available yet.</p>{{end}}
+  </header>
 
-<div class="platforms">{{range .Downloads}}<article class="download-card" data-platform="{{.OS}}"><div class="download-os">{{template "platform-icon" .OS}}<span>{{if eq .OS "windows"}}Windows{{else if eq .OS "macos"}}macOS{{else}}Linux{{end}}</span><span class="recommended" hidden>YOUR PLATFORM</span></div><h2>{{.Name}}</h2><p>{{.Detail}}</p>{{if .URL}}<a class="button button-download" href="{{.URL}}">Download</a>{{else}}<span class="button unavailable" aria-disabled="true">Coming soon</span>{{end}}</article>{{end}}</div>
-<div class="download-notes"><div><h3>Before you start</h3><p>Postika requires Chrome or Chromium. On macOS, move the app into Applications before opening it. Windows portable means no installer; your account data still stays in the normal app data folder.</p></div><div><h3>About updates</h3><p>Updates are currently manual while in-app update delivery is being verified. Once available, Postika will download updates in the background and offer Restart to update. Linux system packages may ask for administrator authorization.</p></div></div>
-<section class="release-history"><h2>Release notes</h2><div id="release-target">{{template "release" .}}</div><button class="button refresh-release" type="button" hx-get="/partials/release" hx-target="#release-target" hx-swap="innerHTML" hx-disabled-elt="this">Refresh release notes</button><p class="release-feedback" role="status" aria-live="polite"></p></section>
-</main>{{template "footer"}}{{end}}
+  <div class="platforms">
+    {{range .DownloadGroups}}{{if .Downloads}}
+    <section class="download-platform" data-platform="{{.OS}}" aria-labelledby="platform-{{.OS}}">
+      <div class="download-os">
+        {{template "platform-icon" .OS}}
+        <h2 id="platform-{{.OS}}">{{.Name}}</h2>
+        <span class="recommended" hidden>Your platform</span>
+      </div>
+      <ul class="download-list">
+        {{range .Downloads}}<li class="download-row">
+          <div class="download-format"><h3>{{.Name}}</h3><p>{{.Detail}}</p></div>
+          {{if .URL}}<a class="button button-download" href="{{.URL}}" aria-label="Download {{.Name}}">Download</a>{{else}}<span class="unavailable">Coming soon</span>{{end}}
+        </li>{{end}}
+      </ul>
+      {{if eq .OS "windows"}}<p class="platform-note">Unsigned installer: Windows may show a SmartScreen warning. The portable version needs no installation; account data stays in the app data folder.</p>{{else if eq .OS "macos"}}<p class="platform-note">Move Postika into Applications before opening it.</p>{{else}}<p class="platform-note">System packages may ask for administrator authorization.</p>{{end}}
+    </section>
+    {{end}}{{end}}
+  </div>
+
+  <section class="download-notes" aria-labelledby="before-heading">
+    <h2 id="before-heading">Before you start</h2>
+    <div>
+      <p>Updates are manual for now. In-app update delivery is still being verified.</p>
+      <p>Keep Postika open and your computer awake while a queue runs. Queues and posting logs aren’t restored after quitting.</p>
+      <a class="text-link" href="mailto:haronkibetrutoh@gmail.com">Report a problem</a>
+    </div>
+  </section>
+  <section class="release-history" aria-labelledby="release-heading">
+    <div class="release-heading"><h2 id="release-heading">Release notes</h2><button class="button refresh-release" type="button" hx-get="/partials/release" hx-target="#release-target" hx-swap="innerHTML" hx-disabled-elt="this">Refresh release notes</button></div>
+    <div id="release-target">{{template "release" .}}</div>
+    <p class="release-feedback" role="status" aria-live="polite"></p>
+  </section>
+</main>
+{{template "footer"}}
+{{end}}
 
 {{define "platform-icon"}}<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256" aria-hidden="true" focusable="false">
 {{if eq . "windows"}}<path d="M208,136H128a8,8,0,0,0-8,8v57.45a8,8,0,0,0,6.57,7.88l80,14.54A7.61,7.61,0,0,0,208,224a8,8,0,0,0,8-8V144A8,8,0,0,0,208,136Zm-8,70.41-64-11.63V152h64ZM96,136H32a8,8,0,0,0-8,8v40a8,8,0,0,0,6.57,7.87l64,11.64a8.54,8.54,0,0,0,1.43.13,8,8,0,0,0,8-8V144A8,8,0,0,0,96,136Zm-8,50.05-48-8.73V152H88ZM213.13,33.86a8,8,0,0,0-6.56-1.73l-80,14.55A8,8,0,0,0,120,54.55V112a8,8,0,0,0,8,8h80a8,8,0,0,0,8-8V40A8,8,0,0,0,213.13,33.86ZM200,104H136V61.22l64-11.63ZM101.13,54.22a8,8,0,0,0-6.56-1.73l-64,11.64A8,8,0,0,0,24,72v40a8,8,0,0,0,8,8H96a8,8,0,0,0,8-8V60.36A8,8,0,0,0,101.13,54.22ZM88,104H40V78.68L88,70Z"></path>

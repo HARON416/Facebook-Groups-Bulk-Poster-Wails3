@@ -51,6 +51,9 @@ type DesktopOS = "windows" | "macos" | "linux";
     const selected = theme.preference ?? 'system';
     rows.forEach((row, id) => row.setAttribute('aria-selected', String(id === selected)));
     const name = theme.options.find(option => option.id === theme.selected)?.name ?? 'Postika Light';
+    const label = trigger!.querySelector<HTMLElement>('[data-current-theme]');
+    if (label) label.textContent = name;
+    trigger!.title = theme.preference === null ? `System default (${name})` : name;
     trigger!.setAttribute('aria-label', `Color themes: ${theme.preference === null ? `System default (${name})` : name}`);
   }
   function filter() {
@@ -107,6 +110,61 @@ type DesktopOS = "windows" | "macos" | "linux";
   });
   document.addEventListener('postika:themechange', refreshSelection);
   refreshSelection();
+})();
+
+// Screenshot links still open the original asset when scripting is unavailable.
+(() => {
+  const dialog = document.querySelector<HTMLDialogElement>('#screenshot-modal');
+  const stage = dialog?.querySelector<HTMLElement>('[data-screenshot-stage]');
+  const status = dialog?.querySelector<HTMLElement>('[data-screenshot-status]');
+  const close = dialog?.querySelector<HTMLButtonElement>('[data-close-screenshot]');
+  if (!dialog || !stage || !status || !close) return;
+  const image = new Image();
+  image.dataset.fullScreenshot = '';
+  let opener: HTMLAnchorElement | null = null;
+  let generation = 0;
+  document.querySelectorAll<HTMLAnchorElement>('[data-screenshot]').forEach(link => {
+    link.setAttribute('aria-haspopup', 'dialog');
+    link.setAttribute('aria-controls', 'screenshot-modal');
+    link.addEventListener('click', event => {
+      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      const thumbnail = link.querySelector<HTMLImageElement>('img');
+      if (!thumbnail) return;
+      event.preventDefault();
+      opener = link;
+      const current = ++generation;
+      dialog.setAttribute('aria-label', thumbnail.alt || 'Screenshot preview');
+      image.hidden = true;
+      image.alt = thumbnail.alt;
+      image.src = link.href;
+      stage.prepend(image);
+      status.textContent = 'Loading screenshot…';
+      status.hidden = false;
+      document.documentElement.classList.add('screenshot-open');
+      dialog.showModal();
+      close.focus();
+      void image.decode().then(() => {
+        if (current !== generation || !dialog.open) return;
+        image.hidden = false;
+        status.hidden = true;
+      }).catch(() => {
+        if (current !== generation || !dialog.open) return;
+        status.textContent = 'Couldn’t load this screenshot. Close it and try again.';
+      });
+    });
+  });
+  close.addEventListener('click', () => dialog.close());
+  dialog.addEventListener('close', () => {
+    generation++;
+    image.remove();
+    document.documentElement.classList.remove('screenshot-open');
+    opener?.focus({ preventScroll: true });
+  });
+  dialog.addEventListener('click', event => {
+    if (event.target !== dialog) return;
+    const bounds = dialog.getBoundingClientRect();
+    if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
+  });
 })();
 
 function detectOS(): DesktopOS | null {

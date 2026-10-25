@@ -49,6 +49,7 @@
 </dialog>
 
 <style>
+  .ui-dialog-heading { padding-bottom: 1.2rem; border-bottom: 1px solid var(--border); }
   dialog { width: min(48rem, calc(100vw - 3.2rem)); max-height: calc(100dvh - 3.2rem); overflow-y: auto; overscroll-behavior: contain; }
   .fields { display: grid; gap: var(--ui-field-gap); padding: var(--ui-space); }
   label { color: var(--text); font-weight: var(--ui-label-weight); }

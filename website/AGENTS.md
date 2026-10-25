@@ -9,3 +9,10 @@
   update delivery, and queue persistence behavior; never invent availability.
 - Check changed pages in the browser at desktop and phone widths, including
   wrapping, overflow, keyboard focus, and readable contrast.
+
+- Screenshot modals show only the image and a close control. Do not add a title,
+  footer, padded panel, or colored frame around the image.
+
+- Feature sections flow down the page as one full-width card per row. Use copy
+  on the left and the image on the right on desktop, stacked in that order on
+  phones. Screenshots have no captions, colored frames, or padded wrappers.

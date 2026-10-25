@@ -1236,6 +1236,7 @@ msgid "Color themes"
 msgstr "ערכות צבעים"
 
 #: src/components/AddAccountDialog.svelte
+#: src/components/ContactButton.svelte
 #: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
@@ -1919,6 +1920,7 @@ msgid "Queues pause when offline and resume when the connection returns."
 msgstr "תורי הפרסום מושהים כשאין חיבור לאינטרנט וממשיכים כשהחיבור חוזר."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/FeaturesCard.svelte
 msgid "How to use"
 msgstr "איך משתמשים"
 
@@ -2179,7 +2181,9 @@ msgstr "יובאו {0} פוסטים."
 msgid "Fetched {0} posts. No more posts are available."
 msgstr "יובאו {0} פוסטים. אין פוסטים נוספים זמינים."
 
+#. 0: incompleteFetchedPost + 1
 #. 0: number(a)
+#: src/App.svelte
 #: src/components/LogMessage.svelte
 msgid "Add text to fetched post {0} before posting"
 msgstr "יש להוסיף טקסט לפוסט המיובא {0} לפני הפרסום"
@@ -2394,11 +2398,56 @@ msgstr "פעולה זו מוחקת לצמיתות את ההתחברות לפיי
 msgid "Deleting…"
 msgstr "מוחק…"
 
-#: src/components/FeaturesCard.svelte
-msgid "<0/> How to use"
-msgstr "<0/> איך משתמשים"
+#~ msgid "<0/> How to use"
+#~ msgstr "<0/> איך משתמשים"
 
 #: src/components/QueueReview.svelte
 #: src/components/QueueReview.svelte
 msgid "Review your queue"
 msgstr "בדיקת תור הפרסום"
+
+#: src/components/ContactButton.svelte
+msgid "Question"
+msgstr "שאלה"
+
+#: src/components/ContactButton.svelte
+msgid "Feedback"
+msgstr "משוב"
+
+#: src/components/ContactButton.svelte
+msgid "Bug report"
+msgstr "דיווח על תקלה"
+
+#: src/components/ContactButton.svelte
+msgid "Account help"
+msgstr "עזרה בחשבון"
+
+#: src/components/ContactButton.svelte
+msgid "Business inquiry"
+msgstr "פנייה עסקית"
+
+#: src/components/ContactButton.svelte
+#: src/components/ContactButton.svelte
+msgid "Other"
+msgstr "אחר"
+
+#: src/components/ContactButton.svelte
+#: src/components/ContactButton.svelte
+msgid "Contact"
+msgstr "יצירת קשר"
+
+#: src/components/ContactButton.svelte
+msgid "Could not open your email app. Copy the address above to send an email."
+msgstr "לא ניתן לפתוח את יישום הדוא״ל. יש להעתיק את הכתובת שלמעלה כדי לשלוח הודעה."
+
+#~ msgid "Choose a topic to open your email app."
+#~ msgstr "בחרו נושא כדי לפתוח את יישום הדוא״ל."
+
+#~ msgid "Bug"
+#~ msgstr ""
+
+#~ msgid "Account"
+#~ msgstr ""
+
+#~ msgid "Business"
+#~ msgstr ""

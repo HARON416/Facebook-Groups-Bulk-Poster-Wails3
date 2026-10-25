@@ -25,13 +25,13 @@
   .visually-hidden { position: absolute; width: 1px; height: 1px; clip-path: inset(50%); overflow: hidden; }
   .option-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--ui-panel-radius); padding: var(--ui-space); }
   h2 { font-size: var(--ui-title-size); font-weight: var(--ui-title-weight); line-height: 1.5; color: var(--text-strong); }
-  p { font-size: 1.3rem; line-height: 1.6; color: var(--text-secondary); margin: .8rem 0 1.8rem; }
+  p { font-size: var(--ui-body-size); line-height: 1.6; color: var(--text-secondary); margin: .8rem 0 1.8rem; }
   .intervals { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; }
   label { display: flex; flex-direction: column; gap: var(--ui-field-gap); font-size: var(--ui-body-size); font-weight: var(--ui-label-weight); color: var(--text); }
   .input-wrap { display: flex; align-items: center; border: 1px solid var(--border-strong); border-radius: .6rem; overflow: hidden; }
-  .input-wrap > span { padding-inline-end: 1.2rem; font-size: 1.2rem; color: var(--text-muted); font-weight: 400; }
+  .input-wrap > span { padding-inline-end: 1.2rem; font-size: var(--ui-small-size); color: var(--text-muted); font-weight: 400; }
   input { font-size: var(--ui-body-size); width: 100%; min-width: 0; padding: 1.2rem; border: 0; background: transparent; color: var(--text); }
-  .hint { margin: .9rem 0 0; font-size: 1.2rem; }
+  .hint { margin: .9rem 0 0; font-size: var(--ui-small-size); }
   .interval-error { margin: .9rem 0 0; color: var(--danger); }
   .interval-error:empty { margin: 0; }
   .input-wrap.invalid { border-color: var(--danger); }

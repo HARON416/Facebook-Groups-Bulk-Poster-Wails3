@@ -1236,6 +1236,7 @@ msgid "Color themes"
 msgstr "రంగు థీమ్‌లు"
 
 #: src/components/AddAccountDialog.svelte
+#: src/components/ContactButton.svelte
 #: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
@@ -1919,6 +1920,7 @@ msgid "Queues pause when offline and resume when the connection returns."
 msgstr "ఆఫ్‌లైన్‌లో ఉన్నప్పుడు క్యూలు ఆగి, కనెక్షన్ తిరిగి వచ్చినప్పుడు కొనసాగుతాయి."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/FeaturesCard.svelte
 msgid "How to use"
 msgstr "ఎలా ఉపయోగించాలి"
 
@@ -2179,7 +2181,9 @@ msgstr "{0} పోస్టులు పొందబడ్డాయి."
 msgid "Fetched {0} posts. No more posts are available."
 msgstr "{0} పోస్టులు పొందబడ్డాయి. మరిన్ని పోస్టులు అందుబాటులో లేవు."
 
+#. 0: incompleteFetchedPost + 1
 #. 0: number(a)
+#: src/App.svelte
 #: src/components/LogMessage.svelte
 msgid "Add text to fetched post {0} before posting"
 msgstr "పోస్ట్ చేసే ముందు పొందిన పోస్ట్ {0}కు వచనం జోడించండి"
@@ -2394,11 +2398,56 @@ msgstr "ఇది ఈ ప్రొఫైల్ యొక్క Facebook లా�
 msgid "Deleting…"
 msgstr "తొలగిస్తోంది…"
 
-#: src/components/FeaturesCard.svelte
-msgid "<0/> How to use"
-msgstr "<0/> ఎలా ఉపయోగించాలి"
+#~ msgid "<0/> How to use"
+#~ msgstr "<0/> ఎలా ఉపయోగించాలి"
 
 #: src/components/QueueReview.svelte
 #: src/components/QueueReview.svelte
 msgid "Review your queue"
 msgstr "మీ క్యూను సమీక్షించండి"
+
+#: src/components/ContactButton.svelte
+msgid "Question"
+msgstr "ప్రశ్న"
+
+#: src/components/ContactButton.svelte
+msgid "Feedback"
+msgstr "అభిప్రాయం"
+
+#: src/components/ContactButton.svelte
+msgid "Bug report"
+msgstr "లోపాన్ని నివేదించండి"
+
+#: src/components/ContactButton.svelte
+msgid "Account help"
+msgstr "ఖాతా సహాయం"
+
+#: src/components/ContactButton.svelte
+msgid "Business inquiry"
+msgstr "వ్యాపార విచారణ"
+
+#: src/components/ContactButton.svelte
+#: src/components/ContactButton.svelte
+msgid "Other"
+msgstr "ఇతర"
+
+#: src/components/ContactButton.svelte
+#: src/components/ContactButton.svelte
+msgid "Contact"
+msgstr "సంప్రదించండి"
+
+#: src/components/ContactButton.svelte
+msgid "Could not open your email app. Copy the address above to send an email."
+msgstr "మీ ఇమెయిల్ యాప్ తెరవలేకపోయాము. ఇమెయిల్ పంపడానికి పైన ఉన్న చిరునామాను కాపీ చేయండి."
+
+#~ msgid "Choose a topic to open your email app."
+#~ msgstr "మీ ఇమెయిల్ యాప్ తెరవడానికి ఒక అంశాన్ని ఎంచుకోండి."
+
+#~ msgid "Bug"
+#~ msgstr ""
+
+#~ msgid "Account"
+#~ msgstr ""
+
+#~ msgid "Business"
+#~ msgstr ""

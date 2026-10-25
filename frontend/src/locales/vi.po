@@ -1236,6 +1236,7 @@ msgid "Color themes"
 msgstr "Chủ đề màu sắc"
 
 #: src/components/AddAccountDialog.svelte
+#: src/components/ContactButton.svelte
 #: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
@@ -1919,6 +1920,7 @@ msgid "Queues pause when offline and resume when the connection returns."
 msgstr "Hàng đợi tạm dừng khi mất mạng và tiếp tục khi kết nối trở lại."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/FeaturesCard.svelte
 msgid "How to use"
 msgstr "Cách sử dụng"
 
@@ -2179,7 +2181,9 @@ msgstr "Đã lấy {0} bài viết."
 msgid "Fetched {0} posts. No more posts are available."
 msgstr "Đã lấy {0} bài viết. Không còn bài viết nào khác."
 
+#. 0: incompleteFetchedPost + 1
 #. 0: number(a)
+#: src/App.svelte
 #: src/components/LogMessage.svelte
 msgid "Add text to fetched post {0} before posting"
 msgstr "Thêm văn bản vào bài viết đã lấy {0} trước khi đăng"
@@ -2394,11 +2398,56 @@ msgstr "Thao tác này xóa vĩnh viễn thông tin đăng nhập Facebook, nhó
 msgid "Deleting…"
 msgstr "Đang xóa…"
 
-#: src/components/FeaturesCard.svelte
-msgid "<0/> How to use"
-msgstr "<0/> Cách sử dụng"
+#~ msgid "<0/> How to use"
+#~ msgstr "<0/> Cách sử dụng"
 
 #: src/components/QueueReview.svelte
 #: src/components/QueueReview.svelte
 msgid "Review your queue"
 msgstr "Xem lại hàng đợi của bạn"
+
+#: src/components/ContactButton.svelte
+msgid "Question"
+msgstr "Câu hỏi"
+
+#: src/components/ContactButton.svelte
+msgid "Feedback"
+msgstr "Góp ý"
+
+#: src/components/ContactButton.svelte
+msgid "Bug report"
+msgstr "Báo lỗi"
+
+#: src/components/ContactButton.svelte
+msgid "Account help"
+msgstr "Trợ giúp tài khoản"
+
+#: src/components/ContactButton.svelte
+msgid "Business inquiry"
+msgstr "Liên hệ kinh doanh"
+
+#: src/components/ContactButton.svelte
+#: src/components/ContactButton.svelte
+msgid "Other"
+msgstr "Khác"
+
+#: src/components/ContactButton.svelte
+#: src/components/ContactButton.svelte
+msgid "Contact"
+msgstr "Liên hệ"
+
+#: src/components/ContactButton.svelte
+msgid "Could not open your email app. Copy the address above to send an email."
+msgstr "Không thể mở ứng dụng email. Sao chép địa chỉ ở trên để gửi email."
+
+#~ msgid "Choose a topic to open your email app."
+#~ msgstr "Chọn chủ đề để mở ứng dụng email của bạn."
+
+#~ msgid "Bug"
+#~ msgstr ""
+
+#~ msgid "Account"
+#~ msgstr ""
+
+#~ msgid "Business"
+#~ msgstr ""

@@ -158,24 +158,24 @@
   button:disabled { opacity: .3; cursor: not-allowed; }
   button:focus-visible, input:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
   .weekday-shortcuts { display: flex; align-items: center; justify-content: space-between; gap: .6rem; margin-bottom: 1.6rem; }
-  .weekday-shortcuts button { display: grid; place-items: center; width: 3rem; height: 3rem; flex: 0 1 3rem; aspect-ratio: 1; padding: 0; border: 1px solid var(--border); border-radius: 50%; font-size: 1.1rem; }
+  .weekday-shortcuts button { display: grid; place-items: center; width: 3rem; height: 3rem; flex: 0 1 3rem; aspect-ratio: 1; padding: 0; border: 1px solid var(--border); border-radius: 50%; font-size: var(--ui-small-size); }
   .weekday-shortcuts button:hover:not(.chosen) { background: var(--surface-hover); border-color: var(--accent); }
   .weekday-shortcuts .chosen { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
   .time-presets .chosen { background: var(--surface-active); border-color: var(--border-accent); color: var(--accent); }
   .month-navigation { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.2rem; }
-  h3 { font-size: 1.3rem; color: var(--text-strong); font-weight: 550; }
+  h3 { font-size: var(--ui-body-size); color: var(--text-strong); font-weight: 550; }
   .month-navigation button { display: grid; place-items: center; width: 3rem; height: 3rem; border-radius: .6rem; }
   .month-navigation button:hover:not(:disabled), .calendar button:hover:not(:disabled):not(.selected) { background: var(--surface-hover); }
   svg { width: 1.6rem; height: 1.6rem; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
   .weekdays, .calendar { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: .4rem; text-align: center; }
-  .weekdays { font-size: 1rem; color: var(--text-muted); margin-bottom: .8rem; }
-  .calendar button { min-height: 3.2rem; border-radius: .6rem; font-size: 1.2rem; position: relative; }
+  .weekdays { font-size: var(--ui-small-size); color: var(--text-muted); margin-bottom: .8rem; }
+  .calendar button { min-height: 3.2rem; border-radius: .6rem; font-size: var(--ui-small-size); position: relative; }
   .calendar .outside { color: var(--text-faint); }
   .calendar .today::after { content: ''; position: absolute; bottom: .3rem; left: calc(50% - .15rem); width: .3rem; height: .3rem; border-radius: 50%; background: var(--accent); }
   .calendar .selected { background: var(--accent); color: var(--on-accent); font-weight: 600; box-shadow: 0 2px 5px var(--accent-soft); }
   .calendar .selected.today::after { background: var(--on-accent); }
   .time-heading { display: flex; align-items: center; justify-content: space-between; gap: .5rem; margin-top: .5rem; }
-  .time-heading > span { font-size: 1rem; color: var(--text-muted); }
+  .time-heading > span { font-size: var(--ui-small-size); color: var(--text-muted); }
   .time-controls { direction: ltr; display: flex; justify-content: center; align-items: center; gap: 1.4rem; margin: 2rem 0; padding: .8rem; border-radius: 1rem; background: var(--surface-hover); }
   .selection-summary strong { direction: ltr; }
   :global(html[dir="rtl"]) .month-navigation button svg { transform: scaleX(-1); }
@@ -183,15 +183,15 @@
   .time-unit button { width: 4.8rem; height: 2.4rem; border-radius: .5rem; font-size: 2rem; color: var(--text-muted); }
   .time-unit button:hover { background: var(--surface-hover); color: var(--accent); }
   .time-unit input { width: 5.2rem; height: 4.8rem; padding: 0; border: 1px solid var(--border); border-radius: .7rem; background: var(--surface); text-align: center; font: inherit; font-size: 2.6rem; font-weight: 550; font-variant-numeric: tabular-nums; color: var(--text-strong); }
-  .time-unit > span { font-size: 1rem; color: var(--text-muted); }
+  .time-unit > span { font-size: var(--ui-small-size); color: var(--text-muted); }
   .colon { font-size: 2rem; color: var(--text-muted); margin-top: -1.6rem; }
   .time-presets { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .6rem; }
   .time-presets button { display: flex; flex-direction: column; align-items: center; gap: .5rem; padding: .9rem .3rem; border: 1px solid var(--border); border-radius: .6rem; }
-  .time-presets span { font-size: .95rem; color: var(--text-muted); }
-  .time-presets strong { font-size: 1.2rem; font-weight: 500; }
-  .selection-summary { grid-column: 1 / -1; display: flex; gap: .8rem; align-items: center; padding: 1.3rem 1.8rem; background: var(--surface-active); border-top: 1px solid var(--border); color: var(--accent); font-size: 1.2rem; }
+  .time-presets span { font-size: var(--ui-small-size); color: var(--text-muted); }
+  .time-presets strong { font-size: var(--ui-small-size); font-weight: 500; }
+  .selection-summary { grid-column: 1 / -1; display: flex; gap: .8rem; align-items: center; padding: 1.3rem 1.8rem; background: var(--surface-active); border-top: 1px solid var(--border); color: var(--accent); font-size: var(--ui-small-size); }
   .selection-summary span { display: flex; flex: 1; justify-content: space-between; align-items: center; gap: 1rem; }
   .selection-summary strong { font-size: 1.4rem; font-weight: 600; font-variant-numeric: tabular-nums; }
-  .validation { grid-column: 1 / -1; padding: 1rem 1.8rem; font-size: 1.2rem; color: var(--danger); border-top: 1px solid var(--danger-border); }
+  .validation { grid-column: 1 / -1; padding: 1rem 1.8rem; font-size: var(--ui-small-size); color: var(--danger); border-top: 1px solid var(--danger-border); }
   @media (max-width: 600px) { .date-time-picker { grid-template-columns: 1fr; } .date-section { border-inline-end: 0; border-bottom: 1px solid var(--border); } }
 </style>

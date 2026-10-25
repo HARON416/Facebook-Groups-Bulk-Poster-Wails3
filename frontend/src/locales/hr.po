@@ -1236,6 +1236,7 @@ msgid "Color themes"
 msgstr "Teme boja"
 
 #: src/components/AddAccountDialog.svelte
+#: src/components/ContactButton.svelte
 #: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
@@ -1919,6 +1920,7 @@ msgid "Queues pause when offline and resume when the connection returns."
 msgstr "Redovi se pauziraju bez interneta i nastavljaju kada se veza vrati."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/FeaturesCard.svelte
 msgid "How to use"
 msgstr "Kako koristiti"
 
@@ -2179,7 +2181,9 @@ msgstr "Broj dohvaćenih objava: {0}."
 msgid "Fetched {0} posts. No more posts are available."
 msgstr "Broj dohvaćenih objava: {0}. Nema više dostupnih objava."
 
+#. 0: incompleteFetchedPost + 1
 #. 0: number(a)
+#: src/App.svelte
 #: src/components/LogMessage.svelte
 msgid "Add text to fetched post {0} before posting"
 msgstr "Dodajte tekst dohvaćenoj objavi {0} prije objavljivanja"
@@ -2394,11 +2398,56 @@ msgstr "Ovo trajno briše Facebook prijavu, grupe, skice, slike, postavke i zapi
 msgid "Deleting…"
 msgstr "Brisanje…"
 
-#: src/components/FeaturesCard.svelte
-msgid "<0/> How to use"
-msgstr "<0/> Kako koristiti"
+#~ msgid "<0/> How to use"
+#~ msgstr "<0/> Kako koristiti"
 
 #: src/components/QueueReview.svelte
 #: src/components/QueueReview.svelte
 msgid "Review your queue"
 msgstr "Pregledajte svoj red čekanja"
+
+#: src/components/ContactButton.svelte
+msgid "Question"
+msgstr "Pitanje"
+
+#: src/components/ContactButton.svelte
+msgid "Feedback"
+msgstr "Povratne informacije"
+
+#: src/components/ContactButton.svelte
+msgid "Bug report"
+msgstr "Prijava greške"
+
+#: src/components/ContactButton.svelte
+msgid "Account help"
+msgstr "Pomoć s računom"
+
+#: src/components/ContactButton.svelte
+msgid "Business inquiry"
+msgstr "Poslovni upit"
+
+#: src/components/ContactButton.svelte
+#: src/components/ContactButton.svelte
+msgid "Other"
+msgstr "Ostalo"
+
+#: src/components/ContactButton.svelte
+#: src/components/ContactButton.svelte
+msgid "Contact"
+msgstr "Kontakt"
+
+#: src/components/ContactButton.svelte
+msgid "Could not open your email app. Copy the address above to send an email."
+msgstr "Nije moguće otvoriti aplikaciju za e-poštu. Kopirajte gornju adresu kako biste poslali e-poruku."
+
+#~ msgid "Choose a topic to open your email app."
+#~ msgstr "Odaberite temu za otvaranje aplikacije za e-poštu."
+
+#~ msgid "Bug"
+#~ msgstr ""
+
+#~ msgid "Account"
+#~ msgstr ""
+
+#~ msgid "Business"
+#~ msgstr ""

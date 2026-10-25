@@ -5,7 +5,7 @@
   import { accountLabel } from './AccountLabel.svelte';
   import WindowControls from './WindowControls.svelte';
   import ThemeMenu from './ThemeMenu.svelte';
-  import WhatsAppButton from './WhatsAppButton.svelte';
+  import ContactButton from './ContactButton.svelte';
   import LocalizedFeedback from './LocalizedFeedback.svelte';
 
   let { title, children, actions, profileSwitcher, account: accountOverride }: { title: string; children: Snippet; actions?: Snippet; profileSwitcher?: Snippet; account?: string } = $props();
@@ -33,7 +33,7 @@
     </div>
     {#if actions}<div class="window-actions">{@render actions()}</div>{/if}
     <ThemeMenu />
-    <WhatsAppButton onerror={(message) => { error = message; }} />
+    <ContactButton />
     <WindowControls bind:this={controls} onerror={(message) => { error = message; }} />
   </header>
   {#if error}<div class="window-error" role="alert"><LocalizedFeedback message={error} /></div>{/if}
@@ -51,5 +51,5 @@
   .window-account { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--text-secondary); }
   .window-actions { --wails-draggable: no-drag; display: flex; align-items: center; flex-shrink: 0; max-width: 28%; min-width: 0; padding: 0 1rem; }
   .auxiliary-content { flex: 1; min-height: 0; overflow: auto; overscroll-behavior: contain; }
-  .window-error { padding: 1rem 1.6rem; color: var(--danger); font-size: 1.2rem; background: var(--danger-bg); }
+  .window-error { padding: 1rem 1.6rem; color: var(--danger); font-size: var(--ui-small-size); background: var(--danger-bg); }
 </style>

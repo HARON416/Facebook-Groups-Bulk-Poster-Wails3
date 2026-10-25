@@ -1236,6 +1236,7 @@ msgid "Color themes"
 msgstr "Tema warna"
 
 #: src/components/AddAccountDialog.svelte
+#: src/components/ContactButton.svelte
 #: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
@@ -1919,6 +1920,7 @@ msgid "Queues pause when offline and resume when the connection returns."
 msgstr "Antrean dijeda saat offline dan dilanjutkan ketika koneksi kembali."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/FeaturesCard.svelte
 msgid "How to use"
 msgstr "Cara menggunakan"
 
@@ -2179,7 +2181,9 @@ msgstr "{0} postingan diambil."
 msgid "Fetched {0} posts. No more posts are available."
 msgstr "{0} postingan diambil. Tidak ada postingan lagi yang tersedia."
 
+#. 0: incompleteFetchedPost + 1
 #. 0: number(a)
+#: src/App.svelte
 #: src/components/LogMessage.svelte
 msgid "Add text to fetched post {0} before posting"
 msgstr "Tambahkan teks ke postingan yang diambil {0} sebelum mengirim"
@@ -2394,11 +2398,56 @@ msgstr "Ini menghapus login Facebook, grup, draf, gambar, pengaturan, dan log pr
 msgid "Deleting…"
 msgstr "Menghapus…"
 
-#: src/components/FeaturesCard.svelte
-msgid "<0/> How to use"
-msgstr "<0/> Cara menggunakan"
+#~ msgid "<0/> How to use"
+#~ msgstr "<0/> Cara menggunakan"
 
 #: src/components/QueueReview.svelte
 #: src/components/QueueReview.svelte
 msgid "Review your queue"
 msgstr "Tinjau antrean Anda"
+
+#: src/components/ContactButton.svelte
+msgid "Question"
+msgstr "Pertanyaan"
+
+#: src/components/ContactButton.svelte
+msgid "Feedback"
+msgstr "Masukan"
+
+#: src/components/ContactButton.svelte
+msgid "Bug report"
+msgstr "Laporan bug"
+
+#: src/components/ContactButton.svelte
+msgid "Account help"
+msgstr "Bantuan akun"
+
+#: src/components/ContactButton.svelte
+msgid "Business inquiry"
+msgstr "Pertanyaan bisnis"
+
+#: src/components/ContactButton.svelte
+#: src/components/ContactButton.svelte
+msgid "Other"
+msgstr "Lainnya"
+
+#: src/components/ContactButton.svelte
+#: src/components/ContactButton.svelte
+msgid "Contact"
+msgstr "Kontak"
+
+#: src/components/ContactButton.svelte
+msgid "Could not open your email app. Copy the address above to send an email."
+msgstr "Aplikasi email tidak dapat dibuka. Salin alamat di atas untuk mengirim email."
+
+#~ msgid "Choose a topic to open your email app."
+#~ msgstr "Pilih topik untuk membuka aplikasi email Anda."
+
+#~ msgid "Bug"
+#~ msgstr ""
+
+#~ msgid "Account"
+#~ msgstr ""
+
+#~ msgid "Business"
+#~ msgstr ""

@@ -1,0 +1,53 @@
+import { randomUUID } from 'node:crypto';
+import { spawnSync } from 'node:child_process';
+import { mkdirSync } from 'node:fs';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+const workflow = 'distribution.yml';
+function command(root, name, args, inherit = false) {
+  const result = spawnSync(name, args, { cwd: root, encoding: 'utf8', stdio: inherit ? 'inherit' : 'pipe' });
+  if (result.error) throw new Error(`${name} is unavailable: ${result.error.message}`);
+  if (result.status !== 0) throw new Error(`${name} ${args[0]} failed. ${result.stderr?.trim() ?? ''}`);
+  return result.stdout?.trim() ?? '';
+}
+
+export async function releaseAll({ root = projectRoot, run = (...args) => command(root, ...args), sleep = ms => new Promise(resolve => setTimeout(resolve, ms)), request = randomUUID(), log = console.log } = {}) {
+  // The remote workflow builds pushed source, not local working-tree edits.
+  if (run('git', ['status', '--porcelain']).length) throw new Error('Commit and push your changes before building a distributed release. Local edits cannot be built by GitHub Actions.');
+  const branch = run('git', ['branch', '--show-current']);
+  if (!branch) throw new Error('Check out a branch before running make release-all.');
+  const sha = run('git', ['rev-parse', 'HEAD']);
+  run('gh', ['auth', 'status']);
+  const remoteSHA = run('gh', ['api', `repos/{owner}/{repo}/commits/${encodeURIComponent(branch)}`, '--jq', '.sha']);
+  if (remoteSHA !== sha) throw new Error('The remote branch differs from this checkout. Push this commit before building.');
+  run('gh', ['workflow', 'run', workflow, '--ref', branch, '-f', `request_id=${request}`]);
+  log('Requested all four release targets. Waiting for GitHub to create the run…');
+  let selectedRun;
+  for (let attempt = 0; attempt < 24; attempt++) {
+    const runs = JSON.parse(run('gh', ['run', 'list', '--workflow', workflow, '--event', 'workflow_dispatch', '--limit', '50', '--json', 'databaseId,displayTitle,headSha,url']));
+    selectedRun = runs.find(item => item.displayTitle === `Postika packages ${request}` && item.headSha === sha);
+    if (selectedRun) break;
+    await sleep(5000);
+  }
+  if (!selectedRun) throw new Error(`Run not visible yet. Find request ${request} in GitHub Actions; it was already dispatched. Do not dispatch it again to find it.`);
+  log(selectedRun.url);
+  run('gh', ['run', 'watch', String(selectedRun.databaseId), '--exit-status'], true);
+  const output = resolve(root, 'bin/releases', `ci-${selectedRun.databaseId}`);
+  mkdirSync(output, { recursive: true });
+  run('gh', ['run', 'download', String(selectedRun.databaseId), '--pattern', 'postika-*', '--dir', output], true);
+  log(`All release packages downloaded to ${output}`);
+  return output;
+}
+
+
+if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  try {
+    if (process.argv.includes('--plan')) {
+      console.log('Build Linux x64, Windows x64, macOS arm64 and macOS amd64 on native GitHub runners.');
+      console.log('Wait for all jobs and download their packages, licenses and checksums into bin/releases/ci-<run-id>/.');
+      console.log('Requires a clean, pushed branch, the workflow on the default branch, and authenticated GitHub CLI. Does not publish a release.');
+    } else await releaseAll();
+  } catch (error) { console.error(error.message); process.exitCode = 1; }
+}

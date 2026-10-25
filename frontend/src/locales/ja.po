@@ -1236,6 +1236,7 @@ msgid "Color themes"
 msgstr "カラーテーマ"
 
 #: src/components/AddAccountDialog.svelte
+#: src/components/ContactButton.svelte
 #: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
@@ -1919,6 +1920,7 @@ msgid "Queues pause when offline and resume when the connection returns."
 msgstr "オフライン時にキューが一時停止し、接続が戻ると再開します。"
 
 #: src/components/FeaturesCard.svelte
+#: src/components/FeaturesCard.svelte
 msgid "How to use"
 msgstr "使い方"
 
@@ -2179,7 +2181,9 @@ msgstr "{0}件の投稿を取得しました。"
 msgid "Fetched {0} posts. No more posts are available."
 msgstr "{0}件の投稿を取得しました。取得できる投稿はこれ以上ありません。"
 
+#. 0: incompleteFetchedPost + 1
 #. 0: number(a)
+#: src/App.svelte
 #: src/components/LogMessage.svelte
 msgid "Add text to fetched post {0} before posting"
 msgstr "公開前に取得済みの投稿{0}にテキストを追加してください"
@@ -2394,11 +2398,56 @@ msgstr "このプロフィールのFacebookログイン情報、グループ、�
 msgid "Deleting…"
 msgstr "削除中…"
 
-#: src/components/FeaturesCard.svelte
-msgid "<0/> How to use"
-msgstr "<0/> 使い方"
+#~ msgid "<0/> How to use"
+#~ msgstr "<0/> 使い方"
 
 #: src/components/QueueReview.svelte
 #: src/components/QueueReview.svelte
 msgid "Review your queue"
 msgstr "投稿キューを確認"
+
+#: src/components/ContactButton.svelte
+msgid "Question"
+msgstr "質問"
+
+#: src/components/ContactButton.svelte
+msgid "Feedback"
+msgstr "フィードバック"
+
+#: src/components/ContactButton.svelte
+msgid "Bug report"
+msgstr "不具合の報告"
+
+#: src/components/ContactButton.svelte
+msgid "Account help"
+msgstr "アカウントのヘルプ"
+
+#: src/components/ContactButton.svelte
+msgid "Business inquiry"
+msgstr "ビジネスのお問い合わせ"
+
+#: src/components/ContactButton.svelte
+#: src/components/ContactButton.svelte
+msgid "Other"
+msgstr "その他"
+
+#: src/components/ContactButton.svelte
+#: src/components/ContactButton.svelte
+msgid "Contact"
+msgstr "お問い合わせ"
+
+#: src/components/ContactButton.svelte
+msgid "Could not open your email app. Copy the address above to send an email."
+msgstr "メールアプリを開けませんでした。上のアドレスをコピーしてメールを送信してください。"
+
+#~ msgid "Choose a topic to open your email app."
+#~ msgstr "トピックを選んでメールアプリを開きます。"
+
+#~ msgid "Bug"
+#~ msgstr ""
+
+#~ msgid "Account"
+#~ msgstr ""
+
+#~ msgid "Business"
+#~ msgstr ""

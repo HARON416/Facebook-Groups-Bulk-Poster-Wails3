@@ -4,10 +4,11 @@
 export PATH := $(CURDIR)/.tools/bin:$(PATH)
 WAILS_VERSION := $(shell awk '$$1 == "require" && $$2 == "github.com/wailsapp/wails/v3" {print $$3} $$1 == "github.com/wailsapp/wails/v3" {print $$2}' go.mod)
 
-.PHONY: help dev run build check doctor install-cli install-garble package-all
+.PHONY: help dev run build check doctor install-cli install-garble package-all release-all
 
 help:
 	@printf '%s\n' 'Postika commands:' '  make dev          Start the desktop app with hot reload' '  make run          Alias for make dev' '  make build        Build the desktop executable' '  make check        Check Svelte and TypeScript' '  make doctor       Check Wails dependencies' '  make install-cli  Install the pinned Wails CLI locally' '  make install-garble Install optional pinned obfuscator' '  make package-all  Package unsigned formats for this OS'
+	@printf '%s\n' '  make release-all  Build all four desktop targets in GitHub Actions and download the packages'
 
 dev run:
 	wails3 dev
@@ -31,3 +32,6 @@ install-garble:
 
 package-all:
 	wails3 task package:all
+
+release-all:
+	node scripts/release-all.mjs

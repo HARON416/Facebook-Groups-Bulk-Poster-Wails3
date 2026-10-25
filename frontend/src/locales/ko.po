@@ -1236,6 +1236,7 @@ msgid "Color themes"
 msgstr "색상 테마"
 
 #: src/components/AddAccountDialog.svelte
+#: src/components/ContactButton.svelte
 #: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
@@ -1919,6 +1920,7 @@ msgid "Queues pause when offline and resume when the connection returns."
 msgstr "오프라인에서는 대기열이 일시 중지되고 연결이 복구되면 다시 시작됩니다."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/FeaturesCard.svelte
 msgid "How to use"
 msgstr "사용 방법"
 
@@ -2179,7 +2181,9 @@ msgstr "게시물 {0}개를 가져왔습니다."
 msgid "Fetched {0} posts. No more posts are available."
 msgstr "게시물 {0}개를 가져왔습니다. 더 이상 가져올 게시물이 없습니다."
 
+#. 0: incompleteFetchedPost + 1
 #. 0: number(a)
+#: src/App.svelte
 #: src/components/LogMessage.svelte
 msgid "Add text to fetched post {0} before posting"
 msgstr "게시하기 전에 가져온 게시물 {0}에 텍스트를 추가하세요"
@@ -2394,11 +2398,56 @@ msgstr "이 프로필의 Facebook 로그인, 그룹, 초안, 이미지, 설정 �
 msgid "Deleting…"
 msgstr "삭제 중…"
 
-#: src/components/FeaturesCard.svelte
-msgid "<0/> How to use"
-msgstr "<0/> 사용 방법"
+#~ msgid "<0/> How to use"
+#~ msgstr "<0/> 사용 방법"
 
 #: src/components/QueueReview.svelte
 #: src/components/QueueReview.svelte
 msgid "Review your queue"
 msgstr "대기열 검토"
+
+#: src/components/ContactButton.svelte
+msgid "Question"
+msgstr "질문"
+
+#: src/components/ContactButton.svelte
+msgid "Feedback"
+msgstr "의견"
+
+#: src/components/ContactButton.svelte
+msgid "Bug report"
+msgstr "버그 신고"
+
+#: src/components/ContactButton.svelte
+msgid "Account help"
+msgstr "계정 도움말"
+
+#: src/components/ContactButton.svelte
+msgid "Business inquiry"
+msgstr "비즈니스 문의"
+
+#: src/components/ContactButton.svelte
+#: src/components/ContactButton.svelte
+msgid "Other"
+msgstr "기타"
+
+#: src/components/ContactButton.svelte
+#: src/components/ContactButton.svelte
+msgid "Contact"
+msgstr "문의"
+
+#: src/components/ContactButton.svelte
+msgid "Could not open your email app. Copy the address above to send an email."
+msgstr "이메일 앱을 열 수 없습니다. 위 주소를 복사하여 이메일을 보내세요."
+
+#~ msgid "Choose a topic to open your email app."
+#~ msgstr "이메일 앱을 열려면 주제를 선택하세요."
+
+#~ msgid "Bug"
+#~ msgstr ""
+
+#~ msgid "Account"
+#~ msgstr ""
+
+#~ msgid "Business"
+#~ msgstr ""

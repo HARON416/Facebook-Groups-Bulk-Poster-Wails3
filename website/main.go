@@ -31,9 +31,27 @@ type Release struct {
 
 type Page struct {
 	Release
-	Title       string
-	Description string
-	Canonical   string
+	DownloadGroups []DownloadGroup
+	Title          string
+	Description    string
+	Canonical      string
+}
+
+type DownloadGroup struct {
+	OS, Name  string
+	Downloads []Download
+}
+
+func groupDownloads(downloads []Download) []DownloadGroup {
+	groups := []DownloadGroup{{OS: "windows", Name: "Windows"}, {OS: "macos", Name: "macOS"}, {OS: "linux", Name: "Linux"}}
+	for i := range groups {
+		for _, download := range downloads {
+			if download.OS == groups[i].OS {
+				groups[i].Downloads = append(groups[i].Downloads, download)
+			}
+		}
+	}
+	return groups
 }
 
 func loadRelease() (Release, error) {
@@ -77,10 +95,11 @@ func newHandler(release Release) http.Handler {
 	render := func(name string) http.HandlerFunc {
 		return func(w http.ResponseWriter, r *http.Request) {
 			page := Page{
-				Release:     release,
-				Title:       "Facebook Group Auto Poster for Desktop | Postika",
-				Description: "Post to multiple Facebook groups with Postika. A desktop auto poster with scheduling, multiple accounts, 33 interface languages, and clear posting logs.",
-				Canonical:   "https://postika.softwrhq.com/",
+				Release:        release,
+				DownloadGroups: groupDownloads(release.Downloads),
+				Title:          "Facebook Group Auto Poster for Desktop | Postika",
+				Description:    "Post to multiple Facebook groups with Postika. A desktop auto poster with scheduling, multiple accounts, 33 interface languages, and clear posting logs.",
+				Canonical:      "https://postika.softwrhq.com/",
 			}
 			if name == "downloads" {
 				page.Title = "Download Postika — Facebook Group Auto Poster"
@@ -102,7 +121,7 @@ func newHandler(release Release) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("X-Content-Type-Options", "nosniff")
 		w.Header().Set("Referrer-Policy", "strict-origin-when-cross-origin")
-		w.Header().Set("Content-Security-Policy", "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'")
+		w.Header().Set("Content-Security-Policy", "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: https://postika-desktop-application.b-cdn.net; font-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'")
 		mux.ServeHTTP(w, r)
 	})
 }

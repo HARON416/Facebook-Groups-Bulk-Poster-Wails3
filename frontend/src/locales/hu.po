@@ -1236,6 +1236,7 @@ msgid "Color themes"
 msgstr "Színtémák"
 
 #: src/components/AddAccountDialog.svelte
+#: src/components/ContactButton.svelte
 #: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
@@ -1919,6 +1920,7 @@ msgid "Queues pause when offline and resume when the connection returns."
 msgstr "A várólisták kapcsolat nélkül szünetelnek, majd a kapcsolat helyreállásakor folytatódnak."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/FeaturesCard.svelte
 msgid "How to use"
 msgstr "Használati útmutató"
 
@@ -2179,7 +2181,9 @@ msgstr "{0} bejegyzés lekérve."
 msgid "Fetched {0} posts. No more posts are available."
 msgstr "{0} bejegyzés lekérve. Nincs több elérhető bejegyzés."
 
+#. 0: incompleteFetchedPost + 1
 #. 0: number(a)
+#: src/App.svelte
 #: src/components/LogMessage.svelte
 msgid "Add text to fetched post {0} before posting"
 msgstr "Közzététel előtt adj szöveget a(z) {0}. lekért bejegyzéshez"
@@ -2394,11 +2398,56 @@ msgstr "Ez véglegesen törli a profil Facebook-bejelentkezését, csoportjait, 
 msgid "Deleting…"
 msgstr "Törlés…"
 
-#: src/components/FeaturesCard.svelte
-msgid "<0/> How to use"
-msgstr "<0/> Használati útmutató"
+#~ msgid "<0/> How to use"
+#~ msgstr "<0/> Használati útmutató"
 
 #: src/components/QueueReview.svelte
 #: src/components/QueueReview.svelte
 msgid "Review your queue"
 msgstr "Várólista áttekintése"
+
+#: src/components/ContactButton.svelte
+msgid "Question"
+msgstr "Kérdés"
+
+#: src/components/ContactButton.svelte
+msgid "Feedback"
+msgstr "Visszajelzés"
+
+#: src/components/ContactButton.svelte
+msgid "Bug report"
+msgstr "Hibajelentés"
+
+#: src/components/ContactButton.svelte
+msgid "Account help"
+msgstr "Fiókkal kapcsolatos segítség"
+
+#: src/components/ContactButton.svelte
+msgid "Business inquiry"
+msgstr "Üzleti megkeresés"
+
+#: src/components/ContactButton.svelte
+#: src/components/ContactButton.svelte
+msgid "Other"
+msgstr "Egyéb"
+
+#: src/components/ContactButton.svelte
+#: src/components/ContactButton.svelte
+msgid "Contact"
+msgstr "Kapcsolat"
+
+#: src/components/ContactButton.svelte
+msgid "Could not open your email app. Copy the address above to send an email."
+msgstr "Nem sikerült megnyitni a levelezőalkalmazást. E-mail küldéséhez másold ki a fenti címet."
+
+#~ msgid "Choose a topic to open your email app."
+#~ msgstr "Válassz témát a levelezőalkalmazás megnyitásához."
+
+#~ msgid "Bug"
+#~ msgstr ""
+
+#~ msgid "Account"
+#~ msgstr ""
+
+#~ msgid "Business"
+#~ msgstr ""

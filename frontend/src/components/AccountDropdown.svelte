@@ -175,13 +175,13 @@
 {/if}
 
 <style>
-  .account-dropdown { position: relative; width: 24rem; max-width: 50vw; font-size: 1.3rem; }
+  .account-dropdown { position: relative; width: 24rem; max-width: 50vw; font-size: var(--ui-body-size); }
   button, input { font: inherit; }
   button { cursor: pointer; }
   .account-trigger { display: flex; align-items: center; gap: 1rem; width: 100%; min-height: 4rem; padding: .9rem 1.4rem; border: 1px solid var(--border); border-radius: .7rem; color: var(--text-secondary); background: var(--surface); text-align: start; }
   .account-trigger:hover:not(:disabled), .account-trigger[aria-expanded=true] { border-color: var(--border-strong); }
   .account-trigger:disabled { opacity: .5; cursor: default; }
-  .compact { width: 22rem; font-size: 1.2rem; }
+  .compact { width: 22rem; font-size: var(--ui-small-size); }
   .compact .account-trigger { min-height: 3.2rem; padding: .6rem 1rem; }
   .account-name { display: block; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .flag { flex-shrink: 0; font-size: 1.4rem; }
@@ -192,7 +192,7 @@
   .search-row input { min-width: 0; flex: 1; width: 100%; padding: 0; border: 0; outline: none; background: transparent; color: var(--text); }
   .search-row input::placeholder { color: var(--text-muted); }
   .clear-search { display: grid; place-items: center; padding: .2rem; border: 0; border-radius: .3rem; background: transparent; color: var(--text-muted); }
-  .menu-heading { padding: 1.1rem 1.2rem .5rem; color: var(--text-muted); font-size: 1.05rem; }
+  .menu-heading { padding: 1.1rem 1.2rem .5rem; color: var(--text-muted); font-size: var(--ui-small-size); }
   [role=listbox] { max-height: min(28rem, 50dvh); padding: 0 .5rem .6rem; overflow-y: auto; }
   [role=option] { display: flex; align-items: center; gap: .8rem; width: 100%; min-height: 3rem; padding: .6rem .7rem; border: 0; border-radius: .3rem; background: var(--surface); color: var(--text); text-align: start; }
   [role=option]:hover, [role=option].highlighted, [role=option].selected { background: var(--surface-hover); }
@@ -212,8 +212,8 @@
   @media (hover: none) { .profile-action { opacity: 1; pointer-events: auto; } }
   .no-results { display: flex; align-items: center; flex-direction: column; gap: .8rem; padding: 2.5rem 1.5rem 3rem; text-align: center; }
   .no-results svg { width: 2rem; height: 2rem; margin-bottom: .5rem; color: var(--text-muted); }
-  .no-results strong { color: var(--text); font-size: 1.2rem; font-weight: 550; }
-  .no-results p { color: var(--text-muted); font-size: 1.1rem; }
+  .no-results strong { color: var(--text); font-size: var(--ui-small-size); font-weight: 550; }
+  .no-results p { color: var(--text-muted); font-size: var(--ui-small-size); }
   .account-trigger:focus-visible, .clear-search:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
   .search-row:focus-within { box-shadow: inset 0 -1px var(--border-strong); }
 </style>

@@ -68,11 +68,13 @@
 <style>
   .update-control { position: relative; --wails-draggable: no-drag; }
   button { border: 1px solid var(--border); border-radius: .5rem; padding: .7rem 1rem; color: var(--text); background: var(--surface); font: inherit; cursor: pointer; white-space: nowrap; }
-  button.available { background: #ffbd59; color: #332000; border-color: #e59418; font-weight: 600; }
+  .update-control > button { min-height: 3.2rem; border: 0; border-radius: .4rem; background: transparent; color: var(--text-secondary); font-size: var(--ui-small-size); }
+  .update-control > button:hover, .update-control > button[aria-expanded=true] { background: var(--surface-hover); color: var(--text); filter: none; }
+  .update-control > button.available { background: var(--warning-bg); color: var(--warning); font-weight: var(--ui-title-weight); }
   button:hover { filter: brightness(.94); }
   button:disabled { opacity: .5; cursor: default; }
   button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
-  section { position: absolute; z-index: 100; inset-inline-end: 0; top: calc(100% + 1.1rem); width: min(36rem, calc(100vw - 3rem)); padding: 1.6rem; border: 1px solid var(--border); border-radius: .8rem; background: var(--surface); color: var(--text); box-shadow: 0 .8rem 2.4rem #0003; font-size: 1.3rem; user-select: text; }
+  section { position: absolute; z-index: 100; inset-inline-end: 0; top: calc(100% + 1.1rem); width: min(36rem, calc(100vw - 3rem)); padding: 1.6rem; border: 1px solid var(--border); border-radius: .8rem; background: var(--surface); color: var(--text); box-shadow: 0 .8rem 2.4rem var(--shadow-strong); font-size: var(--ui-body-size); user-select: text; }
   .heading, .actions { display: flex; gap: .8rem; align-items: center; justify-content: space-between; }
   .actions { flex-wrap: wrap; justify-content: flex-start; margin-top: 1.2rem; }
   p { margin-top: 1rem; overflow-wrap: anywhere; line-height: 1.5; }

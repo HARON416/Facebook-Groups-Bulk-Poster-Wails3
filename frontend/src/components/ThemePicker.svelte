@@ -67,7 +67,7 @@
 </dialog>
 
 <style>
-  .picker-trigger { --wails-draggable: no-drag; display: grid; place-items: center; flex-shrink: 0; height: 3.2rem; padding: .7rem 1rem; font-size: 1.2rem; white-space: nowrap; border: 0; border-radius: .5rem; background: transparent; color: var(--text-secondary); cursor: pointer; }
+  .picker-trigger { --wails-draggable: no-drag; display: grid; place-items: center; flex-shrink: 0; height: 3.2rem; padding: .7rem 1rem; font-size: var(--ui-small-size); white-space: nowrap; border: 0; border-radius: .5rem; background: transparent; color: var(--text-secondary); cursor: pointer; }
   .picker-trigger:hover { background: var(--surface-hover); color: var(--accent); }
   button:focus-visible { outline: 2px solid var(--focus); outline-offset: -2px; }
   dialog { width: min(52rem, calc(100vw - 3.2rem)); max-height: min(64rem, calc(100dvh - 3.2rem)); overflow: hidden; }
@@ -75,15 +75,15 @@
 
   .search-row svg { width: 1.6rem; height: 1.6rem; fill: none; stroke: currentColor; stroke-width: 1.5; }
   .search-row { display: flex; align-items: center; gap: 1rem; padding: .8rem 1.6rem 1.2rem; border-bottom: 1px solid var(--border); color: var(--text-muted); }
-  input { flex: 1; min-width: 0; padding: .5rem 0; background: transparent; border: 0; outline: 0; color: var(--text); font-size: 1.3rem; }
+  input { flex: 1; min-width: 0; padding: .5rem 0; background: transparent; border: 0; outline: 0; color: var(--text); font-size: var(--ui-body-size); }
   .search-row:focus-within { box-shadow: inset 0 -2px var(--focus); }
   .theme-list { min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: .6rem; }
-  [role=option] { display: flex; align-items: center; gap: .8rem; width: 100%; min-height: 3.7rem; padding: .7rem 1rem; border: 0; border-radius: .5rem; background: transparent; color: var(--text-secondary); font-size: 1.3rem; text-align: start; cursor: pointer; }
+  [role=option] { display: flex; align-items: center; gap: .8rem; width: 100%; min-height: 3.7rem; padding: .7rem 1rem; border: 0; border-radius: .5rem; background: transparent; color: var(--text-secondary); font-size: var(--ui-body-size); text-align: start; cursor: pointer; }
   [role=option].highlighted, [role=option][aria-selected=true] { background: var(--surface-hover); color: var(--text); }
   .check { flex-shrink: 0; width: 1.4rem; color: var(--accent); }
   .theme-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .swatches { display: flex; flex-shrink: 0; align-items: center; gap: .4rem; padding: .5rem .8rem; border: 1px solid var(--border-strong); border-radius: 2rem; }
   .swatches i { display: block; width: 1.2rem; height: 1.2rem; border-radius: 50%; }
-  .no-results { padding: 3rem 1.6rem; text-align: center; font-size: 1.3rem; }
+  .no-results { padding: 3rem 1.6rem; text-align: center; font-size: var(--ui-body-size); }
   .no-results p { margin-top: .8rem; color: var(--text-muted); }
 </style>

@@ -90,7 +90,7 @@ textarea,
 }
 
 body {
-  font-size: 1.6rem;
+  font-size: var(--ui-body-size);
   min-width: 320px;
 }
 
