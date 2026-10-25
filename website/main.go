@@ -14,6 +14,9 @@ import (
 //go:embed templates/*.html static
 var assets embed.FS
 
+//go:embed releases/0.1.2.json
+var defaultRelease []byte
+
 var pages = template.Must(template.ParseFS(assets, "templates/*.html"))
 
 type Download struct {
@@ -55,25 +58,17 @@ func groupDownloads(downloads []Download) []DownloadGroup {
 }
 
 func loadRelease() (Release, error) {
-	r := Release{Downloads: []Download{
-		{OS: "windows", Name: "Windows installer", Detail: "Windows x64 (.exe)"},
-		{OS: "windows", Name: "Windows portable", Detail: "Windows x64 (.zip)"},
-		{OS: "macos", Name: "Apple Silicon", Detail: "M-series Macs (.dmg)"},
-		{OS: "macos", Name: "Intel Mac", Detail: "Intel Macs (.dmg)"},
-		{OS: "linux", Name: "AppImage", Detail: "Linux x64 (portable)"},
-		{OS: "linux", Name: "Debian / Ubuntu", Detail: "Linux x64 (.deb)"},
-		{OS: "linux", Name: "Fedora / RPM", Detail: "Linux x64 (.rpm)"},
-		{OS: "linux", Name: "Arch Linux", Detail: "Linux x64 (.pkg.tar.zst)"},
-	}}
+	var r Release
+	b := defaultRelease
 	if path := os.Getenv("RELEASE_FILE"); path != "" {
-		b, err := os.ReadFile(path)
+		var err error
+		b, err = os.ReadFile(path)
 		if err != nil {
 			return r, err
 		}
-		err = json.Unmarshal(b, &r)
-		if err != nil {
-			return r, err
-		}
+	}
+	if err := json.Unmarshal(b, &r); err != nil {
+		return r, err
 	}
 	for _, d := range r.Downloads {
 		if d.URL != "" {
@@ -118,6 +113,16 @@ func newHandler(release Release) http.Handler {
 	mux.HandleFunc("GET /{$}", render("home"))
 	mux.HandleFunc("GET /downloads", render("downloads"))
 	mux.HandleFunc("GET /partials/release", render("release"))
+	for _, feed := range []string{"stable.json", "stable-deb.json", "stable-rpm.json", "stable-arch.json", "stable-binary.json"} {
+		mux.HandleFunc("GET /updates/postika/"+feed, func(w http.ResponseWriter, r *http.Request) {
+			target := "https://postika-desktop-application.b-cdn.net/updates/" + feed
+			if r.URL.RawQuery != "" {
+				target += "?" + r.URL.RawQuery
+			}
+			w.Header().Set("Cache-Control", "no-cache")
+			http.Redirect(w, r, target, http.StatusTemporaryRedirect)
+		})
+	}
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("X-Content-Type-Options", "nosniff")
 		w.Header().Set("Referrer-Policy", "strict-origin-when-cross-origin")
@@ -132,7 +137,7 @@ func main() {
 	}
 	addr := os.Getenv("ADDR")
 	if addr == "" {
-		addr = "127.0.0.1:8080"
+		addr = "127.0.0.1:8000"
 	}
 	server := &http.Server{Addr: addr, Handler: newHandler(release), ReadHeaderTimeout: 5 * time.Second, IdleTimeout: 60 * time.Second}
 	log.Printf("Postika website: http://%s", addr)

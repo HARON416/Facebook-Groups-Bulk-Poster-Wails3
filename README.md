@@ -5,9 +5,10 @@ groups with separate accounts, saved drafts, scheduling, and posting controls.
 It uses an installed Chrome or Chromium browser for Facebook sessions and is
 built with **Wails v3, Go, Svelte 5, TypeScript, and Lexical**.
 
-The project is under active development. Windows, macOS, and Linux packaging
-recipes are available; release downloads and update feeds have not been
-published. The website at `postika.softwrhq.com` is planned.
+The project is under active development. Release `0.1.2` has Windows, macOS,
+and Linux distribution packages and signed update feeds prepared for Bunny CDN.
+Release assets are hosted at `https://postika-desktop-application.b-cdn.net`.
+Deployment of the website and update routes at `postika.softwrhq.com` is pending.
 
 ## Features
 
@@ -115,8 +116,10 @@ verification helper and the native package manager; they may request
 administrator authorization. Updates stay inside the app.
 
 Payloads require SHA-512 checksums and Ed25519ph signatures. These authenticate
-updates independently of OS publisher code signing. **Update delivery is pending
-publication of the release feeds and native old-to-new installation tests.**
+updates independently of OS publisher code signing. Signed `0.1.2` feeds have
+been generated and verified against the embedded public key. **End-to-end update
+delivery still requires the website update routes to be deployed over HTTPS,
+working DNS, and native old-to-new installation tests.**
 See [Releasing](docs/RELEASING.md) for artifact formats, signing keys, feeds,
 and release acceptance checks.
 
@@ -341,35 +344,113 @@ Additional targets are separate from the unsigned release set:
   `Casks/postika.rb` in a tap. It points to the same hosted, architecture-specific
   DMGs listed above.
 
-Before switching architectures or platforms, copy the tested artifacts into
-`bin/releases/<version>/` with versioned, architecture-specific names. This is a
-release staging convention, not an automatic output of `package:all`. For
-example, rename the Apple Silicon `bin/postika.dmg` to
-`postika-<version>-darwin-arm64.dmg` before building the Intel DMG. Use `amd64` in
-release filenames for x64 targets, including the renamed Linux AppImage.
+For distribution, use the verified, versioned files in `bin/releases/<version>/`
+created by `make release-all`. The raw build outputs above can be overwritten by
+the next architecture or platform build. `make package-all` packages only the
+current OS; it is not needed again after a successful all-OS release.
 
-The planned website layout is:
+### Publishing a release to Bunny
+
+After committing and pushing application changes, run from the repository root:
+
+```sh
+make release-all     # Automatically bumps patch, builds all OS packages, downloads and verifies them
+make update-feeds    # Signs and verifies all five update feeds for that version
+```
+
+For a retry of the same release version, use `make release-all BUMP=none`.
+`make update-feeds` does not change the version, rebuild packages, or upload
+anything. It requires the project-local Wails CLI and the existing private key
+at `.update-keys/updater.key`. It verifies the complete release's SHA256SUMS,
+creates signed manifests, and verifies them against
+`internal/updateauth/public-key.pem`, the public key embedded in the app.
+An existing `bin/updates/<version>/` folder is preserved rather than overwritten.
+Keep using the same signing key; back it up privately and never upload it.
+
+For each release, publish in this order:
+
+1. Test the packages and the native update paths for the platforms being published.
+2. Upload every file **inside** `bin/releases/<version>/` to Bunny's `downloads/`
+   folder. Keep the versioned filenames; do not upload the local version folder.
+   Include `SHA256SUMS`, `LICENSE.txt`, and the update payloads as well as installers.
+3. Confirm the new payload URLs work before changing any feeds.
+4. Upload the five JSON files **inside** `bin/updates/<version>/` to Bunny's
+   `updates/` folder, replacing the previous JSON files with the same names.
+5. Purge Bunny's cached update JSON files. Serve `/updates/*.json` as
+   `application/json` with `Cache-Control: no-cache` and configure the CDN to
+   avoid stale feed caching. Query parameters must be accepted.
+6. Update the website's release metadata and deploy it as described below.
+
+The Bunny base URL is `https://postika-desktop-application.b-cdn.net`:
 
 | Hosted path | Contents |
 | --- | --- |
-| `/downloads/postika/<version>/` | Versioned installers, portable archives, update payloads, `SHA256SUMS`, and `LICENSE.txt` |
-| `/updates/postika/stable.json` | Windows raw EXE, macOS app-bundle ZIPs, and Linux AppImage entries |
-| `/updates/postika/stable-deb.json` | Linux DEB entries |
-| `/updates/postika/stable-rpm.json` | Linux RPM entries |
-| `/updates/postika/stable-arch.json` | Linux Arch package entries |
-| `/updates/postika/stable-binary.json` | Optional standalone Linux ELF entries |
+| `/downloads/` | Versioned installers, portable archives, update payloads, `SHA256SUMS`, and `LICENSE.txt` |
+| `/updates/stable.json` | Windows raw EXE, macOS app-bundle ZIPs for both architectures, and Linux AppImage |
+| `/updates/stable-deb.json` | Linux DEB |
+| `/updates/stable-rpm.json` | Linux RPM |
+| `/updates/stable-arch.json` | Linux Arch package |
+| `/updates/stable-binary.json` | Standalone Linux ELF |
 
-These hosted paths are under `https://postika.softwrhq.com`. Generate and verify
-the JSON manifests with the pinned Wails updater CLI; the release guide stages
-them at `bin/updates/stable*.json`. Packaging alone does not generate those
-feeds or upload files. Initial-download archives and updater payloads are
-different for Windows and macOS: feed entries must reference the raw Windows
-EXE or macOS app-bundle ZIP, never the NSIS setup EXE or DMG.
+For example, the current Arch feed is
+`https://postika-desktop-application.b-cdn.net/updates/stable-arch.json`, and the
+Windows installer is
+`https://postika-desktop-application.b-cdn.net/downloads/postika-0.1.2-windows-amd64-installer.exe`.
+The JSON filenames remain constant; their version, payload URLs, hashes, and
+signatures change for each release. Package filenames include the version.
+Keep older remote payloads available while clients may still be downloading
+them. Automatic cleanup of older **local** release folders does not delete
+anything from Bunny.
 
-Upload the final immutable artifacts and checksums first, then the verified
-feeds. Keep `.update-keys/` and all private keys out of the hosting directory.
-See [Releasing](docs/RELEASING.md#signing-and-payloads) for manifest commands and
-verification requirements. The website and publishing work remain pending.
+Initial-download archives and updater payloads differ for Windows and macOS:
+feeds reference the raw Windows EXE or macOS app-bundle ZIP, never the NSIS
+installer or DMG. Update signing is separate from OS publisher code signing;
+paid publisher signing and notarization remain deferred.
+
+### Website downloads and update routing
+
+Already-built apps request feeds at
+`https://postika.softwrhq.com/updates/postika/stable*.json`. The website has five
+exact GET/HEAD routes that issue temporary HTTPS redirects to Bunny's
+`/updates/stable*.json`, preserving the query string. The app follows these
+redirects. Deploy the website handler behind HTTPS and configure DNS for
+`postika.softwrhq.com` before expecting installed apps to reach the feeds.
+These routes remain the same for future releases; only Bunny's JSON contents
+need replacing.
+
+Download-page metadata is separate from the signed update feeds. The current
+`website/releases/0.1.2.json` is embedded in the website executable, so all eight
+download buttons work by default without environment variables:
+
+```sh
+cd website
+make run
+```
+
+For each new release, prepare `website/releases/<version>.json` with its version,
+date, release notes, and versioned Bunny download URLs. Update the default
+`go:embed` release path in `website/main.go`, then rebuild and deploy the website.
+`make release-all` and `make update-feeds` do not generate this website metadata
+or deploy the website. Release notes appear when the metadata includes notes.
+
+An optional `RELEASE_FILE` overrides the embedded metadata at startup. Use a path
+relative to the website process's working directory, or an absolute path. When
+using an override, deploy that JSON file alongside the executable and restart
+the website to load changes. For example:
+
+```sh
+RELEASE_FILE=releases/0.1.2.json make run
+```
+
+For a Go executable deployment, build with `make build` from `website/`. The
+default release data is included in the executable. Configure the server's
+address using `ADDR` (default `127.0.0.1:8080`) behind your HTTPS reverse proxy.
+
+Before declaring auto updates available, verify the deployed website routes,
+Bunny feeds, and native old-to-new installation flows. An app already running
+the published version correctly reports no newer update.
+See [Releasing](docs/RELEASING.md#signing-and-payloads) for verification and
+release acceptance requirements.
 
 macOS DMG packaging requires macOS. Preserve each architecture's output before
 building the next, because some output paths are reused. Windows NSIS packaging
@@ -408,6 +489,8 @@ setup required by Garble.
 | `frontend/src/` | Svelte interface, editor, drafts, themes, and localization |
 | `frontend/bindings/` | Generated Wails service bindings and models |
 | `build/`, `Taskfile.yml` | Native resources, platform packaging, and build tasks |
+| `scripts/` | Release packaging, versioning, artifact verification, and signed feed generation |
+| `website/` | Go website, download metadata, and update-feed redirects |
 | `docs/` | Release instructions, translation guidance, and Wails v3 review |
 
 ## Ubuntu sandbox troubleshooting

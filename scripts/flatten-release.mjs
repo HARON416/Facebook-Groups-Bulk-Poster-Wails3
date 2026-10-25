@@ -31,7 +31,7 @@ function rejectOlderRelease(releases, version) {
     }
   }
 }
-function verifyFlatRelease(directory, version) {
+export function verifyFlatRelease(directory, version) {
   const expected = new Set([...packageNames(version), 'LICENSE.txt']);
   const entries = readdirSync(directory, { withFileTypes: true });
   if (entries.length !== expected.size + 1 || entries.some(entry => !entry.isFile() || (!expected.has(entry.name) && entry.name !== 'SHA256SUMS'))) {

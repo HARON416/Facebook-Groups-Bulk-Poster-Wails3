@@ -3,7 +3,7 @@
 {{define "brand"}}<a class="brand" href="/" aria-label="Postika home"><img src="/static/appicon.png" width="32" height="32" alt="">postika</a>{{end}}
 {{define "cta"}}<a class="button button-primary" href="/downloads"><span data-download-label>Download Postika</span></a><a class="text-link platform-link" href="/downloads">Windows, macOS &amp; Linux</a>{{end}}
 {{define "footer"}}<footer class="footer"><div>{{template "brand"}}<p>A little less busywork. A little more time.</p></div><div class="footer-links"><a href="/downloads">Downloads</a><a href="mailto:haronkibetrutoh@gmail.com">Get in touch</a><span>© {{/* Kept independent of release dates. */}}2026 Postika Technologies</span></div></footer>{{template "theme-picker"}}{{template "screenshot-modal"}}</body></html>{{end}}
-{{define "release"}}<div id="release-details" class="release-details">{{if .Version}}<p class="release-meta">Version {{.Version}} ({{.Date}})</p>{{if .Notes}}<ul>{{range .Notes}}<li>{{.}}</li>{{end}}</ul>{{else}}<p>Release notes will be added here.</p>{{end}}{{else}}<p>Our first public release is being prepared. Download links and release notes will appear here when the builds are ready.</p>{{end}}</div>{{end}}
+{{define "release"}}<div id="release-details" class="release-details">{{if .Version}}<p class="release-meta">Version {{.Version}} ({{.Date}})</p>{{if .Notes}}<ul>{{range .Notes}}<li>{{.}}</li>{{end}}</ul>{{end}}{{end}}</div>{{end}}
 
 {{define "topnav"}}
 <header class="site-header">

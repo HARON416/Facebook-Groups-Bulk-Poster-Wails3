@@ -406,48 +406,59 @@ and `amd64` for architectures. Initial installers (DMG/NSIS/portable ZIP) and
 update payloads are separate artifacts. Never put an NSIS installer into the
 Windows update feed or a DMG into the macOS update feed.
 
-For a hypothetical tested `0.2.0` release, arrange payloads as follows:
-
-```text
-bin/updates/0.2.0/app/postika-0.2.0-windows-amd64.exe
-bin/updates/0.2.0/app/postika-0.2.0-darwin-arm64.app.zip
-bin/updates/0.2.0/app/postika-0.2.0-darwin-amd64.app.zip
-bin/updates/0.2.0/app/postika-0.2.0-linux-amd64.AppImage
-bin/updates/0.2.0/deb/postika-0.2.0-linux-amd64.deb
-```
-
-On macOS, package the signed/ad-hoc-signed bundle with one top-level entry:
-`go run ./build/darwin/updatezip -app bin/postika.app -out <output>.app.zip`.
-This helper preserves executable modes and internal symlinks and avoids extra
-`__MACOSX` top-level folders, which the updater correctly rejects.
-Build the two architectures separately, preserving each payload before the next
-build overwrites `bin/postika.app`. Create and verify feed files:
+After `make release-all` downloads and verifies the complete flat release, run:
 
 ```sh
-.tools/bin/wails3 updater manifest -version 0.2.0 -channel stable \
-  -key .update-keys/updater.key \
-  -url-prefix https://postika.softwrhq.com/downloads/postika/0.2.0/ \
-  -output bin/updates/stable.json bin/updates/0.2.0/app/
-.tools/bin/wails3 updater verify -manifest bin/updates/stable.json \
-  -dir bin/updates/0.2.0/app -publickey internal/updateauth/public-key.pem
-.tools/bin/wails3 updater manifest -version 0.2.0 -channel stable \
-  -key .update-keys/updater.key \
-  -url-prefix https://postika.softwrhq.com/downloads/postika/0.2.0/ \
-  -output bin/updates/stable-deb.json bin/updates/0.2.0/deb/
-.tools/bin/wails3 updater verify -manifest bin/updates/stable-deb.json \
-  -dir bin/updates/0.2.0/deb -publickey internal/updateauth/public-key.pem
+make update-feeds
 ```
 
-Generate and verify `stable-rpm.json` and `stable-arch.json` the same way,
-using separate directories containing only their corresponding packages.
+This uses the project-local Wails CLI and existing `.update-keys/updater.key` to
+create all five feeds in `bin/updates/<version>/`. It first verifies the release's
+SHA256SUMS, selects compatible payloads for each feed, then verifies each digest
+and signature against the public key embedded in the app. Signing runs locally;
+the private key is never included in release files or uploaded. An existing feed
+folder is preserved; move it explicitly if regeneration is required. This command
+does not bump the version or rebuild the app.
 
-Upload the tested immutable payloads first, then publish the verified feeds last.
-All feeds must return JSON directly, accept platform/arch/version/channel query
-parameters, and use `Cache-Control: no-cache`. Serve them through static hosting
-or a CDN; running apps check about once per minute. Before a feed is available,
-return 404 or 204. Other errors appear in the Updates panel without interrupting
-posting. Keep first-install files and SHA256SUMS on `/downloads` with actual file
-sizes. Do not copy another app's sizes or availability claims.
+For the current `0.1.2` release, upload the **five JSON files inside**
+`bin/updates/0.1.2/` to the Bunny storage folder `updates/`. Do not include
+the local version folder in the remote path. The public main feed URL must be:
+
+```text
+https://postika-desktop-application.b-cdn.net/updates/stable.json
+```
+
+The other four feed filenames use the same directory. Payload URLs point to
+`https://postika-desktop-application.b-cdn.net/downloads/` with versioned filenames.
+Upload and test all payloads before replacing any stable feeds. Preserve remote
+older payloads while clients may still have feeds/downloads in progress; local
+release cleanup does not imply remote deletion is safe.
+
+Configure Bunny to serve `/updates/*.json` as `application/json`, with
+`Cache-Control: no-cache` and no stale CDN caching; purge cached feeds after
+replacing them. Query parameters for platform/arch/version/channel must be
+accepted. Never cache a missing feed. Before publishing a feed, return 404 or 204.
+
+Already-built apps request `https://postika.softwrhq.com/updates/postika/`.
+The website now has five exact GET/HEAD routes that temporarily redirect those
+requests over HTTPS to Bunny while preserving the query string. Deploy this
+website handler behind HTTPS and configure DNS for `postika.softwrhq.com` so
+those routes are reachable. Creating feeds alone does not connect installed apps.
+The app's HTTP client follows HTTPS redirects. Other feed paths return 404.
+Check the public URLs after deployment, then perform native old-to-new update
+tests before advertising working auto updates. An app already on the published
+version correctly has no new update to install.
+
+The website embeds `website/releases/0.1.2.json` as its default download metadata.
+Plain `make run` from `website/` and the compiled executable show download links
+without environment variables. For a new release, prepare its JSON metadata,
+update the `go:embed` release path in `website/main.go`, and rebuild/deploy.
+`RELEASE_FILE` remains an optional startup override for an external JSON file.
+Download metadata is independent of the signed update feeds.
+
+On macOS, the release packaging task creates `.app.zip` with one top-level bundle,
+preserving executable modes and symlinks via `build/darwin/updatezip`. Do not
+substitute a DMG or a ZIP containing `__MACOSX` folders in the update feed.
 
 ### Release gates
 

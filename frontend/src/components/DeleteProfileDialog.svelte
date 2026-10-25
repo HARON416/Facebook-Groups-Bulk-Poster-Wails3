@@ -32,7 +32,7 @@
 <dialog bind:this={dialog} id="delete-profile-dialog" class="ui-dialog" aria-labelledby="delete-profile-heading" aria-describedby="delete-profile-hint" onclick={backdrop} oncancel={(event) => { event.preventDefault(); dismiss(); }} {onclose}>
   <header class="ui-dialog-heading">
     <h2 id="delete-profile-heading" class="ui-title">Delete profile</h2>
-    <button type="button" class="ui-dialog-close" aria-label="Close" disabled={busy} onclick={dismiss}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
+    <button type="button" class="ui-dialog-close" disabled={busy} onclick={dismiss}>Close</button>
   </header>
   <div class="fields">
     <p class="profile-name" dir="auto">{accountLabel(profile)}</p>

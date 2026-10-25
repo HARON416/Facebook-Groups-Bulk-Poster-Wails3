@@ -38,7 +38,7 @@
   <form onsubmit={save}>
     <header class="ui-dialog-heading">
       <h2 id="rename-profile-heading" class="ui-title">Rename profile</h2>
-      <button type="button" class="ui-dialog-close" aria-label="Close" disabled={busy} onclick={dismiss}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
+      <button type="button" class="ui-dialog-close" disabled={busy} onclick={dismiss}>Close</button>
     </header>
     <div class="fields">
       <label for="rename-profile-name">Account name</label>

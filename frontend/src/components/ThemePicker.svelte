@@ -50,7 +50,7 @@
 
 <dialog class="ui-dialog" bind:this={dialog} aria-labelledby="theme-picker-heading" onclose={() => { expanded = false; }} onclick={(event) => { if (event.target === dialog) { const r = dialog.getBoundingClientRect(); if (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) close(); } }}>
   {#if expanded}
-  <div class="picker-heading ui-dialog-heading"><h2 class="ui-title" id="theme-picker-heading">Color themes</h2><button type="button" class="close-picker ui-dialog-close" aria-label="Close" onclick={close}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
+  <div class="picker-heading ui-dialog-heading"><h2 class="ui-title" id="theme-picker-heading">Color themes</h2><button type="button" class="close-picker ui-dialog-close" onclick={close}>Close</button></div>
   <div class="search-row"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m13 13 4 4"/></svg>
     <input type="search" placeholder="Search themes…" aria-label="Search themes…" role="combobox" aria-autocomplete="list" aria-expanded="true" aria-controls="theme-options" aria-activedescendant={highlighted ? `theme-${highlighted}` : undefined} bind:this={search} bind:value={query} onkeydown={searchKey} />
   </div>

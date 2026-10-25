@@ -55,7 +55,7 @@
 <dialog class="ui-dialog" id="contact-dialog" bind:this={dialog} dir={localeDirection(getLocale())} aria-labelledby="contact-heading" onclick={backdrop} onclose={() => { expanded = false; trigger.focus(); }}>
   <header class="ui-dialog-heading">
     <h2 class="ui-title" id="contact-heading">Contact</h2>
-    <button class="ui-dialog-close" type="button" aria-label="Close" onclick={close}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
+    <button class="ui-dialog-close" type="button" onclick={close}>Close</button>
   </header>
   <div class="contact-content">
     <div class="contact-topics">

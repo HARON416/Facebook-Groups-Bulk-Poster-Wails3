@@ -100,9 +100,7 @@
   <form onsubmit={fetchPosts}>
     <header class="ui-dialog-heading">
       <h2 class="ui-title" id={`${dialogID}-heading`}>Fetch posts from a Facebook page</h2>
-      <button type="button" class="close ui-dialog-close" aria-label="Close" disabled={starting} onclick={dismiss}>
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" /></svg>
-      </button>
+      <button type="button" class="close ui-dialog-close" disabled={starting} onclick={dismiss}>Close</button>
     </header>
     <fieldset class="fields" disabled={busy}>
       <legend class="sr-only">Facebook page fetch options</legend>
@@ -139,7 +137,6 @@
   .facebook-page-option { justify-self: start; padding: 0; border: 0; background: transparent; color: var(--accent); font-size: var(--ui-small-size); font-weight: 700; line-height: 1.5; text-align: start; text-decoration: underline; text-underline-offset: .2rem; cursor: pointer; }
   .facebook-page-option:hover { color: var(--accent-hover); }
   dialog { width: min(48rem, calc(100vw - 3.2rem)); max-height: calc(100dvh - 3.2rem); overflow-y: auto; overscroll-behavior: contain; }
-  svg { width: 1.6rem; height: 1.6rem; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
   .fields { display: grid; min-width: 0; gap: var(--ui-space); padding: var(--ui-space); border: 0; }
   .fields:disabled { opacity: .6; }
   .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }

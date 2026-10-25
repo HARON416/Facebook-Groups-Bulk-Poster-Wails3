@@ -34,7 +34,7 @@
 <dialog class="ui-dialog" id="features-dialog" bind:this={dialog} dir={localeDirection(getLocale())} aria-labelledby="features-heading" onclick={backdrop} onclose={() => { expanded = false; trigger.focus(); }}>
   <header class="feature-header ui-dialog-heading">
     <h1 class="ui-title" id="features-heading">Features &amp; How to Use</h1>
-    <button class="close ui-dialog-close" type="button" aria-label="Close" onclick={close}><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
+    <button class="close ui-dialog-close" type="button" onclick={close}>Close</button>
   </header>
   <div class="view-switch" role="group" aria-label="Features">
     <button type="button" aria-pressed={view === 'features'} aria-controls="features-content" onclick={() => showView('features')}>Features</button>

@@ -154,9 +154,9 @@ textarea::placeholder {
 .ui-dialog::backdrop { background: rgb(0 0 0 / 40%); }
 .ui-dialog-heading { display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; gap: var(--ui-space); padding: 1.2rem var(--ui-space) .8rem; }
 .ui-title { color: var(--text-strong); font-size: var(--ui-title-size); font-weight: var(--ui-title-weight); line-height: 1.5; letter-spacing: normal; }
-.ui-dialog-close { display: grid; place-items: center; width: 2.8rem; height: 2.8rem; flex-shrink: 0; padding: .6rem; border: 0; border-radius: .4rem; background: transparent; color: var(--text-secondary); cursor: pointer; }
-.ui-dialog-close:hover { background: var(--surface-hover); }
-.ui-dialog-close svg { width: 1.6rem; height: 1.6rem; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.ui-dialog-close { display: inline-flex; align-items: center; justify-content: center; min-height: 3.2rem; flex-shrink: 0; padding: .7rem 1rem; border: 1px solid var(--border); border-radius: .5rem; background: var(--surface); color: var(--text); font: inherit; cursor: pointer; }
+.ui-dialog-close:not(:disabled):hover { background: var(--surface-hover); }
+.ui-dialog-close:disabled { opacity: .5; cursor: default; }
 .ui-dialog-close:focus-visible { outline: 2px solid var(--focus); outline-offset: -2px; }
 .ui-dialog-footer { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 1rem; padding: var(--ui-space); border-top: 1px solid var(--border); }
 .ui-window { background: var(--surface); color: var(--text); font-size: var(--ui-body-size); }
