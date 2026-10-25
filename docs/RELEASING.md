@@ -150,8 +150,21 @@ The current package metadata version is used; this command does not bump it.
 Keep all OS metadata versions synchronized before a new release.
 
 The launcher watches the particular run it requested, checks that it builds
-the intended commit, and downloads only after all jobs succeed. Downloaded
-artifacts land in `bin/releases/ci-<run-id>/postika-<target>/`. Access follows
+the intended commit, and downloads only after all jobs succeed. Downloads are
+temporarily stored under `bin/releases/ci-<run-id>/`. The command verifies all
+four target manifests and payloads, then automatically flattens the packages
+into `bin/releases/<version>/`. The result has 12 package files, one `LICENSE.txt`,
+and a combined `SHA256SUMS`, ready to upload to a versioned hosting folder.
+Identical licenses with Windows versus Unix line endings are merged into one
+LF copy, and its checksum is recalculated. Package bytes remain unchanged.
+The nested download folder is removed only after the flat release is complete.
+Corrupt/incomplete downloads or conflicting licenses preserve the download
+folder and fail the command. Existing releases are reused only when every file
+and checksum matches; different files for the same version are never overwritten.
+Move an existing release or bump the synchronized version metadata before
+deliberately creating a different build of that version.
+
+Access to the intermediate GitHub artifacts follows
 the repository's Actions access rules; no public release is created. CI artifacts
 expire after 30 days; copy verified releases to your permanent hosting.
 

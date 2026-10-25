@@ -3,6 +3,8 @@ import { spawnSync } from 'node:child_process';
 import { mkdirSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { releaseVersion } from './package-release.mjs';
+import { flattenRelease } from './flatten-release.mjs';
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const workflow = 'distribution.yml';
@@ -22,6 +24,7 @@ export async function releaseAll({ root = projectRoot, run = (...args) => comman
   const branch = run('git', ['branch', '--show-current']);
   if (!branch) throw new Error('Check out a branch before running make release-all.');
   const sha = run('git', ['rev-parse', 'HEAD']);
+  const version = releaseVersion(root);
   run('gh', ['auth', 'status']);
   const remoteSHA = run('gh', ['api', `repos/{owner}/{repo}/commits/${encodeURIComponent(branch)}`, '--jq', '.sha']);
   if (remoteSHA !== sha) throw new Error('The remote branch differs from this checkout. Push this commit before building.');
@@ -37,10 +40,11 @@ export async function releaseAll({ root = projectRoot, run = (...args) => comman
   if (!selectedRun) throw new Error(`Run not visible yet. Find request ${request} in GitHub Actions; it was already dispatched. Do not dispatch it again to find it.`);
   log(selectedRun.url);
   run('gh', ['run', 'watch', String(selectedRun.databaseId), '--exit-status'], true);
-  const output = resolve(root, 'bin/releases', `ci-${selectedRun.databaseId}`);
-  mkdirSync(output, { recursive: true });
-  run('gh', ['run', 'download', String(selectedRun.databaseId), '--pattern', 'postika-*', '--dir', output], true);
-  log(`All release packages downloaded to ${output}`);
+  const download = resolve(root, 'bin/releases', `ci-${selectedRun.databaseId}`);
+  mkdirSync(download, { recursive: true });
+  run('gh', ['run', 'download', String(selectedRun.databaseId), '--pattern', 'postika-*', '--dir', download], true);
+  const output = flattenRelease(root, download, version);
+  log(`Release ready to upload: ${output} (flat packages, one license, combined SHA256SUMS)`);
   return output;
 }
 
@@ -49,7 +53,7 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
   try {
     if (process.argv.includes('--plan')) {
       console.log('Build Linux x64, Windows x64, macOS arm64 and macOS amd64 on native GitHub runners.');
-      console.log('Wait for all jobs and download their packages, licenses and checksums into bin/releases/ci-<run-id>/.');
+      console.log('Wait for all jobs, verify and flatten packages into bin/releases/<version>/ with one license and combined SHA256SUMS.');
       console.log('Requires a clean, pushed branch, the workflow on the default branch, and authenticated GitHub CLI. Does not publish a release.');
     } else await releaseAll();
   } catch (error) { console.error(error.message); process.exitCode = 1; }
