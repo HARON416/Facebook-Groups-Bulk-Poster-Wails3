@@ -10,6 +10,7 @@ import (
 	"os"
 	"path/filepath"
 	"reflect"
+	"runtime"
 	"strings"
 	"sync"
 	"testing"
@@ -112,7 +113,11 @@ func TestProfilesPreserveLegacyDataAndIsolateStorage(t *testing.T) {
 		t.Fatal("migration modified browser login")
 	}
 	info, err := os.Stat(filepath.Join(root, "profiles.json"))
-	if err != nil || info.Mode().Perm() != 0600 {
+	if err != nil {
+		t.Fatal(err)
+	}
+	// Windows ACLs are not represented by Go's Unix permission bits.
+	if runtime.GOOS != "windows" && info.Mode().Perm() != 0600 {
 		t.Fatal("profile registry is not private")
 	}
 }

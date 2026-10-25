@@ -8,6 +8,7 @@ import (
 	"net/http/httptest"
 	"os"
 	"path/filepath"
+	"runtime"
 	"strings"
 	"testing"
 	"time"
@@ -34,7 +35,11 @@ func TestSettingsPersistWithoutReturningKey(t *testing.T) {
 		t.Fatal("API key exposed to UI")
 	}
 	info, err := os.Stat(s.settingsPath)
-	if err != nil || info.Mode().Perm() != 0600 {
+	if err != nil {
+		t.Fatal(err)
+	}
+	// Windows ACLs are not represented by Go's Unix permission bits.
+	if runtime.GOOS != "windows" && info.Mode().Perm() != 0600 {
 		t.Fatal("settings file must be private", err)
 	}
 	saved.MaximumInterval = 180

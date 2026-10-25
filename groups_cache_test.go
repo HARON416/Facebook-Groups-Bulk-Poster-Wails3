@@ -5,6 +5,7 @@ import (
 	"os"
 	"path/filepath"
 	"reflect"
+	"runtime"
 	"testing"
 )
 
@@ -20,7 +21,11 @@ func TestSavedGroupsRefreshAndRestore(t *testing.T) {
 		t.Fatalf("saved groups or owner not restored: %+v", status)
 	}
 	info, err := os.Stat(path)
-	if err != nil || info.Mode().Perm() != 0600 {
+	if err != nil {
+		t.Fatal(err)
+	}
+	// Windows ACLs are not represented by Go's Unix permission bits.
+	if runtime.GOOS != "windows" && info.Mode().Perm() != 0600 {
 		t.Fatalf("cache permissions: %v, %v", info, err)
 	}
 	// A failed partial refresh must not replace the complete list on disk.
