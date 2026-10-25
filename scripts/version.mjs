@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, realpathSync, writeFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -116,7 +116,9 @@ export function bumpVersion(root, change = 'patch') {
   return { previous, ...syncVersions(root, version) };
 }
 
-if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+// Node resolves the module's real path, but argv can retain a symlink alias
+// (notably /var versus /private/var for temporary directories on macOS).
+if (process.argv[1] && realpathSync(resolve(process.argv[1])) === realpathSync(fileURLToPath(import.meta.url))) {
   const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
   try {
     const [action = 'check', argument] = process.argv.slice(2);

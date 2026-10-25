@@ -1,6 +1,6 @@
 import { randomUUID } from 'node:crypto';
 import { spawnSync } from 'node:child_process';
-import { mkdirSync } from 'node:fs';
+import { mkdirSync, realpathSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { releaseVersion } from './package-release.mjs';
@@ -72,7 +72,7 @@ export async function releaseAll({ root = projectRoot, run = (...args) => comman
 }
 
 
-if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+if (process.argv[1] && realpathSync(resolve(process.argv[1])) === realpathSync(fileURLToPath(import.meta.url))) {
   try {
     if (process.argv.includes('--plan')) {
       console.log('Increment patch by default, synchronize native metadata, then commit and push only those version files.');

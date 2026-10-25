@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { spawnSync } from 'node:child_process';
-import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { mkdirSync, mkdtempSync, readFileSync, rmSync, symlinkSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { bumpVersion, checkVersions, currentVersion, parseVersion, syncVersions, versionFields, versionFiles } from './version.mjs';
@@ -108,6 +108,18 @@ test('CLI uses environment values for bump and explicit version without touching
     assert.equal(result.status, 0, result.stderr);
     assert.equal(checkVersions(root), expected);
   }
+});
+
+test('CLI executes when its checkout path goes through a directory symlink', { skip: process.platform === 'win32' }, t => {
+  const root = fixture(t);
+  mkdirSync(join(root, 'scripts'));
+  writeFileSync(join(root, 'scripts/version.mjs'), readFileSync(new URL('./version.mjs', import.meta.url)));
+  const alias = `${root}-alias`;
+  symlinkSync(root, alias, 'dir');
+  t.after(() => rmSync(alias, { force: true }));
+  const result = spawnSync(process.execPath, [join(alias, 'scripts/version.mjs'), 'bump', 'minor'], { encoding: 'utf8' });
+  assert.equal(result.status, 0, result.stderr);
+  assert.equal(checkVersions(root), '0.2.0');
 });
 
 test('make exposes version commands without running a bump', () => {
