@@ -2,6 +2,7 @@ import { createHash } from 'node:crypto';
 import { copyFileSync, existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, renameSync, rmSync, writeFileSync } from 'node:fs';
 import { basename, dirname, join, resolve, sep } from 'node:path';
 import { targets } from './package-release.mjs';
+import { parseVersion } from './version.mjs';
 
 const digest = file => createHash('sha256').update(readFileSync(file)).digest('hex');
 const normalizeLicense = bytes => bytes.toString('utf8').replace(/\r\n/g, '\n');
@@ -13,13 +14,78 @@ function filesWithin(directory) {
   });
 }
 
-// Validate every target before copying or removing anything. Only verified
-// download trees are removed; existing versioned releases are never replaced.
+const versionDirectory = /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)$/;
+function compareVersions(left, right) {
+  const a = parseVersion(left), b = parseVersion(right);
+  const index = a.findIndex((part, index) => part !== b[index]);
+  return index < 0 ? 0 : a[index] - b[index];
+}
+function packageNames(version) {
+  return Object.entries(targets).flatMap(([target, plan]) => plan.files.map(([, suffix]) => `postika-${version}-${target}${suffix}`));
+}
+function rejectOlderRelease(releases, version) {
+  if (!existsSync(releases)) return;
+  for (const entry of readdirSync(releases, { withFileTypes: true })) {
+    if (entry.isDirectory() && versionDirectory.test(entry.name) && compareVersions(entry.name, version) > 0) {
+      throw new Error(`Newer local release ${entry.name} already exists; refusing to replace it with ${version}.`);
+    }
+  }
+}
+function verifyFlatRelease(directory, version) {
+  const expected = new Set([...packageNames(version), 'LICENSE.txt']);
+  const entries = readdirSync(directory, { withFileTypes: true });
+  if (entries.length !== expected.size + 1 || entries.some(entry => !entry.isFile() || (!expected.has(entry.name) && entry.name !== 'SHA256SUMS'))) {
+    throw new Error('Latest release is incomplete or contains unexpected files; older releases preserved.');
+  }
+  const seen = new Set();
+  for (const row of readFileSync(join(directory, 'SHA256SUMS'), 'utf8').trim().split(/\r?\n/)) {
+    const match = /^([a-f0-9]{64})  ([^/\\]+)$/.exec(row);
+    if (!match || !expected.has(match[2]) || seen.has(match[2]) || digest(join(directory, match[2])) !== match[1]) {
+      throw new Error('Latest release checksum verification failed; older releases preserved.');
+    }
+    seen.add(match[2]);
+  }
+  if (seen.size !== expected.size) throw new Error('Latest release checksums are incomplete; older releases preserved.');
+}
+function isObsoleteDownload(directory, version) {
+  let files;
+  try { files = filesWithin(directory); }
+  catch { return false; }
+  let hasPackage = false;
+  for (const file of files) {
+    const name = basename(file);
+    if (name === 'LICENSE.txt' || name === 'SHA256SUMS') continue;
+    const match = /^postika-(\d+\.\d+\.\d+)-/.exec(name);
+    if (!match || compareVersions(match[1], version) > 0 || !packageNames(match[1]).includes(name)) return false;
+    hasPackage = true;
+  }
+  return hasPackage;
+}
+
+// Keep the last complete release until its successor has all twelve packages
+// and valid checksums. Only generated version/download folders are pruned.
+export function prunePreviousReleases(root, version) {
+  parseVersion(version);
+  const releases = resolve(root, 'bin/releases');
+  rejectOlderRelease(releases, version);
+  verifyFlatRelease(join(releases, version), version);
+  const obsolete = readdirSync(releases, { withFileTypes: true }).filter(entry => {
+    if (!entry.isDirectory() || entry.name === version) return false;
+    if (versionDirectory.test(entry.name)) return compareVersions(entry.name, version) < 0;
+    return /^ci-\d+$/.test(entry.name) && isObsoleteDownload(join(releases, entry.name), version);
+  });
+  for (const entry of obsolete) rmSync(join(releases, entry.name), { recursive: true });
+  return obsolete.map(entry => entry.name);
+}
+
+// Validate every target before copying or removing anything. Existing versions
+// are never overwritten in place; older releases are pruned after success.
 export function flattenRelease(root, download, version) {
   if (!/^\d+\.\d+\.\d+(?:-[\w.-]+)?$/.test(version)) throw new Error('Invalid release version');
   const releases = resolve(root, 'bin/releases');
   const source = resolve(download);
   const output = join(releases, version);
+  rejectOlderRelease(releases, version);
   if (dirname(source) !== releases || !basename(source).startsWith('ci-')) throw new Error('Expected a downloaded ci-<run-id> folder in bin/releases');
   const sourceFiles = filesWithin(source);
   const manifests = sourceFiles.filter(file => basename(file) === 'SHA256SUMS');
@@ -86,5 +152,6 @@ export function flattenRelease(root, download, version) {
     } catch (error) { rmSync(staging, { recursive: true, force: true }); throw error; }
   }
   rmSync(source, { recursive: true });
+  prunePreviousReleases(root, version);
   return output;
 }

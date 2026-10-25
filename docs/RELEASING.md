@@ -215,6 +215,14 @@ and a combined `SHA256SUMS`, ready to upload to a versioned hosting folder.
 Identical licenses with Windows versus Unix line endings are merged into one
 LF copy, and its checksum is recalculated. Package bytes remain unchanged.
 The nested download folder is removed only after the flat release is complete.
+The command then rechecks all twelve packages and the license against the
+combined manifest and removes older local version folders and obsolete CI
+caches containing only known packages of the retained or earlier versions.
+The normal result is one local `bin/releases/<latest-version>/` folder. A failed
+or corrupt new download preserves the previous complete release. Newer local
+releases are never discarded for an older build; newer downloads and unrelated
+folders are preserved. This local retention policy does not delete hosted Bunny
+files, GitHub artifacts, or remote release history.
 Corrupt/incomplete downloads or conflicting licenses preserve the download
 folder and fail the command. Existing releases are reused only when every file
 and checksum matches; different files for the same version are never overwritten.

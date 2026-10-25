@@ -268,7 +268,10 @@ This starts `.github/workflows/distribution.yml` on native Linux, Windows,
 Apple Silicon, and Intel Mac runners, waits for completion, verifies the downloads,
 and flattens all packages into `bin/releases/<version>/`, ready to upload.
 It keeps one license, combines the SHA-256 checksums, and removes the nested
-download folder only after verification. Install and authenticate GitHub CLI (`gh auth login`)
+download folder only after verification. After the new release is complete,
+older local versions and obsolete CI download folders are removed, leaving the
+latest release. Failed downloads retain the previous complete release.
+Install and authenticate GitHub CLI (`gh auth login`)
 first. The workflow must already exist on the repository's default branch, and
 the selected remote branch must match your local commit. It builds artifacts;
 it does not publish a GitHub release, upload to the website, or generate updater
