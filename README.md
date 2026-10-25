@@ -212,7 +212,23 @@ old-to-new update tests for each distributed platform and format.
 
 ## Builds and packages
 
-Choose the version once per new release. Building does not increment it:
+The all-OS release command handles versioning automatically:
+
+```sh
+make release-all                 # Bump patch, commit/push metadata, then build
+make release-all BUMP=minor      # Bump minor instead
+make release-all BUMP=major      # Bump major instead
+make release-all VERSION=0.3.2   # Use an explicit higher version
+make release-all BUMP=none       # Retry the current version without a bump
+```
+
+Start with committed, pushed application changes. The launcher checks the
+checkout and GitHub authentication, synchronizes the version, commits only the
+version metadata, pushes that commit to the current branch on `origin`, and
+builds it. A failed CI build keeps the reserved version; use `BUMP=none` to retry.
+This does not publish a GitHub release or upload anything to the website.
+
+For manual version preparation, the standalone helpers remain available:
 
 ```sh
 make version-bump                  # 0.1.0 -> 0.1.1
@@ -221,10 +237,10 @@ make version-bump BUMP=major       # 0.1.0 -> 1.0.0
 make version-set VERSION=0.2.0     # Explicit higher version
 ```
 
-Run just one of those alternatives. The command synchronizes all Windows,
+Run just one of those manual alternatives. The command synchronizes all Windows,
 macOS, and Linux app/package metadata from `build/config.yml`, including the
 embedded version used by automatic updates. Commit and push the changes before
-`make release-all`. `make version-check` validates the metadata;
+`make release-all BUMP=none` to avoid incrementing it again. `make version-check` validates the metadata;
 `make version-sync` repairs it from the config without incrementing anything.
 Release scripts, Wails frontend build tasks, and CI reject inconsistent versions.
 Existing published packages are not renamed or modified by a version bump.
@@ -241,7 +257,8 @@ wails3 build GOOS=windows GOARCH=amd64     # Windows executable from Linux/macOS
 `make build` and `make package-all` provide the corresponding shortcuts.
 Outputs are written to `bin/`.
 
-For all four release targets with one command, after committing and pushing:
+For all four release targets with one command, after committing and pushing
+your application changes:
 
 ```sh
 make release-all

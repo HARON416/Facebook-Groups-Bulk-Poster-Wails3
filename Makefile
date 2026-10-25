@@ -12,7 +12,7 @@ export POSTIKA_RELEASE_VERSION := $(VERSION)
 
 help:
 	@printf '%s\n' 'Postika commands:' '  make dev          Start the desktop app with hot reload' '  make run          Alias for make dev' '  make build        Build the desktop executable' '  make check        Check Svelte and TypeScript' '  make doctor       Check Wails dependencies' '  make install-cli  Install the pinned Wails CLI locally' '  make install-garble Install optional pinned obfuscator' '  make package-all  Package unsigned formats for this OS'
-	@printf '%s\n' '  make release-all  Build all four desktop targets in GitHub Actions and download the packages'
+	@printf '%s\n' '  make release-all  Bump patch, commit/push version metadata, build all OS packages and flatten downloads' '                    BUMP=minor|major|none or VERSION=0.3.2 selects the version policy'
 	@printf '%s\n' '  make version-check Check all platform versions agree' '  make version-sync  Sync platform metadata from build/config.yml' '  make version-bump  Increment patch; BUMP=minor or BUMP=major also supported' '  make version-set VERSION=0.2.0  Set a higher version across all platforms'
 
 dev run:

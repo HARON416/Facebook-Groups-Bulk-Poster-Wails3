@@ -111,8 +111,30 @@ and put its bin directory on PATH (with GOTOOLCHAIN=local).
 
 ### Versioning
 
-`build/config.yml` is the authoritative application version. Pick a version
-deliberately once per published release; rerunning a build does not increment it.
+`build/config.yml` is the authoritative application version. `make release-all`
+automatically increments its patch version, synchronizes the native metadata,
+commits only those version files, and pushes the commit to the current branch
+on `origin` before starting CI. All four jobs build that version commit.
+
+| Release command | Behavior from `0.1.0` |
+| --- | --- |
+| `make release-all` | Prepare and build `0.1.1` |
+| `make release-all BUMP=minor` | Prepare and build `0.2.0` |
+| `make release-all BUMP=major` | Prepare and build `1.0.0` |
+| `make release-all VERSION=0.3.2` | Prepare and build explicit higher version `0.3.2` |
+| `make release-all BUMP=none` | Build the existing `0.1.0` without a version commit or push |
+
+An attempted release reserves its version when the version commit is pushed,
+even if packaging later fails. Retry failed builds with `BUMP=none` rather than
+reserving another version. A commit failure restores the previous metadata;
+a push failure keeps the local version commit and reports how to push/retry.
+Branch protection is honored; the command never force-pushes or bypasses it.
+Every release still requires clean, already-pushed application source. Plain
+`make build`, `make package-all`, and GitHub's manual workflow-dispatch UI build
+the existing metadata without incrementing it. Automatic version preparation
+lives in the `make release-all` launcher.
+
+The following helpers are optional for preparing a version manually:
 
 | Command | Behavior from `0.1.0` |
 | --- | --- |
@@ -123,8 +145,9 @@ deliberately once per published release; rerunning a build does not increment it
 | `make version-check` | Validate every platform's active version fields |
 | `make version-sync` | Repair platform metadata from the config without a bump |
 
-Choose one bump/set command, review the diff, commit and push, then run
-`make release-all`. This updates config, Windows executable resources, NSIS
+Choose one manual bump/set command, review the diff, commit and push, then run
+`make release-all BUMP=none` to avoid a second increment. Both automatic and
+manual preparation update config, Windows executable resources, NSIS
 defines, both MSIX templates, both macOS plists, Linux nFPM metadata, and both
 desktop-entry AppImage versions. Windows numeric versions use `X.Y.Z.0`.
 The shared runtime/updater version in `build/windows/info.json` is checked on
@@ -162,7 +185,9 @@ packaging command and does not require GitHub CLI or a GitHub account.
 
 Commit and push the application changes you want to distribute. The launcher
 rejects a dirty checkout and a remote branch whose commit differs from HEAD.
-It never commits, pushes, publishes, or installs an application for you.
+It then commits and pushes only its synchronized version metadata by default.
+It does not commit unrelated application changes, publish a GitHub release,
+upload to the website, or install an application.
 
 The workflow builds these targets independently on native GitHub-hosted runners:
 
@@ -178,8 +203,8 @@ matching the Go dependency, then checks the frontend and runs Go and release
 script tests before packaging. It stages versioned filenames with `LICENSE.txt`
 and `SHA256SUMS`. The app bundle is retained locally by the staging script;
 CI transports it inside its app ZIP to preserve file modes and symlinks.
-The current package metadata version is used; this command does not bump it.
-Use the version commands above to synchronize all OS metadata before a new release.
+The package jobs use the version committed by the launcher. For a retry with
+`BUMP=none`, they use the existing synchronized metadata instead.
 
 The launcher watches the particular run it requested, checks that it builds
 the intended commit, and downloads only after all jobs succeed. Downloads are

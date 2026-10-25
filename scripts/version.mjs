@@ -94,8 +94,7 @@ export function syncVersions(root, version = currentVersion(root)) {
   return { version, files: changed.map(([file]) => file) };
 }
 
-export function bumpVersion(root, change = 'patch') {
-  const previous = currentVersion(root);
+export function nextVersion(previous, change = 'patch') {
   const parts = parseVersion(previous);
   let version;
   if (change === 'patch') version = `${parts[0]}.${parts[1]}.${parts[2] + 1}`;
@@ -108,6 +107,12 @@ export function bumpVersion(root, change = 'patch') {
     version = change;
   }
   parseVersion(version);
+  return version;
+}
+
+export function bumpVersion(root, change = 'patch') {
+  const previous = currentVersion(root);
+  const version = nextVersion(previous, change);
   return { previous, ...syncVersions(root, version) };
 }
 
