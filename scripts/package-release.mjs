@@ -3,6 +3,7 @@ import { spawnSync } from 'node:child_process';
 import { copyFileSync, cpSync, existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs';
 import { dirname, join, resolve, delimiter } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { checkVersions } from './version.mjs';
 
 export const targets = {
   'linux-amd64': {
@@ -24,10 +25,7 @@ export const targets = {
 };
 
 export function releaseVersion(root) {
-  const config = readFileSync(join(root, 'build/config.yml'), 'utf8');
-  const version = config.match(/^  version: "([^"]+)"/m)?.[1];
-  if (!version || !/^\d+\.\d+\.\d+(?:-[\w.-]+)?$/.test(version)) throw new Error('Invalid release version in build/config.yml');
-  return version;
+  return checkVersions(root);
 }
 
 export function stageRelease(root, target, version) {

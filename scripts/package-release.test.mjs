@@ -5,13 +5,13 @@ import { mkdtempSync, mkdirSync, writeFileSync, readFileSync, existsSync, rmSync
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { targets, packageRelease, releaseVersion, stageRelease } from './package-release.mjs';
+import { writeVersionFixture } from './release-test-fixtures.mjs';
 
 function fixture(t) {
   const root = mkdtempSync(join(tmpdir(), 'postika-release-'));
   t.after(() => rmSync(root, { recursive: true, force: true }));
-  mkdirSync(join(root, 'build'), { recursive: true });
+  writeVersionFixture(root);
   mkdirSync(join(root, 'bin'), { recursive: true });
-  writeFileSync(join(root, 'build/config.yml'), 'info:\n  version: "0.1.0"\n');
   writeFileSync(join(root, 'LICENSE'), 'Fixture license\n');
   return root;
 }

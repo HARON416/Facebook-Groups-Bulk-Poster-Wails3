@@ -1,7 +1,20 @@
 import { createHash } from 'node:crypto';
-import { mkdirSync, writeFileSync } from 'node:fs';
-import { join } from 'node:path';
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { dirname, join, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { targets } from './package-release.mjs';
+import { syncVersions, versionFiles } from './version.mjs';
+
+export function writeVersionFixture(root, version = '0.1.0') {
+  const project = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+  for (const file of versionFiles) {
+    mkdirSync(dirname(join(root, file)), { recursive: true });
+    writeFileSync(join(root, file), readFileSync(join(project, file)));
+  }
+  const config = join(root, 'build/config.yml');
+  writeFileSync(config, readFileSync(config, 'utf8').replace(/^  version: "[^"]+"/m, `  version: "${version}"`));
+  syncVersions(root);
+}
 
 export function writeDownloadFixture(download, version = '0.1.0') {
   const directories = {};

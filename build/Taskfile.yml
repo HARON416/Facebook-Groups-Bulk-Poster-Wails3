@@ -1,6 +1,12 @@
 version: '3'
 
 tasks:
+  check:version:
+    summary: Verifies all native package versions match build/config.yml
+    run: once
+    cmds:
+      - node scripts/version.mjs check
+
   go:mod:tidy:
     summary: Runs `go mod tidy`
     internal: true
@@ -85,6 +91,7 @@ tasks:
     generates:
       - dist/**/*
     deps:
+      - task: check:version
       - task: install:frontend:deps
       - task: generate:bindings
         vars:

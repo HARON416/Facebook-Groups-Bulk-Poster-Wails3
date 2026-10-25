@@ -212,6 +212,23 @@ old-to-new update tests for each distributed platform and format.
 
 ## Builds and packages
 
+Choose the version once per new release. Building does not increment it:
+
+```sh
+make version-bump                  # 0.1.0 -> 0.1.1
+make version-bump BUMP=minor       # 0.1.0 -> 0.2.0
+make version-bump BUMP=major       # 0.1.0 -> 1.0.0
+make version-set VERSION=0.2.0     # Explicit higher version
+```
+
+Run just one of those alternatives. The command synchronizes all Windows,
+macOS, and Linux app/package metadata from `build/config.yml`, including the
+embedded version used by automatic updates. Commit and push the changes before
+`make release-all`. `make version-check` validates the metadata;
+`make version-sync` repairs it from the config without incrementing anything.
+Release scripts, Wails frontend build tasks, and CI reject inconsistent versions.
+Existing published packages are not renamed or modified by a version bump.
+
 Run these commands with `.tools/bin` on PATH. Build tasks regenerate bindings
 and frontend assets automatically.
 

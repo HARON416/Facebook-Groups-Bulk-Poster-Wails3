@@ -47,6 +47,8 @@ jobs:
           node-version: '24'
           cache: npm
           cache-dependency-path: frontend/package-lock.json
+      - name: Check release version metadata
+        run: node scripts/version.mjs check
       - name: Linux dependencies
         if: runner.os == 'Linux'
         run: |
@@ -67,7 +69,7 @@ jobs:
       - name: Build frontend and generate Wails bindings
         run: wails3 task common:build:frontend
       - run: npm --prefix frontend run check
-      - run: node --test scripts/package-release.test.mjs scripts/release-all.test.mjs scripts/flatten-release.test.mjs
+      - run: node --test scripts/package-release.test.mjs scripts/release-all.test.mjs scripts/flatten-release.test.mjs scripts/version.test.mjs
       - run: go test -buildvcs=false -timeout 120s ./...
       - name: Package and stage artifacts
         run: node scripts/package-release.mjs '${{ matrix.target }}'

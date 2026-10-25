@@ -4,7 +4,7 @@ import { existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, rmSync, 
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { command, releaseAll } from './release-all.mjs';
-import { writeDownloadFixture } from './release-test-fixtures.mjs';
+import { writeDownloadFixture, writeVersionFixture } from './release-test-fixtures.mjs';
 
 test('missing GitHub CLI explains installation, login, and local packaging', () => {
   assert.throws(() => command('.', 'gh', ['auth', 'status'], false, () => ({ error: { code: 'ENOENT' } })), error => {
@@ -16,8 +16,7 @@ test('missing GitHub CLI explains installation, login, and local packaging', () 
 function fixture(t, override = () => undefined) {
   const root = mkdtempSync(join(tmpdir(), 'postika-dispatch-'));
   t.after(() => rmSync(root, { recursive: true, force: true }));
-  mkdirSync(join(root, 'build'));
-  writeFileSync(join(root, 'build/config.yml'), 'info:\n  version: "0.1.0"\n');
+  writeVersionFixture(root);
   const calls = [];
   const options = { root, request: 'test-request', sleep: async () => {}, log: () => {}, run: (name, args) => {
     calls.push([name, ...args]);
@@ -47,6 +46,14 @@ test('unpushed commit cannot dispatch', async t => {
   const { options, calls } = fixture(t, (name, args) => name === 'gh' && args[0] === 'api' ? 'older-commit' : undefined);
   await assert.rejects(releaseAll(options), /remote branch differs/);
   assert.ok(!calls.some(call => call[1] === 'workflow'));
+});
+
+test('mismatched native version metadata cannot dispatch a build', async t => {
+  const { options, calls } = fixture(t);
+  const path = join(options.root, 'build/windows/info.json');
+  writeFileSync(path, readFileSync(path, 'utf8').replace('"ProductVersion": "0.1.0"', '"ProductVersion": "0.0.9"'));
+  await assert.rejects(releaseAll(options), /version metadata is inconsistent/);
+  assert.ok(!calls.some(call => call[0] === 'gh'));
 });
 
 test('downloads this request’s run, never another concurrent build', async t => {

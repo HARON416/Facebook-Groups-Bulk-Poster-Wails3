@@ -109,6 +109,38 @@ and put its bin directory on PATH (with GOTOOLCHAIN=local).
 
 ## Packaging commands
 
+### Versioning
+
+`build/config.yml` is the authoritative application version. Pick a version
+deliberately once per published release; rerunning a build does not increment it.
+
+| Command | Behavior from `0.1.0` |
+| --- | --- |
+| `make version-bump` | Patch: `0.1.1` |
+| `make version-bump BUMP=minor` | Minor: `0.2.0` |
+| `make version-bump BUMP=major` | Major: `1.0.0` |
+| `make version-set VERSION=0.3.2` | Explicit higher version: `0.3.2` |
+| `make version-check` | Validate every platform's active version fields |
+| `make version-sync` | Repair platform metadata from the config without a bump |
+
+Choose one bump/set command, review the diff, commit and push, then run
+`make release-all`. This updates config, Windows executable resources, NSIS
+defines, both MSIX templates, both macOS plists, Linux nFPM metadata, and both
+desktop-entry AppImage versions. Windows numeric versions use `X.Y.Z.0`.
+The shared runtime/updater version in `build/windows/info.json` is checked on
+every platform. Release dispatch, per-target packaging, CI, and the shared Wails
+frontend-build task all check consistency; an inconsistent version cannot be
+packaged through these release commands.
+
+Only stable `MAJOR.MINOR.PATCH` values without leading zeros are accepted by this
+cross-platform release workflow; each component must fit Windows' 0–65535 range.
+Explicit equal or lower versions are rejected. For metadata repair, use sync.
+If a version field is missing or duplicated, the bump fails before writing any
+files. Existing packages, public updater feeds, Git tags, and release-history
+examples are not rewritten. The frontend npm package's internal tooling version
+is separate from the shipped desktop version. Desktop-entry `Version=1.0` and
+OS minimum-version fields are specifications/requirements and remain unchanged.
+
 ### One-command build for all desktop targets
 
 ```sh
@@ -147,7 +179,7 @@ script tests before packaging. It stages versioned filenames with `LICENSE.txt`
 and `SHA256SUMS`. The app bundle is retained locally by the staging script;
 CI transports it inside its app ZIP to preserve file modes and symlinks.
 The current package metadata version is used; this command does not bump it.
-Keep all OS metadata versions synchronized before a new release.
+Use the version commands above to synchronize all OS metadata before a new release.
 
 The launcher watches the particular run it requested, checks that it builds
 the intended commit, and downloads only after all jobs succeed. Downloads are
