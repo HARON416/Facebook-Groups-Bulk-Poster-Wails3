@@ -1,0 +1,332 @@
+# Website copy. Initial non-English translations are machine generated; review before publication.
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: te\n"
+
+msgid "A Facebook group auto poster helps you share a prepared post across the groups you select. Postika combines a post editor, group selection, scheduling, and posting logs in one desktop app."
+msgstr "Facebook సమూహం స్వీయ పోస్టర్ మీరు ఎంచుకున్న సమూహాలలో సిద్ధం చేసిన పోస్ట్‌ను భాగస్వామ్యం చేయడంలో మీకు సహాయపడుతుంది. Postika ఒక డెస్క్‌టాప్ యాప్‌లో పోస్ట్ ఎడిటర్, గ్రూప్ ఎంపిక, షెడ్యూలింగ్ మరియు పోస్ట్ లాగ్‌లను మిళితం చేస్తుంది."
+
+msgid "A few things to know"
+msgstr "తెలుసుకోవలసిన కొన్ని విషయాలు"
+
+msgid "A little less busywork. A little more time."
+msgstr "కొంచెం బిజీ వర్క్ తక్కువ. మరికొంత సమయం."
+
+msgid "A supported Windows, macOS, or Linux computer, an installed Chrome or Chromium browser, and your Facebook account. Platform downloads are listed on the downloads page."
+msgstr "మద్దతు ఉన్న Windows, macOS లేదా Linux కంప్యూటర్, ఇన్‌స్టాల్ చేయబడిన Chrome లేదా Chromium బ్రౌజర్ మరియు మీ Facebook ఖాతా. ప్లాట్‌ఫారమ్ డౌన్‌లోడ్‌లు డౌన్‌లోడ్‌ల పేజీలో జాబితా చేయబడ్డాయి."
+
+msgid "Already have a post worth sharing? Import posts from a Facebook page your signed-in account can access. Review the text and images, make your edits, and add the posts you want to your queue."
+msgstr "ఇప్పటికే షేర్ చేయడానికి విలువైన పోస్ట్ ఉందా? మీరు సైన్ ఇన్ చేసిన ఖాతా యాక్సెస్ చేయగల Facebook పేజీ నుండి పోస్ట్‌లను దిగుమతి చేసుకోండి. వచనం మరియు చిత్రాలను సమీక్షించండి, మీ సవరణలు చేయండి మరియు మీ క్యూలో మీరు కోరుకునే పోస్ట్‌లను జోడించండి."
+
+msgid "Before you start"
+msgstr "మీరు ప్రారంభించడానికి ముందు"
+
+msgid "Bring your page posts along."
+msgstr "మీ పేజీ పోస్ట్‌లను వెంట తీసుకురండి."
+
+msgid "Browser language"
+msgstr "బ్రౌజర్ భాష"
+
+msgid "Bulk Poster"
+msgstr "బల్క్ పోస్టర్"
+
+msgid "Can multiple Facebook accounts post at the same time?"
+msgstr "బహుళ Facebook ఖాతాలు ఒకే సమయంలో పోస్ట్ చేయవచ్చా?"
+
+msgid "Check your connection and try again."
+msgstr "మీ కనెక్షన్‌ని తనిఖీ చేసి, మళ్లీ ప్రయత్నించండి."
+
+msgid "Choose a version for your computer. Requires Chrome or Chromium."
+msgstr "మీ కంప్యూటర్ కోసం ఒక సంస్కరణను ఎంచుకోండి. Chrome లేదా Chromium అవసరం."
+
+msgid "Choose from 33 interface languages, including right-to-left layouts. Menus, controls, and app-generated log messages follow your choice across windows. And with 189 themes, you can make Postika feel like your own."
+msgstr "కుడి-నుండి-ఎడమ లేఅవుట్‌లతో సహా 33 ఇంటర్‌ఫేస్ భాషల నుండి ఎంచుకోండి. మెనూలు, నియంత్రణలు మరియు యాప్ రూపొందించిన లాగ్ సందేశాలు విండోస్‌లో మీ ఎంపికను అనుసరిస్తాయి. మరియు 189 థీమ్‌లతో, మీరు Postikaను మీ స్వంతంగా భావించవచ్చు."
+
+msgid "Choose your own minimum and maximum interval between posts to avoid posting in rapid succession and help reduce the risk of rate limits or account restrictions. Follow progress as the queue runs, and pause whenever you need to."
+msgstr "త్వరితగతిన పోస్ట్ చేయడాన్ని నివారించడానికి మరియు రేట్ పరిమితులు లేదా ఖాతా పరిమితుల ప్రమాదాన్ని తగ్గించడంలో సహాయపడటానికి పోస్ట్‌ల మధ్య మీ స్వంత కనీస మరియు గరిష్ట విరామాన్ని ఎంచుకోండి. క్యూ నడుస్తున్నప్పుడు పురోగతిని అనుసరించండి మరియు మీకు అవసరమైనప్పుడు పాజ్ చేయండి."
+
+msgid "Close screenshot"
+msgstr "స్క్రీన్‌షాట్‌ను మూసివేయండి"
+
+msgid "Close themes"
+msgstr "థీమ్‌లను మూసివేయండి"
+
+msgid "Color themes"
+msgstr "రంగు థీమ్స్"
+
+msgid "Color themes: {0}"
+msgstr "రంగు థీమ్‌లు: {0}"
+
+msgid "Coming soon"
+msgstr "త్వరలో వస్తుంది"
+
+msgid "Couldn’t load this screenshot. Close it and try again."
+msgstr "ఈ స్క్రీన్‌షాట్‌ను లోడ్ చేయడం సాధ్యపడలేదు. దాన్ని మూసివేసి, మళ్లీ ప్రయత్నించండి."
+
+msgid "Couldn’t refresh release notes. Please try again."
+msgstr "విడుదల గమనికలను రిఫ్రెష్ చేయడం సాధ్యపడలేదు. దయచేసి మళ్లీ ప్రయత్నించండి."
+
+msgid "Does a submission mean my post is published?"
+msgstr "సమర్పణ అంటే నా పోస్ట్ ప్రచురించబడిందా?"
+
+msgid "Does my computer need to stay on?"
+msgstr "నా కంప్యూటర్ ఆన్‌లో ఉండాల్సిన అవసరం ఉందా?"
+
+msgid "Download"
+msgstr "డౌన్‌లోడ్ చేయండి"
+
+msgid "Download Postika"
+msgstr "Postikaని డౌన్‌లోడ్ చేయండి"
+
+msgid "Download Postika for Windows, macOS, and Linux. Choose your desktop Facebook group auto poster installer and find the latest release notes."
+msgstr "Windows, macOS మరియు Linux కోసం Postikaని డౌన్‌లోడ్ చేయండి. మీ డెస్క్‌టాప్ Facebook గ్రూప్ ఆటో పోస్టర్ ఇన్‌స్టాలర్‌ని ఎంచుకోండి మరియు తాజా విడుదల గమనికలను కనుగొనండి."
+
+msgid "Download Postika — Facebook Group Auto Poster"
+msgstr "Postikaని డౌన్‌లోడ్ చేయండి — Facebook గ్రూపుల్లో ఒకేసారి పోస్ట్ చేయండి"
+
+msgid "Download for {0}"
+msgstr "{0} కోసం డౌన్‌లోడ్ చేయండి"
+
+msgid "Download {0}"
+msgstr "డౌన్‌లోడ్ {0}"
+
+msgid "Downloads"
+msgstr "డౌన్‌లోడ్‌లు"
+
+msgid "Enlarge screenshot: Postika Facebook page-post import dialog"
+msgstr "స్క్రీన్‌షాట్‌ని విస్తరించండి: Postika Facebook పేజీ-పోస్ట్ దిగుమతి డైలాగ్"
+
+msgid "Enlarge screenshot: Postika account selector and separate account workspaces"
+msgstr "స్క్రీన్‌షాట్‌ని విస్తరించండి: Postika ఖాతా ఎంపిక సాధనం మరియు ప్రత్యేక ఖాతా కార్యస్థలాలు"
+
+msgid "Enlarge screenshot: Postika composer with rich-text controls and image uploads"
+msgstr "స్క్రీన్‌షాట్‌ని విస్తరించండి: రిచ్-టెక్స్ట్ నియంత్రణలు మరియు ఇమేజ్ అప్‌లోడ్‌లతో కూడిన Postika కంపోజర్"
+
+msgid "Enlarge screenshot: Postika language selector and localized interface"
+msgstr "స్క్రీన్‌షాట్‌ని విస్తరించండి: Postika భాష ఎంపిక సాధనం మరియు స్థానికీకరించిన ఇంటర్‌ఫేస్"
+
+msgid "Enlarge screenshot: Postika posting intervals and scheduling controls"
+msgstr "స్క్రీన్‌షాట్‌ని విస్తరించండి: Postika పోస్టింగ్ విరామాలు మరియు షెడ్యూలింగ్ నియంత్రణలు"
+
+msgid "Enlarge screenshot: Postika posting logs with per-group results and queue controls"
+msgstr "స్క్రీన్‌షాట్‌ని విస్తరించండి: ప్రతి సమూహ ఫలితాలు మరియు క్యూ నియంత్రణలతో Postika లాగ్‌లను పోస్ట్ చేయడం"
+
+msgid "Enlarge screenshot: Postika scheduling controls"
+msgstr "స్క్రీన్‌షాట్‌ని విస్తరించండి: Postika షెడ్యూలింగ్ నియంత్రణలు"
+
+msgid "Facebook Group Auto Poster for Desktop | Postika"
+msgstr "Facebook గ్రూపుల్లో ఒకేసారి పోస్ట్ చేయండి | Postika"
+
+msgid "Facebook Groups"
+msgstr "ఫేస్బుక్ గుంపులు"
+
+msgid "Features"
+msgstr "ఫీచర్లు"
+
+msgid "Follow progress group by group. See what’s published, what’s awaiting approval, and what needs attention, including failed, skipped, and unconfirmed submissions. Pause, resume, or stop your queue from the same window."
+msgstr "సమూహం ద్వారా ప్రోగ్రెస్ గ్రూప్‌ని అనుసరించండి. విఫలమైన, దాటవేయబడిన మరియు ధృవీకరించని సమర్పణలతో సహా ప్రచురించబడినవి, ఆమోదం కోసం వేచి ఉన్నవి మరియు శ్రద్ధ వహించాల్సిన వాటిని చూడండి. అదే విండో నుండి మీ క్యూను పాజ్ చేయండి, పునఃప్రారంభించండి లేదా ఆపివేయండి."
+
+msgid "Get in touch"
+msgstr "సంప్రదించండి"
+
+msgid "Intel Macs (.dmg)"
+msgstr "Intel Macs (.dmg)"
+
+msgid "Is Postika a Chrome extension?"
+msgstr "Postika అనేది Chrome పొడిగింపునా?"
+
+msgid "Keep Postika open and your computer awake while a queue runs. Queues and posting logs aren’t restored after quitting."
+msgstr "క్యూ నడుస్తున్నప్పుడు Postikaను తెరిచి ఉంచండి మరియు మీ కంప్యూటర్‌ను మేల్కొని ఉంచండి. నిష్క్రమించిన తర్వాత క్యూలు మరియు పోస్టింగ్ లాగ్‌లు పునరుద్ధరించబడవు."
+
+msgid "Keep your device on and awake, with Postika open, so it can handle the posting for you."
+msgstr "Postika తెరిచి ఉంచడంతో మీ పరికరాన్ని ఆన్‌లో ఉంచండి మరియు మేల్కొని ఉంచండి, తద్వారా ఇది మీ కోసం పోస్టింగ్‌ను నిర్వహించగలదు."
+
+msgid "Language"
+msgstr "భాష"
+
+msgid "Linux x64 (portable)"
+msgstr "Linux x64 (పోర్టబుల్)"
+
+msgid "Loading screenshot…"
+msgstr "స్క్రీన్‌షాట్ లోడ్ అవుతోంది…"
+
+msgid "M-series Macs (.dmg)"
+msgstr "M-సిరీస్ Macs (.dmg)"
+
+msgid "Main navigation"
+msgstr "ప్రధాన నావిగేషన్"
+
+msgid "Move Postika into Applications before opening it."
+msgstr "Postikaను తెరవడానికి ముందు అప్లికేషన్‌లలోకి తరలించండి."
+
+msgid "No themes found. Try another name."
+msgstr "థీమ్‌లు ఏవీ కనుగొనబడలేదు. మరొక పేరు ప్రయత్నించండి."
+
+msgid "One good post. All the right groups."
+msgstr "ఒక మంచి పోస్ట్. అన్ని సరైన సమూహాలు."
+
+msgid "Post to multiple Facebook groups with Postika. A desktop auto poster with scheduling, multiple accounts, 33 interface languages, and clear posting logs."
+msgstr "Postikaతో బహుళ Facebook సమూహాలకు పోస్ట్ చేయండి. షెడ్యూలింగ్, బహుళ ఖాతాలు, 33 ఇంటర్‌ఫేస్ భాషలు మరియు స్పష్టమైన పోస్టింగ్ లాగ్‌లతో కూడిన డెస్క్‌టాప్ ఆటో పోస్టర్."
+
+msgid "Post to multiple Facebook groups without repeating the same steps. Write once, choose your groups, and post now or schedule for later."
+msgstr "ఒకే దశలను పునరావృతం చేయకుండా బహుళ Facebook సమూహాలకు పోస్ట్ చేయండి. ఒకసారి వ్రాయండి, మీ సమూహాలను ఎంచుకోండి మరియు ఇప్పుడే పోస్ట్ చేయండి లేదా తర్వాత షెడ్యూల్ చేయండి."
+
+msgid "Postika Facebook page-post import dialog"
+msgstr "Postika Facebook పేజీ-పోస్ట్ దిగుమతి డైలాగ్"
+
+msgid "Postika account selector and separate account workspaces"
+msgstr "Postika ఖాతా ఎంపిక సాధనం మరియు ప్రత్యేక ఖాతా కార్యస్థలాలు"
+
+msgid "Postika composer with rich-text controls and image uploads"
+msgstr "రిచ్-టెక్స్ట్ నియంత్రణలు మరియు ఇమేజ్ అప్‌లోడ్‌లతో కూడిన Postika కంపోజర్"
+
+msgid "Postika features"
+msgstr "Postika లక్షణాలు"
+
+msgid "Postika home"
+msgstr "Postika హోమ్"
+
+msgid "Postika is a desktop app for Windows, macOS, and Linux. It uses an installed Chrome or Chromium browser for your Facebook sessions."
+msgstr "Postika అనేది Windows, macOS మరియు Linux కోసం డెస్క్‌టాప్ యాప్. ఇది మీ Facebook సెషన్‌ల కోసం ఇన్‌స్టాల్ చేయబడిన Chrome లేదా Chromium బ్రౌజర్‌ని ఉపయోగిస్తుంది."
+
+msgid "Postika language selector and localized interface"
+msgstr "Postika భాష ఎంపిక సాధనం మరియు స్థానికీకరించిన ఇంటర్‌ఫేస్"
+
+msgid "Postika posting intervals and scheduling controls"
+msgstr "Postika పోస్టింగ్ విరామాలు మరియు షెడ్యూలింగ్ నియంత్రణలు"
+
+msgid "Postika posting logs with per-group results and queue controls"
+msgstr "Postika ప్రతి సమూహ ఫలితాలు మరియు క్యూ నియంత్రణలతో లాగ్‌లను పోస్ట్ చేస్తోంది"
+
+msgid "Postika scheduling controls"
+msgstr "Postika షెడ్యూలింగ్ నియంత్రణలు"
+
+msgid "Posting intervals don’t guarantee protection from Facebook restrictions or bans."
+msgstr "పోస్ట్ చేసే విరామాలు Facebook పరిమితులు లేదా నిషేధాల నుండి రక్షణకు హామీ ఇవ్వవు."
+
+msgid "Prepare now. Schedule for later."
+msgstr "ఇప్పుడే సిద్ధం. తర్వాత షెడ్యూల్ చేయండి."
+
+msgid "Questions"
+msgstr "ప్రశ్నలు"
+
+msgid "Refresh release notes"
+msgstr "విడుదల గమనికలను రిఫ్రెష్ చేయండి"
+
+msgid "Release notes"
+msgstr "విడుదల గమనికలు"
+
+msgid "Release notes are up to date."
+msgstr "విడుదల గమనికలు తాజాగా ఉన్నాయి."
+
+msgid "Report a problem"
+msgstr "సమస్యను నివేదించండి"
+
+msgid "Run posting queues for multiple Facebook accounts at the same time. Each account keeps its own browser session, groups, drafts, and posting settings, so you can prepare another post or check progress without interrupting the other accounts."
+msgstr "ఒకే సమయంలో బహుళ Facebook ఖాతాల కోసం పోస్టింగ్ క్యూలను అమలు చేయండి. ప్రతి ఖాతా దాని స్వంత బ్రౌజర్ సెషన్, సమూహాలు, డ్రాఫ్ట్‌లు మరియు పోస్టింగ్ సెట్టింగ్‌లను ఉంచుతుంది, కాబట్టి మీరు మరొక పోస్ట్‌ను సిద్ధం చేయవచ్చు లేదా ఇతర ఖాతాలకు అంతరాయం కలిగించకుండా పురోగతిని తనిఖీ చేయవచ్చు."
+
+msgid "Schedule your posts for a date and time that suits you. When that time arrives, Postika automatically starts posting to your selected groups. You don’t need to be there to press Post."
+msgstr "మీకు సరిపోయే తేదీ మరియు సమయం కోసం మీ పోస్ట్‌లను షెడ్యూల్ చేయండి. ఆ సమయం వచ్చినప్పుడు, Postika స్వయంచాలకంగా మీరు ఎంచుకున్న సమూహాలకు పోస్ట్ చేయడం ప్రారంభిస్తుంది. పోస్ట్‌ని నొక్కడానికి మీరు అక్కడ ఉండవలసిన అవసరం లేదు."
+
+msgid "Screenshot preview"
+msgstr "స్క్రీన్‌షాట్ ప్రివ్యూ"
+
+msgid "Search by name…"
+msgstr "పేరుతో వెతకండి..."
+
+msgid "Search themes"
+msgstr "థీమ్‌లను శోధించండి"
+
+msgid "See where every post stands."
+msgstr "ప్రతి పోస్ట్ ఎక్కడ ఉందో చూడండి."
+
+msgid "Selected"
+msgstr "ఎంపిక చేయబడింది"
+
+msgid "Set your pace. Leave room between posts."
+msgstr "మీ వేగాన్ని సెట్ చేయండి. పోస్ట్‌ల మధ్య గదిని వదిలివేయండి."
+
+msgid "Several accounts. Posting at the same time."
+msgstr "అనేక ఖాతాలు. అదే సమయంలో పోస్ట్ చేయడం."
+
+msgid "Skip opening every group and pasting the same thing again. Write your post with rich text, add and reorder your images, then search and select the Facebook groups you want to share with. Your draft stays saved while you get it right."
+msgstr "ప్రతి సమూహాన్ని తెరిచి, అదే విషయాన్ని మళ్లీ అతికించడాన్ని దాటవేయండి. రిచ్ టెక్స్ట్‌తో మీ పోస్ట్‌ను వ్రాయండి, మీ చిత్రాలను జోడించండి మరియు క్రమాన్ని మార్చండి, ఆపై మీరు భాగస్వామ్యం చేయాలనుకుంటున్న Facebook సమూహాలను శోధించండి మరియు ఎంచుకోండి. మీరు సరిగ్గా పొందినప్పుడు మీ చిత్తుప్రతి సేవ్ చేయబడుతుంది."
+
+msgid "Skip to content"
+msgstr "కంటెంట్‌కి దాటవేయండి"
+
+msgid "Some groups require approval. Posting logs distinguish published posts, pending approval, failed, skipped, and unconfirmed submissions. Check unconfirmed results on Facebook before retrying."
+msgstr "కొన్ని సమూహాలకు ఆమోదం అవసరం. పోస్టింగ్ లాగ్‌లు ప్రచురించిన పోస్ట్‌లు, పెండింగ్‌లో ఉన్న ఆమోదం, విఫలమైన, దాటవేయబడిన మరియు ధృవీకరించని సమర్పణలను వేరు చేస్తాయి. మళ్లీ ప్రయత్నించే ముందు Facebookలో ధృవీకరించని ఫలితాలను తనిఖీ చేయండి."
+
+msgid "System default"
+msgstr "సిస్టమ్ డిఫాల్ట్"
+
+msgid "System default ({0})"
+msgstr "సిస్టమ్ డిఫాల్ట్ ({0})"
+
+msgid "System packages may ask for administrator authorization."
+msgstr "సిస్టమ్ ప్యాకేజీలు అడ్మినిస్ట్రేటర్ అధికారాన్ని అడగవచ్చు."
+
+msgid "Unsigned installer: Windows may show a SmartScreen warning. The portable version needs no installation; account data stays in the app data folder."
+msgstr "సంతకం చేయని ఇన్‌స్టాలర్: Windows SmartScreen హెచ్చరికను చూపవచ్చు. పోర్టబుల్ వెర్షన్‌కు ఇన్‌స్టాలేషన్ అవసరం లేదు; ఖాతా డేటా యాప్ డేటా ఫోల్డర్‌లో ఉంటుంది."
+
+msgid "Version"
+msgstr "వెర్షన్"
+
+msgid "Version {0} ({1})"
+msgstr "వెర్షన్ {0} ({1})"
+
+msgid "What do I need to run Postika?"
+msgstr "Postikaను అమలు చేయడానికి నేను ఏమి చేయాలి?"
+
+msgid "What is a Facebook group auto poster?"
+msgstr "Facebook గ్రూప్ ఆటో పోస్టర్ అంటే ఏమిటి?"
+
+msgid "Windows installer"
+msgstr "విండోస్ ఇన్‌స్టాలర్"
+
+msgid "Windows portable"
+msgstr "విండోస్ పోర్టబుల్"
+
+msgid "Windows, macOS & Linux"
+msgstr "Windows, macOS & Linux"
+
+msgid "Work in the language you think in."
+msgstr "మీరు అనుకున్న భాషలో పని చేయండి."
+
+msgid "Yes. Keep Postika open and your computer awake while a queue is scheduled or running. Queues and posting logs are not restored after quitting."
+msgstr "అవును. క్యూ షెడ్యూల్ చేయబడినప్పుడు లేదా నడుస్తున్నప్పుడు Postikaను తెరిచి ఉంచండి మరియు మీ కంప్యూటర్‌ను మేల్కొని ఉంచండి. నిష్క్రమించిన తర్వాత క్యూలు మరియు పోస్టింగ్ లాగ్‌లు పునరుద్ధరించబడవు."
+
+msgid "Yes. Multiple accounts can run their posting queues in parallel. Each account has a separate browser session, groups, drafts, and posting settings. Switching accounts doesn’t interrupt the other queues."
+msgstr "అవును. బహుళ ఖాతాలు వాటి పోస్టింగ్ క్యూలను సమాంతరంగా అమలు చేయగలవు. ప్రతి ఖాతాకు ప్రత్యేక బ్రౌజర్ సెషన్, సమూహాలు, చిత్తుప్రతులు మరియు పోస్టింగ్ సెట్టింగ్‌లు ఉంటాయి. ఖాతాలను మార్చడం ఇతర క్యూలకు అంతరాయం కలిగించదు."
+
+msgid "Your platform"
+msgstr "మీ వేదిక"
+
+msgid "{0} shown"
+msgstr "{0} చూపబడింది"
+
+msgid "{0} themes and system default"
+msgstr "{0} థీమ్‌లు మరియు సిస్టమ్ డిఫాల్ట్"
+
+msgid "Facebook Groups <0>Bulk Poster</0>"
+msgstr "Facebook గ్రూపుల్లో <0>ఒకేసారి పోస్ట్ చేయండి</0>"
+
+msgid "All languages"
+msgstr "అన్ని భాషలు"
+
+msgid "Language: {0}"
+msgstr "భాష: {0}"
+
+msgid "Languages"
+msgstr "భాషలు"
+
+msgid "No languages found"
+msgstr "ఎలాంటి భాషలు కనిపించలేదు"
+
+msgid "Search languages…"
+msgstr "భాషలను వెతకండి…"
+
+msgid "Try a different name."
+msgstr "వేరే పేరుతో ప్రయత్నించండి."

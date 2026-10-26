@@ -1,0 +1,332 @@
+# Website copy. Initial non-English translations are machine generated; review before publication.
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: el\n"
+
+msgid "A Facebook group auto poster helps you share a prepared post across the groups you select. Postika combines a post editor, group selection, scheduling, and posting logs in one desktop app."
+msgstr "Μια αυτόματη αφίσα ομάδας Facebook σάς βοηθά να μοιραστείτε μια έτοιμη ανάρτηση στις ομάδες που επιλέγετε. Η Postika συνδυάζει ένα πρόγραμμα επεξεργασίας αναρτήσεων, την επιλογή ομάδας, τον προγραμματισμό και τα αρχεία καταγραφής ανάρτησης σε μία εφαρμογή επιφάνειας εργασίας."
+
+msgid "A few things to know"
+msgstr "Μερικά πράγματα που πρέπει να γνωρίζετε"
+
+msgid "A little less busywork. A little more time."
+msgstr "Λίγο λιγότερο απασχολημένος. Λίγο περισσότερο χρόνο."
+
+msgid "A supported Windows, macOS, or Linux computer, an installed Chrome or Chromium browser, and your Facebook account. Platform downloads are listed on the downloads page."
+msgstr "Υποστηριζόμενος υπολογιστής Windows, macOS ή Linux, εγκατεστημένο πρόγραμμα περιήγησης Chrome ή Chromium και ο λογαριασμός σας στο Facebook. Οι λήψεις πλατφόρμας παρατίθενται στη σελίδα λήψεων."
+
+msgid "Already have a post worth sharing? Import posts from a Facebook page your signed-in account can access. Review the text and images, make your edits, and add the posts you want to your queue."
+msgstr "Έχετε ήδη μια ανάρτηση που αξίζει να μοιραστείτε; Εισαγάγετε αναρτήσεις από μια σελίδα Facebook στην οποία έχει πρόσβαση ο συνδεδεμένος λογαριασμός σας. Ελέγξτε το κείμενο και τις εικόνες, κάντε τις αλλαγές σας και προσθέστε τις αναρτήσεις που θέλετε στην ουρά σας."
+
+msgid "Before you start"
+msgstr "Πριν ξεκινήσετε"
+
+msgid "Bring your page posts along."
+msgstr "Φέρτε μαζί τις αναρτήσεις της σελίδας σας."
+
+msgid "Browser language"
+msgstr "Γλώσσα προγράμματος περιήγησης"
+
+msgid "Bulk Poster"
+msgstr "Μαζική αφίσα"
+
+msgid "Can multiple Facebook accounts post at the same time?"
+msgstr "Μπορούν πολλοί λογαριασμοί Facebook να δημοσιεύουν ταυτόχρονα;"
+
+msgid "Check your connection and try again."
+msgstr "Ελέγξτε τη σύνδεσή σας και δοκιμάστε ξανά."
+
+msgid "Choose a version for your computer. Requires Chrome or Chromium."
+msgstr "Επιλέξτε μια έκδοση για τον υπολογιστή σας. Απαιτεί Chrome ή Chromium."
+
+msgid "Choose from 33 interface languages, including right-to-left layouts. Menus, controls, and app-generated log messages follow your choice across windows. And with 189 themes, you can make Postika feel like your own."
+msgstr "Επιλέξτε από 33 γλώσσες διεπαφής, συμπεριλαμβανομένων των διατάξεων από δεξιά προς τα αριστερά. Τα μενού, τα στοιχεία ελέγχου και τα μηνύματα καταγραφής που δημιουργούνται από την εφαρμογή ακολουθούν την επιλογή σας στα παράθυρα. Και με 189 θέματα, μπορείτε να κάνετε την Postika να αισθάνεται σαν τη δική σας."
+
+msgid "Choose your own minimum and maximum interval between posts to avoid posting in rapid succession and help reduce the risk of rate limits or account restrictions. Follow progress as the queue runs, and pause whenever you need to."
+msgstr "Επιλέξτε το δικό σας ελάχιστο και μέγιστο διάστημα μεταξύ των αναρτήσεων για να αποφύγετε τη γρήγορη διαδοχική ανάρτηση και να συμβάλλετε στη μείωση του κινδύνου ορίων τιμών ή περιορισμών λογαριασμού. Παρακολουθήστε την πρόοδο καθώς τρέχει η ουρά και κάντε παύση όποτε το χρειαστείτε."
+
+msgid "Close screenshot"
+msgstr "Κλείσιμο στιγμιότυπου οθόνης"
+
+msgid "Close themes"
+msgstr "Κλείσιμο θεμάτων"
+
+msgid "Color themes"
+msgstr "Έγχρωμα θέματα"
+
+msgid "Color themes: {0}"
+msgstr "Έγχρωμα θέματα: {0}"
+
+msgid "Coming soon"
+msgstr "Προσεχώς"
+
+msgid "Couldn’t load this screenshot. Close it and try again."
+msgstr "Δεν ήταν δυνατή η φόρτωση αυτού του στιγμιότυπου οθόνης. Κλείστε το και δοκιμάστε ξανά."
+
+msgid "Couldn’t refresh release notes. Please try again."
+msgstr "Δεν ήταν δυνατή η ανανέωση των σημειώσεων έκδοσης. Δοκιμάστε ξανά."
+
+msgid "Does a submission mean my post is published?"
+msgstr "Μια υποβολή σημαίνει ότι η ανάρτησή μου δημοσιεύτηκε;"
+
+msgid "Does my computer need to stay on?"
+msgstr "Πρέπει ο υπολογιστής μου να παραμείνει ενεργοποιημένος;"
+
+msgid "Download"
+msgstr "Λήψη"
+
+msgid "Download Postika"
+msgstr "Κατεβάστε το Postika"
+
+msgid "Download Postika for Windows, macOS, and Linux. Choose your desktop Facebook group auto poster installer and find the latest release notes."
+msgstr "Κατεβάστε το Postika για Windows, macOS και Linux. Επιλέξτε το πρόγραμμα εγκατάστασης αυτόματης αφίσας της ομάδας σας στο Facebook και βρείτε τις πιο πρόσφατες σημειώσεις έκδοσης."
+
+msgid "Download Postika — Facebook Group Auto Poster"
+msgstr "Κατεβάστε το Postika — Μαζικές δημοσιεύσεις σε ομάδες Facebook"
+
+msgid "Download for {0}"
+msgstr "Λήψη για {0}"
+
+msgid "Download {0}"
+msgstr "Λήψη {0}"
+
+msgid "Downloads"
+msgstr "Λήψεις"
+
+msgid "Enlarge screenshot: Postika Facebook page-post import dialog"
+msgstr "Μεγέθυνση στιγμιότυπου οθόνης: Διάλογος εισαγωγής σελίδας Postika στο Facebook-ανάρτηση"
+
+msgid "Enlarge screenshot: Postika account selector and separate account workspaces"
+msgstr "Μεγέθυνση στιγμιότυπου οθόνης: Επιλογέας λογαριασμού Postika και ξεχωριστοί χώροι εργασίας λογαριασμού"
+
+msgid "Enlarge screenshot: Postika composer with rich-text controls and image uploads"
+msgstr "Μεγέθυνση στιγμιότυπου οθόνης: Συνθέτης Postika με στοιχεία ελέγχου εμπλουτισμένου κειμένου και μεταφορτώσεις εικόνων"
+
+msgid "Enlarge screenshot: Postika language selector and localized interface"
+msgstr "Μεγέθυνση στιγμιότυπου οθόνης: Επιλογέας γλώσσας Postika και τοπική διεπαφή"
+
+msgid "Enlarge screenshot: Postika posting intervals and scheduling controls"
+msgstr "Μεγέθυνση στιγμιότυπου οθόνης: Postika διαστήματα ανάρτησης και έλεγχοι προγραμματισμού"
+
+msgid "Enlarge screenshot: Postika posting logs with per-group results and queue controls"
+msgstr "Μεγέθυνση στιγμιότυπου οθόνης: Postika δημοσιεύει αρχεία καταγραφής με αποτελέσματα ανά ομάδα και στοιχεία ελέγχου ουράς"
+
+msgid "Enlarge screenshot: Postika scheduling controls"
+msgstr "Μεγέθυνση στιγμιότυπου οθόνης: Στοιχεία ελέγχου προγραμματισμού Postika"
+
+msgid "Facebook Group Auto Poster for Desktop | Postika"
+msgstr "Μαζικές δημοσιεύσεις σε ομάδες Facebook | Postika"
+
+msgid "Facebook Groups"
+msgstr "Ομάδες Facebook"
+
+msgid "Features"
+msgstr "Χαρακτηριστικά"
+
+msgid "Follow progress group by group. See what’s published, what’s awaiting approval, and what needs attention, including failed, skipped, and unconfirmed submissions. Pause, resume, or stop your queue from the same window."
+msgstr "Παρακολουθήστε την πρόοδο ανά ομάδα. Δείτε τι δημοσιεύεται, τι περιμένει έγκριση και τι χρειάζεται προσοχή, συμπεριλαμβανομένων των αποτυχημένων, παραλειφθέντων και μη επιβεβαιωμένων υποβολών. Παύση, συνέχιση ή διακοπή της ουράς σας από το ίδιο παράθυρο."
+
+msgid "Get in touch"
+msgstr "Ελάτε σε επαφή"
+
+msgid "Intel Macs (.dmg)"
+msgstr "Intel Mac (.dmg)"
+
+msgid "Is Postika a Chrome extension?"
+msgstr "Είναι η Postika επέκταση του Chrome;"
+
+msgid "Keep Postika open and your computer awake while a queue runs. Queues and posting logs aren’t restored after quitting."
+msgstr "Κρατήστε το Postika ανοιχτό και τον υπολογιστή σας σε λειτουργία ενώ τρέχει μια ουρά. Οι ουρές και τα αρχεία καταγραφής αναρτήσεων δεν αποκαθίστανται μετά την παραίτηση."
+
+msgid "Keep your device on and awake, with Postika open, so it can handle the posting for you."
+msgstr "Διατηρήστε τη συσκευή σας ενεργοποιημένη και ξύπνια, με την Postika ανοιχτή, ώστε να μπορεί να χειριστεί τη δημοσίευση για εσάς."
+
+msgid "Language"
+msgstr "Γλώσσα"
+
+msgid "Linux x64 (portable)"
+msgstr "Linux x64 (φορητό)"
+
+msgid "Loading screenshot…"
+msgstr "Φόρτωση στιγμιότυπου οθόνης…"
+
+msgid "M-series Macs (.dmg)"
+msgstr "Mac της σειράς M (.dmg)"
+
+msgid "Main navigation"
+msgstr "Κύρια πλοήγηση"
+
+msgid "Move Postika into Applications before opening it."
+msgstr "Μετακινήστε το Postika στις Εφαρμογές πριν το ανοίξετε."
+
+msgid "No themes found. Try another name."
+msgstr "Δεν βρέθηκαν θέματα. Δοκιμάστε άλλο όνομα."
+
+msgid "One good post. All the right groups."
+msgstr "Μια καλή ανάρτηση. Όλες οι σωστές ομάδες."
+
+msgid "Post to multiple Facebook groups with Postika. A desktop auto poster with scheduling, multiple accounts, 33 interface languages, and clear posting logs."
+msgstr "Δημοσιεύστε σε πολλές ομάδες Facebook με την Postika. Μια αυτόματη αφίσα επιτραπέζιου υπολογιστή με προγραμματισμό, πολλούς λογαριασμούς, 33 γλώσσες διεπαφής και καθαρά αρχεία καταγραφής αναρτήσεων."
+
+msgid "Post to multiple Facebook groups without repeating the same steps. Write once, choose your groups, and post now or schedule for later."
+msgstr "Δημοσιεύστε σε πολλές ομάδες του Facebook χωρίς να επαναλάβετε τα ίδια βήματα. Γράψτε μία φορά, επιλέξτε τις ομάδες σας και δημοσιεύστε τώρα ή προγραμματίστε για αργότερα."
+
+msgid "Postika Facebook page-post import dialog"
+msgstr "Διάλογος εισαγωγής σελίδας Postika στο Facebook-ανάρτηση"
+
+msgid "Postika account selector and separate account workspaces"
+msgstr "Επιλογέας λογαριασμού Postika και χωριστοί χώροι εργασίας λογαριασμού"
+
+msgid "Postika composer with rich-text controls and image uploads"
+msgstr "Συνθέτης Postika με στοιχεία ελέγχου εμπλουτισμένου κειμένου και μεταφορτώσεις εικόνων"
+
+msgid "Postika features"
+msgstr "Χαρακτηριστικά Postika"
+
+msgid "Postika home"
+msgstr "Postika σπίτι"
+
+msgid "Postika is a desktop app for Windows, macOS, and Linux. It uses an installed Chrome or Chromium browser for your Facebook sessions."
+msgstr "Η Postika είναι μια εφαρμογή για υπολογιστές για Windows, macOS και Linux. Χρησιμοποιεί ένα εγκατεστημένο πρόγραμμα περιήγησης Chrome ή Chromium για τις συνεδρίες σας στο Facebook."
+
+msgid "Postika language selector and localized interface"
+msgstr "Επιλογέας γλώσσας Postika και τοπική διεπαφή"
+
+msgid "Postika posting intervals and scheduling controls"
+msgstr "Postika διαστήματα ανάρτησης και έλεγχοι προγραμματισμού"
+
+msgid "Postika posting logs with per-group results and queue controls"
+msgstr "Η Postika δημοσιεύει αρχεία καταγραφής με αποτελέσματα ανά ομάδα και στοιχεία ελέγχου ουράς"
+
+msgid "Postika scheduling controls"
+msgstr "Έλεγχοι προγραμματισμού Postika"
+
+msgid "Posting intervals don’t guarantee protection from Facebook restrictions or bans."
+msgstr "Τα διαστήματα αναρτήσεων δεν εγγυώνται προστασία από περιορισμούς ή απαγορεύσεις στο Facebook."
+
+msgid "Prepare now. Schedule for later."
+msgstr "Προετοιμαστείτε τώρα. Προγραμματίστε για αργότερα."
+
+msgid "Questions"
+msgstr "Ερωτήσεις"
+
+msgid "Refresh release notes"
+msgstr "Ανανεώστε τις σημειώσεις έκδοσης"
+
+msgid "Release notes"
+msgstr "Σημειώσεις έκδοσης"
+
+msgid "Release notes are up to date."
+msgstr "Οι σημειώσεις έκδοσης είναι ενημερωμένες."
+
+msgid "Report a problem"
+msgstr "Αναφέρετε ένα πρόβλημα"
+
+msgid "Run posting queues for multiple Facebook accounts at the same time. Each account keeps its own browser session, groups, drafts, and posting settings, so you can prepare another post or check progress without interrupting the other accounts."
+msgstr "Εκτελέστε ουρές ανάρτησης για πολλούς λογαριασμούς Facebook ταυτόχρονα. Κάθε λογαριασμός διατηρεί τη δική του περίοδο λειτουργίας προγράμματος περιήγησης, ομάδες, πρόχειρα και ρυθμίσεις ανάρτησης, ώστε να μπορείτε να προετοιμάσετε μια άλλη ανάρτηση ή να ελέγξετε την πρόοδο χωρίς να διακόψετε τους άλλους λογαριασμούς."
+
+msgid "Schedule your posts for a date and time that suits you. When that time arrives, Postika automatically starts posting to your selected groups. You don’t need to be there to press Post."
+msgstr "Προγραμματίστε τις αναρτήσεις σας για μια ημερομηνία και ώρα που σας ταιριάζει. Όταν φτάσει αυτή η ώρα, η Postika ξεκινά αυτόματα τις αναρτήσεις στις επιλεγμένες ομάδες σας. Δεν χρειάζεται να είστε εκεί για να πατήσετε Δημοσίευση."
+
+msgid "Screenshot preview"
+msgstr "Προεπισκόπηση στιγμιότυπου οθόνης"
+
+msgid "Search by name…"
+msgstr "Αναζήτηση με όνομα…"
+
+msgid "Search themes"
+msgstr "Αναζήτηση θεμάτων"
+
+msgid "See where every post stands."
+msgstr "Δείτε πού βρίσκεται κάθε ανάρτηση."
+
+msgid "Selected"
+msgstr "Επιλεγμένο"
+
+msgid "Set your pace. Leave room between posts."
+msgstr "Ορίστε τον ρυθμό σας. Αφήστε χώρο μεταξύ των αναρτήσεων."
+
+msgid "Several accounts. Posting at the same time."
+msgstr "Αρκετοί λογαριασμοί. Ανάρτηση ταυτόχρονα."
+
+msgid "Skip opening every group and pasting the same thing again. Write your post with rich text, add and reorder your images, then search and select the Facebook groups you want to share with. Your draft stays saved while you get it right."
+msgstr "Παραλείψτε να ανοίξετε κάθε ομάδα και να επικολλήσετε ξανά το ίδιο πράγμα. Γράψτε την ανάρτησή σας με πλούσιο κείμενο, προσθέστε και αναδιατάξτε τις εικόνες σας και, στη συνέχεια, αναζητήστε και επιλέξτε τις ομάδες Facebook με τις οποίες θέλετε να μοιραστείτε. Το πρόχειρό σας παραμένει αποθηκευμένο όσο το κάνετε σωστά."
+
+msgid "Skip to content"
+msgstr "Μετάβαση στο περιεχόμενο"
+
+msgid "Some groups require approval. Posting logs distinguish published posts, pending approval, failed, skipped, and unconfirmed submissions. Check unconfirmed results on Facebook before retrying."
+msgstr "Ορισμένες ομάδες απαιτούν έγκριση. Τα αρχεία καταγραφής ανάρτησης διακρίνουν τις δημοσιευμένες αναρτήσεις, τις εκκρεμείς εγκρίσεις, τις αποτυχημένες, τις παραλειφθείσες και τις μη επιβεβαιωμένες υποβολές. Ελέγξτε τα μη επιβεβαιωμένα αποτελέσματα στο Facebook πριν δοκιμάσετε ξανά."
+
+msgid "System default"
+msgstr "Προεπιλογή συστήματος"
+
+msgid "System default ({0})"
+msgstr "Προεπιλογή συστήματος ({0})"
+
+msgid "System packages may ask for administrator authorization."
+msgstr "Τα πακέτα συστήματος ενδέχεται να ζητούν εξουσιοδότηση διαχειριστή."
+
+msgid "Unsigned installer: Windows may show a SmartScreen warning. The portable version needs no installation; account data stays in the app data folder."
+msgstr "Μη υπογεγραμμένο πρόγραμμα εγκατάστασης: Τα Windows ενδέχεται να εμφανίζουν μια προειδοποίηση SmartScreen. Η φορητή έκδοση δεν χρειάζεται εγκατάσταση. τα δεδομένα λογαριασμού παραμένουν στο φάκελο δεδομένων της εφαρμογής."
+
+msgid "Version"
+msgstr "Εκδοχή"
+
+msgid "Version {0} ({1})"
+msgstr "Έκδοση {0} ({1})"
+
+msgid "What do I need to run Postika?"
+msgstr "Τι χρειάζομαι για να τρέξω την Postika;"
+
+msgid "What is a Facebook group auto poster?"
+msgstr "Τι είναι μια αυτόματη αφίσα ομάδας Facebook;"
+
+msgid "Windows installer"
+msgstr "Εγκατάσταση των Windows"
+
+msgid "Windows portable"
+msgstr "Windows φορητά"
+
+msgid "Windows, macOS & Linux"
+msgstr "Windows, macOS & Linux"
+
+msgid "Work in the language you think in."
+msgstr "Εργαστείτε στη γλώσσα που σκέφτεστε."
+
+msgid "Yes. Keep Postika open and your computer awake while a queue is scheduled or running. Queues and posting logs are not restored after quitting."
+msgstr "Ναί. Κρατήστε το Postika ανοιχτό και τον υπολογιστή σας σε λειτουργία όταν είναι προγραμματισμένη ή εκτελείται μια ουρά. Οι ουρές και τα αρχεία καταγραφής αναρτήσεων δεν αποκαθίστανται μετά την παραίτηση."
+
+msgid "Yes. Multiple accounts can run their posting queues in parallel. Each account has a separate browser session, groups, drafts, and posting settings. Switching accounts doesn’t interrupt the other queues."
+msgstr "Ναί. Πολλοί λογαριασμοί μπορούν να εκτελούν παράλληλα τις ουρές ανάρτησής τους. Κάθε λογαριασμός έχει ξεχωριστή περίοδο λειτουργίας προγράμματος περιήγησης, ομάδες, πρόχειρα και ρυθμίσεις ανάρτησης. Η εναλλαγή λογαριασμών δεν διακόπτει τις άλλες ουρές."
+
+msgid "Your platform"
+msgstr "Η πλατφόρμα σας"
+
+msgid "{0} shown"
+msgstr "{0} εμφανίζεται"
+
+msgid "{0} themes and system default"
+msgstr "{0} θέματα και προεπιλογή συστήματος"
+
+msgid "Facebook Groups <0>Bulk Poster</0>"
+msgstr "<0>Μαζικές δημοσιεύσεις</0> σε ομάδες Facebook"
+
+msgid "All languages"
+msgstr "Όλες οι γλώσσες"
+
+msgid "Language: {0}"
+msgstr "Γλώσσα: {0}"
+
+msgid "Languages"
+msgstr "Γλώσσες"
+
+msgid "No languages found"
+msgstr "Δεν βρέθηκαν γλώσσες"
+
+msgid "Search languages…"
+msgstr "Αναζήτηση γλωσσών…"
+
+msgid "Try a different name."
+msgstr "Δοκιμάστε άλλο όνομα."

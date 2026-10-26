@@ -1,0 +1,332 @@
+# Website copy. Initial non-English translations are machine generated; review before publication.
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: id\n"
+
+msgid "A Facebook group auto poster helps you share a prepared post across the groups you select. Postika combines a post editor, group selection, scheduling, and posting logs in one desktop app."
+msgstr "Poster otomatis grup Facebook membantu Anda membagikan postingan yang telah disiapkan ke seluruh grup yang Anda pilih. Postika menggabungkan editor postingan, pemilihan grup, penjadwalan, dan log postingan dalam satu aplikasi desktop."
+
+msgid "A few things to know"
+msgstr "Beberapa hal yang perlu diketahui"
+
+msgid "A little less busywork. A little more time."
+msgstr "Sedikit mengurangi kesibukan. Sedikit lagi waktu."
+
+msgid "A supported Windows, macOS, or Linux computer, an installed Chrome or Chromium browser, and your Facebook account. Platform downloads are listed on the downloads page."
+msgstr "Komputer Windows, macOS, atau Linux yang didukung, browser Chrome atau Chromium yang terpasang, dan akun Facebook Anda. Unduhan platform tercantum di halaman unduhan."
+
+msgid "Already have a post worth sharing? Import posts from a Facebook page your signed-in account can access. Review the text and images, make your edits, and add the posts you want to your queue."
+msgstr "Sudah punya postingan yang layak dibagikan? Impor postingan dari halaman Facebook yang dapat diakses oleh akun masuk Anda. Tinjau teks dan gambar, edit, dan tambahkan postingan yang Anda inginkan ke antrean."
+
+msgid "Before you start"
+msgstr "Sebelum Anda mulai"
+
+msgid "Bring your page posts along."
+msgstr "Bawa serta postingan halaman Anda."
+
+msgid "Browser language"
+msgstr "Bahasa peramban"
+
+msgid "Bulk Poster"
+msgstr "Poster Massal"
+
+msgid "Can multiple Facebook accounts post at the same time?"
+msgstr "Bisakah beberapa akun Facebook memposting secara bersamaan?"
+
+msgid "Check your connection and try again."
+msgstr "Periksa koneksi Anda dan coba lagi."
+
+msgid "Choose a version for your computer. Requires Chrome or Chromium."
+msgstr "Pilih versi untuk komputer Anda. Membutuhkan Chrome atau Chromium."
+
+msgid "Choose from 33 interface languages, including right-to-left layouts. Menus, controls, and app-generated log messages follow your choice across windows. And with 189 themes, you can make Postika feel like your own."
+msgstr "Pilih dari 33 bahasa antarmuka, termasuk tata letak kanan ke kiri. Menu, kontrol, dan pesan log yang dihasilkan aplikasi mengikuti pilihan Anda di seluruh jendela. Dan dengan 189 tema, Anda dapat menjadikan Postika serasa milik Anda sendiri."
+
+msgid "Choose your own minimum and maximum interval between posts to avoid posting in rapid succession and help reduce the risk of rate limits or account restrictions. Follow progress as the queue runs, and pause whenever you need to."
+msgstr "Pilih sendiri interval minimum dan maksimum antar postingan untuk menghindari postingan secara berurutan dan membantu mengurangi risiko batasan nilai atau pembatasan akun. Ikuti kemajuan saat antrean berjalan, dan jeda kapan pun Anda perlu."
+
+msgid "Close screenshot"
+msgstr "Tutup tangkapan layar"
+
+msgid "Close themes"
+msgstr "Tutup tema"
+
+msgid "Color themes"
+msgstr "Tema warna"
+
+msgid "Color themes: {0}"
+msgstr "Tema warna: {0}"
+
+msgid "Coming soon"
+msgstr "Segera hadir"
+
+msgid "Couldn’t load this screenshot. Close it and try again."
+msgstr "Tidak dapat memuat tangkapan layar ini. Tutup dan coba lagi."
+
+msgid "Couldn’t refresh release notes. Please try again."
+msgstr "Tidak dapat menyegarkan catatan rilis. Silakan coba lagi."
+
+msgid "Does a submission mean my post is published?"
+msgstr "Apakah kiriman berarti postingan saya dipublikasikan?"
+
+msgid "Does my computer need to stay on?"
+msgstr "Apakah komputer saya harus tetap menyala?"
+
+msgid "Download"
+msgstr "Unduh"
+
+msgid "Download Postika"
+msgstr "Unduh Postika"
+
+msgid "Download Postika for Windows, macOS, and Linux. Choose your desktop Facebook group auto poster installer and find the latest release notes."
+msgstr "Unduh Postika untuk Windows, macOS, dan Linux. Pilih penginstal poster otomatis grup Facebook desktop Anda dan temukan catatan rilis terbaru."
+
+msgid "Download Postika — Facebook Group Auto Poster"
+msgstr "Unduh Postika — Posting Massal ke Grup Facebook"
+
+msgid "Download for {0}"
+msgstr "Unduh untuk {0}"
+
+msgid "Download {0}"
+msgstr "Unduh {0}"
+
+msgid "Downloads"
+msgstr "Unduhan"
+
+msgid "Enlarge screenshot: Postika Facebook page-post import dialog"
+msgstr "Perbesar tangkapan layar: Dialog impor kiriman halaman Facebook Postika"
+
+msgid "Enlarge screenshot: Postika account selector and separate account workspaces"
+msgstr "Perbesar tangkapan layar: pemilih akun Postika dan ruang kerja akun terpisah"
+
+msgid "Enlarge screenshot: Postika composer with rich-text controls and image uploads"
+msgstr "Perbesar tangkapan layar: Komposer Postika dengan kontrol teks kaya dan unggahan gambar"
+
+msgid "Enlarge screenshot: Postika language selector and localized interface"
+msgstr "Perbesar tangkapan layar: Pemilih bahasa Postika dan antarmuka lokal"
+
+msgid "Enlarge screenshot: Postika posting intervals and scheduling controls"
+msgstr "Perbesar tangkapan layar: Interval posting Postika dan kontrol penjadwalan"
+
+msgid "Enlarge screenshot: Postika posting logs with per-group results and queue controls"
+msgstr "Perbesar tangkapan layar: Postika memposting log dengan hasil per grup dan kontrol antrian"
+
+msgid "Enlarge screenshot: Postika scheduling controls"
+msgstr "Perbesar tangkapan layar: Kontrol penjadwalan Postika"
+
+msgid "Facebook Group Auto Poster for Desktop | Postika"
+msgstr "Posting Massal ke Grup Facebook | Postika"
+
+msgid "Facebook Groups"
+msgstr "Grup Facebook"
+
+msgid "Features"
+msgstr "Fitur"
+
+msgid "Follow progress group by group. See what’s published, what’s awaiting approval, and what needs attention, including failed, skipped, and unconfirmed submissions. Pause, resume, or stop your queue from the same window."
+msgstr "Ikuti kemajuan kelompok demi kelompok. Lihat apa yang dipublikasikan, apa yang menunggu persetujuan, dan apa yang perlu diperhatikan, termasuk kiriman yang gagal, dilewati, dan belum dikonfirmasi. Jeda, lanjutkan, atau hentikan antrean Anda dari jendela yang sama."
+
+msgid "Get in touch"
+msgstr "Hubungi kami"
+
+msgid "Intel Macs (.dmg)"
+msgstr "Intel Mac (.dmg)"
+
+msgid "Is Postika a Chrome extension?"
+msgstr "Apakah Postika merupakan ekstensi Chrome?"
+
+msgid "Keep Postika open and your computer awake while a queue runs. Queues and posting logs aren’t restored after quitting."
+msgstr "Biarkan Postika tetap terbuka dan komputer Anda tetap aktif saat antrian berjalan. Antrean dan log postingan tidak dipulihkan setelah berhenti."
+
+msgid "Keep your device on and awake, with Postika open, so it can handle the posting for you."
+msgstr "Jaga agar perangkat Anda tetap hidup dan aktif, dengan Postika terbuka, sehingga dapat menangani pengeposan untuk Anda."
+
+msgid "Language"
+msgstr "Bahasa"
+
+msgid "Linux x64 (portable)"
+msgstr "Linux x64 (portabel)"
+
+msgid "Loading screenshot…"
+msgstr "Memuat tangkapan layar…"
+
+msgid "M-series Macs (.dmg)"
+msgstr "Mac seri M (.dmg)"
+
+msgid "Main navigation"
+msgstr "Navigasi utama"
+
+msgid "Move Postika into Applications before opening it."
+msgstr "Pindahkan Postika ke dalam Aplikasi sebelum membukanya."
+
+msgid "No themes found. Try another name."
+msgstr "Tidak ada tema yang ditemukan. Coba nama lain."
+
+msgid "One good post. All the right groups."
+msgstr "Satu postingan bagus. Semua kelompok yang tepat."
+
+msgid "Post to multiple Facebook groups with Postika. A desktop auto poster with scheduling, multiple accounts, 33 interface languages, and clear posting logs."
+msgstr "Posting ke beberapa grup Facebook dengan Postika. Poster otomatis desktop dengan penjadwalan, banyak akun, 33 bahasa antarmuka, dan log posting yang jelas."
+
+msgid "Post to multiple Facebook groups without repeating the same steps. Write once, choose your groups, and post now or schedule for later."
+msgstr "Posting ke beberapa grup Facebook tanpa mengulangi langkah yang sama. Tulis sekali, pilih grup Anda, dan posting sekarang atau jadwalkan untuk nanti."
+
+msgid "Postika Facebook page-post import dialog"
+msgstr "Dialog impor postingan halaman Facebook Postika"
+
+msgid "Postika account selector and separate account workspaces"
+msgstr "Pemilih akun Postika dan ruang kerja akun terpisah"
+
+msgid "Postika composer with rich-text controls and image uploads"
+msgstr "Komposer Postika dengan kontrol teks kaya dan unggahan gambar"
+
+msgid "Postika features"
+msgstr "Fitur Postika"
+
+msgid "Postika home"
+msgstr "Postika pulang"
+
+msgid "Postika is a desktop app for Windows, macOS, and Linux. It uses an installed Chrome or Chromium browser for your Facebook sessions."
+msgstr "Postika adalah aplikasi desktop untuk Windows, macOS, dan Linux. Ini menggunakan browser Chrome atau Chromium yang diinstal untuk sesi Facebook Anda."
+
+msgid "Postika language selector and localized interface"
+msgstr "Pemilih bahasa Postika dan antarmuka lokal"
+
+msgid "Postika posting intervals and scheduling controls"
+msgstr "Interval posting Postika dan kontrol penjadwalan"
+
+msgid "Postika posting logs with per-group results and queue controls"
+msgstr "Postika memposting log dengan hasil per grup dan kontrol antrian"
+
+msgid "Postika scheduling controls"
+msgstr "Kontrol penjadwalan Postika"
+
+msgid "Posting intervals don’t guarantee protection from Facebook restrictions or bans."
+msgstr "Interval postingan tidak menjamin perlindungan dari pembatasan atau larangan Facebook."
+
+msgid "Prepare now. Schedule for later."
+msgstr "Persiapkan sekarang. Jadwalkan untuk nanti."
+
+msgid "Questions"
+msgstr "Pertanyaan"
+
+msgid "Refresh release notes"
+msgstr "Segarkan catatan rilis"
+
+msgid "Release notes"
+msgstr "Catatan rilis"
+
+msgid "Release notes are up to date."
+msgstr "Catatan rilis adalah yang terbaru."
+
+msgid "Report a problem"
+msgstr "Laporkan masalah"
+
+msgid "Run posting queues for multiple Facebook accounts at the same time. Each account keeps its own browser session, groups, drafts, and posting settings, so you can prepare another post or check progress without interrupting the other accounts."
+msgstr "Jalankan antrian posting untuk beberapa akun Facebook secara bersamaan. Setiap akun menyimpan sesi browser, grup, draf, dan pengaturan postingannya sendiri, sehingga Anda dapat menyiapkan postingan lain atau memeriksa kemajuannya tanpa mengganggu akun lain."
+
+msgid "Schedule your posts for a date and time that suits you. When that time arrives, Postika automatically starts posting to your selected groups. You don’t need to be there to press Post."
+msgstr "Jadwalkan postingan Anda pada tanggal dan waktu yang sesuai untuk Anda. Ketika waktunya tiba, Postika secara otomatis mulai memposting ke grup pilihan Anda. Anda tidak perlu berada di sana untuk menekan Posting."
+
+msgid "Screenshot preview"
+msgstr "Pratinjau tangkapan layar"
+
+msgid "Search by name…"
+msgstr "Cari berdasarkan nama…"
+
+msgid "Search themes"
+msgstr "Cari tema"
+
+msgid "See where every post stands."
+msgstr "Lihat di mana setiap postingan berdiri."
+
+msgid "Selected"
+msgstr "Terpilih"
+
+msgid "Set your pace. Leave room between posts."
+msgstr "Atur kecepatan Anda. Sisakan ruang di antara postingan."
+
+msgid "Several accounts. Posting at the same time."
+msgstr "Beberapa akun. Memposting secara bersamaan."
+
+msgid "Skip opening every group and pasting the same thing again. Write your post with rich text, add and reorder your images, then search and select the Facebook groups you want to share with. Your draft stays saved while you get it right."
+msgstr "Lewati membuka setiap grup dan menempelkan hal yang sama lagi. Tulis postingan Anda dengan teks kaya, tambahkan dan susun ulang gambar Anda, lalu cari dan pilih grup Facebook yang ingin Anda ajak berbagi. Draf Anda tetap disimpan selama Anda melakukannya dengan benar."
+
+msgid "Skip to content"
+msgstr "Lewati ke konten"
+
+msgid "Some groups require approval. Posting logs distinguish published posts, pending approval, failed, skipped, and unconfirmed submissions. Check unconfirmed results on Facebook before retrying."
+msgstr "Beberapa kelompok memerlukan persetujuan. Log postingan membedakan postingan yang diterbitkan, menunggu persetujuan, gagal, dilewati, dan kiriman yang belum dikonfirmasi. Periksa hasil yang belum dikonfirmasi di Facebook sebelum mencoba lagi."
+
+msgid "System default"
+msgstr "Bawaan sistem"
+
+msgid "System default ({0})"
+msgstr "Bawaan sistem ({0})"
+
+msgid "System packages may ask for administrator authorization."
+msgstr "Paket sistem mungkin meminta otorisasi administrator."
+
+msgid "Unsigned installer: Windows may show a SmartScreen warning. The portable version needs no installation; account data stays in the app data folder."
+msgstr "Penginstal yang tidak ditandatangani: Windows mungkin menampilkan peringatan SmartScreen. Versi portabel tidak memerlukan instalasi; data akun tetap berada di folder data aplikasi."
+
+msgid "Version"
+msgstr "Versi"
+
+msgid "Version {0} ({1})"
+msgstr "Versi {0} ({1})"
+
+msgid "What do I need to run Postika?"
+msgstr "Apa yang saya perlukan untuk menjalankan Postika?"
+
+msgid "What is a Facebook group auto poster?"
+msgstr "Apa itu poster otomatis grup Facebook?"
+
+msgid "Windows installer"
+msgstr "Pemasang Windows"
+
+msgid "Windows portable"
+msgstr "Windows portabel"
+
+msgid "Windows, macOS & Linux"
+msgstr "Windows, macOS & Linux"
+
+msgid "Work in the language you think in."
+msgstr "Bekerjalah dalam bahasa yang Anda pikirkan."
+
+msgid "Yes. Keep Postika open and your computer awake while a queue is scheduled or running. Queues and posting logs are not restored after quitting."
+msgstr "Ya. Biarkan Postika tetap terbuka dan komputer Anda tetap aktif saat antrian dijadwalkan atau sedang berjalan. Antrian dan log posting tidak dipulihkan setelah berhenti."
+
+msgid "Yes. Multiple accounts can run their posting queues in parallel. Each account has a separate browser session, groups, drafts, and posting settings. Switching accounts doesn’t interrupt the other queues."
+msgstr "Ya. Beberapa akun dapat menjalankan antrian postingannya secara paralel. Setiap akun memiliki sesi browser, grup, draf, dan pengaturan postingan terpisah. Berpindah akun tidak mengganggu antrean lainnya."
+
+msgid "Your platform"
+msgstr "platform Anda"
+
+msgid "{0} shown"
+msgstr "{0} ditampilkan"
+
+msgid "{0} themes and system default"
+msgstr "{0} tema dan default sistem"
+
+msgid "Facebook Groups <0>Bulk Poster</0>"
+msgstr "<0>Posting Massal</0> ke Grup Facebook"
+
+msgid "All languages"
+msgstr "Semua bahasa"
+
+msgid "Language: {0}"
+msgstr "Bahasa: {0}"
+
+msgid "Languages"
+msgstr "Bahasa"
+
+msgid "No languages found"
+msgstr "Tidak ada bahasa ditemukan"
+
+msgid "Search languages…"
+msgstr "Cari bahasa…"
+
+msgid "Try a different name."
+msgstr "Coba nama lain."

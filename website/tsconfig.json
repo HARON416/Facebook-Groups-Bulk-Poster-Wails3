@@ -1,1 +1,18 @@
-{"compilerOptions":{"target":"ES2022","module":"none","lib":["DOM","ES2022"],"strict":true,"outFile":"static/js/main.js","noEmitOnError":true},"include":["src/main.ts","src/theme-types.d.ts"]}
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "none",
+    "lib": [
+      "DOM",
+      "ES2022"
+    ],
+    "strict": true,
+    "outFile": "static/js/main.js",
+    "noEmitOnError": true
+  },
+  "include": [
+    "src/main.ts",
+    "src/theme-types.d.ts",
+    "src/i18n-types.d.ts"
+  ]
+}

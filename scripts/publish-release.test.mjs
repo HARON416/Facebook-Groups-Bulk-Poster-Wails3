@@ -129,3 +129,51 @@ test('public verification rejects stale bytes and cacheable JSON without logging
     await assert.rejects(client.verifyPublic(file, 'updates/stable.json', true), error => !error.message.includes('fixture-secret'));
   }
 });
+
+test('upload retries network/server failures using fresh streams with all bytes', async t => {
+  const directory = mkdtempSync(join(tmpdir(), 'postika-upload-retry-'));
+  t.after(() => rmSync(directory, { recursive: true, force: true }));
+  const file = join(directory, 'fixture.bin');
+  const payload = Buffer.from('complete fixture upload');
+  writeFileSync(file, payload);
+  let attempts = 0;
+  const delays = [];
+  const bodies = new Set();
+  const client = bunnyClient({ host: 'storage.bunnycdn.com', zone: 'fixture', password: 'fixture-secret' }, {
+    sleep: async delay => delays.push(delay),
+    request: async (url, options) => {
+      attempts++;
+      assert.ok(!bodies.has(options.body));
+      bodies.add(options.body);
+      const chunks = [];
+      for await (const chunk of options.body) chunks.push(chunk);
+      assert.deepEqual(Buffer.concat(chunks), payload);
+      if (attempts === 1) throw new TypeError('fixture-secret', { cause: Object.assign(new Error(), { code: 'ECONNRESET' }) });
+      return new Response('', { status: attempts === 2 ? 503 : 201 });
+    },
+  });
+  await client.upload(file, 'downloads/0.1.5/fixture.bin');
+  assert.equal(attempts, 3);
+  assert.deepEqual(delays, [1000, 2000]);
+});
+
+test('connection errors name the storage check and safe nested codes after bounded retries', async () => {
+  let attempts = 0;
+  const client = bunnyClient({ host: 'storage.bunnycdn.com', zone: 'fixture', password: 'fixture-secret' }, {
+    sleep: async () => {},
+    request: async () => {
+      attempts++;
+      throw new TypeError('fixture-secret', { cause: new AggregateError([
+        Object.assign(new Error('fixture-secret'), { code: 'ETIMEDOUT' }),
+        Object.assign(new Error('fixture-secret'), { code: 'ENETUNREACH' }),
+      ]) });
+    },
+  });
+  await assert.rejects(client.getStorage(''), error => {
+    assert.match(error.message, /Storage Zone connection \(storage.bunnycdn.com\)/);
+    assert.match(error.message, /ETIMEDOUT, ENETUNREACH/);
+    assert.ok(!error.message.includes('fixture-secret'));
+    return true;
+  });
+  assert.equal(attempts, 3);
+});

@@ -4,7 +4,7 @@
   <header class="download-heading">
     <h1>Download Postika</h1>
     <p class="download-intro">Choose a version for your computer. Requires Chrome or Chromium.</p>
-    {{if .Version}}<p class="release-version">Version <strong>{{.Version}}</strong><span>{{.Date}}</span></p>{{end}}
+    {{if .Version}}<p class="release-version">Version <strong>{{.Version}}</strong><time datetime="{{.Date}}" data-release-date="{{.Date}}">{{.Date}}</time></p>{{end}}
   </header>
 
   <div class="platforms">

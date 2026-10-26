@@ -1,0 +1,332 @@
+# Website copy. Initial non-English translations are machine generated; review before publication.
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: nl\n"
+
+msgid "A Facebook group auto poster helps you share a prepared post across the groups you select. Postika combines a post editor, group selection, scheduling, and posting logs in one desktop app."
+msgstr "Met een automatische Facebook-groepposter kunt u een voorbereid bericht delen met de groepen die u selecteert. Postika combineert een berichteditor, groepsselectie, planning en postlogboeken in één desktop-app."
+
+msgid "A few things to know"
+msgstr "Een paar dingen om te weten"
+
+msgid "A little less busywork. A little more time."
+msgstr "Iets minder druk werk. Nog een beetje tijd."
+
+msgid "A supported Windows, macOS, or Linux computer, an installed Chrome or Chromium browser, and your Facebook account. Platform downloads are listed on the downloads page."
+msgstr "Een ondersteunde Windows-, macOS- of Linux-computer, een geïnstalleerde Chrome- of Chromium-browser en uw Facebook-account. Platformdownloads worden vermeld op de downloadpagina."
+
+msgid "Already have a post worth sharing? Import posts from a Facebook page your signed-in account can access. Review the text and images, make your edits, and add the posts you want to your queue."
+msgstr "Heb je al een bericht dat de moeite waard is om te delen? Importeer berichten van een Facebook-pagina waartoe uw ingelogde account toegang heeft. Bekijk de tekst en afbeeldingen, breng uw wijzigingen aan en voeg de gewenste berichten toe aan uw wachtrij."
+
+msgid "Before you start"
+msgstr "Voordat je begint"
+
+msgid "Bring your page posts along."
+msgstr "Neem uw paginaberichten mee."
+
+msgid "Browser language"
+msgstr "Browsertaal"
+
+msgid "Bulk Poster"
+msgstr "Bulkposter"
+
+msgid "Can multiple Facebook accounts post at the same time?"
+msgstr "Kunnen meerdere Facebook-accounts tegelijkertijd posten?"
+
+msgid "Check your connection and try again."
+msgstr "Controleer uw verbinding en probeer het opnieuw."
+
+msgid "Choose a version for your computer. Requires Chrome or Chromium."
+msgstr "Kies een versie voor uw computer. Vereist Chrome of Chromium."
+
+msgid "Choose from 33 interface languages, including right-to-left layouts. Menus, controls, and app-generated log messages follow your choice across windows. And with 189 themes, you can make Postika feel like your own."
+msgstr "Kies uit 33 interfacetalen, inclusief lay-outs van rechts naar links. Menu's, bedieningselementen en door de app gegenereerde logberichten volgen uw keuze in alle vensters. En met 189 thema's kunt u ervoor zorgen dat Postika zich als uw eigen thema voelt."
+
+msgid "Choose your own minimum and maximum interval between posts to avoid posting in rapid succession and help reduce the risk of rate limits or account restrictions. Follow progress as the queue runs, and pause whenever you need to."
+msgstr "Kies uw eigen minimale en maximale interval tussen berichten om te voorkomen dat berichten snel achter elkaar worden geplaatst en om het risico op tarieflimieten of accountbeperkingen te verkleinen. Volg de voortgang terwijl de wachtrij loopt en pauzeer wanneer dat nodig is."
+
+msgid "Close screenshot"
+msgstr "Schermafbeelding sluiten"
+
+msgid "Close themes"
+msgstr "Sluit thema's"
+
+msgid "Color themes"
+msgstr "Kleurthema's"
+
+msgid "Color themes: {0}"
+msgstr "Kleurthema's: {0}"
+
+msgid "Coming soon"
+msgstr "Binnenkort beschikbaar"
+
+msgid "Couldn’t load this screenshot. Close it and try again."
+msgstr "Kan deze schermafbeelding niet laden. Sluit het en probeer het opnieuw."
+
+msgid "Couldn’t refresh release notes. Please try again."
+msgstr "Kan releaseopmerkingen niet vernieuwen. Probeer het opnieuw."
+
+msgid "Does a submission mean my post is published?"
+msgstr "Betekent een inzending dat mijn bericht wordt gepubliceerd?"
+
+msgid "Does my computer need to stay on?"
+msgstr "Moet mijn computer aan blijven?"
+
+msgid "Download"
+msgstr "Downloaden"
+
+msgid "Download Postika"
+msgstr "Postika downloaden"
+
+msgid "Download Postika for Windows, macOS, and Linux. Choose your desktop Facebook group auto poster installer and find the latest release notes."
+msgstr "Download Postika voor Windows, macOS en Linux. Kies het automatische posterinstallatieprogramma voor Facebook-groepen op uw bureaublad en vind de nieuwste releaseopmerkingen."
+
+msgid "Download Postika — Facebook Group Auto Poster"
+msgstr "Postika downloaden — Plaats berichten in meerdere Facebook-groepen"
+
+msgid "Download for {0}"
+msgstr "Downloaden voor {0}"
+
+msgid "Download {0}"
+msgstr "Downloaden {0}"
+
+msgid "Downloads"
+msgstr "Downloads"
+
+msgid "Enlarge screenshot: Postika Facebook page-post import dialog"
+msgstr "Schermafbeelding vergroten: Dialoogvenster Postika Facebook-pagina-post importeren"
+
+msgid "Enlarge screenshot: Postika account selector and separate account workspaces"
+msgstr "Schermafbeelding vergroten: Postika-accountkiezer en aparte accountwerkruimten"
+
+msgid "Enlarge screenshot: Postika composer with rich-text controls and image uploads"
+msgstr "Schermafbeelding vergroten: Postika-componist met rich-text-besturingselementen en afbeeldingsuploads"
+
+msgid "Enlarge screenshot: Postika language selector and localized interface"
+msgstr "Schermafbeelding vergroten: Postika-taalkiezer en gelokaliseerde interface"
+
+msgid "Enlarge screenshot: Postika posting intervals and scheduling controls"
+msgstr "Schermafbeelding vergroten: postika-postintervallen en planningsopties"
+
+msgid "Enlarge screenshot: Postika posting logs with per-group results and queue controls"
+msgstr "Schermafbeelding vergroten: Postika plaatst logboeken met resultaten per groep en wachtrijcontroles"
+
+msgid "Enlarge screenshot: Postika scheduling controls"
+msgstr "Schermafbeelding vergroten: Postika-planningsbesturingselementen"
+
+msgid "Facebook Group Auto Poster for Desktop | Postika"
+msgstr "Plaats berichten in meerdere Facebook-groepen | Postika"
+
+msgid "Facebook Groups"
+msgstr "Facebook-groepen"
+
+msgid "Features"
+msgstr "Functies"
+
+msgid "Follow progress group by group. See what’s published, what’s awaiting approval, and what needs attention, including failed, skipped, and unconfirmed submissions. Pause, resume, or stop your queue from the same window."
+msgstr "Volg de voortgang groep voor groep. Bekijk wat er is gepubliceerd, wat nog moet worden goedgekeurd en wat aandacht behoeft, inclusief mislukte, overgeslagen en onbevestigde inzendingen. Pauzeer, hervat of stop uw wachtrij vanuit hetzelfde venster."
+
+msgid "Get in touch"
+msgstr "Neem contact op"
+
+msgid "Intel Macs (.dmg)"
+msgstr "Intel Macs (.dmg)"
+
+msgid "Is Postika a Chrome extension?"
+msgstr "Is Postika een Chrome-extensie?"
+
+msgid "Keep Postika open and your computer awake while a queue runs. Queues and posting logs aren’t restored after quitting."
+msgstr "Houd Postika open en uw computer wakker terwijl er een wachtrij loopt. Wachtrijen en berichtlogboeken worden niet hersteld na het afsluiten."
+
+msgid "Keep your device on and awake, with Postika open, so it can handle the posting for you."
+msgstr "Houd uw apparaat ingeschakeld en wakker, met Postika geopend, zodat het de berichten voor u kan afhandelen."
+
+msgid "Language"
+msgstr "Taal"
+
+msgid "Linux x64 (portable)"
+msgstr "Linux x64 (draagbaar)"
+
+msgid "Loading screenshot…"
+msgstr "Schermafbeelding laden…"
+
+msgid "M-series Macs (.dmg)"
+msgstr "Macs uit de M-serie (.dmg)"
+
+msgid "Main navigation"
+msgstr "Hoofdnavigatie"
+
+msgid "Move Postika into Applications before opening it."
+msgstr "Verplaats Postika naar Applicaties voordat u het opent."
+
+msgid "No themes found. Try another name."
+msgstr "Geen thema's gevonden. Probeer een andere naam."
+
+msgid "One good post. All the right groups."
+msgstr "Eén goed bericht. Alle juiste groepen."
+
+msgid "Post to multiple Facebook groups with Postika. A desktop auto poster with scheduling, multiple accounts, 33 interface languages, and clear posting logs."
+msgstr "Plaats berichten in meerdere Facebook-groepen met Postika. Een automatische desktopposter met planning, meerdere accounts, 33 interfacetalen en duidelijke berichtlogboeken."
+
+msgid "Post to multiple Facebook groups without repeating the same steps. Write once, choose your groups, and post now or schedule for later."
+msgstr "Plaats berichten in meerdere Facebook-groepen zonder dezelfde stappen te herhalen. Schrijf één keer, kies uw groepen en post nu of plan voor later."
+
+msgid "Postika Facebook page-post import dialog"
+msgstr "Dialoogvenster voor het importeren van Postika Facebook-pagina's"
+
+msgid "Postika account selector and separate account workspaces"
+msgstr "Postika-accountkiezer en aparte accountwerkruimten"
+
+msgid "Postika composer with rich-text controls and image uploads"
+msgstr "Postika-componist met rich-text-besturingselementen en afbeeldingsuploads"
+
+msgid "Postika features"
+msgstr "Postika-functies"
+
+msgid "Postika home"
+msgstr "Postika thuis"
+
+msgid "Postika is a desktop app for Windows, macOS, and Linux. It uses an installed Chrome or Chromium browser for your Facebook sessions."
+msgstr "Postika is een desktop-app voor Windows, macOS en Linux. Het maakt gebruik van een geïnstalleerde Chrome- of Chromium-browser voor uw Facebook-sessies."
+
+msgid "Postika language selector and localized interface"
+msgstr "Postika-taalkiezer en gelokaliseerde interface"
+
+msgid "Postika posting intervals and scheduling controls"
+msgstr "Postika-postintervallen en planningscontroles"
+
+msgid "Postika posting logs with per-group results and queue controls"
+msgstr "Postika plaatst logboeken met resultaten per groep en wachtrijcontroles"
+
+msgid "Postika scheduling controls"
+msgstr "Postika-planningscontroles"
+
+msgid "Posting intervals don’t guarantee protection from Facebook restrictions or bans."
+msgstr "Postintervallen garanderen geen bescherming tegen Facebook-beperkingen of -verboden."
+
+msgid "Prepare now. Schedule for later."
+msgstr "Bereid je nu voor. Plan voor later."
+
+msgid "Questions"
+msgstr "Vragen"
+
+msgid "Refresh release notes"
+msgstr "Vernieuw de release-opmerkingen"
+
+msgid "Release notes"
+msgstr "Release-opmerkingen"
+
+msgid "Release notes are up to date."
+msgstr "Releaseopmerkingen zijn up-to-date."
+
+msgid "Report a problem"
+msgstr "Meld een probleem"
+
+msgid "Run posting queues for multiple Facebook accounts at the same time. Each account keeps its own browser session, groups, drafts, and posting settings, so you can prepare another post or check progress without interrupting the other accounts."
+msgstr "Voer wachtrijen voor meerdere Facebook-accounts tegelijkertijd uit. Elk account behoudt zijn eigen browsersessie, groepen, concepten en berichtinstellingen, zodat u een nieuw bericht kunt voorbereiden of de voortgang kunt controleren zonder de andere accounts te onderbreken."
+
+msgid "Schedule your posts for a date and time that suits you. When that time arrives, Postika automatically starts posting to your selected groups. You don’t need to be there to press Post."
+msgstr "Plan uw berichten op een datum en tijd die u uitkomt. Wanneer dat tijdstip aanbreekt, begint Postika automatisch berichten te plaatsen in de door u geselecteerde groepen. Je hoeft daar niet te zijn om op Posten te drukken."
+
+msgid "Screenshot preview"
+msgstr "Voorbeeld van screenshot"
+
+msgid "Search by name…"
+msgstr "Zoek op naam…"
+
+msgid "Search themes"
+msgstr "Zoek thema's"
+
+msgid "See where every post stands."
+msgstr "Kijk waar elke post staat."
+
+msgid "Selected"
+msgstr "Gekozen"
+
+msgid "Set your pace. Leave room between posts."
+msgstr "Bepaal uw tempo. Laat ruimte tussen de berichten."
+
+msgid "Several accounts. Posting at the same time."
+msgstr "Verschillende rekeningen. Tegelijkertijd posten."
+
+msgid "Skip opening every group and pasting the same thing again. Write your post with rich text, add and reorder your images, then search and select the Facebook groups you want to share with. Your draft stays saved while you get it right."
+msgstr "Sla het openen van elke groep over en plak hetzelfde opnieuw. Schrijf uw bericht met opgemaakte tekst, voeg uw afbeeldingen toe en herschik ze, en zoek en selecteer vervolgens de Facebook-groepen waarmee u wilt delen. Uw concept blijft opgeslagen zolang u het goed doet."
+
+msgid "Skip to content"
+msgstr "Ga naar de inhoud"
+
+msgid "Some groups require approval. Posting logs distinguish published posts, pending approval, failed, skipped, and unconfirmed submissions. Check unconfirmed results on Facebook before retrying."
+msgstr "Voor sommige groepen is goedkeuring vereist. In de berichtlogboeken wordt onderscheid gemaakt tussen gepubliceerde berichten, in afwachting van goedkeuring, mislukte, overgeslagen en onbevestigde inzendingen. Controleer onbevestigde resultaten op Facebook voordat u het opnieuw probeert."
+
+msgid "System default"
+msgstr "Systeemstandaard"
+
+msgid "System default ({0})"
+msgstr "Systeemstandaard ({0})"
+
+msgid "System packages may ask for administrator authorization."
+msgstr "Systeempakketten kunnen om beheerdersautorisatie vragen."
+
+msgid "Unsigned installer: Windows may show a SmartScreen warning. The portable version needs no installation; account data stays in the app data folder."
+msgstr "Niet-ondertekend installatieprogramma: Windows geeft mogelijk een SmartScreen-waarschuwing weer. De draagbare versie vereist geen installatie; accountgegevens blijven in de app-gegevensmap."
+
+msgid "Version"
+msgstr "Versie"
+
+msgid "Version {0} ({1})"
+msgstr "Versie {0} ({1})"
+
+msgid "What do I need to run Postika?"
+msgstr "Wat heb ik nodig om Postika te kunnen gebruiken?"
+
+msgid "What is a Facebook group auto poster?"
+msgstr "Wat is een autoposter voor een Facebook-groep?"
+
+msgid "Windows installer"
+msgstr "Windows-installatieprogramma"
+
+msgid "Windows portable"
+msgstr "Windows draagbaar"
+
+msgid "Windows, macOS & Linux"
+msgstr "Windows, macOS en Linux"
+
+msgid "Work in the language you think in."
+msgstr "Werk in de taal waarin u denkt."
+
+msgid "Yes. Keep Postika open and your computer awake while a queue is scheduled or running. Queues and posting logs are not restored after quitting."
+msgstr "Ja. Houd Postika open en uw computer wakker terwijl er een wachtrij gepland is of actief is. Wachtrijen en berichtlogboeken worden niet hersteld na het afsluiten."
+
+msgid "Yes. Multiple accounts can run their posting queues in parallel. Each account has a separate browser session, groups, drafts, and posting settings. Switching accounts doesn’t interrupt the other queues."
+msgstr "Ja. Meerdere accounts kunnen hun berichtenwachtrijen parallel uitvoeren. Elk account heeft een afzonderlijke browsersessie, groepen, concepten en postinstellingen. Het wisselen van account onderbreekt de andere wachtrijen niet."
+
+msgid "Your platform"
+msgstr "Jouw platform"
+
+msgid "{0} shown"
+msgstr "{0} getoond"
+
+msgid "{0} themes and system default"
+msgstr "{0} thema's en systeemstandaard"
+
+msgid "Facebook Groups <0>Bulk Poster</0>"
+msgstr "<0>Plaats berichten in meerdere</0> Facebook-groepen"
+
+msgid "All languages"
+msgstr "Alle talen"
+
+msgid "Language: {0}"
+msgstr "Taal: {0}"
+
+msgid "Languages"
+msgstr "Talen"
+
+msgid "No languages found"
+msgstr "Geen talen gevonden"
+
+msgid "Search languages…"
+msgstr "Talen zoeken…"
+
+msgid "Try a different name."
+msgstr "Probeer een andere naam."

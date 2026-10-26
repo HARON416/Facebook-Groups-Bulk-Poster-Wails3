@@ -1,0 +1,332 @@
+# Website copy. Initial non-English translations are machine generated; review before publication.
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: de\n"
+
+msgid "A Facebook group auto poster helps you share a prepared post across the groups you select. Postika combines a post editor, group selection, scheduling, and posting logs in one desktop app."
+msgstr "Mit einem automatischen Facebook-Gruppenposter können Sie einen vorbereiteten Beitrag in den von Ihnen ausgewählten Gruppen teilen. Postika vereint einen Post-Editor, Gruppenauswahl, Planung und Posting-Protokolle in einer Desktop-App."
+
+msgid "A few things to know"
+msgstr "Ein paar Dinge, die Sie wissen sollten"
+
+msgid "A little less busywork. A little more time."
+msgstr "Etwas weniger geschäftige Arbeit. Etwas mehr Zeit."
+
+msgid "A supported Windows, macOS, or Linux computer, an installed Chrome or Chromium browser, and your Facebook account. Platform downloads are listed on the downloads page."
+msgstr "Ein unterstützter Windows-, macOS- oder Linux-Computer, ein installierter Chrome- oder Chromium-Browser und Ihr Facebook-Konto. Plattform-Downloads sind auf der Download-Seite aufgeführt."
+
+msgid "Already have a post worth sharing? Import posts from a Facebook page your signed-in account can access. Review the text and images, make your edits, and add the posts you want to your queue."
+msgstr "Haben Sie bereits einen Beitrag, den es wert ist, geteilt zu werden? Importieren Sie Beiträge von einer Facebook-Seite, auf die Ihr angemeldetes Konto zugreifen kann. Überprüfen Sie den Text und die Bilder, nehmen Sie Änderungen vor und fügen Sie die gewünschten Beiträge zu Ihrer Warteschlange hinzu."
+
+msgid "Before you start"
+msgstr "Bevor Sie beginnen"
+
+msgid "Bring your page posts along."
+msgstr "Bringen Sie Ihre Seitenbeiträge mit."
+
+msgid "Browser language"
+msgstr "Browsersprache"
+
+msgid "Bulk Poster"
+msgstr "Massenplakat"
+
+msgid "Can multiple Facebook accounts post at the same time?"
+msgstr "Können mehrere Facebook-Konten gleichzeitig Beiträge posten?"
+
+msgid "Check your connection and try again."
+msgstr "Überprüfen Sie Ihre Verbindung und versuchen Sie es erneut."
+
+msgid "Choose a version for your computer. Requires Chrome or Chromium."
+msgstr "Wählen Sie eine Version für Ihren Computer. Erfordert Chrome oder Chromium."
+
+msgid "Choose from 33 interface languages, including right-to-left layouts. Menus, controls, and app-generated log messages follow your choice across windows. And with 189 themes, you can make Postika feel like your own."
+msgstr "Wählen Sie aus 33 Schnittstellensprachen, einschließlich Rechts-nach-Links-Layouts. Menüs, Steuerelemente und von der App generierte Protokollmeldungen folgen Ihrer Auswahl in allen Fenstern. Und mit 189 Themen können Sie Postika wie Ihr eigenes gestalten."
+
+msgid "Choose your own minimum and maximum interval between posts to avoid posting in rapid succession and help reduce the risk of rate limits or account restrictions. Follow progress as the queue runs, and pause whenever you need to."
+msgstr "Wählen Sie Ihr eigenes minimales und maximales Intervall zwischen Posts, um zu schnelle Posts hintereinander zu vermeiden und das Risiko von Ratenbeschränkungen oder Kontobeschränkungen zu verringern. Verfolgen Sie den Fortschritt, während die Warteschlange ausgeführt wird, und pausieren Sie, wann immer Sie möchten."
+
+msgid "Close screenshot"
+msgstr "Screenshot schließen"
+
+msgid "Close themes"
+msgstr "Themen schließen"
+
+msgid "Color themes"
+msgstr "Farbthemen"
+
+msgid "Color themes: {0}"
+msgstr "Farbthemen: {0}"
+
+msgid "Coming soon"
+msgstr "Kommt bald"
+
+msgid "Couldn’t load this screenshot. Close it and try again."
+msgstr "Dieser Screenshot konnte nicht geladen werden. Schließen Sie es und versuchen Sie es erneut."
+
+msgid "Couldn’t refresh release notes. Please try again."
+msgstr "Versionshinweise konnten nicht aktualisiert werden. Bitte versuchen Sie es erneut."
+
+msgid "Does a submission mean my post is published?"
+msgstr "Bedeutet eine Einreichung, dass mein Beitrag veröffentlicht wird?"
+
+msgid "Does my computer need to stay on?"
+msgstr "Muss mein Computer eingeschaltet bleiben?"
+
+msgid "Download"
+msgstr "Herunterladen"
+
+msgid "Download Postika"
+msgstr "Laden Sie Postika herunter"
+
+msgid "Download Postika for Windows, macOS, and Linux. Choose your desktop Facebook group auto poster installer and find the latest release notes."
+msgstr "Laden Sie Postika für Windows, macOS und Linux herunter. Wählen Sie das Auto-Poster-Installationsprogramm für Ihre Desktop-Facebook-Gruppe und finden Sie die neuesten Versionshinweise."
+
+msgid "Download Postika — Facebook Group Auto Poster"
+msgstr "Laden Sie Postika herunter — Beiträge gleichzeitig in mehreren Facebook-Gruppen veröffentlichen"
+
+msgid "Download for {0}"
+msgstr "Herunterladen für {0}"
+
+msgid "Download {0}"
+msgstr "Laden Sie {0} herunter"
+
+msgid "Downloads"
+msgstr "Downloads"
+
+msgid "Enlarge screenshot: Postika Facebook page-post import dialog"
+msgstr "Screenshot vergrößern: Dialog zum Importieren von Postika-Facebook-Seitenbeiträgen"
+
+msgid "Enlarge screenshot: Postika account selector and separate account workspaces"
+msgstr "Screenshot vergrößern: Postika-Kontoauswahl und separate Kontoarbeitsbereiche"
+
+msgid "Enlarge screenshot: Postika composer with rich-text controls and image uploads"
+msgstr "Screenshot vergrößern: Postika Composer mit Rich-Text-Steuerelementen und Bild-Uploads"
+
+msgid "Enlarge screenshot: Postika language selector and localized interface"
+msgstr "Screenshot vergrößern: Postika-Sprachauswahl und lokalisierte Benutzeroberfläche"
+
+msgid "Enlarge screenshot: Postika posting intervals and scheduling controls"
+msgstr "Screenshot vergrößern: Postika-Postintervalle und Planungskontrollen"
+
+msgid "Enlarge screenshot: Postika posting logs with per-group results and queue controls"
+msgstr "Vergrößerter Screenshot: Postika-Postprotokolle mit Ergebnissen pro Gruppe und Warteschlangenkontrollen"
+
+msgid "Enlarge screenshot: Postika scheduling controls"
+msgstr "Screenshot vergrößern: Postika-Planungssteuerung"
+
+msgid "Facebook Group Auto Poster for Desktop | Postika"
+msgstr "Beiträge gleichzeitig in mehreren Facebook-Gruppen veröffentlichen | Postika"
+
+msgid "Facebook Groups"
+msgstr "Facebook-Gruppen"
+
+msgid "Features"
+msgstr "Merkmale"
+
+msgid "Follow progress group by group. See what’s published, what’s awaiting approval, and what needs attention, including failed, skipped, and unconfirmed submissions. Pause, resume, or stop your queue from the same window."
+msgstr "Verfolgen Sie den Fortschritt Gruppe für Gruppe. Sehen Sie, was veröffentlicht wurde, was auf Genehmigung wartet und was Aufmerksamkeit erfordert, einschließlich fehlgeschlagener, übersprungener und unbestätigter Übermittlungen. Halten Sie Ihre Warteschlange im selben Fenster an, setzen Sie sie fort oder stoppen Sie sie."
+
+msgid "Get in touch"
+msgstr "Nehmen Sie Kontakt auf"
+
+msgid "Intel Macs (.dmg)"
+msgstr "Intel-Macs (.dmg)"
+
+msgid "Is Postika a Chrome extension?"
+msgstr "Ist Postika eine Chrome-Erweiterung?"
+
+msgid "Keep Postika open and your computer awake while a queue runs. Queues and posting logs aren’t restored after quitting."
+msgstr "Halten Sie Postika geöffnet und Ihren Computer aktiv, während eine Warteschlange läuft. Warteschlangen und Beitragsprotokolle werden nach dem Beenden nicht wiederhergestellt."
+
+msgid "Keep your device on and awake, with Postika open, so it can handle the posting for you."
+msgstr "Lassen Sie Ihr Gerät eingeschaltet und wach, während Postika geöffnet ist, damit es den Postvorgang für Sie übernehmen kann."
+
+msgid "Language"
+msgstr "Sprache"
+
+msgid "Linux x64 (portable)"
+msgstr "Linux x64 (tragbar)"
+
+msgid "Loading screenshot…"
+msgstr "Screenshot wird geladen…"
+
+msgid "M-series Macs (.dmg)"
+msgstr "Macs der M-Serie (.dmg)"
+
+msgid "Main navigation"
+msgstr "Hauptnavigation"
+
+msgid "Move Postika into Applications before opening it."
+msgstr "Verschieben Sie Postika in die Anwendungen, bevor Sie es öffnen."
+
+msgid "No themes found. Try another name."
+msgstr "Keine Themen gefunden. Versuchen Sie es mit einem anderen Namen."
+
+msgid "One good post. All the right groups."
+msgstr "Ein guter Beitrag. Alle richtigen Gruppen."
+
+msgid "Post to multiple Facebook groups with Postika. A desktop auto poster with scheduling, multiple accounts, 33 interface languages, and clear posting logs."
+msgstr "Posten Sie mit Postika in mehreren Facebook-Gruppen. Ein automatisches Desktop-Poster mit Planung, mehreren Konten, 33 Schnittstellensprachen und übersichtlichen Posting-Protokollen."
+
+msgid "Post to multiple Facebook groups without repeating the same steps. Write once, choose your groups, and post now or schedule for later."
+msgstr "Posten Sie in mehreren Facebook-Gruppen, ohne die gleichen Schritte zu wiederholen. Schreiben Sie einmal, wählen Sie Ihre Gruppen aus und posten Sie jetzt oder planen Sie für später."
+
+msgid "Postika Facebook page-post import dialog"
+msgstr "Dialog zum Importieren von Postika-Facebook-Seitenbeiträgen"
+
+msgid "Postika account selector and separate account workspaces"
+msgstr "Postika-Kontoauswahl und separate Kontoarbeitsbereiche"
+
+msgid "Postika composer with rich-text controls and image uploads"
+msgstr "Postika-Composer mit Rich-Text-Steuerelementen und Bild-Uploads"
+
+msgid "Postika features"
+msgstr "Postika-Funktionen"
+
+msgid "Postika home"
+msgstr "Postika-Haus"
+
+msgid "Postika is a desktop app for Windows, macOS, and Linux. It uses an installed Chrome or Chromium browser for your Facebook sessions."
+msgstr "Postika ist eine Desktop-App für Windows, macOS und Linux. Es verwendet einen installierten Chrome- oder Chromium-Browser für Ihre Facebook-Sitzungen."
+
+msgid "Postika language selector and localized interface"
+msgstr "Postika-Sprachauswahl und lokalisierte Benutzeroberfläche"
+
+msgid "Postika posting intervals and scheduling controls"
+msgstr "Postika-Veröffentlichungsintervalle und Planungskontrollen"
+
+msgid "Postika posting logs with per-group results and queue controls"
+msgstr "Postika-Posting-Protokolle mit Ergebnissen pro Gruppe und Warteschlangenkontrollen"
+
+msgid "Postika scheduling controls"
+msgstr "Postika-Planungskontrollen"
+
+msgid "Posting intervals don’t guarantee protection from Facebook restrictions or bans."
+msgstr "Postintervalle bieten keinen Schutz vor Facebook-Einschränkungen oder -Verboten."
+
+msgid "Prepare now. Schedule for later."
+msgstr "Bereiten Sie sich jetzt vor. Planen Sie für später."
+
+msgid "Questions"
+msgstr "Fragen"
+
+msgid "Refresh release notes"
+msgstr "Versionshinweise aktualisieren"
+
+msgid "Release notes"
+msgstr "Versionshinweise"
+
+msgid "Release notes are up to date."
+msgstr "Die Versionshinweise sind aktuell."
+
+msgid "Report a problem"
+msgstr "Melden Sie ein Problem"
+
+msgid "Run posting queues for multiple Facebook accounts at the same time. Each account keeps its own browser session, groups, drafts, and posting settings, so you can prepare another post or check progress without interrupting the other accounts."
+msgstr "Führen Sie Posting-Warteschlangen für mehrere Facebook-Konten gleichzeitig aus. Jedes Konto behält seine eigene Browsersitzung, Gruppen, Entwürfe und Posting-Einstellungen bei, sodass Sie einen weiteren Post vorbereiten oder den Fortschritt überprüfen können, ohne die anderen Konten zu unterbrechen."
+
+msgid "Schedule your posts for a date and time that suits you. When that time arrives, Postika automatically starts posting to your selected groups. You don’t need to be there to press Post."
+msgstr "Planen Sie Ihre Beiträge für ein Datum und eine Uhrzeit, die zu Ihnen passen. Wenn dieser Zeitpunkt erreicht ist, beginnt Postika automatisch mit dem Posten in den von Ihnen ausgewählten Gruppen. Sie müssen nicht dort sein, um auf „Posten“ zu klicken."
+
+msgid "Screenshot preview"
+msgstr "Screenshot-Vorschau"
+
+msgid "Search by name…"
+msgstr "Nach Namen suchen…"
+
+msgid "Search themes"
+msgstr "Suchthemen"
+
+msgid "See where every post stands."
+msgstr "Sehen Sie, wo jeder Beitrag steht."
+
+msgid "Selected"
+msgstr "Ausgewählt"
+
+msgid "Set your pace. Leave room between posts."
+msgstr "Bestimmen Sie Ihr Tempo. Lassen Sie Platz zwischen den Beiträgen."
+
+msgid "Several accounts. Posting at the same time."
+msgstr "Mehrere Konten. Gleichzeitiges Posten."
+
+msgid "Skip opening every group and pasting the same thing again. Write your post with rich text, add and reorder your images, then search and select the Facebook groups you want to share with. Your draft stays saved while you get it right."
+msgstr "Überspringen Sie das Öffnen jeder Gruppe und das erneute Einfügen desselben. Schreiben Sie Ihren Beitrag mit Rich Text, fügen Sie Ihre Bilder hinzu und ordnen Sie sie neu an. Suchen Sie dann nach den Facebook-Gruppen, mit denen Sie teilen möchten, und wählen Sie sie aus. Ihr Entwurf bleibt gespeichert, während Sie ihn richtig machen."
+
+msgid "Skip to content"
+msgstr "Zum Inhalt springen"
+
+msgid "Some groups require approval. Posting logs distinguish published posts, pending approval, failed, skipped, and unconfirmed submissions. Check unconfirmed results on Facebook before retrying."
+msgstr "Einige Gruppen erfordern eine Genehmigung. In den Posting-Protokollen werden veröffentlichte Posts, ausstehende Posts, fehlgeschlagene, übersprungene und unbestätigte Posts unterschieden. Überprüfen Sie unbestätigte Ergebnisse auf Facebook, bevor Sie es erneut versuchen."
+
+msgid "System default"
+msgstr "Systemstandard"
+
+msgid "System default ({0})"
+msgstr "Systemstandard ({0})"
+
+msgid "System packages may ask for administrator authorization."
+msgstr "Systempakete verlangen möglicherweise eine Administrator-Autorisierung."
+
+msgid "Unsigned installer: Windows may show a SmartScreen warning. The portable version needs no installation; account data stays in the app data folder."
+msgstr "Nicht signiertes Installationsprogramm: Windows zeigt möglicherweise eine SmartScreen-Warnung an. Die tragbare Version erfordert keine Installation; Kontodaten bleiben im App-Datenordner."
+
+msgid "Version"
+msgstr "Version"
+
+msgid "Version {0} ({1})"
+msgstr "Version {0} ({1})"
+
+msgid "What do I need to run Postika?"
+msgstr "Was benötige ich, um Postika auszuführen?"
+
+msgid "What is a Facebook group auto poster?"
+msgstr "Was ist ein automatisches Facebook-Gruppenposter?"
+
+msgid "Windows installer"
+msgstr "Windows-Installer"
+
+msgid "Windows portable"
+msgstr "Windows ohne Installation"
+
+msgid "Windows, macOS & Linux"
+msgstr "Windows, macOS und Linux"
+
+msgid "Work in the language you think in."
+msgstr "Arbeiten Sie in der Sprache, in der Sie denken."
+
+msgid "Yes. Keep Postika open and your computer awake while a queue is scheduled or running. Queues and posting logs are not restored after quitting."
+msgstr "Ja. Halten Sie Postika geöffnet und Ihren Computer aktiv, während eine Warteschlange geplant ist oder ausgeführt wird. Warteschlangen und Beitragsprotokolle werden nach dem Beenden nicht wiederhergestellt."
+
+msgid "Yes. Multiple accounts can run their posting queues in parallel. Each account has a separate browser session, groups, drafts, and posting settings. Switching accounts doesn’t interrupt the other queues."
+msgstr "Ja. Mehrere Konten können ihre Posting-Warteschlangen parallel ausführen. Jedes Konto verfügt über eine separate Browsersitzung, Gruppen, Entwürfe und Veröffentlichungseinstellungen. Durch den Kontowechsel werden die anderen Warteschlangen nicht unterbrochen."
+
+msgid "Your platform"
+msgstr "Ihre Plattform"
+
+msgid "{0} shown"
+msgstr "{0} angezeigt"
+
+msgid "{0} themes and system default"
+msgstr "{0} Themen und Systemstandard"
+
+msgid "Facebook Groups <0>Bulk Poster</0>"
+msgstr "<0>Beiträge gleichzeitig</0> in mehreren Facebook-Gruppen veröffentlichen"
+
+msgid "All languages"
+msgstr "Alle Sprachen"
+
+msgid "Language: {0}"
+msgstr "Sprache: {0}"
+
+msgid "Languages"
+msgstr "Sprachen"
+
+msgid "No languages found"
+msgstr "Keine Sprachen gefunden"
+
+msgid "Search languages…"
+msgstr "Sprachen suchen…"
+
+msgid "Try a different name."
+msgstr "Versuchen Sie einen anderen Namen."

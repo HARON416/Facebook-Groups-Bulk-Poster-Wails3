@@ -1,0 +1,332 @@
+# Website copy. Initial non-English translations are machine generated; review before publication.
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: pt-BR\n"
+
+msgid "A Facebook group auto poster helps you share a prepared post across the groups you select. Postika combines a post editor, group selection, scheduling, and posting logs in one desktop app."
+msgstr "Um postador automático de grupo do Facebook ajuda você a compartilhar uma postagem preparada entre os grupos selecionados. Postika combina um editor de postagem, seleção de grupo, agendamento e postagem de logs em um aplicativo de desktop."
+
+msgid "A few things to know"
+msgstr "Algumas coisas para saber"
+
+msgid "A little less busywork. A little more time."
+msgstr "Um pouco menos ocupado. Um pouco mais de tempo."
+
+msgid "A supported Windows, macOS, or Linux computer, an installed Chrome or Chromium browser, and your Facebook account. Platform downloads are listed on the downloads page."
+msgstr "Um computador Windows, macOS ou Linux compatível, um navegador Chrome ou Chromium instalado e sua conta do Facebook. Os downloads da plataforma estão listados na página de downloads."
+
+msgid "Already have a post worth sharing? Import posts from a Facebook page your signed-in account can access. Review the text and images, make your edits, and add the posts you want to your queue."
+msgstr "Já tem uma postagem que vale a pena compartilhar? Importe postagens de uma página do Facebook que sua conta conectada possa acessar. Revise o texto e as imagens, faça suas edições e adicione as postagens desejadas à sua fila."
+
+msgid "Before you start"
+msgstr "Antes de começar"
+
+msgid "Bring your page posts along."
+msgstr "Traga as postagens da sua página."
+
+msgid "Browser language"
+msgstr "Idioma do navegador"
+
+msgid "Bulk Poster"
+msgstr "Pôster em massa"
+
+msgid "Can multiple Facebook accounts post at the same time?"
+msgstr "Várias contas do Facebook podem postar ao mesmo tempo?"
+
+msgid "Check your connection and try again."
+msgstr "Verifique sua conexão e tente novamente."
+
+msgid "Choose a version for your computer. Requires Chrome or Chromium."
+msgstr "Escolha uma versão para o seu computador. Requer Chrome ou Chromium."
+
+msgid "Choose from 33 interface languages, including right-to-left layouts. Menus, controls, and app-generated log messages follow your choice across windows. And with 189 themes, you can make Postika feel like your own."
+msgstr "Escolha entre 33 idiomas de interface, incluindo layouts da direita para a esquerda. Menus, controles e mensagens de log geradas pelo aplicativo seguem sua escolha nas janelas. E com 189 temas, você pode fazer o Postika parecer seu."
+
+msgid "Choose your own minimum and maximum interval between posts to avoid posting in rapid succession and help reduce the risk of rate limits or account restrictions. Follow progress as the queue runs, and pause whenever you need to."
+msgstr "Escolha seu próprio intervalo mínimo e máximo entre postagens para evitar postagens em rápida sucessão e ajudar a reduzir o risco de limites de taxas ou restrições de conta. Acompanhe o progresso à medida que a fila é executada e faça uma pausa sempre que precisar."
+
+msgid "Close screenshot"
+msgstr "Fechar captura de tela"
+
+msgid "Close themes"
+msgstr "Fechar temas"
+
+msgid "Color themes"
+msgstr "Temas de cores"
+
+msgid "Color themes: {0}"
+msgstr "Temas de cores: {0}"
+
+msgid "Coming soon"
+msgstr "Em breve"
+
+msgid "Couldn’t load this screenshot. Close it and try again."
+msgstr "Não foi possível carregar esta captura de tela. Feche-o e tente novamente."
+
+msgid "Couldn’t refresh release notes. Please try again."
+msgstr "Não foi possível atualizar as notas de lançamento. Por favor, tente novamente."
+
+msgid "Does a submission mean my post is published?"
+msgstr "Um envio significa que minha postagem foi publicada?"
+
+msgid "Does my computer need to stay on?"
+msgstr "Meu computador precisa permanecer ligado?"
+
+msgid "Download"
+msgstr "Download"
+
+msgid "Download Postika"
+msgstr "Baixar Postika"
+
+msgid "Download Postika for Windows, macOS, and Linux. Choose your desktop Facebook group auto poster installer and find the latest release notes."
+msgstr "Baixe Postika para Windows, macOS e Linux. Escolha o instalador de pôster automático do grupo do Facebook para desktop e encontre as notas de versão mais recentes."
+
+msgid "Download Postika — Facebook Group Auto Poster"
+msgstr "Baixar Postika — Publique em vários grupos do Facebook"
+
+msgid "Download for {0}"
+msgstr "Baixar para {0}"
+
+msgid "Download {0}"
+msgstr "Baixar {0}"
+
+msgid "Downloads"
+msgstr "Transferências"
+
+msgid "Enlarge screenshot: Postika Facebook page-post import dialog"
+msgstr "Ampliar captura de tela: caixa de diálogo de importação de postagem de página do Postika no Facebook"
+
+msgid "Enlarge screenshot: Postika account selector and separate account workspaces"
+msgstr "Ampliar captura de tela: seletor de conta Postika e espaços de trabalho de conta separados"
+
+msgid "Enlarge screenshot: Postika composer with rich-text controls and image uploads"
+msgstr "Ampliar captura de tela: compositor Postika com controles de rich text e uploads de imagens"
+
+msgid "Enlarge screenshot: Postika language selector and localized interface"
+msgstr "Ampliar captura de tela: seletor de idioma Postika e interface localizada"
+
+msgid "Enlarge screenshot: Postika posting intervals and scheduling controls"
+msgstr "Ampliar captura de tela: intervalos de postagem do Postika e controles de agendamento"
+
+msgid "Enlarge screenshot: Postika posting logs with per-group results and queue controls"
+msgstr "Ampliar captura de tela: Postika postando logs com resultados por grupo e controles de fila"
+
+msgid "Enlarge screenshot: Postika scheduling controls"
+msgstr "Ampliar captura de tela: controles de agendamento do Postika"
+
+msgid "Facebook Group Auto Poster for Desktop | Postika"
+msgstr "Publique em vários grupos do Facebook | Postika"
+
+msgid "Facebook Groups"
+msgstr "Grupos do Facebook"
+
+msgid "Features"
+msgstr "Características"
+
+msgid "Follow progress group by group. See what’s published, what’s awaiting approval, and what needs attention, including failed, skipped, and unconfirmed submissions. Pause, resume, or stop your queue from the same window."
+msgstr "Acompanhe o progresso grupo por grupo. Veja o que foi publicado, o que está aguardando aprovação e o que precisa de atenção, incluindo envios com falha, ignorados e não confirmados. Pause, retome ou interrompa sua fila na mesma janela."
+
+msgid "Get in touch"
+msgstr "Entre em contato"
+
+msgid "Intel Macs (.dmg)"
+msgstr "Macs Intel (.dmg)"
+
+msgid "Is Postika a Chrome extension?"
+msgstr "Postika é uma extensão do Chrome?"
+
+msgid "Keep Postika open and your computer awake while a queue runs. Queues and posting logs aren’t restored after quitting."
+msgstr "Mantenha o Postika aberto e seu computador ativo enquanto uma fila é executada. Filas e registros de postagem não são restaurados após encerrar."
+
+msgid "Keep your device on and awake, with Postika open, so it can handle the posting for you."
+msgstr "Mantenha seu dispositivo ligado e ativo, com o Postika aberto, para que ele possa cuidar da postagem para você."
+
+msgid "Language"
+msgstr "Linguagem"
+
+msgid "Linux x64 (portable)"
+msgstr "Linux x64 (portátil)"
+
+msgid "Loading screenshot…"
+msgstr "Carregando captura de tela…"
+
+msgid "M-series Macs (.dmg)"
+msgstr "Macs da série M (.dmg)"
+
+msgid "Main navigation"
+msgstr "Navegação principal"
+
+msgid "Move Postika into Applications before opening it."
+msgstr "Mova o Postika para Aplicativos antes de abri-lo."
+
+msgid "No themes found. Try another name."
+msgstr "Nenhum tema encontrado. Tente outro nome."
+
+msgid "One good post. All the right groups."
+msgstr "Uma boa postagem. Todos os grupos certos."
+
+msgid "Post to multiple Facebook groups with Postika. A desktop auto poster with scheduling, multiple accounts, 33 interface languages, and clear posting logs."
+msgstr "Publique em vários grupos do Facebook com Postika. Um pôster automático para desktop com agendamento, várias contas, 33 idiomas de interface e registros de postagem claros."
+
+msgid "Post to multiple Facebook groups without repeating the same steps. Write once, choose your groups, and post now or schedule for later."
+msgstr "Publique em vários grupos do Facebook sem repetir as mesmas etapas. Escreva uma vez, escolha seus grupos e poste agora ou agende para mais tarde."
+
+msgid "Postika Facebook page-post import dialog"
+msgstr "Caixa de diálogo de importação de postagem de página do Postika no Facebook"
+
+msgid "Postika account selector and separate account workspaces"
+msgstr "Seletor de conta Postika e espaços de trabalho de conta separados"
+
+msgid "Postika composer with rich-text controls and image uploads"
+msgstr "Compositor Postika com controles de rich text e uploads de imagens"
+
+msgid "Postika features"
+msgstr "Recursos do Postika"
+
+msgid "Postika home"
+msgstr "Postika casa"
+
+msgid "Postika is a desktop app for Windows, macOS, and Linux. It uses an installed Chrome or Chromium browser for your Facebook sessions."
+msgstr "Postika é um aplicativo de desktop para Windows, macOS e Linux. Ele usa um navegador Chrome ou Chromium instalado para suas sessões do Facebook."
+
+msgid "Postika language selector and localized interface"
+msgstr "Seletor de idioma Postika e interface localizada"
+
+msgid "Postika posting intervals and scheduling controls"
+msgstr "Intervalos de postagem Postika e controles de agendamento"
+
+msgid "Postika posting logs with per-group results and queue controls"
+msgstr "Postika postando logs com resultados por grupo e controles de fila"
+
+msgid "Postika scheduling controls"
+msgstr "Controles de agendamento Postika"
+
+msgid "Posting intervals don’t guarantee protection from Facebook restrictions or bans."
+msgstr "Os intervalos de postagem não garantem proteção contra restrições ou proibições do Facebook."
+
+msgid "Prepare now. Schedule for later."
+msgstr "Prepare-se agora. Agende para mais tarde."
+
+msgid "Questions"
+msgstr "Questões"
+
+msgid "Refresh release notes"
+msgstr "Atualizar notas de versão"
+
+msgid "Release notes"
+msgstr "Notas de lançamento"
+
+msgid "Release notes are up to date."
+msgstr "As notas de versão estão atualizadas."
+
+msgid "Report a problem"
+msgstr "Informar um problema"
+
+msgid "Run posting queues for multiple Facebook accounts at the same time. Each account keeps its own browser session, groups, drafts, and posting settings, so you can prepare another post or check progress without interrupting the other accounts."
+msgstr "Execute filas de postagem para várias contas do Facebook ao mesmo tempo. Cada conta mantém sua própria sessão do navegador, grupos, rascunhos e configurações de postagem, para que você possa preparar outra postagem ou verificar o progresso sem interromper as outras contas."
+
+msgid "Schedule your posts for a date and time that suits you. When that time arrives, Postika automatically starts posting to your selected groups. You don’t need to be there to press Post."
+msgstr "Programe suas postagens para uma data e horário que mais lhe convier. Quando chegar esse momento, o Postika começará a postar automaticamente nos grupos selecionados. Você não precisa estar lá para pressionar Postar."
+
+msgid "Screenshot preview"
+msgstr "Visualização da captura de tela"
+
+msgid "Search by name…"
+msgstr "Pesquise por nome…"
+
+msgid "Search themes"
+msgstr "Temas de pesquisa"
+
+msgid "See where every post stands."
+msgstr "Veja onde está cada postagem."
+
+msgid "Selected"
+msgstr "Selecionado"
+
+msgid "Set your pace. Leave room between posts."
+msgstr "Defina seu ritmo. Deixe espaço entre as postagens."
+
+msgid "Several accounts. Posting at the same time."
+msgstr "Várias contas. Postando ao mesmo tempo."
+
+msgid "Skip opening every group and pasting the same thing again. Write your post with rich text, add and reorder your images, then search and select the Facebook groups you want to share with. Your draft stays saved while you get it right."
+msgstr "Pule a abertura de cada grupo e cole a mesma coisa novamente. Escreva sua postagem com rich text, adicione e reordene suas imagens, depois pesquise e selecione os grupos do Facebook com os quais deseja compartilhar. Seu rascunho permanece salvo enquanto você acerta."
+
+msgid "Skip to content"
+msgstr "Pular para o conteúdo"
+
+msgid "Some groups require approval. Posting logs distinguish published posts, pending approval, failed, skipped, and unconfirmed submissions. Check unconfirmed results on Facebook before retrying."
+msgstr "Alguns grupos exigem aprovação. Os registros de postagem distinguem postagens publicadas, aprovação pendente, envios com falha, ignorados e não confirmados. Verifique os resultados não confirmados no Facebook antes de tentar novamente."
+
+msgid "System default"
+msgstr "Padrão do sistema"
+
+msgid "System default ({0})"
+msgstr "Padrão do sistema ({0})"
+
+msgid "System packages may ask for administrator authorization."
+msgstr "Os pacotes do sistema podem solicitar autorização do administrador."
+
+msgid "Unsigned installer: Windows may show a SmartScreen warning. The portable version needs no installation; account data stays in the app data folder."
+msgstr "Instalador não assinado: o Windows pode mostrar um aviso do SmartScreen. A versão portátil não necessita de instalação; os dados da conta permanecem na pasta de dados do aplicativo."
+
+msgid "Version"
+msgstr "Versão"
+
+msgid "Version {0} ({1})"
+msgstr "Versão {0} ({1})"
+
+msgid "What do I need to run Postika?"
+msgstr "O que eu preciso para executar o Postika?"
+
+msgid "What is a Facebook group auto poster?"
+msgstr "O que é um postador automático de grupo do Facebook?"
+
+msgid "Windows installer"
+msgstr "Instalador do Windows"
+
+msgid "Windows portable"
+msgstr "Windows portátil"
+
+msgid "Windows, macOS & Linux"
+msgstr "Windows, macOS e Linux"
+
+msgid "Work in the language you think in."
+msgstr "Trabalhe no idioma que você pensa."
+
+msgid "Yes. Keep Postika open and your computer awake while a queue is scheduled or running. Queues and posting logs are not restored after quitting."
+msgstr "Sim. Mantenha o Postika aberto e seu computador ativo enquanto uma fila está agendada ou em execução. As filas e os logs de postagem não são restaurados após o encerramento."
+
+msgid "Yes. Multiple accounts can run their posting queues in parallel. Each account has a separate browser session, groups, drafts, and posting settings. Switching accounts doesn’t interrupt the other queues."
+msgstr "Sim. Várias contas podem executar suas filas de lançamento em paralelo. Cada conta tem uma sessão de navegador, grupos, rascunhos e configurações de postagem separados. A troca de contas não interrompe as outras filas."
+
+msgid "Your platform"
+msgstr "Sua plataforma"
+
+msgid "{0} shown"
+msgstr "{0} mostrado"
+
+msgid "{0} themes and system default"
+msgstr "{0} temas e padrão do sistema"
+
+msgid "Facebook Groups <0>Bulk Poster</0>"
+msgstr "<0>Publique em vários</0> grupos do Facebook"
+
+msgid "All languages"
+msgstr "Todos os idiomas"
+
+msgid "Language: {0}"
+msgstr "Idioma: {0}"
+
+msgid "Languages"
+msgstr "Idiomas"
+
+msgid "No languages found"
+msgstr "Nenhum idioma encontrado"
+
+msgid "Search languages…"
+msgstr "Buscar idiomas…"
+
+msgid "Try a different name."
+msgstr "Tente outro nome."

@@ -22,9 +22,34 @@ export function bunnyConfig(env = process.env) {
 
 export function bunnyClient(config, { request = fetch, sleep = ms => new Promise(resolve => setTimeout(resolve, ms)) } = {}) {
   const storageURL = path => `https://${config.host}/${config.zone}/${path}`;
+  const networkCodes = error => {
+    const found = new Set();
+    function visit(value) {
+      if (!value || typeof value !== 'object') return;
+      // Report error codes only. Raw error messages may contain credentials.
+      if (typeof value.code === 'string' && /^[A-Z][A-Z0-9_]{1,40}$/.test(value.code)) found.add(value.code);
+      visit(value.cause);
+      if (Array.isArray(value.errors)) value.errors.forEach(visit);
+    }
+    visit(error);
+    return [...found].join(', ') || 'connection failure';
+  };
   async function send(url, init, label) {
-    try { return await request(url, { redirect: 'error', signal: AbortSignal.timeout(600_000), ...init }); }
-    catch { throw new Error(`Network request failed for ${label}; credentials have not been logged.`); }
+    const target = label || `Storage Zone connection (${config.host})`;
+    for (let attempt = 0; attempt < 3; attempt++) {
+      const options = typeof init === 'function' ? init() : init;
+      try {
+        const response = await request(url, { redirect: 'error', signal: AbortSignal.timeout(600_000), ...options });
+        if (attempt < 2 && (response.status === 429 || response.status >= 500)) {
+          await response.body?.cancel();
+        } else return response;
+      } catch (error) {
+        if (attempt === 2) throw new Error(`Network request failed for ${target} after 3 attempts (${networkCodes(error)}). Check DNS/network access and retry; credentials have not been logged.`);
+      } finally {
+        if (typeof options.body?.destroy === 'function') options.body.destroy();
+      }
+      await sleep(1000 * (attempt + 1));
+    }
   }
   async function getStorage(path) {
     const response = await send(storageURL(path), { headers: { AccessKey: config.password } }, path);
@@ -35,16 +60,13 @@ export function bunnyClient(config, { request = fetch, sleep = ms => new Promise
   async function upload(file, path) {
     const checksum = createHash('sha256').update(readFileSync(file)).digest('hex').toUpperCase();
     // A fresh stream per request avoids buffering entire releases in memory.
-    const stream = createReadStream(file);
-    try {
-      const response = await send(storageURL(path), {
-        method: 'PUT', duplex: 'half', body: stream,
-        headers: { AccessKey: config.password, Checksum: checksum, 'Content-Length': String(statSync(file).size),
-          'Content-Type': path.endsWith('.json') ? 'application/json' : 'application/octet-stream' },
-      }, path);
-      await response.body?.cancel();
-      if (!response.ok) throw new Error(`Bunny upload failed with HTTP ${response.status} for ${path}.`);
-    } finally { stream.destroy(); }
+    const response = await send(storageURL(path), () => ({
+      method: 'PUT', duplex: 'half', body: createReadStream(file),
+      headers: { AccessKey: config.password, Checksum: checksum, 'Content-Length': String(statSync(file).size),
+        'Content-Type': path.endsWith('.json') ? 'application/json' : 'application/octet-stream' },
+    }), path);
+    await response.body?.cancel();
+    if (!response.ok) throw new Error(`Bunny upload failed with HTTP ${response.status} for ${path}.`);
   }
   async function verifyPublic(file, path, feed = false) {
     const expected = createHash('sha256').update(readFileSync(file)).digest('hex');

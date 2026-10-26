@@ -1,0 +1,332 @@
+# Website copy. Initial non-English translations are machine generated; review before publication.
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: tr\n"
+
+msgid "A Facebook group auto poster helps you share a prepared post across the groups you select. Postika combines a post editor, group selection, scheduling, and posting logs in one desktop app."
+msgstr "Facebook grubu otomatik posteri, hazırlanmış bir gönderiyi seçtiğiniz gruplar arasında paylaşmanıza yardımcı olur. Postika, bir gönderi düzenleyiciyi, grup seçimini, planlamayı ve günlükleri tek bir masaüstü uygulamasında birleştirir."
+
+msgid "A few things to know"
+msgstr "Bilmeniz gereken birkaç şey"
+
+msgid "A little less busywork. A little more time."
+msgstr "Biraz daha az meşgul iş. Biraz daha zaman."
+
+msgid "A supported Windows, macOS, or Linux computer, an installed Chrome or Chromium browser, and your Facebook account. Platform downloads are listed on the downloads page."
+msgstr "Desteklenen bir Windows, macOS veya Linux bilgisayar, yüklü bir Chrome veya Chromium tarayıcı ve Facebook hesabınız. Platform indirmeleri, indirmeler sayfasında listelenir."
+
+msgid "Already have a post worth sharing? Import posts from a Facebook page your signed-in account can access. Review the text and images, make your edits, and add the posts you want to your queue."
+msgstr "Zaten paylaşmaya değer bir gönderiniz var mı? Oturum açtığınız hesabınızın erişebildiği bir Facebook sayfasındaki gönderileri içe aktarın. Metin ve görselleri inceleyin, düzenlemelerinizi yapın ve istediğiniz gönderileri sıranıza ekleyin."
+
+msgid "Before you start"
+msgstr "Başlamadan önce"
+
+msgid "Bring your page posts along."
+msgstr "Sayfa gönderilerinizi yanınızda getirin."
+
+msgid "Browser language"
+msgstr "Tarayıcı dili"
+
+msgid "Bulk Poster"
+msgstr "Toplu Poster"
+
+msgid "Can multiple Facebook accounts post at the same time?"
+msgstr "Birden fazla Facebook hesabı aynı anda paylaşım yapabilir mi?"
+
+msgid "Check your connection and try again."
+msgstr "Bağlantınızı kontrol edip tekrar deneyin."
+
+msgid "Choose a version for your computer. Requires Chrome or Chromium."
+msgstr "Bilgisayarınız için bir sürüm seçin. Chrome veya Chromium gerektirir."
+
+msgid "Choose from 33 interface languages, including right-to-left layouts. Menus, controls, and app-generated log messages follow your choice across windows. And with 189 themes, you can make Postika feel like your own."
+msgstr "Sağdan sola düzenleri de içeren 33 arayüz dili arasından seçim yapın. Menüler, kontroller ve uygulama tarafından oluşturulan günlük mesajları, tüm pencerelerde seçiminizi takip eder. Ve 189 temayla Postika'nın size aitmiş gibi hissetmesini sağlayabilirsiniz."
+
+msgid "Choose your own minimum and maximum interval between posts to avoid posting in rapid succession and help reduce the risk of rate limits or account restrictions. Follow progress as the queue runs, and pause whenever you need to."
+msgstr "Art arda hızlı paylaşım yapmaktan kaçınmak ve oran limitleri veya hesap kısıtlamaları riskini azaltmaya yardımcı olmak için gönderiler arasındaki minimum ve maksimum aralığınızı kendiniz seçin. Kuyruk çalışırken ilerlemeyi takip edin ve ihtiyaç duyduğunuzda duraklatın."
+
+msgid "Close screenshot"
+msgstr "Ekran görüntüsünü kapat"
+
+msgid "Close themes"
+msgstr "Temaları kapat"
+
+msgid "Color themes"
+msgstr "Renk temaları"
+
+msgid "Color themes: {0}"
+msgstr "Renk temaları: {0}"
+
+msgid "Coming soon"
+msgstr "Yakında gelecek"
+
+msgid "Couldn’t load this screenshot. Close it and try again."
+msgstr "Bu ekran görüntüsü yüklenemedi. Kapatıp tekrar deneyin."
+
+msgid "Couldn’t refresh release notes. Please try again."
+msgstr "Sürüm notları yenilenemedi. Lütfen tekrar deneyin."
+
+msgid "Does a submission mean my post is published?"
+msgstr "Gönderim, yayınımın yayınlandığı anlamına mı gelir?"
+
+msgid "Does my computer need to stay on?"
+msgstr "Bilgisayarımın açık kalması gerekiyor mu?"
+
+msgid "Download"
+msgstr "İndirmek"
+
+msgid "Download Postika"
+msgstr "Postika'yı indirin"
+
+msgid "Download Postika for Windows, macOS, and Linux. Choose your desktop Facebook group auto poster installer and find the latest release notes."
+msgstr "Windows, macOS ve Linux için Postika'yı indirin. Masaüstü Facebook grubu otomatik poster yükleyicinizi seçin ve en son sürüm notlarını bulun."
+
+msgid "Download Postika — Facebook Group Auto Poster"
+msgstr "Postika'yı indirin — Facebook Gruplarına Toplu Gönderi Paylaşın"
+
+msgid "Download for {0}"
+msgstr "{0} için indirin"
+
+msgid "Download {0}"
+msgstr "{0}'ı indirin"
+
+msgid "Downloads"
+msgstr "İndirilenler"
+
+msgid "Enlarge screenshot: Postika Facebook page-post import dialog"
+msgstr "Ekran görüntüsünü büyüt: Postika Facebook sayfa gönderisi içe aktarma iletişim kutusu"
+
+msgid "Enlarge screenshot: Postika account selector and separate account workspaces"
+msgstr "Ekran görüntüsünü büyüt: Postika hesap seçici ve ayrı hesap çalışma alanları"
+
+msgid "Enlarge screenshot: Postika composer with rich-text controls and image uploads"
+msgstr "Ekran görüntüsünü büyüt: Zengin metin kontrollerine ve görsel yüklemelere sahip Postika oluşturucu"
+
+msgid "Enlarge screenshot: Postika language selector and localized interface"
+msgstr "Ekran görüntüsünü büyüt: Postika dil seçici ve yerelleştirilmiş arayüz"
+
+msgid "Enlarge screenshot: Postika posting intervals and scheduling controls"
+msgstr "Ekran görüntüsünü büyüt: Postika paylaşım aralıkları ve planlama kontrolleri"
+
+msgid "Enlarge screenshot: Postika posting logs with per-group results and queue controls"
+msgstr "Ekran görüntüsünü büyüt: Postika, grup başına sonuçları ve kuyruk kontrollerini içeren günlükleri yayınlıyor"
+
+msgid "Enlarge screenshot: Postika scheduling controls"
+msgstr "Ekran görüntüsünü büyüt: Postika planlama kontrolleri"
+
+msgid "Facebook Group Auto Poster for Desktop | Postika"
+msgstr "Facebook Gruplarına Toplu Gönderi Paylaşın | Postika"
+
+msgid "Facebook Groups"
+msgstr "Facebook Grupları"
+
+msgid "Features"
+msgstr "Özellikler"
+
+msgid "Follow progress group by group. See what’s published, what’s awaiting approval, and what needs attention, including failed, skipped, and unconfirmed submissions. Pause, resume, or stop your queue from the same window."
+msgstr "İlerlemeyi grup grup takip edin. Başarısız, atlanan ve onaylanmamış gönderimler de dahil olmak üzere nelerin yayınlandığını, nelerin onay beklediğini ve nelere dikkat edilmesi gerektiğini görün. Sıranızı aynı pencereden duraklatın, devam ettirin veya durdurun."
+
+msgid "Get in touch"
+msgstr "İletişime geçin"
+
+msgid "Intel Macs (.dmg)"
+msgstr "Intel Mac'ler (.dmg)"
+
+msgid "Is Postika a Chrome extension?"
+msgstr "Postika bir Chrome uzantısı mıdır?"
+
+msgid "Keep Postika open and your computer awake while a queue runs. Queues and posting logs aren’t restored after quitting."
+msgstr "Sıra çalışırken Postika'yı açık ve bilgisayarınızı uyanık tutun. Çıktıktan sonra kuyruklar ve kayıt günlükleri geri yüklenmez."
+
+msgid "Keep your device on and awake, with Postika open, so it can handle the posting for you."
+msgstr "Postika açıkken cihazınızı açık ve uyanık tutun, böylece gönderileri sizin yerinize halledebilir."
+
+msgid "Language"
+msgstr "Dil"
+
+msgid "Linux x64 (portable)"
+msgstr "Linux x64 (taşınabilir)"
+
+msgid "Loading screenshot…"
+msgstr "Ekran görüntüsü yükleniyor…"
+
+msgid "M-series Macs (.dmg)"
+msgstr "M serisi Mac'ler (.dmg)"
+
+msgid "Main navigation"
+msgstr "Ana gezinme"
+
+msgid "Move Postika into Applications before opening it."
+msgstr "Postika'yı açmadan önce Uygulamalar'a taşıyın."
+
+msgid "No themes found. Try another name."
+msgstr "Tema bulunamadı. Başka bir ad deneyin."
+
+msgid "One good post. All the right groups."
+msgstr "İyi bir yazı. Hepsi doğru gruplar."
+
+msgid "Post to multiple Facebook groups with Postika. A desktop auto poster with scheduling, multiple accounts, 33 interface languages, and clear posting logs."
+msgstr "Postika ile birden fazla Facebook grubuna paylaşım yapın. Planlama, birden fazla hesap, 33 arayüz dili ve net kayıt günlükleri içeren bir masaüstü otomatik posteri."
+
+msgid "Post to multiple Facebook groups without repeating the same steps. Write once, choose your groups, and post now or schedule for later."
+msgstr "Aynı adımları tekrarlamadan birden fazla Facebook grubuna paylaşım yapın. Bir kez yazın, gruplarınızı seçin ve şimdi yayınlayın veya daha sonra yayınlayın."
+
+msgid "Postika Facebook page-post import dialog"
+msgstr "Postika Facebook sayfa gönderisi içe aktarma iletişim kutusu"
+
+msgid "Postika account selector and separate account workspaces"
+msgstr "Postika hesap seçici ve ayrı hesap çalışma alanları"
+
+msgid "Postika composer with rich-text controls and image uploads"
+msgstr "Zengin metin kontrollerine ve görsel yüklemelere sahip Postika oluşturucu"
+
+msgid "Postika features"
+msgstr "Postika'nın özellikleri"
+
+msgid "Postika home"
+msgstr "Postika ana sayfası"
+
+msgid "Postika is a desktop app for Windows, macOS, and Linux. It uses an installed Chrome or Chromium browser for your Facebook sessions."
+msgstr "Postika, Windows, macOS ve Linux için bir masaüstü uygulamasıdır. Facebook oturumlarınız için yüklü bir Chrome veya Chromium tarayıcı kullanır."
+
+msgid "Postika language selector and localized interface"
+msgstr "Postika dil seçici ve yerelleştirilmiş arayüz"
+
+msgid "Postika posting intervals and scheduling controls"
+msgstr "Postika gönderim aralıkları ve planlama kontrolleri"
+
+msgid "Postika posting logs with per-group results and queue controls"
+msgstr "Postika, grup başına sonuçları ve sıra kontrollerini içeren günlükleri yayınlıyor"
+
+msgid "Postika scheduling controls"
+msgstr "Postika planlama kontrolleri"
+
+msgid "Posting intervals don’t guarantee protection from Facebook restrictions or bans."
+msgstr "Paylaşım aralıkları, Facebook kısıtlamalarına veya yasaklarına karşı korumayı garanti etmez."
+
+msgid "Prepare now. Schedule for later."
+msgstr "Şimdi hazırlanın. Daha sonrası için planlayın."
+
+msgid "Questions"
+msgstr "Sorular"
+
+msgid "Refresh release notes"
+msgstr "Sürüm notlarını yenile"
+
+msgid "Release notes"
+msgstr "Sürüm notları"
+
+msgid "Release notes are up to date."
+msgstr "Sürüm notları günceldir."
+
+msgid "Report a problem"
+msgstr "Sorun bildir"
+
+msgid "Run posting queues for multiple Facebook accounts at the same time. Each account keeps its own browser session, groups, drafts, and posting settings, so you can prepare another post or check progress without interrupting the other accounts."
+msgstr "Aynı anda birden fazla Facebook hesabı için gönderi gönderme kuyruklarını çalıştırın. Her hesap kendi tarayıcı oturumunu, gruplarını, taslaklarını ve gönderi ayarlarını saklar, böylece diğer hesapları kesintiye uğratmadan başka bir gönderi hazırlayabilir veya ilerlemeyi kontrol edebilirsiniz."
+
+msgid "Schedule your posts for a date and time that suits you. When that time arrives, Postika automatically starts posting to your selected groups. You don’t need to be there to press Post."
+msgstr "Gönderilerinizi size uygun tarih ve saate göre planlayın. O zaman geldiğinde Postika otomatik olarak seçtiğiniz gruplara paylaşım yapmaya başlar. Gönder tuşuna basmak için orada olmanıza gerek yok."
+
+msgid "Screenshot preview"
+msgstr "Ekran görüntüsü önizlemesi"
+
+msgid "Search by name…"
+msgstr "İsme göre ara…"
+
+msgid "Search themes"
+msgstr "Temaları arayın"
+
+msgid "See where every post stands."
+msgstr "Her gönderinin nerede durduğunu görün."
+
+msgid "Selected"
+msgstr "Seçildi"
+
+msgid "Set your pace. Leave room between posts."
+msgstr "Hızınızı ayarlayın. Gönderiler arasında yer bırakın."
+
+msgid "Several accounts. Posting at the same time."
+msgstr "Birkaç hesap. Aynı anda yayınlanıyor."
+
+msgid "Skip opening every group and pasting the same thing again. Write your post with rich text, add and reorder your images, then search and select the Facebook groups you want to share with. Your draft stays saved while you get it right."
+msgstr "Her grubu açıp aynı şeyi tekrar yapıştırmayı atlayın. Gönderinizi zengin metinle yazın, görsellerinizi ekleyin ve yeniden sıralayın, ardından paylaşmak istediğiniz Facebook gruplarını arayın ve seçin. Siz doğru yaptığınız sürece taslağınız kayıtlı kalır."
+
+msgid "Skip to content"
+msgstr "İçeriğe atla"
+
+msgid "Some groups require approval. Posting logs distinguish published posts, pending approval, failed, skipped, and unconfirmed submissions. Check unconfirmed results on Facebook before retrying."
+msgstr "Bazı grupların onaylanması gerekir. Gönderim günlükleri, yayınlanmış gönderileri, onay bekleyen gönderileri, başarısız olan, atlanan ve onaylanmamış gönderimleri birbirinden ayırır. Yeniden denemeden önce Facebook'taki onaylanmamış sonuçları kontrol edin."
+
+msgid "System default"
+msgstr "Sistem varsayılanı"
+
+msgid "System default ({0})"
+msgstr "Sistem varsayılanı ({0})"
+
+msgid "System packages may ask for administrator authorization."
+msgstr "Sistem paketleri yönetici yetkisi isteyebilir."
+
+msgid "Unsigned installer: Windows may show a SmartScreen warning. The portable version needs no installation; account data stays in the app data folder."
+msgstr "İmzasız yükleyici: Windows bir SmartScreen uyarısı gösterebilir. Taşınabilir sürümün kuruluma ihtiyacı yoktur; hesap verileri uygulama verileri klasöründe kalır."
+
+msgid "Version"
+msgstr "Sürüm"
+
+msgid "Version {0} ({1})"
+msgstr "Sürüm {0} ({1})"
+
+msgid "What do I need to run Postika?"
+msgstr "Postika'yı çalıştırmak için neye ihtiyacım var?"
+
+msgid "What is a Facebook group auto poster?"
+msgstr "Facebook grubunun otomatik posteri nedir?"
+
+msgid "Windows installer"
+msgstr "Windows yükleyici"
+
+msgid "Windows portable"
+msgstr "Windows taşınabilir"
+
+msgid "Windows, macOS & Linux"
+msgstr "Windows, macOS ve Linux"
+
+msgid "Work in the language you think in."
+msgstr "Düşündüğünüz dilde çalışın."
+
+msgid "Yes. Keep Postika open and your computer awake while a queue is scheduled or running. Queues and posting logs are not restored after quitting."
+msgstr "Evet. Sıra planlanırken veya çalışırken Postika'yı açık ve bilgisayarınızı uyanık tutun. Çıktıktan sonra kuyruklar ve kayıt günlükleri geri yüklenmez."
+
+msgid "Yes. Multiple accounts can run their posting queues in parallel. Each account has a separate browser session, groups, drafts, and posting settings. Switching accounts doesn’t interrupt the other queues."
+msgstr "Evet. Birden fazla hesap, gönderim kuyruklarını paralel olarak çalıştırabilir. Her hesabın ayrı bir tarayıcı oturumu, grupları, taslakları ve gönderme ayarları vardır. Hesapların değiştirilmesi diğer kuyrukları kesintiye uğratmaz."
+
+msgid "Your platform"
+msgstr "Platformunuz"
+
+msgid "{0} shown"
+msgstr "{0} gösterildi"
+
+msgid "{0} themes and system default"
+msgstr "{0} tema ve sistem varsayılanı"
+
+msgid "Facebook Groups <0>Bulk Poster</0>"
+msgstr "Facebook Gruplarına <0>Toplu Gönderi Paylaşın</0>"
+
+msgid "All languages"
+msgstr "Tüm diller"
+
+msgid "Language: {0}"
+msgstr "Dil: {0}"
+
+msgid "Languages"
+msgstr "Diller"
+
+msgid "No languages found"
+msgstr "Hiç dil bulunamadı"
+
+msgid "Search languages…"
+msgstr "Dil ara…"
+
+msgid "Try a different name."
+msgstr "Farklı bir ad deneyin."

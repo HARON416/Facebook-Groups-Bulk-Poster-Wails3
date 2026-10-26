@@ -1,0 +1,332 @@
+# Website copy. Initial non-English translations are machine generated; review before publication.
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: he\n"
+
+msgid "A Facebook group auto poster helps you share a prepared post across the groups you select. Postika combines a post editor, group selection, scheduling, and posting logs in one desktop app."
+msgstr "פוסטר אוטומטי של קבוצת פייסבוק עוזר לך לשתף פוסט מוכן בין הקבוצות שתבחר. Postika משלב עורך פוסטים, בחירת קבוצות, תזמון ויומני פרסום באפליקציית שולחן עבודה אחת."
+
+msgid "A few things to know"
+msgstr "כמה דברים שכדאי לדעת"
+
+msgid "A little less busywork. A little more time."
+msgstr "קצת פחות עמוס בעבודה. עוד קצת זמן."
+
+msgid "A supported Windows, macOS, or Linux computer, an installed Chrome or Chromium browser, and your Facebook account. Platform downloads are listed on the downloads page."
+msgstr "מחשב Windows, macOS או Linux נתמך, דפדפן Chrome או Chromium מותקן וחשבון הפייסבוק שלך. הורדות הפלטפורמה מופיעות בדף ההורדות."
+
+msgid "Already have a post worth sharing? Import posts from a Facebook page your signed-in account can access. Review the text and images, make your edits, and add the posts you want to your queue."
+msgstr "יש לך כבר פוסט ששווה לשתף? יבא פוסטים מדף פייסבוק שהחשבון המחובר שלך יכול לגשת אליו. בדוק את הטקסט והתמונות, בצע את העריכות שלך והוסף את הפוסטים שאתה רוצה לתור שלך."
+
+msgid "Before you start"
+msgstr "לפני שמתחילים"
+
+msgid "Bring your page posts along."
+msgstr "תביא את הפוסטים שלך בדף."
+
+msgid "Browser language"
+msgstr "שפת הדפדפן"
+
+msgid "Bulk Poster"
+msgstr "פוסטר בתפזורת"
+
+msgid "Can multiple Facebook accounts post at the same time?"
+msgstr "האם חשבונות פייסבוק מרובים יכולים לפרסם בו זמנית?"
+
+msgid "Check your connection and try again."
+msgstr "בדוק את החיבור שלך ונסה שוב."
+
+msgid "Choose a version for your computer. Requires Chrome or Chromium."
+msgstr "בחר גרסה עבור המחשב שלך. דורש Chrome או Chromium."
+
+msgid "Choose from 33 interface languages, including right-to-left layouts. Menus, controls, and app-generated log messages follow your choice across windows. And with 189 themes, you can make Postika feel like your own."
+msgstr "בחר מתוך 33 שפות ממשק, כולל פריסות מימין לשמאל. תפריטים, פקדים והודעות יומן יומן שנוצרו על פי בחירתך בחלונות. ועם 189 ערכות נושא, אתה יכול לגרום לPostika להרגיש כמו שלך."
+
+msgid "Choose your own minimum and maximum interval between posts to avoid posting in rapid succession and help reduce the risk of rate limits or account restrictions. Follow progress as the queue runs, and pause whenever you need to."
+msgstr "בחר את המרווח המינימלי והמקסימלי שלך בין פוסטים כדי להימנע מפרסום ברצף מהיר ולעזור להפחית את הסיכון של מגבלות תעריפים או הגבלות חשבון. עקוב אחר ההתקדמות בזמן שהתור פועל, והשהה מתי שתצטרך."
+
+msgid "Close screenshot"
+msgstr "סגור צילום מסך"
+
+msgid "Close themes"
+msgstr "סגור ערכות נושא"
+
+msgid "Color themes"
+msgstr "נושאי צבע"
+
+msgid "Color themes: {0}"
+msgstr "ערכות נושא של צבע: {0}"
+
+msgid "Coming soon"
+msgstr "בקרוב"
+
+msgid "Couldn’t load this screenshot. Close it and try again."
+msgstr "לא ניתן היה לטעון את צילום המסך הזה. סגור אותו ונסה שוב."
+
+msgid "Couldn’t refresh release notes. Please try again."
+msgstr "לא ניתן היה לרענן את הערות הגרסה. אנא נסה שוב."
+
+msgid "Does a submission mean my post is published?"
+msgstr "האם הגשה אומרת שהפוסט שלי פורסם?"
+
+msgid "Does my computer need to stay on?"
+msgstr "האם המחשב שלי צריך להישאר דלוק?"
+
+msgid "Download"
+msgstr "הורד"
+
+msgid "Download Postika"
+msgstr "הורד את Postika"
+
+msgid "Download Postika for Windows, macOS, and Linux. Choose your desktop Facebook group auto poster installer and find the latest release notes."
+msgstr "הורד את Postika עבור Windows, macOS ו-Linux. בחר את מתקין הפוסטרים האוטומטי של קבוצת הפייסבוק שלך בשולחן העבודה ומצא את הערות הגרסה העדכניות ביותר."
+
+msgid "Download Postika — Facebook Group Auto Poster"
+msgstr "הורד את Postika — פרסום במספר קבוצות Facebook"
+
+msgid "Download for {0}"
+msgstr "הורד עבור {0}"
+
+msgid "Download {0}"
+msgstr "הורד את {0}"
+
+msgid "Downloads"
+msgstr "הורדות"
+
+msgid "Enlarge screenshot: Postika Facebook page-post import dialog"
+msgstr "הגדלת צילום מסך: דו-שיח של ייבוא ​​עמוד פוסט-פוסט בפייסבוק"
+
+msgid "Enlarge screenshot: Postika account selector and separate account workspaces"
+msgstr "הגדל את צילום המסך: בורר חשבון Postika ומרחבי עבודה נפרדים בחשבון"
+
+msgid "Enlarge screenshot: Postika composer with rich-text controls and image uploads"
+msgstr "הגדל צילום מסך: מלחין Postika עם פקדי טקסט עשיר והעלאות תמונות"
+
+msgid "Enlarge screenshot: Postika language selector and localized interface"
+msgstr "הגדלה של צילום מסך: בורר שפות Postika וממשק מקומי"
+
+msgid "Enlarge screenshot: Postika posting intervals and scheduling controls"
+msgstr "הגדל את צילום המסך: מרווחי פרסום של Postika ובקרות תזמון"
+
+msgid "Enlarge screenshot: Postika posting logs with per-group results and queue controls"
+msgstr "הגדל את צילום המסך: Postika מפרסם יומנים עם תוצאות לכל קבוצה ובקרות תור"
+
+msgid "Enlarge screenshot: Postika scheduling controls"
+msgstr "הגדלת צילום מסך: פקדי תזמון Postika"
+
+msgid "Facebook Group Auto Poster for Desktop | Postika"
+msgstr "פרסום במספר קבוצות Facebook | Postika"
+
+msgid "Facebook Groups"
+msgstr "קבוצות פייסבוק"
+
+msgid "Features"
+msgstr "תכונות"
+
+msgid "Follow progress group by group. See what’s published, what’s awaiting approval, and what needs attention, including failed, skipped, and unconfirmed submissions. Pause, resume, or stop your queue from the same window."
+msgstr "עקוב אחר ההתקדמות קבוצה אחר קבוצה. ראה מה פורסם, מה ממתין לאישור ומה צריך תשומת לב, כולל הגשות שנכשלו, שדילגו ולא אושרו. השהה, המשך או עצור את התור שלך מאותו חלון."
+
+msgid "Get in touch"
+msgstr "לְהִתְקַשֵׁר"
+
+msgid "Intel Macs (.dmg)"
+msgstr "מחשבי מקינטוש של אינטל (.dmg)"
+
+msgid "Is Postika a Chrome extension?"
+msgstr "האם Postika הוא תוסף לכרום?"
+
+msgid "Keep Postika open and your computer awake while a queue runs. Queues and posting logs aren’t restored after quitting."
+msgstr "השאר את Postika פתוח והמחשב שלך ער בזמן שתור פועל. תורים ויומני פרסום אינם משוחזרים לאחר היציאה."
+
+msgid "Keep your device on and awake, with Postika open, so it can handle the posting for you."
+msgstr "השאר את המכשיר שלך דלוק וער, עם Postika פתוח, כך שהוא יוכל להתמודד עם הפרסום עבורך."
+
+msgid "Language"
+msgstr "שָׂפָה"
+
+msgid "Linux x64 (portable)"
+msgstr "Linux x64 (נייד)"
+
+msgid "Loading screenshot…"
+msgstr "טוען צילום מסך..."
+
+msgid "M-series Macs (.dmg)"
+msgstr "מחשבי Mac מסדרת M (.dmg)"
+
+msgid "Main navigation"
+msgstr "ניווט ראשי"
+
+msgid "Move Postika into Applications before opening it."
+msgstr "העבר את Postika לאפליקציות לפני פתיחתה."
+
+msgid "No themes found. Try another name."
+msgstr "לא נמצאו ערכות נושא. נסה שם אחר."
+
+msgid "One good post. All the right groups."
+msgstr "פוסט אחד טוב. כל הקבוצות הנכונות."
+
+msgid "Post to multiple Facebook groups with Postika. A desktop auto poster with scheduling, multiple accounts, 33 interface languages, and clear posting logs."
+msgstr "פרסם בקבוצות פייסבוק מרובות עם Postika. פוסטר אוטומטי שולחני עם תזמון, מספר חשבונות, 33 שפות ממשק ויומני פרסום ברורים."
+
+msgid "Post to multiple Facebook groups without repeating the same steps. Write once, choose your groups, and post now or schedule for later."
+msgstr "פרסם בקבוצות פייסבוק מרובות מבלי לחזור על אותם שלבים. כתוב פעם אחת, בחר את הקבוצות שלך ופרסם עכשיו או תזמן למועד מאוחר יותר."
+
+msgid "Postika Facebook page-post import dialog"
+msgstr "דו-שיח של ייבוא ​​של עמוד פייסבוק של Postika"
+
+msgid "Postika account selector and separate account workspaces"
+msgstr "בורר חשבונות Postika ומרחבי עבודה נפרדים בחשבון"
+
+msgid "Postika composer with rich-text controls and image uploads"
+msgstr "מלחין Postika עם פקדי טקסט עשיר והעלאות תמונות"
+
+msgid "Postika features"
+msgstr "תכונות Postika"
+
+msgid "Postika home"
+msgstr "Postika הביתה"
+
+msgid "Postika is a desktop app for Windows, macOS, and Linux. It uses an installed Chrome or Chromium browser for your Facebook sessions."
+msgstr "Postika היא אפליקציית שולחן עבודה עבור Windows, macOS ו-Linux. הוא משתמש בדפדפן Chrome או Chromium מותקן עבור הפעלות שלך בפייסבוק."
+
+msgid "Postika language selector and localized interface"
+msgstr "בורר שפות Postika וממשק מקומי"
+
+msgid "Postika posting intervals and scheduling controls"
+msgstr "מרווחי פרסום של Postika ובקרות תזמון"
+
+msgid "Postika posting logs with per-group results and queue controls"
+msgstr "Postika פרסום יומני עם תוצאות לכל קבוצה ובקרות תור"
+
+msgid "Postika scheduling controls"
+msgstr "פקדי תזמון Postika"
+
+msgid "Posting intervals don’t guarantee protection from Facebook restrictions or bans."
+msgstr "מרווחי פרסום אינם מבטיחים הגנה מפני הגבלות או איסורים של פייסבוק."
+
+msgid "Prepare now. Schedule for later."
+msgstr "תתכוננו עכשיו. לוח זמנים למועד מאוחר יותר."
+
+msgid "Questions"
+msgstr "שאלות"
+
+msgid "Refresh release notes"
+msgstr "רענן את הערות השחרור"
+
+msgid "Release notes"
+msgstr "הערות שחרור"
+
+msgid "Release notes are up to date."
+msgstr "הערות השחרור מעודכנות."
+
+msgid "Report a problem"
+msgstr "דווח על בעיה"
+
+msgid "Run posting queues for multiple Facebook accounts at the same time. Each account keeps its own browser session, groups, drafts, and posting settings, so you can prepare another post or check progress without interrupting the other accounts."
+msgstr "הפעל תורי פרסום עבור מספר חשבונות פייסבוק בו זמנית. כל חשבון שומר הפעלת דפדפן משלו, קבוצות, טיוטות והגדרות פרסום, כך שתוכל להכין פוסט נוסף או לבדוק התקדמות מבלי להפריע לחשבונות האחרים."
+
+msgid "Schedule your posts for a date and time that suits you. When that time arrives, Postika automatically starts posting to your selected groups. You don’t need to be there to press Post."
+msgstr "תזמן את הפוסטים שלך לתאריך ושעה שמתאימים לך. כאשר הזמן הזה מגיע, Postika מתחילה לפרסם באופן אוטומטי הודעות לקבוצות שבחרת. אתה לא צריך להיות שם כדי ללחוץ על פוסט."
+
+msgid "Screenshot preview"
+msgstr "תצוגה מקדימה של צילום מסך"
+
+msgid "Search by name…"
+msgstr "חפש לפי שם..."
+
+msgid "Search themes"
+msgstr "חיפוש ערכות נושא"
+
+msgid "See where every post stands."
+msgstr "ראה היכן עומד כל פוסט."
+
+msgid "Selected"
+msgstr "נִבחָר"
+
+msgid "Set your pace. Leave room between posts."
+msgstr "קבע את הקצב שלך. השאירו מקום בין הפוסטים."
+
+msgid "Several accounts. Posting at the same time."
+msgstr "מספר חשבונות. מפרסמים במקביל."
+
+msgid "Skip opening every group and pasting the same thing again. Write your post with rich text, add and reorder your images, then search and select the Facebook groups you want to share with. Your draft stays saved while you get it right."
+msgstr "דלג על פתיחת כל קבוצה והדבקת אותו דבר שוב. כתוב את הפוסט שלך עם טקסט עשיר, הוסף וסדר מחדש את התמונות שלך, ואז חפש ובחר את קבוצות הפייסבוק שאתה רוצה לשתף איתן. הטיוטה שלך נשארת נשמרת כל עוד אתה עושה את זה נכון."
+
+msgid "Skip to content"
+msgstr "דלג לתוכן"
+
+msgid "Some groups require approval. Posting logs distinguish published posts, pending approval, failed, skipped, and unconfirmed submissions. Check unconfirmed results on Facebook before retrying."
+msgstr "חלק מהקבוצות דורשות אישור. יומני פרסום מבדילים בין פוסטים שפורסמו, ממתינים לאישור, נכשלים, דילוגים והגשות לא מאושרות. בדוק תוצאות לא מאושרות בפייסבוק לפני שתנסה שוב."
+
+msgid "System default"
+msgstr "ברירת המחדל של המערכת"
+
+msgid "System default ({0})"
+msgstr "ברירת המחדל של המערכת ({0})"
+
+msgid "System packages may ask for administrator authorization."
+msgstr "חבילות מערכת עשויות לבקש הרשאת מנהל מערכת."
+
+msgid "Unsigned installer: Windows may show a SmartScreen warning. The portable version needs no installation; account data stays in the app data folder."
+msgstr "תוכנית התקנה לא חתומה: Windows עשויה להציג אזהרת SmartScreen. הגרסה הניידת אינה זקוקה להתקנה; נתוני החשבון נשארים בתיקיית נתוני האפליקציה."
+
+msgid "Version"
+msgstr "גִרְסָה"
+
+msgid "Version {0} ({1})"
+msgstr "גרסה {0} ({1})"
+
+msgid "What do I need to run Postika?"
+msgstr "מה אני צריך כדי להפעיל את Postika?"
+
+msgid "What is a Facebook group auto poster?"
+msgstr "מהו פוסטר אוטומטי של קבוצת פייסבוק?"
+
+msgid "Windows installer"
+msgstr "מתקין חלונות"
+
+msgid "Windows portable"
+msgstr "Windows נייד"
+
+msgid "Windows, macOS & Linux"
+msgstr "Windows, macOS & Linux"
+
+msgid "Work in the language you think in."
+msgstr "עבוד בשפה שבה אתה חושב."
+
+msgid "Yes. Keep Postika open and your computer awake while a queue is scheduled or running. Queues and posting logs are not restored after quitting."
+msgstr "כֵּן. השאר את Postika פתוח והמחשב שלך ער בזמן שתוזמן או פועל בתור. תורים ויומני פרסום אינם משוחזרים לאחר היציאה."
+
+msgid "Yes. Multiple accounts can run their posting queues in parallel. Each account has a separate browser session, groups, drafts, and posting settings. Switching accounts doesn’t interrupt the other queues."
+msgstr "כֵּן. חשבונות מרובים יכולים להפעיל את תורי הפרסום שלהם במקביל. לכל חשבון יש הפעלת דפדפן נפרדת, קבוצות, טיוטות והגדרות פרסום. החלפת חשבונות אינה קוטעת את התורים האחרים."
+
+msgid "Your platform"
+msgstr "הפלטפורמה שלך"
+
+msgid "{0} shown"
+msgstr "{0} מוצג"
+
+msgid "{0} themes and system default"
+msgstr "{0} ערכות נושא וברירת המחדל של המערכת"
+
+msgid "Facebook Groups <0>Bulk Poster</0>"
+msgstr "<0>פרסום במספר</0> קבוצות Facebook"
+
+msgid "All languages"
+msgstr "כל השפות"
+
+msgid "Language: {0}"
+msgstr "שפה: {0}"
+
+msgid "Languages"
+msgstr "שפות"
+
+msgid "No languages found"
+msgstr "לא נמצאו שפות"
+
+msgid "Search languages…"
+msgstr "חיפוש שפות…"
+
+msgid "Try a different name."
+msgstr "כדאי לנסות שם אחר."

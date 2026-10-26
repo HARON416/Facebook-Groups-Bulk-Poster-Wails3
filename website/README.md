@@ -42,10 +42,10 @@ From this monorepo, the existing frontend compiler can also build the script:
 
 ## Website themes
 
-The header selector shows the palette icon and current theme name, and opens
+The header selector shows the palette icon and current theme name, and opens a compact, scrollable dropdown with
 the same searchable selection of 189 palettes as
 Postika's desktop app. Use the arrow keys and Enter to select a result, or
-Escape to close the picker. Swatches are rectangular.
+Escape or a click outside to close the picker. Swatches are rectangular.
 
 The site follows the OS color scheme until a visitor chooses a theme. Choices
 are stored locally, apply to the home and downloads pages, and synchronize
@@ -132,3 +132,38 @@ the checked-in browser assets. The image listens on port 8080 and runs as a
 non-root user. Configure HTTPS through the hosting platform or reverse proxy.
 Supply `RELEASE_FILE` and mount its JSON file if using external release metadata.
 No hosting account changes or deployment have been performed.
+
+## Website localization
+
+The website uses **Wuchale 0.26.7**, matching the desktop application, with the
+same 33 languages and native language names imported from
+`frontend/src/locales/languages.js`. The header defaults to **🇺🇸 English**. Its compact, searchable, scrollable popup
+matches the desktop picker, with each language's matching flag and native name.
+Explicit choices persist across pages and synchronize across tabs.
+Arabic and Hebrew set the document direction to RTL. Dates and theme counts use
+locale-aware formatting. English HTML remains usable without JavaScript.
+
+Catalogs live in `locales/*.po`. Initial non-English copy is machine translated,
+with corrections to headlines and product names; native-language review is
+still recommended. The selected catalog is fetched locally from
+`/static/locales/`, compiled by Wuchale, and rendered without injecting HTML.
+There is no external translation service at runtime. Release notes and unknown
+future download format names remain as supplied in release metadata.
+
+To update copy:
+
+```sh
+npm run i18n:extract
+# Translate new blank msgstr entries in locales/*.po.
+npm run i18n:check
+npm run build
+npm test
+```
+
+Extraction requires Python 3 and reads the Go templates plus dynamic messages
+in `src/i18n-messages.json`. It preserves existing PO translations. The check
+reports unextracted copy, missing translations, and broken placeholders or
+inline markup. The browser runtime and all compiled catalogs are checked in
+and embedded by Go, so production still needs only the standalone executable.
+Node 22.12+ is recommended for building browser assets. Rebuild the Go binary
+after changing templates or generated static assets.

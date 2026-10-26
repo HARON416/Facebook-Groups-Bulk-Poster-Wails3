@@ -1,0 +1,332 @@
+# Website copy. Initial non-English translations are machine generated; review before publication.
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: vi\n"
+
+msgid "A Facebook group auto poster helps you share a prepared post across the groups you select. Postika combines a post editor, group selection, scheduling, and posting logs in one desktop app."
+msgstr "Áp phích tự động của nhóm Facebook giúp bạn chia sẻ bài đăng đã chuẩn bị sẵn trên các nhóm bạn chọn. Postika kết hợp trình chỉnh sửa bài đăng, chọn nhóm, lên lịch và đăng nhật ký trong một ứng dụng dành cho máy tính để bàn."
+
+msgid "A few things to know"
+msgstr "Một số điều cần biết"
+
+msgid "A little less busywork. A little more time."
+msgstr "Công việc bớt bận rộn hơn một chút. Một chút thời gian nữa."
+
+msgid "A supported Windows, macOS, or Linux computer, an installed Chrome or Chromium browser, and your Facebook account. Platform downloads are listed on the downloads page."
+msgstr "Máy tính Windows, macOS hoặc Linux được hỗ trợ, trình duyệt Chrome hoặc Chrome đã cài đặt và tài khoản Facebook của bạn. Tải xuống nền tảng được liệt kê trên trang tải xuống."
+
+msgid "Already have a post worth sharing? Import posts from a Facebook page your signed-in account can access. Review the text and images, make your edits, and add the posts you want to your queue."
+msgstr "Đã có một bài viết đáng chia sẻ? Nhập bài đăng từ trang Facebook mà tài khoản đã đăng nhập của bạn có thể truy cập. Xem lại văn bản và hình ảnh, thực hiện chỉnh sửa và thêm các bài đăng bạn muốn vào hàng đợi."
+
+msgid "Before you start"
+msgstr "Trước khi bạn bắt đầu"
+
+msgid "Bring your page posts along."
+msgstr "Mang theo bài viết trên trang của bạn."
+
+msgid "Browser language"
+msgstr "Ngôn ngữ trình duyệt"
+
+msgid "Bulk Poster"
+msgstr "Áp phích số lượng lớn"
+
+msgid "Can multiple Facebook accounts post at the same time?"
+msgstr "Nhiều tài khoản Facebook có thể đăng bài cùng một lúc không?"
+
+msgid "Check your connection and try again."
+msgstr "Hãy kiểm tra kết nối của bạn và thử lại."
+
+msgid "Choose a version for your computer. Requires Chrome or Chromium."
+msgstr "Chọn một phiên bản cho máy tính của bạn. Yêu cầu Chrome hoặc Chrome."
+
+msgid "Choose from 33 interface languages, including right-to-left layouts. Menus, controls, and app-generated log messages follow your choice across windows. And with 189 themes, you can make Postika feel like your own."
+msgstr "Chọn từ 33 ngôn ngữ giao diện, bao gồm cả bố cục từ phải sang trái. Menu, điều khiển và thông báo nhật ký do ứng dụng tạo theo lựa chọn của bạn trên các cửa sổ. Và với 189 chủ đề, bạn có thể khiến Postika có cảm giác như của riêng bạn."
+
+msgid "Choose your own minimum and maximum interval between posts to avoid posting in rapid succession and help reduce the risk of rate limits or account restrictions. Follow progress as the queue runs, and pause whenever you need to."
+msgstr "Chọn khoảng thời gian tối thiểu và tối đa của riêng bạn giữa các bài đăng để tránh đăng liên tiếp và giúp giảm nguy cơ bị giới hạn tỷ lệ hoặc hạn chế tài khoản. Theo dõi tiến trình khi hàng đợi chạy và tạm dừng bất cứ khi nào bạn cần."
+
+msgid "Close screenshot"
+msgstr "Đóng ảnh chụp màn hình"
+
+msgid "Close themes"
+msgstr "Đóng chủ đề"
+
+msgid "Color themes"
+msgstr "Chủ đề màu sắc"
+
+msgid "Color themes: {0}"
+msgstr "Chủ đề màu sắc: {0}"
+
+msgid "Coming soon"
+msgstr "Sắp ra mắt"
+
+msgid "Couldn’t load this screenshot. Close it and try again."
+msgstr "Không thể tải ảnh chụp màn hình này. Hãy đóng nó lại và thử lại."
+
+msgid "Couldn’t refresh release notes. Please try again."
+msgstr "Không thể làm mới ghi chú phát hành. Vui lòng thử lại."
+
+msgid "Does a submission mean my post is published?"
+msgstr "Việc gửi bài có nghĩa là bài viết của tôi được xuất bản phải không?"
+
+msgid "Does my computer need to stay on?"
+msgstr "Máy tính của tôi có cần bật không?"
+
+msgid "Download"
+msgstr "Tải xuống"
+
+msgid "Download Postika"
+msgstr "Tải xuống Postika"
+
+msgid "Download Postika for Windows, macOS, and Linux. Choose your desktop Facebook group auto poster installer and find the latest release notes."
+msgstr "Tải xuống Postika cho Windows, macOS và Linux. Chọn trình cài đặt áp phích tự động nhóm Facebook trên máy tính để bàn của bạn và tìm ghi chú phát hành mới nhất."
+
+msgid "Download Postika — Facebook Group Auto Poster"
+msgstr "Tải xuống Postika — Đăng bài hàng loạt lên các nhóm Facebook"
+
+msgid "Download for {0}"
+msgstr "Tải xuống cho {0}"
+
+msgid "Download {0}"
+msgstr "Tải xuống {0}"
+
+msgid "Downloads"
+msgstr "Tải xuống"
+
+msgid "Enlarge screenshot: Postika Facebook page-post import dialog"
+msgstr "Phóng to ảnh chụp màn hình: Hộp thoại nhập bài đăng trên trang Postika Facebook"
+
+msgid "Enlarge screenshot: Postika account selector and separate account workspaces"
+msgstr "Phóng to ảnh chụp màn hình: Bộ chọn tài khoản Postika và không gian làm việc tài khoản riêng biệt"
+
+msgid "Enlarge screenshot: Postika composer with rich-text controls and image uploads"
+msgstr "Phóng to ảnh chụp màn hình: Trình soạn thảo Postika với các điều khiển văn bản đa dạng thức và tải lên hình ảnh"
+
+msgid "Enlarge screenshot: Postika language selector and localized interface"
+msgstr "Phóng to ảnh chụp màn hình: Bộ chọn ngôn ngữ Postika và giao diện bản địa hóa"
+
+msgid "Enlarge screenshot: Postika posting intervals and scheduling controls"
+msgstr "Phóng to ảnh chụp màn hình: Khoảng thời gian đăng bài Postika và kiểm soát lập lịch"
+
+msgid "Enlarge screenshot: Postika posting logs with per-group results and queue controls"
+msgstr "Phóng to ảnh chụp màn hình: Nhật ký đăng bài của Postika với kết quả cho mỗi nhóm và kiểm soát hàng đợi"
+
+msgid "Enlarge screenshot: Postika scheduling controls"
+msgstr "Phóng to ảnh chụp màn hình: Kiểm soát lập lịch của Postika"
+
+msgid "Facebook Group Auto Poster for Desktop | Postika"
+msgstr "Đăng bài hàng loạt lên các nhóm Facebook | Postika"
+
+msgid "Facebook Groups"
+msgstr "Nhóm Facebook"
+
+msgid "Features"
+msgstr "Đặc trưng"
+
+msgid "Follow progress group by group. See what’s published, what’s awaiting approval, and what needs attention, including failed, skipped, and unconfirmed submissions. Pause, resume, or stop your queue from the same window."
+msgstr "Theo dõi tiến độ từng nhóm. Xem những gì đã xuất bản, những gì đang chờ phê duyệt và những gì cần chú ý, bao gồm cả những bài gửi không thành công, bị bỏ qua và chưa được xác nhận. Tạm dừng, tiếp tục hoặc dừng hàng đợi của bạn từ cùng một cửa sổ."
+
+msgid "Get in touch"
+msgstr "Hãy liên lạc"
+
+msgid "Intel Macs (.dmg)"
+msgstr "Máy Mac Intel (.dmg)"
+
+msgid "Is Postika a Chrome extension?"
+msgstr "Postika có phải là tiện ích mở rộng của Chrome không?"
+
+msgid "Keep Postika open and your computer awake while a queue runs. Queues and posting logs aren’t restored after quitting."
+msgstr "Luôn mở Postika và máy tính của bạn luôn hoạt động trong khi hàng chờ chạy. Hàng đợi và nhật ký đăng bài không được khôi phục sau khi thoát."
+
+msgid "Keep your device on and awake, with Postika open, so it can handle the posting for you."
+msgstr "Hãy luôn bật thiết bị của bạn và mở Postika để nó có thể xử lý việc đăng bài cho bạn."
+
+msgid "Language"
+msgstr "Ngôn ngữ"
+
+msgid "Linux x64 (portable)"
+msgstr "Linux x64 (di động)"
+
+msgid "Loading screenshot…"
+msgstr "Đang tải ảnh chụp màn hình…"
+
+msgid "M-series Macs (.dmg)"
+msgstr "Máy Mac dòng M (.dmg)"
+
+msgid "Main navigation"
+msgstr "Điều hướng chính"
+
+msgid "Move Postika into Applications before opening it."
+msgstr "Di chuyển Postika vào Ứng dụng trước khi mở nó."
+
+msgid "No themes found. Try another name."
+msgstr "Không tìm thấy chủ đề nào. Hãy thử một tên khác."
+
+msgid "One good post. All the right groups."
+msgstr "Một bài viết tốt. Tất cả các nhóm phù hợp."
+
+msgid "Post to multiple Facebook groups with Postika. A desktop auto poster with scheduling, multiple accounts, 33 interface languages, and clear posting logs."
+msgstr "Đăng lên nhiều nhóm Facebook bằng Postika. Áp phích tự động trên máy tính để bàn có tính năng lập lịch, nhiều tài khoản, 33 ngôn ngữ giao diện và nhật ký đăng bài rõ ràng."
+
+msgid "Post to multiple Facebook groups without repeating the same steps. Write once, choose your groups, and post now or schedule for later."
+msgstr "Đăng lên nhiều nhóm Facebook mà không lặp lại các bước tương tự. Viết một lần, chọn nhóm của bạn và đăng ngay hoặc lên lịch sau."
+
+msgid "Postika Facebook page-post import dialog"
+msgstr "Hộp thoại nhập bài đăng trên trang Facebook của Postika"
+
+msgid "Postika account selector and separate account workspaces"
+msgstr "Bộ chọn tài khoản Postika và không gian làm việc tài khoản riêng biệt"
+
+msgid "Postika composer with rich-text controls and image uploads"
+msgstr "Trình soạn thảo Postika với các điều khiển văn bản đa dạng thức và tải lên hình ảnh"
+
+msgid "Postika features"
+msgstr "Tính năng Postika"
+
+msgid "Postika home"
+msgstr "nhà Postika"
+
+msgid "Postika is a desktop app for Windows, macOS, and Linux. It uses an installed Chrome or Chromium browser for your Facebook sessions."
+msgstr "Postika là một ứng dụng máy tính để bàn dành cho Windows, macOS và Linux. Nó sử dụng trình duyệt Chrome hoặc Chrome đã cài đặt cho các phiên Facebook của bạn."
+
+msgid "Postika language selector and localized interface"
+msgstr "Bộ chọn ngôn ngữ Postika và giao diện được bản địa hóa"
+
+msgid "Postika posting intervals and scheduling controls"
+msgstr "Khoảng thời gian đăng bài của Postika và kiểm soát lập lịch"
+
+msgid "Postika posting logs with per-group results and queue controls"
+msgstr "Nhật ký đăng bài của Postika với kết quả theo nhóm và kiểm soát hàng đợi"
+
+msgid "Postika scheduling controls"
+msgstr "Kiểm soát lập kế hoạch Postika"
+
+msgid "Posting intervals don’t guarantee protection from Facebook restrictions or bans."
+msgstr "Khoảng thời gian đăng bài không đảm bảo được bảo vệ khỏi các hạn chế hoặc lệnh cấm của Facebook."
+
+msgid "Prepare now. Schedule for later."
+msgstr "Hãy chuẩn bị ngay bây giờ. Lên lịch sau."
+
+msgid "Questions"
+msgstr "Câu hỏi"
+
+msgid "Refresh release notes"
+msgstr "Làm mới ghi chú phát hành"
+
+msgid "Release notes"
+msgstr "Ghi chú phát hành"
+
+msgid "Release notes are up to date."
+msgstr "Ghi chú phát hành được cập nhật."
+
+msgid "Report a problem"
+msgstr "Báo cáo sự cố"
+
+msgid "Run posting queues for multiple Facebook accounts at the same time. Each account keeps its own browser session, groups, drafts, and posting settings, so you can prepare another post or check progress without interrupting the other accounts."
+msgstr "Chạy hàng đợi đăng bài cho nhiều tài khoản Facebook cùng lúc. Mỗi tài khoản giữ phiên trình duyệt, nhóm, bản nháp và cài đặt đăng bài riêng, do đó bạn có thể chuẩn bị một bài đăng khác hoặc kiểm tra tiến trình mà không làm gián đoạn các tài khoản khác."
+
+msgid "Schedule your posts for a date and time that suits you. When that time arrives, Postika automatically starts posting to your selected groups. You don’t need to be there to press Post."
+msgstr "Lên lịch bài viết của bạn vào ngày và giờ phù hợp với bạn. Khi đến thời điểm đó, Postika sẽ tự động bắt đầu đăng bài lên các nhóm bạn đã chọn. Bạn không cần phải có mặt ở đó để nhấn Đăng."
+
+msgid "Screenshot preview"
+msgstr "Xem trước ảnh chụp màn hình"
+
+msgid "Search by name…"
+msgstr "Tìm kiếm theo tên…"
+
+msgid "Search themes"
+msgstr "Tìm kiếm chủ đề"
+
+msgid "See where every post stands."
+msgstr "Xem vị trí của mỗi bài đăng."
+
+msgid "Selected"
+msgstr "Đã chọn"
+
+msgid "Set your pace. Leave room between posts."
+msgstr "Đặt tốc độ của bạn. Để lại khoảng trống giữa các bài viết."
+
+msgid "Several accounts. Posting at the same time."
+msgstr "Một số tài khoản. Đăng cùng một lúc."
+
+msgid "Skip opening every group and pasting the same thing again. Write your post with rich text, add and reorder your images, then search and select the Facebook groups you want to share with. Your draft stays saved while you get it right."
+msgstr "Bỏ qua việc mở mọi nhóm và dán lại nội dung tương tự. Viết bài đăng của bạn bằng văn bản đa dạng thức, thêm và sắp xếp lại hình ảnh của bạn, sau đó tìm kiếm và chọn các nhóm Facebook mà bạn muốn chia sẻ. Bản nháp của bạn vẫn được lưu trong khi bạn làm đúng."
+
+msgid "Skip to content"
+msgstr "Chuyển đến nội dung"
+
+msgid "Some groups require approval. Posting logs distinguish published posts, pending approval, failed, skipped, and unconfirmed submissions. Check unconfirmed results on Facebook before retrying."
+msgstr "Một số nhóm yêu cầu phê duyệt. Nhật ký đăng bài phân biệt các bài đăng đã xuất bản, đang chờ phê duyệt, bài gửi không thành công, bị bỏ qua và chưa được xác nhận. Kiểm tra kết quả chưa được xác nhận trên Facebook trước khi thử lại."
+
+msgid "System default"
+msgstr "Mặc định hệ thống"
+
+msgid "System default ({0})"
+msgstr "Mặc định hệ thống ({0})"
+
+msgid "System packages may ask for administrator authorization."
+msgstr "Các gói hệ thống có thể yêu cầu ủy quyền của quản trị viên."
+
+msgid "Unsigned installer: Windows may show a SmartScreen warning. The portable version needs no installation; account data stays in the app data folder."
+msgstr "Trình cài đặt chưa được ký: Windows có thể hiển thị cảnh báo SmartScreen. Phiên bản di động không cần cài đặt; dữ liệu tài khoản vẫn nằm trong thư mục dữ liệu ứng dụng."
+
+msgid "Version"
+msgstr "Phiên bản"
+
+msgid "Version {0} ({1})"
+msgstr "Phiên bản {0} ({1})"
+
+msgid "What do I need to run Postika?"
+msgstr "Tôi cần gì để chạy Postika?"
+
+msgid "What is a Facebook group auto poster?"
+msgstr "Poster tự động của nhóm Facebook là gì?"
+
+msgid "Windows installer"
+msgstr "Trình cài đặt Windows"
+
+msgid "Windows portable"
+msgstr "Windows di động"
+
+msgid "Windows, macOS & Linux"
+msgstr "Windows, macOS & Linux"
+
+msgid "Work in the language you think in."
+msgstr "Làm việc bằng ngôn ngữ bạn nghĩ."
+
+msgid "Yes. Keep Postika open and your computer awake while a queue is scheduled or running. Queues and posting logs are not restored after quitting."
+msgstr "Đúng. Luôn mở Postika và máy tính của bạn luôn hoạt động trong khi hàng đợi được lên lịch hoặc đang chạy. Hàng đợi và nhật ký đăng bài không được khôi phục sau khi thoát."
+
+msgid "Yes. Multiple accounts can run their posting queues in parallel. Each account has a separate browser session, groups, drafts, and posting settings. Switching accounts doesn’t interrupt the other queues."
+msgstr "Đúng. Nhiều tài khoản có thể chạy song song hàng đợi đăng bài của họ. Mỗi tài khoản có một phiên trình duyệt, nhóm, bản nháp và cài đặt đăng bài riêng biệt. Việc chuyển đổi tài khoản không làm gián đoạn các hàng đợi khác."
+
+msgid "Your platform"
+msgstr "Nền tảng của bạn"
+
+msgid "{0} shown"
+msgstr "{0} được hiển thị"
+
+msgid "{0} themes and system default"
+msgstr "{0} chủ đề và mặc định của hệ thống"
+
+msgid "Facebook Groups <0>Bulk Poster</0>"
+msgstr "<0>Đăng bài hàng loạt</0> lên các nhóm Facebook"
+
+msgid "All languages"
+msgstr "Tất cả ngôn ngữ"
+
+msgid "Language: {0}"
+msgstr "Ngôn ngữ: {0}"
+
+msgid "Languages"
+msgstr "Ngôn ngữ"
+
+msgid "No languages found"
+msgstr "Không tìm thấy ngôn ngữ"
+
+msgid "Search languages…"
+msgstr "Tìm ngôn ngữ…"
+
+msgid "Try a different name."
+msgstr "Thử một tên khác."

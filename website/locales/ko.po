@@ -1,0 +1,332 @@
+# Website copy. Initial non-English translations are machine generated; review before publication.
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: ko\n"
+
+msgid "A Facebook group auto poster helps you share a prepared post across the groups you select. Postika combines a post editor, group selection, scheduling, and posting logs in one desktop app."
+msgstr "Facebook 그룹 자동 포스터를 사용하면 선택한 그룹 전체에 준비된 게시물을 공유할 수 있습니다. Postika는 게시물 편집기, 그룹 선택, 예약 및 게시 로그를 하나의 데스크톱 앱에 결합합니다."
+
+msgid "A few things to know"
+msgstr "알아야 할 몇 가지 사항"
+
+msgid "A little less busywork. A little more time."
+msgstr "조금 덜 바쁜 일. 조금 더 시간이 걸립니다."
+
+msgid "A supported Windows, macOS, or Linux computer, an installed Chrome or Chromium browser, and your Facebook account. Platform downloads are listed on the downloads page."
+msgstr "지원되는 Windows, macOS 또는 Linux 컴퓨터, 설치된 Chrome 또는 Chromium 브라우저 및 Facebook 계정. 플랫폼 다운로드는 다운로드 페이지에 나열됩니다."
+
+msgid "Already have a post worth sharing? Import posts from a Facebook page your signed-in account can access. Review the text and images, make your edits, and add the posts you want to your queue."
+msgstr "이미 공유할 만한 게시물이 있나요? 로그인한 계정으로 액세스할 수 있는 Facebook 페이지에서 게시물을 가져옵니다. 텍스트와 이미지를 검토하고 편집한 다음 원하는 게시물을 대기열에 추가하세요."
+
+msgid "Before you start"
+msgstr "시작하기 전에"
+
+msgid "Bring your page posts along."
+msgstr "페이지 게시물을 함께 가져오세요."
+
+msgid "Browser language"
+msgstr "브라우저 언어"
+
+msgid "Bulk Poster"
+msgstr "대량 포스터"
+
+msgid "Can multiple Facebook accounts post at the same time?"
+msgstr "여러 Facebook 계정에 동시에 게시할 수 있나요?"
+
+msgid "Check your connection and try again."
+msgstr "연결을 확인하고 다시 시도하세요."
+
+msgid "Choose a version for your computer. Requires Chrome or Chromium."
+msgstr "컴퓨터 버전을 선택하세요. Chrome 또는 Chromium이 필요합니다."
+
+msgid "Choose from 33 interface languages, including right-to-left layouts. Menus, controls, and app-generated log messages follow your choice across windows. And with 189 themes, you can make Postika feel like your own."
+msgstr "오른쪽에서 왼쪽으로 쓰는 레이아웃을 포함하여 33개의 인터페이스 언어 중에서 선택하세요. 메뉴, 컨트롤, 앱 생성 로그 메시지는 여러 창에서 선택한 내용을 따릅니다. 189개 테마를 사용하면 Postika를 나만의 테마로 만들 수 있습니다."
+
+msgid "Choose your own minimum and maximum interval between posts to avoid posting in rapid succession and help reduce the risk of rate limits or account restrictions. Follow progress as the queue runs, and pause whenever you need to."
+msgstr "연속해서 빠르게 게시하는 것을 방지하고 속도 제한이나 계정 제한의 위험을 줄이는 데 도움이 되도록 게시물 사이의 최소 및 최대 간격을 직접 선택하세요. 대기열이 실행되는 동안 진행 상황을 따르고 필요할 때마다 일시 중지하세요."
+
+msgid "Close screenshot"
+msgstr "스크린샷 닫기"
+
+msgid "Close themes"
+msgstr "테마 닫기"
+
+msgid "Color themes"
+msgstr "색상 테마"
+
+msgid "Color themes: {0}"
+msgstr "색상 테마: {0}"
+
+msgid "Coming soon"
+msgstr "곧 출시 예정"
+
+msgid "Couldn’t load this screenshot. Close it and try again."
+msgstr "이 스크린샷을 로드할 수 없습니다. 닫고 다시 시도하십시오."
+
+msgid "Couldn’t refresh release notes. Please try again."
+msgstr "출시 노트를 새로고침할 수 없습니다. 다시 시도해 주세요."
+
+msgid "Does a submission mean my post is published?"
+msgstr "제출하면 내 게시물이 게시된다는 뜻인가요?"
+
+msgid "Does my computer need to stay on?"
+msgstr "내 컴퓨터는 계속 켜져 있어야 합니까?"
+
+msgid "Download"
+msgstr "다운로드"
+
+msgid "Download Postika"
+msgstr "Postika 다운로드"
+
+msgid "Download Postika for Windows, macOS, and Linux. Choose your desktop Facebook group auto poster installer and find the latest release notes."
+msgstr "Windows, macOS 및 Linux용 Postika를 다운로드하세요. 데스크톱 Facebook 그룹 자동 포스터 설치 프로그램을 선택하고 최신 릴리스 노트를 찾으세요."
+
+msgid "Download Postika — Facebook Group Auto Poster"
+msgstr "Postika 다운로드 — 여러 Facebook 그룹에 한 번에 게시하세요"
+
+msgid "Download for {0}"
+msgstr "{0} 다운로드"
+
+msgid "Download {0}"
+msgstr "{0} 다운로드"
+
+msgid "Downloads"
+msgstr "다운로드"
+
+msgid "Enlarge screenshot: Postika Facebook page-post import dialog"
+msgstr "스크린샷 확대: Postika Facebook 페이지-게시물 가져오기 대화 상자"
+
+msgid "Enlarge screenshot: Postika account selector and separate account workspaces"
+msgstr "스크린샷 확대: Postika 계정 선택기 및 별도의 계정 작업 공간"
+
+msgid "Enlarge screenshot: Postika composer with rich-text controls and image uploads"
+msgstr "스크린샷 확대: 서식 있는 텍스트 컨트롤과 이미지 업로드 기능을 갖춘 Postika 작성기"
+
+msgid "Enlarge screenshot: Postika language selector and localized interface"
+msgstr "스크린샷 확대: Postika 언어 선택기 및 현지화된 인터페이스"
+
+msgid "Enlarge screenshot: Postika posting intervals and scheduling controls"
+msgstr "스크린샷 확대: Postika 게시 간격 및 일정 관리"
+
+msgid "Enlarge screenshot: Postika posting logs with per-group results and queue controls"
+msgstr "스크린샷 확대: 그룹별 결과 및 대기열 제어 기능이 포함된 Postika 게시 로그"
+
+msgid "Enlarge screenshot: Postika scheduling controls"
+msgstr "스크린샷 확대: Postika 일정 제어"
+
+msgid "Facebook Group Auto Poster for Desktop | Postika"
+msgstr "여러 Facebook 그룹에 한 번에 게시하세요 | Postika"
+
+msgid "Facebook Groups"
+msgstr "페이스북 그룹"
+
+msgid "Features"
+msgstr "특징"
+
+msgid "Follow progress group by group. See what’s published, what’s awaiting approval, and what needs attention, including failed, skipped, and unconfirmed submissions. Pause, resume, or stop your queue from the same window."
+msgstr "그룹별로 진행 상황을 따르세요. 게시된 항목, 승인 대기 중인 항목, 실패, 건너뛰기, 확인되지 않은 제출을 포함하여 주의가 필요한 항목을 확인하세요. 동일한 창에서 대기열을 일시 중지, 재개 또는 중지합니다."
+
+msgid "Get in touch"
+msgstr "연락하세요"
+
+msgid "Intel Macs (.dmg)"
+msgstr "Intel Mac(.dmg)"
+
+msgid "Is Postika a Chrome extension?"
+msgstr "Postika는 Chrome 확장 프로그램인가요?"
+
+msgid "Keep Postika open and your computer awake while a queue runs. Queues and posting logs aren’t restored after quitting."
+msgstr "대기열이 실행되는 동안 Postika를 열어두고 컴퓨터를 깨어 있게 유지하세요. 종료 후 대기열 및 게시 로그는 복원되지 않습니다."
+
+msgid "Keep your device on and awake, with Postika open, so it can handle the posting for you."
+msgstr "Postika를 열어 둔 상태로 기기를 켜두어두면 Postika가 게시물을 처리할 수 있습니다."
+
+msgid "Language"
+msgstr "언어"
+
+msgid "Linux x64 (portable)"
+msgstr "Linux x64(휴대용)"
+
+msgid "Loading screenshot…"
+msgstr "스크린샷 로드 중…"
+
+msgid "M-series Macs (.dmg)"
+msgstr "M 시리즈 Mac(.dmg)"
+
+msgid "Main navigation"
+msgstr "메인 네비게이션"
+
+msgid "Move Postika into Applications before opening it."
+msgstr "Postika를 열기 전에 응용 프로그램으로 이동하세요."
+
+msgid "No themes found. Try another name."
+msgstr "테마를 찾을 수 없습니다. 다른 이름을 사용해 보세요."
+
+msgid "One good post. All the right groups."
+msgstr "좋은 게시물 하나. 모두 올바른 그룹입니다."
+
+msgid "Post to multiple Facebook groups with Postika. A desktop auto poster with scheduling, multiple accounts, 33 interface languages, and clear posting logs."
+msgstr "Postika를 사용하여 여러 Facebook 그룹에 게시하세요. 일정 관리, 다중 계정, 33개 인터페이스 언어 및 명확한 게시 로그가 포함된 데스크탑 자동 포스터입니다."
+
+msgid "Post to multiple Facebook groups without repeating the same steps. Write once, choose your groups, and post now or schedule for later."
+msgstr "동일한 단계를 반복하지 않고도 여러 Facebook 그룹에 게시할 수 있습니다. 한 번 작성하고 그룹을 선택한 후 지금 게시하거나 나중에 게시하도록 예약하세요."
+
+msgid "Postika Facebook page-post import dialog"
+msgstr "Postika Facebook 페이지-게시물 가져오기 대화상자"
+
+msgid "Postika account selector and separate account workspaces"
+msgstr "Postika 계정 선택기 및 별도의 계정 작업 공간"
+
+msgid "Postika composer with rich-text controls and image uploads"
+msgstr "서식 있는 텍스트 컨트롤과 이미지 업로드 기능을 갖춘 Postika 작성기"
+
+msgid "Postika features"
+msgstr "Postika 기능"
+
+msgid "Postika home"
+msgstr "Postika 홈"
+
+msgid "Postika is a desktop app for Windows, macOS, and Linux. It uses an installed Chrome or Chromium browser for your Facebook sessions."
+msgstr "Postika는 Windows, macOS, Linux용 데스크톱 앱입니다. Facebook 세션에는 설치된 Chrome 또는 Chromium 브라우저를 사용합니다."
+
+msgid "Postika language selector and localized interface"
+msgstr "Postika 언어 선택기 및 현지화된 인터페이스"
+
+msgid "Postika posting intervals and scheduling controls"
+msgstr "Postika 게시 간격 및 일정 관리"
+
+msgid "Postika posting logs with per-group results and queue controls"
+msgstr "그룹별 결과 및 대기열 제어 기능이 포함된 Postika 게시 로그"
+
+msgid "Postika scheduling controls"
+msgstr "Postika 일정 관리"
+
+msgid "Posting intervals don’t guarantee protection from Facebook restrictions or bans."
+msgstr "게시 간격이 Facebook 제한이나 금지로부터 보호된다는 것을 보장하지는 않습니다."
+
+msgid "Prepare now. Schedule for later."
+msgstr "지금 준비하세요. 나중에 예약하세요."
+
+msgid "Questions"
+msgstr "질문"
+
+msgid "Refresh release notes"
+msgstr "릴리스 노트 새로고침"
+
+msgid "Release notes"
+msgstr "릴리스 노트"
+
+msgid "Release notes are up to date."
+msgstr "릴리스 노트가 최신 상태입니다."
+
+msgid "Report a problem"
+msgstr "문제 신고"
+
+msgid "Run posting queues for multiple Facebook accounts at the same time. Each account keeps its own browser session, groups, drafts, and posting settings, so you can prepare another post or check progress without interrupting the other accounts."
+msgstr "여러 Facebook 계정에 대한 게시 대기열을 동시에 실행하세요. 각 계정은 자체 브라우저 세션, 그룹, 초안 및 게시 설정을 유지하므로 다른 계정을 방해하지 않고 다른 게시물을 준비하거나 진행 상황을 확인할 수 있습니다."
+
+msgid "Schedule your posts for a date and time that suits you. When that time arrives, Postika automatically starts posting to your selected groups. You don’t need to be there to press Post."
+msgstr "귀하에게 적합한 날짜와 시간에 게시물을 예약하세요. 해당 시간이 되면 Postika는 자동으로 선택한 그룹에 게시를 시작합니다. 게시를 누르기 위해 그곳에 있을 필요는 없습니다."
+
+msgid "Screenshot preview"
+msgstr "스크린샷 미리보기"
+
+msgid "Search by name…"
+msgstr "이름으로 검색…"
+
+msgid "Search themes"
+msgstr "테마 검색"
+
+msgid "See where every post stands."
+msgstr "모든 게시물이 어디에 있는지 확인하세요."
+
+msgid "Selected"
+msgstr "선택된"
+
+msgid "Set your pace. Leave room between posts."
+msgstr "속도를 설정하세요. 게시물 사이에 공간을 남겨두세요."
+
+msgid "Several accounts. Posting at the same time."
+msgstr "여러 계정. 동시에 포스팅합니다."
+
+msgid "Skip opening every group and pasting the same thing again. Write your post with rich text, add and reorder your images, then search and select the Facebook groups you want to share with. Your draft stays saved while you get it right."
+msgstr "모든 그룹을 열고 같은 내용을 다시 붙여넣는 작업을 건너뛰세요. 서식 있는 텍스트로 게시물을 작성하고, 이미지를 추가하고 순서를 바꾼 다음, 공유하려는 Facebook 그룹을 검색하고 선택하세요. 올바르게 작성하는 동안 초안은 계속 저장됩니다."
+
+msgid "Skip to content"
+msgstr "콘텐츠로 건너뛰기"
+
+msgid "Some groups require approval. Posting logs distinguish published posts, pending approval, failed, skipped, and unconfirmed submissions. Check unconfirmed results on Facebook before retrying."
+msgstr "일부 그룹에는 승인이 필요합니다. 게시 로그는 게시된 게시물, 승인 대기 중인 게시물, 실패, 건너뛴 제출, 확인되지 않은 제출을 구분합니다. 다시 시도하기 전에 Facebook에서 확인되지 않은 결과를 확인하세요."
+
+msgid "System default"
+msgstr "시스템 기본값"
+
+msgid "System default ({0})"
+msgstr "시스템 기본값({0})"
+
+msgid "System packages may ask for administrator authorization."
+msgstr "시스템 패키지가 관리자 인증을 요청할 수 있습니다."
+
+msgid "Unsigned installer: Windows may show a SmartScreen warning. The portable version needs no installation; account data stays in the app data folder."
+msgstr "서명되지 않은 설치 프로그램: Windows에서 SmartScreen 경고가 표시될 수 있습니다. 휴대용 버전은 설치가 필요하지 않습니다. 계정 데이터는 앱 데이터 폴더에 유지됩니다."
+
+msgid "Version"
+msgstr "버전"
+
+msgid "Version {0} ({1})"
+msgstr "버전 {0}({1})"
+
+msgid "What do I need to run Postika?"
+msgstr "Postika를 실행하려면 무엇이 필요합니까?"
+
+msgid "What is a Facebook group auto poster?"
+msgstr "페이스북 그룹 자동 포스터란?"
+
+msgid "Windows installer"
+msgstr "Windows 설치 프로그램"
+
+msgid "Windows portable"
+msgstr "Windows 휴대용"
+
+msgid "Windows, macOS & Linux"
+msgstr "윈도우, 맥OS, 리눅스"
+
+msgid "Work in the language you think in."
+msgstr "당신이 생각하는 언어로 작업하세요."
+
+msgid "Yes. Keep Postika open and your computer awake while a queue is scheduled or running. Queues and posting logs are not restored after quitting."
+msgstr "예. 대기열이 예약되거나 실행되는 동안 Postika를 열어두고 컴퓨터를 깨어 있게 유지하세요. 종료 후 대기열 및 게시 로그는 복원되지 않습니다."
+
+msgid "Yes. Multiple accounts can run their posting queues in parallel. Each account has a separate browser session, groups, drafts, and posting settings. Switching accounts doesn’t interrupt the other queues."
+msgstr "예. 여러 계정이 게시 대기열을 병렬로 실행할 수 있습니다. 각 계정에는 별도의 브라우저 세션, 그룹, 초안 및 게시 설정이 있습니다. 계정을 전환해도 다른 대기열이 중단되지 않습니다."
+
+msgid "Your platform"
+msgstr "귀하의 플랫폼"
+
+msgid "{0} shown"
+msgstr "{0} 표시됨"
+
+msgid "{0} themes and system default"
+msgstr "{0} 테마 및 시스템 기본값"
+
+msgid "Facebook Groups <0>Bulk Poster</0>"
+msgstr "여러 Facebook 그룹에 <0>한 번에 게시하세요</0>"
+
+msgid "All languages"
+msgstr "모든 언어"
+
+msgid "Language: {0}"
+msgstr "언어: {0}"
+
+msgid "Languages"
+msgstr "언어"
+
+msgid "No languages found"
+msgstr "언어를 찾을 수 없습니다"
+
+msgid "Search languages…"
+msgstr "언어 검색…"
+
+msgid "Try a different name."
+msgstr "다른 이름으로 검색해 보세요."

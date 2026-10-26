@@ -1,0 +1,332 @@
+# Website copy. Initial non-English translations are machine generated; review before publication.
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: zh-CN\n"
+
+msgid "A Facebook group auto poster helps you share a prepared post across the groups you select. Postika combines a post editor, group selection, scheduling, and posting logs in one desktop app."
+msgstr "Facebook 群组自动海报可帮助您在您选择的群组中分享准备好的帖子。 Postika 在一个桌面应用程序中结合了帖子编辑器、组选择、日程安排和发布日志。"
+
+msgid "A few things to know"
+msgstr "有几件事需要知道"
+
+msgid "A little less busywork. A little more time."
+msgstr "忙碌一点。再多一点时间。"
+
+msgid "A supported Windows, macOS, or Linux computer, an installed Chrome or Chromium browser, and your Facebook account. Platform downloads are listed on the downloads page."
+msgstr "受支持的 Windows、macOS 或 Linux 计算机、已安装的 Chrome 或 Chromium 浏览器以及您的 Facebook 帐户。下载页面列出了平台下载。"
+
+msgid "Already have a post worth sharing? Import posts from a Facebook page your signed-in account can access. Review the text and images, make your edits, and add the posts you want to your queue."
+msgstr "已经有值得分享的帖子了吗？从您登录的帐户可以访问的 Facebook 页面导入帖子。查看文本和图像，进行编辑，然后将所需的帖子添加到队列中。"
+
+msgid "Before you start"
+msgstr "开始之前"
+
+msgid "Bring your page posts along."
+msgstr "带上您的页面帖子。"
+
+msgid "Browser language"
+msgstr "浏览器语言"
+
+msgid "Bulk Poster"
+msgstr "散装海报"
+
+msgid "Can multiple Facebook accounts post at the same time?"
+msgstr "多个 Facebook 帐户可以同时发帖吗？"
+
+msgid "Check your connection and try again."
+msgstr "检查您的连接并重试。"
+
+msgid "Choose a version for your computer. Requires Chrome or Chromium."
+msgstr "选择适合您计算机的版本。需要 Chrome 或 Chromium。"
+
+msgid "Choose from 33 interface languages, including right-to-left layouts. Menus, controls, and app-generated log messages follow your choice across windows. And with 189 themes, you can make Postika feel like your own."
+msgstr "有 33 种界面语言可供选择，包括从右到左的布局。菜单、控件和应用程序生成的日志消息遵循您在窗口中的选择。凭借 189 个主题，您可以让 Postika 感觉像您自己的一样。"
+
+msgid "Choose your own minimum and maximum interval between posts to avoid posting in rapid succession and help reduce the risk of rate limits or account restrictions. Follow progress as the queue runs, and pause whenever you need to."
+msgstr "选择您自己的最小和最大发帖间隔，以避免快速连续发帖，并帮助降低速率限制或帐户限制的风险。跟踪队列运行的进度，并在需要时暂停。"
+
+msgid "Close screenshot"
+msgstr "关闭截图"
+
+msgid "Close themes"
+msgstr "关闭主题"
+
+msgid "Color themes"
+msgstr "颜色主题"
+
+msgid "Color themes: {0}"
+msgstr "颜色主题：{0}"
+
+msgid "Coming soon"
+msgstr "即将推出"
+
+msgid "Couldn’t load this screenshot. Close it and try again."
+msgstr "无法加载此屏幕截图。关闭它并重试。"
+
+msgid "Couldn’t refresh release notes. Please try again."
+msgstr "无法刷新发行说明。请再试一次。"
+
+msgid "Does a submission mean my post is published?"
+msgstr "提交是否意味着我的帖子已发布？"
+
+msgid "Does my computer need to stay on?"
+msgstr "我的计算机需要保持开启状态吗？"
+
+msgid "Download"
+msgstr "下载"
+
+msgid "Download Postika"
+msgstr "下载Postika"
+
+msgid "Download Postika for Windows, macOS, and Linux. Choose your desktop Facebook group auto poster installer and find the latest release notes."
+msgstr "下载适用于 Windows、macOS 和 Linux 的 Postika。选择您的桌面 Facebook 群组自动海报安装程序并查找最新的发行说明。"
+
+msgid "Download Postika — Facebook Group Auto Poster"
+msgstr "下载Postika — Facebook 群组批量发帖工具"
+
+msgid "Download for {0}"
+msgstr "下载{0}"
+
+msgid "Download {0}"
+msgstr "下载{0}"
+
+msgid "Downloads"
+msgstr "下载"
+
+msgid "Enlarge screenshot: Postika Facebook page-post import dialog"
+msgstr "放大截图：Postika Facebook 页面-帖子导入对话框"
+
+msgid "Enlarge screenshot: Postika account selector and separate account workspaces"
+msgstr "放大屏幕截图：Postika 帐户选择器和单独的帐户工作区"
+
+msgid "Enlarge screenshot: Postika composer with rich-text controls and image uploads"
+msgstr "放大屏幕截图：具有富文本控件和图像上传功能的 Postika 作曲家"
+
+msgid "Enlarge screenshot: Postika language selector and localized interface"
+msgstr "放大屏幕截图：Postika 语言选择器和本地化界面"
+
+msgid "Enlarge screenshot: Postika posting intervals and scheduling controls"
+msgstr "放大屏幕截图：Postika 发帖间隔和调度控制"
+
+msgid "Enlarge screenshot: Postika posting logs with per-group results and queue controls"
+msgstr "放大屏幕截图：Postika 发布日志以及每组结果和队列控制"
+
+msgid "Enlarge screenshot: Postika scheduling controls"
+msgstr "放大屏幕截图：Postika 调度控件"
+
+msgid "Facebook Group Auto Poster for Desktop | Postika"
+msgstr "Facebook 群组批量发帖工具 | Postika"
+
+msgid "Facebook Groups"
+msgstr "脸书群组"
+
+msgid "Features"
+msgstr "特征"
+
+msgid "Follow progress group by group. See what’s published, what’s awaiting approval, and what needs attention, including failed, skipped, and unconfirmed submissions. Pause, resume, or stop your queue from the same window."
+msgstr "逐组跟踪进度。查看已发布的内容、等待批准的内容以及需要注意的内容，包括失败、跳过和未经确认的提交。从同一窗口暂停、恢复或停止队列。"
+
+msgid "Get in touch"
+msgstr "联系我们"
+
+msgid "Intel Macs (.dmg)"
+msgstr "英特尔 Mac (.dmg)"
+
+msgid "Is Postika a Chrome extension?"
+msgstr "Postika 是 Chrome 扩展程序吗？"
+
+msgid "Keep Postika open and your computer awake while a queue runs. Queues and posting logs aren’t restored after quitting."
+msgstr "当队列运行时，请保持 Postika 打开并保持计算机处于唤醒状态。退出后队列和发布日志不会恢复。"
+
+msgid "Keep your device on and awake, with Postika open, so it can handle the posting for you."
+msgstr "保持您的设备处于开机状态并打开 Postika，以便它可以为您处理发帖。"
+
+msgid "Language"
+msgstr "语言"
+
+msgid "Linux x64 (portable)"
+msgstr "Linux x64（便携式）"
+
+msgid "Loading screenshot…"
+msgstr "正在加载屏幕截图..."
+
+msgid "M-series Macs (.dmg)"
+msgstr "M 系列 Mac (.dmg)"
+
+msgid "Main navigation"
+msgstr "主导航"
+
+msgid "Move Postika into Applications before opening it."
+msgstr "在打开 Postika 之前将其移至应用程序中。"
+
+msgid "No themes found. Try another name."
+msgstr "未找到主题。尝试另一个名字。"
+
+msgid "One good post. All the right groups."
+msgstr "一篇好帖子。所有正确的组。"
+
+msgid "Post to multiple Facebook groups with Postika. A desktop auto poster with scheduling, multiple accounts, 33 interface languages, and clear posting logs."
+msgstr "使用 Postika 向多个 Facebook 群组发帖。具有日程安排、多帐户、33种界面语言和清晰的发布日志的桌面自动海报。"
+
+msgid "Post to multiple Facebook groups without repeating the same steps. Write once, choose your groups, and post now or schedule for later."
+msgstr "无需重复相同的步骤即可发布到多个 Facebook 群组。写一次，选择你的组，然后立即发布或安排稍后发布。"
+
+msgid "Postika Facebook page-post import dialog"
+msgstr "Postika Facebook 页面-帖子导入对话框"
+
+msgid "Postika account selector and separate account workspaces"
+msgstr "Postika 帐户选择器和单独的帐户工作区"
+
+msgid "Postika composer with rich-text controls and image uploads"
+msgstr "Postika 作曲家，具有富文本控件和图像上传功能"
+
+msgid "Postika features"
+msgstr "Postika特点"
+
+msgid "Postika home"
+msgstr "Postika之家"
+
+msgid "Postika is a desktop app for Windows, macOS, and Linux. It uses an installed Chrome or Chromium browser for your Facebook sessions."
+msgstr "Postika 是一款适用于 Windows、macOS 和 Linux 的桌面应用程序。它使用已安装的 Chrome 或 Chromium 浏览器来进行 Facebook 会话。"
+
+msgid "Postika language selector and localized interface"
+msgstr "Postika 语言选择器和本地化界面"
+
+msgid "Postika posting intervals and scheduling controls"
+msgstr "Postika 发布间隔和调度控制"
+
+msgid "Postika posting logs with per-group results and queue controls"
+msgstr "Postika 发布日志，包含每组结果和队列控制"
+
+msgid "Postika scheduling controls"
+msgstr "Postika 调度控制"
+
+msgid "Posting intervals don’t guarantee protection from Facebook restrictions or bans."
+msgstr "发帖间隔并不能保证免受 Facebook 的限制或禁令。"
+
+msgid "Prepare now. Schedule for later."
+msgstr "现在就准备吧。稍后安排。"
+
+msgid "Questions"
+msgstr "问题"
+
+msgid "Refresh release notes"
+msgstr "刷新发行说明"
+
+msgid "Release notes"
+msgstr "发行说明"
+
+msgid "Release notes are up to date."
+msgstr "发行说明是最新的。"
+
+msgid "Report a problem"
+msgstr "报告问题"
+
+msgid "Run posting queues for multiple Facebook accounts at the same time. Each account keeps its own browser session, groups, drafts, and posting settings, so you can prepare another post or check progress without interrupting the other accounts."
+msgstr "同时运行多个 Facebook 帐户的发帖队列。每个帐户都保留自己的浏览器会话、组、草稿和发布设置，因此您可以准备另一篇文章或检查进度，而无需中断其他帐户。"
+
+msgid "Schedule your posts for a date and time that suits you. When that time arrives, Postika automatically starts posting to your selected groups. You don’t need to be there to press Post."
+msgstr "将您的帖子安排在适合您的日期和时间。当该时间到来时，Postika 会自动开始向您选择的群组发帖。您不需要去那里按邮政。"
+
+msgid "Screenshot preview"
+msgstr "截图预览"
+
+msgid "Search by name…"
+msgstr "按名称搜索..."
+
+msgid "Search themes"
+msgstr "搜索主题"
+
+msgid "See where every post stands."
+msgstr "查看每个帖子的位置。"
+
+msgid "Selected"
+msgstr "已选择"
+
+msgid "Set your pace. Leave room between posts."
+msgstr "设定你的节奏。帖子之间留出空间。"
+
+msgid "Several accounts. Posting at the same time."
+msgstr "几个帐户。同时发帖。"
+
+msgid "Skip opening every group and pasting the same thing again. Write your post with rich text, add and reorder your images, then search and select the Facebook groups you want to share with. Your draft stays saved while you get it right."
+msgstr "跳过打开每个组并再次粘贴相同的内容。使用富文本编写帖子，添加图像并重新排序，然后搜索并选择您想要分享的 Facebook 群组。当您做对时，您的草稿将被保存。"
+
+msgid "Skip to content"
+msgstr "跳至内容"
+
+msgid "Some groups require approval. Posting logs distinguish published posts, pending approval, failed, skipped, and unconfirmed submissions. Check unconfirmed results on Facebook before retrying."
+msgstr "有些团体需要批准。发布日志区分已发布的帖子、待批准的帖子、失败的帖子、跳过的帖子和未经确认的提交。重试之前，请在 Facebook 上检查未经确认的结果。"
+
+msgid "System default"
+msgstr "系统默认"
+
+msgid "System default ({0})"
+msgstr "系统默认值 ({0})"
+
+msgid "System packages may ask for administrator authorization."
+msgstr "系统包可能会要求管理员授权。"
+
+msgid "Unsigned installer: Windows may show a SmartScreen warning. The portable version needs no installation; account data stays in the app data folder."
+msgstr "未签名的安装程序：Windows 可能会显示 SmartScreen 警告。便携版无需安装；帐户数据保留在应用程序数据文件夹中。"
+
+msgid "Version"
+msgstr "版本"
+
+msgid "Version {0} ({1})"
+msgstr "版本 {0} ({1})"
+
+msgid "What do I need to run Postika?"
+msgstr "运行 Postika 需要什么？"
+
+msgid "What is a Facebook group auto poster?"
+msgstr "什么是 Facebook 群组自动海报？"
+
+msgid "Windows installer"
+msgstr "Windows安装程序"
+
+msgid "Windows portable"
+msgstr "Windows 便携式"
+
+msgid "Windows, macOS & Linux"
+msgstr "Windows、macOS 和 Linux"
+
+msgid "Work in the language you think in."
+msgstr "用您思考的语言工作。"
+
+msgid "Yes. Keep Postika open and your computer awake while a queue is scheduled or running. Queues and posting logs are not restored after quitting."
+msgstr "是的。在安排或运行队列时，保持 Postika 打开并让您的计算机处于唤醒状态。退出后队列和发布日志不会恢复。"
+
+msgid "Yes. Multiple accounts can run their posting queues in parallel. Each account has a separate browser session, groups, drafts, and posting settings. Switching accounts doesn’t interrupt the other queues."
+msgstr "是的。多个帐户可以并行运行其发布队列。每个帐户都有单独的浏览器会话、组、草稿和发布设置。切换帐户不会中断其他队列。"
+
+msgid "Your platform"
+msgstr "您的平台"
+
+msgid "{0} shown"
+msgstr "显示了{0}"
+
+msgid "{0} themes and system default"
+msgstr "{0} 主题和系统默认值"
+
+msgid "Facebook Groups <0>Bulk Poster</0>"
+msgstr "Facebook 群组<0>批量发帖工具</0>"
+
+msgid "All languages"
+msgstr "所有语言"
+
+msgid "Language: {0}"
+msgstr "语言: {0}"
+
+msgid "Languages"
+msgstr "语言"
+
+msgid "No languages found"
+msgstr "未找到语言"
+
+msgid "Search languages…"
+msgstr "搜索语言…"
+
+msgid "Try a different name."
+msgstr "请尝试其他名称。"

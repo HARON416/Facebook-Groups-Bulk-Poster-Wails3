@@ -1,0 +1,332 @@
+# Website copy. Initial non-English translations are machine generated; review before publication.
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: ro\n"
+
+msgid "A Facebook group auto poster helps you share a prepared post across the groups you select. Postika combines a post editor, group selection, scheduling, and posting logs in one desktop app."
+msgstr "Un poster automat de grup Facebook vă ajută să distribuiți o postare pregătită în grupurile pe care le selectați. Postika combină un editor de postări, selecția grupului, programarea și postarea jurnalelor într-o singură aplicație desktop."
+
+msgid "A few things to know"
+msgstr "Câteva lucruri de știut"
+
+msgid "A little less busywork. A little more time."
+msgstr "Un pic mai puțin ocupat. Mai mult timp."
+
+msgid "A supported Windows, macOS, or Linux computer, an installed Chrome or Chromium browser, and your Facebook account. Platform downloads are listed on the downloads page."
+msgstr "Un computer compatibil cu Windows, macOS sau Linux, un browser Chrome sau Chromium instalat și contul dvs. Facebook. Descărcările platformei sunt listate pe pagina de descărcări."
+
+msgid "Already have a post worth sharing? Import posts from a Facebook page your signed-in account can access. Review the text and images, make your edits, and add the posts you want to your queue."
+msgstr "Aveți deja o postare care merită distribuită? Importați postări dintr-o pagină de Facebook pe care o poate accesa contul dvs. conectat. Examinați textul și imaginile, faceți modificările și adăugați postările dorite în coadă."
+
+msgid "Before you start"
+msgstr "Înainte de a începe"
+
+msgid "Bring your page posts along."
+msgstr "Aduceți postările de pe pagina dvs."
+
+msgid "Browser language"
+msgstr "Limba browserului"
+
+msgid "Bulk Poster"
+msgstr "Poster în vrac"
+
+msgid "Can multiple Facebook accounts post at the same time?"
+msgstr "Pot posta mai multe conturi de Facebook în același timp?"
+
+msgid "Check your connection and try again."
+msgstr "Verificați conexiunea și încercați din nou."
+
+msgid "Choose a version for your computer. Requires Chrome or Chromium."
+msgstr "Alegeți o versiune pentru computerul dvs. Necesită Chrome sau Chromium."
+
+msgid "Choose from 33 interface languages, including right-to-left layouts. Menus, controls, and app-generated log messages follow your choice across windows. And with 189 themes, you can make Postika feel like your own."
+msgstr "Alegeți dintre 33 de limbi ale interfeței, inclusiv aspecte de la dreapta la stânga. Meniurile, comenzile și mesajele de jurnal generate de aplicație urmează alegerea dvs. în toate ferestrele. Și cu 189 de teme, poți să-l faci pe Postika să se simtă ca a ta."
+
+msgid "Choose your own minimum and maximum interval between posts to avoid posting in rapid succession and help reduce the risk of rate limits or account restrictions. Follow progress as the queue runs, and pause whenever you need to."
+msgstr "Alegeți propriul interval minim și maxim dintre postări pentru a evita postarea în succesiune rapidă și pentru a ajuta la reducerea riscului de limite de tarife sau restricții de cont. Urmărește progresul pe măsură ce coada rulează și întrerupe-te ori de câte ori este nevoie."
+
+msgid "Close screenshot"
+msgstr "Închideți captura de ecran"
+
+msgid "Close themes"
+msgstr "Închideți teme"
+
+msgid "Color themes"
+msgstr "Teme de culoare"
+
+msgid "Color themes: {0}"
+msgstr "Teme de culoare: {0}"
+
+msgid "Coming soon"
+msgstr "În curând"
+
+msgid "Couldn’t load this screenshot. Close it and try again."
+msgstr "Nu s-a putut încărca această captură de ecran. Închideți-l și încercați din nou."
+
+msgid "Couldn’t refresh release notes. Please try again."
+msgstr "Nu s-au putut reîmprospăta notele de lansare. Vă rugăm să încercați din nou."
+
+msgid "Does a submission mean my post is published?"
+msgstr "O trimitere înseamnă că postarea mea este publicată?"
+
+msgid "Does my computer need to stay on?"
+msgstr "Computerul meu trebuie să rămână pornit?"
+
+msgid "Download"
+msgstr "Descărcați"
+
+msgid "Download Postika"
+msgstr "Descărcați Postika"
+
+msgid "Download Postika for Windows, macOS, and Linux. Choose your desktop Facebook group auto poster installer and find the latest release notes."
+msgstr "Descărcați Postika pentru Windows, macOS și Linux. Alegeți instalatorul automat de postere pentru grupul Facebook de pe desktop și găsiți cele mai recente note de lansare."
+
+msgid "Download Postika — Facebook Group Auto Poster"
+msgstr "Descărcați Postika — Publică în mai multe grupuri Facebook"
+
+msgid "Download for {0}"
+msgstr "Descărcați pentru {0}"
+
+msgid "Download {0}"
+msgstr "Descărcați {0}"
+
+msgid "Downloads"
+msgstr "Descărcări"
+
+msgid "Enlarge screenshot: Postika Facebook page-post import dialog"
+msgstr "Măriți captura de ecran: dialog de importare a postării paginii Facebook Postika"
+
+msgid "Enlarge screenshot: Postika account selector and separate account workspaces"
+msgstr "Măriți captura de ecran: selector de cont Postika și spații de lucru separate pentru cont"
+
+msgid "Enlarge screenshot: Postika composer with rich-text controls and image uploads"
+msgstr "Măriți captura de ecran: compozitor Postika cu comenzi pentru text îmbogățit și încărcare de imagini"
+
+msgid "Enlarge screenshot: Postika language selector and localized interface"
+msgstr "Măriți captura de ecran: selector de limbă Postika și interfață localizată"
+
+msgid "Enlarge screenshot: Postika posting intervals and scheduling controls"
+msgstr "Măriți captura de ecran: intervalele de postare Postika și controalele de programare"
+
+msgid "Enlarge screenshot: Postika posting logs with per-group results and queue controls"
+msgstr "Măriți captura de ecran: Postika postează jurnalele cu rezultate per grup și comenzi de coadă"
+
+msgid "Enlarge screenshot: Postika scheduling controls"
+msgstr "Măriți captura de ecran: comenzile de programare Postika"
+
+msgid "Facebook Group Auto Poster for Desktop | Postika"
+msgstr "Publică în mai multe grupuri Facebook | Postika"
+
+msgid "Facebook Groups"
+msgstr "Grupuri Facebook"
+
+msgid "Features"
+msgstr "Caracteristici"
+
+msgid "Follow progress group by group. See what’s published, what’s awaiting approval, and what needs attention, including failed, skipped, and unconfirmed submissions. Pause, resume, or stop your queue from the same window."
+msgstr "Urmărește progresul grup cu grup. Vedeți ce este publicat, ce așteaptă aprobare și ce necesită atenție, inclusiv trimiterile eșuate, omise și neconfirmate. Întrerupeți, reluați sau opriți coada din aceeași fereastră."
+
+msgid "Get in touch"
+msgstr "Luați legătura"
+
+msgid "Intel Macs (.dmg)"
+msgstr "Mac-uri Intel (.dmg)"
+
+msgid "Is Postika a Chrome extension?"
+msgstr "Postika este o extensie Chrome?"
+
+msgid "Keep Postika open and your computer awake while a queue runs. Queues and posting logs aren’t restored after quitting."
+msgstr "Țineți Postika deschis și computerul treaz în timp ce o coadă rulează. Cozile și jurnalele de postare nu sunt restaurate după ce ați renunțat."
+
+msgid "Keep your device on and awake, with Postika open, so it can handle the posting for you."
+msgstr "Țineți-vă dispozitivul pornit și treaz, cu Postika deschis, astfel încât acesta să se ocupe de postare pentru dvs."
+
+msgid "Language"
+msgstr "Limbă"
+
+msgid "Linux x64 (portable)"
+msgstr "Linux x64 (portabil)"
+
+msgid "Loading screenshot…"
+msgstr "Se încarcă captură de ecran..."
+
+msgid "M-series Macs (.dmg)"
+msgstr "Mac-uri din seria M (.dmg)"
+
+msgid "Main navigation"
+msgstr "Navigație principală"
+
+msgid "Move Postika into Applications before opening it."
+msgstr "Mutați Postika în aplicații înainte de a o deschide."
+
+msgid "No themes found. Try another name."
+msgstr "Nu s-au găsit teme. Încearcă alt nume."
+
+msgid "One good post. All the right groups."
+msgstr "O postare buna. Toate grupurile potrivite."
+
+msgid "Post to multiple Facebook groups with Postika. A desktop auto poster with scheduling, multiple accounts, 33 interface languages, and clear posting logs."
+msgstr "Postați în mai multe grupuri Facebook cu Postika. Un poster automat pentru desktop cu programare, mai multe conturi, 33 de limbi de interfață și jurnale clare de postare."
+
+msgid "Post to multiple Facebook groups without repeating the same steps. Write once, choose your groups, and post now or schedule for later."
+msgstr "Postați în mai multe grupuri Facebook fără a repeta aceiași pași. Scrie o dată, alege-ți grupurile și postează acum sau programează-te pentru mai târziu."
+
+msgid "Postika Facebook page-post import dialog"
+msgstr "Dialog de importare a postării paginii Facebook Postika"
+
+msgid "Postika account selector and separate account workspaces"
+msgstr "Selector de cont Postika și spații de lucru separate pentru conturi"
+
+msgid "Postika composer with rich-text controls and image uploads"
+msgstr "Compozitor Postika cu comenzi pentru text îmbogățit și încărcări de imagini"
+
+msgid "Postika features"
+msgstr "Caracteristicile Postika"
+
+msgid "Postika home"
+msgstr "Postika acasă"
+
+msgid "Postika is a desktop app for Windows, macOS, and Linux. It uses an installed Chrome or Chromium browser for your Facebook sessions."
+msgstr "Postika este o aplicație desktop pentru Windows, macOS și Linux. Folosește un browser Chrome sau Chromium instalat pentru sesiunile tale Facebook."
+
+msgid "Postika language selector and localized interface"
+msgstr "Selector de limbă Postika și interfață localizată"
+
+msgid "Postika posting intervals and scheduling controls"
+msgstr "Postika intervale de postare și controale de programare"
+
+msgid "Postika posting logs with per-group results and queue controls"
+msgstr "Postika postarea jurnalelor cu rezultate per grup și comenzi de coadă"
+
+msgid "Postika scheduling controls"
+msgstr "Controale de programare Postika"
+
+msgid "Posting intervals don’t guarantee protection from Facebook restrictions or bans."
+msgstr "Intervalele de postare nu garantează protecția împotriva restricțiilor sau interdicțiilor Facebook."
+
+msgid "Prepare now. Schedule for later."
+msgstr "Pregătește-te acum. Programează pentru mai târziu."
+
+msgid "Questions"
+msgstr "Întrebări"
+
+msgid "Refresh release notes"
+msgstr "Actualizează notele de lansare"
+
+msgid "Release notes"
+msgstr "Note de lansare"
+
+msgid "Release notes are up to date."
+msgstr "Notele de lansare sunt la zi."
+
+msgid "Report a problem"
+msgstr "Raportați o problemă"
+
+msgid "Run posting queues for multiple Facebook accounts at the same time. Each account keeps its own browser session, groups, drafts, and posting settings, so you can prepare another post or check progress without interrupting the other accounts."
+msgstr "Rulați cozi de postare pentru mai multe conturi Facebook în același timp. Fiecare cont își păstrează propria sesiune de browser, grupuri, schițe și setări de postare, astfel încât să puteți pregăti o altă postare sau să verificați progresul fără a întrerupe celelalte conturi."
+
+msgid "Schedule your posts for a date and time that suits you. When that time arrives, Postika automatically starts posting to your selected groups. You don’t need to be there to press Post."
+msgstr "Programează-ți postările la data și ora care ți se potrivesc. Când sosește acel moment, Postika începe automat să posteze în grupurile selectate. Nu trebuie să fii acolo pentru a apăsa Postare."
+
+msgid "Screenshot preview"
+msgstr "Previzualizare captură de ecran"
+
+msgid "Search by name…"
+msgstr "Cauta dupa nume..."
+
+msgid "Search themes"
+msgstr "Căutați teme"
+
+msgid "See where every post stands."
+msgstr "Vezi unde se află fiecare post."
+
+msgid "Selected"
+msgstr "Selectat"
+
+msgid "Set your pace. Leave room between posts."
+msgstr "Stabilește-ți ritmul. Lasă loc între postări."
+
+msgid "Several accounts. Posting at the same time."
+msgstr "Mai multe conturi. Postare in acelasi timp."
+
+msgid "Skip opening every group and pasting the same thing again. Write your post with rich text, add and reorder your images, then search and select the Facebook groups you want to share with. Your draft stays saved while you get it right."
+msgstr "Sări peste deschiderea fiecărui grup și să lipiți din nou același lucru. Scrieți postarea cu text îmbogățit, adăugați și reordonați imaginile, apoi căutați și selectați grupurile Facebook cărora doriți să le distribuiți. Schița dvs. rămâne salvată în timp ce înțelegeți bine."
+
+msgid "Skip to content"
+msgstr "Treci la conținut"
+
+msgid "Some groups require approval. Posting logs distinguish published posts, pending approval, failed, skipped, and unconfirmed submissions. Check unconfirmed results on Facebook before retrying."
+msgstr "Unele grupuri necesită aprobare. Jurnalele de postare disting postările publicate, în așteptarea aprobării, nereușite, omise și neconfirmate. Verificați rezultatele neconfirmate pe Facebook înainte de a încerca din nou."
+
+msgid "System default"
+msgstr "Implicit de sistem"
+
+msgid "System default ({0})"
+msgstr "Implicit de sistem ({0})"
+
+msgid "System packages may ask for administrator authorization."
+msgstr "Pachetele de sistem pot solicita autorizarea administratorului."
+
+msgid "Unsigned installer: Windows may show a SmartScreen warning. The portable version needs no installation; account data stays in the app data folder."
+msgstr "Program de instalare nesemnat: Windows poate afișa un avertisment SmartScreen. Versiunea portabilă nu necesită instalare; datele contului rămân în folderul de date ale aplicației."
+
+msgid "Version"
+msgstr "Versiune"
+
+msgid "Version {0} ({1})"
+msgstr "Versiunea {0} ({1})"
+
+msgid "What do I need to run Postika?"
+msgstr "De ce am nevoie pentru a rula Postika?"
+
+msgid "What is a Facebook group auto poster?"
+msgstr "Ce este un poster automat de grup Facebook?"
+
+msgid "Windows installer"
+msgstr "Instalator Windows"
+
+msgid "Windows portable"
+msgstr "Windows portabil"
+
+msgid "Windows, macOS & Linux"
+msgstr "Windows, macOS și Linux"
+
+msgid "Work in the language you think in."
+msgstr "Lucrează în limba în care gândești."
+
+msgid "Yes. Keep Postika open and your computer awake while a queue is scheduled or running. Queues and posting logs are not restored after quitting."
+msgstr "Da. Păstrați Postika deschis și computerul treaz în timp ce o coadă este programată sau rulează. Cozile și jurnalele de postare nu sunt restaurate după părăsire."
+
+msgid "Yes. Multiple accounts can run their posting queues in parallel. Each account has a separate browser session, groups, drafts, and posting settings. Switching accounts doesn’t interrupt the other queues."
+msgstr "Da. Mai multe conturi își pot rula cozile de postare în paralel. Fiecare cont are o sesiune separată de browser, grupuri, schițe și setări de postare. Schimbarea conturilor nu întrerupe celelalte cozi."
+
+msgid "Your platform"
+msgstr "Platforma ta"
+
+msgid "{0} shown"
+msgstr "{0} afișat"
+
+msgid "{0} themes and system default"
+msgstr "{0} teme și sistem prestabilit"
+
+msgid "Facebook Groups <0>Bulk Poster</0>"
+msgstr "<0>Publică în mai multe</0> grupuri Facebook"
+
+msgid "All languages"
+msgstr "Toate limbile"
+
+msgid "Language: {0}"
+msgstr "Limbă: {0}"
+
+msgid "Languages"
+msgstr "Limbi"
+
+msgid "No languages found"
+msgstr "Nu s-au găsit limbi"
+
+msgid "Search languages…"
+msgstr "Caută limbi…"
+
+msgid "Try a different name."
+msgstr "Încearcă alt nume."

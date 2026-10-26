@@ -1,0 +1,332 @@
+# Website copy. Initial non-English translations are machine generated; review before publication.
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: uk\n"
+
+msgid "A Facebook group auto poster helps you share a prepared post across the groups you select. Postika combines a post editor, group selection, scheduling, and posting logs in one desktop app."
+msgstr "Автоматичний плакат групи Facebook допоможе вам поділитися підготовленим дописом у вибраних групах. Postika поєднує в собі редактор дописів, вибір груп, планування та журнали публікацій в одній програмі для комп’ютера."
+
+msgid "A few things to know"
+msgstr "Кілька речей, які варто знати"
+
+msgid "A little less busywork. A little more time."
+msgstr "Трохи менше зайнятості. Ще трохи часу."
+
+msgid "A supported Windows, macOS, or Linux computer, an installed Chrome or Chromium browser, and your Facebook account. Platform downloads are listed on the downloads page."
+msgstr "Підтримуваний комп’ютер з Windows, macOS або Linux, встановлений браузер Chrome або Chromium і ваш обліковий запис Facebook. Завантаження платформи перераховані на сторінці завантажень."
+
+msgid "Already have a post worth sharing? Import posts from a Facebook page your signed-in account can access. Review the text and images, make your edits, and add the posts you want to your queue."
+msgstr "Уже маєте допис, яким варто поділитися? Імпортуйте публікації зі сторінки Facebook, доступ до якої має ваш обліковий запис. Перегляньте текст і зображення, внесіть зміни та додайте потрібні публікації до черги."
+
+msgid "Before you start"
+msgstr "Перш ніж почати"
+
+msgid "Bring your page posts along."
+msgstr "Беріть із собою дописи на своїй сторінці."
+
+msgid "Browser language"
+msgstr "Мова браузера"
+
+msgid "Bulk Poster"
+msgstr "Масовий плакат"
+
+msgid "Can multiple Facebook accounts post at the same time?"
+msgstr "Чи можуть кілька облікових записів Facebook публікувати публікації одночасно?"
+
+msgid "Check your connection and try again."
+msgstr "Перевірте підключення та повторіть спробу."
+
+msgid "Choose a version for your computer. Requires Chrome or Chromium."
+msgstr "Виберіть версію для свого комп'ютера. Потрібен Chrome або Chromium."
+
+msgid "Choose from 33 interface languages, including right-to-left layouts. Menus, controls, and app-generated log messages follow your choice across windows. And with 189 themes, you can make Postika feel like your own."
+msgstr "Виберіть одну з 33 мов інтерфейсу, включаючи розкладку справа наліво. Меню, елементи керування та повідомлення журналу, згенеровані програмою, слідують за вашим вибором у вікнах. А за допомогою 189 тем ви можете зробити Postika власною."
+
+msgid "Choose your own minimum and maximum interval between posts to avoid posting in rapid succession and help reduce the risk of rate limits or account restrictions. Follow progress as the queue runs, and pause whenever you need to."
+msgstr "Виберіть свій власний мінімальний і максимальний інтервал між публікаціями, щоб уникнути швидкої послідовності публікацій і допомогти зменшити ризик обмежень кількості чи обмежень облікового запису. Слідкуйте за прогресом у черзі та робіть паузу, коли вам це потрібно."
+
+msgid "Close screenshot"
+msgstr "Закрити знімок екрана"
+
+msgid "Close themes"
+msgstr "Закрити теми"
+
+msgid "Color themes"
+msgstr "Кольорові теми"
+
+msgid "Color themes: {0}"
+msgstr "Колірні теми: {0}"
+
+msgid "Coming soon"
+msgstr "Скоро буде"
+
+msgid "Couldn’t load this screenshot. Close it and try again."
+msgstr "Не вдалося завантажити цей знімок екрана. Закрийте його та повторіть спробу."
+
+msgid "Couldn’t refresh release notes. Please try again."
+msgstr "Не вдалося оновити примітки до випуску. Спробуйте ще раз."
+
+msgid "Does a submission mean my post is published?"
+msgstr "Чи подання означає, що мій пост опубліковано?"
+
+msgid "Does my computer need to stay on?"
+msgstr "Чи повинен мій комп’ютер залишатися включеним?"
+
+msgid "Download"
+msgstr "Завантажити"
+
+msgid "Download Postika"
+msgstr "Завантажити Postika"
+
+msgid "Download Postika for Windows, macOS, and Linux. Choose your desktop Facebook group auto poster installer and find the latest release notes."
+msgstr "Завантажте Postika для Windows, macOS і Linux. Виберіть для настільного комп’ютера програму автоматичного встановлення плакатів групи Facebook і знайдіть останні примітки до випуску."
+
+msgid "Download Postika — Facebook Group Auto Poster"
+msgstr "Завантажити Postika — Масова публікація у групах Facebook"
+
+msgid "Download for {0}"
+msgstr "Завантажити для {0}"
+
+msgid "Download {0}"
+msgstr "Завантажити {0}"
+
+msgid "Downloads"
+msgstr "Завантаження"
+
+msgid "Enlarge screenshot: Postika Facebook page-post import dialog"
+msgstr "Збільшити знімок екрана: діалогове вікно імпорту дописів на сторінці Postika Facebook"
+
+msgid "Enlarge screenshot: Postika account selector and separate account workspaces"
+msgstr "Збільшити знімок екрана: засіб вибору облікових записів Postika та окремі робочі області облікових записів"
+
+msgid "Enlarge screenshot: Postika composer with rich-text controls and image uploads"
+msgstr "Збільшити знімок екрана: редактор Postika з елементами керування форматованим текстом і завантаженням зображень"
+
+msgid "Enlarge screenshot: Postika language selector and localized interface"
+msgstr "Збільшити знімок екрана: селектор мови Postika та локалізований інтерфейс"
+
+msgid "Enlarge screenshot: Postika posting intervals and scheduling controls"
+msgstr "Збільшити знімок екрана: інтервали публікації Postika та елементи керування розкладом"
+
+msgid "Enlarge screenshot: Postika posting logs with per-group results and queue controls"
+msgstr "Збільшити знімок екрана: журнали публікацій Postika з результатами для кожної групи та керування чергою"
+
+msgid "Enlarge screenshot: Postika scheduling controls"
+msgstr "Збільшити знімок екрана: елементи керування розкладом Postika"
+
+msgid "Facebook Group Auto Poster for Desktop | Postika"
+msgstr "Масова публікація у групах Facebook | Postika"
+
+msgid "Facebook Groups"
+msgstr "Групи Facebook"
+
+msgid "Features"
+msgstr "особливості"
+
+msgid "Follow progress group by group. See what’s published, what’s awaiting approval, and what needs attention, including failed, skipped, and unconfirmed submissions. Pause, resume, or stop your queue from the same window."
+msgstr "Слідкуйте за прогресом група за групою. Перегляньте, що опубліковано, що очікує на схвалення та що потребує уваги, включно з невдалими, пропущеними та непідтвердженими. Призупиняйте, відновлюйте або зупиняйте свою чергу з того самого вікна."
+
+msgid "Get in touch"
+msgstr "Зв'яжіться"
+
+msgid "Intel Macs (.dmg)"
+msgstr "Intel Mac (.dmg)"
+
+msgid "Is Postika a Chrome extension?"
+msgstr "Чи є Postika розширенням Chrome?"
+
+msgid "Keep Postika open and your computer awake while a queue runs. Queues and posting logs aren’t restored after quitting."
+msgstr "Тримайте Postika відкритим, а ваш комп’ютер активним, поки працює черга. Черги та журнали публікацій не відновлюються після виходу."
+
+msgid "Keep your device on and awake, with Postika open, so it can handle the posting for you."
+msgstr "Тримайте пристрій увімкненим і активним, а Postika відкрита, щоб він міг опублікувати публікації за вас."
+
+msgid "Language"
+msgstr "Мова"
+
+msgid "Linux x64 (portable)"
+msgstr "Linux x64 (портативний)"
+
+msgid "Loading screenshot…"
+msgstr "Завантаження знімка екрана…"
+
+msgid "M-series Macs (.dmg)"
+msgstr "Mac серії M (.dmg)"
+
+msgid "Main navigation"
+msgstr "Основна навігація"
+
+msgid "Move Postika into Applications before opening it."
+msgstr "Перемістіть Postika в Програми, перш ніж відкривати її."
+
+msgid "No themes found. Try another name."
+msgstr "Теми не знайдено. Спробуйте інше ім'я."
+
+msgid "One good post. All the right groups."
+msgstr "Один хороший пост. Всі правильні групи."
+
+msgid "Post to multiple Facebook groups with Postika. A desktop auto poster with scheduling, multiple accounts, 33 interface languages, and clear posting logs."
+msgstr "Публікуйте в кількох групах Facebook за допомогою Postika. Настільний автоматичний плакат із плануванням, кількома обліковими записами, 33 мовами інтерфейсу та чіткими журналами публікацій."
+
+msgid "Post to multiple Facebook groups without repeating the same steps. Write once, choose your groups, and post now or schedule for later."
+msgstr "Публікуйте в кількох групах Facebook, не повторюючи ті самі дії. Напишіть один раз, виберіть групи та опублікуйте зараз або заплануйте на потім."
+
+msgid "Postika Facebook page-post import dialog"
+msgstr "Діалог імпорту дописів на сторінці Postika Facebook"
+
+msgid "Postika account selector and separate account workspaces"
+msgstr "Селектор облікових записів Postika та окремі робочі області облікових записів"
+
+msgid "Postika composer with rich-text controls and image uploads"
+msgstr "Композитор Postika з елементами керування форматованим текстом і завантаженням зображень"
+
+msgid "Postika features"
+msgstr "Postika особливості"
+
+msgid "Postika home"
+msgstr "Postika додому"
+
+msgid "Postika is a desktop app for Windows, macOS, and Linux. It uses an installed Chrome or Chromium browser for your Facebook sessions."
+msgstr "Postika — це настільна програма для Windows, macOS і Linux. Він використовує встановлений браузер Chrome або Chromium для ваших сеансів Facebook."
+
+msgid "Postika language selector and localized interface"
+msgstr "Селектор мови Postika та локалізований інтерфейс"
+
+msgid "Postika posting intervals and scheduling controls"
+msgstr "Інтервали розміщення Postika та елементи керування плануванням"
+
+msgid "Postika posting logs with per-group results and queue controls"
+msgstr "Журнали публікації Postika з результатами для кожної групи та керування чергою"
+
+msgid "Postika scheduling controls"
+msgstr "Елементи керування плануванням Postika"
+
+msgid "Posting intervals don’t guarantee protection from Facebook restrictions or bans."
+msgstr "Інтервали між публікаціями не гарантують захисту від обмежень або заборон Facebook."
+
+msgid "Prepare now. Schedule for later."
+msgstr "Готуйте зараз. Розклад на потім."
+
+msgid "Questions"
+msgstr "Питання"
+
+msgid "Refresh release notes"
+msgstr "Оновити примітки до випуску"
+
+msgid "Release notes"
+msgstr "Примітки до випуску"
+
+msgid "Release notes are up to date."
+msgstr "Примітки до випуску актуальні."
+
+msgid "Report a problem"
+msgstr "Повідомте про проблему"
+
+msgid "Run posting queues for multiple Facebook accounts at the same time. Each account keeps its own browser session, groups, drafts, and posting settings, so you can prepare another post or check progress without interrupting the other accounts."
+msgstr "Запустіть черги публікацій для кількох облікових записів Facebook одночасно. Кожен обліковий запис зберігає власний сеанс веб-переглядача, групи, чернетки та налаштування публікацій, тож ви можете підготувати інший допис або перевірити прогрес, не перериваючи інших облікових записів."
+
+msgid "Schedule your posts for a date and time that suits you. When that time arrives, Postika automatically starts posting to your selected groups. You don’t need to be there to press Post."
+msgstr "Заплануйте публікації на дату й час, які вам зручні. Коли настане цей час, Postika автоматично почне публікувати повідомлення у вибраних вами групах. Щоб натиснути «Опублікувати», вам не потрібно бути там."
+
+msgid "Screenshot preview"
+msgstr "Попередній перегляд знімка екрана"
+
+msgid "Search by name…"
+msgstr "Пошук за назвою…"
+
+msgid "Search themes"
+msgstr "Теми пошуку"
+
+msgid "See where every post stands."
+msgstr "Подивіться, де стоїть кожен пост."
+
+msgid "Selected"
+msgstr "Вибране"
+
+msgid "Set your pace. Leave room between posts."
+msgstr "Встановіть свій темп. Залиште місце між стовпами."
+
+msgid "Several accounts. Posting at the same time."
+msgstr "Кілька акаунтів. Публікація одночасно."
+
+msgid "Skip opening every group and pasting the same thing again. Write your post with rich text, add and reorder your images, then search and select the Facebook groups you want to share with. Your draft stays saved while you get it right."
+msgstr "Пропустіть відкриття кожної групи та повторне вставлення того самого. Напишіть свою публікацію форматованим текстом, додайте та змініть порядок зображень, потім знайдіть і виберіть групи Facebook, з якими ви хочете поділитися. Ваша чернетка залишається збереженою, доки ви її правильно оформите."
+
+msgid "Skip to content"
+msgstr "Перейти до вмісту"
+
+msgid "Some groups require approval. Posting logs distinguish published posts, pending approval, failed, skipped, and unconfirmed submissions. Check unconfirmed results on Facebook before retrying."
+msgstr "Деякі групи потребують схвалення. Журнали публікацій розрізняють опубліковані публікації, повідомлення, що очікують на схвалення, невдалі, пропущені та непідтверджені. Перед повторною спробою перевірте непідтверджені результати на Facebook."
+
+msgid "System default"
+msgstr "Система за умовчанням"
+
+msgid "System default ({0})"
+msgstr "Системне замовчування ({0})"
+
+msgid "System packages may ask for administrator authorization."
+msgstr "Системні пакети можуть запитувати авторизацію адміністратора."
+
+msgid "Unsigned installer: Windows may show a SmartScreen warning. The portable version needs no installation; account data stays in the app data folder."
+msgstr "Непідписаний інсталятор: Windows може відображати попередження SmartScreen. Портативна версія не потребує встановлення; дані облікового запису залишаються в папці даних програми."
+
+msgid "Version"
+msgstr "Версія"
+
+msgid "Version {0} ({1})"
+msgstr "Версія {0} ({1})"
+
+msgid "What do I need to run Postika?"
+msgstr "Що мені потрібно для запуску Postika?"
+
+msgid "What is a Facebook group auto poster?"
+msgstr "Що таке автопостер групи Facebook?"
+
+msgid "Windows installer"
+msgstr "Інсталятор Windows"
+
+msgid "Windows portable"
+msgstr "Windows portable"
+
+msgid "Windows, macOS & Linux"
+msgstr "Windows, macOS і Linux"
+
+msgid "Work in the language you think in."
+msgstr "Працюйте тією мовою, якою ви думаєте."
+
+msgid "Yes. Keep Postika open and your computer awake while a queue is scheduled or running. Queues and posting logs are not restored after quitting."
+msgstr "так Тримайте Postika відкритим, а ваш комп’ютер активним, поки запланована або запущена черга. Черги та журнали публікацій не відновлюються після виходу."
+
+msgid "Yes. Multiple accounts can run their posting queues in parallel. Each account has a separate browser session, groups, drafts, and posting settings. Switching accounts doesn’t interrupt the other queues."
+msgstr "так Кілька облікових записів можуть запускати свої черги публікацій паралельно. Кожен обліковий запис має окремий сеанс браузера, групи, чернетки та налаштування публікацій. Перемикання облікових записів не перериває інші черги."
+
+msgid "Your platform"
+msgstr "Ваша платформа"
+
+msgid "{0} shown"
+msgstr "Показано {0}"
+
+msgid "{0} themes and system default"
+msgstr "{0} теми та система за умовчанням"
+
+msgid "Facebook Groups <0>Bulk Poster</0>"
+msgstr "<0>Масова публікація</0> у групах Facebook"
+
+msgid "All languages"
+msgstr "Усі мови"
+
+msgid "Language: {0}"
+msgstr "Мова: {0}"
+
+msgid "Languages"
+msgstr "Мови"
+
+msgid "No languages found"
+msgstr "Мови не знайдено"
+
+msgid "Search languages…"
+msgstr "Пошук мов…"
+
+msgid "Try a different name."
+msgstr "Спробуйте іншу назву."

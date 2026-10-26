@@ -1,1 +1,18 @@
-{"name":"postika-website","private":true,"scripts":{"test":"node scripts/themes.test.mjs","themes:sync":"node scripts/sync-themes.mjs","build":"npm run themes:sync && tsc -p tsconfig.theme.json && tsc -p tsconfig.json","check":"tsc -p tsconfig.theme.json --noEmit && tsc -p tsconfig.json --noEmit"},"devDependencies":{"typescript":"~5.9.3"}}
+{
+  "name": "postika-website",
+  "private": true,
+  "scripts": {
+    "test": "node scripts/themes.test.mjs && node scripts/i18n.test.mjs",
+    "themes:sync": "node scripts/sync-themes.mjs",
+    "build": "npm run themes:sync && npm run i18n:build && tsc -p tsconfig.theme.json && tsc -p tsconfig.json",
+    "check": "tsc -p tsconfig.theme.json --noEmit && tsc -p tsconfig.json --noEmit && tsc -p tsconfig.i18n.json",
+    "i18n:build": "node scripts/build-i18n.mjs",
+    "i18n:extract": "python3 scripts/extract-i18n.py",
+    "i18n:check": "python3 scripts/extract-i18n.py --check && node scripts/build-i18n.mjs"
+  },
+  "devDependencies": {
+    "rolldown": "1.2.13",
+    "typescript": "~5.9.3",
+    "wuchale": "0.26.7"
+  }
+}

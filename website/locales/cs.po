@@ -1,0 +1,332 @@
+# Website copy. Initial non-English translations are machine generated; review before publication.
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: cs\n"
+
+msgid "A Facebook group auto poster helps you share a prepared post across the groups you select. Postika combines a post editor, group selection, scheduling, and posting logs in one desktop app."
+msgstr "Automatický plakát skupiny na Facebooku vám pomůže sdílet připravený příspěvek ve skupinách, které vyberete. Postika kombinuje editor příspěvků, výběr skupin, plánování a protokoly odesílání v jedné desktopové aplikaci."
+
+msgid "A few things to know"
+msgstr "Pár věcí, které byste měli vědět"
+
+msgid "A little less busywork. A little more time."
+msgstr "Trochu méně práce. Ještě trochu času."
+
+msgid "A supported Windows, macOS, or Linux computer, an installed Chrome or Chromium browser, and your Facebook account. Platform downloads are listed on the downloads page."
+msgstr "Podporovaný počítač se systémem Windows, macOS nebo Linux, nainstalovaný prohlížeč Chrome nebo Chromium a váš účet na Facebooku. Stahování platformy je uvedeno na stránce stahování."
+
+msgid "Already have a post worth sharing? Import posts from a Facebook page your signed-in account can access. Review the text and images, make your edits, and add the posts you want to your queue."
+msgstr "Máte již příspěvek, který stojí za sdílení? Importujte příspěvky ze stránky na Facebooku, ke které má váš přihlášený účet přístup. Zkontrolujte text a obrázky, proveďte úpravy a přidejte požadované příspěvky do fronty."
+
+msgid "Before you start"
+msgstr "Než začnete"
+
+msgid "Bring your page posts along."
+msgstr "Přineste s sebou příspěvky na své stránce."
+
+msgid "Browser language"
+msgstr "Jazyk prohlížeče"
+
+msgid "Bulk Poster"
+msgstr "Hromadný plakát"
+
+msgid "Can multiple Facebook accounts post at the same time?"
+msgstr "Může více facebookových účtů přispívat současně?"
+
+msgid "Check your connection and try again."
+msgstr "Zkontrolujte připojení a zkuste to znovu."
+
+msgid "Choose a version for your computer. Requires Chrome or Chromium."
+msgstr "Vyberte verzi pro váš počítač. Vyžaduje Chrome nebo Chromium."
+
+msgid "Choose from 33 interface languages, including right-to-left layouts. Menus, controls, and app-generated log messages follow your choice across windows. And with 189 themes, you can make Postika feel like your own."
+msgstr "Vyberte si z 33 jazyků rozhraní, včetně rozložení zprava doleva. Nabídky, ovládací prvky a zprávy protokolu generované aplikacemi se řídí podle vašeho výběru v různých oknech. A díky 189 tématům si můžete Postiku připadat jako vlastní."
+
+msgid "Choose your own minimum and maximum interval between posts to avoid posting in rapid succession and help reduce the risk of rate limits or account restrictions. Follow progress as the queue runs, and pause whenever you need to."
+msgstr "Zvolte si svůj vlastní minimální a maximální interval mezi příspěvky, abyste se vyhnuli rychlému zasílání příspěvků a pomohli snížit riziko omezení sazeb nebo omezení účtu. Sledujte průběh fronty a zastavte, kdykoli budete potřebovat."
+
+msgid "Close screenshot"
+msgstr "Zavřít snímek obrazovky"
+
+msgid "Close themes"
+msgstr "Zavřete motivy"
+
+msgid "Color themes"
+msgstr "Barevné motivy"
+
+msgid "Color themes: {0}"
+msgstr "Barevné motivy: {0}"
+
+msgid "Coming soon"
+msgstr "Již brzy"
+
+msgid "Couldn’t load this screenshot. Close it and try again."
+msgstr "Tento snímek obrazovky se nepodařilo načíst. Zavřete jej a zkuste to znovu."
+
+msgid "Couldn’t refresh release notes. Please try again."
+msgstr "Poznámky k vydání se nepodařilo obnovit. Zkuste to prosím znovu."
+
+msgid "Does a submission mean my post is published?"
+msgstr "Znamená příspěvek zveřejnění mého příspěvku?"
+
+msgid "Does my computer need to stay on?"
+msgstr "Musí můj počítač zůstat zapnutý?"
+
+msgid "Download"
+msgstr "Stáhnout"
+
+msgid "Download Postika"
+msgstr "Stáhněte si Postika"
+
+msgid "Download Postika for Windows, macOS, and Linux. Choose your desktop Facebook group auto poster installer and find the latest release notes."
+msgstr "Stáhněte si Postika pro Windows, macOS a Linux. Vyberte si instalátor automatického plakátu skupiny na Facebooku a najděte nejnovější poznámky k vydání."
+
+msgid "Download Postika — Facebook Group Auto Poster"
+msgstr "Stáhněte si Postika — Hromadné publikování do skupin na Facebooku"
+
+msgid "Download for {0}"
+msgstr "Stáhnout pro {0}"
+
+msgid "Download {0}"
+msgstr "Stáhnout {0}"
+
+msgid "Downloads"
+msgstr "Stahování"
+
+msgid "Enlarge screenshot: Postika Facebook page-post import dialog"
+msgstr "Zvětšit snímek obrazovky: Dialogové okno importu postika Facebook stránky"
+
+msgid "Enlarge screenshot: Postika account selector and separate account workspaces"
+msgstr "Zvětšit snímek obrazovky: Výběr účtu Postika a samostatné pracovní prostory účtu"
+
+msgid "Enlarge screenshot: Postika composer with rich-text controls and image uploads"
+msgstr "Zvětšit snímek obrazovky: Skladatel Postika s ovládacími prvky formátovaného textu a nahráváním obrázků"
+
+msgid "Enlarge screenshot: Postika language selector and localized interface"
+msgstr "Zvětšit snímek obrazovky: Výběr jazyka Postika a lokalizované rozhraní"
+
+msgid "Enlarge screenshot: Postika posting intervals and scheduling controls"
+msgstr "Zvětšit snímek obrazovky: Intervaly odesílání Postika a ovládací prvky plánování"
+
+msgid "Enlarge screenshot: Postika posting logs with per-group results and queue controls"
+msgstr "Zvětšit snímek obrazovky: Postika zveřejňuje protokoly s výsledky podle skupin a ovládacími prvky fronty"
+
+msgid "Enlarge screenshot: Postika scheduling controls"
+msgstr "Zvětšit snímek obrazovky: Ovládací prvky plánování Postika"
+
+msgid "Facebook Group Auto Poster for Desktop | Postika"
+msgstr "Hromadné publikování do skupin na Facebooku | Postika"
+
+msgid "Facebook Groups"
+msgstr "Skupiny na Facebooku"
+
+msgid "Features"
+msgstr "Vlastnosti"
+
+msgid "Follow progress group by group. See what’s published, what’s awaiting approval, and what needs attention, including failed, skipped, and unconfirmed submissions. Pause, resume, or stop your queue from the same window."
+msgstr "Sledujte postup skupinu po skupině. Podívejte se, co je publikováno, co čeká na schválení a co vyžaduje pozornost, včetně neúspěšných, přeskočených a nepotvrzených příspěvků. Pozastavit, obnovit nebo zastavit frontu ze stejného okna."
+
+msgid "Get in touch"
+msgstr "Ozvěte se"
+
+msgid "Intel Macs (.dmg)"
+msgstr "Intel Mac (.dmg)"
+
+msgid "Is Postika a Chrome extension?"
+msgstr "Je Postika rozšířením pro Chrome?"
+
+msgid "Keep Postika open and your computer awake while a queue runs. Queues and posting logs aren’t restored after quitting."
+msgstr "Ponechejte Postiku otevřenou a váš počítač bdělý, zatímco běží fronta. Fronty a protokoly odesílání se po ukončení neobnoví."
+
+msgid "Keep your device on and awake, with Postika open, so it can handle the posting for you."
+msgstr "Nechte své zařízení zapnuté a vzhůru, s otevřenou Postikou, aby mohla zpracovat příspěvky za vás."
+
+msgid "Language"
+msgstr "Jazyk"
+
+msgid "Linux x64 (portable)"
+msgstr "Linux x64 (přenosný)"
+
+msgid "Loading screenshot…"
+msgstr "Načítání snímku obrazovky…"
+
+msgid "M-series Macs (.dmg)"
+msgstr "Macy řady M (.dmg)"
+
+msgid "Main navigation"
+msgstr "Hlavní navigace"
+
+msgid "Move Postika into Applications before opening it."
+msgstr "Před otevřením přesuňte Postiku do Aplikace."
+
+msgid "No themes found. Try another name."
+msgstr "Nebyla nalezena žádná témata. Zkuste jiné jméno."
+
+msgid "One good post. All the right groups."
+msgstr "Jeden dobrý příspěvek. Všechny správné skupiny."
+
+msgid "Post to multiple Facebook groups with Postika. A desktop auto poster with scheduling, multiple accounts, 33 interface languages, and clear posting logs."
+msgstr "Přidávejte příspěvky do více skupin na Facebooku pomocí Postika. Automatický plakát pro stolní počítače s plánováním, více účty, 33 jazyky rozhraní a přehlednými protokoly odesílání."
+
+msgid "Post to multiple Facebook groups without repeating the same steps. Write once, choose your groups, and post now or schedule for later."
+msgstr "Přidávejte příspěvky do více skupin na Facebooku bez opakování stejných kroků. Napište jednou, vyberte své skupiny a zveřejněte je nyní nebo naplánujte na později."
+
+msgid "Postika Facebook page-post import dialog"
+msgstr "Dialogové okno importu postika Facebook stránky"
+
+msgid "Postika account selector and separate account workspaces"
+msgstr "Výběr účtu Postika a samostatné pracovní prostory účtu"
+
+msgid "Postika composer with rich-text controls and image uploads"
+msgstr "Skladatel Postika s ovládacími prvky formátovaného textu a nahráváním obrázků"
+
+msgid "Postika features"
+msgstr "Funkce Postika"
+
+msgid "Postika home"
+msgstr "Postika domů"
+
+msgid "Postika is a desktop app for Windows, macOS, and Linux. It uses an installed Chrome or Chromium browser for your Facebook sessions."
+msgstr "Postika je desktopová aplikace pro Windows, MacOS a Linux. Pro vaše relace na Facebooku používá nainstalovaný prohlížeč Chrome nebo Chromium."
+
+msgid "Postika language selector and localized interface"
+msgstr "Výběr jazyka Postika a lokalizované rozhraní"
+
+msgid "Postika posting intervals and scheduling controls"
+msgstr "Postika intervaly odesílání a kontroly plánování"
+
+msgid "Postika posting logs with per-group results and queue controls"
+msgstr "Postika odesílání protokolů s výsledky podle skupiny a ovládacími prvky fronty"
+
+msgid "Postika scheduling controls"
+msgstr "Ovládací prvky plánování Postika"
+
+msgid "Posting intervals don’t guarantee protection from Facebook restrictions or bans."
+msgstr "Intervaly zveřejňování nezaručují ochranu před omezeními nebo zákazy Facebooku."
+
+msgid "Prepare now. Schedule for later."
+msgstr "Připravte se. Plán na později."
+
+msgid "Questions"
+msgstr "Otázky"
+
+msgid "Refresh release notes"
+msgstr "Obnovit poznámky k vydání"
+
+msgid "Release notes"
+msgstr "Poznámky k vydání"
+
+msgid "Release notes are up to date."
+msgstr "Poznámky k vydání jsou aktuální."
+
+msgid "Report a problem"
+msgstr "Nahlásit problém"
+
+msgid "Run posting queues for multiple Facebook accounts at the same time. Each account keeps its own browser session, groups, drafts, and posting settings, so you can prepare another post or check progress without interrupting the other accounts."
+msgstr "Spusťte fronty příspěvků pro více účtů na Facebooku současně. Každý účet si uchovává svou vlastní relaci prohlížeče, skupiny, koncepty a nastavení odesílání, takže můžete připravit další příspěvek nebo zkontrolovat průběh, aniž byste přerušili ostatní účty."
+
+msgid "Schedule your posts for a date and time that suits you. When that time arrives, Postika automatically starts posting to your selected groups. You don’t need to be there to press Post."
+msgstr "Naplánujte si příspěvky na datum a čas, který vám vyhovuje. Když tento čas nastane, Postika automaticky začne přispívat do vámi vybraných skupin. Nemusíte tam být, abyste mohli stisknout Odeslat."
+
+msgid "Screenshot preview"
+msgstr "Náhled snímku obrazovky"
+
+msgid "Search by name…"
+msgstr "Hledat podle jména…"
+
+msgid "Search themes"
+msgstr "Hledat témata"
+
+msgid "See where every post stands."
+msgstr "Podívejte se, kde každý příspěvek stojí."
+
+msgid "Selected"
+msgstr "Vybraný"
+
+msgid "Set your pace. Leave room between posts."
+msgstr "Nastavte si tempo. Nechte prostor mezi příspěvky."
+
+msgid "Several accounts. Posting at the same time."
+msgstr "Několik účtů. Odesílání ve stejnou dobu."
+
+msgid "Skip opening every group and pasting the same thing again. Write your post with rich text, add and reorder your images, then search and select the Facebook groups you want to share with. Your draft stays saved while you get it right."
+msgstr "Přeskočte otevírání každé skupiny a vkládání stejné věci znovu. Napište svůj příspěvek s formátovaným textem, přidejte a změňte pořadí obrázků a poté vyhledejte a vyberte skupiny na Facebooku, se kterými chcete sdílet. Váš koncept zůstane uložený, dokud to uděláte správně."
+
+msgid "Skip to content"
+msgstr "Přejít na obsah"
+
+msgid "Some groups require approval. Posting logs distinguish published posts, pending approval, failed, skipped, and unconfirmed submissions. Check unconfirmed results on Facebook before retrying."
+msgstr "Některé skupiny vyžadují schválení. Protokoly odesílání rozlišují publikované příspěvky, čekající na schválení, neúspěšné, přeskočené a nepotvrzené příspěvky. Než to zkusíte znovu, zkontrolujte nepotvrzené výsledky na Facebooku."
+
+msgid "System default"
+msgstr "Výchozí nastavení systému"
+
+msgid "System default ({0})"
+msgstr "Výchozí nastavení systému ({0})"
+
+msgid "System packages may ask for administrator authorization."
+msgstr "Systémové balíčky mohou vyžadovat oprávnění správce."
+
+msgid "Unsigned installer: Windows may show a SmartScreen warning. The portable version needs no installation; account data stays in the app data folder."
+msgstr "Nepodepsaný instalační program: Windows může zobrazovat varování SmartScreen. Přenosná verze nevyžaduje instalaci; data účtu zůstanou ve složce dat aplikace."
+
+msgid "Version"
+msgstr "Verze"
+
+msgid "Version {0} ({1})"
+msgstr "Verze {0} ({1})"
+
+msgid "What do I need to run Postika?"
+msgstr "Co potřebuji ke spuštění Postika?"
+
+msgid "What is a Facebook group auto poster?"
+msgstr "Co je automatický plakát skupiny na Facebooku?"
+
+msgid "Windows installer"
+msgstr "Instalační program systému Windows"
+
+msgid "Windows portable"
+msgstr "Windows přenosný"
+
+msgid "Windows, macOS & Linux"
+msgstr "Windows, MacOS a Linux"
+
+msgid "Work in the language you think in."
+msgstr "Pracujte v jazyce, ve kterém myslíte."
+
+msgid "Yes. Keep Postika open and your computer awake while a queue is scheduled or running. Queues and posting logs are not restored after quitting."
+msgstr "Ano. Mějte Postika otevřenou a váš počítač bdělý, když je naplánována nebo spuštěna fronta. Fronty a protokoly odesílání se po ukončení neobnoví."
+
+msgid "Yes. Multiple accounts can run their posting queues in parallel. Each account has a separate browser session, groups, drafts, and posting settings. Switching accounts doesn’t interrupt the other queues."
+msgstr "Ano. Více účtů může spouštět své fronty odesílání paralelně. Každý účet má samostatnou relaci prohlížeče, skupiny, koncepty a nastavení odesílání. Přepnutí účtů nepřeruší ostatní fronty."
+
+msgid "Your platform"
+msgstr "Vaše platforma"
+
+msgid "{0} shown"
+msgstr "Zobrazeno: {0}"
+
+msgid "{0} themes and system default"
+msgstr "{0} motivů a výchozí nastavení systému"
+
+msgid "Facebook Groups <0>Bulk Poster</0>"
+msgstr "<0>Hromadné publikování</0> do skupin na Facebooku"
+
+msgid "All languages"
+msgstr "Všechny jazyky"
+
+msgid "Language: {0}"
+msgstr "Jazyk: {0}"
+
+msgid "Languages"
+msgstr "Jazyky"
+
+msgid "No languages found"
+msgstr "Nenalezeny žádné jazyky"
+
+msgid "Search languages…"
+msgstr "Hledat jazyky…"
+
+msgid "Try a different name."
+msgstr "Zkuste jiný název."

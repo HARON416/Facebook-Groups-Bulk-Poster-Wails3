@@ -1,0 +1,332 @@
+# Website copy. Initial non-English translations are machine generated; review before publication.
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: hu\n"
+
+msgid "A Facebook group auto poster helps you share a prepared post across the groups you select. Postika combines a post editor, group selection, scheduling, and posting logs in one desktop app."
+msgstr "A Facebook csoport automatikus posztere segít megosztani egy előkészített bejegyzést a kiválasztott csoportok között. A Postika egyetlen asztali alkalmazásban egyesíti a bejegyzésszerkesztőt, a csoportkiválasztást, az ütemezést és a közzétételi naplókat."
+
+msgid "A few things to know"
+msgstr "Néhány tudnivaló"
+
+msgid "A little less busywork. A little more time."
+msgstr "Kicsit kevésbé elfoglaltság. Még egy kicsit."
+
+msgid "A supported Windows, macOS, or Linux computer, an installed Chrome or Chromium browser, and your Facebook account. Platform downloads are listed on the downloads page."
+msgstr "Támogatott Windows-, macOS- vagy Linux-számítógép, telepített Chrome vagy Chromium böngésző és Facebook-fiókja. A platformletöltések listája a letöltési oldalon található."
+
+msgid "Already have a post worth sharing? Import posts from a Facebook page your signed-in account can access. Review the text and images, make your edits, and add the posts you want to your queue."
+msgstr "Van már megosztásra érdemes bejegyzésed? Importáljon bejegyzéseket egy olyan Facebook-oldalról, amelyhez a bejelentkezett fiókja hozzáfér. Tekintse át a szöveget és a képeket, végezze el a módosításokat, és adja hozzá a kívánt bejegyzéseket a sorhoz."
+
+msgid "Before you start"
+msgstr "Mielőtt elkezdené"
+
+msgid "Bring your page posts along."
+msgstr "Hozd magaddal az oldalad bejegyzéseit."
+
+msgid "Browser language"
+msgstr "Böngésző nyelve"
+
+msgid "Bulk Poster"
+msgstr "Tömeges poszter"
+
+msgid "Can multiple Facebook accounts post at the same time?"
+msgstr "Több Facebook-fiók is közzétehet egyidejűleg?"
+
+msgid "Check your connection and try again."
+msgstr "Ellenőrizze a kapcsolatot, és próbálja újra."
+
+msgid "Choose a version for your computer. Requires Chrome or Chromium."
+msgstr "Válasszon verziót a számítógépéhez. Chrome vagy Chromium szükséges."
+
+msgid "Choose from 33 interface languages, including right-to-left layouts. Menus, controls, and app-generated log messages follow your choice across windows. And with 189 themes, you can make Postika feel like your own."
+msgstr "Válasszon 33 kezelőfelületi nyelv közül, beleértve a jobbról balra haladó elrendezéseket is. A menük, vezérlők és az alkalmazások által generált naplóüzenetek követik az Ön választását az ablakokon keresztül. A 189 témával pedig a Postika alkalmazást sajátodnak érezheted."
+
+msgid "Choose your own minimum and maximum interval between posts to avoid posting in rapid succession and help reduce the risk of rate limits or account restrictions. Follow progress as the queue runs, and pause whenever you need to."
+msgstr "Válassza ki a saját minimális és maximális intervallumát a bejegyzések között, hogy elkerülje a gyors egymásutáni bejegyzéseket, és csökkentse a díjkorlátok vagy fiókkorlátozások kockázatát. Kövesse nyomon a folyamatot a várólista futása közben, és szüneteltesse, amikor csak kell."
+
+msgid "Close screenshot"
+msgstr "Képernyőkép bezárása"
+
+msgid "Close themes"
+msgstr "Témák bezárása"
+
+msgid "Color themes"
+msgstr "Színes témák"
+
+msgid "Color themes: {0}"
+msgstr "Színtémák: {0}"
+
+msgid "Coming soon"
+msgstr "Hamarosan"
+
+msgid "Couldn’t load this screenshot. Close it and try again."
+msgstr "Nem sikerült betölteni ezt a képernyőképet. Zárja be, és próbálja újra."
+
+msgid "Couldn’t refresh release notes. Please try again."
+msgstr "Nem sikerült frissíteni a kibocsátási megjegyzéseket. Kérjük, próbálja újra."
+
+msgid "Does a submission mean my post is published?"
+msgstr "A beküldés azt jelenti, hogy a bejegyzésem megjelent?"
+
+msgid "Does my computer need to stay on?"
+msgstr "A számítógépemnek bekapcsolva kell maradnia?"
+
+msgid "Download"
+msgstr "Letöltés"
+
+msgid "Download Postika"
+msgstr "Töltse le a Postika alkalmazást"
+
+msgid "Download Postika for Windows, macOS, and Linux. Choose your desktop Facebook group auto poster installer and find the latest release notes."
+msgstr "Töltse le a Postika alkalmazást Windows, macOS és Linux rendszerre. Válassza ki az asztali Facebook-csoport automatikus plakáttelepítőjét, és keresse meg a legújabb kiadási megjegyzéseket."
+
+msgid "Download Postika — Facebook Group Auto Poster"
+msgstr "Töltse le a Postika alkalmazást — Tömeges közzététel Facebook-csoportokban"
+
+msgid "Download for {0}"
+msgstr "Letöltés {0} számára"
+
+msgid "Download {0}"
+msgstr "{0} letöltése"
+
+msgid "Downloads"
+msgstr "Letöltések"
+
+msgid "Enlarge screenshot: Postika Facebook page-post import dialog"
+msgstr "Képernyőkép nagyítása: Postika Facebook-oldal-bejegyzés importálási párbeszédpanel"
+
+msgid "Enlarge screenshot: Postika account selector and separate account workspaces"
+msgstr "Képernyőkép nagyítása: Postika-fiókválasztó és külön fiókmunkaterületek"
+
+msgid "Enlarge screenshot: Postika composer with rich-text controls and image uploads"
+msgstr "Képernyőkép nagyítása: Postika zeneszerző rich-text vezérlőkkel és képfeltöltésekkel"
+
+msgid "Enlarge screenshot: Postika language selector and localized interface"
+msgstr "Képernyőkép nagyítása: Postika nyelvválasztó és lokalizált felület"
+
+msgid "Enlarge screenshot: Postika posting intervals and scheduling controls"
+msgstr "Képernyőkép nagyítása: Postika közzétételi időközök és ütemezési vezérlők"
+
+msgid "Enlarge screenshot: Postika posting logs with per-group results and queue controls"
+msgstr "Képernyőkép nagyítása: A Postika naplókat tesz közzé csoportonkénti eredményekkel és sorvezérlőkkel"
+
+msgid "Enlarge screenshot: Postika scheduling controls"
+msgstr "Képernyőkép nagyítása: Postika ütemezési vezérlők"
+
+msgid "Facebook Group Auto Poster for Desktop | Postika"
+msgstr "Tömeges közzététel Facebook-csoportokban | Postika"
+
+msgid "Facebook Groups"
+msgstr "Facebook csoportok"
+
+msgid "Features"
+msgstr "Jellemzők"
+
+msgid "Follow progress group by group. See what’s published, what’s awaiting approval, and what needs attention, including failed, skipped, and unconfirmed submissions. Pause, resume, or stop your queue from the same window."
+msgstr "Csoportonként kövesse a haladást. Tekintse meg, mi van közzétéve, mi vár jóváhagyásra, és mi igényel figyelmet, beleértve a sikertelen, kihagyott és meg nem erősített beküldéseket. Szüneteltesse, folytassa vagy állítsa le a sort ugyanabban az ablakban."
+
+msgid "Get in touch"
+msgstr "Vegye fel a kapcsolatot"
+
+msgid "Intel Macs (.dmg)"
+msgstr "Intel Mac (.dmg)"
+
+msgid "Is Postika a Chrome extension?"
+msgstr "A Postika egy Chrome-bővítmény?"
+
+msgid "Keep Postika open and your computer awake while a queue runs. Queues and posting logs aren’t restored after quitting."
+msgstr "Tartsa nyitva a Postika alkalmazást, és tartsa ébren a számítógépét, miközben fut a sor. A várólisták és a feladási naplók nem állnak vissza a kilépés után."
+
+msgid "Keep your device on and awake, with Postika open, so it can handle the posting for you."
+msgstr "Tartsa az eszközt bekapcsolva és ébren, miközben a Postika nyitva van, hogy az Ön helyett kezelhesse a bejegyzéseket."
+
+msgid "Language"
+msgstr "Nyelv"
+
+msgid "Linux x64 (portable)"
+msgstr "Linux x64 (hordozható)"
+
+msgid "Loading screenshot…"
+msgstr "Képernyőkép betöltése…"
+
+msgid "M-series Macs (.dmg)"
+msgstr "M-sorozatú Mac (.dmg)"
+
+msgid "Main navigation"
+msgstr "Fő navigáció"
+
+msgid "Move Postika into Applications before opening it."
+msgstr "A megnyitás előtt helyezze át a Postika alkalmazást az Alkalmazások közé."
+
+msgid "No themes found. Try another name."
+msgstr "Nem található téma. Próbálkozzon másik névvel."
+
+msgid "One good post. All the right groups."
+msgstr "Egy jó poszt. Minden megfelelő csoport."
+
+msgid "Post to multiple Facebook groups with Postika. A desktop auto poster with scheduling, multiple accounts, 33 interface languages, and clear posting logs."
+msgstr "Posztoljon több Facebook-csoportba a Postika alkalmazással. Asztali automatikus poszter ütemezéssel, több fiókkal, 33 kezelőfelületi nyelvvel és egyértelmű feladási naplókkal."
+
+msgid "Post to multiple Facebook groups without repeating the same steps. Write once, choose your groups, and post now or schedule for later."
+msgstr "Tegyen közzé több Facebook-csoportot anélkül, hogy megismételné ugyanazokat a lépéseket. Írjon egyszer, válassza ki a csoportjait, és tegye közzé most, vagy ütemezze be későbbre."
+
+msgid "Postika Facebook page-post import dialog"
+msgstr "Postika Facebook-oldal-bejegyzés importálási párbeszédpanel"
+
+msgid "Postika account selector and separate account workspaces"
+msgstr "Postika fiókválasztó és külön fiók munkaterületek"
+
+msgid "Postika composer with rich-text controls and image uploads"
+msgstr "Postika zeneszerző formázott szöveges vezérlőkkel és képfeltöltésekkel"
+
+msgid "Postika features"
+msgstr "A Postika jellemzői"
+
+msgid "Postika home"
+msgstr "Postika haza"
+
+msgid "Postika is a desktop app for Windows, macOS, and Linux. It uses an installed Chrome or Chromium browser for your Facebook sessions."
+msgstr "A Postika egy asztali alkalmazás Windowsra, macOS-re és Linuxra. Telepített Chrome vagy Chromium böngészőt használ a Facebook munkameneteihez."
+
+msgid "Postika language selector and localized interface"
+msgstr "Postika nyelvválasztó és lokalizált felület"
+
+msgid "Postika posting intervals and scheduling controls"
+msgstr "Postika feladási időközök és ütemezési vezérlők"
+
+msgid "Postika posting logs with per-group results and queue controls"
+msgstr "A Postika naplókat tesz közzé csoportonkénti eredményekkel és sorvezérlőkkel"
+
+msgid "Postika scheduling controls"
+msgstr "Postika ütemezési vezérlők"
+
+msgid "Posting intervals don’t guarantee protection from Facebook restrictions or bans."
+msgstr "A közzétételi időközök nem garantálják a Facebook-korlátozások vagy tiltások elleni védelmet."
+
+msgid "Prepare now. Schedule for later."
+msgstr "Készülj fel most. Időbeosztás későbbre."
+
+msgid "Questions"
+msgstr "Kérdések"
+
+msgid "Refresh release notes"
+msgstr "Frissítse a kiadási megjegyzéseket"
+
+msgid "Release notes"
+msgstr "Kiadási megjegyzések"
+
+msgid "Release notes are up to date."
+msgstr "A kiadási megjegyzések naprakészek."
+
+msgid "Report a problem"
+msgstr "Probléma bejelentése"
+
+msgid "Run posting queues for multiple Facebook accounts at the same time. Each account keeps its own browser session, groups, drafts, and posting settings, so you can prepare another post or check progress without interrupting the other accounts."
+msgstr "Futtasson közzétételi sorokat több Facebook-fiókhoz egyszerre. Minden fiók megőrzi a saját böngészőmunkamenetét, csoportjait, piszkozatait és közzétételi beállításait, így a többi fiók megszakítása nélkül készíthet elő egy újabb bejegyzést, vagy ellenőrizheti a folyamatot."
+
+msgid "Schedule your posts for a date and time that suits you. When that time arrives, Postika automatically starts posting to your selected groups. You don’t need to be there to press Post."
+msgstr "Ütemezze be bejegyzéseit az Ön számára megfelelő dátumra és időpontra. Amikor elérkezik ez az idő, a Postika automatikusan elkezd posztolni a kiválasztott csoportokhoz. Nem kell ott lennie, hogy megnyomja a Post gombot."
+
+msgid "Screenshot preview"
+msgstr "Képernyőkép előnézete"
+
+msgid "Search by name…"
+msgstr "Keresés név szerint…"
+
+msgid "Search themes"
+msgstr "Témák keresése"
+
+msgid "See where every post stands."
+msgstr "Nézze meg, hol áll minden poszt."
+
+msgid "Selected"
+msgstr "Kiválasztott"
+
+msgid "Set your pace. Leave room between posts."
+msgstr "Állítsa be a tempót. Hagyjon helyet a bejegyzések között."
+
+msgid "Several accounts. Posting at the same time."
+msgstr "Több fiók. Postázás egyidejűleg."
+
+msgid "Skip opening every group and pasting the same thing again. Write your post with rich text, add and reorder your images, then search and select the Facebook groups you want to share with. Your draft stays saved while you get it right."
+msgstr "Ne nyisson meg minden csoportot, és illessze be újra ugyanazt. Írja meg bejegyzését formázott szöveggel, adja hozzá és rendezze át a képeket, majd keressen és válassza ki azokat a Facebook-csoportokat, amelyekkel meg szeretné osztani. Piszkozata mentve marad, amíg helyesen kezeli."
+
+msgid "Skip to content"
+msgstr "Ugrás a tartalomhoz"
+
+msgid "Some groups require approval. Posting logs distinguish published posts, pending approval, failed, skipped, and unconfirmed submissions. Check unconfirmed results on Facebook before retrying."
+msgstr "Egyes csoportok jóváhagyást igényelnek. A közzétételi naplók megkülönböztetik a közzétett, jóváhagyásra váró, sikertelen, kihagyott és meg nem erősített beküldéseket. Az újrapróbálkozás előtt ellenőrizze a meg nem erősített eredményeket a Facebookon."
+
+msgid "System default"
+msgstr "Rendszer alapértelmezett"
+
+msgid "System default ({0})"
+msgstr "Rendszer alapértelmezett ({0})"
+
+msgid "System packages may ask for administrator authorization."
+msgstr "A rendszercsomagok rendszergazdai engedélyt kérhetnek."
+
+msgid "Unsigned installer: Windows may show a SmartScreen warning. The portable version needs no installation; account data stays in the app data folder."
+msgstr "Aláíratlan telepítő: A Windows SmartScreen figyelmeztetést jeleníthet meg. A hordozható változat nem igényel telepítést; fiókadatok az alkalmazás adatmappájában maradnak."
+
+msgid "Version"
+msgstr "Változat"
+
+msgid "Version {0} ({1})"
+msgstr "Verzió: {0} ({1})"
+
+msgid "What do I need to run Postika?"
+msgstr "Mire van szükségem a Postika futtatásához?"
+
+msgid "What is a Facebook group auto poster?"
+msgstr "Mi az a Facebook-csoportos automatikus poszter?"
+
+msgid "Windows installer"
+msgstr "Windows telepítő"
+
+msgid "Windows portable"
+msgstr "Windows hordozható"
+
+msgid "Windows, macOS & Linux"
+msgstr "Windows, macOS és Linux"
+
+msgid "Work in the language you think in."
+msgstr "Dolgozz azon a nyelven, amelyen gondolkodsz."
+
+msgid "Yes. Keep Postika open and your computer awake while a queue is scheduled or running. Queues and posting logs are not restored after quitting."
+msgstr "Igen. Tartsa nyitva a Postika alkalmazást, és tartsa ébren a számítógépét, amíg egy sor ütemezett vagy fut. A várólisták és a feladási naplók nem állnak vissza a kilépés után."
+
+msgid "Yes. Multiple accounts can run their posting queues in parallel. Each account has a separate browser session, groups, drafts, and posting settings. Switching accounts doesn’t interrupt the other queues."
+msgstr "Igen. Több fiók párhuzamosan is futtathatja feladási sorait. Minden fiókhoz külön böngésző munkamenet, csoportok, piszkozatok és közzétételi beállítások tartoznak. A fiókváltás nem szakítja meg a többi sort."
+
+msgid "Your platform"
+msgstr "Az Ön platformja"
+
+msgid "{0} shown"
+msgstr "{0} látható"
+
+msgid "{0} themes and system default"
+msgstr "{0} téma és rendszer alapértelmezett"
+
+msgid "Facebook Groups <0>Bulk Poster</0>"
+msgstr "<0>Tömeges közzététel</0> Facebook-csoportokban"
+
+msgid "All languages"
+msgstr "Összes nyelv"
+
+msgid "Language: {0}"
+msgstr "Nyelv: {0}"
+
+msgid "Languages"
+msgstr "Nyelvek"
+
+msgid "No languages found"
+msgstr "Nem található nyelv"
+
+msgid "Search languages…"
+msgstr "Nyelvek keresése…"
+
+msgid "Try a different name."
+msgstr "Próbáljon másik nevet."

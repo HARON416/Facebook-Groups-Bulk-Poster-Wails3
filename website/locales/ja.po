@@ -1,0 +1,332 @@
+# Website copy. Initial non-English translations are machine generated; review before publication.
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: ja\n"
+
+msgid "A Facebook group auto poster helps you share a prepared post across the groups you select. Postika combines a post editor, group selection, scheduling, and posting logs in one desktop app."
+msgstr "Facebook グループの自動ポスターを使用すると、準備した投稿を選択したグループ間で共有できます。 Postika は、投稿エディター、グループ選択、スケジュール設定、ログの投稿を 1 つのデスクトップ アプリに統合します。"
+
+msgid "A few things to know"
+msgstr "知っておくべきいくつかのこと"
+
+msgid "A little less busywork. A little more time."
+msgstr "忙しい仕事が少し減りました。もう少し時間。"
+
+msgid "A supported Windows, macOS, or Linux computer, an installed Chrome or Chromium browser, and your Facebook account. Platform downloads are listed on the downloads page."
+msgstr "サポートされている Windows、macOS、または Linux コンピューター、インストールされている Chrome または Chromium ブラウザー、および Facebook アカウント。プラットフォームのダウンロードは、ダウンロード ページにリストされています。"
+
+msgid "Already have a post worth sharing? Import posts from a Facebook page your signed-in account can access. Review the text and images, make your edits, and add the posts you want to your queue."
+msgstr "共有する価値のある投稿をすでにお持ちですか?サインインしているアカウントがアクセスできる Facebook ページから投稿をインポートします。テキストと画像を確認して編集し、必要な投稿をキューに追加します。"
+
+msgid "Before you start"
+msgstr "始める前に"
+
+msgid "Bring your page posts along."
+msgstr "ページの投稿も持参してください。"
+
+msgid "Browser language"
+msgstr "ブラウザ言語"
+
+msgid "Bulk Poster"
+msgstr "バルクポスター"
+
+msgid "Can multiple Facebook accounts post at the same time?"
+msgstr "複数の Facebook アカウントが同時に投稿できますか?"
+
+msgid "Check your connection and try again."
+msgstr "接続を確認して、もう一度試してください。"
+
+msgid "Choose a version for your computer. Requires Chrome or Chromium."
+msgstr "お使いのコンピュータのバージョンを選択してください。 Chrome または Chromium が必要です。"
+
+msgid "Choose from 33 interface languages, including right-to-left layouts. Menus, controls, and app-generated log messages follow your choice across windows. And with 189 themes, you can make Postika feel like your own."
+msgstr "右から左へのレイアウトを含む 33 のインターフェイス言語から選択します。メニュー、コントロール、アプリで生成されたログ メッセージは、複数のウィンドウにわたって選択に従います。 189 のテーマを使用して、Postika を自分のものにすることができます。"
+
+msgid "Choose your own minimum and maximum interval between posts to avoid posting in rapid succession and help reduce the risk of rate limits or account restrictions. Follow progress as the queue runs, and pause whenever you need to."
+msgstr "独自の投稿間隔の最小値と最大値を選択して、急速に連続して投稿することを避け、レ​​ート制限やアカウント制限のリスクを軽減します。キューの実行に合わせて進行状況を追跡し、必要に応じて一時停止します。"
+
+msgid "Close screenshot"
+msgstr "スクリーンショットを閉じる"
+
+msgid "Close themes"
+msgstr "テーマを閉じる"
+
+msgid "Color themes"
+msgstr "カラーテーマ"
+
+msgid "Color themes: {0}"
+msgstr "カラーテーマ: {0}"
+
+msgid "Coming soon"
+msgstr "近日公開"
+
+msgid "Couldn’t load this screenshot. Close it and try again."
+msgstr "このスクリーンショットを読み込めませんでした。閉じて、もう一度試してください。"
+
+msgid "Couldn’t refresh release notes. Please try again."
+msgstr "リリースノートを更新できませんでした。もう一度試してください。"
+
+msgid "Does a submission mean my post is published?"
+msgstr "送信すると、私の投稿が公開されることになりますか?"
+
+msgid "Does my computer need to stay on?"
+msgstr "コンピューターは電源を入れたままにしておく必要がありますか?"
+
+msgid "Download"
+msgstr "ダウンロード"
+
+msgid "Download Postika"
+msgstr "Postikaをダウンロード"
+
+msgid "Download Postika for Windows, macOS, and Linux. Choose your desktop Facebook group auto poster installer and find the latest release notes."
+msgstr "Windows、macOS、Linux 用の Postika をダウンロードします。デスクトップ Facebook グループ自動ポスター インストーラーを選択し、最新のリリース ノートを見つけてください。"
+
+msgid "Download Postika — Facebook Group Auto Poster"
+msgstr "Postikaをダウンロード — Facebookグループへの一括投稿ツール"
+
+msgid "Download for {0}"
+msgstr "{0} をダウンロード"
+
+msgid "Download {0}"
+msgstr "{0}をダウンロード"
+
+msgid "Downloads"
+msgstr "ダウンロード"
+
+msgid "Enlarge screenshot: Postika Facebook page-post import dialog"
+msgstr "スクリーンショットを拡大: Postika Facebook ページ - インポート後のダイアログ"
+
+msgid "Enlarge screenshot: Postika account selector and separate account workspaces"
+msgstr "スクリーンショットを拡大: Postika アカウント セレクターと個別のアカウント ワークスペース"
+
+msgid "Enlarge screenshot: Postika composer with rich-text controls and image uploads"
+msgstr "スクリーンショットを拡大: リッチテキスト コントロールと画像アップロードを備えた Postika コンポーザー"
+
+msgid "Enlarge screenshot: Postika language selector and localized interface"
+msgstr "スクリーンショットを拡大: Postika 言語セレクターとローカライズされたインターフェイス"
+
+msgid "Enlarge screenshot: Postika posting intervals and scheduling controls"
+msgstr "スクリーンショットを拡大: Postika の投稿間隔とスケジュール制御"
+
+msgid "Enlarge screenshot: Postika posting logs with per-group results and queue controls"
+msgstr "スクリーンショットを拡大: グループごとの結果とキュー制御を備えた Postika 投稿ログ"
+
+msgid "Enlarge screenshot: Postika scheduling controls"
+msgstr "スクリーンショットを拡大: Postika スケジュール コントロール"
+
+msgid "Facebook Group Auto Poster for Desktop | Postika"
+msgstr "Facebookグループへの一括投稿ツール | Postika"
+
+msgid "Facebook Groups"
+msgstr "Facebookグループ"
+
+msgid "Features"
+msgstr "特徴"
+
+msgid "Follow progress group by group. See what’s published, what’s awaiting approval, and what needs attention, including failed, skipped, and unconfirmed submissions. Pause, resume, or stop your queue from the same window."
+msgstr "グループごとに進捗状況を追跡します。公開されたもの、承認待ちのもの、失敗したもの、スキップされたもの、未確認の送信物など、注意が必要なものを確認します。同じウィンドウからキューを一時停止、再開、または停止します。"
+
+msgid "Get in touch"
+msgstr "連絡する"
+
+msgid "Intel Macs (.dmg)"
+msgstr "Intel Mac (.dmg)"
+
+msgid "Is Postika a Chrome extension?"
+msgstr "Postika は Chrome 拡張機能ですか?"
+
+msgid "Keep Postika open and your computer awake while a queue runs. Queues and posting logs aren’t restored after quitting."
+msgstr "キューの実行中は Postika を開いたままにし、コンピュータを起動したままにしてください。キューと投稿ログは終了後に復元されません。"
+
+msgid "Keep your device on and awake, with Postika open, so it can handle the posting for you."
+msgstr "Postika を開いた状態でデバイスの電源を入れ、起動したままにしておきます。これにより、Postika が投稿を処理できるようになります。"
+
+msgid "Language"
+msgstr "言語"
+
+msgid "Linux x64 (portable)"
+msgstr "Linux x64 (ポータブル)"
+
+msgid "Loading screenshot…"
+msgstr "スクリーンショットを読み込んでいます…"
+
+msgid "M-series Macs (.dmg)"
+msgstr "M シリーズ Mac (.dmg)"
+
+msgid "Main navigation"
+msgstr "メインナビゲーション"
+
+msgid "Move Postika into Applications before opening it."
+msgstr "Postika を開く前に、アプリケーションに Postika を移動します。"
+
+msgid "No themes found. Try another name."
+msgstr "テーマが見つかりませんでした。別の名前を試してください。"
+
+msgid "One good post. All the right groups."
+msgstr "良い投稿が 1 つあります。すべて正しいグループです。"
+
+msgid "Post to multiple Facebook groups with Postika. A desktop auto poster with scheduling, multiple accounts, 33 interface languages, and clear posting logs."
+msgstr "Postika を使用して複数の Facebook グループに投稿します。スケジュール機能、複数のアカウント、33 のインターフェース言語、明確な投稿ログを備えたデスクトップ自動ポスター。"
+
+msgid "Post to multiple Facebook groups without repeating the same steps. Write once, choose your groups, and post now or schedule for later."
+msgstr "同じ手順を繰り返すことなく、複数の Facebook グループに投稿できます。一度書いてグループを選択し、今すぐ投稿するか、後で投稿するようにスケジュールします。"
+
+msgid "Postika Facebook page-post import dialog"
+msgstr "Postika Facebook ページ - インポート後のダイアログ"
+
+msgid "Postika account selector and separate account workspaces"
+msgstr "Postika アカウント セレクターと個別のアカウント ワークスペース"
+
+msgid "Postika composer with rich-text controls and image uploads"
+msgstr "リッチテキストコントロールと画像アップロードを備えた Postika コンポーザー"
+
+msgid "Postika features"
+msgstr "Postikaの特徴"
+
+msgid "Postika home"
+msgstr "Postika ホーム"
+
+msgid "Postika is a desktop app for Windows, macOS, and Linux. It uses an installed Chrome or Chromium browser for your Facebook sessions."
+msgstr "Postika は、Windows、macOS、Linux 用のデスクトップ アプリです。 Facebook セッションには、インストールされた Chrome または Chromium ブラウザが使用されます。"
+
+msgid "Postika language selector and localized interface"
+msgstr "Postika 言語セレクターとローカライズされたインターフェイス"
+
+msgid "Postika posting intervals and scheduling controls"
+msgstr "Postika の投稿間隔とスケジュール制御"
+
+msgid "Postika posting logs with per-group results and queue controls"
+msgstr "グループごとの結果とキュー制御を備えた Postika 投稿ログ"
+
+msgid "Postika scheduling controls"
+msgstr "Postika スケジュール制御"
+
+msgid "Posting intervals don’t guarantee protection from Facebook restrictions or bans."
+msgstr "投稿間隔は Facebook の制限や禁止から保護されることを保証するものではありません。"
+
+msgid "Prepare now. Schedule for later."
+msgstr "今すぐ準備してください。後でスケジュールを立てます。"
+
+msgid "Questions"
+msgstr "質問"
+
+msgid "Refresh release notes"
+msgstr "リリースノートを更新する"
+
+msgid "Release notes"
+msgstr "リリースノート"
+
+msgid "Release notes are up to date."
+msgstr "リリースノートは最新です。"
+
+msgid "Report a problem"
+msgstr "問題を報告する"
+
+msgid "Run posting queues for multiple Facebook accounts at the same time. Each account keeps its own browser session, groups, drafts, and posting settings, so you can prepare another post or check progress without interrupting the other accounts."
+msgstr "複数の Facebook アカウントの投稿キューを同時に実行します。各アカウントは独自のブラウザ セッション、グループ、下書き、投稿設定を保持するため、他のアカウントを中断することなく、別の投稿を準備したり、進行状況を確認したりできます。"
+
+msgid "Schedule your posts for a date and time that suits you. When that time arrives, Postika automatically starts posting to your selected groups. You don’t need to be there to press Post."
+msgstr "都合の良い日時に投稿をスケジュールします。その時間が来ると、Postika は選択したグループへの投稿を自動的に開始します。 [投稿] を押すためにそこにいる必要はありません。"
+
+msgid "Screenshot preview"
+msgstr "スクリーンショットのプレビュー"
+
+msgid "Search by name…"
+msgstr "名前で検索…"
+
+msgid "Search themes"
+msgstr "テーマを検索する"
+
+msgid "See where every post stands."
+msgstr "すべての投稿がどこにあるのかを確認します。"
+
+msgid "Selected"
+msgstr "選択済み"
+
+msgid "Set your pace. Leave room between posts."
+msgstr "ペースを決めましょう。ポストの間にスペースを空けてください。"
+
+msgid "Several accounts. Posting at the same time."
+msgstr "複数のアカウント。同時投稿です。"
+
+msgid "Skip opening every group and pasting the same thing again. Write your post with rich text, add and reorder your images, then search and select the Facebook groups you want to share with. Your draft stays saved while you get it right."
+msgstr "すべてのグループを開いて同じものを再度貼り付ける必要はありません。リッチ テキストで投稿を作成し、画像を追加して並べ替えてから、共有したい Facebook グループを検索して選択します。正しく完成している間、下書きは保存されたままになります。"
+
+msgid "Skip to content"
+msgstr "コンテンツにスキップ"
+
+msgid "Some groups require approval. Posting logs distinguish published posts, pending approval, failed, skipped, and unconfirmed submissions. Check unconfirmed results on Facebook before retrying."
+msgstr "一部のグループには承認が必要です。投稿ログは、公開された投稿、承認待ち、失敗した投稿、スキップされた投稿、および未確認の投稿を区別します。再試行する前に、未確認の結果を Facebook で確認してください。"
+
+msgid "System default"
+msgstr "システムのデフォルト"
+
+msgid "System default ({0})"
+msgstr "システムのデフォルト ({0})"
+
+msgid "System packages may ask for administrator authorization."
+msgstr "システム パッケージでは、管理者の承認が必要になる場合があります。"
+
+msgid "Unsigned installer: Windows may show a SmartScreen warning. The portable version needs no installation; account data stays in the app data folder."
+msgstr "署名のないインストーラー: Windows で SmartScreen 警告が表示される場合があります。ポータブル版はインストールの必要がありません。アカウントデータはアプリデータフォルダーに残ります。"
+
+msgid "Version"
+msgstr "バージョン"
+
+msgid "Version {0} ({1})"
+msgstr "バージョン {0} ({1})"
+
+msgid "What do I need to run Postika?"
+msgstr "Postika を実行するには何が必要ですか?"
+
+msgid "What is a Facebook group auto poster?"
+msgstr "Facebookグループ自動ポスターとは何ですか?"
+
+msgid "Windows installer"
+msgstr "Windows インストーラー"
+
+msgid "Windows portable"
+msgstr "Windowsポータブル"
+
+msgid "Windows, macOS & Linux"
+msgstr "Windows、macOS、Linux"
+
+msgid "Work in the language you think in."
+msgstr "自分が考えた言語で作業しましょう。"
+
+msgid "Yes. Keep Postika open and your computer awake while a queue is scheduled or running. Queues and posting logs are not restored after quitting."
+msgstr "はい。キューがスケジュールされている間、または実行されている間は、Postika を開いたままにし、コンピュータを起動したままにしてください。終了後、キューと投稿ログは復元されません。"
+
+msgid "Yes. Multiple accounts can run their posting queues in parallel. Each account has a separate browser session, groups, drafts, and posting settings. Switching accounts doesn’t interrupt the other queues."
+msgstr "はい。複数のアカウントが投稿キューを並行して実行できます。各アカウントには、個別のブラウザ セッション、グループ、下書き、および投稿設定があります。アカウントを切り替えても、他のキューは中断されません。"
+
+msgid "Your platform"
+msgstr "あなたのプラットフォーム"
+
+msgid "{0} shown"
+msgstr "{0} を表示"
+
+msgid "{0} themes and system default"
+msgstr "{0} 個のテーマとシステムのデフォルト"
+
+msgid "Facebook Groups <0>Bulk Poster</0>"
+msgstr "Facebookグループへの<0>一括投稿ツール</0>"
+
+msgid "All languages"
+msgstr "すべての言語"
+
+msgid "Language: {0}"
+msgstr "言語: {0}"
+
+msgid "Languages"
+msgstr "言語"
+
+msgid "No languages found"
+msgstr "言語が見つかりません"
+
+msgid "Search languages…"
+msgstr "言語を検索…"
+
+msgid "Try a different name."
+msgstr "別の名前をお試しください。"

@@ -1,0 +1,332 @@
+# Website copy. Initial non-English translations are machine generated; review before publication.
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: mr\n"
+
+msgid "A Facebook group auto poster helps you share a prepared post across the groups you select. Postika combines a post editor, group selection, scheduling, and posting logs in one desktop app."
+msgstr "फेसबुक ग्रुप ऑटो पोस्टर तुम्हाला तुम्ही निवडलेल्या ग्रुपवर तयार केलेली पोस्ट शेअर करण्यात मदत करते. Postika एका डेस्कटॉप ॲपमध्ये पोस्ट संपादक, गट निवड, शेड्यूलिंग आणि पोस्टिंग लॉग एकत्र करते."
+
+msgid "A few things to know"
+msgstr "जाणून घेण्यासारख्या काही गोष्टी"
+
+msgid "A little less busywork. A little more time."
+msgstr "कामात थोडी कमी. अजून थोडा वेळ."
+
+msgid "A supported Windows, macOS, or Linux computer, an installed Chrome or Chromium browser, and your Facebook account. Platform downloads are listed on the downloads page."
+msgstr "समर्थित Windows, macOS किंवा Linux संगणक, स्थापित केलेले Chrome किंवा Chromium ब्राउझर आणि तुमचे Facebook खाते. प्लॅटफॉर्म डाउनलोड डाउनलोड पृष्ठावर सूचीबद्ध आहेत."
+
+msgid "Already have a post worth sharing? Import posts from a Facebook page your signed-in account can access. Review the text and images, make your edits, and add the posts you want to your queue."
+msgstr "आधीपासून शेअर करण्यायोग्य पोस्ट आहे? तुमचे साइन इन केलेले खाते प्रवेश करू शकतील अशा Facebook पृष्ठावरून पोस्ट आयात करा. मजकूर आणि प्रतिमांचे पुनरावलोकन करा, तुमची संपादने करा आणि तुम्हाला तुमच्या रांगेत हवी असलेली पोस्ट जोडा."
+
+msgid "Before you start"
+msgstr "आपण सुरू करण्यापूर्वी"
+
+msgid "Bring your page posts along."
+msgstr "तुमच्या पेजच्या पोस्ट सोबत आणा."
+
+msgid "Browser language"
+msgstr "ब्राउझर भाषा"
+
+msgid "Bulk Poster"
+msgstr "मोठ्या प्रमाणात पोस्टर"
+
+msgid "Can multiple Facebook accounts post at the same time?"
+msgstr "एकाच वेळी अनेक फेसबुक खाती पोस्ट करू शकतात?"
+
+msgid "Check your connection and try again."
+msgstr "तुमचे कनेक्शन तपासा आणि पुन्हा प्रयत्न करा."
+
+msgid "Choose a version for your computer. Requires Chrome or Chromium."
+msgstr "तुमच्या संगणकासाठी आवृत्ती निवडा. Chrome किंवा Chromium आवश्यक आहे."
+
+msgid "Choose from 33 interface languages, including right-to-left layouts. Menus, controls, and app-generated log messages follow your choice across windows. And with 189 themes, you can make Postika feel like your own."
+msgstr "उजवीकडून डावीकडे मांडणीसह 33 इंटरफेस भाषांमधून निवडा. मेनू, नियंत्रणे आणि ॲप-व्युत्पन्न लॉग संदेश संपूर्ण विंडोमध्ये तुमच्या निवडीचे अनुसरण करतात. आणि 189 थीम्ससह, तुम्ही Postikaला तुमच्या स्वतःच्या सारखे वाटू शकता."
+
+msgid "Choose your own minimum and maximum interval between posts to avoid posting in rapid succession and help reduce the risk of rate limits or account restrictions. Follow progress as the queue runs, and pause whenever you need to."
+msgstr "वेगाने पोस्ट करणे टाळण्यासाठी आणि दर मर्यादा किंवा खाते निर्बंधांचा धोका कमी करण्यात मदत करण्यासाठी पोस्ट दरम्यान तुमचे स्वतःचे किमान आणि कमाल अंतर निवडा. रांग चालू असताना प्रगतीचे अनुसरण करा आणि जेव्हा तुम्हाला आवश्यक असेल तेव्हा विराम द्या."
+
+msgid "Close screenshot"
+msgstr "स्क्रीनशॉट बंद करा"
+
+msgid "Close themes"
+msgstr "थीम बंद करा"
+
+msgid "Color themes"
+msgstr "रंगीत थीम"
+
+msgid "Color themes: {0}"
+msgstr "रंग थीम: {0}"
+
+msgid "Coming soon"
+msgstr "लवकरच येत आहे"
+
+msgid "Couldn’t load this screenshot. Close it and try again."
+msgstr "हा स्क्रीनशॉट लोड करू शकलो नाही. ते बंद करा आणि पुन्हा प्रयत्न करा."
+
+msgid "Couldn’t refresh release notes. Please try again."
+msgstr "रिलीझ नोट्स रिफ्रेश करू शकलो नाही. कृपया पुन्हा प्रयत्न करा."
+
+msgid "Does a submission mean my post is published?"
+msgstr "सबमिशन म्हणजे माझी पोस्ट प्रकाशित झाली आहे का?"
+
+msgid "Does my computer need to stay on?"
+msgstr "माझा संगणक चालू ठेवण्याची गरज आहे का?"
+
+msgid "Download"
+msgstr "डाउनलोड करा"
+
+msgid "Download Postika"
+msgstr "Postika डाउनलोड करा"
+
+msgid "Download Postika for Windows, macOS, and Linux. Choose your desktop Facebook group auto poster installer and find the latest release notes."
+msgstr "Windows, macOS आणि Linux साठी Postika डाउनलोड करा. तुमचा डेस्कटॉप फेसबुक ग्रुप ऑटो पोस्टर इंस्टॉलर निवडा आणि नवीनतम रिलीझ नोट्स शोधा."
+
+msgid "Download Postika — Facebook Group Auto Poster"
+msgstr "Postika डाउनलोड करा — Facebook ग्रुपमध्ये एकाच वेळी पोस्ट करा"
+
+msgid "Download for {0}"
+msgstr "{0} साठी डाउनलोड करा"
+
+msgid "Download {0}"
+msgstr "डाउनलोड करा {0}"
+
+msgid "Downloads"
+msgstr "डाउनलोड"
+
+msgid "Enlarge screenshot: Postika Facebook page-post import dialog"
+msgstr "स्क्रीनशॉट मोठा करा: Postika फेसबुक पेज-पोस्ट इंपोर्ट डायलॉग"
+
+msgid "Enlarge screenshot: Postika account selector and separate account workspaces"
+msgstr "स्क्रीनशॉट मोठा करा: Postika खाते निवडक आणि स्वतंत्र खाते कार्यस्थान"
+
+msgid "Enlarge screenshot: Postika composer with rich-text controls and image uploads"
+msgstr "स्क्रीनशॉट मोठा करा: रिच-टेक्स्ट कंट्रोल्स आणि इमेज अपलोडसह Postika संगीतकार"
+
+msgid "Enlarge screenshot: Postika language selector and localized interface"
+msgstr "स्क्रीनशॉट मोठा करा: Postika भाषा निवडक आणि स्थानिकीकृत इंटरफेस"
+
+msgid "Enlarge screenshot: Postika posting intervals and scheduling controls"
+msgstr "स्क्रीनशॉट मोठा करा: Postika पोस्टिंग अंतराल आणि शेड्यूलिंग नियंत्रणे"
+
+msgid "Enlarge screenshot: Postika posting logs with per-group results and queue controls"
+msgstr "स्क्रीनशॉट मोठा करा: प्रति-गट परिणाम आणि रांग नियंत्रणांसह Postika पोस्टिंग लॉग"
+
+msgid "Enlarge screenshot: Postika scheduling controls"
+msgstr "स्क्रीनशॉट मोठा करा: Postika शेड्यूलिंग नियंत्रणे"
+
+msgid "Facebook Group Auto Poster for Desktop | Postika"
+msgstr "Facebook ग्रुपमध्ये एकाच वेळी पोस्ट करा | Postika"
+
+msgid "Facebook Groups"
+msgstr "फेसबुक गट"
+
+msgid "Features"
+msgstr "वैशिष्ट्ये"
+
+msgid "Follow progress group by group. See what’s published, what’s awaiting approval, and what needs attention, including failed, skipped, and unconfirmed submissions. Pause, resume, or stop your queue from the same window."
+msgstr "गटानुसार प्रगती गटाचे अनुसरण करा. अयशस्वी, वगळलेले आणि पुष्टी न झालेल्या सबमिशनसह काय प्रकाशित झाले आहे, काय मंजुरीची प्रतीक्षा आहे आणि कशाकडे लक्ष देणे आवश्यक आहे ते पहा. त्याच विंडोमधून तुमची रांग विराम द्या, पुन्हा सुरू करा किंवा थांबवा."
+
+msgid "Get in touch"
+msgstr "संपर्कात रहा"
+
+msgid "Intel Macs (.dmg)"
+msgstr "Intel Macs (.dmg)"
+
+msgid "Is Postika a Chrome extension?"
+msgstr "Postika हे Chrome विस्तार आहे का?"
+
+msgid "Keep Postika open and your computer awake while a queue runs. Queues and posting logs aren’t restored after quitting."
+msgstr "Postika उघडा ठेवा आणि रांग चालू असताना तुमचा संगणक जागृत ठेवा. रांगा आणि पोस्टिंग लॉग सोडल्यानंतर पुनर्संचयित केले जात नाहीत."
+
+msgid "Keep your device on and awake, with Postika open, so it can handle the posting for you."
+msgstr "तुमचे डिव्हाइस चालू आणि जागृत ठेवा, Postika उघडे ठेवा, जेणेकरून ते तुमच्यासाठी पोस्टिंग हाताळू शकेल."
+
+msgid "Language"
+msgstr "भाषा"
+
+msgid "Linux x64 (portable)"
+msgstr "लिनक्स x64 (पोर्टेबल)"
+
+msgid "Loading screenshot…"
+msgstr "स्क्रीनशॉट लोड करत आहे..."
+
+msgid "M-series Macs (.dmg)"
+msgstr "M-मालिका Macs (.dmg)"
+
+msgid "Main navigation"
+msgstr "मुख्य नेव्हिगेशन"
+
+msgid "Move Postika into Applications before opening it."
+msgstr "Postika उघडण्यापूर्वी ऍप्लिकेशनमध्ये हलवा."
+
+msgid "No themes found. Try another name."
+msgstr "कोणत्याही थीम आढळल्या नाहीत. दुसरे नाव वापरून पहा."
+
+msgid "One good post. All the right groups."
+msgstr "एक चांगली पोस्ट. सर्व योग्य गट."
+
+msgid "Post to multiple Facebook groups with Postika. A desktop auto poster with scheduling, multiple accounts, 33 interface languages, and clear posting logs."
+msgstr "Postikaसह अनेक फेसबुक ग्रुपवर पोस्ट करा. शेड्युलिंग, एकाधिक खाती, 33 इंटरफेस भाषा आणि स्पष्ट पोस्टिंग लॉगसह डेस्कटॉप ऑटो पोस्टर."
+
+msgid "Post to multiple Facebook groups without repeating the same steps. Write once, choose your groups, and post now or schedule for later."
+msgstr "समान चरणांची पुनरावृत्ती न करता एकाधिक Facebook गटांवर पोस्ट करा. एकदा लिहा, तुमचे गट निवडा आणि आत्ता पोस्ट करा किंवा नंतरसाठी शेड्यूल करा."
+
+msgid "Postika Facebook page-post import dialog"
+msgstr "Postika फेसबुक पेज-पोस्ट इंपोर्ट डायलॉग"
+
+msgid "Postika account selector and separate account workspaces"
+msgstr "Postika खाते निवडक आणि स्वतंत्र खाते कार्यस्थान"
+
+msgid "Postika composer with rich-text controls and image uploads"
+msgstr "रिच-टेक्स्ट कंट्रोल्स आणि इमेज अपलोडसह Postika संगीतकार"
+
+msgid "Postika features"
+msgstr "Postika वैशिष्ट्ये"
+
+msgid "Postika home"
+msgstr "Postika घरी"
+
+msgid "Postika is a desktop app for Windows, macOS, and Linux. It uses an installed Chrome or Chromium browser for your Facebook sessions."
+msgstr "Postika हे Windows, macOS आणि Linux साठी डेस्कटॉप ॲप आहे. हे तुमच्या Facebook सत्रांसाठी इंस्टॉल केलेले Chrome किंवा Chromium ब्राउझर वापरते."
+
+msgid "Postika language selector and localized interface"
+msgstr "Postika भाषा निवडक आणि स्थानिकीकृत इंटरफेस"
+
+msgid "Postika posting intervals and scheduling controls"
+msgstr "Postika पोस्टिंग अंतराल आणि शेड्यूलिंग नियंत्रणे"
+
+msgid "Postika posting logs with per-group results and queue controls"
+msgstr "प्रति-समूह परिणाम आणि रांग नियंत्रणांसह Postika पोस्टिंग लॉग"
+
+msgid "Postika scheduling controls"
+msgstr "Postika शेड्यूलिंग नियंत्रणे"
+
+msgid "Posting intervals don’t guarantee protection from Facebook restrictions or bans."
+msgstr "पोस्टिंग अंतराल फेसबुक प्रतिबंध किंवा बंदीपासून संरक्षणाची हमी देत ​​नाही."
+
+msgid "Prepare now. Schedule for later."
+msgstr "आता तयारी करा. नंतरचे वेळापत्रक."
+
+msgid "Questions"
+msgstr "प्रश्न"
+
+msgid "Refresh release notes"
+msgstr "रिलीझ नोट्स रिफ्रेश करा"
+
+msgid "Release notes"
+msgstr "रिलीझ नोट्स"
+
+msgid "Release notes are up to date."
+msgstr "प्रकाशन नोट्स अद्ययावत आहेत."
+
+msgid "Report a problem"
+msgstr "समस्या कळवा"
+
+msgid "Run posting queues for multiple Facebook accounts at the same time. Each account keeps its own browser session, groups, drafts, and posting settings, so you can prepare another post or check progress without interrupting the other accounts."
+msgstr "एकाच वेळी एकाधिक Facebook खात्यांसाठी पोस्टिंग रांग चालवा. प्रत्येक खाते स्वतःचे ब्राउझर सत्र, गट, मसुदे आणि पोस्टिंग सेटिंग्ज ठेवते, जेणेकरून तुम्ही इतर खात्यांमध्ये व्यत्यय न आणता दुसरी पोस्ट तयार करू शकता किंवा प्रगती तपासू शकता."
+
+msgid "Schedule your posts for a date and time that suits you. When that time arrives, Postika automatically starts posting to your selected groups. You don’t need to be there to press Post."
+msgstr "तुमच्या पोस्टला तुमच्या अनुकूल तारीख आणि वेळेसाठी शेड्यूल करा. ती वेळ आल्यावर, Postika आपोआप तुमच्या निवडलेल्या गटांमध्ये पोस्ट करणे सुरू करते. पोस्ट दाबण्यासाठी तुम्हाला तिथे असण्याची गरज नाही."
+
+msgid "Screenshot preview"
+msgstr "स्क्रीनशॉट पूर्वावलोकन"
+
+msgid "Search by name…"
+msgstr "नावाने शोधा…"
+
+msgid "Search themes"
+msgstr "थीम शोधा"
+
+msgid "See where every post stands."
+msgstr "प्रत्येक पोस्ट कुठे उभी आहे ते पहा."
+
+msgid "Selected"
+msgstr "निवडले"
+
+msgid "Set your pace. Leave room between posts."
+msgstr "तुमचा वेग सेट करा. पोस्ट दरम्यान जागा सोडा."
+
+msgid "Several accounts. Posting at the same time."
+msgstr "अनेक खाती. त्याच वेळी पोस्टिंग."
+
+msgid "Skip opening every group and pasting the same thing again. Write your post with rich text, add and reorder your images, then search and select the Facebook groups you want to share with. Your draft stays saved while you get it right."
+msgstr "प्रत्येक गट उघडणे वगळा आणि तीच गोष्ट पुन्हा पेस्ट करा. तुमची पोस्ट समृद्ध मजकुरासह लिहा, तुमच्या प्रतिमा जोडा आणि पुनर्क्रमित करा, त्यानंतर तुम्हाला शेअर करायचे असलेले Facebook गट शोधा आणि निवडा. तुमचा मसुदा तुम्हाला बरोबर मिळेपर्यंत जतन केला जातो."
+
+msgid "Skip to content"
+msgstr "सामग्रीवर जा"
+
+msgid "Some groups require approval. Posting logs distinguish published posts, pending approval, failed, skipped, and unconfirmed submissions. Check unconfirmed results on Facebook before retrying."
+msgstr "काही गटांना मान्यता आवश्यक आहे. पोस्टिंग लॉग प्रकाशित पोस्ट, प्रलंबित मंजूरी, अयशस्वी, वगळलेले आणि पुष्टी न केलेले सबमिशन वेगळे करतात. पुन्हा प्रयत्न करण्यापूर्वी Facebook वर पुष्टी न झालेले परिणाम तपासा."
+
+msgid "System default"
+msgstr "सिस्टम डीफॉल्ट"
+
+msgid "System default ({0})"
+msgstr "सिस्टम डीफॉल्ट ({0})"
+
+msgid "System packages may ask for administrator authorization."
+msgstr "सिस्टम पॅकेजेस प्रशासकाच्या अधिकृततेसाठी विचारू शकतात."
+
+msgid "Unsigned installer: Windows may show a SmartScreen warning. The portable version needs no installation; account data stays in the app data folder."
+msgstr "स्वाक्षरी नसलेले इंस्टॉलर: विंडोज स्मार्टस्क्रीन चेतावणी दर्शवू शकते. पोर्टेबल आवृत्तीला कोणत्याही स्थापनेची आवश्यकता नाही; खाते डेटा ॲप डेटा फोल्डरमध्ये राहतो."
+
+msgid "Version"
+msgstr "आवृत्ती"
+
+msgid "Version {0} ({1})"
+msgstr "आवृत्ती {0} ({1})"
+
+msgid "What do I need to run Postika?"
+msgstr "Postika चालवण्यासाठी मला काय आवश्यक आहे?"
+
+msgid "What is a Facebook group auto poster?"
+msgstr "फेसबुक ग्रुप ऑटो पोस्टर म्हणजे काय?"
+
+msgid "Windows installer"
+msgstr "विंडोज इंस्टॉलर"
+
+msgid "Windows portable"
+msgstr "विंडोज पोर्टेबल"
+
+msgid "Windows, macOS & Linux"
+msgstr "Windows, macOS आणि Linux"
+
+msgid "Work in the language you think in."
+msgstr "तुम्हाला वाटेल त्या भाषेत काम करा."
+
+msgid "Yes. Keep Postika open and your computer awake while a queue is scheduled or running. Queues and posting logs are not restored after quitting."
+msgstr "होय. Postika उघडा ठेवा आणि रांग शेड्यूल केलेली किंवा चालू असताना तुमचा संगणक जागृत ठेवा. रांगा आणि पोस्टिंग लॉग सोडल्यानंतर पुनर्संचयित केले जात नाहीत."
+
+msgid "Yes. Multiple accounts can run their posting queues in parallel. Each account has a separate browser session, groups, drafts, and posting settings. Switching accounts doesn’t interrupt the other queues."
+msgstr "होय. एकाधिक खाती त्यांच्या पोस्टिंग रांगा समांतर चालवू शकतात. प्रत्येक खात्यामध्ये स्वतंत्र ब्राउझर सत्र, गट, मसुदे आणि पोस्टिंग सेटिंग्ज असतात. खाती स्विच केल्याने इतर रांगांमध्ये व्यत्यय येत नाही."
+
+msgid "Your platform"
+msgstr "आपले व्यासपीठ"
+
+msgid "{0} shown"
+msgstr "{0} दाखवले"
+
+msgid "{0} themes and system default"
+msgstr "{0} थीम आणि सिस्टम डीफॉल्ट"
+
+msgid "Facebook Groups <0>Bulk Poster</0>"
+msgstr "Facebook ग्रुपमध्ये <0>एकाच वेळी पोस्ट करा</0>"
+
+msgid "All languages"
+msgstr "सर्व भाषा"
+
+msgid "Language: {0}"
+msgstr "भाषा: {0}"
+
+msgid "Languages"
+msgstr "भाषा"
+
+msgid "No languages found"
+msgstr "कोणतीही भाषा सापडली नाही"
+
+msgid "Search languages…"
+msgstr "भाषा शोधा…"
+
+msgid "Try a different name."
+msgstr "दुसरे नाव वापरून पहा."

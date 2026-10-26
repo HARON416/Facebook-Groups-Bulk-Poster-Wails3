@@ -1,0 +1,332 @@
+# Website copy. Initial non-English translations are machine generated; review before publication.
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: sw\n"
+
+msgid "A Facebook group auto poster helps you share a prepared post across the groups you select. Postika combines a post editor, group selection, scheduling, and posting logs in one desktop app."
+msgstr "Bango otomatiki la kikundi cha Facebook hukusaidia kushiriki chapisho lililotayarishwa kwenye vikundi unavyochagua. Postika inachanganya kihariri cha chapisho, uteuzi wa kikundi, kuratibu na kuchapisha kumbukumbu katika programu moja ya eneo-kazi."
+
+msgid "A few things to know"
+msgstr "Mambo machache ya kujua"
+
+msgid "A little less busywork. A little more time."
+msgstr "Kazi kidogo kidogo. Muda kidogo zaidi."
+
+msgid "A supported Windows, macOS, or Linux computer, an installed Chrome or Chromium browser, and your Facebook account. Platform downloads are listed on the downloads page."
+msgstr "Kompyuta inayotumika ya Windows, macOS, au Linux, kivinjari cha Chrome au Chromium kilichosakinishwa, na akaunti yako ya Facebook. Vipakuliwa vya jukwaa vimeorodheshwa kwenye ukurasa wa vipakuliwa."
+
+msgid "Already have a post worth sharing? Import posts from a Facebook page your signed-in account can access. Review the text and images, make your edits, and add the posts you want to your queue."
+msgstr "Je, tayari una chapisho linalostahili kushirikiwa? Ingiza machapisho kutoka kwa ukurasa wa Facebook akaunti yako uliyoingia inaweza kufikia. Kagua maandishi na picha, fanya mabadiliko yako, na uongeze machapisho unayotaka kwenye foleni yako."
+
+msgid "Before you start"
+msgstr "Kabla ya kuanza"
+
+msgid "Bring your page posts along."
+msgstr "Lete machapisho ya ukurasa wako."
+
+msgid "Browser language"
+msgstr "Lugha ya kivinjari"
+
+msgid "Bulk Poster"
+msgstr "Bango Wingi"
+
+msgid "Can multiple Facebook accounts post at the same time?"
+msgstr "Akaunti nyingi za Facebook zinaweza kuchapisha kwa wakati mmoja?"
+
+msgid "Check your connection and try again."
+msgstr "Angalia muunganisho wako na ujaribu tena."
+
+msgid "Choose a version for your computer. Requires Chrome or Chromium."
+msgstr "Chagua toleo la kompyuta yako. Inahitaji Chrome au Chromium."
+
+msgid "Choose from 33 interface languages, including right-to-left layouts. Menus, controls, and app-generated log messages follow your choice across windows. And with 189 themes, you can make Postika feel like your own."
+msgstr "Chagua kutoka lugha 33 za kiolesura, ikijumuisha miundo kutoka kulia kwenda kushoto. Menyu, vidhibiti na ujumbe wa kumbukumbu unaozalishwa na programu hufuata chaguo lako katika madirisha yote. Na kwa mandhari 189, unaweza kuifanya Postika ijisikie kama yako."
+
+msgid "Choose your own minimum and maximum interval between posts to avoid posting in rapid succession and help reduce the risk of rate limits or account restrictions. Follow progress as the queue runs, and pause whenever you need to."
+msgstr "Chagua muda wako wa chini na wa juu zaidi kati ya machapisho ili kuepuka kuchapisha kwa mfululizo wa haraka na usaidie kupunguza hatari ya vikomo vya viwango au vikwazo vya akaunti. Fuata maendeleo wakati foleni inaendelea, na usimame wakati wowote unapohitaji."
+
+msgid "Close screenshot"
+msgstr "Funga picha ya skrini"
+
+msgid "Close themes"
+msgstr "Funga mandhari"
+
+msgid "Color themes"
+msgstr "Mandhari ya rangi"
+
+msgid "Color themes: {0}"
+msgstr "Mandhari ya rangi: {0}"
+
+msgid "Coming soon"
+msgstr "Inakuja hivi karibuni"
+
+msgid "Couldn’t load this screenshot. Close it and try again."
+msgstr "Haikuweza kupakia picha hii ya skrini. Ifunge na ujaribu tena."
+
+msgid "Couldn’t refresh release notes. Please try again."
+msgstr "Imeshindwa kuonyesha upya madokezo kuhusu toleo. Tafadhali jaribu tena."
+
+msgid "Does a submission mean my post is published?"
+msgstr "Je, uwasilishaji unamaanisha kuwa chapisho langu limechapishwa?"
+
+msgid "Does my computer need to stay on?"
+msgstr "Je, kompyuta yangu inahitaji kusalia?"
+
+msgid "Download"
+msgstr "Pakua"
+
+msgid "Download Postika"
+msgstr "Pakua Postika"
+
+msgid "Download Postika for Windows, macOS, and Linux. Choose your desktop Facebook group auto poster installer and find the latest release notes."
+msgstr "Pakua Postika kwa Windows, macOS, na Linux. Chagua kisakinishi cha bango kiotomatiki cha kikundi chako cha Facebook na utafute vidokezo vya toleo jipya zaidi."
+
+msgid "Download Postika — Facebook Group Auto Poster"
+msgstr "Pakua Postika — Chapisha kwa pamoja katika vikundi vya Facebook"
+
+msgid "Download for {0}"
+msgstr "Pakua kwa {0}"
+
+msgid "Download {0}"
+msgstr "Pakua {0}"
+
+msgid "Downloads"
+msgstr "Vipakuliwa"
+
+msgid "Enlarge screenshot: Postika Facebook page-post import dialog"
+msgstr "Panua picha ya skrini: Kidirisha cha kuingiza ukurasa wa chapisho la Postika Facebook"
+
+msgid "Enlarge screenshot: Postika account selector and separate account workspaces"
+msgstr "Panua picha ya skrini: Kiteuzi cha akaunti ya Postika na nafasi za kazi za akaunti tofauti"
+
+msgid "Enlarge screenshot: Postika composer with rich-text controls and image uploads"
+msgstr "Panua picha ya skrini: Mtunzi wa Postika mwenye vidhibiti vya maandishi mengi na upakiaji wa picha"
+
+msgid "Enlarge screenshot: Postika language selector and localized interface"
+msgstr "Panua picha ya skrini: Kiteuzi cha lugha cha Postika na kiolesura kilichojanibishwa"
+
+msgid "Enlarge screenshot: Postika posting intervals and scheduling controls"
+msgstr "Panua picha ya skrini: Vipindi vya uchapishaji wa Postika na vidhibiti vya kuratibu"
+
+msgid "Enlarge screenshot: Postika posting logs with per-group results and queue controls"
+msgstr "Panua picha ya skrini: Postika inachapisha kumbukumbu zenye matokeo ya kila kikundi na vidhibiti vya foleni"
+
+msgid "Enlarge screenshot: Postika scheduling controls"
+msgstr "Panua picha ya skrini: Vidhibiti vya kuratibu vya Postika"
+
+msgid "Facebook Group Auto Poster for Desktop | Postika"
+msgstr "Chapisha kwa pamoja katika vikundi vya Facebook | Postika"
+
+msgid "Facebook Groups"
+msgstr "Vikundi vya Facebook"
+
+msgid "Features"
+msgstr "Vipengele"
+
+msgid "Follow progress group by group. See what’s published, what’s awaiting approval, and what needs attention, including failed, skipped, and unconfirmed submissions. Pause, resume, or stop your queue from the same window."
+msgstr "Fuata maendeleo ya kikundi baada ya kikundi. Angalia kilichochapishwa, kinachosubiri kuidhinishwa na kinachohitaji kuzingatiwa, ikijumuisha mawasilisho ambayo hayajafaulu, yaliyorukwa na ambayo hayajathibitishwa. Sitisha, endelea, au simamisha foleni yako kutoka kwa dirisha moja."
+
+msgid "Get in touch"
+msgstr "Wasiliana"
+
+msgid "Intel Macs (.dmg)"
+msgstr "Intel Mac (.dmg)"
+
+msgid "Is Postika a Chrome extension?"
+msgstr "Je, Postika ni kiendelezi cha Chrome?"
+
+msgid "Keep Postika open and your computer awake while a queue runs. Queues and posting logs aren’t restored after quitting."
+msgstr "Weka Postika wazi na kompyuta yako ikiwa macho wakati foleni inaendelea. Foleni na kumbukumbu za uchapishaji hazirejeshwe baada ya kuacha."
+
+msgid "Keep your device on and awake, with Postika open, so it can handle the posting for you."
+msgstr "Washa kifaa chako na kikiwa macho, Postika ikiwa wazi, ili iweze kushughulikia uchapishaji kwa ajili yako."
+
+msgid "Language"
+msgstr "Lugha"
+
+msgid "Linux x64 (portable)"
+msgstr "Linux x64 (inabebeka)"
+
+msgid "Loading screenshot…"
+msgstr "Inapakia picha ya skrini..."
+
+msgid "M-series Macs (.dmg)"
+msgstr "Mac za mfululizo wa M (.dmg)"
+
+msgid "Main navigation"
+msgstr "Urambazaji mkuu"
+
+msgid "Move Postika into Applications before opening it."
+msgstr "Hamisha Postika kwenye Programu kabla ya kuifungua."
+
+msgid "No themes found. Try another name."
+msgstr "Hakuna mandhari yaliyopatikana. Jaribu jina lingine."
+
+msgid "One good post. All the right groups."
+msgstr "Chapisho moja nzuri. Makundi yote sahihi."
+
+msgid "Post to multiple Facebook groups with Postika. A desktop auto poster with scheduling, multiple accounts, 33 interface languages, and clear posting logs."
+msgstr "Chapisha kwa vikundi vingi vya Facebook ukitumia Postika. Bango la kiotomatiki la eneo-kazi lenye kuratibu, akaunti nyingi, lugha 33 za kiolesura, na kumbukumbu wazi za uchapishaji."
+
+msgid "Post to multiple Facebook groups without repeating the same steps. Write once, choose your groups, and post now or schedule for later."
+msgstr "Chapisha kwa vikundi vingi vya Facebook bila kurudia hatua sawa. Andika mara moja, chagua vikundi vyako, na uchapishe sasa au uratibishe baadaye."
+
+msgid "Postika Facebook page-post import dialog"
+msgstr "Kidirisha cha kuingiza ukurasa wa postika kwenye Facebook"
+
+msgid "Postika account selector and separate account workspaces"
+msgstr "Kiteuzi cha akaunti ya Postika na nafasi za kazi za akaunti tofauti"
+
+msgid "Postika composer with rich-text controls and image uploads"
+msgstr "Mtunzi wa Postika aliye na vidhibiti vya maandishi mengi na upakiaji wa picha"
+
+msgid "Postika features"
+msgstr "Vipengele vya Postika"
+
+msgid "Postika home"
+msgstr "Postika nyumbani"
+
+msgid "Postika is a desktop app for Windows, macOS, and Linux. It uses an installed Chrome or Chromium browser for your Facebook sessions."
+msgstr "Postika ni programu ya eneo-kazi kwa Windows, macOS, na Linux. Inatumia kivinjari cha Chrome au Chromium kilichosakinishwa kwa vipindi vyako vya Facebook."
+
+msgid "Postika language selector and localized interface"
+msgstr "Kiteuzi cha lugha cha Postika na kiolesura kilichojanibishwa"
+
+msgid "Postika posting intervals and scheduling controls"
+msgstr "Vipindi vya uchapishaji wa Postika na vidhibiti vya kuratibu"
+
+msgid "Postika posting logs with per-group results and queue controls"
+msgstr "Postika inachapisha kumbukumbu zenye matokeo ya kila kikundi na vidhibiti vya foleni"
+
+msgid "Postika scheduling controls"
+msgstr "Vidhibiti vya kuratibu vya Postika"
+
+msgid "Posting intervals don’t guarantee protection from Facebook restrictions or bans."
+msgstr "Vipindi vya uchapishaji havihakikishii ulinzi dhidi ya vikwazo au marufuku ya Facebook."
+
+msgid "Prepare now. Schedule for later."
+msgstr "Jitayarishe sasa. Ratiba ya baadaye."
+
+msgid "Questions"
+msgstr "Maswali"
+
+msgid "Refresh release notes"
+msgstr "Onyesha upya madokezo ya kutolewa"
+
+msgid "Release notes"
+msgstr "Toa maelezo"
+
+msgid "Release notes are up to date."
+msgstr "Maelezo kuhusu matoleo yamesasishwa."
+
+msgid "Report a problem"
+msgstr "Ripoti tatizo"
+
+msgid "Run posting queues for multiple Facebook accounts at the same time. Each account keeps its own browser session, groups, drafts, and posting settings, so you can prepare another post or check progress without interrupting the other accounts."
+msgstr "Endesha foleni za uchapishaji kwa akaunti nyingi za Facebook kwa wakati mmoja. Kila akaunti huweka kipindi chake cha kivinjari, vikundi, rasimu na mipangilio ya uchapishaji, ili uweze kuandaa chapisho lingine au kuangalia maendeleo bila kukatiza akaunti zingine."
+
+msgid "Schedule your posts for a date and time that suits you. When that time arrives, Postika automatically starts posting to your selected groups. You don’t need to be there to press Post."
+msgstr "Panga machapisho yako kwa tarehe na wakati unaokufaa. Wakati huo ukifika, Postika itaanza kutuma kiotomatiki kwa vikundi ulivyochagua. Huhitaji kuwa hapo ili kubonyeza Chapisha."
+
+msgid "Screenshot preview"
+msgstr "Onyesho la kukagua picha ya skrini"
+
+msgid "Search by name…"
+msgstr "Tafuta kwa jina..."
+
+msgid "Search themes"
+msgstr "Tafuta mandhari"
+
+msgid "See where every post stands."
+msgstr "Angalia ambapo kila chapisho limesimama."
+
+msgid "Selected"
+msgstr "Imechaguliwa"
+
+msgid "Set your pace. Leave room between posts."
+msgstr "Weka kasi yako. Acha nafasi kati ya machapisho."
+
+msgid "Several accounts. Posting at the same time."
+msgstr "Akaunti kadhaa. Kuchapisha kwa wakati mmoja."
+
+msgid "Skip opening every group and pasting the same thing again. Write your post with rich text, add and reorder your images, then search and select the Facebook groups you want to share with. Your draft stays saved while you get it right."
+msgstr "Ruka kufungua kila kikundi na kubandika kitu kile kile tena. Andika chapisho lako kwa maandishi tele, ongeza na upange upya picha zako, kisha utafute na uchague vikundi vya Facebook unavyotaka kushiriki navyo. Rasimu yako itasalia kuhifadhiwa huku ukiipata sawa."
+
+msgid "Skip to content"
+msgstr "Ruka hadi yaliyomo"
+
+msgid "Some groups require approval. Posting logs distinguish published posts, pending approval, failed, skipped, and unconfirmed submissions. Check unconfirmed results on Facebook before retrying."
+msgstr "Baadhi ya vikundi vinahitaji idhini. Kumbukumbu za kuchapisha hutofautisha machapisho yaliyochapishwa, idhini inayosubiri, mawasilisho ambayo hayajafaulu, yamerukwa na ambayo hayajathibitishwa. Angalia matokeo ambayo hayajathibitishwa kwenye Facebook kabla ya kujaribu tena."
+
+msgid "System default"
+msgstr "Chaguomsingi ya mfumo"
+
+msgid "System default ({0})"
+msgstr "Chaguomsingi ya mfumo ({0})"
+
+msgid "System packages may ask for administrator authorization."
+msgstr "Vifurushi vya mfumo vinaweza kuomba idhini ya msimamizi."
+
+msgid "Unsigned installer: Windows may show a SmartScreen warning. The portable version needs no installation; account data stays in the app data folder."
+msgstr "Kisakinishi ambacho hakijasainiwa: Windows inaweza kuonyesha onyo la SmartScreen. Toleo la portable halihitaji usakinishaji; data ya akaunti inasalia kwenye folda ya data ya programu."
+
+msgid "Version"
+msgstr "Toleo"
+
+msgid "Version {0} ({1})"
+msgstr "Toleo la {0} ({1})"
+
+msgid "What do I need to run Postika?"
+msgstr "Ninahitaji nini ili kuendesha Postika?"
+
+msgid "What is a Facebook group auto poster?"
+msgstr "Bango otomatiki la kikundi cha Facebook ni nini?"
+
+msgid "Windows installer"
+msgstr "Kisakinishi cha Windows"
+
+msgid "Windows portable"
+msgstr "Windows portable"
+
+msgid "Windows, macOS & Linux"
+msgstr "Windows, macOS na Linux"
+
+msgid "Work in the language you think in."
+msgstr "Fanya kazi kwa lugha unayofikiria."
+
+msgid "Yes. Keep Postika open and your computer awake while a queue is scheduled or running. Queues and posting logs are not restored after quitting."
+msgstr "Ndiyo. Weka Postika wazi na kompyuta yako ikiwa macho wakati foleni imeratibiwa au kuendeshwa. Foleni na kumbukumbu za kuchapisha hazirejeshwa baada ya kuacha."
+
+msgid "Yes. Multiple accounts can run their posting queues in parallel. Each account has a separate browser session, groups, drafts, and posting settings. Switching accounts doesn’t interrupt the other queues."
+msgstr "Ndiyo. Akaunti nyingi zinaweza kuendesha foleni zao za uchapishaji kwa sambamba. Kila akaunti ina kipindi tofauti cha kivinjari, vikundi, rasimu na mipangilio ya uchapishaji. Kubadilisha akaunti hakukatizi foleni zingine."
+
+msgid "Your platform"
+msgstr "Jukwaa lako"
+
+msgid "{0} shown"
+msgstr "{0} imeonyeshwa"
+
+msgid "{0} themes and system default"
+msgstr "{0} mandhari na mfumo chaguomsingi"
+
+msgid "Facebook Groups <0>Bulk Poster</0>"
+msgstr "<0>Chapisha kwa pamoja</0> katika vikundi vya Facebook"
+
+msgid "All languages"
+msgstr "Lugha zote"
+
+msgid "Language: {0}"
+msgstr "Lugha: {0}"
+
+msgid "Languages"
+msgstr "Lugha"
+
+msgid "No languages found"
+msgstr "Hakuna lugha zilizopatikana"
+
+msgid "Search languages…"
+msgstr "Tafuta lugha…"
+
+msgid "Try a different name."
+msgstr "Jaribu jina lingine."
