@@ -30,7 +30,7 @@ assets and signed update feeds are hosted on Bunny CDN at
   maximum delays, and pause, resume, or stop from the shared Posting logs window.
   Queues wait while offline and resume when connectivity returns.
 - **Personalize the interface:** 33 languages, including right-to-left layouts,
-  and 189 themes. Language and theme choices sync across windows. App-generated
+  and 213 themes. Language and theme choices sync across windows. App-generated
   log messages are translated, with original diagnostics under Debug details.
 
 Open **How to use** inside the app for the detailed workflow.

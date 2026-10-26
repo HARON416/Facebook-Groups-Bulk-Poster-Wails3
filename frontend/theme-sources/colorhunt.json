@@ -1,0 +1,518 @@
+{
+  "source": "https://colorhunt.co/",
+  "endpoint": "https://colorhunt.co/php/feed.php",
+  "retrievedAt": "2026-10-26T11:02:46.571Z",
+  "review": {
+    "requests": 20,
+    "records": 630,
+    "uniquePalettes": 400,
+    "feeds": [
+      {
+        "sort": "new",
+        "timeframe": 30,
+        "pages": 10
+      },
+      {
+        "sort": "popular",
+        "timeframe": 30,
+        "pages": 5,
+        "nonEmptyPages": 1
+      },
+      {
+        "sort": "popular",
+        "timeframe": 365,
+        "pages": 5
+      }
+    ],
+    "criteria": [
+      "At least 7:1 contrast between the original lightest and darkest colors.",
+      "Quiet backgrounds: limited OKLab chroma for large desktop surfaces.",
+      "Perceptual distance from existing themes and the other additions.",
+      "Popularity used as a secondary signal, balanced with palette diversity.",
+      "Twelve light and twelve dark themes, one variant per source palette.",
+      "Existing token generator derives readable actions, labels, and status colors."
+    ]
+  },
+  "palettes": [
+    {
+      "id": "palette:colorhunt-porcelain-blue",
+      "name": "Porcelain Blue",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/efece38fabd44a70a9000000",
+      "code": "efece38fabd44a70a9000000",
+      "colors": [
+        "#efece3",
+        "#8fabd4",
+        "#4a70a9",
+        "#000000"
+      ],
+      "likesAtRetrieval": 7488,
+      "feed": {
+        "sort": "new",
+        "timeframe": 30,
+        "step": 8
+      },
+      "rationale": "Warm porcelain with a restrained blue accent."
+    },
+    {
+      "id": "palette:colorhunt-midnight-orchid",
+      "name": "Midnight Orchid",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/0000009929eaff5fcffaeb92",
+      "code": "0000009929eaff5fcffaeb92",
+      "colors": [
+        "#000000",
+        "#9929ea",
+        "#ff5fcf",
+        "#faeb92"
+      ],
+      "likesAtRetrieval": 2457,
+      "feed": {
+        "sort": "new",
+        "timeframe": 30,
+        "step": 7
+      },
+      "rationale": "Black canvas with violet actions and soft yellow text."
+    },
+    {
+      "id": "palette:colorhunt-rose-ink",
+      "name": "Rose Ink",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/000000cb2957ddddddeeeeee",
+      "code": "000000cb2957ddddddeeeeee",
+      "colors": [
+        "#000000",
+        "#cb2957",
+        "#dddddd",
+        "#eeeeee"
+      ],
+      "likesAtRetrieval": 1663,
+      "feed": {
+        "sort": "new",
+        "timeframe": 30,
+        "step": 3
+      },
+      "rationale": "Soft gray with raspberry actions."
+    },
+    {
+      "id": "palette:colorhunt-ember-slate",
+      "name": "Ember Slate",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/000000233d4dfe7f2deaecf0",
+      "code": "000000233d4dfe7f2deaecf0",
+      "colors": [
+        "#000000",
+        "#233d4d",
+        "#fe7f2d",
+        "#eaecf0"
+      ],
+      "likesAtRetrieval": 1763,
+      "feed": {
+        "sort": "new",
+        "timeframe": 30,
+        "step": 3
+      },
+      "rationale": "Black and slate with a warm orange accent."
+    },
+    {
+      "id": "palette:colorhunt-honey-linen",
+      "name": "Honey Linen",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/09251ca55704f3d2aff8eadc",
+      "code": "09251ca55704f3d2aff8eadc",
+      "colors": [
+        "#09251c",
+        "#a55704",
+        "#f3d2af",
+        "#f8eadc"
+      ],
+      "likesAtRetrieval": 223,
+      "feed": {
+        "sort": "new",
+        "timeframe": 30,
+        "step": 0
+      },
+      "rationale": "Cream linen with honey-brown actions."
+    },
+    {
+      "id": "palette:colorhunt-deep-lagoon",
+      "name": "Deep Lagoon",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/00546101879000b7b5f4f4f4",
+      "code": "00546101879000b7b5f4f4f4",
+      "colors": [
+        "#005461",
+        "#018790",
+        "#00b7b5",
+        "#f4f4f4"
+      ],
+      "likesAtRetrieval": 3677,
+      "feed": {
+        "sort": "new",
+        "timeframe": 30,
+        "step": 8
+      },
+      "rationale": "Deep teal with bright lagoon accents."
+    },
+    {
+      "id": "palette:colorhunt-oxblood-paper",
+      "name": "Oxblood Paper",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/6d08082d0000757d6feeead7",
+      "code": "6d08082d0000757d6feeead7",
+      "colors": [
+        "#6d0808",
+        "#2d0000",
+        "#757d6f",
+        "#eeead7"
+      ],
+      "likesAtRetrieval": 2008,
+      "feed": {
+        "sort": "new",
+        "timeframe": 30,
+        "step": 1
+      },
+      "rationale": "Parchment with an oxblood accent."
+    },
+    {
+      "id": "palette:colorhunt-garnet-night",
+      "name": "Garnet Night",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/d90000ffea938db355000000",
+      "code": "d90000ffea938db355000000",
+      "colors": [
+        "#d90000",
+        "#ffea93",
+        "#8db355",
+        "#000000"
+      ],
+      "likesAtRetrieval": 1196,
+      "feed": {
+        "sort": "new",
+        "timeframe": 30,
+        "step": 2
+      },
+      "rationale": "Black canvas with garnet actions and warm cream text."
+    },
+    {
+      "id": "palette:colorhunt-olive-cream",
+      "name": "Olive Cream",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/fbf5dde7e1b1306d290d530e",
+      "code": "fbf5dde7e1b1306d290d530e",
+      "colors": [
+        "#fbf5dd",
+        "#e7e1b1",
+        "#306d29",
+        "#0d530e"
+      ],
+      "likesAtRetrieval": 3114,
+      "feed": {
+        "sort": "new",
+        "timeframe": 30,
+        "step": 4
+      },
+      "rationale": "Pale cream with leafy green actions."
+    },
+    {
+      "id": "palette:colorhunt-mulberry-dusk",
+      "name": "Mulberry Dusk",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/15173d982598e491c9f1e9e9",
+      "code": "15173d982598e491c9f1e9e9",
+      "colors": [
+        "#15173d",
+        "#982598",
+        "#e491c9",
+        "#f1e9e9"
+      ],
+      "likesAtRetrieval": 3481,
+      "feed": {
+        "sort": "new",
+        "timeframe": 30,
+        "step": 6
+      },
+      "rationale": "Dark indigo with mulberry actions and pale pink text."
+    },
+    {
+      "id": "palette:colorhunt-espresso-linen",
+      "name": "Espresso Linen",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/0000001f150c412d15e1dcc9",
+      "code": "0000001f150c412d15e1dcc9",
+      "colors": [
+        "#000000",
+        "#1f150c",
+        "#412d15",
+        "#e1dcc9"
+      ],
+      "likesAtRetrieval": 3181,
+      "feed": {
+        "sort": "new",
+        "timeframe": 30,
+        "step": 4
+      },
+      "rationale": "Warm linen with espresso accents."
+    },
+    {
+      "id": "palette:colorhunt-harbor-brass",
+      "name": "Harbor Brass",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/0a2947f3e4c9d3d4c08b5e3c",
+      "code": "0a2947f3e4c9d3d4c08b5e3c",
+      "colors": [
+        "#0a2947",
+        "#f3e4c9",
+        "#d3d4c0",
+        "#8b5e3c"
+      ],
+      "likesAtRetrieval": 3417,
+      "feed": {
+        "sort": "new",
+        "timeframe": 30,
+        "step": 3
+      },
+      "rationale": "Deep harbor blue with brass-brown accents."
+    },
+    {
+      "id": "palette:colorhunt-glacial-blue",
+      "name": "Glacial Blue",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/2936814274d995ccddd0e7e6",
+      "code": "2936814274d995ccddd0e7e6",
+      "colors": [
+        "#293681",
+        "#4274d9",
+        "#95ccdd",
+        "#d0e7e6"
+      ],
+      "likesAtRetrieval": 3251,
+      "feed": {
+        "sort": "new",
+        "timeframe": 30,
+        "step": 3
+      },
+      "rationale": "Cool mist with clear blue actions."
+    },
+    {
+      "id": "palette:colorhunt-plum-apricot",
+      "name": "Plum Apricot",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/522d6080426ef2a67bffd38b",
+      "code": "522d6080426ef2a67bffd38b",
+      "colors": [
+        "#522d60",
+        "#80426e",
+        "#f2a67b",
+        "#ffd38b"
+      ],
+      "likesAtRetrieval": 759,
+      "feed": {
+        "sort": "new",
+        "timeframe": 30,
+        "step": 0
+      },
+      "rationale": "Smoky plum with apricot actions."
+    },
+    {
+      "id": "palette:colorhunt-mint-grove",
+      "name": "Mint Grove",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/091413285a48408a71b0e4cc",
+      "code": "091413285a48408a71b0e4cc",
+      "colors": [
+        "#091413",
+        "#285a48",
+        "#408a71",
+        "#b0e4cc"
+      ],
+      "likesAtRetrieval": 4919,
+      "feed": {
+        "sort": "new",
+        "timeframe": 30,
+        "step": 5
+      },
+      "rationale": "Pale mint with forest-green actions."
+    },
+    {
+      "id": "palette:colorhunt-burnt-caramel",
+      "name": "Burnt Caramel",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/fffdf1ffce99ff9644562f00",
+      "code": "fffdf1ffce99ff9644562f00",
+      "colors": [
+        "#fffdf1",
+        "#ffce99",
+        "#ff9644",
+        "#562f00"
+      ],
+      "likesAtRetrieval": 2607,
+      "feed": {
+        "sort": "new",
+        "timeframe": 30,
+        "step": 6
+      },
+      "rationale": "Dark caramel with orange accents."
+    },
+    {
+      "id": "palette:colorhunt-sailcloth-navy",
+      "name": "Sailcloth Navy",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/0107360d1c4222396ffcf1d0",
+      "code": "0107360d1c4222396ffcf1d0",
+      "colors": [
+        "#010736",
+        "#0d1c42",
+        "#22396f",
+        "#fcf1d0"
+      ],
+      "likesAtRetrieval": 2588,
+      "feed": {
+        "sort": "new",
+        "timeframe": 30,
+        "step": 0
+      },
+      "rationale": "Warm sailcloth with navy actions."
+    },
+    {
+      "id": "palette:colorhunt-fern-lantern",
+      "name": "Fern Lantern",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/fffd8fb0ce884c763b043915",
+      "code": "fffd8fb0ce884c763b043915",
+      "colors": [
+        "#fffd8f",
+        "#b0ce88",
+        "#4c763b",
+        "#043915"
+      ],
+      "likesAtRetrieval": 3452,
+      "feed": {
+        "sort": "new",
+        "timeframe": 30,
+        "step": 9
+      },
+      "rationale": "Forest green with fern accents and pale yellow text."
+    },
+    {
+      "id": "palette:colorhunt-apricot-iris",
+      "name": "Apricot Iris",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/333d6d723ec3ffcf95fff0d9",
+      "code": "333d6d723ec3ffcf95fff0d9",
+      "colors": [
+        "#333d6d",
+        "#723ec3",
+        "#ffcf95",
+        "#fff0d9"
+      ],
+      "likesAtRetrieval": 869,
+      "feed": {
+        "sort": "new",
+        "timeframe": 30,
+        "step": 3
+      },
+      "rationale": "Warm ivory with an iris-purple accent."
+    },
+    {
+      "id": "palette:colorhunt-twilight-steel",
+      "name": "Twilight Steel",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/1118444b56947288aeeae0cf",
+      "code": "1118444b56947288aeeae0cf",
+      "colors": [
+        "#111844",
+        "#4b5694",
+        "#7288ae",
+        "#eae0cf"
+      ],
+      "likesAtRetrieval": 4608,
+      "feed": {
+        "sort": "new",
+        "timeframe": 30,
+        "step": 3
+      },
+      "rationale": "Deep twilight with steel-blue accents."
+    },
+    {
+      "id": "palette:colorhunt-blush-sand",
+      "name": "Blush Sand",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/5d3140cf4173f39399f6d8bd",
+      "code": "5d3140cf4173f39399f6d8bd",
+      "colors": [
+        "#5d3140",
+        "#cf4173",
+        "#f39399",
+        "#f6d8bd"
+      ],
+      "likesAtRetrieval": 1628,
+      "feed": {
+        "sort": "new",
+        "timeframe": 30,
+        "step": 2
+      },
+      "rationale": "Blush sand with rose actions."
+    },
+    {
+      "id": "palette:colorhunt-cedar-ember",
+      "name": "Cedar Ember",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/254f22a03a13f5824aede4c2",
+      "code": "254f22a03a13f5824aede4c2",
+      "colors": [
+        "#254f22",
+        "#a03a13",
+        "#f5824a",
+        "#ede4c2"
+      ],
+      "likesAtRetrieval": 1568,
+      "feed": {
+        "sort": "new",
+        "timeframe": 30,
+        "step": 6
+      },
+      "rationale": "Dark cedar green with ember-orange actions."
+    },
+    {
+      "id": "palette:colorhunt-fjord-mist",
+      "name": "Fjord Mist",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/061e291d546d5f9598f3f4f4",
+      "code": "061e291d546d5f9598f3f4f4",
+      "colors": [
+        "#061e29",
+        "#1d546d",
+        "#5f9598",
+        "#f3f4f4"
+      ],
+      "likesAtRetrieval": 4407,
+      "feed": {
+        "sort": "new",
+        "timeframe": 30,
+        "step": 7
+      },
+      "rationale": "Cool white with fjord-blue actions."
+    },
+    {
+      "id": "palette:colorhunt-pine-candlelight",
+      "name": "Pine Candlelight",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/faf8f1faeab134656d334443",
+      "code": "faf8f1faeab134656d334443",
+      "colors": [
+        "#faf8f1",
+        "#faeab1",
+        "#34656d",
+        "#334443"
+      ],
+      "likesAtRetrieval": 2450,
+      "feed": {
+        "sort": "new",
+        "timeframe": 30,
+        "step": 9
+      },
+      "rationale": "Pine slate with warm candlelight accents."
+    }
+  ]
+}
