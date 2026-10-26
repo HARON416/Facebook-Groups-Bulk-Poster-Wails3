@@ -69,6 +69,7 @@ jobs:
       - name: Build frontend and generate Wails bindings
         run: wails3 task common:build:frontend
       - run: npm --prefix frontend run check
+      - run: npm --prefix frontend run tour:test
       - run: node --test scripts/package-release.test.mjs scripts/release-all.test.mjs scripts/flatten-release.test.mjs scripts/version.test.mjs scripts/update-feeds.test.mjs scripts/website-release.test.mjs scripts/publish-release.test.mjs
       - run: go test ./...
         working-directory: website

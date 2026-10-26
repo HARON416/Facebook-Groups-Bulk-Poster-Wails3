@@ -74,7 +74,7 @@ msgstr "Επιλέξτε τις ομάδες με τις οποίες θέλετ
 #~ msgid "Review your post and preferences, then post now or schedule for later."
 #~ msgstr "Ελέγξτε την ανάρτησή σας και τις προτιμήσεις, στη συνέχεια δημοσιεύστε τώρα ή προγραμματίστε για αργότερα."
 
-#. 0: currentStep + 1; 1: steps.length
+#. 0: displayStep + 1; 1: steps.length
 #: src/App.svelte
 msgid "STEP {0} OF {1}"
 msgstr "ΒΗΜΑ {0} ΑΠΟ {1}"
@@ -256,6 +256,7 @@ msgstr "Προσθήκη λογαριασμού"
 
 #: src/Workspace.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogs.svelte
@@ -329,6 +330,7 @@ msgstr "Όλοι οι λογαριασμοί"
 
 #: src/components/AccountDropdown.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 msgid "Accounts"
 msgstr "Λογαριασμοί"
 
@@ -768,6 +770,7 @@ msgstr "Διακοπή…"
 #~ msgstr "ΡΥΘΜΟΣ ΑΝΑΡΤΗΣΗΣ"
 
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/PostingOptionsForm.svelte
 #: src/components/UsageGuide.svelte
 msgid "Interval between posts"
@@ -786,6 +789,7 @@ msgstr "Μέγιστο (δευτερόλεπτα)"
 msgid "Choose how long to wait before posting to the next group."
 msgstr "Επιλέξτε πόσο να περιμένετε πριν την ανάρτηση στην επόμενη ομάδα."
 
+#: src/components/GuidedTour.svelte
 #: src/components/PostingOptionsForm.svelte
 #: src/components/UsageGuide.svelte
 msgid "At least 60 seconds. Use equal values for a fixed interval."
@@ -954,6 +958,7 @@ msgstr "Κλείσιμο παραθύρου"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Create post"
@@ -965,6 +970,7 @@ msgstr "Γράψτε την ανάρτησή σας και προσθέστε ε
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select groups"
@@ -1240,6 +1246,7 @@ msgstr "Χρωματικά θέματα"
 #: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/RenameProfileDialog.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UpdateButton.svelte
@@ -1839,6 +1846,7 @@ msgid "Themes"
 msgstr "Θέματα"
 
 #: src/App.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Post or schedule"
 msgstr "Δημοσίευση ή προγραμματισμός"
@@ -1863,6 +1871,7 @@ msgid "Draft text and image copies are saved automatically for each account."
 msgstr "Το κείμενο του προχείρου και τα αντίγραφα εικόνων αποθηκεύονται αυτόματα για κάθε λογαριασμό."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Separate Facebook sessions, groups, drafts, settings, and queues for each account."
 msgstr "Ξεχωριστές συνεδρίες Facebook, ομάδες, πρόχειρα, ρυθμίσεις και ουρές για κάθε λογαριασμό."
@@ -1920,7 +1929,6 @@ msgid "Queues pause when offline and resume when the connection returns."
 msgstr "Οι ουρές παύουν εκτός σύνδεσης και συνεχίζουν όταν επανέλθει η σύνδεση."
 
 #: src/components/FeaturesCard.svelte
-#: src/components/FeaturesCard.svelte
 msgid "How to use"
 msgstr "Οδηγίες χρήσης"
 
@@ -1928,10 +1936,12 @@ msgstr "Οδηγίες χρήσης"
 msgid "Choose Add account, enter an account name, and select Create & sign in. Use the account switcher to return to an existing account."
 msgstr "Επιλέξτε Προσθήκη λογαριασμού, δώστε όνομα και επιλέξτε Δημιουργία και σύνδεση. Χρησιμοποιήστε τον επιλογέα για επιστροφή σε υπάρχοντα λογαριασμό."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Write your message and add at least one image; both are required. Use Next to move forward and Previous to edit an earlier step."
 msgstr "Γράψτε το μήνυμα και προσθέστε τουλάχιστον μία εικόνα· απαιτούνται και τα δύο. Το Επόμενο συνεχίζει, ενώ το Προηγούμενο επιτρέπει επεξεργασία παλιότερου βήματος."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select Load groups and finish Facebook login or verification in Chrome. Search the loaded list, select the groups you want, then choose Next."
 msgstr "Επιλέξτε Φόρτωση ομάδων και ολοκληρώστε τη σύνδεση ή επαλήθευση Facebook στο Chrome. Αναζητήστε στη λίστα, επιλέξτε ομάδες και πατήστε Επόμενο."
@@ -1943,10 +1953,12 @@ msgstr "Επιλέξτε Φόρτωση ομάδων και ολοκληρώστ
 msgid "Review the account, message, image order, selected groups, and posting intervals. Choose Post now and complete any Facebook login or verification prompts in Chrome."
 msgstr "Ελέγξτε λογαριασμό, μήνυμα, σειρά εικόνων, ομάδες και διαστήματα. Επιλέξτε Δημοσίευση τώρα και ολοκληρώστε τυχόν σύνδεση ή επαλήθευση Facebook στο Chrome."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Choose Schedule, select a future date and time in the displayed time zone, then Confirm schedule. Facebook may require login when the queue starts."
 msgstr "Επιλέξτε Προγραμματισμός, ορίστε μελλοντική ημερομηνία και ώρα στη ζώνη που εμφανίζεται και επιβεβαιώστε. Το Facebook μπορεί να ζητήσει σύνδεση όταν αρχίσει η ουρά."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Open Posting logs to follow progress. Its account selector lets you inspect other queues without switching the account in the main workspace."
 msgstr "Ανοίξτε τα αρχεία δημοσιεύσεων για την πρόοδο. Ο επιλογέας λογαριασμού εκεί δείχνει άλλες ουρές χωρίς αλλαγή λογαριασμού στον κύριο χώρο εργασίας."
@@ -2011,6 +2023,7 @@ msgstr "Αριθμός αναρτήσεων για λήψη"
 #~ msgstr ""
 
 #: src/components/FacebookPageDialog.svelte
+#: src/components/GuidedTour.svelte
 msgid "Fetch posts from a Facebook page"
 msgstr "Λήψη αναρτήσεων από σελίδα Facebook"
 
@@ -2063,6 +2076,7 @@ msgstr "Γράψτε μια ανάρτηση αντί γι’ αυτό"
 #~ msgstr ""
 
 #: src/App.svelte
+#: src/components/GuidedTour.svelte
 msgid "Review the posts fetched from your Facebook page."
 msgstr "Ελέγξτε τις αναρτήσεις που λάβατε από τη σελίδα σας στο Facebook."
 
@@ -2451,3 +2465,40 @@ msgstr "Δεν ήταν δυνατό το άνοιγμα της εφαρμογή
 
 #~ msgid "Business"
 #~ msgstr ""
+
+#: src/components/FeaturesCard.svelte
+msgid "Wait until the current operation finishes to start the tour."
+msgstr "Περιμένετε να ολοκληρωθεί η τρέχουσα λειτουργία για να ξεκινήσετε την περιήγηση."
+
+#: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
+msgid "Start guided tour"
+msgstr "Έναρξη ξενάγησης"
+
+#: src/components/FeaturesCard.svelte
+msgid "Read the guide"
+msgstr "Διαβάστε τον οδηγό"
+
+#: src/components/GuidedTour.svelte
+msgid "Take a quick tour of Postika?"
+msgstr "Θέλετε μια σύντομη ξενάγηση στο Postika;"
+
+#: src/components/GuidedTour.svelte
+msgid "You can reopen the tour from How to use."
+msgstr "Μπορείτε να ανοίξετε ξανά την ξενάγηση από τις Οδηγίες χρήσης."
+
+#: src/components/GuidedTour.svelte
+msgid "Skip"
+msgstr "Παράλειψη"
+
+#: src/components/GuidedTour.svelte
+msgid "Finish"
+msgstr "Τέλος"
+
+#: src/components/GuidedTour.svelte
+msgid "Next"
+msgstr "Επόμενο"
+
+#: src/components/GuidedTour.svelte
+msgid "Previous"
+msgstr "Προηγούμενο"

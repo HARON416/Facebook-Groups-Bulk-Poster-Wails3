@@ -15,7 +15,11 @@
   import { pollWhileWindowOpen } from './lib/window-polling';
   import LocalizedFeedback from './components/LocalizedFeedback.svelte';
   import AddAccountDialog from './components/AddAccountDialog.svelte';
+  import GuidedTour from './components/GuidedTour.svelte';
 
+  let tour: GuidedTour;
+  let tourPage = $state<number | null>(null), tourReady = $state(false), tourActive = $state(false);
+  const setTourReady = (ready: boolean) => { tourReady = ready; };
   let profiles = $state<ProfileActivity[]>([]);
   let opened = $state<(AccountProfile & { connect: boolean })[]>([]);
   let selected = $state('');
@@ -24,9 +28,11 @@
   let windowControls = $state<WindowControls>();
   const current = $derived(profiles.find((profile) => profile.id === selected));
   const background = $derived(profiles.filter((profile) => profile.active && profile.id !== selected));
+  const tourAvailable = $derived(Boolean(current) && tourReady && !adding && !profiles.some(profile => profile.active));
 
   function open(profile: AccountProfile, connect = false) {
     if (!opened.some((entry) => entry.id === profile.id)) opened = [...opened, { ...profile, connect }];
+    tourReady = false;
     selected = profile.id;
   }
   async function refresh() {
@@ -81,14 +87,14 @@
 
 <div class="workspace ui-window">
   <header class="top-bar">
-    <div class="profile-control"><AccountDropdown {profiles} {selected} compact disabled={busy} onselect={select} onrenamed={profileRenamed} oncreated={profileCreated} ondeleted={() => void refresh()} /></div>
+    <div class="profile-control" data-tour="accounts"><AccountDropdown {profiles} {selected} compact disabled={busy} onselect={select} onrenamed={profileRenamed} oncreated={profileCreated} ondeleted={() => void refresh()} /></div>
     <div class="drag-area" aria-hidden="true" ondblclick={() => windowControls?.toggleMaximise()}></div>
     <nav class="app-menu" aria-label="Application menu">
     <fieldset class="menu-controls">
       <UpdateButton />
-      <FeaturesCard />
+      <FeaturesCard {tourAvailable} onstarttour={() => tour.start()} />
       <button type="button" disabled={busy} aria-expanded={adding} bind:this={addTrigger} aria-haspopup="dialog" aria-controls="add-account-dialog" onclick={showAddAccount}>Add account</button>
-      <button type="button" disabled={busy || !selected} onclick={() => openPostingLogs()}>Posting logs</button>
+      <button type="button" data-tour="logs" disabled={busy || !selected} onclick={() => openPostingLogs()}>Posting logs</button>
       <LanguageMenu />
       <ThemeMenu />
       <ContactButton />
@@ -105,10 +111,11 @@
   {/if}
   {#each opened as profile (profile.id)}
     <div class="account-workspace" hidden={profile.id !== selected}>
-      <App {profile} active={profile.id === selected} connect={profile.connect} />
+      <App {profile} active={profile.id === selected} connect={profile.connect} tourStep={profile.id === selected ? tourPage : null} tourActive={profile.id === selected && tourActive} onTourReadyChange={setTourReady} />
     </div>
   {/each}
   {#if !selected && !error}<p class="loading" role="status">{profiles.length ? 'Loading accounts…' : 'Add an account to get started.'}</p>{/if}
+  <GuidedTour bind:this={tour} ready={tourAvailable} onpage={(page) => { tourPage = page; }} onactive={(active) => { tourActive = active; }} />
   {#if current}{#key current.id}<ConnectivityToast profileID={current.id} />{/key}{/if}
 </div>
 

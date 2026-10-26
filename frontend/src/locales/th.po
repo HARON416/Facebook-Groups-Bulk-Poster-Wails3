@@ -74,7 +74,7 @@ msgstr "เลือกกลุ่มที่คุณต้องการแ
 #~ msgid "Review your post and preferences, then post now or schedule for later."
 #~ msgstr "ตรวจสอบโพสต์และการตั้งค่าของคุณ แล้วโพสต์ตอนนี้หรือกำหนดเวลาโพสต์ในภายหลัง"
 
-#. 0: currentStep + 1; 1: steps.length
+#. 0: displayStep + 1; 1: steps.length
 #: src/App.svelte
 msgid "STEP {0} OF {1}"
 msgstr "ขั้นตอน {0} จาก {1}"
@@ -256,6 +256,7 @@ msgstr "เพิ่มบัญชี"
 
 #: src/Workspace.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogs.svelte
@@ -329,6 +330,7 @@ msgstr "บัญชีทั้งหมด"
 
 #: src/components/AccountDropdown.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 msgid "Accounts"
 msgstr "บัญชี"
 
@@ -768,6 +770,7 @@ msgstr "กำลังหยุด…"
 #~ msgstr "จังหวะการโพสต์"
 
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/PostingOptionsForm.svelte
 #: src/components/UsageGuide.svelte
 msgid "Interval between posts"
@@ -786,6 +789,7 @@ msgstr "ค่าสูงสุด (วินาที)"
 msgid "Choose how long to wait before posting to the next group."
 msgstr "เลือกเวลาที่จะรอก่อนโพสต์ไปยังกลุ่มถัดไป"
 
+#: src/components/GuidedTour.svelte
 #: src/components/PostingOptionsForm.svelte
 #: src/components/UsageGuide.svelte
 msgid "At least 60 seconds. Use equal values for a fixed interval."
@@ -954,6 +958,7 @@ msgstr "ปิดหน้าต่าง"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Create post"
@@ -965,6 +970,7 @@ msgstr "เขียนโพสต์ของคุณและเพิ่ม
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select groups"
@@ -1240,6 +1246,7 @@ msgstr "ธีมสี"
 #: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/RenameProfileDialog.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UpdateButton.svelte
@@ -1839,6 +1846,7 @@ msgid "Themes"
 msgstr "ธีม"
 
 #: src/App.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Post or schedule"
 msgstr "โพสต์หรือตั้งเวลา"
@@ -1863,6 +1871,7 @@ msgid "Draft text and image copies are saved automatically for each account."
 msgstr "ข้อความฉบับร่างและสำเนารูปภาพจะถูกบันทึกอัตโนมัติสำหรับแต่ละบัญชี"
 
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Separate Facebook sessions, groups, drafts, settings, and queues for each account."
 msgstr "แยกเซสชัน Facebook กลุ่ม ฉบับร่าง การตั้งค่า และคิวสำหรับแต่ละบัญชี"
@@ -1920,7 +1929,6 @@ msgid "Queues pause when offline and resume when the connection returns."
 msgstr "คิวจะหยุดชั่วคราวเมื่อออฟไลน์และทำงานต่อเมื่อการเชื่อมต่อกลับมา"
 
 #: src/components/FeaturesCard.svelte
-#: src/components/FeaturesCard.svelte
 msgid "How to use"
 msgstr "วิธีใช้งาน"
 
@@ -1928,10 +1936,12 @@ msgstr "วิธีใช้งาน"
 msgid "Choose Add account, enter an account name, and select Create & sign in. Use the account switcher to return to an existing account."
 msgstr "เลือกเพิ่มบัญชี ใส่ชื่อ แล้วเลือกสร้างและเข้าสู่ระบบ ใช้ตัวสลับบัญชีเพื่อกลับไปยังบัญชีเดิม"
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Write your message and add at least one image; both are required. Use Next to move forward and Previous to edit an earlier step."
 msgstr "เขียนข้อความและเพิ่มรูปภาพอย่างน้อยหนึ่งรูป ต้องมีทั้งสองอย่าง ใช้ถัดไปเพื่อดำเนินการต่อและก่อนหน้าเพื่อแก้ไขขั้นตอนก่อน"
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select Load groups and finish Facebook login or verification in Chrome. Search the loaded list, select the groups you want, then choose Next."
 msgstr "เลือกโหลดกลุ่มและเข้าสู่ระบบหรือยืนยัน Facebook ใน Chrome ให้เสร็จ ค้นหาในรายการ เลือกกลุ่ม แล้วเลือกถัดไป"
@@ -1943,10 +1953,12 @@ msgstr "เลือกโหลดกลุ่มและเข้าสู่
 msgid "Review the account, message, image order, selected groups, and posting intervals. Choose Post now and complete any Facebook login or verification prompts in Chrome."
 msgstr "ตรวจสอบบัญชี ข้อความ ลำดับรูปภาพ กลุ่ม และช่วงเวลา เลือกโพสต์ตอนนี้ แล้วทำการเข้าสู่ระบบหรือยืนยัน Facebook ใน Chrome ให้เสร็จ"
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Choose Schedule, select a future date and time in the displayed time zone, then Confirm schedule. Facebook may require login when the queue starts."
 msgstr "เลือกตั้งเวลา กำหนดวันและเวลาในอนาคตตามเขตเวลาที่แสดง แล้วยืนยัน Facebook อาจขอให้เข้าสู่ระบบเมื่อคิวเริ่มทำงาน"
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Open Posting logs to follow progress. Its account selector lets you inspect other queues without switching the account in the main workspace."
 msgstr "เปิดบันทึกการโพสต์เพื่อติดตามความคืบหน้า ตัวเลือกบัญชีในนั้นช่วยดูคิวอื่นได้โดยไม่เปลี่ยนบัญชีในพื้นที่หลัก"
@@ -2011,6 +2023,7 @@ msgstr "จำนวนโพสต์ที่ต้องการดึง"
 #~ msgstr ""
 
 #: src/components/FacebookPageDialog.svelte
+#: src/components/GuidedTour.svelte
 msgid "Fetch posts from a Facebook page"
 msgstr "ดึงโพสต์จากเพจ Facebook"
 
@@ -2063,6 +2076,7 @@ msgstr "เขียนโพสต์แทน"
 #~ msgstr ""
 
 #: src/App.svelte
+#: src/components/GuidedTour.svelte
 msgid "Review the posts fetched from your Facebook page."
 msgstr "ตรวจสอบโพสต์ที่ดึงมาจากเพจ Facebook ของคุณ"
 
@@ -2451,3 +2465,40 @@ msgstr "ไม่สามารถเปิดแอปอีเมลได้
 
 #~ msgid "Business"
 #~ msgstr ""
+
+#: src/components/FeaturesCard.svelte
+msgid "Wait until the current operation finishes to start the tour."
+msgstr "รอให้การดำเนินการปัจจุบันเสร็จสิ้นก่อนเริ่มทัวร์"
+
+#: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
+msgid "Start guided tour"
+msgstr "เริ่มทัวร์แนะนำ"
+
+#: src/components/FeaturesCard.svelte
+msgid "Read the guide"
+msgstr "อ่านคู่มือ"
+
+#: src/components/GuidedTour.svelte
+msgid "Take a quick tour of Postika?"
+msgstr "ต้องการชมทัวร์ Postika แบบสั้น ๆ ไหม?"
+
+#: src/components/GuidedTour.svelte
+msgid "You can reopen the tour from How to use."
+msgstr "คุณสามารถเปิดทัวร์อีกครั้งได้จากวิธีใช้งาน"
+
+#: src/components/GuidedTour.svelte
+msgid "Skip"
+msgstr "ข้าม"
+
+#: src/components/GuidedTour.svelte
+msgid "Finish"
+msgstr "เสร็จสิ้น"
+
+#: src/components/GuidedTour.svelte
+msgid "Next"
+msgstr "ถัดไป"
+
+#: src/components/GuidedTour.svelte
+msgid "Previous"
+msgstr "ก่อนหน้า"

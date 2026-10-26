@@ -74,7 +74,7 @@ msgstr "게시물을 공유할 그룹을 선택하세요."
 #~ msgid "Review your post and preferences, then post now or schedule for later."
 #~ msgstr "게시물과 설정을 검토한 후 지금 게시하거나 나중에 예약하세요."
 
-#. 0: currentStep + 1; 1: steps.length
+#. 0: displayStep + 1; 1: steps.length
 #: src/App.svelte
 msgid "STEP {0} OF {1}"
 msgstr "단계 {0} / {1}"
@@ -256,6 +256,7 @@ msgstr "계정 추가"
 
 #: src/Workspace.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogs.svelte
@@ -329,6 +330,7 @@ msgstr "모든 계정"
 
 #: src/components/AccountDropdown.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 msgid "Accounts"
 msgstr "계정"
 
@@ -768,6 +770,7 @@ msgstr "중지 중…"
 #~ msgstr "게시 속도"
 
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/PostingOptionsForm.svelte
 #: src/components/UsageGuide.svelte
 msgid "Interval between posts"
@@ -786,6 +789,7 @@ msgstr "최대 (초)"
 msgid "Choose how long to wait before posting to the next group."
 msgstr "다음 그룹에 게시하기 전에 기다릴 시간을 선택하세요."
 
+#: src/components/GuidedTour.svelte
 #: src/components/PostingOptionsForm.svelte
 #: src/components/UsageGuide.svelte
 msgid "At least 60 seconds. Use equal values for a fixed interval."
@@ -954,6 +958,7 @@ msgstr "창 닫기"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Create post"
@@ -965,6 +970,7 @@ msgstr "게시물 작성 및 이미지 추가"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select groups"
@@ -1240,6 +1246,7 @@ msgstr "색상 테마"
 #: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/RenameProfileDialog.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UpdateButton.svelte
@@ -1839,6 +1846,7 @@ msgid "Themes"
 msgstr "테마"
 
 #: src/App.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Post or schedule"
 msgstr "게시 또는 예약"
@@ -1863,6 +1871,7 @@ msgid "Draft text and image copies are saved automatically for each account."
 msgstr "계정별로 초안 텍스트와 이미지 사본이 자동 저장됩니다."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Separate Facebook sessions, groups, drafts, settings, and queues for each account."
 msgstr "계정마다 Facebook 세션, 그룹, 초안, 설정, 대기열을 별도로 관리합니다."
@@ -1920,7 +1929,6 @@ msgid "Queues pause when offline and resume when the connection returns."
 msgstr "오프라인에서는 대기열이 일시 중지되고 연결이 복구되면 다시 시작됩니다."
 
 #: src/components/FeaturesCard.svelte
-#: src/components/FeaturesCard.svelte
 msgid "How to use"
 msgstr "사용 방법"
 
@@ -1928,10 +1936,12 @@ msgstr "사용 방법"
 msgid "Choose Add account, enter an account name, and select Create & sign in. Use the account switcher to return to an existing account."
 msgstr "계정 추가를 선택하고 이름을 입력한 뒤 만들고 로그인하기를 선택하세요. 기존 계정으로 돌아가려면 계정 전환기를 사용하세요."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Write your message and add at least one image; both are required. Use Next to move forward and Previous to edit an earlier step."
 msgstr "메시지를 쓰고 이미지를 하나 이상 추가하세요. 둘 다 필수입니다. 다음으로 진행하고 이전으로 앞 단계를 수정할 수 있습니다."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select Load groups and finish Facebook login or verification in Chrome. Search the loaded list, select the groups you want, then choose Next."
 msgstr "그룹 불러오기를 선택하고 Chrome에서 Facebook 로그인 또는 인증을 완료하세요. 목록을 검색해 그룹을 선택한 뒤 다음을 누르세요."
@@ -1943,10 +1953,12 @@ msgstr "그룹 불러오기를 선택하고 Chrome에서 Facebook 로그인 또�
 msgid "Review the account, message, image order, selected groups, and posting intervals. Choose Post now and complete any Facebook login or verification prompts in Chrome."
 msgstr "계정, 메시지, 이미지 순서, 선택한 그룹과 게시 간격을 확인하세요. 지금 게시를 선택하고 Chrome에서 Facebook 로그인 또는 인증을 완료하세요."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Choose Schedule, select a future date and time in the displayed time zone, then Confirm schedule. Facebook may require login when the queue starts."
 msgstr "예약을 선택해 표시된 시간대의 미래 날짜와 시간을 지정하고 확정하세요. 대기열이 시작될 때 Facebook 로그인이 필요할 수 있습니다."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Open Posting logs to follow progress. Its account selector lets you inspect other queues without switching the account in the main workspace."
 msgstr "게시 로그를 열어 진행 상황을 확인하세요. 로그의 계정 선택기로 기본 작업 공간의 계정을 바꾸지 않고 다른 대기열을 볼 수 있습니다."
@@ -2011,6 +2023,7 @@ msgstr "가져올 게시물 수"
 #~ msgstr ""
 
 #: src/components/FacebookPageDialog.svelte
+#: src/components/GuidedTour.svelte
 msgid "Fetch posts from a Facebook page"
 msgstr "Facebook 페이지에서 게시물 가져오기"
 
@@ -2063,6 +2076,7 @@ msgstr "대신 게시물 작성"
 #~ msgstr ""
 
 #: src/App.svelte
+#: src/components/GuidedTour.svelte
 msgid "Review the posts fetched from your Facebook page."
 msgstr "Facebook 페이지에서 가져온 게시물을 검토하세요."
 
@@ -2451,3 +2465,40 @@ msgstr "이메일 앱을 열 수 없습니다. 위 주소를 복사하여 이메
 
 #~ msgid "Business"
 #~ msgstr ""
+
+#: src/components/FeaturesCard.svelte
+msgid "Wait until the current operation finishes to start the tour."
+msgstr "현재 작업이 완료된 후 투어를 시작하세요."
+
+#: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
+msgid "Start guided tour"
+msgstr "가이드 투어 시작"
+
+#: src/components/FeaturesCard.svelte
+msgid "Read the guide"
+msgstr "가이드 읽기"
+
+#: src/components/GuidedTour.svelte
+msgid "Take a quick tour of Postika?"
+msgstr "Postika를 간단히 둘러보시겠어요?"
+
+#: src/components/GuidedTour.svelte
+msgid "You can reopen the tour from How to use."
+msgstr "사용 방법에서 투어를 다시 열 수 있습니다."
+
+#: src/components/GuidedTour.svelte
+msgid "Skip"
+msgstr "건너뛰기"
+
+#: src/components/GuidedTour.svelte
+msgid "Finish"
+msgstr "마침"
+
+#: src/components/GuidedTour.svelte
+msgid "Next"
+msgstr "다음"
+
+#: src/components/GuidedTour.svelte
+msgid "Previous"
+msgstr "이전"

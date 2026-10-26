@@ -74,7 +74,7 @@ msgstr "Chagua makundi unayotaka kushirikisha chapisho lako nao."
 #~ msgid "Review your post and preferences, then post now or schedule for later."
 #~ msgstr "Pitia chapisho lako na mapendeleo yako, kisha chapisha sasa au panga kwa wakati mwingine."
 
-#. 0: currentStep + 1; 1: steps.length
+#. 0: displayStep + 1; 1: steps.length
 #: src/App.svelte
 msgid "STEP {0} OF {1}"
 msgstr "HATUA {0} YA {1}"
@@ -256,6 +256,7 @@ msgstr "Ongeza akaunti"
 
 #: src/Workspace.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogs.svelte
@@ -329,6 +330,7 @@ msgstr "Akaunti zote"
 
 #: src/components/AccountDropdown.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 msgid "Accounts"
 msgstr "Akaunti"
 
@@ -768,6 +770,7 @@ msgstr "Kukomesha…"
 #~ msgstr "KASI YA KUPOSTI"
 
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/PostingOptionsForm.svelte
 #: src/components/UsageGuide.svelte
 msgid "Interval between posts"
@@ -786,6 +789,7 @@ msgstr "Juu kabisa (sekunde)"
 msgid "Choose how long to wait before posting to the next group."
 msgstr "Chagua muda wa kusubiri kabla ya kuposti kwenye kundi la pili."
 
+#: src/components/GuidedTour.svelte
 #: src/components/PostingOptionsForm.svelte
 #: src/components/UsageGuide.svelte
 msgid "At least 60 seconds. Use equal values for a fixed interval."
@@ -954,6 +958,7 @@ msgstr "Funga dirisha"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Create post"
@@ -965,6 +970,7 @@ msgstr "Andika chapisho lako na ongeza picha"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select groups"
@@ -1240,6 +1246,7 @@ msgstr "Mandhari ya rangi"
 #: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/RenameProfileDialog.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UpdateButton.svelte
@@ -1839,6 +1846,7 @@ msgid "Themes"
 msgstr "Mandhari"
 
 #: src/App.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Post or schedule"
 msgstr "Chapisha au ratibu"
@@ -1863,6 +1871,7 @@ msgid "Draft text and image copies are saved automatically for each account."
 msgstr "Maandishi ya rasimu na nakala za picha huhifadhiwa kiotomatiki kwa kila akaunti."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Separate Facebook sessions, groups, drafts, settings, and queues for each account."
 msgstr "Vipindi vya Facebook, vikundi, rasimu, mipangilio na foleni tofauti kwa kila akaunti."
@@ -1920,7 +1929,6 @@ msgid "Queues pause when offline and resume when the connection returns."
 msgstr "Foleni husitishwa bila mtandao na kuendelea muunganisho unaporudi."
 
 #: src/components/FeaturesCard.svelte
-#: src/components/FeaturesCard.svelte
 msgid "How to use"
 msgstr "Jinsi ya kutumia"
 
@@ -1928,10 +1936,12 @@ msgstr "Jinsi ya kutumia"
 msgid "Choose Add account, enter an account name, and select Create & sign in. Use the account switcher to return to an existing account."
 msgstr "Chagua Ongeza akaunti, ingiza jina la akaunti, kisha chagua Unda na uingie. Tumia kibadilisha akaunti kurudi kwenye akaunti iliyopo."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Write your message and add at least one image; both are required. Use Next to move forward and Previous to edit an earlier step."
 msgstr "Andika ujumbe na uongeze angalau picha moja; vyote vinahitajika. Tumia Inayofuata kuendelea na Iliyotangulia kuhariri hatua ya awali."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select Load groups and finish Facebook login or verification in Chrome. Search the loaded list, select the groups you want, then choose Next."
 msgstr "Chagua Pakia vikundi na ukamilishe kuingia Facebook au uthibitishaji katika Chrome. Tafuta kwenye orodha iliyopakiwa, chagua vikundi unavyotaka, kisha Inayofuata."
@@ -1943,10 +1953,12 @@ msgstr "Chagua Pakia vikundi na ukamilishe kuingia Facebook au uthibitishaji kat
 msgid "Review the account, message, image order, selected groups, and posting intervals. Choose Post now and complete any Facebook login or verification prompts in Chrome."
 msgstr "Kagua akaunti, ujumbe, mpangilio wa picha, vikundi na vipindi vya kuchapisha. Chagua Chapisha sasa na ukamilishe kuingia Facebook au uthibitishaji katika Chrome."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Choose Schedule, select a future date and time in the displayed time zone, then Confirm schedule. Facebook may require login when the queue starts."
 msgstr "Chagua Ratibu, weka tarehe na saa ya baadaye katika ukanda wa saa unaoonyeshwa, kisha Thibitisha ratiba. Facebook inaweza kuhitaji kuingia foleni inapoanza."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Open Posting logs to follow progress. Its account selector lets you inspect other queues without switching the account in the main workspace."
 msgstr "Fungua Kumbukumbu za uchapishaji kufuatilia maendeleo. Kiteuzi chake cha akaunti hukuruhusu kukagua foleni nyingine bila kubadilisha akaunti katika eneo kuu la kazi."
@@ -2011,6 +2023,7 @@ msgstr "Idadi ya machapisho ya kuleta"
 #~ msgstr ""
 
 #: src/components/FacebookPageDialog.svelte
+#: src/components/GuidedTour.svelte
 msgid "Fetch posts from a Facebook page"
 msgstr "Leta machapisho kutoka ukurasa wa Facebook"
 
@@ -2063,6 +2076,7 @@ msgstr "Andika chapisho badala yake"
 #~ msgstr ""
 
 #: src/App.svelte
+#: src/components/GuidedTour.svelte
 msgid "Review the posts fetched from your Facebook page."
 msgstr "Kagua machapisho yaliyoletwa kutoka ukurasa wako wa Facebook."
 
@@ -2451,3 +2465,40 @@ msgstr "Imeshindikana kufungua programu yako ya barua pepe. Nakili anwani iliyo 
 
 #~ msgid "Business"
 #~ msgstr ""
+
+#: src/components/FeaturesCard.svelte
+msgid "Wait until the current operation finishes to start the tour."
+msgstr "Subiri shughuli ya sasa ikamilike ili kuanza ziara."
+
+#: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
+msgid "Start guided tour"
+msgstr "Anza ziara ya mwongozo"
+
+#: src/components/FeaturesCard.svelte
+msgid "Read the guide"
+msgstr "Soma mwongozo"
+
+#: src/components/GuidedTour.svelte
+msgid "Take a quick tour of Postika?"
+msgstr "Ungependa ziara fupi ya Postika?"
+
+#: src/components/GuidedTour.svelte
+msgid "You can reopen the tour from How to use."
+msgstr "Unaweza kufungua ziara tena kupitia Jinsi ya kutumia."
+
+#: src/components/GuidedTour.svelte
+msgid "Skip"
+msgstr "Ruka"
+
+#: src/components/GuidedTour.svelte
+msgid "Finish"
+msgstr "Maliza"
+
+#: src/components/GuidedTour.svelte
+msgid "Next"
+msgstr "Endelea"
+
+#: src/components/GuidedTour.svelte
+msgid "Previous"
+msgstr "Rudi"

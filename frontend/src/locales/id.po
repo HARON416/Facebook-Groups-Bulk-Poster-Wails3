@@ -74,7 +74,7 @@ msgstr "Pilih grup tempat Anda ingin membagikan postingan."
 #~ msgid "Review your post and preferences, then post now or schedule for later."
 #~ msgstr "Tinjau postingan dan preferensi Anda, lalu kirim sekarang atau jadwalkan untuk nanti."
 
-#. 0: currentStep + 1; 1: steps.length
+#. 0: displayStep + 1; 1: steps.length
 #: src/App.svelte
 msgid "STEP {0} OF {1}"
 msgstr "LANGKAH {0} DARI {1}"
@@ -256,6 +256,7 @@ msgstr "Tambah akun"
 
 #: src/Workspace.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogs.svelte
@@ -329,6 +330,7 @@ msgstr "Semua akun"
 
 #: src/components/AccountDropdown.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 msgid "Accounts"
 msgstr "Akun"
 
@@ -768,6 +770,7 @@ msgstr "Menghentikan…"
 #~ msgstr "JEDA PENGIRIMAN"
 
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/PostingOptionsForm.svelte
 #: src/components/UsageGuide.svelte
 msgid "Interval between posts"
@@ -786,6 +789,7 @@ msgstr "Maksimum (detik)"
 msgid "Choose how long to wait before posting to the next group."
 msgstr "Pilih waktu tunggu sebelum mengirim ke grup berikutnya."
 
+#: src/components/GuidedTour.svelte
 #: src/components/PostingOptionsForm.svelte
 #: src/components/UsageGuide.svelte
 msgid "At least 60 seconds. Use equal values for a fixed interval."
@@ -954,6 +958,7 @@ msgstr "Tutup jendela"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Create post"
@@ -965,6 +970,7 @@ msgstr "Tulis postingan Anda dan tambahkan gambar"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select groups"
@@ -1240,6 +1246,7 @@ msgstr "Tema warna"
 #: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/RenameProfileDialog.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UpdateButton.svelte
@@ -1839,6 +1846,7 @@ msgid "Themes"
 msgstr "Tema"
 
 #: src/App.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Post or schedule"
 msgstr "Posting atau jadwalkan"
@@ -1863,6 +1871,7 @@ msgid "Draft text and image copies are saved automatically for each account."
 msgstr "Teks draf dan salinan gambar disimpan otomatis untuk setiap akun."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Separate Facebook sessions, groups, drafts, settings, and queues for each account."
 msgstr "Sesi Facebook, grup, draf, pengaturan, dan antrean terpisah untuk setiap akun."
@@ -1920,7 +1929,6 @@ msgid "Queues pause when offline and resume when the connection returns."
 msgstr "Antrean dijeda saat offline dan dilanjutkan ketika koneksi kembali."
 
 #: src/components/FeaturesCard.svelte
-#: src/components/FeaturesCard.svelte
 msgid "How to use"
 msgstr "Cara menggunakan"
 
@@ -1928,10 +1936,12 @@ msgstr "Cara menggunakan"
 msgid "Choose Add account, enter an account name, and select Create & sign in. Use the account switcher to return to an existing account."
 msgstr "Pilih Tambah akun, masukkan nama akun, lalu Buat & masuk. Gunakan pengalih akun untuk kembali ke akun yang sudah ada."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Write your message and add at least one image; both are required. Use Next to move forward and Previous to edit an earlier step."
 msgstr "Tulis pesan dan tambahkan setidaknya satu gambar; keduanya wajib. Gunakan Berikutnya untuk melanjutkan dan Sebelumnya untuk mengedit langkah sebelumnya."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select Load groups and finish Facebook login or verification in Chrome. Search the loaded list, select the groups you want, then choose Next."
 msgstr "Pilih Muat grup dan selesaikan login Facebook atau verifikasi di Chrome. Cari di daftar yang dimuat, pilih grup tujuan, lalu Berikutnya."
@@ -1943,10 +1953,12 @@ msgstr "Pilih Muat grup dan selesaikan login Facebook atau verifikasi di Chrome.
 msgid "Review the account, message, image order, selected groups, and posting intervals. Choose Post now and complete any Facebook login or verification prompts in Chrome."
 msgstr "Periksa akun, pesan, urutan gambar, grup terpilih, dan interval posting. Pilih Kirim sekarang dan selesaikan login atau verifikasi Facebook di Chrome."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Choose Schedule, select a future date and time in the displayed time zone, then Confirm schedule. Facebook may require login when the queue starts."
 msgstr "Pilih Jadwalkan, tentukan tanggal dan waktu mendatang dalam zona waktu yang ditampilkan, lalu Konfirmasi jadwal. Facebook mungkin meminta login saat antrean dimulai."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Open Posting logs to follow progress. Its account selector lets you inspect other queues without switching the account in the main workspace."
 msgstr "Buka Log posting untuk mengikuti kemajuan. Pemilih akunnya memungkinkan Anda memeriksa antrean lain tanpa mengganti akun di ruang kerja utama."
@@ -2011,6 +2023,7 @@ msgstr "Jumlah postingan yang diambil"
 #~ msgstr ""
 
 #: src/components/FacebookPageDialog.svelte
+#: src/components/GuidedTour.svelte
 msgid "Fetch posts from a Facebook page"
 msgstr "Ambil postingan dari halaman Facebook"
 
@@ -2063,6 +2076,7 @@ msgstr "Tulis postingan sebagai gantinya"
 #~ msgstr ""
 
 #: src/App.svelte
+#: src/components/GuidedTour.svelte
 msgid "Review the posts fetched from your Facebook page."
 msgstr "Tinjau postingan yang diambil dari halaman Facebook Anda."
 
@@ -2451,3 +2465,40 @@ msgstr "Aplikasi email tidak dapat dibuka. Salin alamat di atas untuk mengirim e
 
 #~ msgid "Business"
 #~ msgstr ""
+
+#: src/components/FeaturesCard.svelte
+msgid "Wait until the current operation finishes to start the tour."
+msgstr "Tunggu operasi saat ini selesai untuk memulai tur."
+
+#: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
+msgid "Start guided tour"
+msgstr "Mulai tur terpandu"
+
+#: src/components/FeaturesCard.svelte
+msgid "Read the guide"
+msgstr "Baca panduan"
+
+#: src/components/GuidedTour.svelte
+msgid "Take a quick tour of Postika?"
+msgstr "Ingin tur singkat Postika?"
+
+#: src/components/GuidedTour.svelte
+msgid "You can reopen the tour from How to use."
+msgstr "Anda dapat membuka kembali tur dari Cara menggunakan."
+
+#: src/components/GuidedTour.svelte
+msgid "Skip"
+msgstr "Lewati"
+
+#: src/components/GuidedTour.svelte
+msgid "Finish"
+msgstr "Selesai"
+
+#: src/components/GuidedTour.svelte
+msgid "Next"
+msgstr "Berikutnya"
+
+#: src/components/GuidedTour.svelte
+msgid "Previous"
+msgstr "Sebelumnya"

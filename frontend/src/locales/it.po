@@ -74,7 +74,7 @@ msgstr "Scegli i gruppi con cui vuoi condividere il tuo post."
 #~ msgid "Review your post and preferences, then post now or schedule for later."
 #~ msgstr "Rivedi il tuo post e le preferenze, quindi pubblica ora o programma per più tardi."
 
-#. 0: currentStep + 1; 1: steps.length
+#. 0: displayStep + 1; 1: steps.length
 #: src/App.svelte
 msgid "STEP {0} OF {1}"
 msgstr "PASSO {0} DI {1}"
@@ -256,6 +256,7 @@ msgstr "Aggiungi account"
 
 #: src/Workspace.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogs.svelte
@@ -329,6 +330,7 @@ msgstr "Tutti gli account"
 
 #: src/components/AccountDropdown.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 msgid "Accounts"
 msgstr "Account"
 
@@ -768,6 +770,7 @@ msgstr "Fermando…"
 #~ msgstr "VELOCITÀ DI PUBBLICAZIONE"
 
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/PostingOptionsForm.svelte
 #: src/components/UsageGuide.svelte
 msgid "Interval between posts"
@@ -786,6 +789,7 @@ msgstr "Massimo (secondi)"
 msgid "Choose how long to wait before posting to the next group."
 msgstr "Scegli quanto tempo attendere prima di pubblicare sul gruppo successivo."
 
+#: src/components/GuidedTour.svelte
 #: src/components/PostingOptionsForm.svelte
 #: src/components/UsageGuide.svelte
 msgid "At least 60 seconds. Use equal values for a fixed interval."
@@ -954,6 +958,7 @@ msgstr "Chiudi finestra"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Create post"
@@ -965,6 +970,7 @@ msgstr "Scrivi il tuo post e aggiungi immagini"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select groups"
@@ -1240,6 +1246,7 @@ msgstr "Temi di colore"
 #: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/RenameProfileDialog.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UpdateButton.svelte
@@ -1839,6 +1846,7 @@ msgid "Themes"
 msgstr "Temi"
 
 #: src/App.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Post or schedule"
 msgstr "Pubblica o programma"
@@ -1863,6 +1871,7 @@ msgid "Draft text and image copies are saved automatically for each account."
 msgstr "Il testo della bozza e le copie delle immagini vengono salvati automaticamente per ogni account."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Separate Facebook sessions, groups, drafts, settings, and queues for each account."
 msgstr "Sessioni Facebook, gruppi, bozze, impostazioni e code separati per ogni account."
@@ -1920,7 +1929,6 @@ msgid "Queues pause when offline and resume when the connection returns."
 msgstr "Le code si sospendono offline e riprendono quando torna la connessione."
 
 #: src/components/FeaturesCard.svelte
-#: src/components/FeaturesCard.svelte
 msgid "How to use"
 msgstr "Come usare"
 
@@ -1928,10 +1936,12 @@ msgstr "Come usare"
 msgid "Choose Add account, enter an account name, and select Create & sign in. Use the account switcher to return to an existing account."
 msgstr "Scegli Aggiungi account, inserisci un nome e seleziona Crea e accedi. Usa il selettore per tornare a un account esistente."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Write your message and add at least one image; both are required. Use Next to move forward and Previous to edit an earlier step."
 msgstr "Scrivi il messaggio e aggiungi almeno un’immagine; entrambi sono obbligatori. Usa Avanti per proseguire e Indietro per modificare un passaggio precedente."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select Load groups and finish Facebook login or verification in Chrome. Search the loaded list, select the groups you want, then choose Next."
 msgstr "Seleziona Carica gruppi e completa l’accesso o la verifica Facebook in Chrome. Cerca nell’elenco, seleziona i gruppi e scegli Avanti."
@@ -1943,10 +1953,12 @@ msgstr "Seleziona Carica gruppi e completa l’accesso o la verifica Facebook in
 msgid "Review the account, message, image order, selected groups, and posting intervals. Choose Post now and complete any Facebook login or verification prompts in Chrome."
 msgstr "Controlla account, messaggio, ordine delle immagini, gruppi e intervalli. Scegli Pubblica ora e completa eventuali richieste di accesso o verifica Facebook in Chrome."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Choose Schedule, select a future date and time in the displayed time zone, then Confirm schedule. Facebook may require login when the queue starts."
 msgstr "Scegli Programma, imposta data e ora future nel fuso indicato e conferma. Facebook potrebbe richiedere l’accesso all’avvio della coda."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Open Posting logs to follow progress. Its account selector lets you inspect other queues without switching the account in the main workspace."
 msgstr "Apri i registri di pubblicazione per seguire l’avanzamento. Il selettore permette di controllare altre code senza cambiare account nello spazio principale."
@@ -2011,6 +2023,7 @@ msgstr "Numero di post da recuperare"
 #~ msgstr ""
 
 #: src/components/FacebookPageDialog.svelte
+#: src/components/GuidedTour.svelte
 msgid "Fetch posts from a Facebook page"
 msgstr "Recupera post da una pagina Facebook"
 
@@ -2063,6 +2076,7 @@ msgstr "Scrivi invece un post"
 #~ msgstr ""
 
 #: src/App.svelte
+#: src/components/GuidedTour.svelte
 msgid "Review the posts fetched from your Facebook page."
 msgstr "Controlla i post recuperati dalla tua pagina Facebook."
 
@@ -2451,3 +2465,40 @@ msgstr "Impossibile aprire l’app di posta. Copia l’indirizzo qui sopra per i
 
 #~ msgid "Business"
 #~ msgstr ""
+
+#: src/components/FeaturesCard.svelte
+msgid "Wait until the current operation finishes to start the tour."
+msgstr "Attendi il completamento dell’operazione in corso per avviare il tour."
+
+#: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
+msgid "Start guided tour"
+msgstr "Avvia tour guidato"
+
+#: src/components/FeaturesCard.svelte
+msgid "Read the guide"
+msgstr "Leggi la guida"
+
+#: src/components/GuidedTour.svelte
+msgid "Take a quick tour of Postika?"
+msgstr "Vuoi fare un breve tour di Postika?"
+
+#: src/components/GuidedTour.svelte
+msgid "You can reopen the tour from How to use."
+msgstr "Puoi riaprire il tour da Come si usa."
+
+#: src/components/GuidedTour.svelte
+msgid "Skip"
+msgstr "Salta"
+
+#: src/components/GuidedTour.svelte
+msgid "Finish"
+msgstr "Termina"
+
+#: src/components/GuidedTour.svelte
+msgid "Next"
+msgstr "Avanti"
+
+#: src/components/GuidedTour.svelte
+msgid "Previous"
+msgstr "Indietro"

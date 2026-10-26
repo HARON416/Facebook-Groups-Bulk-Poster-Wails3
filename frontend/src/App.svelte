@@ -8,7 +8,7 @@
   import { createAccountService } from './lib/accounts';
   import { Events } from '@wailsio/runtime';
   import { readDraft, writeDraft, type AccountDraft } from './lib/drafts';
-  let { profile, active = true, connect = false } = $props<{ profile: AccountProfile; active?: boolean; connect?: boolean }>();
+  let { profile, active = true, connect = false, tourStep = null, tourActive = false, onTourReadyChange } = $props<{ profile: AccountProfile; active?: boolean; connect?: boolean; tourStep?: number | null; tourActive?: boolean; onTourReadyChange?: (ready: boolean) => void }>();
   const GroupsService = untrack(() => createAccountService(profile.id));
   const { PublishRichPostWithOptions: publish } = GroupsService;
   let draftReady = $state(false), draftError = $state(''), imageDropMessage = $state<string | string[]>('');
@@ -25,6 +25,7 @@
   ];
 
   let currentStep = $state(0);
+  const displayStep = $derived(tourStep ?? currentStep);
   let minimumInterval = $state(60), maximumInterval = $state(120);
   const validSettings = $derived(Number.isInteger(minimumInterval) && minimumInterval >= 60 && Number.isInteger(maximumInterval) && maximumInterval >= minimumInterval && maximumInterval <= 86400);
   let body = $state('');
@@ -334,6 +335,7 @@
     }
     void initialize();
     const stopImageDrops = Events.On('postika:images-dropped', (event) => {
+      if (tourActive) return;
       const result = event.data as { target: string; profileID?: string; images: { name: string; type: string; data: string; lastModified: number }[]; errors: string[] };
       if (result.target !== 'post-images' || (result.profileID ? result.profileID !== profile.id : !active)) return;
       try {
@@ -353,6 +355,10 @@
     return () => { disposed = true; stopImageDrops(); stopLoginPolling(); stopPostingPolling(); };
   });
 
+  $effect(() => {
+    if (active) onTourReadyChange?.(draftReady && !groupsBusy && !postingActive && !openingPost);
+  });
+
   async function navigate(step: number) {
     if (postingActive || (groupsBusy && currentStep === 1 && step > currentStep)) return;
     currentStep = step;
@@ -360,8 +366,21 @@
     stepHeading?.focus();
   }
 
+  // Previewing the composer can normalize Lexical markup on mount. Preserve
+  // the original rich-text state and suppress draft writes throughout the tour.
+  let beforeTour: { body: string; bodyHTML: string; bodyState: string } | undefined;
+  $effect.pre(() => {
+    if (tourActive) {
+      beforeTour ??= untrack(() => ({ body, bodyHTML, bodyState }));
+    } else if (beforeTour) {
+      const saved = beforeTour;
+      beforeTour = undefined;
+      body = saved.body; bodyHTML = saved.bodyHTML; bodyState = saved.bodyState;
+    }
+  });
+
   $effect(() => {
-    if (!draftReady) return;
+    if (!draftReady || tourActive) return;
     // Read reactive fields now; draft storage copies attachment bytes to IndexedDB.
     const draft: AccountDraft = {
       body, bodyHTML, bodyState, images: images.map(({ id, file, unavailable, recoveryKey }) => ({ id, file, unavailable, recoveryKey })),
@@ -381,25 +400,25 @@
 {#if active}
 <div class="app-shell">
   <header>
-    <StepProgress {steps} {currentStep} completed={postingCompleted} />
+    <StepProgress {steps} currentStep={displayStep} completed={postingCompleted} />
   </header>
   <main aria-labelledby="step-heading" data-step-scroll>
     {#if draftError}<p class="group-status error" role="alert">{logMessage(draftError)}</p>{/if}
     <div class="step-content">
       <div class="step-heading">
-        <p class="eyebrow">STEP {currentStep + 1} OF {steps.length}</p>
-        <h1 class="ui-title" id="step-heading" bind:this={stepHeading} tabindex="-1">{steps[currentStep].title}</h1>
+        <p class="eyebrow">STEP {displayStep + 1} OF {steps.length}</p>
+        <h1 class="ui-title" id="step-heading" bind:this={stepHeading} tabindex="-1">{steps[displayStep].title}</h1>
         <p class="step-intro">
-          {currentStep === 0 ? fetchedPosts === null ? 'Start with your message. Add images to bring it to life.' : 'Review the posts fetched from your Facebook page.' : currentStep === 1 ? 'Choose the groups you want to share your post with.' : 'Choose the time between posts, then post now or schedule for later.'}
+          {displayStep === 0 ? fetchedPosts === null ? 'Start with your message. Add images to bring it to life.' : 'Review the posts fetched from your Facebook page.' : displayStep === 1 ? 'Choose the groups you want to share your post with.' : 'Choose the time between posts, then post now or schedule for later.'}
         </p>
       </div>
 
       {#if !draftReady}
         <p class="group-status" role="status">Restoring account workspace…</p>
-      {:else if currentStep === 0}
+      {:else if displayStep === 0}
         <PostComposer profileID={profile.id} groupsLoading={groupsBusy} bind:message={imageDropMessage} bind:body bind:bodyHTML bind:bodyState bind:images bind:fetchedPosts />
-      {:else if currentStep === 1}
-        <div class="groups-toolbar">
+      {:else if displayStep === 1}
+        <div class="groups-toolbar" data-tour="groups">
           <h2>Groups</h2>
           <button type="button" class="load-groups" disabled={postingActive || groupsBusy} aria-busy={groupsBusy} onclick={loadGroups}>
             {openingGroups ? 'Opening…' : groupsBusy ? 'Loading…' : 'Load groups'}
@@ -457,7 +476,7 @@
         {/if}
       {:else}
         <QueueReview {profile} {body} imageCount={images.length} {fetchedPosts} groups={reviewGroups} disabled={postingActive} oneditpost={() => navigate(0)} oneditgroups={() => navigate(1)} />
-        <section class="run-settings" aria-label="Posting settings">
+        <section class="run-settings" data-tour="timing" aria-label="Posting settings">
           <PostingOptionsForm bind:minimumInterval bind:maximumInterval disabled={postingActive} />
         </section>
         {#if scheduleOpen && !postingActive}
@@ -473,22 +492,22 @@
     </div>
   </main>
 
-  <footer class="step-actions">
-        {#if currentStep === 0 && draftReady && incompleteFetchedPost !== -1}
+  <footer class="step-actions" data-tour="schedule">
+        {#if displayStep === 0 && draftReady && incompleteFetchedPost !== -1}
         <p id="next-blocker" class="next-blocker" role="status"><LocalizedFeedback message={`Add text to fetched post ${incompleteFetchedPost + 1} before posting`} /></p>
-        {:else if currentStep < steps.length - 1 && postingActive && postMessage}
+        {:else if displayStep < steps.length - 1 && postingActive && postMessage}
         <p id="next-blocker" class="next-blocker" role="status"><LocalizedFeedback message={postMessage} /></p>
         {/if}
-        {#if currentStep === steps.length - 1 && scheduleOpen && !postingActive}
+        {#if displayStep === steps.length - 1 && scheduleOpen && !postingActive}
         <button type="button" class="previous action-button action-button--secondary" onclick={() => { scheduleOpen = false; }}>Cancel</button>
         <button type="submit" form="schedule-form" class="post action-button action-button--primary" disabled={groupsBusy || !scheduleValid || selectedGroupIds.length === 0 || !hasCompletePost || !validSettings}>Confirm schedule</button>
         {:else}
-        <button type="button" class="previous action-button action-button--secondary" disabled={currentStep === 0 || postingActive} onclick={() => navigate(currentStep - 1)}>
+        <button type="button" class="previous action-button action-button--secondary" disabled={displayStep === 0 || postingActive} onclick={() => navigate(displayStep - 1)}>
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg>
           Previous
         </button>
-        {#if currentStep < steps.length - 1}
-        <button type="button" class="next action-button action-button--primary" aria-describedby={currentStep === 0 && incompleteFetchedPost !== -1 || postingActive && postMessage ? 'next-blocker' : undefined} disabled={!canContinue || postingActive || (groupsBusy && currentStep === 1)} onclick={() => navigate(currentStep + 1)}>
+        {#if displayStep < steps.length - 1}
+        <button type="button" class="next action-button action-button--primary" aria-describedby={displayStep === 0 && incompleteFetchedPost !== -1 || postingActive && postMessage ? 'next-blocker' : undefined} disabled={!canContinue || postingActive || (groupsBusy && displayStep === 1)} onclick={() => navigate(displayStep + 1)}>
           Next
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg>
         </button>

@@ -1,5 +1,8 @@
 <script lang="ts">
   import UsageGuide from './UsageGuide.svelte';
+  import { tick } from 'svelte';
+  let { onstarttour, tourAvailable = true }: { onstarttour?: () => void | Promise<void>; tourAvailable?: boolean } = $props();
+  async function launchTour() { close(); await tick(); await onstarttour?.(); }
   import { languages } from '../locales/languages.js';
   import { themeOptions } from '../lib/theme-options';
   import { getLocale } from '../lib/i18n.svelte';
@@ -38,7 +41,8 @@
   </header>
   <div class="view-switch" role="group" aria-label="Features">
     <button type="button" aria-pressed={view === 'features'} aria-controls="features-content" onclick={() => showView('features')}>Features</button>
-    <button type="button" data-usage-guide aria-pressed={view === 'guide'} aria-controls="features-content" onclick={() => showView('guide')}>How to use</button>
+    <button type="button" data-usage-guide aria-pressed={view === 'guide'} aria-controls="features-content" onclick={() => showView('guide')}>Read the guide</button>
+    {#if onstarttour}<button type="button" class="start-tour" disabled={!tourAvailable} title={!tourAvailable ? 'Wait until the current operation finishes to start the tour.' : undefined} onclick={launchTour}>Start guided tour</button>{/if}
   </div>
   <!-- A fresh pane resets scrolling and cancels keyboard scrolling from the previous view. -->
   {#key view}
@@ -99,10 +103,12 @@
   dialog { width: min(88rem, calc(100vw - 3.2rem)); max-height: min(86rem, calc(100dvh - 3.2rem)); overflow: hidden; }
   dialog[open] { display: flex; flex-direction: column; }
 
-  .view-switch { display: flex; flex-shrink: 0; gap: .6rem; padding: 1.2rem var(--ui-space); border-bottom: 1px solid var(--border); }
+  .view-switch { display: flex; flex-wrap: wrap; flex-shrink: 0; gap: .6rem; padding: 1.2rem var(--ui-space); border-bottom: 1px solid var(--border); }
   .view-switch button { padding: .7rem 1.2rem; border: 1px solid transparent; border-radius: .6rem; background: transparent; color: var(--text-secondary); font-size: var(--ui-body-size); cursor: pointer; }
   .view-switch button:hover { background: var(--surface-hover); color: var(--text); }
   .view-switch button[aria-pressed=true] { border-color: var(--border-accent); background: var(--accent-faint); color: var(--accent); }
+  .view-switch .start-tour { border-color: var(--border); margin-inline-start: auto; }
+  .view-switch button:disabled { opacity: .5; cursor: default; }
   .feature-content { min-height: 0; padding: var(--ui-space); overflow-y: auto; overscroll-behavior: contain; font-size: var(--ui-body-size); line-height: 1.6; overflow-wrap: anywhere; }
   .intro { color: var(--text-strong); font-size: var(--ui-body-size); }
   section { margin-top: 2.4rem; }

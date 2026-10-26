@@ -226,7 +226,7 @@
       <span class="field-label">Post body</span>
       <span>Required</span>
     </div>
-    <div class="editor">
+    <div class="editor" data-tour="compose">
       <PostEditor bind:body bind:html={bodyHTML} bind:editorJSON={bodyState} />
     </div>
   </div>
@@ -322,7 +322,7 @@
   </div>
   {#if fetchedPosts !== null}
     <section class="fetched-section" aria-labelledby={`fetched-posts-heading-${profileID}`}>
-      <div class="fetched-heading">
+      <div class="fetched-heading" data-tour="compose">
         <h2 id={`fetched-posts-heading-${profileID}`}>Fetched posts <span>{fetchedPosts.length}</span></h2>
         <button type="button" class="write-instead" onclick={() => { fetchedPosts = null; }}>Write a post instead</button>
       </div>

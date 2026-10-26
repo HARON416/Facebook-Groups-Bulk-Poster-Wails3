@@ -33,7 +33,14 @@ assets and signed update feeds are hosted on Bunny CDN at
   and 213 themes. Language and theme choices sync across windows. App-generated
   log messages are translated, with original diagnostics under Debug details.
 
-Open **How to use** inside the app for the detailed workflow.
+On first launch, Postika offers a guided tour with spotlights on the real app
+controls. Choose **Start guided tour** or **Skip**; the choice is remembered on
+this device. Reopen it from **How to use → Start guided tour**, or choose
+**Read the guide** for the existing written instructions. The tour has Previous,
+Next, Close and Finish controls, supports Escape and keyboard navigation, and
+preserves the account's draft, workflow step and scroll position. It does not
+fetch data, create accounts or start posting. Start it when no posting or group
+loading operation is active. Tour copy follows the selected interface language.
 
 ## Using the app
 

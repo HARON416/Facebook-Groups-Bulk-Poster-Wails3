@@ -74,7 +74,7 @@ msgstr "మీ పోస్ట్‌ను భాగస్వామ్యం చ
 #~ msgid "Review your post and preferences, then post now or schedule for later."
 #~ msgstr "మీ పోస్ట్ మరియు ప్రాధాన్యతలను సమీక్షించండి, అప్పుడు ఇప్పుడే పోస్ట్ చేయండి లేదా తర్వాత కోసం షెడ్యూల్ చేయండి."
 
-#. 0: currentStep + 1; 1: steps.length
+#. 0: displayStep + 1; 1: steps.length
 #: src/App.svelte
 msgid "STEP {0} OF {1}"
 msgstr "దశ {0} מתוך {1}"
@@ -256,6 +256,7 @@ msgstr "ఖాతాను జోడించండి"
 
 #: src/Workspace.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogs.svelte
@@ -329,6 +330,7 @@ msgstr "అన్ని ఖాతాలు"
 
 #: src/components/AccountDropdown.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 msgid "Accounts"
 msgstr "ఖాతాలు"
 
@@ -768,6 +770,7 @@ msgstr "ఆపడం…"
 #~ msgstr "పోస్టింగ్ వేగం"
 
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/PostingOptionsForm.svelte
 #: src/components/UsageGuide.svelte
 msgid "Interval between posts"
@@ -786,6 +789,7 @@ msgstr "గరిష్ఠం (సెకన్లు)"
 msgid "Choose how long to wait before posting to the next group."
 msgstr "తదుపరి గ్రూప్‌కు పోస్టు చేయడానికి ఎంత సమయం వేచి ఉండాలో ఎంచుకోండి."
 
+#: src/components/GuidedTour.svelte
 #: src/components/PostingOptionsForm.svelte
 #: src/components/UsageGuide.svelte
 msgid "At least 60 seconds. Use equal values for a fixed interval."
@@ -954,6 +958,7 @@ msgstr "విండోను మూసివేయండి"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Create post"
@@ -965,6 +970,7 @@ msgstr "మీ పోస్ట్ రాయండి మరియు చిత�
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select groups"
@@ -1240,6 +1246,7 @@ msgstr "రంగు థీమ్‌లు"
 #: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/RenameProfileDialog.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UpdateButton.svelte
@@ -1839,6 +1846,7 @@ msgid "Themes"
 msgstr "థీమ్‌లు"
 
 #: src/App.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Post or schedule"
 msgstr "పోస్ట్ చేయండి లేదా షెడ్యూల్ చేయండి"
@@ -1863,6 +1871,7 @@ msgid "Draft text and image copies are saved automatically for each account."
 msgstr "ప్రతి ఖాతా కోసం చిత్తుప్రతి వచనం మరియు చిత్రాల కాపీలు స్వయంచాలకంగా సేవ్ అవుతాయి."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Separate Facebook sessions, groups, drafts, settings, and queues for each account."
 msgstr "ప్రతి ఖాతా కోసం వేర్వేరు Facebook సెషన్‌లు, గ్రూపులు, చిత్తుప్రతులు, సెట్టింగ్‌లు మరియు క్యూలు."
@@ -1920,7 +1929,6 @@ msgid "Queues pause when offline and resume when the connection returns."
 msgstr "ఆఫ్‌లైన్‌లో ఉన్నప్పుడు క్యూలు ఆగి, కనెక్షన్ తిరిగి వచ్చినప్పుడు కొనసాగుతాయి."
 
 #: src/components/FeaturesCard.svelte
-#: src/components/FeaturesCard.svelte
 msgid "How to use"
 msgstr "ఎలా ఉపయోగించాలి"
 
@@ -1928,10 +1936,12 @@ msgstr "ఎలా ఉపయోగించాలి"
 msgid "Choose Add account, enter an account name, and select Create & sign in. Use the account switcher to return to an existing account."
 msgstr "ఖాతాను జోడించు ఎంచుకుని పేరు ఇవ్వండి, తర్వాత సృష్టించి సైన్ ఇన్ చేయి ఎంచుకోండి. పాత ఖాతాకు తిరిగి వెళ్లడానికి ఖాతా స్విచర్‌ను వాడండి."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Write your message and add at least one image; both are required. Use Next to move forward and Previous to edit an earlier step."
 msgstr "సందేశం రాసి కనీసం ఒక చిత్రాన్ని జోడించండి; రెండూ తప్పనిసరి. ముందుకు వెళ్లడానికి తదుపరి, మునుపటి దశ మార్చడానికి మునుపటి వాడండి."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select Load groups and finish Facebook login or verification in Chrome. Search the loaded list, select the groups you want, then choose Next."
 msgstr "గ్రూపులను లోడ్ చేయి ఎంచుకుని Chromeలో Facebook లాగిన్ లేదా ధృవీకరణ పూర్తిచేయండి. జాబితాలో వెతికి గ్రూపులు ఎంచుకున్నాక తదుపరి నొక్కండి."
@@ -1943,10 +1953,12 @@ msgstr "గ్రూపులను లోడ్ చేయి ఎంచుకు
 msgid "Review the account, message, image order, selected groups, and posting intervals. Choose Post now and complete any Facebook login or verification prompts in Chrome."
 msgstr "ఖాతా, సందేశం, చిత్రాల క్రమం, గ్రూపులు మరియు విరామాలు తనిఖీ చేయండి. ఇప్పుడే పోస్ట్ చేయి ఎంచుకుని Chromeలో Facebook లాగిన్ లేదా ధృవీకరణ పూర్తిచేయండి."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Choose Schedule, select a future date and time in the displayed time zone, then Confirm schedule. Facebook may require login when the queue starts."
 msgstr "షెడ్యూల్ ఎంచుకుని చూపిన టైమ్ జోన్‌లో భవిష్యత్ తేదీ, సమయం నిర్ణయించి నిర్ధారించండి. క్యూ మొదలయ్యేటప్పుడు Facebook లాగిన్ కోరవచ్చు."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Open Posting logs to follow progress. Its account selector lets you inspect other queues without switching the account in the main workspace."
 msgstr "పురోగతికి పోస్టింగ్ లాగ్‌లు తెరవండి. అందులో ఖాతాను ఎంచుకుని ప్రధాన వర్క్‌స్పేస్ ఖాతా మార్చకుండా ఇతర క్యూలను చూడవచ్చు."
@@ -2011,6 +2023,7 @@ msgstr "పొందాల్సిన పోస్టుల సంఖ్య"
 #~ msgstr ""
 
 #: src/components/FacebookPageDialog.svelte
+#: src/components/GuidedTour.svelte
 msgid "Fetch posts from a Facebook page"
 msgstr "Facebook పేజీ నుంచి పోస్టులను పొందండి"
 
@@ -2063,6 +2076,7 @@ msgstr "బదులుగా పోస్ట్ రాయండి"
 #~ msgstr ""
 
 #: src/App.svelte
+#: src/components/GuidedTour.svelte
 msgid "Review the posts fetched from your Facebook page."
 msgstr "మీ Facebook పేజీ నుంచి పొందిన పోస్టులను సమీక్షించండి."
 
@@ -2451,3 +2465,40 @@ msgstr "మీ ఇమెయిల్ యాప్ తెరవలేకపోయ
 
 #~ msgid "Business"
 #~ msgstr ""
+
+#: src/components/FeaturesCard.svelte
+msgid "Wait until the current operation finishes to start the tour."
+msgstr "టూర్ ప్రారంభించడానికి ప్రస్తుత పని పూర్తయ్యే వరకు వేచి ఉండండి."
+
+#: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
+msgid "Start guided tour"
+msgstr "మార్గదర్శక టూర్ ప్రారంభించండి"
+
+#: src/components/FeaturesCard.svelte
+msgid "Read the guide"
+msgstr "గైడ్ చదవండి"
+
+#: src/components/GuidedTour.svelte
+msgid "Take a quick tour of Postika?"
+msgstr "Postika గురించి చిన్న టూర్ కావాలా?"
+
+#: src/components/GuidedTour.svelte
+msgid "You can reopen the tour from How to use."
+msgstr "ఎలా ఉపయోగించాలి నుండి టూర్‌ను మళ్లీ తెరవవచ్చు."
+
+#: src/components/GuidedTour.svelte
+msgid "Skip"
+msgstr "దాటవేయి"
+
+#: src/components/GuidedTour.svelte
+msgid "Finish"
+msgstr "ముగించు"
+
+#: src/components/GuidedTour.svelte
+msgid "Next"
+msgstr "తదుపరి"
+
+#: src/components/GuidedTour.svelte
+msgid "Previous"
+msgstr "మునుపటి"

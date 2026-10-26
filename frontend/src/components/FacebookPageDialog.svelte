@@ -93,7 +93,7 @@
     if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) void dismiss();
   }
 </script>
-<button bind:this={trigger} type="button" class="facebook-page-option" {disabled} title={disabled ? logMessage(/* @wc-ignore */ 'Finish loading groups before fetching Facebook posts') : undefined} aria-haspopup="dialog" aria-expanded={expanded} aria-controls={dialogID} onclick={() => { error = ''; dialog.showModal(); expanded = true; void refresh(); }}>
+<button bind:this={trigger} type="button" class="facebook-page-option" data-tour="import" {disabled} title={disabled ? logMessage(/* @wc-ignore */ 'Finish loading groups before fetching Facebook posts') : undefined} aria-haspopup="dialog" aria-expanded={expanded} aria-controls={dialogID} onclick={() => { error = ''; dialog.showModal(); expanded = true; void refresh(); }}>
   Or click here to fetch posts from any Facebook page
 </button>
 <dialog class="ui-dialog" bind:this={dialog} id={dialogID} aria-labelledby={`${dialogID}-heading`} onclick={backdrop} oncancel={(event) => { event.preventDefault(); void dismiss(); }} onclose={() => { expanded = false; trigger.focus(); }}>

@@ -74,7 +74,7 @@ msgstr "Válaszd ki azokat a csoportokat, amelyekkel meg szeretnéd osztani a be
 #~ msgid "Review your post and preferences, then post now or schedule for later."
 #~ msgstr "Tekintsd át a bejegyzésed és a beállításaid, majd tedd közzé most, vagy ütemezd későbbre."
 
-#. 0: currentStep + 1; 1: steps.length
+#. 0: displayStep + 1; 1: steps.length
 #: src/App.svelte
 msgid "STEP {0} OF {1}"
 msgstr "{0} LÉPÉS {1}-BŐL"
@@ -256,6 +256,7 @@ msgstr "Fiók hozzáadása"
 
 #: src/Workspace.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogs.svelte
@@ -329,6 +330,7 @@ msgstr "Összes fiók"
 
 #: src/components/AccountDropdown.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 msgid "Accounts"
 msgstr "Fiókok"
 
@@ -768,6 +770,7 @@ msgstr "Leállítás…"
 #~ msgstr "POSZTOLÁSI ÜTEM"
 
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/PostingOptionsForm.svelte
 #: src/components/UsageGuide.svelte
 msgid "Interval between posts"
@@ -786,6 +789,7 @@ msgstr "Maximum (másodperc)"
 msgid "Choose how long to wait before posting to the next group."
 msgstr "Válaszd ki, mennyi ideig várj a következő csoporthoz való posztolás előtt."
 
+#: src/components/GuidedTour.svelte
 #: src/components/PostingOptionsForm.svelte
 #: src/components/UsageGuide.svelte
 msgid "At least 60 seconds. Use equal values for a fixed interval."
@@ -954,6 +958,7 @@ msgstr "Ablak bezárása"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Create post"
@@ -965,6 +970,7 @@ msgstr "Írja meg bejegyzését és adjon hozzá képeket"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select groups"
@@ -1240,6 +1246,7 @@ msgstr "Színtémák"
 #: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/RenameProfileDialog.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UpdateButton.svelte
@@ -1839,6 +1846,7 @@ msgid "Themes"
 msgstr "Témák"
 
 #: src/App.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Post or schedule"
 msgstr "Közzététel vagy ütemezés"
@@ -1863,6 +1871,7 @@ msgid "Draft text and image copies are saved automatically for each account."
 msgstr "A piszkozat szövege és a képmásolatok fiókonként automatikusan mentődnek."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Separate Facebook sessions, groups, drafts, settings, and queues for each account."
 msgstr "Külön Facebook-munkamenetek, csoportok, piszkozatok, beállítások és várólisták minden fiókhoz."
@@ -1920,7 +1929,6 @@ msgid "Queues pause when offline and resume when the connection returns."
 msgstr "A várólisták kapcsolat nélkül szünetelnek, majd a kapcsolat helyreállásakor folytatódnak."
 
 #: src/components/FeaturesCard.svelte
-#: src/components/FeaturesCard.svelte
 msgid "How to use"
 msgstr "Használati útmutató"
 
@@ -1928,10 +1936,12 @@ msgstr "Használati útmutató"
 msgid "Choose Add account, enter an account name, and select Create & sign in. Use the account switcher to return to an existing account."
 msgstr "Válassza a Fiók hozzáadása lehetőséget, adjon meg nevet, majd hozza létre és jelentkezzen be. A fiókváltóval visszatérhet meglévő fiókjához."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Write your message and add at least one image; both are required. Use Next to move forward and Previous to edit an earlier step."
 msgstr "Írja meg az üzenetet, és adjon hozzá legalább egy képet; mindkettő kötelező. A Tovább folytatja, a Vissza egy korábbi lépés szerkesztésére szolgál."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select Load groups and finish Facebook login or verification in Chrome. Search the loaded list, select the groups you want, then choose Next."
 msgstr "Válassza a Csoportok betöltése lehetőséget, és fejezze be a Facebook-bejelentkezést vagy ellenőrzést a Chrome-ban. Keressen a listában, válassza ki a csoportokat, majd Tovább."
@@ -1943,10 +1953,12 @@ msgstr "Válassza a Csoportok betöltése lehetőséget, és fejezze be a Facebo
 msgid "Review the account, message, image order, selected groups, and posting intervals. Choose Post now and complete any Facebook login or verification prompts in Chrome."
 msgstr "Ellenőrizze a fiókot, az üzenetet, a képek sorrendjét, a csoportokat és időközöket. Válassza a Közzététel most lehetőséget, és végezze el a Facebook ellenőrzéseit a Chrome-ban."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Choose Schedule, select a future date and time in the displayed time zone, then Confirm schedule. Facebook may require login when the queue starts."
 msgstr "Válassza az Ütemezés lehetőséget, állítson be jövőbeli időpontot a jelzett időzónában, majd erősítse meg. A Facebook a várólista indulásakor bejelentkezést kérhet."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Open Posting logs to follow progress. Its account selector lets you inspect other queues without switching the account in the main workspace."
 msgstr "Nyissa meg a közzétételi naplót a haladás követéséhez. Az ottani fiókválasztó más várólistákat mutat a fő munkaterület fiókjának megváltoztatása nélkül."
@@ -2011,6 +2023,7 @@ msgstr "Lekérendő bejegyzések száma"
 #~ msgstr ""
 
 #: src/components/FacebookPageDialog.svelte
+#: src/components/GuidedTour.svelte
 msgid "Fetch posts from a Facebook page"
 msgstr "Bejegyzések lekérése egy Facebook-oldalról"
 
@@ -2063,6 +2076,7 @@ msgstr "Inkább bejegyzést írok"
 #~ msgstr ""
 
 #: src/App.svelte
+#: src/components/GuidedTour.svelte
 msgid "Review the posts fetched from your Facebook page."
 msgstr "Tekintsd át a Facebook-oldaladról lekért bejegyzéseket."
 
@@ -2451,3 +2465,40 @@ msgstr "Nem sikerült megnyitni a levelezőalkalmazást. E-mail küldéséhez m�
 
 #~ msgid "Business"
 #~ msgstr ""
+
+#: src/components/FeaturesCard.svelte
+msgid "Wait until the current operation finishes to start the tour."
+msgstr "A bemutató elindításához várja meg az aktuális művelet befejezését."
+
+#: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
+msgid "Start guided tour"
+msgstr "Bemutató indítása"
+
+#: src/components/FeaturesCard.svelte
+msgid "Read the guide"
+msgstr "Útmutató elolvasása"
+
+#: src/components/GuidedTour.svelte
+msgid "Take a quick tour of Postika?"
+msgstr "Szeretne egy rövid bemutatót a Postikáról?"
+
+#: src/components/GuidedTour.svelte
+msgid "You can reopen the tour from How to use."
+msgstr "A bemutatót a Használati útmutatóban újra megnyithatja."
+
+#: src/components/GuidedTour.svelte
+msgid "Skip"
+msgstr "Kihagyás"
+
+#: src/components/GuidedTour.svelte
+msgid "Finish"
+msgstr "Befejezés"
+
+#: src/components/GuidedTour.svelte
+msgid "Next"
+msgstr "Tovább"
+
+#: src/components/GuidedTour.svelte
+msgid "Previous"
+msgstr "Vissza"

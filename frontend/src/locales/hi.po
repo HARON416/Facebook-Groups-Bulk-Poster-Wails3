@@ -74,7 +74,7 @@ msgstr "अपने पोस्ट को जिन समूहों के 
 #~ msgid "Review your post and preferences, then post now or schedule for later."
 #~ msgstr "अपने पोस्ट और वरीयताओं की समीक्षा करें, फिर अब पोस्ट करें या बाद के लिए शेड्यूल करें।"
 
-#. 0: currentStep + 1; 1: steps.length
+#. 0: displayStep + 1; 1: steps.length
 #: src/App.svelte
 msgid "STEP {0} OF {1}"
 msgstr "चरण {0} में से {1}"
@@ -256,6 +256,7 @@ msgstr "खाता जोड़ें"
 
 #: src/Workspace.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogs.svelte
@@ -329,6 +330,7 @@ msgstr "सभी खाते"
 
 #: src/components/AccountDropdown.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 msgid "Accounts"
 msgstr "खाते"
 
@@ -768,6 +770,7 @@ msgstr "रोक रहा है…"
 #~ msgstr "पोस्टिंग गति"
 
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/PostingOptionsForm.svelte
 #: src/components/UsageGuide.svelte
 msgid "Interval between posts"
@@ -786,6 +789,7 @@ msgstr "अधिकतम (सेकंड)"
 msgid "Choose how long to wait before posting to the next group."
 msgstr "अगले समूह में पोस्ट करने से पहले प्रतीक्षा करने का समय चुनें।"
 
+#: src/components/GuidedTour.svelte
 #: src/components/PostingOptionsForm.svelte
 #: src/components/UsageGuide.svelte
 msgid "At least 60 seconds. Use equal values for a fixed interval."
@@ -954,6 +958,7 @@ msgstr "विंडो बंद करें"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Create post"
@@ -965,6 +970,7 @@ msgstr "अपना पोस्ट लिखें और चित्र ज�
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select groups"
@@ -1240,6 +1246,7 @@ msgstr "रंग थीम"
 #: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/RenameProfileDialog.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UpdateButton.svelte
@@ -1839,6 +1846,7 @@ msgid "Themes"
 msgstr "थीम"
 
 #: src/App.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Post or schedule"
 msgstr "पोस्ट करें या समय तय करें"
@@ -1863,6 +1871,7 @@ msgid "Draft text and image copies are saved automatically for each account."
 msgstr "मसौदे का टेक्स्ट और तस्वीरों की प्रतियाँ हर खाते के लिए अपने आप सहेजी जाती हैं।"
 
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Separate Facebook sessions, groups, drafts, settings, and queues for each account."
 msgstr "हर खाते के लिए अलग Facebook सत्र, समूह, मसौदे, सेटिंग और कतारें।"
@@ -1920,7 +1929,6 @@ msgid "Queues pause when offline and resume when the connection returns."
 msgstr "ऑफ़लाइन होने पर कतारें रुकती हैं और कनेक्शन लौटने पर फिर चलती हैं।"
 
 #: src/components/FeaturesCard.svelte
-#: src/components/FeaturesCard.svelte
 msgid "How to use"
 msgstr "कैसे उपयोग करें"
 
@@ -1928,10 +1936,12 @@ msgstr "कैसे उपयोग करें"
 msgid "Choose Add account, enter an account name, and select Create & sign in. Use the account switcher to return to an existing account."
 msgstr "खाता जोड़ें चुनें, खाते का नाम लिखें और बनाएँ और साइन इन करें चुनें। पुराने खाते पर लौटने के लिए खाता स्विचर का उपयोग करें।"
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Write your message and add at least one image; both are required. Use Next to move forward and Previous to edit an earlier step."
 msgstr "संदेश लिखें और कम से कम एक तस्वीर जोड़ें; दोनों ज़रूरी हैं। आगे बढ़ने के लिए अगला और पिछला चरण बदलने के लिए पिछला चुनें।"
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select Load groups and finish Facebook login or verification in Chrome. Search the loaded list, select the groups you want, then choose Next."
 msgstr "समूह लोड करें चुनें और Chrome में Facebook लॉगिन या सत्यापन पूरा करें। सूची में खोजें, समूह चुनें और अगला दबाएँ।"
@@ -1943,10 +1953,12 @@ msgstr "समूह लोड करें चुनें और Chrome मे
 msgid "Review the account, message, image order, selected groups, and posting intervals. Choose Post now and complete any Facebook login or verification prompts in Chrome."
 msgstr "खाता, संदेश, तस्वीरों का क्रम, समूह और अंतराल जाँचें। अभी पोस्ट करें चुनें और Chrome में Facebook लॉगिन या सत्यापन पूरा करें।"
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Choose Schedule, select a future date and time in the displayed time zone, then Confirm schedule. Facebook may require login when the queue starts."
 msgstr "शेड्यूल चुनें, दिखाई गई समय-सीमा में भविष्य की तारीख और समय तय करें और पुष्टि करें। कतार शुरू होते समय Facebook लॉगिन माँग सकता है।"
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Open Posting logs to follow progress. Its account selector lets you inspect other queues without switching the account in the main workspace."
 msgstr "प्रगति देखने के लिए पोस्टिंग लॉग खोलें। उसके खाता चयन से मुख्य कार्यक्षेत्र का खाता बदले बिना दूसरी कतारें देख सकते हैं।"
@@ -2011,6 +2023,7 @@ msgstr "लाई जाने वाली पोस्ट की संख्�
 #~ msgstr ""
 
 #: src/components/FacebookPageDialog.svelte
+#: src/components/GuidedTour.svelte
 msgid "Fetch posts from a Facebook page"
 msgstr "Facebook पेज से पोस्ट लाएँ"
 
@@ -2063,6 +2076,7 @@ msgstr "इसके बजाय पोस्ट लिखें"
 #~ msgstr ""
 
 #: src/App.svelte
+#: src/components/GuidedTour.svelte
 msgid "Review the posts fetched from your Facebook page."
 msgstr "अपने Facebook पेज से लाई गई पोस्ट की समीक्षा करें।"
 
@@ -2451,3 +2465,40 @@ msgstr "आपका ईमेल ऐप नहीं खुल सका। ई
 
 #~ msgid "Business"
 #~ msgstr ""
+
+#: src/components/FeaturesCard.svelte
+msgid "Wait until the current operation finishes to start the tour."
+msgstr "टूर शुरू करने के लिए मौजूदा प्रक्रिया पूरी होने तक प्रतीक्षा करें।"
+
+#: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
+msgid "Start guided tour"
+msgstr "निर्देशित टूर शुरू करें"
+
+#: src/components/FeaturesCard.svelte
+msgid "Read the guide"
+msgstr "गाइड पढ़ें"
+
+#: src/components/GuidedTour.svelte
+msgid "Take a quick tour of Postika?"
+msgstr "क्या आप Postika का एक छोटा टूर लेना चाहेंगे?"
+
+#: src/components/GuidedTour.svelte
+msgid "You can reopen the tour from How to use."
+msgstr "आप उपयोग कैसे करें से टूर दोबारा खोल सकते हैं।"
+
+#: src/components/GuidedTour.svelte
+msgid "Skip"
+msgstr "छोड़ें"
+
+#: src/components/GuidedTour.svelte
+msgid "Finish"
+msgstr "समाप्त करें"
+
+#: src/components/GuidedTour.svelte
+msgid "Next"
+msgstr "आगे"
+
+#: src/components/GuidedTour.svelte
+msgid "Previous"
+msgstr "पीछे"

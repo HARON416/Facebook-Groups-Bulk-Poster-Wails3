@@ -74,7 +74,7 @@ msgstr "Выберите группы, с которыми вы хотите п�
 #~ msgid "Review your post and preferences, then post now or schedule for later."
 #~ msgstr "Просмотрите свой пост и настройки, затем опубликуйте сейчас или запланируйте на потом."
 
-#. 0: currentStep + 1; 1: steps.length
+#. 0: displayStep + 1; 1: steps.length
 #: src/App.svelte
 msgid "STEP {0} OF {1}"
 msgstr "ШАГ {0} ИЗ {1}"
@@ -256,6 +256,7 @@ msgstr "Добавить аккаунт"
 
 #: src/Workspace.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogs.svelte
@@ -329,6 +330,7 @@ msgstr "Все аккаунты"
 
 #: src/components/AccountDropdown.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 msgid "Accounts"
 msgstr "Аккаунты"
 
@@ -768,6 +770,7 @@ msgstr "Остановка…"
 #~ msgstr "СКОРОСТЬ ПУБЛИКАЦИИ"
 
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/PostingOptionsForm.svelte
 #: src/components/UsageGuide.svelte
 msgid "Interval between posts"
@@ -786,6 +789,7 @@ msgstr "Максимум (секунды)"
 msgid "Choose how long to wait before posting to the next group."
 msgstr "Выберите, сколько ждать перед публикацией в следующей группе."
 
+#: src/components/GuidedTour.svelte
 #: src/components/PostingOptionsForm.svelte
 #: src/components/UsageGuide.svelte
 msgid "At least 60 seconds. Use equal values for a fixed interval."
@@ -954,6 +958,7 @@ msgstr "Закрыть окно"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Create post"
@@ -965,6 +970,7 @@ msgstr "Напишите сообщение и добавьте изображе
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select groups"
@@ -1240,6 +1246,7 @@ msgstr "Цветовые темы"
 #: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/RenameProfileDialog.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UpdateButton.svelte
@@ -1839,6 +1846,7 @@ msgid "Themes"
 msgstr "Темы"
 
 #: src/App.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Post or schedule"
 msgstr "Опубликовать или запланировать"
@@ -1863,6 +1871,7 @@ msgid "Draft text and image copies are saved automatically for each account."
 msgstr "Текст черновика и копии изображений автоматически сохраняются для каждого аккаунта."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Separate Facebook sessions, groups, drafts, settings, and queues for each account."
 msgstr "Отдельные сеансы Facebook, группы, черновики, настройки и очереди для каждого аккаунта."
@@ -1920,7 +1929,6 @@ msgid "Queues pause when offline and resume when the connection returns."
 msgstr "Очереди приостанавливаются без интернета и продолжаются после восстановления соединения."
 
 #: src/components/FeaturesCard.svelte
-#: src/components/FeaturesCard.svelte
 msgid "How to use"
 msgstr "Как пользоваться"
 
@@ -1928,10 +1936,12 @@ msgstr "Как пользоваться"
 msgid "Choose Add account, enter an account name, and select Create & sign in. Use the account switcher to return to an existing account."
 msgstr "Выберите Добавить аккаунт, введите имя и нажмите Создать и войти. Для возврата к существующему аккаунту используйте переключатель."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Write your message and add at least one image; both are required. Use Next to move forward and Previous to edit an earlier step."
 msgstr "Напишите сообщение и добавьте хотя бы одно изображение; оба обязательны. Далее переходит вперёд, Назад позволяет изменить предыдущий шаг."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select Load groups and finish Facebook login or verification in Chrome. Search the loaded list, select the groups you want, then choose Next."
 msgstr "Выберите Загрузить группы и завершите вход или проверку Facebook в Chrome. Найдите нужные группы в списке, отметьте их и нажмите Далее."
@@ -1943,10 +1953,12 @@ msgstr "Выберите Загрузить группы и завершите �
 msgid "Review the account, message, image order, selected groups, and posting intervals. Choose Post now and complete any Facebook login or verification prompts in Chrome."
 msgstr "Проверьте аккаунт, сообщение, порядок изображений, группы и интервалы. Выберите Опубликовать сейчас и завершите запросы входа или проверки Facebook в Chrome."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Choose Schedule, select a future date and time in the displayed time zone, then Confirm schedule. Facebook may require login when the queue starts."
 msgstr "Выберите Запланировать, укажите будущие дату и время в показанном часовом поясе и подтвердите. Facebook может потребовать вход при запуске очереди."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Open Posting logs to follow progress. Its account selector lets you inspect other queues without switching the account in the main workspace."
 msgstr "Откройте журналы публикаций для отслеживания прогресса. Выбор аккаунта в них показывает другие очереди без смены аккаунта в основном окне."
@@ -2011,6 +2023,7 @@ msgstr "Количество публикаций для загрузки"
 #~ msgstr ""
 
 #: src/components/FacebookPageDialog.svelte
+#: src/components/GuidedTour.svelte
 msgid "Fetch posts from a Facebook page"
 msgstr "Загрузить публикации со страницы Facebook"
 
@@ -2063,6 +2076,7 @@ msgstr "Вместо этого написать публикацию"
 #~ msgstr ""
 
 #: src/App.svelte
+#: src/components/GuidedTour.svelte
 msgid "Review the posts fetched from your Facebook page."
 msgstr "Проверьте публикации, загруженные с вашей страницы Facebook."
 
@@ -2451,3 +2465,40 @@ msgstr "Не удалось открыть почтовое приложение
 
 #~ msgid "Business"
 #~ msgstr ""
+
+#: src/components/FeaturesCard.svelte
+msgid "Wait until the current operation finishes to start the tour."
+msgstr "Дождитесь завершения текущей операции, чтобы начать обзор."
+
+#: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
+msgid "Start guided tour"
+msgstr "Начать обзор"
+
+#: src/components/FeaturesCard.svelte
+msgid "Read the guide"
+msgstr "Прочитать руководство"
+
+#: src/components/GuidedTour.svelte
+msgid "Take a quick tour of Postika?"
+msgstr "Хотите быстро познакомиться с Postika?"
+
+#: src/components/GuidedTour.svelte
+msgid "You can reopen the tour from How to use."
+msgstr "Обзор можно открыть снова в разделе «Как пользоваться»."
+
+#: src/components/GuidedTour.svelte
+msgid "Skip"
+msgstr "Пропустить"
+
+#: src/components/GuidedTour.svelte
+msgid "Finish"
+msgstr "Завершить"
+
+#: src/components/GuidedTour.svelte
+msgid "Next"
+msgstr "Далее"
+
+#: src/components/GuidedTour.svelte
+msgid "Previous"
+msgstr "Назад"

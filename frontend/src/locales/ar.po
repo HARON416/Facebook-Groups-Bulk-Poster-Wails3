@@ -74,7 +74,7 @@ msgstr "اختر المجموعات التي تريد مشاركة منشورك 
 #~ msgid "Review your post and preferences, then post now or schedule for later."
 #~ msgstr "راجع منشورك وتفضيلاتك، ثم انشر الآن أو جدول للنشر لاحقًا."
 
-#. 0: currentStep + 1; 1: steps.length
+#. 0: displayStep + 1; 1: steps.length
 #: src/App.svelte
 msgid "STEP {0} OF {1}"
 msgstr "الخطوة {0} من {1}"
@@ -256,6 +256,7 @@ msgstr "إضافة حساب"
 
 #: src/Workspace.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogView.svelte
 #: src/components/PostingLogs.svelte
@@ -329,6 +330,7 @@ msgstr "جميع الحسابات"
 
 #: src/components/AccountDropdown.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 msgid "Accounts"
 msgstr "الحسابات"
 
@@ -768,6 +770,7 @@ msgstr "التوقف…"
 #~ msgstr "سرعة النشر"
 
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/PostingOptionsForm.svelte
 #: src/components/UsageGuide.svelte
 msgid "Interval between posts"
@@ -786,6 +789,7 @@ msgstr "الحد الأقصى (بالثواني)"
 msgid "Choose how long to wait before posting to the next group."
 msgstr "اختر مدة الانتظار قبل النشر في المجموعة التالية."
 
+#: src/components/GuidedTour.svelte
 #: src/components/PostingOptionsForm.svelte
 #: src/components/UsageGuide.svelte
 msgid "At least 60 seconds. Use equal values for a fixed interval."
@@ -954,6 +958,7 @@ msgstr "إغلاق النافذة"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Create post"
@@ -965,6 +970,7 @@ msgstr "اكتب منشورك وأضف الصور"
 
 #: src/App.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/QueueReview.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select groups"
@@ -1240,6 +1246,7 @@ msgstr "سمات الألوان"
 #: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/RenameProfileDialog.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UpdateButton.svelte
@@ -1839,6 +1846,7 @@ msgid "Themes"
 msgstr "السمات"
 
 #: src/App.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Post or schedule"
 msgstr "انشر أو جدوِل"
@@ -1863,6 +1871,7 @@ msgid "Draft text and image copies are saved automatically for each account."
 msgstr "يُحفظ نص المسودة ونسخ الصور تلقائيًا لكل حساب."
 
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Separate Facebook sessions, groups, drafts, settings, and queues for each account."
 msgstr "جلسات Facebook ومجموعات ومسودات وإعدادات وقوائم انتظار منفصلة لكل حساب."
@@ -1920,7 +1929,6 @@ msgid "Queues pause when offline and resume when the connection returns."
 msgstr "تتوقف قوائم الانتظار مؤقتًا دون اتصال وتُستأنف عند عودة الاتصال."
 
 #: src/components/FeaturesCard.svelte
-#: src/components/FeaturesCard.svelte
 msgid "How to use"
 msgstr "كيفية الاستخدام"
 
@@ -1928,10 +1936,12 @@ msgstr "كيفية الاستخدام"
 msgid "Choose Add account, enter an account name, and select Create & sign in. Use the account switcher to return to an existing account."
 msgstr "اختر إضافة حساب، وأدخل اسمًا، ثم اختر إنشاء وتسجيل الدخول. استخدم مبدّل الحسابات للعودة إلى حساب موجود."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Write your message and add at least one image; both are required. Use Next to move forward and Previous to edit an earlier step."
 msgstr "اكتب رسالتك وأضف صورة واحدة على الأقل؛ كلاهما مطلوب. استخدم التالي للمتابعة والسابق لتعديل خطوة سابقة."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Select Load groups and finish Facebook login or verification in Chrome. Search the loaded list, select the groups you want, then choose Next."
 msgstr "اختر تحميل المجموعات وأكمل تسجيل الدخول إلى Facebook أو التحقق في Chrome. ابحث في القائمة، وحدد المجموعات المطلوبة، ثم اختر التالي."
@@ -1943,10 +1953,12 @@ msgstr "اختر تحميل المجموعات وأكمل تسجيل الدخو�
 msgid "Review the account, message, image order, selected groups, and posting intervals. Choose Post now and complete any Facebook login or verification prompts in Chrome."
 msgstr "راجع الحساب والرسالة وترتيب الصور والمجموعات والفواصل الزمنية. اختر النشر الآن وأكمل أي طلبات دخول أو تحقق من Facebook في Chrome."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Choose Schedule, select a future date and time in the displayed time zone, then Confirm schedule. Facebook may require login when the queue starts."
 msgstr "اختر جدولة، وحدد تاريخًا ووقتًا مستقبليين بالمنطقة الزمنية المعروضة، ثم أكّد الجدول. قد يطلب Facebook تسجيل الدخول عند بدء قائمة الانتظار."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Open Posting logs to follow progress. Its account selector lets you inspect other queues without switching the account in the main workspace."
 msgstr "افتح سجلات النشر لمتابعة التقدم. يتيح محدد الحساب فيها فحص قوائم أخرى دون تغيير الحساب في مساحة العمل الرئيسية."
@@ -2011,6 +2023,7 @@ msgstr "عدد المنشورات المطلوب جلبها"
 #~ msgstr ""
 
 #: src/components/FacebookPageDialog.svelte
+#: src/components/GuidedTour.svelte
 msgid "Fetch posts from a Facebook page"
 msgstr "جلب منشورات من صفحة فيسبوك"
 
@@ -2063,6 +2076,7 @@ msgstr "كتابة منشور بدلًا من ذلك"
 #~ msgstr ""
 
 #: src/App.svelte
+#: src/components/GuidedTour.svelte
 msgid "Review the posts fetched from your Facebook page."
 msgstr "راجع المنشورات المجلوبة من صفحتك على فيسبوك."
 
@@ -2451,3 +2465,40 @@ msgstr "تعذر فتح تطبيق البريد الإلكتروني. انسخ �
 
 #~ msgid "Business"
 #~ msgstr ""
+
+#: src/components/FeaturesCard.svelte
+msgid "Wait until the current operation finishes to start the tour."
+msgstr "انتظر حتى تنتهي العملية الحالية لبدء الجولة."
+
+#: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
+msgid "Start guided tour"
+msgstr "ابدأ الجولة الإرشادية"
+
+#: src/components/FeaturesCard.svelte
+msgid "Read the guide"
+msgstr "اقرأ الدليل"
+
+#: src/components/GuidedTour.svelte
+msgid "Take a quick tour of Postika?"
+msgstr "هل تريد جولة سريعة في Postika؟"
+
+#: src/components/GuidedTour.svelte
+msgid "You can reopen the tour from How to use."
+msgstr "يمكنك فتح الجولة مجددًا من «كيفية الاستخدام»."
+
+#: src/components/GuidedTour.svelte
+msgid "Skip"
+msgstr "تخطي"
+
+#: src/components/GuidedTour.svelte
+msgid "Finish"
+msgstr "إنهاء"
+
+#: src/components/GuidedTour.svelte
+msgid "Next"
+msgstr "التالي"
+
+#: src/components/GuidedTour.svelte
+msgid "Previous"
+msgstr "السابق"

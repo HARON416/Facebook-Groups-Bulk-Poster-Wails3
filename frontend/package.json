@@ -18,7 +18,8 @@
     "prebuild": "node scripts/generate-themes.mjs && wuchale && node scripts/check-i18n.mjs",
     "themes:generate": "node scripts/generate-themes.mjs",
     "themes:test": "node scripts/themes.test.mjs",
-    "logs:test": "node scripts/log-messages.test.mjs"
+    "logs:test": "node scripts/log-messages.test.mjs",
+    "tour:test": "node --test scripts/tour.test.mjs"
   },
   "dependencies": {
     "@lexical/html": "^0.40.0",
