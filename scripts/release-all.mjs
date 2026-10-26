@@ -7,7 +7,7 @@ import { releaseVersion } from './package-release.mjs';
 import { flattenRelease } from './flatten-release.mjs';
 import { bumpVersion, nextVersion, syncVersions } from './version.mjs';
 import { generateWebsiteRelease } from './website-release.mjs';
-import { preflightPublish, publishRelease } from './publish-release.mjs';
+import { checkRemotePublishing, previousBuild, publishExisting, rememberBuild, syncPublishedMetadata } from './remote-publish.mjs';
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const workflow = 'distribution.yml';
@@ -69,7 +69,7 @@ export async function resumeRelease({ root = projectRoot, runID, sourceCommit = 
   }
 }
 
-export async function releaseAll({ root = projectRoot, run = (...args) => command(root, ...args), sleep = ms => new Promise(resolve => setTimeout(resolve, ms)), request = randomUUID(), log = console.log, change = process.env.POSTIKA_RELEASE_VERSION || process.env.POSTIKA_RELEASE_BUMP || 'patch' } = {}) {
+export async function releaseAll({ root = projectRoot, run = (...args) => command(root, ...args), sleep = ms => new Promise(resolve => setTimeout(resolve, ms)), request = randomUUID(), log = console.log, change = process.env.POSTIKA_RELEASE_VERSION || process.env.POSTIKA_RELEASE_BUMP || 'patch', publish = false, syncMetadata = syncPublishedMetadata } = {}) {
   // The remote workflow builds pushed source, not local working-tree edits.
   if (run('git', ['status', '--porcelain']).length) throw new Error('Commit and push your changes before building a distributed release. Local edits cannot be built by GitHub Actions.');
   const branch = run('git', ['branch', '--show-current']);
@@ -78,6 +78,7 @@ export async function releaseAll({ root = projectRoot, run = (...args) => comman
   const previous = releaseVersion(root);
   const version = change === 'none' ? previous : nextVersion(previous, change);
   run('gh', ['auth', 'status']);
+  if (publish) checkRemotePublishing(run);
   const remoteSHA = run('gh', ['api', `repos/{owner}/{repo}/commits/${encodeURIComponent(branch)}`, '--jq', '.sha']);
   if (remoteSHA !== sha) throw new Error('The remote branch differs from this checkout. Push this commit before building.');
   if (change !== 'none') {
@@ -98,10 +99,10 @@ export async function releaseAll({ root = projectRoot, run = (...args) => comman
     }
   }
   let successfulRun;
+  let selectedRun;
   try {
-    run('gh', ['workflow', 'run', workflow, '--ref', branch, '-f', `request_id=${request}`]);
+    run('gh', ['workflow', 'run', workflow, '--ref', branch, '-f', `request_id=${request}`, ...(publish ? ['-f', 'publish=true'] : [])]);
     log('Requested all four release targets. Waiting for GitHub to create the run…');
-    let selectedRun;
     for (let attempt = 0; attempt < 24; attempt++) {
       const runs = JSON.parse(run('gh', ['run', 'list', '--workflow', workflow, '--event', 'workflow_dispatch', '--limit', '50', '--json', 'databaseId,displayTitle,headSha,url']));
       selectedRun = runs.find(item => item.displayTitle === `Postika packages ${request}` && item.headSha === sha);
@@ -109,11 +110,18 @@ export async function releaseAll({ root = projectRoot, run = (...args) => comman
       await sleep(5000);
     }
     if (!selectedRun) throw new Error(`Run not visible yet. Find request ${request} in GitHub Actions; it was already dispatched. Do not dispatch it again to find it.`);
+    rememberBuild(root, { version, runID: String(selectedRun.databaseId), sha, remote: publish });
     log(selectedRun.url);
     run('gh', ['run', 'watch', String(selectedRun.databaseId), '--exit-status'], true);
     successfulRun = selectedRun.databaseId;
+    if (publish) {
+      const output = await syncMetadata(root, version);
+      log(`Published ${version} from GitHub directly to Bunny. Website metadata synced; rebuild and deploy the website.`);
+      return output;
+    }
     return await downloadRun({ root, version, runID: successfulRun, run, sleep, log });
   } catch (error) {
+    if (publish && selectedRun) throw new Error(`${error.message}\nCheck ${selectedRun.url}; GitHub continues independently of this terminal. Retry the existing build with make publish-release RUN_ID=${selectedRun.databaseId}, without a new version bump.`);
     if (successfulRun) throw new Error(`${error.message}\nVersion ${version} remains committed and the build succeeded. Resume without rebuilding: make release-resume RUN_ID=${successfulRun}. Add PUBLISH=1 to upload after downloading.`);
     throw new Error(`${error.message}\nVersion ${version} remains committed. To retry without another increment, use make release-all BUMP=none.`);
   }
@@ -128,14 +136,19 @@ if (process.argv[1] && realpathSync(resolve(process.argv[1])) === realpathSync(f
       console.log('Build Linux x64, Windows x64, macOS arm64 and macOS amd64 on native GitHub runners.');
       console.log('Wait for all jobs, verify and flatten packages into bin/releases/<version>/ with one license and combined SHA256SUMS.');
       console.log('Generate website/releases/<version>.json and current.json automatically; rebuild/deploy the website to use them.');
-      console.log('PUBLISH=1 also signs update feeds, uploads packages to downloads/<version>/ on Bunny, verifies them publicly, then replaces updates/*.json.');
-      console.log('Resume an interrupted download with make release-resume RUN_ID=<successful-run-id> PUBLISH=1; no version bump or rebuild.');
-      console.log('Requires a clean, pushed branch, the workflow on the default branch, and authenticated GitHub CLI. Publishing also requires .env and the existing update signing key.');
+      console.log('PUBLISH=1 signs, verifies and uploads directly inside GitHub Actions. The laptop downloads only website metadata.');
+      console.log('make publish-release RUN_ID=<build-id> publishes existing artifacts directly from Actions without rebuilding.');
+      console.log('make release-resume RUN_ID=<build-id> without PUBLISH=1 optionally downloads packages to this computer.');
+      console.log('Requires a clean, pushed branch and authenticated GitHub CLI. Run make configure-publishing once to configure repository secrets.');
     } else {
-      const client = process.env.POSTIKA_PUBLISH === '1' ? await preflightPublish(projectRoot) : null;
-      if (process.argv.includes('--resume')) await resumeRelease({ runID: process.env.POSTIKA_RELEASE_RUN_ID });
-      else await releaseAll();
-      if (client) await publishRelease({ root: projectRoot, client });
+      const publish = process.env.POSTIKA_PUBLISH === '1';
+      const runID = process.env.POSTIKA_RELEASE_RUN_ID || undefined;
+      if (process.argv.includes('--publish-existing') || (process.argv.includes('--resume') && publish)) {
+        await publishExisting({ root: projectRoot, runID: runID ?? previousBuild(projectRoot).runID,
+          sourceCommit: process.env.POSTIKA_RELEASE_SOURCE_COMMIT || undefined,
+          run: (...args) => command(projectRoot, ...args) });
+      } else if (process.argv.includes('--resume')) await resumeRelease({ runID });
+      else await releaseAll({ publish });
     }
   } catch (error) { console.error(error.message); process.exitCode = 1; }
 }

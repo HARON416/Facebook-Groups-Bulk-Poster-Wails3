@@ -5,6 +5,24 @@ import { releaseVersion } from './package-release.mjs';
 import { verifyFlatRelease } from './flatten-release.mjs';
 import { websiteRelease } from './release-layout.mjs';
 
+export function saveWebsiteRelease(root, metadata) {
+  const expected = websiteRelease(metadata.version, { date: metadata.date, notes: metadata.notes });
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(metadata.date ?? '') || !Array.isArray(metadata.notes) ||
+      metadata.notes.some(note => typeof note !== 'string' || note.length > 2000) ||
+      JSON.stringify(metadata.downloads) !== JSON.stringify(expected.downloads)) {
+    throw new Error('Published website metadata does not match the expected release download URLs.');
+  }
+  const directory = join(root, 'website/releases');
+  const file = join(directory, `${metadata.version}.json`);
+  const text = JSON.stringify(expected, null, 2) + '\n';
+  mkdirSync(directory, { recursive: true });
+  for (const target of [file, join(directory, 'current.json')]) {
+    writeFileSync(target + '.tmp', text);
+    renameSync(target + '.tmp', target);
+  }
+  return file;
+}
+
 // Only point the website at a complete, checksum-verified local release.
 export function generateWebsiteRelease(root) {
   const version = releaseVersion(root);
@@ -13,13 +31,7 @@ export function generateWebsiteRelease(root) {
   const file = join(directory, `${version}.json`);
   const previous = existsSync(file) ? JSON.parse(readFileSync(file, 'utf8')) : {};
   const metadata = websiteRelease(version, { date: previous.date, notes: previous.notes });
-  const text = JSON.stringify(metadata, null, 2) + '\n';
-  mkdirSync(directory, { recursive: true });
-  for (const target of [file, join(directory, 'current.json')]) {
-    writeFileSync(target + '.tmp', text);
-    renameSync(target + '.tmp', target);
-  }
-  return file;
+  return saveWebsiteRelease(root, metadata);
 }
 
 if (process.argv[1] && realpathSync(resolve(process.argv[1])) === realpathSync(fileURLToPath(import.meta.url))) {

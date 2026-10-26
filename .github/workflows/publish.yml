@@ -1,0 +1,93 @@
+name: Publish distribution packages
+run-name: Postika publish ${{ inputs.run_id }} ${{ inputs.request_id || 'manual' }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: Distribution build run containing all four successful package jobs
+        required: true
+        type: string
+      request_id:
+        description: Correlation ID supplied by the release command
+        default: manual
+        type: string
+  workflow_call:
+    inputs:
+      run_id:
+        required: true
+        type: string
+    secrets:
+      BUNNY_STORAGE_PASSWORD:
+        required: true
+      POSTIKA_UPDATE_PRIVATE_KEY:
+        required: true
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    concurrency:
+      group: postika-bunny-publish
+      cancel-in-progress: false
+    env:
+      GH_TOKEN: ${{ github.token }}
+      POSTIKA_SOURCE_RUN_ID: ${{ inputs.run_id }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Test publication orchestration
+        env:
+          POSTIKA_SOURCE_RUN_ID: ''
+        run: node --test scripts/ci-publish.test.mjs scripts/remote-publish.test.mjs
+      - name: Validate source build and release version
+        id: release
+        run: node scripts/ci-publish.mjs validate
+      - name: Check publishing configuration and signing key
+        env:
+          BUNNY_STORAGE_ZONE: ${{ vars.BUNNY_STORAGE_ZONE }}
+          BUNNY_STORAGE_HOST: ${{ vars.BUNNY_STORAGE_HOST }}
+          BUNNY_STORAGE_PASSWORD: ${{ secrets.BUNNY_STORAGE_PASSWORD }}
+          POSTIKA_UPDATE_PRIVATE_KEY: ${{ secrets.POSTIKA_UPDATE_PRIVATE_KEY }}
+        run: node scripts/ci-publish.mjs check-secrets
+      - uses: actions/setup-go@v7
+        with:
+          go-version-file: go.mod
+          cache-dependency-path: go.sum
+      - name: Install pinned Wails CLI
+        run: |
+          WAILS_VERSION=$(go list -m -f '{{.Version}}' github.com/wailsapp/wails/v3)
+          CGO_ENABLED=0 GOBIN="$GITHUB_WORKSPACE/.tools/bin" go install "github.com/wailsapp/wails/v3/cmd/wails3@$WAILS_VERSION"
+      - name: Download build artifacts inside GitHub Actions
+        uses: actions/download-artifact@v8
+        with:
+          github-token: ${{ github.token }}
+          run-id: ${{ inputs.run_id }}
+          pattern: postika-*
+          digest-mismatch: error
+          path: bin/releases/ci-${{ inputs.run_id }}
+      - name: Verify, sign and publish directly to Bunny
+        env:
+          BUNNY_STORAGE_ZONE: ${{ vars.BUNNY_STORAGE_ZONE }}
+          BUNNY_STORAGE_HOST: ${{ vars.BUNNY_STORAGE_HOST }}
+          BUNNY_STORAGE_PASSWORD: ${{ secrets.BUNNY_STORAGE_PASSWORD }}
+          POSTIKA_UPDATE_PRIVATE_KEY: ${{ secrets.POSTIKA_UPDATE_PRIVATE_KEY }}
+        run: node scripts/ci-publish.mjs publish
+      - name: Store generated website metadata
+        uses: actions/upload-artifact@v6
+        with:
+          name: website-release-${{ steps.release.outputs.version }}
+          path: |
+            website/releases/current.json
+            website/releases/${{ steps.release.outputs.version }}.json
+          if-no-files-found: error
+          retention-days: 30

@@ -167,27 +167,22 @@ OS minimum-version fields are specifications/requirements and remain unchanged.
 ### One-command build for all desktop targets
 
 ```sh
-make release-all
+make release-all PUBLISH=1
 ```
 
-One-time setup: install and authenticate GitHub CLI with `gh auth login`, enable
-Actions, and merge `.github/workflows/distribution.yml` into the default branch.
-On Ubuntu/Debian, the local CLI setup is:
+One-time setup: authenticate GitHub CLI with `gh auth login`, enable Actions,
+push both distribution and publish workflows to the default branch, and run
+`make configure-publishing` to configure repository secrets from local credentials.
+The native Wails builds and Bunny publishing all run on GitHub-hosted runners.
+The laptop waits for completion and syncs only website metadata. A terminal
+connection failure does not stop the remote job. See Automated Bunny publishing
+below for recovery commands and credential handling.
 
-```sh
-sudo apt-get install gh
-gh auth login
-```
-
-GitHub CLI starts and downloads the remote workflow; it is not part of the
-Wails compiler or packager. `make package-all` remains the local, current-OS
-packaging command and does not require GitHub CLI or a GitHub account.
-
-Commit and push the application changes you want to distribute. The launcher
-rejects a dirty checkout and a remote branch whose commit differs from HEAD.
-It then commits and pushes only its synchronized version metadata by default.
-It does not commit unrelated application changes, publish a GitHub release,
-upload to the website, or install an application.
+Commit and push application changes before building. The launcher rejects a
+dirty checkout or a remote branch that differs from HEAD, then synchronizes,
+commits and pushes version metadata. It does not commit unrelated application
+changes, create a GitHub release, install the app or deploy the VPS website.
+`make package-all` remains a local current-OS command requiring no GitHub account.
 
 The workflow builds these targets independently on native GitHub-hosted runners:
 
@@ -206,15 +201,10 @@ CI transports it inside its app ZIP to preserve file modes and symlinks.
 The package jobs use the version committed by the launcher. For a retry with
 `BUMP=none`, they use the existing synchronized metadata instead.
 
-If the jobs succeeded but downloading failed, resume that run instead of
-rebuilding: `make release-resume RUN_ID=<successful-run-id> PUBLISH=1`.
-The download retries up to three times in fresh temporary directories. Partial
-extracted files from one attempt cannot block another. Resuming does not bump,
-commit, push, or dispatch a workflow. It validates the selected workflow's
-success, source commit, and release version before downloading. If the checkout
-has advanced, explicitly acknowledge the selected build's exact source with
-`SOURCE_COMMIT=<full-built-commit-sha>`; packages from that run exclude later
-commits. Build a fresh release to include those later changes.
+With `PUBLISH=1`, a serialized publish job follows the four package jobs and
+uploads directly to Bunny. Retry an existing build with `make publish-release
+RUN_ID=<build-id>`; this does not rebuild or bump a version. Without `PUBLISH=1`,
+the following optional full local download behavior applies.
 
 The launcher watches the particular run it requested, checks that it builds
 the intended commit, and downloads only after all jobs succeed. Downloads are
@@ -247,7 +237,7 @@ This covers the current unsigned distribution set. MSIX and universal Mac
 bundles are separate optional targets. Native install/login/update testing
 and Homebrew tap publication remain separate release steps. Website metadata is
 generated automatically. `make release-all PUBLISH=1` also signs and publishes
-feeds/packages to Bunny; see the publishing section below. No publisher keys are required by this
+feeds/packages to Bunny; see the publishing section below. No paid OS publisher certificates are required by this
 workflow; macOS retains its existing ad-hoc signature.
 
 The application build and package tasks follow Wails v3's Taskfile pipeline:
@@ -426,90 +416,81 @@ make update-feeds
 This uses the project-local Wails CLI and existing `.update-keys/updater.key` to
 create all five feeds in `bin/updates/<version>/`. It verifies the release's
 SHA256SUMS, selects compatible payloads for each feed, then verifies every digest
-and signature against the public key embedded in the app. Signing runs locally;
-the private key is never uploaded. Existing feeds are reused after verification;
+and signature against the public key embedded in the app. This optional local command signs on your computer;
+it does not upload the private key. The cloud publish job instead uses the
+configured GitHub repository secret. Existing feeds are reused after verification;
 incorrect signatures, versions or URLs stop the command. This does not bump the
 version or rebuild the app.
 
 ### Automated Bunny publishing
 
-Configure ignored `.env` from `.env.example` with your Storage Zone
-name, regional Storage API hostname and **Storage Zone password**. A global
-Bunny API key is not used. The regional hostname is shown in FTP & API Access;
-do not substitute the public CDN hostname. Environment variables take precedence
-over values in the file. See [Bunny's Storage HTTP API](https://bunny.net/docs/storage/http)
-for authentication, regional endpoints, raw-body PUT uploads, and uppercase
-SHA-256 Checksum headers.
+Publishing now runs inside GitHub Actions, so large artifacts do not travel
+through the developer's laptop. The four native build jobs produce temporary
+GitHub artifacts; a serialized reusable publish job downloads them on a GitHub
+runner and uploads verified packages and signed feeds directly to Bunny.
+[GitHub's download-artifact action](https://github.com/actions/download-artifact)
+supports the cross-run recovery path. Archive digest mismatches fail the action;
+per-package SHA256SUMS and update signatures are also verified.
+
+One-time setup: configure ignored `.env` from `.env.example`, restore the existing
+`.update-keys/updater.key`, and run `make configure-publishing`. The command sends
+the storage password and private signing key through stdin into GitHub repository
+secrets, and sets the non-secret storage hostname and zone as repository variables.
+Normal cloud publishing reads that repository configuration rather than local
+secrets. Keep private backups. The publish job checks the key against the source
+build's public key before downloading and creates/removes a temporary key file
+only in the publishing step. OS publisher code signing remains separate.
 
 ```sh
-make release-all PUBLISH=1   # Build the next version and publish it
-make publish-release        # Publish/retry the current downloaded version only
+make release-all PUBLISH=1                 # New version, builds and direct publishing
+make publish-release                      # Retry/reconnect to the last recorded build
+make publish-release RUN_ID=40353873509    # Publish an existing build without rebuilding
 ```
 
-The first command checks credentials and key availability before starting the
-normal version bump/build. Default patch versioning means `0.1.3` becomes `0.1.4`.
-For native testing before publishing, use plain `make release-all`, test the
-packages, then `make publish-release`. The publisher verifies local packages and
-signatures, checks existing feeds to prevent a rollback or same-version payload
-replacement, and uploads every package to `downloads/<version>/`. Upload paths
-create the versioned storage folder. Every public package URL is fetched and
-SHA-256 verified before any stable feed is changed, so publishing transfers the
-release both up to storage and back down through the CDN. `SHA256SUMS` is uploaded
-after the package files, followed by a `release.json` metadata copy.
+`distribution.yml` calls `publish.yml` after all four package jobs pass. The latter
+also accepts `workflow_dispatch` for recovery. It validates workflow identity,
+all four job conclusions, source version and source public key. The overall
+workflow may still be running when its own publish job begins. Publisher source
+must have the same version as the built artifacts. A local checkout ahead of the
+built source requires explicit `SOURCE_COMMIT=<full-built-sha>` acknowledgment.
+No application rebuild or version bump occurs during a publish-only retry.
 
-The publisher then overwrites the five `updates/stable*.json` files and verifies
-their public contents and JSON/no-cache headers. Remote older packages are never
-deleted. It uses a local lock; run only one publisher across all machines. A
-partial feed upload can temporarily leave platforms on different releases;
-`make publish-release` resumes the same version without another bump. Different
-same-version payloads require a new version. If a process crashed, confirm it has
-stopped before removing `bin/.publish.lock`.
+All packages go to `downloads/<version>/`; a `release.json` metadata copy is
+included. SHA-256 headers are sent on upload, and each public CDN payload is
+fetched and hashed before any stable feed changes. The five `updates/stable*.json`
+files are then published and checked for exact contents, JSON content type and
+no-cache headers. Older remote payloads and legacy flat `0.1.2` URLs stay in place.
+A source build's artifacts are retained by GitHub for 30 days.
 
-For example, a `0.1.4` Windows installer is hosted at:
+Local `bin/release-build.json` and `bin/release-publish.json` record run IDs. If the
+terminal disconnects, CI continues independently. Reconnect with `make
+publish-release`; do not start another version to recover a watch failure. If
+publication succeeded but local metadata syncing failed, the retry fetches only
+the small metadata file. Optional full local downloads remain available through
+`make release-resume RUN_ID=<build-id>` without `PUBLISH=1`. The old local uploader
+is retained as `make publish-local`; it is not used by the normal release command.
 
-```text
-https://postika-desktop-application.b-cdn.net/downloads/0.1.4/postika-0.1.4-windows-amd64-installer.exe
-```
-
-The main feed URL remains:
-
-```text
-https://postika-desktop-application.b-cdn.net/updates/stable.json
-```
-
-The other four feeds use the same `updates/` directory. Keep legacy `0.1.2`
-packages at their already-published flat `/downloads/` URLs. Do not move them
-when introducing versioned folders for new releases.
-
-Keep Bunny's `/updates/*.json` cache bypass rule enabled, with `application/json`
-and `Cache-Control: no-cache` or `no-store`. The publisher requires those response
-headers. Purge stale feeds when first configuring the rule. With cache bypass
-active, normal publication does not require cache-purge API credentials. Query
-parameters for platform/arch/version/channel must be accepted.
-
-Already-built apps request `https://postika.softwrhq.com/updates/postika/`.
-The website's five exact GET/HEAD routes temporarily redirect those requests
-over HTTPS to Bunny's `updates/` folder, preserving the query string. Those
-routes do not change for each release. Check the public URLs and perform native
-old-to-new update tests before advertising working auto updates. An app already
-on the published version correctly has no new update to install.
+Keep Bunny's `/updates/*.json` cache bypass and `application/json` response type.
+No account API key or cache purge is needed for normal feed replacements. The
+storage password authenticates the HTTP Storage API at the correct regional
+hostname; Frankfurt uses `storage.bunnycdn.com`, while `de-s3.storage.bunnycdn.com`
+is its separate S3 endpoint. See [Bunny's Storage HTTP API](https://bunny.net/docs/storage/http).
 
 ### Generated website metadata
 
-After all four build targets download and verify, `make release-all` generates
-`website/releases/<version>.json` and `website/releases/current.json` with all
-eight public download URLs. The website always embeds `current.json`; there is
-no Go source-code path or download URL to edit for each version. To regenerate
-metadata for the current complete local release, use `make website-release`.
-Release dates and notes in an existing version JSON are preserved; add actual
-release notes there and regenerate before rebuilding the website. Commit the
-generated metadata with your next app changes before another all-OS release.
+CI generates `website/releases/<version>.json` and `current.json`, uploads them
+as a small `website-release-<version>` Actions artifact and publishes
+`downloads/<version>/release.json` to Bunny. After the workflow succeeds, the
+local release command fetches only that public metadata document, validates all
+eight expected versioned download URLs and saves both local JSON files.
 
-Rebuild and deploy the website after successful package/feed publication. This
-workflow does not upload or restart the VPS binary. The running binary keeps
-its embedded metadata until replaced; the `release.json` copy on Bunny is not
-a live metadata source. `RELEASE_FILE` remains an optional external-file startup
-override. Plain `make run` from `website/` needs no environment variables.
+The website embeds `current.json`, so rebuild and deploy its binary after a
+release to update public download buttons. This automation does not deploy or
+restart the VPS website. Add genuine notes to the version JSON and current JSON
+before rebuilding; review/commit generated metadata before the next release.
+`RELEASE_FILE` remains an optional startup override; default website startup needs
+no environment variables. Installed-app feed redirects remain unchanged across
+releases. Test native old-to-new updates before declaring a platform ready.
 
 On macOS, the release packaging task creates `.app.zip` with one top-level bundle,
 preserving executable modes and symlinks via `build/darwin/updatezip`. Do not

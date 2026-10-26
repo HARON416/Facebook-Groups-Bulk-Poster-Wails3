@@ -52,7 +52,7 @@ test('all packages are publicly verified before any stable feed, and retries pre
 test('failed public package verification leaves all stable feeds untouched', async t => {
   const f = fixture(t);
   f.client.verifyPublic = async () => { throw new Error('CDN checksum mismatch'); };
-  await assert.rejects(publishRelease(f.options), /make publish-release/);
+  await assert.rejects(publishRelease(f.options), /Retry this version/);
   assert.ok(!f.events.some(([method, path]) => method === 'PUT' && path.startsWith('updates/')));
   assert.ok(!existsSync(join(f.root, 'bin/.publish.lock')));
 });

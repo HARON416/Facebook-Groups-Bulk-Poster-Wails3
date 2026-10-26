@@ -95,7 +95,7 @@ export function bunnyClient(config, { request = fetch, sleep = ms => new Promise
       }
       if (attempt < 4) await sleep(1000 * (attempt + 1));
     }
-    throw new Error(`Public verification failed for ${path}: ${reason}. Check CDN replication/cache rules, then retry make publish-release.`);
+    throw new Error(`Public verification failed for ${path}: ${reason}. Check CDN replication/cache rules, then retry publication of this same version.`);
   }
   return { getStorage, upload, verifyPublic };
 }
@@ -158,7 +158,7 @@ export async function publishRelease({ root, client = bunnyClient(bunnyConfig())
     log(`Published ${version}. Rebuild and deploy the website to include its generated download links.`);
     return version;
   } catch (error) {
-    throw new Error(`${error.message}\nRetry this version with make publish-release; it does not bump or rebuild. Older remote packages have been preserved.`);
+    throw new Error(`${error.message}\nRetry this version without another version bump or rebuild. Older remote packages have been preserved.`);
   } finally { closeSync(fd); rmSync(lock); }
 }
 
@@ -179,5 +179,5 @@ if (process.argv[1] && realpathSync(resolve(process.argv[1])) === realpathSync(f
       const version = releaseVersion(root);
       console.log(`Publish packages to ${cdnOrigin}/downloads/${version}/, then five signed feeds to ${cdnOrigin}/updates/. No uploads were performed.`);
     } else await publishRelease({ root });
-  } catch (error) { console.error(error.message); process.exitCode = 1; }
+  } catch (error) { console.error(error.message); console.error('Retry local publishing with make publish-local.'); process.exitCode = 1; }
 }

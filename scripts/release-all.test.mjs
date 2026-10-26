@@ -7,6 +7,8 @@ import { spawnSync } from 'node:child_process';
 import { command, releaseAll, resumeRelease } from './release-all.mjs';
 import { writeDownloadFixture, writeVersionFixture } from './release-test-fixtures.mjs';
 import { checkVersions, versionFiles } from './version.mjs';
+import { saveWebsiteRelease } from './website-release.mjs';
+import { websiteRelease } from './release-layout.mjs';
 
 test('missing GitHub CLI explains installation, login, and local packaging', () => {
   assert.throws(() => command('.', 'gh', ['auth', 'status'], false, () => ({ error: { code: 'ENOENT' } })), error => {
@@ -44,6 +46,24 @@ test('dirty checkout cannot dispatch a remote build', async t => {
   const { options, calls } = fixture(t, (name, args) => name === 'git' && args[0] === 'status' ? ' M main.go' : undefined);
   await assert.rejects(releaseAll(options), /Commit and push/);
   assert.equal(calls.length, 1);
+});
+
+test('PUBLISH=1 publishes inside Actions and syncs metadata without downloading artifacts locally', async t => {
+  const { options, calls } = fixture(t, (name, args) => {
+    if (name === 'gh' && args[0] === 'secret') return JSON.stringify(['BUNNY_STORAGE_PASSWORD', 'POSTIKA_UPDATE_PRIVATE_KEY'].map(name => ({ name })));
+    if (name === 'gh' && args[0] === 'variable') return JSON.stringify(['BUNNY_STORAGE_ZONE', 'BUNNY_STORAGE_HOST'].map(name => ({ name })));
+  });
+  const output = await releaseAll({ ...options, publish: true, syncMetadata: async (root, version) => saveWebsiteRelease(root, websiteRelease(version)) });
+  assert.equal(output, join(options.root, 'website/releases/0.1.1.json'));
+  assert.ok(calls.some(call => call[0] === 'gh' && call[1] === 'workflow' && call.includes('publish=true')));
+  assert.ok(!calls.some(call => call[0] === 'gh' && call[1] === 'run' && call[2] === 'download'));
+});
+
+test('missing repository publishing secrets fail before reserving a new version', async t => {
+  const { options, calls } = fixture(t, (name, args) => name === 'gh' && ['secret', 'variable'].includes(args[0]) ? '[]' : undefined);
+  await assert.rejects(releaseAll({ ...options, publish: true }), /configure-publishing/);
+  assert.equal(checkVersions(options.root), '0.1.0');
+  assert.ok(!calls.some(call => call[0] === 'git' && ['commit', 'push'].includes(call[1])));
 });
 
 test('unpushed commit cannot dispatch', async t => {
