@@ -4,7 +4,7 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"github.com/wailsapp/wails/v3/pkg/application"
+	"net"
 	"os"
 	"path/filepath"
 	"sync"
@@ -13,6 +13,7 @@ import (
 	"github.com/go-rod/rod"
 	"github.com/go-rod/rod/lib/launcher"
 	"github.com/go-rod/rod/lib/proto"
+	"github.com/wailsapp/wails/v3/pkg/application"
 )
 
 const joinedGroupsURL = "https://web.facebook.com/groups/joins/?nav_source=tab&ordering=viewer_added"
@@ -96,7 +97,22 @@ func (s *GroupsService) OpenJoinedGroups(ctx context.Context) error {
 	if err := s.page.Context(ctx).Navigate(url); err != nil {
 		return fmt.Errorf("open Facebook groups: %w", err)
 	}
-	if _, err := s.page.Context(ctx).Activate(); err != nil {
+	page := s.page.Context(ctx)
+	if err := page.WaitLoad(); err != nil {
+		return fmt.Errorf("wait for Facebook groups to load: %w", err)
+	}
+	// Facebook keeps changing the DOM in the background. Give the initial
+	// content time to settle without waiting forever for a completely idle page.
+	settleCtx, settleCancel := context.WithTimeout(ctx, 5*time.Second)
+	err := page.Context(settleCtx).WaitDOMStable(300*time.Millisecond, 0)
+	settleCancel()
+	if ctx.Err() != nil {
+		return ctx.Err()
+	}
+	if err != nil && !errors.Is(err, context.DeadlineExceeded) {
+		return fmt.Errorf("wait for Facebook groups content: %w", err)
+	}
+	if _, err := page.Activate(); err != nil {
 		return fmt.Errorf("activate groups tab: %w", err)
 	}
 	return nil
@@ -130,6 +146,11 @@ func (s *GroupsService) ensureBrowserPage(ctx context.Context) error {
 		}
 		// The tab remains available after this binding call finishes.
 		s.page = page
+		if !s.headless {
+			if err := page.Context(ctx).SetWindow(&proto.BrowserBounds{WindowState: proto.BrowserWindowStateMaximized}); err != nil {
+				return fmt.Errorf("maximize Chrome window: %w", err)
+			}
+		}
 	}
 	return nil
 }
@@ -154,7 +175,17 @@ func (s *GroupsService) launchBrowser(ctx context.Context) error {
 	if err := os.MkdirAll(dir, 0700); err != nil {
 		return fmt.Errorf("create Postika browser profile: %w", err)
 	}
-	l := launcher.New().Context(ctx).Bin(chrome).UserDataDir(dir).Headless(s.headless)
+	// NewUserMode defaults to a shared fixed port. Choose a free loopback port
+	// for this launch so different accounts never attach to the same browser.
+	listener, err := net.Listen("tcp4", "127.0.0.1:0")
+	if err != nil {
+		return fmt.Errorf("allocate Chrome debugging port: %w", err)
+	}
+	port := listener.Addr().(*net.TCPAddr).Port
+	if err := listener.Close(); err != nil {
+		return fmt.Errorf("release Chrome debugging port: %w", err)
+	}
+	l := newBrowserLauncher(ctx, chrome, dir, port, s.headless)
 	controlURL, err := l.Launch()
 	if err != nil {
 		return fmt.Errorf("launch Chrome: %w", err)
@@ -169,6 +200,25 @@ func (s *GroupsService) launchBrowser(ctx context.Context) error {
 	}
 	s.browser, s.launcher, s.cancel = browser, l, cancel
 	return nil
+}
+
+// Use normal Chrome settings rather than Rod's automation preset. Each account
+// still has its own persistent directory and independently managed process.
+func newBrowserLauncher(ctx context.Context, chrome, dir string, port int, headless bool) *launcher.Launcher {
+	// Rod v0.116.2's NewUserMode does not initialize its exit channel. Keep
+	// New's process lifecycle (needed by profile deletion's Cleanup), but
+	// replace its automation defaults with the complete user-mode preset.
+	l := launcher.New()
+	l.Flags = launcher.NewUserMode().Flags
+	return l.Context(ctx).Bin(chrome).
+		Leakless(true).
+		NoSandbox(true).
+		Headless(headless).
+		Devtools(false).
+		UserDataDir(dir).
+		RemoteDebuggingPort(port).
+		Set("disable-notifications").
+		Set("start-maximized")
 }
 
 // closeBrowser is called with the service mutex held. Never call launcher.Cleanup:
