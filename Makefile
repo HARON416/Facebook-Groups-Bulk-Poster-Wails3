@@ -11,6 +11,8 @@ PUBLISH ?= 0
 export POSTIKA_PUBLISH := $(PUBLISH)
 export POSTIKA_RELEASE_BUMP := $(BUMP)
 export POSTIKA_RELEASE_VERSION := $(VERSION)
+export POSTIKA_RELEASE_RUN_ID := $(RUN_ID)
+export POSTIKA_RELEASE_SOURCE_COMMIT := $(SOURCE_COMMIT)
 
 help:
 	@printf '%s\n' 'Postika commands:' '  make dev          Start the desktop app with hot reload' '  make run          Alias for make dev' '  make build        Build the desktop executable' '  make check        Check Svelte and TypeScript' '  make doctor       Check Wails dependencies' '  make install-cli  Install the pinned Wails CLI locally' '  make install-garble Install optional pinned obfuscator' '  make package-all  Package unsigned formats for this OS'
@@ -18,6 +20,7 @@ help:
 	@printf '%s\n' '  make version-check Check all platform versions agree' '  make version-sync  Sync platform metadata from build/config.yml' '  make version-bump  Increment patch; BUMP=minor or BUMP=major also supported' '  make version-set VERSION=0.2.0  Set a higher version across all platforms'
 	@printf '%s\n' '  make update-feeds Sign and verify update feeds for the current downloaded release'
 	@printf '%s\n' '  make release-all PUBLISH=1  Build, generate website links, sign feeds, and publish to Bunny' '  make publish-release  Publish/retry the current downloaded release without a bump' '  make website-release  Regenerate website metadata for the current downloaded release'
+	@printf '%s\n' '  make release-resume RUN_ID=123 PUBLISH=1  Download a successful build and publish, without rebuilding'
 
 dev run:
 	wails3 dev
@@ -44,6 +47,10 @@ package-all: version-check
 
 release-all:
 	node --env-file-if-exists=.env scripts/release-all.mjs
+
+.PHONY: release-resume
+release-resume:
+	node --env-file-if-exists=.env scripts/release-all.mjs --resume
 
 .PHONY: publish-release website-release
 publish-release:

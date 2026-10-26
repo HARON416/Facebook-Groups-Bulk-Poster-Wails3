@@ -206,9 +206,19 @@ CI transports it inside its app ZIP to preserve file modes and symlinks.
 The package jobs use the version committed by the launcher. For a retry with
 `BUMP=none`, they use the existing synchronized metadata instead.
 
+If the jobs succeeded but downloading failed, resume that run instead of
+rebuilding: `make release-resume RUN_ID=<successful-run-id> PUBLISH=1`.
+The download retries up to three times in fresh temporary directories. Partial
+extracted files from one attempt cannot block another. Resuming does not bump,
+commit, push, or dispatch a workflow. It validates the selected workflow's
+success, source commit, and release version before downloading. If the checkout
+has advanced, explicitly acknowledge the selected build's exact source with
+`SOURCE_COMMIT=<full-built-commit-sha>`; packages from that run exclude later
+commits. Build a fresh release to include those later changes.
+
 The launcher watches the particular run it requested, checks that it builds
 the intended commit, and downloads only after all jobs succeed. Downloads are
-temporarily stored under `bin/releases/ci-<run-id>/`. The command verifies all
+temporarily stored under `bin/releases/ci-<run-id>-<unique-suffix>/`. The command verifies all
 four target manifests and payloads, then automatically flattens the packages
 into `bin/releases/<version>/`. The result has 12 package files, one `LICENSE.txt`,
 and a combined `SHA256SUMS`, ready to upload to a versioned hosting folder.

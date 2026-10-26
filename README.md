@@ -388,6 +388,7 @@ ignored by Git; never commit either. `.env.example` contains placeholders only.
 | New release: bump version, build every OS, and upload packages and feeds | `make release-all PUBLISH=1` |
 | Current version is already built and downloaded: publish it or retry a failed upload | `make publish-release` |
 | Build failed: retry the same version, then publish it | `make release-all BUMP=none PUBLISH=1` |
+| Build succeeded but artifact downloading failed: resume without rebuilding | `make release-resume RUN_ID=<successful-run-id> PUBLISH=1` |
 | Build a new release for testing before uploading | `make release-all` |
 
 For the normal new-release workflow, after committing and pushing changes:
@@ -419,6 +420,21 @@ rebuilds the app. It cannot publish a version whose build/download is incomplete
 Existing feeds are reused only after signature verification and validation
 against the expected versioned URLs. `make package-all` is not needed after a
 successful all-OS build.
+
+Artifact downloads automatically retry three times in fresh temporary folders,
+so partial extracted files cannot block a retry. A failed download preserves
+previous complete releases. The error prints the successful run ID for resuming.
+For example, `make release-resume RUN_ID=40313745083 PUBLISH=1` downloads the
+already-built release, verifies it, generates website metadata and publishes it;
+it never increments the version, dispatches a new build, commits or pushes.
+
+Resuming verifies the workflow, successful completion, source commit and committed
+release version. Normally the selected run must match the checkout commit. If
+you have since committed more changes, the command refuses to publish silently;
+choose whether to build a fresh release including those changes or explicitly
+set `SOURCE_COMMIT=<full-built-commit-sha>` to acknowledge that the existing
+packages exclude them. Local synchronized version metadata must still match
+the version in the selected build's commit.
 
 The private signing key stays local. Run only one publisher at a time, including
 across machines. A local lock prevents two publishers in the same checkout;

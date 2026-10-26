@@ -4,7 +4,7 @@ import { existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, rmSync, 
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { spawnSync } from 'node:child_process';
-import { command, releaseAll } from './release-all.mjs';
+import { command, releaseAll, resumeRelease } from './release-all.mjs';
 import { writeDownloadFixture, writeVersionFixture } from './release-test-fixtures.mjs';
 import { checkVersions, versionFiles } from './version.mjs';
 
@@ -69,7 +69,7 @@ test('downloads this request’s run, never another concurrent build', async t =
   assert.ok(readFileSync(join(output, 'SHA256SUMS'), 'utf8').includes('postika-0.1.1-windows-amd64-installer.exe'));
   const commit = calls.find(call => call[0] === 'git' && call[1] === 'commit');
   assert.deepEqual(commit.slice(commit.indexOf('--') + 1).sort(), [...versionFiles].sort());
-  assert.ok(calls.some(call => call.join(' ') === 'git push origin HEAD:refs/heads/feature/release'));
+  assert.ok(calls.some(call => call.join(' ') === 'git push --quiet origin HEAD:refs/heads/feature/release'));
   assert.ok(calls.some(call => call.join(' ') === 'gh run watch 42 --exit-status'));
   assert.ok(calls.some(call => call[1] === 'run' && call[2] === 'download' && call[3] === '42'));
 });
@@ -163,4 +163,86 @@ test('real local Git remote receives only the version commit used for the build'
   assert.equal(metadata.version, '0.1.1');
   assert.ok(metadata.downloads.every(download => download.url.includes('/downloads/0.1.1/')));
   assert.equal(git('status', '--porcelain'), '?? website/');
+});
+
+test('interrupted artifact downloads retry the same run in fresh directories', async t => {
+  const directories = [];
+  const { options, calls } = fixture(t, (name, args) => {
+    if (name === 'gh' && args[0] === 'run' && args[1] === 'download') {
+      const directory = args[args.indexOf('--dir') + 1];
+      directories.push(directory);
+      if (directories.length < 3) {
+        writeFileSync(join(directory, 'partially-extracted.txt'), 'partial');
+        throw new Error('connection reset by peer');
+      }
+    }
+  });
+  const output = await releaseAll(options);
+  assert.equal(output, join(options.root, 'bin/releases/0.1.1'));
+  assert.equal(new Set(directories).size, 3);
+  assert.ok(directories.every(directory => !existsSync(directory)));
+  assert.equal(calls.filter(call => call[0] === 'gh' && call[1] === 'workflow').length, 1);
+});
+
+test('exhausted downloads preserve the old release and give the successful run resume command', async t => {
+  const { options, calls } = fixture(t, (name, args) => {
+    if (name === 'gh' && args[0] === 'run' && args[1] === 'download') throw new Error('connection reset by peer');
+  });
+  const prior = join(options.root, 'bin/releases/0.1.0');
+  mkdirSync(prior, { recursive: true });
+  writeFileSync(join(prior, 'preserve.txt'), 'old release');
+  await assert.rejects(releaseAll(options), /make release-resume RUN_ID=42/);
+  assert.equal(calls.filter(call => call[0] === 'gh' && call[1] === 'run' && call[2] === 'download').length, 3);
+  assert.equal(readFileSync(join(prior, 'preserve.txt'), 'utf8'), 'old release');
+  assert.equal(checkVersions(options.root), '0.1.1');
+});
+
+function resumeFixture(t, build = {}, committed = '0.1.0') {
+  const f = fixture(t, (name, args) => {
+    if (name === 'gh' && args[0] === 'api') return JSON.stringify({
+      path: '.github/workflows/distribution.yml', event: 'workflow_dispatch',
+      status: 'completed', conclusion: 'success', head_sha: 'commit-sha', ...build,
+    });
+    if (name === 'git' && args[0] === 'show') return `  version: "${committed}"`;
+  });
+  f.options.runID = '42';
+  return f;
+}
+
+test('resume downloads a successful matching commit without mutation, dispatch or rebuilding', async t => {
+  const { options, calls } = resumeFixture(t);
+  const output = await resumeRelease(options);
+  assert.equal(output, join(options.root, 'bin/releases/0.1.0'));
+  assert.equal(readdirSync(output).length, 14);
+  assert.ok(!calls.some(call => call[0] === 'git' && ['status', 'commit', 'push'].includes(call[1])));
+  assert.ok(!calls.some(call => call[0] === 'gh' && (call[1] === 'workflow' || call[2] === 'watch')));
+  assert.equal(checkVersions(options.root), '0.1.0');
+});
+
+for (const build of [
+  { path: '.github/workflows/unrelated.yml' }, { event: 'push' },
+  { status: 'in_progress' }, { conclusion: 'failure' }, { head_sha: 'other-commit' },
+]) {
+  test(`resume rejects an unrelated or unsuccessful run: ${JSON.stringify(build)}`, async t => {
+    const { options, calls } = resumeFixture(t, build);
+    await assert.rejects(resumeRelease(options));
+    assert.ok(!calls.some(call => call[0] === 'gh' && call[1] === 'run'));
+  });
+}
+
+test('resume rejects changed version metadata and invalid run IDs before downloading', async t => {
+  const { options, calls } = resumeFixture(t, {}, '0.0.9');
+  await assert.rejects(resumeRelease(options), /version metadata differs/);
+  assert.ok(!calls.some(call => call[0] === 'gh' && call[1] === 'run'));
+  calls.length = 0;
+  await assert.rejects(resumeRelease({ ...options, runID: '../other' }), /RUN_ID/);
+  assert.equal(calls.length, 0);
+});
+
+test('a different checkout requires explicit acknowledgment of the exact built source commit', async t => {
+  const { options, calls } = resumeFixture(t, { head_sha: 'already-built-commit' });
+  await assert.rejects(resumeRelease({ ...options, sourceCommit: 'wrong-commit' }), /SOURCE_COMMIT/);
+  const output = await resumeRelease({ ...options, sourceCommit: 'already-built-commit' });
+  assert.equal(output, join(options.root, 'bin/releases/0.1.0'));
+  assert.ok(calls.some(call => call[0] === 'git' && call[1] === 'show' && call[2] === 'already-built-commit:build/config.yml'));
 });
