@@ -6,7 +6,7 @@
 name: "postika"
 arch: ${GOARCH}
 platform: "linux"
-version: "0.1.5"
+version: "0.1.6"
 section: "default"
 priority: "extra"
 maintainer: "Postika Technologies <haronkibetrutoh@gmail.com>"
