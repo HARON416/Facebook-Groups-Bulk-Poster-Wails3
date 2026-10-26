@@ -177,3 +177,49 @@ test('connection errors name the storage check and safe nested codes after bound
   });
   assert.equal(attempts, 3);
 });
+
+test('public checksum verification retries interrupted bodies with a fresh hash', async t => {
+  const root = mkdtempSync(join(tmpdir(), 'postika-body-retry-'));
+  t.after(() => rmSync(root, { recursive: true, force: true }));
+  const file = join(root, 'fixture.bin');
+  const payload = Buffer.from('complete payload');
+  writeFileSync(file, payload);
+  for (const recover of [true, false]) {
+    let attempts = 0;
+    const client = bunnyClient({ host: 'storage.bunnycdn.com', zone: 'fixture', password: 'fixture-secret' }, {
+      sleep: async () => {}, request: async () => {
+        attempts++;
+        if (recover && attempts > 1) return new Response(payload);
+        return new Response(new ReadableStream({
+          start(controller) { controller.enqueue(payload.subarray(0, 5)); },
+          pull(controller) { controller.error(Object.assign(new Error('fixture-secret'), { code: 'ECONNRESET' })); },
+        }));
+      },
+    });
+    if (recover) {
+      await client.verifyPublic(file, 'downloads/0.1.7/fixture.bin');
+      assert.equal(attempts, 2);
+    } else {
+      await assert.rejects(client.verifyPublic(file, 'downloads/0.1.7/fixture.bin'), error => {
+        assert.match(error.message, /fixture.bin.*interrupted download \(ECONNRESET\)/);
+        assert.ok(!error.message.includes('fixture-secret'));
+        return true;
+      });
+      assert.equal(attempts, 5);
+    }
+  }
+});
+
+test('response cleanup failures do not abort an accepted upload', async t => {
+  const root = mkdtempSync(join(tmpdir(), 'postika-cleanup-'));
+  t.after(() => rmSync(root, { recursive: true, force: true }));
+  const file = join(root, 'fixture.bin');
+  writeFileSync(file, 'payload');
+  const client = bunnyClient({ host: 'storage.bunnycdn.com', zone: 'fixture', password: 'fixture-secret' }, {
+    request: async (url, options) => {
+      for await (const chunk of options.body) { /* Consume the request. */ }
+      return { ok: true, status: 201, body: { cancel: async () => { throw new Error('terminated'); } } };
+    },
+  });
+  await client.upload(file, 'downloads/0.1.7/fixture.bin');
+});

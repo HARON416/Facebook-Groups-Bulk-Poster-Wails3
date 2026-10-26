@@ -449,7 +449,8 @@ metadata as `downloads/<version>/release.json`, then replaces the five JSON feed
 in `updates/`. Feeds are checked publicly for matching bytes, JSON content type,
 and no-cache headers. Transient connection errors and HTTP 429/5xx responses are retried up to three
 times with fresh upload streams. Persistent errors report safe network codes
-without credentials. CDN replication/cache failures stop publishing and give a
+without credentials. Interrupted public verification downloads also retry from
+a fresh checksum calculation. CDN replication/cache failures stop publishing and give a
 retry command. A failure partway through publishing feeds can leave some platforms
 on the previous version; retry the same release to finish.
 

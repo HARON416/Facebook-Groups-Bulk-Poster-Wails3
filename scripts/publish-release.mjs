@@ -22,6 +22,10 @@ export function bunnyConfig(env = process.env) {
 
 export function bunnyClient(config, { request = fetch, sleep = ms => new Promise(resolve => setTimeout(resolve, ms)) } = {}) {
   const storageURL = path => `https://${config.host}/${config.zone}/${path}`;
+  async function discard(response) {
+    try { await response.body?.cancel(); }
+    catch { /* Cleanup of an unused response cannot replace its HTTP status. */ }
+  }
   const networkCodes = error => {
     const found = new Set();
     function visit(value) {
@@ -41,7 +45,7 @@ export function bunnyClient(config, { request = fetch, sleep = ms => new Promise
       try {
         const response = await request(url, { redirect: 'error', signal: AbortSignal.timeout(600_000), ...options });
         if (attempt < 2 && (response.status === 429 || response.status >= 500)) {
-          await response.body?.cancel();
+          await discard(response);
         } else return response;
       } catch (error) {
         if (attempt === 2) throw new Error(`Network request failed for ${target} after 3 attempts (${networkCodes(error)}). Check DNS/network access and retry; credentials have not been logged.`);
@@ -53,8 +57,8 @@ export function bunnyClient(config, { request = fetch, sleep = ms => new Promise
   }
   async function getStorage(path) {
     const response = await send(storageURL(path), { headers: { AccessKey: config.password } }, path);
-    if (response.status === 404) { await response.body?.cancel(); return null; }
-    if (!response.ok) { await response.body?.cancel(); throw new Error(`Bunny Storage returned HTTP ${response.status} for ${path || 'authentication'}. Check the storage password and regional hostname.`); }
+    if (response.status === 404) { await discard(response); return null; }
+    if (!response.ok) { await discard(response); throw new Error(`Bunny Storage returned HTTP ${response.status} for ${path || 'authentication'}. Check the storage password and regional hostname.`); }
     return response.text();
   }
   async function upload(file, path) {
@@ -65,24 +69,29 @@ export function bunnyClient(config, { request = fetch, sleep = ms => new Promise
       headers: { AccessKey: config.password, Checksum: checksum, 'Content-Length': String(statSync(file).size),
         'Content-Type': path.endsWith('.json') ? 'application/json' : 'application/octet-stream' },
     }), path);
-    await response.body?.cancel();
+    await discard(response);
     if (!response.ok) throw new Error(`Bunny upload failed with HTTP ${response.status} for ${path}.`);
   }
   async function verifyPublic(file, path, feed = false) {
     const expected = createHash('sha256').update(readFileSync(file)).digest('hex');
     let reason = '';
     for (let attempt = 0; attempt < 5; attempt++) {
-      const response = await send(`${cdnOrigin}/${path}`, { headers: { 'Cache-Control': 'no-cache' } }, path);
-      if (response.ok) {
-        const hash = createHash('sha256');
-        for await (const chunk of response.body) hash.update(chunk);
-        const cache = response.headers.get('cache-control') ?? '';
-        const json = (response.headers.get('content-type') ?? '').includes('application/json');
-        if (hash.digest('hex') === expected && (!feed || (/\bno-cache\b|\bno-store\b/i.test(cache) && json))) return;
-        reason = feed ? 'content mismatch or missing JSON/no-cache headers' : 'checksum mismatch';
-      } else {
-        reason = `HTTP ${response.status}`;
-        await response.body?.cancel();
+      try {
+        const response = await send(`${cdnOrigin}/${path}`, { headers: { 'Cache-Control': 'no-cache' } }, path);
+        if (response.ok) {
+          // Start a fresh hash after every interrupted response body.
+          const hash = createHash('sha256');
+          for await (const chunk of response.body) hash.update(chunk);
+          const cache = response.headers.get('cache-control') ?? '';
+          const json = (response.headers.get('content-type') ?? '').includes('application/json');
+          if (hash.digest('hex') === expected && (!feed || (/\bno-cache\b|\bno-store\b/i.test(cache) && json))) return;
+          reason = feed ? 'content mismatch or missing JSON/no-cache headers' : 'checksum mismatch';
+        } else {
+          reason = `HTTP ${response.status}`;
+          await discard(response);
+        }
+      } catch (error) {
+        reason = `interrupted download (${networkCodes(error)})`;
       }
       if (attempt < 4) await sleep(1000 * (attempt + 1));
     }
