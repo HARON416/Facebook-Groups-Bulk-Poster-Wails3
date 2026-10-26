@@ -14,7 +14,7 @@
     !define INFO_PRODUCTNAME "Postika"
 !endif
 !ifndef INFO_PRODUCTVERSION
-    !define INFO_PRODUCTVERSION "0.1.8"
+    !define INFO_PRODUCTVERSION "0.1.9"
 !endif
 !ifndef INFO_COPYRIGHT
     !define INFO_COPYRIGHT "© now, My Company"
