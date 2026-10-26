@@ -17,7 +17,7 @@
         PackageDisplayName="Postika"
         PublisherName="CN=Postika Technologies"
         PublisherDisplayName="Postika Technologies"
-        Version="0.1.6.0"
+        Version="0.1.7.0"
         PackageDescription="Postika desktop application">
         <Capabilities>
             <Capability Name="runFullTrust" />
