@@ -1068,6 +1068,7 @@ msgid "All languages"
 msgstr "Všechny jazyky"
 
 #: src/components/AccountDropdown.svelte
+#: src/components/GuidedTour.svelte
 msgid "Languages"
 msgstr "Jazyky"
 
@@ -1840,6 +1841,7 @@ msgstr "Podrobnosti ladění"
 #~ msgstr ""
 
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UsageGuide.svelte
 msgid "Themes"
@@ -1899,6 +1901,7 @@ msgid "{0} languages · {1} themes"
 msgstr "{0} jazyků · {1} motivů"
 
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 msgid "Language and theme choices sync across windows."
 msgstr "Volby jazyka a motivu se synchronizují mezi okny."
 
@@ -1975,6 +1978,7 @@ msgstr "Publikováno znamená potvrzení Facebookem. Čekající vyžaduje schv�
 msgid "For problems, expand Debug details or Copy Facebook response in Posting logs. For expired logins, use Load groups and finish verification before trying again."
 msgstr "Při potížích rozbalte Podrobnosti ladění nebo zkopírujte odpověď Facebooku v protokolech. Při vypršení přihlášení načtěte skupiny a dokončete ověření před dalším pokusem."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Use Language and Themes in the top bar. Your choices apply across windows."
 msgstr "Použijte Jazyk a Motivy v horní liště. Volby platí pro všechna okna."

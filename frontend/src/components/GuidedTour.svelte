@@ -23,6 +23,8 @@
     { selector: '[data-tour="timing"]', page: 2, title: 'Interval between posts', description: 'At least 60 seconds. Use equal values for a fixed interval.' },
     { selector: '[data-tour="schedule"]', page: 2, title: 'Post or schedule', description: 'Choose Schedule, select a future date and time in the displayed time zone, then Confirm schedule. Facebook may require login when the queue starts.' },
     { selector: '[data-tour="logs"]', page: null, title: 'Posting logs', description: 'Open Posting logs to follow progress. Its account selector lets you inspect other queues without switching the account in the main workspace.' },
+    { selector: '[data-tour="language"]', page: null, title: 'Languages', description: 'Use Language and Themes in the top bar. Your choices apply across windows.' },
+    { selector: '[data-tour="themes"]', page: null, title: 'Themes', description: 'Language and theme choices sync across windows.' },
   ]);
 
   function elementForStep() {

@@ -56,7 +56,7 @@
     "id": "palette:anti-hero"
   },
   {
-    "name": "Apricot Iris",
+    "name": "apricot iris",
     "bg": "#fff0d9",
     "main": "#723ec3",
     "sub": "#ffcf95",
@@ -70,6 +70,14 @@
     "sub": "#454864",
     "text": "#f6f5f5",
     "id": "palette:arch"
+  },
+  {
+    "name": "atlantic dusk",
+    "bg": "#030164",
+    "main": "#363199",
+    "sub": "#2d7495",
+    "text": "#e8e085",
+    "id": "palette:colorhunt-atlantic-dusk"
   },
   {
     "name": "aurora",
@@ -94,6 +102,14 @@
     "sub": "#4a768d",
     "text": "#fffaf8",
     "id": "palette:bento"
+  },
+  {
+    "name": "berry porcelain",
+    "bg": "#f2dace",
+    "main": "#aa5e7a",
+    "sub": "#d49a9a",
+    "text": "#7c0e44",
+    "id": "palette:colorhunt-berry-porcelain"
   },
   {
     "name": "bingsu",
@@ -136,7 +152,7 @@
     "id": "palette:blueberry-light"
   },
   {
-    "name": "Blush Sand",
+    "name": "blush sand",
     "bg": "#f6d8bd",
     "main": "#cf4173",
     "sub": "#f39399",
@@ -168,7 +184,7 @@
     "id": "palette:breeze"
   },
   {
-    "name": "Burnt Caramel",
+    "name": "burnt caramel",
     "bg": "#562f00",
     "main": "#ff9644",
     "sub": "#ffce99",
@@ -216,7 +232,7 @@
     "id": "palette:catppuccin"
   },
   {
-    "name": "Cedar Ember",
+    "name": "cedar ember",
     "bg": "#254f22",
     "main": "#f5824a",
     "sub": "#a03a13",
@@ -246,6 +262,14 @@
     "sub": "#787d82",
     "text": "#d1d0c5",
     "id": "palette:cherry-blossom"
+  },
+  {
+    "name": "citrus sky",
+    "bg": "#fff2a7",
+    "main": "#ffa500",
+    "sub": "#bedeff",
+    "text": "#930031",
+    "id": "palette:colorhunt-citrus-sky"
   },
   {
     "name": "comfy",
@@ -320,7 +344,7 @@
     "id": "palette:darling"
   },
   {
-    "name": "Deep Lagoon",
+    "name": "deep lagoon",
     "bg": "#005461",
     "main": "#00b7b5",
     "sub": "#018790",
@@ -432,7 +456,15 @@
     "id": "palette:earthsong"
   },
   {
-    "name": "Ember Slate",
+    "name": "ember cream",
+    "bg": "#2a1a0e",
+    "main": "#d4621a",
+    "sub": "#f4ae52",
+    "text": "#fef3e2",
+    "id": "palette:colorhunt-ember-cream"
+  },
+  {
+    "name": "ember slate",
     "bg": "#000000",
     "main": "#fe7f2d",
     "sub": "#233d4d",
@@ -440,7 +472,7 @@
     "id": "palette:colorhunt-ember-slate"
   },
   {
-    "name": "Espresso Linen",
+    "name": "espresso linen",
     "bg": "#e1dcc9",
     "main": "#412d15",
     "sub": "#1f150c",
@@ -472,7 +504,7 @@
     "id": "palette:ez-mode"
   },
   {
-    "name": "Fern Lantern",
+    "name": "fern lantern",
     "bg": "#043915",
     "main": "#4c763b",
     "sub": "#b0ce88",
@@ -488,7 +520,7 @@
     "id": "palette:fire"
   },
   {
-    "name": "Fjord Mist",
+    "name": "fjord mist",
     "bg": "#f3f4f4",
     "main": "#1d546d",
     "sub": "#5f9598",
@@ -518,6 +550,14 @@
     "sub": "#779097",
     "text": "#e5e5e5",
     "id": "palette:floret"
+  },
+  {
+    "name": "forest brass",
+    "bg": "#123f36",
+    "main": "#c49a45",
+    "sub": "#2a6b5c",
+    "text": "#e8dcc4",
+    "id": "palette:colorhunt-forest-brass"
   },
   {
     "name": "froyo",
@@ -560,12 +600,20 @@
     "id": "palette:future-funk"
   },
   {
-    "name": "Garnet Night",
+    "name": "garnet night",
     "bg": "#000000",
     "main": "#d90000",
     "sub": "#8db355",
     "text": "#ffea93",
     "id": "palette:colorhunt-garnet-night"
+  },
+  {
+    "name": "garnet sage",
+    "bg": "#790d16",
+    "main": "#e5d3af",
+    "sub": "#aec4d4",
+    "text": "#f5efe1",
+    "id": "palette:colorhunt-garnet-sage"
   },
   {
     "name": "github",
@@ -576,7 +624,7 @@
     "id": "palette:github"
   },
   {
-    "name": "Glacial Blue",
+    "name": "glacial blue",
     "bg": "#d0e7e6",
     "main": "#4274d9",
     "sub": "#95ccdd",
@@ -648,7 +696,7 @@
     "id": "palette:hanok"
   },
   {
-    "name": "Harbor Brass",
+    "name": "harbor brass",
     "bg": "#0a2947",
     "main": "#8b5e3c",
     "sub": "#d3d4c0",
@@ -672,7 +720,7 @@
     "id": "palette:honey"
   },
   {
-    "name": "Honey Linen",
+    "name": "honey linen",
     "bg": "#f8eadc",
     "main": "#a55704",
     "sub": "#f3d2af",
@@ -718,6 +766,14 @@
     "sub": "#555555",
     "text": "#c6c6c6",
     "id": "palette:incognito"
+  },
+  {
+    "name": "indigo frost",
+    "bg": "#e3ef4f",
+    "main": "#0f42c0",
+    "sub": "#5882e8",
+    "text": "#1f06ac",
+    "id": "palette:colorhunt-indigo-frost"
   },
   {
     "name": "ishtar",
@@ -912,7 +968,7 @@
     "id": "palette:midnight"
   },
   {
-    "name": "Midnight Orchid",
+    "name": "midnight orchid",
     "bg": "#000000",
     "main": "#9929ea",
     "sub": "#ff5fcf",
@@ -936,7 +992,7 @@
     "id": "palette:mint"
   },
   {
-    "name": "Mint Grove",
+    "name": "mint grove",
     "bg": "#b0e4cc",
     "main": "#408a71",
     "sub": "#285a48",
@@ -992,6 +1048,14 @@
     "id": "palette:moonlight"
   },
   {
+    "name": "moss champagne",
+    "bg": "#15370d",
+    "main": "#e5cd82",
+    "sub": "#728e6d",
+    "text": "#fff2b4",
+    "id": "palette:colorhunt-moss-champagne"
+  },
+  {
     "name": "mountain",
     "bg": "#0f0f0f",
     "main": "#e7e7e7",
@@ -1016,7 +1080,7 @@
     "id": "palette:ms-cupcakes"
   },
   {
-    "name": "Mulberry Dusk",
+    "name": "mulberry dusk",
     "bg": "#15173d",
     "main": "#982598",
     "sub": "#e491c9",
@@ -1096,12 +1160,20 @@
     "id": "palette:olive"
   },
   {
-    "name": "Olive Cream",
+    "name": "olive cream",
     "bg": "#fbf5dd",
     "main": "#306d29",
     "sub": "#e7e1b1",
     "text": "#0d530e",
     "id": "palette:colorhunt-olive-cream"
+  },
+  {
+    "name": "olive parchment",
+    "bg": "#fcf0da",
+    "main": "#f2c46a",
+    "sub": "#aeac78",
+    "text": "#4c4541",
+    "id": "palette:colorhunt-olive-parchment"
   },
   {
     "name": "olivia",
@@ -1128,7 +1200,7 @@
     "id": "palette:our-theme"
   },
   {
-    "name": "Oxblood Paper",
+    "name": "oxblood paper",
     "bg": "#eeead7",
     "main": "#6d0808",
     "sub": "#757d6f",
@@ -1192,7 +1264,7 @@
     "id": "palette:phantom"
   },
   {
-    "name": "Pine Candlelight",
+    "name": "pine candlelight",
     "bg": "#334443",
     "main": "#faeab1",
     "sub": "#34656d",
@@ -1208,7 +1280,7 @@
     "id": "palette:pink-lemonade"
   },
   {
-    "name": "Plum Apricot",
+    "name": "plum apricot",
     "bg": "#522d60",
     "main": "#f2a67b",
     "sub": "#80426e",
@@ -1216,7 +1288,7 @@
     "id": "palette:colorhunt-plum-apricot"
   },
   {
-    "name": "Porcelain Blue",
+    "name": "porcelain blue",
     "bg": "#efece3",
     "main": "#4a70a9",
     "sub": "#8fabd4",
@@ -1304,7 +1376,7 @@
     "id": "palette:rgb"
   },
   {
-    "name": "Rose Ink",
+    "name": "rose ink",
     "bg": "#eeeeee",
     "main": "#cb2957",
     "sub": "#dddddd",
@@ -1352,7 +1424,23 @@
     "id": "palette:ryujinscales"
   },
   {
-    "name": "Sailcloth Navy",
+    "name": "saffron paper",
+    "bg": "#f9e6a8",
+    "main": "#f2a900",
+    "sub": "#cc6f00",
+    "text": "#4d2a00",
+    "id": "palette:colorhunt-saffron-paper"
+  },
+  {
+    "name": "sage starlight",
+    "bg": "#202734",
+    "main": "#b7d894",
+    "sub": "#36415a",
+    "text": "#e0f8c7",
+    "id": "palette:colorhunt-sage-starlight"
+  },
+  {
+    "name": "sailcloth navy",
     "bg": "#fcf1d0",
     "main": "#22396f",
     "sub": "#0d1c42",
@@ -1544,6 +1632,14 @@
     "id": "palette:taro"
   },
   {
+    "name": "teal terracotta",
+    "bg": "#f8e0a4",
+    "main": "#a82020",
+    "sub": "#31aaa9",
+    "text": "#6c1a1a",
+    "id": "palette:colorhunt-teal-terracotta"
+  },
+  {
     "name": "terminal",
     "bg": "#191a1b",
     "main": "#79a617",
@@ -1608,7 +1704,7 @@
     "id": "palette:tron-orange"
   },
   {
-    "name": "Twilight Steel",
+    "name": "twilight steel",
     "bg": "#111844",
     "main": "#4b5694",
     "sub": "#7288ae",

@@ -22,3 +22,15 @@ made to Color Hunt at runtime.
 
 This batch applies only to the desktop application. Website theme assets were
 not synchronized.
+
+## New-feed desktop additions
+
+`colorhunt-new.json` records twelve further palettes selected from 200 unique
+results across `sort=new` steps 0–4. The requested `timeframe=30` was retained,
+but this feed also returned older palettes. Six light and six dark themes use
+original source colors with at least 7:1 background/text contrast. Derived UI
+tokens are checked by `npm run themes:test`. Source codes and URLs are recorded;
+clearance cookies are not stored.
+
+All desktop theme display names are lowercase. Existing IDs are unchanged so
+saved selections continue working. Website theme files are not regenerated.

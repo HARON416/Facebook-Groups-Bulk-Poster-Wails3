@@ -1,0 +1,246 @@
+{
+  "source": "https://colorhunt.co/",
+  "endpoint": "https://colorhunt.co/php/feed.php",
+  "retrievedAt": "2026-10-26T17:24:06.341628+00:00",
+  "review": {
+    "requests": 5,
+    "records": 200,
+    "uniquePalettes": 200,
+    "criteria": [
+      "Only sort=new, steps 0 through 4; timeframe=30 does not exclude older palettes in this feed.",
+      "At least 7:1 contrast between background and original text color.",
+      "Six light and six dark palettes, excluding existing Color Hunt combinations.",
+      "Favor recent palettes and varied hues; token generator preserves readable UI contrast."
+    ]
+  },
+  "palettes": [
+    {
+      "id": "palette:colorhunt-citrus-sky",
+      "name": "citrus sky",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/bedefffff2a7ffa500930031",
+      "code": "bedefffff2a7ffa500930031",
+      "colors": [
+        "#bedeff",
+        "#fff2a7",
+        "#ffa500",
+        "#930031"
+      ],
+      "likesAtRetrieval": 112,
+      "feed": {
+        "sort": "new",
+        "timeframe": 30,
+        "step": 0
+      }
+    },
+    {
+      "id": "palette:colorhunt-moss-champagne",
+      "name": "moss champagne",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/15370d728e6de5cd82fff2b4",
+      "code": "15370d728e6de5cd82fff2b4",
+      "colors": [
+        "#15370d",
+        "#728e6d",
+        "#e5cd82",
+        "#fff2b4"
+      ],
+      "likesAtRetrieval": 218,
+      "feed": {
+        "sort": "new",
+        "timeframe": 30,
+        "step": 0
+      }
+    },
+    {
+      "id": "palette:colorhunt-berry-porcelain",
+      "name": "berry porcelain",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/7c0e44aa5e7ad49a9af2dace",
+      "code": "7c0e44aa5e7ad49a9af2dace",
+      "colors": [
+        "#7c0e44",
+        "#aa5e7a",
+        "#d49a9a",
+        "#f2dace"
+      ],
+      "likesAtRetrieval": 517,
+      "feed": {
+        "sort": "new",
+        "timeframe": 30,
+        "step": 0
+      }
+    },
+    {
+      "id": "palette:colorhunt-sage-starlight",
+      "name": "sage starlight",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/20273436415ab7d894e0f8c7",
+      "code": "20273436415ab7d894e0f8c7",
+      "colors": [
+        "#202734",
+        "#36415a",
+        "#b7d894",
+        "#e0f8c7"
+      ],
+      "likesAtRetrieval": 392,
+      "feed": {
+        "sort": "new",
+        "timeframe": 30,
+        "step": 0
+      }
+    },
+    {
+      "id": "palette:colorhunt-indigo-frost",
+      "name": "indigo frost",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/1f06ac0f42c05882e8e3ef4f",
+      "code": "1f06ac0f42c05882e8e3ef4f",
+      "colors": [
+        "#1f06ac",
+        "#0f42c0",
+        "#5882e8",
+        "#e3ef4f"
+      ],
+      "likesAtRetrieval": 316,
+      "feed": {
+        "sort": "new",
+        "timeframe": 30,
+        "step": 0
+      }
+    },
+    {
+      "id": "palette:colorhunt-ember-cream",
+      "name": "ember cream",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/fef3e2f4ae52d4621a2a1a0e",
+      "code": "fef3e2f4ae52d4621a2a1a0e",
+      "colors": [
+        "#fef3e2",
+        "#f4ae52",
+        "#d4621a",
+        "#2a1a0e"
+      ],
+      "likesAtRetrieval": 779,
+      "feed": {
+        "sort": "new",
+        "timeframe": 30,
+        "step": 0
+      }
+    },
+    {
+      "id": "palette:colorhunt-olive-parchment",
+      "name": "olive parchment",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/fcf0daaeac78f2c46a4c4541",
+      "code": "fcf0daaeac78f2c46a4c4541",
+      "colors": [
+        "#fcf0da",
+        "#aeac78",
+        "#f2c46a",
+        "#4c4541"
+      ],
+      "likesAtRetrieval": 797,
+      "feed": {
+        "sort": "new",
+        "timeframe": 30,
+        "step": 0
+      }
+    },
+    {
+      "id": "palette:colorhunt-garnet-sage",
+      "name": "garnet sage",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/790d16e5d3aff5efe1aec4d4",
+      "code": "790d16e5d3aff5efe1aec4d4",
+      "colors": [
+        "#790d16",
+        "#e5d3af",
+        "#f5efe1",
+        "#aec4d4"
+      ],
+      "likesAtRetrieval": 1933,
+      "feed": {
+        "sort": "new",
+        "timeframe": 30,
+        "step": 0
+      }
+    },
+    {
+      "id": "palette:colorhunt-saffron-paper",
+      "name": "saffron paper",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/f9e6a8f2a900cc6f004d2a00",
+      "code": "f9e6a8f2a900cc6f004d2a00",
+      "colors": [
+        "#f9e6a8",
+        "#f2a900",
+        "#cc6f00",
+        "#4d2a00"
+      ],
+      "likesAtRetrieval": 1061,
+      "feed": {
+        "sort": "new",
+        "timeframe": 30,
+        "step": 0
+      }
+    },
+    {
+      "id": "palette:colorhunt-atlantic-dusk",
+      "name": "atlantic dusk",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/0301643631992d7495e8e085",
+      "code": "0301643631992d7495e8e085",
+      "colors": [
+        "#030164",
+        "#363199",
+        "#2d7495",
+        "#e8e085"
+      ],
+      "likesAtRetrieval": 767,
+      "feed": {
+        "sort": "new",
+        "timeframe": 30,
+        "step": 0
+      }
+    },
+    {
+      "id": "palette:colorhunt-teal-terracotta",
+      "name": "teal terracotta",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/31aaa9f8e0a4a820206c1a1a",
+      "code": "31aaa9f8e0a4a820206c1a1a",
+      "colors": [
+        "#31aaa9",
+        "#f8e0a4",
+        "#a82020",
+        "#6c1a1a"
+      ],
+      "likesAtRetrieval": 1237,
+      "feed": {
+        "sort": "new",
+        "timeframe": 30,
+        "step": 1
+      }
+    },
+    {
+      "id": "palette:colorhunt-forest-brass",
+      "name": "forest brass",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/123f362a6b5cc49a45e8dcc4",
+      "code": "123f362a6b5cc49a45e8dcc4",
+      "colors": [
+        "#123f36",
+        "#2a6b5c",
+        "#c49a45",
+        "#e8dcc4"
+      ],
+      "likesAtRetrieval": 949,
+      "feed": {
+        "sort": "new",
+        "timeframe": 30,
+        "step": 1
+      }
+    }
+  ]
+}

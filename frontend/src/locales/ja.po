@@ -1068,6 +1068,7 @@ msgid "All languages"
 msgstr "すべての言語"
 
 #: src/components/AccountDropdown.svelte
+#: src/components/GuidedTour.svelte
 msgid "Languages"
 msgstr "言語"
 
@@ -1840,6 +1841,7 @@ msgstr "デバッグ詳細"
 #~ msgstr ""
 
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UsageGuide.svelte
 msgid "Themes"
@@ -1899,6 +1901,7 @@ msgid "{0} languages · {1} themes"
 msgstr "{0} 言語 · {1} テーマ"
 
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 msgid "Language and theme choices sync across windows."
 msgstr "言語とテーマの選択はウィンドウ間で同期されます。"
 
@@ -1975,6 +1978,7 @@ msgstr "公開済みはFacebookによる公開確認、保留中は管理者の�
 msgid "For problems, expand Debug details or Copy Facebook response in Posting logs. For expired logins, use Load groups and finish verification before trying again."
 msgstr "問題がある場合は投稿ログのデバッグ詳細を開くか、Facebookの応答をコピーします。ログイン期限切れの場合はグループを読み込み、認証してから再試行します。"
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Use Language and Themes in the top bar. Your choices apply across windows."
 msgstr "上部バーの言語とテーマを使います。選択はすべてのウィンドウに適用されます。"

@@ -1068,6 +1068,7 @@ msgid "All languages"
 msgstr "Όλες οι γλώσσες"
 
 #: src/components/AccountDropdown.svelte
+#: src/components/GuidedTour.svelte
 msgid "Languages"
 msgstr "Γλώσσες"
 
@@ -1840,6 +1841,7 @@ msgstr "Λεπτομέρειες εντοπισμού σφαλμάτων"
 #~ msgstr ""
 
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UsageGuide.svelte
 msgid "Themes"
@@ -1899,6 +1901,7 @@ msgid "{0} languages · {1} themes"
 msgstr "{0} γλώσσες · {1} θέματα"
 
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 msgid "Language and theme choices sync across windows."
 msgstr "Οι επιλογές γλώσσας και θέματος συγχρονίζονται μεταξύ παραθύρων."
 
@@ -1975,6 +1978,7 @@ msgstr "Δημοσιεύτηκε σημαίνει επιβεβαίωση από 
 msgid "For problems, expand Debug details or Copy Facebook response in Posting logs. For expired logins, use Load groups and finish verification before trying again."
 msgstr "Σε προβλήματα, ανοίξτε τις λεπτομέρειες εντοπισμού σφαλμάτων ή αντιγράψτε την απόκριση Facebook από τα αρχεία. Αν έληξε η σύνδεση, φορτώστε ομάδες και ολοκληρώστε την επαλήθευση πριν ξαναδοκιμάσετε."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Use Language and Themes in the top bar. Your choices apply across windows."
 msgstr "Χρησιμοποιήστε Γλώσσα και Θέματα στην πάνω γραμμή. Οι επιλογές ισχύουν σε όλα τα παράθυρα."

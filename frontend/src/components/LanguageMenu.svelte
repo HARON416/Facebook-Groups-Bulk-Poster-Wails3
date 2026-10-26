@@ -12,7 +12,7 @@
   }
 </script>
 
-<div class="language-menu">
+<div class="language-menu" data-tour="language">
   <AccountDropdown id="language" language compact profiles={options} selected={i18n.locale} disabled={i18n.changing} onselect={select} />
   {#if error}<p role="alert">{logMessage(error)}</p>{/if}
 </div>

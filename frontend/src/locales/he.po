@@ -1068,6 +1068,7 @@ msgid "All languages"
 msgstr "כל השפות"
 
 #: src/components/AccountDropdown.svelte
+#: src/components/GuidedTour.svelte
 msgid "Languages"
 msgstr "שפות"
 
@@ -1840,6 +1841,7 @@ msgstr "פרטי אבחון"
 #~ msgstr ""
 
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UsageGuide.svelte
 msgid "Themes"
@@ -1899,6 +1901,7 @@ msgid "{0} languages · {1} themes"
 msgstr "{0} שפות · {1} ערכות נושא"
 
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 msgid "Language and theme choices sync across windows."
 msgstr "בחירת השפה וערכת הנושא מסתנכרנת בין החלונות."
 
@@ -1975,6 +1978,7 @@ msgstr "פורסם פירושו שפייסבוק אישר את הפרסום. מ�
 msgid "For problems, expand Debug details or Copy Facebook response in Posting logs. For expired logins, use Load groups and finish verification before trying again."
 msgstr "במקרה של בעיות, אפשר להרחיב את פרטי האבחון או להעתיק את תגובת פייסבוק ביומני הפרסום. אם פג תוקף ההתחברות, יש לטעון קבוצות ולהשלים אימות לפני ניסיון נוסף."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Use Language and Themes in the top bar. Your choices apply across windows."
 msgstr "אפשר להשתמש בשפה ובערכות נושא בסרגל העליון. הבחירות שלכם חלות בכל החלונות."

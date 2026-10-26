@@ -1068,6 +1068,7 @@ msgid "All languages"
 msgstr "Tất cả ngôn ngữ"
 
 #: src/components/AccountDropdown.svelte
+#: src/components/GuidedTour.svelte
 msgid "Languages"
 msgstr "Ngôn ngữ"
 
@@ -1840,6 +1841,7 @@ msgstr "Chi tiết gỡ lỗi"
 #~ msgstr ""
 
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UsageGuide.svelte
 msgid "Themes"
@@ -1899,6 +1901,7 @@ msgid "{0} languages · {1} themes"
 msgstr "{0} ngôn ngữ · {1} giao diện"
 
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 msgid "Language and theme choices sync across windows."
 msgstr "Lựa chọn ngôn ngữ và giao diện được đồng bộ giữa các cửa sổ."
 
@@ -1975,6 +1978,7 @@ msgstr "Đã đăng nghĩa là Facebook xác nhận xuất bản. Chờ duyệt 
 msgid "For problems, expand Debug details or Copy Facebook response in Posting logs. For expired logins, use Load groups and finish verification before trying again."
 msgstr "Khi có lỗi, mở chi tiết gỡ lỗi hoặc sao chép phản hồi Facebook trong nhật ký. Nếu phiên đăng nhập hết hạn, tải nhóm và xác minh trước khi thử lại."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Use Language and Themes in the top bar. Your choices apply across windows."
 msgstr "Dùng Ngôn ngữ và Giao diện ở thanh trên. Lựa chọn áp dụng cho mọi cửa sổ."

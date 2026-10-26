@@ -36,7 +36,7 @@
   "palettes": [
     {
       "id": "palette:colorhunt-porcelain-blue",
-      "name": "Porcelain Blue",
+      "name": "porcelain blue",
       "mode": "light",
       "sourceUrl": "https://colorhunt.co/palette/efece38fabd44a70a9000000",
       "code": "efece38fabd44a70a9000000",
@@ -56,7 +56,7 @@
     },
     {
       "id": "palette:colorhunt-midnight-orchid",
-      "name": "Midnight Orchid",
+      "name": "midnight orchid",
       "mode": "dark",
       "sourceUrl": "https://colorhunt.co/palette/0000009929eaff5fcffaeb92",
       "code": "0000009929eaff5fcffaeb92",
@@ -76,7 +76,7 @@
     },
     {
       "id": "palette:colorhunt-rose-ink",
-      "name": "Rose Ink",
+      "name": "rose ink",
       "mode": "light",
       "sourceUrl": "https://colorhunt.co/palette/000000cb2957ddddddeeeeee",
       "code": "000000cb2957ddddddeeeeee",
@@ -96,7 +96,7 @@
     },
     {
       "id": "palette:colorhunt-ember-slate",
-      "name": "Ember Slate",
+      "name": "ember slate",
       "mode": "dark",
       "sourceUrl": "https://colorhunt.co/palette/000000233d4dfe7f2deaecf0",
       "code": "000000233d4dfe7f2deaecf0",
@@ -116,7 +116,7 @@
     },
     {
       "id": "palette:colorhunt-honey-linen",
-      "name": "Honey Linen",
+      "name": "honey linen",
       "mode": "light",
       "sourceUrl": "https://colorhunt.co/palette/09251ca55704f3d2aff8eadc",
       "code": "09251ca55704f3d2aff8eadc",
@@ -136,7 +136,7 @@
     },
     {
       "id": "palette:colorhunt-deep-lagoon",
-      "name": "Deep Lagoon",
+      "name": "deep lagoon",
       "mode": "dark",
       "sourceUrl": "https://colorhunt.co/palette/00546101879000b7b5f4f4f4",
       "code": "00546101879000b7b5f4f4f4",
@@ -156,7 +156,7 @@
     },
     {
       "id": "palette:colorhunt-oxblood-paper",
-      "name": "Oxblood Paper",
+      "name": "oxblood paper",
       "mode": "light",
       "sourceUrl": "https://colorhunt.co/palette/6d08082d0000757d6feeead7",
       "code": "6d08082d0000757d6feeead7",
@@ -176,7 +176,7 @@
     },
     {
       "id": "palette:colorhunt-garnet-night",
-      "name": "Garnet Night",
+      "name": "garnet night",
       "mode": "dark",
       "sourceUrl": "https://colorhunt.co/palette/d90000ffea938db355000000",
       "code": "d90000ffea938db355000000",
@@ -196,7 +196,7 @@
     },
     {
       "id": "palette:colorhunt-olive-cream",
-      "name": "Olive Cream",
+      "name": "olive cream",
       "mode": "light",
       "sourceUrl": "https://colorhunt.co/palette/fbf5dde7e1b1306d290d530e",
       "code": "fbf5dde7e1b1306d290d530e",
@@ -216,7 +216,7 @@
     },
     {
       "id": "palette:colorhunt-mulberry-dusk",
-      "name": "Mulberry Dusk",
+      "name": "mulberry dusk",
       "mode": "dark",
       "sourceUrl": "https://colorhunt.co/palette/15173d982598e491c9f1e9e9",
       "code": "15173d982598e491c9f1e9e9",
@@ -236,7 +236,7 @@
     },
     {
       "id": "palette:colorhunt-espresso-linen",
-      "name": "Espresso Linen",
+      "name": "espresso linen",
       "mode": "light",
       "sourceUrl": "https://colorhunt.co/palette/0000001f150c412d15e1dcc9",
       "code": "0000001f150c412d15e1dcc9",
@@ -256,7 +256,7 @@
     },
     {
       "id": "palette:colorhunt-harbor-brass",
-      "name": "Harbor Brass",
+      "name": "harbor brass",
       "mode": "dark",
       "sourceUrl": "https://colorhunt.co/palette/0a2947f3e4c9d3d4c08b5e3c",
       "code": "0a2947f3e4c9d3d4c08b5e3c",
@@ -276,7 +276,7 @@
     },
     {
       "id": "palette:colorhunt-glacial-blue",
-      "name": "Glacial Blue",
+      "name": "glacial blue",
       "mode": "light",
       "sourceUrl": "https://colorhunt.co/palette/2936814274d995ccddd0e7e6",
       "code": "2936814274d995ccddd0e7e6",
@@ -296,7 +296,7 @@
     },
     {
       "id": "palette:colorhunt-plum-apricot",
-      "name": "Plum Apricot",
+      "name": "plum apricot",
       "mode": "dark",
       "sourceUrl": "https://colorhunt.co/palette/522d6080426ef2a67bffd38b",
       "code": "522d6080426ef2a67bffd38b",
@@ -316,7 +316,7 @@
     },
     {
       "id": "palette:colorhunt-mint-grove",
-      "name": "Mint Grove",
+      "name": "mint grove",
       "mode": "light",
       "sourceUrl": "https://colorhunt.co/palette/091413285a48408a71b0e4cc",
       "code": "091413285a48408a71b0e4cc",
@@ -336,7 +336,7 @@
     },
     {
       "id": "palette:colorhunt-burnt-caramel",
-      "name": "Burnt Caramel",
+      "name": "burnt caramel",
       "mode": "dark",
       "sourceUrl": "https://colorhunt.co/palette/fffdf1ffce99ff9644562f00",
       "code": "fffdf1ffce99ff9644562f00",
@@ -356,7 +356,7 @@
     },
     {
       "id": "palette:colorhunt-sailcloth-navy",
-      "name": "Sailcloth Navy",
+      "name": "sailcloth navy",
       "mode": "light",
       "sourceUrl": "https://colorhunt.co/palette/0107360d1c4222396ffcf1d0",
       "code": "0107360d1c4222396ffcf1d0",
@@ -376,7 +376,7 @@
     },
     {
       "id": "palette:colorhunt-fern-lantern",
-      "name": "Fern Lantern",
+      "name": "fern lantern",
       "mode": "dark",
       "sourceUrl": "https://colorhunt.co/palette/fffd8fb0ce884c763b043915",
       "code": "fffd8fb0ce884c763b043915",
@@ -396,7 +396,7 @@
     },
     {
       "id": "palette:colorhunt-apricot-iris",
-      "name": "Apricot Iris",
+      "name": "apricot iris",
       "mode": "light",
       "sourceUrl": "https://colorhunt.co/palette/333d6d723ec3ffcf95fff0d9",
       "code": "333d6d723ec3ffcf95fff0d9",
@@ -416,7 +416,7 @@
     },
     {
       "id": "palette:colorhunt-twilight-steel",
-      "name": "Twilight Steel",
+      "name": "twilight steel",
       "mode": "dark",
       "sourceUrl": "https://colorhunt.co/palette/1118444b56947288aeeae0cf",
       "code": "1118444b56947288aeeae0cf",
@@ -436,7 +436,7 @@
     },
     {
       "id": "palette:colorhunt-blush-sand",
-      "name": "Blush Sand",
+      "name": "blush sand",
       "mode": "light",
       "sourceUrl": "https://colorhunt.co/palette/5d3140cf4173f39399f6d8bd",
       "code": "5d3140cf4173f39399f6d8bd",
@@ -456,7 +456,7 @@
     },
     {
       "id": "palette:colorhunt-cedar-ember",
-      "name": "Cedar Ember",
+      "name": "cedar ember",
       "mode": "dark",
       "sourceUrl": "https://colorhunt.co/palette/254f22a03a13f5824aede4c2",
       "code": "254f22a03a13f5824aede4c2",
@@ -476,7 +476,7 @@
     },
     {
       "id": "palette:colorhunt-fjord-mist",
-      "name": "Fjord Mist",
+      "name": "fjord mist",
       "mode": "light",
       "sourceUrl": "https://colorhunt.co/palette/061e291d546d5f9598f3f4f4",
       "code": "061e291d546d5f9598f3f4f4",
@@ -496,7 +496,7 @@
     },
     {
       "id": "palette:colorhunt-pine-candlelight",
-      "name": "Pine Candlelight",
+      "name": "pine candlelight",
       "mode": "dark",
       "sourceUrl": "https://colorhunt.co/palette/faf8f1faeab134656d334443",
       "code": "faf8f1faeab134656d334443",

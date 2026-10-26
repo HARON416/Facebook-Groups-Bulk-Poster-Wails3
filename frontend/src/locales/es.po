@@ -1068,6 +1068,7 @@ msgid "All languages"
 msgstr "Todos los idiomas"
 
 #: src/components/AccountDropdown.svelte
+#: src/components/GuidedTour.svelte
 msgid "Languages"
 msgstr "Idiomas"
 
@@ -1840,6 +1841,7 @@ msgstr "Detalles de depuración"
 #~ msgstr ""
 
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UsageGuide.svelte
 msgid "Themes"
@@ -1899,6 +1901,7 @@ msgid "{0} languages · {1} themes"
 msgstr "{0} idiomas · {1} temas"
 
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 msgid "Language and theme choices sync across windows."
 msgstr "Las preferencias de idioma y tema se sincronizan entre ventanas."
 
@@ -1975,6 +1978,7 @@ msgstr "Publicado significa que Facebook confirmó la publicación. Pendiente re
 msgid "For problems, expand Debug details or Copy Facebook response in Posting logs. For expired logins, use Load groups and finish verification before trying again."
 msgstr "Si hay problemas, abre los detalles de depuración o copia la respuesta de Facebook desde los registros. Si caduca la sesión, carga los grupos y completa la verificación antes de reintentar."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Use Language and Themes in the top bar. Your choices apply across windows."
 msgstr "Usa Idioma y Temas en la barra superior. Tus preferencias se aplican a todas las ventanas."

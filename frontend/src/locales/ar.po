@@ -1068,6 +1068,7 @@ msgid "All languages"
 msgstr "جميع اللغات"
 
 #: src/components/AccountDropdown.svelte
+#: src/components/GuidedTour.svelte
 msgid "Languages"
 msgstr "اللغات"
 
@@ -1840,6 +1841,7 @@ msgstr "تفاصيل التصحيح"
 #~ msgstr ""
 
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UsageGuide.svelte
 msgid "Themes"
@@ -1899,6 +1901,7 @@ msgid "{0} languages · {1} themes"
 msgstr "{0} لغة · {1} سمة"
 
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 msgid "Language and theme choices sync across windows."
 msgstr "تتزامن اختيارات اللغة والسمة بين النوافذ."
 
@@ -1975,6 +1978,7 @@ msgstr "منشور يعني تأكيد Facebook للنشر. قيد الانتظ�
 msgid "For problems, expand Debug details or Copy Facebook response in Posting logs. For expired logins, use Load groups and finish verification before trying again."
 msgstr "عند المشاكل، وسّع تفاصيل التصحيح أو انسخ استجابة Facebook من سجلات النشر. إذا انتهت الجلسة، حمّل المجموعات وأكمل التحقق قبل المحاولة مجددًا."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Use Language and Themes in the top bar. Your choices apply across windows."
 msgstr "استخدم اللغة والسمات في الشريط العلوي. تنطبق اختياراتك على جميع النوافذ."

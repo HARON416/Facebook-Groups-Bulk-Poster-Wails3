@@ -1068,6 +1068,7 @@ msgid "All languages"
 msgstr "Всички езици"
 
 #: src/components/AccountDropdown.svelte
+#: src/components/GuidedTour.svelte
 msgid "Languages"
 msgstr "Езици"
 
@@ -1840,6 +1841,7 @@ msgstr "Детайли за отстраняване на грешки"
 #~ msgstr ""
 
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UsageGuide.svelte
 msgid "Themes"
@@ -1899,6 +1901,7 @@ msgid "{0} languages · {1} themes"
 msgstr "{0} езика · {1} теми"
 
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 msgid "Language and theme choices sync across windows."
 msgstr "Изборът на език и тема се синхронизира между прозорците."
 
@@ -1975,6 +1978,7 @@ msgstr "Публикувано означава потвърждение от Fa
 msgid "For problems, expand Debug details or Copy Facebook response in Posting logs. For expired logins, use Load groups and finish verification before trying again."
 msgstr "При проблеми разгънете подробностите за отстраняване на грешки или копирайте отговора на Facebook от дневниците. При изтекъл вход заредете групите и завършете проверката преди повторен опит."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Use Language and Themes in the top bar. Your choices apply across windows."
 msgstr "Използвайте Език и Теми в горната лента. Изборите важат за всички прозорци."

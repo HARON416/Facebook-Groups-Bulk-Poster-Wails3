@@ -1,4 +1,4 @@
-<div class="theme-menu">
+<div class="theme-menu" data-tour="themes">
   {#await import('./ThemePicker.svelte') then { default: ThemePicker }}<ThemePicker />{/await}
 </div>
 

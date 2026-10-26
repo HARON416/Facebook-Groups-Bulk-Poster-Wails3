@@ -1068,6 +1068,7 @@ msgid "All languages"
 msgstr "सर्व भाषा"
 
 #: src/components/AccountDropdown.svelte
+#: src/components/GuidedTour.svelte
 msgid "Languages"
 msgstr "भाषा"
 
@@ -1840,6 +1841,7 @@ msgstr "डिबग तपशील"
 #~ msgstr ""
 
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UsageGuide.svelte
 msgid "Themes"
@@ -1899,6 +1901,7 @@ msgid "{0} languages · {1} themes"
 msgstr "{0} भाषा · {1} थीम"
 
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 msgid "Language and theme choices sync across windows."
 msgstr "भाषा आणि थीमची निवड सर्व विंडोमध्ये समक्रमित होते."
 
@@ -1975,6 +1978,7 @@ msgstr "प्रकाशित म्हणजे Facebook ने पुष्
 msgid "For problems, expand Debug details or Copy Facebook response in Posting logs. For expired logins, use Load groups and finish verification before trying again."
 msgstr "अडचणीसाठी नोंदींतील डीबग तपशील उघडा किंवा Facebook प्रतिसाद कॉपी करा. लॉगिन कालबाह्य असल्यास गट लोड करून पडताळणी पूर्ण केल्यावर पुन्हा प्रयत्न करा."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Use Language and Themes in the top bar. Your choices apply across windows."
 msgstr "वरच्या पट्टीतील भाषा आणि थीम वापरा. निवडी सर्व विंडोमध्ये लागू होतात."

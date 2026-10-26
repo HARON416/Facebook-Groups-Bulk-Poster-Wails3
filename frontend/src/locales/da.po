@@ -1068,6 +1068,7 @@ msgid "All languages"
 msgstr "Alle sprog"
 
 #: src/components/AccountDropdown.svelte
+#: src/components/GuidedTour.svelte
 msgid "Languages"
 msgstr "Sprog"
 
@@ -1840,6 +1841,7 @@ msgstr "Fejlretningsoplysninger"
 #~ msgstr ""
 
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UsageGuide.svelte
 msgid "Themes"
@@ -1899,6 +1901,7 @@ msgid "{0} languages · {1} themes"
 msgstr "{0} sprog · {1} temaer"
 
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 msgid "Language and theme choices sync across windows."
 msgstr "Sprog- og temavalg synkroniseres på tværs af vinduer."
 
@@ -1975,6 +1978,7 @@ msgstr "Udgivet betyder, at Facebook har bekræftet opslaget. Afventer kræver a
 msgid "For problems, expand Debug details or Copy Facebook response in Posting logs. For expired logins, use Load groups and finish verification before trying again."
 msgstr "Ved problemer kan du åbne Fejlfindingsdetaljer eller kopiere Facebook-svaret i loggen. Ved udløbet login skal du indlæse grupper og gennemføre bekræftelse før næste forsøg."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Use Language and Themes in the top bar. Your choices apply across windows."
 msgstr "Brug Sprog og Temaer i topbjælken. Dine valg gælder på tværs af vinduer."

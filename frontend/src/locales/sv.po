@@ -1068,6 +1068,7 @@ msgid "All languages"
 msgstr "Alla språk"
 
 #: src/components/AccountDropdown.svelte
+#: src/components/GuidedTour.svelte
 msgid "Languages"
 msgstr "Språk"
 
@@ -1840,6 +1841,7 @@ msgstr "Felsökningsdetaljer"
 #~ msgstr ""
 
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UsageGuide.svelte
 msgid "Themes"
@@ -1899,6 +1901,7 @@ msgid "{0} languages · {1} themes"
 msgstr "{0} språk · {1} teman"
 
 #: src/components/FeaturesCard.svelte
+#: src/components/GuidedTour.svelte
 msgid "Language and theme choices sync across windows."
 msgstr "Språk- och temaval synkroniseras mellan fönster."
 
@@ -1975,6 +1978,7 @@ msgstr "Publicerad betyder att Facebook bekräftat publiceringen. Väntande krä
 msgid "For problems, expand Debug details or Copy Facebook response in Posting logs. For expired logins, use Load groups and finish verification before trying again."
 msgstr "Vid problem, öppna felsökningsdetaljer eller kopiera Facebook-svaret i loggarna. Om inloggningen löpt ut, läs in grupper och slutför verifieringen innan du försöker igen."
 
+#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Use Language and Themes in the top bar. Your choices apply across windows."
 msgstr "Använd Språk och Teman i toppraden. Dina val gäller i alla fönster."
