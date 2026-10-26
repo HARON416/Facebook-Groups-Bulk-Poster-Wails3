@@ -1901,7 +1901,6 @@ msgid "{0} languages · {1} themes"
 msgstr "{0} भाषाएँ · {1} थीम"
 
 #: src/components/FeaturesCard.svelte
-#: src/components/GuidedTour.svelte
 msgid "Language and theme choices sync across windows."
 msgstr "भाषा और थीम के विकल्प सभी विंडो में सिंक होते हैं।"
 
@@ -1978,7 +1977,6 @@ msgstr "प्रकाशित का मतलब Facebook ने पुष�
 msgid "For problems, expand Debug details or Copy Facebook response in Posting logs. For expired logins, use Load groups and finish verification before trying again."
 msgstr "समस्या होने पर लॉग में डीबग विवरण खोलें या Facebook प्रतिक्रिया कॉपी करें। लॉगिन समाप्त होने पर समूह लोड करें और सत्यापन पूरा करके फिर कोशिश करें।"
 
-#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Use Language and Themes in the top bar. Your choices apply across windows."
 msgstr "ऊपर की पट्टी में भाषा और थीम चुनें। आपकी पसंद सभी विंडो पर लागू होती है।"
@@ -2506,3 +2504,11 @@ msgstr "आगे"
 #: src/components/GuidedTour.svelte
 msgid "Previous"
 msgstr "पीछे"
+
+#: src/components/GuidedTour.svelte
+msgid "Choose the language used for menus, buttons, and instructions."
+msgstr "मेनू, बटन और निर्देशों के लिए भाषा चुनें।"
+
+#: src/components/GuidedTour.svelte
+msgid "Choose a light or dark color theme for the app."
+msgstr "ऐप के लिए हल्के या गहरे रंग की थीम चुनें।"

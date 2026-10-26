@@ -1901,7 +1901,6 @@ msgid "{0} languages · {1} themes"
 msgstr "{0} jezika · {1} tema"
 
 #: src/components/FeaturesCard.svelte
-#: src/components/GuidedTour.svelte
 msgid "Language and theme choices sync across windows."
 msgstr "Odabiri jezika i teme sinkroniziraju se među prozorima."
 
@@ -1978,7 +1977,6 @@ msgstr "Objavljeno znači da je Facebook potvrdio objavu. Na čekanju zahtijeva 
 msgid "For problems, expand Debug details or Copy Facebook response in Posting logs. For expired logins, use Load groups and finish verification before trying again."
 msgstr "Kod problema proširite pojedinosti otklanjanja pogrešaka ili kopirajte Facebook odgovor iz zapisnika. Za isteklu prijavu učitajte grupe i dovršite provjeru prije ponovnog pokušaja."
 
-#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Use Language and Themes in the top bar. Your choices apply across windows."
 msgstr "Koristite Jezik i Teme u gornjoj traci. Odabiri vrijede u svim prozorima."
@@ -2506,3 +2504,11 @@ msgstr "Dalje"
 #: src/components/GuidedTour.svelte
 msgid "Previous"
 msgstr "Natrag"
+
+#: src/components/GuidedTour.svelte
+msgid "Choose the language used for menus, buttons, and instructions."
+msgstr "Odaberite jezik izbornika, gumba i uputa."
+
+#: src/components/GuidedTour.svelte
+msgid "Choose a light or dark color theme for the app."
+msgstr "Odaberite svijetlu ili tamnu temu boja za aplikaciju."

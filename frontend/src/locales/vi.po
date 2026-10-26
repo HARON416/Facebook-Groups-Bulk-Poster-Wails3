@@ -1901,7 +1901,6 @@ msgid "{0} languages · {1} themes"
 msgstr "{0} ngôn ngữ · {1} giao diện"
 
 #: src/components/FeaturesCard.svelte
-#: src/components/GuidedTour.svelte
 msgid "Language and theme choices sync across windows."
 msgstr "Lựa chọn ngôn ngữ và giao diện được đồng bộ giữa các cửa sổ."
 
@@ -1978,7 +1977,6 @@ msgstr "Đã đăng nghĩa là Facebook xác nhận xuất bản. Chờ duyệt 
 msgid "For problems, expand Debug details or Copy Facebook response in Posting logs. For expired logins, use Load groups and finish verification before trying again."
 msgstr "Khi có lỗi, mở chi tiết gỡ lỗi hoặc sao chép phản hồi Facebook trong nhật ký. Nếu phiên đăng nhập hết hạn, tải nhóm và xác minh trước khi thử lại."
 
-#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Use Language and Themes in the top bar. Your choices apply across windows."
 msgstr "Dùng Ngôn ngữ và Giao diện ở thanh trên. Lựa chọn áp dụng cho mọi cửa sổ."
@@ -2506,3 +2504,11 @@ msgstr "Tiếp theo"
 #: src/components/GuidedTour.svelte
 msgid "Previous"
 msgstr "Quay lại"
+
+#: src/components/GuidedTour.svelte
+msgid "Choose the language used for menus, buttons, and instructions."
+msgstr "Chọn ngôn ngữ cho menu, nút và hướng dẫn."
+
+#: src/components/GuidedTour.svelte
+msgid "Choose a light or dark color theme for the app."
+msgstr "Chọn giao diện màu sáng hoặc tối cho ứng dụng."

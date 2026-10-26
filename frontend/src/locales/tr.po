@@ -1901,7 +1901,6 @@ msgid "{0} languages · {1} themes"
 msgstr "{0} dil · {1} tema"
 
 #: src/components/FeaturesCard.svelte
-#: src/components/GuidedTour.svelte
 msgid "Language and theme choices sync across windows."
 msgstr "Dil ve tema seçimleri pencereler arasında eşitlenir."
 
@@ -1978,7 +1977,6 @@ msgstr "Yayımlandı, Facebook’un yayını doğruladığı anlamına gelir. Be
 msgid "For problems, expand Debug details or Copy Facebook response in Posting logs. For expired logins, use Load groups and finish verification before trying again."
 msgstr "Sorunlarda hata ayıklama ayrıntılarını açın veya günlüklerden Facebook yanıtını kopyalayın. Oturum süresi dolduysa grupları yükleyip tekrar denemeden önce doğrulamayı tamamlayın."
 
-#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Use Language and Themes in the top bar. Your choices apply across windows."
 msgstr "Üst çubuktaki Dil ve Temalar’ı kullanın. Seçimler tüm pencerelere uygulanır."
@@ -2506,3 +2504,11 @@ msgstr "İleri"
 #: src/components/GuidedTour.svelte
 msgid "Previous"
 msgstr "Geri"
+
+#: src/components/GuidedTour.svelte
+msgid "Choose the language used for menus, buttons, and instructions."
+msgstr "Menüler, düğmeler ve yönergeler için dil seçin."
+
+#: src/components/GuidedTour.svelte
+msgid "Choose a light or dark color theme for the app."
+msgstr "Uygulama için açık veya koyu bir renk teması seçin."

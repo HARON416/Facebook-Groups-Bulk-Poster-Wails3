@@ -1901,7 +1901,6 @@ msgid "{0} languages · {1} themes"
 msgstr "{0} ภาษา · {1} ธีม"
 
 #: src/components/FeaturesCard.svelte
-#: src/components/GuidedTour.svelte
 msgid "Language and theme choices sync across windows."
 msgstr "ตัวเลือกภาษาและธีมจะซิงค์ระหว่างหน้าต่าง"
 
@@ -1978,7 +1977,6 @@ msgstr "เผยแพร่แล้วหมายถึง Facebook ยื�
 msgid "For problems, expand Debug details or Copy Facebook response in Posting logs. For expired logins, use Load groups and finish verification before trying again."
 msgstr "เมื่อมีปัญหา ให้เปิดรายละเอียดดีบักหรือคัดลอกคำตอบ Facebook จากบันทึก หากการเข้าสู่ระบบหมดอายุ ให้โหลดกลุ่มและยืนยันตัวตนก่อนลองใหม่"
 
-#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Use Language and Themes in the top bar. Your choices apply across windows."
 msgstr "ใช้ภาษาและธีมในแถบด้านบน ตัวเลือกจะใช้กับทุกหน้าต่าง"
@@ -2506,3 +2504,11 @@ msgstr "ถัดไป"
 #: src/components/GuidedTour.svelte
 msgid "Previous"
 msgstr "ก่อนหน้า"
+
+#: src/components/GuidedTour.svelte
+msgid "Choose the language used for menus, buttons, and instructions."
+msgstr "เลือกภาษาสำหรับเมนู ปุ่ม และคำแนะนำ"
+
+#: src/components/GuidedTour.svelte
+msgid "Choose a light or dark color theme for the app."
+msgstr "เลือกธีมสีสว่างหรือสีมืดสำหรับแอป"

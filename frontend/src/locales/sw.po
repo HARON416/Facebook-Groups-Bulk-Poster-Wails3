@@ -1901,7 +1901,6 @@ msgid "{0} languages · {1} themes"
 msgstr "Lugha {0} · mandhari {1}"
 
 #: src/components/FeaturesCard.svelte
-#: src/components/GuidedTour.svelte
 msgid "Language and theme choices sync across windows."
 msgstr "Chaguo za lugha na mandhari husawazishwa katika madirisha yote."
 
@@ -1978,7 +1977,6 @@ msgstr "Imechapishwa humaanisha Facebook imethibitisha uchapishaji. Inasubiri hu
 msgid "For problems, expand Debug details or Copy Facebook response in Posting logs. For expired logins, use Load groups and finish verification before trying again."
 msgstr "Kwa matatizo, panua Maelezo ya utatuzi au Nakili jibu la Facebook kwenye kumbukumbu. Kwa kuingia kulikoisha muda, Pakia vikundi na ukamilishe uthibitishaji kabla ya kujaribu tena."
 
-#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Use Language and Themes in the top bar. Your choices apply across windows."
 msgstr "Tumia Lugha na Mandhari kwenye upau wa juu. Chaguo zako hutumika katika madirisha yote."
@@ -2506,3 +2504,11 @@ msgstr "Endelea"
 #: src/components/GuidedTour.svelte
 msgid "Previous"
 msgstr "Rudi"
+
+#: src/components/GuidedTour.svelte
+msgid "Choose the language used for menus, buttons, and instructions."
+msgstr "Chagua lugha ya menyu, vitufe na maelekezo."
+
+#: src/components/GuidedTour.svelte
+msgid "Choose a light or dark color theme for the app."
+msgstr "Chagua mandhari ya rangi nyepesi au nyeusi kwa programu."

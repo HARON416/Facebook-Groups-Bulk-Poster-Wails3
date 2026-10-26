@@ -1901,7 +1901,6 @@ msgid "{0} languages · {1} themes"
 msgstr "{0} jazykov · {1} motívov"
 
 #: src/components/FeaturesCard.svelte
-#: src/components/GuidedTour.svelte
 msgid "Language and theme choices sync across windows."
 msgstr "Voľby jazyka a motívu sa synchronizujú medzi oknami."
 
@@ -1978,7 +1977,6 @@ msgstr "Zverejnené znamená potvrdenie Facebookom. Čakajúce vyžaduje schvál
 msgid "For problems, expand Debug details or Copy Facebook response in Posting logs. For expired logins, use Load groups and finish verification before trying again."
 msgstr "Pri problémoch rozbaľte podrobnosti ladenia alebo skopírujte odpoveď Facebooku z protokolov. Pri vypršaní prihlásenia načítajte skupiny a dokončite overenie pred ďalším pokusom."
 
-#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Use Language and Themes in the top bar. Your choices apply across windows."
 msgstr "Použite Jazyk a Motívy v hornej lište. Voľby platia pre všetky okná."
@@ -2506,3 +2504,11 @@ msgstr "Ďalej"
 #: src/components/GuidedTour.svelte
 msgid "Previous"
 msgstr "Späť"
+
+#: src/components/GuidedTour.svelte
+msgid "Choose the language used for menus, buttons, and instructions."
+msgstr "Vyberte jazyk ponúk, tlačidiel a pokynov."
+
+#: src/components/GuidedTour.svelte
+msgid "Choose a light or dark color theme for the app."
+msgstr "Vyberte svetlý alebo tmavý farebný motív aplikácie."

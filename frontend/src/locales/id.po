@@ -1901,7 +1901,6 @@ msgid "{0} languages · {1} themes"
 msgstr "{0} bahasa · {1} tema"
 
 #: src/components/FeaturesCard.svelte
-#: src/components/GuidedTour.svelte
 msgid "Language and theme choices sync across windows."
 msgstr "Pilihan bahasa dan tema disinkronkan di seluruh jendela."
 
@@ -1978,7 +1977,6 @@ msgstr "Dipublikasikan berarti Facebook mengonfirmasi publikasi. Tertunda berart
 msgid "For problems, expand Debug details or Copy Facebook response in Posting logs. For expired logins, use Load groups and finish verification before trying again."
 msgstr "Jika bermasalah, buka Detail debug atau Salin respons Facebook di log. Jika login kedaluwarsa, Muat grup dan selesaikan verifikasi sebelum mencoba lagi."
 
-#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Use Language and Themes in the top bar. Your choices apply across windows."
 msgstr "Gunakan Bahasa dan Tema di bilah atas. Pilihan Anda berlaku di semua jendela."
@@ -2506,3 +2504,11 @@ msgstr "Berikutnya"
 #: src/components/GuidedTour.svelte
 msgid "Previous"
 msgstr "Sebelumnya"
+
+#: src/components/GuidedTour.svelte
+msgid "Choose the language used for menus, buttons, and instructions."
+msgstr "Pilih bahasa untuk menu, tombol, dan petunjuk."
+
+#: src/components/GuidedTour.svelte
+msgid "Choose a light or dark color theme for the app."
+msgstr "Pilih tema warna terang atau gelap untuk aplikasi."

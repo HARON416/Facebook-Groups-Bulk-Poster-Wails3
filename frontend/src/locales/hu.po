@@ -1901,7 +1901,6 @@ msgid "{0} languages · {1} themes"
 msgstr "{0} nyelv · {1} téma"
 
 #: src/components/FeaturesCard.svelte
-#: src/components/GuidedTour.svelte
 msgid "Language and theme choices sync across windows."
 msgstr "A nyelv- és témaválasztás szinkronizálódik az ablakok között."
 
@@ -1978,7 +1977,6 @@ msgstr "A Közzétéve Facebook-visszaigazolást jelent. A Függőben adminisztr
 msgid "For problems, expand Debug details or Copy Facebook response in Posting logs. For expired logins, use Load groups and finish verification before trying again."
 msgstr "Hiba esetén nyissa meg a hibakeresési részleteket, vagy másolja a Facebook-választ a naplóból. Lejárt bejelentkezésnél töltse be a csoportokat és végezze el az ellenőrzést újrapróbálkozás előtt."
 
-#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Use Language and Themes in the top bar. Your choices apply across windows."
 msgstr "Használja a Nyelv és Témák menüt a felső sávon. A választások minden ablakra érvényesek."
@@ -2506,3 +2504,11 @@ msgstr "Tovább"
 #: src/components/GuidedTour.svelte
 msgid "Previous"
 msgstr "Vissza"
+
+#: src/components/GuidedTour.svelte
+msgid "Choose the language used for menus, buttons, and instructions."
+msgstr "Válassza ki a menük, gombok és utasítások nyelvét."
+
+#: src/components/GuidedTour.svelte
+msgid "Choose a light or dark color theme for the app."
+msgstr "Válasszon világos vagy sötét színtémát az alkalmazáshoz."

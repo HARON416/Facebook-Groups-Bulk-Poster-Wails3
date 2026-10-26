@@ -1901,7 +1901,6 @@ msgid "{0} languages · {1} themes"
 msgstr "{0} мов · {1} тем"
 
 #: src/components/FeaturesCard.svelte
-#: src/components/GuidedTour.svelte
 msgid "Language and theme choices sync across windows."
 msgstr "Вибір мови й теми синхронізується між вікнами."
 
@@ -1978,7 +1977,6 @@ msgstr "Опубліковано означає підтвердження Faceb
 msgid "For problems, expand Debug details or Copy Facebook response in Posting logs. For expired logins, use Load groups and finish verification before trying again."
 msgstr "У разі проблем розгорніть деталі налагодження або скопіюйте відповідь Facebook із журналу. Якщо вхід застарів, завантажте групи й завершіть перевірку перед повторною спробою."
 
-#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Use Language and Themes in the top bar. Your choices apply across windows."
 msgstr "Використовуйте Мову й Теми у верхній панелі. Вибір діє в усіх вікнах."
@@ -2506,3 +2504,11 @@ msgstr "Далі"
 #: src/components/GuidedTour.svelte
 msgid "Previous"
 msgstr "Назад"
+
+#: src/components/GuidedTour.svelte
+msgid "Choose the language used for menus, buttons, and instructions."
+msgstr "Виберіть мову меню, кнопок та інструкцій."
+
+#: src/components/GuidedTour.svelte
+msgid "Choose a light or dark color theme for the app."
+msgstr "Виберіть світлу або темну колірну тему застосунку."

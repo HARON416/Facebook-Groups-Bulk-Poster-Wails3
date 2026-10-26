@@ -1901,7 +1901,6 @@ msgid "{0} languages · {1} themes"
 msgstr "{0} språk · {1} teman"
 
 #: src/components/FeaturesCard.svelte
-#: src/components/GuidedTour.svelte
 msgid "Language and theme choices sync across windows."
 msgstr "Språk- och temaval synkroniseras mellan fönster."
 
@@ -1978,7 +1977,6 @@ msgstr "Publicerad betyder att Facebook bekräftat publiceringen. Väntande krä
 msgid "For problems, expand Debug details or Copy Facebook response in Posting logs. For expired logins, use Load groups and finish verification before trying again."
 msgstr "Vid problem, öppna felsökningsdetaljer eller kopiera Facebook-svaret i loggarna. Om inloggningen löpt ut, läs in grupper och slutför verifieringen innan du försöker igen."
 
-#: src/components/GuidedTour.svelte
 #: src/components/UsageGuide.svelte
 msgid "Use Language and Themes in the top bar. Your choices apply across windows."
 msgstr "Använd Språk och Teman i toppraden. Dina val gäller i alla fönster."
@@ -2506,3 +2504,11 @@ msgstr "Nästa"
 #: src/components/GuidedTour.svelte
 msgid "Previous"
 msgstr "Föregående"
+
+#: src/components/GuidedTour.svelte
+msgid "Choose the language used for menus, buttons, and instructions."
+msgstr "Välj språk för menyer, knappar och instruktioner."
+
+#: src/components/GuidedTour.svelte
+msgid "Choose a light or dark color theme for the app."
+msgstr "Välj ett ljust eller mörkt färgtema för appen."
