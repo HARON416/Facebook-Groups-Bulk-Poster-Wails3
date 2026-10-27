@@ -1,0 +1,208 @@
+{
+  "source": "https://colorhunt.co/palettes/grey",
+  "endpoint": "https://colorhunt.co/php/feed.php",
+  "retrievedAt": "2026-10-27T09:19:01.274Z",
+  "review": {
+    "requests": 5,
+    "records": 200,
+    "uniquePalettes": 200,
+    "criteria": [
+      "POST step=0 through step=4 with tags=grey and timeframe=30; increment step for each page.",
+      "The feed returns older palettes despite timeframe=30.",
+      "Five light and five dark themes with grey backgrounds and varied accents; exclude existing Color Hunt combinations including reordered colors.",
+      "Preserve all four source colors with at least 7:1 background/text contrast; generated tokens maintain readable UI contrast."
+    ]
+  },
+  "palettes": [
+    {
+      "id": "palette:colorhunt-grey-berry",
+      "name": "grey berry",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/f3f4f4853953612d532c2c2c",
+      "code": "f3f4f4853953612d532c2c2c",
+      "colors": [
+        "#f3f4f4",
+        "#853953",
+        "#612d53",
+        "#2c2c2c"
+      ],
+      "likesAtRetrieval": 3081,
+      "feed": {
+        "tags": "grey",
+        "timeframe": 30,
+        "step": 0
+      }
+    },
+    {
+      "id": "palette:colorhunt-grey-olive",
+      "name": "grey olive",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/ececec84934a656d3f492828",
+      "code": "ececec84934a656d3f492828",
+      "colors": [
+        "#ececec",
+        "#84934a",
+        "#656d3f",
+        "#492828"
+      ],
+      "likesAtRetrieval": 2253,
+      "feed": {
+        "tags": "grey",
+        "timeframe": 30,
+        "step": 0
+      }
+    },
+    {
+      "id": "palette:colorhunt-grey-lagoon",
+      "name": "grey lagoon",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/f5f5f548cfcb229799424242",
+      "code": "f5f5f548cfcb229799424242",
+      "colors": [
+        "#f5f5f5",
+        "#48cfcb",
+        "#229799",
+        "#424242"
+      ],
+      "likesAtRetrieval": 5444,
+      "feed": {
+        "tags": "grey",
+        "timeframe": 30,
+        "step": 2
+      }
+    },
+    {
+      "id": "palette:colorhunt-grey-rose",
+      "name": "grey rose",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/f0eeed609ea2c92c6d332c39",
+      "code": "f0eeed609ea2c92c6d332c39",
+      "colors": [
+        "#f0eeed",
+        "#609ea2",
+        "#c92c6d",
+        "#332c39"
+      ],
+      "likesAtRetrieval": 4109,
+      "feed": {
+        "tags": "grey",
+        "timeframe": 30,
+        "step": 4
+      }
+    },
+    {
+      "id": "palette:colorhunt-grey-stone",
+      "name": "grey stone",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/eeedebe0ccbe7472643c3633",
+      "code": "eeedebe0ccbe7472643c3633",
+      "colors": [
+        "#eeedeb",
+        "#e0ccbe",
+        "#747264",
+        "#3c3633"
+      ],
+      "likesAtRetrieval": 8025,
+      "feed": {
+        "tags": "grey",
+        "timeframe": 30,
+        "step": 3
+      }
+    },
+    {
+      "id": "palette:colorhunt-grey-slate",
+      "name": "grey slate",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/27374d526d829db2bfdde6ed",
+      "code": "27374d526d829db2bfdde6ed",
+      "colors": [
+        "#27374d",
+        "#526d82",
+        "#9db2bf",
+        "#dde6ed"
+      ],
+      "likesAtRetrieval": 36299,
+      "feed": {
+        "tags": "grey",
+        "timeframe": 30,
+        "step": 4
+      }
+    },
+    {
+      "id": "palette:colorhunt-grey-mist",
+      "name": "grey mist",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/3334467f8caab8cfceeaefef",
+      "code": "3334467f8caab8cfceeaefef",
+      "colors": [
+        "#333446",
+        "#7f8caa",
+        "#b8cfce",
+        "#eaefef"
+      ],
+      "likesAtRetrieval": 6233,
+      "feed": {
+        "tags": "grey",
+        "timeframe": 30,
+        "step": 1
+      }
+    },
+    {
+      "id": "palette:colorhunt-grey-mauve",
+      "name": "grey mauve",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/37353e44444e715a5ad3dad9",
+      "code": "37353e44444e715a5ad3dad9",
+      "colors": [
+        "#37353e",
+        "#44444e",
+        "#715a5a",
+        "#d3dad9"
+      ],
+      "likesAtRetrieval": 6999,
+      "feed": {
+        "tags": "grey",
+        "timeframe": 30,
+        "step": 1
+      }
+    },
+    {
+      "id": "palette:colorhunt-grey-ember",
+      "name": "grey ember",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/454545ff6000ffa559ffe6c7",
+      "code": "454545ff6000ffa559ffe6c7",
+      "colors": [
+        "#454545",
+        "#ff6000",
+        "#ffa559",
+        "#ffe6c7"
+      ],
+      "likesAtRetrieval": 12160,
+      "feed": {
+        "tags": "grey",
+        "timeframe": 30,
+        "step": 4
+      }
+    },
+    {
+      "id": "palette:colorhunt-grey-iris",
+      "name": "grey iris",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/3d3b40525cebbfcfe7f8edff",
+      "code": "3d3b40525cebbfcfe7f8edff",
+      "colors": [
+        "#3d3b40",
+        "#525ceb",
+        "#bfcfe7",
+        "#f8edff"
+      ],
+      "likesAtRetrieval": 3902,
+      "feed": {
+        "tags": "grey",
+        "timeframe": 30,
+        "step": 3
+      }
+    }
+  ]
+}

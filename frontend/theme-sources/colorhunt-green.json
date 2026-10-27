@@ -1,0 +1,208 @@
+{
+  "source": "https://colorhunt.co/palettes/green",
+  "endpoint": "https://colorhunt.co/php/feed.php",
+  "retrievedAt": "2026-10-27T09:31:10.415Z",
+  "review": {
+    "requests": 5,
+    "records": 200,
+    "uniquePalettes": 200,
+    "criteria": [
+      "POST step=0 through step=4 with tags=green and timeframe=30; increment step for each page.",
+      "The feed returns older palettes despite timeframe=30.",
+      "Five light and five dark themes with green backgrounds or prominent accents; exclude existing Color Hunt combinations including reordered colors.",
+      "Preserve all four source colors with at least 7:1 background/text contrast; generated tokens maintain readable UI contrast."
+    ]
+  },
+  "palettes": [
+    {
+      "id": "palette:colorhunt-green-sage",
+      "name": "green sage",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/ebf4dd90ab8b5a78633b4953",
+      "code": "ebf4dd90ab8b5a78633b4953",
+      "colors": [
+        "#ebf4dd",
+        "#90ab8b",
+        "#5a7863",
+        "#3b4953"
+      ],
+      "likesAtRetrieval": 4731,
+      "feed": {
+        "tags": "green",
+        "timeframe": 30,
+        "step": 1
+      }
+    },
+    {
+      "id": "palette:colorhunt-green-meadow",
+      "name": "green meadow",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/d6efd880af81508d4e1a5319",
+      "code": "d6efd880af81508d4e1a5319",
+      "colors": [
+        "#d6efd8",
+        "#80af81",
+        "#508d4e",
+        "#1a5319"
+      ],
+      "likesAtRetrieval": 12729,
+      "feed": {
+        "tags": "green",
+        "timeframe": 30,
+        "step": 4
+      }
+    },
+    {
+      "id": "palette:colorhunt-green-moss",
+      "name": "green moss",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/e7efc7aec8a48a784e3b3b1a",
+      "code": "e7efc7aec8a48a784e3b3b1a",
+      "colors": [
+        "#e7efc7",
+        "#aec8a4",
+        "#8a784e",
+        "#3b3b1a"
+      ],
+      "likesAtRetrieval": 4874,
+      "feed": {
+        "tags": "green",
+        "timeframe": 30,
+        "step": 2
+      }
+    },
+    {
+      "id": "palette:colorhunt-green-fern",
+      "name": "green fern",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/16423c6a9c89c4dad2e9efec",
+      "code": "16423c6a9c89c4dad2e9efec",
+      "colors": [
+        "#16423c",
+        "#6a9c89",
+        "#c4dad2",
+        "#e9efec"
+      ],
+      "likesAtRetrieval": 10567,
+      "feed": {
+        "tags": "green",
+        "timeframe": 30,
+        "step": 4
+      }
+    },
+    {
+      "id": "palette:colorhunt-green-lime",
+      "name": "green lime",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/ddeb9da0c87827667b143d60",
+      "code": "ddeb9da0c87827667b143d60",
+      "colors": [
+        "#ddeb9d",
+        "#a0c878",
+        "#27667b",
+        "#143d60"
+      ],
+      "likesAtRetrieval": 4213,
+      "feed": {
+        "tags": "green",
+        "timeframe": 30,
+        "step": 3
+      }
+    },
+    {
+      "id": "palette:colorhunt-green-woodland",
+      "name": "green woodland",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/1235243e7b2785a947efe3c2",
+      "code": "1235243e7b2785a947efe3c2",
+      "colors": [
+        "#123524",
+        "#3e7b27",
+        "#85a947",
+        "#efe3c2"
+      ],
+      "likesAtRetrieval": 6049,
+      "feed": {
+        "tags": "green",
+        "timeframe": 30,
+        "step": 3
+      }
+    },
+    {
+      "id": "palette:colorhunt-green-pine",
+      "name": "green pine",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/0040304a9782dcd0a8fff9e5",
+      "code": "0040304a9782dcd0a8fff9e5",
+      "colors": [
+        "#004030",
+        "#4a9782",
+        "#dcd0a8",
+        "#fff9e5"
+      ],
+      "likesAtRetrieval": 3817,
+      "feed": {
+        "tags": "green",
+        "timeframe": 30,
+        "step": 2
+      }
+    },
+    {
+      "id": "palette:colorhunt-green-olive",
+      "name": "green olive",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/41431baeb784e3dbbbf8f3e1",
+      "code": "41431baeb784e3dbbbf8f3e1",
+      "colors": [
+        "#41431b",
+        "#aeb784",
+        "#e3dbbb",
+        "#f8f3e1"
+      ],
+      "likesAtRetrieval": 5234,
+      "feed": {
+        "tags": "green",
+        "timeframe": 30,
+        "step": 1
+      }
+    },
+    {
+      "id": "palette:colorhunt-green-lagoon",
+      "name": "green lagoon",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/09232812544f2a835f8bbb92",
+      "code": "09232812544f2a835f8bbb92",
+      "colors": [
+        "#092328",
+        "#12544f",
+        "#2a835f",
+        "#8bbb92"
+      ],
+      "likesAtRetrieval": 2850,
+      "feed": {
+        "tags": "green",
+        "timeframe": 30,
+        "step": 0
+      }
+    },
+    {
+      "id": "palette:colorhunt-green-orchard",
+      "name": "green orchard",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/0a400c819067b1ab86fefae0",
+      "code": "0a400c819067b1ab86fefae0",
+      "colors": [
+        "#0a400c",
+        "#819067",
+        "#b1ab86",
+        "#fefae0"
+      ],
+      "likesAtRetrieval": 5969,
+      "feed": {
+        "tags": "green",
+        "timeframe": 30,
+        "step": 2
+      }
+    }
+  ]
+}

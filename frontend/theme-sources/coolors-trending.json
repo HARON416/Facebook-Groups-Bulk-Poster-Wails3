@@ -1,0 +1,462 @@
+{
+  "source": "https://coolors.co/palettes/trending",
+  "endpoint": "https://coolors.co/ajax/list-palettes/e",
+  "retrievedAt": "2026-10-27T09:46:48.098Z",
+  "review": {
+    "requests": 4,
+    "records": 192,
+    "uniquePalettes": 192,
+    "criteria": [
+      "Review public TRENDING pages 1 through 4, with 48 palettes per page.",
+      "Eight light and eight dark palettes with restrained surfaces, varied accents, and at least 7:1 source background/text contrast.",
+      "Keep every original source color in this file; select four for the app background, accent, secondary, and text slots.",
+      "Exclude existing four-color combinations and duplicate names; generated tokens maintain readable UI contrast."
+    ]
+  },
+  "palettes": [
+    {
+      "id": "palette:coolors-harvest-linen",
+      "name": "harvest linen",
+      "mode": "light",
+      "sourcePaletteId": "5e9c86d918a3f413572a760d",
+      "sourceName": "Olive Garden Feast",
+      "sourceUrl": "https://coolors.co/606c38-283618-fefae0-dda15e-bc6c25",
+      "colors": [
+        "#606c38",
+        "#283618",
+        "#fefae0",
+        "#dda15e",
+        "#bc6c25"
+      ],
+      "uiColors": {
+        "bg": "#fefae0",
+        "main": "#606c38",
+        "sub": "#dda15e",
+        "text": "#283618"
+      },
+      "savesAtRetrieval": 97403,
+      "feed": {
+        "sort": "TRENDING",
+        "search": "",
+        "page": 1
+      }
+    },
+    {
+      "id": "palette:coolors-coastal-mist",
+      "name": "coastal mist",
+      "mode": "light",
+      "sourcePaletteId": "5e9c86f018a3f413572ad406",
+      "sourceName": "Summer Ocean Breeze",
+      "sourceUrl": "https://coolors.co/e63946-f1faee-a8dadc-457b9d-1d3557",
+      "colors": [
+        "#e63946",
+        "#f1faee",
+        "#a8dadc",
+        "#457b9d",
+        "#1d3557"
+      ],
+      "uiColors": {
+        "bg": "#f1faee",
+        "main": "#457b9d",
+        "sub": "#a8dadc",
+        "text": "#1d3557"
+      },
+      "savesAtRetrieval": 79042,
+      "feed": {
+        "sort": "TRENDING",
+        "search": "",
+        "page": 1
+      }
+    },
+    {
+      "id": "palette:coolors-lavender-clay",
+      "name": "lavender clay",
+      "mode": "light",
+      "sourcePaletteId": "5e9c86cd18a3f413572a343f",
+      "sourceName": "Soft Lavender",
+      "sourceUrl": "https://coolors.co/22223b-4a4e69-9a8c98-c9ada7-f2e9e4",
+      "colors": [
+        "#22223b",
+        "#4a4e69",
+        "#9a8c98",
+        "#c9ada7",
+        "#f2e9e4"
+      ],
+      "uiColors": {
+        "bg": "#f2e9e4",
+        "main": "#4a4e69",
+        "sub": "#c9ada7",
+        "text": "#22223b"
+      },
+      "savesAtRetrieval": 45552,
+      "feed": {
+        "sort": "TRENDING",
+        "search": "",
+        "page": 1
+      }
+    },
+    {
+      "id": "palette:coolors-copper-paper",
+      "name": "copper paper",
+      "mode": "light",
+      "sourcePaletteId": "5e9c86f918a3f413572b0c52",
+      "sourceName": "Rustic Charm",
+      "sourceUrl": "https://coolors.co/fffcf2-ccc5b9-403d39-252422-eb5e28",
+      "colors": [
+        "#fffcf2",
+        "#ccc5b9",
+        "#403d39",
+        "#252422",
+        "#eb5e28"
+      ],
+      "uiColors": {
+        "bg": "#fffcf2",
+        "main": "#eb5e28",
+        "sub": "#ccc5b9",
+        "text": "#252422"
+      },
+      "savesAtRetrieval": 18403,
+      "feed": {
+        "sort": "TRENDING",
+        "search": "",
+        "page": 3
+      }
+    },
+    {
+      "id": "palette:coolors-slate-pearl",
+      "name": "slate pearl",
+      "mode": "light",
+      "sourcePaletteId": "5ec19c970343b60007fc8990",
+      "sourceName": "Light Steel",
+      "sourceUrl": "https://coolors.co/f8f9fa-e9ecef-dee2e6-ced4da-adb5bd-6c757d-495057-343a40-212529",
+      "colors": [
+        "#f8f9fa",
+        "#e9ecef",
+        "#dee2e6",
+        "#ced4da",
+        "#adb5bd",
+        "#6c757d",
+        "#495057",
+        "#343a40",
+        "#212529"
+      ],
+      "uiColors": {
+        "bg": "#f8f9fa",
+        "main": "#495057",
+        "sub": "#adb5bd",
+        "text": "#212529"
+      },
+      "savesAtRetrieval": 19196,
+      "feed": {
+        "sort": "TRENDING",
+        "search": "",
+        "page": 2
+      }
+    },
+    {
+      "id": "palette:coolors-forest-parchment",
+      "name": "forest parchment",
+      "mode": "light",
+      "sourcePaletteId": "5e9c86df18a3f413572a82a9",
+      "sourceName": "Earth Tones",
+      "sourceUrl": "https://coolors.co/14281d-355834-6e633d-c2a878-f1f5f2",
+      "colors": [
+        "#14281d",
+        "#355834",
+        "#6e633d",
+        "#c2a878",
+        "#f1f5f2"
+      ],
+      "uiColors": {
+        "bg": "#f1f5f2",
+        "main": "#355834",
+        "sub": "#c2a878",
+        "text": "#14281d"
+      },
+      "savesAtRetrieval": 2405,
+      "feed": {
+        "sort": "TRENDING",
+        "search": "",
+        "page": 2
+      }
+    },
+    {
+      "id": "palette:coolors-rose-quartz",
+      "name": "rose quartz",
+      "mode": "light",
+      "sourcePaletteId": "5e9c86cd18a3f413572a2c0b",
+      "sourceName": "Rose Quartz Elegance",
+      "sourceUrl": "https://coolors.co/eeb4b3-c179b9-a42cd6-502274-2f242c",
+      "colors": [
+        "#eeb4b3",
+        "#c179b9",
+        "#a42cd6",
+        "#502274",
+        "#2f242c"
+      ],
+      "uiColors": {
+        "bg": "#eeb4b3",
+        "main": "#502274",
+        "sub": "#c179b9",
+        "text": "#2f242c"
+      },
+      "savesAtRetrieval": 1762,
+      "feed": {
+        "sort": "TRENDING",
+        "search": "",
+        "page": 3
+      }
+    },
+    {
+      "id": "palette:coolors-sage-ceramic",
+      "name": "sage ceramic",
+      "mode": "light",
+      "sourcePaletteId": "5e9c86cd18a3f413572a2c06",
+      "sourceName": "Earthy Green",
+      "sourceUrl": "https://coolors.co/cad2c5-84a98c-52796f-354f52-2f3e46",
+      "colors": [
+        "#cad2c5",
+        "#84a98c",
+        "#52796f",
+        "#354f52",
+        "#2f3e46"
+      ],
+      "uiColors": {
+        "bg": "#cad2c5",
+        "main": "#52796f",
+        "sub": "#84a98c",
+        "text": "#2f3e46"
+      },
+      "savesAtRetrieval": 38214,
+      "feed": {
+        "sort": "TRENDING",
+        "search": "",
+        "page": 2
+      }
+    },
+    {
+      "id": "palette:coolors-ocean-brass",
+      "name": "ocean brass",
+      "mode": "dark",
+      "sourcePaletteId": "5e9c86e818a3f413572ac190",
+      "sourceName": "Black & Gold Elegance",
+      "sourceUrl": "https://coolors.co/000000-14213d-fca311-e5e5e5-ffffff",
+      "colors": [
+        "#000000",
+        "#14213d",
+        "#fca311",
+        "#e5e5e5",
+        "#ffffff"
+      ],
+      "uiColors": {
+        "bg": "#14213d",
+        "main": "#fca311",
+        "sub": "#e5e5e5",
+        "text": "#ffffff"
+      },
+      "savesAtRetrieval": 54428,
+      "feed": {
+        "sort": "TRENDING",
+        "search": "",
+        "page": 1
+      }
+    },
+    {
+      "id": "palette:coolors-violet-velvet",
+      "name": "violet velvet",
+      "mode": "dark",
+      "sourcePaletteId": "5eab3e9d81393300071ddfcc",
+      "sourceName": "Vivid Nightfall",
+      "sourceUrl": "https://coolors.co/10002b-240046-3c096c-5a189a-7b2cbf-9d4edd-c77dff-e0aaff",
+      "colors": [
+        "#10002b",
+        "#240046",
+        "#3c096c",
+        "#5a189a",
+        "#7b2cbf",
+        "#9d4edd",
+        "#c77dff",
+        "#e0aaff"
+      ],
+      "uiColors": {
+        "bg": "#10002b",
+        "main": "#c77dff",
+        "sub": "#5a189a",
+        "text": "#e0aaff"
+      },
+      "savesAtRetrieval": 13929,
+      "feed": {
+        "sort": "TRENDING",
+        "search": "",
+        "page": 1
+      }
+    },
+    {
+      "id": "palette:coolors-pine-canopy",
+      "name": "pine canopy",
+      "mode": "dark",
+      "sourcePaletteId": "5e9c86e618a3f413572aa345",
+      "sourceName": "Leafy Green Garden",
+      "sourceUrl": "https://coolors.co/132a13-31572c-4f772d-90a955-ecf39e",
+      "colors": [
+        "#132a13",
+        "#31572c",
+        "#4f772d",
+        "#90a955",
+        "#ecf39e"
+      ],
+      "uiColors": {
+        "bg": "#132a13",
+        "main": "#90a955",
+        "sub": "#4f772d",
+        "text": "#ecf39e"
+      },
+      "savesAtRetrieval": 17072,
+      "feed": {
+        "sort": "TRENDING",
+        "search": "",
+        "page": 1
+      }
+    },
+    {
+      "id": "palette:coolors-midnight-tide",
+      "name": "midnight tide",
+      "mode": "dark",
+      "sourcePaletteId": "5e9c86df18a3f413572a7eff",
+      "sourceName": "Deep Sea",
+      "sourceUrl": "https://coolors.co/0d1b2a-1b263b-415a77-778da9-e0e1dd",
+      "colors": [
+        "#0d1b2a",
+        "#1b263b",
+        "#415a77",
+        "#778da9",
+        "#e0e1dd"
+      ],
+      "uiColors": {
+        "bg": "#0d1b2a",
+        "main": "#778da9",
+        "sub": "#415a77",
+        "text": "#e0e1dd"
+      },
+      "savesAtRetrieval": 27570,
+      "feed": {
+        "sort": "TRENDING",
+        "search": "",
+        "page": 2
+      }
+    },
+    {
+      "id": "palette:coolors-ember-graphite",
+      "name": "ember graphite",
+      "mode": "dark",
+      "sourcePaletteId": "5e9c86fe18a3f413572b17bb",
+      "sourceName": "Azure Skies",
+      "sourceUrl": "https://coolors.co/080708-3772ff-df2935-fdca40-e6e8e6",
+      "colors": [
+        "#080708",
+        "#3772ff",
+        "#df2935",
+        "#fdca40",
+        "#e6e8e6"
+      ],
+      "uiColors": {
+        "bg": "#080708",
+        "main": "#df2935",
+        "sub": "#fdca40",
+        "text": "#e6e8e6"
+      },
+      "savesAtRetrieval": 5120,
+      "feed": {
+        "sort": "TRENDING",
+        "search": "",
+        "page": 2
+      }
+    },
+    {
+      "id": "palette:coolors-arctic-ink",
+      "name": "arctic ink",
+      "mode": "dark",
+      "sourcePaletteId": "5e9c86cd18a3f413572a3165",
+      "sourceName": "Deep Blue Sea",
+      "sourceUrl": "https://coolors.co/0b132b-1c2541-3a506b-5bc0be-6fffe9",
+      "colors": [
+        "#0b132b",
+        "#1c2541",
+        "#3a506b",
+        "#5bc0be",
+        "#6fffe9"
+      ],
+      "uiColors": {
+        "bg": "#0b132b",
+        "main": "#5bc0be",
+        "sub": "#3a506b",
+        "text": "#6fffe9"
+      },
+      "savesAtRetrieval": 11534,
+      "feed": {
+        "sort": "TRENDING",
+        "search": "",
+        "page": 3
+      }
+    },
+    {
+      "id": "palette:coolors-lagoon-midnight",
+      "name": "lagoon midnight",
+      "mode": "dark",
+      "sourcePaletteId": "5fa6d07bde1390000b71e90f",
+      "sourceName": "Ocean Sunset",
+      "sourceUrl": "https://coolors.co/001219-005f73-0a9396-94d2bd-e9d8a6-ee9b00-ca6702-bb3e03-ae2012-9b2226",
+      "colors": [
+        "#001219",
+        "#005f73",
+        "#0a9396",
+        "#94d2bd",
+        "#e9d8a6",
+        "#ee9b00",
+        "#ca6702",
+        "#bb3e03",
+        "#ae2012",
+        "#9b2226"
+      ],
+      "uiColors": {
+        "bg": "#001219",
+        "main": "#94d2bd",
+        "sub": "#ee9b00",
+        "text": "#e9d8a6"
+      },
+      "savesAtRetrieval": 24683,
+      "feed": {
+        "sort": "TRENDING",
+        "search": "",
+        "page": 1
+      }
+    },
+    {
+      "id": "palette:coolors-aubergine-mist",
+      "name": "aubergine mist",
+      "mode": "dark",
+      "sourcePaletteId": "5e9c86cd18a3f413572a2c3a",
+      "sourceName": "Mystic Voyage",
+      "sourceUrl": "https://coolors.co/36213e-554971-63768d-8ac6d0-b8f3ff",
+      "colors": [
+        "#36213e",
+        "#554971",
+        "#63768d",
+        "#8ac6d0",
+        "#b8f3ff"
+      ],
+      "uiColors": {
+        "bg": "#36213e",
+        "main": "#8ac6d0",
+        "sub": "#63768d",
+        "text": "#b8f3ff"
+      },
+      "savesAtRetrieval": 3488,
+      "feed": {
+        "sort": "TRENDING",
+        "search": "",
+        "page": 4
+      }
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+{
+  "source": "https://colorhunt.co/palettes/orange",
+  "endpoint": "https://colorhunt.co/php/feed.php",
+  "retrievedAt": "2026-10-27T09:06:40.102Z",
+  "review": {
+    "requests": 5,
+    "records": 200,
+    "uniquePalettes": 200,
+    "criteria": [
+      "POST step=0 through step=4 with tags=orange and timeframe=30; increment step for each page.",
+      "The feed returns older palettes despite timeframe=30.",
+      "Five light and five dark themes with an orange background or prominent accent; exclude existing Color Hunt combinations and near-duplicate selections.",
+      "Preserve all four source colors with at least 7:1 background/text contrast; generated tokens maintain readable UI contrast."
+    ]
+  },
+  "palettes": [
+    {
+      "id": "palette:colorhunt-orange-porcelain",
+      "name": "orange porcelain",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/f5ebddf2765e315b8c413333",
+      "code": "f5ebddf2765e315b8c413333",
+      "colors": [
+        "#f5ebdd",
+        "#f2765e",
+        "#315b8c",
+        "#413333"
+      ],
+      "likesAtRetrieval": 897,
+      "feed": {
+        "tags": "orange",
+        "timeframe": 30,
+        "step": 0
+      }
+    },
+    {
+      "id": "palette:colorhunt-orange-paper",
+      "name": "orange paper",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/faf3e1f5e7c6fa8112222222",
+      "code": "faf3e1f5e7c6fa8112222222",
+      "colors": [
+        "#faf3e1",
+        "#f5e7c6",
+        "#fa8112",
+        "#222222"
+      ],
+      "likesAtRetrieval": 2252,
+      "feed": {
+        "tags": "orange",
+        "timeframe": 30,
+        "step": 2
+      }
+    },
+    {
+      "id": "palette:colorhunt-orange-peach",
+      "name": "orange peach",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/ffc570efd2b05477921a3263",
+      "code": "ffc570efd2b05477921a3263",
+      "colors": [
+        "#ffc570",
+        "#efd2b0",
+        "#547792",
+        "#1a3263"
+      ],
+      "likesAtRetrieval": 2266,
+      "feed": {
+        "tags": "orange",
+        "timeframe": 30,
+        "step": 1
+      }
+    },
+    {
+      "id": "palette:colorhunt-orange-ember",
+      "name": "orange ember",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/fe7743efeeea273f4f000000",
+      "code": "fe7743efeeea273f4f000000",
+      "colors": [
+        "#fe7743",
+        "#efeeea",
+        "#273f4f",
+        "#000000"
+      ],
+      "likesAtRetrieval": 4074,
+      "feed": {
+        "tags": "orange",
+        "timeframe": 30,
+        "step": 4
+      }
+    },
+    {
+      "id": "palette:colorhunt-orange-copper",
+      "name": "orange copper",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/f5e5e1f9b487427a76174143",
+      "code": "f5e5e1f9b487427a76174143",
+      "colors": [
+        "#f5e5e1",
+        "#f9b487",
+        "#427a76",
+        "#174143"
+      ],
+      "likesAtRetrieval": 1667,
+      "feed": {
+        "tags": "orange",
+        "timeframe": 30,
+        "step": 2
+      }
+    },
+    {
+      "id": "palette:colorhunt-orange-navy",
+      "name": "orange navy",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/001f3ded985ff7b980e6e6e6",
+      "code": "001f3ded985ff7b980e6e6e6",
+      "colors": [
+        "#001f3d",
+        "#ed985f",
+        "#f7b980",
+        "#e6e6e6"
+      ],
+      "likesAtRetrieval": 1646,
+      "feed": {
+        "tags": "orange",
+        "timeframe": 30,
+        "step": 2
+      }
+    },
+    {
+      "id": "palette:colorhunt-orange-indigo",
+      "name": "orange indigo",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/001bb70046ffff8040f5f1dc",
+      "code": "001bb70046ffff8040f5f1dc",
+      "colors": [
+        "#001bb7",
+        "#0046ff",
+        "#ff8040",
+        "#f5f1dc"
+      ],
+      "likesAtRetrieval": 2339,
+      "feed": {
+        "tags": "orange",
+        "timeframe": 30,
+        "step": 2
+      }
+    },
+    {
+      "id": "palette:colorhunt-orange-walnut",
+      "name": "orange walnut",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/443627d98324efdcabf2f6d0",
+      "code": "443627d98324efdcabf2f6d0",
+      "colors": [
+        "#443627",
+        "#d98324",
+        "#efdcab",
+        "#f2f6d0"
+      ],
+      "likesAtRetrieval": 4480,
+      "feed": {
+        "tags": "orange",
+        "timeframe": 30,
+        "step": 4
+      }
+    },
+    {
+      "id": "palette:colorhunt-orange-plum",
+      "name": "orange plum",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/1e104e452e5aff653fffc85c",
+      "code": "1e104e452e5aff653fffc85c",
+      "colors": [
+        "#1e104e",
+        "#452e5a",
+        "#ff653f",
+        "#ffc85c"
+      ],
+      "likesAtRetrieval": 1904,
+      "feed": {
+        "tags": "orange",
+        "timeframe": 30,
+        "step": 1
+      }
+    },
+    {
+      "id": "palette:colorhunt-orange-oxblood",
+      "name": "orange oxblood",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/5e00069b0f06d53e0feed9b9",
+      "code": "5e00069b0f06d53e0feed9b9",
+      "colors": [
+        "#5e0006",
+        "#9b0f06",
+        "#d53e0f",
+        "#eed9b9"
+      ],
+      "likesAtRetrieval": 4330,
+      "feed": {
+        "tags": "orange",
+        "timeframe": 30,
+        "step": 1
+      }
+    }
+  ]
+}

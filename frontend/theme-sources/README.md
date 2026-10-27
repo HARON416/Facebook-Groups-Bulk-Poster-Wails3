@@ -34,3 +34,17 @@ clearance cookies are not stored.
 
 All desktop theme display names are lowercase. Existing IDs are unchanged so
 saved selections continue working. Website theme files are not regenerated.
+
+## Coolors trending desktop additions
+
+`coolors-trending.json` records sixteen themes selected from 192 palettes across
+public trending pages 1–4, with eight light and eight dark choices. The feed uses
+an encoded JSON payload containing `page`, `sort: "TRENDING"`, and `search: ""`.
+Cookies and session tokens are not included in the source records.
+
+Coolors palettes can have more colors than the app's four seed slots. Each record
+keeps the full original palette, its source URL and ID, and the four selected
+`uiColors`. Source background/text contrast is at least 7:1; generated text,
+actions, status indicators, and button labels pass the existing contrast checks.
+Names are lowercase and IDs use `palette:coolors-`. These are bundled desktop
+themes; no Coolors requests run in the app and website assets are not synchronized.

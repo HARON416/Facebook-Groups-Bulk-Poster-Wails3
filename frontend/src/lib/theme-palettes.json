@@ -72,12 +72,28 @@
     "id": "palette:arch"
   },
   {
+    "name": "arctic ink",
+    "bg": "#0b132b",
+    "main": "#5bc0be",
+    "sub": "#3a506b",
+    "text": "#6fffe9",
+    "id": "palette:coolors-arctic-ink"
+  },
+  {
     "name": "atlantic dusk",
     "bg": "#030164",
     "main": "#363199",
     "sub": "#2d7495",
     "text": "#e8e085",
     "id": "palette:colorhunt-atlantic-dusk"
+  },
+  {
+    "name": "aubergine mist",
+    "bg": "#36213e",
+    "main": "#8ac6d0",
+    "sub": "#63768d",
+    "text": "#b8f3ff",
+    "id": "palette:coolors-aubergine-mist"
   },
   {
     "name": "aurora",
@@ -94,6 +110,86 @@
     "sub": "#ffcc5c",
     "text": "#5b7869",
     "id": "palette:beach"
+  },
+  {
+    "name": "beige bark",
+    "bg": "#f7f1de",
+    "main": "#9d6638",
+    "sub": "#b0ba99",
+    "text": "#4e220f",
+    "id": "palette:colorhunt-beige-bark"
+  },
+  {
+    "name": "beige cedar",
+    "bg": "#4b352a",
+    "main": "#ca7842",
+    "sub": "#b2cd9c",
+    "text": "#f0f2bd",
+    "id": "palette:colorhunt-beige-cedar"
+  },
+  {
+    "name": "beige dune",
+    "bg": "#e4d6a9",
+    "main": "#995f2f",
+    "sub": "#978f66",
+    "text": "#622b14",
+    "id": "palette:colorhunt-beige-dune"
+  },
+  {
+    "name": "beige fir",
+    "bg": "#1b211a",
+    "main": "#8bae66",
+    "sub": "#628141",
+    "text": "#ebd5ab",
+    "id": "palette:colorhunt-beige-fir"
+  },
+  {
+    "name": "beige flax",
+    "bg": "#f8f3d9",
+    "main": "#b9b28a",
+    "sub": "#ebe5c2",
+    "text": "#504b38",
+    "id": "palette:colorhunt-beige-flax"
+  },
+  {
+    "name": "beige harbor",
+    "bg": "#213448",
+    "main": "#94b4c1",
+    "sub": "#547792",
+    "text": "#eae0cf",
+    "id": "palette:colorhunt-beige-harbor"
+  },
+  {
+    "name": "beige ink",
+    "bg": "#f3e2d4",
+    "main": "#415e72",
+    "sub": "#c5b0cd",
+    "text": "#17313e",
+    "id": "palette:colorhunt-beige-ink"
+  },
+  {
+    "name": "beige merlot",
+    "bg": "#4b1426",
+    "main": "#558467",
+    "sub": "#17433f",
+    "text": "#efeabb",
+    "id": "palette:colorhunt-beige-merlot"
+  },
+  {
+    "name": "beige moss",
+    "bg": "#3e3f29",
+    "main": "#bca88d",
+    "sub": "#7d8d86",
+    "text": "#f1f0e4",
+    "id": "palette:colorhunt-beige-moss"
+  },
+  {
+    "name": "beige orchard",
+    "bg": "#f2edd1",
+    "main": "#689b8a",
+    "sub": "#f9cb99",
+    "text": "#280a3e",
+    "id": "palette:colorhunt-beige-orchard"
   },
   {
     "name": "bento",
@@ -120,6 +216,86 @@
     "id": "palette:bingsu"
   },
   {
+    "name": "black amber",
+    "bg": "#000000",
+    "main": "#ff9f29",
+    "sub": "#1a4d2e",
+    "text": "#faf3e3",
+    "id": "palette:colorhunt-black-amber"
+  },
+  {
+    "name": "black cobalt",
+    "bg": "#000000",
+    "main": "#068fff",
+    "sub": "#4e4feb",
+    "text": "#eeeeee",
+    "id": "palette:colorhunt-black-cobalt"
+  },
+  {
+    "name": "black copper",
+    "bg": "#000000",
+    "main": "#b8621b",
+    "sub": "#262a56",
+    "text": "#e3ccae",
+    "id": "palette:colorhunt-black-copper"
+  },
+  {
+    "name": "black linen",
+    "bg": "#000000",
+    "main": "#f4dfc8",
+    "sub": "#f4eae0",
+    "text": "#faf6f0",
+    "id": "palette:colorhunt-black-linen"
+  },
+  {
+    "name": "black mint",
+    "bg": "#000000",
+    "main": "#cfffe2",
+    "sub": "#a2d5c6",
+    "text": "#f6f6f6",
+    "id": "palette:colorhunt-black-mint"
+  },
+  {
+    "name": "black plum",
+    "bg": "#20262e",
+    "main": "#cd5888",
+    "sub": "#913175",
+    "text": "#e9e8e8",
+    "id": "palette:colorhunt-black-plum"
+  },
+  {
+    "name": "black rose",
+    "bg": "#151515",
+    "main": "#c73659",
+    "sub": "#a91d3a",
+    "text": "#eeeeee",
+    "id": "palette:colorhunt-black-rose"
+  },
+  {
+    "name": "black sage",
+    "bg": "#181c14",
+    "main": "#697565",
+    "sub": "#3c3d37",
+    "text": "#ecdfcc",
+    "id": "palette:colorhunt-black-sage"
+  },
+  {
+    "name": "black seafoam",
+    "bg": "#0b0909",
+    "main": "#408175",
+    "sub": "#2e4540",
+    "text": "#b5b9f0",
+    "id": "palette:colorhunt-black-seafoam"
+  },
+  {
+    "name": "black violet",
+    "bg": "#181818",
+    "main": "#8758ff",
+    "sub": "#5cb8e4",
+    "text": "#f2f2f2",
+    "id": "palette:colorhunt-black-violet"
+  },
+  {
     "name": "bliss",
     "bg": "#262727",
     "main": "#f0d3c9",
@@ -128,12 +304,92 @@
     "id": "palette:bliss"
   },
   {
+    "name": "blue amber",
+    "bg": "#003092",
+    "main": "#ffab5b",
+    "sub": "#00879e",
+    "text": "#fff2db",
+    "id": "palette:colorhunt-blue-amber"
+  },
+  {
     "name": "blue dolphin",
     "bg": "#003950",
     "main": "#ffcefb",
     "sub": "#00e4ff",
     "text": "#82eaff",
     "id": "palette:blue-dolphin"
+  },
+  {
+    "name": "blue frost",
+    "bg": "#bbfbff",
+    "main": "#4e71ff",
+    "sub": "#8dd8ff",
+    "text": "#5409da",
+    "id": "palette:colorhunt-blue-frost"
+  },
+  {
+    "name": "blue glacier",
+    "bg": "#e3f2fd",
+    "main": "#2196f3",
+    "sub": "#90caf9",
+    "text": "#0d47a1",
+    "id": "palette:colorhunt-blue-glacier"
+  },
+  {
+    "name": "blue haze",
+    "bg": "#aaccd6",
+    "main": "#4382df",
+    "sub": "#4647ae",
+    "text": "#112e81",
+    "id": "palette:colorhunt-blue-haze"
+  },
+  {
+    "name": "blue indigo",
+    "bg": "#473472",
+    "main": "#87bac3",
+    "sub": "#53629e",
+    "text": "#d6f4ed",
+    "id": "palette:colorhunt-blue-indigo"
+  },
+  {
+    "name": "blue linen",
+    "bg": "#f7f8f0",
+    "main": "#7aaace",
+    "sub": "#9cd5ff",
+    "text": "#355872",
+    "id": "palette:colorhunt-blue-linen"
+  },
+  {
+    "name": "blue marine",
+    "bg": "#1b3c53",
+    "main": "#456882",
+    "sub": "#d2c1b6",
+    "text": "#f9f3ef",
+    "id": "palette:colorhunt-blue-marine"
+  },
+  {
+    "name": "blue midnight",
+    "bg": "#0c2c55",
+    "main": "#629fad",
+    "sub": "#296374",
+    "text": "#ededce",
+    "id": "palette:colorhunt-blue-midnight"
+  },
+  {
+    "name": "blue periwinkle",
+    "bg": "#abd2fa",
+    "main": "#7692ff",
+    "sub": "#1b2cc1",
+    "text": "#091540",
+    "id": "palette:colorhunt-blue-periwinkle"
+  },
+  {
+    "name": "blue tide",
+    "bg": "#2e5077",
+    "main": "#4da1a9",
+    "sub": "#79d7be",
+    "text": "#f6f4f0",
+    "id": "palette:colorhunt-blue-tide"
   },
   {
     "name": "blueberry dark",
@@ -272,6 +528,14 @@
     "id": "palette:colorhunt-citrus-sky"
   },
   {
+    "name": "coastal mist",
+    "bg": "#f1faee",
+    "main": "#457b9d",
+    "sub": "#a8dadc",
+    "text": "#1d3557",
+    "id": "palette:coolors-coastal-mist"
+  },
+  {
     "name": "comfy",
     "bg": "#4a5b6e",
     "main": "#f8cdc6",
@@ -286,6 +550,14 @@
     "sub": "#7ebab5",
     "text": "#e7e0de",
     "id": "palette:copper"
+  },
+  {
+    "name": "copper paper",
+    "bg": "#fffcf2",
+    "main": "#eb5e28",
+    "sub": "#ccc5b9",
+    "text": "#252422",
+    "id": "palette:coolors-copper-paper"
   },
   {
     "name": "creamsicle",
@@ -464,6 +736,14 @@
     "id": "palette:colorhunt-ember-cream"
   },
   {
+    "name": "ember graphite",
+    "bg": "#080708",
+    "main": "#df2935",
+    "sub": "#fdca40",
+    "text": "#e6e8e6",
+    "id": "palette:coolors-ember-graphite"
+  },
+  {
     "name": "ember slate",
     "bg": "#000000",
     "main": "#fe7f2d",
@@ -558,6 +838,14 @@
     "sub": "#2a6b5c",
     "text": "#e8dcc4",
     "id": "palette:colorhunt-forest-brass"
+  },
+  {
+    "name": "forest parchment",
+    "bg": "#f1f5f2",
+    "main": "#355834",
+    "sub": "#c2a878",
+    "text": "#14281d",
+    "id": "palette:coolors-forest-parchment"
   },
   {
     "name": "froyo",
@@ -664,6 +952,166 @@
     "id": "palette:grape"
   },
   {
+    "name": "green fern",
+    "bg": "#e9efec",
+    "main": "#6a9c89",
+    "sub": "#c4dad2",
+    "text": "#16423c",
+    "id": "palette:colorhunt-green-fern"
+  },
+  {
+    "name": "green lagoon",
+    "bg": "#092328",
+    "main": "#2a835f",
+    "sub": "#12544f",
+    "text": "#8bbb92",
+    "id": "palette:colorhunt-green-lagoon"
+  },
+  {
+    "name": "green lime",
+    "bg": "#ddeb9d",
+    "main": "#a0c878",
+    "sub": "#27667b",
+    "text": "#143d60",
+    "id": "palette:colorhunt-green-lime"
+  },
+  {
+    "name": "green meadow",
+    "bg": "#d6efd8",
+    "main": "#508d4e",
+    "sub": "#80af81",
+    "text": "#1a5319",
+    "id": "palette:colorhunt-green-meadow"
+  },
+  {
+    "name": "green moss",
+    "bg": "#e7efc7",
+    "main": "#aec8a4",
+    "sub": "#8a784e",
+    "text": "#3b3b1a",
+    "id": "palette:colorhunt-green-moss"
+  },
+  {
+    "name": "green olive",
+    "bg": "#41431b",
+    "main": "#aeb784",
+    "sub": "#e3dbbb",
+    "text": "#f8f3e1",
+    "id": "palette:colorhunt-green-olive"
+  },
+  {
+    "name": "green orchard",
+    "bg": "#0a400c",
+    "main": "#819067",
+    "sub": "#b1ab86",
+    "text": "#fefae0",
+    "id": "palette:colorhunt-green-orchard"
+  },
+  {
+    "name": "green pine",
+    "bg": "#004030",
+    "main": "#4a9782",
+    "sub": "#dcd0a8",
+    "text": "#fff9e5",
+    "id": "palette:colorhunt-green-pine"
+  },
+  {
+    "name": "green sage",
+    "bg": "#ebf4dd",
+    "main": "#5a7863",
+    "sub": "#90ab8b",
+    "text": "#3b4953",
+    "id": "palette:colorhunt-green-sage"
+  },
+  {
+    "name": "green woodland",
+    "bg": "#123524",
+    "main": "#85a947",
+    "sub": "#3e7b27",
+    "text": "#efe3c2",
+    "id": "palette:colorhunt-green-woodland"
+  },
+  {
+    "name": "grey berry",
+    "bg": "#f3f4f4",
+    "main": "#853953",
+    "sub": "#612d53",
+    "text": "#2c2c2c",
+    "id": "palette:colorhunt-grey-berry"
+  },
+  {
+    "name": "grey ember",
+    "bg": "#454545",
+    "main": "#ff6000",
+    "sub": "#ffa559",
+    "text": "#ffe6c7",
+    "id": "palette:colorhunt-grey-ember"
+  },
+  {
+    "name": "grey iris",
+    "bg": "#3d3b40",
+    "main": "#525ceb",
+    "sub": "#bfcfe7",
+    "text": "#f8edff",
+    "id": "palette:colorhunt-grey-iris"
+  },
+  {
+    "name": "grey lagoon",
+    "bg": "#f5f5f5",
+    "main": "#229799",
+    "sub": "#48cfcb",
+    "text": "#424242",
+    "id": "palette:colorhunt-grey-lagoon"
+  },
+  {
+    "name": "grey mauve",
+    "bg": "#37353e",
+    "main": "#715a5a",
+    "sub": "#44444e",
+    "text": "#d3dad9",
+    "id": "palette:colorhunt-grey-mauve"
+  },
+  {
+    "name": "grey mist",
+    "bg": "#333446",
+    "main": "#b8cfce",
+    "sub": "#7f8caa",
+    "text": "#eaefef",
+    "id": "palette:colorhunt-grey-mist"
+  },
+  {
+    "name": "grey olive",
+    "bg": "#ececec",
+    "main": "#656d3f",
+    "sub": "#84934a",
+    "text": "#492828",
+    "id": "palette:colorhunt-grey-olive"
+  },
+  {
+    "name": "grey rose",
+    "bg": "#f0eeed",
+    "main": "#c92c6d",
+    "sub": "#609ea2",
+    "text": "#332c39",
+    "id": "palette:colorhunt-grey-rose"
+  },
+  {
+    "name": "grey slate",
+    "bg": "#27374d",
+    "main": "#9db2bf",
+    "sub": "#526d82",
+    "text": "#dde6ed",
+    "id": "palette:colorhunt-grey-slate"
+  },
+  {
+    "name": "grey stone",
+    "bg": "#eeedeb",
+    "main": "#747264",
+    "sub": "#e0ccbe",
+    "text": "#3c3633",
+    "id": "palette:colorhunt-grey-stone"
+  },
+  {
     "name": "gruvbox dark",
     "bg": "#282828",
     "main": "#d79921",
@@ -702,6 +1150,14 @@
     "sub": "#d3d4c0",
     "text": "#f3e4c9",
     "id": "palette:colorhunt-harbor-brass"
+  },
+  {
+    "name": "harvest linen",
+    "bg": "#fefae0",
+    "main": "#606c38",
+    "sub": "#dda15e",
+    "text": "#283618",
+    "id": "palette:coolors-harvest-linen"
   },
   {
     "name": "hedge",
@@ -808,6 +1264,14 @@
     "id": "palette:joker"
   },
   {
+    "name": "lagoon midnight",
+    "bg": "#001219",
+    "main": "#94d2bd",
+    "sub": "#ee9b00",
+    "text": "#e9d8a6",
+    "id": "palette:coolors-lagoon-midnight"
+  },
+  {
     "name": "laser",
     "bg": "#221b44",
     "main": "#009eaf",
@@ -822,6 +1286,14 @@
     "sub": "#e4e3e9",
     "text": "#2f2a41",
     "id": "palette:lavender"
+  },
+  {
+    "name": "lavender clay",
+    "bg": "#f2e9e4",
+    "main": "#4a4e69",
+    "sub": "#c9ada7",
+    "text": "#22223b",
+    "id": "palette:coolors-lavender-clay"
   },
   {
     "name": "leather",
@@ -976,6 +1448,14 @@
     "id": "palette:colorhunt-midnight-orchid"
   },
   {
+    "name": "midnight tide",
+    "bg": "#0d1b2a",
+    "main": "#778da9",
+    "sub": "#415a77",
+    "text": "#e0e1dd",
+    "id": "palette:coolors-midnight-tide"
+  },
+  {
     "name": "milkshake",
     "bg": "#ffffff",
     "main": "#212b43",
@@ -992,12 +1472,92 @@
     "id": "palette:mint"
   },
   {
+    "name": "mint coral",
+    "bg": "#cdffeb",
+    "main": "#c7004c",
+    "sub": "#ffaaaa",
+    "text": "#8f1537",
+    "id": "palette:colorhunt-mint-coral"
+  },
+  {
     "name": "mint grove",
     "bg": "#b0e4cc",
     "main": "#408a71",
     "sub": "#285a48",
     "text": "#091413",
     "id": "palette:colorhunt-mint-grove"
+  },
+  {
+    "name": "mint harbor",
+    "bg": "#ddf4e7",
+    "main": "#26667f",
+    "sub": "#67c090",
+    "text": "#124170",
+    "id": "palette:colorhunt-mint-harbor"
+  },
+  {
+    "name": "mint ink",
+    "bg": "#2c3333",
+    "main": "#0e8388",
+    "sub": "#2e4f4f",
+    "text": "#cbe4de",
+    "id": "palette:colorhunt-mint-ink"
+  },
+  {
+    "name": "mint lagoon",
+    "bg": "#003c43",
+    "main": "#77b0aa",
+    "sub": "#135d66",
+    "text": "#e3fef7",
+    "id": "palette:colorhunt-mint-lagoon"
+  },
+  {
+    "name": "mint moon",
+    "bg": "#321e48",
+    "main": "#65dcd5",
+    "sub": "#43637e",
+    "text": "#d9fff4",
+    "id": "palette:colorhunt-mint-moon"
+  },
+  {
+    "name": "mint orchid",
+    "bg": "#a6f0c6",
+    "main": "#4e3d53",
+    "sub": "#a98b98",
+    "text": "#0f1123",
+    "id": "palette:colorhunt-mint-orchid"
+  },
+  {
+    "name": "mint rose",
+    "bg": "#c1f6e7",
+    "main": "#bb7171",
+    "sub": "#ffcbcb",
+    "text": "#4e3440",
+    "id": "palette:colorhunt-mint-rose"
+  },
+  {
+    "name": "mint tide",
+    "bg": "#cff5e7",
+    "main": "#59c1bd",
+    "sub": "#a0e4cb",
+    "text": "#0d4c92",
+    "id": "palette:colorhunt-mint-tide"
+  },
+  {
+    "name": "mint twilight",
+    "bg": "#464159",
+    "main": "#8bbabb",
+    "sub": "#6c7b95",
+    "text": "#c7f0db",
+    "id": "palette:colorhunt-mint-twilight"
+  },
+  {
+    "name": "mint woodland",
+    "bg": "#1a312c",
+    "main": "#89d7b7",
+    "sub": "#428475",
+    "text": "#fff4e1",
+    "id": "palette:colorhunt-mint-woodland"
   },
   {
     "name": "mizu",
@@ -1104,6 +1664,86 @@
     "id": "palette:nautilus"
   },
   {
+    "name": "navy azure",
+    "bg": "#0f2854",
+    "main": "#4988c4",
+    "sub": "#1c4d8d",
+    "text": "#bde8f5",
+    "id": "palette:colorhunt-navy-azure"
+  },
+  {
+    "name": "navy blush",
+    "bg": "#102c57",
+    "main": "#ffb1b1",
+    "sub": "#1679ab",
+    "text": "#ffcbcb",
+    "id": "palette:colorhunt-navy-blush"
+  },
+  {
+    "name": "navy coral",
+    "bg": "#1a2a4f",
+    "main": "#f7a5a5",
+    "sub": "#ffdbb6",
+    "text": "#fff2ef",
+    "id": "palette:colorhunt-navy-coral"
+  },
+  {
+    "name": "navy dusk",
+    "bg": "#021526",
+    "main": "#6eacda",
+    "sub": "#03346e",
+    "text": "#e2e2b6",
+    "id": "palette:colorhunt-navy-dusk"
+  },
+  {
+    "name": "navy lavender",
+    "bg": "#0b1d51",
+    "main": "#725cad",
+    "sub": "#8ccdeb",
+    "text": "#ffe3a9",
+    "id": "palette:colorhunt-navy-lavender"
+  },
+  {
+    "name": "navy linen",
+    "bg": "#213555",
+    "main": "#d8c4b6",
+    "sub": "#3e5879",
+    "text": "#f5efe7",
+    "id": "palette:colorhunt-navy-linen"
+  },
+  {
+    "name": "navy mint",
+    "bg": "#161d6f",
+    "main": "#98ded9",
+    "sub": "#0b2f9f",
+    "text": "#c7ffd8",
+    "id": "palette:colorhunt-navy-mint"
+  },
+  {
+    "name": "navy sage",
+    "bg": "#11235a",
+    "main": "#c6cf9b",
+    "sub": "#596fb7",
+    "text": "#f6eca9",
+    "id": "palette:colorhunt-navy-sage"
+  },
+  {
+    "name": "navy steel",
+    "bg": "#001f3f",
+    "main": "#6a9ab0",
+    "sub": "#3a6d8c",
+    "text": "#ead8b1",
+    "id": "palette:colorhunt-navy-steel"
+  },
+  {
+    "name": "navy tide",
+    "bg": "#0b2d72",
+    "main": "#0ac4e0",
+    "sub": "#0992c2",
+    "text": "#f6e7bc",
+    "id": "palette:colorhunt-navy-tide"
+  },
+  {
     "name": "nebula",
     "bg": "#212135",
     "main": "#be3c88",
@@ -1152,6 +1792,14 @@
     "id": "palette:oblivion"
   },
   {
+    "name": "ocean brass",
+    "bg": "#14213d",
+    "main": "#fca311",
+    "sub": "#e5e5e5",
+    "text": "#ffffff",
+    "id": "palette:coolors-ocean-brass"
+  },
+  {
     "name": "olive",
     "bg": "#e9e5cc",
     "main": "#92946f",
@@ -1190,6 +1838,86 @@
     "sub": "#eceff4",
     "text": "#98c379",
     "id": "palette:onedark"
+  },
+  {
+    "name": "orange copper",
+    "bg": "#f5e5e1",
+    "main": "#f9b487",
+    "sub": "#427a76",
+    "text": "#174143",
+    "id": "palette:colorhunt-orange-copper"
+  },
+  {
+    "name": "orange ember",
+    "bg": "#fe7743",
+    "main": "#273f4f",
+    "sub": "#efeeea",
+    "text": "#000000",
+    "id": "palette:colorhunt-orange-ember"
+  },
+  {
+    "name": "orange indigo",
+    "bg": "#001bb7",
+    "main": "#ff8040",
+    "sub": "#0046ff",
+    "text": "#f5f1dc",
+    "id": "palette:colorhunt-orange-indigo"
+  },
+  {
+    "name": "orange navy",
+    "bg": "#001f3d",
+    "main": "#ed985f",
+    "sub": "#f7b980",
+    "text": "#e6e6e6",
+    "id": "palette:colorhunt-orange-navy"
+  },
+  {
+    "name": "orange oxblood",
+    "bg": "#5e0006",
+    "main": "#d53e0f",
+    "sub": "#9b0f06",
+    "text": "#eed9b9",
+    "id": "palette:colorhunt-orange-oxblood"
+  },
+  {
+    "name": "orange paper",
+    "bg": "#faf3e1",
+    "main": "#fa8112",
+    "sub": "#f5e7c6",
+    "text": "#222222",
+    "id": "palette:colorhunt-orange-paper"
+  },
+  {
+    "name": "orange peach",
+    "bg": "#ffc570",
+    "main": "#547792",
+    "sub": "#efd2b0",
+    "text": "#1a3263",
+    "id": "palette:colorhunt-orange-peach"
+  },
+  {
+    "name": "orange plum",
+    "bg": "#1e104e",
+    "main": "#ff653f",
+    "sub": "#452e5a",
+    "text": "#ffc85c",
+    "id": "palette:colorhunt-orange-plum"
+  },
+  {
+    "name": "orange porcelain",
+    "bg": "#f5ebdd",
+    "main": "#f2765e",
+    "sub": "#315b8c",
+    "text": "#413333",
+    "id": "palette:colorhunt-orange-porcelain"
+  },
+  {
+    "name": "orange walnut",
+    "bg": "#443627",
+    "main": "#d98324",
+    "sub": "#efdcab",
+    "text": "#f2f6d0",
+    "id": "palette:colorhunt-orange-walnut"
   },
   {
     "name": "our theme",
@@ -1248,6 +1976,86 @@
     "id": "palette:peach-blossom"
   },
   {
+    "name": "peach coast",
+    "bg": "#f9dfdc",
+    "main": "#0a81ab",
+    "sub": "#0c4271",
+    "text": "#000000",
+    "id": "palette:colorhunt-peach-coast"
+  },
+  {
+    "name": "peach cobalt",
+    "bg": "#002366",
+    "main": "#fa8072",
+    "sub": "#0f52ba",
+    "text": "#ffdab9",
+    "id": "palette:colorhunt-peach-cobalt"
+  },
+  {
+    "name": "peach dusk",
+    "bg": "#121481",
+    "main": "#ffcbcb",
+    "sub": "#ffeae3",
+    "text": "#ffb1b1",
+    "id": "palette:colorhunt-peach-dusk"
+  },
+  {
+    "name": "peach harbor",
+    "bg": "#ffcbcb",
+    "main": "#407088",
+    "sub": "#ffb5b5",
+    "text": "#132743",
+    "id": "palette:colorhunt-peach-harbor"
+  },
+  {
+    "name": "peach indigo",
+    "bg": "#fbe4d6",
+    "main": "#261fb3",
+    "sub": "#161179",
+    "text": "#0c0950",
+    "id": "palette:colorhunt-peach-indigo"
+  },
+  {
+    "name": "peach ink",
+    "bg": "#000000",
+    "main": "#739ec9",
+    "sub": "#5682b1",
+    "text": "#ffe8db",
+    "id": "palette:colorhunt-peach-ink"
+  },
+  {
+    "name": "peach lilac",
+    "bg": "#fdd2bf",
+    "main": "#8236cb",
+    "sub": "#b97a95",
+    "text": "#290fba",
+    "id": "palette:colorhunt-peach-lilac"
+  },
+  {
+    "name": "peach midnight",
+    "bg": "#1b262c",
+    "main": "#ed6663",
+    "sub": "#0f4c81",
+    "text": "#ffa372",
+    "id": "palette:colorhunt-peach-midnight"
+  },
+  {
+    "name": "peach rose",
+    "bg": "#ffdfdf",
+    "main": "#315b96",
+    "sub": "#fbc1bc",
+    "text": "#233567",
+    "id": "palette:colorhunt-peach-rose"
+  },
+  {
+    "name": "peach sun",
+    "bg": "#0802a3",
+    "main": "#ff7676",
+    "sub": "#ff4b91",
+    "text": "#ffcd4b",
+    "id": "palette:colorhunt-peach-sun"
+  },
+  {
     "name": "peaches",
     "bg": "#e0d7c1",
     "main": "#dd7a5f",
@@ -1272,12 +2080,100 @@
     "id": "palette:colorhunt-pine-candlelight"
   },
   {
+    "name": "pine canopy",
+    "bg": "#132a13",
+    "main": "#90a955",
+    "sub": "#4f772d",
+    "text": "#ecf39e",
+    "id": "palette:coolors-pine-canopy"
+  },
+  {
+    "name": "pink cherry",
+    "bg": "#fcf5ee",
+    "main": "#ee6983",
+    "sub": "#ffc4c4",
+    "text": "#850e35",
+    "id": "palette:colorhunt-pink-cherry"
+  },
+  {
+    "name": "pink cocoa",
+    "bg": "#f9dec9",
+    "main": "#f78ca2",
+    "sub": "#d80032",
+    "text": "#3d0c11",
+    "id": "palette:colorhunt-pink-cocoa"
+  },
+  {
+    "name": "pink dusk",
+    "bg": "#533b4d",
+    "main": "#f564a9",
+    "sub": "#faa4bd",
+    "text": "#fae3c6",
+    "id": "palette:colorhunt-pink-dusk"
+  },
+  {
+    "name": "pink lagoon",
+    "bg": "#ffcfef",
+    "main": "#0a5eb0",
+    "sub": "#0a97b0",
+    "text": "#2a3335",
+    "id": "palette:colorhunt-pink-lagoon"
+  },
+  {
     "name": "pink lemonade",
     "bg": "#f6d992",
     "main": "#f6a192",
     "sub": "#f6b092",
     "text": "#fcfcf8",
     "id": "palette:pink-lemonade"
+  },
+  {
+    "name": "pink linen",
+    "bg": "#fff5f5",
+    "main": "#e2b4bd",
+    "sub": "#f7d6d0",
+    "text": "#4a4a4a",
+    "id": "palette:colorhunt-pink-linen"
+  },
+  {
+    "name": "pink midnight",
+    "bg": "#132043",
+    "main": "#f1b4bb",
+    "sub": "#1f4172",
+    "text": "#fdf0f0",
+    "id": "palette:colorhunt-pink-midnight"
+  },
+  {
+    "name": "pink orchid",
+    "bg": "#241468",
+    "main": "#ea1179",
+    "sub": "#9f0d7f",
+    "text": "#f79bd3",
+    "id": "palette:colorhunt-pink-orchid"
+  },
+  {
+    "name": "pink plum",
+    "bg": "#441752",
+    "main": "#a888b5",
+    "sub": "#8174a0",
+    "text": "#efb6c8",
+    "id": "palette:colorhunt-pink-plum"
+  },
+  {
+    "name": "pink sky",
+    "bg": "#fce9f1",
+    "main": "#73bbc9",
+    "sub": "#f1d4e5",
+    "text": "#080202",
+    "id": "palette:colorhunt-pink-sky"
+  },
+  {
+    "name": "pink velvet",
+    "bg": "#3a0519",
+    "main": "#a53860",
+    "sub": "#670d2f",
+    "text": "#ef88ad",
+    "id": "palette:colorhunt-pink-velvet"
   },
   {
     "name": "plum apricot",
@@ -1304,6 +2200,86 @@
     "id": "palette:pulse"
   },
   {
+    "name": "purple amethyst",
+    "bg": "#2e073f",
+    "main": "#ad49e1",
+    "sub": "#7a1cac",
+    "text": "#ebd3f8",
+    "id": "palette:colorhunt-purple-amethyst"
+  },
+  {
+    "name": "purple apricot",
+    "bg": "#ffead8",
+    "main": "#9b177e",
+    "sub": "#e8988a",
+    "text": "#2a1458",
+    "id": "palette:colorhunt-purple-apricot"
+  },
+  {
+    "name": "purple candle",
+    "bg": "#493d9e",
+    "main": "#b2a5ff",
+    "sub": "#dad2ff",
+    "text": "#fff2af",
+    "id": "palette:colorhunt-purple-candle"
+  },
+  {
+    "name": "purple cream",
+    "bg": "#fff7d1",
+    "main": "#6a42c2",
+    "sub": "#8b5dff",
+    "text": "#563a9c",
+    "id": "palette:colorhunt-purple-cream"
+  },
+  {
+    "name": "purple dusk",
+    "bg": "#3b1e54",
+    "main": "#9b7ebd",
+    "sub": "#d4bee4",
+    "text": "#eeeeee",
+    "id": "palette:colorhunt-purple-dusk"
+  },
+  {
+    "name": "purple lavender",
+    "bg": "#f3f8ff",
+    "main": "#7e30e1",
+    "sub": "#e26ee5",
+    "text": "#49108b",
+    "id": "palette:colorhunt-purple-lavender"
+  },
+  {
+    "name": "purple lilac",
+    "bg": "#f2afef",
+    "main": "#7360df",
+    "sub": "#c499f3",
+    "text": "#33186b",
+    "id": "palette:colorhunt-purple-lilac"
+  },
+  {
+    "name": "purple mulberry",
+    "bg": "#540863",
+    "main": "#e49ba6",
+    "sub": "#92487a",
+    "text": "#ffd3d5",
+    "id": "palette:colorhunt-purple-mulberry"
+  },
+  {
+    "name": "purple orchid",
+    "bg": "#3b0270",
+    "main": "#6f00ff",
+    "sub": "#e9b3fb",
+    "text": "#fff1f1",
+    "id": "palette:colorhunt-purple-orchid"
+  },
+  {
+    "name": "purple porcelain",
+    "bg": "#f5f5f5",
+    "main": "#dd88cf",
+    "sub": "#f8e7f6",
+    "text": "#4b164c",
+    "id": "palette:colorhunt-purple-porcelain"
+  },
+  {
     "name": "purpleish",
     "bg": "#1e1e32",
     "main": "#7a52cc",
@@ -1320,6 +2296,54 @@
     "id": "palette:rainbow-trail"
   },
   {
+    "name": "red blush",
+    "bg": "#f8eded",
+    "main": "#b43f3f",
+    "sub": "#ff8225",
+    "text": "#173b45",
+    "id": "palette:colorhunt-red-blush"
+  },
+  {
+    "name": "red burgundy",
+    "bg": "#800000",
+    "main": "#982b1c",
+    "sub": "#dad4b5",
+    "text": "#f2e8c6",
+    "id": "palette:colorhunt-red-burgundy"
+  },
+  {
+    "name": "red charcoal",
+    "bg": "#1d1616",
+    "main": "#d84040",
+    "sub": "#8e1616",
+    "text": "#eeeeee",
+    "id": "palette:colorhunt-red-charcoal"
+  },
+  {
+    "name": "red clover",
+    "bg": "#6e1a37",
+    "main": "#ae2448",
+    "sub": "#72baa9",
+    "text": "#d5e7b5",
+    "id": "palette:colorhunt-red-clover"
+  },
+  {
+    "name": "red cobalt",
+    "bg": "#134686",
+    "main": "#ed3f27",
+    "sub": "#feb21a",
+    "text": "#fdf4e3",
+    "id": "palette:colorhunt-red-cobalt"
+  },
+  {
+    "name": "red cream",
+    "bg": "#fef9e1",
+    "main": "#a31d1d",
+    "sub": "#e5d0ac",
+    "text": "#6d2323",
+    "id": "palette:colorhunt-red-cream"
+  },
+  {
     "name": "red dragon",
     "bg": "#1a0b0c",
     "main": "#ff3a32",
@@ -1328,12 +2352,44 @@
     "id": "palette:red-dragon"
   },
   {
+    "name": "red ink",
+    "bg": "#000000",
+    "main": "#ff0b55",
+    "sub": "#cf0f47",
+    "text": "#ffdede",
+    "id": "palette:colorhunt-red-ink"
+  },
+  {
+    "name": "red ivory",
+    "bg": "#f7f6e5",
+    "main": "#da4848",
+    "sub": "#76d2db",
+    "text": "#36064d",
+    "id": "palette:colorhunt-red-ivory"
+  },
+  {
     "name": "red samurai",
     "bg": "#84202c",
     "main": "#c79e6e",
     "sub": "#55131b",
     "text": "#e2dad0",
     "id": "palette:red-samurai"
+  },
+  {
+    "name": "red sandstone",
+    "bg": "#fbdb93",
+    "main": "#8a2d3b",
+    "sub": "#be5b50",
+    "text": "#641b2e",
+    "id": "palette:colorhunt-red-sandstone"
+  },
+  {
+    "name": "red vanilla",
+    "bg": "#fff5e1",
+    "main": "#c80036",
+    "sub": "#ff6969",
+    "text": "#0c1844",
+    "id": "palette:colorhunt-red-vanilla"
   },
   {
     "name": "repose dark",
@@ -1408,6 +2464,14 @@
     "id": "palette:rose-pine-moon"
   },
   {
+    "name": "rose quartz",
+    "bg": "#eeb4b3",
+    "main": "#502274",
+    "sub": "#c179b9",
+    "text": "#2f242c",
+    "id": "palette:coolors-rose-quartz"
+  },
+  {
     "name": "rudy",
     "bg": "#1a2b3e",
     "main": "#af8f5c",
@@ -1430,6 +2494,14 @@
     "sub": "#cc6f00",
     "text": "#4d2a00",
     "id": "palette:colorhunt-saffron-paper"
+  },
+  {
+    "name": "sage ceramic",
+    "bg": "#cad2c5",
+    "main": "#52796f",
+    "sub": "#84a98c",
+    "text": "#2f3e46",
+    "id": "palette:coolors-sage-ceramic"
   },
   {
     "name": "sage starlight",
@@ -1502,6 +2574,14 @@
     "sub": "#1c82adc4",
     "text": "#13005a",
     "id": "palette:slambook"
+  },
+  {
+    "name": "slate pearl",
+    "bg": "#f8f9fa",
+    "main": "#495057",
+    "sub": "#adb5bd",
+    "text": "#212529",
+    "id": "palette:coolors-slate-pearl"
   },
   {
     "name": "snes",
@@ -1632,6 +2712,86 @@
     "id": "palette:taro"
   },
   {
+    "name": "teal dusk",
+    "bg": "#332d56",
+    "main": "#71c0bb",
+    "sub": "#4e6688",
+    "text": "#e3eeb2",
+    "id": "palette:colorhunt-teal-dusk"
+  },
+  {
+    "name": "teal harbor",
+    "bg": "#243642",
+    "main": "#387478",
+    "sub": "#629584",
+    "text": "#e2f1e7",
+    "id": "palette:colorhunt-teal-harbor"
+  },
+  {
+    "name": "teal linen",
+    "bg": "#fffaec",
+    "main": "#578e7e",
+    "sub": "#f5ecd5",
+    "text": "#3d3d3d",
+    "id": "palette:colorhunt-teal-linen"
+  },
+  {
+    "name": "teal mint",
+    "bg": "#aaffc7",
+    "main": "#215b63",
+    "sub": "#67c090",
+    "text": "#124170",
+    "id": "palette:colorhunt-teal-mint"
+  },
+  {
+    "name": "teal mist",
+    "bg": "#ecf4d6",
+    "main": "#2d9596",
+    "sub": "#9ad0c2",
+    "text": "#265073",
+    "id": "palette:colorhunt-teal-mist"
+  },
+  {
+    "name": "teal orchid",
+    "bg": "#4e1f6e",
+    "main": "#45a9a9",
+    "sub": "#3e3e75",
+    "text": "#98e8de",
+    "id": "palette:colorhunt-teal-orchid"
+  },
+  {
+    "name": "teal peach",
+    "bg": "#fff5f2",
+    "main": "#568f87",
+    "sub": "#f5babb",
+    "text": "#064232",
+    "id": "palette:colorhunt-teal-peach"
+  },
+  {
+    "name": "teal petrol",
+    "bg": "#071952",
+    "main": "#37b7c3",
+    "sub": "#088395",
+    "text": "#ebf4f6",
+    "id": "palette:colorhunt-teal-petrol"
+  },
+  {
+    "name": "teal seafoam",
+    "bg": "#dafffb",
+    "main": "#64ccc5",
+    "sub": "#176b87",
+    "text": "#04364a",
+    "id": "palette:colorhunt-teal-seafoam"
+  },
+  {
+    "name": "teal slate",
+    "bg": "#222831",
+    "main": "#76abae",
+    "sub": "#31363f",
+    "text": "#eeeeee",
+    "id": "palette:colorhunt-teal-slate"
+  },
+  {
     "name": "teal terracotta",
     "bg": "#f8e0a4",
     "main": "#a82020",
@@ -1736,6 +2896,14 @@
     "id": "palette:vesper-light"
   },
   {
+    "name": "violet velvet",
+    "bg": "#10002b",
+    "main": "#c77dff",
+    "sub": "#5a189a",
+    "text": "#e0aaff",
+    "id": "palette:coolors-violet-velvet"
+  },
+  {
     "name": "viridescent",
     "bg": "#2c3333",
     "main": "#95d5b2",
@@ -1776,11 +2944,171 @@
     "id": "palette:wavez"
   },
   {
+    "name": "white cedar",
+    "bg": "#faf7f0",
+    "main": "#b17457",
+    "sub": "#d8d2c2",
+    "text": "#4a4947",
+    "id": "palette:colorhunt-white-cedar"
+  },
+  {
+    "name": "white cobalt",
+    "bg": "#fff8f8",
+    "main": "#1b56fd",
+    "sub": "#e9dfc3",
+    "text": "#0118d8",
+    "id": "palette:colorhunt-white-cobalt"
+  },
+  {
+    "name": "white jade",
+    "bg": "#fdfaf6",
+    "main": "#e4efe7",
+    "sub": "#faf1e6",
+    "text": "#064420",
+    "id": "palette:colorhunt-white-jade"
+  },
+  {
+    "name": "white lavender",
+    "bg": "#fff2f2",
+    "main": "#7886c7",
+    "sub": "#a9b5df",
+    "text": "#2d336b",
+    "id": "palette:colorhunt-white-lavender"
+  },
+  {
+    "name": "white mint",
+    "bg": "#f6f6f6",
+    "main": "#98ded9",
+    "sub": "#c7ffd8",
+    "text": "#161d6f",
+    "id": "palette:colorhunt-white-mint"
+  },
+  {
+    "name": "white navy",
+    "bg": "#fefaf6",
+    "main": "#dac0a3",
+    "sub": "#eadbc8",
+    "text": "#102c57",
+    "id": "palette:colorhunt-white-navy"
+  },
+  {
+    "name": "white ocean",
+    "bg": "#f4f4f4",
+    "main": "#1d546c",
+    "sub": "#1a3d64",
+    "text": "#0c2b4e",
+    "id": "palette:colorhunt-white-ocean"
+  },
+  {
+    "name": "white plum",
+    "bg": "#fffbf5",
+    "main": "#c3acd0",
+    "sub": "#f7efe5",
+    "text": "#674188",
+    "id": "palette:colorhunt-white-plum"
+  },
+  {
+    "name": "white rose",
+    "bg": "#fff5fd",
+    "main": "#ff96ad",
+    "sub": "#005a8d",
+    "text": "#022e57",
+    "id": "palette:colorhunt-white-rose"
+  },
+  {
+    "name": "white walnut",
+    "bg": "#fff8f0",
+    "main": "#8c5a3c",
+    "sub": "#c08552",
+    "text": "#4b2e2b",
+    "id": "palette:colorhunt-white-walnut"
+  },
+  {
     "name": "witch girl",
     "bg": "#f3dbda",
     "main": "#56786a",
     "sub": "#ddb4a7",
     "text": "#56786a",
     "id": "palette:witch-girl"
+  },
+  {
+    "name": "yellow apricot",
+    "bg": "#ffe8b4",
+    "main": "#aa1c41",
+    "sub": "#e68457",
+    "text": "#5e244e",
+    "id": "palette:colorhunt-yellow-apricot"
+  },
+  {
+    "name": "yellow cobalt",
+    "bg": "#3338a0",
+    "main": "#fcc61d",
+    "sub": "#c59560",
+    "text": "#f7f7f7",
+    "id": "palette:colorhunt-yellow-cobalt"
+  },
+  {
+    "name": "yellow forest",
+    "bg": "#0b1849",
+    "main": "#e4b028",
+    "sub": "#124d1c",
+    "text": "#ebede3",
+    "id": "palette:colorhunt-yellow-forest"
+  },
+  {
+    "name": "yellow graphite",
+    "bg": "#454040",
+    "main": "#d8d365",
+    "sub": "#605b51",
+    "text": "#e6f082",
+    "id": "palette:colorhunt-yellow-graphite"
+  },
+  {
+    "name": "yellow lemon",
+    "bg": "#ffde42",
+    "main": "#313e17",
+    "sub": "#4c5c2d",
+    "text": "#1b0c0c",
+    "id": "palette:colorhunt-yellow-lemon"
+  },
+  {
+    "name": "yellow linen",
+    "bg": "#ffebb8",
+    "main": "#bd5579",
+    "sub": "#ea9d9d",
+    "text": "#601d49",
+    "id": "palette:colorhunt-yellow-linen"
+  },
+  {
+    "name": "yellow olive",
+    "bg": "#133458",
+    "main": "#d99b21",
+    "sub": "#838921",
+    "text": "#faf7bb",
+    "id": "palette:colorhunt-yellow-olive"
+  },
+  {
+    "name": "yellow plum",
+    "bg": "#4d2b8c",
+    "main": "#eea727",
+    "sub": "#85409d",
+    "text": "#ffef5f",
+    "id": "palette:colorhunt-yellow-plum"
+  },
+  {
+    "name": "yellow sea",
+    "bg": "#fdeb9e",
+    "main": "#077a7d",
+    "sub": "#7ae2cf",
+    "text": "#06202b",
+    "id": "palette:colorhunt-yellow-sea"
+  },
+  {
+    "name": "yellow sky",
+    "bg": "#fdf5aa",
+    "main": "#34699a",
+    "sub": "#58a0c8",
+    "text": "#113f67",
+    "id": "palette:colorhunt-yellow-sky"
   }
 ]

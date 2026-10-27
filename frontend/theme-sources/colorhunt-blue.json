@@ -1,0 +1,208 @@
+{
+  "source": "https://colorhunt.co/palettes/blue",
+  "endpoint": "https://colorhunt.co/php/feed.php",
+  "retrievedAt": "2026-10-27T09:38:36.824Z",
+  "review": {
+    "requests": 5,
+    "records": 200,
+    "uniquePalettes": 200,
+    "criteria": [
+      "POST step=0 through step=4 with tags=blue and timeframe=30; increment step for each page.",
+      "The feed returns older palettes despite timeframe=30.",
+      "Five light and five dark themes with blue backgrounds or prominent accents; exclude existing Color Hunt combinations including reordered colors.",
+      "Preserve all four source colors with at least 7:1 background/text contrast; generated tokens maintain readable UI contrast."
+    ]
+  },
+  "palettes": [
+    {
+      "id": "palette:colorhunt-blue-glacier",
+      "name": "blue glacier",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/e3f2fd90caf92196f30d47a1",
+      "code": "e3f2fd90caf92196f30d47a1",
+      "colors": [
+        "#e3f2fd",
+        "#90caf9",
+        "#2196f3",
+        "#0d47a1"
+      ],
+      "likesAtRetrieval": 4927,
+      "feed": {
+        "tags": "blue",
+        "timeframe": 30,
+        "step": 0
+      }
+    },
+    {
+      "id": "palette:colorhunt-blue-periwinkle",
+      "name": "blue periwinkle",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/0915401b2cc17692ffabd2fa",
+      "code": "0915401b2cc17692ffabd2fa",
+      "colors": [
+        "#091540",
+        "#1b2cc1",
+        "#7692ff",
+        "#abd2fa"
+      ],
+      "likesAtRetrieval": 2213,
+      "feed": {
+        "tags": "blue",
+        "timeframe": 30,
+        "step": 0
+      }
+    },
+    {
+      "id": "palette:colorhunt-blue-frost",
+      "name": "blue frost",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/5409da4e71ff8dd8ffbbfbff",
+      "code": "5409da4e71ff8dd8ffbbfbff",
+      "colors": [
+        "#5409da",
+        "#4e71ff",
+        "#8dd8ff",
+        "#bbfbff"
+      ],
+      "likesAtRetrieval": 4440,
+      "feed": {
+        "tags": "blue",
+        "timeframe": 30,
+        "step": 4
+      }
+    },
+    {
+      "id": "palette:colorhunt-blue-haze",
+      "name": "blue haze",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/112e814647ae4382dfaaccd6",
+      "code": "112e814647ae4382dfaaccd6",
+      "colors": [
+        "#112e81",
+        "#4647ae",
+        "#4382df",
+        "#aaccd6"
+      ],
+      "likesAtRetrieval": 1889,
+      "feed": {
+        "tags": "blue",
+        "timeframe": 30,
+        "step": 0
+      }
+    },
+    {
+      "id": "palette:colorhunt-blue-linen",
+      "name": "blue linen",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/3558727aaace9cd5fff7f8f0",
+      "code": "3558727aaace9cd5fff7f8f0",
+      "colors": [
+        "#355872",
+        "#7aaace",
+        "#9cd5ff",
+        "#f7f8f0"
+      ],
+      "likesAtRetrieval": 6993,
+      "feed": {
+        "tags": "blue",
+        "timeframe": 30,
+        "step": 1
+      }
+    },
+    {
+      "id": "palette:colorhunt-blue-marine",
+      "name": "blue marine",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/1b3c53456882d2c1b6f9f3ef",
+      "code": "1b3c53456882d2c1b6f9f3ef",
+      "colors": [
+        "#1b3c53",
+        "#456882",
+        "#d2c1b6",
+        "#f9f3ef"
+      ],
+      "likesAtRetrieval": 7893,
+      "feed": {
+        "tags": "blue",
+        "timeframe": 30,
+        "step": 3
+      }
+    },
+    {
+      "id": "palette:colorhunt-blue-tide",
+      "name": "blue tide",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/2e50774da1a979d7bef6f4f0",
+      "code": "2e50774da1a979d7bef6f4f0",
+      "colors": [
+        "#2e5077",
+        "#4da1a9",
+        "#79d7be",
+        "#f6f4f0"
+      ],
+      "likesAtRetrieval": 6580,
+      "feed": {
+        "tags": "blue",
+        "timeframe": 30,
+        "step": 4
+      }
+    },
+    {
+      "id": "palette:colorhunt-blue-amber",
+      "name": "blue amber",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/00309200879effab5bfff2db",
+      "code": "00309200879effab5bfff2db",
+      "colors": [
+        "#003092",
+        "#00879e",
+        "#ffab5b",
+        "#fff2db"
+      ],
+      "likesAtRetrieval": 3903,
+      "feed": {
+        "tags": "blue",
+        "timeframe": 30,
+        "step": 4
+      }
+    },
+    {
+      "id": "palette:colorhunt-blue-midnight",
+      "name": "blue midnight",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/0c2c55296374629fadededce",
+      "code": "0c2c55296374629fadededce",
+      "colors": [
+        "#0c2c55",
+        "#296374",
+        "#629fad",
+        "#ededce"
+      ],
+      "likesAtRetrieval": 4109,
+      "feed": {
+        "tags": "blue",
+        "timeframe": 30,
+        "step": 2
+      }
+    },
+    {
+      "id": "palette:colorhunt-blue-indigo",
+      "name": "blue indigo",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/47347253629e87bac3d6f4ed",
+      "code": "47347253629e87bac3d6f4ed",
+      "colors": [
+        "#473472",
+        "#53629e",
+        "#87bac3",
+        "#d6f4ed"
+      ],
+      "likesAtRetrieval": 4041,
+      "feed": {
+        "tags": "blue",
+        "timeframe": 30,
+        "step": 2
+      }
+    }
+  ]
+}

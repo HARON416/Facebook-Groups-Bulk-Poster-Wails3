@@ -1,0 +1,208 @@
+{
+  "source": "https://colorhunt.co/palettes/yellow",
+  "endpoint": "https://colorhunt.co/php/feed.php",
+  "retrievedAt": "2026-10-27T09:04:19.485Z",
+  "review": {
+    "requests": 5,
+    "records": 200,
+    "uniquePalettes": 200,
+    "criteria": [
+      "POST step=0 through step=4 with tags=yellow and timeframe=30; increment step for each page.",
+      "The feed returns older palettes despite timeframe=30.",
+      "Five light and five dark themes with a yellow background or prominent accent; exclude existing Color Hunt combinations.",
+      "Preserve all four source colors with at least 7:1 background/text contrast; generated tokens maintain readable UI contrast."
+    ]
+  },
+  "palettes": [
+    {
+      "id": "palette:colorhunt-yellow-linen",
+      "name": "yellow linen",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/601d49bd5579ea9d9dffebb8",
+      "code": "601d49bd5579ea9d9dffebb8",
+      "colors": [
+        "#601d49",
+        "#bd5579",
+        "#ea9d9d",
+        "#ffebb8"
+      ],
+      "likesAtRetrieval": 2577,
+      "feed": {
+        "tags": "yellow",
+        "timeframe": 30,
+        "step": 0
+      }
+    },
+    {
+      "id": "palette:colorhunt-yellow-apricot",
+      "name": "yellow apricot",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/5e244eaa1c41e68457ffe8b4",
+      "code": "5e244eaa1c41e68457ffe8b4",
+      "colors": [
+        "#5e244e",
+        "#aa1c41",
+        "#e68457",
+        "#ffe8b4"
+      ],
+      "likesAtRetrieval": 1758,
+      "feed": {
+        "tags": "yellow",
+        "timeframe": 30,
+        "step": 1
+      }
+    },
+    {
+      "id": "palette:colorhunt-yellow-lemon",
+      "name": "yellow lemon",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/ffde424c5c2d313e171b0c0c",
+      "code": "ffde424c5c2d313e171b0c0c",
+      "colors": [
+        "#ffde42",
+        "#4c5c2d",
+        "#313e17",
+        "#1b0c0c"
+      ],
+      "likesAtRetrieval": 1308,
+      "feed": {
+        "tags": "yellow",
+        "timeframe": 30,
+        "step": 2
+      }
+    },
+    {
+      "id": "palette:colorhunt-yellow-sea",
+      "name": "yellow sea",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/fdeb9e7ae2cf077a7d06202b",
+      "code": "fdeb9e7ae2cf077a7d06202b",
+      "colors": [
+        "#fdeb9e",
+        "#7ae2cf",
+        "#077a7d",
+        "#06202b"
+      ],
+      "likesAtRetrieval": 1217,
+      "feed": {
+        "tags": "yellow",
+        "timeframe": 30,
+        "step": 1
+      }
+    },
+    {
+      "id": "palette:colorhunt-yellow-sky",
+      "name": "yellow sky",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/113f6734699a58a0c8fdf5aa",
+      "code": "113f6734699a58a0c8fdf5aa",
+      "colors": [
+        "#113f67",
+        "#34699a",
+        "#58a0c8",
+        "#fdf5aa"
+      ],
+      "likesAtRetrieval": 5109,
+      "feed": {
+        "tags": "yellow",
+        "timeframe": 30,
+        "step": 4
+      }
+    },
+    {
+      "id": "palette:colorhunt-yellow-olive",
+      "name": "yellow olive",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/133458838921d99b21faf7bb",
+      "code": "133458838921d99b21faf7bb",
+      "colors": [
+        "#133458",
+        "#838921",
+        "#d99b21",
+        "#faf7bb"
+      ],
+      "likesAtRetrieval": 932,
+      "feed": {
+        "tags": "yellow",
+        "timeframe": 30,
+        "step": 0
+      }
+    },
+    {
+      "id": "palette:colorhunt-yellow-forest",
+      "name": "yellow forest",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/0b1849124d1ce4b028ebede3",
+      "code": "0b1849124d1ce4b028ebede3",
+      "colors": [
+        "#0b1849",
+        "#124d1c",
+        "#e4b028",
+        "#ebede3"
+      ],
+      "likesAtRetrieval": 946,
+      "feed": {
+        "tags": "yellow",
+        "timeframe": 30,
+        "step": 1
+      }
+    },
+    {
+      "id": "palette:colorhunt-yellow-graphite",
+      "name": "yellow graphite",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/454040605b51d8d365e6f082",
+      "code": "454040605b51d8d365e6f082",
+      "colors": [
+        "#454040",
+        "#605b51",
+        "#d8d365",
+        "#e6f082"
+      ],
+      "likesAtRetrieval": 1230,
+      "feed": {
+        "tags": "yellow",
+        "timeframe": 30,
+        "step": 2
+      }
+    },
+    {
+      "id": "palette:colorhunt-yellow-plum",
+      "name": "yellow plum",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/4d2b8c85409deea727ffef5f",
+      "code": "4d2b8c85409deea727ffef5f",
+      "colors": [
+        "#4d2b8c",
+        "#85409d",
+        "#eea727",
+        "#ffef5f"
+      ],
+      "likesAtRetrieval": 1910,
+      "feed": {
+        "tags": "yellow",
+        "timeframe": 30,
+        "step": 3
+      }
+    },
+    {
+      "id": "palette:colorhunt-yellow-cobalt",
+      "name": "yellow cobalt",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/3338a0c59560fcc61df7f7f7",
+      "code": "3338a0c59560fcc61df7f7f7",
+      "colors": [
+        "#3338a0",
+        "#c59560",
+        "#fcc61d",
+        "#f7f7f7"
+      ],
+      "likesAtRetrieval": 1618,
+      "feed": {
+        "tags": "yellow",
+        "timeframe": 30,
+        "step": 4
+      }
+    }
+  ]
+}

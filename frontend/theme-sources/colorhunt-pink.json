@@ -1,0 +1,208 @@
+{
+  "source": "https://colorhunt.co/palettes/pink",
+  "endpoint": "https://colorhunt.co/php/feed.php",
+  "retrievedAt": "2026-10-27T09:26:41.144Z",
+  "review": {
+    "requests": 5,
+    "records": 200,
+    "uniquePalettes": 200,
+    "criteria": [
+      "POST step=0 through step=4 with tags=pink and timeframe=30; increment step for each page.",
+      "The feed returns older palettes despite timeframe=30.",
+      "Five light and five dark themes with pink backgrounds or prominent accents; exclude existing Color Hunt combinations including reordered colors.",
+      "Preserve all four source colors with at least 7:1 background/text contrast; generated tokens maintain readable UI contrast."
+    ]
+  },
+  "palettes": [
+    {
+      "id": "palette:colorhunt-pink-linen",
+      "name": "pink linen",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/fff5f5f7d6d0e2b4bd4a4a4a",
+      "code": "fff5f5f7d6d0e2b4bd4a4a4a",
+      "colors": [
+        "#fff5f5",
+        "#f7d6d0",
+        "#e2b4bd",
+        "#4a4a4a"
+      ],
+      "likesAtRetrieval": 3641,
+      "feed": {
+        "tags": "pink",
+        "timeframe": 30,
+        "step": 0
+      }
+    },
+    {
+      "id": "palette:colorhunt-pink-cherry",
+      "name": "pink cherry",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/fcf5eeffc4c4ee6983850e35",
+      "code": "fcf5eeffc4c4ee6983850e35",
+      "colors": [
+        "#fcf5ee",
+        "#ffc4c4",
+        "#ee6983",
+        "#850e35"
+      ],
+      "likesAtRetrieval": 7807,
+      "feed": {
+        "tags": "pink",
+        "timeframe": 30,
+        "step": 1
+      }
+    },
+    {
+      "id": "palette:colorhunt-pink-lagoon",
+      "name": "pink lagoon",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/ffcfef0a97b00a5eb02a3335",
+      "code": "ffcfef0a97b00a5eb02a3335",
+      "colors": [
+        "#ffcfef",
+        "#0a97b0",
+        "#0a5eb0",
+        "#2a3335"
+      ],
+      "likesAtRetrieval": 3005,
+      "feed": {
+        "tags": "pink",
+        "timeframe": 30,
+        "step": 2
+      }
+    },
+    {
+      "id": "palette:colorhunt-pink-cocoa",
+      "name": "pink cocoa",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/3d0c11d80032f78ca2f9dec9",
+      "code": "3d0c11d80032f78ca2f9dec9",
+      "colors": [
+        "#3d0c11",
+        "#d80032",
+        "#f78ca2",
+        "#f9dec9"
+      ],
+      "likesAtRetrieval": 6610,
+      "feed": {
+        "tags": "pink",
+        "timeframe": 30,
+        "step": 4
+      }
+    },
+    {
+      "id": "palette:colorhunt-pink-sky",
+      "name": "pink sky",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/fce9f1f1d4e573bbc9080202",
+      "code": "fce9f1f1d4e573bbc9080202",
+      "colors": [
+        "#fce9f1",
+        "#f1d4e5",
+        "#73bbc9",
+        "#080202"
+      ],
+      "likesAtRetrieval": 4990,
+      "feed": {
+        "tags": "pink",
+        "timeframe": 30,
+        "step": 4
+      }
+    },
+    {
+      "id": "palette:colorhunt-pink-velvet",
+      "name": "pink velvet",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/3a0519670d2fa53860ef88ad",
+      "code": "3a0519670d2fa53860ef88ad",
+      "colors": [
+        "#3a0519",
+        "#670d2f",
+        "#a53860",
+        "#ef88ad"
+      ],
+      "likesAtRetrieval": 9106,
+      "feed": {
+        "tags": "pink",
+        "timeframe": 30,
+        "step": 1
+      }
+    },
+    {
+      "id": "palette:colorhunt-pink-plum",
+      "name": "pink plum",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/4417528174a0a888b5efb6c8",
+      "code": "4417528174a0a888b5efb6c8",
+      "colors": [
+        "#441752",
+        "#8174a0",
+        "#a888b5",
+        "#efb6c8"
+      ],
+      "likesAtRetrieval": 6219,
+      "feed": {
+        "tags": "pink",
+        "timeframe": 30,
+        "step": 2
+      }
+    },
+    {
+      "id": "palette:colorhunt-pink-midnight",
+      "name": "pink midnight",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/1320431f4172f1b4bbfdf0f0",
+      "code": "1320431f4172f1b4bbfdf0f0",
+      "colors": [
+        "#132043",
+        "#1f4172",
+        "#f1b4bb",
+        "#fdf0f0"
+      ],
+      "likesAtRetrieval": 9264,
+      "feed": {
+        "tags": "pink",
+        "timeframe": 30,
+        "step": 4
+      }
+    },
+    {
+      "id": "palette:colorhunt-pink-orchid",
+      "name": "pink orchid",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/2414689f0d7fea1179f79bd3",
+      "code": "2414689f0d7fea1179f79bd3",
+      "colors": [
+        "#241468",
+        "#9f0d7f",
+        "#ea1179",
+        "#f79bd3"
+      ],
+      "likesAtRetrieval": 5250,
+      "feed": {
+        "tags": "pink",
+        "timeframe": 30,
+        "step": 4
+      }
+    },
+    {
+      "id": "palette:colorhunt-pink-dusk",
+      "name": "pink dusk",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/533b4df564a9faa4bdfae3c6",
+      "code": "533b4df564a9faa4bdfae3c6",
+      "colors": [
+        "#533b4d",
+        "#f564a9",
+        "#faa4bd",
+        "#fae3c6"
+      ],
+      "likesAtRetrieval": 3735,
+      "feed": {
+        "tags": "pink",
+        "timeframe": 30,
+        "step": 1
+      }
+    }
+  ]
+}

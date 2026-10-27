@@ -1,0 +1,208 @@
+{
+  "source": "https://colorhunt.co/palettes/navy",
+  "endpoint": "https://colorhunt.co/php/feed.php",
+  "retrievedAt": "2026-10-27T09:23:19.162Z",
+  "review": {
+    "requests": 5,
+    "records": 200,
+    "uniquePalettes": 200,
+    "criteria": [
+      "POST step=0 through step=4 with tags=navy and timeframe=30; increment step for each page.",
+      "The feed returns older palettes despite timeframe=30.",
+      "Ten dark themes with navy backgrounds and varied accents; exclude existing Color Hunt combinations including reordered colors.",
+      "Preserve all four source colors with at least 7:1 background/text contrast; generated tokens maintain readable UI contrast."
+    ]
+  },
+  "palettes": [
+    {
+      "id": "palette:colorhunt-navy-azure",
+      "name": "navy azure",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/0f28541c4d8d4988c4bde8f5",
+      "code": "0f28541c4d8d4988c4bde8f5",
+      "colors": [
+        "#0f2854",
+        "#1c4d8d",
+        "#4988c4",
+        "#bde8f5"
+      ],
+      "likesAtRetrieval": 8676,
+      "feed": {
+        "tags": "navy",
+        "timeframe": 30,
+        "step": 1
+      }
+    },
+    {
+      "id": "palette:colorhunt-navy-tide",
+      "name": "navy tide",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/0b2d720992c20ac4e0f6e7bc",
+      "code": "0b2d720992c20ac4e0f6e7bc",
+      "colors": [
+        "#0b2d72",
+        "#0992c2",
+        "#0ac4e0",
+        "#f6e7bc"
+      ],
+      "likesAtRetrieval": 2910,
+      "feed": {
+        "tags": "navy",
+        "timeframe": 30,
+        "step": 1
+      }
+    },
+    {
+      "id": "palette:colorhunt-navy-linen",
+      "name": "navy linen",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/2135553e5879d8c4b6f5efe7",
+      "code": "2135553e5879d8c4b6f5efe7",
+      "colors": [
+        "#213555",
+        "#3e5879",
+        "#d8c4b6",
+        "#f5efe7"
+      ],
+      "likesAtRetrieval": 14510,
+      "feed": {
+        "tags": "navy",
+        "timeframe": 30,
+        "step": 3
+      }
+    },
+    {
+      "id": "palette:colorhunt-navy-coral",
+      "name": "navy coral",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/1a2a4ff7a5a5ffdbb6fff2ef",
+      "code": "1a2a4ff7a5a5ffdbb6fff2ef",
+      "colors": [
+        "#1a2a4f",
+        "#f7a5a5",
+        "#ffdbb6",
+        "#fff2ef"
+      ],
+      "likesAtRetrieval": 3064,
+      "feed": {
+        "tags": "navy",
+        "timeframe": 30,
+        "step": 1
+      }
+    },
+    {
+      "id": "palette:colorhunt-navy-lavender",
+      "name": "navy lavender",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/0b1d51725cad8ccdebffe3a9",
+      "code": "0b1d51725cad8ccdebffe3a9",
+      "colors": [
+        "#0b1d51",
+        "#725cad",
+        "#8ccdeb",
+        "#ffe3a9"
+      ],
+      "likesAtRetrieval": 2882,
+      "feed": {
+        "tags": "navy",
+        "timeframe": 30,
+        "step": 2
+      }
+    },
+    {
+      "id": "palette:colorhunt-navy-steel",
+      "name": "navy steel",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/001f3f3a6d8c6a9ab0ead8b1",
+      "code": "001f3f3a6d8c6a9ab0ead8b1",
+      "colors": [
+        "#001f3f",
+        "#3a6d8c",
+        "#6a9ab0",
+        "#ead8b1"
+      ],
+      "likesAtRetrieval": 10379,
+      "feed": {
+        "tags": "navy",
+        "timeframe": 30,
+        "step": 3
+      }
+    },
+    {
+      "id": "palette:colorhunt-navy-blush",
+      "name": "navy blush",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/102c571679abffb1b1ffcbcb",
+      "code": "102c571679abffb1b1ffcbcb",
+      "colors": [
+        "#102c57",
+        "#1679ab",
+        "#ffb1b1",
+        "#ffcbcb"
+      ],
+      "likesAtRetrieval": 5877,
+      "feed": {
+        "tags": "navy",
+        "timeframe": 30,
+        "step": 3
+      }
+    },
+    {
+      "id": "palette:colorhunt-navy-dusk",
+      "name": "navy dusk",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/02152603346e6eacdae2e2b6",
+      "code": "02152603346e6eacdae2e2b6",
+      "colors": [
+        "#021526",
+        "#03346e",
+        "#6eacda",
+        "#e2e2b6"
+      ],
+      "likesAtRetrieval": 9299,
+      "feed": {
+        "tags": "navy",
+        "timeframe": 30,
+        "step": 3
+      }
+    },
+    {
+      "id": "palette:colorhunt-navy-sage",
+      "name": "navy sage",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/11235a596fb7c6cf9bf6eca9",
+      "code": "11235a596fb7c6cf9bf6eca9",
+      "colors": [
+        "#11235a",
+        "#596fb7",
+        "#c6cf9b",
+        "#f6eca9"
+      ],
+      "likesAtRetrieval": 3151,
+      "feed": {
+        "tags": "navy",
+        "timeframe": 30,
+        "step": 4
+      }
+    },
+    {
+      "id": "palette:colorhunt-navy-mint",
+      "name": "navy mint",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/161d6f0b2f9f98ded9c7ffd8",
+      "code": "161d6f0b2f9f98ded9c7ffd8",
+      "colors": [
+        "#161d6f",
+        "#0b2f9f",
+        "#98ded9",
+        "#c7ffd8"
+      ],
+      "likesAtRetrieval": 5135,
+      "feed": {
+        "tags": "navy",
+        "timeframe": 30,
+        "step": 3
+      }
+    }
+  ]
+}

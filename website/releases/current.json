@@ -1,5 +1,5 @@
 {
-  "version": "0.1.9",
+  "version": "0.1.10",
   "date": "2026-10-26",
   "notes": [],
   "downloads": [
@@ -7,49 +7,49 @@
       "os": "windows",
       "name": "Windows installer",
       "detail": "Windows x64 (.exe)",
-      "url": "https://postika-desktop-application.b-cdn.net/downloads/0.1.9/postika-0.1.9-windows-amd64-installer.exe"
+      "url": "https://postika-desktop-application.b-cdn.net/downloads/0.1.10/postika-0.1.10-windows-amd64-installer.exe"
     },
     {
       "os": "windows",
       "name": "Windows portable",
       "detail": "Windows x64 (.zip)",
-      "url": "https://postika-desktop-application.b-cdn.net/downloads/0.1.9/postika-0.1.9-windows-amd64-portable.zip"
+      "url": "https://postika-desktop-application.b-cdn.net/downloads/0.1.10/postika-0.1.10-windows-amd64-portable.zip"
     },
     {
       "os": "macos",
       "name": "Apple Silicon",
       "detail": "M-series Macs (.dmg)",
-      "url": "https://postika-desktop-application.b-cdn.net/downloads/0.1.9/postika-0.1.9-darwin-arm64.dmg"
+      "url": "https://postika-desktop-application.b-cdn.net/downloads/0.1.10/postika-0.1.10-darwin-arm64.dmg"
     },
     {
       "os": "macos",
       "name": "Intel Mac",
       "detail": "Intel Macs (.dmg)",
-      "url": "https://postika-desktop-application.b-cdn.net/downloads/0.1.9/postika-0.1.9-darwin-amd64.dmg"
+      "url": "https://postika-desktop-application.b-cdn.net/downloads/0.1.10/postika-0.1.10-darwin-amd64.dmg"
     },
     {
       "os": "linux",
       "name": "AppImage",
       "detail": "Linux x64 (portable)",
-      "url": "https://postika-desktop-application.b-cdn.net/downloads/0.1.9/postika-0.1.9-linux-amd64.AppImage"
+      "url": "https://postika-desktop-application.b-cdn.net/downloads/0.1.10/postika-0.1.10-linux-amd64.AppImage"
     },
     {
       "os": "linux",
       "name": "Debian / Ubuntu",
       "detail": "Linux x64 (.deb)",
-      "url": "https://postika-desktop-application.b-cdn.net/downloads/0.1.9/postika-0.1.9-linux-amd64.deb"
+      "url": "https://postika-desktop-application.b-cdn.net/downloads/0.1.10/postika-0.1.10-linux-amd64.deb"
     },
     {
       "os": "linux",
       "name": "Fedora / RPM",
       "detail": "Linux x64 (.rpm)",
-      "url": "https://postika-desktop-application.b-cdn.net/downloads/0.1.9/postika-0.1.9-linux-amd64.rpm"
+      "url": "https://postika-desktop-application.b-cdn.net/downloads/0.1.10/postika-0.1.10-linux-amd64.rpm"
     },
     {
       "os": "linux",
       "name": "Arch Linux",
       "detail": "Linux x64 (.pkg.tar.zst)",
-      "url": "https://postika-desktop-application.b-cdn.net/downloads/0.1.9/postika-0.1.9-linux-amd64.pkg.tar.zst"
+      "url": "https://postika-desktop-application.b-cdn.net/downloads/0.1.10/postika-0.1.10-linux-amd64.pkg.tar.zst"
     }
   ]
 }

@@ -1,0 +1,208 @@
+{
+  "source": "https://colorhunt.co/palettes/purple",
+  "endpoint": "https://colorhunt.co/php/feed.php",
+  "retrievedAt": "2026-10-27T09:24:26.971Z",
+  "review": {
+    "requests": 5,
+    "records": 200,
+    "uniquePalettes": 200,
+    "criteria": [
+      "POST step=0 through step=4 with tags=purple and timeframe=30; increment step for each page.",
+      "The feed returns older palettes despite timeframe=30.",
+      "Five light and five dark themes with purple backgrounds or prominent accents; exclude existing Color Hunt combinations including reordered colors.",
+      "Preserve all four source colors with at least 7:1 background/text contrast; generated tokens maintain readable UI contrast."
+    ]
+  },
+  "palettes": [
+    {
+      "id": "palette:colorhunt-purple-lavender",
+      "name": "purple lavender",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/f3f8ffe26ee57e30e149108b",
+      "code": "f3f8ffe26ee57e30e149108b",
+      "colors": [
+        "#f3f8ff",
+        "#e26ee5",
+        "#7e30e1",
+        "#49108b"
+      ],
+      "likesAtRetrieval": 5586,
+      "feed": {
+        "tags": "purple",
+        "timeframe": 30,
+        "step": 4
+      }
+    },
+    {
+      "id": "palette:colorhunt-purple-lilac",
+      "name": "purple lilac",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/f2afefc499f37360df33186b",
+      "code": "f2afefc499f37360df33186b",
+      "colors": [
+        "#f2afef",
+        "#c499f3",
+        "#7360df",
+        "#33186b"
+      ],
+      "likesAtRetrieval": 5138,
+      "feed": {
+        "tags": "purple",
+        "timeframe": 30,
+        "step": 4
+      }
+    },
+    {
+      "id": "palette:colorhunt-purple-cream",
+      "name": "purple cream",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/fff7d18b5dff6a42c2563a9c",
+      "code": "fff7d18b5dff6a42c2563a9c",
+      "colors": [
+        "#fff7d1",
+        "#8b5dff",
+        "#6a42c2",
+        "#563a9c"
+      ],
+      "likesAtRetrieval": 3122,
+      "feed": {
+        "tags": "purple",
+        "timeframe": 30,
+        "step": 2
+      }
+    },
+    {
+      "id": "palette:colorhunt-purple-porcelain",
+      "name": "purple porcelain",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/f5f5f5f8e7f6dd88cf4b164c",
+      "code": "f5f5f5f8e7f6dd88cf4b164c",
+      "colors": [
+        "#f5f5f5",
+        "#f8e7f6",
+        "#dd88cf",
+        "#4b164c"
+      ],
+      "likesAtRetrieval": 4374,
+      "feed": {
+        "tags": "purple",
+        "timeframe": 30,
+        "step": 2
+      }
+    },
+    {
+      "id": "palette:colorhunt-purple-apricot",
+      "name": "purple apricot",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/ffead8e8988a9b177e2a1458",
+      "code": "ffead8e8988a9b177e2a1458",
+      "colors": [
+        "#ffead8",
+        "#e8988a",
+        "#9b177e",
+        "#2a1458"
+      ],
+      "likesAtRetrieval": 1996,
+      "feed": {
+        "tags": "purple",
+        "timeframe": 30,
+        "step": 1
+      }
+    },
+    {
+      "id": "palette:colorhunt-purple-orchid",
+      "name": "purple orchid",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/3b02706f00ffe9b3fbfff1f1",
+      "code": "3b02706f00ffe9b3fbfff1f1",
+      "colors": [
+        "#3b0270",
+        "#6f00ff",
+        "#e9b3fb",
+        "#fff1f1"
+      ],
+      "likesAtRetrieval": 3247,
+      "feed": {
+        "tags": "purple",
+        "timeframe": 30,
+        "step": 1
+      }
+    },
+    {
+      "id": "palette:colorhunt-purple-dusk",
+      "name": "purple dusk",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/3b1e549b7ebdd4bee4eeeeee",
+      "code": "3b1e549b7ebdd4bee4eeeeee",
+      "colors": [
+        "#3b1e54",
+        "#9b7ebd",
+        "#d4bee4",
+        "#eeeeee"
+      ],
+      "likesAtRetrieval": 9418,
+      "feed": {
+        "tags": "purple",
+        "timeframe": 30,
+        "step": 2
+      }
+    },
+    {
+      "id": "palette:colorhunt-purple-mulberry",
+      "name": "purple mulberry",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/54086392487ae49ba6ffd3d5",
+      "code": "54086392487ae49ba6ffd3d5",
+      "colors": [
+        "#540863",
+        "#92487a",
+        "#e49ba6",
+        "#ffd3d5"
+      ],
+      "likesAtRetrieval": 5298,
+      "feed": {
+        "tags": "purple",
+        "timeframe": 30,
+        "step": 1
+      }
+    },
+    {
+      "id": "palette:colorhunt-purple-amethyst",
+      "name": "purple amethyst",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/2e073f7a1cacad49e1ebd3f8",
+      "code": "2e073f7a1cacad49e1ebd3f8",
+      "colors": [
+        "#2e073f",
+        "#7a1cac",
+        "#ad49e1",
+        "#ebd3f8"
+      ],
+      "likesAtRetrieval": 9365,
+      "feed": {
+        "tags": "purple",
+        "timeframe": 30,
+        "step": 3
+      }
+    },
+    {
+      "id": "palette:colorhunt-purple-candle",
+      "name": "purple candle",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/493d9eb2a5ffdad2fffff2af",
+      "code": "493d9eb2a5ffdad2fffff2af",
+      "colors": [
+        "#493d9e",
+        "#b2a5ff",
+        "#dad2ff",
+        "#fff2af"
+      ],
+      "likesAtRetrieval": 4034,
+      "feed": {
+        "tags": "purple",
+        "timeframe": 30,
+        "step": 2
+      }
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+{
+  "source": "https://colorhunt.co/palettes/teal",
+  "endpoint": "https://colorhunt.co/php/feed.php",
+  "retrievedAt": "2026-10-27T09:34:28.936Z",
+  "review": {
+    "requests": 5,
+    "records": 200,
+    "uniquePalettes": 200,
+    "criteria": [
+      "POST step=0 through step=4 with tags=teal and timeframe=30; increment step for each page.",
+      "The feed returns older palettes despite timeframe=30.",
+      "Five light and five dark themes with teal backgrounds or prominent accents; exclude existing Color Hunt combinations including reordered colors.",
+      "Preserve all four source colors with at least 7:1 background/text contrast; generated tokens maintain readable UI contrast."
+    ]
+  },
+  "palettes": [
+    {
+      "id": "palette:colorhunt-teal-linen",
+      "name": "teal linen",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/fffaecf5ecd5578e7e3d3d3d",
+      "code": "fffaecf5ecd5578e7e3d3d3d",
+      "colors": [
+        "#fffaec",
+        "#f5ecd5",
+        "#578e7e",
+        "#3d3d3d"
+      ],
+      "likesAtRetrieval": 5111,
+      "feed": {
+        "tags": "teal",
+        "timeframe": 30,
+        "step": 3
+      }
+    },
+    {
+      "id": "palette:colorhunt-teal-peach",
+      "name": "teal peach",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/fff5f2f5babb568f87064232",
+      "code": "fff5f2f5babb568f87064232",
+      "colors": [
+        "#fff5f2",
+        "#f5babb",
+        "#568f87",
+        "#064232"
+      ],
+      "likesAtRetrieval": 5991,
+      "feed": {
+        "tags": "teal",
+        "timeframe": 30,
+        "step": 2
+      }
+    },
+    {
+      "id": "palette:colorhunt-teal-mist",
+      "name": "teal mist",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/ecf4d69ad0c22d9596265073",
+      "code": "ecf4d69ad0c22d9596265073",
+      "colors": [
+        "#ecf4d6",
+        "#9ad0c2",
+        "#2d9596",
+        "#265073"
+      ],
+      "likesAtRetrieval": 8010,
+      "feed": {
+        "tags": "teal",
+        "timeframe": 30,
+        "step": 4
+      }
+    },
+    {
+      "id": "palette:colorhunt-teal-mint",
+      "name": "teal mint",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/aaffc767c090215b63124170",
+      "code": "aaffc767c090215b63124170",
+      "colors": [
+        "#aaffc7",
+        "#67c090",
+        "#215b63",
+        "#124170"
+      ],
+      "likesAtRetrieval": 1400,
+      "feed": {
+        "tags": "teal",
+        "timeframe": 30,
+        "step": 0
+      }
+    },
+    {
+      "id": "palette:colorhunt-teal-seafoam",
+      "name": "teal seafoam",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/04364a176b8764ccc5dafffb",
+      "code": "04364a176b8764ccc5dafffb",
+      "colors": [
+        "#04364a",
+        "#176b87",
+        "#64ccc5",
+        "#dafffb"
+      ],
+      "likesAtRetrieval": 9952,
+      "feed": {
+        "tags": "teal",
+        "timeframe": 30,
+        "step": 4
+      }
+    },
+    {
+      "id": "palette:colorhunt-teal-harbor",
+      "name": "teal harbor",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/243642387478629584e2f1e7",
+      "code": "243642387478629584e2f1e7",
+      "colors": [
+        "#243642",
+        "#387478",
+        "#629584",
+        "#e2f1e7"
+      ],
+      "likesAtRetrieval": 7143,
+      "feed": {
+        "tags": "teal",
+        "timeframe": 30,
+        "step": 3
+      }
+    },
+    {
+      "id": "palette:colorhunt-teal-petrol",
+      "name": "teal petrol",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/07195208839537b7c3ebf4f6",
+      "code": "07195208839537b7c3ebf4f6",
+      "colors": [
+        "#071952",
+        "#088395",
+        "#37b7c3",
+        "#ebf4f6"
+      ],
+      "likesAtRetrieval": 9441,
+      "feed": {
+        "tags": "teal",
+        "timeframe": 30,
+        "step": 3
+      }
+    },
+    {
+      "id": "palette:colorhunt-teal-slate",
+      "name": "teal slate",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/22283131363f76abaeeeeeee",
+      "code": "22283131363f76abaeeeeeee",
+      "colors": [
+        "#222831",
+        "#31363f",
+        "#76abae",
+        "#eeeeee"
+      ],
+      "likesAtRetrieval": 16711,
+      "feed": {
+        "tags": "teal",
+        "timeframe": 30,
+        "step": 4
+      }
+    },
+    {
+      "id": "palette:colorhunt-teal-orchid",
+      "name": "teal orchid",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/4e1f6e3e3e7545a9a998e8de",
+      "code": "4e1f6e3e3e7545a9a998e8de",
+      "colors": [
+        "#4e1f6e",
+        "#3e3e75",
+        "#45a9a9",
+        "#98e8de"
+      ],
+      "likesAtRetrieval": 1407,
+      "feed": {
+        "tags": "teal",
+        "timeframe": 30,
+        "step": 0
+      }
+    },
+    {
+      "id": "palette:colorhunt-teal-dusk",
+      "name": "teal dusk",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/332d564e668871c0bbe3eeb2",
+      "code": "332d564e668871c0bbe3eeb2",
+      "colors": [
+        "#332d56",
+        "#4e6688",
+        "#71c0bb",
+        "#e3eeb2"
+      ],
+      "likesAtRetrieval": 2684,
+      "feed": {
+        "tags": "teal",
+        "timeframe": 30,
+        "step": 2
+      }
+    }
+  ]
+}

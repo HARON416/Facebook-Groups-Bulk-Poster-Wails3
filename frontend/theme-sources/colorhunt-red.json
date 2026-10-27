@@ -1,0 +1,208 @@
+{
+  "source": "https://colorhunt.co/palettes/red",
+  "endpoint": "https://colorhunt.co/php/feed.php",
+  "retrievedAt": "2026-10-27T09:08:29.102Z",
+  "review": {
+    "requests": 5,
+    "records": 200,
+    "uniquePalettes": 200,
+    "criteria": [
+      "POST step=0 through step=4 with tags=red and timeframe=30; increment step for each page.",
+      "The feed returns older palettes despite timeframe=30.",
+      "Five light and five dark themes with a red background or prominent accent; exclude existing Color Hunt combinations and near-duplicate selections.",
+      "Preserve all four source colors with at least 7:1 background/text contrast; generated tokens maintain readable UI contrast."
+    ]
+  },
+  "palettes": [
+    {
+      "id": "palette:colorhunt-red-ivory",
+      "name": "red ivory",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/f7f6e576d2dbda484836064d",
+      "code": "f7f6e576d2dbda484836064d",
+      "colors": [
+        "#f7f6e5",
+        "#76d2db",
+        "#da4848",
+        "#36064d"
+      ],
+      "likesAtRetrieval": 1479,
+      "feed": {
+        "tags": "red",
+        "timeframe": 30,
+        "step": 1
+      }
+    },
+    {
+      "id": "palette:colorhunt-red-cream",
+      "name": "red cream",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/fef9e1e5d0aca31d1d6d2323",
+      "code": "fef9e1e5d0aca31d1d6d2323",
+      "colors": [
+        "#fef9e1",
+        "#e5d0ac",
+        "#a31d1d",
+        "#6d2323"
+      ],
+      "likesAtRetrieval": 11127,
+      "feed": {
+        "tags": "red",
+        "timeframe": 30,
+        "step": 3
+      }
+    },
+    {
+      "id": "palette:colorhunt-red-blush",
+      "name": "red blush",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/f8ededff8225b43f3f173b45",
+      "code": "f8ededff8225b43f3f173b45",
+      "colors": [
+        "#f8eded",
+        "#ff8225",
+        "#b43f3f",
+        "#173b45"
+      ],
+      "likesAtRetrieval": 5016,
+      "feed": {
+        "tags": "red",
+        "timeframe": 30,
+        "step": 4
+      }
+    },
+    {
+      "id": "palette:colorhunt-red-vanilla",
+      "name": "red vanilla",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/fff5e1ff6969c800360c1844",
+      "code": "fff5e1ff6969c800360c1844",
+      "colors": [
+        "#fff5e1",
+        "#ff6969",
+        "#c80036",
+        "#0c1844"
+      ],
+      "likesAtRetrieval": 6996,
+      "feed": {
+        "tags": "red",
+        "timeframe": 30,
+        "step": 4
+      }
+    },
+    {
+      "id": "palette:colorhunt-red-sandstone",
+      "name": "red sandstone",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/fbdb93be5b508a2d3b641b2e",
+      "code": "fbdb93be5b508a2d3b641b2e",
+      "colors": [
+        "#fbdb93",
+        "#be5b50",
+        "#8a2d3b",
+        "#641b2e"
+      ],
+      "likesAtRetrieval": 6176,
+      "feed": {
+        "tags": "red",
+        "timeframe": 30,
+        "step": 2
+      }
+    },
+    {
+      "id": "palette:colorhunt-red-ink",
+      "name": "red ink",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/000000cf0f47ff0b55ffdede",
+      "code": "000000cf0f47ff0b55ffdede",
+      "colors": [
+        "#000000",
+        "#cf0f47",
+        "#ff0b55",
+        "#ffdede"
+      ],
+      "likesAtRetrieval": 4560,
+      "feed": {
+        "tags": "red",
+        "timeframe": 30,
+        "step": 2
+      }
+    },
+    {
+      "id": "palette:colorhunt-red-charcoal",
+      "name": "red charcoal",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/1d16168e1616d84040eeeeee",
+      "code": "1d16168e1616d84040eeeeee",
+      "colors": [
+        "#1d1616",
+        "#8e1616",
+        "#d84040",
+        "#eeeeee"
+      ],
+      "likesAtRetrieval": 9235,
+      "feed": {
+        "tags": "red",
+        "timeframe": 30,
+        "step": 3
+      }
+    },
+    {
+      "id": "palette:colorhunt-red-burgundy",
+      "name": "red burgundy",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/800000982b1cdad4b5f2e8c6",
+      "code": "800000982b1cdad4b5f2e8c6",
+      "colors": [
+        "#800000",
+        "#982b1c",
+        "#dad4b5",
+        "#f2e8c6"
+      ],
+      "likesAtRetrieval": 12033,
+      "feed": {
+        "tags": "red",
+        "timeframe": 30,
+        "step": 4
+      }
+    },
+    {
+      "id": "palette:colorhunt-red-cobalt",
+      "name": "red cobalt",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/134686ed3f27feb21afdf4e3",
+      "code": "134686ed3f27feb21afdf4e3",
+      "colors": [
+        "#134686",
+        "#ed3f27",
+        "#feb21a",
+        "#fdf4e3"
+      ],
+      "likesAtRetrieval": 4433,
+      "feed": {
+        "tags": "red",
+        "timeframe": 30,
+        "step": 2
+      }
+    },
+    {
+      "id": "palette:colorhunt-red-clover",
+      "name": "red clover",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/6e1a37ae244872baa9d5e7b5",
+      "code": "6e1a37ae244872baa9d5e7b5",
+      "colors": [
+        "#6e1a37",
+        "#ae2448",
+        "#72baa9",
+        "#d5e7b5"
+      ],
+      "likesAtRetrieval": 2244,
+      "feed": {
+        "tags": "red",
+        "timeframe": 30,
+        "step": 1
+      }
+    }
+  ]
+}

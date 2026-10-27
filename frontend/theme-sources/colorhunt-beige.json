@@ -1,0 +1,208 @@
+{
+  "source": "https://colorhunt.co/palettes/beige",
+  "endpoint": "https://colorhunt.co/php/feed.php",
+  "retrievedAt": "2026-10-27T09:28:24.192Z",
+  "review": {
+    "requests": 5,
+    "records": 200,
+    "uniquePalettes": 200,
+    "criteria": [
+      "POST step=0 through step=4 with tags=beige and timeframe=30; increment step for each page.",
+      "The feed returns older palettes despite timeframe=30.",
+      "Five light and five dark themes with beige backgrounds or supporting tones and varied accents; exclude existing Color Hunt combinations including reordered colors.",
+      "Preserve all four source colors with at least 7:1 background/text contrast; generated tokens maintain readable UI contrast."
+    ]
+  },
+  "palettes": [
+    {
+      "id": "palette:colorhunt-beige-bark",
+      "name": "beige bark",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/f7f1deb0ba999d66384e220f",
+      "code": "f7f1deb0ba999d66384e220f",
+      "colors": [
+        "#f7f1de",
+        "#b0ba99",
+        "#9d6638",
+        "#4e220f"
+      ],
+      "likesAtRetrieval": 3164,
+      "feed": {
+        "tags": "beige",
+        "timeframe": 30,
+        "step": 1
+      }
+    },
+    {
+      "id": "palette:colorhunt-beige-dune",
+      "name": "beige dune",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/622b14995f2f978f66e4d6a9",
+      "code": "622b14995f2f978f66e4d6a9",
+      "colors": [
+        "#622b14",
+        "#995f2f",
+        "#978f66",
+        "#e4d6a9"
+      ],
+      "likesAtRetrieval": 3251,
+      "feed": {
+        "tags": "beige",
+        "timeframe": 30,
+        "step": 1
+      }
+    },
+    {
+      "id": "palette:colorhunt-beige-ink",
+      "name": "beige ink",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/f3e2d4c5b0cd415e7217313e",
+      "code": "f3e2d4c5b0cd415e7217313e",
+      "colors": [
+        "#f3e2d4",
+        "#c5b0cd",
+        "#415e72",
+        "#17313e"
+      ],
+      "likesAtRetrieval": 4167,
+      "feed": {
+        "tags": "beige",
+        "timeframe": 30,
+        "step": 3
+      }
+    },
+    {
+      "id": "palette:colorhunt-beige-flax",
+      "name": "beige flax",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/f8f3d9ebe5c2b9b28a504b38",
+      "code": "f8f3d9ebe5c2b9b28a504b38",
+      "colors": [
+        "#f8f3d9",
+        "#ebe5c2",
+        "#b9b28a",
+        "#504b38"
+      ],
+      "likesAtRetrieval": 8217,
+      "feed": {
+        "tags": "beige",
+        "timeframe": 30,
+        "step": 4
+      }
+    },
+    {
+      "id": "palette:colorhunt-beige-orchard",
+      "name": "beige orchard",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/f2edd1f9cb99689b8a280a3e",
+      "code": "f2edd1f9cb99689b8a280a3e",
+      "colors": [
+        "#f2edd1",
+        "#f9cb99",
+        "#689b8a",
+        "#280a3e"
+      ],
+      "likesAtRetrieval": 1572,
+      "feed": {
+        "tags": "beige",
+        "timeframe": 30,
+        "step": 3
+      }
+    },
+    {
+      "id": "palette:colorhunt-beige-cedar",
+      "name": "beige cedar",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/4b352aca7842b2cd9cf0f2bd",
+      "code": "4b352aca7842b2cd9cf0f2bd",
+      "colors": [
+        "#4b352a",
+        "#ca7842",
+        "#b2cd9c",
+        "#f0f2bd"
+      ],
+      "likesAtRetrieval": 4700,
+      "feed": {
+        "tags": "beige",
+        "timeframe": 30,
+        "step": 4
+      }
+    },
+    {
+      "id": "palette:colorhunt-beige-merlot",
+      "name": "beige merlot",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/4b142617433f558467efeabb",
+      "code": "4b142617433f558467efeabb",
+      "colors": [
+        "#4b1426",
+        "#17433f",
+        "#558467",
+        "#efeabb"
+      ],
+      "likesAtRetrieval": 1488,
+      "feed": {
+        "tags": "beige",
+        "timeframe": 30,
+        "step": 0
+      }
+    },
+    {
+      "id": "palette:colorhunt-beige-fir",
+      "name": "beige fir",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/1b211a6281418bae66ebd5ab",
+      "code": "1b211a6281418bae66ebd5ab",
+      "colors": [
+        "#1b211a",
+        "#628141",
+        "#8bae66",
+        "#ebd5ab"
+      ],
+      "likesAtRetrieval": 3541,
+      "feed": {
+        "tags": "beige",
+        "timeframe": 30,
+        "step": 2
+      }
+    },
+    {
+      "id": "palette:colorhunt-beige-harbor",
+      "name": "beige harbor",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/21344854779294b4c1eae0cf",
+      "code": "21344854779294b4c1eae0cf",
+      "colors": [
+        "#213448",
+        "#547792",
+        "#94b4c1",
+        "#eae0cf"
+      ],
+      "likesAtRetrieval": 7684,
+      "feed": {
+        "tags": "beige",
+        "timeframe": 30,
+        "step": 2
+      }
+    },
+    {
+      "id": "palette:colorhunt-beige-moss",
+      "name": "beige moss",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/3e3f297d8d86bca88df1f0e4",
+      "code": "3e3f297d8d86bca88df1f0e4",
+      "colors": [
+        "#3e3f29",
+        "#7d8d86",
+        "#bca88d",
+        "#f1f0e4"
+      ],
+      "likesAtRetrieval": 4179,
+      "feed": {
+        "tags": "beige",
+        "timeframe": 30,
+        "step": 3
+      }
+    }
+  ]
+}

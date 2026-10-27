@@ -1,0 +1,208 @@
+{
+  "source": "https://colorhunt.co/palettes/black",
+  "endpoint": "https://colorhunt.co/php/feed.php",
+  "retrievedAt": "2026-10-27T09:16:59.714Z",
+  "review": {
+    "requests": 5,
+    "records": 200,
+    "uniquePalettes": 200,
+    "criteria": [
+      "POST step=0 through step=4 with tags=black and timeframe=30; increment step for each page.",
+      "The feed returns older palettes despite timeframe=30.",
+      "Ten dark themes with black or near-black backgrounds and distinct accents; exclude existing Color Hunt combinations.",
+      "Preserve all four source colors with at least 7:1 background/text contrast; generated tokens maintain readable UI contrast."
+    ]
+  },
+  "palettes": [
+    {
+      "id": "palette:colorhunt-black-linen",
+      "name": "black linen",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/000000f4dfc8f4eae0faf6f0",
+      "code": "000000f4dfc8f4eae0faf6f0",
+      "colors": [
+        "#000000",
+        "#f4dfc8",
+        "#f4eae0",
+        "#faf6f0"
+      ],
+      "likesAtRetrieval": 8570,
+      "feed": {
+        "tags": "black",
+        "timeframe": 30,
+        "step": 2
+      }
+    },
+    {
+      "id": "palette:colorhunt-black-mint",
+      "name": "black mint",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/000000cfffe2a2d5c6f6f6f6",
+      "code": "000000cfffe2a2d5c6f6f6f6",
+      "colors": [
+        "#000000",
+        "#cfffe2",
+        "#a2d5c6",
+        "#f6f6f6"
+      ],
+      "likesAtRetrieval": 2925,
+      "feed": {
+        "tags": "black",
+        "timeframe": 30,
+        "step": 1
+      }
+    },
+    {
+      "id": "palette:colorhunt-black-cobalt",
+      "name": "black cobalt",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/0000004e4feb068fffeeeeee",
+      "code": "0000004e4feb068fffeeeeee",
+      "colors": [
+        "#000000",
+        "#4e4feb",
+        "#068fff",
+        "#eeeeee"
+      ],
+      "likesAtRetrieval": 5732,
+      "feed": {
+        "tags": "black",
+        "timeframe": 30,
+        "step": 3
+      }
+    },
+    {
+      "id": "palette:colorhunt-black-violet",
+      "name": "black violet",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/1818188758ff5cb8e4f2f2f2",
+      "code": "1818188758ff5cb8e4f2f2f2",
+      "colors": [
+        "#181818",
+        "#8758ff",
+        "#5cb8e4",
+        "#f2f2f2"
+      ],
+      "likesAtRetrieval": 5597,
+      "feed": {
+        "tags": "black",
+        "timeframe": 30,
+        "step": 4
+      }
+    },
+    {
+      "id": "palette:colorhunt-black-amber",
+      "name": "black amber",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/0000001a4d2eff9f29faf3e3",
+      "code": "0000001a4d2eff9f29faf3e3",
+      "colors": [
+        "#000000",
+        "#1a4d2e",
+        "#ff9f29",
+        "#faf3e3"
+      ],
+      "likesAtRetrieval": 7371,
+      "feed": {
+        "tags": "black",
+        "timeframe": 30,
+        "step": 4
+      }
+    },
+    {
+      "id": "palette:colorhunt-black-rose",
+      "name": "black rose",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/151515a91d3ac73659eeeeee",
+      "code": "151515a91d3ac73659eeeeee",
+      "colors": [
+        "#151515",
+        "#a91d3a",
+        "#c73659",
+        "#eeeeee"
+      ],
+      "likesAtRetrieval": 8633,
+      "feed": {
+        "tags": "black",
+        "timeframe": 30,
+        "step": 2
+      }
+    },
+    {
+      "id": "palette:colorhunt-black-copper",
+      "name": "black copper",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/000000262a56b8621be3ccae",
+      "code": "000000262a56b8621be3ccae",
+      "colors": [
+        "#000000",
+        "#262a56",
+        "#b8621b",
+        "#e3ccae"
+      ],
+      "likesAtRetrieval": 5786,
+      "feed": {
+        "tags": "black",
+        "timeframe": 30,
+        "step": 3
+      }
+    },
+    {
+      "id": "palette:colorhunt-black-sage",
+      "name": "black sage",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/181c143c3d37697565ecdfcc",
+      "code": "181c143c3d37697565ecdfcc",
+      "colors": [
+        "#181c14",
+        "#3c3d37",
+        "#697565",
+        "#ecdfcc"
+      ],
+      "likesAtRetrieval": 11460,
+      "feed": {
+        "tags": "black",
+        "timeframe": 30,
+        "step": 1
+      }
+    },
+    {
+      "id": "palette:colorhunt-black-plum",
+      "name": "black plum",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/20262e913175cd5888e9e8e8",
+      "code": "20262e913175cd5888e9e8e8",
+      "colors": [
+        "#20262e",
+        "#913175",
+        "#cd5888",
+        "#e9e8e8"
+      ],
+      "likesAtRetrieval": 5863,
+      "feed": {
+        "tags": "black",
+        "timeframe": 30,
+        "step": 3
+      }
+    },
+    {
+      "id": "palette:colorhunt-black-seafoam",
+      "name": "black seafoam",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/0b09092e4540408175b5b9f0",
+      "code": "0b09092e4540408175b5b9f0",
+      "colors": [
+        "#0b0909",
+        "#2e4540",
+        "#408175",
+        "#b5b9f0"
+      ],
+      "likesAtRetrieval": 986,
+      "feed": {
+        "tags": "black",
+        "timeframe": 30,
+        "step": 0
+      }
+    }
+  ]
+}

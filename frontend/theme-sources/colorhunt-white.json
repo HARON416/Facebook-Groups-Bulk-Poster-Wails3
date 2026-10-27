@@ -1,0 +1,208 @@
+{
+  "source": "https://colorhunt.co/palettes/white",
+  "endpoint": "https://colorhunt.co/php/feed.php",
+  "retrievedAt": "2026-10-27T09:21:31.237Z",
+  "review": {
+    "requests": 5,
+    "records": 200,
+    "uniquePalettes": 200,
+    "criteria": [
+      "POST step=0 through step=4 with tags=white and timeframe=30; increment step for each page.",
+      "The feed returns older palettes despite timeframe=30.",
+      "Ten light themes with white or near-white backgrounds and varied accents; exclude existing Color Hunt combinations including reordered colors.",
+      "Preserve all four source colors with at least 7:1 background/text contrast; generated tokens maintain readable UI contrast."
+    ]
+  },
+  "palettes": [
+    {
+      "id": "palette:colorhunt-white-walnut",
+      "name": "white walnut",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/fff8f0c085528c5a3c4b2e2b",
+      "code": "fff8f0c085528c5a3c4b2e2b",
+      "colors": [
+        "#fff8f0",
+        "#c08552",
+        "#8c5a3c",
+        "#4b2e2b"
+      ],
+      "likesAtRetrieval": 5825,
+      "feed": {
+        "tags": "white",
+        "timeframe": 30,
+        "step": 0
+      }
+    },
+    {
+      "id": "palette:colorhunt-white-ocean",
+      "name": "white ocean",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/0c2b4e1a3d641d546cf4f4f4",
+      "code": "0c2b4e1a3d641d546cf4f4f4",
+      "colors": [
+        "#0c2b4e",
+        "#1a3d64",
+        "#1d546c",
+        "#f4f4f4"
+      ],
+      "likesAtRetrieval": 4774,
+      "feed": {
+        "tags": "white",
+        "timeframe": 30,
+        "step": 0
+      }
+    },
+    {
+      "id": "palette:colorhunt-white-cobalt",
+      "name": "white cobalt",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/0118d81b56fde9dfc3fff8f8",
+      "code": "0118d81b56fde9dfc3fff8f8",
+      "colors": [
+        "#0118d8",
+        "#1b56fd",
+        "#e9dfc3",
+        "#fff8f8"
+      ],
+      "likesAtRetrieval": 2640,
+      "feed": {
+        "tags": "white",
+        "timeframe": 30,
+        "step": 0
+      }
+    },
+    {
+      "id": "palette:colorhunt-white-lavender",
+      "name": "white lavender",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/fff2f2a9b5df7886c72d336b",
+      "code": "fff2f2a9b5df7886c72d336b",
+      "colors": [
+        "#fff2f2",
+        "#a9b5df",
+        "#7886c7",
+        "#2d336b"
+      ],
+      "likesAtRetrieval": 10886,
+      "feed": {
+        "tags": "white",
+        "timeframe": 30,
+        "step": 1
+      }
+    },
+    {
+      "id": "palette:colorhunt-white-cedar",
+      "name": "white cedar",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/faf7f0d8d2c2b174574a4947",
+      "code": "faf7f0d8d2c2b174574a4947",
+      "colors": [
+        "#faf7f0",
+        "#d8d2c2",
+        "#b17457",
+        "#4a4947"
+      ],
+      "likesAtRetrieval": 10128,
+      "feed": {
+        "tags": "white",
+        "timeframe": 30,
+        "step": 1
+      }
+    },
+    {
+      "id": "palette:colorhunt-white-plum",
+      "name": "white plum",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/fffbf5f7efe5c3acd0674188",
+      "code": "fffbf5f7efe5c3acd0674188",
+      "colors": [
+        "#fffbf5",
+        "#f7efe5",
+        "#c3acd0",
+        "#674188"
+      ],
+      "likesAtRetrieval": 10992,
+      "feed": {
+        "tags": "white",
+        "timeframe": 30,
+        "step": 2
+      }
+    },
+    {
+      "id": "palette:colorhunt-white-navy",
+      "name": "white navy",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/fefaf6eadbc8dac0a3102c57",
+      "code": "fefaf6eadbc8dac0a3102c57",
+      "colors": [
+        "#fefaf6",
+        "#eadbc8",
+        "#dac0a3",
+        "#102c57"
+      ],
+      "likesAtRetrieval": 9277,
+      "feed": {
+        "tags": "white",
+        "timeframe": 30,
+        "step": 2
+      }
+    },
+    {
+      "id": "palette:colorhunt-white-jade",
+      "name": "white jade",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/faf1e6fdfaf6e4efe7064420",
+      "code": "faf1e6fdfaf6e4efe7064420",
+      "colors": [
+        "#faf1e6",
+        "#fdfaf6",
+        "#e4efe7",
+        "#064420"
+      ],
+      "likesAtRetrieval": 12009,
+      "feed": {
+        "tags": "white",
+        "timeframe": 30,
+        "step": 4
+      }
+    },
+    {
+      "id": "palette:colorhunt-white-rose",
+      "name": "white rose",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/fff5fdff96ad005a8d022e57",
+      "code": "fff5fdff96ad005a8d022e57",
+      "colors": [
+        "#fff5fd",
+        "#ff96ad",
+        "#005a8d",
+        "#022e57"
+      ],
+      "likesAtRetrieval": 7757,
+      "feed": {
+        "tags": "white",
+        "timeframe": 30,
+        "step": 4
+      }
+    },
+    {
+      "id": "palette:colorhunt-white-mint",
+      "name": "white mint",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/f6f6f6c7ffd898ded9161d6f",
+      "code": "f6f6f6c7ffd898ded9161d6f",
+      "colors": [
+        "#f6f6f6",
+        "#c7ffd8",
+        "#98ded9",
+        "#161d6f"
+      ],
+      "likesAtRetrieval": 9314,
+      "feed": {
+        "tags": "white",
+        "timeframe": 30,
+        "step": 4
+      }
+    }
+  ]
+}

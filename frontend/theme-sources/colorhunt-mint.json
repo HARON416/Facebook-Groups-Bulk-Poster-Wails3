@@ -1,0 +1,208 @@
+{
+  "source": "https://colorhunt.co/palettes/mint",
+  "endpoint": "https://colorhunt.co/php/feed.php",
+  "retrievedAt": "2026-10-27T08:59:09.788Z",
+  "review": {
+    "requests": 5,
+    "records": 200,
+    "uniquePalettes": 200,
+    "criteria": [
+      "POST step=0 through step=4 with tags=mint and timeframe=30; increment step for each page.",
+      "The feed returns older palettes despite timeframe=30.",
+      "Five light and five dark themes with a visible mint background or accent; exclude existing Color Hunt combinations.",
+      "Preserve all four source colors with at least 7:1 background/text contrast; generated tokens maintain readable UI contrast."
+    ]
+  },
+  "palettes": [
+    {
+      "id": "palette:colorhunt-mint-harbor",
+      "name": "mint harbor",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/ddf4e767c09026667f124170",
+      "code": "ddf4e767c09026667f124170",
+      "colors": [
+        "#ddf4e7",
+        "#67c090",
+        "#26667f",
+        "#124170"
+      ],
+      "likesAtRetrieval": 4389,
+      "feed": {
+        "tags": "mint",
+        "timeframe": 30,
+        "step": 0
+      }
+    },
+    {
+      "id": "palette:colorhunt-mint-tide",
+      "name": "mint tide",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/cff5e7a0e4cb59c1bd0d4c92",
+      "code": "cff5e7a0e4cb59c1bd0d4c92",
+      "colors": [
+        "#cff5e7",
+        "#a0e4cb",
+        "#59c1bd",
+        "#0d4c92"
+      ],
+      "likesAtRetrieval": 10782,
+      "feed": {
+        "tags": "mint",
+        "timeframe": 30,
+        "step": 2
+      }
+    },
+    {
+      "id": "palette:colorhunt-mint-orchid",
+      "name": "mint orchid",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/a6f0c6a98b984e3d530f1123",
+      "code": "a6f0c6a98b984e3d530f1123",
+      "colors": [
+        "#a6f0c6",
+        "#a98b98",
+        "#4e3d53",
+        "#0f1123"
+      ],
+      "likesAtRetrieval": 4776,
+      "feed": {
+        "tags": "mint",
+        "timeframe": 30,
+        "step": 3
+      }
+    },
+    {
+      "id": "palette:colorhunt-mint-rose",
+      "name": "mint rose",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/c1f6e7ffcbcbbb71714e3440",
+      "code": "c1f6e7ffcbcbbb71714e3440",
+      "colors": [
+        "#c1f6e7",
+        "#ffcbcb",
+        "#bb7171",
+        "#4e3440"
+      ],
+      "likesAtRetrieval": 3286,
+      "feed": {
+        "tags": "mint",
+        "timeframe": 30,
+        "step": 4
+      }
+    },
+    {
+      "id": "palette:colorhunt-mint-coral",
+      "name": "mint coral",
+      "mode": "light",
+      "sourceUrl": "https://colorhunt.co/palette/cdffebffaaaac7004c8f1537",
+      "code": "cdffebffaaaac7004c8f1537",
+      "colors": [
+        "#cdffeb",
+        "#ffaaaa",
+        "#c7004c",
+        "#8f1537"
+      ],
+      "likesAtRetrieval": 2547,
+      "feed": {
+        "tags": "mint",
+        "timeframe": 30,
+        "step": 4
+      }
+    },
+    {
+      "id": "palette:colorhunt-mint-woodland",
+      "name": "mint woodland",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/1a312c42847589d7b7fff4e1",
+      "code": "1a312c42847589d7b7fff4e1",
+      "colors": [
+        "#1a312c",
+        "#428475",
+        "#89d7b7",
+        "#fff4e1"
+      ],
+      "likesAtRetrieval": 1667,
+      "feed": {
+        "tags": "mint",
+        "timeframe": 30,
+        "step": 0
+      }
+    },
+    {
+      "id": "palette:colorhunt-mint-lagoon",
+      "name": "mint lagoon",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/003c43135d6677b0aae3fef7",
+      "code": "003c43135d6677b0aae3fef7",
+      "colors": [
+        "#003c43",
+        "#135d66",
+        "#77b0aa",
+        "#e3fef7"
+      ],
+      "likesAtRetrieval": 11329,
+      "feed": {
+        "tags": "mint",
+        "timeframe": 30,
+        "step": 1
+      }
+    },
+    {
+      "id": "palette:colorhunt-mint-ink",
+      "name": "mint ink",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/2c33332e4f4f0e8388cbe4de",
+      "code": "2c33332e4f4f0e8388cbe4de",
+      "colors": [
+        "#2c3333",
+        "#2e4f4f",
+        "#0e8388",
+        "#cbe4de"
+      ],
+      "likesAtRetrieval": 13459,
+      "feed": {
+        "tags": "mint",
+        "timeframe": 30,
+        "step": 2
+      }
+    },
+    {
+      "id": "palette:colorhunt-mint-moon",
+      "name": "mint moon",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/321e4843637e65dcd5d9fff4",
+      "code": "321e4843637e65dcd5d9fff4",
+      "colors": [
+        "#321e48",
+        "#43637e",
+        "#65dcd5",
+        "#d9fff4"
+      ],
+      "likesAtRetrieval": 1853,
+      "feed": {
+        "tags": "mint",
+        "timeframe": 30,
+        "step": 0
+      }
+    },
+    {
+      "id": "palette:colorhunt-mint-twilight",
+      "name": "mint twilight",
+      "mode": "dark",
+      "sourceUrl": "https://colorhunt.co/palette/4641596c7b958bbabbc7f0db",
+      "code": "4641596c7b958bbabbc7f0db",
+      "colors": [
+        "#464159",
+        "#6c7b95",
+        "#8bbabb",
+        "#c7f0db"
+      ],
+      "likesAtRetrieval": 5598,
+      "feed": {
+        "tags": "mint",
+        "timeframe": 30,
+        "step": 4
+      }
+    }
+  ]
+}
