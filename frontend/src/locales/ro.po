@@ -339,7 +339,6 @@ msgid "No accounts found"
 msgstr "Nu s-au găsit conturi"
 
 #: src/components/AccountDropdown.svelte
-#: src/components/ThemePicker.svelte
 msgid "Try a different name."
 msgstr "Încearcă alt nume."
 
@@ -2512,3 +2511,129 @@ msgstr "Alege limba pentru meniuri, butoane și instrucțiuni."
 #: src/components/GuidedTour.svelte
 msgid "Choose a light or dark color theme for the app."
 msgstr "Alege o temă de culori deschisă sau închisă pentru aplicație."
+
+#: src/components/ThemePicker.svelte
+msgid "Theme collection"
+msgstr "Colecție de teme"
+
+#: src/components/ThemePicker.svelte
+msgid "All themes <0/>"
+msgstr "Toate temele <0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Favorites <0/>"
+msgstr "Favorite <0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Color<0/>"
+msgstr "Culoare<0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Appearance<0/>"
+msgstr "Aspect<0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Clear filters"
+msgstr "Șterge filtrele"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Remove favorite"
+msgstr "Elimină din favorite"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Add favorite"
+msgstr "Adaugă la favorite"
+
+#: src/components/ThemePicker.svelte
+msgid "No favorites yet"
+msgstr "Nicio temă favorită încă"
+
+#: src/components/ThemePicker.svelte
+msgid "Use the star beside a theme to save it here."
+msgstr "Folosește steaua de lângă o temă pentru a o salva aici."
+
+#: src/components/ThemePicker.svelte
+msgid "Try another search or clear the filters."
+msgstr "Încearcă altă căutare sau șterge filtrele."
+
+#: src/components/ThemePicker.svelte
+msgid "All colors"
+msgstr "Toate culorile"
+
+#: src/components/ThemePicker.svelte
+msgid "Red"
+msgstr "Roșu"
+
+#: src/components/ThemePicker.svelte
+msgid "Orange"
+msgstr "Portocaliu"
+
+#: src/components/ThemePicker.svelte
+msgid "Yellow"
+msgstr "Galben"
+
+#: src/components/ThemePicker.svelte
+msgid "Green"
+msgstr "Verde"
+
+#: src/components/ThemePicker.svelte
+msgid "Mint"
+msgstr "Verde mentă"
+
+#: src/components/ThemePicker.svelte
+msgid "Teal"
+msgstr "Verde-albăstrui"
+
+#: src/components/ThemePicker.svelte
+msgid "Blue"
+msgstr "Albastru"
+
+#: src/components/ThemePicker.svelte
+msgid "Navy"
+msgstr "Bleumarin"
+
+#: src/components/ThemePicker.svelte
+msgid "Purple"
+msgstr "Mov"
+
+#: src/components/ThemePicker.svelte
+msgid "Pink"
+msgstr "Roz"
+
+#: src/components/ThemePicker.svelte
+msgid "Brown"
+msgstr "Maro"
+
+#: src/components/ThemePicker.svelte
+msgid "Beige"
+msgstr "Bej"
+
+#: src/components/ThemePicker.svelte
+msgid "White"
+msgstr "Alb"
+
+#: src/components/ThemePicker.svelte
+msgid "Grey"
+msgstr "Gri"
+
+#: src/components/ThemePicker.svelte
+msgid "Black"
+msgstr "Negru"
+
+#: src/components/ThemePicker.svelte
+msgid "Light & dark"
+msgstr "Luminos și întunecat"
+
+#: src/components/ThemePicker.svelte
+msgid "Light"
+msgstr "Luminos"
+
+#: src/components/ThemePicker.svelte
+msgid "Dark"
+msgstr "Întunecat"
+
+#: src/components/ThemePicker.svelte
+msgid "Peach"
+msgstr "Piersică"

@@ -339,7 +339,6 @@ msgid "No accounts found"
 msgstr "Nessun account trovato"
 
 #: src/components/AccountDropdown.svelte
-#: src/components/ThemePicker.svelte
 msgid "Try a different name."
 msgstr "Prova un altro nome."
 
@@ -2512,3 +2511,129 @@ msgstr "Scegli la lingua dei menu, dei pulsanti e delle istruzioni."
 #: src/components/GuidedTour.svelte
 msgid "Choose a light or dark color theme for the app."
 msgstr "Scegli un tema di colori chiaro o scuro per l’app."
+
+#: src/components/ThemePicker.svelte
+msgid "Theme collection"
+msgstr "Raccolta di temi"
+
+#: src/components/ThemePicker.svelte
+msgid "All themes <0/>"
+msgstr "Tutti i temi <0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Favorites <0/>"
+msgstr "Preferiti <0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Color<0/>"
+msgstr "Colore<0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Appearance<0/>"
+msgstr "Aspetto<0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Clear filters"
+msgstr "Cancella filtri"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Remove favorite"
+msgstr "Rimuovi dai preferiti"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Add favorite"
+msgstr "Aggiungi ai preferiti"
+
+#: src/components/ThemePicker.svelte
+msgid "No favorites yet"
+msgstr "Nessun preferito"
+
+#: src/components/ThemePicker.svelte
+msgid "Use the star beside a theme to save it here."
+msgstr "Usa la stella accanto a un tema per salvarlo qui."
+
+#: src/components/ThemePicker.svelte
+msgid "Try another search or clear the filters."
+msgstr "Prova un’altra ricerca o cancella i filtri."
+
+#: src/components/ThemePicker.svelte
+msgid "All colors"
+msgstr "Tutti i colori"
+
+#: src/components/ThemePicker.svelte
+msgid "Red"
+msgstr "Rosso"
+
+#: src/components/ThemePicker.svelte
+msgid "Orange"
+msgstr "Arancione"
+
+#: src/components/ThemePicker.svelte
+msgid "Yellow"
+msgstr "Giallo"
+
+#: src/components/ThemePicker.svelte
+msgid "Green"
+msgstr "Verde"
+
+#: src/components/ThemePicker.svelte
+msgid "Mint"
+msgstr "Menta"
+
+#: src/components/ThemePicker.svelte
+msgid "Teal"
+msgstr "Verde petrolio"
+
+#: src/components/ThemePicker.svelte
+msgid "Blue"
+msgstr "Blu"
+
+#: src/components/ThemePicker.svelte
+msgid "Navy"
+msgstr "Blu navy"
+
+#: src/components/ThemePicker.svelte
+msgid "Purple"
+msgstr "Viola"
+
+#: src/components/ThemePicker.svelte
+msgid "Pink"
+msgstr "Rosa"
+
+#: src/components/ThemePicker.svelte
+msgid "Brown"
+msgstr "Marrone"
+
+#: src/components/ThemePicker.svelte
+msgid "Beige"
+msgstr "Beige"
+
+#: src/components/ThemePicker.svelte
+msgid "White"
+msgstr "Bianco"
+
+#: src/components/ThemePicker.svelte
+msgid "Grey"
+msgstr "Grigio"
+
+#: src/components/ThemePicker.svelte
+msgid "Black"
+msgstr "Nero"
+
+#: src/components/ThemePicker.svelte
+msgid "Light & dark"
+msgstr "Chiaro e scuro"
+
+#: src/components/ThemePicker.svelte
+msgid "Light"
+msgstr "Chiaro"
+
+#: src/components/ThemePicker.svelte
+msgid "Dark"
+msgstr "Scuro"
+
+#: src/components/ThemePicker.svelte
+msgid "Peach"
+msgstr "Pesca"

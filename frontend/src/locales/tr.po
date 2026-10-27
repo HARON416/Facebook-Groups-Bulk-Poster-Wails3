@@ -339,7 +339,6 @@ msgid "No accounts found"
 msgstr "Hesap bulunamadı"
 
 #: src/components/AccountDropdown.svelte
-#: src/components/ThemePicker.svelte
 msgid "Try a different name."
 msgstr "Farklı bir ad deneyin."
 
@@ -2512,3 +2511,129 @@ msgstr "Menüler, düğmeler ve yönergeler için dil seçin."
 #: src/components/GuidedTour.svelte
 msgid "Choose a light or dark color theme for the app."
 msgstr "Uygulama için açık veya koyu bir renk teması seçin."
+
+#: src/components/ThemePicker.svelte
+msgid "Theme collection"
+msgstr "Tema koleksiyonu"
+
+#: src/components/ThemePicker.svelte
+msgid "All themes <0/>"
+msgstr "Tüm temalar <0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Favorites <0/>"
+msgstr "Favoriler <0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Color<0/>"
+msgstr "Renk<0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Appearance<0/>"
+msgstr "Görünüm<0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Clear filters"
+msgstr "Filtreleri temizle"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Remove favorite"
+msgstr "Favorilerden kaldır"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Add favorite"
+msgstr "Favorilere ekle"
+
+#: src/components/ThemePicker.svelte
+msgid "No favorites yet"
+msgstr "Henüz favori yok"
+
+#: src/components/ThemePicker.svelte
+msgid "Use the star beside a theme to save it here."
+msgstr "Bir temayı buraya kaydetmek için yanındaki yıldızı kullanın."
+
+#: src/components/ThemePicker.svelte
+msgid "Try another search or clear the filters."
+msgstr "Başka bir arama deneyin veya filtreleri temizleyin."
+
+#: src/components/ThemePicker.svelte
+msgid "All colors"
+msgstr "Tüm renkler"
+
+#: src/components/ThemePicker.svelte
+msgid "Red"
+msgstr "Kırmızı"
+
+#: src/components/ThemePicker.svelte
+msgid "Orange"
+msgstr "Turuncu"
+
+#: src/components/ThemePicker.svelte
+msgid "Yellow"
+msgstr "Sarı"
+
+#: src/components/ThemePicker.svelte
+msgid "Green"
+msgstr "Yeşil"
+
+#: src/components/ThemePicker.svelte
+msgid "Mint"
+msgstr "Nane yeşili"
+
+#: src/components/ThemePicker.svelte
+msgid "Teal"
+msgstr "Petrol yeşili"
+
+#: src/components/ThemePicker.svelte
+msgid "Blue"
+msgstr "Mavi"
+
+#: src/components/ThemePicker.svelte
+msgid "Navy"
+msgstr "Lacivert"
+
+#: src/components/ThemePicker.svelte
+msgid "Purple"
+msgstr "Mor"
+
+#: src/components/ThemePicker.svelte
+msgid "Pink"
+msgstr "Pembe"
+
+#: src/components/ThemePicker.svelte
+msgid "Brown"
+msgstr "Kahverengi"
+
+#: src/components/ThemePicker.svelte
+msgid "Beige"
+msgstr "Bej"
+
+#: src/components/ThemePicker.svelte
+msgid "White"
+msgstr "Beyaz"
+
+#: src/components/ThemePicker.svelte
+msgid "Grey"
+msgstr "Gri"
+
+#: src/components/ThemePicker.svelte
+msgid "Black"
+msgstr "Siyah"
+
+#: src/components/ThemePicker.svelte
+msgid "Light & dark"
+msgstr "Açık ve koyu"
+
+#: src/components/ThemePicker.svelte
+msgid "Light"
+msgstr "Açık"
+
+#: src/components/ThemePicker.svelte
+msgid "Dark"
+msgstr "Koyu"
+
+#: src/components/ThemePicker.svelte
+msgid "Peach"
+msgstr "Şeftali"

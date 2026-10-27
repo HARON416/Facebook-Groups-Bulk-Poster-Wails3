@@ -339,7 +339,6 @@ msgid "No accounts found"
 msgstr "Nema pronađenih računa"
 
 #: src/components/AccountDropdown.svelte
-#: src/components/ThemePicker.svelte
 msgid "Try a different name."
 msgstr "Pokušajte s drugim nazivom."
 
@@ -2512,3 +2511,129 @@ msgstr "Odaberite jezik izbornika, gumba i uputa."
 #: src/components/GuidedTour.svelte
 msgid "Choose a light or dark color theme for the app."
 msgstr "Odaberite svijetlu ili tamnu temu boja za aplikaciju."
+
+#: src/components/ThemePicker.svelte
+msgid "Theme collection"
+msgstr "Zbirka tema"
+
+#: src/components/ThemePicker.svelte
+msgid "All themes <0/>"
+msgstr "Sve teme <0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Favorites <0/>"
+msgstr "Favoriti <0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Color<0/>"
+msgstr "Boja<0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Appearance<0/>"
+msgstr "Izgled<0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Clear filters"
+msgstr "Očisti filtre"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Remove favorite"
+msgstr "Ukloni iz favorita"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Add favorite"
+msgstr "Dodaj u favorite"
+
+#: src/components/ThemePicker.svelte
+msgid "No favorites yet"
+msgstr "Još nema favorita"
+
+#: src/components/ThemePicker.svelte
+msgid "Use the star beside a theme to save it here."
+msgstr "Zvjezdicom pokraj teme spremite je ovdje."
+
+#: src/components/ThemePicker.svelte
+msgid "Try another search or clear the filters."
+msgstr "Pokušajte drugu pretragu ili očistite filtre."
+
+#: src/components/ThemePicker.svelte
+msgid "All colors"
+msgstr "Sve boje"
+
+#: src/components/ThemePicker.svelte
+msgid "Red"
+msgstr "Crvena"
+
+#: src/components/ThemePicker.svelte
+msgid "Orange"
+msgstr "Narančasta"
+
+#: src/components/ThemePicker.svelte
+msgid "Yellow"
+msgstr "Žuta"
+
+#: src/components/ThemePicker.svelte
+msgid "Green"
+msgstr "Zelena"
+
+#: src/components/ThemePicker.svelte
+msgid "Mint"
+msgstr "Mentol zelena"
+
+#: src/components/ThemePicker.svelte
+msgid "Teal"
+msgstr "Modrozelena"
+
+#: src/components/ThemePicker.svelte
+msgid "Blue"
+msgstr "Plava"
+
+#: src/components/ThemePicker.svelte
+msgid "Navy"
+msgstr "Tamnoplava"
+
+#: src/components/ThemePicker.svelte
+msgid "Purple"
+msgstr "Ljubičasta"
+
+#: src/components/ThemePicker.svelte
+msgid "Pink"
+msgstr "Ružičasta"
+
+#: src/components/ThemePicker.svelte
+msgid "Brown"
+msgstr "Smeđa"
+
+#: src/components/ThemePicker.svelte
+msgid "Beige"
+msgstr "Bež"
+
+#: src/components/ThemePicker.svelte
+msgid "White"
+msgstr "Bijela"
+
+#: src/components/ThemePicker.svelte
+msgid "Grey"
+msgstr "Siva"
+
+#: src/components/ThemePicker.svelte
+msgid "Black"
+msgstr "Crna"
+
+#: src/components/ThemePicker.svelte
+msgid "Light & dark"
+msgstr "Svijetle i tamne"
+
+#: src/components/ThemePicker.svelte
+msgid "Light"
+msgstr "Svijetle"
+
+#: src/components/ThemePicker.svelte
+msgid "Dark"
+msgstr "Tamne"
+
+#: src/components/ThemePicker.svelte
+msgid "Peach"
+msgstr "Breskvasta"

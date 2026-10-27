@@ -339,7 +339,6 @@ msgid "No accounts found"
 msgstr "Inga konton hittades"
 
 #: src/components/AccountDropdown.svelte
-#: src/components/ThemePicker.svelte
 msgid "Try a different name."
 msgstr "Prova ett annat namn."
 
@@ -2512,3 +2511,129 @@ msgstr "Välj språk för menyer, knappar och instruktioner."
 #: src/components/GuidedTour.svelte
 msgid "Choose a light or dark color theme for the app."
 msgstr "Välj ett ljust eller mörkt färgtema för appen."
+
+#: src/components/ThemePicker.svelte
+msgid "Theme collection"
+msgstr "Temasamling"
+
+#: src/components/ThemePicker.svelte
+msgid "All themes <0/>"
+msgstr "Alla teman <0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Favorites <0/>"
+msgstr "Favoriter <0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Color<0/>"
+msgstr "Färg<0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Appearance<0/>"
+msgstr "Utseende<0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Clear filters"
+msgstr "Rensa filter"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Remove favorite"
+msgstr "Ta bort favorit"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Add favorite"
+msgstr "Lägg till favorit"
+
+#: src/components/ThemePicker.svelte
+msgid "No favorites yet"
+msgstr "Inga favoriter ännu"
+
+#: src/components/ThemePicker.svelte
+msgid "Use the star beside a theme to save it here."
+msgstr "Använd stjärnan bredvid ett tema för att spara det här."
+
+#: src/components/ThemePicker.svelte
+msgid "Try another search or clear the filters."
+msgstr "Prova en annan sökning eller rensa filtren."
+
+#: src/components/ThemePicker.svelte
+msgid "All colors"
+msgstr "Alla färger"
+
+#: src/components/ThemePicker.svelte
+msgid "Red"
+msgstr "Röd"
+
+#: src/components/ThemePicker.svelte
+msgid "Orange"
+msgstr "Orange"
+
+#: src/components/ThemePicker.svelte
+msgid "Yellow"
+msgstr "Gul"
+
+#: src/components/ThemePicker.svelte
+msgid "Green"
+msgstr "Grön"
+
+#: src/components/ThemePicker.svelte
+msgid "Mint"
+msgstr "Mintgrön"
+
+#: src/components/ThemePicker.svelte
+msgid "Teal"
+msgstr "Blågrön"
+
+#: src/components/ThemePicker.svelte
+msgid "Blue"
+msgstr "Blå"
+
+#: src/components/ThemePicker.svelte
+msgid "Navy"
+msgstr "Marinblå"
+
+#: src/components/ThemePicker.svelte
+msgid "Purple"
+msgstr "Lila"
+
+#: src/components/ThemePicker.svelte
+msgid "Pink"
+msgstr "Rosa"
+
+#: src/components/ThemePicker.svelte
+msgid "Brown"
+msgstr "Brun"
+
+#: src/components/ThemePicker.svelte
+msgid "Beige"
+msgstr "Beige"
+
+#: src/components/ThemePicker.svelte
+msgid "White"
+msgstr "Vit"
+
+#: src/components/ThemePicker.svelte
+msgid "Grey"
+msgstr "Grå"
+
+#: src/components/ThemePicker.svelte
+msgid "Black"
+msgstr "Svart"
+
+#: src/components/ThemePicker.svelte
+msgid "Light & dark"
+msgstr "Ljust och mörkt"
+
+#: src/components/ThemePicker.svelte
+msgid "Light"
+msgstr "Ljust"
+
+#: src/components/ThemePicker.svelte
+msgid "Dark"
+msgstr "Mörkt"
+
+#: src/components/ThemePicker.svelte
+msgid "Peach"
+msgstr "Persika"

@@ -339,7 +339,6 @@ msgid "No accounts found"
 msgstr "Nem található fiók"
 
 #: src/components/AccountDropdown.svelte
-#: src/components/ThemePicker.svelte
 msgid "Try a different name."
 msgstr "Próbáljon másik nevet."
 
@@ -2512,3 +2511,129 @@ msgstr "Válassza ki a menük, gombok és utasítások nyelvét."
 #: src/components/GuidedTour.svelte
 msgid "Choose a light or dark color theme for the app."
 msgstr "Válasszon világos vagy sötét színtémát az alkalmazáshoz."
+
+#: src/components/ThemePicker.svelte
+msgid "Theme collection"
+msgstr "Témagyűjtemény"
+
+#: src/components/ThemePicker.svelte
+msgid "All themes <0/>"
+msgstr "Összes téma <0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Favorites <0/>"
+msgstr "Kedvencek <0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Color<0/>"
+msgstr "Szín<0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Appearance<0/>"
+msgstr "Megjelenés<0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Clear filters"
+msgstr "Szűrők törlése"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Remove favorite"
+msgstr "Eltávolítás a kedvencekből"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Add favorite"
+msgstr "Hozzáadás a kedvencekhez"
+
+#: src/components/ThemePicker.svelte
+msgid "No favorites yet"
+msgstr "Még nincsenek kedvencek"
+
+#: src/components/ThemePicker.svelte
+msgid "Use the star beside a theme to save it here."
+msgstr "A téma melletti csillaggal mentheted ide."
+
+#: src/components/ThemePicker.svelte
+msgid "Try another search or clear the filters."
+msgstr "Próbálj más keresést, vagy töröld a szűrőket."
+
+#: src/components/ThemePicker.svelte
+msgid "All colors"
+msgstr "Összes szín"
+
+#: src/components/ThemePicker.svelte
+msgid "Red"
+msgstr "Piros"
+
+#: src/components/ThemePicker.svelte
+msgid "Orange"
+msgstr "Narancssárga"
+
+#: src/components/ThemePicker.svelte
+msgid "Yellow"
+msgstr "Sárga"
+
+#: src/components/ThemePicker.svelte
+msgid "Green"
+msgstr "Zöld"
+
+#: src/components/ThemePicker.svelte
+msgid "Mint"
+msgstr "Mentazöld"
+
+#: src/components/ThemePicker.svelte
+msgid "Teal"
+msgstr "Kékeszöld"
+
+#: src/components/ThemePicker.svelte
+msgid "Blue"
+msgstr "Kék"
+
+#: src/components/ThemePicker.svelte
+msgid "Navy"
+msgstr "Tengerészkék"
+
+#: src/components/ThemePicker.svelte
+msgid "Purple"
+msgstr "Lila"
+
+#: src/components/ThemePicker.svelte
+msgid "Pink"
+msgstr "Rózsaszín"
+
+#: src/components/ThemePicker.svelte
+msgid "Brown"
+msgstr "Barna"
+
+#: src/components/ThemePicker.svelte
+msgid "Beige"
+msgstr "Bézs"
+
+#: src/components/ThemePicker.svelte
+msgid "White"
+msgstr "Fehér"
+
+#: src/components/ThemePicker.svelte
+msgid "Grey"
+msgstr "Szürke"
+
+#: src/components/ThemePicker.svelte
+msgid "Black"
+msgstr "Fekete"
+
+#: src/components/ThemePicker.svelte
+msgid "Light & dark"
+msgstr "Világos és sötét"
+
+#: src/components/ThemePicker.svelte
+msgid "Light"
+msgstr "Világos"
+
+#: src/components/ThemePicker.svelte
+msgid "Dark"
+msgstr "Sötét"
+
+#: src/components/ThemePicker.svelte
+msgid "Peach"
+msgstr "Barackszín"

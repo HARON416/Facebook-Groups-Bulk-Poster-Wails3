@@ -339,7 +339,6 @@ msgid "No accounts found"
 msgstr "Keine Konten gefunden"
 
 #: src/components/AccountDropdown.svelte
-#: src/components/ThemePicker.svelte
 msgid "Try a different name."
 msgstr "Versuchen Sie einen anderen Namen."
 
@@ -2512,3 +2511,129 @@ msgstr "Wähle die Sprache für Menüs, Schaltflächen und Anleitungen."
 #: src/components/GuidedTour.svelte
 msgid "Choose a light or dark color theme for the app."
 msgstr "Wähle ein helles oder dunkles Farbschema für die App."
+
+#: src/components/ThemePicker.svelte
+msgid "Theme collection"
+msgstr "Themesammlung"
+
+#: src/components/ThemePicker.svelte
+msgid "All themes <0/>"
+msgstr "Alle Themes <0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Favorites <0/>"
+msgstr "Favoriten <0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Color<0/>"
+msgstr "Farbe<0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Appearance<0/>"
+msgstr "Darstellung<0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Clear filters"
+msgstr "Filter zurücksetzen"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Remove favorite"
+msgstr "Favorit entfernen"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Add favorite"
+msgstr "Favorit hinzufügen"
+
+#: src/components/ThemePicker.svelte
+msgid "No favorites yet"
+msgstr "Noch keine Favoriten"
+
+#: src/components/ThemePicker.svelte
+msgid "Use the star beside a theme to save it here."
+msgstr "Mit dem Stern neben einem Theme speicherst du es hier."
+
+#: src/components/ThemePicker.svelte
+msgid "Try another search or clear the filters."
+msgstr "Versuche eine andere Suche oder setze die Filter zurück."
+
+#: src/components/ThemePicker.svelte
+msgid "All colors"
+msgstr "Alle Farben"
+
+#: src/components/ThemePicker.svelte
+msgid "Red"
+msgstr "Rot"
+
+#: src/components/ThemePicker.svelte
+msgid "Orange"
+msgstr "Orange"
+
+#: src/components/ThemePicker.svelte
+msgid "Yellow"
+msgstr "Gelb"
+
+#: src/components/ThemePicker.svelte
+msgid "Green"
+msgstr "Grün"
+
+#: src/components/ThemePicker.svelte
+msgid "Mint"
+msgstr "Mintgrün"
+
+#: src/components/ThemePicker.svelte
+msgid "Teal"
+msgstr "Blaugrün"
+
+#: src/components/ThemePicker.svelte
+msgid "Blue"
+msgstr "Blau"
+
+#: src/components/ThemePicker.svelte
+msgid "Navy"
+msgstr "Marineblau"
+
+#: src/components/ThemePicker.svelte
+msgid "Purple"
+msgstr "Lila"
+
+#: src/components/ThemePicker.svelte
+msgid "Pink"
+msgstr "Rosa"
+
+#: src/components/ThemePicker.svelte
+msgid "Brown"
+msgstr "Braun"
+
+#: src/components/ThemePicker.svelte
+msgid "Beige"
+msgstr "Beige"
+
+#: src/components/ThemePicker.svelte
+msgid "White"
+msgstr "Weiß"
+
+#: src/components/ThemePicker.svelte
+msgid "Grey"
+msgstr "Grau"
+
+#: src/components/ThemePicker.svelte
+msgid "Black"
+msgstr "Schwarz"
+
+#: src/components/ThemePicker.svelte
+msgid "Light & dark"
+msgstr "Hell & dunkel"
+
+#: src/components/ThemePicker.svelte
+msgid "Light"
+msgstr "Hell"
+
+#: src/components/ThemePicker.svelte
+msgid "Dark"
+msgstr "Dunkel"
+
+#: src/components/ThemePicker.svelte
+msgid "Peach"
+msgstr "Pfirsich"

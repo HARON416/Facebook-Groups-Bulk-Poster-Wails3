@@ -339,7 +339,6 @@ msgid "No accounts found"
 msgstr "ఖాతాలు కనుగొనబడలేదు"
 
 #: src/components/AccountDropdown.svelte
-#: src/components/ThemePicker.svelte
 msgid "Try a different name."
 msgstr "వేరే పేరుతో ప్రయత్నించండి."
 
@@ -2512,3 +2511,129 @@ msgstr "మెనూలు, బటన్‌లు మరియు సూచన�
 #: src/components/GuidedTour.svelte
 msgid "Choose a light or dark color theme for the app."
 msgstr "యాప్ కోసం లేత లేదా ముదురు రంగు థీమ్‌ను ఎంచుకోండి."
+
+#: src/components/ThemePicker.svelte
+msgid "Theme collection"
+msgstr "థీమ్‌ల సేకరణ"
+
+#: src/components/ThemePicker.svelte
+msgid "All themes <0/>"
+msgstr "అన్ని థీమ్‌లు <0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Favorites <0/>"
+msgstr "ఇష్టమైనవి <0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Color<0/>"
+msgstr "రంగు<0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Appearance<0/>"
+msgstr "రూపం<0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Clear filters"
+msgstr "ఫిల్టర్‌లను తొలగించు"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Remove favorite"
+msgstr "ఇష్టమైన వాటి నుండి తీసివేయి"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Add favorite"
+msgstr "ఇష్టమైన వాటికి జోడించు"
+
+#: src/components/ThemePicker.svelte
+msgid "No favorites yet"
+msgstr "ఇంకా ఇష్టమైనవి లేవు"
+
+#: src/components/ThemePicker.svelte
+msgid "Use the star beside a theme to save it here."
+msgstr "థీమ్‌ను ఇక్కడ సేవ్ చేయడానికి దాని పక్కన ఉన్న నక్షత్రాన్ని ఉపయోగించండి."
+
+#: src/components/ThemePicker.svelte
+msgid "Try another search or clear the filters."
+msgstr "మరో శోధన ప్రయత్నించండి లేదా ఫిల్టర్‌లను తొలగించండి."
+
+#: src/components/ThemePicker.svelte
+msgid "All colors"
+msgstr "అన్ని రంగులు"
+
+#: src/components/ThemePicker.svelte
+msgid "Red"
+msgstr "ఎరుపు"
+
+#: src/components/ThemePicker.svelte
+msgid "Orange"
+msgstr "నారింజ"
+
+#: src/components/ThemePicker.svelte
+msgid "Yellow"
+msgstr "పసుపు"
+
+#: src/components/ThemePicker.svelte
+msgid "Green"
+msgstr "ఆకుపచ్చ"
+
+#: src/components/ThemePicker.svelte
+msgid "Mint"
+msgstr "పుదీనా ఆకుపచ్చ"
+
+#: src/components/ThemePicker.svelte
+msgid "Teal"
+msgstr "నీలి ఆకుపచ్చ"
+
+#: src/components/ThemePicker.svelte
+msgid "Blue"
+msgstr "నీలం"
+
+#: src/components/ThemePicker.svelte
+msgid "Navy"
+msgstr "ముదురు నీలం"
+
+#: src/components/ThemePicker.svelte
+msgid "Purple"
+msgstr "ఊదా"
+
+#: src/components/ThemePicker.svelte
+msgid "Pink"
+msgstr "గులాబీ"
+
+#: src/components/ThemePicker.svelte
+msgid "Brown"
+msgstr "గోధుమ"
+
+#: src/components/ThemePicker.svelte
+msgid "Beige"
+msgstr "లేత గోధుమ"
+
+#: src/components/ThemePicker.svelte
+msgid "White"
+msgstr "తెలుపు"
+
+#: src/components/ThemePicker.svelte
+msgid "Grey"
+msgstr "బూడిద"
+
+#: src/components/ThemePicker.svelte
+msgid "Black"
+msgstr "నలుపు"
+
+#: src/components/ThemePicker.svelte
+msgid "Light & dark"
+msgstr "లేత మరియు ముదురు"
+
+#: src/components/ThemePicker.svelte
+msgid "Light"
+msgstr "లేత"
+
+#: src/components/ThemePicker.svelte
+msgid "Dark"
+msgstr "ముదురు"
+
+#: src/components/ThemePicker.svelte
+msgid "Peach"
+msgstr "పీచ్"

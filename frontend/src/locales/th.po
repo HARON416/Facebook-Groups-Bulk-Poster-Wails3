@@ -339,7 +339,6 @@ msgid "No accounts found"
 msgstr "ไม่พบบัญชี"
 
 #: src/components/AccountDropdown.svelte
-#: src/components/ThemePicker.svelte
 msgid "Try a different name."
 msgstr "ลองใช้ชื่ออื่น"
 
@@ -2512,3 +2511,129 @@ msgstr "เลือกภาษาสำหรับเมนู ปุ่ม �
 #: src/components/GuidedTour.svelte
 msgid "Choose a light or dark color theme for the app."
 msgstr "เลือกธีมสีสว่างหรือสีมืดสำหรับแอป"
+
+#: src/components/ThemePicker.svelte
+msgid "Theme collection"
+msgstr "คอลเลกชันธีม"
+
+#: src/components/ThemePicker.svelte
+msgid "All themes <0/>"
+msgstr "ธีมทั้งหมด <0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Favorites <0/>"
+msgstr "รายการโปรด <0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Color<0/>"
+msgstr "สี<0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Appearance<0/>"
+msgstr "รูปลักษณ์<0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Clear filters"
+msgstr "ล้างตัวกรอง"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Remove favorite"
+msgstr "ลบออกจากรายการโปรด"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Add favorite"
+msgstr "เพิ่มในรายการโปรด"
+
+#: src/components/ThemePicker.svelte
+msgid "No favorites yet"
+msgstr "ยังไม่มีรายการโปรด"
+
+#: src/components/ThemePicker.svelte
+msgid "Use the star beside a theme to save it here."
+msgstr "ใช้ดาวข้างธีมเพื่อบันทึกไว้ที่นี่"
+
+#: src/components/ThemePicker.svelte
+msgid "Try another search or clear the filters."
+msgstr "ลองค้นหาใหม่หรือล้างตัวกรอง"
+
+#: src/components/ThemePicker.svelte
+msgid "All colors"
+msgstr "ทุกสี"
+
+#: src/components/ThemePicker.svelte
+msgid "Red"
+msgstr "แดง"
+
+#: src/components/ThemePicker.svelte
+msgid "Orange"
+msgstr "ส้ม"
+
+#: src/components/ThemePicker.svelte
+msgid "Yellow"
+msgstr "เหลือง"
+
+#: src/components/ThemePicker.svelte
+msgid "Green"
+msgstr "เขียว"
+
+#: src/components/ThemePicker.svelte
+msgid "Mint"
+msgstr "เขียวมิ้นต์"
+
+#: src/components/ThemePicker.svelte
+msgid "Teal"
+msgstr "เขียวอมฟ้า"
+
+#: src/components/ThemePicker.svelte
+msgid "Blue"
+msgstr "น้ำเงิน"
+
+#: src/components/ThemePicker.svelte
+msgid "Navy"
+msgstr "กรมท่า"
+
+#: src/components/ThemePicker.svelte
+msgid "Purple"
+msgstr "ม่วง"
+
+#: src/components/ThemePicker.svelte
+msgid "Pink"
+msgstr "ชมพู"
+
+#: src/components/ThemePicker.svelte
+msgid "Brown"
+msgstr "น้ำตาล"
+
+#: src/components/ThemePicker.svelte
+msgid "Beige"
+msgstr "เบจ"
+
+#: src/components/ThemePicker.svelte
+msgid "White"
+msgstr "ขาว"
+
+#: src/components/ThemePicker.svelte
+msgid "Grey"
+msgstr "เทา"
+
+#: src/components/ThemePicker.svelte
+msgid "Black"
+msgstr "ดำ"
+
+#: src/components/ThemePicker.svelte
+msgid "Light & dark"
+msgstr "สว่างและมืด"
+
+#: src/components/ThemePicker.svelte
+msgid "Light"
+msgstr "สว่าง"
+
+#: src/components/ThemePicker.svelte
+msgid "Dark"
+msgstr "มืด"
+
+#: src/components/ThemePicker.svelte
+msgid "Peach"
+msgstr "พีช"

@@ -339,7 +339,6 @@ msgid "No accounts found"
 msgstr "Ingen konti fundet"
 
 #: src/components/AccountDropdown.svelte
-#: src/components/ThemePicker.svelte
 msgid "Try a different name."
 msgstr "Prøv et andet navn."
 
@@ -2512,3 +2511,129 @@ msgstr "Vælg sproget til menuer, knapper og vejledninger."
 #: src/components/GuidedTour.svelte
 msgid "Choose a light or dark color theme for the app."
 msgstr "Vælg et lyst eller mørkt farvetema til appen."
+
+#: src/components/ThemePicker.svelte
+msgid "Theme collection"
+msgstr "Temasamling"
+
+#: src/components/ThemePicker.svelte
+msgid "All themes <0/>"
+msgstr "Alle temaer <0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Favorites <0/>"
+msgstr "Favoritter <0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Color<0/>"
+msgstr "Farve<0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Appearance<0/>"
+msgstr "Udseende<0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Clear filters"
+msgstr "Ryd filtre"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Remove favorite"
+msgstr "Fjern favorit"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Add favorite"
+msgstr "Tilføj favorit"
+
+#: src/components/ThemePicker.svelte
+msgid "No favorites yet"
+msgstr "Ingen favoritter endnu"
+
+#: src/components/ThemePicker.svelte
+msgid "Use the star beside a theme to save it here."
+msgstr "Brug stjernen ved siden af et tema for at gemme det her."
+
+#: src/components/ThemePicker.svelte
+msgid "Try another search or clear the filters."
+msgstr "Prøv en anden søgning, eller ryd filtrene."
+
+#: src/components/ThemePicker.svelte
+msgid "All colors"
+msgstr "Alle farver"
+
+#: src/components/ThemePicker.svelte
+msgid "Red"
+msgstr "Rød"
+
+#: src/components/ThemePicker.svelte
+msgid "Orange"
+msgstr "Orange"
+
+#: src/components/ThemePicker.svelte
+msgid "Yellow"
+msgstr "Gul"
+
+#: src/components/ThemePicker.svelte
+msgid "Green"
+msgstr "Grøn"
+
+#: src/components/ThemePicker.svelte
+msgid "Mint"
+msgstr "Mintgrøn"
+
+#: src/components/ThemePicker.svelte
+msgid "Teal"
+msgstr "Blågrøn"
+
+#: src/components/ThemePicker.svelte
+msgid "Blue"
+msgstr "Blå"
+
+#: src/components/ThemePicker.svelte
+msgid "Navy"
+msgstr "Marineblå"
+
+#: src/components/ThemePicker.svelte
+msgid "Purple"
+msgstr "Lilla"
+
+#: src/components/ThemePicker.svelte
+msgid "Pink"
+msgstr "Lyserød"
+
+#: src/components/ThemePicker.svelte
+msgid "Brown"
+msgstr "Brun"
+
+#: src/components/ThemePicker.svelte
+msgid "Beige"
+msgstr "Beige"
+
+#: src/components/ThemePicker.svelte
+msgid "White"
+msgstr "Hvid"
+
+#: src/components/ThemePicker.svelte
+msgid "Grey"
+msgstr "Grå"
+
+#: src/components/ThemePicker.svelte
+msgid "Black"
+msgstr "Sort"
+
+#: src/components/ThemePicker.svelte
+msgid "Light & dark"
+msgstr "Lys og mørk"
+
+#: src/components/ThemePicker.svelte
+msgid "Light"
+msgstr "Lys"
+
+#: src/components/ThemePicker.svelte
+msgid "Dark"
+msgstr "Mørk"
+
+#: src/components/ThemePicker.svelte
+msgid "Peach"
+msgstr "Fersken"

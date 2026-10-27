@@ -339,7 +339,6 @@ msgid "No accounts found"
 msgstr "Nenašli sa žiadne účty"
 
 #: src/components/AccountDropdown.svelte
-#: src/components/ThemePicker.svelte
 msgid "Try a different name."
 msgstr "Skúste iný názov."
 
@@ -2512,3 +2511,129 @@ msgstr "Vyberte jazyk ponúk, tlačidiel a pokynov."
 #: src/components/GuidedTour.svelte
 msgid "Choose a light or dark color theme for the app."
 msgstr "Vyberte svetlý alebo tmavý farebný motív aplikácie."
+
+#: src/components/ThemePicker.svelte
+msgid "Theme collection"
+msgstr "Kolekcia motívov"
+
+#: src/components/ThemePicker.svelte
+msgid "All themes <0/>"
+msgstr "Všetky motívy <0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Favorites <0/>"
+msgstr "Obľúbené <0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Color<0/>"
+msgstr "Farba<0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Appearance<0/>"
+msgstr "Vzhľad<0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Clear filters"
+msgstr "Zrušiť filtre"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Remove favorite"
+msgstr "Odstrániť z obľúbených"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Add favorite"
+msgstr "Pridať k obľúbeným"
+
+#: src/components/ThemePicker.svelte
+msgid "No favorites yet"
+msgstr "Zatiaľ žiadne obľúbené"
+
+#: src/components/ThemePicker.svelte
+msgid "Use the star beside a theme to save it here."
+msgstr "Hviezdičkou vedľa motívu ho uložíte sem."
+
+#: src/components/ThemePicker.svelte
+msgid "Try another search or clear the filters."
+msgstr "Skúste iné vyhľadávanie alebo zrušte filtre."
+
+#: src/components/ThemePicker.svelte
+msgid "All colors"
+msgstr "Všetky farby"
+
+#: src/components/ThemePicker.svelte
+msgid "Red"
+msgstr "Červená"
+
+#: src/components/ThemePicker.svelte
+msgid "Orange"
+msgstr "Oranžová"
+
+#: src/components/ThemePicker.svelte
+msgid "Yellow"
+msgstr "Žltá"
+
+#: src/components/ThemePicker.svelte
+msgid "Green"
+msgstr "Zelená"
+
+#: src/components/ThemePicker.svelte
+msgid "Mint"
+msgstr "Mätová"
+
+#: src/components/ThemePicker.svelte
+msgid "Teal"
+msgstr "Petrolejová"
+
+#: src/components/ThemePicker.svelte
+msgid "Blue"
+msgstr "Modrá"
+
+#: src/components/ThemePicker.svelte
+msgid "Navy"
+msgstr "Námornícka modrá"
+
+#: src/components/ThemePicker.svelte
+msgid "Purple"
+msgstr "Fialová"
+
+#: src/components/ThemePicker.svelte
+msgid "Pink"
+msgstr "Ružová"
+
+#: src/components/ThemePicker.svelte
+msgid "Brown"
+msgstr "Hnedá"
+
+#: src/components/ThemePicker.svelte
+msgid "Beige"
+msgstr "Béžová"
+
+#: src/components/ThemePicker.svelte
+msgid "White"
+msgstr "Biela"
+
+#: src/components/ThemePicker.svelte
+msgid "Grey"
+msgstr "Sivá"
+
+#: src/components/ThemePicker.svelte
+msgid "Black"
+msgstr "Čierna"
+
+#: src/components/ThemePicker.svelte
+msgid "Light & dark"
+msgstr "Svetlé aj tmavé"
+
+#: src/components/ThemePicker.svelte
+msgid "Light"
+msgstr "Svetlé"
+
+#: src/components/ThemePicker.svelte
+msgid "Dark"
+msgstr "Tmavé"
+
+#: src/components/ThemePicker.svelte
+msgid "Peach"
+msgstr "Broskyňová"

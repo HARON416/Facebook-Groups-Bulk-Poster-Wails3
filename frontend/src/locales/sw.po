@@ -339,7 +339,6 @@ msgid "No accounts found"
 msgstr "Hakuna akaunti zilizopatikana"
 
 #: src/components/AccountDropdown.svelte
-#: src/components/ThemePicker.svelte
 msgid "Try a different name."
 msgstr "Jaribu jina lingine."
 
@@ -2512,3 +2511,129 @@ msgstr "Chagua lugha ya menyu, vitufe na maelekezo."
 #: src/components/GuidedTour.svelte
 msgid "Choose a light or dark color theme for the app."
 msgstr "Chagua mandhari ya rangi nyepesi au nyeusi kwa programu."
+
+#: src/components/ThemePicker.svelte
+msgid "Theme collection"
+msgstr "Mkusanyiko wa mandhari"
+
+#: src/components/ThemePicker.svelte
+msgid "All themes <0/>"
+msgstr "Mandhari zote <0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Favorites <0/>"
+msgstr "Vipendwa <0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Color<0/>"
+msgstr "Rangi<0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Appearance<0/>"
+msgstr "Mwonekano<0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Clear filters"
+msgstr "Ondoa vichujio"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Remove favorite"
+msgstr "Ondoa kwenye vipendwa"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Add favorite"
+msgstr "Ongeza kwenye vipendwa"
+
+#: src/components/ThemePicker.svelte
+msgid "No favorites yet"
+msgstr "Bado hakuna vipendwa"
+
+#: src/components/ThemePicker.svelte
+msgid "Use the star beside a theme to save it here."
+msgstr "Tumia nyota iliyo kando ya mandhari ili kuihifadhi hapa."
+
+#: src/components/ThemePicker.svelte
+msgid "Try another search or clear the filters."
+msgstr "Jaribu utafutaji mwingine au uondoe vichujio."
+
+#: src/components/ThemePicker.svelte
+msgid "All colors"
+msgstr "Rangi zote"
+
+#: src/components/ThemePicker.svelte
+msgid "Red"
+msgstr "Nyekundu"
+
+#: src/components/ThemePicker.svelte
+msgid "Orange"
+msgstr "Chungwa"
+
+#: src/components/ThemePicker.svelte
+msgid "Yellow"
+msgstr "Njano"
+
+#: src/components/ThemePicker.svelte
+msgid "Green"
+msgstr "Kijani"
+
+#: src/components/ThemePicker.svelte
+msgid "Mint"
+msgstr "Kijani cha mnanaa"
+
+#: src/components/ThemePicker.svelte
+msgid "Teal"
+msgstr "Kijani cha samawati"
+
+#: src/components/ThemePicker.svelte
+msgid "Blue"
+msgstr "Bluu"
+
+#: src/components/ThemePicker.svelte
+msgid "Navy"
+msgstr "Bluu iliyokolea"
+
+#: src/components/ThemePicker.svelte
+msgid "Purple"
+msgstr "Zambarau"
+
+#: src/components/ThemePicker.svelte
+msgid "Pink"
+msgstr "Waridi"
+
+#: src/components/ThemePicker.svelte
+msgid "Brown"
+msgstr "Kahawia"
+
+#: src/components/ThemePicker.svelte
+msgid "Beige"
+msgstr "Beji"
+
+#: src/components/ThemePicker.svelte
+msgid "White"
+msgstr "Nyeupe"
+
+#: src/components/ThemePicker.svelte
+msgid "Grey"
+msgstr "Kijivu"
+
+#: src/components/ThemePicker.svelte
+msgid "Black"
+msgstr "Nyeusi"
+
+#: src/components/ThemePicker.svelte
+msgid "Light & dark"
+msgstr "Angavu na nyeusi"
+
+#: src/components/ThemePicker.svelte
+msgid "Light"
+msgstr "Angavu"
+
+#: src/components/ThemePicker.svelte
+msgid "Dark"
+msgstr "Nyeusi"
+
+#: src/components/ThemePicker.svelte
+msgid "Peach"
+msgstr "Pichi"

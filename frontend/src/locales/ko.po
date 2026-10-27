@@ -339,7 +339,6 @@ msgid "No accounts found"
 msgstr "계정을 찾을 수 없습니다"
 
 #: src/components/AccountDropdown.svelte
-#: src/components/ThemePicker.svelte
 msgid "Try a different name."
 msgstr "다른 이름으로 검색해 보세요."
 
@@ -2512,3 +2511,129 @@ msgstr "메뉴, 버튼 및 안내에 사용할 언어를 선택하세요."
 #: src/components/GuidedTour.svelte
 msgid "Choose a light or dark color theme for the app."
 msgstr "앱에 사용할 밝은 색상 또는 어두운 색상 테마를 선택하세요."
+
+#: src/components/ThemePicker.svelte
+msgid "Theme collection"
+msgstr "테마 모음"
+
+#: src/components/ThemePicker.svelte
+msgid "All themes <0/>"
+msgstr "모든 테마 <0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Favorites <0/>"
+msgstr "즐겨찾기 <0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Color<0/>"
+msgstr "색상<0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Appearance<0/>"
+msgstr "화면 모드<0/>"
+
+#: src/components/ThemePicker.svelte
+msgid "Clear filters"
+msgstr "필터 초기화"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Remove favorite"
+msgstr "즐겨찾기에서 제거"
+
+#: src/components/ThemePicker.svelte
+#: src/components/ThemePicker.svelte
+msgid "Add favorite"
+msgstr "즐겨찾기에 추가"
+
+#: src/components/ThemePicker.svelte
+msgid "No favorites yet"
+msgstr "아직 즐겨찾기가 없습니다"
+
+#: src/components/ThemePicker.svelte
+msgid "Use the star beside a theme to save it here."
+msgstr "테마 옆의 별을 눌러 여기에 저장하세요."
+
+#: src/components/ThemePicker.svelte
+msgid "Try another search or clear the filters."
+msgstr "다른 검색어를 입력하거나 필터를 초기화하세요."
+
+#: src/components/ThemePicker.svelte
+msgid "All colors"
+msgstr "모든 색상"
+
+#: src/components/ThemePicker.svelte
+msgid "Red"
+msgstr "빨강"
+
+#: src/components/ThemePicker.svelte
+msgid "Orange"
+msgstr "주황"
+
+#: src/components/ThemePicker.svelte
+msgid "Yellow"
+msgstr "노랑"
+
+#: src/components/ThemePicker.svelte
+msgid "Green"
+msgstr "초록"
+
+#: src/components/ThemePicker.svelte
+msgid "Mint"
+msgstr "민트"
+
+#: src/components/ThemePicker.svelte
+msgid "Teal"
+msgstr "청록"
+
+#: src/components/ThemePicker.svelte
+msgid "Blue"
+msgstr "파랑"
+
+#: src/components/ThemePicker.svelte
+msgid "Navy"
+msgstr "남색"
+
+#: src/components/ThemePicker.svelte
+msgid "Purple"
+msgstr "보라"
+
+#: src/components/ThemePicker.svelte
+msgid "Pink"
+msgstr "분홍"
+
+#: src/components/ThemePicker.svelte
+msgid "Brown"
+msgstr "갈색"
+
+#: src/components/ThemePicker.svelte
+msgid "Beige"
+msgstr "베이지"
+
+#: src/components/ThemePicker.svelte
+msgid "White"
+msgstr "흰색"
+
+#: src/components/ThemePicker.svelte
+msgid "Grey"
+msgstr "회색"
+
+#: src/components/ThemePicker.svelte
+msgid "Black"
+msgstr "검정"
+
+#: src/components/ThemePicker.svelte
+msgid "Light & dark"
+msgstr "밝게 및 어둡게"
+
+#: src/components/ThemePicker.svelte
+msgid "Light"
+msgstr "밝게"
+
+#: src/components/ThemePicker.svelte
+msgid "Dark"
+msgstr "어둡게"
+
+#: src/components/ThemePicker.svelte
+msgid "Peach"
+msgstr "복숭아색"

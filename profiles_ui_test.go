@@ -34,11 +34,24 @@ func TestFacebookPageFetchDialogUI(t *testing.T) {
 	testAccountWorkspacesUI(t, true)
 }
 
-func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool) {
+func TestThemePickerBrowsingUI(t *testing.T) {
+	testAccountWorkspacesUI(t, false, true)
+}
+
+func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool, themePickerOnly ...bool) {
 	t.Helper()
 	if !*browserIntegration {
 		t.Skip("enable with -browser-integration; build frontend first")
 	}
+	paletteData, err := os.ReadFile("frontend/src/lib/theme-palettes.json")
+	if err != nil {
+		t.Fatal(err)
+	}
+	var themePalettes []json.RawMessage
+	if err := json.Unmarshal(paletteData, &themePalettes); err != nil {
+		t.Fatal(err)
+	}
+	themeCount := len(themePalettes) + 2
 	chrome, found := launcher.LookPath()
 	if !found {
 		t.Fatal("Chrome required")
@@ -328,7 +341,7 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool) {
 		t.Helper()
 		target.MustActivate()
 		target.MustElement("[data-theme-picker]").MustClick()
-		awaitPage(target, `() => document.querySelector('dialog[aria-labelledby="theme-picker-heading"]')?.open && document.querySelectorAll('#theme-options [role=option]').length===189`)
+		awaitPage(target, fmt.Sprintf(`() => document.querySelector('dialog[aria-labelledby="theme-picker-heading"]')?.open && document.querySelectorAll('#theme-options [data-theme-id]').length===%d`, themeCount))
 		target.MustElement(fmt.Sprintf(`[data-theme-id="%s"]`, id)).MustClick()
 		awaitPage(target, `() => !document.querySelector('dialog[aria-labelledby="theme-picker-heading"]').open`)
 	}
@@ -348,6 +361,58 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool) {
 		await(fmt.Sprintf(`() => document.querySelector('#account-profile').dataset.profileId===%q && !document.querySelector('#account-profile').disabled`, id))
 	}
 	await(`() => document.querySelector('#post-body[contenteditable=true]') !== null`)
+	if len(themePickerOnly) > 0 && themePickerOnly[0] {
+		chooseTheme(page, "light")
+		page.MustElement("[data-theme-picker]").MustClick()
+		await(fmt.Sprintf(`() => document.querySelectorAll('[data-theme-id]').length===%d && document.activeElement.matches('dialog input')`, themeCount))
+		eval(`() => document.querySelector('[data-theme-favorite="palette:catppuccin"]').click()`)
+		await(`() => document.documentElement.dataset.theme==='light' && document.querySelector('[data-theme-favorite="palette:catppuccin"]').getAttribute('aria-pressed')==='true' && !!document.querySelector('dialog[open]')`)
+		other := browser.MustPage(server.URL)
+		awaitPage(other, `() => !!document.querySelector('[data-theme-picker]')`)
+		other.MustElement("[data-theme-picker]").MustClick()
+		awaitPage(other, `() => document.querySelector('[data-theme-favorite="palette:catppuccin"]')?.getAttribute('aria-pressed')==='true'`)
+		page.MustActivate()
+		eval(`() => document.querySelector('[data-theme-favorite="palette:catppuccin"]').click()`)
+		awaitPage(other, `() => document.querySelector('[data-theme-favorite="palette:catppuccin"]')?.getAttribute('aria-pressed')==='false'`)
+		eval(`() => document.querySelector('[data-theme-favorite="palette:catppuccin"]').click()`)
+		page.MustReload()
+		await(`() => !!document.querySelector('[data-theme-picker]')`)
+		page.MustElement("[data-theme-picker]").MustClick()
+		await(`() => document.querySelector('[data-theme-favorite="palette:catppuccin"]')?.getAttribute('aria-pressed')==='true'`)
+		page.MustElement("[data-theme-favorites-view]").MustClick()
+		await(`() => document.querySelectorAll('[data-theme-id]').length===1`)
+		page.MustElement(`[data-theme-favorite="palette:catppuccin"]`).MustClick()
+		await(`() => document.querySelectorAll('[data-theme-id]').length===0 && document.activeElement.matches('dialog input') && !!document.querySelector('.no-results')`)
+		page.MustElement(".results-bar button").MustClick()
+		eval(`() => {const c=document.querySelector('[data-theme-color]');c.value='green';c.dispatchEvent(new Event('change',{bubbles:true}));const m=document.querySelector('[data-theme-appearance]');m.value='light';m.dispatchEvent(new Event('change',{bubbles:true}));}`)
+		page.MustElement("dialog input").MustInput("green ")
+		await(`() => document.querySelectorAll('[data-theme-id]').length>=5 && document.querySelector('[data-theme-id="palette:colorhunt-green-meadow"]') && !document.querySelector('[data-theme-id="palette:colorhunt-green-pine"]')`)
+		if err := page.Keyboard.Type(input.ArrowDown, input.End, input.Home); err != nil {
+			t.Fatal(err)
+		}
+		await(`() => document.activeElement===document.querySelector('[data-theme-id]')`)
+		if err := page.Keyboard.Type(input.Tab, input.Space); err != nil {
+			t.Fatal(err)
+		}
+		await(`() => document.activeElement.matches('[data-theme-favorite][aria-pressed=true]') && document.documentElement.dataset.theme==='light' && !document.documentElement.dataset.palette`)
+		eval(`() => {const s=document.querySelector('dialog input');s.focus();s.dispatchEvent(new KeyboardEvent('keydown',{key:'Enter',isComposing:true,bubbles:true}));}`)
+		await(`() => !!document.querySelector('dialog[open]')`)
+		if err := page.Keyboard.Type(input.Escape); err != nil {
+			t.Fatal(err)
+		}
+		await(`() => !document.querySelector('dialog[open]') && document.activeElement.matches('[data-theme-picker]')`)
+		page.MustElement("[data-theme-picker]").MustClick()
+		page.MustElement(".results-bar button").MustClick()
+		page.MustElement("dialog input").MustInput("catppuccin")
+		if err := page.Keyboard.Type(input.Enter); err != nil {
+			t.Fatal(err)
+		}
+		await(`() => !document.querySelector('dialog[open]') && document.documentElement.dataset.palette==='palette:catppuccin'`)
+		page.MustElement("[data-theme-picker]").MustClick()
+		eval(`() => {Storage.prototype.setItem=()=>{throw new Error('blocked')};document.querySelector('[data-theme-favorite="palette:catppuccin"]').click();window.dispatchEvent(new Event('focus'));}`)
+		await(`() => document.querySelector('[data-theme-favorite="palette:catppuccin"]').getAttribute('aria-pressed')==='true'`)
+		return
+	}
 	if pageFetchOnly {
 		// An inactive account dialog must not process an unrelated submission.
 		eval(`async () => {const form=document.querySelector('#add-account-form');if(form){const input=form.querySelector('input');input.value='Unintended account';input.dispatchEvent(new Event('input',{bubbles:true}));form.requestSubmit();}await new Promise(resolve=>setTimeout(resolve,400));}`)
@@ -601,7 +666,7 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool) {
 	page.MustElement("[data-features-card]").MustClick()
 	await(`() => document.querySelector('[data-features-card]').textContent.includes('How to use') && document.querySelector('#features-dialog').open && !!document.querySelector('.usage-guide')`)
 	eval(`() => document.querySelector('.view-switch button:first-child').click()`)
-	await(`() => {const d=document.querySelector('#features-dialog');return d.open && d.contains(document.activeElement) && d.querySelectorAll('section').length===6 && d.innerText.includes('33 languages · 189 themes')}`)
+	await(fmt.Sprintf(`() => {const d=document.querySelector('#features-dialog');return d.open && d.contains(document.activeElement) && d.querySelectorAll('section').length===6 && d.innerText.includes('33 languages · %d themes')}`, themeCount))
 	if err := page.Keyboard.Type(input.Tab); err != nil {
 		t.Fatal(err)
 	}
@@ -835,7 +900,7 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool) {
 	changeLanguage("id")
 	page.MustElement("[data-features-card]").MustClick()
 	eval(`() => document.querySelector('.view-switch button:first-child').click()`)
-	await(`() => document.querySelector('#features-heading').textContent==='Fitur & Cara Menggunakan' && document.querySelector('#features-dialog').innerText.includes('33 bahasa · 189 tema') && getComputedStyle(document.querySelector('#features-dialog')).backgroundColor===getComputedStyle(document.querySelector('.top-bar')).backgroundColor`)
+	await(fmt.Sprintf(`() => document.querySelector('#features-heading').textContent==='Fitur & Cara Menggunakan' && document.querySelector('#features-dialog').innerText.includes('33 bahasa · %d tema') && getComputedStyle(document.querySelector('#features-dialog')).backgroundColor===getComputedStyle(document.querySelector('.top-bar')).backgroundColor`, themeCount))
 	page.MustElement("[data-usage-guide]").MustClick()
 	await(`() => document.querySelector('#features-heading').textContent==='Fitur & Cara Menggunakan' && document.querySelector('.usage-guide').textContent.includes('keduanya wajib') && !document.querySelector('.usage-guide').textContent.includes('Write your message') && document.querySelector('#post-body').textContent==='Business draft'`)
 	page.MustElement("#features-dialog .close").MustClick()
@@ -911,9 +976,9 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool) {
 		if view.query == "posting-logs" {
 			// Imported themes share the existing persistence and cross-window sync.
 			aux.MustElement("[data-theme-picker]").MustClick()
-			awaitPage(aux, `() => document.querySelectorAll('#theme-options [role=option]').length===189 && document.activeElement.matches('dialog[open] input')`)
+			awaitPage(aux, fmt.Sprintf(`() => document.querySelectorAll('#theme-options [data-theme-id]').length===%d && document.activeElement.matches('dialog[open] input')`, themeCount))
 			aux.MustElement("dialog[open] input").MustInput("no-theme-matches-this")
-			awaitPage(aux, `() => document.querySelectorAll('#theme-options [role=option]').length===0 && document.querySelector('.no-results')!==null`)
+			awaitPage(aux, `() => document.querySelectorAll('#theme-options [data-theme-id]').length===0 && document.querySelector('.no-results')!==null`)
 			aux.MustEval(`() => document.querySelector('dialog[open] input').focus()`)
 			if err := aux.Keyboard.Type(input.Escape); err != nil {
 				t.Fatal(err)
@@ -921,7 +986,7 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool) {
 			awaitPage(aux, `() => !document.querySelector('dialog').open && document.activeElement.matches('[data-theme-picker]') && !document.documentElement.dataset.palette`)
 			aux.MustElement("[data-theme-picker]").MustClick()
 			aux.MustElement("dialog[open] input").MustInput("CATPPUCCIN")
-			awaitPage(aux, `() => document.querySelectorAll('#theme-options [role=option]').length===1`)
+			awaitPage(aux, `() => document.querySelectorAll('#theme-options [data-theme-id]').length===1`)
 			if err := aux.Keyboard.Type(input.Enter); err != nil {
 				t.Fatal(err)
 			}
@@ -932,7 +997,30 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool) {
 			}
 			awaitPage(aux, `() => document.documentElement.dataset.palette==='palette:catppuccin' && document.querySelector('[data-theme-picker]')!==null`)
 			aux.MustElement("[data-theme-picker]").MustClick()
-			awaitPage(aux, `() => document.querySelector('[data-theme-id="palette:catppuccin"]').getAttribute('aria-selected')==='true'`)
+			awaitPage(aux, `() => document.querySelector('[data-theme-id="palette:catppuccin"]').getAttribute('aria-pressed')==='true'`)
+			// Favorite controls never select a theme, persist, and sync across windows.
+			aux.MustElement(`[data-theme-favorite="palette:catppuccin"]`).MustClick()
+			awaitPage(aux, `() => JSON.parse(localStorage.getItem('postika:theme-favorites')).includes('palette:catppuccin') && document.documentElement.dataset.palette==='palette:catppuccin' && !!document.querySelector('dialog[open]')`)
+			page.MustElement("[data-theme-picker]").MustClick()
+			await(`() => document.querySelector('[data-theme-favorite="palette:catppuccin"]')?.getAttribute('aria-pressed')==='true'`)
+			page.MustEval(`() => document.querySelector('dialog[open]').close()`)
+			aux.MustElement("[data-theme-favorites-view]").MustClick()
+			awaitPage(aux, `() => document.querySelectorAll('#theme-options [data-theme-id]').length===1`)
+			if err := aux.Reload(); err != nil {
+				t.Fatal(err)
+			}
+			awaitPage(aux, `() => document.querySelector('[data-theme-picker]')!==null`)
+			aux.MustElement("[data-theme-picker]").MustClick()
+			awaitPage(aux, `() => document.querySelector('[data-theme-favorite="palette:catppuccin"]')?.getAttribute('aria-pressed')==='true'`)
+			aux.MustElement("[data-theme-favorites-view]").MustClick()
+			aux.MustElement(`[data-theme-favorite="palette:catppuccin"]`).MustClick()
+			awaitPage(aux, `() => document.querySelectorAll('#theme-options [data-theme-id]').length===0 && document.activeElement.matches('dialog[open] input')`)
+			aux.MustElement(".views button:first-child").MustClick()
+			aux.MustEval(`() => { const color=document.querySelector('[data-theme-color]');color.value='green';color.dispatchEvent(new Event('change',{bubbles:true}));const mode=document.querySelector('[data-theme-appearance]');mode.value='light';mode.dispatchEvent(new Event('change',{bubbles:true})); }`)
+			aux.MustElement("dialog[open] input").MustInput("green ")
+			awaitPage(aux, `() => document.querySelectorAll('#theme-options [data-theme-id]').length>=5 && !document.querySelector('[data-theme-id="palette:colorhunt-green-pine"]') && !!document.querySelector('[data-theme-id="palette:colorhunt-green-meadow"]')`)
+			aux.MustEval(`() => document.querySelector('.results-bar button').click()`)
+			awaitPage(aux, fmt.Sprintf(`() => document.querySelectorAll('#theme-options [data-theme-id]').length===%d`, themeCount))
 			if *uiArtifactDir != "" {
 				data, err := aux.Screenshot(false, &proto.PageCaptureScreenshot{})
 				if err != nil {
@@ -943,7 +1031,7 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool) {
 				}
 			}
 			aux.MustElement("dialog[open] input").MustInput("Postika Dark")
-			awaitPage(aux, `() => document.querySelectorAll('#theme-options [role=option]').length===1`)
+			awaitPage(aux, `() => document.querySelectorAll('#theme-options [data-theme-id]').length===1`)
 			if err := aux.Keyboard.Type(input.Enter); err != nil {
 				t.Fatal(err)
 			}
@@ -998,7 +1086,7 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool) {
 	page.MustActivate()
 	page.MustElement("[data-features-card]").MustClick()
 	eval(`() => document.querySelector('.view-switch button:first-child').click()`)
-	await(`() => {const d=document.querySelector('#features-dialog');return d.open && document.querySelector('#features-heading').textContent==='الميزات وكيفية الاستخدام' && getComputedStyle(d).direction==='rtl' && d.innerText.includes('33 لغة · 189 سمة')}`)
+	await(fmt.Sprintf(`() => {const d=document.querySelector('#features-dialog');return d.open && document.querySelector('#features-heading').textContent==='الميزات وكيفية الاستخدام' && getComputedStyle(d).direction==='rtl' && d.innerText.includes('33 لغة · %d سمة')}`, themeCount))
 	page.MustElement("[data-usage-guide]").MustClick()
 	await(`() => document.querySelector('#features-heading').textContent==='الميزات وكيفية الاستخدام' && document.querySelector('.usage-guide').textContent.includes('كلاهما مطلوب') && getComputedStyle(document.querySelector('.usage-guide')).direction==='rtl'`)
 	if *uiArtifactDir != "" {
@@ -1028,7 +1116,7 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool) {
 
 	page.MustElement("[data-features-card]").MustClick()
 	eval(`() => document.querySelector('.view-switch button:first-child').click()`)
-	await(`() => {const d=document.querySelector('#features-dialog');return d.open && getComputedStyle(d).direction==='rtl' && document.querySelector('#features-heading').textContent==='תכונות ומדריך שימוש' && d.innerText.includes('33 שפות · 189 ערכות נושא')}`)
+	await(fmt.Sprintf(`() => {const d=document.querySelector('#features-dialog');return d.open && getComputedStyle(d).direction==='rtl' && document.querySelector('#features-heading').textContent==='תכונות ומדריך שימוש' && d.innerText.includes('33 שפות · %d ערכות נושא')}`, themeCount))
 	page.MustElement("[data-usage-guide]").MustClick()
 	await(`() => document.querySelector('.usage-guide').textContent.includes('שניהם נדרשים') && getComputedStyle(document.querySelector('.usage-guide')).direction==='rtl'`)
 	page.MustElement("#features-dialog .close").MustClick()
