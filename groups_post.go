@@ -231,9 +231,8 @@ func (s *GroupsService) GetPostPreparationStatus() string {
 }
 func (s *GroupsService) setPostStatus(message string) {
 	s.postMu.Lock()
-	if s.postingCancel != nil && s.postStatus != message {
-		s.appendPostingLogLocked("info", message)
-	}
+	// Progress is polled by the current-activity display. Only durable events
+	// belong in the timeline; callers record those explicitly.
 	s.postStatus = message
 	s.postMu.Unlock()
 }

@@ -134,6 +134,77 @@ func TestPostingLogsPaginationAndSnapshot(t *testing.T) {
 		t.Fatal("idle polling added log noise")
 	}
 }
+
+func TestPostingProgressStaysLiveWithoutTimelineNoise(t *testing.T) {
+	s := &GroupsService{}
+	ctx, cancel := testPostingContext(s)
+	defer cancel()
+	s.postMu.Lock()
+	s.posting.Total = 2
+	s.postMu.Unlock()
+	s.beginPostingGroup(Group{ID: "one", Name: "First group"})
+	if status := s.GetPostingStatus(); status.Current != 1 || status.CurrentGroup.ID != "one" || status.Message != "Group 1/2: First group" {
+		t.Fatalf("group progress was lost: %+v", status)
+	}
+	for _, message := range []string{
+		"Opening browser…", "Waiting for the group page and opening its composer…",
+		"Preparing post 1/1 for First group...", "Uploading images from post 1/1 for First group...",
+		"First group: uploading image 1 of 2…", "First group: uploading image 2 of 2…",
+		"Posting post 1/1 to First group...", "Post button clicked", "Posting...",
+		"Rewriting the post body with Gemini…", "Gemini rewrite completed.",
+	} {
+		s.setPostStatus(message)
+		if status := s.GetPostingStatus(); status.Message != message {
+			t.Fatalf("live progress is stale: got %q, want %q", status.Message, message)
+		}
+	}
+	if logs := s.GetPostingLogs(1, 50); logs.Total != 0 {
+		t.Fatalf("routine progress created timeline entries: %+v", logs.Entries)
+	}
+	s.recordOutcome(PostOutcome{Group: Group{ID: "one", Name: "First group"}, State: "posted"})
+	s.beginPostingGroup(Group{ID: "two", Name: "Second group"})
+	done := make(chan error, 1)
+	go func() { done <- s.waitPostingDelay(ctx, time.Minute) }()
+	deadline := time.Now().Add(time.Second)
+	for s.GetPostingStatus().WaitSeconds == 0 && time.Now().Before(deadline) {
+		time.Sleep(time.Millisecond)
+	}
+	status := s.GetPostingStatus()
+	if status.WaitSeconds == 0 || !strings.Contains(status.Message, "Next post in") || status.Current != 2 {
+		t.Fatalf("countdown is missing from live status: %+v", status)
+	}
+	cancel()
+	if err := <-done; !errors.Is(err, context.Canceled) {
+		t.Fatalf("countdown did not stop: %v", err)
+	}
+	if logs := s.GetPostingLogs(1, 50); logs.Total != 1 || logs.Entries[0].Outcome != "posted" || logs.Status.WaitSeconds != 0 {
+		t.Fatalf("expected only the group outcome, with countdown cleared: %+v", logs)
+	}
+}
+
+func TestPostingRetryEventsRemainWarningsAndKeepFinalOutcome(t *testing.T) {
+	s := &GroupsService{postingRunID: 1}
+	_, cancel := testPostingContext(s)
+	defer cancel()
+	firstRetry := "First submission unconfirmed. Retrying request 1/3 with the captured mutation ID…"
+	laterRetry := "Submission unconfirmed. Retrying request 2/3: temporary network failure"
+	for _, message := range []string{firstRetry, firstRetry, laterRetry} {
+		s.setPostEvent("warning", message)
+		if s.GetPostingStatus().Message != message {
+			t.Fatal("retry missing from live status")
+		}
+	}
+	s.setPostStatus("Posting post 1/1 to First group...")
+	s.recordOutcome(PostOutcome{Group: Group{ID: "one", Name: "First group"}, State: "posted", diagnostic: "API confirmation: HTTP 200", response: `{"data":{"post_id":"one"}}`})
+	logs := s.GetPostingLogs(1, 50)
+	if logs.Total != 4 || logs.Entries[0].Message != firstRetry || logs.Entries[1].Message != laterRetry || logs.Entries[0].Level != "warning" || logs.Entries[1].Level != "warning" || logs.Entries[2].Level != "debug" || logs.Entries[3].Outcome != "posted" || !logs.Entries[3].HasResponse {
+		t.Fatalf("important history or outcome diagnostics were lost: %+v", logs.Entries)
+	}
+	if response, err := s.postingResponse(1, logs.Entries[3].ID); err != nil || !strings.Contains(response, `"post_id": "one"`) {
+		t.Fatalf("outcome response unavailable: %q %v", response, err)
+	}
+}
+
 func TestPauseAllowsInflightRequestAndBlocksNext(t *testing.T) {
 	if !*browserIntegration {
 		t.Skip("enable with -browser-integration for local HTTP fixtures")

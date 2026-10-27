@@ -37,6 +37,17 @@ func (s *GroupsService) appendPostingLogLocked(level, message string) {
 	s.postingLogs = append(s.postingLogs, PostingLog{ID: len(s.postingLogs) + 1, Level: level, Timestamp: time.Now().UTC().Format(time.RFC3339Nano), Message: message})
 }
 
+// Important events, such as retries, update live status and remain in history.
+// Routine preparation/upload/submission progress uses setPostStatus instead.
+func (s *GroupsService) setPostEvent(level, message string) {
+	s.postMu.Lock()
+	defer s.postMu.Unlock()
+	if s.postingCancel != nil && s.postStatus != message {
+		s.appendPostingLogLocked(level, message)
+	}
+	s.postStatus = message
+}
+
 func (s *GroupsService) postingResponse(runID uint64, logID int) (string, error) {
 	s.postMu.Lock()
 	defer s.postMu.Unlock()

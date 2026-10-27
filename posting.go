@@ -361,14 +361,14 @@ func (s *GroupsService) PublishPostWithOptions(ctx context.Context, selected []s
 		return finish("stopped", err.Error()), nil
 	}
 	replay.allowRewrite = options.Rewrite || rotating
-	replay.progress = s.setPostStatus
+	replay.progress = func(message string) { s.setPostEvent("warning", message) }
 	first := parsePostResponseForGroup(template.Response, template.Status, prepared.OpenedGroup.ID)
 	if captureErr != nil {
 		first = replayRequestFailure("unknown", "The first post could not be confirmed.", "Browser post", template.Response, template.Status, captureErr)
 	}
 	firstRetried := first.State == "unknown"
 	if firstRetried {
-		s.setPostStatus("First submission unconfirmed. Retrying request 1/3 with the captured mutation ID…")
+		s.setPostEvent("warning", "First submission unconfirmed. Retrying request 1/3 with the captured mutation ID…")
 		response, status, retryErr := replay.sendAttempts(ctx, template.URL, template.Headers, []byte(template.Body), 1, func(body []byte, status int) bool {
 			return parsePostResponseForGroup(body, status, prepared.OpenedGroup.ID).State == "unknown"
 		})

@@ -17,7 +17,6 @@ func (s *GroupsService) beginPostingGroup(group Group) {
 	s.posting.Current = len(s.posting.Results) + 1
 	s.posting.CurrentGroup = group
 	s.postStatus = fmt.Sprintf("Group %d/%d: %s", s.posting.Current, s.posting.Total, group.Name)
-	s.appendPostingLogLocked("info", s.postStatus)
 }
 func (s *GroupsService) waitPostingInterval(ctx context.Context, options PostingOptions) error {
 	span := options.MaximumInterval - options.MinimumInterval + 1
@@ -28,9 +27,6 @@ func (s *GroupsService) waitPostingInterval(ctx context.Context, options Posting
 	return s.waitPostingDelay(ctx, time.Duration(options.MinimumInterval+int(number.Int64()))*time.Second)
 }
 func (s *GroupsService) waitPostingDelay(ctx context.Context, duration time.Duration) error {
-	s.postMu.Lock()
-	s.appendPostingLogLocked("info", fmt.Sprintf("Waiting %ds before posting to %s.", int(duration.Seconds()), s.posting.CurrentGroup.Name))
-	s.postMu.Unlock()
 	remaining := duration
 	defer func() { s.postMu.Lock(); s.posting.WaitSeconds = 0; s.postMu.Unlock() }()
 	for remaining > 0 {
