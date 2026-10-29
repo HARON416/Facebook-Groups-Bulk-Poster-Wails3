@@ -88,6 +88,7 @@ msgid "Opening…"
 msgstr "正在打开…"
 
 #: src/App.svelte
+#: src/components/ItemListingEditor.svelte
 #: src/components/LogMessage.svelte
 msgid "Loading…"
 msgstr "正在加载…"
@@ -127,6 +128,8 @@ msgstr "取消选择所有群组"
 #~ msgstr ""
 
 #: src/App.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ListingFieldSelect.svelte
 msgid "Searching…"
 msgstr "正在搜索…"
 
@@ -197,6 +200,10 @@ msgstr "时区：{0}。保持 Postika 打开并让计算机保持唤醒。发布
 #: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FetchedPostCard.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/LocationSearchDialog.svelte
+#: src/components/MarketplaceListings.svelte
 #: src/components/RenameProfileDialog.svelte
 msgid "Cancel"
 msgstr "取消"
@@ -339,6 +346,7 @@ msgid "No accounts found"
 msgstr "未找到账号"
 
 #: src/components/AccountDropdown.svelte
+#: src/components/ListingFieldSelect.svelte
 msgid "Try a different name."
 msgstr "请尝试其他名称。"
 
@@ -379,15 +387,19 @@ msgid "Choose a weekday for this post"
 msgstr "为此帖子选择一个工作日"
 
 #. 0: day.description
+#. 0: title(listing)
 #: src/components/DateTimePicker.svelte
+#: src/components/MarketplaceListings.svelte
 msgid "Select {0}"
 msgstr "选择 {0}"
 
 #: src/components/DateTimePicker.svelte
+#: src/components/ListingDatePicker.svelte
 msgid "Previous month"
 msgstr "上个月"
 
 #: src/components/DateTimePicker.svelte
+#: src/components/ListingDatePicker.svelte
 msgid "Next month"
 msgstr "下个月"
 
@@ -450,6 +462,7 @@ msgstr "{0} 移动到第 {2} 个位置的 {1}。"
 msgid "Post body"
 msgstr "帖子正文"
 
+#: src/components/ItemListingEditor.svelte
 #: src/components/PostComposer.svelte
 #: src/components/PostComposer.svelte
 msgid "Required"
@@ -462,6 +475,7 @@ msgstr "必填"
 msgid "Images"
 msgstr "图片"
 
+#: src/components/ItemListingEditor.svelte
 #: src/components/PostComposer.svelte
 msgid "Choose images"
 msgstr "选择图片"
@@ -484,6 +498,7 @@ msgid "Add more"
 msgstr "添加更多"
 
 #: src/components/FeaturesCard.svelte
+#: src/components/ItemListingEditor.svelte
 #: src/components/PostComposer.svelte
 #: src/components/UsageGuide.svelte
 msgid "Drag images to rearrange. Or focus an image and use Alt + Left / Right."
@@ -498,7 +513,11 @@ msgstr "已选图片"
 msgid "{0}, image {1} of {2}"
 msgstr "{0}，第 {2} 张中的第 {1} 张图片"
 
+#. 0: photo.file.name
+#. 0: tag
 #. 0: image.file.name
+#: src/components/ItemListingEditor.svelte
+#: src/components/ListingTags.svelte
 #: src/components/PostComposer.svelte
 msgid "Remove {0}"
 msgstr "移除 {0}"
@@ -994,11 +1013,13 @@ msgid "The browser is closed. It will reopen when you click Post."
 msgstr "浏览器已关闭。点击发布时将重新打开。"
 
 #: src/App.svelte
+#: src/components/ItemListingEditor.svelte
 #: src/components/LogMessage.svelte
 msgid "Checking Facebook login"
 msgstr "正在检查 Facebook 登录"
 
 #: src/App.svelte
+#: src/components/ItemListingEditor.svelte
 #: src/components/LogMessage.svelte
 msgid "Finish signing in or any verification prompts in Chrome. Your login will be detected automatically."
 msgstr "在 Chrome 中完成登录或任何验证提示。您的登录信息将自动被检测。"
@@ -1117,8 +1138,10 @@ msgid "{0} shown"
 msgstr "显示 {0}"
 
 #. 0: selectedGroupIds.length
+#. 0: selected.length
 #. 0: groups.length
 #: src/App.svelte
+#: src/components/MarketplaceListings.svelte
 #: src/components/QueueReview.svelte
 msgid "{0} selected"
 msgstr "已选择 {0}"
@@ -1247,6 +1270,7 @@ msgstr "配色主题"
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
 #: src/components/GuidedTour.svelte
+#: src/components/NotificationBar.svelte
 #: src/components/RenameProfileDialog.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UpdateButton.svelte
@@ -1286,6 +1310,7 @@ msgstr "Chrome 中的图片上传失败。检查编辑器并重试发布"
 msgid "Attaching images…"
 msgstr "正在附加图片…"
 
+#: src/components/ItemListingEditor.svelte
 #: src/components/LogMessage.svelte
 msgid "Choose JPG, PNG, WebP, or GIF images"
 msgstr "请选择 JPG、PNG、WebP 或 GIF 图片"
@@ -1538,6 +1563,7 @@ msgstr "未捕获完整的图片上传请求。"
 msgid "No fresh image upload request was captured."
 msgstr "未捕获新的图片上传请求。"
 
+#: src/components/LocationSearchDialog.svelte
 #: src/components/LogMessage.svelte
 msgid "Opening browser…"
 msgstr "正在打开浏览器…"
@@ -2099,6 +2125,7 @@ msgid "Edit post {0}"
 msgstr "编辑帖子 {0}"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/MarketplaceListings.svelte
 #: src/components/QueueReview.svelte
 #: src/components/QueueReview.svelte
 msgid "Edit"
@@ -2112,6 +2139,7 @@ msgstr "删除帖子 {0}"
 #: src/components/AccountDropdown.svelte
 #: src/components/AccountDropdown.svelte
 #: src/components/FetchedPostCard.svelte
+#: src/components/MarketplaceListings.svelte
 msgid "Delete"
 msgstr "删除"
 
@@ -2443,6 +2471,10 @@ msgstr "商务咨询"
 
 #: src/components/ContactButton.svelte
 #: src/components/ContactButton.svelte
+#: src/components/MarketplaceVehicles.svelte
+#: src/components/MarketplaceVehicles.svelte
+#: src/components/MarketplaceVehicles.svelte
+#: src/components/MarketplaceVehicles.svelte
 msgid "Other"
 msgstr "其他"
 
@@ -2497,10 +2529,14 @@ msgid "Finish"
 msgstr "完成"
 
 #: src/components/GuidedTour.svelte
+#: src/components/ItemListingEditor.svelte
 msgid "Next"
 msgstr "下一步"
 
+#: src/components/CreateListing.svelte
 #: src/components/GuidedTour.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
 msgid "Previous"
 msgstr "上一步"
 
@@ -2562,18 +2598,22 @@ msgstr "请尝试其他搜索或清除筛选。"
 msgid "All colors"
 msgstr "全部颜色"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Red"
 msgstr "红色"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Orange"
 msgstr "橙色"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Yellow"
 msgstr "黄色"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Green"
 msgstr "绿色"
@@ -2586,6 +2626,7 @@ msgstr "薄荷绿"
 msgid "Teal"
 msgstr "青绿色"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Blue"
 msgstr "蓝色"
@@ -2594,22 +2635,27 @@ msgstr "蓝色"
 msgid "Navy"
 msgstr "藏青色"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Purple"
 msgstr "紫色"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Pink"
 msgstr "粉色"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Brown"
 msgstr "棕色"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Beige"
 msgstr "米色"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "White"
 msgstr "白色"
@@ -2618,6 +2664,7 @@ msgstr "白色"
 msgid "Grey"
 msgstr "灰色"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Black"
 msgstr "黑色"
@@ -2637,3 +2684,1364 @@ msgstr "深色"
 #: src/components/ThemePicker.svelte
 msgid "Peach"
 msgstr "桃色"
+
+#: src/Workspace.svelte
+#: src/components/MarketplaceToolbar.svelte
+msgid "Marketplace"
+msgstr "市场"
+
+#. 0: marketplaceTitle
+#: src/Workspace.svelte
+msgid "{0} · Postika"
+msgstr "{0} · Postika"
+
+#: src/components/MarketplaceToolbar.svelte
+msgid "All listing types"
+msgstr "所有刊登类型"
+
+#: src/components/MarketplaceToolbar.svelte
+msgid "Items for sale"
+msgstr "待售物品"
+
+#: src/components/MarketplaceToolbar.svelte
+msgid "Vehicles for sale"
+msgstr "待售车辆"
+
+#: src/components/MarketplaceToolbar.svelte
+msgid "Homes for rent or sale"
+msgstr "出租或出售的房屋"
+
+#: src/components/MarketplaceToolbar.svelte
+#: src/components/MarketplaceToolbar.svelte
+msgid "Listing type"
+msgstr "刊登类型"
+
+#~ msgid "<0/> Create new listing"
+#~ msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/MarketplaceToolbar.svelte
+msgid "Create new listing"
+msgstr "创建新刊登"
+
+#: src/components/CreateListing.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Item for sale"
+msgstr "待售物品"
+
+#: src/components/CreateListing.svelte
+msgid "Create a single listing for one or more items to sell."
+msgstr "为一件或多件待售物品创建一条刊登信息。"
+
+#: src/components/CreateListing.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Vehicle for sale"
+msgstr "待售车辆"
+
+#: src/components/CreateListing.svelte
+msgid "Sell a car, truck or other type of vehicle."
+msgstr "出售汽车、卡车或其他类型的车辆。"
+
+#: src/components/CreateListing.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Home for sale or rent"
+msgstr "出售或出租的房屋"
+
+#: src/components/CreateListing.svelte
+msgid "List a house or apartment for sale or rent."
+msgstr "刊登出售或出租房屋或公寓的信息。"
+
+#: src/components/CreateListing.svelte
+msgid "Choose listing type"
+msgstr "选择刊登类型"
+
+#~ msgid "Save draft"
+#~ msgstr "保存草稿"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Listing to Marketplace"
+msgstr "刊登到Marketplace"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Photos"
+msgstr "照片"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Add photos"
+msgstr "添加照片"
+
+#: src/components/ItemListingEditor.svelte
+msgid "or drag and drop"
+msgstr "或拖放照片"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Category"
+msgstr "类别"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Condition"
+msgstr "状况"
+
+#~ msgid "Title<0/>"
+#~ msgstr ""
+
+#~ msgid "Price<0/>"
+#~ msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "More details"
+msgstr "更多详情"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Attract more interest by including more details."
+msgstr "添加更多详情以吸引更多关注。"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Availability"
+msgstr "供货情况"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/MarketplaceAvailability.svelte
+msgid "List as Single Item"
+msgstr "作为单件物品刊登"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/LocationSearchDialog.svelte
+#: src/components/MarketplaceListings.svelte
+msgid "Location"
+msgstr "位置"
+
+#~ msgid "Description<0/>"
+#~ msgstr ""
+
+#~ msgid "Product tags<0/><1>Optional. Limit: 20.</1>"
+#~ msgstr ""
+
+#~ msgid "SKU<0/><1>Optional. Only visible to you.</1>"
+#~ msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "You can add up to 10 photos."
+msgstr "最多可以添加10张照片。"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Be as descriptive as possible."
+msgstr "请尽可能详细地描述。"
+
+#~ msgid "Draft saved."
+#~ msgstr "草稿已保存。"
+
+#~ msgid "Could not save draft. Please try again."
+#~ msgstr "无法保存草稿，请重试。"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Could not load draft. Please try again."
+msgstr "无法加载草稿，请重试。"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Your listing preview"
+msgstr "您的刊登预览"
+
+#: src/components/ItemListingEditor.svelte
+msgid "As you create your listing, you can preview how it will appear on Marketplace."
+msgstr "创建刊登信息时，您可以预览它在Marketplace上的显示效果。"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Title"
+msgstr "标题"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/MarketplaceListings.svelte
+msgid "Price"
+msgstr "价格"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Description will appear here."
+msgstr "描述将显示在这里。"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Details"
+msgstr "详情"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Seller information"
+msgstr "卖家信息"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Preview"
+msgstr "预览"
+
+#: src/components/ListingFieldSelect.svelte
+msgid "Options will be added later."
+msgstr "选项将在稍后添加。"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Description"
+msgstr "描述"
+
+#: src/components/ListingTags.svelte
+msgid "Product tags"
+msgstr "商品标签"
+
+#: src/components/ListingTags.svelte
+msgid "Optional. Limit: 20."
+msgstr "选填。上限：20。"
+
+#: src/components/ItemListingEditor.svelte
+msgid "SKU"
+msgstr "SKU"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Optional. Only visible to you."
+msgstr "选填。仅对您可见。"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Home & Garden"
+msgstr "家居与园艺"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Entertainment"
+msgstr "娱乐"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Clothing & Accessories"
+msgstr "服装与配饰"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Family"
+msgstr "家庭"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Electronics"
+msgstr "电子产品"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Hobbies"
+msgstr "爱好"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Classifieds"
+msgstr "分类广告"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Shipping available"
+msgstr "可配送"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Tools"
+msgstr "工具"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Furniture"
+msgstr "家具"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Household"
+msgstr "家居用品"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Garden"
+msgstr "园艺"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Appliances"
+msgstr "家用电器"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Video Games"
+msgstr "电子游戏"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Books, Movies & Music"
+msgstr "书籍、电影与音乐"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Bags & Luggage"
+msgstr "箱包与行李"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Women's clothing & shoes"
+msgstr "女装与女鞋"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Men's clothing & shoes"
+msgstr "男装与男鞋"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Jewelry & Accessories"
+msgstr "珠宝与配饰"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Health & beauty"
+msgstr "健康与美容"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Pet Supplies"
+msgstr "宠物用品"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Baby & kids"
+msgstr "婴幼儿与儿童"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Toys & Games"
+msgstr "玩具与游戏"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Electronics & computers"
+msgstr "电子产品与电脑"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Mobile phones"
+msgstr "手机"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Bicycles"
+msgstr "自行车"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Arts & Crafts"
+msgstr "艺术与手工艺"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Sports & Outdoors"
+msgstr "运动与户外"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Auto parts"
+msgstr "汽车配件"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Musical Instruments"
+msgstr "乐器"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Antiques & Collectibles"
+msgstr "古董与收藏品"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Garage Sale"
+msgstr "车库旧货出售"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Miscellaneous"
+msgstr "其他"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Vehicles"
+msgstr "车辆"
+
+#: src/components/MarketplaceConditions.svelte
+msgid "New"
+msgstr "全新"
+
+#: src/components/MarketplaceConditions.svelte
+msgid "Used - Like New"
+msgstr "二手 - 成色如新"
+
+#: src/components/MarketplaceConditions.svelte
+msgid "Used - Good"
+msgstr "二手 - 状况良好"
+
+#: src/components/MarketplaceConditions.svelte
+msgid "Used - Fair"
+msgstr "二手 - 状况一般"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Public"
+msgstr "公开"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Learn more about meetup preferences"
+msgstr "了解更多: 见面偏好"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Public meetup"
+msgstr "在公共场所见面"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Meet at a public location."
+msgstr "在公共场所见面。"
+
+#: src/components/ItemListingEditor.svelte
+msgid "See Marketplace meetup safety tips"
+msgstr "查看安全提示 (Marketplace)"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Door pickup"
+msgstr "上门取货"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Buyer picks up at your door."
+msgstr "买家到您家门口取货。"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Door dropoff"
+msgstr "送货上门"
+
+#: src/components/ItemListingEditor.svelte
+msgid "You drop off at buyer's door."
+msgstr "您将商品送到买家家门口。"
+
+#: src/components/ItemListingEditor.svelte
+msgid "See safety tips"
+msgstr "查看安全提示"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Meetup preferences"
+msgstr "见面偏好"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Buyers will be able to see your preferences on your listing."
+msgstr "买家可以在刊登信息中查看您的偏好。"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Learn more"
+msgstr "了解更多"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Promote listing after publish"
+msgstr "发布后推广刊登"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Add a step to promote your listing after it publishes, to help you reach more potential buyers by turning it into an ad."
+msgstr "添加发布后的推广步骤，将刊登信息转为广告，以触达更多潜在买家。"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Hide from friends"
+msgstr "向好友隐藏"
+
+#: src/components/ItemListingEditor.svelte
+msgid "This listing is still public. If you hide this listing from friends, they won't see it in most cases."
+msgstr "此刊登信息仍为公开状态。向好友隐藏后，多数情况下好友将看不到它。"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Learn more about hiding listings from friends"
+msgstr "了解更多: 向好友隐藏"
+
+#~ msgid "Marketplace items are public and can be seen by anyone on or off Facebook."
+#~ msgstr "Marketplace刊登信息是公开的，Facebook内外的任何人都可以查看。"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Commerce Policies"
+msgstr "商业政策"
+
+#~ msgid "Backspace"
+#~ msgstr ""
+
+#~ msgid "Files"
+#~ msgstr ""
+
+#~ msgid "Alt+ArrowLeft Alt+ArrowRight"
+#~ msgstr ""
+
+#: src/components/MarketplaceAvailability.svelte
+msgid "If you're selling one item, show \"Only one\" on your listing."
+msgstr "如果您只出售一件商品，请在商品信息中显示“仅一件”。"
+
+#: src/components/MarketplaceAvailability.svelte
+msgid "List as In Stock"
+msgstr "以有货状态发布"
+
+#: src/components/MarketplaceAvailability.svelte
+msgid "If you're selling more than one item, show \"In Stock\" on your listing."
+msgstr "如果您出售多件商品，请在商品信息中显示“有货”。"
+
+#: src/components/ListingTags.svelte
+msgid "Add tag"
+msgstr "添加标签"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Tags"
+msgstr "标签"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Enter a town or city"
+msgstr "输入城镇或城市"
+
+#~ msgid "Facebook opened."
+#~ msgstr "已打开 Facebook。"
+
+#~ msgid "Connect location search"
+#~ msgstr "连接位置搜索"
+
+#~ msgid "Postika needs to open Facebook for this account to prepare location search. If Facebook asks you to log in, complete that step in the browser."
+#~ msgstr "Postika 需要使用此账号打开 Facebook，以准备位置搜索。如果 Facebook 要求登录，请在浏览器中完成该步骤。"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/LocationSearchDialog.svelte
+msgid "Continue to Facebook"
+msgstr "继续前往 Facebook"
+
+#: src/components/LocationSearchDialog.svelte
+msgid "We need to open Facebook to set up location search. If Facebook asks you to log in, complete that step in the browser."
+msgstr "我们需要打开 Facebook 以设置位置搜索。如果 Facebook 要求登录，请在浏览器中完成该步骤。"
+
+#~ msgid "You’re logged in. Marketplace is open."
+#~ msgstr "您已登录。Marketplace 已打开。"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Facebook was closed. Continue to Facebook to try again."
+msgstr "Facebook 已关闭。请继续前往 Facebook 重试。"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Preparing Marketplace…"
+msgstr "正在准备 Marketplace…"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Could not expand More details. Please try again."
+msgstr "无法展开“更多详情”。请重试。"
+
+#: src/components/ItemListingEditor.svelte
+msgid "No locations found."
+msgstr "未找到位置。"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Location search is ready."
+msgstr "位置搜索已就绪。"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Reconnect to Facebook to search locations."
+msgstr "请重新连接 Facebook 以搜索位置。"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Could not search locations. Please try again."
+msgstr "无法搜索位置。请重试。"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/MarketplaceListings.svelte
+msgid "Try again"
+msgstr "重试"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Please enter a valid location."
+msgstr "请输入有效的位置。"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Vehicle type"
+msgstr "车辆类型"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Photo upload"
+msgstr "上传照片"
+
+#: src/components/ItemListingEditor.svelte
+msgid "You can add up to 20 photos."
+msgstr "最多可添加20张照片。"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "About this vehicle"
+msgstr "关于此车辆"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Help buyers know more about the vehicle you're listing."
+msgstr "帮助买家进一步了解您发布的车辆。"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Year"
+msgstr "年份"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Make"
+msgstr "品牌"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Model"
+msgstr "型号"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Enter your price for this vehicle."
+msgstr "输入此车辆的价格。"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Tell buyers anything that you haven't had the chance to include yet about your vehicle."
+msgstr "向买家补充您尚未填写的车辆信息。"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Seller's description"
+msgstr "卖家描述"
+
+#: src/components/ListingLocationPreview.svelte
+#: src/components/ListingLocationPreview.svelte
+msgid "Location is approximate"
+msgstr "位置仅供参考"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Car/Truck"
+msgstr "汽车/卡车"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Motorcycle"
+msgstr "摩托车"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Powersport"
+msgstr "动力运动型车辆"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "RV/Camper"
+msgstr "房车/露营车"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Trailer"
+msgstr "拖车"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Boat"
+msgstr "船"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Commercial/Industrial"
+msgstr "商用/工业用车辆"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Mileage"
+msgstr "行驶里程"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Vehicle appearance and features"
+msgstr "车辆外观和配置"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Add more about what your vehicle looks like and the features that it has."
+msgstr "补充车辆外观和配置的详细信息。"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Body style"
+msgstr "车身类型"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Exterior color"
+msgstr "外部颜色"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Interior color"
+msgstr "内饰颜色"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Vehicle details"
+msgstr "车辆详情"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Include more details to help connect interested buyers to your vehicle."
+msgstr "补充更多详情，帮助感兴趣的买家找到您的车辆。"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "This vehicle has a clean title."
+msgstr "此车辆的产权证明无重大损坏记录。"
+
+#: src/components/ItemListingEditor.svelte
+msgid "This vehicle has no significant damage or persistent problems."
+msgstr "此车辆无严重损坏或持续存在的问题。"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Vehicle condition"
+msgstr "车辆状况"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Fuel type"
+msgstr "燃料类型"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Transmission"
+msgstr "变速箱"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ListingVideo.svelte
+msgid "Video preview"
+msgstr "视频预览"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Automatic transmission"
+msgstr "自动变速箱"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ListingVideo.svelte
+msgid "Videos"
+msgstr "视频"
+
+#: src/components/ListingVideo.svelte
+#: src/components/ListingVideo.svelte
+msgid "Add video"
+msgstr "添加视频"
+
+#: src/components/ListingVideo.svelte
+#: src/components/ListingVideo.svelte
+#: src/components/ListingVideo.svelte
+#: src/components/ListingVideo.svelte
+msgid "Remove video"
+msgstr "移除视频"
+
+#~ msgid "Checking video…"
+#~ msgstr "正在检查视频…"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Choose a supported video up to 1 minute long."
+msgstr "请选择受支持且时长不超过1分钟的视频。"
+
+#: src/components/ListingVideo.svelte
+msgid "(1 minute max)"
+msgstr "(最长1分钟)"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Gold"
+msgstr "金色"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Gray"
+msgstr "灰色"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Silver"
+msgstr "银色"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Charcoal"
+msgstr "炭灰色"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Off white"
+msgstr "米白色"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Tan"
+msgstr "棕褐色"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Burgundy"
+msgstr "酒红色"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Turquoise"
+msgstr "绿松石色"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Coupe"
+msgstr "双门轿跑车"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Truck"
+msgstr "卡车"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Sedan"
+msgstr "轿车"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Hatchback"
+msgstr "掀背车"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "SUV"
+msgstr "SUV"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Convertible"
+msgstr "敞篷车"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Wagon"
+msgstr "旅行车"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Minivan"
+msgstr "小型厢式车"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Small Car"
+msgstr "小型汽车"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Excellent"
+msgstr "极佳"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Very good"
+msgstr "很好"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Good"
+msgstr "良好"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Fair"
+msgstr "一般"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Poor"
+msgstr "较差"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Diesel"
+msgstr "柴油"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Electric"
+msgstr "电动"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Gasoline"
+msgstr "汽油（Gasoline）"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Flex"
+msgstr "灵活燃料"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Hybrid"
+msgstr "混合动力"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Petrol"
+msgstr "汽油（Petrol）"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Plug-in hybrid"
+msgstr "插电式混合动力"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Manual transmission"
+msgstr "手动变速箱"
+
+#: src/components/ItemListingEditor.svelte
+msgid "You can add up to 50 photos."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Property type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Number of bedrooms"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Number of bathrooms"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Address"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Property description"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Include details like utilities, amenities, any deposits needed and when it's available."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Advanced Details"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Optional"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Property square feet"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Laundry type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Parking type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Air conditioning type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Heating type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "/ Month"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Rental Location"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "New home listing"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Rent"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "For Sale"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Apartment"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "House"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Townhouse"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "In-unit laundry"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Laundry in building"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Laundry available"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+#: src/components/MarketplaceHomes.svelte
+#: src/components/MarketplaceHomes.svelte
+#: src/components/MarketplaceHomes.svelte
+msgid "None"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Garage parking"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Street parking"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Off-street parking"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Parking available"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Central AC"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "AC available"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Central heating"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Electric heating"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Gas heating"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Radiator heating"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Heating available"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Enter an address"
+msgstr ""
+
+#: src/components/ListingLocationPreview.svelte
+msgid "View listing location"
+msgstr ""
+
+#: src/components/ListingLocationPreview.svelte
+msgid "Map preview unavailable."
+msgstr ""
+
+#: src/components/ListingLocationPreview.svelte
+msgid "View Map Info"
+msgstr ""
+
+#: src/components/ListingLocationPreview.svelte
+msgid "View map image"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Rental type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "This is a private room in a shared property."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Price per month"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Rental description"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Date available"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Cat friendly"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Dog friendly"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Date available:"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "How many people live here?"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Bathroom Type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Is this room furnished?"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Room Details"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Property Details"
+msgstr ""
+
+#~ msgid "Is this room furnished? <0/>"
+#~ msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Furnished"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Private"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Shared"
+msgstr ""
+
+#: src/components/ListingDatePicker.svelte
+msgid "Clear date"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Test"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Save"
+msgstr ""
+
+#. 0: maxPhotos
+#: src/components/ItemListingEditor.svelte
+msgid "You may only select a maximum of {0} photos."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Marketplace items are public and can be seen by anyone on or off Facebook. Items like animals, drugs, weapons, counterfeits, and other items that infringe intellectual property aren't allowed on Marketplace."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ListingVideo.svelte
+msgid "Loading video…"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Loading video"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Your video must finish loading before proceeding."
+msgstr ""
+
+#~ msgid "Video added. Preview is unavailable in this app."
+#~ msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Could not load video thumbnail."
+msgstr ""
+
+#~ msgid "Finish signing in or any verification prompts in Chrome. Media will be added automatically."
+#~ msgstr ""
+
+#~ msgid "Media sent to Facebook. Review the listing in Chrome."
+#~ msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Test cancelled."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Add at least one photo or video."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Finish signing in or any verification prompts in Chrome. Your listing will be filled automatically."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Listing filled in Facebook. Review it in Chrome."
+msgstr ""
+
+#: src/components/MarketplaceToolbar.svelte
+msgid "Publish selected<0/>"
+msgstr ""
+
+#: src/components/CreateListing.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/MarketplaceListings.svelte
+msgid "Listing saved."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Save listing"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Untitled listing"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Item"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Vehicle"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Could not load saved listings. Please try again."
+msgstr ""
+
+#~ msgid "Listing duplicated."
+#~ msgstr ""
+
+#~ msgid "Could not duplicate listing. Please try again."
+#~ msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Listing deleted."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Could not delete listing. Please try again."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+#: src/components/MarketplaceListings.svelte
+msgid "Saved listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Save listings here, then select them when you’re ready to publish."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Search saved listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Search listings"
+msgstr ""
+
+#. 0: chosen.length
+#: src/components/MarketplaceListings.svelte
+msgid "Selected listings ({0})"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Back to listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Group selection and publishing will be added next. Your listings are saved; nothing has been posted to Facebook."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Clear selection"
+msgstr ""
+
+#. 0: visible.length
+#: src/components/MarketplaceListings.svelte
+msgid "{0} listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Loading saved listings…"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "No saved listings yet"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Select an account to see its listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Create a listing and save it. It will appear here, ready to select later."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Your listings stay separate for each account."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "No matching listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Try another search or listing type."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Select all visible listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Listing"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Type"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Status"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Updated"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Actions"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Draft"
+msgstr ""
+
+#~ msgid "More actions for {0}"
+#~ msgstr ""
+
+#~ msgid "Duplicate"
+#~ msgstr ""
+
+#~ msgid "More"
+#~ msgstr ""
+
+#. 0: title(listing)
+#: src/components/MarketplaceListings.svelte
+msgid "Delete “{0}” and its saved media?"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Delete listing"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+#: src/components/MarketplaceListings.svelte
+msgid "Saved Marketplace listings"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Could not save listing. Please try again."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Today"
+msgstr ""
+
+#. 0: title(listing)
+#: src/components/MarketplaceListings.svelte
+msgid "Edit {0}"
+msgstr ""
+
+#. 0: title(listing)
+#: src/components/MarketplaceListings.svelte
+msgid "Delete {0}"
+msgstr ""

@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { Window } from '@wailsio/runtime';
   import { ProfileService, type ProfileActivity, type AccountProfile } from '../bindings/postika';
   import App from './App.svelte';
   import AccountDropdown from './components/AccountDropdown.svelte';
@@ -16,6 +17,19 @@
   import LocalizedFeedback from './components/LocalizedFeedback.svelte';
   import AddAccountDialog from './components/AddAccountDialog.svelte';
   import GuidedTour from './components/GuidedTour.svelte';
+  import MarketplaceListings from './components/MarketplaceListings.svelte';
+  import CreateListing from './components/CreateListing.svelte';
+
+  const marketplace = new URLSearchParams(window.location.search).get('view') === 'marketplace';
+  const createListing = new URLSearchParams(window.location.search).get('view') === 'create-listing';
+  const blankWorkspace = marketplace || createListing;
+  const marketplaceTitle = $derived(createListing ? 'Create new listing' : 'Marketplace');
+  $effect(() => {
+    if (blankWorkspace) {
+      document.title = `${marketplaceTitle} · Postika`;
+      void Window.SetTitle(document.title).catch(() => {});
+    }
+  });
 
   let tour: GuidedTour;
   let tourPage = $state<number | null>(null), tourReady = $state(false), tourActive = $state(false);
@@ -28,10 +42,10 @@
   let windowControls = $state<WindowControls>();
   const current = $derived(profiles.find((profile) => profile.id === selected));
   const background = $derived(profiles.filter((profile) => profile.active && profile.id !== selected));
-  const tourAvailable = $derived(Boolean(current) && tourReady && !adding && !profiles.some(profile => profile.active));
+  const tourAvailable = $derived(!blankWorkspace && Boolean(current) && tourReady && !adding && !profiles.some(profile => profile.active));
 
   function open(profile: AccountProfile, connect = false) {
-    if (!opened.some((entry) => entry.id === profile.id)) opened = [...opened, { ...profile, connect }];
+    if (!blankWorkspace && !opened.some((entry) => entry.id === profile.id)) opened = [...opened, { ...profile, connect }];
     tourReady = false;
     selected = profile.id;
   }
@@ -65,6 +79,12 @@
     catch (cause) { error = cause instanceof Error ? cause.message : String(cause); }
   }
 
+  async function openMarketplace() {
+    error = '';
+    try { await ProfileService.OpenMarketplace(); }
+    catch (cause) { error = cause instanceof Error ? cause.message : String(cause); }
+  }
+
   async function select(id: string) {
     if (busy || id === selected) return;
     busy = true; error = '';
@@ -95,6 +115,7 @@
       <FeaturesCard {tourAvailable} onstarttour={() => tour.start()} />
       <button type="button" disabled={busy} aria-expanded={adding} bind:this={addTrigger} aria-haspopup="dialog" aria-controls="add-account-dialog" onclick={showAddAccount}>Add account</button>
       <button type="button" data-tour="logs" disabled={busy || !selected} onclick={() => openPostingLogs()}>Posting logs</button>
+      <button type="button" disabled={busy} onclick={openMarketplace}>Marketplace</button>
       <LanguageMenu />
       <ThemeMenu />
       <ContactButton />
@@ -104,17 +125,21 @@
   </header>
   {#if adding}<AddAccountDialog oncreated={profileCreated} onclose={() => { adding = false; addTrigger?.focus(); }} />{/if}
   {#if error}<div class="profile-error" role="alert"><LocalizedFeedback message={error} /></div>{/if}
-  {#if background.length}
+  {#if !blankWorkspace && background.length}
     <div class="background-jobs" role="status">In the background:
       {#each background as profile (profile.id)}<button type="button" disabled={busy} onclick={() => select(profile.id)}>{accountLabel(profile)} · {profile.state === 'scheduled' ? 'Scheduled' : 'Running'}</button>{/each}
     </div>
   {/if}
+  {#if blankWorkspace}
+    <main class="account-workspace" aria-label={marketplaceTitle}>{#if marketplace}{#key current?.id}<MarketplaceListings profile={current} />{/key}{/if}{#if createListing}{#key current?.id}<CreateListing profile={current} />{/key}{/if}</main>
+  {:else}
   {#each opened as profile (profile.id)}
     <div class="account-workspace" hidden={profile.id !== selected}>
       <App {profile} active={profile.id === selected} connect={profile.connect} tourStep={profile.id === selected ? tourPage : null} tourActive={profile.id === selected && tourActive} onTourReadyChange={setTourReady} />
     </div>
   {/each}
   {#if !selected && !error}<p class="loading" role="status">{profiles.length ? 'Loading accounts…' : 'Add an account to get started.'}</p>{/if}
+  {/if}
   <GuidedTour bind:this={tour} ready={tourAvailable} onpage={(page) => { tourPage = page; }} onactive={(active) => { tourActive = active; }} />
   {#if current}{#key current.id}<ConnectivityToast profileID={current.id} />{/key}{/if}
 </div>
@@ -136,9 +161,12 @@
   .profile-error, .loading { padding: 1.2rem 2.4rem; font-size: var(--ui-body-size); color: var(--danger); }
   .background-jobs { display: flex; align-items: center; flex-wrap: wrap; gap: .8rem; padding: .8rem 2.4rem; font-size: 1.2rem; background: var(--surface-active); color: var(--text-strong); }
   @media (max-width: 1000px) {
+    .top-bar { height: auto; flex-wrap: wrap; padding-left: 0; }
+    .profile-control { margin-left: 1.2rem; }
     .profile-control :global(.account-dropdown) { width: 17rem; }
+    .menu-controls { display: flex; flex-shrink: 0; align-items: center; gap: .2rem; min-width: 0; border: 0; padding: 0; margin: 0; }
     .app-menu button { padding-inline: .7rem; }
-    .app-menu { padding-right: .5rem; margin-right: 0; }
-    .drag-area { min-width: 1.2rem; }
+    .app-menu { order: 1; flex-basis: 100%; min-height: 4.2rem; overflow-x: auto; padding: .4rem .8rem; margin-right: 0; border-right: 0; border-top: 1px solid var(--border); }
+    .drag-area { min-width: 1.2rem; min-height: 4.8rem; }
   }
 </style>

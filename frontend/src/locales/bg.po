@@ -88,6 +88,7 @@ msgid "Opening…"
 msgstr "Отваряне…"
 
 #: src/App.svelte
+#: src/components/ItemListingEditor.svelte
 #: src/components/LogMessage.svelte
 msgid "Loading…"
 msgstr "Зареждане…"
@@ -127,6 +128,8 @@ msgstr "Премахване на избора на всички групи"
 #~ msgstr ""
 
 #: src/App.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ListingFieldSelect.svelte
 msgid "Searching…"
 msgstr "Търсене…"
 
@@ -197,6 +200,10 @@ msgstr "Часова зона: {0}. Дръжте Postika отворен и ко�
 #: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FetchedPostCard.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/LocationSearchDialog.svelte
+#: src/components/MarketplaceListings.svelte
 #: src/components/RenameProfileDialog.svelte
 msgid "Cancel"
 msgstr "Отказ"
@@ -339,6 +346,7 @@ msgid "No accounts found"
 msgstr "Няма намерени акаунти"
 
 #: src/components/AccountDropdown.svelte
+#: src/components/ListingFieldSelect.svelte
 msgid "Try a different name."
 msgstr "Опитайте друго име."
 
@@ -379,15 +387,19 @@ msgid "Choose a weekday for this post"
 msgstr "Изберете ден от седмицата за този пост"
 
 #. 0: day.description
+#. 0: title(listing)
 #: src/components/DateTimePicker.svelte
+#: src/components/MarketplaceListings.svelte
 msgid "Select {0}"
 msgstr "Изберете {0}"
 
 #: src/components/DateTimePicker.svelte
+#: src/components/ListingDatePicker.svelte
 msgid "Previous month"
 msgstr "Предишен месец"
 
 #: src/components/DateTimePicker.svelte
+#: src/components/ListingDatePicker.svelte
 msgid "Next month"
 msgstr "Следващия месец"
 
@@ -450,6 +462,7 @@ msgstr "{0} преместен на позиция {1} от {2}."
 msgid "Post body"
 msgstr "Текст на публикацията"
 
+#: src/components/ItemListingEditor.svelte
 #: src/components/PostComposer.svelte
 #: src/components/PostComposer.svelte
 msgid "Required"
@@ -462,6 +475,7 @@ msgstr "Задължително"
 msgid "Images"
 msgstr "Изображения"
 
+#: src/components/ItemListingEditor.svelte
 #: src/components/PostComposer.svelte
 msgid "Choose images"
 msgstr "Изберете изображения"
@@ -484,6 +498,7 @@ msgid "Add more"
 msgstr "Добавяне на още"
 
 #: src/components/FeaturesCard.svelte
+#: src/components/ItemListingEditor.svelte
 #: src/components/PostComposer.svelte
 #: src/components/UsageGuide.svelte
 msgid "Drag images to rearrange. Or focus an image and use Alt + Left / Right."
@@ -498,7 +513,11 @@ msgstr "Избрани изображения"
 msgid "{0}, image {1} of {2}"
 msgstr "{0}, изображение {1} от {2}"
 
+#. 0: photo.file.name
+#. 0: tag
 #. 0: image.file.name
+#: src/components/ItemListingEditor.svelte
+#: src/components/ListingTags.svelte
 #: src/components/PostComposer.svelte
 msgid "Remove {0}"
 msgstr "Премахни {0}"
@@ -994,11 +1013,13 @@ msgid "The browser is closed. It will reopen when you click Post."
 msgstr "Браузърът е затворен. Той ще се отвори отново, когато кликнете върху Публикувай."
 
 #: src/App.svelte
+#: src/components/ItemListingEditor.svelte
 #: src/components/LogMessage.svelte
 msgid "Checking Facebook login"
 msgstr "Проверка на вход във Facebook"
 
 #: src/App.svelte
+#: src/components/ItemListingEditor.svelte
 #: src/components/LogMessage.svelte
 msgid "Finish signing in or any verification prompts in Chrome. Your login will be detected automatically."
 msgstr "Завършете влизането или всички подканващи действия за проверка в Chrome. Входът ви ще бъде открит автоматично."
@@ -1117,8 +1138,10 @@ msgid "{0} shown"
 msgstr "{0} показани"
 
 #. 0: selectedGroupIds.length
+#. 0: selected.length
 #. 0: groups.length
 #: src/App.svelte
+#: src/components/MarketplaceListings.svelte
 #: src/components/QueueReview.svelte
 msgid "{0} selected"
 msgstr "{0} избрани"
@@ -1247,6 +1270,7 @@ msgstr "Цветови теми"
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
 #: src/components/GuidedTour.svelte
+#: src/components/NotificationBar.svelte
 #: src/components/RenameProfileDialog.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UpdateButton.svelte
@@ -1286,6 +1310,7 @@ msgstr "Качването на изображение се провали в Ch
 msgid "Attaching images…"
 msgstr "Прикачване на изображения …"
 
+#: src/components/ItemListingEditor.svelte
 #: src/components/LogMessage.svelte
 msgid "Choose JPG, PNG, WebP, or GIF images"
 msgstr "Изберете изображения в JPG, PNG, WebP или GIF формат"
@@ -1538,6 +1563,7 @@ msgstr "Не е уловена пълна заявка за качване на 
 msgid "No fresh image upload request was captured."
 msgstr "Не е уловена нова заявка за качване на изображение."
 
+#: src/components/LocationSearchDialog.svelte
 #: src/components/LogMessage.svelte
 msgid "Opening browser…"
 msgstr "Отваряне на браузър…"
@@ -2099,6 +2125,7 @@ msgid "Edit post {0}"
 msgstr "Редактиране на публикация {0}"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/MarketplaceListings.svelte
 #: src/components/QueueReview.svelte
 #: src/components/QueueReview.svelte
 msgid "Edit"
@@ -2112,6 +2139,7 @@ msgstr "Изтриване на публикация {0}"
 #: src/components/AccountDropdown.svelte
 #: src/components/AccountDropdown.svelte
 #: src/components/FetchedPostCard.svelte
+#: src/components/MarketplaceListings.svelte
 msgid "Delete"
 msgstr "Изтриване"
 
@@ -2443,6 +2471,10 @@ msgstr "Бизнес запитване"
 
 #: src/components/ContactButton.svelte
 #: src/components/ContactButton.svelte
+#: src/components/MarketplaceVehicles.svelte
+#: src/components/MarketplaceVehicles.svelte
+#: src/components/MarketplaceVehicles.svelte
+#: src/components/MarketplaceVehicles.svelte
 msgid "Other"
 msgstr "Друго"
 
@@ -2497,10 +2529,14 @@ msgid "Finish"
 msgstr "Край"
 
 #: src/components/GuidedTour.svelte
+#: src/components/ItemListingEditor.svelte
 msgid "Next"
 msgstr "Напред"
 
+#: src/components/CreateListing.svelte
 #: src/components/GuidedTour.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
 msgid "Previous"
 msgstr "Назад"
 
@@ -2562,18 +2598,22 @@ msgstr "Опитайте друго търсене или изчистете ф�
 msgid "All colors"
 msgstr "Всички цветове"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Red"
 msgstr "Червено"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Orange"
 msgstr "Оранжево"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Yellow"
 msgstr "Жълто"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Green"
 msgstr "Зелено"
@@ -2586,6 +2626,7 @@ msgstr "Ментово"
 msgid "Teal"
 msgstr "Синьо-зелено"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Blue"
 msgstr "Синьо"
@@ -2594,22 +2635,27 @@ msgstr "Синьо"
 msgid "Navy"
 msgstr "Тъмносиньо"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Purple"
 msgstr "Лилаво"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Pink"
 msgstr "Розово"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Brown"
 msgstr "Кафяво"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Beige"
 msgstr "Бежово"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "White"
 msgstr "Бяло"
@@ -2618,6 +2664,7 @@ msgstr "Бяло"
 msgid "Grey"
 msgstr "Сиво"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Black"
 msgstr "Черно"
@@ -2637,3 +2684,1364 @@ msgstr "Тъмни"
 #: src/components/ThemePicker.svelte
 msgid "Peach"
 msgstr "Прасковено"
+
+#: src/Workspace.svelte
+#: src/components/MarketplaceToolbar.svelte
+msgid "Marketplace"
+msgstr "Пазар"
+
+#. 0: marketplaceTitle
+#: src/Workspace.svelte
+msgid "{0} · Postika"
+msgstr "{0} · Postika"
+
+#: src/components/MarketplaceToolbar.svelte
+msgid "All listing types"
+msgstr "Всички видове обяви"
+
+#: src/components/MarketplaceToolbar.svelte
+msgid "Items for sale"
+msgstr "Стоки за продажба"
+
+#: src/components/MarketplaceToolbar.svelte
+msgid "Vehicles for sale"
+msgstr "Превозни средства за продажба"
+
+#: src/components/MarketplaceToolbar.svelte
+msgid "Homes for rent or sale"
+msgstr "Жилища под наем или за продажба"
+
+#: src/components/MarketplaceToolbar.svelte
+#: src/components/MarketplaceToolbar.svelte
+msgid "Listing type"
+msgstr "Вид обява"
+
+#~ msgid "<0/> Create new listing"
+#~ msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/MarketplaceToolbar.svelte
+msgid "Create new listing"
+msgstr "Създаване на нова обява"
+
+#: src/components/CreateListing.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Item for sale"
+msgstr "Артикул за продажба"
+
+#: src/components/CreateListing.svelte
+msgid "Create a single listing for one or more items to sell."
+msgstr "Създайте една обява за един или повече артикули за продажба."
+
+#: src/components/CreateListing.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Vehicle for sale"
+msgstr "Превозно средство за продажба"
+
+#: src/components/CreateListing.svelte
+msgid "Sell a car, truck or other type of vehicle."
+msgstr "Продайте кола, камион или друг вид превозно средство."
+
+#: src/components/CreateListing.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Home for sale or rent"
+msgstr "Жилище за продажба или под наем"
+
+#: src/components/CreateListing.svelte
+msgid "List a house or apartment for sale or rent."
+msgstr "Публикувайте обява за къща или апартамент за продажба или под наем."
+
+#: src/components/CreateListing.svelte
+msgid "Choose listing type"
+msgstr "Изберете вид обява"
+
+#~ msgid "Save draft"
+#~ msgstr "Запазване на чернова"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Listing to Marketplace"
+msgstr "Обява в Marketplace"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Photos"
+msgstr "Снимки"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Add photos"
+msgstr "Добавяне на снимки"
+
+#: src/components/ItemListingEditor.svelte
+msgid "or drag and drop"
+msgstr "или плъзнете и пуснете"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Category"
+msgstr "Категория"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Condition"
+msgstr "Състояние"
+
+#~ msgid "Title<0/>"
+#~ msgstr ""
+
+#~ msgid "Price<0/>"
+#~ msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "More details"
+msgstr "Още подробности"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Attract more interest by including more details."
+msgstr "Привлечете повече интерес, като добавите повече подробности."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Availability"
+msgstr "Наличност"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/MarketplaceAvailability.svelte
+msgid "List as Single Item"
+msgstr "Обява за единичен артикул"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/LocationSearchDialog.svelte
+#: src/components/MarketplaceListings.svelte
+msgid "Location"
+msgstr "Местоположение"
+
+#~ msgid "Description<0/>"
+#~ msgstr ""
+
+#~ msgid "Product tags<0/><1>Optional. Limit: 20.</1>"
+#~ msgstr ""
+
+#~ msgid "SKU<0/><1>Optional. Only visible to you.</1>"
+#~ msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "You can add up to 10 photos."
+msgstr "Можете да добавите до 10 снимки."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Be as descriptive as possible."
+msgstr "Опишете възможно най-подробно."
+
+#~ msgid "Draft saved."
+#~ msgstr "Черновата е запазена."
+
+#~ msgid "Could not save draft. Please try again."
+#~ msgstr "Черновата не можа да се запази. Опитайте отново."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Could not load draft. Please try again."
+msgstr "Черновата не можа да се зареди. Опитайте отново."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Your listing preview"
+msgstr "Преглед на обявата ви"
+
+#: src/components/ItemListingEditor.svelte
+msgid "As you create your listing, you can preview how it will appear on Marketplace."
+msgstr "Докато създавате обявата си, можете да видите как ще изглежда в Marketplace."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Title"
+msgstr "Заглавие"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/MarketplaceListings.svelte
+msgid "Price"
+msgstr "Цена"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Description will appear here."
+msgstr "Описанието ще се появи тук."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Details"
+msgstr "Подробности"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Seller information"
+msgstr "Информация за продавача"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Preview"
+msgstr "Преглед"
+
+#: src/components/ListingFieldSelect.svelte
+msgid "Options will be added later."
+msgstr "Опциите ще бъдат добавени по-късно."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Description"
+msgstr "Описание"
+
+#: src/components/ListingTags.svelte
+msgid "Product tags"
+msgstr "Етикети на продукта"
+
+#: src/components/ListingTags.svelte
+msgid "Optional. Limit: 20."
+msgstr "Незадължително. Лимит: 20."
+
+#: src/components/ItemListingEditor.svelte
+msgid "SKU"
+msgstr "SKU"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Optional. Only visible to you."
+msgstr "Незадължително. Виждате го само вие."
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Home & Garden"
+msgstr "Дом и градина"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Entertainment"
+msgstr "Развлечения"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Clothing & Accessories"
+msgstr "Облекло и аксесоари"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Family"
+msgstr "Семейство"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Electronics"
+msgstr "Електроника"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Hobbies"
+msgstr "Хобита"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Classifieds"
+msgstr "Обяви"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Shipping available"
+msgstr "Възможна доставка"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Tools"
+msgstr "Инструменти"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Furniture"
+msgstr "Мебели"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Household"
+msgstr "Домакински стоки"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Garden"
+msgstr "Градина"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Appliances"
+msgstr "Уреди"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Video Games"
+msgstr "Видеоигри"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Books, Movies & Music"
+msgstr "Книги, филми и музика"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Bags & Luggage"
+msgstr "Чанти и багаж"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Women's clothing & shoes"
+msgstr "Дамски дрехи и обувки"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Men's clothing & shoes"
+msgstr "Мъжки дрехи и обувки"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Jewelry & Accessories"
+msgstr "Бижута и аксесоари"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Health & beauty"
+msgstr "Здраве и красота"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Pet Supplies"
+msgstr "Стоки за домашни любимци"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Baby & kids"
+msgstr "Бебета и деца"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Toys & Games"
+msgstr "Играчки и игри"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Electronics & computers"
+msgstr "Електроника и компютри"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Mobile phones"
+msgstr "Мобилни телефони"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Bicycles"
+msgstr "Велосипеди"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Arts & Crafts"
+msgstr "Изкуство и занаяти"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Sports & Outdoors"
+msgstr "Спорт и дейности на открито"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Auto parts"
+msgstr "Авточасти"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Musical Instruments"
+msgstr "Музикални инструменти"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Antiques & Collectibles"
+msgstr "Антики и колекционерски предмети"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Garage Sale"
+msgstr "Гаражна разпродажба"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Miscellaneous"
+msgstr "Разни"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Vehicles"
+msgstr "Превозни средства"
+
+#: src/components/MarketplaceConditions.svelte
+msgid "New"
+msgstr "Ново"
+
+#: src/components/MarketplaceConditions.svelte
+msgid "Used - Like New"
+msgstr "Използвано - като ново"
+
+#: src/components/MarketplaceConditions.svelte
+msgid "Used - Good"
+msgstr "Използвано - добро"
+
+#: src/components/MarketplaceConditions.svelte
+msgid "Used - Fair"
+msgstr "Използвано - приемливо"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Public"
+msgstr "Публично"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Learn more about meetup preferences"
+msgstr "Научете повече: Предпочитания за среща"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Public meetup"
+msgstr "Среща на обществено място"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Meet at a public location."
+msgstr "Срещнете се на обществено място."
+
+#: src/components/ItemListingEditor.svelte
+msgid "See Marketplace meetup safety tips"
+msgstr "Вижте съвети за безопасност (Marketplace)"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Door pickup"
+msgstr "Вземане от адрес"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Buyer picks up at your door."
+msgstr "Купувачът взема от вашата врата."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Door dropoff"
+msgstr "Доставка до адрес"
+
+#: src/components/ItemListingEditor.svelte
+msgid "You drop off at buyer's door."
+msgstr "Доставяте до вратата на купувача."
+
+#: src/components/ItemListingEditor.svelte
+msgid "See safety tips"
+msgstr "Вижте съвети за безопасност"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Meetup preferences"
+msgstr "Предпочитания за среща"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Buyers will be able to see your preferences on your listing."
+msgstr "Купувачите ще виждат предпочитанията ви в обявата."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Learn more"
+msgstr "Научете повече"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Promote listing after publish"
+msgstr "Промотиране след публикуване"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Add a step to promote your listing after it publishes, to help you reach more potential buyers by turning it into an ad."
+msgstr "Добавете стъпка за промотиране след публикуване, за да достигнете до повече потенциални купувачи чрез превръщане на обявата в реклама."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Hide from friends"
+msgstr "Скриване от приятели"
+
+#: src/components/ItemListingEditor.svelte
+msgid "This listing is still public. If you hide this listing from friends, they won't see it in most cases."
+msgstr "Обявата остава публична. Ако я скриете от приятели, в повечето случаи те няма да я виждат."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Learn more about hiding listings from friends"
+msgstr "Научете повече: Скриване от приятели"
+
+#~ msgid "Marketplace items are public and can be seen by anyone on or off Facebook."
+#~ msgstr "Обявите в Marketplace са публични и могат да бъдат видени от всеки във или извън Facebook."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Commerce Policies"
+msgstr "Търговски политики"
+
+#~ msgid "Backspace"
+#~ msgstr ""
+
+#~ msgid "Files"
+#~ msgstr ""
+
+#~ msgid "Alt+ArrowLeft Alt+ArrowRight"
+#~ msgstr ""
+
+#: src/components/MarketplaceAvailability.svelte
+msgid "If you're selling one item, show \"Only one\" on your listing."
+msgstr "Ако продавате един артикул, показвайте „Само един“ в обявата."
+
+#: src/components/MarketplaceAvailability.svelte
+msgid "List as In Stock"
+msgstr "Обяви като налично"
+
+#: src/components/MarketplaceAvailability.svelte
+msgid "If you're selling more than one item, show \"In Stock\" on your listing."
+msgstr "Ако продавате повече от един артикул, показвайте „В наличност“ в обявата."
+
+#: src/components/ListingTags.svelte
+msgid "Add tag"
+msgstr "Добавяне на етикет"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Tags"
+msgstr "Етикети"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Enter a town or city"
+msgstr "Въведете град"
+
+#~ msgid "Facebook opened."
+#~ msgstr "Facebook е отворен."
+
+#~ msgid "Connect location search"
+#~ msgstr "Свързване на търсенето на местоположение"
+
+#~ msgid "Postika needs to open Facebook for this account to prepare location search. If Facebook asks you to log in, complete that step in the browser."
+#~ msgstr "Postika трябва да отвори Facebook за този профил, за да подготви търсенето на местоположение. Ако Facebook поиска да влезете, направете го в браузъра."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/LocationSearchDialog.svelte
+msgid "Continue to Facebook"
+msgstr "Продължи към Facebook"
+
+#: src/components/LocationSearchDialog.svelte
+msgid "We need to open Facebook to set up location search. If Facebook asks you to log in, complete that step in the browser."
+msgstr "Трябва да отворим Facebook, за да настроим търсенето на местоположение. Ако Facebook поиска да влезете, направете го в браузъра."
+
+#~ msgid "You’re logged in. Marketplace is open."
+#~ msgstr "Влезли сте. Marketplace е отворен."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Facebook was closed. Continue to Facebook to try again."
+msgstr "Facebook беше затворен. Продължете към Facebook, за да опитате отново."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Preparing Marketplace…"
+msgstr "Подготовка на Marketplace…"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Could not expand More details. Please try again."
+msgstr "Неуспешно разгъване на „Още подробности“. Опитайте отново."
+
+#: src/components/ItemListingEditor.svelte
+msgid "No locations found."
+msgstr "Няма намерени местоположения."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Location search is ready."
+msgstr "Търсенето на местоположение е готово."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Reconnect to Facebook to search locations."
+msgstr "Свържете се отново с Facebook, за да търсите местоположения."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Could not search locations. Please try again."
+msgstr "Неуспешно търсене на местоположения. Опитайте отново."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/MarketplaceListings.svelte
+msgid "Try again"
+msgstr "Опитайте отново"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Please enter a valid location."
+msgstr "Моля, въведете валидно местоположение."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Vehicle type"
+msgstr "Вид превозно средство"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Photo upload"
+msgstr "Качване на снимки"
+
+#: src/components/ItemListingEditor.svelte
+msgid "You can add up to 20 photos."
+msgstr "Можете да добавите до 20 снимки."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "About this vehicle"
+msgstr "За това превозно средство"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Help buyers know more about the vehicle you're listing."
+msgstr "Помогнете на купувачите да научат повече за превозното средство, което предлагате."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Year"
+msgstr "Година"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Make"
+msgstr "Марка"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Model"
+msgstr "Модел"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Enter your price for this vehicle."
+msgstr "Въведете цената на това превозно средство."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Tell buyers anything that you haven't had the chance to include yet about your vehicle."
+msgstr "Споделете с купувачите други подробности за превозното средство, които още не сте включили."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Seller's description"
+msgstr "Описание на продавача"
+
+#: src/components/ListingLocationPreview.svelte
+#: src/components/ListingLocationPreview.svelte
+msgid "Location is approximate"
+msgstr "Местоположението е приблизително"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Car/Truck"
+msgstr "Автомобил/Камион"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Motorcycle"
+msgstr "Мотоциклет"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Powersport"
+msgstr "Спортно-развлекателно превозно средство"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "RV/Camper"
+msgstr "Кемпер/Каравана"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Trailer"
+msgstr "Ремарке"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Boat"
+msgstr "Лодка"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Commercial/Industrial"
+msgstr "Търговско/Промишлено"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Mileage"
+msgstr "Пробег"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Vehicle appearance and features"
+msgstr "Външен вид и оборудване на превозното средство"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Add more about what your vehicle looks like and the features that it has."
+msgstr "Добавете още за външния вид и оборудването на превозното средство."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Body style"
+msgstr "Тип каросерия"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Exterior color"
+msgstr "Външен цвят"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Interior color"
+msgstr "Цвят на интериора"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Vehicle details"
+msgstr "Подробности за превозното средство"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Include more details to help connect interested buyers to your vehicle."
+msgstr "Добавете още подробности, за да помогнете на заинтересованите купувачи да намерят превозното средство."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "This vehicle has a clean title."
+msgstr "Това превозно средство има документ за собственост без отбелязани щети."
+
+#: src/components/ItemListingEditor.svelte
+msgid "This vehicle has no significant damage or persistent problems."
+msgstr "Това превозно средство няма значителни повреди или постоянни проблеми."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Vehicle condition"
+msgstr "Състояние на превозното средство"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Fuel type"
+msgstr "Вид гориво"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Transmission"
+msgstr "Скоростна кутия"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ListingVideo.svelte
+msgid "Video preview"
+msgstr "Преглед на видео"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Automatic transmission"
+msgstr "Автоматична скоростна кутия"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ListingVideo.svelte
+msgid "Videos"
+msgstr "Видеоклипове"
+
+#: src/components/ListingVideo.svelte
+#: src/components/ListingVideo.svelte
+msgid "Add video"
+msgstr "Добавяне на видео"
+
+#: src/components/ListingVideo.svelte
+#: src/components/ListingVideo.svelte
+#: src/components/ListingVideo.svelte
+#: src/components/ListingVideo.svelte
+msgid "Remove video"
+msgstr "Премахване на видео"
+
+#~ msgid "Checking video…"
+#~ msgstr "Проверка на видеото…"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Choose a supported video up to 1 minute long."
+msgstr "Изберете поддържано видео с продължителност до 1 минута."
+
+#: src/components/ListingVideo.svelte
+msgid "(1 minute max)"
+msgstr "(най-много 1 минута)"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Gold"
+msgstr "Златист"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Gray"
+msgstr "Сив"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Silver"
+msgstr "Сребрист"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Charcoal"
+msgstr "Антрацит"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Off white"
+msgstr "Кремавобял"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Tan"
+msgstr "Светлокафяв"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Burgundy"
+msgstr "Бордо"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Turquoise"
+msgstr "Тюркоазен"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Coupe"
+msgstr "Купе"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Truck"
+msgstr "Камион"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Sedan"
+msgstr "Седан"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Hatchback"
+msgstr "Хечбек"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "SUV"
+msgstr "SUV"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Convertible"
+msgstr "Кабриолет"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Wagon"
+msgstr "Комби"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Minivan"
+msgstr "Миниван"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Small Car"
+msgstr "Малък автомобил"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Excellent"
+msgstr "Отлично"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Very good"
+msgstr "Много добро"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Good"
+msgstr "Добро"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Fair"
+msgstr "Задоволително"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Poor"
+msgstr "Лошо"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Diesel"
+msgstr "Дизел"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Electric"
+msgstr "Електричество"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Gasoline"
+msgstr "Бензин (Gasoline)"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Flex"
+msgstr "Flex-fuel"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Hybrid"
+msgstr "Хибрид"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Petrol"
+msgstr "Бензин (Petrol)"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Plug-in hybrid"
+msgstr "Зареждаем хибрид"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Manual transmission"
+msgstr "Ръчна скоростна кутия"
+
+#: src/components/ItemListingEditor.svelte
+msgid "You can add up to 50 photos."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Property type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Number of bedrooms"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Number of bathrooms"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Address"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Property description"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Include details like utilities, amenities, any deposits needed and when it's available."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Advanced Details"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Optional"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Property square feet"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Laundry type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Parking type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Air conditioning type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Heating type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "/ Month"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Rental Location"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "New home listing"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Rent"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "For Sale"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Apartment"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "House"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Townhouse"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "In-unit laundry"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Laundry in building"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Laundry available"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+#: src/components/MarketplaceHomes.svelte
+#: src/components/MarketplaceHomes.svelte
+#: src/components/MarketplaceHomes.svelte
+msgid "None"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Garage parking"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Street parking"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Off-street parking"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Parking available"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Central AC"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "AC available"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Central heating"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Electric heating"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Gas heating"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Radiator heating"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Heating available"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Enter an address"
+msgstr ""
+
+#: src/components/ListingLocationPreview.svelte
+msgid "View listing location"
+msgstr ""
+
+#: src/components/ListingLocationPreview.svelte
+msgid "Map preview unavailable."
+msgstr ""
+
+#: src/components/ListingLocationPreview.svelte
+msgid "View Map Info"
+msgstr ""
+
+#: src/components/ListingLocationPreview.svelte
+msgid "View map image"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Rental type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "This is a private room in a shared property."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Price per month"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Rental description"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Date available"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Cat friendly"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Dog friendly"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Date available:"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "How many people live here?"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Bathroom Type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Is this room furnished?"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Room Details"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Property Details"
+msgstr ""
+
+#~ msgid "Is this room furnished? <0/>"
+#~ msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Furnished"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Private"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Shared"
+msgstr ""
+
+#: src/components/ListingDatePicker.svelte
+msgid "Clear date"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Test"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Save"
+msgstr ""
+
+#. 0: maxPhotos
+#: src/components/ItemListingEditor.svelte
+msgid "You may only select a maximum of {0} photos."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Marketplace items are public and can be seen by anyone on or off Facebook. Items like animals, drugs, weapons, counterfeits, and other items that infringe intellectual property aren't allowed on Marketplace."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ListingVideo.svelte
+msgid "Loading video…"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Loading video"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Your video must finish loading before proceeding."
+msgstr ""
+
+#~ msgid "Video added. Preview is unavailable in this app."
+#~ msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Could not load video thumbnail."
+msgstr ""
+
+#~ msgid "Finish signing in or any verification prompts in Chrome. Media will be added automatically."
+#~ msgstr ""
+
+#~ msgid "Media sent to Facebook. Review the listing in Chrome."
+#~ msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Test cancelled."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Add at least one photo or video."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Finish signing in or any verification prompts in Chrome. Your listing will be filled automatically."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Listing filled in Facebook. Review it in Chrome."
+msgstr ""
+
+#: src/components/MarketplaceToolbar.svelte
+msgid "Publish selected<0/>"
+msgstr ""
+
+#: src/components/CreateListing.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/MarketplaceListings.svelte
+msgid "Listing saved."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Save listing"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Untitled listing"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Item"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Vehicle"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Could not load saved listings. Please try again."
+msgstr ""
+
+#~ msgid "Listing duplicated."
+#~ msgstr ""
+
+#~ msgid "Could not duplicate listing. Please try again."
+#~ msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Listing deleted."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Could not delete listing. Please try again."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+#: src/components/MarketplaceListings.svelte
+msgid "Saved listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Save listings here, then select them when you’re ready to publish."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Search saved listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Search listings"
+msgstr ""
+
+#. 0: chosen.length
+#: src/components/MarketplaceListings.svelte
+msgid "Selected listings ({0})"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Back to listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Group selection and publishing will be added next. Your listings are saved; nothing has been posted to Facebook."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Clear selection"
+msgstr ""
+
+#. 0: visible.length
+#: src/components/MarketplaceListings.svelte
+msgid "{0} listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Loading saved listings…"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "No saved listings yet"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Select an account to see its listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Create a listing and save it. It will appear here, ready to select later."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Your listings stay separate for each account."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "No matching listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Try another search or listing type."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Select all visible listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Listing"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Type"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Status"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Updated"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Actions"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Draft"
+msgstr ""
+
+#~ msgid "More actions for {0}"
+#~ msgstr ""
+
+#~ msgid "Duplicate"
+#~ msgstr ""
+
+#~ msgid "More"
+#~ msgstr ""
+
+#. 0: title(listing)
+#: src/components/MarketplaceListings.svelte
+msgid "Delete “{0}” and its saved media?"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Delete listing"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+#: src/components/MarketplaceListings.svelte
+msgid "Saved Marketplace listings"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Could not save listing. Please try again."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Today"
+msgstr ""
+
+#. 0: title(listing)
+#: src/components/MarketplaceListings.svelte
+msgid "Edit {0}"
+msgstr ""
+
+#. 0: title(listing)
+#: src/components/MarketplaceListings.svelte
+msgid "Delete {0}"
+msgstr ""

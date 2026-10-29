@@ -88,6 +88,7 @@ msgid "Opening…"
 msgstr "Megnyitás…"
 
 #: src/App.svelte
+#: src/components/ItemListingEditor.svelte
 #: src/components/LogMessage.svelte
 msgid "Loading…"
 msgstr "Betöltés…"
@@ -127,6 +128,8 @@ msgstr "Összes kijelölés törlése"
 #~ msgstr ""
 
 #: src/App.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ListingFieldSelect.svelte
 msgid "Searching…"
 msgstr "Keresés…"
 
@@ -197,6 +200,10 @@ msgstr "Időzóna: {0}. Tartsd nyitva a Postikát és a számítógéped ébren.
 #: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FetchedPostCard.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/LocationSearchDialog.svelte
+#: src/components/MarketplaceListings.svelte
 #: src/components/RenameProfileDialog.svelte
 msgid "Cancel"
 msgstr "Mégse"
@@ -339,6 +346,7 @@ msgid "No accounts found"
 msgstr "Nem található fiók"
 
 #: src/components/AccountDropdown.svelte
+#: src/components/ListingFieldSelect.svelte
 msgid "Try a different name."
 msgstr "Próbáljon másik nevet."
 
@@ -379,15 +387,19 @@ msgid "Choose a weekday for this post"
 msgstr "Válassz egy hétköznapot ehhez a bejegyzéshez"
 
 #. 0: day.description
+#. 0: title(listing)
 #: src/components/DateTimePicker.svelte
+#: src/components/MarketplaceListings.svelte
 msgid "Select {0}"
 msgstr "Válassz {0}"
 
 #: src/components/DateTimePicker.svelte
+#: src/components/ListingDatePicker.svelte
 msgid "Previous month"
 msgstr "Előző hónap"
 
 #: src/components/DateTimePicker.svelte
+#: src/components/ListingDatePicker.svelte
 msgid "Next month"
 msgstr "Következő hónap"
 
@@ -450,6 +462,7 @@ msgstr "{0} áthelyezve a(z) {2} közül a(z) {1}. pozícióra."
 msgid "Post body"
 msgstr "Bejegyzés szövege"
 
+#: src/components/ItemListingEditor.svelte
 #: src/components/PostComposer.svelte
 #: src/components/PostComposer.svelte
 msgid "Required"
@@ -462,6 +475,7 @@ msgstr "Kötelező"
 msgid "Images"
 msgstr "Képek"
 
+#: src/components/ItemListingEditor.svelte
 #: src/components/PostComposer.svelte
 msgid "Choose images"
 msgstr "Képek kiválasztása"
@@ -484,6 +498,7 @@ msgid "Add more"
 msgstr "Továbbiak hozzáadása"
 
 #: src/components/FeaturesCard.svelte
+#: src/components/ItemListingEditor.svelte
 #: src/components/PostComposer.svelte
 #: src/components/UsageGuide.svelte
 msgid "Drag images to rearrange. Or focus an image and use Alt + Left / Right."
@@ -498,7 +513,11 @@ msgstr "Kiválasztott képek"
 msgid "{0}, image {1} of {2}"
 msgstr "{0}, {2} közül a(z) {1}. kép"
 
+#. 0: photo.file.name
+#. 0: tag
 #. 0: image.file.name
+#: src/components/ItemListingEditor.svelte
+#: src/components/ListingTags.svelte
 #: src/components/PostComposer.svelte
 msgid "Remove {0}"
 msgstr "{0} eltávolítása"
@@ -994,11 +1013,13 @@ msgid "The browser is closed. It will reopen when you click Post."
 msgstr "A böngésző zárva van. Újra megnyílik, amikor a Poszt gombra kattint."
 
 #: src/App.svelte
+#: src/components/ItemListingEditor.svelte
 #: src/components/LogMessage.svelte
 msgid "Checking Facebook login"
 msgstr "Facebook bejelentkezés ellenőrzése"
 
 #: src/App.svelte
+#: src/components/ItemListingEditor.svelte
 #: src/components/LogMessage.svelte
 msgid "Finish signing in or any verification prompts in Chrome. Your login will be detected automatically."
 msgstr "Fejezze be a bejelentkezést vagy bármely ellenőrzési kérést a Chrome-ban. A bejelentkezés automatikusan észlelve lesz."
@@ -1117,8 +1138,10 @@ msgid "{0} shown"
 msgstr "{0} megjelenítve"
 
 #. 0: selectedGroupIds.length
+#. 0: selected.length
 #. 0: groups.length
 #: src/App.svelte
+#: src/components/MarketplaceListings.svelte
 #: src/components/QueueReview.svelte
 msgid "{0} selected"
 msgstr "{0} kiválasztva"
@@ -1247,6 +1270,7 @@ msgstr "Színtémák"
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
 #: src/components/GuidedTour.svelte
+#: src/components/NotificationBar.svelte
 #: src/components/RenameProfileDialog.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UpdateButton.svelte
@@ -1286,6 +1310,7 @@ msgstr "Egy kép feltöltése sikertelen volt Chrome-ban. Ellenőrizd a komponen
 msgid "Attaching images…"
 msgstr "Képek csatolása…"
 
+#: src/components/ItemListingEditor.svelte
 #: src/components/LogMessage.svelte
 msgid "Choose JPG, PNG, WebP, or GIF images"
 msgstr "Válassz JPG, PNG, WebP vagy GIF képeket"
@@ -1538,6 +1563,7 @@ msgstr "Nem került rögzítésre teljes kép feltöltési kérelem."
 msgid "No fresh image upload request was captured."
 msgstr "Nem került rögzítésre új kép feltöltési kérelem."
 
+#: src/components/LocationSearchDialog.svelte
 #: src/components/LogMessage.svelte
 msgid "Opening browser…"
 msgstr "Böngésző megnyitása…"
@@ -2099,6 +2125,7 @@ msgid "Edit post {0}"
 msgstr "{0}. bejegyzés szerkesztése"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/MarketplaceListings.svelte
 #: src/components/QueueReview.svelte
 #: src/components/QueueReview.svelte
 msgid "Edit"
@@ -2112,6 +2139,7 @@ msgstr "{0}. bejegyzés törlése"
 #: src/components/AccountDropdown.svelte
 #: src/components/AccountDropdown.svelte
 #: src/components/FetchedPostCard.svelte
+#: src/components/MarketplaceListings.svelte
 msgid "Delete"
 msgstr "Törlés"
 
@@ -2443,6 +2471,10 @@ msgstr "Üzleti megkeresés"
 
 #: src/components/ContactButton.svelte
 #: src/components/ContactButton.svelte
+#: src/components/MarketplaceVehicles.svelte
+#: src/components/MarketplaceVehicles.svelte
+#: src/components/MarketplaceVehicles.svelte
+#: src/components/MarketplaceVehicles.svelte
 msgid "Other"
 msgstr "Egyéb"
 
@@ -2497,10 +2529,14 @@ msgid "Finish"
 msgstr "Befejezés"
 
 #: src/components/GuidedTour.svelte
+#: src/components/ItemListingEditor.svelte
 msgid "Next"
 msgstr "Tovább"
 
+#: src/components/CreateListing.svelte
 #: src/components/GuidedTour.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
 msgid "Previous"
 msgstr "Vissza"
 
@@ -2562,18 +2598,22 @@ msgstr "Próbálj más keresést, vagy töröld a szűrőket."
 msgid "All colors"
 msgstr "Összes szín"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Red"
 msgstr "Piros"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Orange"
 msgstr "Narancssárga"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Yellow"
 msgstr "Sárga"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Green"
 msgstr "Zöld"
@@ -2586,6 +2626,7 @@ msgstr "Mentazöld"
 msgid "Teal"
 msgstr "Kékeszöld"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Blue"
 msgstr "Kék"
@@ -2594,22 +2635,27 @@ msgstr "Kék"
 msgid "Navy"
 msgstr "Tengerészkék"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Purple"
 msgstr "Lila"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Pink"
 msgstr "Rózsaszín"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Brown"
 msgstr "Barna"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Beige"
 msgstr "Bézs"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "White"
 msgstr "Fehér"
@@ -2618,6 +2664,7 @@ msgstr "Fehér"
 msgid "Grey"
 msgstr "Szürke"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Black"
 msgstr "Fekete"
@@ -2637,3 +2684,1364 @@ msgstr "Sötét"
 #: src/components/ThemePicker.svelte
 msgid "Peach"
 msgstr "Barackszín"
+
+#: src/Workspace.svelte
+#: src/components/MarketplaceToolbar.svelte
+msgid "Marketplace"
+msgstr "Piactér"
+
+#. 0: marketplaceTitle
+#: src/Workspace.svelte
+msgid "{0} · Postika"
+msgstr "{0} · Postika"
+
+#: src/components/MarketplaceToolbar.svelte
+msgid "All listing types"
+msgstr "Minden hirdetéstípus"
+
+#: src/components/MarketplaceToolbar.svelte
+msgid "Items for sale"
+msgstr "Eladó termékek"
+
+#: src/components/MarketplaceToolbar.svelte
+msgid "Vehicles for sale"
+msgstr "Eladó járművek"
+
+#: src/components/MarketplaceToolbar.svelte
+msgid "Homes for rent or sale"
+msgstr "Kiadó vagy eladó otthonok"
+
+#: src/components/MarketplaceToolbar.svelte
+#: src/components/MarketplaceToolbar.svelte
+msgid "Listing type"
+msgstr "Hirdetés típusa"
+
+#~ msgid "<0/> Create new listing"
+#~ msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/MarketplaceToolbar.svelte
+msgid "Create new listing"
+msgstr "Új hirdetés létrehozása"
+
+#: src/components/CreateListing.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Item for sale"
+msgstr "Eladó termék"
+
+#: src/components/CreateListing.svelte
+msgid "Create a single listing for one or more items to sell."
+msgstr "Hozzon létre egyetlen hirdetést egy vagy több eladó termékhez."
+
+#: src/components/CreateListing.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Vehicle for sale"
+msgstr "Eladó jármű"
+
+#: src/components/CreateListing.svelte
+msgid "Sell a car, truck or other type of vehicle."
+msgstr "Adjon el személyautót, teherautót vagy más járművet."
+
+#: src/components/CreateListing.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Home for sale or rent"
+msgstr "Eladó vagy kiadó otthon"
+
+#: src/components/CreateListing.svelte
+msgid "List a house or apartment for sale or rent."
+msgstr "Hirdessen meg házat vagy lakást eladásra vagy kiadásra."
+
+#: src/components/CreateListing.svelte
+msgid "Choose listing type"
+msgstr "Válassza ki a hirdetés típusát"
+
+#~ msgid "Save draft"
+#~ msgstr "Piszkozat mentése"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Listing to Marketplace"
+msgstr "Hirdetés a Marketplace-en"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Photos"
+msgstr "Fényképek"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Add photos"
+msgstr "Fényképek hozzáadása"
+
+#: src/components/ItemListingEditor.svelte
+msgid "or drag and drop"
+msgstr "vagy húzza ide őket"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Category"
+msgstr "Kategória"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Condition"
+msgstr "Állapot"
+
+#~ msgid "Title<0/>"
+#~ msgstr ""
+
+#~ msgid "Price<0/>"
+#~ msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "More details"
+msgstr "További részletek"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Attract more interest by including more details."
+msgstr "További részletekkel nagyobb érdeklődést kelthet."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Availability"
+msgstr "Elérhetőség"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/MarketplaceAvailability.svelte
+msgid "List as Single Item"
+msgstr "Hirdetés egyetlen termékként"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/LocationSearchDialog.svelte
+#: src/components/MarketplaceListings.svelte
+msgid "Location"
+msgstr "Hely"
+
+#~ msgid "Description<0/>"
+#~ msgstr ""
+
+#~ msgid "Product tags<0/><1>Optional. Limit: 20.</1>"
+#~ msgstr ""
+
+#~ msgid "SKU<0/><1>Optional. Only visible to you.</1>"
+#~ msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "You can add up to 10 photos."
+msgstr "Legfeljebb 10 fényképet adhat hozzá."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Be as descriptive as possible."
+msgstr "Adjon minél részletesebb leírást."
+
+#~ msgid "Draft saved."
+#~ msgstr "Piszkozat mentve."
+
+#~ msgid "Could not save draft. Please try again."
+#~ msgstr "Nem sikerült menteni a piszkozatot. Próbálja újra."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Could not load draft. Please try again."
+msgstr "Nem sikerült betölteni a piszkozatot. Próbálja újra."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Your listing preview"
+msgstr "A hirdetés előnézete"
+
+#: src/components/ItemListingEditor.svelte
+msgid "As you create your listing, you can preview how it will appear on Marketplace."
+msgstr "A hirdetés létrehozása közben megtekintheti, hogyan fog megjelenni a Marketplace-en."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Title"
+msgstr "Cím"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/MarketplaceListings.svelte
+msgid "Price"
+msgstr "Ár"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Description will appear here."
+msgstr "Itt jelenik majd meg a leírás."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Details"
+msgstr "Részletek"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Seller information"
+msgstr "Eladó adatai"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Preview"
+msgstr "Előnézet"
+
+#: src/components/ListingFieldSelect.svelte
+msgid "Options will be added later."
+msgstr "A lehetőségeket később adjuk hozzá."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Description"
+msgstr "Leírás"
+
+#: src/components/ListingTags.svelte
+msgid "Product tags"
+msgstr "Termékcímkék"
+
+#: src/components/ListingTags.svelte
+msgid "Optional. Limit: 20."
+msgstr "Nem kötelező. Legfeljebb 20."
+
+#: src/components/ItemListingEditor.svelte
+msgid "SKU"
+msgstr "SKU"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Optional. Only visible to you."
+msgstr "Nem kötelező. Csak Ön láthatja."
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Home & Garden"
+msgstr "Otthon és kert"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Entertainment"
+msgstr "Szórakozás"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Clothing & Accessories"
+msgstr "Ruházat és kiegészítők"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Family"
+msgstr "Család"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Electronics"
+msgstr "Elektronika"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Hobbies"
+msgstr "Hobbik"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Classifieds"
+msgstr "Apróhirdetések"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Shipping available"
+msgstr "Szállítás elérhető"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Tools"
+msgstr "Szerszámok"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Furniture"
+msgstr "Bútorok"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Household"
+msgstr "Háztartás"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Garden"
+msgstr "Kert"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Appliances"
+msgstr "Háztartási gépek"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Video Games"
+msgstr "Videójátékok"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Books, Movies & Music"
+msgstr "Könyvek, filmek és zene"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Bags & Luggage"
+msgstr "Táskák és bőröndök"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Women's clothing & shoes"
+msgstr "Női ruházat és cipők"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Men's clothing & shoes"
+msgstr "Férfiruházat és cipők"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Jewelry & Accessories"
+msgstr "Ékszerek és kiegészítők"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Health & beauty"
+msgstr "Egészség és szépség"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Pet Supplies"
+msgstr "Kisállat-felszerelés"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Baby & kids"
+msgstr "Babák és gyermekek"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Toys & Games"
+msgstr "Játékok és társasjátékok"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Electronics & computers"
+msgstr "Elektronika és számítógépek"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Mobile phones"
+msgstr "Mobiltelefonok"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Bicycles"
+msgstr "Kerékpárok"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Arts & Crafts"
+msgstr "Művészet és kézművesség"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Sports & Outdoors"
+msgstr "Sport és szabadtéri tevékenységek"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Auto parts"
+msgstr "Autóalkatrészek"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Musical Instruments"
+msgstr "Hangszerek"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Antiques & Collectibles"
+msgstr "Régiségek és gyűjtemények"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Garage Sale"
+msgstr "Garázsvásár"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Miscellaneous"
+msgstr "Egyéb"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Vehicles"
+msgstr "Járművek"
+
+#: src/components/MarketplaceConditions.svelte
+msgid "New"
+msgstr "Új"
+
+#: src/components/MarketplaceConditions.svelte
+msgid "Used - Like New"
+msgstr "Használt - újszerű"
+
+#: src/components/MarketplaceConditions.svelte
+msgid "Used - Good"
+msgstr "Használt - jó állapotú"
+
+#: src/components/MarketplaceConditions.svelte
+msgid "Used - Fair"
+msgstr "Használt - elfogadható"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Public"
+msgstr "Nyilvános"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Learn more about meetup preferences"
+msgstr "További információ: Találkozási beállítások"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Public meetup"
+msgstr "Találkozó nyilvános helyen"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Meet at a public location."
+msgstr "Találkozzanak nyilvános helyen."
+
+#: src/components/ItemListingEditor.svelte
+msgid "See Marketplace meetup safety tips"
+msgstr "Biztonsági tippek megtekintése (Marketplace)"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Door pickup"
+msgstr "Átvétel az ajtónál"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Buyer picks up at your door."
+msgstr "A vevő az Ön ajtajánál veszi át a terméket."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Door dropoff"
+msgstr "Kiszállítás az ajtóhoz"
+
+#: src/components/ItemListingEditor.svelte
+msgid "You drop off at buyer's door."
+msgstr "Ön a vevő ajtajához szállítja a terméket."
+
+#: src/components/ItemListingEditor.svelte
+msgid "See safety tips"
+msgstr "Biztonsági tippek megtekintése"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Meetup preferences"
+msgstr "Találkozási beállítások"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Buyers will be able to see your preferences on your listing."
+msgstr "A vevők a hirdetésben láthatják a beállításait."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Learn more"
+msgstr "További információ"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Promote listing after publish"
+msgstr "Hirdetés kiemelése közzététel után"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Add a step to promote your listing after it publishes, to help you reach more potential buyers by turning it into an ad."
+msgstr "Adjon hozzá egy kiemelési lépést a közzététel után, hogy a hirdetés reklámmá alakításával több lehetséges vevőt érjen el."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Hide from friends"
+msgstr "Elrejtés az ismerősök elől"
+
+#: src/components/ItemListingEditor.svelte
+msgid "This listing is still public. If you hide this listing from friends, they won't see it in most cases."
+msgstr "A hirdetés továbbra is nyilvános. Ha elrejti az ismerősei elől, a legtöbb esetben nem fogják látni."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Learn more about hiding listings from friends"
+msgstr "További információ: Elrejtés az ismerősök elől"
+
+#~ msgid "Marketplace items are public and can be seen by anyone on or off Facebook."
+#~ msgstr "A Marketplace-hirdetések nyilvánosak, és bárki láthatja őket a Facebookon vagy azon kívül."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Commerce Policies"
+msgstr "Kereskedelmi szabályzatok"
+
+#~ msgid "Backspace"
+#~ msgstr ""
+
+#~ msgid "Files"
+#~ msgstr ""
+
+#~ msgid "Alt+ArrowLeft Alt+ArrowRight"
+#~ msgstr ""
+
+#: src/components/MarketplaceAvailability.svelte
+msgid "If you're selling one item, show \"Only one\" on your listing."
+msgstr "Ha egyetlen terméket árulsz, jelenjen meg a hirdetésben a „Csak egy” jelzés."
+
+#: src/components/MarketplaceAvailability.svelte
+msgid "List as In Stock"
+msgstr "Hirdetés készleten lévőként"
+
+#: src/components/MarketplaceAvailability.svelte
+msgid "If you're selling more than one item, show \"In Stock\" on your listing."
+msgstr "Ha több terméket árulsz, jelenjen meg a hirdetésben a „Készleten” jelzés."
+
+#: src/components/ListingTags.svelte
+msgid "Add tag"
+msgstr "Címke hozzáadása"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Tags"
+msgstr "Címkék"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Enter a town or city"
+msgstr "Adj meg egy települést vagy várost"
+
+#~ msgid "Facebook opened."
+#~ msgstr "A Facebook megnyílt."
+
+#~ msgid "Connect location search"
+#~ msgstr "Helykeresés csatlakoztatása"
+
+#~ msgid "Postika needs to open Facebook for this account to prepare location search. If Facebook asks you to log in, complete that step in the browser."
+#~ msgstr "A Postikának meg kell nyitnia a Facebookot ezzel a fiókkal a helykeresés előkészítéséhez. Ha a Facebook bejelentkezést kér, végezd el a böngészőben."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/LocationSearchDialog.svelte
+msgid "Continue to Facebook"
+msgstr "Tovább a Facebookra"
+
+#: src/components/LocationSearchDialog.svelte
+msgid "We need to open Facebook to set up location search. If Facebook asks you to log in, complete that step in the browser."
+msgstr "Meg kell nyitnunk a Facebookot a helykeresés beállításához. Ha a Facebook bejelentkezést kér, végezd el a böngészőben."
+
+#~ msgid "You’re logged in. Marketplace is open."
+#~ msgstr "Bejelentkeztél. A Marketplace meg van nyitva."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Facebook was closed. Continue to Facebook to try again."
+msgstr "A Facebook bezárult. Az újrapróbálkozáshoz lépj tovább a Facebookra."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Preparing Marketplace…"
+msgstr "A Marketplace előkészítése…"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Could not expand More details. Please try again."
+msgstr "Nem sikerült kibontani a További részletek szakaszt. Próbáld újra."
+
+#: src/components/ItemListingEditor.svelte
+msgid "No locations found."
+msgstr "Nem találhatók helyek."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Location search is ready."
+msgstr "A helykeresés készen áll."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Reconnect to Facebook to search locations."
+msgstr "Helyek kereséséhez csatlakozz újra a Facebookhoz."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Could not search locations. Please try again."
+msgstr "Nem sikerült helyeket keresni. Próbáld újra."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/MarketplaceListings.svelte
+msgid "Try again"
+msgstr "Próbáld újra"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Please enter a valid location."
+msgstr "Adj meg egy érvényes helyet."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Vehicle type"
+msgstr "Jármű típusa"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Photo upload"
+msgstr "Fényképek feltöltése"
+
+#: src/components/ItemListingEditor.svelte
+msgid "You can add up to 20 photos."
+msgstr "Legfeljebb 20 fényképet adhatsz hozzá."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "About this vehicle"
+msgstr "A járműről"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Help buyers know more about the vehicle you're listing."
+msgstr "Segíts a vevőknek többet megtudni a meghirdetett járműről."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Year"
+msgstr "Évjárat"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Make"
+msgstr "Márka"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Model"
+msgstr "Modell"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Enter your price for this vehicle."
+msgstr "Add meg a jármű árát."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Tell buyers anything that you haven't had the chance to include yet about your vehicle."
+msgstr "Oszd meg a vevőkkel a jármű egyéb adatait, amelyeket még nem volt lehetőséged megadni."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Seller's description"
+msgstr "Az eladó leírása"
+
+#: src/components/ListingLocationPreview.svelte
+#: src/components/ListingLocationPreview.svelte
+msgid "Location is approximate"
+msgstr "A hely hozzávetőleges"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Car/Truck"
+msgstr "Autó/Teherautó"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Motorcycle"
+msgstr "Motorkerékpár"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Powersport"
+msgstr "Motoros szabadidőjármű"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "RV/Camper"
+msgstr "Lakóautó/Lakókocsi"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Trailer"
+msgstr "Utánfutó"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Boat"
+msgstr "Hajó"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Commercial/Industrial"
+msgstr "Kereskedelmi/Ipari"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Mileage"
+msgstr "Kilométeróra-állás"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Vehicle appearance and features"
+msgstr "A jármű megjelenése és felszereltsége"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Add more about what your vehicle looks like and the features that it has."
+msgstr "Adj meg további adatokat a jármű megjelenéséről és felszereltségéről."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Body style"
+msgstr "Karosszériatípus"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Exterior color"
+msgstr "Külső szín"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Interior color"
+msgstr "Belső szín"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Vehicle details"
+msgstr "Járműadatok"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Include more details to help connect interested buyers to your vehicle."
+msgstr "Adj meg további adatokat, hogy az érdeklődő vevők könnyebben megtalálják a járművedet."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "This vehicle has a clean title."
+msgstr "A jármű tulajdoni okmánya nem tartalmaz kárbejegyzést."
+
+#: src/components/ItemListingEditor.svelte
+msgid "This vehicle has no significant damage or persistent problems."
+msgstr "A járműnek nincs jelentős sérülése vagy tartós problémája."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Vehicle condition"
+msgstr "A jármű állapota"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Fuel type"
+msgstr "Üzemanyagtípus"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Transmission"
+msgstr "Sebességváltó"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ListingVideo.svelte
+msgid "Video preview"
+msgstr "Videó előnézete"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Automatic transmission"
+msgstr "Automata sebességváltó"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ListingVideo.svelte
+msgid "Videos"
+msgstr "Videók"
+
+#: src/components/ListingVideo.svelte
+#: src/components/ListingVideo.svelte
+msgid "Add video"
+msgstr "Videó hozzáadása"
+
+#: src/components/ListingVideo.svelte
+#: src/components/ListingVideo.svelte
+#: src/components/ListingVideo.svelte
+#: src/components/ListingVideo.svelte
+msgid "Remove video"
+msgstr "Videó eltávolítása"
+
+#~ msgid "Checking video…"
+#~ msgstr "Videó ellenőrzése…"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Choose a supported video up to 1 minute long."
+msgstr "Válassz legfeljebb 1 perces, támogatott videót."
+
+#: src/components/ListingVideo.svelte
+msgid "(1 minute max)"
+msgstr "(legfeljebb 1 perc)"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Gold"
+msgstr "Arany"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Gray"
+msgstr "Szürke"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Silver"
+msgstr "Ezüst"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Charcoal"
+msgstr "Antracit"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Off white"
+msgstr "Törtfehér"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Tan"
+msgstr "Világosbarna"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Burgundy"
+msgstr "Bordó"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Turquoise"
+msgstr "Türkiz"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Coupe"
+msgstr "Kupé"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Truck"
+msgstr "Teherautó"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Sedan"
+msgstr "Szedán"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Hatchback"
+msgstr "Ferdehátú"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "SUV"
+msgstr "SUV"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Convertible"
+msgstr "Kabrió"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Wagon"
+msgstr "Kombi"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Minivan"
+msgstr "Egyterű"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Small Car"
+msgstr "Kisautó"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Excellent"
+msgstr "Kiváló"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Very good"
+msgstr "Nagyon jó"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Good"
+msgstr "Jó"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Fair"
+msgstr "Elfogadható"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Poor"
+msgstr "Rossz"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Diesel"
+msgstr "Dízel"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Electric"
+msgstr "Elektromos"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Gasoline"
+msgstr "Benzin (Gasoline)"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Flex"
+msgstr "Flex-fuel"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Hybrid"
+msgstr "Hibrid"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Petrol"
+msgstr "Benzin (Petrol)"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Plug-in hybrid"
+msgstr "Plug-in hibrid"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Manual transmission"
+msgstr "Kézi sebességváltó"
+
+#: src/components/ItemListingEditor.svelte
+msgid "You can add up to 50 photos."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Property type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Number of bedrooms"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Number of bathrooms"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Address"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Property description"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Include details like utilities, amenities, any deposits needed and when it's available."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Advanced Details"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Optional"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Property square feet"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Laundry type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Parking type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Air conditioning type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Heating type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "/ Month"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Rental Location"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "New home listing"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Rent"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "For Sale"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Apartment"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "House"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Townhouse"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "In-unit laundry"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Laundry in building"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Laundry available"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+#: src/components/MarketplaceHomes.svelte
+#: src/components/MarketplaceHomes.svelte
+#: src/components/MarketplaceHomes.svelte
+msgid "None"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Garage parking"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Street parking"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Off-street parking"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Parking available"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Central AC"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "AC available"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Central heating"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Electric heating"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Gas heating"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Radiator heating"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Heating available"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Enter an address"
+msgstr ""
+
+#: src/components/ListingLocationPreview.svelte
+msgid "View listing location"
+msgstr ""
+
+#: src/components/ListingLocationPreview.svelte
+msgid "Map preview unavailable."
+msgstr ""
+
+#: src/components/ListingLocationPreview.svelte
+msgid "View Map Info"
+msgstr ""
+
+#: src/components/ListingLocationPreview.svelte
+msgid "View map image"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Rental type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "This is a private room in a shared property."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Price per month"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Rental description"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Date available"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Cat friendly"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Dog friendly"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Date available:"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "How many people live here?"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Bathroom Type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Is this room furnished?"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Room Details"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Property Details"
+msgstr ""
+
+#~ msgid "Is this room furnished? <0/>"
+#~ msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Furnished"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Private"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Shared"
+msgstr ""
+
+#: src/components/ListingDatePicker.svelte
+msgid "Clear date"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Test"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Save"
+msgstr ""
+
+#. 0: maxPhotos
+#: src/components/ItemListingEditor.svelte
+msgid "You may only select a maximum of {0} photos."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Marketplace items are public and can be seen by anyone on or off Facebook. Items like animals, drugs, weapons, counterfeits, and other items that infringe intellectual property aren't allowed on Marketplace."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ListingVideo.svelte
+msgid "Loading video…"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Loading video"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Your video must finish loading before proceeding."
+msgstr ""
+
+#~ msgid "Video added. Preview is unavailable in this app."
+#~ msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Could not load video thumbnail."
+msgstr ""
+
+#~ msgid "Finish signing in or any verification prompts in Chrome. Media will be added automatically."
+#~ msgstr ""
+
+#~ msgid "Media sent to Facebook. Review the listing in Chrome."
+#~ msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Test cancelled."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Add at least one photo or video."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Finish signing in or any verification prompts in Chrome. Your listing will be filled automatically."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Listing filled in Facebook. Review it in Chrome."
+msgstr ""
+
+#: src/components/MarketplaceToolbar.svelte
+msgid "Publish selected<0/>"
+msgstr ""
+
+#: src/components/CreateListing.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/MarketplaceListings.svelte
+msgid "Listing saved."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Save listing"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Untitled listing"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Item"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Vehicle"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Could not load saved listings. Please try again."
+msgstr ""
+
+#~ msgid "Listing duplicated."
+#~ msgstr ""
+
+#~ msgid "Could not duplicate listing. Please try again."
+#~ msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Listing deleted."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Could not delete listing. Please try again."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+#: src/components/MarketplaceListings.svelte
+msgid "Saved listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Save listings here, then select them when you’re ready to publish."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Search saved listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Search listings"
+msgstr ""
+
+#. 0: chosen.length
+#: src/components/MarketplaceListings.svelte
+msgid "Selected listings ({0})"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Back to listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Group selection and publishing will be added next. Your listings are saved; nothing has been posted to Facebook."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Clear selection"
+msgstr ""
+
+#. 0: visible.length
+#: src/components/MarketplaceListings.svelte
+msgid "{0} listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Loading saved listings…"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "No saved listings yet"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Select an account to see its listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Create a listing and save it. It will appear here, ready to select later."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Your listings stay separate for each account."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "No matching listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Try another search or listing type."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Select all visible listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Listing"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Type"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Status"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Updated"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Actions"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Draft"
+msgstr ""
+
+#~ msgid "More actions for {0}"
+#~ msgstr ""
+
+#~ msgid "Duplicate"
+#~ msgstr ""
+
+#~ msgid "More"
+#~ msgstr ""
+
+#. 0: title(listing)
+#: src/components/MarketplaceListings.svelte
+msgid "Delete “{0}” and its saved media?"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Delete listing"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+#: src/components/MarketplaceListings.svelte
+msgid "Saved Marketplace listings"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Could not save listing. Please try again."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Today"
+msgstr ""
+
+#. 0: title(listing)
+#: src/components/MarketplaceListings.svelte
+msgid "Edit {0}"
+msgstr ""
+
+#. 0: title(listing)
+#: src/components/MarketplaceListings.svelte
+msgid "Delete {0}"
+msgstr ""

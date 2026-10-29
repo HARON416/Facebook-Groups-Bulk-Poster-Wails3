@@ -88,6 +88,7 @@ msgid "Opening…"
 msgstr "Åbner…"
 
 #: src/App.svelte
+#: src/components/ItemListingEditor.svelte
 #: src/components/LogMessage.svelte
 msgid "Loading…"
 msgstr "Indlæser…"
@@ -127,6 +128,8 @@ msgstr "Fravælg alle grupper"
 #~ msgstr ""
 
 #: src/App.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ListingFieldSelect.svelte
 msgid "Searching…"
 msgstr "Søger…"
 
@@ -197,6 +200,10 @@ msgstr "Tidszone: {0}. Hold Postika åben, og hold din computer vågen. Facebook
 #: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FetchedPostCard.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/LocationSearchDialog.svelte
+#: src/components/MarketplaceListings.svelte
 #: src/components/RenameProfileDialog.svelte
 msgid "Cancel"
 msgstr "Annuller"
@@ -339,6 +346,7 @@ msgid "No accounts found"
 msgstr "Ingen konti fundet"
 
 #: src/components/AccountDropdown.svelte
+#: src/components/ListingFieldSelect.svelte
 msgid "Try a different name."
 msgstr "Prøv et andet navn."
 
@@ -379,15 +387,19 @@ msgid "Choose a weekday for this post"
 msgstr "Vælg en ugedag for dette opslag"
 
 #. 0: day.description
+#. 0: title(listing)
 #: src/components/DateTimePicker.svelte
+#: src/components/MarketplaceListings.svelte
 msgid "Select {0}"
 msgstr "Vælg {0}"
 
 #: src/components/DateTimePicker.svelte
+#: src/components/ListingDatePicker.svelte
 msgid "Previous month"
 msgstr "Forrige måned"
 
 #: src/components/DateTimePicker.svelte
+#: src/components/ListingDatePicker.svelte
 msgid "Next month"
 msgstr "Næste måned"
 
@@ -450,6 +462,7 @@ msgstr "{0} flyttet til position {1} af {2}."
 msgid "Post body"
 msgstr "Opslagstekst"
 
+#: src/components/ItemListingEditor.svelte
 #: src/components/PostComposer.svelte
 #: src/components/PostComposer.svelte
 msgid "Required"
@@ -462,6 +475,7 @@ msgstr "Påkrævet"
 msgid "Images"
 msgstr "Billeder"
 
+#: src/components/ItemListingEditor.svelte
 #: src/components/PostComposer.svelte
 msgid "Choose images"
 msgstr "Vælg billeder"
@@ -484,6 +498,7 @@ msgid "Add more"
 msgstr "Tilføj flere"
 
 #: src/components/FeaturesCard.svelte
+#: src/components/ItemListingEditor.svelte
 #: src/components/PostComposer.svelte
 #: src/components/UsageGuide.svelte
 msgid "Drag images to rearrange. Or focus an image and use Alt + Left / Right."
@@ -498,7 +513,11 @@ msgstr "Valgte billeder"
 msgid "{0}, image {1} of {2}"
 msgstr "{0}, billede {1} af {2}"
 
+#. 0: photo.file.name
+#. 0: tag
 #. 0: image.file.name
+#: src/components/ItemListingEditor.svelte
+#: src/components/ListingTags.svelte
 #: src/components/PostComposer.svelte
 msgid "Remove {0}"
 msgstr "Fjern {0}"
@@ -994,11 +1013,13 @@ msgid "The browser is closed. It will reopen when you click Post."
 msgstr "Browseren er lukket. Den åbnes igen, når du klikker på Post."
 
 #: src/App.svelte
+#: src/components/ItemListingEditor.svelte
 #: src/components/LogMessage.svelte
 msgid "Checking Facebook login"
 msgstr "Tjekker Facebook-login"
 
 #: src/App.svelte
+#: src/components/ItemListingEditor.svelte
 #: src/components/LogMessage.svelte
 msgid "Finish signing in or any verification prompts in Chrome. Your login will be detected automatically."
 msgstr "Afslut login eller enhver verifikationsprompt i Chrome. Dit login vil blive registreret automatisk."
@@ -1117,8 +1138,10 @@ msgid "{0} shown"
 msgstr "{0} vist"
 
 #. 0: selectedGroupIds.length
+#. 0: selected.length
 #. 0: groups.length
 #: src/App.svelte
+#: src/components/MarketplaceListings.svelte
 #: src/components/QueueReview.svelte
 msgid "{0} selected"
 msgstr "{0} valgt"
@@ -1247,6 +1270,7 @@ msgstr "Farvetemaer"
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
 #: src/components/GuidedTour.svelte
+#: src/components/NotificationBar.svelte
 #: src/components/RenameProfileDialog.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UpdateButton.svelte
@@ -1286,6 +1310,7 @@ msgstr "En billedupload mislykkedes i Chrome. Tjek editoren og prøv at sende in
 msgid "Attaching images…"
 msgstr "Vedhæfter billeder…"
 
+#: src/components/ItemListingEditor.svelte
 #: src/components/LogMessage.svelte
 msgid "Choose JPG, PNG, WebP, or GIF images"
 msgstr "Vælg JPG-, PNG-, WebP- eller GIF-billeder"
@@ -1538,6 +1563,7 @@ msgstr "Ingen komplet billeduploadanmodning blev fanget."
 msgid "No fresh image upload request was captured."
 msgstr "Ingen ny billeduploadanmodning blev fanget."
 
+#: src/components/LocationSearchDialog.svelte
 #: src/components/LogMessage.svelte
 msgid "Opening browser…"
 msgstr "Åbner browser…"
@@ -2099,6 +2125,7 @@ msgid "Edit post {0}"
 msgstr "Rediger opslag {0}"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/MarketplaceListings.svelte
 #: src/components/QueueReview.svelte
 #: src/components/QueueReview.svelte
 msgid "Edit"
@@ -2112,6 +2139,7 @@ msgstr "Slet opslag {0}"
 #: src/components/AccountDropdown.svelte
 #: src/components/AccountDropdown.svelte
 #: src/components/FetchedPostCard.svelte
+#: src/components/MarketplaceListings.svelte
 msgid "Delete"
 msgstr "Slet"
 
@@ -2443,6 +2471,10 @@ msgstr "Forretningshenvendelse"
 
 #: src/components/ContactButton.svelte
 #: src/components/ContactButton.svelte
+#: src/components/MarketplaceVehicles.svelte
+#: src/components/MarketplaceVehicles.svelte
+#: src/components/MarketplaceVehicles.svelte
+#: src/components/MarketplaceVehicles.svelte
 msgid "Other"
 msgstr "Andet"
 
@@ -2497,10 +2529,14 @@ msgid "Finish"
 msgstr "Afslut"
 
 #: src/components/GuidedTour.svelte
+#: src/components/ItemListingEditor.svelte
 msgid "Next"
 msgstr "Næste"
 
+#: src/components/CreateListing.svelte
 #: src/components/GuidedTour.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
 msgid "Previous"
 msgstr "Tilbage"
 
@@ -2562,18 +2598,22 @@ msgstr "Prøv en anden søgning, eller ryd filtrene."
 msgid "All colors"
 msgstr "Alle farver"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Red"
 msgstr "Rød"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Orange"
 msgstr "Orange"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Yellow"
 msgstr "Gul"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Green"
 msgstr "Grøn"
@@ -2586,6 +2626,7 @@ msgstr "Mintgrøn"
 msgid "Teal"
 msgstr "Blågrøn"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Blue"
 msgstr "Blå"
@@ -2594,22 +2635,27 @@ msgstr "Blå"
 msgid "Navy"
 msgstr "Marineblå"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Purple"
 msgstr "Lilla"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Pink"
 msgstr "Lyserød"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Brown"
 msgstr "Brun"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Beige"
 msgstr "Beige"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "White"
 msgstr "Hvid"
@@ -2618,6 +2664,7 @@ msgstr "Hvid"
 msgid "Grey"
 msgstr "Grå"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Black"
 msgstr "Sort"
@@ -2637,3 +2684,1364 @@ msgstr "Mørk"
 #: src/components/ThemePicker.svelte
 msgid "Peach"
 msgstr "Fersken"
+
+#: src/Workspace.svelte
+#: src/components/MarketplaceToolbar.svelte
+msgid "Marketplace"
+msgstr "Markedsplads"
+
+#. 0: marketplaceTitle
+#: src/Workspace.svelte
+msgid "{0} · Postika"
+msgstr "{0} · Postika"
+
+#: src/components/MarketplaceToolbar.svelte
+msgid "All listing types"
+msgstr "Alle annoncetyper"
+
+#: src/components/MarketplaceToolbar.svelte
+msgid "Items for sale"
+msgstr "Varer til salg"
+
+#: src/components/MarketplaceToolbar.svelte
+msgid "Vehicles for sale"
+msgstr "Køretøjer til salg"
+
+#: src/components/MarketplaceToolbar.svelte
+msgid "Homes for rent or sale"
+msgstr "Boliger til leje eller salg"
+
+#: src/components/MarketplaceToolbar.svelte
+#: src/components/MarketplaceToolbar.svelte
+msgid "Listing type"
+msgstr "Annoncetype"
+
+#~ msgid "<0/> Create new listing"
+#~ msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/MarketplaceToolbar.svelte
+msgid "Create new listing"
+msgstr "Opret ny annonce"
+
+#: src/components/CreateListing.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Item for sale"
+msgstr "Vare til salg"
+
+#: src/components/CreateListing.svelte
+msgid "Create a single listing for one or more items to sell."
+msgstr "Opret én annonce for en eller flere varer, du vil sælge."
+
+#: src/components/CreateListing.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Vehicle for sale"
+msgstr "Køretøj til salg"
+
+#: src/components/CreateListing.svelte
+msgid "Sell a car, truck or other type of vehicle."
+msgstr "Sælg en bil, lastbil eller en anden type køretøj."
+
+#: src/components/CreateListing.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Home for sale or rent"
+msgstr "Bolig til salg eller leje"
+
+#: src/components/CreateListing.svelte
+msgid "List a house or apartment for sale or rent."
+msgstr "Opret en annonce for et hus eller en lejlighed til salg eller leje."
+
+#: src/components/CreateListing.svelte
+msgid "Choose listing type"
+msgstr "Vælg annoncetype"
+
+#~ msgid "Save draft"
+#~ msgstr "Gem kladde"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Listing to Marketplace"
+msgstr "Annonce på Marketplace"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Photos"
+msgstr "Billeder"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Add photos"
+msgstr "Tilføj billeder"
+
+#: src/components/ItemListingEditor.svelte
+msgid "or drag and drop"
+msgstr "eller træk og slip"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Category"
+msgstr "Kategori"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Condition"
+msgstr "Stand"
+
+#~ msgid "Title<0/>"
+#~ msgstr ""
+
+#~ msgid "Price<0/>"
+#~ msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "More details"
+msgstr "Flere oplysninger"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Attract more interest by including more details."
+msgstr "Tiltræk mere interesse ved at tilføje flere oplysninger."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Availability"
+msgstr "Tilgængelighed"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/MarketplaceAvailability.svelte
+msgid "List as Single Item"
+msgstr "Annoncér som enkelt vare"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/LocationSearchDialog.svelte
+#: src/components/MarketplaceListings.svelte
+msgid "Location"
+msgstr "Placering"
+
+#~ msgid "Description<0/>"
+#~ msgstr ""
+
+#~ msgid "Product tags<0/><1>Optional. Limit: 20.</1>"
+#~ msgstr ""
+
+#~ msgid "SKU<0/><1>Optional. Only visible to you.</1>"
+#~ msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "You can add up to 10 photos."
+msgstr "Du kan tilføje op til 10 billeder."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Be as descriptive as possible."
+msgstr "Vær så beskrivende som muligt."
+
+#~ msgid "Draft saved."
+#~ msgstr "Kladde gemt."
+
+#~ msgid "Could not save draft. Please try again."
+#~ msgstr "Kladden kunne ikke gemmes. Prøv igen."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Could not load draft. Please try again."
+msgstr "Kladden kunne ikke indlæses. Prøv igen."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Your listing preview"
+msgstr "Forhåndsvisning af din annonce"
+
+#: src/components/ItemListingEditor.svelte
+msgid "As you create your listing, you can preview how it will appear on Marketplace."
+msgstr "Mens du opretter annoncen, kan du se, hvordan den vil se ud på Marketplace."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Title"
+msgstr "Titel"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/MarketplaceListings.svelte
+msgid "Price"
+msgstr "Pris"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Description will appear here."
+msgstr "Beskrivelsen vises her."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Details"
+msgstr "Oplysninger"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Seller information"
+msgstr "Sælgeroplysninger"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Preview"
+msgstr "Forhåndsvisning"
+
+#: src/components/ListingFieldSelect.svelte
+msgid "Options will be added later."
+msgstr "Valgmuligheder tilføjes senere."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Description"
+msgstr "Beskrivelse"
+
+#: src/components/ListingTags.svelte
+msgid "Product tags"
+msgstr "Produktmærker"
+
+#: src/components/ListingTags.svelte
+msgid "Optional. Limit: 20."
+msgstr "Valgfrit. Grænse: 20."
+
+#: src/components/ItemListingEditor.svelte
+msgid "SKU"
+msgstr "SKU"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Optional. Only visible to you."
+msgstr "Valgfrit. Kun synligt for dig."
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Home & Garden"
+msgstr "Hjem og have"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Entertainment"
+msgstr "Underholdning"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Clothing & Accessories"
+msgstr "Tøj og tilbehør"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Family"
+msgstr "Familie"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Electronics"
+msgstr "Elektronik"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Hobbies"
+msgstr "Hobbyer"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Classifieds"
+msgstr "Rubrikannoncer"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Shipping available"
+msgstr "Forsendelse tilgængelig"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Tools"
+msgstr "Værktøj"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Furniture"
+msgstr "Møbler"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Household"
+msgstr "Husholdning"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Garden"
+msgstr "Have"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Appliances"
+msgstr "Hvidevarer"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Video Games"
+msgstr "Videospil"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Books, Movies & Music"
+msgstr "Bøger, film og musik"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Bags & Luggage"
+msgstr "Tasker og bagage"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Women's clothing & shoes"
+msgstr "Dametøj og -sko"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Men's clothing & shoes"
+msgstr "Herretøj og -sko"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Jewelry & Accessories"
+msgstr "Smykker og tilbehør"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Health & beauty"
+msgstr "Sundhed og skønhed"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Pet Supplies"
+msgstr "Kæledyrsartikler"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Baby & kids"
+msgstr "Baby og børn"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Toys & Games"
+msgstr "Legetøj og spil"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Electronics & computers"
+msgstr "Elektronik og computere"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Mobile phones"
+msgstr "Mobiltelefoner"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Bicycles"
+msgstr "Cykler"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Arts & Crafts"
+msgstr "Kunst og håndværk"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Sports & Outdoors"
+msgstr "Sport og friluftsliv"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Auto parts"
+msgstr "Autodele"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Musical Instruments"
+msgstr "Musikinstrumenter"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Antiques & Collectibles"
+msgstr "Antikviteter og samlerobjekter"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Garage Sale"
+msgstr "Loppemarked"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Miscellaneous"
+msgstr "Diverse"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Vehicles"
+msgstr "Køretøjer"
+
+#: src/components/MarketplaceConditions.svelte
+msgid "New"
+msgstr "Ny"
+
+#: src/components/MarketplaceConditions.svelte
+msgid "Used - Like New"
+msgstr "Brugt - som ny"
+
+#: src/components/MarketplaceConditions.svelte
+msgid "Used - Good"
+msgstr "Brugt - god stand"
+
+#: src/components/MarketplaceConditions.svelte
+msgid "Used - Fair"
+msgstr "Brugt - rimelig stand"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Public"
+msgstr "Offentlig"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Learn more about meetup preferences"
+msgstr "Læs mere: Mødepræferencer"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Public meetup"
+msgstr "Møde på offentligt sted"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Meet at a public location."
+msgstr "Mød hinanden på et offentligt sted."
+
+#: src/components/ItemListingEditor.svelte
+msgid "See Marketplace meetup safety tips"
+msgstr "Se sikkerhedstips (Marketplace)"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Door pickup"
+msgstr "Afhentning ved døren"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Buyer picks up at your door."
+msgstr "Køberen henter ved din dør."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Door dropoff"
+msgstr "Levering til døren"
+
+#: src/components/ItemListingEditor.svelte
+msgid "You drop off at buyer's door."
+msgstr "Du leverer til køberens dør."
+
+#: src/components/ItemListingEditor.svelte
+msgid "See safety tips"
+msgstr "Se sikkerhedstips"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Meetup preferences"
+msgstr "Mødepræferencer"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Buyers will be able to see your preferences on your listing."
+msgstr "Købere vil kunne se dine præferencer i annoncen."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Learn more"
+msgstr "Læs mere"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Promote listing after publish"
+msgstr "Promover efter offentliggørelse"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Add a step to promote your listing after it publishes, to help you reach more potential buyers by turning it into an ad."
+msgstr "Tilføj et trin for at promovere annoncen efter offentliggørelsen og nå flere potentielle købere ved at gøre den til en reklame."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Hide from friends"
+msgstr "Skjul for venner"
+
+#: src/components/ItemListingEditor.svelte
+msgid "This listing is still public. If you hide this listing from friends, they won't see it in most cases."
+msgstr "Annoncen er stadig offentlig. Hvis du skjuler den for venner, vil de i de fleste tilfælde ikke se den."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Learn more about hiding listings from friends"
+msgstr "Læs mere: Skjul for venner"
+
+#~ msgid "Marketplace items are public and can be seen by anyone on or off Facebook."
+#~ msgstr "Marketplace-annoncer er offentlige og kan ses af alle på og uden for Facebook."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Commerce Policies"
+msgstr "Handelspolitikker"
+
+#~ msgid "Backspace"
+#~ msgstr ""
+
+#~ msgid "Files"
+#~ msgstr ""
+
+#~ msgid "Alt+ArrowLeft Alt+ArrowRight"
+#~ msgstr ""
+
+#: src/components/MarketplaceAvailability.svelte
+msgid "If you're selling one item, show \"Only one\" on your listing."
+msgstr "Hvis du sælger én vare, vises “Kun én” i din annonce."
+
+#: src/components/MarketplaceAvailability.svelte
+msgid "List as In Stock"
+msgstr "Annoncér som på lager"
+
+#: src/components/MarketplaceAvailability.svelte
+msgid "If you're selling more than one item, show \"In Stock\" on your listing."
+msgstr "Hvis du sælger flere varer, vises “På lager” i din annonce."
+
+#: src/components/ListingTags.svelte
+msgid "Add tag"
+msgstr "Tilføj tag"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Tags"
+msgstr "Tags"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Enter a town or city"
+msgstr "Indtast en by"
+
+#~ msgid "Facebook opened."
+#~ msgstr "Facebook er åbnet."
+
+#~ msgid "Connect location search"
+#~ msgstr "Forbind placeringssøgning"
+
+#~ msgid "Postika needs to open Facebook for this account to prepare location search. If Facebook asks you to log in, complete that step in the browser."
+#~ msgstr "Postika skal åbne Facebook for denne konto for at klargøre placeringssøgning. Hvis Facebook beder dig om at logge ind, skal du gøre det i browseren."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/LocationSearchDialog.svelte
+msgid "Continue to Facebook"
+msgstr "Fortsæt til Facebook"
+
+#: src/components/LocationSearchDialog.svelte
+msgid "We need to open Facebook to set up location search. If Facebook asks you to log in, complete that step in the browser."
+msgstr "Vi skal åbne Facebook for at konfigurere placeringssøgning. Hvis Facebook beder dig om at logge ind, skal du gøre det i browseren."
+
+#~ msgid "You’re logged in. Marketplace is open."
+#~ msgstr "Du er logget ind. Marketplace er åbent."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Facebook was closed. Continue to Facebook to try again."
+msgstr "Facebook blev lukket. Fortsæt til Facebook for at prøve igen."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Preparing Marketplace…"
+msgstr "Klargør Marketplace…"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Could not expand More details. Please try again."
+msgstr "Kunne ikke udvide Flere oplysninger. Prøv igen."
+
+#: src/components/ItemListingEditor.svelte
+msgid "No locations found."
+msgstr "Ingen placeringer fundet."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Location search is ready."
+msgstr "Placeringssøgning er klar."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Reconnect to Facebook to search locations."
+msgstr "Opret forbindelse til Facebook igen for at søge efter placeringer."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Could not search locations. Please try again."
+msgstr "Kunne ikke søge efter placeringer. Prøv igen."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/MarketplaceListings.svelte
+msgid "Try again"
+msgstr "Prøv igen"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Please enter a valid location."
+msgstr "Indtast en gyldig placering."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Vehicle type"
+msgstr "Køretøjstype"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Photo upload"
+msgstr "Upload af billeder"
+
+#: src/components/ItemListingEditor.svelte
+msgid "You can add up to 20 photos."
+msgstr "Du kan tilføje op til 20 billeder."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "About this vehicle"
+msgstr "Om dette køretøj"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Help buyers know more about the vehicle you're listing."
+msgstr "Hjælp købere med at få mere at vide om det køretøj, du sælger."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Year"
+msgstr "Årgang"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Make"
+msgstr "Mærke"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Model"
+msgstr "Model"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Enter your price for this vehicle."
+msgstr "Indtast din pris for dette køretøj."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Tell buyers anything that you haven't had the chance to include yet about your vehicle."
+msgstr "Fortæl købere andre oplysninger om dit køretøj, som du endnu ikke har haft mulighed for at tilføje."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Seller's description"
+msgstr "Sælgerens beskrivelse"
+
+#: src/components/ListingLocationPreview.svelte
+#: src/components/ListingLocationPreview.svelte
+msgid "Location is approximate"
+msgstr "Placeringen er omtrentlig"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Car/Truck"
+msgstr "Bil/Lastbil"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Motorcycle"
+msgstr "Motorcykel"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Powersport"
+msgstr "Motordrevet fritidskøretøj"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "RV/Camper"
+msgstr "Autocamper/Campingvogn"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Trailer"
+msgstr "Anhænger"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Boat"
+msgstr "Båd"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Commercial/Industrial"
+msgstr "Erhverv/Industri"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Mileage"
+msgstr "Kilometertal"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Vehicle appearance and features"
+msgstr "Køretøjets udseende og funktioner"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Add more about what your vehicle looks like and the features that it has."
+msgstr "Tilføj flere oplysninger om dit køretøjs udseende og funktioner."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Body style"
+msgstr "Karrosseritype"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Exterior color"
+msgstr "Udvendig farve"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Interior color"
+msgstr "Indvendig farve"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Vehicle details"
+msgstr "Køretøjsoplysninger"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Include more details to help connect interested buyers to your vehicle."
+msgstr "Tilføj flere oplysninger for at hjælpe interesserede købere med at finde dit køretøj."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "This vehicle has a clean title."
+msgstr "Dette køretøj har en registreringsattest uden skadesanmærkninger."
+
+#: src/components/ItemListingEditor.svelte
+msgid "This vehicle has no significant damage or persistent problems."
+msgstr "Dette køretøj har ingen væsentlige skader eller vedvarende problemer."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Vehicle condition"
+msgstr "Køretøjets stand"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Fuel type"
+msgstr "Brændstoftype"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Transmission"
+msgstr "Gearkasse"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ListingVideo.svelte
+msgid "Video preview"
+msgstr "Videoforhåndsvisning"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Automatic transmission"
+msgstr "Automatgear"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ListingVideo.svelte
+msgid "Videos"
+msgstr "Videoer"
+
+#: src/components/ListingVideo.svelte
+#: src/components/ListingVideo.svelte
+msgid "Add video"
+msgstr "Tilføj video"
+
+#: src/components/ListingVideo.svelte
+#: src/components/ListingVideo.svelte
+#: src/components/ListingVideo.svelte
+#: src/components/ListingVideo.svelte
+msgid "Remove video"
+msgstr "Fjern video"
+
+#~ msgid "Checking video…"
+#~ msgstr "Kontrollerer video…"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Choose a supported video up to 1 minute long."
+msgstr "Vælg en understøttet video på højst 1 minut."
+
+#: src/components/ListingVideo.svelte
+msgid "(1 minute max)"
+msgstr "(højst 1 minut)"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Gold"
+msgstr "Guld"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Gray"
+msgstr "Grå"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Silver"
+msgstr "Sølv"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Charcoal"
+msgstr "Koksgrå"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Off white"
+msgstr "Råhvid"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Tan"
+msgstr "Lysebrun"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Burgundy"
+msgstr "Bordeaux"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Turquoise"
+msgstr "Turkis"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Coupe"
+msgstr "Coupé"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Truck"
+msgstr "Lastbil"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Sedan"
+msgstr "Sedan"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Hatchback"
+msgstr "Hatchback"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "SUV"
+msgstr "SUV"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Convertible"
+msgstr "Cabriolet"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Wagon"
+msgstr "Stationcar"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Minivan"
+msgstr "Minivan"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Small Car"
+msgstr "Lille bil"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Excellent"
+msgstr "Fremragende"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Very good"
+msgstr "Meget god"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Good"
+msgstr "God"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Fair"
+msgstr "Rimelig"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Poor"
+msgstr "Dårlig"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Diesel"
+msgstr "Diesel"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Electric"
+msgstr "Elektrisk"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Gasoline"
+msgstr "Benzin (Gasoline)"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Flex"
+msgstr "Flexfuel"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Hybrid"
+msgstr "Hybrid"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Petrol"
+msgstr "Benzin (Petrol)"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Plug-in hybrid"
+msgstr "Plug-in-hybrid"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Manual transmission"
+msgstr "Manuel gearkasse"
+
+#: src/components/ItemListingEditor.svelte
+msgid "You can add up to 50 photos."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Property type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Number of bedrooms"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Number of bathrooms"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Address"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Property description"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Include details like utilities, amenities, any deposits needed and when it's available."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Advanced Details"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Optional"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Property square feet"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Laundry type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Parking type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Air conditioning type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Heating type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "/ Month"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Rental Location"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "New home listing"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Rent"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "For Sale"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Apartment"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "House"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Townhouse"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "In-unit laundry"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Laundry in building"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Laundry available"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+#: src/components/MarketplaceHomes.svelte
+#: src/components/MarketplaceHomes.svelte
+#: src/components/MarketplaceHomes.svelte
+msgid "None"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Garage parking"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Street parking"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Off-street parking"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Parking available"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Central AC"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "AC available"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Central heating"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Electric heating"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Gas heating"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Radiator heating"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Heating available"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Enter an address"
+msgstr ""
+
+#: src/components/ListingLocationPreview.svelte
+msgid "View listing location"
+msgstr ""
+
+#: src/components/ListingLocationPreview.svelte
+msgid "Map preview unavailable."
+msgstr ""
+
+#: src/components/ListingLocationPreview.svelte
+msgid "View Map Info"
+msgstr ""
+
+#: src/components/ListingLocationPreview.svelte
+msgid "View map image"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Rental type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "This is a private room in a shared property."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Price per month"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Rental description"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Date available"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Cat friendly"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Dog friendly"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Date available:"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "How many people live here?"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Bathroom Type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Is this room furnished?"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Room Details"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Property Details"
+msgstr ""
+
+#~ msgid "Is this room furnished? <0/>"
+#~ msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Furnished"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Private"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Shared"
+msgstr ""
+
+#: src/components/ListingDatePicker.svelte
+msgid "Clear date"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Test"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Save"
+msgstr ""
+
+#. 0: maxPhotos
+#: src/components/ItemListingEditor.svelte
+msgid "You may only select a maximum of {0} photos."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Marketplace items are public and can be seen by anyone on or off Facebook. Items like animals, drugs, weapons, counterfeits, and other items that infringe intellectual property aren't allowed on Marketplace."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ListingVideo.svelte
+msgid "Loading video…"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Loading video"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Your video must finish loading before proceeding."
+msgstr ""
+
+#~ msgid "Video added. Preview is unavailable in this app."
+#~ msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Could not load video thumbnail."
+msgstr ""
+
+#~ msgid "Finish signing in or any verification prompts in Chrome. Media will be added automatically."
+#~ msgstr ""
+
+#~ msgid "Media sent to Facebook. Review the listing in Chrome."
+#~ msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Test cancelled."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Add at least one photo or video."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Finish signing in or any verification prompts in Chrome. Your listing will be filled automatically."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Listing filled in Facebook. Review it in Chrome."
+msgstr ""
+
+#: src/components/MarketplaceToolbar.svelte
+msgid "Publish selected<0/>"
+msgstr ""
+
+#: src/components/CreateListing.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/MarketplaceListings.svelte
+msgid "Listing saved."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Save listing"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Untitled listing"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Item"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Vehicle"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Could not load saved listings. Please try again."
+msgstr ""
+
+#~ msgid "Listing duplicated."
+#~ msgstr ""
+
+#~ msgid "Could not duplicate listing. Please try again."
+#~ msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Listing deleted."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Could not delete listing. Please try again."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+#: src/components/MarketplaceListings.svelte
+msgid "Saved listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Save listings here, then select them when you’re ready to publish."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Search saved listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Search listings"
+msgstr ""
+
+#. 0: chosen.length
+#: src/components/MarketplaceListings.svelte
+msgid "Selected listings ({0})"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Back to listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Group selection and publishing will be added next. Your listings are saved; nothing has been posted to Facebook."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Clear selection"
+msgstr ""
+
+#. 0: visible.length
+#: src/components/MarketplaceListings.svelte
+msgid "{0} listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Loading saved listings…"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "No saved listings yet"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Select an account to see its listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Create a listing and save it. It will appear here, ready to select later."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Your listings stay separate for each account."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "No matching listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Try another search or listing type."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Select all visible listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Listing"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Type"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Status"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Updated"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Actions"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Draft"
+msgstr ""
+
+#~ msgid "More actions for {0}"
+#~ msgstr ""
+
+#~ msgid "Duplicate"
+#~ msgstr ""
+
+#~ msgid "More"
+#~ msgstr ""
+
+#. 0: title(listing)
+#: src/components/MarketplaceListings.svelte
+msgid "Delete “{0}” and its saved media?"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Delete listing"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+#: src/components/MarketplaceListings.svelte
+msgid "Saved Marketplace listings"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Could not save listing. Please try again."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Today"
+msgstr ""
+
+#. 0: title(listing)
+#: src/components/MarketplaceListings.svelte
+msgid "Edit {0}"
+msgstr ""
+
+#. 0: title(listing)
+#: src/components/MarketplaceListings.svelte
+msgid "Delete {0}"
+msgstr ""

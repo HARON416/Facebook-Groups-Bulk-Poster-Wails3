@@ -101,7 +101,7 @@
     border-radius: 0.16rem;
     background: transparent;
     box-shadow: 0 0 0 0 var(--step-accent-faint);
-    transition: box-shadow 0.4s var(--ease-out), background-color 0.4s;
+    transition: box-shadow var(--motion-state) var(--motion-ease), background-color var(--motion-state) var(--motion-ease);
   }
 
   .marker::after {
@@ -130,7 +130,7 @@
   }
 
   .completed .marker::after {
-    animation: checkbox-ripple 1.5s var(--ease-out);
+    animation: checkbox-ripple var(--motion-state) var(--motion-ease);
   }
 
   svg {
@@ -147,12 +147,12 @@
   svg path {
     stroke-dasharray: 30, 31;
     stroke-dashoffset: 31;
-    transition: stroke-dashoffset 0.2s ease-in;
+    transition: stroke-dashoffset var(--motion-state) var(--motion-ease);
   }
 
   .completed svg path {
     stroke-dashoffset: 0;
-    transition: stroke-dashoffset 0.4s var(--ease-out);
+    transition: stroke-dashoffset var(--motion-state) var(--motion-ease);
   }
 
   @keyframes checkbox-ripple {

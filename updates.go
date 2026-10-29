@@ -54,6 +54,7 @@ type updateTarget struct{ Kind, Path string }
 // UpdateService automatically checks and stages verified updates. Installing
 // waits for an explicit restart request and the completion of all posting runs.
 type UpdateService struct {
+	disabled                    bool
 	verification                *updater.Verification
 	mu                          sync.Mutex
 	op                          sync.Mutex
@@ -79,6 +80,9 @@ func newUpdateService(app *application.App, profiles *ProfileService) (*UpdateSe
 		return nil, err
 	}
 	version := info.Info["0000"].ProductVersion
+	if developmentBuild {
+		return &UpdateService{disabled: true, status: UpdateStatus{CurrentVersion: version, State: "disabled"}}, nil
+	}
 	target, err := detectUpdateTarget()
 	if err != nil {
 		return nil, err
@@ -153,6 +157,9 @@ func (p verifiedUpdateProvider) Check(ctx context.Context, req updater.CheckRequ
 }
 
 func (s *UpdateService) ServiceStartup(ctx context.Context, _ application.ServiceOptions) error {
+	if s.disabled {
+		return nil
+	}
 	s.ctx, s.cancel = context.WithCancel(ctx)
 	s.done = make(chan struct{})
 	go func() {
@@ -187,6 +194,9 @@ func (s *UpdateService) GetUpdateStatus() UpdateStatus {
 }
 
 func (s *UpdateService) CheckForUpdates(ctx context.Context) (UpdateStatus, error) {
+	if s.disabled {
+		return s.GetUpdateStatus(), errors.New("Updates are disabled in development builds")
+	}
 	if !s.op.TryLock() {
 		return s.GetUpdateStatus(), nil
 	}
@@ -254,6 +264,9 @@ func (s *UpdateService) stageUpdate() {
 	s.status.Error = ""
 }
 func (s *UpdateService) DownloadUpdate() error {
+	if s.disabled {
+		return errors.New("Updates are disabled in development builds")
+	}
 	if !s.op.TryLock() {
 		return errors.New("An update operation is already running")
 	}
@@ -269,6 +282,9 @@ func (s *UpdateService) DownloadUpdate() error {
 	return nil
 }
 func (s *UpdateService) RestartToUpdate(ctx context.Context) error {
+	if s.disabled {
+		return errors.New("Updates are disabled in development builds")
+	}
 	if !s.op.TryLock() {
 		return errors.New("An update operation is already running")
 	}

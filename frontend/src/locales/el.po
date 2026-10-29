@@ -88,6 +88,7 @@ msgid "Opening…"
 msgstr "Άνοιγμα…"
 
 #: src/App.svelte
+#: src/components/ItemListingEditor.svelte
 #: src/components/LogMessage.svelte
 msgid "Loading…"
 msgstr "Φόρτωση…"
@@ -127,6 +128,8 @@ msgstr "Αποεπιλογή όλων των ομάδων"
 #~ msgstr ""
 
 #: src/App.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ListingFieldSelect.svelte
 msgid "Searching…"
 msgstr "Αναζήτηση…"
 
@@ -197,6 +200,10 @@ msgstr "Ζώνη ώρας: {0}. Κρατήστε το Postika ανοιχτό κ�
 #: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FetchedPostCard.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/LocationSearchDialog.svelte
+#: src/components/MarketplaceListings.svelte
 #: src/components/RenameProfileDialog.svelte
 msgid "Cancel"
 msgstr "Ακύρωση"
@@ -339,6 +346,7 @@ msgid "No accounts found"
 msgstr "Δεν βρέθηκαν λογαριασμοί"
 
 #: src/components/AccountDropdown.svelte
+#: src/components/ListingFieldSelect.svelte
 msgid "Try a different name."
 msgstr "Δοκιμάστε άλλο όνομα."
 
@@ -379,15 +387,19 @@ msgid "Choose a weekday for this post"
 msgstr "Επιλέξτε ημέρα της εβδομάδας για αυτήν την ανάρτηση"
 
 #. 0: day.description
+#. 0: title(listing)
 #: src/components/DateTimePicker.svelte
+#: src/components/MarketplaceListings.svelte
 msgid "Select {0}"
 msgstr "Επιλέξτε {0}"
 
 #: src/components/DateTimePicker.svelte
+#: src/components/ListingDatePicker.svelte
 msgid "Previous month"
 msgstr "Προηγούμενος μήνας"
 
 #: src/components/DateTimePicker.svelte
+#: src/components/ListingDatePicker.svelte
 msgid "Next month"
 msgstr "Επόμενος μήνας"
 
@@ -450,6 +462,7 @@ msgstr "Το {0} μετακινήθηκε στη θέση {1} από {2}."
 msgid "Post body"
 msgstr "Κείμενο ανάρτησης"
 
+#: src/components/ItemListingEditor.svelte
 #: src/components/PostComposer.svelte
 #: src/components/PostComposer.svelte
 msgid "Required"
@@ -462,6 +475,7 @@ msgstr "Υποχρεωτικό"
 msgid "Images"
 msgstr "Εικόνες"
 
+#: src/components/ItemListingEditor.svelte
 #: src/components/PostComposer.svelte
 msgid "Choose images"
 msgstr "Επιλέξτε εικόνες"
@@ -484,6 +498,7 @@ msgid "Add more"
 msgstr "Προσθήκη περισσότερων"
 
 #: src/components/FeaturesCard.svelte
+#: src/components/ItemListingEditor.svelte
 #: src/components/PostComposer.svelte
 #: src/components/UsageGuide.svelte
 msgid "Drag images to rearrange. Or focus an image and use Alt + Left / Right."
@@ -498,7 +513,11 @@ msgstr "Επιλεγμένες εικόνες"
 msgid "{0}, image {1} of {2}"
 msgstr "{0}, εικόνα {1} από {2}"
 
+#. 0: photo.file.name
+#. 0: tag
 #. 0: image.file.name
+#: src/components/ItemListingEditor.svelte
+#: src/components/ListingTags.svelte
 #: src/components/PostComposer.svelte
 msgid "Remove {0}"
 msgstr "Αφαιρέστε το {0}"
@@ -994,11 +1013,13 @@ msgid "The browser is closed. It will reopen when you click Post."
 msgstr "Ο περιηγητής είναι κλειστός. Θα ανοίξει ξανά όταν κάνετε κλικ στο Δημοσίευση."
 
 #: src/App.svelte
+#: src/components/ItemListingEditor.svelte
 #: src/components/LogMessage.svelte
 msgid "Checking Facebook login"
 msgstr "Έλεγχος σύνδεσης στο Facebook"
 
 #: src/App.svelte
+#: src/components/ItemListingEditor.svelte
 #: src/components/LogMessage.svelte
 msgid "Finish signing in or any verification prompts in Chrome. Your login will be detected automatically."
 msgstr "Ολοκληρώστε τη σύνδεση ή οποιαδήποτε προτροπή επαλήθευσης στο Chrome. Η σύνδεσή σας θα ανιχνευθεί αυτόματα."
@@ -1117,8 +1138,10 @@ msgid "{0} shown"
 msgstr "Εμφανίστηκαν {0}"
 
 #. 0: selectedGroupIds.length
+#. 0: selected.length
 #. 0: groups.length
 #: src/App.svelte
+#: src/components/MarketplaceListings.svelte
 #: src/components/QueueReview.svelte
 msgid "{0} selected"
 msgstr "Επιλέχθηκαν {0}"
@@ -1247,6 +1270,7 @@ msgstr "Χρωματικά θέματα"
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
 #: src/components/GuidedTour.svelte
+#: src/components/NotificationBar.svelte
 #: src/components/RenameProfileDialog.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UpdateButton.svelte
@@ -1286,6 +1310,7 @@ msgstr "Η μεταφόρτωση εικόνας απέτυχε στο Chrome. �
 msgid "Attaching images…"
 msgstr "Συνημμένες εικόνες…"
 
+#: src/components/ItemListingEditor.svelte
 #: src/components/LogMessage.svelte
 msgid "Choose JPG, PNG, WebP, or GIF images"
 msgstr "Επιλέξτε εικόνες JPG, PNG, WebP ή GIF"
@@ -1538,6 +1563,7 @@ msgstr "Δεν καταγράφηκε πλήρης αίτηση ανέβασμα
 msgid "No fresh image upload request was captured."
 msgstr "Δεν καταγράφηκε φρέσκια αίτηση ανέβασματος εικόνας."
 
+#: src/components/LocationSearchDialog.svelte
 #: src/components/LogMessage.svelte
 msgid "Opening browser…"
 msgstr "Άνοιγμα προγράμματος περιήγησης…"
@@ -2099,6 +2125,7 @@ msgid "Edit post {0}"
 msgstr "Επεξεργασία ανάρτησης {0}"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/MarketplaceListings.svelte
 #: src/components/QueueReview.svelte
 #: src/components/QueueReview.svelte
 msgid "Edit"
@@ -2112,6 +2139,7 @@ msgstr "Διαγραφή ανάρτησης {0}"
 #: src/components/AccountDropdown.svelte
 #: src/components/AccountDropdown.svelte
 #: src/components/FetchedPostCard.svelte
+#: src/components/MarketplaceListings.svelte
 msgid "Delete"
 msgstr "Διαγραφή"
 
@@ -2443,6 +2471,10 @@ msgstr "Επαγγελματική επικοινωνία"
 
 #: src/components/ContactButton.svelte
 #: src/components/ContactButton.svelte
+#: src/components/MarketplaceVehicles.svelte
+#: src/components/MarketplaceVehicles.svelte
+#: src/components/MarketplaceVehicles.svelte
+#: src/components/MarketplaceVehicles.svelte
 msgid "Other"
 msgstr "Άλλο"
 
@@ -2497,10 +2529,14 @@ msgid "Finish"
 msgstr "Τέλος"
 
 #: src/components/GuidedTour.svelte
+#: src/components/ItemListingEditor.svelte
 msgid "Next"
 msgstr "Επόμενο"
 
+#: src/components/CreateListing.svelte
 #: src/components/GuidedTour.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
 msgid "Previous"
 msgstr "Προηγούμενο"
 
@@ -2562,18 +2598,22 @@ msgstr "Δοκιμάστε άλλη αναζήτηση ή καθαρίστε τ�
 msgid "All colors"
 msgstr "Όλα τα χρώματα"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Red"
 msgstr "Κόκκινο"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Orange"
 msgstr "Πορτοκαλί"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Yellow"
 msgstr "Κίτρινο"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Green"
 msgstr "Πράσινο"
@@ -2586,6 +2626,7 @@ msgstr "Μέντα"
 msgid "Teal"
 msgstr "Πετρόλ"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Blue"
 msgstr "Μπλε"
@@ -2594,22 +2635,27 @@ msgstr "Μπλε"
 msgid "Navy"
 msgstr "Σκούρο μπλε"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Purple"
 msgstr "Μωβ"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Pink"
 msgstr "Ροζ"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Brown"
 msgstr "Καφέ"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Beige"
 msgstr "Μπεζ"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "White"
 msgstr "Λευκό"
@@ -2618,6 +2664,7 @@ msgstr "Λευκό"
 msgid "Grey"
 msgstr "Γκρι"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Black"
 msgstr "Μαύρο"
@@ -2637,3 +2684,1364 @@ msgstr "Σκοτεινό"
 #: src/components/ThemePicker.svelte
 msgid "Peach"
 msgstr "Ροδακινί"
+
+#: src/Workspace.svelte
+#: src/components/MarketplaceToolbar.svelte
+msgid "Marketplace"
+msgstr "Αγορά"
+
+#. 0: marketplaceTitle
+#: src/Workspace.svelte
+msgid "{0} · Postika"
+msgstr "{0} · Postika"
+
+#: src/components/MarketplaceToolbar.svelte
+msgid "All listing types"
+msgstr "Όλοι οι τύποι αγγελιών"
+
+#: src/components/MarketplaceToolbar.svelte
+msgid "Items for sale"
+msgstr "Αντικείμενα προς πώληση"
+
+#: src/components/MarketplaceToolbar.svelte
+msgid "Vehicles for sale"
+msgstr "Οχήματα προς πώληση"
+
+#: src/components/MarketplaceToolbar.svelte
+msgid "Homes for rent or sale"
+msgstr "Κατοικίες προς ενοικίαση ή πώληση"
+
+#: src/components/MarketplaceToolbar.svelte
+#: src/components/MarketplaceToolbar.svelte
+msgid "Listing type"
+msgstr "Τύπος αγγελίας"
+
+#~ msgid "<0/> Create new listing"
+#~ msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/MarketplaceToolbar.svelte
+msgid "Create new listing"
+msgstr "Δημιουργία νέας αγγελίας"
+
+#: src/components/CreateListing.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Item for sale"
+msgstr "Αντικείμενο προς πώληση"
+
+#: src/components/CreateListing.svelte
+msgid "Create a single listing for one or more items to sell."
+msgstr "Δημιουργήστε μία αγγελία για ένα ή περισσότερα αντικείμενα προς πώληση."
+
+#: src/components/CreateListing.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Vehicle for sale"
+msgstr "Όχημα προς πώληση"
+
+#: src/components/CreateListing.svelte
+msgid "Sell a car, truck or other type of vehicle."
+msgstr "Πουλήστε αυτοκίνητο, φορτηγό ή άλλο τύπο οχήματος."
+
+#: src/components/CreateListing.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Home for sale or rent"
+msgstr "Κατοικία προς πώληση ή ενοικίαση"
+
+#: src/components/CreateListing.svelte
+msgid "List a house or apartment for sale or rent."
+msgstr "Καταχωρίστε σπίτι ή διαμέρισμα προς πώληση ή ενοικίαση."
+
+#: src/components/CreateListing.svelte
+msgid "Choose listing type"
+msgstr "Επιλέξτε τύπο αγγελίας"
+
+#~ msgid "Save draft"
+#~ msgstr "Αποθήκευση πρόχειρου"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Listing to Marketplace"
+msgstr "Αγγελία στο Marketplace"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Photos"
+msgstr "Φωτογραφίες"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Add photos"
+msgstr "Προσθήκη φωτογραφιών"
+
+#: src/components/ItemListingEditor.svelte
+msgid "or drag and drop"
+msgstr "ή σύρετε και αποθέστε"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Category"
+msgstr "Κατηγορία"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Condition"
+msgstr "Κατάσταση"
+
+#~ msgid "Title<0/>"
+#~ msgstr ""
+
+#~ msgid "Price<0/>"
+#~ msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "More details"
+msgstr "Περισσότερες λεπτομέρειες"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Attract more interest by including more details."
+msgstr "Προσελκύστε περισσότερο ενδιαφέρον προσθέτοντας περισσότερες λεπτομέρειες."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Availability"
+msgstr "Διαθεσιμότητα"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/MarketplaceAvailability.svelte
+msgid "List as Single Item"
+msgstr "Καταχώριση ως μεμονωμένο αντικείμενο"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/LocationSearchDialog.svelte
+#: src/components/MarketplaceListings.svelte
+msgid "Location"
+msgstr "Τοποθεσία"
+
+#~ msgid "Description<0/>"
+#~ msgstr ""
+
+#~ msgid "Product tags<0/><1>Optional. Limit: 20.</1>"
+#~ msgstr ""
+
+#~ msgid "SKU<0/><1>Optional. Only visible to you.</1>"
+#~ msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "You can add up to 10 photos."
+msgstr "Μπορείτε να προσθέσετε έως 10 φωτογραφίες."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Be as descriptive as possible."
+msgstr "Δώστε όσο το δυνατόν περισσότερες πληροφορίες."
+
+#~ msgid "Draft saved."
+#~ msgstr "Το πρόχειρο αποθηκεύτηκε."
+
+#~ msgid "Could not save draft. Please try again."
+#~ msgstr "Δεν ήταν δυνατή η αποθήκευση του πρόχειρου. Δοκιμάστε ξανά."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Could not load draft. Please try again."
+msgstr "Δεν ήταν δυνατή η φόρτωση του πρόχειρου. Δοκιμάστε ξανά."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Your listing preview"
+msgstr "Προεπισκόπηση της αγγελίας σας"
+
+#: src/components/ItemListingEditor.svelte
+msgid "As you create your listing, you can preview how it will appear on Marketplace."
+msgstr "Καθώς δημιουργείτε την αγγελία, μπορείτε να δείτε πώς θα εμφανίζεται στο Marketplace."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Title"
+msgstr "Τίτλος"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/MarketplaceListings.svelte
+msgid "Price"
+msgstr "Τιμή"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Description will appear here."
+msgstr "Η περιγραφή θα εμφανιστεί εδώ."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Details"
+msgstr "Λεπτομέρειες"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Seller information"
+msgstr "Πληροφορίες πωλητή"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Preview"
+msgstr "Προεπισκόπηση"
+
+#: src/components/ListingFieldSelect.svelte
+msgid "Options will be added later."
+msgstr "Οι επιλογές θα προστεθούν αργότερα."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Description"
+msgstr "Περιγραφή"
+
+#: src/components/ListingTags.svelte
+msgid "Product tags"
+msgstr "Ετικέτες προϊόντος"
+
+#: src/components/ListingTags.svelte
+msgid "Optional. Limit: 20."
+msgstr "Προαιρετικό. Όριο: 20."
+
+#: src/components/ItemListingEditor.svelte
+msgid "SKU"
+msgstr "SKU"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Optional. Only visible to you."
+msgstr "Προαιρετικό. Ορατό μόνο σε εσάς."
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Home & Garden"
+msgstr "Σπίτι και κήπος"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Entertainment"
+msgstr "Ψυχαγωγία"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Clothing & Accessories"
+msgstr "Ρούχα και αξεσουάρ"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Family"
+msgstr "Οικογένεια"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Electronics"
+msgstr "Ηλεκτρονικά"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Hobbies"
+msgstr "Χόμπι"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Classifieds"
+msgstr "Μικρές αγγελίες"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Shipping available"
+msgstr "Διαθέσιμη αποστολή"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Tools"
+msgstr "Εργαλεία"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Furniture"
+msgstr "Έπιπλα"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Household"
+msgstr "Οικιακά είδη"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Garden"
+msgstr "Κήπος"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Appliances"
+msgstr "Συσκευές"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Video Games"
+msgstr "Βιντεοπαιχνίδια"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Books, Movies & Music"
+msgstr "Βιβλία, ταινίες και μουσική"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Bags & Luggage"
+msgstr "Τσάντες και αποσκευές"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Women's clothing & shoes"
+msgstr "Γυναικεία ρούχα και παπούτσια"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Men's clothing & shoes"
+msgstr "Ανδρικά ρούχα και παπούτσια"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Jewelry & Accessories"
+msgstr "Κοσμήματα και αξεσουάρ"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Health & beauty"
+msgstr "Υγεία και ομορφιά"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Pet Supplies"
+msgstr "Είδη κατοικίδιων"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Baby & kids"
+msgstr "Βρέφη και παιδιά"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Toys & Games"
+msgstr "Παιχνίδια και επιτραπέζια"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Electronics & computers"
+msgstr "Ηλεκτρονικά και υπολογιστές"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Mobile phones"
+msgstr "Κινητά τηλέφωνα"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Bicycles"
+msgstr "Ποδήλατα"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Arts & Crafts"
+msgstr "Τέχνες και χειροτεχνίες"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Sports & Outdoors"
+msgstr "Αθλητισμός και υπαίθριες δραστηριότητες"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Auto parts"
+msgstr "Ανταλλακτικά αυτοκινήτων"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Musical Instruments"
+msgstr "Μουσικά όργανα"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Antiques & Collectibles"
+msgstr "Αντίκες και συλλεκτικά είδη"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Garage Sale"
+msgstr "Πώληση μεταχειρισμένων"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Miscellaneous"
+msgstr "Διάφορα"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Vehicles"
+msgstr "Οχήματα"
+
+#: src/components/MarketplaceConditions.svelte
+msgid "New"
+msgstr "Καινούργιο"
+
+#: src/components/MarketplaceConditions.svelte
+msgid "Used - Like New"
+msgstr "Μεταχειρισμένο - σαν καινούργιο"
+
+#: src/components/MarketplaceConditions.svelte
+msgid "Used - Good"
+msgstr "Μεταχειρισμένο - καλή κατάσταση"
+
+#: src/components/MarketplaceConditions.svelte
+msgid "Used - Fair"
+msgstr "Μεταχειρισμένο - αποδεκτή κατάσταση"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Public"
+msgstr "Δημόσιο"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Learn more about meetup preferences"
+msgstr "Μάθετε περισσότερα: Προτιμήσεις συνάντησης"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Public meetup"
+msgstr "Συνάντηση σε δημόσιο χώρο"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Meet at a public location."
+msgstr "Συναντηθείτε σε δημόσιο χώρο."
+
+#: src/components/ItemListingEditor.svelte
+msgid "See Marketplace meetup safety tips"
+msgstr "Δείτε συμβουλές ασφαλείας (Marketplace)"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Door pickup"
+msgstr "Παραλαβή από την πόρτα"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Buyer picks up at your door."
+msgstr "Ο αγοραστής παραλαμβάνει από την πόρτα σας."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Door dropoff"
+msgstr "Παράδοση στην πόρτα"
+
+#: src/components/ItemListingEditor.svelte
+msgid "You drop off at buyer's door."
+msgstr "Παραδίδετε στην πόρτα του αγοραστή."
+
+#: src/components/ItemListingEditor.svelte
+msgid "See safety tips"
+msgstr "Δείτε συμβουλές ασφαλείας"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Meetup preferences"
+msgstr "Προτιμήσεις συνάντησης"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Buyers will be able to see your preferences on your listing."
+msgstr "Οι αγοραστές θα βλέπουν τις προτιμήσεις σας στην αγγελία."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Learn more"
+msgstr "Μάθετε περισσότερα"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Promote listing after publish"
+msgstr "Προώθηση μετά τη δημοσίευση"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Add a step to promote your listing after it publishes, to help you reach more potential buyers by turning it into an ad."
+msgstr "Προσθέστε ένα βήμα προώθησης μετά τη δημοσίευση, για να προσεγγίσετε περισσότερους πιθανούς αγοραστές μετατρέποντας την αγγελία σε διαφήμιση."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Hide from friends"
+msgstr "Απόκρυψη από φίλους"
+
+#: src/components/ItemListingEditor.svelte
+msgid "This listing is still public. If you hide this listing from friends, they won't see it in most cases."
+msgstr "Η αγγελία παραμένει δημόσια. Αν την αποκρύψετε από φίλους, στις περισσότερες περιπτώσεις δεν θα τη βλέπουν."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Learn more about hiding listings from friends"
+msgstr "Μάθετε περισσότερα: Απόκρυψη από φίλους"
+
+#~ msgid "Marketplace items are public and can be seen by anyone on or off Facebook."
+#~ msgstr "Οι αγγελίες του Marketplace είναι δημόσιες και μπορούν να τις δουν όλοι, εντός ή εκτός Facebook."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Commerce Policies"
+msgstr "Πολιτικές εμπορίου"
+
+#~ msgid "Backspace"
+#~ msgstr ""
+
+#~ msgid "Files"
+#~ msgstr ""
+
+#~ msgid "Alt+ArrowLeft Alt+ArrowRight"
+#~ msgstr ""
+
+#: src/components/MarketplaceAvailability.svelte
+msgid "If you're selling one item, show \"Only one\" on your listing."
+msgstr "Αν πουλάτε ένα αντικείμενο, εμφανίστε «Μόνο ένα» στην αγγελία σας."
+
+#: src/components/MarketplaceAvailability.svelte
+msgid "List as In Stock"
+msgstr "Καταχώριση ως διαθέσιμο σε απόθεμα"
+
+#: src/components/MarketplaceAvailability.svelte
+msgid "If you're selling more than one item, show \"In Stock\" on your listing."
+msgstr "Αν πουλάτε περισσότερα από ένα αντικείμενα, εμφανίστε «Σε απόθεμα» στην αγγελία σας."
+
+#: src/components/ListingTags.svelte
+msgid "Add tag"
+msgstr "Προσθήκη ετικέτας"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Tags"
+msgstr "Ετικέτες"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Enter a town or city"
+msgstr "Εισαγάγετε μια πόλη"
+
+#~ msgid "Facebook opened."
+#~ msgstr "Το Facebook άνοιξε."
+
+#~ msgid "Connect location search"
+#~ msgstr "Σύνδεση αναζήτησης τοποθεσίας"
+
+#~ msgid "Postika needs to open Facebook for this account to prepare location search. If Facebook asks you to log in, complete that step in the browser."
+#~ msgstr "Το Postika πρέπει να ανοίξει το Facebook για αυτόν τον λογαριασμό ώστε να προετοιμάσει την αναζήτηση τοποθεσίας. Αν το Facebook ζητήσει σύνδεση, ολοκληρώστε τη στο πρόγραμμα περιήγησης."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/LocationSearchDialog.svelte
+msgid "Continue to Facebook"
+msgstr "Συνέχεια στο Facebook"
+
+#: src/components/LocationSearchDialog.svelte
+msgid "We need to open Facebook to set up location search. If Facebook asks you to log in, complete that step in the browser."
+msgstr "Χρειάζεται να ανοίξουμε το Facebook για να ρυθμίσουμε την αναζήτηση τοποθεσίας. Αν το Facebook ζητήσει σύνδεση, ολοκληρώστε τη στο πρόγραμμα περιήγησης."
+
+#~ msgid "You’re logged in. Marketplace is open."
+#~ msgstr "Συνδεθήκατε. Το Marketplace είναι ανοιχτό."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Facebook was closed. Continue to Facebook to try again."
+msgstr "Το Facebook έκλεισε. Συνεχίστε στο Facebook για να δοκιμάσετε ξανά."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Preparing Marketplace…"
+msgstr "Προετοιμασία του Marketplace…"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Could not expand More details. Please try again."
+msgstr "Δεν ήταν δυνατό το άνοιγμα των περισσότερων λεπτομερειών. Δοκιμάστε ξανά."
+
+#: src/components/ItemListingEditor.svelte
+msgid "No locations found."
+msgstr "Δεν βρέθηκαν τοποθεσίες."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Location search is ready."
+msgstr "Η αναζήτηση τοποθεσίας είναι έτοιμη."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Reconnect to Facebook to search locations."
+msgstr "Συνδεθείτε ξανά στο Facebook για αναζήτηση τοποθεσιών."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Could not search locations. Please try again."
+msgstr "Δεν ήταν δυνατή η αναζήτηση τοποθεσιών. Δοκιμάστε ξανά."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/MarketplaceListings.svelte
+msgid "Try again"
+msgstr "Δοκιμάστε ξανά"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Please enter a valid location."
+msgstr "Εισαγάγετε μια έγκυρη τοποθεσία."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Vehicle type"
+msgstr "Τύπος οχήματος"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Photo upload"
+msgstr "Μεταφόρτωση φωτογραφιών"
+
+#: src/components/ItemListingEditor.svelte
+msgid "You can add up to 20 photos."
+msgstr "Μπορείτε να προσθέσετε έως 20 φωτογραφίες."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "About this vehicle"
+msgstr "Σχετικά με το όχημα"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Help buyers know more about the vehicle you're listing."
+msgstr "Βοηθήστε τους αγοραστές να μάθουν περισσότερα για το όχημα που πουλάτε."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Year"
+msgstr "Έτος"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Make"
+msgstr "Μάρκα"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Model"
+msgstr "Μοντέλο"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Enter your price for this vehicle."
+msgstr "Εισαγάγετε την τιμή για αυτό το όχημα."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Tell buyers anything that you haven't had the chance to include yet about your vehicle."
+msgstr "Πείτε στους αγοραστές επιπλέον πληροφορίες για το όχημά σας που δεν είχατε ακόμη την ευκαιρία να προσθέσετε."
+
+#: src/components/ItemListingEditor.svelte
+msgid "Seller's description"
+msgstr "Περιγραφή πωλητή"
+
+#: src/components/ListingLocationPreview.svelte
+#: src/components/ListingLocationPreview.svelte
+msgid "Location is approximate"
+msgstr "Η τοποθεσία είναι κατά προσέγγιση"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Car/Truck"
+msgstr "Αυτοκίνητο/Φορτηγό"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Motorcycle"
+msgstr "Μοτοσικλέτα"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Powersport"
+msgstr "Μηχανοκίνητο όχημα αναψυχής"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "RV/Camper"
+msgstr "Αυτοκινούμενο/Τροχόσπιτο"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Trailer"
+msgstr "Ρυμουλκούμενο"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Boat"
+msgstr "Σκάφος"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Commercial/Industrial"
+msgstr "Επαγγελματικό/Βιομηχανικό"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Mileage"
+msgstr "Διανυθείσα απόσταση"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Vehicle appearance and features"
+msgstr "Εμφάνιση και χαρακτηριστικά οχήματος"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Add more about what your vehicle looks like and the features that it has."
+msgstr "Προσθέστε περισσότερα για την εμφάνιση και τα χαρακτηριστικά του οχήματός σας."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Body style"
+msgstr "Τύπος αμαξώματος"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Exterior color"
+msgstr "Εξωτερικό χρώμα"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Interior color"
+msgstr "Εσωτερικό χρώμα"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Vehicle details"
+msgstr "Λεπτομέρειες οχήματος"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Include more details to help connect interested buyers to your vehicle."
+msgstr "Προσθέστε λεπτομέρειες για να βοηθήσετε τους ενδιαφερόμενους αγοραστές να βρουν το όχημά σας."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "This vehicle has a clean title."
+msgstr "Αυτό το όχημα έχει τίτλο ιδιοκτησίας χωρίς καταγεγραμμένες ζημιές."
+
+#: src/components/ItemListingEditor.svelte
+msgid "This vehicle has no significant damage or persistent problems."
+msgstr "Αυτό το όχημα δεν έχει σημαντικές ζημιές ή επίμονα προβλήματα."
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Vehicle condition"
+msgstr "Κατάσταση οχήματος"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Fuel type"
+msgstr "Τύπος καυσίμου"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Transmission"
+msgstr "Κιβώτιο ταχυτήτων"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ListingVideo.svelte
+msgid "Video preview"
+msgstr "Προεπισκόπηση βίντεο"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Automatic transmission"
+msgstr "Αυτόματο κιβώτιο ταχυτήτων"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ListingVideo.svelte
+msgid "Videos"
+msgstr "Βίντεο"
+
+#: src/components/ListingVideo.svelte
+#: src/components/ListingVideo.svelte
+msgid "Add video"
+msgstr "Προσθήκη βίντεο"
+
+#: src/components/ListingVideo.svelte
+#: src/components/ListingVideo.svelte
+#: src/components/ListingVideo.svelte
+#: src/components/ListingVideo.svelte
+msgid "Remove video"
+msgstr "Αφαίρεση βίντεο"
+
+#~ msgid "Checking video…"
+#~ msgstr "Έλεγχος βίντεο…"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Choose a supported video up to 1 minute long."
+msgstr "Επιλέξτε ένα υποστηριζόμενο βίντεο διάρκειας έως 1 λεπτού."
+
+#: src/components/ListingVideo.svelte
+msgid "(1 minute max)"
+msgstr "(έως 1 λεπτό)"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Gold"
+msgstr "Χρυσό"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Gray"
+msgstr "Γκρι"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Silver"
+msgstr "Ασημί"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Charcoal"
+msgstr "Ανθρακί"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Off white"
+msgstr "Υπόλευκο"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Tan"
+msgstr "Ανοιχτό καφέ"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Burgundy"
+msgstr "Μπορντό"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Turquoise"
+msgstr "Τιρκουάζ"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Coupe"
+msgstr "Κουπέ"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Truck"
+msgstr "Φορτηγό"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Sedan"
+msgstr "Σεντάν"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Hatchback"
+msgstr "Χάτσμπακ"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "SUV"
+msgstr "SUV"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Convertible"
+msgstr "Κάμπριο"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Wagon"
+msgstr "Στέισον βάγκον"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Minivan"
+msgstr "Μίνιβαν"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Small Car"
+msgstr "Μικρό αυτοκίνητο"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Excellent"
+msgstr "Άριστη"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Very good"
+msgstr "Πολύ καλή"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Good"
+msgstr "Καλή"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Fair"
+msgstr "Μέτρια"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Poor"
+msgstr "Κακή"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Diesel"
+msgstr "Ντίζελ"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Electric"
+msgstr "Ηλεκτρικό"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Gasoline"
+msgstr "Βενζίνη (Gasoline)"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Flex"
+msgstr "Ευέλικτο καύσιμο"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Hybrid"
+msgstr "Υβριδικό"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Petrol"
+msgstr "Βενζίνη (Petrol)"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Plug-in hybrid"
+msgstr "Επαναφορτιζόμενο υβριδικό"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Manual transmission"
+msgstr "Χειροκίνητο κιβώτιο ταχυτήτων"
+
+#: src/components/ItemListingEditor.svelte
+msgid "You can add up to 50 photos."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Property type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Number of bedrooms"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Number of bathrooms"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Address"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Property description"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Include details like utilities, amenities, any deposits needed and when it's available."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Advanced Details"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Optional"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Property square feet"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Laundry type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Parking type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Air conditioning type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Heating type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "/ Month"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Rental Location"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "New home listing"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Rent"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "For Sale"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Apartment"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "House"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Townhouse"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "In-unit laundry"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Laundry in building"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Laundry available"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+#: src/components/MarketplaceHomes.svelte
+#: src/components/MarketplaceHomes.svelte
+#: src/components/MarketplaceHomes.svelte
+msgid "None"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Garage parking"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Street parking"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Off-street parking"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Parking available"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Central AC"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "AC available"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Central heating"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Electric heating"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Gas heating"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Radiator heating"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Heating available"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Enter an address"
+msgstr ""
+
+#: src/components/ListingLocationPreview.svelte
+msgid "View listing location"
+msgstr ""
+
+#: src/components/ListingLocationPreview.svelte
+msgid "Map preview unavailable."
+msgstr ""
+
+#: src/components/ListingLocationPreview.svelte
+msgid "View Map Info"
+msgstr ""
+
+#: src/components/ListingLocationPreview.svelte
+msgid "View map image"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Rental type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "This is a private room in a shared property."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Price per month"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Rental description"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Date available"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Cat friendly"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Dog friendly"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Date available:"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "How many people live here?"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Bathroom Type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Is this room furnished?"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Room Details"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Property Details"
+msgstr ""
+
+#~ msgid "Is this room furnished? <0/>"
+#~ msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Furnished"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Private"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Shared"
+msgstr ""
+
+#: src/components/ListingDatePicker.svelte
+msgid "Clear date"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Test"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Save"
+msgstr ""
+
+#. 0: maxPhotos
+#: src/components/ItemListingEditor.svelte
+msgid "You may only select a maximum of {0} photos."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Marketplace items are public and can be seen by anyone on or off Facebook. Items like animals, drugs, weapons, counterfeits, and other items that infringe intellectual property aren't allowed on Marketplace."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ListingVideo.svelte
+msgid "Loading video…"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Loading video"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Your video must finish loading before proceeding."
+msgstr ""
+
+#~ msgid "Video added. Preview is unavailable in this app."
+#~ msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Could not load video thumbnail."
+msgstr ""
+
+#~ msgid "Finish signing in or any verification prompts in Chrome. Media will be added automatically."
+#~ msgstr ""
+
+#~ msgid "Media sent to Facebook. Review the listing in Chrome."
+#~ msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Test cancelled."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Add at least one photo or video."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Finish signing in or any verification prompts in Chrome. Your listing will be filled automatically."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Listing filled in Facebook. Review it in Chrome."
+msgstr ""
+
+#: src/components/MarketplaceToolbar.svelte
+msgid "Publish selected<0/>"
+msgstr ""
+
+#: src/components/CreateListing.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/MarketplaceListings.svelte
+msgid "Listing saved."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Save listing"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Untitled listing"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Item"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Vehicle"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Could not load saved listings. Please try again."
+msgstr ""
+
+#~ msgid "Listing duplicated."
+#~ msgstr ""
+
+#~ msgid "Could not duplicate listing. Please try again."
+#~ msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Listing deleted."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Could not delete listing. Please try again."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+#: src/components/MarketplaceListings.svelte
+msgid "Saved listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Save listings here, then select them when you’re ready to publish."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Search saved listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Search listings"
+msgstr ""
+
+#. 0: chosen.length
+#: src/components/MarketplaceListings.svelte
+msgid "Selected listings ({0})"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Back to listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Group selection and publishing will be added next. Your listings are saved; nothing has been posted to Facebook."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Clear selection"
+msgstr ""
+
+#. 0: visible.length
+#: src/components/MarketplaceListings.svelte
+msgid "{0} listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Loading saved listings…"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "No saved listings yet"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Select an account to see its listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Create a listing and save it. It will appear here, ready to select later."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Your listings stay separate for each account."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "No matching listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Try another search or listing type."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Select all visible listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Listing"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Type"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Status"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Updated"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Actions"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Draft"
+msgstr ""
+
+#~ msgid "More actions for {0}"
+#~ msgstr ""
+
+#~ msgid "Duplicate"
+#~ msgstr ""
+
+#~ msgid "More"
+#~ msgstr ""
+
+#. 0: title(listing)
+#: src/components/MarketplaceListings.svelte
+msgid "Delete “{0}” and its saved media?"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Delete listing"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+#: src/components/MarketplaceListings.svelte
+msgid "Saved Marketplace listings"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Could not save listing. Please try again."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Today"
+msgstr ""
+
+#. 0: title(listing)
+#: src/components/MarketplaceListings.svelte
+msgid "Edit {0}"
+msgstr ""
+
+#. 0: title(listing)
+#: src/components/MarketplaceListings.svelte
+msgid "Delete {0}"
+msgstr ""

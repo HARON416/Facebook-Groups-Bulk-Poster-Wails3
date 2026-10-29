@@ -109,6 +109,15 @@ copies of locally attached image bytes. Imported images retain Facebook CDN
 URLs and may need to be fetched again if those URLs expire. Drafts survive
 updates when the app's data and webview storage are retained.
 
+Marketplace item listings use **Save draft** to store one draft per account,
+including the form fields and photo bytes in a separate IndexedDB database.
+Reopening the item editor restores that account's saved draft. Unsaved edits
+remain in memory when returning to the listing-type choices in the same window.
+Meetup preferences, promotion preference, friend visibility, and up to 20 product
+tags are included in the saved draft. This editor currently provides local
+drafts and previews; listing publication, paid promotion, and phone photo
+transfer are not connected.
+
 ## Automatic updates
 
 The updater checks **10 seconds after launch**, then **every minute** while
@@ -169,10 +178,19 @@ make dev
 directory to PATH for its tasks; the export also makes it available to direct
 `wails3` commands and their child tasks. `make run` is an alias for `make dev`.
 
-Close any installed Postika instance before running `make dev`. Installed and
-development builds share the same single-instance ID: if Postika is already
-running, the development build focuses that instance and exits instead of
-opening a new window. A successful build alone does not replace the running app.
+`make dev` can run alongside installed Postika, including while posting queues
+are active. Development builds run as **Postika Dev** with a separate
+single-instance ID and account storage under `postika-dev` in the user's config
+directory (`~/.config/postika-dev` on Linux). Sign in separately in dev; installed
+accounts, browser sessions, groups, settings, and queues are not copied or shared.
+Linux development webviews also use separate XDG data/cache directories; Windows
+uses a separate WebView2 data directory. The dev frontend uses its own local
+development origin. Updates are disabled in development builds, including manual
+checks and installation. Reopening dev focuses its own existing instance.
+
+The `production` Go build tag selects the installed app identity and storage;
+normal release tasks already set it. A successful build alone does not replace
+or restart an installed app.
 
 On Windows, use PowerShell to install and run the same CLI without Make:
 

@@ -54,11 +54,11 @@ type ProfileService struct {
 
 func newProfileService(root string) (*ProfileService, error) {
 	if root == "" {
-		dir, err := os.UserConfigDir()
+		dir, err := defaultProfileRoot()
 		if err != nil {
 			return nil, err
 		}
-		root = filepath.Join(dir, "postika")
+		root = dir
 	}
 	m := &ProfileService{root: root, sessions: map[string]*GroupsService{}}
 	data, err := os.ReadFile(filepath.Join(root, "profiles.json"))

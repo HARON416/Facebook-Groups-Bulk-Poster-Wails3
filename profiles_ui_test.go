@@ -35,10 +35,14 @@ func TestFacebookPageFetchDialogUI(t *testing.T) {
 }
 
 func TestThemePickerBrowsingUI(t *testing.T) {
-	testAccountWorkspacesUI(t, false, true)
+	testAccountWorkspacesUI(t, false, "themes")
 }
 
-func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool, themePickerOnly ...bool) {
+func TestMarketplaceWindowUI(t *testing.T) {
+	testAccountWorkspacesUI(t, false, "marketplace")
+}
+
+func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool, viewOnly ...string) {
 	t.Helper()
 	if !*browserIntegration {
 		t.Skip("enable with -browser-integration; build frontend first")
@@ -83,6 +87,26 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool, themePickerOnly .
 		methods[hash.Sum32()] = bound.Method(i)
 	}
 	var maximised, minimised, closed atomic.Bool
+	var createListingOpens atomic.Int64
+	createListingMethod := fnv.New32a()
+	_, _ = createListingMethod.Write([]byte("main.ProfileService.OpenCreateListing"))
+	var locationOpens atomic.Int64
+	var locationProfile atomic.Value
+	var failLocationOpen atomic.Bool
+	var locationState atomic.Value
+	locationState.Store("idle")
+	var locationRun atomic.Uint64
+	var locationCancels atomic.Int64
+	var locationSearchCalls atomic.Int64
+	locationSearchMethod := fnv.New32a()
+	_, _ = locationSearchMethod.Write([]byte("main.ProfileService.SearchMarketplaceLocations"))
+
+	locationStatusMethod, locationCancelMethod := fnv.New32a(), fnv.New32a()
+	_, _ = locationStatusMethod.Write([]byte("main.ProfileService.GetMarketplaceLocationStatus"))
+	_, _ = locationCancelMethod.Write([]byte("main.ProfileService.CancelMarketplaceLocation"))
+
+	locationMethod := fnv.New32a()
+	_, _ = locationMethod.Write([]byte("main.ProfileService.OpenMarketplaceLocation"))
 	var auxiliaryProfile atomic.Value
 	var nativeTitles, windowActions sync.Map
 	var copiedLogProfile atomic.Value
@@ -116,6 +140,68 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool, themePickerOnly .
 			return
 		}
 		w.Header().Set("Content-Type", "application/json")
+		if call.Args.MethodID == createListingMethod.Sum32() {
+			createListingOpens.Add(1)
+			_ = json.NewEncoder(w).Encode(nil)
+			return
+		}
+		if call.Args.MethodID == locationSearchMethod.Sum32() {
+			var id, query string
+			_ = json.Unmarshal(call.Args.Args[0], &id)
+			_ = json.Unmarshal(call.Args.Args[1], &query)
+			if id != "default" {
+				t.Error("location search used the wrong account")
+			}
+			locationSearchCalls.Add(1)
+			if query == "Old" {
+				time.Sleep(700 * time.Millisecond)
+			}
+			hits := []MarketplaceLocationHit{}
+			if query != "zzzz" {
+				label := "Nairobi, Kenya"
+				if query == "Old" {
+					label = "Old City"
+				}
+				hits = append(hits, MarketplaceLocationHit{PageID: "114751268540391", Label: label, Subtitle: "City", Latitude: -1.28333, Longitude: 36.8167, City: "Nairobi"})
+			}
+			_ = json.NewEncoder(w).Encode(hits)
+			return
+		}
+		if call.Args.MethodID == locationStatusMethod.Sum32() {
+			var id string
+			_ = json.Unmarshal(call.Args.Args[0], &id)
+			status := MarketplaceLocationStatus{State: "idle"}
+			if locationProfile.Load() == id {
+				status.RunID, status.State = locationRun.Load(), locationState.Load().(string)
+				status.Captured = status.State == "ready"
+			}
+			_ = json.NewEncoder(w).Encode(status)
+			return
+		}
+		if call.Args.MethodID == locationCancelMethod.Sum32() {
+			locationCancels.Add(1)
+			locationState.Store("cancelled")
+			_ = json.NewEncoder(w).Encode(nil)
+			return
+		}
+		if call.Args.MethodID == locationMethod.Sum32() {
+			var id string
+			var query string
+			if len(call.Args.Args) != 2 || json.Unmarshal(call.Args.Args[0], &id) != nil || json.Unmarshal(call.Args.Args[1], &query) != nil || strings.TrimSpace(query) == "" {
+				t.Error("location browser did not receive an account and initial query")
+			}
+			locationProfile.Store(id)
+			locationOpens.Add(1)
+			if failLocationOpen.Swap(false) {
+				w.WriteHeader(500)
+				_ = json.NewEncoder(w).Encode(map[string]string{"message": "Could not open the link. Please try again."})
+				return
+			}
+			locationRun.Add(1)
+			locationState.Store("waiting_login")
+			_ = json.NewEncoder(w).Encode(nil)
+			return
+		}
 		if call.Object == 10 {
 			_ = json.NewEncoder(w).Encode(nil)
 			return
@@ -167,6 +253,8 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool, themePickerOnly .
 			windowActions.Store(fmt.Sprintf("%s#%d", r.Referer(), call.Method), true)
 			var result any
 			switch call.Method {
+			case 5:
+				// Focus the native window after Marketplace setup.
 			case 14:
 				result = maximised.Load()
 			case 17:
@@ -309,8 +397,14 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool, themePickerOnly .
 		t.Fatal(err)
 	}
 	defer func() { _ = browser.Context(context.Background()).Close(); time.Sleep(500 * time.Millisecond) }()
-	page, err := browser.Page(proto.TargetCreateTarget{URL: server.URL})
+	page, err := browser.Page(proto.TargetCreateTarget{URL: "about:blank"})
 	if err != nil {
+		t.Fatal(err)
+	}
+	// This fixture exercises existing-user workflows. Keep the first-run tour
+	// invitation from taking focus during cross-window checks.
+	page.MustEvalOnNewDocument(`localStorage.setItem('postika:guided-tour:v1','seen')`)
+	if err := page.Navigate(server.URL); err != nil {
 		t.Fatal(err)
 	}
 	if err := page.SetViewport(&proto.EmulationSetDeviceMetricsOverride{Width: 1200, Height: 800, DeviceScaleFactor: 1}); err != nil {
@@ -346,6 +440,876 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool, themePickerOnly .
 		awaitPage(target, `() => !document.querySelector('dialog[aria-labelledby="theme-picker-heading"]').open`)
 	}
 
+	if len(viewOnly) > 0 && viewOnly[0] == "marketplace" {
+		marketplace, err := browser.Page(proto.TargetCreateTarget{URL: server.URL + "/?view=marketplace"})
+		if err != nil {
+			t.Fatal(err)
+		}
+		for _, width := range []int{1200, 800} {
+			if err := marketplace.SetViewport(&proto.EmulationSetDeviceMetricsOverride{Width: width, Height: 800, DeviceScaleFactor: 1}); err != nil {
+				t.Fatal(err)
+			}
+			awaitPage(marketplace, `() => document.title==='Marketplace · Postika' && document.querySelector('main[aria-label="Marketplace"]')?.children.length===0 && !document.querySelector('#post-body') && document.querySelectorAll('.window-controls button').length===3 && [...document.querySelectorAll('.app-menu button')].some(b=>b.textContent==='Marketplace') && document.querySelector('.window-controls').getBoundingClientRect().right<=innerWidth`)
+			awaitPage(marketplace, `() => { const nav=document.querySelector('.marketplace-toolbar'), filter=nav?.querySelector('[role=combobox]'), create=nav?.querySelector('.create-listing'); return nav && filter && create && !create.disabled && create.textContent.includes('Create new listing') && nav.getBoundingClientRect().top>=document.querySelector('.top-bar').getBoundingClientRect().bottom && filter.getBoundingClientRect().right<create.getBoundingClientRect().left; }`)
+			marketplace.MustElement(".filter-trigger").MustClick()
+			awaitPage(marketplace, `() => JSON.stringify([...document.querySelectorAll('#marketplace-listing-types [role=option]')].map(o=>o.textContent.trim()))===JSON.stringify(['All listing types','Items for sale','Vehicles for sale','Homes for rent or sale'])`)
+			if err := marketplace.Keyboard.Type(input.ArrowDown, input.Enter); err != nil {
+				t.Fatal(err)
+			}
+			awaitPage(marketplace, `() => document.querySelector('.filter-trigger span').textContent==='Items for sale' && !document.querySelector('#marketplace-listing-types') && document.activeElement.matches('.filter-trigger')`)
+			marketplace.MustElement(".filter-trigger").MustClick()
+			marketplace.MustElement("#listing-type-homes").MustClick()
+			awaitPage(marketplace, `() => document.querySelector('.filter-trigger span').textContent==='Homes for rent or sale' && !document.querySelector('#marketplace-listing-types')`)
+			marketplace.MustElement(".filter-trigger").MustClick()
+			if err := marketplace.Keyboard.Type(input.Home, input.Escape); err != nil {
+				t.Fatal(err)
+			}
+			awaitPage(marketplace, `() => document.querySelector('.filter-trigger span').textContent==='Homes for rent or sale' && !document.querySelector('#marketplace-listing-types')`)
+			marketplace.MustElement(".filter-trigger").MustClick()
+			marketplace.MustElement("main").MustClick()
+			awaitPage(marketplace, `() => !document.querySelector('#marketplace-listing-types')`)
+			marketplace.MustElement(".filter-trigger").MustClick()
+			marketplace.MustElement("#listing-type-all").MustClick()
+			if _, err := marketplace.Eval(fmt.Sprintf(`() => {document.documentElement.dataset.theme=%q}`, map[bool]string{true: "dark", false: "light"}[width == 800])); err != nil {
+				t.Fatal(err)
+			}
+			marketplace.MustElement(".filter-trigger").MustClick()
+			if *uiArtifactDir != "" {
+				if err := os.MkdirAll(*uiArtifactDir, 0755); err != nil {
+					t.Fatal(err)
+				}
+				data, err := marketplace.Screenshot(false, &proto.PageCaptureScreenshot{})
+				if err != nil {
+					t.Fatal(err)
+				}
+				if err := os.WriteFile(filepath.Join(*uiArtifactDir, fmt.Sprintf("postika-marketplace-%d.png", width)), data, 0600); err != nil {
+					t.Fatal(err)
+				}
+			}
+			if err := marketplace.Keyboard.Type(input.Escape); err != nil {
+				t.Fatal(err)
+			}
+		}
+		if _, err := marketplace.Eval(`() => {document.documentElement.dir='rtl'}`); err != nil {
+			t.Fatal(err)
+		}
+		marketplace.MustElement(".filter-trigger").MustClick()
+		awaitPage(marketplace, `() => {const menu=document.querySelector('#marketplace-listing-types').getBoundingClientRect(), filter=document.querySelector('.filter-trigger').getBoundingClientRect(), create=document.querySelector('.create-listing').getBoundingClientRect(); return menu.left>=0 && menu.right<=innerWidth && create.right<filter.left;}`)
+		marketplace.MustElement(".create-listing").MustClick()
+		awaitPage(marketplace, `() => document.querySelector('.create-listing').getAttribute('aria-busy')==='false' && !document.querySelector('.create-error')`)
+		if createListingOpens.Load() != 1 {
+			t.Fatal("Create new listing did not call the native window opener")
+		}
+		listing, err := browser.Page(proto.TargetCreateTarget{URL: server.URL + "/?view=create-listing"})
+		if err != nil {
+			t.Fatal(err)
+		}
+		awaitPage(listing, `() => document.title==='Create new listing · Postika' && document.querySelector('#listing-type-heading')?.textContent==='Choose listing type' && document.querySelectorAll('.listing-types button').length===3 && !document.querySelector('.marketplace-toolbar') && !document.querySelector('#post-body') && document.querySelectorAll('.window-controls button').length===3`)
+		awaitPage(listing, `() => !document.querySelector('.listing-types [aria-checked]') && !document.querySelector('.selected-check') && [...document.querySelectorAll('.listing-type')].every(b=>b.tabIndex===0)`)
+		for _, kind := range []string{"items", "vehicles", "homes"} {
+			if kind == "items" {
+				listing.MustElement("#create-listing-" + kind).MustClick()
+			} else {
+				listing.MustElement("#create-listing-" + kind).MustFocus()
+				key := input.Enter
+				if kind == "homes" {
+					key = input.Space
+				}
+				if err := listing.Keyboard.Type(key); err != nil {
+					t.Fatal(err)
+				}
+			}
+			awaitPage(listing, fmt.Sprintf(`() => document.querySelector('.listing-details')?.dataset.listingType===%q && !document.querySelector('.listing-types') && document.activeElement.id==='listing-step-heading'`, kind))
+			listing.MustElement(".listing-details .previous").MustClick()
+			awaitPage(listing, fmt.Sprintf(`() => document.querySelectorAll('.listing-type').length===3 && !document.querySelector('.selected-check') && !document.querySelector('.listing-type[aria-checked]') && document.activeElement.id===%q`, "create-listing-"+kind))
+		}
+		for _, width := range []int{1200, 800} {
+			if err := listing.SetViewport(&proto.EmulationSetDeviceMetricsOverride{Width: width, Height: 800, DeviceScaleFactor: 1}); err != nil {
+				t.Fatal(err)
+			}
+			if _, err := listing.Eval(fmt.Sprintf(`() => {document.documentElement.dataset.theme=%q;document.activeElement?.blur()}`, map[bool]string{true: "dark", false: "light"}[width == 800])); err != nil {
+				t.Fatal(err)
+			}
+			awaitPage(listing, `() => {const cards=[...document.querySelectorAll('.listing-type')].map(e=>e.getBoundingClientRect());return cards.every(c=>c.top===cards[0].top && Math.abs(c.width-cards[0].width)<1 && c.left>=0 && c.right<=innerWidth) && document.querySelector('.create-listing-step').scrollWidth<=innerWidth;}`)
+			if *uiArtifactDir != "" {
+				data, err := listing.Screenshot(false, &proto.PageCaptureScreenshot{})
+				if err != nil {
+					t.Fatal(err)
+				}
+				if err := os.WriteFile(filepath.Join(*uiArtifactDir, fmt.Sprintf("postika-create-listing-%d.png", width)), data, 0600); err != nil {
+					t.Fatal(err)
+				}
+			}
+		}
+		if _, err := listing.Eval(`() => {document.documentElement.dir='rtl'}`); err != nil {
+			t.Fatal(err)
+		}
+		listing.MustElement("#create-listing-items").MustClick()
+		awaitPage(listing, `() => document.querySelector('.listing-details')?.dataset.listingType==='items' && document.activeElement.id==='listing-step-heading'`)
+		awaitPage(listing, `() => !document.querySelector('.save-draft').disabled && document.querySelector('#listing-title') && document.querySelector('.preview-empty') && document.querySelector('.form-footer button').disabled`)
+		for _, width := range []int{1200, 800} {
+			if err := listing.SetViewport(&proto.EmulationSetDeviceMetricsOverride{Width: width, Height: 800, DeviceScaleFactor: 1}); err != nil {
+				t.Fatal(err)
+			}
+			if _, err := listing.Eval(fmt.Sprintf(`() => {document.documentElement.dir='ltr';document.documentElement.dataset.theme=%q;}`, map[bool]string{true: "dark", false: "light"}[width == 800])); err != nil {
+				t.Fatal(err)
+			}
+			awaitPage(listing, `() => {const form=document.querySelector('.form-pane').getBoundingClientRect(),preview=document.querySelector('.preview-pane').getBoundingClientRect();return form.right<=preview.left+1 && preview.right<=innerWidth && document.querySelector('.form-scroll').clientHeight<document.querySelector('.form-pane').clientHeight;}`)
+			if *uiArtifactDir != "" {
+				data, err := listing.Screenshot(false, &proto.PageCaptureScreenshot{})
+				if err != nil {
+					t.Fatal(err)
+				}
+				if err := os.WriteFile(filepath.Join(*uiArtifactDir, fmt.Sprintf("postika-item-editor-%d.png", width)), data, 0600); err != nil {
+					t.Fatal(err)
+				}
+			}
+		}
+		listing.MustElement("#listing-title").MustInput("Desk lamp")
+		listing.MustElement("#listing-price").MustInput("1250")
+		awaitPage(listing, `() => document.querySelector('.form-pane').getBoundingClientRect().width>=359 && ['listing-title','listing-price'].every(id=>{const input=document.getElementById(id),label=input.closest('.text-field').querySelector('label');return input.getBoundingClientRect().height>=58 && label.getBoundingClientRect().bottom<=input.getBoundingClientRect().top+parseFloat(getComputedStyle(input).paddingTop)+1;})`)
+		listing.MustElement(".more-details summary").MustClick()
+		listing.MustElement("#listing-availability").MustClick()
+		awaitPage(listing, `() => {const options=[...document.querySelectorAll('#listing-availability-options [role=option]')];return options.length===2 && options[0].dataset.value==='single' && options[0].getAttribute('aria-selected')==='true' && options[1].dataset.value==='in-stock' && options[1].querySelector('.option-copy > span').textContent==='List as In Stock' && options.every(option=>!!option.querySelector('.option-hint'));}`)
+		if *uiArtifactDir != "" {
+			data, err := listing.Screenshot(false, &proto.PageCaptureScreenshot{})
+			if err != nil {
+				t.Fatal(err)
+			}
+			if err := os.WriteFile(filepath.Join(*uiArtifactDir, "postika-item-availability.png"), data, 0600); err != nil {
+				t.Fatal(err)
+			}
+		}
+		if err := listing.Keyboard.Type(input.ArrowDown, input.Enter); err != nil {
+			t.Fatal(err)
+		}
+		awaitPage(listing, `() => !document.querySelector('#listing-availability-options') && document.querySelector('#listing-availability').textContent.trim()==='List as In Stock'`)
+
+		listing.MustElement("#listing-description").MustInput("A reading lamp with an adjustable arm.")
+		awaitPage(listing, `() => document.querySelector('#preview-item-title').textContent==='Desk lamp' && document.querySelector('.preview-price').textContent==='1250' && document.querySelector('.preview-description').textContent==='A reading lamp with an adjustable arm.'`)
+		for _, width := range []int{1200, 800} {
+			if err := listing.SetViewport(&proto.EmulationSetDeviceMetricsOverride{Width: width, Height: 800, DeviceScaleFactor: 1}); err != nil {
+				t.Fatal(err)
+			}
+			if _, err := listing.Eval(fmt.Sprintf(`() => {document.documentElement.dataset.theme=%q;const pane=document.querySelector('.form-scroll'),field=document.querySelector('#listing-category').closest('.field-select');pane.scrollBy({top:field.getBoundingClientRect().top-pane.getBoundingClientRect().top});}`, map[bool]string{true: "dark", false: "light"}[width == 800])); err != nil {
+				t.Fatal(err)
+			}
+			listing.MustElement("#listing-category").MustClick()
+			awaitPage(listing, `() => document.querySelectorAll('#listing-category-options [role=option]').length===26 && document.querySelectorAll('#listing-category-options [role=group]').length===7 && document.querySelectorAll('#listing-category-options .option-hint').length===12 && document.querySelector('#listing-category-options .group-heading').textContent.trim()==='Home & Garden' && !document.querySelector('select')`)
+			awaitPage(listing, `() => {const list=document.querySelector('#listing-category-options').getBoundingClientRect(),pane=document.querySelector('.form-scroll').getBoundingClientRect();return list.top>=pane.top && list.bottom<=pane.bottom+1;}`)
+			if *uiArtifactDir != "" {
+				data, err := listing.Screenshot(false, &proto.PageCaptureScreenshot{})
+				if err != nil {
+					t.Fatal(err)
+				}
+				if err := os.WriteFile(filepath.Join(*uiArtifactDir, fmt.Sprintf("postika-item-categories-%d.png", width)), data, 0600); err != nil {
+					t.Fatal(err)
+				}
+			}
+			if err := listing.Keyboard.Type(input.Escape); err != nil {
+				t.Fatal(err)
+			}
+		}
+		listing.MustElement("#listing-category").MustClick()
+		if err := listing.Keyboard.Type(input.End); err != nil {
+			t.Fatal(err)
+		}
+		awaitPage(listing, `() => {const list=document.querySelector('#listing-category-options'),option=list.querySelector('[data-value=vehicles]'),bounds=list.getBoundingClientRect(),row=option.getBoundingClientRect();return document.querySelector('#listing-category').getAttribute('aria-activedescendant')===option.id && row.top>=bounds.top && row.bottom<=bounds.bottom+1;}`)
+		if err := listing.Keyboard.Type(input.Enter); err != nil {
+			t.Fatal(err)
+		}
+		awaitPage(listing, `() => document.querySelector('#listing-category').textContent.trim()==='Vehicles' && !document.querySelector('#listing-category-options')`)
+		listing.MustElement("#listing-category").MustClick()
+		if err := listing.Keyboard.Type(input.Home, input.ArrowDown, input.Enter); err != nil {
+			t.Fatal(err)
+		}
+		awaitPage(listing, `() => document.querySelector('#listing-category').textContent.trim()==='Furniture' && document.activeElement.id==='listing-category'`)
+		listing.MustElement("#listing-condition").MustClick()
+		awaitPage(listing, `() => JSON.stringify([...document.querySelectorAll('#listing-condition-options [role=option] .option-copy')].map(e=>e.textContent.trim()))===JSON.stringify(['New','Used - Like New','Used - Good','Used - Fair']) && !document.querySelector('#listing-condition-options [aria-selected=true]')`)
+		if *uiArtifactDir != "" {
+			data, err := listing.Screenshot(false, &proto.PageCaptureScreenshot{})
+			if err != nil {
+				t.Fatal(err)
+			}
+			if err := os.WriteFile(filepath.Join(*uiArtifactDir, "postika-item-conditions.png"), data, 0600); err != nil {
+				t.Fatal(err)
+			}
+		}
+		if err := listing.Keyboard.Type(input.ArrowDown, input.ArrowDown, input.Enter); err != nil {
+			t.Fatal(err)
+		}
+		awaitPage(listing, `() => document.querySelector('#listing-condition').textContent.trim()==='Used - Good' && document.activeElement.id==='listing-condition' && !document.querySelector('#listing-condition-options')`)
+		awaitPage(listing, `() => ['listing-category','listing-condition'].every(id=>{const button=document.getElementById(id),label=button.closest('.field-select').querySelector('label');return button.getBoundingClientRect().height>=58 && label.getBoundingClientRect().bottom<button.querySelector('span').getBoundingClientRect().top;})`)
+		if *uiArtifactDir != "" {
+			for _, width := range []int{1200, 800} {
+				if err := listing.SetViewport(&proto.EmulationSetDeviceMetricsOverride{Width: width, Height: 800, DeviceScaleFactor: 1}); err != nil {
+					t.Fatal(err)
+				}
+				if _, err := listing.Eval(fmt.Sprintf(`() => {document.documentElement.dataset.theme=%q;const pane=document.querySelector('.form-scroll'),price=document.querySelector('#listing-price');pane.scrollBy({top:price.getBoundingClientRect().top-pane.getBoundingClientRect().top-12});}`, map[bool]string{true: "dark", false: "light"}[width == 800])); err != nil {
+					t.Fatal(err)
+				}
+				data, err := listing.Screenshot(false, &proto.PageCaptureScreenshot{})
+				if err != nil {
+					t.Fatal(err)
+				}
+				if err := os.WriteFile(filepath.Join(*uiArtifactDir, fmt.Sprintf("postika-item-fields-%d.png", width)), data, 0600); err != nil {
+					t.Fatal(err)
+				}
+			}
+		}
+		listing.MustElement("#language-profile").MustClick()
+		listing.MustElement(`[data-profile-id="sw"]`).MustClick()
+		awaitPage(listing, `() => document.documentElement.lang==='sw' && document.querySelector('#listing-category').textContent.trim()==='Samani' && document.querySelector('#listing-condition').textContent.trim()==='Imetumika - Hali nzuri'`)
+		listing.MustElement("#listing-category").MustClick()
+		awaitPage(listing, `() => document.querySelector('#listing-category-options .group-heading').textContent.trim()==='Nyumbani na bustani' && document.querySelector('#listing-category-options .option-hint').textContent.trim()==='Usafirishaji unapatikana'`)
+		listing.MustElement("#language-profile").MustClick()
+		listing.MustElement(`[data-profile-id="en"]`).MustClick()
+		awaitPage(listing, `() => document.documentElement.lang==='en' && document.querySelector('#listing-category').textContent.trim()==='Furniture'`)
+		awaitPage(listing, `() => document.querySelector('.preview-attributes dd').textContent.trim()==='Used - Good' && [...document.querySelectorAll('.meetup-options input, .listing-preferences input')].every(input=>!input.checked) && document.querySelector('[role=progressbar]').getAttribute('aria-valuenow')==='1'`)
+		listing.MustElement(".tags-field").MustClick()
+		awaitPage(listing, `() => document.activeElement.id==='listing-tags'`)
+		listing.MustElement("#listing-title").MustClick()
+		listing.MustElement(`label[for="listing-tags"]`).MustClick()
+		awaitPage(listing, `() => document.activeElement.id==='listing-tags'`)
+		awaitPage(listing, `() => !document.querySelector('.preview-tags') && document.querySelector('.tags-field').getBoundingClientRect().height<90 && document.querySelector('#listing-tags').getBoundingClientRect().top-document.querySelector('.tags-field').getBoundingClientRect().top<40`)
+		if *uiArtifactDir != "" {
+			data, err := listing.Screenshot(false, &proto.PageCaptureScreenshot{})
+			if err != nil {
+				t.Fatal(err)
+			}
+			if err := os.WriteFile(filepath.Join(*uiArtifactDir, "postika-item-tags-empty-focus.png"), data, 0600); err != nil {
+				t.Fatal(err)
+			}
+		}
+		for _, tag := range []string{"lamp", "decor", "vintage"} {
+			listing.MustElement("#listing-tags").MustInput(tag)
+			if err := listing.Keyboard.Type(input.Enter); err != nil {
+				t.Fatal(err)
+			}
+		}
+		awaitPage(listing, `() => document.querySelectorAll('.tags-field li').length===3 && [...document.querySelectorAll('.preview-tags li')].map(tag=>tag.textContent).join(',')==='lamp,decor,vintage' && document.querySelector('#listing-tags').value==='' && document.activeElement.id==='listing-tags'`)
+		if *uiArtifactDir != "" {
+			data, err := listing.Screenshot(false, &proto.PageCaptureScreenshot{})
+			if err != nil {
+				t.Fatal(err)
+			}
+			if err := os.WriteFile(filepath.Join(*uiArtifactDir, "postika-item-tags.png"), data, 0600); err != nil {
+				t.Fatal(err)
+			}
+		}
+		if *uiArtifactDir != "" {
+			if err := listing.SetViewport(&proto.EmulationSetDeviceMetricsOverride{Width: 1200, Height: 800, DeviceScaleFactor: 1}); err != nil {
+				t.Fatal(err)
+			}
+			if _, err := listing.Eval(`() => {document.querySelector('.tags-field').scrollIntoView({block:'center'});document.querySelector('.preview-details').scrollTop=0;}`); err != nil {
+				t.Fatal(err)
+			}
+			data, err := listing.Screenshot(false, &proto.PageCaptureScreenshot{})
+			if err != nil {
+				t.Fatal(err)
+			}
+			if err := os.WriteFile(filepath.Join(*uiArtifactDir, "postika-item-tags-preview.png"), data, 0600); err != nil {
+				t.Fatal(err)
+			}
+		}
+
+		listing.MustElement("#listing-tags").MustInput("modern")
+		listing.MustElement(".add-tag").MustClick()
+		awaitPage(listing, `() => document.querySelectorAll('.tags-field li').length===4 && document.querySelectorAll('.preview-tags li').length===4 && document.querySelector('#listing-tags').value==='' && document.activeElement.id==='listing-tags'`)
+		listing.MustElement(`[aria-label="Remove modern"]`).MustClick()
+		listing.MustElement(`[aria-label="Remove decor"]`).MustClick()
+		listing.MustElement("#listing-tags").MustInput("LAMP")
+		if err := listing.Keyboard.Type(input.Enter); err != nil {
+			t.Fatal(err)
+		}
+		awaitPage(listing, `() => document.querySelectorAll('.tags-field li').length===2 && [...document.querySelectorAll('.preview-tags li')].map(tag=>tag.textContent).join(',')==='lamp,vintage'`)
+		listing.MustElement("#listing-tags").MustInput("tag-0,tag-1,tag-2,tag-3,tag-4,tag-5,tag-6,tag-7,tag-8,tag-9,tag-10,tag-11,tag-12,tag-13,tag-14,tag-15,tag-16,tag-17,tag-18,tag-19,tag-20")
+		if err := listing.Keyboard.Type(input.Enter); err != nil {
+			t.Fatal(err)
+		}
+		awaitPage(listing, `() => document.querySelectorAll('.tags-field li').length===20 && document.querySelector('#listing-tags').getAttribute('aria-invalid')==='true'`)
+		if err := listing.Keyboard.Type(input.Backspace); err != nil {
+			t.Fatal(err)
+		}
+		awaitPage(listing, `() => document.querySelectorAll('.tags-field li').length===19`)
+		listing.MustElement("#listing-tags").MustInput("lighting")
+		listing.MustElement(`label:has(#listing-public-meetup)`).MustClick()
+		listing.MustElement(`label:has(#listing-door-pickup)`).MustClick()
+		// Observe actual thumb movement between its endpoints in both reading
+		// directions, rather than only checking the declared CSS duration.
+		for _, direction := range []string{"ltr", "rtl"} {
+			result, err := listing.Eval(`async (direction) => {
+			  const control=document.querySelector('#listing-promote'), root=control.closest('.listing-switch'), previous=root.dir;
+			  root.dir=direction;
+			  const x=()=>new DOMMatrixReadOnly(getComputedStyle(control.parentElement.querySelector('.switch-thumb')).transform).m41;
+			  const wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+			  await wait(300);const before=x();control.click();await wait(40);const during=x();await wait(300);const after=x();
+			  control.click();await wait(300);const restored=x();root.dir=previous;
+			  const distance=after-before; const thumb=control.parentElement.querySelector('.switch-thumb').getBoundingClientRect(),track=control.parentElement.querySelector('.switch-track').getBoundingClientRect(); const pass=Math.abs(during-before)>0 && Math.abs(during-before)<Math.abs(distance) && Math.abs(distance)>10 && Math.abs(restored-before)<.01 && thumb.left>=track.left && thumb.right<=track.right && (direction==='rtl'?distance<0:distance>0); return pass?'':JSON.stringify({direction,before,during,after,restored,computedDirection:getComputedStyle(control).direction});
+			}`, direction)
+			if err != nil || result.Value.Str() != "" {
+				t.Fatalf("switch did not move smoothly in %s: %v %v", direction, result, err)
+			}
+		}
+		if err := (proto.EmulationSetEmulatedMedia{Features: []*proto.EmulationMediaFeature{{Name: "prefers-reduced-motion", Value: "reduce"}}}).Call(listing); err != nil {
+			t.Fatal(err)
+		}
+		result, err := listing.Eval(`() => {
+		  const control=document.querySelector('#listing-promote');control.click();
+		  const style=getComputedStyle(control.parentElement.querySelector('.switch-thumb')),x=new DOMMatrixReadOnly(style.transform).m41;
+		  const instant=style.transitionDuration.split(',').every(value=>parseFloat(value)===0) && x>10;
+		  const button=getComputedStyle(document.querySelector('.save-draft'));
+		  control.click();return instant && button.transitionDuration.split(',').every(value=>parseFloat(value)===0);
+		}`)
+		if err != nil || !result.Value.Bool() {
+			t.Fatalf("reduced motion did not make controls immediate: %v %v", result, err)
+		}
+		if err := (proto.EmulationSetEmulatedMedia{Features: []*proto.EmulationMediaFeature{{Name: "prefers-reduced-motion", Value: "no-preference"}}}).Call(listing); err != nil {
+			t.Fatal(err)
+		}
+		listing.MustElement(`label[for="listing-promote"]`).MustClick()
+		listing.MustElement(`label[for="listing-hide-friends"]`).Timeout(5 * time.Second).MustClick()
+		awaitPage(listing, `() => document.querySelectorAll('.tags-field li').length===20 && document.querySelector('#listing-public-meetup').checked && document.querySelector('#listing-door-pickup').checked && !document.querySelector('#listing-door-dropoff').checked && document.querySelector('#listing-promote').checked && document.querySelector('#listing-hide-friends').checked && document.querySelector('.preview-meetups').textContent.includes('Public meetup') && document.querySelector('.preview-meetups').textContent.includes('Door pickup')`)
+		listing.MustElement("#listing-location").MustClick()
+		awaitPage(listing, `() => document.activeElement.id==='listing-location' && !document.querySelector('#location-search-dialog')`)
+		listing.MustElement("#listing-location").MustInput("N")
+		awaitPage(listing, `() => document.querySelector('#location-search-dialog')?.open && !document.querySelector('#location-search-dialog header, #location-search-dialog .account-name, #location-search-dialog .ui-dialog-close') && document.querySelector('#location-search-hint').textContent.startsWith('We need to open Facebook') && document.activeElement.textContent==='Cancel'`)
+		if locationOpens.Load() != 0 {
+			t.Fatal("location focus opened Chrome before consent")
+		}
+		if *uiArtifactDir != "" {
+			data, err := listing.Screenshot(false, &proto.PageCaptureScreenshot{})
+			if err != nil {
+				t.Fatal(err)
+			}
+			if err := os.WriteFile(filepath.Join(*uiArtifactDir, "postika-location-search-dialog.png"), data, 0600); err != nil {
+				t.Fatal(err)
+			}
+		}
+		listing.MustElement("#location-search-dialog .action-button--secondary").MustClick()
+		awaitPage(listing, `() => !document.querySelector('#location-search-dialog') && document.activeElement.id==='listing-location' && document.querySelector('#listing-title').value==='Desk lamp' && document.querySelector('#listing-location').value==='N'`)
+		if locationOpens.Load() != 0 {
+			t.Fatal("cancelling location setup opened Chrome")
+		}
+		listing.MustElement(".location-status-action").MustClick()
+		awaitPage(listing, `() => document.querySelector('#location-search-dialog')?.open`)
+		failLocationOpen.Store(true)
+		listing.MustElement(".location-continue").MustClick()
+		awaitPage(listing, `() => !!document.querySelector('#location-search-dialog [role=alert]') && !document.querySelector('.location-continue').disabled`)
+		listing.MustElement(".location-continue").MustClick()
+		awaitPage(listing, `() => !document.querySelector('#location-search-dialog') && document.activeElement.id==='listing-location'`)
+		if locationOpens.Load() != 2 || locationProfile.Load() != "default" {
+			t.Fatal("location setup opened the wrong account")
+		}
+
+		awaitPage(listing, `() => document.querySelector('.location-status')?.textContent.includes('Your login will be detected automatically.') && !!document.querySelector('.location-status-action')`)
+		if *uiArtifactDir != "" {
+			data, err := listing.Screenshot(false, &proto.PageCaptureScreenshot{})
+			if err != nil {
+				t.Fatal(err)
+			}
+			if err := os.WriteFile(filepath.Join(*uiArtifactDir, "postika-marketplace-login-wait.png"), data, 0600); err != nil {
+				t.Fatal(err)
+			}
+		}
+		listing.MustElement(".location-status-action").MustClick()
+		awaitPage(listing, `() => !document.querySelector('.location-status')`)
+		if locationCancels.Load() != 1 {
+			t.Fatal("location login wait was not cancelled")
+		}
+		listing.MustElement(".location-status-action").MustClick()
+		awaitPage(listing, `() => document.querySelector('#location-search-dialog')?.open`)
+		listing.MustElement(".location-continue").MustClick()
+		awaitPage(listing, `() => !document.querySelector('#location-search-dialog') && document.querySelector('.location-status')?.textContent.includes('Your login will be detected automatically.')`)
+		locationState.Store("expanding_details")
+		awaitPage(listing, `() => document.querySelector('.location-status')?.textContent.includes('Preparing Marketplace…') && !!document.querySelector('.location-status-action')`)
+		locationState.Store("details_error")
+		awaitPage(listing, `() => document.querySelector('.location-status')?.textContent.includes('Could not expand More details. Please try again.') && document.querySelector('.location-status-action')?.textContent==='Continue to Facebook'`)
+		locationState.Store("capturing_location")
+		awaitPage(listing, `() => document.querySelector('.location-status')?.textContent.includes('Searching…') && document.querySelector('.location-status-action')?.textContent==='Cancel' && !document.querySelector('.location-status [role=alert]')`)
+		locationState.Store("ready")
+		awaitPage(listing, `() => document.querySelector('.notification-bar[data-kind=success]')?.textContent.includes('Location search is ready.') && document.activeElement?.id==='listing-location' && !document.querySelector('.location-status')`)
+		awaitPage(listing, `() => document.querySelector('#listing-location').value==='N' && document.querySelectorAll('#listing-location-options [role=option]').length===1`)
+		if *uiArtifactDir != "" {
+			data, err := listing.Screenshot(false, &proto.PageCaptureScreenshot{})
+			if err != nil {
+				t.Fatal(err)
+			}
+			if err := os.WriteFile(filepath.Join(*uiArtifactDir, "postika-location-results.png"), data, 0600); err != nil {
+				t.Fatal(err)
+			}
+		}
+		listing.MustElement(".notification-close").MustClick()
+		awaitPage(listing, `() => !document.querySelector('.notification-bar') && document.activeElement?.id==='listing-location'`)
+		// Shared bars support every semantic state, descriptions, actions and
+		// persistent errors. They do not take focus away from the current field.
+		if _, err := listing.Eval(`() => {
+		  for(const [kind,message] of [['info','Information'],['success','Completed'],['warning','Needs attention'],['error','Could not complete']])
+		    window.dispatchEvent(new CustomEvent('postika:notification',{detail:{id:kind,kind,message,description:'Notification detail for this action.',duration:0,actionLabel:kind==='error'?'Try again':'',onaction:()=>document.body.dataset.notificationAction='done'}}));
+		}`); err != nil {
+			t.Fatal(err)
+		}
+		awaitPage(listing, `() => document.querySelectorAll('.notification-bar').length===3 && !document.querySelector('.notification-bar[data-kind=info]') && document.querySelector('.notification-bar[data-kind=error]')?.getAttribute('role')==='alert' && document.activeElement?.id==='listing-location'`)
+		listing.MustElement(".notification-action").MustClick()
+		awaitPage(listing, `() => document.body.dataset.notificationAction==='done'`)
+		for _, width := range []int{1200, 800} {
+			if err := listing.SetViewport(&proto.EmulationSetDeviceMetricsOverride{Width: width, Height: 800, DeviceScaleFactor: 1}); err != nil {
+				t.Fatal(err)
+			}
+			if _, err := listing.Eval(fmt.Sprintf(`() => {document.documentElement.dataset.theme=%q}`, map[bool]string{true: "dark", false: "light"}[width == 800])); err != nil {
+				t.Fatal(err)
+			}
+			awaitPage(listing, `() => Array.from(document.querySelectorAll('.notification-bar')).every(bar=>{const r=bar.getBoundingClientRect();return r.left>=0 && r.right<=innerWidth && r.top>=0 && r.bottom<=innerHeight})`)
+			if *uiArtifactDir != "" {
+				data, err := listing.Screenshot(false, &proto.PageCaptureScreenshot{})
+				if err != nil {
+					t.Fatal(err)
+				}
+				if err := os.WriteFile(filepath.Join(*uiArtifactDir, fmt.Sprintf("postika-notifications-%d.png", width)), data, 0600); err != nil {
+					t.Fatal(err)
+				}
+			}
+		}
+		for range 3 {
+			listing.MustElement(".notification-close").MustClick()
+		}
+		awaitPage(listing, `() => !document.querySelector('.notification-bar')`)
+		if _, err := listing.Eval(`() => {
+		  document.querySelector('#listing-location').focus();
+		  window.dispatchEvent(new CustomEvent('postika:notification',{detail:{id:'pause-test',message:'Temporary information',duration:400}}));
+		}`); err != nil {
+			t.Fatal(err)
+		}
+		awaitPage(listing, `() => !!document.querySelector('.notification-close')`)
+		listing.MustElement(".notification-close").MustFocus()
+		time.Sleep(500 * time.Millisecond)
+		awaitPage(listing, `() => !!document.querySelector('.notification-bar[data-kind=info]')`)
+		listing.MustElement("#listing-location").MustFocus()
+		awaitPage(listing, `() => !document.querySelector('.notification-bar')`)
+		// Unselected text is invalid after leaving the field, including a
+		// pointer click on a non-focusable area of the preview.
+		listing.MustElement("#listing-location").MustSelectAllText().MustInput("nairobi")
+		awaitPage(listing, `() => !!document.querySelector('#listing-location-options [role=option]')`)
+		listing.MustElement("#listing-preview-heading").MustClick()
+		awaitPage(listing, `() => document.querySelector('#listing-location')?.getAttribute('aria-invalid')==='true' && document.querySelector('#listing-location-error')?.textContent==='Please enter a valid location.' && !document.querySelector('#listing-location-options')`)
+		if *uiArtifactDir != "" {
+			data, err := listing.Screenshot(false, &proto.PageCaptureScreenshot{})
+			if err != nil {
+				t.Fatal(err)
+			}
+			if err := os.WriteFile(filepath.Join(*uiArtifactDir, "postika-location-invalid.png"), data, 0600); err != nil {
+				t.Fatal(err)
+			}
+		}
+		listing.MustElement("#listing-location").MustSelectAllText().MustInput("Old")
+		awaitPage(listing, `() => document.querySelector('#listing-location-options')?.getAttribute('aria-busy')==='true'`)
+		time.Sleep(300 * time.Millisecond)
+		listing.MustElement("#listing-location").MustSelectAllText().MustInput("Nairobi")
+		awaitPage(listing, `() => document.querySelector('#listing-location-options [role=option]')?.textContent.includes('Nairobi, Kenya')`)
+		time.Sleep(750 * time.Millisecond)
+		awaitPage(listing, `() => !document.querySelector('#listing-location-options')?.textContent.includes('Old City')`)
+		listing.MustElement("#listing-location").MustSelectAllText().MustInput("zzzz")
+		awaitPage(listing, `() => document.querySelector('#listing-location-options')?.textContent.includes('No locations found.')`)
+		listing.MustElement("#listing-location").MustSelectAllText().MustInput("Nairobi")
+		awaitPage(listing, `() => !!document.querySelector('#listing-location-option-0')`)
+		if err := listing.Keyboard.Type(input.Enter); err != nil {
+			t.Fatal(err)
+		}
+		awaitPage(listing, `() => document.querySelector('#listing-location').value==='Nairobi, Kenya' && document.querySelector('.preview-location')?.textContent==='Nairobi, Kenya' && !document.querySelector('#listing-location-options')`)
+		awaitPage(listing, `() => document.querySelector('#listing-location')?.getAttribute('aria-invalid')==='false' && document.querySelector('#listing-location-error')?.getAttribute('aria-hidden')==='true'`)
+		listing.MustElement("#listing-sku").MustClick()
+		listing.MustElement("#listing-location").MustClick()
+		awaitPage(listing, `() => document.activeElement.id==='listing-location' && document.querySelector('#listing-location').value==='Nairobi, Kenya' && !document.querySelector('#location-search-dialog')`)
+		if locationOpens.Load() != 3 || locationSearchCalls.Load() < 4 {
+			t.Fatal("location typing did not replay in the existing session")
+		}
+
+		if *uiArtifactDir != "" {
+			for _, width := range []int{1200, 800} {
+				if err := listing.SetViewport(&proto.EmulationSetDeviceMetricsOverride{Width: width, Height: 800, DeviceScaleFactor: 1}); err != nil {
+					t.Fatal(err)
+				}
+				if _, err := listing.Eval(fmt.Sprintf(`() => {document.documentElement.dataset.theme=%q;const pane=document.querySelector('.form-scroll'),section=document.querySelector('.meetup-preferences');pane.scrollBy({top:section.getBoundingClientRect().top-pane.getBoundingClientRect().top-12});}`, map[bool]string{true: "dark", false: "light"}[width == 800])); err != nil {
+					t.Fatal(err)
+				}
+				data, err := listing.Screenshot(false, &proto.PageCaptureScreenshot{})
+				if err != nil {
+					t.Fatal(err)
+				}
+				if err := os.WriteFile(filepath.Join(*uiArtifactDir, fmt.Sprintf("postika-item-preferences-%d.png", width)), data, 0600); err != nil {
+					t.Fatal(err)
+				}
+			}
+		}
+		listing.MustElement("#language-profile").MustClick()
+		listing.MustElement(`[data-profile-id="ar"]`).MustClick()
+		awaitPage(listing, `() => document.documentElement.lang==='ar' && document.documentElement.dir==='rtl' && document.querySelector('.form-pane').getBoundingClientRect().left>=document.querySelector('.preview-pane').getBoundingClientRect().right-1 && document.querySelector('#listing-public-meetup').checked && document.querySelector('#listing-hide-friends').checked`)
+		if *uiArtifactDir != "" {
+			data, err := listing.Screenshot(false, &proto.PageCaptureScreenshot{})
+			if err != nil {
+				t.Fatal(err)
+			}
+			if err := os.WriteFile(filepath.Join(*uiArtifactDir, "postika-item-preferences-rtl.png"), data, 0600); err != nil {
+				t.Fatal(err)
+			}
+		}
+		listing.MustElement("#language-profile").MustClick()
+		listing.MustElement(`[data-profile-id="en"]`).MustClick()
+		awaitPage(listing, `() => document.documentElement.lang==='en' && document.documentElement.dir==='ltr'`)
+		if _, err := listing.Eval(fmt.Sprintf(`() => {const bytes=Uint8Array.from(atob(%q),c=>c.charCodeAt(0)),transfer=new DataTransfer();for(let i=0;i<11;i++)transfer.items.add(new File([bytes],'listing-'+i+'.png',{type:'image/png',lastModified:12345}));const input=document.querySelector('#listing-photos');input.files=transfer.files;input.dispatchEvent(new Event('change',{bubbles:true}));}`, fixturePNG)); err != nil {
+			t.Fatal(err)
+		}
+		awaitPage(listing, `() => document.querySelectorAll('.photo-tile').length===10 && !document.querySelector('.save-draft').disabled && document.querySelector('.preview-image')?.complete && document.querySelectorAll('.preview-thumbnails button').length===10`)
+		listing.MustElement(`[aria-label="Remove listing-0.png"]`).MustClick()
+		awaitPage(listing, `() => document.querySelectorAll('.photo-tile').length===9 && document.querySelectorAll('.preview-thumbnails button').length===9`)
+		listing.MustElement(".next-photo").MustClick()
+		awaitPage(listing, `() => document.querySelector('.preview-image').alt==='listing-2.png'`)
+		awaitPage(listing, `() => [...document.querySelectorAll('.preview-thumbnails button')].every(b=>{const s=getComputedStyle(b.querySelector('img'));return b.getAttribute('aria-pressed')==='true' ? s.filter==='none' && s.opacity==='1' : s.filter.includes('blur') && Number(s.opacity)<1;})`)
+		if _, err := listing.Eval(fmt.Sprintf(`() => {const d=new DataTransfer();d.items.add(new File([Uint8Array.from(atob(%q),c=>c.charCodeAt(0))],'dropped.png',{type:'image/png'}));const area=document.querySelector('.photo-upload');area.dispatchEvent(new DragEvent('dragover',{bubbles:true,cancelable:true,dataTransfer:d}));area.dispatchEvent(new DragEvent('drop',{bubbles:true,cancelable:true,dataTransfer:d}));}`, fixturePNG)); err != nil {
+			t.Fatal(err)
+		}
+		awaitPage(listing, `() => document.querySelectorAll('.photo-tile').length===10 && !document.querySelector('.save-draft').disabled && !document.querySelector('.photo-upload.dragging')`)
+		if _, err := listing.Eval(`() => document.querySelector('[aria-label="Remove dropped.png"]').click()`); err != nil {
+			t.Fatal(err)
+		}
+		awaitPage(listing, `() => document.querySelectorAll('.photo-tile').length===9`)
+		// Exercise actual mouse input, including click suppression and cancellation.
+		if _, err := listing.Eval(`() => {document.querySelector('.form-scroll').scrollTop=0;window.listingOriginalURLs=[...document.querySelectorAll('.photo-select img')].map(i=>i.src);}`); err != nil {
+			t.Fatal(err)
+		}
+		dragListingPhoto := func(from, to int) {
+			t.Helper()
+			sourceShape, err := listing.MustElement(fmt.Sprintf(".photo-tile:nth-child(%d) .photo-select img", from)).Shape()
+			if err != nil {
+				t.Fatal(err)
+			}
+			targetShape, err := listing.MustElement(fmt.Sprintf(".photo-tile:nth-child(%d)", to)).Shape()
+			if err != nil {
+				t.Fatal(err)
+			}
+			sourcePoint, targetPoint := sourceShape.OnePointInside(), targetShape.OnePointInside()
+			targetPoint.X += 35
+			if err := listing.Mouse.MoveTo(*sourcePoint); err != nil {
+				t.Fatal(err)
+			}
+			if err := listing.Mouse.Down(proto.InputMouseButtonLeft, 1); err != nil {
+				t.Fatal(err)
+			}
+			if err := listing.Mouse.MoveLinear(*targetPoint, 12); err != nil {
+				t.Fatal(err)
+			}
+		}
+		dragListingPhoto(1, 3)
+		awaitPage(listing, `() => document.querySelector('.photo-select img').alt==='listing-1.png' && !!document.querySelector('.drop-after') && !!document.querySelector('.photo-drag-preview')`)
+		if *uiArtifactDir != "" {
+			data, err := listing.Screenshot(false, &proto.PageCaptureScreenshot{})
+			if err != nil {
+				t.Fatal(err)
+			}
+			if err := os.WriteFile(filepath.Join(*uiArtifactDir, "postika-item-photo-reorder.png"), data, 0600); err != nil {
+				t.Fatal(err)
+			}
+		}
+		if err := listing.Mouse.Up(proto.InputMouseButtonLeft, 1); err != nil {
+			t.Fatal(err)
+		}
+		awaitPage(listing, `() => [...document.querySelectorAll('.photo-select img')].slice(0,3).map(i=>i.alt).join(',')==='listing-2.png,listing-3.png,listing-1.png' && document.querySelector('.preview-image').alt==='listing-2.png' && document.activeElement.querySelector('img')?.alt==='listing-1.png' && !document.querySelector('.drop-after,.photo-drag-preview') && [...document.querySelectorAll('.photo-select img')].every(i=>window.listingOriginalURLs.includes(i.src))`)
+		dragListingPhoto(1, 4)
+		awaitPage(listing, `() => !!document.querySelector('.photo-drag-preview')`)
+		if _, err := listing.Eval(`() => window.dispatchEvent(new KeyboardEvent('keydown',{bubbles:true,key:'Escape'}))`); err != nil {
+			t.Fatal(err)
+		}
+		if err := listing.Mouse.Up(proto.InputMouseButtonLeft, 1); err != nil {
+			t.Fatal(err)
+		}
+		awaitPage(listing, `() => !document.querySelector('.drag-source,.drop-after,.drop-before,.photo-drag-preview') && document.querySelector('.photo-select img').alt==='listing-2.png' && document.querySelector('.preview-image').alt==='listing-2.png'`)
+		if _, err := listing.Eval(`() => {document.querySelector('.photo-select').dispatchEvent(new KeyboardEvent('keydown',{bubbles:true,cancelable:true,altKey:true,key:'ArrowRight'}));}`); err != nil {
+			t.Fatal(err)
+		}
+		awaitPage(listing, `() => document.querySelector('.photo-select img').alt==='listing-3.png' && document.querySelector('.preview-image').alt==='listing-2.png' && document.activeElement.querySelector('img')?.alt==='listing-2.png'`)
+		if _, err := listing.Eval(`() => {document.documentElement.dir='rtl';document.activeElement.dispatchEvent(new KeyboardEvent('keydown',{bubbles:true,cancelable:true,altKey:true,key:'ArrowRight'}));}`); err != nil {
+			t.Fatal(err)
+		}
+		awaitPage(listing, `() => document.querySelector('.photo-select img').alt==='listing-2.png' && document.querySelector('.preview-image').alt==='listing-2.png'`)
+		if _, err := listing.Eval(`() => {document.documentElement.dir='ltr';}`); err != nil {
+			t.Fatal(err)
+		}
+		if *uiArtifactDir != "" {
+			if err := listing.SetViewport(&proto.EmulationSetDeviceMetricsOverride{Width: 1200, Height: 800, DeviceScaleFactor: 1}); err != nil {
+				t.Fatal(err)
+			}
+			if _, err := listing.Eval(`() => {document.querySelector('.form-scroll').scrollTop=document.querySelector('.form-scroll').scrollHeight;}`); err != nil {
+				t.Fatal(err)
+			}
+			awaitPage(listing, `() => {const strip=document.querySelector('.preview-thumbnails'),buttons=strip.querySelectorAll('button'),first=buttons[0].getBoundingClientRect(),last=buttons[buttons.length-1].getBoundingClientRect(),bounds=strip.getBoundingClientRect();return Math.abs((first.left+last.right)-(bounds.left+bounds.right))<2;}`)
+			data, err := listing.Screenshot(false, &proto.PageCaptureScreenshot{})
+			if err != nil {
+				t.Fatal(err)
+			}
+			if err := os.WriteFile(filepath.Join(*uiArtifactDir, "postika-item-editor-details.png"), data, 0600); err != nil {
+				t.Fatal(err)
+			}
+		}
+		listing.MustElement(".save-draft").MustClick()
+		awaitPage(listing, `() => document.querySelector('.feedback[role=status]').textContent.trim()==='Draft saved.' && !document.querySelector('.save-draft').disabled`)
+		listing.MustElement(`label[for="listing-hide-friends"]`).Timeout(5 * time.Second).MustClick()
+		awaitPage(listing, `() => !document.querySelector('#listing-hide-friends').checked && document.querySelector('.feedback[role=status]').textContent.trim()===''`)
+		if err := listing.Navigate(server.URL + "/?view=create-listing"); err != nil {
+			t.Fatal(err)
+		}
+		awaitPage(listing, `() => !!document.querySelector('#create-listing-items')`)
+		listing.MustElement("#create-listing-items").MustClick()
+		awaitPage(listing, `() => !document.querySelector('.save-draft').disabled && document.querySelector('#listing-title').value==='Desk lamp' && document.querySelector('#listing-category').textContent.trim()==='Furniture' && document.querySelector('#listing-condition').textContent.trim()==='Used - Good' && document.querySelectorAll('.photo-tile').length===9`)
+		awaitPage(listing, `() => document.querySelector('#listing-location').value==='Nairobi, Kenya' && document.querySelector('.preview-location')?.textContent==='Nairobi, Kenya' && document.querySelectorAll('.preview-tags li').length===20 && document.querySelector('#listing-availability').textContent.trim()==='List as In Stock' && document.querySelector('.photo-select img').alt==='listing-2.png' && document.querySelectorAll('.tags-field li').length===20 && document.querySelector('#listing-public-meetup').checked && document.querySelector('#listing-door-pickup').checked && !document.querySelector('#listing-door-dropoff').checked && document.querySelector('#listing-promote').checked && document.querySelector('#listing-hide-friends').checked`)
+		// Vehicle drafts share editor behavior, but stay separate from item data.
+		listing.MustElement(".form-heading .previous").MustClick()
+		listing.MustElement("#create-listing-vehicles").MustClick()
+		awaitPage(listing, `() => document.querySelector('.listing-details')?.dataset.listingType==='vehicles' && !document.querySelector('.save-draft').disabled && document.querySelector('.photo-label').textContent.includes('/ 20') && !document.querySelector('#listing-title,#listing-category,#listing-condition,#listing-tags,#listing-hide-friends,#listing-public-meetup') && document.querySelector('#listing-make').value==='' && document.querySelectorAll('.photo-tile').length===0`)
+		for _, width := range []int{1200, 800} {
+			if err := listing.SetViewport(&proto.EmulationSetDeviceMetricsOverride{Width: width, Height: 800, DeviceScaleFactor: 1}); err != nil {
+				t.Fatal(err)
+			}
+			if _, err := listing.Eval(fmt.Sprintf(`() => {document.documentElement.dataset.theme=%q;document.querySelector('.form-scroll').scrollTop=0}`, map[bool]string{true: "dark", false: "light"}[width == 800])); err != nil {
+				t.Fatal(err)
+			}
+			awaitPage(listing, `() => {const pane=document.querySelector('.preview-pane').getBoundingClientRect(),form=document.querySelector('.form-pane').getBoundingClientRect();return pane.right<=innerWidth && form.width===360 && document.documentElement.scrollWidth<=innerWidth}`)
+			if *uiArtifactDir != "" {
+				data, err := listing.Screenshot(false, &proto.PageCaptureScreenshot{})
+				if err != nil {
+					t.Fatal(err)
+				}
+				if err := os.WriteFile(filepath.Join(*uiArtifactDir, fmt.Sprintf("postika-vehicle-editor-%d.png", width)), data, 0600); err != nil {
+					t.Fatal(err)
+				}
+			}
+		}
+		listing.MustElement("#listing-vehicle-type").MustClick()
+		awaitPage(listing, `() => [...document.querySelectorAll('#listing-vehicle-type-options [role=option]')].map(option=>option.textContent.trim()).join('|')==='Car/Truck|Motorcycle|Powersport|RV/Camper|Trailer|Boat|Commercial/Industrial|Other'`)
+		if *uiArtifactDir != "" {
+			data, err := listing.Screenshot(false, &proto.PageCaptureScreenshot{})
+			if err != nil {
+				t.Fatal(err)
+			}
+			if err := os.WriteFile(filepath.Join(*uiArtifactDir, "postika-vehicle-type-options.png"), data, 0600); err != nil {
+				t.Fatal(err)
+			}
+		}
+		if err := listing.Keyboard.Type(input.Escape); err != nil {
+			t.Fatal(err)
+		}
+		// Existing free-text makes migrate into the new make dropdown.
+		listing.MustElement("#listing-make").MustInput("Toyota")
+		listing.MustElement("#listing-vehicle-type").MustClick()
+		listing.MustElement(`#listing-vehicle-type-options [data-value="car-truck"]`).MustClick()
+		awaitPage(listing, `() => document.querySelector('#listing-vehicle-type').textContent.trim()==='Car/Truck' && !document.querySelector('#listing-vehicle-type-options')`)
+		listing.MustElement("#listing-year").MustClick()
+		awaitPage(listing, `() => {const menu=document.querySelector('#listing-year-options'), options=[...menu.querySelectorAll('[role=option]')];return options.length===127 && options.every((option,index)=>option.textContent.trim()===String(2027-index)) && !options.some(option=>option.getAttribute('aria-selected')==='true') && getComputedStyle(menu).opacity==='1'}`)
+		if *uiArtifactDir != "" {
+			data, err := listing.Screenshot(false, &proto.PageCaptureScreenshot{})
+			if err != nil {
+				t.Fatal(err)
+			}
+			if err := os.WriteFile(filepath.Join(*uiArtifactDir, "postika-vehicle-year-options.png"), data, 0600); err != nil {
+				t.Fatal(err)
+			}
+		}
+		if err := listing.Keyboard.Type(input.End); err != nil {
+			t.Fatal(err)
+		}
+		awaitPage(listing, `() => document.querySelector('#listing-year').getAttribute('aria-activedescendant')==='listing-year-option-126' && document.querySelector('#listing-year-options').scrollTop>0`)
+		if err := listing.Keyboard.Type(input.Home); err != nil {
+			t.Fatal(err)
+		}
+		awaitPage(listing, `() => (() => {const menu=document.querySelector('#listing-year-options'),option=document.querySelector('#listing-year-option-0'),bounds=menu.getBoundingClientRect(),item=option.getBoundingClientRect();return document.querySelector('#listing-year').getAttribute('aria-activedescendant')==='listing-year-option-0' && item.top>=bounds.top && item.bottom<=bounds.bottom})()`)
+		listing.MustElement(`#listing-year-options [data-value="2020"]`).MustClick()
+		awaitPage(listing, `() => document.querySelector('#listing-year').textContent.trim()==='2020' && !document.querySelector('#listing-year-options')`)
+		awaitPage(listing, `() => document.querySelector('#listing-make').matches('button[role=combobox]') && document.querySelector('#listing-make').textContent.trim()==='Toyota' && !!document.querySelector('#listing-mileage,#listing-body-style,#listing-exterior-color,#listing-interior-color,#listing-clean-title,#listing-vehicle-condition,#listing-fuel-type,#listing-transmission') && document.querySelector('#listing-transmission').textContent.trim()==='Automatic transmission' && !document.querySelector('#listing-clean-title').checked && !!document.querySelector('#listing-video')`)
+		listing.MustElement("#listing-make").MustClick()
+		awaitPage(listing, `() => document.querySelectorAll('#listing-make-options [role=option]').length===66 && [...document.querySelectorAll('#listing-make-options [role=option]')].map(option=>option.textContent.trim()).join('|')==="Acura|Alfa Romeo|Aston Martin|Audi|BMW|Bentley|Buick|CODA|Cadillac|Chevrolet|Chrysler|Daewoo|Daihatsu|Dodge|Eagle|Ferrari|Fiat|Fisker|Ford|Freightliner|GMC|Genesis|Geo|Honda|Hummer|Hyundai|Infiniti|Isuzu|Jaguar|Jeep|Kia|Lamborghini|Land Rover|Lexus|Lincoln|Lotus|Lucid|MINI|Maserati|Maybach|Mazda|Mclaren|Mercedes-Benz|Mercury|Mitsubishi|Nissan|Oldsmobile|Panoz|Plymouth|Polestar|Pontiac|Porsche|Ram|Rivian|Rolls-Royce|SRT|Saab|Saturn|Scion|Smart|Subaru|Suzuki|Tesla|Toyota|Volkswagen|Volvo" && getComputedStyle(document.querySelector('#listing-make-options')).opacity==='1'`)
+		if *uiArtifactDir != "" {
+			data, err := listing.Screenshot(false, &proto.PageCaptureScreenshot{})
+			if err != nil {
+				t.Fatal(err)
+			}
+			if err := os.WriteFile(filepath.Join(*uiArtifactDir, "postika-vehicle-make-options.png"), data, 0600); err != nil {
+				t.Fatal(err)
+			}
+		}
+		listing.MustElement(`#listing-make-options [data-value="Honda"]`).MustClick()
+		awaitPage(listing, `() => document.querySelector('#listing-make').textContent.trim()==='Honda' && document.querySelector('#preview-item-title').textContent==='2020 Honda'`)
+		listing.MustElement("#listing-make").MustClick()
+		listing.MustElement(`#listing-make-options [data-value="Toyota"]`).MustClick()
+		awaitPage(listing, `() => document.querySelector('#listing-make').textContent.trim()==='Toyota' && !document.querySelector('#listing-make-options')`)
+
+		for _, width := range []int{1200, 800} {
+			if err := listing.SetViewport(&proto.EmulationSetDeviceMetricsOverride{Width: width, Height: 800, DeviceScaleFactor: 1}); err != nil {
+				t.Fatal(err)
+			}
+			listing.MustEval(fmt.Sprintf(`() => {document.documentElement.dataset.theme=%q;document.querySelector('.form-scroll').scrollTop=0}`, map[bool]string{true: "dark", false: "light"}[width == 800]))
+			if *uiArtifactDir != "" {
+				data, err := listing.Screenshot(false, &proto.PageCaptureScreenshot{})
+				if err != nil {
+					t.Fatal(err)
+				}
+				if err := os.WriteFile(filepath.Join(*uiArtifactDir, fmt.Sprintf("postika-car-truck-media-%d.png", width)), data, 0600); err != nil {
+					t.Fatal(err)
+				}
+			}
+		}
+		listing.MustElement(".form-heading .previous").MustClick()
+		listing.MustElement("#create-listing-items").MustClick()
+		awaitPage(listing, `() => document.querySelector('#listing-title')?.value==='Desk lamp' && document.querySelectorAll('.photo-tile').length===9`)
+		listing.MustElement(".form-heading .previous").MustClick()
+		listing.MustElement("#create-listing-vehicles").MustClick()
+		awaitPage(listing, `() => document.querySelector('#listing-make')?.textContent.trim()==='Toyota' && document.querySelector('#listing-vehicle-type').textContent.trim()==='Car/Truck' && document.querySelector('#listing-year').textContent.trim()==='2020' && !document.querySelector('.save-draft').disabled && document.querySelectorAll('.photo-tile').length===0`)
+		listing.MustElement("#listing-model").MustInput("Corolla")
+		listing.MustElement("#listing-price").MustInput("1650000")
+		listing.MustElement("#listing-description").MustInput("Well maintained, one owner.")
+		listing.MustElement("#listing-mileage").MustInput("75000")
+		listing.MustElement(`label:has(#listing-clean-title)`).MustClick()
+		awaitPage(listing, `() => document.querySelector('.preview-attributes').textContent.includes('75000') && document.querySelector('.preview-attributes').textContent.includes('Automatic transmission') && document.querySelector('.preview-details').textContent.includes('This vehicle has a clean title.')`)
+		for _, field := range []struct{ selector, labels, value, label string }{
+			{"#listing-body-style", "Coupe|Truck|Sedan|Hatchback|SUV|Convertible|Wagon|Minivan|Small Car|Other", "sedan", "Sedan"},
+			{"#listing-exterior-color", "Black|Blue|Brown|Gold|Green|Gray|Pink|Purple|Red|Silver|Orange|White|Yellow|Charcoal|Off white|Tan|Beige|Burgundy|Turquoise|Other", "red", "Red"},
+			{"#listing-interior-color", "Black|Blue|Brown|Gold|Green|Gray|Pink|Purple|Red|Silver|Orange|White|Yellow|Charcoal|Off white|Tan|Beige|Burgundy|Turquoise|Other", "black", "Black"},
+			{"#listing-vehicle-condition", "Excellent|Very good|Good|Fair|Poor", "very-good", "Very good"},
+			{"#listing-fuel-type", "Diesel|Electric|Gasoline|Flex|Hybrid|Petrol|Plug-in hybrid|Other", "hybrid", "Hybrid"},
+			{"#listing-transmission", "Manual transmission|Automatic transmission", "manual", "Manual transmission"},
+		} {
+			listing.MustElement(field.selector).MustClick()
+			awaitPage(listing, fmt.Sprintf(`() => {const menu=document.querySelector(%q);return [...menu.querySelectorAll('[role=option]')].map(option=>option.textContent.trim()).join('|')===%q && getComputedStyle(menu).opacity==='1'}`, field.selector+"-options", field.labels))
+			if *uiArtifactDir != "" {
+				data, err := listing.Screenshot(false, &proto.PageCaptureScreenshot{})
+				if err != nil {
+					t.Fatal(err)
+				}
+				if err := os.WriteFile(filepath.Join(*uiArtifactDir, "postika-"+strings.TrimPrefix(field.selector, "#listing-")+"-options.png"), data, 0600); err != nil {
+					t.Fatal(err)
+				}
+			}
+			listing.MustElement(field.selector + `-options [data-value="` + field.value + `"]`).MustClick()
+			awaitPage(listing, fmt.Sprintf(`() => document.querySelector(%q).textContent.trim()===%q && !document.querySelector(%q)`, field.selector, field.label, field.selector+"-options"))
+		}
+		awaitPage(listing, `() => {const details=document.querySelector('.preview-attributes').textContent;return ['Sedan','Red','Black','Very good','Hybrid','Manual transmission'].every(label=>details.includes(label))}`)
+
+		awaitPage(listing, `() => document.querySelector('#preview-item-title').textContent==='2020 Toyota Corolla' && document.querySelector('.preview-price').textContent==='1650000' && document.querySelector('.preview-description').textContent==='Well maintained, one owner.'`)
+		opensBeforeVehicle := locationOpens.Load()
+		listing.MustElement("#listing-location").MustInput("Nairobi")
+		awaitPage(listing, `() => !!document.querySelector('#listing-location-option-0')`)
+		if err := listing.Keyboard.Type(input.Enter); err != nil {
+			t.Fatal(err)
+		}
+		awaitPage(listing, `() => document.querySelector('.vehicle-location')?.textContent.includes('Nairobi, Kenya') && document.querySelector('#listing-location').getAttribute('aria-invalid')==='false'`)
+		if locationOpens.Load() != opensBeforeVehicle {
+			t.Fatal("vehicle search repeated Facebook setup instead of reusing the account session")
+		}
+		shortVideo, err := os.ReadFile("frontend/testdata/vehicle-short.webm")
+		if err != nil {
+			t.Fatal(err)
+		}
+		maxVideo, err := os.ReadFile("frontend/testdata/vehicle-max.webm")
+		if err != nil {
+			t.Fatal(err)
+		}
+		longVideo, err := os.ReadFile("frontend/testdata/vehicle-long.webm")
+		if err != nil {
+			t.Fatal(err)
+		}
+		chooseVideo := func(data []byte, name, mime string, drop bool) {
+			t.Helper()
+			if _, err := listing.Eval(fmt.Sprintf(`() => {const bytes=Uint8Array.from(atob(%q),c=>c.charCodeAt(0)),files=new DataTransfer();files.items.add(new File([bytes],%q,{type:%q,lastModified:12345}));if(%t){document.querySelector('.video-drop').dispatchEvent(new DragEvent('drop',{bubbles:true,cancelable:true,dataTransfer:files}));}else{const input=document.querySelector('#listing-video');input.files=files.files;input.dispatchEvent(new Event('change',{bubbles:true}));}}`, base64.StdEncoding.EncodeToString(data), name, mime, drop)); err != nil {
+				t.Fatal(err)
+			}
+		}
+		chooseVideo(shortVideo, "vehicle-short.webm", "video/webm", false)
+		awaitPage(listing, `() => document.querySelector('.listing-video .file-name')?.textContent==='vehicle-short.webm' && !document.querySelector('.save-draft').disabled && document.querySelector('.preview-video')?.duration>0`)
+		chooseVideo(maxVideo, "vehicle-max.webm", "video/webm", false)
+		awaitPage(listing, `() => document.querySelector('.listing-video .file-name')?.textContent==='vehicle-max.webm' && !document.querySelector('.save-draft').disabled && document.querySelector('.preview-video')?.duration===60`)
+		listing.MustEval(`async () => {await document.querySelector('.preview-video').play()}`)
+		listing.MustElement(".form-heading .previous").MustClick()
+		awaitPage(listing, `() => !!document.querySelector('#create-listing-vehicles') && [...document.querySelectorAll('.item-listing-editor video')].every(player=>player.paused)`)
+		listing.MustElement("#create-listing-vehicles").MustClick()
+		awaitPage(listing, `() => document.querySelector('.listing-video .file-name')?.textContent==='vehicle-max.webm'`)
+		listing.MustEval(`() => {const source=document.querySelector('#listing-video'),files=new DataTransfer();for(let i=0;i<2;i++)files.items.add(new File(['invalid'],'extra-'+i+'.webm',{type:'video/webm'}));document.querySelector('.video-drop').dispatchEvent(new DragEvent('drop',{bubbles:true,cancelable:true,dataTransfer:files}));}`)
+		awaitPage(listing, `() => !!document.querySelector('.listing-video [role=alert]') && !document.querySelector('.save-draft').disabled && document.querySelector('.listing-video .file-name')?.textContent==='vehicle-max.webm'`)
+
+		for _, invalid := range []struct {
+			data       []byte
+			name, mime string
+		}{{longVideo, "vehicle-long.webm", "video/webm"}, {[]byte("invalid-video"), "corrupt.webm", "video/webm"}, {shortVideo, "not-video.txt", "text/plain"}} {
+			chooseVideo(invalid.data, invalid.name, invalid.mime, false)
+			awaitPage(listing, `() => !!document.querySelector('.listing-video [role=alert]') && !document.querySelector('.save-draft').disabled && document.querySelector('.listing-video .file-name')?.textContent==='vehicle-max.webm'`)
+		}
+		listing.MustElement(".remove-video").MustClick()
+		awaitPage(listing, `() => !document.querySelector('.listing-video video') && !document.querySelector('.preview-video')`)
+		chooseVideo(shortVideo, "vehicle-short.webm", "video/webm", true)
+		awaitPage(listing, `() => document.querySelector('.listing-video .file-name')?.textContent==='vehicle-short.webm' && !document.querySelector('.save-draft').disabled && !document.querySelector('.listing-video [role=alert]')`)
+		if _, err := listing.Eval(fmt.Sprintf(`() => {const bytes=Uint8Array.from(atob(%q),c=>c.charCodeAt(0)),files=new DataTransfer();for(let i=0;i<21;i++)files.items.add(new File([bytes],'vehicle-'+i+'.png',{type:'image/png',lastModified:12345}));const input=document.querySelector('#listing-photos');input.files=files.files;input.dispatchEvent(new Event('change',{bubbles:true}));}`, fixturePNG)); err != nil {
+			t.Fatal(err)
+		}
+		awaitPage(listing, `() => document.querySelectorAll('.photo-tile').length===20 && !document.querySelector('.save-draft').disabled && document.querySelectorAll('.preview-thumbnails button').length===21 && !document.querySelector('.add-photo-tile')`)
+		listing.MustElement(".video-thumbnail").MustClick()
+		awaitPage(listing, `() => document.querySelector('.preview-video')?.duration===1 && !document.querySelector('.preview-image')`)
+		listing.MustElement(".preview-thumbnails button:first-child").MustClick()
+		awaitPage(listing, `() => !!document.querySelector('.preview-image') && !document.querySelector('.preview-video')`)
+		listing.MustElement("#listing-vehicle-type").MustClick()
+		listing.MustElement(`#listing-vehicle-type-options [data-value="boat"]`).MustClick()
+		awaitPage(listing, `() => !document.querySelector('#listing-video,#listing-mileage,#listing-clean-title,#listing-transmission,.video-thumbnail') && document.querySelector('#listing-make').matches('input') && document.querySelector('#listing-make').value==='Toyota' && !document.querySelector('.preview-details').textContent.includes('75000')`)
+		listing.MustElement("#listing-vehicle-type").MustClick()
+		listing.MustElement(`#listing-vehicle-type-options [data-value="car-truck"]`).MustClick()
+		awaitPage(listing, `() => document.querySelector('#listing-mileage')?.value==='75000' && document.querySelector('#listing-clean-title').checked && document.querySelector('.listing-video .file-name')?.textContent==='vehicle-short.webm'`)
+		listing.MustElement(`label[for="listing-promote"]`).MustClick()
+		listing.MustElement(".save-draft").MustClick()
+		awaitPage(listing, `() => document.querySelector('.feedback[role=status]').textContent.trim()==='Draft saved.'`)
+		if err := listing.Reload(); err != nil {
+			t.Fatal(err)
+		}
+		awaitPage(listing, `() => !!document.querySelector('#create-listing-vehicles')`)
+		listing.MustElement("#create-listing-vehicles").MustClick()
+		awaitPage(listing, `() => !document.querySelector('.save-draft').disabled && document.querySelector('#listing-make').textContent.trim()==='Toyota' && document.querySelector('#listing-model').value==='Corolla' && document.querySelector('#listing-year').textContent.trim()==='2020' && document.querySelector('#listing-price').value==='1650000' && document.querySelectorAll('.photo-tile').length===20 && document.querySelector('#listing-location').value==='Nairobi, Kenya' && document.querySelector('#listing-promote').checked && document.querySelector('#listing-mileage').value==='75000' && document.querySelector('#listing-clean-title').checked && document.querySelector('.listing-video .file-name')?.textContent==='vehicle-short.webm' && document.querySelector('.listing-video video')?.duration===1 && document.querySelector('#listing-body-style').textContent.trim()==='Sedan' && document.querySelector('#listing-exterior-color').textContent.trim()==='Red' && document.querySelector('#listing-interior-color').textContent.trim()==='Black' && document.querySelector('#listing-vehicle-condition').textContent.trim()==='Very good' && document.querySelector('#listing-fuel-type').textContent.trim()==='Hybrid' && document.querySelector('#listing-transmission').textContent.trim()==='Manual transmission'`)
+		if *uiArtifactDir != "" {
+			listing.MustEval(`() => document.querySelector('.form-scroll').scrollTop=document.querySelector('.form-scroll').scrollHeight`)
+			data, err := listing.Screenshot(false, &proto.PageCaptureScreenshot{})
+			if err != nil {
+				t.Fatal(err)
+			}
+			if err := os.WriteFile(filepath.Join(*uiArtifactDir, "postika-vehicle-details.png"), data, 0600); err != nil {
+				t.Fatal(err)
+			}
+		}
+		listing.MustElement(".form-heading .previous").MustClick()
+		listing.MustElement("#create-listing-items").MustClick()
+		awaitPage(listing, `() => document.querySelector('#listing-title')?.value==='Desk lamp' && document.querySelectorAll('.photo-tile').length===9`)
+		listing.MustElement("#account-profile").MustClick()
+		listing.MustElement(`[data-profile-id="` + business.ID + `"]`).MustClick()
+		awaitPage(listing, `() => !!document.querySelector('#create-listing-items')`)
+		listing.MustElement("#create-listing-items").MustClick()
+		awaitPage(listing, `() => !document.querySelector('.save-draft').disabled && document.querySelector('#listing-title').value==='' && document.querySelectorAll('.photo-tile').length===0`)
+		listing.MustElement("#listing-title").MustInput("Business listing")
+		listing.MustElement(".save-draft").MustClick()
+		awaitPage(listing, `() => document.querySelector('.feedback[role=status]').textContent.trim()==='Draft saved.'`)
+		listing.MustElement(".form-heading .previous").MustClick()
+		listing.MustElement("#create-listing-vehicles").MustClick()
+		awaitPage(listing, `() => !document.querySelector('.save-draft').disabled && document.querySelector('#listing-make')?.value==='' && document.querySelectorAll('.photo-tile').length===0`)
+		listing.MustElement("#listing-make").MustInput("Business vehicle")
+		listing.MustElement(".save-draft").MustClick()
+		awaitPage(listing, `() => document.querySelector('.feedback[role=status]').textContent.trim()==='Draft saved.'`)
+		listing.MustElement("#account-profile").MustClick()
+		listing.MustElement(`[data-delete-profile="` + business.ID + `"]`).MustClick()
+		listing.MustElement("#delete-profile-dialog .delete-confirm").MustClick()
+		awaitPage(listing, `() => !document.querySelector('#delete-profile-dialog') && !!document.querySelector('#create-listing-items')`)
+		awaitPage(listing, fmt.Sprintf(`async () => {const db=await new Promise((resolve,reject)=>{const r=indexedDB.open('postika-marketplace-drafts',1);r.onsuccess=()=>resolve(r.result);r.onerror=reject;});const results=await Promise.all([%q,['vehicles',%q]].map(key=>new Promise((resolve,reject)=>{const r=db.transaction('items').objectStore('items').get(key);r.onsuccess=()=>resolve(r.result===undefined);r.onerror=reject;})));db.close();return results.every(Boolean);}`, business.ID, business.ID))
+		listing.MustElement("#create-listing-items").MustClick()
+		awaitPage(listing, `() => !document.querySelector('.save-draft').disabled && document.querySelector('#listing-title').value==='Desk lamp' && document.querySelectorAll('.photo-tile').length===9`)
+		if err := listing.Close(); err != nil {
+			t.Fatal(err)
+		}
+		if err := marketplace.Close(); err != nil {
+			t.Fatal(err)
+		}
+		return
+	}
+
 	eval := func(script string) {
 		t.Helper()
 		if _, err := page.Eval(script); err != nil {
@@ -361,7 +1325,7 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool, themePickerOnly .
 		await(fmt.Sprintf(`() => document.querySelector('#account-profile').dataset.profileId===%q && !document.querySelector('#account-profile').disabled`, id))
 	}
 	await(`() => document.querySelector('#post-body[contenteditable=true]') !== null`)
-	if len(themePickerOnly) > 0 && themePickerOnly[0] {
+	if len(viewOnly) > 0 && viewOnly[0] == "themes" {
 		chooseTheme(page, "light")
 		page.MustElement("[data-theme-picker]").MustClick()
 		await(fmt.Sprintf(`() => document.querySelectorAll('[data-theme-id]').length===%d && document.activeElement.matches('dialog input')`, themeCount))
@@ -687,6 +1651,10 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool, themePickerOnly .
 	if err := page.Keyboard.Type(input.Tab); err != nil {
 		t.Fatal(err)
 	}
+	await(`() => document.activeElement.matches('#features-dialog .start-tour')`)
+	if err := page.Keyboard.Type(input.Tab); err != nil {
+		t.Fatal(err)
+	}
 	await(`() => document.activeElement.matches('#features-dialog .feature-content')`)
 	if err := page.Keyboard.Type(input.End); err != nil {
 		t.Fatal(err)
@@ -1001,9 +1969,14 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool, themePickerOnly .
 			// Favorite controls never select a theme, persist, and sync across windows.
 			aux.MustElement(`[data-theme-favorite="palette:catppuccin"]`).MustClick()
 			awaitPage(aux, `() => JSON.parse(localStorage.getItem('postika:theme-favorites')).includes('palette:catppuccin') && document.documentElement.dataset.palette==='palette:catppuccin' && !!document.querySelector('dialog[open]')`)
-			page.MustElement("[data-theme-picker]").MustClick()
+			page.MustActivate()
+			if err := page.MustElement("[data-theme-picker]").Timeout(5*time.Second).Click(proto.InputMouseButtonLeft, 1); err != nil {
+				snapshot, _ := page.Eval(`() => ({dialogs:[...document.querySelectorAll('dialog[open]')].map(d=>d.id),active:document.activeElement?.outerHTML,text:document.body.innerText.slice(0,800)})`)
+				t.Fatalf("main theme picker could not be clicked: %v, %v", err, snapshot)
+			}
 			await(`() => document.querySelector('[data-theme-favorite="palette:catppuccin"]')?.getAttribute('aria-pressed')==='true'`)
 			page.MustEval(`() => document.querySelector('dialog[open]').close()`)
+			aux.MustActivate()
 			aux.MustElement("[data-theme-favorites-view]").MustClick()
 			awaitPage(aux, `() => document.querySelectorAll('#theme-options [data-theme-id]').length===1`)
 			if err := aux.Reload(); err != nil {

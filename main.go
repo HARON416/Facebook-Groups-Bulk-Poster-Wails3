@@ -3,6 +3,7 @@ package main
 import (
 	"embed"
 	"log"
+	"path/filepath"
 
 	"github.com/wailsapp/wails/v3/pkg/application"
 	"github.com/wailsapp/wails/v3/pkg/events"
@@ -16,18 +17,23 @@ var assets embed.FS
 var appIcon []byte
 
 func main() {
-	handlePlatformUpdateHelper()
-	updater.HandleHelperMode()
+	if !developmentBuild {
+		handlePlatformUpdateHelper()
+		updater.HandleHelperMode()
+	}
+	if err := prepareDevelopmentStorage(); err != nil {
+		log.Fatal(err)
+	}
 	profiles, err := newProfileService("")
 	if err != nil {
 		log.Fatal(err)
 	}
-	app := application.New(application.Options{
-		Name:        "Postika",
+	options := application.Options{
+		Name:        appDisplayName,
 		Description: "Postika desktop application",
 		Icon:        appIcon,
 		SingleInstance: &application.SingleInstanceOptions{
-			UniqueID: "app.postika.desktop",
+			UniqueID: appInstanceID,
 			OnSecondInstanceLaunch: func(_ application.SecondInstanceData) {
 				if window, ok := application.Get().Window.GetByName("postika-main"); ok {
 					if window.IsMinimised() {
@@ -38,10 +44,10 @@ func main() {
 			},
 		},
 		Linux: application.LinuxOptions{
-			// Match the launcher basename so GNOME can associate every window
-			// with Postika's installed icon on Wayland and X11.
-			ApplicationID: "app.postika",
-			ProgramName:   "app.postika",
+			// Production matches its installed launcher; dev has a distinct
+			// identity so GNOME does not group it with the installed app.
+			ApplicationID: appLinuxID,
+			ProgramName:   appLinuxID,
 		},
 		Services: []application.Service{
 			application.NewService(profiles),
@@ -53,7 +59,11 @@ func main() {
 		Mac: application.MacOptions{
 			ApplicationShouldTerminateAfterLastWindowClosed: true,
 		},
-	})
+	}
+	if developmentBuild {
+		options.Windows.WebviewUserDataPath = filepath.Join(profiles.root, "webview")
+	}
+	app := application.New(options)
 	profiles.app = app
 	profiles.monitor = true
 	updates, err := newUpdateService(app, profiles)
@@ -64,7 +74,7 @@ func main() {
 
 	window := app.Window.NewWithOptions(application.WebviewWindowOptions{
 		Name:             "postika-main",
-		Title:            "Postika",
+		Title:            appDisplayName,
 		Width:            1200,
 		Height:           800,
 		MinWidth:         800,

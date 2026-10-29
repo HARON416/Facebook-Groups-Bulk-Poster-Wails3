@@ -88,6 +88,7 @@ msgid "Opening…"
 msgstr "กำลังเปิด..."
 
 #: src/App.svelte
+#: src/components/ItemListingEditor.svelte
 #: src/components/LogMessage.svelte
 msgid "Loading…"
 msgstr "กำลังโหลด..."
@@ -127,6 +128,8 @@ msgstr "ยกเลิกการเลือกทุกกลุ่ม"
 #~ msgstr ""
 
 #: src/App.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ListingFieldSelect.svelte
 msgid "Searching…"
 msgstr "กำลังค้นหา..."
 
@@ -197,6 +200,10 @@ msgstr "เขตเวลา: {0} รักษา Postika ให้เปิด
 #: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FetchedPostCard.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/LocationSearchDialog.svelte
+#: src/components/MarketplaceListings.svelte
 #: src/components/RenameProfileDialog.svelte
 msgid "Cancel"
 msgstr "ยกเลิก"
@@ -339,6 +346,7 @@ msgid "No accounts found"
 msgstr "ไม่พบบัญชี"
 
 #: src/components/AccountDropdown.svelte
+#: src/components/ListingFieldSelect.svelte
 msgid "Try a different name."
 msgstr "ลองใช้ชื่ออื่น"
 
@@ -379,15 +387,19 @@ msgid "Choose a weekday for this post"
 msgstr "เลือกวันในสัปดาห์สำหรับโพสต์นี้"
 
 #. 0: day.description
+#. 0: title(listing)
 #: src/components/DateTimePicker.svelte
+#: src/components/MarketplaceListings.svelte
 msgid "Select {0}"
 msgstr "เลือก {0}"
 
 #: src/components/DateTimePicker.svelte
+#: src/components/ListingDatePicker.svelte
 msgid "Previous month"
 msgstr "เดือนก่อนหน้า"
 
 #: src/components/DateTimePicker.svelte
+#: src/components/ListingDatePicker.svelte
 msgid "Next month"
 msgstr "เดือนหน้า"
 
@@ -450,6 +462,7 @@ msgstr "{0} ถูกย้ายไปตำแหน่ง {1} จาก {2}"
 msgid "Post body"
 msgstr "ข้อความโพสต์"
 
+#: src/components/ItemListingEditor.svelte
 #: src/components/PostComposer.svelte
 #: src/components/PostComposer.svelte
 msgid "Required"
@@ -462,6 +475,7 @@ msgstr "จำเป็น"
 msgid "Images"
 msgstr "รูปภาพ"
 
+#: src/components/ItemListingEditor.svelte
 #: src/components/PostComposer.svelte
 msgid "Choose images"
 msgstr "เลือกภาพ"
@@ -484,6 +498,7 @@ msgid "Add more"
 msgstr "เพิ่มอีก"
 
 #: src/components/FeaturesCard.svelte
+#: src/components/ItemListingEditor.svelte
 #: src/components/PostComposer.svelte
 #: src/components/UsageGuide.svelte
 msgid "Drag images to rearrange. Or focus an image and use Alt + Left / Right."
@@ -498,7 +513,11 @@ msgstr "ภาพที่เลือก"
 msgid "{0}, image {1} of {2}"
 msgstr "{0}, ภาพที่ {1} จาก {2}"
 
+#. 0: photo.file.name
+#. 0: tag
 #. 0: image.file.name
+#: src/components/ItemListingEditor.svelte
+#: src/components/ListingTags.svelte
 #: src/components/PostComposer.svelte
 msgid "Remove {0}"
 msgstr "ลบ {0}"
@@ -994,11 +1013,13 @@ msgid "The browser is closed. It will reopen when you click Post."
 msgstr "เบราว์เซอร์ถูกปิด จะเปิดใหม่เมื่อคุณคลิกโพสต์"
 
 #: src/App.svelte
+#: src/components/ItemListingEditor.svelte
 #: src/components/LogMessage.svelte
 msgid "Checking Facebook login"
 msgstr "กำลังตรวจสอบการเข้าสู่ระบบ Facebook"
 
 #: src/App.svelte
+#: src/components/ItemListingEditor.svelte
 #: src/components/LogMessage.svelte
 msgid "Finish signing in or any verification prompts in Chrome. Your login will be detected automatically."
 msgstr "ทำการลงชื่อเข้าใช้ให้เสร็จหรือทำการยืนยันใด ๆ ใน Chrome การเข้าสู่ระบบของคุณจะถูกตรวจพบโดยอัตโนมัติ"
@@ -1117,8 +1138,10 @@ msgid "{0} shown"
 msgstr "แสดง {0}"
 
 #. 0: selectedGroupIds.length
+#. 0: selected.length
 #. 0: groups.length
 #: src/App.svelte
+#: src/components/MarketplaceListings.svelte
 #: src/components/QueueReview.svelte
 msgid "{0} selected"
 msgstr "เลือก {0}"
@@ -1247,6 +1270,7 @@ msgstr "ธีมสี"
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
 #: src/components/GuidedTour.svelte
+#: src/components/NotificationBar.svelte
 #: src/components/RenameProfileDialog.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UpdateButton.svelte
@@ -1286,6 +1310,7 @@ msgstr "การอัปโหลดภาพล้มเหลวใน Chrom
 msgid "Attaching images…"
 msgstr "กำลังแนบภาพ..."
 
+#: src/components/ItemListingEditor.svelte
 #: src/components/LogMessage.svelte
 msgid "Choose JPG, PNG, WebP, or GIF images"
 msgstr "เลือกภาพ JPG, PNG, WebP หรือ GIF"
@@ -1538,6 +1563,7 @@ msgstr "ไม่มีคำขออัปโหลดรูปภาพสม
 msgid "No fresh image upload request was captured."
 msgstr "ไม่มีคำขออัปโหลดรูปภาพใหม่ที่จับได้"
 
+#: src/components/LocationSearchDialog.svelte
 #: src/components/LogMessage.svelte
 msgid "Opening browser…"
 msgstr "กำลังเปิดเบราว์เซอร์…"
@@ -2099,6 +2125,7 @@ msgid "Edit post {0}"
 msgstr "แก้ไขโพสต์ {0}"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/MarketplaceListings.svelte
 #: src/components/QueueReview.svelte
 #: src/components/QueueReview.svelte
 msgid "Edit"
@@ -2112,6 +2139,7 @@ msgstr "ลบโพสต์ {0}"
 #: src/components/AccountDropdown.svelte
 #: src/components/AccountDropdown.svelte
 #: src/components/FetchedPostCard.svelte
+#: src/components/MarketplaceListings.svelte
 msgid "Delete"
 msgstr "ลบ"
 
@@ -2443,6 +2471,10 @@ msgstr "ติดต่อธุรกิจ"
 
 #: src/components/ContactButton.svelte
 #: src/components/ContactButton.svelte
+#: src/components/MarketplaceVehicles.svelte
+#: src/components/MarketplaceVehicles.svelte
+#: src/components/MarketplaceVehicles.svelte
+#: src/components/MarketplaceVehicles.svelte
 msgid "Other"
 msgstr "อื่น ๆ"
 
@@ -2497,10 +2529,14 @@ msgid "Finish"
 msgstr "เสร็จสิ้น"
 
 #: src/components/GuidedTour.svelte
+#: src/components/ItemListingEditor.svelte
 msgid "Next"
 msgstr "ถัดไป"
 
+#: src/components/CreateListing.svelte
 #: src/components/GuidedTour.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
 msgid "Previous"
 msgstr "ก่อนหน้า"
 
@@ -2562,18 +2598,22 @@ msgstr "ลองค้นหาใหม่หรือล้างตัวก
 msgid "All colors"
 msgstr "ทุกสี"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Red"
 msgstr "แดง"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Orange"
 msgstr "ส้ม"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Yellow"
 msgstr "เหลือง"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Green"
 msgstr "เขียว"
@@ -2586,6 +2626,7 @@ msgstr "เขียวมิ้นต์"
 msgid "Teal"
 msgstr "เขียวอมฟ้า"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Blue"
 msgstr "น้ำเงิน"
@@ -2594,22 +2635,27 @@ msgstr "น้ำเงิน"
 msgid "Navy"
 msgstr "กรมท่า"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Purple"
 msgstr "ม่วง"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Pink"
 msgstr "ชมพู"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Brown"
 msgstr "น้ำตาล"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Beige"
 msgstr "เบจ"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "White"
 msgstr "ขาว"
@@ -2618,6 +2664,7 @@ msgstr "ขาว"
 msgid "Grey"
 msgstr "เทา"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Black"
 msgstr "ดำ"
@@ -2637,3 +2684,1364 @@ msgstr "มืด"
 #: src/components/ThemePicker.svelte
 msgid "Peach"
 msgstr "พีช"
+
+#: src/Workspace.svelte
+#: src/components/MarketplaceToolbar.svelte
+msgid "Marketplace"
+msgstr "ตลาดซื้อขาย"
+
+#. 0: marketplaceTitle
+#: src/Workspace.svelte
+msgid "{0} · Postika"
+msgstr "{0} · Postika"
+
+#: src/components/MarketplaceToolbar.svelte
+msgid "All listing types"
+msgstr "ประกาศทุกประเภท"
+
+#: src/components/MarketplaceToolbar.svelte
+msgid "Items for sale"
+msgstr "สินค้าสำหรับขาย"
+
+#: src/components/MarketplaceToolbar.svelte
+msgid "Vehicles for sale"
+msgstr "ยานพาหนะสำหรับขาย"
+
+#: src/components/MarketplaceToolbar.svelte
+msgid "Homes for rent or sale"
+msgstr "บ้านให้เช่าหรือขาย"
+
+#: src/components/MarketplaceToolbar.svelte
+#: src/components/MarketplaceToolbar.svelte
+msgid "Listing type"
+msgstr "ประเภทประกาศ"
+
+#~ msgid "<0/> Create new listing"
+#~ msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/MarketplaceToolbar.svelte
+msgid "Create new listing"
+msgstr "สร้างประกาศใหม่"
+
+#: src/components/CreateListing.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Item for sale"
+msgstr "สินค้าสำหรับขาย"
+
+#: src/components/CreateListing.svelte
+msgid "Create a single listing for one or more items to sell."
+msgstr "สร้างประกาศเดียวสำหรับสินค้าที่ต้องการขายหนึ่งรายการหรือหลายรายการ"
+
+#: src/components/CreateListing.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Vehicle for sale"
+msgstr "ยานพาหนะสำหรับขาย"
+
+#: src/components/CreateListing.svelte
+msgid "Sell a car, truck or other type of vehicle."
+msgstr "ขายรถยนต์ รถบรรทุก หรือยานพาหนะประเภทอื่น"
+
+#: src/components/CreateListing.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Home for sale or rent"
+msgstr "บ้านสำหรับขายหรือให้เช่า"
+
+#: src/components/CreateListing.svelte
+msgid "List a house or apartment for sale or rent."
+msgstr "ลงประกาศขายหรือให้เช่าบ้านหรืออพาร์ตเมนต์"
+
+#: src/components/CreateListing.svelte
+msgid "Choose listing type"
+msgstr "เลือกประเภทประกาศ"
+
+#~ msgid "Save draft"
+#~ msgstr "บันทึกฉบับร่าง"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Listing to Marketplace"
+msgstr "ลงประกาศบน Marketplace"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Photos"
+msgstr "รูปภาพ"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Add photos"
+msgstr "เพิ่มรูปภาพ"
+
+#: src/components/ItemListingEditor.svelte
+msgid "or drag and drop"
+msgstr "หรือลากแล้ววาง"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Category"
+msgstr "หมวดหมู่"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Condition"
+msgstr "สภาพสินค้า"
+
+#~ msgid "Title<0/>"
+#~ msgstr ""
+
+#~ msgid "Price<0/>"
+#~ msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "More details"
+msgstr "รายละเอียดเพิ่มเติม"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Attract more interest by including more details."
+msgstr "ดึงดูดความสนใจมากขึ้นด้วยการเพิ่มรายละเอียด"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Availability"
+msgstr "ความพร้อมจำหน่าย"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/MarketplaceAvailability.svelte
+msgid "List as Single Item"
+msgstr "ลงประกาศเป็นสินค้าชิ้นเดียว"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/LocationSearchDialog.svelte
+#: src/components/MarketplaceListings.svelte
+msgid "Location"
+msgstr "ตำแหน่งที่ตั้ง"
+
+#~ msgid "Description<0/>"
+#~ msgstr ""
+
+#~ msgid "Product tags<0/><1>Optional. Limit: 20.</1>"
+#~ msgstr ""
+
+#~ msgid "SKU<0/><1>Optional. Only visible to you.</1>"
+#~ msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "You can add up to 10 photos."
+msgstr "คุณสามารถเพิ่มรูปภาพได้สูงสุด 10 รูป"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Be as descriptive as possible."
+msgstr "อธิบายให้ละเอียดที่สุด"
+
+#~ msgid "Draft saved."
+#~ msgstr "บันทึกฉบับร่างแล้ว"
+
+#~ msgid "Could not save draft. Please try again."
+#~ msgstr "ไม่สามารถบันทึกฉบับร่างได้ โปรดลองอีกครั้ง"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Could not load draft. Please try again."
+msgstr "ไม่สามารถโหลดฉบับร่างได้ โปรดลองอีกครั้ง"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Your listing preview"
+msgstr "ตัวอย่างประกาศของคุณ"
+
+#: src/components/ItemListingEditor.svelte
+msgid "As you create your listing, you can preview how it will appear on Marketplace."
+msgstr "ขณะสร้างประกาศ คุณสามารถดูตัวอย่างว่าจะแสดงบน Marketplace อย่างไร"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Title"
+msgstr "ชื่อประกาศ"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/MarketplaceListings.svelte
+msgid "Price"
+msgstr "ราคา"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Description will appear here."
+msgstr "คำอธิบายจะปรากฏที่นี่"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Details"
+msgstr "รายละเอียด"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Seller information"
+msgstr "ข้อมูลผู้ขาย"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Preview"
+msgstr "ตัวอย่าง"
+
+#: src/components/ListingFieldSelect.svelte
+msgid "Options will be added later."
+msgstr "ตัวเลือกจะถูกเพิ่มในภายหลัง"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Description"
+msgstr "คำอธิบาย"
+
+#: src/components/ListingTags.svelte
+msgid "Product tags"
+msgstr "แท็กสินค้า"
+
+#: src/components/ListingTags.svelte
+msgid "Optional. Limit: 20."
+msgstr "ไม่บังคับ สูงสุด 20 รายการ"
+
+#: src/components/ItemListingEditor.svelte
+msgid "SKU"
+msgstr "SKU"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Optional. Only visible to you."
+msgstr "ไม่บังคับ มีเพียงคุณเท่านั้นที่มองเห็น"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Home & Garden"
+msgstr "บ้านและสวน"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Entertainment"
+msgstr "ความบันเทิง"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Clothing & Accessories"
+msgstr "เสื้อผ้าและเครื่องประดับ"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Family"
+msgstr "ครอบครัว"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Electronics"
+msgstr "อิเล็กทรอนิกส์"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Hobbies"
+msgstr "งานอดิเรก"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Classifieds"
+msgstr "ประกาศย่อย"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Shipping available"
+msgstr "มีบริการจัดส่ง"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Tools"
+msgstr "เครื่องมือ"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Furniture"
+msgstr "เฟอร์นิเจอร์"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Household"
+msgstr "ของใช้ในบ้าน"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Garden"
+msgstr "สวน"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Appliances"
+msgstr "เครื่องใช้ไฟฟ้า"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Video Games"
+msgstr "วิดีโอเกม"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Books, Movies & Music"
+msgstr "หนังสือ ภาพยนตร์ และดนตรี"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Bags & Luggage"
+msgstr "กระเป๋าและสัมภาระ"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Women's clothing & shoes"
+msgstr "เสื้อผ้าและรองเท้าสตรี"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Men's clothing & shoes"
+msgstr "เสื้อผ้าและรองเท้าบุรุษ"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Jewelry & Accessories"
+msgstr "อัญมณีและเครื่องประดับ"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Health & beauty"
+msgstr "สุขภาพและความงาม"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Pet Supplies"
+msgstr "ของใช้สัตว์เลี้ยง"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Baby & kids"
+msgstr "ทารกและเด็ก"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Toys & Games"
+msgstr "ของเล่นและเกม"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Electronics & computers"
+msgstr "อิเล็กทรอนิกส์และคอมพิวเตอร์"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Mobile phones"
+msgstr "โทรศัพท์มือถือ"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Bicycles"
+msgstr "จักรยาน"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Arts & Crafts"
+msgstr "ศิลปะและงานฝีมือ"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Sports & Outdoors"
+msgstr "กีฬาและกิจกรรมกลางแจ้ง"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Auto parts"
+msgstr "อะไหล่รถยนต์"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Musical Instruments"
+msgstr "เครื่องดนตรี"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Antiques & Collectibles"
+msgstr "ของเก่าและของสะสม"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Garage Sale"
+msgstr "ขายของมือสองที่บ้าน"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Miscellaneous"
+msgstr "เบ็ดเตล็ด"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Vehicles"
+msgstr "ยานพาหนะ"
+
+#: src/components/MarketplaceConditions.svelte
+msgid "New"
+msgstr "ใหม่"
+
+#: src/components/MarketplaceConditions.svelte
+msgid "Used - Like New"
+msgstr "มือสอง - เหมือนใหม่"
+
+#: src/components/MarketplaceConditions.svelte
+msgid "Used - Good"
+msgstr "มือสอง - สภาพดี"
+
+#: src/components/MarketplaceConditions.svelte
+msgid "Used - Fair"
+msgstr "มือสอง - สภาพพอใช้"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Public"
+msgstr "สาธารณะ"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Learn more about meetup preferences"
+msgstr "เรียนรู้เพิ่มเติม: การตั้งค่าการนัดพบ"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Public meetup"
+msgstr "นัดพบในที่สาธารณะ"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Meet at a public location."
+msgstr "นัดพบกันในสถานที่สาธารณะ"
+
+#: src/components/ItemListingEditor.svelte
+msgid "See Marketplace meetup safety tips"
+msgstr "ดูเคล็ดลับความปลอดภัย (Marketplace)"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Door pickup"
+msgstr "รับสินค้าที่ประตู"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Buyer picks up at your door."
+msgstr "ผู้ซื้อมารับสินค้าที่ประตูบ้านคุณ"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Door dropoff"
+msgstr "ส่งสินค้าถึงประตู"
+
+#: src/components/ItemListingEditor.svelte
+msgid "You drop off at buyer's door."
+msgstr "คุณนำสินค้าไปส่งที่ประตูบ้านผู้ซื้อ"
+
+#: src/components/ItemListingEditor.svelte
+msgid "See safety tips"
+msgstr "ดูเคล็ดลับความปลอดภัย"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Meetup preferences"
+msgstr "การตั้งค่าการนัดพบ"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Buyers will be able to see your preferences on your listing."
+msgstr "ผู้ซื้อจะเห็นการตั้งค่าของคุณในประกาศ"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Learn more"
+msgstr "เรียนรู้เพิ่มเติม"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Promote listing after publish"
+msgstr "โปรโมตหลังเผยแพร่"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Add a step to promote your listing after it publishes, to help you reach more potential buyers by turning it into an ad."
+msgstr "เพิ่มขั้นตอนโปรโมตหลังเผยแพร่เพื่อเข้าถึงผู้ซื้อที่สนใจมากขึ้น โดยเปลี่ยนประกาศเป็นโฆษณา"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Hide from friends"
+msgstr "ซ่อนจากเพื่อน"
+
+#: src/components/ItemListingEditor.svelte
+msgid "This listing is still public. If you hide this listing from friends, they won't see it in most cases."
+msgstr "ประกาศนี้ยังคงเป็นสาธารณะ หากคุณซ่อนจากเพื่อน ในกรณีส่วนใหญ่เพื่อนจะไม่เห็นประกาศนี้"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Learn more about hiding listings from friends"
+msgstr "เรียนรู้เพิ่มเติม: ซ่อนจากเพื่อน"
+
+#~ msgid "Marketplace items are public and can be seen by anyone on or off Facebook."
+#~ msgstr "ประกาศใน Marketplace เป็นสาธารณะและทุกคนสามารถเห็นได้ทั้งในและนอก Facebook"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Commerce Policies"
+msgstr "นโยบายการค้า"
+
+#~ msgid "Backspace"
+#~ msgstr ""
+
+#~ msgid "Files"
+#~ msgstr ""
+
+#~ msgid "Alt+ArrowLeft Alt+ArrowRight"
+#~ msgstr ""
+
+#: src/components/MarketplaceAvailability.svelte
+msgid "If you're selling one item, show \"Only one\" on your listing."
+msgstr "หากคุณขายสินค้าหนึ่งชิ้น ให้แสดง “มีชิ้นเดียว” ในประกาศของคุณ"
+
+#: src/components/MarketplaceAvailability.svelte
+msgid "List as In Stock"
+msgstr "ลงประกาศว่ามีสินค้าในสต็อก"
+
+#: src/components/MarketplaceAvailability.svelte
+msgid "If you're selling more than one item, show \"In Stock\" on your listing."
+msgstr "หากคุณขายสินค้ามากกว่าหนึ่งชิ้น ให้แสดง “มีสินค้าในสต็อก” ในประกาศของคุณ"
+
+#: src/components/ListingTags.svelte
+msgid "Add tag"
+msgstr "เพิ่มแท็ก"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Tags"
+msgstr "แท็ก"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Enter a town or city"
+msgstr "ป้อนชื่อเมือง"
+
+#~ msgid "Facebook opened."
+#~ msgstr "เปิด Facebook แล้ว"
+
+#~ msgid "Connect location search"
+#~ msgstr "เชื่อมต่อการค้นหาตำแหน่ง"
+
+#~ msgid "Postika needs to open Facebook for this account to prepare location search. If Facebook asks you to log in, complete that step in the browser."
+#~ msgstr "Postika ต้องเปิด Facebook ด้วยบัญชีนี้เพื่อเตรียมการค้นหาตำแหน่ง หาก Facebook ขอให้เข้าสู่ระบบ ให้ทำขั้นตอนนั้นในเบราว์เซอร์"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/LocationSearchDialog.svelte
+msgid "Continue to Facebook"
+msgstr "ไปที่ Facebook"
+
+#: src/components/LocationSearchDialog.svelte
+msgid "We need to open Facebook to set up location search. If Facebook asks you to log in, complete that step in the browser."
+msgstr "เราจำเป็นต้องเปิด Facebook เพื่อตั้งค่าการค้นหาตำแหน่ง หาก Facebook ขอให้เข้าสู่ระบบ ให้ทำขั้นตอนนั้นในเบราว์เซอร์"
+
+#~ msgid "You’re logged in. Marketplace is open."
+#~ msgstr "คุณเข้าสู่ระบบแล้ว Marketplace เปิดอยู่"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Facebook was closed. Continue to Facebook to try again."
+msgstr "Facebook ถูกปิด ไปที่ Facebook เพื่อลองอีกครั้ง"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Preparing Marketplace…"
+msgstr "กำลังเตรียม Marketplace…"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Could not expand More details. Please try again."
+msgstr "ไม่สามารถขยายรายละเอียดเพิ่มเติมได้ โปรดลองอีกครั้ง"
+
+#: src/components/ItemListingEditor.svelte
+msgid "No locations found."
+msgstr "ไม่พบตำแหน่ง"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Location search is ready."
+msgstr "การค้นหาตำแหน่งพร้อมแล้ว"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Reconnect to Facebook to search locations."
+msgstr "เชื่อมต่อ Facebook อีกครั้งเพื่อค้นหาตำแหน่ง"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Could not search locations. Please try again."
+msgstr "ไม่สามารถค้นหาตำแหน่งได้ โปรดลองอีกครั้ง"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/MarketplaceListings.svelte
+msgid "Try again"
+msgstr "ลองอีกครั้ง"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Please enter a valid location."
+msgstr "โปรดป้อนตำแหน่งที่ถูกต้อง"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Vehicle type"
+msgstr "ประเภทยานพาหนะ"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Photo upload"
+msgstr "อัปโหลดรูปภาพ"
+
+#: src/components/ItemListingEditor.svelte
+msgid "You can add up to 20 photos."
+msgstr "คุณสามารถเพิ่มรูปภาพได้สูงสุด 20 รูป"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "About this vehicle"
+msgstr "เกี่ยวกับยานพาหนะนี้"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Help buyers know more about the vehicle you're listing."
+msgstr "ช่วยให้ผู้ซื้อทราบข้อมูลเพิ่มเติมเกี่ยวกับยานพาหนะที่คุณลงขาย"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Year"
+msgstr "ปี"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Make"
+msgstr "ยี่ห้อ"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Model"
+msgstr "รุ่น"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Enter your price for this vehicle."
+msgstr "ป้อนราคาของยานพาหนะนี้"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Tell buyers anything that you haven't had the chance to include yet about your vehicle."
+msgstr "แจ้งข้อมูลเพิ่มเติมเกี่ยวกับยานพาหนะที่คุณยังไม่ได้ระบุให้ผู้ซื้อทราบ"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Seller's description"
+msgstr "คำอธิบายของผู้ขาย"
+
+#: src/components/ListingLocationPreview.svelte
+#: src/components/ListingLocationPreview.svelte
+msgid "Location is approximate"
+msgstr "ตำแหน่งโดยประมาณ"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Car/Truck"
+msgstr "รถยนต์/รถบรรทุก"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Motorcycle"
+msgstr "รถจักรยานยนต์"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Powersport"
+msgstr "ยานพาหนะกีฬาและนันทนาการ"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "RV/Camper"
+msgstr "รถบ้าน/รถแคมป์ปิ้ง"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Trailer"
+msgstr "รถพ่วง"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Boat"
+msgstr "เรือ"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Commercial/Industrial"
+msgstr "เชิงพาณิชย์/อุตสาหกรรม"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Mileage"
+msgstr "ระยะทางที่วิ่ง"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Vehicle appearance and features"
+msgstr "รูปลักษณ์และคุณสมบัติของยานพาหนะ"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Add more about what your vehicle looks like and the features that it has."
+msgstr "เพิ่มข้อมูลเกี่ยวกับรูปลักษณ์และคุณสมบัติของยานพาหนะของคุณ"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Body style"
+msgstr "รูปแบบตัวถัง"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Exterior color"
+msgstr "สีภายนอก"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Interior color"
+msgstr "สีภายใน"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Vehicle details"
+msgstr "รายละเอียดยานพาหนะ"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Include more details to help connect interested buyers to your vehicle."
+msgstr "เพิ่มรายละเอียดเพื่อช่วยให้ผู้ซื้อที่สนใจพบยานพาหนะของคุณ"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "This vehicle has a clean title."
+msgstr "ยานพาหนะนี้มีเอกสารกรรมสิทธิ์ที่ไม่มีประวัติความเสียหายร้ายแรง"
+
+#: src/components/ItemListingEditor.svelte
+msgid "This vehicle has no significant damage or persistent problems."
+msgstr "ยานพาหนะนี้ไม่มีความเสียหายรุนแรงหรือปัญหาเรื้อรัง"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Vehicle condition"
+msgstr "สภาพยานพาหนะ"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Fuel type"
+msgstr "ประเภทเชื้อเพลิง"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Transmission"
+msgstr "ระบบเกียร์"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ListingVideo.svelte
+msgid "Video preview"
+msgstr "ตัวอย่างวิดีโอ"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Automatic transmission"
+msgstr "เกียร์อัตโนมัติ"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ListingVideo.svelte
+msgid "Videos"
+msgstr "วิดีโอ"
+
+#: src/components/ListingVideo.svelte
+#: src/components/ListingVideo.svelte
+msgid "Add video"
+msgstr "เพิ่มวิดีโอ"
+
+#: src/components/ListingVideo.svelte
+#: src/components/ListingVideo.svelte
+#: src/components/ListingVideo.svelte
+#: src/components/ListingVideo.svelte
+msgid "Remove video"
+msgstr "นำวิดีโอออก"
+
+#~ msgid "Checking video…"
+#~ msgstr "กำลังตรวจสอบวิดีโอ…"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Choose a supported video up to 1 minute long."
+msgstr "เลือกวิดีโอรูปแบบที่รองรับซึ่งมีความยาวไม่เกิน 1 นาที"
+
+#: src/components/ListingVideo.svelte
+msgid "(1 minute max)"
+msgstr "(สูงสุด 1 นาที)"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Gold"
+msgstr "สีทอง"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Gray"
+msgstr "สีเทา"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Silver"
+msgstr "สีเงิน"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Charcoal"
+msgstr "สีเทาถ่าน"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Off white"
+msgstr "สีขาวนวล"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Tan"
+msgstr "สีน้ำตาลอ่อน"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Burgundy"
+msgstr "สีเบอร์กันดี"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Turquoise"
+msgstr "สีเทอร์ควอยซ์"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Coupe"
+msgstr "คูเป้"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Truck"
+msgstr "รถบรรทุก"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Sedan"
+msgstr "ซีดาน"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Hatchback"
+msgstr "แฮทช์แบ็ก"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "SUV"
+msgstr "เอสยูวี"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Convertible"
+msgstr "รถเปิดประทุน"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Wagon"
+msgstr "สเตชันแวกอน"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Minivan"
+msgstr "มินิแวน"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Small Car"
+msgstr "รถขนาดเล็ก"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Excellent"
+msgstr "ยอดเยี่ยม"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Very good"
+msgstr "ดีมาก"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Good"
+msgstr "ดี"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Fair"
+msgstr "พอใช้"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Poor"
+msgstr "ไม่ดี"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Diesel"
+msgstr "ดีเซล"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Electric"
+msgstr "ไฟฟ้า"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Gasoline"
+msgstr "เบนซิน (Gasoline)"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Flex"
+msgstr "เชื้อเพลิงยืดหยุ่น"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Hybrid"
+msgstr "ไฮบริด"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Petrol"
+msgstr "เบนซิน (Petrol)"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Plug-in hybrid"
+msgstr "ปลั๊กอินไฮบริด"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Manual transmission"
+msgstr "เกียร์ธรรมดา"
+
+#: src/components/ItemListingEditor.svelte
+msgid "You can add up to 50 photos."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Property type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Number of bedrooms"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Number of bathrooms"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Address"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Property description"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Include details like utilities, amenities, any deposits needed and when it's available."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Advanced Details"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Optional"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Property square feet"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Laundry type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Parking type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Air conditioning type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Heating type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "/ Month"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Rental Location"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "New home listing"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Rent"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "For Sale"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Apartment"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "House"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Townhouse"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "In-unit laundry"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Laundry in building"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Laundry available"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+#: src/components/MarketplaceHomes.svelte
+#: src/components/MarketplaceHomes.svelte
+#: src/components/MarketplaceHomes.svelte
+msgid "None"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Garage parking"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Street parking"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Off-street parking"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Parking available"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Central AC"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "AC available"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Central heating"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Electric heating"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Gas heating"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Radiator heating"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Heating available"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Enter an address"
+msgstr ""
+
+#: src/components/ListingLocationPreview.svelte
+msgid "View listing location"
+msgstr ""
+
+#: src/components/ListingLocationPreview.svelte
+msgid "Map preview unavailable."
+msgstr ""
+
+#: src/components/ListingLocationPreview.svelte
+msgid "View Map Info"
+msgstr ""
+
+#: src/components/ListingLocationPreview.svelte
+msgid "View map image"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Rental type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "This is a private room in a shared property."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Price per month"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Rental description"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Date available"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Cat friendly"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Dog friendly"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Date available:"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "How many people live here?"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Bathroom Type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Is this room furnished?"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Room Details"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Property Details"
+msgstr ""
+
+#~ msgid "Is this room furnished? <0/>"
+#~ msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Furnished"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Private"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Shared"
+msgstr ""
+
+#: src/components/ListingDatePicker.svelte
+msgid "Clear date"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Test"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Save"
+msgstr ""
+
+#. 0: maxPhotos
+#: src/components/ItemListingEditor.svelte
+msgid "You may only select a maximum of {0} photos."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Marketplace items are public and can be seen by anyone on or off Facebook. Items like animals, drugs, weapons, counterfeits, and other items that infringe intellectual property aren't allowed on Marketplace."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ListingVideo.svelte
+msgid "Loading video…"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Loading video"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Your video must finish loading before proceeding."
+msgstr ""
+
+#~ msgid "Video added. Preview is unavailable in this app."
+#~ msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Could not load video thumbnail."
+msgstr ""
+
+#~ msgid "Finish signing in or any verification prompts in Chrome. Media will be added automatically."
+#~ msgstr ""
+
+#~ msgid "Media sent to Facebook. Review the listing in Chrome."
+#~ msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Test cancelled."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Add at least one photo or video."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Finish signing in or any verification prompts in Chrome. Your listing will be filled automatically."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Listing filled in Facebook. Review it in Chrome."
+msgstr ""
+
+#: src/components/MarketplaceToolbar.svelte
+msgid "Publish selected<0/>"
+msgstr ""
+
+#: src/components/CreateListing.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/MarketplaceListings.svelte
+msgid "Listing saved."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Save listing"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Untitled listing"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Item"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Vehicle"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Could not load saved listings. Please try again."
+msgstr ""
+
+#~ msgid "Listing duplicated."
+#~ msgstr ""
+
+#~ msgid "Could not duplicate listing. Please try again."
+#~ msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Listing deleted."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Could not delete listing. Please try again."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+#: src/components/MarketplaceListings.svelte
+msgid "Saved listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Save listings here, then select them when you’re ready to publish."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Search saved listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Search listings"
+msgstr ""
+
+#. 0: chosen.length
+#: src/components/MarketplaceListings.svelte
+msgid "Selected listings ({0})"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Back to listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Group selection and publishing will be added next. Your listings are saved; nothing has been posted to Facebook."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Clear selection"
+msgstr ""
+
+#. 0: visible.length
+#: src/components/MarketplaceListings.svelte
+msgid "{0} listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Loading saved listings…"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "No saved listings yet"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Select an account to see its listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Create a listing and save it. It will appear here, ready to select later."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Your listings stay separate for each account."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "No matching listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Try another search or listing type."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Select all visible listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Listing"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Type"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Status"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Updated"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Actions"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Draft"
+msgstr ""
+
+#~ msgid "More actions for {0}"
+#~ msgstr ""
+
+#~ msgid "Duplicate"
+#~ msgstr ""
+
+#~ msgid "More"
+#~ msgstr ""
+
+#. 0: title(listing)
+#: src/components/MarketplaceListings.svelte
+msgid "Delete “{0}” and its saved media?"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Delete listing"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+#: src/components/MarketplaceListings.svelte
+msgid "Saved Marketplace listings"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Could not save listing. Please try again."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Today"
+msgstr ""
+
+#. 0: title(listing)
+#: src/components/MarketplaceListings.svelte
+msgid "Edit {0}"
+msgstr ""
+
+#. 0: title(listing)
+#: src/components/MarketplaceListings.svelte
+msgid "Delete {0}"
+msgstr ""

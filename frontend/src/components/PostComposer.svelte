@@ -6,6 +6,7 @@
   import FacebookPageDialog from './FacebookPageDialog.svelte';
   import FetchedPostCard from './FetchedPostCard.svelte';
   import { reorder } from '../lib/reorder';
+  import { overlappingTarget } from '../lib/drag-target';
   import { snapshotImage, type DraftImage } from '../lib/drafts';
   import type { FacebookPagePost } from '../../bindings/postika/models';
 
@@ -128,15 +129,19 @@
 
   function updateTarget() {
     if (!pointer || !draggedId) return;
-    const tile = document.elementFromPoint(pointer.x, pointer.y)?.closest<HTMLElement>('[data-image-target]');
-    const targetId = tile?.dataset.imageTarget;
-    if (!tile || !targetId || targetId === draggedId) {
-      dropTarget = null;
-      return;
-    }
-    const bounds = tile.getBoundingClientRect();
-    dropTarget = targetId;
-    dropSide = tile.dataset.imageEnd !== undefined || pointer.x > bounds.left + bounds.width / 2 ? 'after' : 'before';
+    dropTarget = null;
+    const area = pointer.button.closest('.previews');
+    if (!area) return;
+    const scroll = area.closest('[data-step-scroll]')?.getBoundingClientRect();
+    const clip = { left: Math.max(0, scroll?.left ?? 0), top: Math.max(0, scroll?.top ?? 0), right: Math.min(window.innerWidth, scroll?.right ?? window.innerWidth), bottom: Math.min(window.innerHeight, scroll?.bottom ?? window.innerHeight) };
+    const left = pointer.x - pointer.offsetX, top = pointer.y - pointer.offsetY;
+    const targets = Array.from(area.querySelectorAll<HTMLElement>('[data-image-target]'))
+      .filter(tile => tile.dataset.imageTarget !== draggedId)
+      .map(tile => ({ tile, bounds: tile.getBoundingClientRect() }));
+    const target = overlappingTarget({ left, top, right: left + pointer.size, bottom: top + pointer.size }, targets, clip);
+    if (!target) return;
+    dropTarget = target.tile.dataset.imageTarget ?? null;
+    dropSide = target.tile.dataset.imageEnd !== undefined || images.findIndex(image => image.id === draggedId) < images.findIndex(image => image.id === dropTarget) ? 'after' : 'before';
   }
 
   function renderDrag() {
@@ -370,17 +375,17 @@
   .fetched-posts { display: grid; gap: var(--ui-space); list-style: none; }
   .fetched-post-card { min-width: 0; }
   .no-fetched-posts { color: var(--text-secondary); font-size: var(--ui-body-size); line-height: 1.6; }
-  .image-drop-zone { border-radius: 1rem; transition: background-color 0.2s, outline-color 0.2s; }
+  .image-drop-zone { border-radius: 1rem; transition: background-color var(--motion-state) var(--motion-ease), outline-color var(--motion-state) var(--motion-ease); }
   .image-drop-zone:global(.file-drop-target-active) { outline: 0.2rem dashed var(--accent); outline-offset: 0.7rem; background: var(--surface-active); }
   .image-drop-zone:global(.file-drop-target-active) .image-selector { border-color: var(--accent); background: var(--surface-active); }
   .drop-help { color: var(--text-muted); font-size: var(--ui-small-size); margin-bottom: 1rem; }
   .field-heading, .preview-heading { display: flex; align-items: center; justify-content: space-between; gap: 1.2rem; }
   .field-heading { margin-bottom: 1rem; font-size: var(--ui-body-size); color: var(--text-muted); }
   .field-label { font-size: 1.4rem; font-weight: 550; color: var(--text); }
-  .editor { overflow: hidden; border: 0.2rem solid var(--border-strong); border-radius: 1rem; background: var(--surface); transition: border-color 0.2s, box-shadow 0.2s; }
+  .editor { overflow: hidden; border: 0.2rem solid var(--border-strong); border-radius: 1rem; background: var(--surface); transition: border-color var(--motion-state) var(--motion-ease), box-shadow var(--motion-state) var(--motion-ease); }
   .editor:focus-within { border-color: var(--accent); box-shadow: 0 0 0 0.3rem var(--accent-faint); }
   .file-input { display: none; }
-  .image-selector { display: flex; width: 100%; min-height: 15rem; padding: 2.4rem; align-items: center; justify-content: center; flex-direction: column; gap: 0.9rem; border: 0.2rem dashed var(--border-strong); border-radius: 1rem; background: var(--surface); color: var(--text-secondary); cursor: pointer; font-size: var(--ui-body-size); transition: border-color 0.2s, background-color 0.2s; }
+  .image-selector { display: flex; width: 100%; min-height: 15rem; padding: 2.4rem; align-items: center; justify-content: center; flex-direction: column; gap: 0.9rem; border: 0.2rem dashed var(--border-strong); border-radius: 1rem; background: var(--surface); color: var(--text-secondary); cursor: pointer; font-size: var(--ui-body-size); transition: border-color var(--motion-state) var(--motion-ease), background-color var(--motion-state) var(--motion-ease); }
   .image-selector:hover { border-color: var(--accent); background: var(--surface-active); }
   button:focus-visible { outline: 0.2rem solid var(--accent); outline-offset: 0.4rem; }
   .image-icon { display: grid; place-items: center; width: 3.6rem; height: 3.6rem; margin-bottom: 0.3rem; border-radius: 50%; background: var(--surface-active); color: var(--accent); }
@@ -394,9 +399,7 @@
   .previews { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.6rem; list-style: none; }
   .previews li { position: relative; min-width: 0; }
   .previews li.drag-source { opacity: 0.45; }
-  .previews li.drop-before::before, .previews li.drop-after::after { position: absolute; top: 0; bottom: 0; width: 0.3rem; border-radius: 0.2rem; background: var(--accent); content: ''; }
-  .previews li.drop-before::before { left: -0.95rem; }
-  .previews li.drop-after::after { right: -0.95rem; }
+  .previews li.drop-before::after, .previews li.drop-after::after { content: ''; position: absolute; inset: 0; z-index: 1001; border: .4rem dashed var(--accent); border-radius: 1.2rem; background: color-mix(in srgb, var(--accent) 12%, transparent); pointer-events: none; }
   .image-drag { display: block; width: 100%; height: 100%; border: 0; background: transparent; cursor: grab; touch-action: none; user-select: none; }
   .drag-preview { position: fixed; top: 0; left: 0; z-index: 1000; overflow: hidden; border-radius: 1.2rem; pointer-events: none; will-change: transform; box-shadow: 0 1rem 3rem var(--shadow-strong); }
   .image-drag:active { cursor: grabbing; }
@@ -407,7 +410,7 @@
   .thumbnail { position: relative; aspect-ratio: 1; overflow: hidden; border-radius: 1.2rem; background: var(--surface-hover); }
   .preview-placeholder { aspect-ratio: 1; border-radius: 1.2rem; background: var(--surface-hover); }
   img { display: block; width: 100%; height: 100%; object-fit: cover; }
-  .remove-image { position: absolute; top: 0.8rem; right: 0.8rem; display: grid; place-items: center; width: 2.8rem; height: 2.8rem; border: 0; border-radius: 0.5rem; background: var(--image-overlay); backdrop-filter: blur(0.6rem); color: var(--on-image); cursor: pointer; transition: background-color 0.2s; }
+  .remove-image { position: absolute; top: 0.8rem; right: 0.8rem; display: grid; place-items: center; width: 2.8rem; height: 2.8rem; border: 0; border-radius: 0.5rem; background: var(--image-overlay); backdrop-filter: blur(0.6rem); color: var(--on-image); cursor: pointer; transition: background-color var(--motion-fast) var(--motion-ease); }
   .remove-image:hover, .remove-image:focus-visible { background: var(--danger-solid); }
   .remove-image:focus-visible { outline-offset: -0.3rem; }
   @media (max-width: 540px) {

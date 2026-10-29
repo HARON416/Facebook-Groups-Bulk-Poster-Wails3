@@ -88,6 +88,7 @@ msgid "Opening…"
 msgstr "খোলা হচ্ছে…"
 
 #: src/App.svelte
+#: src/components/ItemListingEditor.svelte
 #: src/components/LogMessage.svelte
 msgid "Loading…"
 msgstr "লোড হচ্ছে…"
@@ -127,6 +128,8 @@ msgstr "সব গ্রুপের নির্বাচন সরান"
 #~ msgstr ""
 
 #: src/App.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ListingFieldSelect.svelte
 msgid "Searching…"
 msgstr "অনুসন্ধান করা হচ্ছে…"
 
@@ -197,6 +200,10 @@ msgstr "টাইম জোন: {0}. পোস্টিকা খোলা র�
 #: src/components/DeleteProfileDialog.svelte
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FetchedPostCard.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/LocationSearchDialog.svelte
+#: src/components/MarketplaceListings.svelte
 #: src/components/RenameProfileDialog.svelte
 msgid "Cancel"
 msgstr "বাতিল"
@@ -339,6 +346,7 @@ msgid "No accounts found"
 msgstr "কোনো অ্যাকাউন্ট পাওয়া যায়নি"
 
 #: src/components/AccountDropdown.svelte
+#: src/components/ListingFieldSelect.svelte
 msgid "Try a different name."
 msgstr "অন্য নাম দিয়ে চেষ্টা করুন।"
 
@@ -379,15 +387,19 @@ msgid "Choose a weekday for this post"
 msgstr "এই পোস্টের জন্য একটি সপ্তাহের দিন নির্বাচন করুন"
 
 #. 0: day.description
+#. 0: title(listing)
 #: src/components/DateTimePicker.svelte
+#: src/components/MarketplaceListings.svelte
 msgid "Select {0}"
 msgstr "{0} নির্বাচন করুন"
 
 #: src/components/DateTimePicker.svelte
+#: src/components/ListingDatePicker.svelte
 msgid "Previous month"
 msgstr "পূর্ববর্তী মাস"
 
 #: src/components/DateTimePicker.svelte
+#: src/components/ListingDatePicker.svelte
 msgid "Next month"
 msgstr "পরবর্তী মাস"
 
@@ -450,6 +462,7 @@ msgstr "{0} {2}-এর {1} অবস্থানে স্থানান্ত�
 msgid "Post body"
 msgstr "পোস্টের লেখা"
 
+#: src/components/ItemListingEditor.svelte
 #: src/components/PostComposer.svelte
 #: src/components/PostComposer.svelte
 msgid "Required"
@@ -462,6 +475,7 @@ msgstr "আবশ্যক"
 msgid "Images"
 msgstr "ছবি"
 
+#: src/components/ItemListingEditor.svelte
 #: src/components/PostComposer.svelte
 msgid "Choose images"
 msgstr "চিত্র নির্বাচন করুন"
@@ -484,6 +498,7 @@ msgid "Add more"
 msgstr "আরও যোগ করুন"
 
 #: src/components/FeaturesCard.svelte
+#: src/components/ItemListingEditor.svelte
 #: src/components/PostComposer.svelte
 #: src/components/UsageGuide.svelte
 msgid "Drag images to rearrange. Or focus an image and use Alt + Left / Right."
@@ -498,7 +513,11 @@ msgstr "নির্বাচিত চিত্রসমূহ"
 msgid "{0}, image {1} of {2}"
 msgstr "{0}, চিত্র {2}-এর {1}"
 
+#. 0: photo.file.name
+#. 0: tag
 #. 0: image.file.name
+#: src/components/ItemListingEditor.svelte
+#: src/components/ListingTags.svelte
 #: src/components/PostComposer.svelte
 msgid "Remove {0}"
 msgstr "{0} সরানো"
@@ -994,11 +1013,13 @@ msgid "The browser is closed. It will reopen when you click Post."
 msgstr "ব্রাউজার বন্ধ আছে। আপনি পোস্টে ক্লিক করলে এটি পুনরায় খোলা হবে।"
 
 #: src/App.svelte
+#: src/components/ItemListingEditor.svelte
 #: src/components/LogMessage.svelte
 msgid "Checking Facebook login"
 msgstr "ফেসবুক লগইন যাচাই করা হচ্ছে"
 
 #: src/App.svelte
+#: src/components/ItemListingEditor.svelte
 #: src/components/LogMessage.svelte
 msgid "Finish signing in or any verification prompts in Chrome. Your login will be detected automatically."
 msgstr "ক্রোমে সাইন ইন সম্পন্ন করুন বা যে কোনো যাচাইকরণের নির্দেশ অনুসরণ করুন। আপনার লগইন স্বয়ংক্রিয়ভাবে শনাক্ত হবে।"
@@ -1117,8 +1138,10 @@ msgid "{0} shown"
 msgstr "{0} প্রদর্শিত"
 
 #. 0: selectedGroupIds.length
+#. 0: selected.length
 #. 0: groups.length
 #: src/App.svelte
+#: src/components/MarketplaceListings.svelte
 #: src/components/QueueReview.svelte
 msgid "{0} selected"
 msgstr "{0} নির্বাচন করা হয়েছে"
@@ -1247,6 +1270,7 @@ msgstr "রঙের থিম"
 #: src/components/FacebookPageDialog.svelte
 #: src/components/FeaturesCard.svelte
 #: src/components/GuidedTour.svelte
+#: src/components/NotificationBar.svelte
 #: src/components/RenameProfileDialog.svelte
 #: src/components/ThemePicker.svelte
 #: src/components/UpdateButton.svelte
@@ -1286,6 +1310,7 @@ msgstr "Chrome-এ একটি ছবি আপলোড ব্যর্থ হ
 msgid "Attaching images…"
 msgstr "ছবি সংযুক্ত করা হচ্ছে…"
 
+#: src/components/ItemListingEditor.svelte
 #: src/components/LogMessage.svelte
 msgid "Choose JPG, PNG, WebP, or GIF images"
 msgstr "JPG, PNG, WebP বা GIF ছবি নির্বাচন করুন"
@@ -1538,6 +1563,7 @@ msgstr "কোনও সম্পূর্ণ ইমেজ আপলোড অ�
 msgid "No fresh image upload request was captured."
 msgstr "কোনও নতুন ইমেজ আপলোড অনুরোধ ধরা পড়েনি।"
 
+#: src/components/LocationSearchDialog.svelte
 #: src/components/LogMessage.svelte
 msgid "Opening browser…"
 msgstr "ব্রাউজার খোলা হচ্ছে…"
@@ -2099,6 +2125,7 @@ msgid "Edit post {0}"
 msgstr "পোস্ট {0} সম্পাদনা করুন"
 
 #: src/components/FetchedPostCard.svelte
+#: src/components/MarketplaceListings.svelte
 #: src/components/QueueReview.svelte
 #: src/components/QueueReview.svelte
 msgid "Edit"
@@ -2112,6 +2139,7 @@ msgstr "পোস্ট {0} মুছুন"
 #: src/components/AccountDropdown.svelte
 #: src/components/AccountDropdown.svelte
 #: src/components/FetchedPostCard.svelte
+#: src/components/MarketplaceListings.svelte
 msgid "Delete"
 msgstr "মুছুন"
 
@@ -2443,6 +2471,10 @@ msgstr "ব্যবসায়িক অনুসন্ধান"
 
 #: src/components/ContactButton.svelte
 #: src/components/ContactButton.svelte
+#: src/components/MarketplaceVehicles.svelte
+#: src/components/MarketplaceVehicles.svelte
+#: src/components/MarketplaceVehicles.svelte
+#: src/components/MarketplaceVehicles.svelte
 msgid "Other"
 msgstr "অন্যান্য"
 
@@ -2497,10 +2529,14 @@ msgid "Finish"
 msgstr "শেষ করুন"
 
 #: src/components/GuidedTour.svelte
+#: src/components/ItemListingEditor.svelte
 msgid "Next"
 msgstr "পরবর্তী"
 
+#: src/components/CreateListing.svelte
 #: src/components/GuidedTour.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
 msgid "Previous"
 msgstr "পূর্ববর্তী"
 
@@ -2562,18 +2598,22 @@ msgstr "অন্যভাবে খুঁজুন বা ফিল্টার
 msgid "All colors"
 msgstr "সব রং"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Red"
 msgstr "লাল"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Orange"
 msgstr "কমলা"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Yellow"
 msgstr "হলুদ"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Green"
 msgstr "সবুজ"
@@ -2586,6 +2626,7 @@ msgstr "পুদিনা সবুজ"
 msgid "Teal"
 msgstr "নীলচে সবুজ"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Blue"
 msgstr "নীল"
@@ -2594,22 +2635,27 @@ msgstr "নীল"
 msgid "Navy"
 msgstr "গাঢ় নীল"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Purple"
 msgstr "বেগুনি"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Pink"
 msgstr "গোলাপি"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Brown"
 msgstr "বাদামি"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Beige"
 msgstr "হালকা বাদামি"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "White"
 msgstr "সাদা"
@@ -2618,6 +2664,7 @@ msgstr "সাদা"
 msgid "Grey"
 msgstr "ধূসর"
 
+#: src/components/MarketplaceVehicles.svelte
 #: src/components/ThemePicker.svelte
 msgid "Black"
 msgstr "কালো"
@@ -2637,3 +2684,1364 @@ msgstr "গাঢ়"
 #: src/components/ThemePicker.svelte
 msgid "Peach"
 msgstr "পিচ"
+
+#: src/Workspace.svelte
+#: src/components/MarketplaceToolbar.svelte
+msgid "Marketplace"
+msgstr "মার্কেটপ্লেস"
+
+#. 0: marketplaceTitle
+#: src/Workspace.svelte
+msgid "{0} · Postika"
+msgstr "{0} · Postika"
+
+#: src/components/MarketplaceToolbar.svelte
+msgid "All listing types"
+msgstr "সব ধরনের বিজ্ঞাপন"
+
+#: src/components/MarketplaceToolbar.svelte
+msgid "Items for sale"
+msgstr "বিক্রয়ের জন্য পণ্য"
+
+#: src/components/MarketplaceToolbar.svelte
+msgid "Vehicles for sale"
+msgstr "বিক্রয়ের জন্য যানবাহন"
+
+#: src/components/MarketplaceToolbar.svelte
+msgid "Homes for rent or sale"
+msgstr "ভাড়া বা বিক্রয়ের জন্য বাড়ি"
+
+#: src/components/MarketplaceToolbar.svelte
+#: src/components/MarketplaceToolbar.svelte
+msgid "Listing type"
+msgstr "বিজ্ঞাপনের ধরন"
+
+#~ msgid "<0/> Create new listing"
+#~ msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/MarketplaceToolbar.svelte
+msgid "Create new listing"
+msgstr "নতুন বিজ্ঞাপন তৈরি করুন"
+
+#: src/components/CreateListing.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Item for sale"
+msgstr "বিক্রয়ের জন্য পণ্য"
+
+#: src/components/CreateListing.svelte
+msgid "Create a single listing for one or more items to sell."
+msgstr "বিক্রয়ের জন্য এক বা একাধিক পণ্যের একটি বিজ্ঞাপন তৈরি করুন।"
+
+#: src/components/CreateListing.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Vehicle for sale"
+msgstr "বিক্রয়ের জন্য যানবাহন"
+
+#: src/components/CreateListing.svelte
+msgid "Sell a car, truck or other type of vehicle."
+msgstr "গাড়ি, ট্রাক বা অন্য ধরনের যানবাহন বিক্রি করুন।"
+
+#: src/components/CreateListing.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Home for sale or rent"
+msgstr "বিক্রয় বা ভাড়ার জন্য বাড়ি"
+
+#: src/components/CreateListing.svelte
+msgid "List a house or apartment for sale or rent."
+msgstr "বিক্রয় বা ভাড়ার জন্য বাড়ি বা অ্যাপার্টমেন্টের বিজ্ঞাপন দিন।"
+
+#: src/components/CreateListing.svelte
+msgid "Choose listing type"
+msgstr "বিজ্ঞাপনের ধরন বেছে নিন"
+
+#~ msgid "Save draft"
+#~ msgstr "খসড়া সংরক্ষণ করুন"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Listing to Marketplace"
+msgstr "Marketplace-এ বিজ্ঞাপন"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Photos"
+msgstr "ছবি"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Add photos"
+msgstr "ছবি যোগ করুন"
+
+#: src/components/ItemListingEditor.svelte
+msgid "or drag and drop"
+msgstr "অথবা টেনে এনে ছেড়ে দিন"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Category"
+msgstr "বিভাগ"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Condition"
+msgstr "অবস্থা"
+
+#~ msgid "Title<0/>"
+#~ msgstr ""
+
+#~ msgid "Price<0/>"
+#~ msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "More details"
+msgstr "আরও বিবরণ"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Attract more interest by including more details."
+msgstr "আরও বিবরণ যোগ করে বেশি আগ্রহ আকর্ষণ করুন।"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Availability"
+msgstr "প্রাপ্যতা"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/MarketplaceAvailability.svelte
+msgid "List as Single Item"
+msgstr "একটি পণ্য হিসেবে তালিকাভুক্ত করুন"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/LocationSearchDialog.svelte
+#: src/components/MarketplaceListings.svelte
+msgid "Location"
+msgstr "অবস্থান"
+
+#~ msgid "Description<0/>"
+#~ msgstr ""
+
+#~ msgid "Product tags<0/><1>Optional. Limit: 20.</1>"
+#~ msgstr ""
+
+#~ msgid "SKU<0/><1>Optional. Only visible to you.</1>"
+#~ msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "You can add up to 10 photos."
+msgstr "আপনি সর্বোচ্চ 10টি ছবি যোগ করতে পারেন।"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Be as descriptive as possible."
+msgstr "যতটা সম্ভব বিস্তারিত বর্ণনা দিন।"
+
+#~ msgid "Draft saved."
+#~ msgstr "খসড়া সংরক্ষিত হয়েছে।"
+
+#~ msgid "Could not save draft. Please try again."
+#~ msgstr "খসড়া সংরক্ষণ করা যায়নি। আবার চেষ্টা করুন।"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Could not load draft. Please try again."
+msgstr "খসড়া লোড করা যায়নি। আবার চেষ্টা করুন।"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Your listing preview"
+msgstr "আপনার বিজ্ঞাপনের প্রিভিউ"
+
+#: src/components/ItemListingEditor.svelte
+msgid "As you create your listing, you can preview how it will appear on Marketplace."
+msgstr "বিজ্ঞাপন তৈরি করার সময় Marketplace-এ সেটি কেমন দেখাবে তা দেখতে পারেন।"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Title"
+msgstr "শিরোনাম"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/MarketplaceListings.svelte
+msgid "Price"
+msgstr "মূল্য"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Description will appear here."
+msgstr "এখানে বর্ণনা দেখা যাবে।"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Details"
+msgstr "বিবরণ"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Seller information"
+msgstr "বিক্রেতার তথ্য"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Preview"
+msgstr "প্রিভিউ"
+
+#: src/components/ListingFieldSelect.svelte
+msgid "Options will be added later."
+msgstr "বিকল্পগুলো পরে যোগ করা হবে।"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Description"
+msgstr "বর্ণনা"
+
+#: src/components/ListingTags.svelte
+msgid "Product tags"
+msgstr "পণ্যের ট্যাগ"
+
+#: src/components/ListingTags.svelte
+msgid "Optional. Limit: 20."
+msgstr "ঐচ্ছিক। সীমা: 20।"
+
+#: src/components/ItemListingEditor.svelte
+msgid "SKU"
+msgstr "SKU"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Optional. Only visible to you."
+msgstr "ঐচ্ছিক। শুধু আপনি দেখতে পাবেন।"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Home & Garden"
+msgstr "বাড়ি ও বাগান"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Entertainment"
+msgstr "বিনোদন"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Clothing & Accessories"
+msgstr "পোশাক ও আনুষঙ্গিক সামগ্রী"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Family"
+msgstr "পরিবার"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Electronics"
+msgstr "ইলেকট্রনিক্স"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Hobbies"
+msgstr "শখ"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Classifieds"
+msgstr "শ্রেণিবদ্ধ বিজ্ঞাপন"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Shipping available"
+msgstr "শিপিং উপলব্ধ"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Tools"
+msgstr "সরঞ্জাম"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Furniture"
+msgstr "আসবাবপত্র"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Household"
+msgstr "গৃহস্থালি সামগ্রী"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Garden"
+msgstr "বাগান"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Appliances"
+msgstr "গৃহস্থালি যন্ত্রপাতি"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Video Games"
+msgstr "ভিডিও গেম"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Books, Movies & Music"
+msgstr "বই, চলচ্চিত্র ও সংগীত"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Bags & Luggage"
+msgstr "ব্যাগ ও লাগেজ"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Women's clothing & shoes"
+msgstr "নারীদের পোশাক ও জুতা"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Men's clothing & shoes"
+msgstr "পুরুষদের পোশাক ও জুতা"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Jewelry & Accessories"
+msgstr "গয়না ও আনুষঙ্গিক সামগ্রী"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Health & beauty"
+msgstr "স্বাস্থ্য ও সৌন্দর্য"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Pet Supplies"
+msgstr "পোষা প্রাণীর সামগ্রী"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Baby & kids"
+msgstr "শিশু ও বাচ্চা"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Toys & Games"
+msgstr "খেলনা ও গেম"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Electronics & computers"
+msgstr "ইলেকট্রনিক্স ও কম্পিউটার"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Mobile phones"
+msgstr "মোবাইল ফোন"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Bicycles"
+msgstr "সাইকেল"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Arts & Crafts"
+msgstr "শিল্প ও কারুশিল্প"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Sports & Outdoors"
+msgstr "খেলাধুলা ও বহিরাঙ্গন"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Auto parts"
+msgstr "গাড়ির যন্ত্রাংশ"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Musical Instruments"
+msgstr "বাদ্যযন্ত্র"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Antiques & Collectibles"
+msgstr "পুরাকীর্তি ও সংগ্রহযোগ্য সামগ্রী"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Garage Sale"
+msgstr "গ্যারেজ সেল"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Miscellaneous"
+msgstr "বিবিধ"
+
+#: src/components/MarketplaceCategories.svelte
+msgid "Vehicles"
+msgstr "যানবাহন"
+
+#: src/components/MarketplaceConditions.svelte
+msgid "New"
+msgstr "নতুন"
+
+#: src/components/MarketplaceConditions.svelte
+msgid "Used - Like New"
+msgstr "ব্যবহৃত - নতুনের মতো"
+
+#: src/components/MarketplaceConditions.svelte
+msgid "Used - Good"
+msgstr "ব্যবহৃত - ভালো"
+
+#: src/components/MarketplaceConditions.svelte
+msgid "Used - Fair"
+msgstr "ব্যবহৃত - মোটামুটি"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Public"
+msgstr "সর্বজনীন"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Learn more about meetup preferences"
+msgstr "আরও জানুন: দেখা করার পছন্দ"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Public meetup"
+msgstr "সর্বজনীন স্থানে দেখা"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Meet at a public location."
+msgstr "সর্বজনীন স্থানে দেখা করুন।"
+
+#: src/components/ItemListingEditor.svelte
+msgid "See Marketplace meetup safety tips"
+msgstr "নিরাপত্তা পরামর্শ দেখুন (Marketplace)"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Door pickup"
+msgstr "দরজা থেকে সংগ্রহ"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Buyer picks up at your door."
+msgstr "ক্রেতা আপনার দরজা থেকে সংগ্রহ করবেন।"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Door dropoff"
+msgstr "দরজায় পৌঁছে দেওয়া"
+
+#: src/components/ItemListingEditor.svelte
+msgid "You drop off at buyer's door."
+msgstr "আপনি ক্রেতার দরজায় পৌঁছে দেবেন।"
+
+#: src/components/ItemListingEditor.svelte
+msgid "See safety tips"
+msgstr "নিরাপত্তা পরামর্শ দেখুন"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Meetup preferences"
+msgstr "দেখা করার পছন্দ"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Buyers will be able to see your preferences on your listing."
+msgstr "ক্রেতারা আপনার বিজ্ঞাপনে আপনার পছন্দগুলো দেখতে পারবেন।"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Learn more"
+msgstr "আরও জানুন"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Promote listing after publish"
+msgstr "প্রকাশের পরে বিজ্ঞাপন প্রচার"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Add a step to promote your listing after it publishes, to help you reach more potential buyers by turning it into an ad."
+msgstr "প্রকাশের পরে বিজ্ঞাপনটি প্রচারের একটি ধাপ যোগ করুন, যাতে সেটিকে বিজ্ঞাপনে রূপান্তর করে আরও সম্ভাব্য ক্রেতার কাছে পৌঁছাতে পারেন।"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Hide from friends"
+msgstr "বন্ধুদের থেকে লুকান"
+
+#: src/components/ItemListingEditor.svelte
+msgid "This listing is still public. If you hide this listing from friends, they won't see it in most cases."
+msgstr "এই বিজ্ঞাপনটি এখনও সর্বজনীন। বন্ধুদের থেকে লুকালে বেশিরভাগ ক্ষেত্রে তারা এটি দেখতে পাবেন না।"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Learn more about hiding listings from friends"
+msgstr "আরও জানুন: বন্ধুদের থেকে লুকান"
+
+#~ msgid "Marketplace items are public and can be seen by anyone on or off Facebook."
+#~ msgstr "Marketplace-এর বিজ্ঞাপনগুলো সর্বজনীন এবং Facebook-এর ভেতরে বা বাইরে যে কেউ দেখতে পারেন।"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Commerce Policies"
+msgstr "বাণিজ্য নীতিমালা"
+
+#~ msgid "Backspace"
+#~ msgstr ""
+
+#~ msgid "Files"
+#~ msgstr ""
+
+#~ msgid "Alt+ArrowLeft Alt+ArrowRight"
+#~ msgstr ""
+
+#: src/components/MarketplaceAvailability.svelte
+msgid "If you're selling one item, show \"Only one\" on your listing."
+msgstr "একটি পণ্য বিক্রি করলে বিজ্ঞাপনে “মাত্র একটি” দেখান।"
+
+#: src/components/MarketplaceAvailability.svelte
+msgid "List as In Stock"
+msgstr "মজুত আছে হিসেবে তালিকাভুক্ত করুন"
+
+#: src/components/MarketplaceAvailability.svelte
+msgid "If you're selling more than one item, show \"In Stock\" on your listing."
+msgstr "একাধিক পণ্য বিক্রি করলে বিজ্ঞাপনে “মজুত আছে” দেখান।"
+
+#: src/components/ListingTags.svelte
+msgid "Add tag"
+msgstr "ট্যাগ যোগ করুন"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Tags"
+msgstr "ট্যাগ"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Enter a town or city"
+msgstr "একটি শহরের নাম লিখুন"
+
+#~ msgid "Facebook opened."
+#~ msgstr "Facebook খোলা হয়েছে।"
+
+#~ msgid "Connect location search"
+#~ msgstr "অবস্থান অনুসন্ধান সংযুক্ত করুন"
+
+#~ msgid "Postika needs to open Facebook for this account to prepare location search. If Facebook asks you to log in, complete that step in the browser."
+#~ msgstr "অবস্থান অনুসন্ধান প্রস্তুত করতে Postika-কে এই অ্যাকাউন্টের Facebook খুলতে হবে। Facebook লগ ইন করতে বললে ব্রাউজারে সেই ধাপটি সম্পন্ন করুন।"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/LocationSearchDialog.svelte
+msgid "Continue to Facebook"
+msgstr "Facebook-এ চালিয়ে যান"
+
+#: src/components/LocationSearchDialog.svelte
+msgid "We need to open Facebook to set up location search. If Facebook asks you to log in, complete that step in the browser."
+msgstr "অবস্থান অনুসন্ধান সেট আপ করতে আমাদের Facebook খুলতে হবে। Facebook লগ ইন করতে বললে ব্রাউজারে সেই ধাপটি সম্পন্ন করুন।"
+
+#~ msgid "You’re logged in. Marketplace is open."
+#~ msgstr "আপনি লগ ইন করেছেন। Marketplace খোলা আছে।"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Facebook was closed. Continue to Facebook to try again."
+msgstr "Facebook বন্ধ হয়েছে। আবার চেষ্টা করতে Facebook-এ এগিয়ে যান।"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Preparing Marketplace…"
+msgstr "Marketplace প্রস্তুত করা হচ্ছে…"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Could not expand More details. Please try again."
+msgstr "আরও বিবরণ খোলা যায়নি। আবার চেষ্টা করুন।"
+
+#: src/components/ItemListingEditor.svelte
+msgid "No locations found."
+msgstr "কোনো অবস্থান পাওয়া যায়নি।"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Location search is ready."
+msgstr "অবস্থান অনুসন্ধান প্রস্তুত।"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Reconnect to Facebook to search locations."
+msgstr "অবস্থান খুঁজতে Facebook-এর সঙ্গে আবার সংযোগ করুন।"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Could not search locations. Please try again."
+msgstr "অবস্থান খোঁজা যায়নি। আবার চেষ্টা করুন।"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/MarketplaceListings.svelte
+msgid "Try again"
+msgstr "আবার চেষ্টা করুন"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Please enter a valid location."
+msgstr "অনুগ্রহ করে একটি বৈধ অবস্থান লিখুন।"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Vehicle type"
+msgstr "গাড়ির ধরন"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Photo upload"
+msgstr "ছবি আপলোড"
+
+#: src/components/ItemListingEditor.svelte
+msgid "You can add up to 20 photos."
+msgstr "আপনি সর্বোচ্চ 20টি ছবি যোগ করতে পারেন।"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "About this vehicle"
+msgstr "এই গাড়ি সম্পর্কে"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Help buyers know more about the vehicle you're listing."
+msgstr "আপনি যে গাড়িটি বিক্রি করছেন সে সম্পর্কে ক্রেতাদের আরও জানতে সাহায্য করুন।"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Year"
+msgstr "বছর"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Make"
+msgstr "প্রস্তুতকারক"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Model"
+msgstr "মডেল"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Enter your price for this vehicle."
+msgstr "এই গাড়ির দাম লিখুন।"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Tell buyers anything that you haven't had the chance to include yet about your vehicle."
+msgstr "আপনার গাড়ি সম্পর্কে এখনও যোগ করতে না পারা অন্যান্য তথ্য ক্রেতাদের জানান।"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Seller's description"
+msgstr "বিক্রেতার বিবরণ"
+
+#: src/components/ListingLocationPreview.svelte
+#: src/components/ListingLocationPreview.svelte
+msgid "Location is approximate"
+msgstr "অবস্থান আনুমানিক"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Car/Truck"
+msgstr "গাড়ি/ট্রাক"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Motorcycle"
+msgstr "মোটরসাইকেল"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Powersport"
+msgstr "মোটরচালিত বিনোদনমূলক যান"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "RV/Camper"
+msgstr "আরভি/ক্যাম্পার"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Trailer"
+msgstr "ট্রেলার"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Boat"
+msgstr "নৌকা"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Commercial/Industrial"
+msgstr "বাণিজ্যিক/শিল্প"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Mileage"
+msgstr "চলা দূরত্ব"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Vehicle appearance and features"
+msgstr "গাড়ির চেহারা ও বৈশিষ্ট্য"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Add more about what your vehicle looks like and the features that it has."
+msgstr "আপনার গাড়ির চেহারা এবং বৈশিষ্ট্য সম্পর্কে আরও তথ্য যোগ করুন।"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Body style"
+msgstr "বডির ধরন"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Exterior color"
+msgstr "বাইরের রং"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Interior color"
+msgstr "ভেতরের রং"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Vehicle details"
+msgstr "গাড়ির বিস্তারিত"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Include more details to help connect interested buyers to your vehicle."
+msgstr "আগ্রহী ক্রেতাদের আপনার গাড়ি খুঁজে পেতে সাহায্য করতে আরও বিস্তারিত যোগ করুন।"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "This vehicle has a clean title."
+msgstr "এই গাড়ির মালিকানার নথিতে গুরুতর ক্ষতির রেকর্ড নেই।"
+
+#: src/components/ItemListingEditor.svelte
+msgid "This vehicle has no significant damage or persistent problems."
+msgstr "এই গাড়িতে বড় ধরনের ক্ষতি বা স্থায়ী সমস্যা নেই।"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Vehicle condition"
+msgstr "গাড়ির অবস্থা"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Fuel type"
+msgstr "জ্বালানির ধরন"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Transmission"
+msgstr "ট্রান্সমিশন"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ListingVideo.svelte
+msgid "Video preview"
+msgstr "ভিডিও প্রিভিউ"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Automatic transmission"
+msgstr "অটোমেটিক ট্রান্সমিশন"
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ListingVideo.svelte
+msgid "Videos"
+msgstr "ভিডিও"
+
+#: src/components/ListingVideo.svelte
+#: src/components/ListingVideo.svelte
+msgid "Add video"
+msgstr "ভিডিও যোগ করুন"
+
+#: src/components/ListingVideo.svelte
+#: src/components/ListingVideo.svelte
+#: src/components/ListingVideo.svelte
+#: src/components/ListingVideo.svelte
+msgid "Remove video"
+msgstr "ভিডিও সরান"
+
+#~ msgid "Checking video…"
+#~ msgstr "ভিডিও পরীক্ষা করা হচ্ছে…"
+
+#: src/components/ItemListingEditor.svelte
+msgid "Choose a supported video up to 1 minute long."
+msgstr "সর্বোচ্চ 1 মিনিটের একটি সমর্থিত ভিডিও বেছে নিন।"
+
+#: src/components/ListingVideo.svelte
+msgid "(1 minute max)"
+msgstr "(সর্বোচ্চ 1 মিনিট)"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Gold"
+msgstr "সোনালি"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Gray"
+msgstr "ধূসর"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Silver"
+msgstr "রুপালি"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Charcoal"
+msgstr "কয়লা ধূসর"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Off white"
+msgstr "ঘিয়ে সাদা"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Tan"
+msgstr "হালকা বাদামি"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Burgundy"
+msgstr "বারগান্ডি"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Turquoise"
+msgstr "ফিরোজা"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Coupe"
+msgstr "কুপে"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Truck"
+msgstr "ট্রাক"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Sedan"
+msgstr "সেডান"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Hatchback"
+msgstr "হ্যাচব্যাক"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "SUV"
+msgstr "এসইউভি"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Convertible"
+msgstr "খোলা ছাদের গাড়ি"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Wagon"
+msgstr "ওয়াগন"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Minivan"
+msgstr "মিনিভ্যান"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Small Car"
+msgstr "ছোট গাড়ি"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Excellent"
+msgstr "চমৎকার"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Very good"
+msgstr "খুব ভালো"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Good"
+msgstr "ভালো"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Fair"
+msgstr "মোটামুটি"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Poor"
+msgstr "খারাপ"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Diesel"
+msgstr "ডিজেল"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Electric"
+msgstr "ইলেকট্রিক"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Gasoline"
+msgstr "পেট্রোল (Gasoline)"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Flex"
+msgstr "ফ্লেক্স জ্বালানি"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Hybrid"
+msgstr "হাইব্রিড"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Petrol"
+msgstr "পেট্রোল (Petrol)"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Plug-in hybrid"
+msgstr "প্লাগ-ইন হাইব্রিড"
+
+#: src/components/MarketplaceVehicles.svelte
+msgid "Manual transmission"
+msgstr "ম্যানুয়াল ট্রান্সমিশন"
+
+#: src/components/ItemListingEditor.svelte
+msgid "You can add up to 50 photos."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Property type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Number of bedrooms"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Number of bathrooms"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Address"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Property description"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Include details like utilities, amenities, any deposits needed and when it's available."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Advanced Details"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Optional"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Property square feet"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Laundry type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Parking type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Air conditioning type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Heating type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "/ Month"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Rental Location"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "New home listing"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Rent"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "For Sale"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Apartment"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "House"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Townhouse"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "In-unit laundry"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Laundry in building"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Laundry available"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+#: src/components/MarketplaceHomes.svelte
+#: src/components/MarketplaceHomes.svelte
+#: src/components/MarketplaceHomes.svelte
+msgid "None"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Garage parking"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Street parking"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Off-street parking"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Parking available"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Central AC"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "AC available"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Central heating"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Electric heating"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Gas heating"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Radiator heating"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Heating available"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Enter an address"
+msgstr ""
+
+#: src/components/ListingLocationPreview.svelte
+msgid "View listing location"
+msgstr ""
+
+#: src/components/ListingLocationPreview.svelte
+msgid "Map preview unavailable."
+msgstr ""
+
+#: src/components/ListingLocationPreview.svelte
+msgid "View Map Info"
+msgstr ""
+
+#: src/components/ListingLocationPreview.svelte
+msgid "View map image"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Rental type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "This is a private room in a shared property."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Price per month"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Rental description"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Date available"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Cat friendly"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Dog friendly"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Date available:"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "How many people live here?"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ItemListingEditor.svelte
+msgid "Bathroom Type"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Is this room furnished?"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Room Details"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Property Details"
+msgstr ""
+
+#~ msgid "Is this room furnished? <0/>"
+#~ msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Furnished"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Private"
+msgstr ""
+
+#: src/components/MarketplaceHomes.svelte
+msgid "Shared"
+msgstr ""
+
+#: src/components/ListingDatePicker.svelte
+msgid "Clear date"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Test"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Save"
+msgstr ""
+
+#. 0: maxPhotos
+#: src/components/ItemListingEditor.svelte
+msgid "You may only select a maximum of {0} photos."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Marketplace items are public and can be seen by anyone on or off Facebook. Items like animals, drugs, weapons, counterfeits, and other items that infringe intellectual property aren't allowed on Marketplace."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+#: src/components/ListingVideo.svelte
+msgid "Loading video…"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Loading video"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Your video must finish loading before proceeding."
+msgstr ""
+
+#~ msgid "Video added. Preview is unavailable in this app."
+#~ msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Could not load video thumbnail."
+msgstr ""
+
+#~ msgid "Finish signing in or any verification prompts in Chrome. Media will be added automatically."
+#~ msgstr ""
+
+#~ msgid "Media sent to Facebook. Review the listing in Chrome."
+#~ msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Test cancelled."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Add at least one photo or video."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Finish signing in or any verification prompts in Chrome. Your listing will be filled automatically."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Listing filled in Facebook. Review it in Chrome."
+msgstr ""
+
+#: src/components/MarketplaceToolbar.svelte
+msgid "Publish selected<0/>"
+msgstr ""
+
+#: src/components/CreateListing.svelte
+#: src/components/ItemListingEditor.svelte
+#: src/components/MarketplaceListings.svelte
+msgid "Listing saved."
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Save listing"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Untitled listing"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Item"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Vehicle"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Could not load saved listings. Please try again."
+msgstr ""
+
+#~ msgid "Listing duplicated."
+#~ msgstr ""
+
+#~ msgid "Could not duplicate listing. Please try again."
+#~ msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Listing deleted."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Could not delete listing. Please try again."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+#: src/components/MarketplaceListings.svelte
+msgid "Saved listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Save listings here, then select them when you’re ready to publish."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Search saved listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Search listings"
+msgstr ""
+
+#. 0: chosen.length
+#: src/components/MarketplaceListings.svelte
+msgid "Selected listings ({0})"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Back to listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Group selection and publishing will be added next. Your listings are saved; nothing has been posted to Facebook."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Clear selection"
+msgstr ""
+
+#. 0: visible.length
+#: src/components/MarketplaceListings.svelte
+msgid "{0} listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Loading saved listings…"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "No saved listings yet"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Select an account to see its listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Create a listing and save it. It will appear here, ready to select later."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Your listings stay separate for each account."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "No matching listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Try another search or listing type."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Select all visible listings"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Listing"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Type"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Status"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Updated"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Actions"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Draft"
+msgstr ""
+
+#~ msgid "More actions for {0}"
+#~ msgstr ""
+
+#~ msgid "Duplicate"
+#~ msgstr ""
+
+#~ msgid "More"
+#~ msgstr ""
+
+#. 0: title(listing)
+#: src/components/MarketplaceListings.svelte
+msgid "Delete “{0}” and its saved media?"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Delete listing"
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+#: src/components/MarketplaceListings.svelte
+msgid "Saved Marketplace listings"
+msgstr ""
+
+#: src/components/ItemListingEditor.svelte
+msgid "Could not save listing. Please try again."
+msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "Today"
+msgstr ""
+
+#. 0: title(listing)
+#: src/components/MarketplaceListings.svelte
+msgid "Edit {0}"
+msgstr ""
+
+#. 0: title(listing)
+#: src/components/MarketplaceListings.svelte
+msgid "Delete {0}"
+msgstr ""

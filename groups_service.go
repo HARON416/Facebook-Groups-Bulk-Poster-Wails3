@@ -20,57 +20,63 @@ const joinedGroupsURL = "https://web.facebook.com/groups/joins/?nav_source=tab&o
 
 // GroupsService owns one browser and a persistent profile dedicated to Postika.
 type GroupsService struct {
-	updateGate             *sync.RWMutex
-	mu                     sync.Mutex
-	postMu                 sync.Mutex
-	postStatus             string
-	postRunMu              sync.Mutex
-	posting                PostingStatus
-	postingCancel          context.CancelFunc
-	postingPaused          bool
-	connectivity           ConnectivityStatus
-	connectivityEnabled    bool
-	connectivityCheckMu    sync.Mutex
-	connectivityProbe      func(context.Context) bool
-	connectivityWake       chan struct{}
-	connectivityFailures   int
-	connectivityGeneration uint64
-	postingChanged         chan struct{}
-	postingLogs            []PostingLog
-	postingRunID           uint64
-	postingStarted         time.Time
-	postingItemStarted     time.Time
-	settingsMu             sync.Mutex
-	settingsPath           string
-	settingsDeleted        bool
-	windowMu               sync.Mutex
-	app                    *application.App
-	postLedger             map[string]PostOutcome
-	photoUploads           *photoUploadCapture
-	photoUploadWatcher     func(context.Context, *rod.Page) *photoUploadCapture
-	workMu                 sync.Mutex
-	workCtx                context.Context
-	workCancel             context.CancelFunc
-	browser                *rod.Browser
-	page                   *rod.Page
-	launcher               *launcher.Launcher
-	cancel                 context.CancelFunc
-	closed                 bool
-	profileDir             string
-	profileID              string
-	profileName            string
-	profileNameMu          sync.RWMutex
-	postImageDir           string
-	chromePath             string
-	targetURL              string
-	headless               bool
-	sortMenuOpened         bool
-	sortOptionSelected     bool
-	groupsLoad             *groupsLoad
-	groupsCachePath        string
-	groupsCacheLoaded      bool
-	facebookPageLoad       *facebookPageLoad
-	facebookPageRunID      uint64
+	updateGate               *sync.RWMutex
+	mu                       sync.Mutex
+	postMu                   sync.Mutex
+	postStatus               string
+	postRunMu                sync.Mutex
+	posting                  PostingStatus
+	postingCancel            context.CancelFunc
+	postingPaused            bool
+	connectivity             ConnectivityStatus
+	connectivityEnabled      bool
+	connectivityCheckMu      sync.Mutex
+	connectivityProbe        func(context.Context) bool
+	connectivityWake         chan struct{}
+	connectivityFailures     int
+	connectivityGeneration   uint64
+	postingChanged           chan struct{}
+	postingLogs              []PostingLog
+	postingRunID             uint64
+	postingStarted           time.Time
+	postingItemStarted       time.Time
+	settingsMu               sync.Mutex
+	settingsPath             string
+	settingsDeleted          bool
+	windowMu                 sync.Mutex
+	app                      *application.App
+	postLedger               map[string]PostOutcome
+	photoUploads             *photoUploadCapture
+	photoUploadWatcher       func(context.Context, *rod.Page) *photoUploadCapture
+	workMu                   sync.Mutex
+	workCtx                  context.Context
+	workCancel               context.CancelFunc
+	browser                  *rod.Browser
+	marketplaceLocationPage  *rod.Page
+	marketplaceTestPage      *rod.Page
+	marketplaceTestDir       string
+	marketplaceTesting       bool
+	marketplaceLocationLoad  *marketplaceLocationLoad
+	marketplaceLocationRunID uint64
+	page                     *rod.Page
+	launcher                 *launcher.Launcher
+	cancel                   context.CancelFunc
+	closed                   bool
+	profileDir               string
+	profileID                string
+	profileName              string
+	profileNameMu            sync.RWMutex
+	postImageDir             string
+	chromePath               string
+	targetURL                string
+	headless                 bool
+	sortMenuOpened           bool
+	sortOptionSelected       bool
+	groupsLoad               *groupsLoad
+	groupsCachePath          string
+	groupsCacheLoaded        bool
+	facebookPageLoad         *facebookPageLoad
+	facebookPageRunID        uint64
 }
 
 func (s *GroupsService) OpenJoinedGroups(ctx context.Context) error {
@@ -118,19 +124,24 @@ func (s *GroupsService) OpenJoinedGroups(ctx context.Context) error {
 	return nil
 }
 
-// ensureBrowserPage is called with mu held and reuses the persistent profile.
-func (s *GroupsService) ensureBrowserPage(ctx context.Context) error {
-
+// ensureBrowser is called with mu held. It connects the account browser without
+// opening a tab, so callers can create their destination directly.
+func (s *GroupsService) ensureBrowser(ctx context.Context) error {
 	if s.browser != nil {
 		if _, err := (proto.BrowserGetVersion{}).Call(s.browser.Context(ctx)); err != nil {
-			// The user may have closed Chrome since the previous click.
 			s.closeBrowser()
 		}
 	}
 	if s.browser == nil {
-		if err := s.launchBrowser(ctx); err != nil {
-			return err
-		}
+		return s.launchBrowser(ctx)
+	}
+	return nil
+}
+
+// ensureBrowserPage is called with mu held and reuses the persistent profile.
+func (s *GroupsService) ensureBrowserPage(ctx context.Context) error {
+	if err := s.ensureBrowser(ctx); err != nil {
+		return err
 	}
 	if s.page != nil {
 		if _, err := (proto.TargetGetTargetInfo{TargetID: s.page.TargetID}).Call(s.browser.Context(ctx)); err != nil {
@@ -166,11 +177,11 @@ func (s *GroupsService) launchBrowser(ctx context.Context) error {
 	}
 	dir := s.profileDir
 	if dir == "" {
-		configDir, err := os.UserConfigDir()
+		configDir, err := defaultProfileRoot()
 		if err != nil {
 			return fmt.Errorf("locate Postika browser profile: %w", err)
 		}
-		dir = filepath.Join(configDir, "postika", "browser-profile")
+		dir = filepath.Join(configDir, "browser-profile")
 	}
 	if err := os.MkdirAll(dir, 0700); err != nil {
 		return fmt.Errorf("create Postika browser profile: %w", err)
@@ -230,7 +241,7 @@ func (s *GroupsService) closeBrowser() {
 }
 
 // Close Chrome without cancelling the independent Go groups job. Called with mu held.
-func (s *GroupsService) closeBrowserConnection() {
+func (s *GroupsService) closeBrowserConnection(keep ...*marketplaceLocationLoad) {
 	s.photoUploads = nil
 	if s.browser != nil {
 		err := s.browser.Context(context.Background()).Close()
@@ -240,6 +251,15 @@ func (s *GroupsService) closeBrowserConnection() {
 	}
 	if s.cancel != nil {
 		s.cancel()
+	}
+	if s.marketplaceLocationLoad != nil && (len(keep) == 0 || s.marketplaceLocationLoad != keep[0]) {
+		s.marketplaceLocationLoad.cancel()
+	}
+	s.marketplaceLocationPage = nil
+	s.marketplaceTestPage = nil
+	if s.marketplaceTestDir != "" {
+		_ = os.RemoveAll(s.marketplaceTestDir)
+		s.marketplaceTestDir = ""
 	}
 	s.browser, s.page, s.launcher, s.cancel = nil, nil, nil, nil
 	if s.postImageDir != "" {

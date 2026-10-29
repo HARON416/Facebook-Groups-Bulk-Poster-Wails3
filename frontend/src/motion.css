@@ -1,0 +1,36 @@
+/* Shared interaction timing for every native window. Keep focus outlines and
+   layout changes immediate; animate only the properties named here. */
+:root {
+  --motion-fast: 120ms;
+  --motion-state: 200ms;
+  --motion-toggle: 260ms;
+  --motion-toggle-ease: cubic-bezier(.4, 0, .2, 1);
+  --motion-surface: 180ms;
+  --motion-ease: cubic-bezier(.16, 1, .3, 1);
+}
+
+:where(button, a, input, textarea, select, summary, [role="button"], [role="option"], [role="tab"], [role="menuitem"], [contenteditable="true"]) {
+  transition-property: background-color, color, border-color, box-shadow, opacity;
+  transition-duration: var(--motion-fast);
+  transition-timing-function: var(--motion-ease);
+}
+
+/* A brief reveal explains a newly opened surface without shifting its target. */
+:where(.ui-dialog[open], [role="listbox"], [role="menu"], .notification-bar) {
+  animation: ui-surface-enter var(--motion-surface) var(--motion-ease);
+}
+.ui-dialog[open]::backdrop { animation: ui-surface-enter var(--motion-surface) var(--motion-ease); }
+@keyframes ui-surface-enter { from { opacity: 0; } to { opacity: 1; } }
+
+/* Covers component-specific CSS and animate.css, including pseudo-elements.
+   State feedback is still immediate when motion is reduced. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+    animation-duration: .01ms !important;
+    animation-delay: 0s !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}

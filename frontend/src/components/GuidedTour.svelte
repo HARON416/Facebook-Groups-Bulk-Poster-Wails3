@@ -180,5 +180,5 @@
   footer button:hover:not(:disabled) { filter: brightness(.94); }
   footer button:disabled { opacity: .5; cursor: default; }
   footer button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
-  @media (prefers-reduced-motion: no-preference) { .tour-card { animation: tour-enter .15s ease-out; } @keyframes tour-enter { from { opacity: 0; } to { opacity: 1; } } }
+  @media (prefers-reduced-motion: no-preference) { .tour-card { animation: tour-enter var(--motion-fast) var(--motion-ease); } @keyframes tour-enter { from { opacity: 0; } to { opacity: 1; } } }
 </style>

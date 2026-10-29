@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
   import { ProfileService, type AccountProfile } from '../../bindings/postika';
   import { deleteDraft } from '../lib/drafts';
+  import { deleteItemListingDraft } from '../lib/marketplace-drafts';
   import { accountLabel } from './AccountLabel.svelte';
   import LocalizedFeedback from './LocalizedFeedback.svelte';
 
@@ -22,6 +23,7 @@
     try {
       if (!removed) { await ProfileService.DeleteProfile(profile.id); removed = true; }
       await deleteDraft(profile.id);
+      await deleteItemListingDraft(profile.id);
       ondeleted?.(profile.id);
       dialog.close();
     } catch (cause) { error = cause instanceof Error ? cause.message : String(cause); }
