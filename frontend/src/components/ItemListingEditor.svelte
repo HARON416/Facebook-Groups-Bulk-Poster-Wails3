@@ -12,7 +12,7 @@
   import ListingVideo from './ListingVideo.svelte';
   import { videoThumbnail } from '../lib/video-thumbnail';
   import { createVideoPoster } from '../lib/video-poster.svelte';
-  import { testMarketplaceItemMedia } from '../lib/media-upload';
+  import { testMarketplaceListingMedia, canTestMarketplaceListing } from '../lib/media-upload';
   import ListingDatePicker from './ListingDatePicker.svelte';
   import ListingTags from './ListingTags.svelte';
   import LocationSearchDialog from './LocationSearchDialog.svelte';
@@ -285,16 +285,16 @@
   const active = $derived(photos[activePhoto] ?? photos[0]);
   const tags = $derived(fields.tags.split(',').map(tag => tag.trim()).filter(Boolean));
   const tagCount = $derived(tags.length);
-  const valid = $derived((photos.length > 0 || Boolean(videoFile)) && !photosOverLimit && (home ? fields.homeOffer !== '' && fields.propertyType !== '' && /^[0-9]+$/.test(fields.bedrooms) && /^[0-9]+([.][05])?$/.test(fields.bathrooms) && fields.address.trim() !== '' && fields.description.trim() !== '' && (fields.squareFeet === '' || /^[0-9]+([.][0-9]+)?$/.test(fields.squareFeet)) : vehicle ? fields.vehicleType !== '' && fields.year !== '' && fields.make.trim() !== '' && fields.model.trim() !== '' : fields.title.trim().length > 0 && fields.category !== '' && fields.condition !== '') && /^[0-9]+$/.test(fields.price) && (!detailedVehicle || /^[0-9]+$/.test(fields.mileage)) && (!privateRental || /^[0-9]+$/.test(fields.occupants) && fields.bathroomType !== '') && tagCount <= 20 && (kind === 'items' ? !locationQuery.trim() || Boolean(fields.locationData) : Boolean(fields.locationData)));
-  const testReady = $derived(Boolean(profile) && valid && (kind === 'items' || Boolean(onnext)));
+  const valid = $derived((photos.length > 0 || Boolean(videoFile)) && !photosOverLimit && !videoError && (home ? fields.homeOffer !== '' && fields.propertyType !== '' && /^[0-9]+$/.test(fields.bedrooms) && /^[0-9]+([.][05])?$/.test(fields.bathrooms) && fields.address.trim() !== '' && fields.description.trim() !== '' && (fields.squareFeet === '' || /^[0-9]+([.][0-9]+)?$/.test(fields.squareFeet)) : vehicle ? fields.vehicleType !== '' && fields.year !== '' && fields.make.trim() !== '' && fields.model.trim() !== '' : fields.title.trim().length > 0 && fields.category !== '' && fields.condition !== '') && /^[0-9]+$/.test(fields.price) && (!detailedVehicle || /^[0-9]+$/.test(fields.mileage) && fields.transmission.trim() !== '') && (!privateRental || /^[0-9]+$/.test(fields.occupants) && fields.bathroomType !== '') && tagCount <= 20 && (kind === 'items' ? !locationQuery.trim() || Boolean(fields.locationData) : Boolean(fields.locationData)));
+  const saveReady = $derived(Boolean(profile) && valid);
+  const testReady = $derived(saveReady && canTestMarketplaceListing(kind, fields));
   async function testMedia() {
     if (busy || !testReady) return;
-    if (kind !== 'items') { onnext?.({ ...fields }, photos.map(photo => photo.file), hasVideo ? videoFile : null); return; }
     if (!profile) return;
     testing = true; testError = ''; feedback = 'testing';
     testController = new AbortController();
     try {
-      await testMarketplaceItemMedia(profile.id, photos.map(photo => photo.file), videoFile, $state.snapshot(fields), testController.signal);
+      await testMarketplaceListingMedia(kind, profile.id, photos.map(photo => photo.file), videoFile, $state.snapshot(fields), testController.signal);
       if (!destroyed) feedback = 'tested';
     } catch (error) {
       if (!destroyed) {
@@ -376,7 +376,7 @@
     feedback = '';
   }
   async function save() {
-    if (!profile || busy || photosOverLimit) return;
+    if (!profile || busy || !valid) return;
     saving = true;
     feedback = '';
     try {
@@ -391,6 +391,11 @@
     const input = event.currentTarget as HTMLInputElement;
     if (/^[0-9]*$/.test(input.value)) fields.price = input.value;
     else input.value = fields.price;
+  }
+  function mileageInput(event: Event) {
+    const input = event.currentTarget as HTMLInputElement;
+    if (/^[0-9]*$/.test(input.value)) fields.mileage = input.value;
+    else input.value = fields.mileage;
   }
   function movePhoto(direction: number) { showingVideo = false; if (photos.length) activePhoto = (activePhoto + direction + photos.length) % photos.length; }
 </script>
@@ -426,10 +431,10 @@
 {/if}
 
 <div bind:this={root} onplaycapture={(event) => pauseMedia(event.target)} class="item-listing-editor" class:listing-details={visible} data-listing-type={kind}>
-  <form class="form-pane" oninput={() => { if (feedback === 'saved') feedback = ''; }} onsubmit={(event) => { event.preventDefault(); if (valid && !busy) onnext?.({ ...fields }, photos.map(photo => photo.file), hasVideo ? videoFile : null); }}>
+  <form class="form-pane" oninput={() => { if (feedback === 'saved') feedback = ''; }} onsubmit={(event) => { event.preventDefault(); if (saveReady && !busy) onnext?.({ ...fields }, photos.map(photo => photo.file), hasVideo ? videoFile : null); }}>
     <header class="form-heading">
       <div><button class="previous" type="button" disabled={busy} onclick={onprevious}><span class="previous-icon"><PhosphorIcon name="arrow-left" size={14} /></span><span>Previous</span></button><h1 id={visible ? 'listing-step-heading' : undefined} tabindex="-1">{#if home}New home listing{:else if vehicle}Vehicle for sale{:else}Item for sale{/if}</h1></div>
-      <button class="save-draft" type="button" disabled={!profile || busy || photosOverLimit} aria-busy={saving} onclick={save}>Save listing</button>
+      <button class="save-draft" type="button" disabled={!saveReady || busy} aria-busy={saving} onclick={save}>Save listing</button>
     </header>
     <div class="form-scroll">
       {#if profile}<div class="account-line"><PhosphorIcon name="user-circle" size={36} /><div><strong>{accountLabel(profile)}</strong><p class="listing-visibility"><span>Listing to Marketplace</span><span>Public</span></p></div></div>{/if}
@@ -517,7 +522,7 @@
             <div class="text-field" class:filled={Boolean(fields.make)}><label for="listing-make">Make</label><input class="ui-input" id="listing-make" dir="auto" bind:value={fields.make} required /></div>
             {/if}
             <div class="text-field" class:filled={Boolean(fields.model)}><label for="listing-model">Model</label><input class="ui-input" id="listing-model" dir="auto" bind:value={fields.model} required /></div>
-            {#if detailedVehicle}<div class="text-field" class:filled={Boolean(fields.mileage)}><label for="listing-mileage">Mileage</label><input class="ui-input" id="listing-mileage" type="text" inputmode="numeric" pattern="[0-9]+" bind:value={fields.mileage} required /></div>{/if}
+            {#if detailedVehicle}<div class="text-field" class:filled={Boolean(fields.mileage)}><label for="listing-mileage">Mileage</label><input class="ui-input" id="listing-mileage" type="text" inputmode="numeric" pattern="[0-9]+" value={fields.mileage} oninput={mileageInput} required /></div>{/if}
           </section>
           <section class="vehicle-section" aria-labelledby="vehicle-price-heading">
             <div><h2 id="vehicle-price-heading">Price</h2><p class="hint">Enter your price for this vehicle.</p></div>
@@ -608,7 +613,7 @@
       {#if testing}<button class="location-status-action" type="button" onclick={() => testController?.abort()}>Cancel</button>{/if}
       <div class="footer-actions">
         <button class="action-button action-button--secondary" type="button" disabled={!testReady || busy} aria-busy={testing} onclick={testMedia}>Test</button>
-        <button class="action-button action-button--primary" type="button" disabled={!profile || busy || photosOverLimit} aria-busy={saving} onclick={save}>Save</button>
+        <button class="action-button action-button--primary" type="button" disabled={!saveReady || busy} aria-busy={saving} onclick={save}>Save</button>
       </div>
     </footer>
   </form>

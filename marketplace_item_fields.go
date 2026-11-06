@@ -32,7 +32,7 @@ type MarketplaceItemFields struct {
 	HideFromFriends     bool                    `json:"hideFromFriends"`
 }
 
-// These are the owner-supplied Facebook labels, independent of the app locale.
+// Canonical values accepted by validation. Display labels are not selectors.
 var marketplaceItemCategories = map[string]string{
 	"tools": "Tools", "furniture": "Furniture", "household": "Household", "garden": "Garden", "appliances": "Appliances",
 	"video-games": "Video Games", "books-movies-music": "Books, Movies & Music", "bags-luggage": "Bags & Luggage",
@@ -62,24 +62,15 @@ func validateMarketplaceItemFields(fields *MarketplaceItemFields) error {
 	return nil
 }
 
-// Resolve the supplied field labels through native labels / aria-labelledby,
-// never copied React IDs or generated class names. Only the listing form is used.
-const marketplaceNamedControl = `(name, selector) => {
- const norm = value => (value || '').replace(/\s+/g,' ').trim().toLocaleLowerCase();
- const matches = [...document.querySelectorAll(selector)].filter(el => {
-   if (!el.closest('main,[role="main"],[role="form"]') || !el.getClientRects().length || el.closest('[hidden],[aria-hidden="true"]')) return false;
-   if (norm(el.getAttribute('aria-label')) === norm(name)) return true;
-   if ((el.getAttribute('aria-labelledby') || '').split(/\s+/).some(id => norm(document.getElementById(id)?.textContent) === norm(name))) return true;
-   const labels = [...(el.labels || [])]; const ancestor = el.closest('label'); if (ancestor) labels.push(ancestor);
-   if (labels.some(label => norm(label.textContent) === norm(name) || [...label.querySelectorAll('span')].some(s => norm(s.textContent) === norm(name)))) return true;
-   return (el.matches('[role="checkbox"],[role="switch"],[role="button"]') && [...el.querySelectorAll('span')].some(s => norm(s.textContent) === norm(name)));
- });
- if(matches.length>1) throw new Error('Multiple matching controls: '+name);
- return matches[0] || null;
-}`
+// Resolve internal field keys through the captured structural contract.
+const marketplaceNamedControl = marketplaceStructuralControl
 
 func marketplaceField(ctx context.Context, page *rod.Page, name, selector string) (*rod.Element, error) {
-	control, err := page.Context(ctx).ElementByJS(rod.Eval(marketplaceNamedControl, name, selector))
+	return marketplaceFieldWith(ctx, page, name, selector, marketplaceNamedControl)
+}
+
+func marketplaceFieldWith(ctx context.Context, page *rod.Page, name, selector, resolver string) (*rod.Element, error) {
+	control, err := page.Context(ctx).ElementByJS(rod.Eval(resolver, name, selector))
 	if err != nil {
 		return nil, fmt.Errorf("Could not find Facebook field %s: %w", name, err)
 	}
@@ -87,7 +78,11 @@ func marketplaceField(ctx context.Context, page *rod.Page, name, selector string
 }
 
 func marketplaceText(ctx context.Context, page *rod.Page, name, value string) error {
-	field, err := marketplaceField(ctx, page, name, `input:not([type="file"]),textarea`)
+	return marketplaceTextWith(ctx, page, name, value, marketplaceNamedControl)
+}
+
+func marketplaceTextWith(ctx context.Context, page *rod.Page, name, value, resolver string) error {
+	field, err := marketplaceFieldWith(ctx, page, name, `input:not([type="file"]),textarea`, resolver)
 	if err != nil {
 		return err
 	}
@@ -104,7 +99,7 @@ func marketplaceText(ctx context.Context, page *rod.Page, name, value string) er
 	ticker := time.NewTicker(100 * time.Millisecond)
 	defer ticker.Stop()
 	for {
-		live, findErr := marketplaceField(verify, page, name, `input:not([type="file"]),textarea`)
+		live, findErr := marketplaceFieldWith(verify, page, name, `input:not([type="file"]),textarea`, resolver)
 		if findErr == nil {
 			actual, readErr := live.Property("value")
 			if readErr == nil && (actual.Str() == value || name == "Price" && marketplacePriceEqual(actual.Str(), value)) {
@@ -124,7 +119,29 @@ func marketplacePriceEqual(display, requested string) bool {
 	if !ok || !marketplaceItemPrice.MatchString(requested) {
 		return false
 	}
-	display = strings.TrimSpace(display)
+	// Normalize decimal digits and separators emitted by localized number formatters.
+	display = strings.Map(func(r rune) rune {
+		if r == '\u066b' {
+			return '.'
+		}
+		if r == '\u066c' {
+			return ','
+		}
+		if r == '\u061c' || r == '\u200e' || r == '\u200f' || r >= '\u2066' && r <= '\u2069' {
+			return -1
+		}
+		for _, group := range unicode.Digit.R16 {
+			if uint32(r) >= uint32(group.Lo) && uint32(r) <= uint32(group.Hi) && (uint32(r)-uint32(group.Lo))%uint32(group.Stride) == 0 {
+				return '0' + rune((uint32(r)-uint32(group.Lo))/uint32(group.Stride)%10)
+			}
+		}
+		for _, group := range unicode.Digit.R32 {
+			if uint32(r) >= group.Lo && uint32(r) <= group.Hi && (uint32(r)-group.Lo)%group.Stride == 0 {
+				return '0' + rune((uint32(r)-group.Lo)/group.Stride%10)
+			}
+		}
+		return r
+	}, strings.TrimSpace(display))
 	if strings.EqualFold(display, "Free") {
 		return wanted.Sign() == 0
 	}
@@ -196,14 +213,15 @@ func marketplacePriceEqual(display, requested string) bool {
 const marketplaceLocationPopup = `() => {
  const visible = el => el.getClientRects().length && !el.closest('[hidden],[aria-hidden="true"]');
  const control = (` + marketplaceNamedControl + `)('Location','input[role="combobox"]');
- if(!control) return null;
+ if(!control || control.getAttribute('aria-expanded')==='false') return null;
  const ids = ((control.getAttribute('aria-controls')||'')+' '+(control.getAttribute('aria-owns')||'')).trim().split(/\s+/).filter(Boolean);
  if(ids.length) return ids.map(id=>document.getElementById(id)).find(el=>el && visible(el)) || null;
  const active = document.getElementById(control.getAttribute('aria-activedescendant')||'')?.closest('[role="listbox"]');
  if(active && visible(active)) return active;
  const roots = [...document.querySelectorAll('[role="listbox"]')].filter(visible);
  let menus = roots.filter(el=>el.tagName==='UL');
- if(!menus.length) menus=roots.filter(el=>!el.getAttribute('aria-label') || /suggested search/i.test(el.getAttribute('aria-label')));
+ // An unlinked generic listbox cannot safely be identified from its translated label.
+ if(!menus.length) return null;
  if(menus.length>1) throw new Error('Multiple open location suggestion lists');
  return menus[0] || null;
 }`
@@ -231,51 +249,86 @@ const marketplaceLocationSelected = `(label) => {
  return !!control && norm(control.value)===norm(label) && control.getAttribute('aria-expanded')!=='true' && !(` + marketplaceLocationPopup + `)();
 }`
 
-const marketplaceDropdownOption = `(name, label) => {
- const norm = value => (value || '').replace(/\s+/g,' ').trim().toLocaleLowerCase();
- const visible = el => el.getClientRects().length && !el.closest('[hidden],[aria-hidden="true"]');
- const control = (` + marketplaceNamedControl + `)(name, '[role="combobox"]');
- if(!control) return null;
- const linkedIDs = ((control.getAttribute('aria-controls')||'')+' '+(control.getAttribute('aria-owns')||'')).trim().split(/\s+/).filter(Boolean);
- const linked = linkedIDs.map(id=>document.getElementById(id)).filter(el=>el && visible(el));
- if(linkedIDs.length && !linked.length) return null;
- let menus = linked;
- if(!menus.length) {
-   const all = [...document.querySelectorAll('[role="listbox"],[role="dialog"][aria-label="Dropdown menu"]')].filter(visible);
-   const named = all.filter(el => norm(el.getAttribute('aria-label'))===norm(name) || (el.getAttribute('aria-labelledby')||'').split(/\s+/).some(id=>norm(document.getElementById(id)?.textContent)===norm(name)));
-   if(named.length) menus = named;
-   else if(name==='Category') menus = all.filter(el=>el.getAttribute('role')==='dialog');
-   else menus = all.filter(el=>el.getAttribute('role')==='listbox' && (!el.getAttribute('aria-label') || norm(el.getAttribute('aria-label'))==='select an option'));
- }
- menus = menus.filter(root=>!menus.some(other=>other!==root && root.contains(other)));
- if(menus.length>1) throw new Error('Multiple open dropdown menus: '+name);
- if(!menus.length) return null;
- const menu = menus[0];
- const selector = name==='Category' && menu.getAttribute('role')==='dialog' ? '[role="button"],[role="option"]' : '[role="option"]';
- const matches = [...menu.querySelectorAll(selector)].filter(visible).filter(el => norm(el.getAttribute('aria-label'))===norm(label) || norm(el.textContent)===norm(label) || [...el.querySelectorAll('span')].some(s=>norm(s.textContent)===norm(label)));
- if(matches.length>1) throw new Error('Multiple matching options: '+label);
- return matches[0] || null;
-}`
+// Canonical keys follow the owner-supplied complete menu, not translated labels.
+var marketplaceDropdownValues = map[string][]string{
+	"Category":     {"tools", "furniture", "household", "garden", "appliances", "video-games", "books-movies-music", "bags-luggage", "womens-clothing-shoes", "mens-clothing-shoes", "jewelry-accessories", "health-beauty", "pet-supplies", "baby-kids", "toys-games", "electronics-computers", "mobile-phones", "bicycles", "arts-crafts", "sports-outdoors", "auto-parts", "musical-instruments", "antiques-collectibles", "garage-sale", "miscellaneous", "vehicles"},
+	"Condition":    {"new", "used-like-new", "used-good", "used-fair"},
+	"Availability": {"single", "in-stock"},
+}
 
-const marketplaceDropdownSelected = `(name,label) => {
- const control = (` + marketplaceNamedControl + `)(name,'[role="combobox"]');
+var marketplaceDropdownOption = marketplaceDropdownOptionFor(marketplaceNamedControl)
+
+func marketplaceDropdownOptionFor(resolver string) string {
+	return `(name, index, count) => {
+ const visible=el=>el.getClientRects().length && !el.closest('[hidden],[aria-hidden="true"]');
+ const control=(` + resolver + `)(name,'[role="combobox"]');
+ // Facebook can leave aria-expanded=false even while the popup is visible.
+ // A unique visible popup with the expected option schema is the open signal.
+ if(!control)return null;
+ const ids=((control.getAttribute('aria-controls')||'')+' '+(control.getAttribute('aria-owns')||'')).trim().split(/\s+/).filter(Boolean);
+ let menus=ids.map(id=>document.getElementById(id)).filter(el=>el && visible(el));
+ if(ids.length && !menus.length)return null;
+ if(!menus.length)menus=[...document.querySelectorAll(name==='Category'?'[role="dialog"]':'[role="listbox"]')].filter(visible);
+ const rows=menu=>[...menu.querySelectorAll(name==='Category'?'[role="button"],[role="option"]':'[role="option"]')].filter(visible).filter(el=>!el.parentElement?.closest('[role="option"],[role="button"]') || !menu.contains(el.parentElement.closest('[role="option"],[role="button"]')));
+ if(!ids.length)menus=menus.filter(menu=>(count===0?rows(menu).length>1:rows(menu).length===count));
+ if(menus.length>1)throw new Error('Multiple open dropdown menus: '+name);
+ if(!menus.length)return null;
+ let options=rows(menus[0]);
+ if(count!==0 && options.length!==count)throw new Error('Unsupported Facebook '+name+' option layout: expected '+count+' options');
+ const expected=count||options.length;
+ const slots=options.map(el=>el.id.match(/___(\d+)$/)?.[1]);
+ if(slots.every(slot=>slot!==undefined)) {
+  if(new Set(slots).size!==expected || slots.some(slot=>Number(slot)>=expected))throw new Error('Unsupported Facebook option indices');
+  options=options.sort((a,b)=>Number(a.id.match(/___(\d+)$/)[1])-Number(b.id.match(/___(\d+)$/)[1]));
+ } else if(slots.some(slot=>slot!==undefined))throw new Error('Mixed Facebook option indices');
+ return options[index]||null;
+}`
+}
+
+func marketplaceDropdownSelectedFor(resolver string) string {
+	return `(name,label) => {
+ const control = (` + resolver + `)(name,'[role="combobox"]');
  if(!control) return false;
  const norm = value => (value || '').replace(/\s+/g,' ').trim().toLocaleLowerCase();
  return norm(control.value)===norm(label) || [...control.querySelectorAll('span')].some(span=>norm(span.textContent)===norm(label));
 }`
+}
 
-func marketplaceChoose(ctx context.Context, page *rod.Page, name, label string) error {
-	if err := marketplaceOpenDropdown(ctx, page, name); err != nil {
+func marketplaceChoose(ctx context.Context, page *rod.Page, name, value string) error {
+	values := marketplaceDropdownValues[name]
+	index := -1
+	for slot, key := range values {
+		if key == value {
+			index = slot
+			break
+		}
+	}
+	if index < 0 {
+		return fmt.Errorf("Unsupported Marketplace %s value: %s", name, value)
+	}
+	return marketplaceChooseIndex(ctx, page, name, index, len(values), marketplaceNamedControl)
+}
+
+func marketplaceChooseIndex(ctx context.Context, page *rod.Page, name string, index, count int, resolver string) error {
+	if err := marketplaceOpenDropdownWith(ctx, page, name, count, resolver); err != nil {
 		return err
 	}
-	option, err := page.Context(ctx).ElementByJS(rod.Eval(marketplaceDropdownOption, name, label))
+	option, err := page.Context(ctx).ElementByJS(rod.Eval(marketplaceDropdownOptionFor(resolver), name, index, count))
 	if err != nil {
-		return fmt.Errorf("Could not find Facebook option %s: %w", label, err)
+		return fmt.Errorf("Could not find Facebook %s option %d: %w", name, index, err)
+	}
+	return marketplaceSelectOption(ctx, page, name, option, resolver)
+}
+
+func marketplaceSelectOption(ctx context.Context, page *rod.Page, name string, option *rod.Element, resolver string) error {
+	caption, err := option.Eval(`function(){return [...this.querySelectorAll('span')].find(span=>!span.querySelector('span') && span.textContent.trim())?.textContent.trim() || this.textContent.trim()}`)
+	if err != nil {
+		return err
 	}
 	if err = option.Click(proto.InputMouseButtonLeft, 1); err != nil {
 		return err
 	}
-	if err = page.Context(ctx).Wait(rod.Eval(marketplaceDropdownSelected, name, label)); err != nil {
+	if err = page.Context(ctx).Wait(rod.Eval(marketplaceDropdownSelectedFor(resolver), name, caption.Value.Str())); err != nil {
 		return fmt.Errorf("Facebook did not retain %s selection: %w", name, err)
 	}
 	return nil
@@ -284,27 +337,67 @@ func marketplaceChoose(ctx context.Context, page *rod.Page, name, label string) 
 // Click the live Facebook label first and verify that React opened it. A
 // dispatched click is not sufficient while the composer is still hydrating.
 func marketplaceOpenDropdown(ctx context.Context, page *rod.Page, name string) error {
-	ctx, cancel := context.WithTimeout(ctx, 25*time.Second)
-	defer cancel()
+	return marketplaceOpenDropdownWith(ctx, page, name, len(marketplaceDropdownValues[name]), marketplaceNamedControl)
+}
+
+func marketplaceOpenDropdownWith(ctx context.Context, page *rod.Page, name string, count int, resolver string) error {
 	ticker := time.NewTicker(150 * time.Millisecond)
 	defer ticker.Stop()
 	var nextClick time.Time
+	var lastInspectionErr error
 	for {
 		if ctx.Err() != nil {
+			if lastInspectionErr != nil {
+				return fmt.Errorf("Could not open Facebook %s dropdown (%v): %w", name, lastInspectionErr, ctx.Err())
+			}
 			return fmt.Errorf("Could not open Facebook %s dropdown: %w", name, ctx.Err())
 		}
 		if _, err := (proto.TargetGetTargetInfo{TargetID: page.TargetID}).Call(page.Browser().Context(ctx)); err != nil {
+			if ctx.Err() != nil {
+				return fmt.Errorf("Could not open Facebook %s dropdown: %w", name, ctx.Err())
+			}
 			return errors.New("Facebook was closed before the dropdown opened")
 		}
 		attempt, stop := context.WithTimeout(ctx, 2*time.Second)
-		field, err := marketplaceField(attempt, page, name, `label[role="combobox"][aria-labelledby]`)
+		open, openErr := page.Context(attempt).Eval(`(name,count)=>Boolean((`+marketplaceDropdownOptionFor(resolver)+`)(name,0,count))`, name, count)
+		if openErr != nil {
+			probeExpired := errors.Is(openErr, context.DeadlineExceeded) || errors.Is(attempt.Err(), context.DeadlineExceeded)
+			stop()
+			if ctx.Err() != nil {
+				return fmt.Errorf("Could not open Facebook %s dropdown: %w", name, ctx.Err())
+			}
+			// React may briefly render both old and new controls. Wait without
+			// clicking either one. A slow probe is retried; only the caller's
+			// cancellation/deadline ends the wait for an unfinished control.
+			if probeExpired || strings.Contains(openErr.Error(), "Multiple matching controls: "+name) {
+				lastInspectionErr = openErr
+				select {
+				case <-ctx.Done():
+				case <-ticker.C:
+				}
+				continue
+			}
+			// The tab may close between the target check and the page inspection.
+			probe, finish := context.WithTimeout(ctx, 2*time.Second)
+			_, targetErr := (proto.TargetGetTargetInfo{TargetID: page.TargetID}).Call(page.Browser().Context(probe))
+			finish()
+			if ctx.Err() != nil {
+				return fmt.Errorf("Could not open Facebook %s dropdown: %w", name, ctx.Err())
+			}
+			if targetErr != nil {
+				return errors.New("Facebook was closed before the dropdown opened")
+			}
+			return fmt.Errorf("Could not inspect Facebook %s dropdown: %w", name, openErr)
+		}
+		lastInspectionErr = nil
+		if open.Value.Bool() {
+			stop()
+			return nil
+		}
+		field, err := marketplaceFieldWith(attempt, page, name, `label[role="combobox"][aria-labelledby]`, resolver)
 		if err == nil {
 			state, stateErr := field.Eval(`function(){return {open:this.getAttribute('aria-expanded')==='true',disabled:this.getAttribute('aria-disabled')==='true'||this.hasAttribute('disabled')}}`)
-			if stateErr == nil && state.Value.Get("open").Bool() {
-				stop()
-				return nil
-			}
-			if stateErr == nil && !state.Value.Get("disabled").Bool() && !time.Now().Before(nextClick) {
+			if stateErr == nil && !state.Value.Get("open").Bool() && !state.Value.Get("disabled").Bool() && !time.Now().Before(nextClick) {
 				// Reacquire the label on each retry; React may replace the ignored
 				// control. Never re-click an expanded field and close its menu.
 				_ = field.Click(proto.InputMouseButtonLeft, 1)
@@ -320,7 +413,11 @@ func marketplaceOpenDropdown(ctx context.Context, page *rod.Page, name string) e
 }
 
 func marketplaceCheck(ctx context.Context, page *rod.Page, name string) error {
-	field, err := marketplaceField(ctx, page, name, `[role="checkbox"],[role="switch"],input[type="checkbox"]`)
+	return marketplaceCheckWith(ctx, page, name, marketplaceNamedControl)
+}
+
+func marketplaceCheckWith(ctx context.Context, page *rod.Page, name, resolver string) error {
+	field, err := marketplaceFieldWith(ctx, page, name, `[role="checkbox"],[role="switch"],input[type="checkbox"]`, resolver)
 	if err != nil {
 		return err
 	}
@@ -359,39 +456,32 @@ func fillMarketplaceItemFields(ctx context.Context, page *rod.Page, fields Marke
 	if err := validateMarketplaceItemFields(&fields); err != nil {
 		return err
 	}
-	// Login waiting has no deadline. Filling a known form has a bounded, cancellable
-	// deadline so missing/changed Facebook controls return a useful error.
-	ctx, cancel := context.WithTimeout(ctx, 2*time.Minute)
-	defer cancel()
+	// Form filling inherits caller cancellation without imposing an overall cap.
 	if err := marketplaceText(ctx, page, "Title", fields.Title); err != nil {
 		return err
 	}
 	if err := marketplaceText(ctx, page, "Price", fields.Price); err != nil {
 		return err
 	}
-	if err := marketplaceChoose(ctx, page, "Category", marketplaceItemCategories[fields.Category]); err != nil {
+	if err := marketplaceChoose(ctx, page, "Category", fields.Category); err != nil {
 		return err
 	}
-	if err := marketplaceChoose(ctx, page, "Condition", marketplaceItemConditions[fields.Condition]); err != nil {
+	if err := marketplaceChoose(ctx, page, "Condition", fields.Condition); err != nil {
 		return err
+	}
+	more := strings.TrimSpace(fields.Description) != "" || fields.Availability != "" || len(fields.Tags) > 0 || strings.TrimSpace(fields.SKU) != "" || fields.Location != nil || fields.PublicMeetup || fields.DoorPickup || fields.DoorDropoff
+	if more {
+		if err := marketplaceMoreDetails(ctx, page); err != nil {
+			return err
+		}
 	}
 	if strings.TrimSpace(fields.Description) != "" {
 		if err := marketplaceText(ctx, page, "Description", fields.Description); err != nil {
 			return err
 		}
 	}
-	more := fields.Availability != "" || len(fields.Tags) > 0 || strings.TrimSpace(fields.SKU) != "" || fields.Location != nil || fields.PublicMeetup || fields.DoorPickup || fields.DoorDropoff
-	if more {
-		if err := marketplaceMoreDetails(ctx, page); err != nil {
-			return err
-		}
-	}
 	if fields.Availability != "" {
-		label := "List as Single Item"
-		if fields.Availability == "in-stock" {
-			label = "List as In Stock"
-		}
-		if err := marketplaceChoose(ctx, page, "Availability", label); err != nil {
+		if err := marketplaceChoose(ctx, page, "Availability", fields.Availability); err != nil {
 			return err
 		}
 	}
@@ -420,18 +510,8 @@ func fillMarketplaceItemFields(ctx context.Context, page *rod.Page, fields Marke
 		}
 	}
 	if fields.Location != nil {
-		if err := marketplaceText(ctx, page, "Location", fields.Location.Label); err != nil {
+		if err := marketplaceSelectLocation(ctx, page, fields.Location); err != nil {
 			return err
-		}
-		option, err := page.Context(ctx).ElementByJS(rod.Eval(marketplaceOption, fields.Location.Label, fields.Location.Subtitle))
-		if err != nil {
-			return fmt.Errorf("Could not match the selected location in Facebook: %w", err)
-		}
-		if err = option.Click(proto.InputMouseButtonLeft, 1); err != nil {
-			return err
-		}
-		if err = page.Context(ctx).Wait(rod.Eval(marketplaceLocationSelected, fields.Location.Label)); err != nil {
-			return fmt.Errorf("Facebook did not confirm the selected location: %w", err)
 		}
 	}
 	for _, toggle := range []struct {
@@ -445,6 +525,23 @@ func fillMarketplaceItemFields(ctx context.Context, page *rod.Page, fields Marke
 				return err
 			}
 		}
+	}
+	return nil
+}
+
+func marketplaceSelectLocation(ctx context.Context, page *rod.Page, location *MarketplaceLocationHit) error {
+	if err := marketplaceText(ctx, page, "Location", location.Label); err != nil {
+		return err
+	}
+	option, err := page.Context(ctx).ElementByJS(rod.Eval(marketplaceOption, location.Label, location.Subtitle))
+	if err != nil {
+		return fmt.Errorf("Could not match the selected location in Facebook: %w", err)
+	}
+	if err = option.Click(proto.InputMouseButtonLeft, 1); err != nil {
+		return err
+	}
+	if err = page.Context(ctx).Wait(rod.Eval(marketplaceLocationSelected, location.Label)); err != nil {
+		return fmt.Errorf("Facebook did not confirm the selected location: %w", err)
 	}
 	return nil
 }

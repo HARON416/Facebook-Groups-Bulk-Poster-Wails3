@@ -47,8 +47,8 @@ func expandMarketplaceDetails(ctx context.Context, browserPage *rod.Page, state 
 		}
 	}()
 	type candidate struct {
-		el             *rod.Element
-		sidebar, named bool
+		el                *rod.Element
+		sidebar, composer bool
 	}
 	var candidates []candidate
 	for _, el := range elements {
@@ -59,25 +59,25 @@ func expandMarketplaceDetails(ctx context.Context, browserPage *rod.Page, state 
 		info, err := el.Eval(`function(){return {
    hidden:!!this.closest('[hidden],[aria-hidden="true"],header,nav,[role="banner"],[role="navigation"]'),
    sidebar:!!this.closest('[role="complementary"]'),
-   named:[...this.querySelectorAll('span[id]')].some(span=>span.textContent.trim()==='More details')
+   composer:!!this.closest('main,[role="main"]')
   }}`)
 		if err == nil && !info.Value.Get("hidden").Bool() {
-			candidates = append(candidates, candidate{el, info.Value.Get("sidebar").Bool(), info.Value.Get("named").Bool()})
+			candidates = append(candidates, candidate{el, info.Value.Get("sidebar").Bool(), info.Value.Get("composer").Bool()})
 		}
 	}
-	// Prefer the supplied label when available, then composer candidates. An
+	// Prefer item-main controls, then complementary composer controls. An
 	// unrelated complementary region must not hide the real control elsewhere.
-	var named, sidebar []candidate
+	var composer, sidebar []candidate
 	for _, candidate := range candidates {
-		if candidate.named {
-			named = append(named, candidate)
+		if candidate.composer {
+			composer = append(composer, candidate)
 		}
 		if candidate.sidebar {
 			sidebar = append(sidebar, candidate)
 		}
 	}
-	if len(named) > 0 {
-		candidates = named
+	if len(composer) > 0 {
+		candidates = composer
 	} else if len(sidebar) > 0 {
 		candidates = sidebar
 	}

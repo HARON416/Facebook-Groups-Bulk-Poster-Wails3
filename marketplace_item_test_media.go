@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/base64"
 	"errors"
+	"fmt"
 	"net/http"
 	"net/url"
 	"os"
@@ -21,21 +22,32 @@ const marketplacePhotoInput = `:is([role="main"], [role="form"], main) input[typ
 const marketplaceVideoInput = `:is([role="main"], [role="form"], main) input[type="file"][accept*="video/"]`
 
 type MarketplaceTestMedia struct {
-	Photos []PostUpload           `json:"photos"`
-	Video  *PostUpload            `json:"video"`
-	Fields *MarketplaceItemFields `json:"fields"`
+	Photos        []PostUpload              `json:"photos"`
+	Video         *PostUpload               `json:"video"`
+	Fields        *MarketplaceItemFields    `json:"fields"`
+	VehicleFields *MarketplaceVehicleFields `json:"vehicleFields"`
+	HomeFields    *MarketplaceHomeFields    `json:"homeFields"`
 }
 
 func init() {
 	application.RegisterBindingMethodID((*ProfileService).TestMarketplaceItemMedia, 4270654618)
+	application.RegisterBindingMethodID((*ProfileService).TestMarketplaceVehicleMedia, 4270654619)
+	application.RegisterBindingMethodID((*ProfileService).TestMarketplaceHomeMedia, 4270654620)
 }
 
 func stageMarketplaceTestMedia(media MarketplaceTestMedia) (dir string, photos []string, video string, err error) {
 	if len(media.Photos) == 0 && media.Video == nil {
 		return "", nil, "", errors.New("Select at least one image or video")
 	}
-	if len(media.Photos) > 10 {
-		return "", nil, "", errors.New("You may only select a maximum of 10 photos")
+	limit := 10
+	if media.VehicleFields != nil {
+		limit = 20
+	}
+	if media.HomeFields != nil {
+		limit = 50
+	}
+	if len(media.Photos) > limit {
+		return "", nil, "", fmt.Errorf("You may only select a maximum of %d photos", limit)
 	}
 	dir, photos, err = stagePostImages(media.Photos)
 	if err != nil {
@@ -68,6 +80,9 @@ func stageMarketplaceTestMedia(media MarketplaceTestMedia) (dir string, photos [
 }
 
 func (m *ProfileService) TestMarketplaceItemMedia(ctx context.Context, profileID string, media MarketplaceTestMedia) error {
+	if media.VehicleFields != nil || media.HomeFields != nil {
+		return errors.New("Use the matching listing test for these fields")
+	}
 	if err := validateMarketplaceItemFields(media.Fields); err != nil {
 		return err
 	}
@@ -78,7 +93,54 @@ func (m *ProfileService) TestMarketplaceItemMedia(ctx context.Context, profileID
 	return s.testMarketplaceItemMedia(ctx, marketplaceTestItemURL, media)
 }
 
+func (m *ProfileService) TestMarketplaceVehicleMedia(ctx context.Context, profileID string, media MarketplaceTestMedia) error {
+	if media.Fields != nil || media.HomeFields != nil {
+		return errors.New("Use only vehicle fields in a vehicle test")
+	}
+	if err := validateMarketplaceVehicleFields(media.VehicleFields); err != nil {
+		return err
+	}
+	s, err := m.session(profileID)
+	if err != nil {
+		return err
+	}
+	return s.testMarketplaceItemMedia(ctx, marketplaceTestVehicleURL, media)
+}
+
+func (m *ProfileService) TestMarketplaceHomeMedia(ctx context.Context, profileID string, media MarketplaceTestMedia) error {
+	if media.Fields != nil || media.VehicleFields != nil {
+		return errors.New("Use only home fields in a home test")
+	}
+	if err := validateMarketplaceHomeFields(media.HomeFields); err != nil {
+		return err
+	}
+	s, err := m.session(profileID)
+	if err != nil {
+		return err
+	}
+	return s.testMarketplaceItemMedia(ctx, marketplaceTestHomeURL, media)
+}
+
 func (s *GroupsService) testMarketplaceItemMedia(ctx context.Context, target string, media MarketplaceTestMedia) error {
+	variants := 0
+	for _, present := range []bool{media.Fields != nil, media.VehicleFields != nil, media.HomeFields != nil} {
+		if present {
+			variants++
+		}
+	}
+	if variants > 1 {
+		return errors.New("Choose one listing type")
+	}
+	if media.HomeFields != nil {
+		if err := validateMarketplaceHomeFields(media.HomeFields); err != nil {
+			return err
+		}
+	}
+	if media.VehicleFields != nil {
+		if err := validateMarketplaceVehicleFields(media.VehicleFields); err != nil {
+			return err
+		}
+	}
 	if media.Fields != nil {
 		if err := validateMarketplaceItemFields(media.Fields); err != nil {
 			return err
@@ -125,6 +187,18 @@ func (s *GroupsService) testMarketplaceItemMedia(ctx context.Context, target str
 			return err
 		}
 	}
+	// Listing-type changes can rebuild the form and clear its media inputs.
+	// Choose the vehicle type or home offer before assigning files.
+	if media.VehicleFields != nil {
+		if err := chooseMarketplaceVehicleFor(ctx, page, media.VehicleFields.VehicleType, "Vehicle type", media.VehicleFields.VehicleType); err != nil {
+			return err
+		}
+	}
+	if media.HomeFields != nil {
+		if err := chooseMarketplaceHome(ctx, page, "Home offer", media.HomeFields.HomeOffer); err != nil {
+			return err
+		}
+	}
 	if len(photos) > 0 {
 		input, findErr := marketplaceMediaInput(ctx, page, marketplacePhotoInput)
 		if findErr != nil {
@@ -161,8 +235,29 @@ func (s *GroupsService) testMarketplaceItemMedia(ctx context.Context, target str
 	if oldDir != "" {
 		_ = os.RemoveAll(oldDir)
 	}
-	if media.Fields != nil {
-		return fillMarketplaceItemFields(ctx, page, *media.Fields)
+	if variants > 0 {
+		var err error
+		if media.HomeFields != nil {
+			err = fillMarketplaceHomeFields(ctx, page, *media.HomeFields)
+		} else if media.VehicleFields != nil {
+			err = fillMarketplaceVehicleFields(ctx, page, *media.VehicleFields)
+		} else {
+			err = fillMarketplaceItemFields(ctx, page, *media.Fields)
+		}
+		if err != nil {
+			return err
+		}
+		if err := clickMarketplaceItemNext(ctx, page); err != nil {
+			return err
+		}
+		if err := waitMarketplaceItemSecondStep(ctx, page); err != nil {
+			return err
+		}
+		if err := selectMarketplaceGroups(ctx, page); err != nil {
+			return err
+		}
+		// Testing stops when Publish is ready. Do not click or focus it.
+		return waitMarketplacePublishReady(ctx, page)
 	}
 	return nil
 }

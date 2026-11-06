@@ -204,6 +204,7 @@ msgstr "Zeitzone: {0}. Halten Sie Postika geöffnet und Ihren Computer wach. Fac
 #: src/components/ItemListingEditor.svelte
 #: src/components/LocationSearchDialog.svelte
 #: src/components/MarketplaceListings.svelte
+#: src/components/MarketplaceListings.svelte
 #: src/components/RenameProfileDialog.svelte
 msgid "Cancel"
 msgstr "Abbrechen"
@@ -3233,6 +3234,7 @@ msgstr "Orte konnten nicht gesucht werden. Bitte versuche es erneut."
 #: src/components/ItemListingEditor.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/MarketplaceListings.svelte
+#: src/components/MarketplaceListings.svelte
 msgid "Try again"
 msgstr "Erneut versuchen"
 
@@ -3851,6 +3853,7 @@ msgstr ""
 #~ msgstr ""
 
 #: src/components/ItemListingEditor.svelte
+#: src/components/MarketplaceListings.svelte
 msgid "Test cancelled."
 msgstr ""
 
@@ -3859,10 +3862,12 @@ msgid "Add at least one photo or video."
 msgstr ""
 
 #: src/components/ItemListingEditor.svelte
+#: src/components/MarketplaceListings.svelte
 msgid "Finish signing in or any verification prompts in Chrome. Your listing will be filled automatically."
 msgstr ""
 
 #: src/components/ItemListingEditor.svelte
+#: src/components/MarketplaceListings.svelte
 msgid "Listing filled in Facebook. Review it in Chrome."
 msgstr ""
 
@@ -3927,18 +3932,14 @@ msgstr ""
 msgid "Search listings"
 msgstr ""
 
-#. 0: chosen.length
-#: src/components/MarketplaceListings.svelte
-msgid "Selected listings ({0})"
-msgstr ""
+#~ msgid "Selected listings ({0})"
+#~ msgstr ""
 
-#: src/components/MarketplaceListings.svelte
-msgid "Back to listings"
-msgstr ""
+#~ msgid "Back to listings"
+#~ msgstr ""
 
-#: src/components/MarketplaceListings.svelte
-msgid "Group selection and publishing will be added next. Your listings are saved; nothing has been posted to Facebook."
-msgstr ""
+#~ msgid "Group selection and publishing will be added next. Your listings are saved; nothing has been posted to Facebook."
+#~ msgstr ""
 
 #: src/components/MarketplaceListings.svelte
 msgid "Clear selection"
@@ -4044,4 +4045,39 @@ msgstr ""
 #. 0: title(listing)
 #: src/components/MarketplaceListings.svelte
 msgid "Delete {0}"
+msgstr ""
+
+#~ msgid "Only item listings can be tested at the moment."
+#~ msgstr ""
+
+#~ msgid "Testing item {0} of {1}: {2}"
+#~ msgstr ""
+
+#~ msgid "Next item ({0} / {1})"
+#~ msgstr ""
+
+#~ msgid "Only item and Car/Truck listings can be tested at the moment."
+#~ msgstr ""
+
+#. 0: testIndex + 1; 1: testQueue.length; 2: title(testQueue[testIndex])
+#: src/components/MarketplaceListings.svelte
+msgid "Testing listing {0} of {1}: {2}"
+msgstr ""
+
+#. 0: testIndex + 2; 1: testQueue.length
+#: src/components/MarketplaceListings.svelte
+msgid "Next listing ({0} / {1})"
+msgstr ""
+
+#~ msgid "Only item, Car/Truck, and Motorcycle listings can be tested at the moment."
+#~ msgstr ""
+
+#~ msgid "Only item, Car/Truck, Motorcycle, and Powersport listings can be tested at the moment."
+#~ msgstr ""
+
+#~ msgid "Only item, Car/Truck, Motorcycle, Powersport, and RV/Camper listings can be tested at the moment."
+#~ msgstr ""
+
+#: src/components/MarketplaceListings.svelte
+msgid "This listing type is not supported for testing yet."
 msgstr ""

@@ -198,7 +198,7 @@ func focusMarketplaceLocation(ctx context.Context, browserPage *rod.Page, query 
 	var visible, named []*rod.Element
 	for _, el := range elements {
 		if shown, err := el.Visible(); err == nil && shown {
-			info, err := el.Eval(`function(){return {hidden:!!this.closest('[hidden],[aria-hidden="true"],header,nav,[role="banner"]'),named:this.getAttribute('aria-label')==='Location'||!!this.closest('label')?.querySelector('svg')}}`)
+			info, err := el.Eval(`function(){return {hidden:!!this.closest('[hidden],[aria-hidden="true"],header,nav,[role="banner"]'),named:!!this.closest('label')?.querySelector('svg')}}`)
 			if err == nil && !info.Value.Get("hidden").Bool() {
 				visible = append(visible, el)
 				if info.Value.Get("named").Bool() {

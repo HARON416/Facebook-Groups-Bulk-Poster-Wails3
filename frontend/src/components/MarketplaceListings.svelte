@@ -3,6 +3,8 @@
   import type { AccountProfile } from '../../bindings/postika';
   import MarketplaceToolbar from './MarketplaceToolbar.svelte';
   import ItemListingEditor from './ItemListingEditor.svelte';
+  import LocalizedFeedback from './LocalizedFeedback.svelte';
+  import { testMarketplaceListingMedia, canTestMarketplaceListing } from '../lib/media-upload';
   import PhosphorIcon from './PhosphorIcon.svelte';
   import { listMarketplaceListings, deleteMarketplaceListing, type MarketplaceListing } from '../lib/marketplace-drafts';
   import { itemListingFieldOptions, vehicleListingFieldOptions, homeListingFieldOptions } from '../lib/marketplace-fields';
@@ -14,7 +16,13 @@
   let selected = $state<string[]>([]);
   let filter = $state('all'), search = $state(''), loading = $state(true), error = $state(''), busy = $state(false);
   let editing = $state<MarketplaceListing | null>(null);
-  let reviewing = $state(false);
+  let testQueue = $state.raw<MarketplaceListing[]>([]);
+  let testIndex = $state(0), testing = $state(false);
+  let testFeedback = $state<'idle' | 'testing' | 'tested' | 'error' | 'cancelled'>('idle');
+  let testError = $state('');
+  let testController: AbortController | undefined;
+  const working = $derived(busy || testQueue.length > 0);
+
   let deleting = $state<string | null>(null);
   let thumbnails = $state<Record<string, string>>({});
   type SortColumn = 'title' | 'price' | 'updated';
@@ -55,15 +63,47 @@
   }
   const fullTimestamp = (timestamp: number) => new Date(timestamp).toLocaleString(getLocale(), { dateStyle: 'full', timeStyle: 'short' });
   const visible = $derived(listings.filter(listing => (filter === 'all' || listing.kind === filter) && [title(listing), listing.fields.locationData?.label, listing.fields.location, listing.fields.address].join(' ').toLocaleLowerCase(getLocale()).includes(search.trim().toLocaleLowerCase(getLocale()))).sort(compare));
-  const chosen = $derived(listings.filter(listing => selected.includes(listing.id)));
-  const allSelected = $derived(visible.length > 0 && visible.every(listing => selected.includes(listing.id)));
-  const someSelected = $derived(visible.some(listing => selected.includes(listing.id)) && !allSelected);
+  const chosen = $derived(listings.filter(listing => canTestMarketplaceListing(listing.kind, listing.fields) && selected.includes(listing.id)));
+  const selectable = $derived(visible.filter(listing => canTestMarketplaceListing(listing.kind, listing.fields)));
+  const allSelected = $derived(selectable.length > 0 && selectable.every(listing => selected.includes(listing.id)));
+  const someSelected = $derived(selectable.some(listing => selected.includes(listing.id)) && !allSelected);
 
-  async function reviewSelection() {
-    reviewing = true;
+  async function testSelected() {
+    if (!profile || working || !chosen.length) return;
+    testQueue = [...chosen];
+    testIndex = 0;
     deleting = null;
-    await tick();
-    document.getElementById('selected-listings-heading')?.focus();
+    await testItem();
+  }
+  async function testItem() {
+    if (!profile || testing || !testQueue[testIndex]) return;
+    const listing = testQueue[testIndex];
+    const profileID = profile.id;
+    const controller = new AbortController();
+    testController = controller;
+    testing = true;
+    testFeedback = 'testing';
+    testError = '';
+    try {
+      await testMarketplaceListingMedia(listing.kind, profileID, listing.photos, listing.video ?? null, listing.fields, controller.signal);
+      if (!alive) return;
+      if (controller.signal.aborted) { testFeedback = 'cancelled'; testQueue = []; return; }
+      testFeedback = 'tested';
+      if (testIndex === testQueue.length - 1) testQueue = [];
+    } catch (cause) {
+      if (!alive) return;
+      if (controller.signal.aborted) { testFeedback = 'cancelled'; testQueue = []; }
+      else { testFeedback = 'error'; testError = cause instanceof Error ? cause.message : String(cause); }
+    } finally { if (alive) testing = false; }
+  }
+  function cancelTest() {
+    testController?.abort();
+    if (!testing) { testQueue = []; testFeedback = 'cancelled'; }
+  }
+  async function nextItem() {
+    if (testing || testFeedback !== 'tested' || testIndex >= testQueue.length - 1) return;
+    testIndex++;
+    await testItem();
   }
   async function closeEditor() {
     const id = editing?.id;
@@ -71,8 +111,8 @@
     await tick();
     document.getElementById(`marketplace-listing-${id}`)?.focus();
   }
-  function toggle(id: string) { selected = selected.includes(id) ? selected.filter(value => value !== id) : [...selected, id]; reviewing = false; }
-  function toggleAll() { selected = allSelected ? selected.filter(id => !visible.some(listing => listing.id === id)) : [...new Set([...selected, ...visible.map(listing => listing.id)])]; reviewing = false; }
+  function toggle(id: string) { if (!working) selected = selected.includes(id) ? selected.filter(value => value !== id) : [...selected, id]; }
+  function toggleAll() { if (!working) selected = allSelected ? selected.filter(id => !selectable.some(listing => listing.id === id)) : [...new Set([...selected, ...selectable.map(listing => listing.id)])]; }
   function releaseThumbnails() { Object.values(thumbnails).forEach(url => URL.revokeObjectURL(url)); }
   async function refresh() {
     const request = ++version;
@@ -96,10 +136,10 @@
     window.addEventListener('postika:listings-changed', reload);
     window.addEventListener('focus', reload);
     void refresh();
-    return () => { alive = false; version++; channel.close(); window.removeEventListener('postika:listings-changed', reload); window.removeEventListener('focus', reload); releaseThumbnails(); };
+    return () => { alive = false; testController?.abort(); version++; channel.close(); window.removeEventListener('postika:listings-changed', reload); window.removeEventListener('focus', reload); releaseThumbnails(); };
   });
   async function remove(id: string) {
-    if (!profile || busy) return;
+    if (!profile || working) return;
     busy = true;
     try { await deleteMarketplaceListing(profile.id, id); deleting = null; notify({ kind: 'success', message: 'Listing deleted.' }); }
     catch { error = 'Could not delete listing. Please try again.'; }
@@ -113,10 +153,10 @@
   </button>
 {/snippet}
 
-{#snippet selectionCheckbox(id: string, label: string, checked: boolean, mixed: boolean, onchange: () => void)}
+{#snippet selectionCheckbox(id: string, label: string, checked: boolean, mixed: boolean, onchange: () => void, disabled = false)}
   <div class="checkbox-wrapper-46">
-    <input class="inp-cbx" {id} type="checkbox" {checked} indeterminate={mixed} {onchange} />
-    <label class="cbx" for={id}>
+    <input class="inp-cbx" {id} type="checkbox" {checked} {disabled} indeterminate={mixed} {onchange} />
+    <label class="cbx" for={id} title={disabled && !working ? 'This listing type is not supported for testing yet.' : undefined}>
       <span class="checkbox-symbol" aria-hidden="true">
         <svg width="12" height="10" viewBox="0 0 12 10">
           {#if mixed}<path class="mixed-mark" d="M2 5h8" />{:else}<polyline points="1.5 6 4.5 9 10.5 1" />{/if}
@@ -131,21 +171,31 @@
   {#key editing.id}<ItemListingEditor {profile} kind={editing.kind} initialDraft={editing} onprevious={closeEditor} onsaved={() => { void closeEditor(); notify({ kind: 'success', message: 'Listing saved.' }); }} />{/key}
 {:else}
 <div class="marketplace-listings">
-  <MarketplaceToolbar bind:selected={filter} selectedCount={selected.length} onpublish={reviewSelection} />
+  <MarketplaceToolbar bind:selected={filter} selectedCount={chosen.length} publishDisabled={working} publishing={testing} onpublish={testSelected} />
   <section class="listing-content" aria-label="Saved listings" aria-busy={loading}>
     <div class="list-heading">
       <div><h1>Saved listings</h1><p>Save listings here, then select them when you’re ready to publish.</p></div>
       <input class="search" type="search" aria-label="Search saved listings" placeholder="Search listings" bind:value={search} />
     </div>
     {#if error}<div class="feedback" role="alert"><p>{error}</p><button type="button" class="action-button action-button--secondary" onclick={refresh}>Try again</button></div>{/if}
-    {#if reviewing && chosen.length}
-      <section class="selection-review" aria-labelledby="selected-listings-heading" tabindex="-1">
-        <div class="review-heading"><h2 id="selected-listings-heading" tabindex="-1">Selected listings ({chosen.length})</h2><button type="button" class="action-button action-button--secondary" onclick={() => { reviewing = false; }}>Back to listings</button></div>
-        <p>Group selection and publishing will be added next. Your listings are saved; nothing has been posted to Facebook.</p>
-        <ul>{#each chosen as listing (listing.id)}<li>{title(listing)} <span>· {typeLabel(listing)}</span></li>{/each}</ul>
-      </section>
+    {#if testFeedback !== 'idle'}
+      <div class="test-status" role="status" aria-live="polite">
+        <div>
+          {#if testFeedback === 'testing'}
+            <p>Testing listing {testIndex + 1} of {testQueue.length}: {title(testQueue[testIndex])}</p>
+            <p>Finish signing in or any verification prompts in Chrome. Your listing will be filled automatically.</p>
+          {:else if testFeedback === 'tested'}<p>Listing filled in Facebook. Review it in Chrome.</p>
+          {:else if testFeedback === 'cancelled'}<p>Test cancelled.</p>
+          {:else if testFeedback === 'error'}<p class="test-error"><LocalizedFeedback message={testError} /></p>{/if}
+        </div>
+        <div class="test-actions">
+          {#if testFeedback === 'tested' && testQueue.length}<button class="action-button action-button--secondary" type="button" onclick={nextItem}>Next listing ({testIndex + 2} / {testQueue.length})</button>{/if}
+          {#if testFeedback === 'error' && testQueue.length}<button class="action-button action-button--secondary" type="button" onclick={testItem}>Try again</button>{/if}
+          {#if testQueue.length}<button class="action-button action-button--secondary" type="button" onclick={cancelTest}>Cancel</button>{/if}
+        </div>
+      </div>
     {/if}
-    <div class="selection-summary" aria-live="polite"><span>{visible.length} listings</span>{#if selected.length}<span>{selected.length} selected</span><button type="button" onclick={() => { selected = []; reviewing = false; }}>Clear selection</button>{/if}</div>
+    <div class="selection-summary" aria-live="polite"><span>{visible.length} listings</span>{#if selected.length}<span>{selected.length} selected</span><button type="button" disabled={working} onclick={() => { selected = []; }}>Clear selection</button>{/if}</div>
     {#if loading}<div class="empty" role="status"><p>Loading saved listings…</p></div>
     {:else if !listings.length}
       <div class="empty"><PhosphorIcon name="package" size={32} /><h2>{profile ? 'No saved listings yet' : 'Select an account to see its listings'}</h2><p>{profile ? 'Create a listing and save it. It will appear here, ready to select later.' : 'Your listings stay separate for each account.'}</p></div>
@@ -155,18 +205,18 @@
     <div class="table-scroll" role="region" aria-label="Saved Marketplace listings" tabindex="0">
       <table>
         <caption class="sr-only">Saved Marketplace listings</caption>
-        <thead><tr><th class="check-cell">{@render selectionCheckbox('marketplace-select-all', 'Select all visible listings', allSelected, someSelected, toggleAll)}</th><th scope="col" aria-sort={sortState('title')}>{@render sortHeading('title', 'Listing')}</th><th class="numeric" scope="col" aria-sort={sortState('price')}>{@render sortHeading('price', 'Price')}</th><th class="type" scope="col">Type</th><th scope="col">Location</th><th scope="col">Status</th><th scope="col" aria-sort={sortState('updated')}>{@render sortHeading('updated', 'Updated')}</th><th class="actions-cell" scope="col">Actions</th></tr></thead>
+        <thead><tr><th class="check-cell">{@render selectionCheckbox('marketplace-select-all', 'Select all visible listings', allSelected, someSelected, toggleAll, working || !selectable.length)}</th><th scope="col" aria-sort={sortState('title')}>{@render sortHeading('title', 'Listing')}</th><th class="numeric" scope="col" aria-sort={sortState('price')}>{@render sortHeading('price', 'Price')}</th><th class="type" scope="col">Type</th><th scope="col">Location</th><th scope="col">Status</th><th scope="col" aria-sort={sortState('updated')}>{@render sortHeading('updated', 'Updated')}</th><th class="actions-cell" scope="col">Actions</th></tr></thead>
         <tbody>{#each visible as listing (listing.id)}
           {@const listingDetails = subtitle(listing)}
           <tr class:selected={selected.includes(listing.id)} class:recent={highlighted === listing.id}>
-            <td class="check-cell">{@render selectionCheckbox(`marketplace-select-${listing.id}`, `Select ${title(listing)}`, selected.includes(listing.id), false, () => toggle(listing.id))}</td>
-            <th scope="row"><button type="button" class="listing-name" id={`marketplace-listing-${listing.id}`} onclick={() => { editing = listing; }}><span class="thumbnail">{#if thumbnails[listing.id]}<img src={thumbnails[listing.id]} alt="" />{:else}<PhosphorIcon name={listing.kind === 'vehicles' ? 'car' : listing.kind === 'homes' ? 'house' : 'package'} />{/if}</span><span class="title" dir="auto">{title(listing)}{#if listingDetails}<small>{listingDetails}</small>{/if}</span></button></th>
+            <td class="check-cell">{@render selectionCheckbox(`marketplace-select-${listing.id}`, `Select ${title(listing)}`, selected.includes(listing.id), false, () => toggle(listing.id), working || !canTestMarketplaceListing(listing.kind, listing.fields))}</td>
+            <th scope="row"><button type="button" class="listing-name" disabled={working} id={`marketplace-listing-${listing.id}`} onclick={() => { editing = listing; }}><span class="thumbnail">{#if thumbnails[listing.id]}<img src={thumbnails[listing.id]} alt="" />{:else}<PhosphorIcon name={listing.kind === 'vehicles' ? 'car' : listing.kind === 'homes' ? 'house' : 'package'} />{/if}</span><span class="title" dir="auto">{title(listing)}{#if listingDetails}<small>{listingDetails}</small>{/if}</span></button></th>
             <td class="numeric"><bdi>{listing.fields.price ? Number(listing.fields.price).toLocaleString(getLocale()) : '—'}</bdi></td>
             <td class="type">{typeLabel(listing)}</td><td class="location">{listing.fields.locationData?.label || listing.fields.address || listing.fields.location || '—'}</td>
             <td><span class="draft">Draft</span></td><td class="updated"><time datetime={new Date(listing.updatedAt).toISOString()} title={fullTimestamp(listing.updatedAt)} aria-label={fullTimestamp(listing.updatedAt)}><span>{updatedDate(listing.updatedAt)}</span><small>{new Date(listing.updatedAt).toLocaleTimeString(getLocale(), { hour: '2-digit', minute: '2-digit' })}</small></time></td>
-            <td class="actions-cell"><div class="row-actions"><button class="button-7" type="button" aria-label={`Edit ${title(listing)}`} disabled={busy} onclick={() => { editing = listing; }}>Edit</button><button class="button-7 button-7--delete" type="button" aria-label={`Delete ${title(listing)}`} disabled={busy} onclick={() => { deleting = listing.id; reviewing = false; }}>Delete</button></div></td>
+            <td class="actions-cell"><div class="row-actions"><button class="button-7" type="button" aria-label={`Edit ${title(listing)}`} disabled={working} onclick={() => { editing = listing; }}>Edit</button><button class="button-7 button-7--delete" type="button" aria-label={`Delete ${title(listing)}`} disabled={working} onclick={() => { deleting = listing.id; }}>Delete</button></div></td>
           </tr>
-          {#if deleting === listing.id}<tr><td colspan="8"><div class="delete-confirm"><p>Delete “{title(listing)}” and its saved media?</p><button class="action-button action-button--secondary" type="button" disabled={busy} onclick={() => { deleting = null; }}>Cancel</button><button class="action-button action-button--secondary delete" type="button" disabled={busy} onclick={() => remove(listing.id)}>Delete listing</button></div></td></tr>{/if}
+          {#if deleting === listing.id}<tr><td colspan="8"><div class="delete-confirm"><p>Delete “{title(listing)}” and its saved media?</p><button class="action-button action-button--secondary" type="button" disabled={working} onclick={() => { deleting = null; }}>Cancel</button><button class="action-button action-button--secondary delete" type="button" disabled={working} onclick={() => remove(listing.id)}>Delete listing</button></div></td></tr>{/if}
         {/each}</tbody>
       </table>
     </div>
@@ -178,7 +228,7 @@
 <style>
   .marketplace-listings { height: 100%; display: flex; flex-direction: column; min-height: 0; }
   .listing-content { flex: 1; overflow: auto; padding: 2.4rem; }
-  .list-heading, .review-heading { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.6rem; }
+  .list-heading { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.6rem; }
   h1 { color: var(--text-strong); font-size: var(--ui-title-size); font-weight: var(--ui-title-weight); margin: 0 0 .6rem; }
   h2 { color: var(--text-strong); font-size: var(--ui-body-size); margin: 0; }
   p { color: var(--text-secondary); font-size: var(--ui-body-size); line-height: 1.6; margin: 0; }
@@ -238,10 +288,10 @@
   .row-actions .button-7:active:not(:disabled) { background-color: color-mix(in srgb, var(--button-hover) 88%, var(--button-text)); box-shadow: none; }
   .row-actions .button-7--delete { --button-bg: var(--surface); --button-hover: var(--danger-bg); --button-text: var(--danger); --button-border: var(--danger-border); --button-ring: color-mix(in srgb, var(--danger) 20%, transparent); }
   .row-actions .button-7--delete:focus-visible { outline-color: var(--danger); }
-  .selection-review { border: 1px solid var(--border); border-radius: 1.2rem; padding: 1.6rem; margin-top: 2rem; background: var(--surface); }
-  .selection-review p { margin-top: 1.2rem; max-width: 70ch; }
-  .selection-review ul { padding-inline-start: 2rem; margin-bottom: 0; font-size: var(--ui-body-size); color: var(--text-strong); line-height: 1.8; }
-  .selection-review li span { color: var(--text-secondary); }
+  .test-status { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.2rem; margin-top: 2rem; }
+  .test-actions { display: flex; align-items: center; flex-wrap: wrap; gap: .8rem; }
+  .test-status .test-error { color: var(--danger); }
+  .inp-cbx:disabled + .cbx { cursor: default; opacity: .5; }
   .empty { display: flex; align-items: center; flex-direction: column; gap: 1.2rem; padding: 6rem 2rem; text-align: center; color: var(--text-secondary); }
   .empty p { max-width: 60ch; }
   .feedback { display: flex; align-items: center; flex-wrap: wrap; gap: 1.2rem; margin-block: 1.6rem; }

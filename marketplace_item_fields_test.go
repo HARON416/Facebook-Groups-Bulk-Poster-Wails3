@@ -35,7 +35,7 @@ func TestMarketplaceFormattedPrice(t *testing.T) {
 	for _, pair := range [][2]string{
 		{"$29,999", "29999"}, {"$29,999.00", "29999"}, {"KSh 29,999.00", "29999"},
 		{"29.999,00 €", "29999"}, {"29\u202f999,00 €", "29999"}, {"$1.00", "1"},
-		{"$0.00", "0"}, {"Free", "0"}, {"$1,234", "1234"}, {"$29,999", "029999"},
+		{"\u200f٢٩٬٩٩٩٫٠٠ ج", "29999"}, {"₹२९९९९.००", "29999"}, {"$0.00", "0"}, {"Free", "0"}, {"$1,234", "1234"}, {"$29,999", "029999"},
 	} {
 		if !marketplacePriceEqual(pair[0], pair[1]) {
 			t.Errorf("Rejected matching price %q for %q", pair[0], pair[1])
@@ -59,16 +59,16 @@ const marketplaceItemFieldsFixture = `<body class="UIPage_LoggedIn">
 <main><div role="form">
 <input type="file" multiple accept="image/*" style="display:none" onchange="window.values.photos=this.files.length">
 <input type="file" accept="video/*" style="display:none">
-<label><span>Title</span><input oninput="values.title=this.value"></label>
-<label><span>Price</span><input oninput="values.price=this.value"></label>
+<label><span>Title</span><input type="text" aria-required="true" oninput="values.title=this.value"></label>
+<label><span>Price</span><input type="text" aria-required="true" autocomplete="off" oninput="values.price=this.value"></label>
 <label role="combobox" aria-labelledby="category-name" tabindex="0" onclick="dropdown('category',this)"><span id="category-name">Category</span><span class="selection"></span></label>
-<label role="combobox" aria-labelledby="condition-name" tabindex="0" onclick="dropdown('condition',this)"><span id="condition-name">Condition</span><span class="selection"></span></label>
+<label role="combobox" aria-labelledby="condition-name" aria-haspopup="listbox" aria-required="true" tabindex="0" onclick="dropdown('condition',this)"><span id="condition-name">Condition</span><span class="selection"></span></label>
 <label><span>Description</span><textarea oninput="values.description=this.value">untouched</textarea></label>
 <div role="button" aria-expanded="false" tabindex="0" onclick="this.setAttribute('aria-expanded','true');document.querySelector('#optional').hidden=false;values.expanded++"><span>More details</span></div>
 <div id="optional" hidden>
-<label role="combobox" aria-labelledby="availability-name" tabindex="0" onclick="dropdown('availability',this)"><span id="availability-name">Availability</span><span class="selection">List as Single Item</span></label>
+<label role="combobox" aria-labelledby="availability-name" aria-haspopup="listbox" tabindex="0" onclick="dropdown('availability',this)"><span id="availability-name">Availability</span><span class="selection">List as Single Item</span></label>
 <label><span>Product tags</span><div role="list"></div><textarea onkeydown="if(event.key==='Enter'){event.preventDefault();values.tags.push(this.value);const s=document.createElement('span');s.textContent=this.value;this.closest('label').querySelector('[role=list]').append(s);this.value=''}"></textarea></label>
-<label><span>SKU</span><input oninput="values.sku=this.value"></label>
+<span id="sku-help">Internal reference</span><label><span>SKU</span><input type="text" aria-describedby="sku-help" oninput="values.sku=this.value"></label>
 <input role="combobox" aria-label="Location" value="Default town" oninput="locationOptions()">
 <div role="checkbox" aria-checked="true" tabindex="0" onclick="this.setAttribute('aria-checked',this.getAttribute('aria-checked')==='true'?'false':'true');values.meetupClicks++"><span>Public meetup</span></div>
 <div role="checkbox" aria-checked="false" tabindex="0" onclick="this.setAttribute('aria-checked','true');values.pickup=true"><span>Door pickup</span></div>
@@ -76,8 +76,11 @@ const marketplaceItemFieldsFixture = `<body class="UIPage_LoggedIn">
 </div>
 <input type="checkbox" role="switch" aria-label="Promote listing after publish" onchange="values.promote=this.checked">
 <input type="checkbox" role="switch" aria-label="Hide from friends" onchange="values.hide=this.checked">
-<button onclick="values.published=true">Publish</button>
-</div></main>
+</div>
+<h1 id="fixture-step-heading">Item for sale</h1>
+<div><div role="img" aria-label="Progress, currently on step 1 of 2"><div><div></div></div><div><div></div></div></div></div>
+<div id="fixture-actions"><div role="button" aria-label="Next" tabindex="0" onclick="values.nextClicks=(values.nextClicks||0)+1;document.querySelector('[role=form]').hidden=true;document.querySelector('#fixture-step-heading').textContent='List in more places';this.parentElement.innerHTML='<button aria-label=Previous>Previous</button><button aria-label=Publish onclick=&quot;values.published=true&quot;>Publish</button>'">Next</div></div>
+</main>
 <script>
 window.menuOrder=[];window.menuClicks={};window.values={title:'',price:'',description:'untouched',category:'',condition:'',availability:'single',tags:[],sku:'untouched',expanded:0,location:'default',meetupClicks:0,pickup:false,dropoff:false,promote:false,hide:false,published:false,photos:0};
 function dropdown(key,control){
@@ -90,7 +93,7 @@ function dropdown(key,control){
  const menu=document.createElement('div');menu.setAttribute('data-active-menu','');menu.id='menu-'+Math.random().toString(36).slice(2);
  if(key==='category'){menu.setAttribute('role','dialog');menu.setAttribute('aria-label','Dropdown menu');const group=document.createElement('span');group.textContent='Home & Garden';menu.append(group)}
  else {menu.setAttribute('role','listbox');menu.setAttribute('aria-label',key==='condition'?'Condition':'Select an option');control.setAttribute('aria-controls',menu.id)}
- const choices={category:['Tools','Household'],condition:['New','Used - Good'],availability:['List as Single Item','List as In Stock']};
+ const choices={category:['Tools','Furniture','Household','Garden','Appliances','Video Games','Books, Movies & Music','Bags & Luggage',"Women's clothing & shoes","Men's clothing & shoes",'Jewelry & Accessories','Health & beauty','Pet Supplies','Baby & kids','Toys & Games','Electronics & computers','Mobile phones','Bicycles','Arts & Crafts','Sports & Outdoors','Auto parts','Musical Instruments','Antiques & Collectibles','Garage Sale','Miscellaneous','Vehicles'],condition:['New','Used - Like New','Used - Good','Used - Fair'],availability:['List as Single Item','List as In Stock']};
  for(const label of choices[key]){
   const option=document.createElement('div');option.setAttribute('role',key==='category'?'button':'option');option.tabIndex=0;
   if(key!=='category')option.setAttribute('aria-selected','false');
@@ -134,6 +137,13 @@ func TestMarketplaceItemFieldsBrowserIntegration(t *testing.T) {
 		}
 		if r.URL.Path == "/late-click" {
 			fixture = strings.Replace(fixture, "window.menuOrder=[];", "window.ignoreFirstMenuClick=true;window.menuOrder=[];", 1)
+		}
+		if r.URL.Path == "/condition-state-change" {
+			fixture = strings.Replace(fixture, "option.onclick=()=>{values[key]=label;", "option.onclick=()=>{if(key==='condition')control.removeAttribute('aria-required');values[key]=label;", 1)
+		}
+		if r.URL.Path == "/publish-loading" {
+			fixture = strings.Replace(fixture, "aria-label=Publish onclick=", "aria-label=Publish aria-disabled=true onclick=", 1)
+			fixture += `<script>new MutationObserver(()=>{const button=document.querySelector('#fixture-actions [aria-disabled=true]');if(!button || button.dataset.pending)return;button.dataset.pending='true';setTimeout(()=>{button.removeAttribute('aria-disabled');values.publishReady=true},250)}).observe(document.querySelector('#fixture-actions'),{childList:true})</script>`
 		}
 		w.Write([]byte(fixture))
 	}))
@@ -181,7 +191,7 @@ func TestMarketplaceItemFieldsBrowserIntegration(t *testing.T) {
 			if order.Value.Str() != expectedOrder {
 				t.Fatalf("Wrong menu interaction order: %s", order.Value.Str())
 			}
-			if v.Get("title").Str() != fields.Title || v.Get("price").Str() != "0" || v.Get("category").Str() != "Household" || v.Get("condition").Str() != "Used - Good" || v.Get("photos").Int() != 1 || v.Get("published").Bool() {
+			if v.Get("title").Str() != fields.Title || v.Get("price").Str() != "0" || v.Get("category").Str() != "Household" || v.Get("condition").Str() != "Used - Good" || v.Get("photos").Int() != 1 || v.Get("nextClicks").Int() != 1 || v.Get("published").Bool() {
 				t.Fatalf("Incorrect required fields: %v", v)
 			}
 			if all {
@@ -193,6 +203,34 @@ func TestMarketplaceItemFieldsBrowserIntegration(t *testing.T) {
 			}
 		})
 	}
+	t.Run("waits-for-publish-readiness-without-publishing", func(t *testing.T) {
+		ctx, cancel := context.WithTimeout(context.Background(), 20*time.Second)
+		defer cancel()
+		fields := MarketplaceItemFields{Title: "Publish readiness", Price: "20", Category: "tools", Condition: "new"}
+		if err := s.testMarketplaceItemMedia(ctx, server.URL+"/publish-loading", MarketplaceTestMedia{Photos: []PostUpload{{Name: "one.png", Data: fixturePNG}}, Fields: &fields}); err != nil {
+			t.Fatal(err)
+		}
+		result, err := s.marketplaceTestPage.Context(ctx).Eval(`()=>window.values`)
+		if err != nil || !result.Value.Get("publishReady").Bool() || result.Value.Get("published").Bool() || result.Value.Get("nextClicks").Int() != 1 {
+			t.Fatalf("Test did not wait for Publish readiness without clicking: %v, %v", result, err)
+		}
+	})
+	t.Run("condition-required-state-changes-after-selection", func(t *testing.T) {
+		ctx, cancel := context.WithTimeout(context.Background(), 20*time.Second)
+		defer cancel()
+		fields := MarketplaceItemFields{Title: "State change", Price: "20", Category: "tools", Condition: "used-good", Availability: "in-stock", SKU: "REF-1"}
+		if err := s.testMarketplaceItemMedia(ctx, server.URL+"/condition-state-change", MarketplaceTestMedia{Photos: []PostUpload{{Name: "one.png", Data: fixturePNG}}, Fields: &fields}); err != nil {
+			t.Fatal(err)
+		}
+		result, err := s.marketplaceTestPage.Context(ctx).Eval(`()=>({values,clicks:menuClicks,required:document.querySelector('[aria-labelledby="condition-name"]').hasAttribute('aria-required')})`)
+		if err != nil {
+			t.Fatal(err)
+		}
+		v := result.Value
+		if v.Get("required").Bool() || v.Get("values").Get("condition").Str() != "Used - Good" || v.Get("values").Get("availability").Str() != "List as In Stock" || v.Get("clicks").Get("condition").Int() != 1 || v.Get("clicks").Get("availability").Int() != 1 || v.Get("values").Get("published").Bool() {
+			t.Fatalf("Dropdowns overlapped after required-state change: %v", v)
+		}
+	})
 	t.Run("single-item-availability", func(t *testing.T) {
 		ctx, cancel := context.WithTimeout(context.Background(), 20*time.Second)
 		defer cancel()

@@ -85,7 +85,7 @@ The private-room rental control uses the shared compact `ListingSwitch`, with th
 
 `ListingDatePicker.svelte` provides the rental availability calendar: a Phosphor calendar icon, localized month/day labels, Sunday-first dates, previous/next month navigation, past-date disabling, selected/today states, an optional Clear date action, and a popover positioned above or below to fit the form scroll area. Keyboard support includes arrows, Home/End, Page Up/Down (Shift for years), Escape, and focus restoration after selection. Date values remain local `YYYY-MM-DD` strings in drafts. Date-only parsing, leap years, calendar grids, and month-end navigation are covered by `node --test scripts/calendar-date.test.mjs`.
 
-All listing editor footers show Test and Save side by side. Save invokes the existing per-account draft save and is available for incomplete drafts. Item Test opens the selected account browser and adds media to the create-item page through Rod. Vehicle/home Test retain the existing submission callback and stay disabled when no handler is connected. The header Save draft action continues to use the same save function.
+All listing editor footers show Test and Save side by side. Save stores a per-account listing only when all required fields and media are valid. Item Test opens the selected account browser and adds media to the create-item page through Rod. Vehicle/home Test retain the existing submission callback and stay disabled when no handler is connected. The header Save listing action uses the same validation and save function.
 
 Marketplace image selection retains and displays every supported unique image, even when over the limit (10 items, 20 vehicles, 50 homes). The count and inline warning are derived from the current selection and clear automatically at or below the limit. Extra images stay available to preview, reorder, and remove; adding remains available. Test and both Save actions are disabled while over the limit, with a matching save guard. Draft restoration never truncates images. Removing an earlier photo preserves the active preview image.
 
@@ -103,11 +103,11 @@ The complete thumbnail task (file read plus native IPC) has a 15-second frontend
 
 Item Test requires at least one image or accepted video (maximum 10 photos and 1 video), Title, a valid whole-number Price (including zero), Category, and Condition. Location is optional for items, but typed location text must be selected before testing. It opens `https://www.facebook.com/marketplace/create/item` in a separate per-account tab, reuses that tab on subsequent tests, waits for positive login detection without an elapsed login deadline, and supports Cancel/unmount/shutdown cancellation. Photos and video are staged locally and assigned to the hidden image/video inputs using Rod `Element.SetFiles`; translated text and generated CSS classes are not used as selectors. The video input is reacquired after adding photos to tolerate React replacing controls. After media insertion, the action fills Title, Price, Category, and Condition, then only supplied optional fields, and leaves the listing for review. Staged files remain available while Chrome may read them and are cleaned up on the next successful test or browser shutdown. Temporary files from failed/cancelled tests are removed. `go test . -run 'TestMarketplaceTestMediaValidation|TestMarketplaceItemMediaBrowserIntegration' -browser-integration` verifies local fixture uploads, photo-only/video-only/mixed selection, hidden inputs, control replacement, tab reuse, staging cleanup, login cancellation, and no Publish click. No live Facebook listing is used by these tests.
 
-`MarketplaceItemFields` carries canonical category/condition keys and optional Description, Availability, Product tags, SKU, selected Location, meetup preferences, promotion, and hide-from-friends flags. Native validation rejects missing/invalid required values before launching Chrome. `marketplace_item_fields.go` resolves the supplied English Facebook field labels via associated labels, aria-label, and aria-labelledby, without copied dynamic IDs or CSS classes. Dropdown choices use exact supplied option labels; location matches use the selected label and subtitle, rejecting ambiguous matches. Product tags are committed with Enter and checked in the chip list. More details is expanded only when a supplied optional field requires it, including either explicit Availability choice. Empty optional values and false preferences leave Facebook defaults untouched. Checked preferences are clicked only when not already enabled. Form filling has a cancellable two-minute deadline following the login wait. The action never clicks Next or Publish. Once media has been assigned, staged files stay available even if later field filling fails so Chrome can finish reading them. `go test . -run TestMarketplaceItemFields -browser-integration` checks required-only and populated-optional forms, controlled input events, descriptive dropdown labels, tag chips, ambiguous city-label disambiguation, untouched defaults, and idempotent preferences using local fixtures.
+`MarketplaceItemFields` carries canonical category/condition keys and optional Description, Availability, Product tags, SKU, selected Location, meetup preferences, promotion, and hide-from-friends flags. Native validation rejects missing/invalid required values before launching Chrome. `marketplace_selectors.go` resolves fields from the supplied composer structure: input attributes, roles, associated popup relationships, and scoped control groups. Localized accessible names and generated CSS classes are not selectors. Dropdown choices map canonical values to the supplied menu positions (26 category, 4 condition, 2 availability options), following numeric option-ID suffixes when present; location matches use the selected label and subtitle, rejecting ambiguous matches. Product tags are committed with Enter and checked in the chip list. More details is expanded only when a supplied optional field requires it, including either explicit Availability choice. Empty optional values and false preferences leave Facebook defaults untouched. Checked preferences are clicked only when not already enabled. Item and vehicle form filling use caller cancellation without an overall elapsed-time cap. After filling, the action waits for Next to be enabled and clicks it once; it never clicks Publish. Once media has been assigned, staged files stay available even if later field filling fails so Chrome can finish reading them. `go test . -run TestMarketplaceItemFields -browser-integration` checks required-only and populated-optional forms, controlled input events, descriptive dropdown labels, tag chips, ambiguous city-label disambiguation, untouched defaults, and idempotent preferences using local fixtures.
 
 Category, Condition, and Availability automation first clicks the labeled combobox and waits for its open menu. Category uses the supplied Dropdown menu dialog and role=button choices; Condition uses its named listbox and role=option choices; Availability follows aria-controls/aria-owns or the generic Select an option listbox. While a linked popup is not yet rendered, automation waits instead of falling back to another menu. Hidden/stale popups and unrelated listboxes are excluded. After choosing, the live field is reacquired and its selected label is verified, including when React replaces the control. Local dropdown tests include delayed menus, shipping/availability descriptions, stale hidden dialogs, unrelated visible options, control replacement, and both Availability choices.
 
-Dropdown opening now targets the supplied `label[role="combobox"][aria-labelledby]` directly and checks `aria-expanded` before option lookup. If Facebook ignores a click while rendering, it reacquires the live label and retries after a grace interval; expanded controls are not clicked again. Disabled controls wait, browser closure is detected, cancellation is respected, and opening has a 25-second deadline. The local browser regression ignores and replaces the first label click for Category, Condition, and Availability, then verifies exactly one retry per field and no accidental re-closing.
+Dropdown opening now targets the supplied `label[role="combobox"][aria-labelledby]` directly and checks `aria-expanded` before option lookup. If Facebook ignores a click while rendering, it reacquires the live label and retries after a grace interval; expanded controls are not clicked again. Disabled controls wait without a fixed opening deadline; browser closure, caller cancellation, account shutdown, or a caller-supplied deadline stop the wait. Internal two-second inspection probes are retried when slow rather than ending the dropdown operation. The local browser regression ignores and replaces the first label click for Category, Condition, and Availability, then verifies exactly one retry per field and no accidental re-closing.
 
 Facebook Price verification compares exact numeric amounts rather than raw strings, accepting currency symbols/codes, grouping separators, decimal formatting, and Free for zero. A requested 29999 therefore matches Facebook’s $29,999. Different amounts, negative values, and malformed grouping are rejected. Input verification reacquires the live field and allows a brief bounded wait for React updates. The browser regression formats 29999 as $29,999, replaces the input node, and verifies automation continues through Category and Condition. Test browser cleanup waits for Chrome to exit before removing its temporary profile.
 
@@ -123,11 +123,53 @@ a listing makes a new ID. Table rows expose Edit and Delete directly. Account de
 legacy draft keys. Save refreshes the table through a window event and
 BroadcastChannel, opens Marketplace, and resets the create window for another
 listing. Search and listing-type filters compose; select-all applies to visible
-rows while preserving selections outside the filter.
+item rows while preserving selections outside the filter.
 
-`Publish selected` opens a review of the selected saved listings only. It never
-submits to Facebook. Group selection and actual publishing remain future steps;
-all saved listings are shown as Draft.
+`Publish selected` uses the same `testMarketplaceListingMedia` dispatcher as the listing
+editor's Test button. It uploads the saved photos/video and fills the saved item
+fields in the selected account's Facebook form, then clicks the enabled Next button once. It never clicks Publish.
+Items, all eight supplied vehicle types, and homes for sale are selectable for testing; home rentals remain disabled. Multiple
+listings are tested one at a time: after reviewing the filled form, Next listing starts
+the next selected item so forms are never silently overwritten. The queue supports
+Cancel and retry, locks selection/edit/delete during the run, and aborts on account
+switch or window destruction. All saved listings remain Draft.
+
+Item Test resolves navigation through the supplied two-segment progress structure
+and its adjacent action row. The first step has one action; the second has two
+(Previous and Publish), a visible level-one heading, and no visible required text
+fields. No translated heading, button caption, or progress label is matched.
+Readiness respects disabled state and inert ancestors, reacquires replaced controls,
+and has a cancellable two-minute deadline. The first action is clicked once;
+arrival detection then waits up to 30 seconds without clicking another action.
+Group rows and warning text are not required for arrival. After arrival, the shared
+`waitMarketplacePublishReady` check waits up to two minutes for the second footer
+action to be enabled. It respects `aria-disabled="true"`, native disabled state,
+inert/busy ancestors, and visible loading-state elements; explicit false or an
+absent disabled attribute permits readiness once loading ends. The control is
+reacquired through replacements without matching a translated label. This check
+is shared by items and supported vehicle types and is available to future home automation; home
+form filling remains unsupported. No Publish click or focus is dispatched.
+
+These selectors are language-independent within the captured Facebook layout,
+not a stable Facebook API. Menu order and grouped preference order remain explicit
+assumptions because the supplied markup has no semantic value IDs. A unique visible popup with the expected option schema confirms a dropdown is
+open even when Facebook leaves `aria-expanded="false"` on its control; an already
+visible menu is consumed without another control click. Unexpected counts,
+duplicate fields, mixed option indices, and ambiguous popups stop the flow.
+A reorder with unchanged counts cannot be detected reliably and requires an updated
+mapping. Optional-field layouts also need live verification across accounts.
+Condition and Availability are separated by their positions around Description
+and the tags/SKU/location section, rather than by mutable required-state attributes.
+Briefly duplicated dropdown controls are allowed to settle during the
+caller-cancellable wait; no ambiguous control is clicked.
+SKU resolution requires its `aria-describedby` relationship to resolve inside the
+composer, excluding unrelated optional text inputs. The anonymized expanded-form
+capture in `testdata/marketplace/item-expanded.html` verifies the supplied control
+structure with additional text inputs and changed SKU/help IDs.
+Local Chrome fixtures cover altered labels, RTL layout, regenerated IDs, reversed
+indexed options, populated fields, location selection, disabled/replaced controls,
+cancellation, exactly one Next click, and zero Publish clicks. These fixtures do
+not establish compatibility with every live Facebook variant.
 
 The saved-listing table sorts by Listing, Price, or Updated (newest first by
 initial default). Sorting and filtering retain selections by listing ID; missing
@@ -137,3 +179,134 @@ Dates use the selected locale and local timezone, with the full timestamp in the
 accessible name and hover title. At compact desktop widths, Edit and Delete stay
 pinned to the table's trailing edge while the other columns scroll. The scroll
 region is keyboard-focusable so keyboard users can reach offscreen columns.
+
+Car/Truck Test opens `/marketplace/create/vehicle`, validates selected location,
+year, supplied make, model, whole-number mileage/price, and transmission before
+launching Chrome. Car/Truck is selected before uploading because subtype changes can reset media.
+Up to 20 photos and one accepted video are staged through the shared upload helper. A checked nine-combobox layout identifies the supplied
+Car/Truck fields; Type precedes media, model/mileage follow Make, and Price is the
+non-combobox input with autocomplete disabled. Clean title uses `name="title_status"`.
+Optional fields are filled only when supplied. Dropdown choices follow the supplied
+option slots and counts; Year matches the live numeric caption, including localized
+digits, without fixing the first year. Translated labels and generated ID prefixes
+are not field selectors. Layout/count changes stop the flow; same-count reorderings
+remain a mapping assumption. The existing location search setup is reused per
+account, and the chosen location is selected in the visible vehicle form.
+The shared Next/step-two checks wait for Publish readiness and stop without clicking it. The local Car/Truck browser
+fixture uses the anonymized supplied markup, RTL captions, reversed indexed menus,
+control replacement, required-only/all-optional input, video, and 20 photos. It does
+not certify every live Facebook variant or other vehicle types.
+
+Motorcycle Test uses the supplied six-combobox schema (type, year, make, exterior
+color, fuel, transmission) and the existing motorcycle manufacturer slots copied
+from `motorcycle-makes.ts`. It shares location, whole-number mileage/price, 20-photo
+and video uploads, Next navigation, and read-only Publish readiness with Car/Truck.
+Car-only body style, interior color, vehicle condition, and clean-title values
+retained in drafts are ignored during validation and filling for motorcycles.
+`testdata/marketplace/motorcycle.html` is the anonymized supplied form capture;
+the Motorcycle browser test covers required-only and all-optional fields, RTL
+captions, localized year digits, indexed menu reordering, replaced controls,
+20 photos/video, and zero Publish clicks. Manufacturer menu order remains the
+same explicit contract as the existing editor list; schema/count changes stop
+selection rather than guessing another field.
+
+After Next confirms the second step, the shared runner automatically selects up to
+20 available Marketplace groups before waiting for Publish readiness. Existing
+checked groups count toward the limit and are never unchecked. Disabled rows are
+skipped; rows are reacquired and checked-state increases verified after every
+click. Group checkboxes are scoped to the supplied second-step form and identified
+by role/state plus their avatar/name structure, without matching translated UI
+labels. The scroll container is advanced when currently rendered rows are
+exhausted, with bounded settling time for appended groups. Empty/unavailable group
+lists are allowed; persistent loading, unconfirmed clicks, unsupported rows, or a
+preexisting over-limit selection stop with an error. Selection is shared by items,
+all supported vehicle types and is reusable for future house filling. Publish is
+never clicked. The anonymized `testdata/marketplace/groups.html` capture backs local
+Chrome tests for the cap, existing selections, disabled rows, replacements, delayed
+and lazy-loaded rows, cancellation, repeat runs, and zero Publish clicks.
+
+Powersport Test uses the supplied five-combobox layout (type, year, exterior color,
+interior color, fuel), with free-text Make and Model between Year and Price.
+Mileage, transmission, body style, vehicle condition, and clean-title draft values
+are ignored for this subtype. The supplied form is retained as an anonymized
+`testdata/marketplace/powersport.html` fixture. It shares selected-location handling,
+whole-number price validation, 20 photos/video, automatic group selection, Next,
+and read-only Publish readiness with the other supported vehicle subtypes.
+
+RV/Camper Test uses the verified five-dropdown/basic-text layout shared with
+Powersport: type/year/exterior color/interior color/fuel, plus free-text Make and
+Model. Validation and filling ignore retained mileage, transmission, body style,
+vehicle condition, and clean-title values. Its supplied markup is retained in
+`testdata/marketplace/rv-camper.html`. Test and Publish selected use the same media,
+location, Next, optional suggested-group selection, and read-only Publish-readiness
+flow as the other supported vehicle subtypes. Local Chrome coverage includes
+required-only/all-optional fields, 20 photos/video, localized captions/year digits,
+replaced controls, and zero Publish clicks.
+
+Trailer Test uses the supplied four-dropdown layout: type, year, exterior color,
+and interior color. Make and Model are text fields. Its supplied capture has new
+generated IDs and supports 20 photos plus a video; selectors continue to use
+structural attributes and relationships. Fuel, mileage, transmission, body style,
+vehicle condition, and clean-title draft values are ignored for Trailer.
+`testdata/marketplace/trailer.html` backs required-only/all-optional Chrome tests,
+including photo/video uploads, Next, skipped empty group suggestions, Publish
+readiness, and zero Publish clicks. The shared group tests cover nonempty lists.
+
+Boat Test uses the supplied five-dropdown/basic-text layout with text Make/Model,
+Year, both colors, and Fuel type. Its new generated field IDs are captured in
+`testdata/marketplace/boat.html`; selectors continue to use structural attributes.
+Validation ignores retained mileage, transmission, body style, vehicle condition,
+and clean-title values. Test and Publish selected share 20 photos/video, selected
+location, Next, automatic suggested-group selection, and read-only Publish readiness.
+The Boat fixture covers required-only/all-optional values with localized captions,
+reordered indexed menus, control replacements, and zero Publish clicks.
+
+Commercial/Industrial Test uses its supplied five-dropdown/basic-text form:
+Vehicle type, Year, both colors, Fuel type, and text Make/Model. It reuses the
+existing year/color/fuel lists and ignores retained mileage, transmission,
+body style, condition, and clean-title fields. The anonymized supplied form is
+`testdata/marketplace/commercial-industrial.html`. Test and Publish selected share
+media upload, selected location, Next, suggested-group selection when available,
+and Publish readiness without clicking Publish. Local fixtures cover required-only
+and all-optional input, 20 photos/video, localized captions, replaced controls,
+and zero Publish clicks; closed-form markup does not independently verify menu
+contents or order.
+
+Other Test uses the supplied two-dropdown layout (Vehicle type and Year) and text
+Make/Model. Colors, fuel, mileage, transmission, body style, condition, and clean-title
+values retained in the draft are ignored. The anonymized supplied capture is
+`testdata/marketplace/other.html`. All eight supplied vehicle types are now enabled
+in Test and Publish selected, retaining required-field validation, media limits,
+location selection, Next, optional suggested-group selection, and read-only Publish
+readiness. Other browser fixtures cover required-only and all-optional input,
+20 photos/video, localized year digits/captions, replacements, and zero Publish clicks.
+
+The shared dropdown opener has no fixed elapsed-time deadline, so it can wait for
+slow Facebook rendering across item/vehicle fields and future home integrations.
+The enclosing item and vehicle filling functions also impose no overall time cap.
+Other stage-specific checks (input retention, Next, arrival, Publish readiness,
+group confirmation, browser startup, and location search) keep their own bounds.
+A local Chrome regression enables Vehicle type after 26 seconds (past the former
+25-second cap), then verifies caller cancellation and browser-close detection.
+
+Home-for-sale Test opens `/marketplace/create/rental` and selects For Sale before
+uploading media. The home binding has stable ID 4270654620; the shared media runner
+accepts exactly one fields variant and permits up to 50 home photos plus one accepted
+video, retaining the existing item/vehicle limits. Native validation requires Sale,
+a supplied property type, whole-number bedrooms/price, integer or half bathrooms,
+a selected address matching its location hit, and a description. Optional square
+feet and advanced dropdown values are checked before launching Chrome.
+The supplied six-combobox sale schema identifies Home offer, Property type,
+Laundry, Parking, Air conditioning, and Heating structurally; bedroom/bathroom
+inputs precede Price, and square feet follows Description. The existing home option
+lists supply canonical menu slots/counts; closed-form HTML alone does not establish
+that every locale/account retains those menu orders. The current selected-location
+search is reused for Address, matching the chosen live suggestion and subtitle;
+live address suggestions still depend on Facebook's page and shared search source.
+Rent/private-room automation is not enabled. Item/vehicle/Home sale flows share
+Next, automatic selection of up to 20 suggested groups, and read-only Publish
+readiness. Home form/dropdown filling has no added elapsed-time cap and inherits
+caller cancellation. `testdata/marketplace/home-sale.html` is the anonymized capture;
+local Chrome tests cover required/all-optional fields, 50 photos/video, duplicate
+address captions disambiguated by subtitle, RTL/altered captions, indexed menu
+reordering, replaced controls, and zero Publish clicks.

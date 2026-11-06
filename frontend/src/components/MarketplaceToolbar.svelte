@@ -3,7 +3,7 @@
   import LocalizedFeedback from './LocalizedFeedback.svelte';
   import PhosphorIcon from './PhosphorIcon.svelte';
 
-  let { selected = $bindable('all'), selectedCount = 0, onpublish }: { selected?: string; selectedCount?: number; onpublish: () => void } = $props();
+  let { selected = $bindable('all'), selectedCount = 0, publishDisabled = false, publishing = false, onpublish }: { selected?: string; selectedCount?: number; publishDisabled?: boolean; publishing?: boolean; onpublish: () => void } = $props();
   let opening = $state(false), error = $state('');
   async function createListing() {
     if (opening) return;
@@ -74,8 +74,8 @@
     {/if}
   </div>
   <div class="toolbar-actions">
-  <button class="action-button action-button--primary" type="button" disabled={!selectedCount} onclick={onpublish}>Publish selected{#if selectedCount} ({selectedCount}){/if}</button>
-  <button class="create-listing action-button action-button--secondary" type="button" disabled={opening} aria-busy={opening} onclick={createListing}>
+  <button class="action-button action-button--primary" type="button" disabled={!selectedCount || publishDisabled} aria-busy={publishing} onclick={onpublish}>Publish selected{#if selectedCount} ({selectedCount}){/if}</button>
+  <button class="create-listing action-button action-button--secondary" type="button" disabled={opening || publishing} aria-busy={opening} onclick={createListing}>
     <PhosphorIcon name="plus" size={16} />
     <span>Create new listing</span>
   </button>
