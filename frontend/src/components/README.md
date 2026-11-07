@@ -141,6 +141,34 @@ means the click was sent, not that Facebook accepted or approved the listing; th
 UI asks the user to review Chrome. Submitted and uncertain entries are deselected.
 Saved listings retain their local Draft status rather than inventing a publication
 timestamp or claiming confirmed publication.
+The saved-listing heading, empty state, tour, and written guide explain the central
+workflow: prepare as many reusable listings as needed, then select saved copies
+when publishing. Submission preserves those local listings and their media for
+later editing and reuse.
+
+Marketplace reuses `GuidedTour.svelte` for saved listings (six steps), listing type
+selection (four steps), and editor tours tailored to the saved listing type.
+Items have eight steps, vehicles nine, home sales ten, and rentals eleven. Price
+always has its own step: asking price for items/vehicles, total property sale price,
+monthly rent for a whole property, or monthly room rent. The private-room price
+uses its own input. Details highlight the relevant item, vehicle, or property
+section. Only rentals include room mode, availability dates, and pet permissions;
+only items include Hide from friends and their More details section. Vehicle
+mileage instructions appear only for Car/Truck and Motorcycle. Each surface
+has an independent first-use invitation and dismissal key; Guide in the header or
+How to use → Start guided tour replays the
+tour for the current surface. Tours wait until the current operation finishes,
+preserve draft inputs and scroll positions, trap keyboard focus, and support Escape.
+They never open Chrome, select a listing type, save, test, or publish on the user's
+behalf. The groups tour also points to the Marketplace button in the header.
+
+Marketplace copy and tour text use the same PO catalogs as the groups workflow.
+`npm run build` and `npm run check` require complete catalogs for every language,
+including identical placeholder counts and embedded markup tokens. The optional
+`scripts/translate-marketplace.py --write` bootstrap uses the repository's existing
+public-copy translation service for missing messages; `--review-context` refreshes
+ambiguous housing/ad terms. It is never called by builds or the running app.
+Translations were machine assisted with contextual terminology corrections.
 
 Item Test resolves navigation through the supplied two-segment progress structure
 and its adjacent action row. The first step has one action; the second has two

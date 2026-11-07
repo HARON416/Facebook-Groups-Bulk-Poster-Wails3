@@ -47,6 +47,14 @@
     <p class="tip">This post was submitted, but confirmation is uncertain. Check Facebook before retrying.</p>
   </aside>
 
+  <aside><h2>Marketplace</h2>
+    <p>Click Marketplace in the header to create and publish items, vehicles, and homes for sale or rent on Facebook Marketplace. Use How to use in that window to start the Marketplace tour.</p>
+    <p>Save as many listings as you need. Keep them ready to edit and reuse when publishing.</p>
+    <p>Save this listing and its media to this account for future use. Saved copies remain available after publishing, so you can edit and reuse them later.</p>
+    <p>Test fills the Facebook form and stops before Publish. Review the result in Chrome. Test does not save your draft.</p>
+    <p class="tip">Each listing opens the matching Facebook form automatically. Publish submits one listing at a time. Review the result in Chrome, then choose Next listing. Check uncertain submissions on Facebook before retrying.</p>
+  </aside>
+
   <aside><h2>Themes</h2>
     <p>Use Language and Themes in the top bar. Your choices apply across windows.</p>
     <p class="tip">Draft text and image copies are saved automatically for each account.</p>

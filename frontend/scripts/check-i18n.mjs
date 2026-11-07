@@ -36,5 +36,14 @@ for (const { code } of languages) {
     failed = true;
     console.error(`${code}: missing translations:\n${missing.map((item) => `  ${JSON.stringify(item.translations.get('en'))}`).join('\n')}`);
   }
+  const tokens = value => [...value.matchAll(/\{\d+\}|<\/?\d+\/?>/g)].map(match => match[0]).sort().join('|');
+  const invalid = items.filter(item => {
+    const source = item.translations.get('en'), target = item.translations.get(code);
+    return typeof source === 'string' && typeof target === 'string' && target && tokens(source) !== tokens(target);
+  });
+  if (invalid.length) {
+    failed = true;
+    console.error(`${code}: translation placeholders differ:\n${invalid.map(item => `  ${JSON.stringify(item.translations.get('en'))}`).join('\n')}`);
+  }
 }
 if (failed) process.exitCode = 1;

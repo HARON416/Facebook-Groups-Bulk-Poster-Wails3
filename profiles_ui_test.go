@@ -46,6 +46,10 @@ func TestMarketplacePublishUI(t *testing.T) {
 	testAccountWorkspacesUI(t, false, "marketplace-publish")
 }
 
+func TestMarketplaceToursUI(t *testing.T) {
+	testAccountWorkspacesUI(t, false, "marketplace-tours")
+}
+
 func TestHouseLocationEditingUI(t *testing.T) {
 	testAccountWorkspacesUI(t, false, "house-location")
 }
@@ -465,7 +469,7 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool, viewOnly ...strin
 	}
 	// This fixture exercises existing-user workflows. Keep the first-run tour
 	// invitation from taking focus during cross-window checks.
-	page.MustEvalOnNewDocument(`localStorage.setItem('postika:guided-tour:v1','seen')`)
+	page.MustEvalOnNewDocument(`['postika:guided-tour:v1','postika:guided-tour:marketplace:v1','postika:guided-tour:listing-types:v1','postika:guided-tour:listing-editor:v1'].forEach(key=>localStorage.setItem(key,'seen'))`)
 	if err := page.Navigate(server.URL); err != nil {
 		t.Fatal(err)
 	}
@@ -500,6 +504,203 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool, viewOnly ...strin
 		awaitPage(target, fmt.Sprintf(`() => document.querySelector('dialog[aria-labelledby="theme-picker-heading"]')?.open && document.querySelectorAll('#theme-options [data-theme-id]').length===%d`, themeCount))
 		target.MustElement(fmt.Sprintf(`[data-theme-id="%s"]`, id)).MustClick()
 		awaitPage(target, `() => !document.querySelector('dialog[aria-labelledby="theme-picker-heading"]').open`)
+	}
+
+	if len(viewOnly) > 0 && viewOnly[0] == "marketplace-tours" {
+		replay := func(target *rod.Page) {
+			t.Helper()
+			target.MustActivate()
+			awaitPage(target, `()=>!!document.querySelector('[data-guide-trigger]') && !document.querySelector('[data-guide-trigger]').disabled`)
+			awaitPage(target, `()=>{const button=document.querySelector('[data-guide-trigger]');return button.textContent.trim().length>0 && button.scrollWidth<=button.clientWidth && (document.documentElement.lang!=='en' || button.textContent==='Guide')}`)
+			target.MustElement("[data-guide-trigger]").MustClick()
+			awaitPage(target, `()=>{const next=document.querySelector('.tour-overlay[open] [data-tour-next]');return next && !next.disabled && document.activeElement===next}`)
+		}
+		walk := func(target *rod.Page, titles []string) {
+			t.Helper()
+			for i, title := range titles {
+				awaitPage(target, fmt.Sprintf(`()=>document.querySelector('.tour-overlay[open] #tour-heading')?.textContent===%q && document.querySelector('.tour-overlay[open] .progress')?.textContent.trim()===%q && !!document.querySelector('.tour-overlay[open] .spotlight')`, title, fmt.Sprintf("%d / %d", i+1, len(titles))))
+				awaitPage(target, `()=>{const b=document.querySelector('.tour-overlay[open] .tour-card').getBoundingClientRect();return b.left>=15 && b.top>=15 && b.right<=innerWidth-15 && b.bottom<=innerHeight-15}`)
+				if title == "Marketplace" {
+					awaitPage(target, `()=>document.querySelector('#tour-description').textContent.includes('items, vehicles, and homes')`)
+				}
+				// Instructions and spotlights must describe the current form, not another type.
+				awaitPage(target, `()=>{
+				 const editor=document.querySelector('.item-listing-editor.listing-details');if(!editor)return true;
+				 const kind=editor.dataset.listingType,copy=document.querySelector('#tour-description').textContent,title=document.querySelector('#tour-heading').textContent;
+				 if(kind==='items' && /\b(homes?|rent|rental|room|vehicles?)\b/i.test(copy))return false;
+				 if(kind==='vehicles' && /\b(homes?|rent|rental|room)\b/i.test(copy))return false;
+				 if(title==='About this vehicle' && /mileage/.test(copy)!==!!document.querySelector('#listing-mileage'))return false;
+				 if(title==='Advanced Details' && /date available/.test(copy)!==!!document.querySelector('#listing-date-available'))return false;
+				 if(title==='Item details')return !!document.querySelector('[data-tour="item-details"] #listing-title');
+				 if(title==='Price' || title==='Price per month'){
+				  const input=document.querySelector('#listing-room-price')||document.querySelector('#listing-price'),a=input.getBoundingClientRect(),b=document.querySelector('.tour-overlay[open] .spotlight').getBoundingClientRect();
+				  if(a.left<b.left || a.right>b.right || a.top<b.top || a.bottom>b.bottom)return false;
+				  if(kind==='homes'){const room=!!document.querySelector('#listing-room-price'),rent=!!document.querySelector('#listing-private-room');return room?/monthly rent for this room/.test(copy):rent?/monthly rent for the whole property/.test(copy):/total sale price|asking price for this property/.test(copy)}
+				  return kind==='items'?/price for your item/.test(copy):/price for this vehicle/.test(copy);
+				 }
+				 return true;
+				}`)
+				if *uiArtifactDir != "" && (title == "Price" || title == "Price per month") {
+					kind := target.MustEval(`()=>document.querySelector('.item-listing-editor.listing-details').dataset.listingType`).Str()
+					data, err := target.Screenshot(false, &proto.PageCaptureScreenshot{})
+					if err != nil {
+						t.Fatal(err)
+					}
+					if err := os.WriteFile(filepath.Join(*uiArtifactDir, "postika-"+kind+"-price-guide.png"), data, 0600); err != nil {
+						t.Fatal(err)
+					}
+				}
+				if *uiArtifactDir != "" && (title == "Publish selected" || title == "Save listing") {
+					data, err := target.Screenshot(false, &proto.PageCaptureScreenshot{})
+					if err != nil {
+						t.Fatal(err)
+					}
+					filename := "postika-marketplace-tour-en.png"
+					if title == "Save listing" {
+						filename = "postika-marketplace-editor-tour-en.png"
+					}
+					if err := os.WriteFile(filepath.Join(*uiArtifactDir, filename), data, 0600); err != nil {
+						t.Fatal(err)
+					}
+				}
+				target.MustElement(".tour-overlay[open] [data-tour-next]").MustClick()
+			}
+			awaitPage(target, `()=>!document.querySelector('.tour-overlay[open]')`)
+		}
+		// Existing groups tour now introduces the Marketplace header button.
+		replay(page)
+		walk(page, []string{"Accounts", "Create post", "Fetch posts from a Facebook page", "Select groups", "Interval between posts", "Post or schedule", "Posting logs", "Marketplace", "Languages", "Themes"})
+		page.MustEval(`()=>localStorage.removeItem('postika:guided-tour:marketplace:v1')`)
+		marketplace := browser.MustPage(server.URL + "/?view=marketplace")
+		if err := marketplace.SetViewport(&proto.EmulationSetDeviceMetricsOverride{Width: 1200, Height: 800, DeviceScaleFactor: 1}); err != nil {
+			t.Fatal(err)
+		}
+		awaitPage(marketplace, `()=>document.querySelector('.tour-overlay[open] #tour-heading')?.textContent==='Take a quick tour of Marketplace?'`)
+		marketplace.MustElement(".tour-overlay[open] footer button").MustClick()
+		awaitPage(marketplace, `()=>!document.querySelector('.tour-overlay[open]') && localStorage.getItem('postika:guided-tour:marketplace:v1')==='seen'`)
+		replay(marketplace)
+		walk(marketplace, []string{"Accounts", "Create new listing", "Listing type", "Search listings", "Saved listings", "Publish selected"})
+		// Replaying via How to use works even after dismissing the first-use invite.
+		replay(marketplace)
+		if err := marketplace.Keyboard.Type(input.Tab); err != nil {
+			t.Fatal(err)
+		}
+		awaitPage(marketplace, `()=>document.activeElement.matches('.tour-overlay[open] .ui-dialog-close')`)
+		if err := marketplace.Keyboard.Press(input.ShiftLeft); err != nil {
+			t.Fatal(err)
+		}
+		if err := marketplace.Keyboard.Type(input.Tab); err != nil {
+			t.Fatal(err)
+		}
+		// Release Shift explicitly; subsequent clicks should remain ordinary clicks.
+		if err := marketplace.Keyboard.Release(input.ShiftLeft); err != nil {
+			t.Fatal(err)
+		}
+		awaitPage(marketplace, `()=>document.activeElement.matches('[data-tour-next]')`)
+		if err := marketplace.Keyboard.Type(input.Escape); err != nil {
+			t.Fatal(err)
+		}
+		awaitPage(marketplace, `()=>!document.querySelector('.tour-overlay[open]') && document.activeElement.matches('[data-guide-trigger]')`)
+		listing := browser.MustPage(server.URL + "/?view=create-listing")
+		if err := listing.SetViewport(&proto.EmulationSetDeviceMetricsOverride{Width: 1200, Height: 800, DeviceScaleFactor: 1}); err != nil {
+			t.Fatal(err)
+		}
+		awaitPage(listing, `()=>!!document.querySelector('#create-listing-items')`)
+		replay(listing)
+		walk(listing, []string{"Accounts", "Item for sale", "Vehicle for sale", "Home for sale or rent"})
+		type tourVariant struct {
+			kind, vehicleType, offer string
+			room                     bool
+		}
+		variants := []tourVariant{{kind: "items"}}
+		for _, vehicleType := range []string{"car-truck", "motorcycle", "powersport", "rv-camper", "trailer", "boat", "commercial-industrial", "other"} {
+			variants = append(variants, tourVariant{kind: "vehicles", vehicleType: vehicleType})
+		}
+		for _, offer := range []string{"", "sale", "rent", "room"} {
+			variant := tourVariant{kind: "homes", offer: offer, room: offer == "room"}
+			if variant.room {
+				variant.offer = "rent"
+			}
+			variants = append(variants, variant)
+		}
+		for _, variant := range variants {
+			kind := variant.kind
+			listing.MustElement("#create-listing-" + kind).MustClick()
+			awaitPage(listing, `()=>!!document.querySelector('#listing-price') || !!document.querySelector('#listing-room-price')`)
+			if kind == "vehicles" {
+				listing.MustElement("#listing-vehicle-type").MustClick()
+				listing.MustElement(`#listing-vehicle-type-options [data-value="` + variant.vehicleType + `"]`).MustClick()
+			}
+			if kind == "homes" && variant.offer != "" {
+				listing.MustElement("#listing-home-offer").MustClick()
+				listing.MustElement(`#listing-home-offer-options [data-value="` + variant.offer + `"]`).MustClick()
+				if variant.room {
+					listing.MustElement(`label[for="listing-private-room"]`).MustClick()
+				}
+			}
+			priceSelector := "#listing-price"
+			if variant.room {
+				priceSelector = "#listing-room-price"
+			}
+			listing.MustElement(priceSelector).MustInput("123")
+			listing.MustElement("#listing-description").MustInput("Keep this draft during the tour")
+			before := listing.MustEval(`()=>JSON.stringify([...document.querySelectorAll('.form-pane input,.form-pane textarea')].map(input=>[input.id,input.value,input.checked]))`).Str()
+			listing.MustEval(`()=>document.querySelector('.form-scroll').scrollTop=180`)
+			scroll := listing.MustEval(`()=>document.querySelector('.form-scroll').scrollTop`).Int()
+			replay(listing)
+			titles := []string{"Photos and video", "Item details", "Price", "More details", "Listing preferences", "Preview", "Test", "Save listing"}
+			if kind == "vehicles" {
+				titles = []string{"Vehicle type", "Photos and video", "About this vehicle", "Price", "Location", "Listing preferences", "Preview", "Test", "Save listing"}
+			}
+			if kind == "homes" {
+				titles = []string{"Home for sale or rent"}
+				if variant.offer == "rent" {
+					titles = append(titles, "This is a private room in a shared property.")
+				}
+				detailsTitle, priceTitle := "Property Details", "Price"
+				if variant.offer == "rent" {
+					priceTitle = "Price per month"
+				}
+				if variant.room {
+					detailsTitle = "Room Details"
+				}
+				titles = append(titles, "Photos and video", detailsTitle, priceTitle, "Address", "Advanced Details", "Listing preferences", "Preview", "Test", "Save listing")
+			}
+			walk(listing, titles)
+			after := listing.MustEval(`()=>JSON.stringify([...document.querySelectorAll('.form-pane input,.form-pane textarea')].map(input=>[input.id,input.value,input.checked]))`).Str()
+			if before != after || listing.MustEval(`()=>document.querySelector('.form-scroll').scrollTop`).Int() != scroll {
+				t.Fatalf("%+v tour changed the draft or scroll position", variant)
+			}
+			listing.MustElement(".previous").MustClick()
+			awaitPage(listing, `()=>!!document.querySelector('#create-listing-items')`)
+		}
+		// Arabic uses the same controls and must fit in the smaller RTL window.
+		page.MustEval(`()=>localStorage.setItem('postika:language','ar')`)
+		rtl := browser.MustPage(server.URL + "/?view=marketplace")
+		if err := rtl.SetViewport(&proto.EmulationSetDeviceMetricsOverride{Width: 800, Height: 700, DeviceScaleFactor: 1}); err != nil {
+			t.Fatal(err)
+		}
+		awaitPage(rtl, `()=>document.documentElement.lang==='ar' && document.documentElement.dir==='rtl' && !!document.querySelector('.empty')`)
+		replay(rtl)
+		awaitPage(rtl, `()=>document.querySelector('.tour-overlay[open]')?.dir==='rtl' && !/Marketplace listings/.test(document.querySelector('#tour-description').textContent)`)
+		for i := 0; i < 6; i++ {
+			awaitPage(rtl, `()=>{const b=document.querySelector('.tour-overlay[open] .tour-card').getBoundingClientRect();return b.left>=15 && b.top>=15 && b.right<=innerWidth-15 && b.bottom<=innerHeight-15 && !!document.querySelector('.tour-overlay[open] .spotlight')}`)
+			if *uiArtifactDir != "" && i == 5 {
+				data, err := rtl.Screenshot(false, &proto.PageCaptureScreenshot{})
+				if err != nil {
+					t.Fatal(err)
+				}
+				if err := os.WriteFile(filepath.Join(*uiArtifactDir, "postika-marketplace-tour-ar.png"), data, 0600); err != nil {
+					t.Fatal(err)
+				}
+			}
+			rtl.MustElement(".tour-overlay[open] [data-tour-next]").MustClick()
+		}
+		awaitPage(rtl, `()=>!document.querySelector('.tour-overlay[open]')`)
+		if marketplacePublishes.Load() != 0 || createListingOpens.Load() != 0 || locationOpens.Load() != 0 {
+			t.Fatal("Tour performed a native action")
+		}
+		return
 	}
 
 	if len(viewOnly) > 0 && viewOnly[0] == "marketplace-publish" {

@@ -339,6 +339,8 @@ msgstr "All accounts"
 #: src/components/AccountDropdown.svelte
 #: src/components/FeaturesCard.svelte
 #: src/components/GuidedTour.svelte
+#: src/components/GuidedTour.svelte
+#: src/components/GuidedTour.svelte
 msgid "Accounts"
 msgstr "Accounts"
 
@@ -2500,10 +2502,12 @@ msgstr "Could not open your email app. Copy the address above to send an email."
 #~ msgid "Business"
 #~ msgstr "Business"
 
+#: src/Workspace.svelte
 #: src/components/FeaturesCard.svelte
 msgid "Wait until the current operation finishes to start the tour."
 msgstr "Wait until the current operation finishes to start the tour."
 
+#: src/Workspace.svelte
 #: src/components/FeaturesCard.svelte
 #: src/components/GuidedTour.svelte
 msgid "Start guided tour"
@@ -2687,7 +2691,10 @@ msgid "Peach"
 msgstr "Peach"
 
 #: src/Workspace.svelte
+#: src/Workspace.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/MarketplaceToolbar.svelte
+#: src/components/UsageGuide.svelte
 msgid "Marketplace"
 msgstr "Marketplace"
 
@@ -2712,6 +2719,7 @@ msgstr "Vehicles for sale"
 msgid "Homes for rent or sale"
 msgstr "Homes for rent or sale"
 
+#: src/components/GuidedTour.svelte
 #: src/components/MarketplaceToolbar.svelte
 #: src/components/MarketplaceToolbar.svelte
 msgid "Listing type"
@@ -2720,12 +2728,15 @@ msgstr "Listing type"
 #~ msgid "<0/> Create new listing"
 #~ msgstr "<0/> Create new listing"
 
+#: src/Workspace.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/MarketplaceToolbar.svelte
 msgid "Create new listing"
 msgstr "Create new listing"
 
 #: src/components/CreateListing.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/ItemListingEditor.svelte
 msgid "Item for sale"
 msgstr "Item for sale"
@@ -2735,6 +2746,7 @@ msgid "Create a single listing for one or more items to sell."
 msgstr "Create a single listing for one or more items to sell."
 
 #: src/components/CreateListing.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/ItemListingEditor.svelte
 msgid "Vehicle for sale"
 msgstr "Vehicle for sale"
@@ -2744,6 +2756,8 @@ msgid "Sell a car, truck or other type of vehicle."
 msgstr "Sell a car, truck or other type of vehicle."
 
 #: src/components/CreateListing.svelte
+#: src/components/GuidedTour.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/ItemListingEditor.svelte
 msgid "Home for sale or rent"
 msgstr "Home for sale or rent"
@@ -2795,6 +2809,7 @@ msgstr "Condition"
 #~ msgid "Price<0/>"
 #~ msgstr "Price<0/>"
 
+#: src/components/GuidedTour.svelte
 #: src/components/ItemListingEditor.svelte
 msgid "More details"
 msgstr "More details"
@@ -2812,6 +2827,7 @@ msgstr "Availability"
 msgid "List as Single Item"
 msgstr "List as Single Item"
 
+#: src/components/GuidedTour.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/LocationSearchDialog.svelte
@@ -2859,6 +2875,7 @@ msgstr "As you create your listing, you can preview how it will appear on Market
 msgid "Title"
 msgstr "Title"
 
+#: src/components/GuidedTour.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/ItemListingEditor.svelte
@@ -2880,6 +2897,7 @@ msgstr "Details"
 msgid "Seller information"
 msgstr "Seller information"
 
+#: src/components/GuidedTour.svelte
 #: src/components/ItemListingEditor.svelte
 msgid "Preview"
 msgstr "Preview"
@@ -3242,6 +3260,7 @@ msgstr "Try again"
 msgid "Please enter a valid location."
 msgstr "Please enter a valid location."
 
+#: src/components/GuidedTour.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/ItemListingEditor.svelte
 msgid "Vehicle type"
@@ -3255,6 +3274,7 @@ msgstr "Photo upload"
 msgid "You can add up to 20 photos."
 msgstr "You can add up to 20 photos."
 
+#: src/components/GuidedTour.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/ItemListingEditor.svelte
 msgid "About this vehicle"
@@ -3572,6 +3592,7 @@ msgstr "Number of bedrooms"
 msgid "Number of bathrooms"
 msgstr "Number of bathrooms"
 
+#: src/components/GuidedTour.svelte
 #: src/components/ItemListingEditor.svelte
 msgid "Address"
 msgstr "Address"
@@ -3584,6 +3605,7 @@ msgstr "Property description"
 msgid "Include details like utilities, amenities, any deposits needed and when it's available."
 msgstr "Include details like utilities, amenities, any deposits needed and when it's available."
 
+#: src/components/GuidedTour.svelte
 #: src/components/ItemListingEditor.svelte
 msgid "Advanced Details"
 msgstr "Advanced Details"
@@ -3736,11 +3758,13 @@ msgstr "View map image"
 msgid "Rental type"
 msgstr "Rental type"
 
+#: src/components/GuidedTour.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/ItemListingEditor.svelte
 msgid "This is a private room in a shared property."
 msgstr "This is a private room in a shared property."
 
+#: src/components/GuidedTour.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/ItemListingEditor.svelte
 msgid "Price per month"
@@ -3782,10 +3806,12 @@ msgstr "Bathroom Type"
 msgid "Is this room furnished?"
 msgstr "Is this room furnished?"
 
+#: src/components/GuidedTour.svelte
 #: src/components/ItemListingEditor.svelte
 msgid "Room Details"
 msgstr "Room Details"
 
+#: src/components/GuidedTour.svelte
 #: src/components/ItemListingEditor.svelte
 msgid "Property Details"
 msgstr "Property Details"
@@ -3809,6 +3835,7 @@ msgstr "Shared"
 msgid "Clear date"
 msgstr "Clear date"
 
+#: src/components/GuidedTour.svelte
 #: src/components/ItemListingEditor.svelte
 msgid "Test"
 msgstr "Test"
@@ -3878,6 +3905,7 @@ msgstr "Publish selected<0/>"
 msgid "Listing saved."
 msgstr "Listing saved."
 
+#: src/components/GuidedTour.svelte
 #: src/components/ItemListingEditor.svelte
 msgid "Save listing"
 msgstr "Save listing"
@@ -3912,19 +3940,20 @@ msgstr "Listing deleted."
 msgid "Could not delete listing. Please try again."
 msgstr "Could not delete listing. Please try again."
 
+#: src/components/GuidedTour.svelte
 #: src/components/MarketplaceListings.svelte
 #: src/components/MarketplaceListings.svelte
 msgid "Saved listings"
 msgstr "Saved listings"
 
-#: src/components/MarketplaceListings.svelte
-msgid "Save listings here, then select them when you’re ready to publish."
-msgstr "Save listings here, then select them when you’re ready to publish."
+#~ msgid "Save listings here, then select them when you’re ready to publish."
+#~ msgstr "Save listings here, then select them when you’re ready to publish."
 
 #: src/components/MarketplaceListings.svelte
 msgid "Search saved listings"
 msgstr "Search saved listings"
 
+#: src/components/GuidedTour.svelte
 #: src/components/MarketplaceListings.svelte
 msgid "Search listings"
 msgstr "Search listings"
@@ -3959,9 +3988,8 @@ msgstr "No saved listings yet"
 msgid "Select an account to see its listings"
 msgstr "Select an account to see its listings"
 
-#: src/components/MarketplaceListings.svelte
-msgid "Create a listing and save it. It will appear here, ready to select later."
-msgstr "Create a listing and save it. It will appear here, ready to select later."
+#~ msgid "Create a listing and save it. It will appear here, ready to select later."
+#~ msgstr "Create a listing and save it. It will appear here, ready to select later."
 
 #: src/components/MarketplaceListings.svelte
 msgid "Your listings stay separate for each account."
@@ -4100,3 +4128,257 @@ msgstr "Could not confirm whether Publish was sent. Check Facebook before contin
 #: src/components/MarketplaceListings.svelte
 msgid "Publishing stopped. Check Facebook before retrying this listing."
 msgstr "Publishing stopped. Check Facebook before retrying this listing."
+
+#: src/components/GuidedTour.svelte
+#: src/components/GuidedTour.svelte
+msgid "Marketplace listings and Facebook sessions stay separate for each account. Check the selected account before publishing."
+msgstr "Marketplace listings and Facebook sessions stay separate for each account. Check the selected account before publishing."
+
+#: src/components/GuidedTour.svelte
+msgid "Create an item, vehicle, or home listing. A separate window lets you prepare and save its details."
+msgstr "Create an item, vehicle, or home listing. A separate window lets you prepare and save its details."
+
+#: src/components/GuidedTour.svelte
+msgid "Filter saved listings by type. You can select items, vehicles, and homes together for publishing."
+msgstr "Filter saved listings by type. You can select items, vehicles, and homes together for publishing."
+
+#: src/components/GuidedTour.svelte
+msgid "Search saved listings by title or location."
+msgstr "Search saved listings by title or location."
+
+#~ msgid "Saved listings appear here. Edit or delete a draft, or use its checkbox to select it. Select all applies to the visible listings."
+#~ msgstr "Saved listings appear here. Edit or delete a draft, or use its checkbox to select it. Select all applies to the visible listings."
+
+#: src/components/GuidedTour.svelte
+msgid "Publish selected"
+msgstr "Publish selected"
+
+#: src/components/GuidedTour.svelte
+#: src/components/UsageGuide.svelte
+msgid "Each listing opens the matching Facebook form automatically. Publish submits one listing at a time. Review the result in Chrome, then choose Next listing. Check uncertain submissions on Facebook before retrying."
+msgstr "Each listing opens the matching Facebook form automatically. Publish submits one listing at a time. Review the result in Chrome, then choose Next listing. Check uncertain submissions on Facebook before retrying."
+
+#: src/components/GuidedTour.svelte
+msgid "Choose this for items such as furniture, electronics, or clothing."
+msgstr "Choose this for items such as furniture, electronics, or clothing."
+
+#: src/components/GuidedTour.svelte
+msgid "Choose this for cars, motorcycles, boats, and other supported vehicle types."
+msgstr "Choose this for cars, motorcycles, boats, and other supported vehicle types."
+
+#: src/components/GuidedTour.svelte
+msgid "Choose this for a property sale, a whole-property rental, or a private room in a shared property. After choosing a type, reopen the tour from How to use for help with the form."
+msgstr "Choose this for a property sale, a whole-property rental, or a private room in a shared property. After choosing a type, reopen the tour from How to use for help with the form."
+
+#: src/components/GuidedTour.svelte
+msgid "Photos and video"
+msgstr "Photos and video"
+
+#~ msgid "Add at least one photo or video. Photo limits depend on the listing type. Rearrange photos to choose their display order."
+#~ msgstr "Add at least one photo or video. Photo limits depend on the listing type. Rearrange photos to choose their display order."
+
+#~ msgid "Listing details"
+#~ msgstr "Listing details"
+
+#~ msgid "Fill the required fields for this listing type. For homes, choose sale or rent and whether the rental is a private room."
+#~ msgstr "Fill the required fields for this listing type. For homes, choose sale or rent and whether the rental is a private room."
+
+#~ msgid "Select a location from the search suggestions. For items, open More details to find Location. Finish Facebook login or verification in Chrome when prompted."
+#~ msgstr "Select a location from the search suggestions. For items, open More details to find Location. Finish Facebook login or verification in Chrome when prompted."
+
+#: src/components/GuidedTour.svelte
+msgid "Listing preferences"
+msgstr "Listing preferences"
+
+#~ msgid "Review optional details and visibility preferences. Rentals also support availability dates, pet preferences, and room details where applicable."
+#~ msgstr "Review optional details and visibility preferences. Rentals also support availability dates, pet preferences, and room details where applicable."
+
+#: src/components/GuidedTour.svelte
+msgid "Review your photos and listing details here before saving or testing."
+msgstr "Review your photos and listing details here before saving or testing."
+
+#: src/components/GuidedTour.svelte
+#: src/components/UsageGuide.svelte
+msgid "Test fills the Facebook form and stops before Publish. Review the result in Chrome. Test does not save your draft."
+msgstr "Test fills the Facebook form and stops before Publish. Review the result in Chrome. Test does not save your draft."
+
+#~ msgid "Save the listing and its media to this account. It will appear in Marketplace, where you can select it and choose Publish selected."
+#~ msgstr "Save the listing and its media to this account. It will appear in Marketplace, where you can select it and choose Publish selected."
+
+#: src/components/GuidedTour.svelte
+#: src/components/UsageGuide.svelte
+msgid "Click Marketplace in the header to create and publish items, vehicles, and homes for sale or rent on Facebook Marketplace. Use How to use in that window to start the Marketplace tour."
+msgstr "Click Marketplace in the header to create and publish items, vehicles, and homes for sale or rent on Facebook Marketplace. Use How to use in that window to start the Marketplace tour."
+
+#: src/components/GuidedTour.svelte
+msgid "Take a quick tour of Marketplace?"
+msgstr "Take a quick tour of Marketplace?"
+
+#: src/Workspace.svelte
+msgid "Guide"
+msgstr "Guide"
+
+#: src/components/GuidedTour.svelte
+msgid "Select the vehicle type first. The available fields and required details depend on this choice."
+msgstr "Select the vehicle type first. The available fields and required details depend on this choice."
+
+#: src/components/GuidedTour.svelte
+msgid "Choose whether you are selling or renting this property."
+msgstr "Choose whether you are selling or renting this property."
+
+#: src/components/GuidedTour.svelte
+msgid "Turn this on only when renting a private room in a shared property. Leave it off when renting the whole property."
+msgstr "Turn this on only when renting a private room in a shared property. Leave it off when renting the whole property."
+
+#: src/components/GuidedTour.svelte
+#: src/components/GuidedTour.svelte
+#: src/components/GuidedTour.svelte
+#: src/components/GuidedTour.svelte
+#: src/components/GuidedTour.svelte
+#: src/components/GuidedTour.svelte
+#: src/components/GuidedTour.svelte
+msgid "items"
+msgstr "items"
+
+#: src/components/GuidedTour.svelte
+msgid "Add at least one photo or video. Items allow up to 10 photos and one video. Rearrange photos to choose their display order."
+msgstr "Add at least one photo or video. Items allow up to 10 photos and one video. Rearrange photos to choose their display order."
+
+#: src/components/GuidedTour.svelte
+#: src/components/GuidedTour.svelte
+#: src/components/GuidedTour.svelte
+#: src/components/GuidedTour.svelte
+#: src/components/GuidedTour.svelte
+#: src/components/GuidedTour.svelte
+msgid "vehicles"
+msgstr "vehicles"
+
+#: src/components/GuidedTour.svelte
+msgid "Add at least one photo or video. Vehicles allow up to 20 photos and one video. Rearrange photos to choose their display order."
+msgstr "Add at least one photo or video. Vehicles allow up to 20 photos and one video. Rearrange photos to choose their display order."
+
+#: src/components/GuidedTour.svelte
+msgid "Add at least one photo or video. Homes allow up to 50 photos and one video. Rearrange photos to choose their display order."
+msgstr "Add at least one photo or video. Homes allow up to 50 photos and one video. Rearrange photos to choose their display order."
+
+#: src/components/GuidedTour.svelte
+msgid "Item details"
+msgstr "Item details"
+
+#: src/components/GuidedTour.svelte
+msgid "Enter a title, choose a category and condition, and describe the item you are selling."
+msgstr "Enter a title, choose a category and condition, and describe the item you are selling."
+
+#: src/components/GuidedTour.svelte
+msgid "car-truck"
+msgstr "car-truck"
+
+#: src/components/GuidedTour.svelte
+msgid "motorcycle"
+msgstr "motorcycle"
+
+#: src/components/GuidedTour.svelte
+msgid "Enter the year, make, model, and mileage for this vehicle."
+msgstr "Enter the year, make, model, and mileage for this vehicle."
+
+#: src/components/GuidedTour.svelte
+msgid "Enter the year, make, and model for this vehicle."
+msgstr "Enter the year, make, and model for this vehicle."
+
+#: src/components/GuidedTour.svelte
+msgid "Enter the number of occupants, bedrooms, and bathrooms. Choose the bathroom type and furnished setting, then describe the room."
+msgstr "Enter the number of occupants, bedrooms, and bathrooms. Choose the bathroom type and furnished setting, then describe the room."
+
+#: src/components/GuidedTour.svelte
+msgid "Choose the rental type and enter the number of bedrooms, bathrooms, and a rental description."
+msgstr "Choose the rental type and enter the number of bedrooms, bathrooms, and a rental description."
+
+#: src/components/GuidedTour.svelte
+msgid "Choose the property type and enter the number of bedrooms, bathrooms, and a property description."
+msgstr "Choose the property type and enter the number of bedrooms, bathrooms, and a property description."
+
+#: src/components/GuidedTour.svelte
+msgid "Enter the asking price for your item as a whole number."
+msgstr "Enter the asking price for your item as a whole number."
+
+#: src/components/GuidedTour.svelte
+msgid "Enter the asking price for this vehicle as a whole number."
+msgstr "Enter the asking price for this vehicle as a whole number."
+
+#: src/components/GuidedTour.svelte
+msgid "Enter the monthly rent for this room as a whole number."
+msgstr "Enter the monthly rent for this room as a whole number."
+
+#: src/components/GuidedTour.svelte
+msgid "Enter the monthly rent for the whole property as a whole number."
+msgstr "Enter the monthly rent for the whole property as a whole number."
+
+#: src/components/GuidedTour.svelte
+msgid "Enter the total sale price for the property as a whole number."
+msgstr "Enter the total sale price for the property as a whole number."
+
+#: src/components/GuidedTour.svelte
+msgid "homes"
+msgstr "homes"
+
+#: src/components/GuidedTour.svelte
+msgid "Use More details for optional location, availability, tags, SKU, and meetup preferences. Choose a location suggestion and complete Facebook login in Chrome if prompted."
+msgstr "Use More details for optional location, availability, tags, SKU, and meetup preferences. Choose a location suggestion and complete Facebook login in Chrome if prompted."
+
+#: src/components/GuidedTour.svelte
+msgid "Search for the town or city where this vehicle is located and select a suggestion. Complete Facebook login in Chrome if prompted."
+msgstr "Search for the town or city where this vehicle is located and select a suggestion. Complete Facebook login in Chrome if prompted."
+
+#: src/components/GuidedTour.svelte
+msgid "Search for the property address and select a suggestion. Complete Facebook login in Chrome if prompted."
+msgstr "Search for the property address and select a suggestion. Complete Facebook login in Chrome if prompted."
+
+#: src/components/GuidedTour.svelte
+msgid "Optionally add the property area, date available, laundry, parking, air conditioning, heating, and cat or dog permissions."
+msgstr "Optionally add the property area, date available, laundry, parking, air conditioning, heating, and cat or dog permissions."
+
+#: src/components/GuidedTour.svelte
+msgid "Optionally add the property area, laundry, parking, air conditioning, and heating."
+msgstr "Optionally add the property area, laundry, parking, air conditioning, and heating."
+
+#: src/components/GuidedTour.svelte
+msgid "Set promotion and Hide from friends preferences for this item. Hiding from friends does not make the listing private."
+msgstr "Set promotion and Hide from friends preferences for this item. Hiding from friends does not make the listing private."
+
+#: src/components/GuidedTour.svelte
+msgid "Choose whether to add a promotion step after this vehicle listing is published."
+msgstr "Choose whether to add a promotion step after this vehicle listing is published."
+
+#: src/components/GuidedTour.svelte
+msgid "Choose whether to add a promotion step after this property listing is published."
+msgstr "Choose whether to add a promotion step after this property listing is published."
+
+#: src/components/GuidedTour.svelte
+msgid "sale"
+msgstr "sale"
+
+#: src/components/GuidedTour.svelte
+msgid "Enter the asking price for this property as a whole number."
+msgstr "Enter the asking price for this property as a whole number."
+
+#: src/components/GuidedTour.svelte
+msgid "Save as many listings as you need for future use. Publishing keeps your saved copies, so you can edit and reuse them later. Select the listings you want using their checkboxes."
+msgstr "Save as many listings as you need for future use. Publishing keeps your saved copies, so you can edit and reuse them later. Select the listings you want using their checkboxes."
+
+#: src/components/GuidedTour.svelte
+#: src/components/UsageGuide.svelte
+msgid "Save this listing and its media to this account for future use. Saved copies remain available after publishing, so you can edit and reuse them later."
+msgstr "Save this listing and its media to this account for future use. Saved copies remain available after publishing, so you can edit and reuse them later."
+
+#: src/components/MarketplaceListings.svelte
+#: src/components/UsageGuide.svelte
+msgid "Save as many listings as you need. Keep them ready to edit and reuse when publishing."
+msgstr "Save as many listings as you need. Keep them ready to edit and reuse when publishing."
+
+#: src/components/MarketplaceListings.svelte
+msgid "Start saving listings now so they’re ready to reuse whenever you publish to Marketplace."
+msgstr "Start saving listings now so they’re ready to reuse whenever you publish to Marketplace."
+
+#: src/components/MarketplaceListings.svelte
+msgid "Home"
+msgstr "Home"

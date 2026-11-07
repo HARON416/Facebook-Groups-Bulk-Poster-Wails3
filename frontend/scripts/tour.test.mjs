@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { createTourChoice, placeTourCard, tourStorageKey } from '../src/lib/tour.ts';
+import { createTourChoice, placeTourCard, tourStorageKey, tourKey } from '../src/lib/tour.ts';
 
 test('tour choices persist without touching drafts, theme or language', () => {
   const data = new Map([['postika:language', 'ar'], ['draft', 'saved message']]);
@@ -19,6 +19,21 @@ test('blocked local storage still respects Skip for the rest of the session', ()
   assert.equal(choice.hasSeen(), false);
   choice.remember();
   assert.equal(choice.hasSeen(), true);
+});
+
+test('Marketplace tour dismissals stay separate from groups and from each other', () => {
+  const data = new Map();
+  const storage = () => ({ getItem: key => data.get(key) ?? null, setItem: (key, value) => data.set(key, value) });
+  assert.equal(tourKey('groups'), tourStorageKey);
+  const scopes = ['groups', 'marketplace', 'listing-types', 'listing-editor'];
+  for (const scope of scopes) {
+    const choice = createTourChoice(storage, tourKey(scope));
+    assert.equal(choice.hasSeen(), false);
+    choice.remember();
+    assert.equal(createTourChoice(storage, tourKey(scope)).hasSeen(), true);
+    for (const unseen of scopes.slice(scopes.indexOf(scope) + 1)) assert.equal(createTourChoice(storage, tourKey(unseen)).hasSeen(), false);
+  }
+  assert.equal(data.size, 4);
 });
 
 test('tour cards stay on screen and avoid the highlighted target when space permits', () => {

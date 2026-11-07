@@ -15,6 +15,7 @@
   import { testMarketplaceListingMedia, canTestMarketplaceListing } from '../lib/media-upload';
   import ListingDatePicker from './ListingDatePicker.svelte';
   import ListingTags from './ListingTags.svelte';
+  import GuidedTour from './GuidedTour.svelte';
   import LocationSearchDialog from './LocationSearchDialog.svelte';
   import ListingSwitch from './ListingSwitch.svelte';
   import Checkbox from './Checkbox.svelte';
@@ -27,7 +28,7 @@
   import { logMessage } from './LogMessage.svelte';
   import { snapshotImage } from '../lib/drafts';
 
-  let { profile, kind = 'items', initialDraft, visible = true, onprevious, onsaved, onnext, onvehicle }: { profile?: AccountProfile; kind?: MarketplaceListingKind; initialDraft?: ListingEditorSnapshot; visible?: boolean; onprevious: () => void; onsaved?: () => void; onnext?: (fields: ItemListingFields, photos: File[], video?: File | null) => void; onvehicle?: () => void } = $props();
+  let { profile, kind = 'items', initialDraft, visible = true, onprevious, onsaved, onnext, onvehicle, ontourready }: { profile?: AccountProfile; kind?: MarketplaceListingKind; initialDraft?: ListingEditorSnapshot; visible?: boolean; onprevious: () => void; onsaved?: () => void; onnext?: (fields: ItemListingFields, photos: File[], video?: File | null) => void; onvehicle?: () => void; ontourready?: (ready: boolean) => void } = $props();
   let root = $state<HTMLDivElement>();
   function pauseMedia(except?: EventTarget | null) { root?.querySelectorAll('video').forEach(player => { if (player !== except) player.pause(); }); }
   $effect(() => { if (!visible) pauseMedia(); });
@@ -224,6 +225,8 @@
   let locationStatus = $state<MarketplaceLocationStatus | null>(null), locationPollError = $state(''), cancellingLocation = $state(false);
   let locationGeneration = 0;
   const locationWaiting = $derived(locationStatus && ['checking', 'waiting_login', 'expanding_details', 'capturing_location'].includes(locationStatus.state));
+  const tourReady = $derived(Boolean(profile) && visible && !busy && !locationWaiting && !locationDialogOpen && !dragging);
+  $effect(() => { if (visible) ontourready?.(tourReady); });
   async function refreshLocationStatus() {
     if (!profile || !visible || destroyed) return;
     const generation = locationGeneration;
@@ -441,7 +444,7 @@
       <div><button class="previous" type="button" disabled={busy} onclick={onprevious}><span class="previous-icon"><PhosphorIcon name="arrow-left" size={14} /></span><span>Previous</span></button><h1 id={visible ? 'listing-step-heading' : undefined} tabindex="-1">{#if home}New home listing{:else if vehicle}Vehicle for sale{:else}Item for sale{/if}</h1></div>
       <button class="save-draft" type="button" disabled={!saveReady || busy} aria-busy={saving} onclick={save}>Save listing</button>
     </header>
-    <div class="form-scroll">
+    <div class="form-scroll" data-step-scroll>
       {#if profile}<div class="account-line"><PhosphorIcon name="user-circle" size={36} /><div><strong>{accountLabel(profile)}</strong><p class="listing-visibility"><span>Listing to Marketplace</span><span>Public</span></p></div></div>{/if}
       {#if loading}<p class="feedback" role="status">Loading…</p>{/if}
       <fieldset disabled={loading || saving || adding || testing}>
@@ -517,7 +520,7 @@
             </div>
           </section>
         {:else if vehicle}
-          <section class="vehicle-section" aria-labelledby="vehicle-about-heading">
+          <section class="vehicle-section" data-tour="vehicle-details" aria-labelledby="vehicle-about-heading">
             <div><h2 id="vehicle-about-heading">About this vehicle</h2><p class="hint">Help buyers know more about the vehicle you're listing.</p></div>
             {@render locationField()}
             <ListingFieldSelect id="listing-year" label="Year" placeholder="Year" required options={vehicleListingFieldOptions.year} bind:value={fields.year} />
@@ -565,7 +568,7 @@
         {:else}
         <h2 class="required-heading">Required</h2>
         <p class="hint">Be as descriptive as possible.</p>
-        <div class="fields">
+        <div class="fields" data-tour="item-details">
           <div class="text-field" class:filled={Boolean(fields.title)}><label for="listing-title">Title</label><input class="ui-input" id="listing-title" dir="auto" bind:value={fields.title} required /></div>
           <div class="text-field" class:filled={Boolean(fields.price)}><label for="listing-price">Price</label><input class="ui-input" id="listing-price" type="text" inputmode="numeric" value={fields.price} oninput={priceInput} pattern="[0-9]+" required /></div>
           <ListingFieldSelect id="listing-category" label="Category" placeholder="Category" required options={itemListingFieldOptions.category} value={fields.category} onselect={(option) => { if (option.value === 'vehicles' && onvehicle) onvehicle(); else fields.category = option.value; }} />
@@ -617,8 +620,8 @@
       </div>
       {#if testing}<button class="location-status-action" type="button" onclick={() => testController?.abort()}>Cancel</button>{/if}
       <div class="footer-actions">
-        <button class="action-button action-button--secondary" type="button" disabled={!testReady || busy} aria-busy={testing} onclick={testMedia}>Test</button>
-        <button class="action-button action-button--primary" type="button" disabled={!saveReady || busy} aria-busy={saving} onclick={save}>Save</button>
+        <button class="action-button action-button--secondary" data-tour="listing-test" type="button" disabled={!testReady || busy} aria-busy={testing} onclick={testMedia}>Test</button>
+        <button class="action-button action-button--primary" data-tour="listing-save" type="button" disabled={!saveReady || busy} aria-busy={saving} onclick={save}>Save</button>
       </div>
     </footer>
   </form>
@@ -626,7 +629,7 @@
   <section class="preview-pane" aria-labelledby="listing-preview-heading">
     <div class="preview-card">
       <h2 id="listing-preview-heading">Preview</h2>
-      <div class="preview-body">
+      <div class="preview-body" data-step-scroll>
         <div class="preview-media">
           <div class="preview-image-area">
             {#if videoActive && videoFile}
@@ -711,6 +714,8 @@
     </div>
   </section>
 </div>
+
+<GuidedTour scope="listing-editor" ready={tourReady} {kind} vehicleType={fields.vehicleType} homeOffer={fields.homeOffer} privateRoom={fields.privateRoom} />
 
 <style>
   .listing-media, .photo-upload-block { min-width: 0; }

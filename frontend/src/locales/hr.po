@@ -339,6 +339,8 @@ msgstr "Svi računi"
 #: src/components/AccountDropdown.svelte
 #: src/components/FeaturesCard.svelte
 #: src/components/GuidedTour.svelte
+#: src/components/GuidedTour.svelte
+#: src/components/GuidedTour.svelte
 msgid "Accounts"
 msgstr "Računi"
 
@@ -2500,10 +2502,12 @@ msgstr "Nije moguće otvoriti aplikaciju za e-poštu. Kopirajte gornju adresu ka
 #~ msgid "Business"
 #~ msgstr ""
 
+#: src/Workspace.svelte
 #: src/components/FeaturesCard.svelte
 msgid "Wait until the current operation finishes to start the tour."
 msgstr "Pričekajte završetak trenutačne radnje prije pokretanja obilaska."
 
+#: src/Workspace.svelte
 #: src/components/FeaturesCard.svelte
 #: src/components/GuidedTour.svelte
 msgid "Start guided tour"
@@ -2687,7 +2691,10 @@ msgid "Peach"
 msgstr "Breskvasta"
 
 #: src/Workspace.svelte
+#: src/Workspace.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/MarketplaceToolbar.svelte
+#: src/components/UsageGuide.svelte
 msgid "Marketplace"
 msgstr "Tržnica"
 
@@ -2712,6 +2719,7 @@ msgstr "Vozila na prodaju"
 msgid "Homes for rent or sale"
 msgstr "Domovi za najam ili prodaju"
 
+#: src/components/GuidedTour.svelte
 #: src/components/MarketplaceToolbar.svelte
 #: src/components/MarketplaceToolbar.svelte
 msgid "Listing type"
@@ -2720,21 +2728,25 @@ msgstr "Vrsta oglasa"
 #~ msgid "<0/> Create new listing"
 #~ msgstr ""
 
+#: src/Workspace.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/MarketplaceToolbar.svelte
 msgid "Create new listing"
-msgstr "Izradi novi oglas"
+msgstr "Napravi novi oglas"
 
 #: src/components/CreateListing.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/ItemListingEditor.svelte
 msgid "Item for sale"
 msgstr "Predmet na prodaju"
 
 #: src/components/CreateListing.svelte
 msgid "Create a single listing for one or more items to sell."
-msgstr "Izradite jedan oglas za jedan ili više predmeta za prodaju."
+msgstr "Napravite jedan oglas za jedan ili više artikala za prodaju."
 
 #: src/components/CreateListing.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/ItemListingEditor.svelte
 msgid "Vehicle for sale"
 msgstr "Vozilo na prodaju"
@@ -2744,6 +2756,8 @@ msgid "Sell a car, truck or other type of vehicle."
 msgstr "Prodajte automobil, kamion ili drugu vrstu vozila."
 
 #: src/components/CreateListing.svelte
+#: src/components/GuidedTour.svelte
+#: src/components/GuidedTour.svelte
 #: src/components/ItemListingEditor.svelte
 msgid "Home for sale or rent"
 msgstr "Dom za prodaju ili najam"
@@ -2795,6 +2809,7 @@ msgstr "Stanje"
 #~ msgid "Price<0/>"
 #~ msgstr ""
 
+#: src/components/GuidedTour.svelte
 #: src/components/ItemListingEditor.svelte
 msgid "More details"
 msgstr "Više pojedinosti"
@@ -2812,6 +2827,7 @@ msgstr "Dostupnost"
 msgid "List as Single Item"
 msgstr "Objavi kao pojedinačni predmet"
 
+#: src/components/GuidedTour.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/LocationSearchDialog.svelte
@@ -2852,13 +2868,14 @@ msgstr "Pregled vašeg oglasa"
 
 #: src/components/ItemListingEditor.svelte
 msgid "As you create your listing, you can preview how it will appear on Marketplace."
-msgstr "Dok izrađujete oglas, možete vidjeti kako će izgledati na Marketplaceu."
+msgstr "Dok stvarate svoj oglas, možete pregledati kako će se pojaviti na Marketplaceu."
 
 #: src/components/ItemListingEditor.svelte
 #: src/components/ItemListingEditor.svelte
 msgid "Title"
 msgstr "Naslov"
 
+#: src/components/GuidedTour.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/ItemListingEditor.svelte
@@ -2880,6 +2897,7 @@ msgstr "Pojedinosti"
 msgid "Seller information"
 msgstr "Podaci o prodavatelju"
 
+#: src/components/GuidedTour.svelte
 #: src/components/ItemListingEditor.svelte
 msgid "Preview"
 msgstr "Pregled"
@@ -3113,7 +3131,7 @@ msgstr "Postavke susreta"
 
 #: src/components/ItemListingEditor.svelte
 msgid "Buyers will be able to see your preferences on your listing."
-msgstr "Kupci će moći vidjeti vaše postavke u oglasu."
+msgstr "Kupci će moći vidjeti vaše preferencije na vašem oglasu."
 
 #: src/components/ItemListingEditor.svelte
 #: src/components/ItemListingEditor.svelte
@@ -3122,11 +3140,11 @@ msgstr "Saznajte više"
 
 #: src/components/ItemListingEditor.svelte
 msgid "Promote listing after publish"
-msgstr "Promoviraj nakon objave"
+msgstr "Promovirajte oglas nakon objave"
 
 #: src/components/ItemListingEditor.svelte
 msgid "Add a step to promote your listing after it publishes, to help you reach more potential buyers by turning it into an ad."
-msgstr "Dodajte korak za promociju nakon objave kako biste pretvaranjem oglasa u reklamu dosegli više potencijalnih kupaca."
+msgstr "Dodajte korak za promidžbu svog oglasa nakon što se objavi, kako biste dosegnuli više potencijalnih kupaca tako što ćete ga pretvoriti u oglas."
 
 #: src/components/ItemListingEditor.svelte
 msgid "Hide from friends"
@@ -3134,11 +3152,11 @@ msgstr "Sakrij od prijatelja"
 
 #: src/components/ItemListingEditor.svelte
 msgid "This listing is still public. If you hide this listing from friends, they won't see it in most cases."
-msgstr "Ovaj oglas i dalje je javan. Ako ga sakrijete od prijatelja, u većini ga slučajeva neće vidjeti."
+msgstr "Ovaj oglas je još uvijek javan. Ako sakrijete ovaj oglas od prijatelja, oni ga u većini slučajeva neće vidjeti."
 
 #: src/components/ItemListingEditor.svelte
 msgid "Learn more about hiding listings from friends"
-msgstr "Saznajte više: Sakrij od prijatelja"
+msgstr "Saznajte više o skrivanju oglasa od prijatelja"
 
 #~ msgid "Marketplace items are public and can be seen by anyone on or off Facebook."
 #~ msgstr "Oglasi na Marketplaceu javni su i može ih vidjeti svatko na Facebooku ili izvan njega."
@@ -3158,7 +3176,7 @@ msgstr "Pravila trgovine"
 
 #: src/components/MarketplaceAvailability.svelte
 msgid "If you're selling one item, show \"Only one\" on your listing."
-msgstr "Ako prodajete jedan predmet, prikažite „Samo jedan” u oglasu."
+msgstr "Ako prodajete jedan artikl, na oglasu označite \"Samo jedan\"."
 
 #: src/components/MarketplaceAvailability.svelte
 msgid "List as In Stock"
@@ -3166,7 +3184,7 @@ msgstr "Oglasi kao na zalihi"
 
 #: src/components/MarketplaceAvailability.svelte
 msgid "If you're selling more than one item, show \"In Stock\" on your listing."
-msgstr "Ako prodajete više predmeta, prikažite „Na zalihi” u oglasu."
+msgstr "Ako prodajete više od jednog artikla, na oglasu prikažite \"Na zalihi\"."
 
 #: src/components/ListingTags.svelte
 msgid "Add tag"
@@ -3242,6 +3260,7 @@ msgstr "Pokušajte ponovno"
 msgid "Please enter a valid location."
 msgstr "Unesite valjanu lokaciju."
 
+#: src/components/GuidedTour.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/ItemListingEditor.svelte
 msgid "Vehicle type"
@@ -3255,6 +3274,7 @@ msgstr "Prijenos fotografija"
 msgid "You can add up to 20 photos."
 msgstr "Možete dodati do 20 fotografija."
 
+#: src/components/GuidedTour.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/ItemListingEditor.svelte
 msgid "About this vehicle"
@@ -3556,295 +3576,302 @@ msgstr "Ručni mjenjač"
 
 #: src/components/ItemListingEditor.svelte
 msgid "You can add up to 50 photos."
-msgstr ""
+msgstr "Možete dodati do 50 fotografija."
 
 #: src/components/ItemListingEditor.svelte
 msgid "Property type"
-msgstr ""
+msgstr "Vrsta nekretnine"
 
 #: src/components/ItemListingEditor.svelte
 #: src/components/ItemListingEditor.svelte
 msgid "Number of bedrooms"
-msgstr ""
+msgstr "Broj spavaćih soba"
 
 #: src/components/ItemListingEditor.svelte
 #: src/components/ItemListingEditor.svelte
 msgid "Number of bathrooms"
-msgstr ""
+msgstr "Broj kupaonica"
 
+#: src/components/GuidedTour.svelte
 #: src/components/ItemListingEditor.svelte
 msgid "Address"
-msgstr ""
+msgstr "Adresa"
 
 #: src/components/ItemListingEditor.svelte
 msgid "Property description"
-msgstr ""
+msgstr "Opis nekretnine"
 
 #: src/components/ItemListingEditor.svelte
 msgid "Include details like utilities, amenities, any deposits needed and when it's available."
-msgstr ""
+msgstr "Uključite pojedinosti kao što su režije, sadržaji, svi potrebni depoziti i kada su dostupni."
 
+#: src/components/GuidedTour.svelte
 #: src/components/ItemListingEditor.svelte
 msgid "Advanced Details"
-msgstr ""
+msgstr "Napredni detalji"
 
 #: src/components/ItemListingEditor.svelte
 msgid "Optional"
-msgstr ""
+msgstr "Neobavezno"
 
 #: src/components/ItemListingEditor.svelte
 #: src/components/ItemListingEditor.svelte
 msgid "Property square feet"
-msgstr ""
+msgstr "Površina posjeda (kvadratni metri)"
 
 #: src/components/ItemListingEditor.svelte
 #: src/components/ItemListingEditor.svelte
 msgid "Laundry type"
-msgstr ""
+msgstr "Vrsta rublja"
 
 #: src/components/ItemListingEditor.svelte
 #: src/components/ItemListingEditor.svelte
 msgid "Parking type"
-msgstr ""
+msgstr "Vrsta parkiranja"
 
 #: src/components/ItemListingEditor.svelte
 #: src/components/ItemListingEditor.svelte
 msgid "Air conditioning type"
-msgstr ""
+msgstr "Vrsta klima uređaja"
 
 #: src/components/ItemListingEditor.svelte
 #: src/components/ItemListingEditor.svelte
 msgid "Heating type"
-msgstr ""
+msgstr "Vrsta grijanja"
 
 #: src/components/ItemListingEditor.svelte
 msgid "/ Month"
-msgstr ""
+msgstr "/ mjesec"
 
 #: src/components/ItemListingEditor.svelte
 msgid "Rental Location"
-msgstr ""
+msgstr "Mjesto za iznajmljivanje"
 
 #: src/components/ItemListingEditor.svelte
 msgid "New home listing"
-msgstr ""
+msgstr "Novi kućni oglas"
 
 #: src/components/MarketplaceHomes.svelte
 msgid "Rent"
-msgstr ""
+msgstr "Najam"
 
 #: src/components/MarketplaceHomes.svelte
 msgid "For Sale"
-msgstr ""
+msgstr "Za prodaju"
 
 #: src/components/MarketplaceHomes.svelte
 msgid "Apartment"
-msgstr ""
+msgstr "Apartman"
 
 #: src/components/MarketplaceHomes.svelte
 msgid "House"
-msgstr ""
+msgstr "Kuća"
 
 #: src/components/MarketplaceHomes.svelte
 msgid "Townhouse"
-msgstr ""
+msgstr "Gradska kuća"
 
 #: src/components/MarketplaceHomes.svelte
 msgid "In-unit laundry"
-msgstr ""
+msgstr "Praonica rublja u jedinici"
 
 #: src/components/MarketplaceHomes.svelte
 msgid "Laundry in building"
-msgstr ""
+msgstr "Praonica rublja u zgradi"
 
 #: src/components/MarketplaceHomes.svelte
 msgid "Laundry available"
-msgstr ""
+msgstr "Mogućnost pranja rublja"
 
 #: src/components/MarketplaceHomes.svelte
 #: src/components/MarketplaceHomes.svelte
 #: src/components/MarketplaceHomes.svelte
 #: src/components/MarketplaceHomes.svelte
 msgid "None"
-msgstr ""
+msgstr "Nijedan"
 
 #: src/components/MarketplaceHomes.svelte
 msgid "Garage parking"
-msgstr ""
+msgstr "Parking u garaži"
 
 #: src/components/MarketplaceHomes.svelte
 msgid "Street parking"
-msgstr ""
+msgstr "Ulični parking"
 
 #: src/components/MarketplaceHomes.svelte
 msgid "Off-street parking"
-msgstr ""
+msgstr "Parking izvan ulice"
 
 #: src/components/MarketplaceHomes.svelte
 msgid "Parking available"
-msgstr ""
+msgstr "Parking dostupan"
 
 #: src/components/MarketplaceHomes.svelte
 msgid "Central AC"
-msgstr ""
+msgstr "Centralna klima"
 
 #: src/components/MarketplaceHomes.svelte
 msgid "AC available"
-msgstr ""
+msgstr "Dostupan klima uređaj"
 
 #: src/components/MarketplaceHomes.svelte
 msgid "Central heating"
-msgstr ""
+msgstr "Centralno grijanje"
 
 #: src/components/MarketplaceHomes.svelte
 msgid "Electric heating"
-msgstr ""
+msgstr "Grijanje na struju"
 
 #: src/components/MarketplaceHomes.svelte
 msgid "Gas heating"
-msgstr ""
+msgstr "Grijanje na plin"
 
 #: src/components/MarketplaceHomes.svelte
 msgid "Radiator heating"
-msgstr ""
+msgstr "Radijatorsko grijanje"
 
 #: src/components/MarketplaceHomes.svelte
 msgid "Heating available"
-msgstr ""
+msgstr "Mogućnost grijanja"
 
 #: src/components/ItemListingEditor.svelte
 msgid "Enter an address"
-msgstr ""
+msgstr "Unesite adresu"
 
 #: src/components/ListingLocationPreview.svelte
 msgid "View listing location"
-msgstr ""
+msgstr "Pogledajte lokaciju oglasa"
 
 #: src/components/ListingLocationPreview.svelte
 msgid "Map preview unavailable."
-msgstr ""
+msgstr "Pregled karte nije dostupan."
 
 #: src/components/ListingLocationPreview.svelte
 msgid "View Map Info"
-msgstr ""
+msgstr "Prikaz informacija o karti"
 
 #: src/components/ListingLocationPreview.svelte
 msgid "View map image"
-msgstr ""
+msgstr "Pogledajte sliku karte"
 
 #: src/components/ItemListingEditor.svelte
 msgid "Rental type"
-msgstr ""
+msgstr "Vrsta najma"
 
+#: src/components/GuidedTour.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/ItemListingEditor.svelte
 msgid "This is a private room in a shared property."
-msgstr ""
+msgstr "Ovaj popis je za privatnu sobu u zajedničkom domu."
 
+#: src/components/GuidedTour.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/ItemListingEditor.svelte
 msgid "Price per month"
-msgstr ""
+msgstr "Cijena mjesečno"
 
 #: src/components/ItemListingEditor.svelte
 msgid "Rental description"
-msgstr ""
+msgstr "Opis najma"
 
 #: src/components/ItemListingEditor.svelte
 msgid "Date available"
-msgstr ""
+msgstr "Dostupan datum"
 
 #: src/components/ItemListingEditor.svelte
 #: src/components/ItemListingEditor.svelte
 msgid "Cat friendly"
-msgstr ""
+msgstr "Mačke dopuštene"
 
 #: src/components/ItemListingEditor.svelte
 #: src/components/ItemListingEditor.svelte
 msgid "Dog friendly"
-msgstr ""
+msgstr "Psi dozvoljeni"
 
 #: src/components/ItemListingEditor.svelte
 msgid "Date available:"
-msgstr ""
+msgstr "Dostupni datumi:"
 
 #: src/components/ItemListingEditor.svelte
 #: src/components/ItemListingEditor.svelte
 msgid "How many people live here?"
-msgstr ""
+msgstr "Koliko ljudi živi ovdje?"
 
 #: src/components/ItemListingEditor.svelte
 #: src/components/ItemListingEditor.svelte
 msgid "Bathroom Type"
-msgstr ""
+msgstr "Vrsta kupaonice"
 
 #: src/components/ItemListingEditor.svelte
 msgid "Is this room furnished?"
-msgstr ""
+msgstr "Je li ova soba namještena?"
 
+#: src/components/GuidedTour.svelte
 #: src/components/ItemListingEditor.svelte
 msgid "Room Details"
-msgstr ""
+msgstr "Detalji sobe"
 
+#: src/components/GuidedTour.svelte
 #: src/components/ItemListingEditor.svelte
 msgid "Property Details"
-msgstr ""
+msgstr "Detalji nekretnine"
 
 #~ msgid "Is this room furnished? <0/>"
 #~ msgstr ""
 
 #: src/components/ItemListingEditor.svelte
 msgid "Furnished"
-msgstr ""
+msgstr "Namješteno"
 
 #: src/components/MarketplaceHomes.svelte
 msgid "Private"
-msgstr ""
+msgstr "Privatno"
 
 #: src/components/MarketplaceHomes.svelte
 msgid "Shared"
-msgstr ""
+msgstr "Podijeljeno"
 
 #: src/components/ListingDatePicker.svelte
 msgid "Clear date"
-msgstr ""
+msgstr "Jasan datum"
 
+#: src/components/GuidedTour.svelte
 #: src/components/ItemListingEditor.svelte
 msgid "Test"
-msgstr ""
+msgstr "Isprobaj"
 
 #: src/components/ItemListingEditor.svelte
 msgid "Save"
-msgstr ""
+msgstr "Uštedjeti"
 
 #. 0: maxPhotos
 #: src/components/ItemListingEditor.svelte
 msgid "You may only select a maximum of {0} photos."
-msgstr ""
+msgstr "Možete odabrati najviše {0} fotografija."
 
 #: src/components/ItemListingEditor.svelte
 msgid "Marketplace items are public and can be seen by anyone on or off Facebook. Items like animals, drugs, weapons, counterfeits, and other items that infringe intellectual property aren't allowed on Marketplace."
-msgstr ""
+msgstr "Stavke na tržištu su javne i može ih vidjeti bilo tko na ili izvan Facebooka. Predmeti poput životinja, droga, oružja, krivotvorina i drugih predmeta koji krše intelektualno vlasništvo nisu dopušteni na Marketplaceu."
 
 #: src/components/ItemListingEditor.svelte
 #: src/components/ListingVideo.svelte
 msgid "Loading video…"
-msgstr ""
+msgstr "Učitavanje videa..."
 
 #: src/components/ItemListingEditor.svelte
 msgid "Loading video"
-msgstr ""
+msgstr "Učitavanje videa"
 
 #: src/components/ItemListingEditor.svelte
 msgid "Your video must finish loading before proceeding."
-msgstr ""
+msgstr "Vaš se videozapis mora završiti s učitavanjem prije nastavka."
 
 #~ msgid "Video added. Preview is unavailable in this app."
 #~ msgstr ""
 
 #: src/components/ItemListingEditor.svelte
 msgid "Could not load video thumbnail."
-msgstr ""
+msgstr "Nije moguće učitati minijaturu videozapisa."
 
 #~ msgid "Finish signing in or any verification prompts in Chrome. Media will be added automatically."
 #~ msgstr ""
@@ -3854,49 +3881,50 @@ msgstr ""
 
 #: src/components/ItemListingEditor.svelte
 msgid "Test cancelled."
-msgstr ""
+msgstr "Test je otkazan."
 
 #: src/components/ItemListingEditor.svelte
 msgid "Add at least one photo or video."
-msgstr ""
+msgstr "Dodajte barem jednu fotografiju ili video."
 
 #: src/components/ItemListingEditor.svelte
 msgid "Finish signing in or any verification prompts in Chrome. Your listing will be filled automatically."
-msgstr ""
+msgstr "Dovršite prijavu ili bilo koje upite za potvrdu u Chromeu. Vaš oglas će se automatski popuniti."
 
 #: src/components/ItemListingEditor.svelte
 msgid "Listing filled in Facebook. Review it in Chrome."
-msgstr ""
+msgstr "Oglas ispunjen na Facebooku. Pregledajte ga u Chromeu."
 
 #: src/components/MarketplaceToolbar.svelte
 msgid "Publish selected<0/>"
-msgstr ""
+msgstr "Objavi odabrane oglase<0/>"
 
 #: src/components/CreateListing.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/MarketplaceListings.svelte
 msgid "Listing saved."
-msgstr ""
+msgstr "Oglas je spremljen."
 
+#: src/components/GuidedTour.svelte
 #: src/components/ItemListingEditor.svelte
 msgid "Save listing"
-msgstr ""
+msgstr "Spremi oglas"
 
 #: src/components/MarketplaceListings.svelte
 msgid "Untitled listing"
-msgstr ""
+msgstr "Oglas bez naslova"
 
 #: src/components/MarketplaceListings.svelte
 msgid "Item"
-msgstr ""
+msgstr "Artikal"
 
 #: src/components/MarketplaceListings.svelte
 msgid "Vehicle"
-msgstr ""
+msgstr "Vozilo"
 
 #: src/components/MarketplaceListings.svelte
 msgid "Could not load saved listings. Please try again."
-msgstr ""
+msgstr "Nije moguće učitati spremljene oglase. Molimo pokušajte ponovo."
 
 #~ msgid "Listing duplicated."
 #~ msgstr ""
@@ -3906,28 +3934,29 @@ msgstr ""
 
 #: src/components/MarketplaceListings.svelte
 msgid "Listing deleted."
-msgstr ""
+msgstr "Oglas izbrisan."
 
 #: src/components/MarketplaceListings.svelte
 msgid "Could not delete listing. Please try again."
-msgstr ""
+msgstr "Nije moguće izbrisati oglas. Molimo pokušajte ponovo."
 
+#: src/components/GuidedTour.svelte
 #: src/components/MarketplaceListings.svelte
 #: src/components/MarketplaceListings.svelte
 msgid "Saved listings"
-msgstr ""
+msgstr "Spremljeni oglasi"
 
-#: src/components/MarketplaceListings.svelte
-msgid "Save listings here, then select them when you’re ready to publish."
-msgstr ""
+#~ msgid "Save listings here, then select them when you’re ready to publish."
+#~ msgstr "Ovdje spremite oglase, a zatim ih odaberite kada budete spremni za objavu."
 
 #: src/components/MarketplaceListings.svelte
 msgid "Search saved listings"
-msgstr ""
+msgstr "Pretražite spremljene oglase"
 
+#: src/components/GuidedTour.svelte
 #: src/components/MarketplaceListings.svelte
 msgid "Search listings"
-msgstr ""
+msgstr "Pretraživanje oglasa"
 
 #~ msgid "Selected listings ({0})"
 #~ msgstr ""
@@ -3940,68 +3969,67 @@ msgstr ""
 
 #: src/components/MarketplaceListings.svelte
 msgid "Clear selection"
-msgstr ""
+msgstr "Očisti odabir"
 
 #. 0: visible.length
 #: src/components/MarketplaceListings.svelte
 msgid "{0} listings"
-msgstr ""
+msgstr "{0} oglasi"
 
 #: src/components/MarketplaceListings.svelte
 msgid "Loading saved listings…"
-msgstr ""
+msgstr "Učitavanje spremljenih oglasa…"
 
 #: src/components/MarketplaceListings.svelte
 msgid "No saved listings yet"
-msgstr ""
+msgstr "Još nema spremljenih oglasa"
 
 #: src/components/MarketplaceListings.svelte
 msgid "Select an account to see its listings"
-msgstr ""
+msgstr "Odaberite račun kako biste vidjeli njegove oglase"
 
-#: src/components/MarketplaceListings.svelte
-msgid "Create a listing and save it. It will appear here, ready to select later."
-msgstr ""
+#~ msgid "Create a listing and save it. It will appear here, ready to select later."
+#~ msgstr "Napravite oglas i spremite ga. Pojavit će se ovdje, spreman za odabir kasnije."
 
 #: src/components/MarketplaceListings.svelte
 msgid "Your listings stay separate for each account."
-msgstr ""
+msgstr "Vaši oglasi ostaju zasebni za svaki račun."
 
 #: src/components/MarketplaceListings.svelte
 msgid "No matching listings"
-msgstr ""
+msgstr "Nema odgovarajućih oglasa"
 
 #: src/components/MarketplaceListings.svelte
 msgid "Try another search or listing type."
-msgstr ""
+msgstr "Pokušajte s drugom pretragom ili vrstom oglasa."
 
 #: src/components/MarketplaceListings.svelte
 msgid "Select all visible listings"
-msgstr ""
+msgstr "Odaberite sve vidljive oglase"
 
 #: src/components/MarketplaceListings.svelte
 msgid "Listing"
-msgstr ""
+msgstr "Oglas"
 
 #: src/components/MarketplaceListings.svelte
 msgid "Type"
-msgstr ""
+msgstr "Tip"
 
 #: src/components/MarketplaceListings.svelte
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 #: src/components/MarketplaceListings.svelte
 msgid "Updated"
-msgstr ""
+msgstr "Ažurirano"
 
 #: src/components/MarketplaceListings.svelte
 msgid "Actions"
-msgstr ""
+msgstr "Radnje"
 
 #: src/components/MarketplaceListings.svelte
 msgid "Draft"
-msgstr ""
+msgstr "Nacrt"
 
 #~ msgid "More actions for {0}"
 #~ msgstr ""
@@ -4015,34 +4043,34 @@ msgstr ""
 #. 0: title(listing)
 #: src/components/MarketplaceListings.svelte
 msgid "Delete “{0}” and its saved media?"
-msgstr ""
+msgstr "Izbrisati “{0}” i njegove spremljene medije?"
 
 #: src/components/MarketplaceListings.svelte
 msgid "Delete listing"
-msgstr ""
+msgstr "Izbriši oglas"
 
 #: src/components/MarketplaceListings.svelte
 #: src/components/MarketplaceListings.svelte
 msgid "Saved Marketplace listings"
-msgstr ""
+msgstr "Spremljeni oglasi na tržištu"
 
 #: src/components/ItemListingEditor.svelte
 msgid "Could not save listing. Please try again."
-msgstr ""
+msgstr "Nije moguće spremiti oglas. Molimo pokušajte ponovo."
 
 #: src/components/MarketplaceListings.svelte
 msgid "Today"
-msgstr ""
+msgstr "Danas"
 
 #. 0: title(listing)
 #: src/components/MarketplaceListings.svelte
 msgid "Edit {0}"
-msgstr ""
+msgstr "Uredi {0}"
 
 #. 0: title(listing)
 #: src/components/MarketplaceListings.svelte
 msgid "Delete {0}"
-msgstr ""
+msgstr "Izbriši {0}"
 
 #~ msgid "Only item listings can be tested at the moment."
 #~ msgstr ""
@@ -4062,7 +4090,7 @@ msgstr ""
 #. 0: publishIndex + 2; 1: publishQueue.length
 #: src/components/MarketplaceListings.svelte
 msgid "Next listing ({0} / {1})"
-msgstr ""
+msgstr "Sljedeći oglas ({0} / {1})"
 
 #~ msgid "Only item, Car/Truck, and Motorcycle listings can be tested at the moment."
 #~ msgstr ""
@@ -4078,25 +4106,279 @@ msgstr ""
 
 #: src/components/MarketplaceListings.svelte
 msgid "This listing type is not supported for publishing yet."
-msgstr ""
+msgstr "Ova vrsta oglasa još nije podržana za objavljivanje."
 
 #. 0: publishIndex + 1; 1: publishQueue.length; 2: title(publishQueue[publishIndex])
 #: src/components/MarketplaceListings.svelte
 msgid "Publishing listing {0} of {1}: {2}"
-msgstr ""
+msgstr "Objavljivanje oglasa na tržištu {0} od {1}: {2}"
 
 #: src/components/MarketplaceListings.svelte
 msgid "Finish signing in or any verification prompts in Chrome. Your listing will be filled and submitted automatically."
-msgstr ""
+msgstr "Dovršite prijavu ili bilo koje upite za potvrdu u Chromeu. Vaš će se oglas automatski ispuniti i poslati."
 
 #: src/components/MarketplaceListings.svelte
 msgid "Publish sent to Facebook. Review the result in Chrome before continuing."
-msgstr ""
+msgstr "Zahtjev za objavu oglasa poslan je Facebooku. Pregledajte rezultat u Chromeu prije nastavka."
 
 #: src/components/MarketplaceListings.svelte
 msgid "Could not confirm whether Publish was sent. Check Facebook before continuing or retrying this listing."
-msgstr ""
+msgstr "Nije moguće potvrditi je li zahtjev za objavu oglasa poslan. Provjerite Facebook prije nastavka ili ponovnog pokušaja ovog oglasa."
 
 #: src/components/MarketplaceListings.svelte
 msgid "Publishing stopped. Check Facebook before retrying this listing."
-msgstr ""
+msgstr "Objavljivanje zaustavljeno. Provjerite Facebook prije ponovnog pokušaja ovog oglasa."
+
+#: src/components/GuidedTour.svelte
+#: src/components/GuidedTour.svelte
+msgid "Marketplace listings and Facebook sessions stay separate for each account. Check the selected account before publishing."
+msgstr "Oglasi na tržištu i Facebook sesije ostaju odvojeni za svaki račun. Provjerite odabrani račun prije objave."
+
+#: src/components/GuidedTour.svelte
+msgid "Create an item, vehicle, or home listing. A separate window lets you prepare and save its details."
+msgstr "Napravite oglas za predmet, vozilo ili kuću. Zaseban prozor omogućuje vam pripremu i spremanje njegovih detalja."
+
+#: src/components/GuidedTour.svelte
+msgid "Filter saved listings by type. You can select items, vehicles, and homes together for publishing."
+msgstr "Filtrirajte spremljene oglase prema vrsti. Za objavljivanje možete zajedno odabrati predmete, vozila i domove."
+
+#: src/components/GuidedTour.svelte
+msgid "Search saved listings by title or location."
+msgstr "Pretražite spremljene oglase prema naslovu ili lokaciji."
+
+#~ msgid "Saved listings appear here. Edit or delete a draft, or use its checkbox to select it. Select all applies to the visible listings."
+#~ msgstr "Ovdje se pojavljuju spremljeni oglasi. Uredite ili izbrišite skicu ili upotrijebite potvrdni okvir za odabir. Odaberite sve odnosi se na vidljive oglase."
+
+#: src/components/GuidedTour.svelte
+msgid "Publish selected"
+msgstr "Objavite odabrane oglase"
+
+#: src/components/GuidedTour.svelte
+#: src/components/UsageGuide.svelte
+msgid "Each listing opens the matching Facebook form automatically. Publish submits one listing at a time. Review the result in Chrome, then choose Next listing. Check uncertain submissions on Facebook before retrying."
+msgstr "Svaki oglas automatski otvara odgovarajući Facebook obrazac. Publish šalje jedan po jedan oglas. Pregledajte rezultat u pregledniku Chrome, a zatim odaberite Sljedeći oglas. Prije ponovnog pokušaja provjerite nesigurne podneske na Facebooku."
+
+#: src/components/GuidedTour.svelte
+msgid "Choose this for items such as furniture, electronics, or clothing."
+msgstr "Odaberite ovo za predmete kao što su namještaj, elektronika ili odjeća."
+
+#: src/components/GuidedTour.svelte
+msgid "Choose this for cars, motorcycles, boats, and other supported vehicle types."
+msgstr "Odaberite ovo za automobile, motocikle, čamce i druge podržane vrste vozila."
+
+#: src/components/GuidedTour.svelte
+msgid "Choose this for a property sale, a whole-property rental, or a private room in a shared property. After choosing a type, reopen the tour from How to use for help with the form."
+msgstr "Odaberite ovo za prodaju nekretnine, najam cijele nekretnine ili privatne sobe u zajedničkom posjedu. Nakon odabira vrste, ponovno otvorite obilazak iz Kako koristiti za pomoć s obrascem."
+
+#: src/components/GuidedTour.svelte
+msgid "Photos and video"
+msgstr "Fotografije i video"
+
+#~ msgid "Add at least one photo or video. Photo limits depend on the listing type. Rearrange photos to choose their display order."
+#~ msgstr "Dodajte barem jednu fotografiju ili video. Ograničenja fotografija ovise o vrsti oglasa. Promijenite raspored fotografija kako biste odabrali njihov redoslijed prikaza."
+
+#~ msgid "Listing details"
+#~ msgstr "Detalji oglasa"
+
+#~ msgid "Fill the required fields for this listing type. For homes, choose sale or rent and whether the rental is a private room."
+#~ msgstr "Ispunite obavezna polja za ovu vrstu oglasa. Za domove odaberite prodaju ili najam i je li najam privatne sobe."
+
+#~ msgid "Select a location from the search suggestions. For items, open More details to find Location. Finish Facebook login or verification in Chrome when prompted."
+#~ msgstr "Odaberite lokaciju iz prijedloga pretraživanja. Za stavke otvorite Više detalja da biste pronašli lokaciju. Dovršite Facebook prijavu ili potvrdu u Chromeu kada se to od vas zatraži."
+
+#: src/components/GuidedTour.svelte
+msgid "Listing preferences"
+msgstr "Postavke oglasa"
+
+#~ msgid "Review optional details and visibility preferences. Rentals also support availability dates, pet preferences, and room details where applicable."
+#~ msgstr "Pregledajte dodatne pojedinosti i postavke vidljivosti. Iznajmljivanje također podržava datume dostupnosti, preferencije kućnih ljubimaca i pojedinosti o sobi gdje je to primjenjivo."
+
+#: src/components/GuidedTour.svelte
+msgid "Review your photos and listing details here before saving or testing."
+msgstr "Ovdje pregledajte svoje fotografije i pojedinosti o oglasu prije spremanja ili testiranja."
+
+#: src/components/GuidedTour.svelte
+#: src/components/UsageGuide.svelte
+msgid "Test fills the Facebook form and stops before Publish. Review the result in Chrome. Test does not save your draft."
+msgstr "Test ispunjava Facebook obrazac i zaustavlja se prije objave. Pregledajte rezultat u Chromeu. Test ne sprema vašu skicu."
+
+#~ msgid "Save the listing and its media to this account. It will appear in Marketplace, where you can select it and choose Publish selected."
+#~ msgstr "Spremite oglas i njegove medije na ovaj račun. Pojavit će se na Marketplaceu, gdje ga možete odabrati i odabrati Objavi odabrano."
+
+#: src/components/GuidedTour.svelte
+#: src/components/UsageGuide.svelte
+msgid "Click Marketplace in the header to create and publish items, vehicles, and homes for sale or rent on Facebook Marketplace. Use How to use in that window to start the Marketplace tour."
+msgstr "Pritisnite Marketplace u zaglavlju za izradu i objavu predmeta, vozila i domova za prodaju ili iznajmljivanje na Facebook Marketplaceu. Upotrijebite Kako koristiti u tom prozoru za početak obilaska tržišta."
+
+#: src/components/GuidedTour.svelte
+msgid "Take a quick tour of Marketplace?"
+msgstr "Krenuti u brzi obilazak Marketplacea?"
+
+#: src/Workspace.svelte
+msgid "Guide"
+msgstr "Vodič"
+
+#: src/components/GuidedTour.svelte
+msgid "Select the vehicle type first. The available fields and required details depend on this choice."
+msgstr "Prvo odaberite vrstu vozila. Dostupna polja i potrebni detalji ovise o ovom izboru."
+
+#: src/components/GuidedTour.svelte
+msgid "Choose whether you are selling or renting this property."
+msgstr "Odaberite prodajete li ili iznajmljujete ovu nekretninu."
+
+#: src/components/GuidedTour.svelte
+msgid "Turn this on only when renting a private room in a shared property. Leave it off when renting the whole property."
+msgstr "Uključite ovo samo kada iznajmljujete privatnu sobu u zajedničkom objektu. Ostavite ga isključenim kada iznajmljujete cijelu nekretninu."
+
+#: src/components/GuidedTour.svelte
+#: src/components/GuidedTour.svelte
+#: src/components/GuidedTour.svelte
+#: src/components/GuidedTour.svelte
+#: src/components/GuidedTour.svelte
+#: src/components/GuidedTour.svelte
+#: src/components/GuidedTour.svelte
+msgid "items"
+msgstr "stavke"
+
+#: src/components/GuidedTour.svelte
+msgid "Add at least one photo or video. Items allow up to 10 photos and one video. Rearrange photos to choose their display order."
+msgstr "Dodajte barem jednu fotografiju ili video. Stavke dopuštaju do 10 fotografija i jedan video. Promijenite raspored fotografija kako biste odabrali njihov redoslijed prikaza."
+
+#: src/components/GuidedTour.svelte
+#: src/components/GuidedTour.svelte
+#: src/components/GuidedTour.svelte
+#: src/components/GuidedTour.svelte
+#: src/components/GuidedTour.svelte
+#: src/components/GuidedTour.svelte
+msgid "vehicles"
+msgstr "vozila"
+
+#: src/components/GuidedTour.svelte
+msgid "Add at least one photo or video. Vehicles allow up to 20 photos and one video. Rearrange photos to choose their display order."
+msgstr "Dodajte barem jednu fotografiju ili video. Vozila dopuštaju do 20 fotografija i jedan video. Promijenite raspored fotografija kako biste odabrali njihov redoslijed prikaza."
+
+#: src/components/GuidedTour.svelte
+msgid "Add at least one photo or video. Homes allow up to 50 photos and one video. Rearrange photos to choose their display order."
+msgstr "Dodajte barem jednu fotografiju ili video. Domovi dopuštaju do 50 fotografija i jedan video. Promijenite raspored fotografija kako biste odabrali njihov redoslijed prikaza."
+
+#: src/components/GuidedTour.svelte
+msgid "Item details"
+msgstr "Detalji stavke"
+
+#: src/components/GuidedTour.svelte
+msgid "Enter a title, choose a category and condition, and describe the item you are selling."
+msgstr "Unesite naslov, odaberite kategoriju i stanje te opišite artikl koji prodajete."
+
+#: src/components/GuidedTour.svelte
+msgid "car-truck"
+msgstr "auto-kamion"
+
+#: src/components/GuidedTour.svelte
+msgid "motorcycle"
+msgstr "motocikl"
+
+#: src/components/GuidedTour.svelte
+msgid "Enter the year, make, model, and mileage for this vehicle."
+msgstr "Unesite godinu, marku, model i kilometražu za ovo vozilo."
+
+#: src/components/GuidedTour.svelte
+msgid "Enter the year, make, and model for this vehicle."
+msgstr "Unesite godinu, marku i model ovog vozila."
+
+#: src/components/GuidedTour.svelte
+msgid "Enter the number of occupants, bedrooms, and bathrooms. Choose the bathroom type and furnished setting, then describe the room."
+msgstr "Unesite broj osoba, spavaćih soba i kupaonica. Odaberite vrstu kupaonice i namještenost, zatim opišite sobu."
+
+#: src/components/GuidedTour.svelte
+msgid "Choose the rental type and enter the number of bedrooms, bathrooms, and a rental description."
+msgstr "Odaberite vrstu najma i unesite broj spavaćih soba, kupaonica i opis najma."
+
+#: src/components/GuidedTour.svelte
+msgid "Choose the property type and enter the number of bedrooms, bathrooms, and a property description."
+msgstr "Odaberite tip nekretnine i unesite broj spavaćih soba, kupaonica i opis nekretnine."
+
+#: src/components/GuidedTour.svelte
+msgid "Enter the asking price for your item as a whole number."
+msgstr "Unesite traženu cijenu za svoju stavku kao cijeli broj."
+
+#: src/components/GuidedTour.svelte
+msgid "Enter the asking price for this vehicle as a whole number."
+msgstr "Unesite traženu cijenu za ovo vozilo kao cijeli broj."
+
+#: src/components/GuidedTour.svelte
+msgid "Enter the monthly rent for this room as a whole number."
+msgstr "Unesite mjesečnu najamninu za ovu sobu kao cijeli broj."
+
+#: src/components/GuidedTour.svelte
+msgid "Enter the monthly rent for the whole property as a whole number."
+msgstr "Unesite mjesečnu najamninu za cijelu nekretninu kao cijeli broj."
+
+#: src/components/GuidedTour.svelte
+msgid "Enter the total sale price for the property as a whole number."
+msgstr "Unesite ukupnu prodajnu cijenu nekretnine kao cijeli broj."
+
+#: src/components/GuidedTour.svelte
+msgid "homes"
+msgstr "domovima"
+
+#: src/components/GuidedTour.svelte
+msgid "Use More details for optional location, availability, tags, SKU, and meetup preferences. Choose a location suggestion and complete Facebook login in Chrome if prompted."
+msgstr "Upotrijebite Više detalja za neobaveznu lokaciju, dostupnost, oznake, SKU i postavke susreta. Odaberite prijedlog lokacije i dovršite Facebook prijavu u Chromeu ako se to od vas zatraži."
+
+#: src/components/GuidedTour.svelte
+msgid "Search for the town or city where this vehicle is located and select a suggestion. Complete Facebook login in Chrome if prompted."
+msgstr "Potražite mjesto ili grad u kojem se nalazi ovo vozilo i odaberite prijedlog. Dovršite Facebook prijavu u Chromeu ako se to od vas zatraži."
+
+#: src/components/GuidedTour.svelte
+msgid "Search for the property address and select a suggestion. Complete Facebook login in Chrome if prompted."
+msgstr "Potražite adresu nekretnine i odaberite prijedlog. Dovršite Facebook prijavu u Chromeu ako se to od vas zatraži."
+
+#: src/components/GuidedTour.svelte
+msgid "Optionally add the property area, date available, laundry, parking, air conditioning, heating, and cat or dog permissions."
+msgstr "Po želji dodajte područje nekretnine, datum dostupnosti, praonicu rublja, parking, klima uređaj, grijanje i dozvole za mačke ili pse."
+
+#: src/components/GuidedTour.svelte
+msgid "Optionally add the property area, laundry, parking, air conditioning, and heating."
+msgstr "Po želji dodajte područje nekretnine, praonicu rublja, parking, klimatizaciju i grijanje."
+
+#: src/components/GuidedTour.svelte
+msgid "Set promotion and Hide from friends preferences for this item. Hiding from friends does not make the listing private."
+msgstr "Postavite promociju i postavke Sakrij od prijatelja za ovu stavku. Skrivanje od prijatelja ne čini oglas privatnim."
+
+#: src/components/GuidedTour.svelte
+msgid "Choose whether to add a promotion step after this vehicle listing is published."
+msgstr "Odaberite želite li dodati korak promocije nakon objave ovog oglasa za vozilo."
+
+#: src/components/GuidedTour.svelte
+msgid "Choose whether to add a promotion step after this property listing is published."
+msgstr "Odaberite želite li dodati korak promocije nakon objave ovog oglasa nekretnine."
+
+#: src/components/GuidedTour.svelte
+msgid "sale"
+msgstr "prodaja"
+
+#: src/components/GuidedTour.svelte
+msgid "Enter the asking price for this property as a whole number."
+msgstr "Unesite traženu cijenu za ovu nekretninu kao cijeli broj."
+
+#: src/components/GuidedTour.svelte
+msgid "Save as many listings as you need for future use. Publishing keeps your saved copies, so you can edit and reuse them later. Select the listings you want using their checkboxes."
+msgstr "Spremite onoliko oglasa koliko vam je potrebno za buduću upotrebu. Objavljivanje čuva vaše spremljene kopije, tako da ih kasnije možete uređivati ​​i ponovno koristiti. Odaberite oglase koje želite koristeći njihove potvrdne okvire."
+
+#: src/components/GuidedTour.svelte
+#: src/components/UsageGuide.svelte
+msgid "Save this listing and its media to this account for future use. Saved copies remain available after publishing, so you can edit and reuse them later."
+msgstr "Spremite ovaj oglas i njegove medije na ovaj račun za buduću upotrebu. Spremljene kopije ostaju dostupne nakon objavljivanja, tako da ih kasnije možete uređivati ​​i ponovno koristiti."
+
+#: src/components/MarketplaceListings.svelte
+#: src/components/UsageGuide.svelte
+msgid "Save as many listings as you need. Keep them ready to edit and reuse when publishing."
+msgstr "Spremite onoliko oglasa koliko vam je potrebno. Neka budu spremni za uređivanje i ponovnu upotrebu prilikom objavljivanja."
+
+#: src/components/MarketplaceListings.svelte
+msgid "Start saving listings now so they’re ready to reuse whenever you publish to Marketplace."
+msgstr "Počnite spremati oglase sada kako bi bili spremni za ponovnu upotrebu kad god ih objavite na Marketplaceu."
+
+#: src/components/MarketplaceListings.svelte
+msgid "Home"
+msgstr "Nekretnina"

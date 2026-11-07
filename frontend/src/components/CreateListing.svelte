@@ -4,10 +4,11 @@
   import { tick } from 'svelte';
   import PhosphorIcon from './PhosphorIcon.svelte';
   import ItemListingEditor from './ItemListingEditor.svelte';
+  import GuidedTour from './GuidedTour.svelte';
   import type { ListingEditorSnapshot, MarketplaceListingKind } from '../lib/marketplace-drafts';
   import type { AccountProfile } from '../../bindings/postika';
 
-  let { profile }: { profile?: AccountProfile } = $props();
+  let { profile, ontourready }: { profile?: AccountProfile; ontourready?: (ready: boolean) => void } = $props();
 
   let listingType = $state<string | null>(null);
   let editorKind = $state<MarketplaceListingKind | null>(null);
@@ -19,6 +20,8 @@
     { id: 'homes', title: 'Home for sale or rent', description: 'List a house or apartment for sale or rent.' },
   ]);
   const currentType = $derived(types.find(type => type.id === listingType));
+  const tourReady = $derived(Boolean(profile) && listingType === null);
+  $effect(() => { if (listingType === null) ontourready?.(tourReady); });
 
   function saved() {
     editorStates.clear();
@@ -47,7 +50,7 @@
 
 {#if editorKind}
   {#key editorKind}
-    <div class="item-editor" hidden={listingType !== editorKind}><ItemListingEditor bind:this={editor} {profile} kind={editorKind} initialDraft={editorStates.get(editorKind)} visible={listingType === editorKind} onsaved={saved} onprevious={previous} onvehicle={() => advance('vehicles')} /></div>
+    <div class="item-editor" hidden={listingType !== editorKind}><ItemListingEditor bind:this={editor} {profile} kind={editorKind} initialDraft={editorStates.get(editorKind)} visible={listingType === editorKind} {ontourready} onsaved={saved} onprevious={previous} onvehicle={() => advance('vehicles')} /></div>
   {/key}
 {/if}
 {#if listingType !== 'items' && listingType !== 'vehicles' && listingType !== 'homes'}
@@ -80,6 +83,7 @@
   </div>
 </section>
 {/if}
+<GuidedTour scope="listing-types" ready={tourReady} />
 
 <style>
   .item-editor { height: 100%; min-height: 0; }

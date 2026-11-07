@@ -10,8 +10,9 @@
   import { itemListingFieldOptions, vehicleListingFieldOptions, homeListingFieldOptions } from '../lib/marketplace-fields';
   import { getLocale } from '../lib/i18n.svelte';
   import { notify } from '../lib/notifications.svelte';
+  import GuidedTour from './GuidedTour.svelte';
 
-  let { profile }: { profile?: AccountProfile } = $props();
+  let { profile, ontourready }: { profile?: AccountProfile; ontourready?: (ready: boolean) => void } = $props();
   let listings = $state<MarketplaceListing[]>([]);
   let selected = $state<string[]>([]);
   let filter = $state('all'), search = $state(''), loading = $state(true), error = $state(''), busy = $state(false);
@@ -22,6 +23,8 @@
   let publishError = $state('');
   let publishController: AbortController | undefined;
   const working = $derived(busy || publishQueue.length > 0);
+  const tourReady = $derived(Boolean(profile) && !loading && !working && !editing);
+  $effect(() => { if (!editing) ontourready?.(tourReady); });
 
   let deleting = $state<string | null>(null);
   let thumbnails = $state<Record<string, string>>({});
@@ -31,7 +34,7 @@
   let highlighted = $state('');
   let alive = true, version = 0;
   const title = (listing: MarketplaceListing) => listing.fields.title.trim() || (listing.kind === 'vehicles' ? [listing.fields.year, listing.fields.make, listing.fields.model].filter(Boolean).join(' ') : listing.fields.address.trim()) || 'Untitled listing';
-  const typeLabel = (listing: MarketplaceListing) => listing.kind === 'items' ? 'Item' : listing.kind === 'vehicles' ? 'Vehicle' : 'Home';
+  const typeLabel = (listing: MarketplaceListing) => listing.kind === 'items' ? 'Item' : listing.kind === 'vehicles' ? 'Vehicle' : /* @wc-include */ 'Home';
   function subtitle(listing: MarketplaceListing) {
     const fields = listing.fields;
     const detail = listing.kind === 'items'
@@ -169,13 +172,13 @@
 {/snippet}
 
 {#if editing}
-  {#key editing.id}<ItemListingEditor {profile} kind={editing.kind} initialDraft={editing} onprevious={closeEditor} onsaved={() => { void closeEditor(); notify({ kind: 'success', message: 'Listing saved.' }); }} />{/key}
+  {#key editing.id}<ItemListingEditor {profile} kind={editing.kind} initialDraft={editing} {ontourready} onprevious={closeEditor} onsaved={() => { void closeEditor(); notify({ kind: 'success', message: 'Listing saved.' }); }} />{/key}
 {:else}
 <div class="marketplace-listings">
   <MarketplaceToolbar bind:selected={filter} selectedCount={chosen.length} publishDisabled={working} publishing={publishing} onpublish={publishSelected} />
-  <section class="listing-content" aria-label="Saved listings" aria-busy={loading}>
+  <section class="listing-content" data-step-scroll aria-label="Saved listings" aria-busy={loading}>
     <div class="list-heading">
-      <div><h1>Saved listings</h1><p>Save listings here, then select them when you’re ready to publish.</p></div>
+      <div><h1>Saved listings</h1><p>Save as many listings as you need. Keep them ready to edit and reuse when publishing.</p></div>
       <input class="search" type="search" aria-label="Search saved listings" placeholder="Search listings" bind:value={search} />
     </div>
     {#if error}<div class="feedback" role="alert"><p>{error}</p><button type="button" class="action-button action-button--secondary" onclick={refresh}>Try again</button></div>{/if}
@@ -200,7 +203,7 @@
     <div class="selection-summary" aria-live="polite"><span>{visible.length} listings</span>{#if selected.length}<span>{selected.length} selected</span><button type="button" disabled={working} onclick={() => { selected = []; }}>Clear selection</button>{/if}</div>
     {#if loading}<div class="empty" role="status"><p>Loading saved listings…</p></div>
     {:else if !listings.length}
-      <div class="empty"><PhosphorIcon name="package" size={32} /><h2>{profile ? 'No saved listings yet' : 'Select an account to see its listings'}</h2><p>{profile ? 'Create a listing and save it. It will appear here, ready to select later.' : 'Your listings stay separate for each account.'}</p></div>
+      <div class="empty"><PhosphorIcon name="package" size={32} /><h2>{profile ? 'No saved listings yet' : 'Select an account to see its listings'}</h2><p>{profile ? 'Start saving listings now so they’re ready to reuse whenever you publish to Marketplace.' : 'Your listings stay separate for each account.'}</p></div>
     {:else if !visible.length}<div class="empty"><h2>No matching listings</h2><p>Try another search or listing type.</p></div>
     {:else}
     <!-- svelte-ignore a11y_no_noninteractive_tabindex (Keyboard users focus this region to scroll the wide table.) -->
@@ -225,6 +228,7 @@
     {/if}
   </section>
 </div>
+<GuidedTour scope="marketplace" ready={tourReady} />
 {/if}
 
 <style>

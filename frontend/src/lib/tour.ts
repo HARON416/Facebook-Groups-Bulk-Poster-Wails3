@@ -1,21 +1,30 @@
 export const tourStorageKey = 'postika:guided-tour:v1';
 
-export function createTourChoice(storage: () => Pick<Storage, 'getItem' | 'setItem'> = () => localStorage) {
+export type TourScope = 'groups' | 'marketplace' | 'listing-types' | 'listing-editor';
+export const tourKey = (scope: TourScope) => scope === 'groups' ? tourStorageKey : `postika:guided-tour:${scope}:v1`;
+
+export function createTourChoice(storage: () => Pick<Storage, 'getItem' | 'setItem'> = () => localStorage, key = tourStorageKey) {
   let seen = false;
   return {
     hasSeen() {
-      try { return seen || storage().getItem(tourStorageKey) === 'seen'; }
+      try { return seen || storage().getItem(key) === 'seen'; }
       catch { return seen; }
     },
     remember() {
       seen = true;
-      try { storage().setItem(tourStorageKey, 'seen'); }
+      try { storage().setItem(key, 'seen'); }
       catch { /* Still respect the choice for this window when storage is unavailable. */ }
     },
   };
 }
 
 export const tourChoice = createTourChoice();
+const choices = new Map<TourScope, ReturnType<typeof createTourChoice>>([['groups', tourChoice]]);
+export function tourChoiceFor(scope: TourScope) {
+  let choice = choices.get(scope);
+  if (!choice) { choice = createTourChoice(undefined, tourKey(scope)); choices.set(scope, choice); }
+  return choice;
+}
 
 export interface TourRect { left: number; top: number; right: number; bottom: number }
 export function placeTourCard(target: TourRect | null, width: number, height: number, viewport: { width: number; height: number }) {

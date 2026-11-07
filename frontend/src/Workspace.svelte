@@ -23,7 +23,7 @@
   const marketplace = new URLSearchParams(window.location.search).get('view') === 'marketplace';
   const createListing = new URLSearchParams(window.location.search).get('view') === 'create-listing';
   const blankWorkspace = marketplace || createListing;
-  const marketplaceTitle = $derived(createListing ? 'Create new listing' : 'Marketplace');
+  const marketplaceTitle = $derived(createListing ? /* @wc-include */ 'Create new listing' : /* @wc-include */ 'Marketplace');
   $effect(() => {
     if (blankWorkspace) {
       document.title = `${marketplaceTitle} · Postika`;
@@ -42,7 +42,13 @@
   let windowControls = $state<WindowControls>();
   const current = $derived(profiles.find((profile) => profile.id === selected));
   const background = $derived(profiles.filter((profile) => profile.active && profile.id !== selected));
-  const tourAvailable = $derived(!blankWorkspace && Boolean(current) && tourReady && !adding && !profiles.some(profile => profile.active));
+  const tourAvailable = $derived(Boolean(current) && tourReady && !adding && !busy && !profiles.some(profile => profile.active));
+
+  function startGuide() {
+    if (!tourAvailable) return;
+    if (blankWorkspace) window.dispatchEvent(new Event('postika:marketplace-tour'));
+    else void tour.start();
+  }
 
   function open(profile: AccountProfile, connect = false) {
     if (!blankWorkspace && !opened.some((entry) => entry.id === profile.id)) opened = [...opened, { ...profile, connect }];
@@ -112,10 +118,11 @@
     <nav class="app-menu" aria-label="Application menu">
     <fieldset class="menu-controls">
       <UpdateButton />
-      <FeaturesCard {tourAvailable} onstarttour={() => tour.start()} />
+      <FeaturesCard {tourAvailable} onstarttour={startGuide} />
+      <button type="button" data-guide-trigger disabled={!tourAvailable} aria-haspopup="dialog" title={tourAvailable ? 'Start guided tour' : 'Wait until the current operation finishes to start the tour.'} onclick={startGuide}>Guide</button>
       <button type="button" disabled={busy} aria-expanded={adding} bind:this={addTrigger} aria-haspopup="dialog" aria-controls="add-account-dialog" onclick={showAddAccount}>Add account</button>
       <button type="button" data-tour="logs" disabled={busy || !selected} onclick={() => openPostingLogs()}>Posting logs</button>
-      <button type="button" disabled={busy} onclick={openMarketplace}>Marketplace</button>
+      <button type="button" data-tour="marketplace" disabled={busy} onclick={openMarketplace}>Marketplace</button>
       <LanguageMenu />
       <ThemeMenu />
       <ContactButton />
@@ -131,7 +138,7 @@
     </div>
   {/if}
   {#if blankWorkspace}
-    <main class="account-workspace" aria-label={marketplaceTitle}>{#if marketplace}{#key current?.id}<MarketplaceListings profile={current} />{/key}{/if}{#if createListing}{#key current?.id}<CreateListing profile={current} />{/key}{/if}</main>
+    <main class="account-workspace" aria-label={marketplaceTitle}>{#if marketplace}{#key current?.id}<MarketplaceListings profile={current} ontourready={setTourReady} />{/key}{/if}{#if createListing}{#key current?.id}<CreateListing profile={current} ontourready={setTourReady} />{/key}{/if}</main>
   {:else}
   {#each opened as profile (profile.id)}
     <div class="account-workspace" hidden={profile.id !== selected}>
@@ -140,7 +147,7 @@
   {/each}
   {#if !selected && !error}<p class="loading" role="status">{profiles.length ? 'Loading accounts…' : 'Add an account to get started.'}</p>{/if}
   {/if}
-  <GuidedTour bind:this={tour} ready={tourAvailable} onpage={(page) => { tourPage = page; }} onactive={(active) => { tourActive = active; }} />
+  <GuidedTour bind:this={tour} ready={!blankWorkspace && tourAvailable} onpage={(page) => { tourPage = page; }} onactive={(active) => { tourActive = active; }} />
   {#if current}{#key current.id}<ConnectivityToast profileID={current.id} />{/key}{/if}
 </div>
 
@@ -152,6 +159,7 @@
   .app-menu { --wails-draggable: no-drag; display: flex; min-width: 0; align-self: stretch; align-items: center; gap: .2rem; padding-right: 1rem; margin-right: .4rem; border-right: 1px solid var(--border); }
   .menu-controls { display: contents; }
   .app-menu button { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; padding: .7rem 1rem; border: 0; border-radius: .4rem; background: transparent; color: var(--text-secondary); font-size: 1.2rem; cursor: pointer; }
+  .app-menu button[data-guide-trigger] { flex-shrink: 0; }
   .app-menu button:hover:not(:disabled), .app-menu button[aria-expanded=true] { background: var(--surface-hover); color: var(--text); }
   .background-jobs button { border: 1px solid var(--border); background: var(--surface); color: var(--accent); padding: .8rem 1.2rem; border-radius: .6rem; font: inherit; cursor: pointer; }
   .background-jobs button:disabled, .app-menu button:disabled { opacity: .5; cursor: default; }
@@ -160,7 +168,7 @@
   .account-workspace[hidden] { display: none; }
   .profile-error, .loading { padding: 1.2rem 2.4rem; font-size: var(--ui-body-size); color: var(--danger); }
   .background-jobs { display: flex; align-items: center; flex-wrap: wrap; gap: .8rem; padding: .8rem 2.4rem; font-size: 1.2rem; background: var(--surface-active); color: var(--text-strong); }
-  @media (max-width: 1000px) {
+  @media (max-width: 1200px) {
     .top-bar { height: auto; flex-wrap: wrap; padding-left: 0; }
     .profile-control { margin-left: 1.2rem; }
     .profile-control :global(.account-dropdown) { width: 17rem; }

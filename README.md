@@ -35,12 +35,16 @@ assets and signed update feeds are hosted on Bunny CDN at
 
 On first launch, Postika offers a guided tour with spotlights on the real app
 controls. Choose **Start guided tour** or **Skip**; the choice is remembered on
-this device. Reopen it from **How to use → Start guided tour**, or choose
+this device. Reopen it with **Guide** in the top menu or **How to use → Start guided tour**, or choose
 **Read the guide** for the existing written instructions. The tour has Previous,
 Next, Close and Finish controls, supports Escape and keyboard navigation, and
 preserves the account's draft, workflow step and scroll position. It does not
 fetch data, create accounts or start posting. Start it when no posting or group
 loading operation is active. Tour copy follows the selected interface language.
+Marketplace has separate tours for saved listings, choosing a listing type, and
+the item, vehicle, or home editor. Select **Guide** in the top menu of the
+current Marketplace window to replay its tour. The groups tour also introduces
+the Marketplace button in the header.
 
 ## Using the app
 
