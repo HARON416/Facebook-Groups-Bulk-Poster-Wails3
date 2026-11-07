@@ -244,6 +244,92 @@ old-to-new update tests for each distributed platform and format.
 
 ## Builds and packages
 
+### Local releases from Linux
+
+GitHub can be used only for source control. `make release-local` builds Linux
+x64, Windows x64, macOS Apple Silicon, and macOS Intel on this Linux computer.
+It does not use GitHub Actions, artifact storage, `gh`, commits, or pushes.
+It includes current local source edits. Frontend, tour, release, and Go checks
+run before building. Builds run sequentially because platform tasks share the
+frontend and `bin` outputs.
+
+Install Docker Engine, NSIS (`makensis`), the Go/Node/Wails toolchain, and the
+GTK4/WebKit development dependencies listed by `make doctor`. Also install
+[Apple Codesign's `rcodesign`](https://gregoryszorc.com/docs/apple-codesign/stable/apple_codesign_getting_started.html)
+on your PATH (or in `.tools/bin`) for portable ad-hoc Mac app signing. With Rust
+installed, `cargo install --locked apple-codesign --version 0.29.0` installs the
+pinned signer. Prebuilt Linux binaries are also available from that project's
+releases.
+
+On Ubuntu, install and start Docker once:
+
+```sh
+sudo apt-get install -y docker.io docker-buildx
+sudo systemctl enable --now docker
+sudo usermod -aG docker "$USER"
+```
+
+Log out and back in after adding yourself to the Docker group. `docker info`
+must succeed as your normal user before continuing. Then, from the repository
+root:
+
+```sh
+make setup-cross                    # One-time Docker image setup
+make release-local-check            # Check tools without bumping or building
+make release-local                  # Bump patch locally and build all targets
+```
+
+The Dockerfile uses heredocs and requires BuildKit. `make setup-cross` invokes
+`docker buildx build --load` so the resulting `wails-cross` image is available to
+the packaging tasks. If setup reports `COPY failed: no source files were specified`
+at a `COPY <<...` step, install `docker-buildx` and rerun setup; the legacy Docker
+builder cannot parse that syntax.
+
+Choose the next command according to what you need; each new release command
+bumps the patch version unless `BUMP=none` is supplied:
+
+```sh
+make release-local PUBLISH=1          # New release: build and publish to Bunny
+make publish-local                   # Publish the release already built locally
+make release-local BUMP=none PUBLISH=1 # Resume a failed build of unchanged source
+```
+
+`BUMP=minor`, `BUMP=major`, and `VERSION=X.Y.Z` select the version policy.
+Version metadata is updated locally; commit it with your changes when ready.
+Failures preserve the selected version and completed, checksum-verified targets.
+Retries require unchanged source; edits require a new version or moving the
+recorded staging folders aside. Completed releases stay in
+`bin/releases/<version>/`. After successful publication, older local releases
+and generated staging copies up to that version are removed. The current
+release's packages, update feeds, and build record remain for retries. Build-only
+runs and failed publications preserve previous packages. Small build records
+and feed manifests from older versions may remain. Bunny keeps the latest two
+completed versioned releases, as described under publishing below.
+Local build records
+and staging live in `bin/local-release/<version>/` and
+`bin/releases/ci-local-<version>/`. Release and publish locks prevent concurrent
+local release commands.
+
+Mac downloads use **`.app.zip` instead of `.dmg`** because the pinned Wails
+version's DMG task requires macOS. Extract the ZIP and move Postika.app to
+Applications. Both architectures are ad-hoc signed with `rcodesign`; these are
+not Apple Developer ID signatures or notarization. Gatekeeper first-launch
+approval is still required, as with the current unsigned distribution. Signed
+update feeds continue using the existing `.app.zip` payloads and existing
+`.update-keys/updater.key`. The website metadata automatically links to the ZIPs.
+The existing Homebrew cask template assumes DMGs and must be adapted separately
+before using it for a ZIP-based release.
+
+`PUBLISH=1` reads the existing ignored `.env` Bunny settings and checks the
+signing key and storage connection before changing the version or building.
+Use `make publish-local` to retry uploading a completed release without rebuilding.
+Publishing uploads to Bunny and updates local website metadata; deploying the
+website remains a separate step. Docker cross-compilation uses the macOS SDK;
+review Apple's SDK terms as described in the
+[Wails cross-platform guide](https://v3.wails.io/guides/build/cross-platform/).
+
+### Optional releases through GitHub Actions
+
 The all-OS release command handles versioning automatically:
 
 ```sh
@@ -272,9 +358,11 @@ make version-set VERSION=0.2.0     # Explicit higher version
 
 Run just one of those manual alternatives. The command synchronizes all Windows,
 macOS, and Linux app/package metadata from `build/config.yml`, including the
-embedded version used by automatic updates. Commit and push the changes before
-`make release-all BUMP=none` to avoid incrementing it again. `make version-check` validates the metadata;
-`make version-sync` repairs it from the config without incrementing anything.
+embedded version used by automatic updates. After a manual bump, use
+`make release-local BUMP=none` to build that version. The optional GitHub path
+requires committing and pushing first, then `make release-all BUMP=none`.
+`make version-check` validates the metadata; `make version-sync` repairs it
+from the config without incrementing anything.
 Release scripts, Wails frontend build tasks, and CI reject inconsistent versions.
 Existing published packages are not renamed or modified by a version bump.
 
@@ -313,24 +401,27 @@ The complete setup and limitations are in [Releasing](docs/RELEASING.md#one-comm
 | Platform | Packaging task | Outputs |
 | --- | --- | --- |
 | Windows x64 | `wails3 task windows:package:all ARCH=amd64` | Per-user NSIS installer and portable ZIP |
-| macOS Apple Silicon | `wails3 task darwin:package:all ARCH=arm64` | App bundle, DMG, and updater ZIP |
-| macOS Intel | `wails3 task darwin:package:all ARCH=amd64` | App bundle, DMG, and updater ZIP |
+| macOS Apple Silicon from Linux | `wails3 task darwin:package:cross ARCH=arm64` | Ad-hoc signed app bundle and app ZIP |
+| macOS Intel from Linux | `wails3 task darwin:package:cross ARCH=amd64` | Ad-hoc signed app bundle and app ZIP |
+| macOS on a Mac / CI | `wails3 task darwin:package:all ARCH=arm64` or `ARCH=amd64` | Ad-hoc signed app bundle, DMG, and updater ZIP |
 | Linux x64 | `wails3 task linux:package ARCH=amd64` | AppImage, DEB, RPM, and Arch package |
 
 ### Artifact locations for hosting
 
-Our initial public download set is:
+The local release download set is:
 
 | OS | Downloads to host |
 | --- | --- |
 | Windows x64 | Installer `.exe` and portable `.zip` |
-| macOS Apple Silicon | arm64 `.dmg` |
-| macOS Intel | amd64 `.dmg` |
+| macOS Apple Silicon | arm64 `.app.zip` |
+| macOS Intel | amd64 `.app.zip` |
 | Linux x64 | `.AppImage`, `.deb`, `.rpm`, and Arch `.pkg.tar.zst` |
 
-Homebrew will use the same hosted macOS DMGs through the published cask.
-For automatic updates, also host the raw Windows application `.exe`, separate
-macOS app-bundle `.zip` files for arm64 and amd64, and the JSON update manifests.
+Optional native/CI releases also include macOS DMGs. The existing Homebrew cask
+template uses those DMGs and needs adapting before publishing a ZIP-based cask.
+For automatic updates, also host the raw Windows application `.exe` and the JSON
+update manifests. The same architecture-specific macOS app ZIPs serve downloads
+and automatic updates.
 Linux updates use the same packages as the public downloads. Include release
 checksums and the license alongside the artifacts.
 
@@ -346,12 +437,12 @@ mean it is the latest build or has passed release testing.
 | Windows x64 | NSIS setup EXE | `bin/postika-amd64-installer.exe` | First-install download |
 | Windows x64 | Portable ZIP | `bin/postika-windows-amd64-portable.zip` | First-install download |
 | Windows x64 | Raw application EXE | `bin/postika.exe` | In-app update payload for both Windows distributions |
-| macOS Apple Silicon | DMG | `bin/postika.dmg` | First-install download; also used by the Homebrew cask |
-| macOS Apple Silicon | App bundle | `bin/postika.app/` | Input to DMG and updater ZIP packaging |
-| macOS Apple Silicon | App-bundle ZIP | `bin/postika-darwin-arm64.app.zip` | In-app update payload |
-| macOS Intel | DMG | `bin/postika.dmg` | First-install download; also used by the Homebrew cask |
-| macOS Intel | App bundle | `bin/postika.app/` | Input to DMG and updater ZIP packaging |
-| macOS Intel | App-bundle ZIP | `bin/postika-darwin-amd64.app.zip` | In-app update payload |
+| macOS Apple Silicon | DMG | `bin/postika.dmg` | Optional macOS/CI output; used by the existing Homebrew cask template |
+| macOS Apple Silicon | App bundle | `bin/postika.app/` | Input to app ZIP packaging; also DMG packaging on macOS |
+| macOS Apple Silicon | App-bundle ZIP | `bin/postika-darwin-arm64.app.zip` | Local release download and in-app update payload |
+| macOS Intel | DMG | `bin/postika.dmg` | Optional macOS/CI output; used by the existing Homebrew cask template |
+| macOS Intel | App bundle | `bin/postika.app/` | Input to app ZIP packaging; also DMG packaging on macOS |
+| macOS Intel | App-bundle ZIP | `bin/postika-darwin-amd64.app.zip` | Local release download and in-app update payload |
 | Linux x64 | AppImage | `bin/postika-x86_64.AppImage` | First-install download and in-app update payload |
 | Linux x64 | DEB | `bin/postika.deb` | First-install download and in-app update payload |
 | Linux x64 | RPM | `bin/postika.rpm` | First-install download and in-app update payload |
@@ -372,22 +463,21 @@ Additional targets are separate from the unsigned release set:
   DMGs listed above.
 
 For distribution, use the verified, versioned files in `bin/releases/<version>/`
-created by `make release-all`. The raw build outputs above can be overwritten by
-the next architecture or platform build. `make package-all` packages only the
+created by `make release-local` (or downloaded by the optional `make release-all`
+path). The raw build outputs above can be overwritten by the next architecture
+or platform build. `make package-all` packages only the
 current OS; it is not needed again after a successful all-OS release.
 
 ### Publishing a release to Bunny
 
-The recommended flow is **GitHub Actions → Bunny**. GitHub builds all four OS
-and architecture targets, then a GitHub-hosted publish job downloads their
-artifacts internally, verifies them, signs the update feeds and uploads to
-Bunny. Large release files no longer pass through your laptop. Your laptop
-starts and monitors the job, then downloads only the small website release JSON.
+The main release flow is **local Linux build → Bunny**. The computer builds all
+four targets, verifies checksums, signs update feeds with the existing key, and
+uploads directly to Bunny. GitHub is only needed if you choose the optional
+Actions workflow above.
 
-#### First-time setup
+#### First-time publishing setup
 
-1. Authenticate GitHub CLI with `gh auth login`. Push the workflows and release
-   scripts to the repository's default branch before using them.
+1. Complete the Docker and signer setup in [Local releases from Linux](#local-releases-from-linux).
 2. If `.env` does not exist, copy `.env.example` to `.env`. Keep an existing `.env`;
    do not overwrite its credentials. Configure the Frankfurt Storage HTTP API:
 
@@ -399,25 +489,14 @@ starts and monitors the job, then downloads only the small website release JSON.
 
    Use the Storage Zone password. `de-s3.storage.bunnycdn.com` is the separate S3
    endpoint; this uploader uses the HTTP endpoint without an `https://` prefix.
-3. Restore and privately back up the existing `.update-keys/updater.key`. Do not
-   generate a replacement key for already-distributed apps.
-4. Run once from the repository root:
-
-   ```sh
-   make configure-publishing
-   ```
-
-   This validates that the private key matches the app's embedded public key,
-   then configures GitHub repository secrets `BUNNY_STORAGE_PASSWORD` and
-   `POSTIKA_UPDATE_PRIVATE_KEY`, plus repository variables `BUNNY_STORAGE_ZONE`
-   and `BUNNY_STORAGE_HOST`. Secret values use stdin and GitHub's secret storage;
-   they are not put in Git, command arguments or logs. The publish job creates
-   a temporary key file and removes it after use.
-
-`.env` and `.update-keys/` remain ignored by Git. Normal cloud publishing uses
-GitHub's stored configuration and does not load your local `.env` or private key.
-Keep local backups for recovery. The GitHub publish job has read-only repository
-permissions and is serialized to prevent concurrent feed publication.
+3. Restore and privately back up the existing `.update-keys/updater.key`. Keep
+   `internal/updateauth/public-key.pem` paired with it. Do not generate a
+   replacement key for already-distributed apps. `.env`, `.update-keys/`, and
+   local build outputs remain ignored by Git.
+4. Run `make release-local-check`. It checks build prerequisites without
+   changing a version, building packages, or uploading. Publishing commands also
+   check the local signing files and Bunny connection. `make configure-publishing`
+   is only for GitHub Actions; local publishing does not require it.
 
 #### Which command to use
 
@@ -425,49 +504,80 @@ Run these commands from the **repository root**:
 
 | Situation | Command |
 | --- | --- |
-| New release: bump version, build all OS targets and publish directly to Bunny | `make release-all PUBLISH=1` |
-| Retry publication of the last recorded build without rebuilding or bumping | `make publish-release` |
-| Publish a specific successful build, including one started before this automation | `make publish-release RUN_ID=<distribution-run-id>` |
-| Build failed: rebuild the same version and publish | `make release-all BUMP=none PUBLISH=1` |
-| Optional local package copy from an existing build | `make release-resume RUN_ID=<distribution-run-id>` |
-| Advanced fallback: publish packages already on this computer | `make publish-local` |
+| New release: bump patch, build all targets locally, and publish | `make release-local PUBLISH=1` |
+| Build all targets locally for testing without uploading | `make release-local` |
+| Publish or retry uploading an already-completed local release | `make publish-local` |
+| Resume a failed local build with the same version and unchanged source, then publish | `make release-local BUMP=none PUBLISH=1` |
+| Start a minor or major release | `make release-local BUMP=minor PUBLISH=1` or `BUMP=major` |
+| Select an explicit higher version | `make release-local VERSION=0.3.2 PUBLISH=1` |
+| Inspect the local release plan without building | `node scripts/release-local.mjs --plan` |
 
-For a normal release, commit and push your application changes, then run:
+For a normal release:
 
 ```sh
-make release-all PUBLISH=1
+make release-local PUBLISH=1
 ```
 
-The launcher checks the pushed checkout and repository publishing configuration,
-reserves the next version, commits and pushes version metadata, then dispatches
-the distribution workflow with publishing enabled. It waits for all build and
-publication jobs. Successful publication syncs `website/releases/<version>.json`
-and `website/releases/current.json` locally from Bunny. No packages are downloaded
-to local `bin/releases/` in this mode. `BUMP=minor`, `BUMP=major`, and `VERSION=X.Y.Z`
-select the version policy; the default is the next patch.
+Local edits are included; pushing to GitHub is not required. The command checks
+tools and publishing credentials, runs validation, updates version metadata
+locally, and builds all four targets. It verifies and combines their packages
+in `bin/releases/<version>/`, generates website metadata, signs the five update
+feeds, and uploads directly to Bunny. Commit version and website metadata with
+your source changes when ready.
 
-If your terminal loses its connection, GitHub continues working independently.
-Check the run URL before starting another release. `make publish-release` reads
-the run recorded in ignored `bin/release-build.json`; an explicit `RUN_ID` also
-works on a fresh checkout. A saved publish-only run is reconnected to instead of
-creating duplicate uploads. A completed distribution publish job only needs its
-small metadata file synced again. Do not bump a new version just to recover a
-monitoring or metadata-sync failure.
+A local build stops if its terminal or computer stops. Keep the computer running
+and connected. A failed build preserves its version and verified targets; retry
+with `BUMP=none` and unchanged source. Source changes are rejected when resuming
+so packages from different code cannot be combined. A completed package set does
+not need rebuilding to retry an upload: use `make publish-local`.
 
-A publish retry never compiles or changes the app version. It verifies that all
-four package jobs passed, and that the built version and embedded public key
-match the publishing checkout. If your checkout has advanced beyond the built
-commit, acknowledge the exact built source with `SOURCE_COMMIT=<full-sha>` or
-build a fresh release to include later app changes. GitHub artifacts expire
-after 30 days, so publish successful builds while their artifacts are available.
+#### Optional GitHub publishing
+
+To use Actions instead, authenticate with `gh auth login`, commit and push your
+changes, then run `make configure-publishing` once. It validates the existing
+signing key and saves the Bunny credentials and signing key as repository secrets.
+`make release-all PUBLISH=1` builds and publishes from GitHub, then syncs the small
+website metadata file locally. No GitHub Release is created.
+
+| GitHub situation | Command |
+| --- | --- |
+| New release through Actions | `make release-all PUBLISH=1` |
+| Retry publication of the last recorded Actions build | `make publish-release` |
+| Publish a specific successful build | `make publish-release RUN_ID=<distribution-run-id>` |
+| Retry a failed Actions build without another version bump | `make release-all BUMP=none PUBLISH=1` |
+| Download packages from an existing successful build | `make release-resume RUN_ID=<distribution-run-id>` |
+
+GitHub jobs continue if the local monitoring terminal disconnects. Check the run
+before starting another one. The last build is recorded in ignored
+`bin/release-build.json`. Publishing requires successful packages from all four
+targets; if the checkout has advanced, `SOURCE_COMMIT=<full-sha>` explicitly
+acknowledges the older built source. GitHub artifacts are retained for 30 days,
+and its artifact quota can block these builds. This limit does not affect the
+local release path.
 
 #### What gets published
 
-The publish job uploads packages to `downloads/<version>/`, using the same
+The publisher uploads packages to `downloads/<version>/`, using the same
 versioned filenames as before. It supplies SHA-256 checksums to Bunny and fetches
 every public package URL to verify its bytes. Only after all packages pass does
 it replace the five stable update JSON files. It refuses downgrades and different
-payloads under a published version. Older remote releases are never deleted.
+payloads under a published version.
+
+After the new packages and all five stable feeds pass public verification, the
+publisher keeps the latest two completed releases on Bunny: the current version
+and the newest older completed version. It deletes older completed
+`downloads/<version>/` folders, including their packages, checksums, and release
+metadata. It rechecks the stable feeds before each deletion and skips cleanup if
+they changed or a newer remote version appeared. Missing or malformed completion
+metadata leaves a folder untouched. Legacy flat downloads, unrelated directories,
+and `/updates/` files are preserved.
+
+This retention policy runs automatically with both `make release-local PUBLISH=1`
+and `make publish-local`, as well as the optional GitHub publisher. Failed
+publications do not run cleanup. Cleanup errors are reported separately and do
+not invalidate an already verified publication; retry `make publish-local` for
+the same version to retry cleanup. Deploy the updated website metadata so its
+download buttons point to the current retained release.
 
 The Bunny base URL is `https://postika-desktop-application.b-cdn.net`:
 
@@ -492,22 +602,19 @@ API key. Uploads and public verification retry interrupted requests; a partial
 feed failure may briefly leave platforms on different versions. Retry the same
 build to complete publication.
 
-#### Optional local files
+#### Local packages and update feeds
 
-Plain `make release-all` without `PUBLISH=1` still builds and downloads packages
-for local testing. `make release-resume RUN_ID=<run-id>` downloads an existing
-build without rebuilding. These optional transfers still use your local network;
-they are separate from cloud publishing. Local staging verifies checksums and
-keeps the latest complete `bin/releases/<version>/` while preserving the previous
-complete release if a download fails.
+`make update-feeds` signs and verifies a complete local package set without
+uploading. `make website-release` regenerates website metadata from those
+packages. `make publish-local` loads `.env` and the existing signing key, verifies
+packages and feeds, and retries publishing the current version without a build
+or bump.
 
-`make publish-local` retains the previous laptop-to-Bunny fallback and loads
-local `.env` and the existing signing key. `make update-feeds` signs local
-packages without uploading; `make website-release` generates website metadata
-from a complete local package set. The normal cloud flow needs none of these.
-Initial installers and updater payloads differ for Windows and macOS: feeds use
-the raw Windows EXE or macOS app ZIP, never the NSIS installer or DMG. Paid OS
-publisher signing and notarization remain deferred.
+Windows first-install downloads and updater payloads differ: the update feed
+uses the raw application EXE, not the NSIS installer. macOS uses the app ZIP for
+updates in both local and native/CI releases. Paid OS publisher signing and
+notarization remain deferred; ad-hoc Mac signing is separate from the Ed25519
+signatures on update feeds.
 
 ### Website downloads and update routing
 
@@ -529,19 +636,24 @@ cd website
 make run
 ```
 
-After `make release-all PUBLISH=1`, the small metadata file generated in GitHub
-Actions is synced into `website/releases/<version>.json` and
-`website/releases/current.json` with all eight versioned Bunny download URLs. No source-code embed path or URLs need editing.
+`make release-local` generates `website/releases/<version>.json` and
+`website/releases/current.json` with all eight versioned Bunny download URLs.
+Mac URLs use `.app.zip` for local Linux releases. The optional
+`make release-all PUBLISH=1` path syncs equivalent metadata from Bunny after
+GitHub publishes its DMG-based release. No source-code embed path or URLs need
+editing.
 Release notes start empty; add actual notes to the version JSON and
 `current.json` together before rebuilding the website. Existing release
 dates and notes are preserved when regenerating metadata. Commit generated
-metadata with your next source changes before starting another all-OS build.
+metadata with your next source changes; the GitHub workflow requires a clean,
+pushed checkout.
 
 After publishing the packages and feeds, rebuild and deploy the website binary
 so it embeds the new metadata. This automation does not deploy to the VPS;
 the running website keeps its embedded release until replaced. The published
-`downloads/<version>/release.json` is the metadata source synced by the local
-release command, but the running website uses its embedded copy. Release notes appear when the metadata includes notes.
+`downloads/<version>/release.json` is uploaded by the publisher and is also used
+by the optional GitHub launcher to sync metadata. The running website uses its
+embedded copy. Release notes appear when the metadata includes notes.
 
 An optional `RELEASE_FILE` overrides the embedded metadata at startup. Use a path
 relative to the website process's working directory, or an absolute path. When
@@ -576,8 +688,9 @@ release acceptance requirements.
 
 macOS DMG packaging requires macOS. Preserve each architecture's output before
 building the next, because some output paths are reused. Windows NSIS packaging
-requires `makensis`. Linux and macOS cross-compilation use the Docker toolchain;
-see [Wails cross-platform builds](https://v3.wails.io/guides/build/cross-platform/).
+requires `makensis`, which also runs on Linux. macOS cross-compilation uses the
+Docker toolchain; Linux x64 builds natively on Linux x64. For other hosts or
+architectures, see [Wails cross-platform builds](https://v3.wails.io/guides/build/cross-platform/).
 
 To create only a Linux DEB and install it after packaging succeeds:
 

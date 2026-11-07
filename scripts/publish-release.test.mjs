@@ -4,7 +4,8 @@ import { createHash } from 'node:crypto';
 import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
-import { bunnyClient, bunnyConfig, publishRelease } from './publish-release.mjs';
+import { bunnyClient, bunnyConfig, pruneRemoteReleases, publishRelease } from './publish-release.mjs';
+import { websiteRelease } from './release-layout.mjs';
 import { writeDownloadFixture, writeVersionFixture } from './release-test-fixtures.mjs';
 import { flattenRelease } from './flatten-release.mjs';
 import { feedPackages } from './update-feeds.mjs';
@@ -24,12 +25,95 @@ function fixture(t) {
   const events = [];
   const objects = new Map([['', '[]']]);
   const client = {
-    async getStorage(path) { events.push(['GET', path]); return objects.get(path) ?? null; },
+    async getStorage(path) {
+      events.push(['GET', path]);
+      if (path === 'downloads/') return JSON.stringify([...new Set([...objects.keys()].map(path => /^downloads\/([^/]+)\//.exec(path)?.[1]).filter(Boolean))].map(ObjectName => ({ ObjectName, IsDirectory: true })));
+      return objects.get(path) ?? null;
+    },
     async upload(file, path) { events.push(['PUT', path]); objects.set(path, readFileSync(file, 'utf8')); },
     async verifyPublic(file, path, feed) { events.push(['VERIFY', path, feed]); assert.equal(objects.get(path), readFileSync(file, 'utf8')); },
+    async deleteRelease(version) {
+      events.push(['DELETE', `downloads/${version}/`]);
+      for (const path of objects.keys()) if (path.startsWith(`downloads/${version}/`)) objects.delete(path);
+    },
   };
   return { root, feeds, client, events, objects, options: { root, client, prepareFeeds: () => feeds, log: () => {} } };
 }
+
+function seedRemoteRelease(objects, version) {
+  const metadata = websiteRelease(version);
+  objects.set(`downloads/${version}/release.json`, JSON.stringify(metadata));
+  const names = metadata.downloads.map(item => item.url.split('/').at(-1));
+  names.push('LICENSE.txt');
+  objects.set(`downloads/${version}/SHA256SUMS`, names.map(name => `${'a'.repeat(64)}  ${name}`).join('\n') + '\n');
+}
+
+test('Bunny retention keeps current and previous releases, deleting older folders after every feed is verified', async t => {
+  const f = fixture(t);
+  for (const version of ['0.1.1', '0.1.2', '0.1.3']) seedRemoteRelease(f.objects, version);
+  f.objects.set('downloads/legacy/postika.exe', 'keep');
+  f.objects.set('downloads/postika-0.1.2.exe', 'legacy flat file');
+  f.objects.set('updates/metadata.json', 'keep');
+  await publishRelease(f.options);
+  assert.deepEqual(f.events.filter(([method]) => method === 'DELETE').map(([, path]) => path), ['downloads/0.1.2/', 'downloads/0.1.1/']);
+  for (const path of ['downloads/0.1.3/release.json', 'downloads/0.1.4/release.json', 'downloads/legacy/postika.exe', 'downloads/postika-0.1.2.exe', 'updates/metadata.json']) assert.ok(f.objects.has(path), path);
+  const firstDelete = f.events.findIndex(([method]) => method === 'DELETE');
+  assert.equal(f.events.slice(0, firstDelete).filter(([method, path]) => method === 'VERIFY' && path.startsWith('updates/')).length, 5);
+  f.events.length = 0;
+  await publishRelease(f.options);
+  assert.equal(f.events.some(([method]) => method === 'DELETE'), false, 'retry does not delete retained releases');
+});
+
+test('incomplete remote folders do not displace the previous complete release', async t => {
+  const f = fixture(t);
+  seedRemoteRelease(f.objects, '0.1.1');
+  seedRemoteRelease(f.objects, '0.1.2');
+  f.objects.set('downloads/0.1.3/release.json', '{"version":"0.1.3"}');
+  await publishRelease(f.options);
+  assert.deepEqual(f.events.filter(([method]) => method === 'DELETE').map(([, path]) => path), ['downloads/0.1.1/']);
+  assert.ok(f.objects.has('downloads/0.1.2/release.json'));
+  assert.ok(f.objects.has('downloads/0.1.3/release.json'));
+});
+
+test('failed publication never deletes Bunny releases', async t => {
+  const f = fixture(t);
+  for (const version of ['0.1.1', '0.1.2', '0.1.3']) seedRemoteRelease(f.objects, version);
+  f.client.verifyPublic = async (_file, path) => { if (path.startsWith('updates/')) throw new Error('feed unavailable'); };
+  await assert.rejects(publishRelease(f.options), /feed unavailable/);
+  assert.equal(f.events.some(([method]) => method === 'DELETE'), false);
+});
+
+test('changed feeds or a newer remote build prevent remote cleanup', async t => {
+  const f = fixture(t);
+  for (const version of ['0.1.1', '0.1.2', '0.1.3', '0.1.4']) seedRemoteRelease(f.objects, version);
+  await assert.rejects(pruneRemoteReleases(f.client, '0.1.4', f.feeds), /feeds changed/);
+  seedRemoteRelease(f.objects, '0.1.5');
+  await assert.rejects(pruneRemoteReleases(f.client, '0.1.4', f.feeds), /inventory changed/);
+  assert.equal(f.events.some(([method]) => method === 'DELETE'), false);
+});
+
+test('cleanup failure does not turn a verified publication into a failed release', async t => {
+  const f = fixture(t);
+  for (const version of ['0.1.1', '0.1.2', '0.1.3']) seedRemoteRelease(f.objects, version);
+  const logs = [];
+  f.client.deleteRelease = async () => { throw new Error('cleanup denied'); };
+  assert.equal(await publishRelease({ ...f.options, log: message => logs.push(message) }), '0.1.4');
+  assert.ok(logs.some(message => message.includes('Bunny cleanup could not finish')));
+  assert.ok(f.objects.has('downloads/0.1.1/release.json'));
+});
+
+test('Bunny DELETE is restricted to validated version folders and treats missing folders as already removed', async () => {
+  const calls = [];
+  const client = bunnyClient({ host: 'storage.bunnycdn.com', zone: 'fixture', password: 'secret' }, {
+    request: async (url, options) => { calls.push([url, options]); return new Response(null, { status: 404 }); },
+  });
+  await client.deleteRelease('0.1.2');
+  assert.equal(calls[0][0], 'https://storage.bunnycdn.com/fixture/downloads/0.1.2/');
+  assert.equal(calls[0][1].method, 'DELETE');
+  assert.equal(calls[0][1].headers.AccessKey, 'secret');
+  for (const invalid of ['../updates', '', '0.1.2/../../', '01.2.3']) await assert.rejects(client.deleteRelease(invalid));
+  assert.equal(calls.length, 1);
+});
 
 test('configuration requires the storage password and constrains credential destinations', () => {
   const env = { BUNNY_STORAGE_ZONE: 'postika-desktop-application', BUNNY_STORAGE_HOST: 'ny.storage.bunnycdn.com', BUNNY_STORAGE_PASSWORD: 'fixture-secret' };
@@ -55,6 +139,47 @@ test('failed public package verification leaves all stable feeds untouched', asy
   await assert.rejects(publishRelease(f.options), /Retry this version/);
   assert.ok(!f.events.some(([method, path]) => method === 'PUT' && path.startsWith('updates/')));
   assert.ok(!existsSync(join(f.root, 'bin/.publish.lock')));
+});
+
+test('successful publication removes older local packages and duplicate staging, keeping retry files', async t => {
+  const f = fixture(t);
+  const older = join(f.root, 'bin/releases/0.1.3');
+  mkdirSync(older);
+  writeFileSync(join(older, 'postika-0.1.3-linux-amd64.deb'), 'old package');
+  const oldStage = join(f.root, 'bin/releases/ci-local-0.1.3');
+  const currentStage = join(f.root, 'bin/releases/ci-local-0.1.4');
+  const newerStage = join(f.root, 'bin/releases/ci-local-0.1.5');
+  writeDownloadFixture(oldStage, '0.1.3');
+  writeDownloadFixture(currentStage, '0.1.4');
+  writeDownloadFixture(newerStage, '0.1.5');
+  const notes = join(f.root, 'bin/releases/ci-local-0.1.2');
+  mkdirSync(notes);
+  writeFileSync(join(notes, 'notes.txt'), 'Keep unknown files');
+  const verify = f.client.verifyPublic;
+  f.client.verifyPublic = async (...args) => {
+    assert.ok(existsSync(older), 'cleanup must wait for all CDN verification');
+    return verify(...args);
+  };
+  await publishRelease(f.options);
+  for (const path of [older, oldStage, currentStage]) assert.equal(existsSync(path), false);
+  for (const path of [newerStage, notes, f.feeds, join(f.root, 'bin/releases/0.1.4')]) assert.ok(existsSync(path));
+  f.client.verifyPublic = verify;
+  assert.equal(await publishRelease(f.options), '0.1.4', 'current release can still be republished');
+});
+
+test('failed publication keeps previous packages and staging for recovery', async t => {
+  const f = fixture(t);
+  const older = join(f.root, 'bin/releases/0.1.3');
+  mkdirSync(older);
+  writeFileSync(join(older, 'postika-0.1.3-linux-amd64.deb'), 'old package');
+  const staging = join(f.root, 'bin/releases/ci-local-0.1.4');
+  writeDownloadFixture(staging, '0.1.4');
+  f.client.verifyPublic = async (_file, path) => {
+    if (path.startsWith('updates/')) throw new Error('Feed verification failed');
+  };
+  await assert.rejects(publishRelease(f.options), /Feed verification failed/);
+  assert.ok(existsSync(older));
+  assert.ok(existsSync(staging));
 });
 
 test('failed authentication or signing makes no uploads', async t => {

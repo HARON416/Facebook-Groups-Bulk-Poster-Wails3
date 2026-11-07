@@ -20,8 +20,8 @@ function compareVersions(left, right) {
   const index = a.findIndex((part, index) => part !== b[index]);
   return index < 0 ? 0 : a[index] - b[index];
 }
-function packageNames(version) {
-  return Object.entries(targets).flatMap(([target, plan]) => plan.files.map(([, suffix]) => `postika-${version}-${target}${suffix}`));
+function packageNames(version, macZipOnly = false) {
+  return Object.entries(targets).flatMap(([target, plan]) => plan.files.filter(([, suffix]) => !macZipOnly || suffix !== '.dmg').map(([, suffix]) => `postika-${version}-${target}${suffix}`));
 }
 function rejectOlderRelease(releases, version) {
   if (!existsSync(releases)) return;
@@ -32,7 +32,10 @@ function rejectOlderRelease(releases, version) {
   }
 }
 export function verifyFlatRelease(directory, version) {
-  const expected = new Set([...packageNames(version), 'LICENSE.txt']);
+  // Both native DMG releases and Linux-built app-ZIP releases are complete.
+  // Mixed sets are rejected: both Mac architectures use the same format.
+  const macZipOnly = !existsSync(join(directory, `postika-${version}-darwin-arm64.dmg`));
+  const expected = new Set([...packageNames(version, macZipOnly), 'LICENSE.txt']);
   const entries = readdirSync(directory, { withFileTypes: true });
   if (entries.length !== expected.size + 1 || entries.some(entry => !entry.isFile() || (!expected.has(entry.name) && entry.name !== 'SHA256SUMS'))) {
     throw new Error('Latest release is incomplete or contains unexpected files; older releases preserved.');
@@ -64,7 +67,7 @@ function isObsoleteDownload(directory, version) {
 
 // Keep the last complete release until its successor has all twelve packages
 // and valid checksums. Only generated version/download folders are pruned.
-export function prunePreviousReleases(root, version) {
+export function prunePreviousReleases(root, version, { localStaging = false } = {}) {
   parseVersion(version);
   const releases = resolve(root, 'bin/releases');
   rejectOlderRelease(releases, version);
@@ -72,6 +75,10 @@ export function prunePreviousReleases(root, version) {
   const obsolete = readdirSync(releases, { withFileTypes: true }).filter(entry => {
     if (!entry.isDirectory() || entry.name === version) return false;
     if (versionDirectory.test(entry.name)) return compareVersions(entry.name, version) < 0;
+    if (localStaging) {
+      const local = /^ci-local-(\d+\.\d+\.\d+)$/.exec(entry.name);
+      if (local && compareVersions(local[1], version) <= 0) return isObsoleteDownload(join(releases, entry.name), version);
+    }
     return /^ci-\d+$/.test(entry.name) && isObsoleteDownload(join(releases, entry.name), version);
   });
   for (const entry of obsolete) rmSync(join(releases, entry.name), { recursive: true });
@@ -80,7 +87,7 @@ export function prunePreviousReleases(root, version) {
 
 // Validate every target before copying or removing anything. Existing versions
 // are never overwritten in place; older releases are pruned after success.
-export function flattenRelease(root, download, version) {
+export function flattenRelease(root, download, version, { macZipOnly = false, prune = true, preserveSource = false } = {}) {
   if (!/^\d+\.\d+\.\d+(?:-[\w.-]+)?$/.test(version)) throw new Error('Invalid release version');
   const releases = resolve(root, 'bin/releases');
   const source = resolve(download);
@@ -107,7 +114,7 @@ export function flattenRelease(root, download, version) {
     }
     const names = [...entries.keys()].filter(name => name !== 'LICENSE.txt').sort();
     const target = Object.keys(targets).find(target => {
-      const expected = targets[target].files.map(([, suffix]) => `postika-${version}-${target}${suffix}`).sort();
+      const expected = targets[target].files.filter(([, suffix]) => !macZipOnly || suffix !== '.dmg').map(([, suffix]) => `postika-${version}-${target}${suffix}`).sort();
       return JSON.stringify(names) === JSON.stringify(expected);
     });
     if (!target || seenTargets.has(target)) throw new Error(`Missing, duplicated, or unexpected target packages in ${manifest}`);
@@ -151,7 +158,7 @@ export function flattenRelease(root, download, version) {
       renameSync(staging, output);
     } catch (error) { rmSync(staging, { recursive: true, force: true }); throw error; }
   }
-  rmSync(source, { recursive: true });
-  prunePreviousReleases(root, version);
+  if (!preserveSource) rmSync(source, { recursive: true });
+  if (prune) prunePreviousReleases(root, version);
   return output;
 }

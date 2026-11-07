@@ -6,7 +6,8 @@ import { verifyFlatRelease } from './flatten-release.mjs';
 import { websiteRelease } from './release-layout.mjs';
 
 export function saveWebsiteRelease(root, metadata) {
-  const expected = websiteRelease(metadata.version, { date: metadata.date, notes: metadata.notes });
+  const macZipOnly = metadata.downloads?.filter(item => item.os === 'macos').every(item => item.url?.endsWith('.app.zip'));
+  const expected = websiteRelease(metadata.version, { date: metadata.date, notes: metadata.notes, macZipOnly });
   if (!/^\d{4}-\d{2}-\d{2}$/.test(metadata.date ?? '') || !Array.isArray(metadata.notes) ||
       metadata.notes.some(note => typeof note !== 'string' || note.length > 2000) ||
       JSON.stringify(metadata.downloads) !== JSON.stringify(expected.downloads)) {
@@ -30,7 +31,8 @@ export function generateWebsiteRelease(root) {
   const directory = join(root, 'website/releases');
   const file = join(directory, `${version}.json`);
   const previous = existsSync(file) ? JSON.parse(readFileSync(file, 'utf8')) : {};
-  const metadata = websiteRelease(version, { date: previous.date, notes: previous.notes });
+  const macZipOnly = !existsSync(join(root, 'bin/releases', version, `postika-${version}-darwin-arm64.dmg`));
+  const metadata = websiteRelease(version, { date: previous.date, notes: previous.notes, macZipOnly });
   return saveWebsiteRelease(root, metadata);
 }
 

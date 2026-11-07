@@ -88,6 +88,9 @@ msgid "Opening…"
 msgstr "נפתח…"
 
 #: src/App.svelte
+#: src/Workspace.svelte
+#: src/Workspace.svelte
+#: src/Workspace.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/LogMessage.svelte
 msgid "Loading…"
@@ -3249,6 +3252,7 @@ msgstr "יש להתחבר מחדש ל-Facebook כדי לחפש מיקומים."
 msgid "Could not search locations. Please try again."
 msgstr "לא ניתן היה לחפש מיקומים. יש לנסות שוב."
 
+#: src/Workspace.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/MarketplaceListings.svelte

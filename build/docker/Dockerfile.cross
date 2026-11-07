@@ -1,3 +1,4 @@
+# syntax=docker/dockerfile:1
 # Cross-compile Wails v3 apps to any platform
 #
 # Darwin: Zig + macOS SDK
@@ -5,7 +6,7 @@
 # Windows: Zig + bundled mingw
 #
 # Usage:
-#   docker build -t wails-cross -f Dockerfile.cross .
+#   docker buildx build --load -t wails-cross -f Dockerfile.cross .
 #   docker run --rm -v $(pwd):/app wails-cross darwin arm64
 #   docker run --rm -v $(pwd):/app wails-cross darwin amd64
 #   docker run --rm -v $(pwd):/app wails-cross linux amd64

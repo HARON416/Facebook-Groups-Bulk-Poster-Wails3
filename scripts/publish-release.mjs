@@ -3,7 +3,7 @@ import { closeSync, createReadStream, existsSync, openSync, readFileSync, readdi
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { releaseVersion } from './package-release.mjs';
-import { verifyFlatRelease } from './flatten-release.mjs';
+import { prunePreviousReleases, verifyFlatRelease } from './flatten-release.mjs';
 import { generateFeeds } from './update-feeds.mjs';
 import { generateWebsiteRelease } from './website-release.mjs';
 import { cdnOrigin } from './release-layout.mjs';
@@ -72,6 +72,15 @@ export function bunnyClient(config, { request = fetch, sleep = ms => new Promise
     await discard(response);
     if (!response.ok) throw new Error(`Bunny upload failed with HTTP ${response.status} for ${path}.`);
   }
+  async function deleteRelease(version) {
+    // Expose only version-folder deletion, never a general storage delete.
+    parseVersion(version);
+    const path = `downloads/${version}/`;
+    const response = await send(storageURL(path), { method: 'DELETE', headers: { AccessKey: config.password } }, path);
+    const ok = response.ok || response.status === 404;
+    await discard(response);
+    if (!ok) throw new Error(`Bunny release cleanup failed with HTTP ${response.status} for ${path}.`);
+  }
   async function verifyPublic(file, path, feed = false) {
     const expected = createHash('sha256').update(readFileSync(file)).digest('hex');
     let reason = '';
@@ -97,13 +106,56 @@ export function bunnyClient(config, { request = fetch, sleep = ms => new Promise
     }
     throw new Error(`Public verification failed for ${path}: ${reason}. Check CDN replication/cache rules, then retry publication of this same version.`);
   }
-  return { getStorage, upload, verifyPublic };
+  return { getStorage, upload, verifyPublic, deleteRelease };
 }
 
 function newer(left, right) {
   const a = parseVersion(left), b = parseVersion(right);
   const index = a.findIndex((part, index) => part !== b[index]);
   return index >= 0 && a[index] > b[index];
+}
+
+// Only completed, recognizable release folders participate in retention.
+// Legacy flat files and unrelated folders are outside this policy.
+export async function pruneRemoteReleases(client, version, feeds) {
+  parseVersion(version);
+  const text = await client.getStorage('downloads/');
+  const entries = JSON.parse(text ?? 'null');
+  if (!Array.isArray(entries)) throw new Error('Bunny downloads listing is unavailable; remote releases preserved.');
+  const versions = [...new Set(entries.filter(entry => entry?.IsDirectory === true && typeof entry.ObjectName === 'string').map(entry => entry.ObjectName))]
+    .filter(name => { try { parseVersion(name); return true; } catch { return false; } })
+    .sort((a, b) => a === b ? 0 : newer(a, b) ? -1 : 1);
+  if (!versions.includes(version) || versions.some(value => newer(value, version))) throw new Error('Bunny release inventory changed; remote cleanup skipped.');
+  const complete = [];
+  for (const candidate of versions) {
+    const metadata = await client.getStorage(`downloads/${candidate}/release.json`);
+    const sums = await client.getStorage(`downloads/${candidate}/SHA256SUMS`);
+    if (!metadata || !sums) continue;
+    let release;
+    try { release = JSON.parse(metadata); } catch { continue; }
+    if (release.version !== candidate || !Array.isArray(release.downloads) || release.downloads.length !== 8) continue;
+    const rows = sums.trim().split(/\r?\n/).map(row => /^([a-f0-9]{64})  ([^/\\]+)$/.exec(row));
+    if (rows.some(row => !row)) continue;
+    const names = new Set(rows.map(row => row[2]));
+    const prefix = `${cdnOrigin}/downloads/${candidate}/`;
+    if (!names.has('LICENSE.txt') || !release.downloads.every(item => typeof item.url === 'string' && item.url.startsWith(prefix) && names.has(item.url.slice(prefix.length)))) continue;
+    complete.push(candidate);
+  }
+  if (complete[0] !== version) throw new Error('Current Bunny release completion markers are missing; remote cleanup skipped.');
+  const obsolete = complete.slice(2);
+  for (const candidate of obsolete) {
+    // Recheck every stable feed before each deletion. An interrupted or
+    // concurrent publisher must not cause us to remove an active payload.
+    for (const name of readdirSync(feeds)) {
+      const remote = await client.getStorage(`updates/${name}`);
+      const local = readFileSync(join(feeds, name), 'utf8');
+      if (remote === null || JSON.stringify(JSON.parse(remote)) !== JSON.stringify(JSON.parse(local))) {
+        throw new Error('Stable feeds changed; remaining remote releases preserved.');
+      }
+    }
+    await client.deleteRelease(candidate);
+  }
+  return obsolete;
 }
 
 // Refuse a rollback or a different payload under an already published version.
@@ -155,6 +207,20 @@ export async function publishRelease({ root, client = bunnyClient(bunnyConfig())
       await client.upload(join(feeds, name), path);
       await client.verifyPublic(join(feeds, name), path, true);
     }
+    try {
+      const removed = await pruneRemoteReleases(client, version, feeds);
+      if (removed.length) log(`Removed older Bunny releases: ${removed.join(', ')}. Kept the latest two completed releases.`);
+    } catch (error) {
+      log(`Published successfully, but Bunny cleanup could not finish: ${error.message}`);
+    }
+    // Publication is complete before removing any previous local packages.
+    // Keep this version's flat packages and feeds for upload retries.
+    try {
+      const removed = prunePreviousReleases(root, version, { localStaging: true });
+      if (removed.length) log(`Removed older local releases and duplicate staging: ${removed.join(', ')}`);
+    } catch (error) {
+      log(`Published successfully, but local cleanup could not finish: ${error.message}`);
+    }
     log(`Published ${version}. Rebuild and deploy the website to include its generated download links.`);
     return version;
   } catch (error) {
@@ -178,6 +244,7 @@ if (process.argv[1] && realpathSync(resolve(process.argv[1])) === realpathSync(f
     if (process.argv.includes('--plan')) {
       const version = releaseVersion(root);
       console.log(`Publish packages to ${cdnOrigin}/downloads/${version}/, then five signed feeds to ${cdnOrigin}/updates/. No uploads were performed.`);
+      console.log('After full verification, retain the latest two completed Bunny releases and remove older version folders.');
     } else await publishRelease({ root });
   } catch (error) { console.error(error.message); console.error('Retry local publishing with make publish-local.'); process.exitCode = 1; }
 }

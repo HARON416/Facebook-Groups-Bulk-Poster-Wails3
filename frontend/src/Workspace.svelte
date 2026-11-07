@@ -2,7 +2,6 @@
   import { onMount } from 'svelte';
   import { Window } from '@wailsio/runtime';
   import { ProfileService, type ProfileActivity, type AccountProfile } from '../bindings/postika';
-  import App from './App.svelte';
   import AccountDropdown from './components/AccountDropdown.svelte';
   import WindowControls from './components/WindowControls.svelte';
   import UpdateButton from './components/UpdateButton.svelte';
@@ -17,9 +16,9 @@
   import LocalizedFeedback from './components/LocalizedFeedback.svelte';
   import AddAccountDialog from './components/AddAccountDialog.svelte';
   import GuidedTour from './components/GuidedTour.svelte';
-  import MarketplaceListings from './components/MarketplaceListings.svelte';
-  import CreateListing from './components/CreateListing.svelte';
 
+  // Load each screen at its render branch below. Marketplace windows and an
+  // empty workspace should not download or initialize the posting editor.
   const marketplace = new URLSearchParams(window.location.search).get('view') === 'marketplace';
   const createListing = new URLSearchParams(window.location.search).get('view') === 'create-listing';
   const blankWorkspace = marketplace || createListing;
@@ -31,6 +30,7 @@
     }
   });
 
+  let viewLoadAttempt = $state(0);
   let tour: GuidedTour;
   let tourPage = $state<number | null>(null), tourReady = $state(false), tourActive = $state(false);
   const setTourReady = (ready: boolean) => { tourReady = ready; };
@@ -111,6 +111,10 @@
 
 </script>
 
+{#snippet viewLoadError(cause: unknown)}
+  <div class="profile-error" role="alert"><LocalizedFeedback message={cause instanceof Error ? cause.message : String(cause)} /><button type="button" onclick={() => { viewLoadAttempt++; }}>Try again</button></div>
+{/snippet}
+
 <div class="workspace ui-window">
   <header class="top-bar">
     <div class="profile-control" data-tour="accounts"><AccountDropdown {profiles} {selected} compact disabled={busy} onselect={select} onrenamed={profileRenamed} oncreated={profileCreated} ondeleted={() => void refresh()} /></div>
@@ -137,16 +141,38 @@
       {#each background as profile (profile.id)}<button type="button" disabled={busy} onclick={() => select(profile.id)}>{accountLabel(profile)} · {profile.state === 'scheduled' ? 'Scheduled' : 'Running'}</button>{/each}
     </div>
   {/if}
+  {#key viewLoadAttempt}
   {#if blankWorkspace}
-    <main class="account-workspace" aria-label={marketplaceTitle}>{#if marketplace}{#key current?.id}<MarketplaceListings profile={current} ontourready={setTourReady} />{/key}{/if}{#if createListing}{#key current?.id}<CreateListing profile={current} ontourready={setTourReady} />{/key}{/if}</main>
+    <main class="account-workspace" aria-label={marketplaceTitle}>
+      {#if marketplace}
+        {#await import('./components/MarketplaceListings.svelte')}
+          <p class="loading" role="status">Loading…</p>
+        {:then { default: MarketplaceListings }}
+          {#key current?.id}<MarketplaceListings profile={current} ontourready={setTourReady} />{/key}
+        {:catch cause}{@render viewLoadError(cause)}{/await}
+      {:else if createListing}
+        {#await import('./components/CreateListing.svelte')}
+          <p class="loading" role="status">Loading…</p>
+        {:then { default: CreateListing }}
+          {#key current?.id}<CreateListing profile={current} ontourready={setTourReady} />{/key}
+        {:catch cause}{@render viewLoadError(cause)}{/await}
+      {/if}
+    </main>
   {:else}
-  {#each opened as profile (profile.id)}
-    <div class="account-workspace" hidden={profile.id !== selected}>
-      <App {profile} active={profile.id === selected} connect={profile.connect} tourStep={profile.id === selected ? tourPage : null} tourActive={profile.id === selected && tourActive} onTourReadyChange={setTourReady} />
-    </div>
-  {/each}
-  {#if !selected && !error}<p class="loading" role="status">{profiles.length ? 'Loading accounts…' : 'Add an account to get started.'}</p>{/if}
+    {#if opened.length}
+      {#await import('./App.svelte')}
+        <p class="loading" role="status">Loading…</p>
+      {:then { default: App }}
+        {#each opened as profile (profile.id)}
+          <div class="account-workspace" hidden={profile.id !== selected}>
+            <App {profile} active={profile.id === selected} connect={profile.connect} tourStep={profile.id === selected ? tourPage : null} tourActive={profile.id === selected && tourActive} onTourReadyChange={setTourReady} />
+          </div>
+        {/each}
+      {:catch cause}{@render viewLoadError(cause)}{/await}
+    {/if}
+    {#if !selected && !error}<p class="loading" role="status">{profiles.length ? 'Loading accounts…' : 'Add an account to get started.'}</p>{/if}
   {/if}
+  {/key}
   <GuidedTour bind:this={tour} ready={!blankWorkspace && tourAvailable} onpage={(page) => { tourPage = page; }} onactive={(active) => { tourActive = active; }} />
   {#if current}{#key current.id}<ConnectivityToast profileID={current.id} />{/key}{/if}
 </div>

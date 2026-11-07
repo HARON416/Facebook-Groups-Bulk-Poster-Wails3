@@ -88,6 +88,9 @@ msgid "Opening…"
 msgstr "جارٍ الفتح…"
 
 #: src/App.svelte
+#: src/Workspace.svelte
+#: src/Workspace.svelte
+#: src/Workspace.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/LogMessage.svelte
 msgid "Loading…"
@@ -3249,6 +3252,7 @@ msgstr "أعد الاتصال بفيسبوك للبحث عن المواقع."
 msgid "Could not search locations. Please try again."
 msgstr "تعذّر البحث عن المواقع. يرجى المحاولة مجددًا."
 
+#: src/Workspace.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/MarketplaceListings.svelte

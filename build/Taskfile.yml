@@ -342,10 +342,12 @@ tasks:
       Builds the Docker image needed for cross-compiling to any platform.
       Run this once to enable cross-platform builds from any OS.
     cmds:
-      - docker build -t wails-cross -f build/docker/Dockerfile.cross build/docker/
+      - docker buildx build --load -t wails-cross -f build/docker/Dockerfile.cross build/docker/
     preconditions:
       - sh: docker info > /dev/null 2>&1
         msg: "Docker is required. Please install Docker first."
+      - sh: docker buildx version > /dev/null 2>&1
+        msg: "Docker Buildx is required for Dockerfile heredocs. On Ubuntu run: sudo apt-get install -y docker-buildx"
 
   ios:device:list:
     summary: Lists connected iOS devices (UDIDs)

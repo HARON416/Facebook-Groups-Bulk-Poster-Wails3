@@ -88,6 +88,9 @@ msgid "Opening…"
 msgstr "Se deschide..."
 
 #: src/App.svelte
+#: src/Workspace.svelte
+#: src/Workspace.svelte
+#: src/Workspace.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/LogMessage.svelte
 msgid "Loading…"
@@ -2691,6 +2694,7 @@ msgid "Peach"
 msgstr "Piersică"
 
 #: src/Workspace.svelte
+#: src/Workspace.svelte
 #: src/components/GuidedTour.svelte
 #: src/components/MarketplaceToolbar.svelte
 #: src/components/UsageGuide.svelte
@@ -2727,6 +2731,7 @@ msgstr "Tipul anunțului"
 #~ msgid "<0/> Create new listing"
 #~ msgstr ""
 
+#: src/Workspace.svelte
 #: src/components/GuidedTour.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/MarketplaceToolbar.svelte
@@ -3247,6 +3252,7 @@ msgstr "Reconectează-te la Facebook pentru a căuta locații."
 msgid "Could not search locations. Please try again."
 msgstr "Nu s-au putut căuta locații. Încearcă din nou."
 
+#: src/Workspace.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/MarketplaceListings.svelte

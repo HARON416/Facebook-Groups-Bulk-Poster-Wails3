@@ -61,3 +61,17 @@ test('target task and architecture are passed explicitly', t => {
     run: (_command, args) => { assert.deepEqual(args, ['task', 'windows:package:all', 'ARCH=amd64']); return { status: 1 }; },
   }), /failed/);
 });
+
+test('Linux cross-builds dispatch Windows packaging and signed macOS ZIP packaging', t => {
+  const root = fixture(t);
+  for (const [target, task, arch] of [
+    ['windows-amd64', 'windows:package:all', 'amd64'],
+    ['darwin-arm64', 'darwin:package:cross', 'arm64'],
+    ['darwin-amd64', 'darwin:package:cross', 'amd64'],
+  ]) {
+    assert.throws(() => packageRelease(root, target, {
+      platform: 'linux', cross: true,
+      run(_command, args) { assert.deepEqual(args, ['task', task, `ARCH=${arch}`]); return { status: 1 }; },
+    }), /failed/);
+  }
+});

@@ -88,6 +88,9 @@ msgid "Opening…"
 msgstr "Kufungua…"
 
 #: src/App.svelte
+#: src/Workspace.svelte
+#: src/Workspace.svelte
+#: src/Workspace.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/LogMessage.svelte
 msgid "Loading…"
@@ -3249,6 +3252,7 @@ msgstr "Unganisha tena Facebook ili kutafuta maeneo."
 msgid "Could not search locations. Please try again."
 msgstr "Imeshindikana kutafuta maeneo. Tafadhali jaribu tena."
 
+#: src/Workspace.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/MarketplaceListings.svelte

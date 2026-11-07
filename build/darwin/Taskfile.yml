@@ -146,6 +146,17 @@ tasks:
       - task: create:dmg
       - task: create:update:zip
 
+  package:cross:
+    summary: Cross-builds an ad-hoc signed macOS app ZIP on Linux
+    preconditions:
+      - sh: command -v rcodesign > /dev/null 2>&1
+        msg: "Install Apple Codesign (rcodesign) for portable ad-hoc app signing. See README.md."
+    deps:
+      - task: package
+    cmds:
+      - rcodesign sign "{{.BIN_DIR}}/{{.APP_NAME}}.app"
+      - task: create:update:zip
+
   create:update:zip:
     summary: Archives an existing app bundle for the Wails updater
     cmds:

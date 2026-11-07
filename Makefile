@@ -21,6 +21,7 @@ help:
 	@printf '%s\n' '  make update-feeds Sign and verify update feeds for the current downloaded release'
 	@printf '%s\n' '  make release-all PUBLISH=1  Build and publish directly from GitHub Actions to Bunny' '  make publish-release RUN_ID=123  Publish/retry an existing build from Actions without a bump' '  make website-release  Regenerate website metadata for locally downloaded packages'
 	@printf '%s\n' '  make release-resume RUN_ID=123  Optional local artifact download without rebuilding' '  make configure-publishing  Save local Bunny/signing credentials as GitHub Actions secrets'
+	@printf '%s\n' '  make setup-cross  Build the Docker cross-compilation image once' '  make release-local-check  Check Linux cross-build prerequisites without building' '  make release-local  Build all four targets locally; Mac downloads use app ZIPs' '  make release-local PUBLISH=1  Build locally and publish directly to Bunny' '  make release-local BUMP=none  Resume unchanged source without another version bump'
 
 dev run:
 	wails3 dev
@@ -47,6 +48,16 @@ package-all: version-check
 
 release-all:
 	node scripts/release-all.mjs
+
+.PHONY: release-local setup-cross release-local-check
+release-local:
+	node --env-file-if-exists=.env scripts/release-local.mjs
+
+release-local-check:
+	node scripts/release-local.mjs --check
+
+setup-cross:
+	wails3 task setup:docker
 
 .PHONY: release-resume
 release-resume:

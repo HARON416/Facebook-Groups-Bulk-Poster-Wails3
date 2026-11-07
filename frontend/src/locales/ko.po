@@ -88,6 +88,9 @@ msgid "Opening…"
 msgstr "열기 중…"
 
 #: src/App.svelte
+#: src/Workspace.svelte
+#: src/Workspace.svelte
+#: src/Workspace.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/LogMessage.svelte
 msgid "Loading…"
@@ -3249,6 +3252,7 @@ msgstr "위치를 검색하려면 Facebook에 다시 연결하세요."
 msgid "Could not search locations. Please try again."
 msgstr "위치를 검색할 수 없습니다. 다시 시도하세요."
 
+#: src/Workspace.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/MarketplaceListings.svelte

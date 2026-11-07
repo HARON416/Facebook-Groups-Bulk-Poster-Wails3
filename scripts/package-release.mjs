@@ -28,20 +28,21 @@ export function releaseVersion(root) {
   return checkVersions(root);
 }
 
-export function stageRelease(root, target, version) {
+export function stageRelease(root, target, version, { releaseRoot = join(root, 'bin/releases', version), macZipOnly = false, preserveBundle = true } = {}) {
   const plan = targets[target];
   if (!plan) throw new Error(`Unknown target: ${target}`);
-  const output = join(root, 'bin/releases', version, target);
+  const files = plan.files.filter(([, suffix]) => !macZipOnly || suffix !== '.dmg');
+  const output = join(releaseRoot, target);
   if (existsSync(output)) throw new Error(`Release already staged: ${output}. Preserve it or move it before rebuilding.`);
   // Validate the full set before creating a staged release.
-  for (const [name] of plan.files) {
+  for (const [name] of files) {
     if (!existsSync(join(root, 'bin', name))) throw new Error(`Missing package: bin/${name}`);
   }
   const temporary = `${output}.staging`;
   if (existsSync(temporary)) throw new Error(`Incomplete staging exists: ${temporary}. Inspect or move it before retrying.`);
   mkdirSync(temporary, { recursive: true });
   const sums = [];
-  for (const [source, suffix] of plan.files) {
+  for (const [source, suffix] of files) {
     const name = `postika-${version}-${target}${suffix}`;
     const destination = join(temporary, name);
     copyFileSync(join(root, 'bin', source), destination);
@@ -51,27 +52,29 @@ export function stageRelease(root, target, version) {
   sums.push(`${createHash('sha256').update(readFileSync(join(temporary, 'LICENSE.txt'))).digest('hex')}  LICENSE.txt`);
   // Keep an intact native app bundle locally. CI transports it in the app ZIP
   // so artifact upload/download cannot strip executable modes or symlinks.
-  if (target.startsWith('darwin-')) cpSync(join(root, 'bin/postika.app'), join(temporary, `postika-${version}-${target}.app`), { recursive: true });
+  if (preserveBundle && target.startsWith('darwin-')) cpSync(join(root, 'bin/postika.app'), join(temporary, `postika-${version}-${target}.app`), { recursive: true });
   writeFileSync(join(temporary, 'SHA256SUMS'), `${sums.join('\n')}\n`);
   renameSync(temporary, output);
   return output;
 }
 
-export function packageRelease(root, target, { platform = process.platform, run = spawnSync } = {}) {
+export function packageRelease(root, target, { platform = process.platform, run = spawnSync, cross = false, ...staging } = {}) {
   const plan = targets[target];
   if (!plan) throw new Error(`Target must be one of: ${Object.keys(targets).join(', ')}`);
-  if (platform !== plan.host) throw new Error(`${target} needs a native ${plan.host} runner. Use make release-all to build every target in CI.`);
+  if (platform !== plan.host && !(cross && platform === 'linux')) throw new Error(`${target} needs a native ${plan.host} runner or make release-local on Linux.`);
   const version = releaseVersion(root);
-  const output = join(root, 'bin/releases', version, target);
+  const output = join(staging.releaseRoot ?? join(root, 'bin/releases', version), target);
   if (existsSync(output) || existsSync(`${output}.staging`)) throw new Error(`Release staging already exists: ${output}`);
   const cli = platform === 'win32' ? 'wails3.exe' : 'wails3';
   const localCLI = join(root, '.tools/bin', cli);
-  const result = run(existsSync(localCLI) ? localCLI : cli, ['task', plan.task, `ARCH=${plan.arch}`], {
+  const macZipOnly = cross && platform === 'linux' && target.startsWith('darwin-');
+  const task = macZipOnly ? 'darwin:package:cross' : plan.task;
+  const result = run(existsSync(localCLI) ? localCLI : cli, ['task', task, `ARCH=${plan.arch}`], {
     cwd: root, stdio: 'inherit', env: { ...process.env, PATH: `${join(root, '.tools/bin')}${delimiter}${process.env.PATH}` },
   });
   if (result.error) throw result.error;
   if (result.status !== 0) throw new Error(`Packaging ${target} failed (${result.status ?? result.signal})`);
-  return stageRelease(root, target, version);
+  return stageRelease(root, target, version, { ...staging, macZipOnly });
 }
 
 if (process.argv[1] && realpathSync(resolve(process.argv[1])) === realpathSync(fileURLToPath(import.meta.url))) {

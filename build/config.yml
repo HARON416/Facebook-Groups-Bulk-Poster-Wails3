@@ -11,7 +11,7 @@ info:
   description: "Postika desktop application" # The application description
   copyright: "Copyright (c) 2026 Postika Technologies" # Copyright text
   comments: "Website: https://postika.softwrhq.com; Support: haronkibetrutoh@gmail.com; License: MIT" # Comments
-  version: "0.1.16" # The application version
+  version: "0.1.18" # The application version
   # cfBundleIconName: "appicon" # The macOS icon name in Assets.car icon bundles (optional)
   #                               # Should match the name of your .icon file without the extension
   #                               # If not set and Assets.car exists, defaults to "appicon"

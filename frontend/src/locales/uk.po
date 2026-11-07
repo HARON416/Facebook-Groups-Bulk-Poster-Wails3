@@ -88,6 +88,9 @@ msgid "Opening…"
 msgstr "Відкривається…"
 
 #: src/App.svelte
+#: src/Workspace.svelte
+#: src/Workspace.svelte
+#: src/Workspace.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/LogMessage.svelte
 msgid "Loading…"
@@ -3249,6 +3252,7 @@ msgstr "Знову підключіться до Facebook, щоб шукати �
 msgid "Could not search locations. Please try again."
 msgstr "Не вдалося знайти місця. Спробуйте ще раз."
 
+#: src/Workspace.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/MarketplaceListings.svelte

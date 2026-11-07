@@ -88,6 +88,9 @@ msgid "Opening…"
 msgstr "Apertura…"
 
 #: src/App.svelte
+#: src/Workspace.svelte
+#: src/Workspace.svelte
+#: src/Workspace.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/LogMessage.svelte
 msgid "Loading…"
@@ -3249,6 +3252,7 @@ msgstr "Ricollegati a Facebook per cercare luoghi."
 msgid "Could not search locations. Please try again."
 msgstr "Impossibile cercare luoghi. Riprova."
 
+#: src/Workspace.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/MarketplaceListings.svelte

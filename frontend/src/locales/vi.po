@@ -88,6 +88,9 @@ msgid "Opening…"
 msgstr "Đang mở…"
 
 #: src/App.svelte
+#: src/Workspace.svelte
+#: src/Workspace.svelte
+#: src/Workspace.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/LogMessage.svelte
 msgid "Loading…"
@@ -3249,6 +3252,7 @@ msgstr "Kết nối lại với Facebook để tìm kiếm vị trí."
 msgid "Could not search locations. Please try again."
 msgstr "Không thể tìm kiếm vị trí. Vui lòng thử lại."
 
+#: src/Workspace.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/MarketplaceListings.svelte

@@ -88,6 +88,9 @@ msgid "Opening…"
 msgstr "उघडत आहे…"
 
 #: src/App.svelte
+#: src/Workspace.svelte
+#: src/Workspace.svelte
+#: src/Workspace.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/LogMessage.svelte
 msgid "Loading…"
@@ -3249,6 +3252,7 @@ msgstr "स्थाने शोधण्यासाठी Facebook शी प
 msgid "Could not search locations. Please try again."
 msgstr "स्थाने शोधता आली नाहीत. कृपया पुन्हा प्रयत्न करा."
 
+#: src/Workspace.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/MarketplaceListings.svelte

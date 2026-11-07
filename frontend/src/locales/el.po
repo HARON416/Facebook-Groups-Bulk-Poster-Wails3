@@ -88,6 +88,9 @@ msgid "Opening…"
 msgstr "Άνοιγμα…"
 
 #: src/App.svelte
+#: src/Workspace.svelte
+#: src/Workspace.svelte
+#: src/Workspace.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/LogMessage.svelte
 msgid "Loading…"
@@ -3249,6 +3252,7 @@ msgstr "Συνδεθείτε ξανά στο Facebook για αναζήτηση 
 msgid "Could not search locations. Please try again."
 msgstr "Δεν ήταν δυνατή η αναζήτηση τοποθεσιών. Δοκιμάστε ξανά."
 
+#: src/Workspace.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/MarketplaceListings.svelte

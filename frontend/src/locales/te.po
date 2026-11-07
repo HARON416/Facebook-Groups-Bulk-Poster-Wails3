@@ -88,6 +88,9 @@ msgid "Opening…"
 msgstr "తీస్తోంది…"
 
 #: src/App.svelte
+#: src/Workspace.svelte
+#: src/Workspace.svelte
+#: src/Workspace.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/LogMessage.svelte
 msgid "Loading…"
@@ -3249,6 +3252,7 @@ msgstr "స్థానాలను శోధించడానికి Faceboo
 msgid "Could not search locations. Please try again."
 msgstr "స్థానాలను శోధించలేకపోయాము. దయచేసి మళ్లీ ప్రయత్నించండి."
 
+#: src/Workspace.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/ItemListingEditor.svelte
 #: src/components/MarketplaceListings.svelte
