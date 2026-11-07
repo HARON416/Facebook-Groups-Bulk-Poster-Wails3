@@ -10,7 +10,7 @@
   <Identity 
     Name="app.postika.desktop"
     Publisher="CN=Postika Technologies"
-    Version="0.1.14.0" 
+    Version="0.1.15.0" 
     ProcessorArchitecture="x64" />
   
   <Properties>
