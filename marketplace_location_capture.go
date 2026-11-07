@@ -54,7 +54,7 @@ func (c *marketplaceLocationCapture) stop() { c.cancel(); <-c.done }
 func startMarketplaceLocationCapture(ctx context.Context, browserPage *rod.Page, target, query string) *marketplaceLocationCapture {
 	ctx, cancel := context.WithCancel(ctx)
 	page := browserPage.Context(ctx)
-	capture := &marketplaceLocationCapture{make(chan marketplaceLocationCaptureResult, 1), cancel, make(chan struct{})}
+	capture := &marketplaceLocationCapture{results: make(chan marketplaceLocationCaptureResult, 1), cancel: cancel, done: make(chan struct{})}
 	buffer := 8 * 1024 * 1024
 	if err := (proto.NetworkEnable{MaxResourceBufferSize: &buffer, MaxTotalBufferSize: &buffer, MaxPostDataSize: &buffer}).Call(page); err != nil {
 		capture.results <- marketplaceLocationCaptureResult{err: errMarketplaceLocationConnection}
@@ -96,7 +96,7 @@ func startMarketplaceLocationCapture(ctx context.Context, browserPage *rod.Page,
 		if err != nil || len(body) > buffer {
 			return deliver(errMarketplaceLocationConnection)
 		}
-		if _, err = parseMarketplaceLocations(body); err != nil {
+		if _, err = parseMarketplaceLocations(body, marketplaceAddressTarget(target)); err != nil {
 			return deliver(err)
 		}
 		login, err := page.Eval(facebookLoginSelectorScript)
@@ -139,7 +139,11 @@ func startMarketplaceLocationCapture(ctx context.Context, browserPage *rod.Page,
 				Query      *string `json:"query"`
 			} `json:"params"`
 		}
-		if json.Unmarshal([]byte(form.Get("variables")), &variables) != nil || variables.Params == nil || variables.Params.Caller != "MARKETPLACE" || variables.Params.SearchType != "PLACE_TYPEAHEAD" || variables.Params.Query == nil {
+		searchType := "PLACE_TYPEAHEAD"
+		if marketplaceAddressTarget(target) {
+			searchType = "STREET_PLACE_TYPEAHEAD"
+		}
+		if json.Unmarshal([]byte(form.Get("variables")), &variables) != nil || variables.Params == nil || variables.Params.Caller != "MARKETPLACE" || variables.Params.SearchType != searchType || variables.Params.Query == nil {
 			return deliver(errMarketplaceLocationConnection)
 		}
 		if *variables.Params.Query != query {
@@ -181,6 +185,11 @@ func startMarketplaceLocationCapture(ctx context.Context, browserPage *rod.Page,
 }
 
 const marketplaceLocationInputSelector = `input[role="combobox"][type="text"][aria-autocomplete="list"][autocomplete="off"]`
+
+func marketplaceAddressTarget(target string) bool {
+	u, err := url.Parse(target)
+	return err == nil && strings.TrimRight(u.Path, "/") == "/marketplace/create/rental"
+}
 
 func focusMarketplaceLocation(ctx context.Context, browserPage *rod.Page, query string) (bool, error) {
 	probe, stop := context.WithTimeout(ctx, 2*time.Second)
@@ -229,6 +238,8 @@ func focusMarketplaceLocation(ctx context.Context, browserPage *rod.Page, query 
 	if err := el.Type(input.Backspace); err != nil {
 		return false, nil
 	}
+	// Retain Rod's input/change notifications: inserting text alone can update
+	// the field without triggering the form's typeahead controller.
 	if err := el.Input(query); err != nil {
 		return false, nil
 	}

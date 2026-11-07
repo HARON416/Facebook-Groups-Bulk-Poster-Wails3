@@ -4,7 +4,7 @@
   import { createAccountService } from '../lib/accounts';
   import LocalizedFeedback from './LocalizedFeedback.svelte';
 
-  let { profile, query, onclose }: { profile: AccountProfile; query: string; onclose: (opened: boolean) => void } = $props();
+  let { profile, query, address = false, onclose }: { profile: AccountProfile; query: string; address?: boolean; onclose: (opened: boolean) => void } = $props();
   let dialog: HTMLDialogElement, cancel: HTMLButtonElement;
   let busy = $state(false), error = $state('');
   let opened = false;
@@ -19,7 +19,7 @@
     if (busy) return;
     busy = true; error = '';
     try {
-      await createAccountService(profile.id).OpenMarketplaceLocation(query.trim());
+      await createAccountService(profile.id).OpenMarketplaceLocation(query.trim(), address);
       opened = true;
       dialog.close();
     } catch (cause) { error = cause instanceof Error ? cause.message : String(cause); }

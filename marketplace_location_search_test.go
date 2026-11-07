@@ -8,6 +8,7 @@ import (
 	"net/http"
 	"net/http/httptest"
 	"net/url"
+	"os"
 	"strings"
 	"sync/atomic"
 	"testing"
@@ -26,6 +27,47 @@ func locationFixtureResponse(label string) string {
 	return string(body)
 }
 func TestMarketplaceLocationResponseAndBody(t *testing.T) {
+	geoBody, err := os.ReadFile("testdata/marketplace/home-geocoded-addresses.json")
+	if err != nil {
+		t.Fatal(err)
+	}
+	geo, err := parseMarketplaceLocations(geoBody, true)
+	if err != nil || len(geo) != 3 {
+		t.Fatalf("Geocoded addresses disappeared: %+v %v", geo, err)
+	}
+	keys := map[string]bool{}
+	for _, hit := range geo {
+		if hit.PageID != "" || hit.AddressKey == "" || keys[hit.AddressKey] {
+			t.Fatalf("Invalid geocoded identity: %+v", hit)
+		}
+		keys[hit.AddressKey] = true
+	}
+	if _, err := parseMarketplaceLocations(geoBody); !errors.Is(err, errMarketplaceLocationConnection) {
+		t.Fatalf("City search accepted page-less addresses: %v", err)
+	}
+	geoAgain, _ := parseMarketplaceLocations(geoBody, true)
+	if !marketplaceSameLocation(&geo[0], geoAgain[0]) || marketplaceSameLocation(&geo[0], geoAgain[1]) || marketplaceSameLocation(&MarketplaceLocationHit{}, geo[0]) {
+		t.Fatal("Geocoded identity is unstable or accepts empty IDs")
+	}
+	home := validMarketplaceHome()
+	home.Address = geo[0].Label
+	home.Location = &geo[0]
+	home.Location.SearchType = "STREET_PLACE_TYPEAHEAD"
+	if err := validateMarketplaceHomeFields(&home); err != nil {
+		t.Fatalf("Valid provider address rejected: %v", err)
+	}
+	home.Location.Longitude++
+	if err := validateMarketplaceHomeFields(&home); err == nil {
+		t.Fatal("Changed coordinates retained an unrelated address key")
+	}
+	addressBody, err := os.ReadFile("testdata/marketplace/home-address-response.json")
+	if err != nil {
+		t.Fatal(err)
+	}
+	addresses, err := parseMarketplaceLocations(addressBody)
+	if err != nil || len(addresses) != 3 || addresses[0].PageID != "10883078204" || addresses[0].PostalCode != "V6Z" || addresses[1].Label != addresses[2].Label || addresses[1].PageID == addresses[2].PageID {
+		t.Fatalf("House address response lost identity/details: %+v, %v", addresses, err)
+	}
 	for _, label := range []string{"", "Nairobi, Kenya"} {
 		hits, err := parseMarketplaceLocations([]byte("for (;;);" + locationFixtureResponse(label) + "\n" + `{"extensions":{"is_final":true}}`))
 		if err != nil {
@@ -60,17 +102,37 @@ func TestMarketplaceLocationResponseAndBody(t *testing.T) {
 	if _, err := marketplaceLocationBody(raw+"&variables=%7B%7D", "X"); err == nil {
 		t.Fatal("ambiguous variables accepted")
 	}
+	savedParams := `{"caller":"MARKETPLACE","search_type":"STREET_PLACE_TYPEAHEAD","provider":"HERE_THRIFT","result_ordering":"ADDRESS_FIRST","viewer_coordinates":{"latitude":49.2819,"longitude":-123.1204}}`
+	contextBody, err := marketplaceLocationBody(raw, "Mombasa, Kenya ", savedParams)
+	if err != nil {
+		t.Fatal(err)
+	}
+	contextForm, _ := url.ParseQuery(contextBody)
+	var restored struct {
+		Params map[string]json.RawMessage `json:"params"`
+	}
+	_ = json.Unmarshal([]byte(contextForm.Get("variables")), &restored)
+	if string(restored.Params["query"]) != `"Mombasa, Kenya "` || restored.Params["country_filter"] != nil || contextForm.Get("fb_dtsg") != "fresh:token" || len(contextForm["repeated"]) != 2 {
+		t.Fatalf("Saved params changed current authentication, merged live params, or trimmed query: %s", contextBody)
+	}
+	if _, err := marketplaceLocationBody(raw, "Mombasa", `{"search_type":"PLACE_TYPEAHEAD"}`); err == nil {
+		t.Fatal("City search params accepted as a saved house context")
+	}
 }
 
 func TestMarketplaceLocationCaptureReplayIntegration(t *testing.T) {
-	testMarketplaceLocationCaptureReplay(t, false)
+	testMarketplaceLocationCaptureReplay(t, false, false)
 }
 
 func TestMarketplaceLocationSlowCaptureIntegration(t *testing.T) {
-	testMarketplaceLocationCaptureReplay(t, true)
+	testMarketplaceLocationCaptureReplay(t, true, false)
 }
 
-func testMarketplaceLocationCaptureReplay(t *testing.T, slow bool) {
+func TestMarketplaceAddressCaptureReplayIntegration(t *testing.T) {
+	testMarketplaceLocationCaptureReplay(t, false, true)
+}
+
+func testMarketplaceLocationCaptureReplay(t *testing.T, slow, address bool) {
 	t.Helper()
 	if !*browserIntegration {
 		t.Skip("enable with -browser-integration")
@@ -78,6 +140,12 @@ func testMarketplaceLocationCaptureReplay(t *testing.T, slow bool) {
 	chrome, ok := launcher.LookPath()
 	if !ok {
 		t.Fatal("Chrome required")
+	}
+	targetPath := "/marketplace/create/item"
+	searchType := "PLACE_TYPEAHEAD"
+	if address {
+		targetPath = "/marketplace/create/rental"
+		searchType = "STREET_PLACE_TYPEAHEAD"
 	}
 	var visits, replays, verifications atomic.Int64
 	var reject atomic.Bool
@@ -93,10 +161,21 @@ func testMarketplaceLocationCaptureReplay(t *testing.T, slow bool) {
 			}
 			var variables struct {
 				Params struct {
-					Query string `json:"query"`
+					Query             string             `json:"query"`
+					SearchType        string             `json:"search_type"`
+					ResultOrdering    string             `json:"result_ordering"`
+					Provider          string             `json:"provider"`
+					GeocodeFallback   bool               `json:"geocode_fallback"`
+					ViewerCoordinates map[string]float64 `json:"viewer_coordinates"`
 				} `json:"params"`
 			}
 			_ = json.Unmarshal([]byte(r.Form.Get("variables")), &variables)
+			if variables.Params.SearchType != searchType {
+				t.Error("search type changed")
+			}
+			if address && (variables.Params.ResultOrdering != "ADDRESS_FIRST" || variables.Params.Provider != "HERE_THRIFT" || !variables.Params.GeocodeFallback || variables.Params.ViewerCoordinates["latitude"] != 49.2819) {
+				t.Error("home search configuration lost")
+			}
 			// Facebook may reject/abort the empty focus request while the typed
 			// query succeeds. Only the typed request is a capture candidate.
 			if variables.Params.Query == "" {
@@ -150,7 +229,18 @@ func testMarketplaceLocationCaptureReplay(t *testing.T, slow bool) {
 		visit := visits.Add(1)
 		http.SetCookie(w, &http.Cookie{Name: "c_user", Value: "12345", Path: "/", HttpOnly: true})
 		http.SetCookie(w, &http.Cookie{Name: "xs", Value: "fresh", Path: "/", HttpOnly: true})
-		fmt.Fprintf(w, `<body class="UIPage_LoggedIn"><aside role="complementary">%s<input id="fixture-location" type="text" role="combobox" aria-autocomplete="list" autocomplete="off" aria-label="Location" hidden onfocus="send('')" oninput="send(this.value)"></aside><script>function send(query){const f=new URLSearchParams({__user:'12345',av:'12345',doc_id:%q,fb_dtsg:'fresh-fixture-token',__req:'a',opaque:'x'.repeat(90000),fb_api_req_friendly_name:%q,variables:JSON.stringify({params:{caller:'MARKETPLACE',query,search_type:'PLACE_TYPEAHEAD',country_filter:null,integration_strategy:'STRING_MATCH',page_category:['CITY','SUBCITY','NEIGHBORHOOD','POSTAL_CODE']}})});f.append('repeat','one');f.append('repeat','two');fetch('/api/graphql/',{method:'POST',headers:{'content-type':'application/x-www-form-urlencoded','x-fixture':'captured','x-fb-friendly-name':%q},body:f})}</script></body>`, marketplaceDetailsFixture, fmt.Sprintf("fresh-%d", visit), marketplaceAddressQuery, marketplaceAddressQuery)
+		details, hidden := marketplaceDetailsFixture, "hidden"
+		modeParams := "search_type:'PLACE_TYPEAHEAD',country_filter:null,integration_strategy:'STRING_MATCH',page_category:['CITY','SUBCITY','NEIGHBORHOOD','POSTAL_CODE']"
+		if address {
+			details = ""
+			hidden = ""
+			modeParams = "search_type:'STREET_PLACE_TYPEAHEAD',geocode_fallback:true,integration_strategy:'STRING_MATCH',provider:'HERE_THRIFT',result_ordering:'ADDRESS_FIRST',viewer_coordinates:{latitude:49.2819,longitude:-123.1204}"
+		}
+		inputEvent := "oninput"
+		if address {
+			inputEvent = "onchange"
+		}
+		fmt.Fprintf(w, `<body class="UIPage_LoggedIn"><aside role="complementary">%s<input id="fixture-location" type="text" role="combobox" aria-autocomplete="list" autocomplete="off" aria-label="Location" %s onfocus="send('')" %s="send(this.value)"></aside><script>function send(query){const f=new URLSearchParams({__user:'12345',av:'12345',doc_id:%q,fb_dtsg:'fresh-fixture-token',__req:'a',opaque:'x'.repeat(90000),fb_api_req_friendly_name:%q,variables:JSON.stringify({params:{caller:'MARKETPLACE',query,%s}})});f.append('repeat','one');f.append('repeat','two');fetch('/api/graphql/',{method:'POST',headers:{'content-type':'application/x-www-form-urlencoded','x-fixture':'captured','x-fb-friendly-name':%q},body:f})}</script></body>`, details, hidden, inputEvent, fmt.Sprintf("fresh-%d", visit), marketplaceAddressQuery, modeParams, marketplaceAddressQuery)
 	}))
 	defer server.Close()
 	m, err := newProfileService(t.TempDir())
@@ -166,7 +256,7 @@ func testMarketplaceLocationCaptureReplay(t *testing.T, slow bool) {
 	s.chromePath = chrome
 	ctx, cancel := context.WithTimeout(context.Background(), 85*time.Second)
 	defer cancel()
-	if err := s.openMarketplaceLocation(ctx, server.URL+"/marketplace/create/item", "N"); err != nil {
+	if err := s.openMarketplaceLocation(ctx, server.URL+targetPath, "N"); err != nil {
 		t.Fatal(err)
 	}
 	wait := 12 * time.Second
@@ -175,7 +265,7 @@ func testMarketplaceLocationCaptureReplay(t *testing.T, slow bool) {
 	}
 	deadline := time.Now().Add(wait)
 	for time.Now().Before(deadline) {
-		status, _ := m.GetMarketplaceLocationStatus("default")
+		status, _ := m.GetMarketplaceLocationStatus("default", address)
 		if status.State == "ready" && status.Captured {
 			break
 		}
@@ -184,7 +274,7 @@ func testMarketplaceLocationCaptureReplay(t *testing.T, slow bool) {
 		}
 		time.Sleep(25 * time.Millisecond)
 	}
-	status, _ := m.GetMarketplaceLocationStatus("default")
+	status, _ := m.GetMarketplaceLocationStatus("default", address)
 	if !status.Captured {
 		t.Fatalf("request not captured: %+v", status)
 	}
@@ -201,27 +291,39 @@ func testMarketplaceLocationCaptureReplay(t *testing.T, slow bool) {
 	if s.browser != nil || s.marketplaceLocationPage != nil {
 		t.Fatal("dedicated capture browser was left open")
 	}
+	if _, err := m.SearchMarketplaceLocations(ctx, "default", "Wrong mode", !address); !errors.Is(err, errMarketplaceLocationConnection) {
+		t.Fatal("cross-mode capture reused")
+	}
 	for _, query := range []string{"Nairobi", "Nakuru"} {
-		hits, err := m.SearchMarketplaceLocations(ctx, "default", query)
-		if err != nil || len(hits) != 1 || hits[0].City != "Nairobi" {
+		hits, err := m.SearchMarketplaceLocations(ctx, "default", query, address)
+		if err != nil || len(hits) != 1 || hits[0].City != "Nairobi" || hits[0].SearchType != searchType || hits[0].SearchQuery != query {
 			t.Fatalf("search %s: %+v %v", query, hits, err)
+		}
+		if address {
+			var params struct {
+				Query             string             `json:"query"`
+				ViewerCoordinates map[string]float64 `json:"viewer_coordinates"`
+			}
+			if json.Unmarshal([]byte(hits[0].SearchParams), &params) != nil || params.Query != query || params.ViewerCoordinates["latitude"] != 49.2819 || strings.Contains(hits[0].SearchParams, "fresh-fixture-token") {
+				t.Fatal("House result did not retain its search context independently of authentication")
+			}
 		}
 	}
 	if replays.Load() != 2 || visits.Load() != 1 {
-		t.Fatal("typing reopened the browser instead of replaying")
+		t.Fatalf("Unexpected query requests or form reloads: requests=%d visits=%d", replays.Load(), visits.Load())
 	}
 	other, err := m.CreateProfile("Other account")
 	if err != nil {
 		t.Fatal(err)
 	}
-	if _, err := m.SearchMarketplaceLocations(ctx, other.ID, "Nairobi"); !errors.Is(err, errMarketplaceLocationConnection) {
+	if _, err := m.SearchMarketplaceLocations(ctx, other.ID, "Nairobi", address); !errors.Is(err, errMarketplaceLocationConnection) {
 		t.Fatal("another account reused the captured session")
 	}
 	reject.Store(true)
-	if _, err := m.SearchMarketplaceLocations(ctx, "default", "Expired"); !errors.Is(err, errMarketplaceLocationConnection) {
+	if _, err := m.SearchMarketplaceLocations(ctx, "default", "Expired", address); !errors.Is(err, errMarketplaceLocationConnection) {
 		t.Fatalf("expired session accepted: %v", err)
 	}
-	status, _ = m.GetMarketplaceLocationStatus("default")
+	status, _ = m.GetMarketplaceLocationStatus("default", address)
 	if status.State != "connection_required" || status.Captured {
 		t.Fatal("expired capture was retained")
 	}
@@ -231,12 +333,12 @@ func testMarketplaceLocationCaptureReplay(t *testing.T, slow bool) {
 		t.Fatal(err)
 	}
 	mainPage := s.page
-	if err := s.openMarketplaceLocation(ctx, server.URL+"/marketplace/create/item", "N"); err != nil {
+	if err := s.openMarketplaceLocation(ctx, server.URL+targetPath, "N"); err != nil {
 		t.Fatal(err)
 	}
 	deadline = time.Now().Add(8 * time.Second)
 	for time.Now().Before(deadline) {
-		status, _ = m.GetMarketplaceLocationStatus("default")
+		status, _ = m.GetMarketplaceLocationStatus("default", address)
 		if status.State == "ready" && status.Captured {
 			break
 		}
@@ -245,13 +347,13 @@ func testMarketplaceLocationCaptureReplay(t *testing.T, slow bool) {
 	if s.browser == nil || s.page != mainPage || s.marketplaceLocationPage != nil {
 		t.Fatal("capture cleanup did not preserve the shared browser tab")
 	}
-	if _, err := m.SearchMarketplaceLocations(ctx, "default", "Reconnected"); err != nil {
+	if _, err := m.SearchMarketplaceLocations(ctx, "default", "Reconnected", address); err != nil {
 		t.Fatalf("fresh capture did not recover search: %v", err)
 	}
 	if err := (proto.NetworkSetCookies{Cookies: []*proto.NetworkCookieParam{{Name: "c_user", Value: "99999", URL: server.URL, Path: "/", HTTPOnly: true}}}).Call(mainPage.Context(ctx)); err != nil {
 		t.Fatal(err)
 	}
-	if _, err := m.SearchMarketplaceLocations(ctx, "default", "Wrong account"); !errors.Is(err, errMarketplaceLocationConnection) {
+	if _, err := m.SearchMarketplaceLocations(ctx, "default", "Wrong account", address); !errors.Is(err, errMarketplaceLocationConnection) {
 		t.Fatal("changed browser account reused the old template")
 	}
 }

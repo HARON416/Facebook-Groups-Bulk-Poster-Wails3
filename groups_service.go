@@ -57,6 +57,7 @@ type GroupsService struct {
 	marketplaceTestDir       string
 	marketplaceTesting       bool
 	marketplaceLocationLoad  *marketplaceLocationLoad
+	marketplaceLocationLoads map[bool]*marketplaceLocationLoad
 	marketplaceLocationRunID uint64
 	page                     *rod.Page
 	launcher                 *launcher.Launcher
@@ -279,6 +280,16 @@ func (s *GroupsService) shutdown(removeBrowserData bool) error {
 	s.mu.Lock()
 	defer s.mu.Unlock()
 	s.closed = true
+	for _, load := range s.marketplaceLocationLoads {
+		if load.cancel != nil {
+			load.cancel()
+		}
+		load.mu.Lock()
+		if load.replay != nil {
+			load.replay.stop()
+		}
+		load.mu.Unlock()
+	}
 	launch := s.launcher
 	s.closeBrowser()
 	if removeBrowserData && launch != nil {

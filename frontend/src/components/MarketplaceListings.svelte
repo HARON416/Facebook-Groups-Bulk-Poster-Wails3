@@ -4,7 +4,7 @@
   import MarketplaceToolbar from './MarketplaceToolbar.svelte';
   import ItemListingEditor from './ItemListingEditor.svelte';
   import LocalizedFeedback from './LocalizedFeedback.svelte';
-  import { testMarketplaceListingMedia, canTestMarketplaceListing } from '../lib/media-upload';
+  import { publishMarketplaceListingMedia, canTestMarketplaceListing } from '../lib/media-upload';
   import PhosphorIcon from './PhosphorIcon.svelte';
   import { listMarketplaceListings, deleteMarketplaceListing, type MarketplaceListing } from '../lib/marketplace-drafts';
   import { itemListingFieldOptions, vehicleListingFieldOptions, homeListingFieldOptions } from '../lib/marketplace-fields';
@@ -16,12 +16,12 @@
   let selected = $state<string[]>([]);
   let filter = $state('all'), search = $state(''), loading = $state(true), error = $state(''), busy = $state(false);
   let editing = $state<MarketplaceListing | null>(null);
-  let testQueue = $state.raw<MarketplaceListing[]>([]);
-  let testIndex = $state(0), testing = $state(false);
-  let testFeedback = $state<'idle' | 'testing' | 'tested' | 'error' | 'cancelled'>('idle');
-  let testError = $state('');
-  let testController: AbortController | undefined;
-  const working = $derived(busy || testQueue.length > 0);
+  let publishQueue = $state.raw<MarketplaceListing[]>([]);
+  let publishIndex = $state(0), publishing = $state(false);
+  let publishFeedback = $state<'idle' | 'publishing' | 'submitted' | 'unknown' | 'error' | 'cancelled'>('idle');
+  let publishError = $state('');
+  let publishController: AbortController | undefined;
+  const working = $derived(busy || publishQueue.length > 0);
 
   let deleting = $state<string | null>(null);
   let thumbnails = $state<Record<string, string>>({});
@@ -68,42 +68,43 @@
   const allSelected = $derived(selectable.length > 0 && selectable.every(listing => selected.includes(listing.id)));
   const someSelected = $derived(selectable.some(listing => selected.includes(listing.id)) && !allSelected);
 
-  async function testSelected() {
+  async function publishSelected() {
     if (!profile || working || !chosen.length) return;
-    testQueue = [...chosen];
-    testIndex = 0;
+    publishQueue = [...chosen];
+    publishIndex = 0;
     deleting = null;
-    await testItem();
+    await publishItem();
   }
-  async function testItem() {
-    if (!profile || testing || !testQueue[testIndex]) return;
-    const listing = testQueue[testIndex];
+  async function publishItem() {
+    if (!profile || publishing || !publishQueue[publishIndex]) return;
+    const listing = publishQueue[publishIndex];
     const profileID = profile.id;
     const controller = new AbortController();
-    testController = controller;
-    testing = true;
-    testFeedback = 'testing';
-    testError = '';
+    publishController = controller;
+    publishing = true;
+    publishFeedback = 'publishing';
+    publishError = '';
     try {
-      await testMarketplaceListingMedia(listing.kind, profileID, listing.photos, listing.video ?? null, listing.fields, controller.signal);
+      const result = await publishMarketplaceListingMedia(listing.kind, profileID, listing.photos, listing.video ?? null, listing.fields, controller.signal);
       if (!alive) return;
-      if (controller.signal.aborted) { testFeedback = 'cancelled'; testQueue = []; return; }
-      testFeedback = 'tested';
-      if (testIndex === testQueue.length - 1) testQueue = [];
+      selected = selected.filter(id => id !== listing.id);
+      if (controller.signal.aborted) { publishFeedback = result.state === 'submitted' ? 'submitted' : 'cancelled'; publishQueue = []; return; }
+      publishFeedback = result.state === 'submitted' ? 'submitted' : 'unknown';
+      if (publishIndex === publishQueue.length - 1) publishQueue = [];
     } catch (cause) {
       if (!alive) return;
-      if (controller.signal.aborted) { testFeedback = 'cancelled'; testQueue = []; }
-      else { testFeedback = 'error'; testError = cause instanceof Error ? cause.message : String(cause); }
-    } finally { if (alive) testing = false; }
+      if (controller.signal.aborted) { publishFeedback = 'cancelled'; publishQueue = []; }
+      else { publishFeedback = 'error'; publishError = cause instanceof Error ? cause.message : String(cause); }
+    } finally { if (alive) publishing = false; }
   }
-  function cancelTest() {
-    testController?.abort();
-    if (!testing) { testQueue = []; testFeedback = 'cancelled'; }
+  function cancelPublish() {
+    publishController?.abort();
+    if (!publishing) { publishQueue = []; publishFeedback = 'cancelled'; }
   }
   async function nextItem() {
-    if (testing || testFeedback !== 'tested' || testIndex >= testQueue.length - 1) return;
-    testIndex++;
-    await testItem();
+    if (publishing || !['submitted', 'unknown'].includes(publishFeedback) || publishIndex >= publishQueue.length - 1) return;
+    publishIndex++;
+    await publishItem();
   }
   async function closeEditor() {
     const id = editing?.id;
@@ -136,7 +137,7 @@
     window.addEventListener('postika:listings-changed', reload);
     window.addEventListener('focus', reload);
     void refresh();
-    return () => { alive = false; testController?.abort(); version++; channel.close(); window.removeEventListener('postika:listings-changed', reload); window.removeEventListener('focus', reload); releaseThumbnails(); };
+    return () => { alive = false; publishController?.abort(); version++; channel.close(); window.removeEventListener('postika:listings-changed', reload); window.removeEventListener('focus', reload); releaseThumbnails(); };
   });
   async function remove(id: string) {
     if (!profile || working) return;
@@ -156,7 +157,7 @@
 {#snippet selectionCheckbox(id: string, label: string, checked: boolean, mixed: boolean, onchange: () => void, disabled = false)}
   <div class="checkbox-wrapper-46">
     <input class="inp-cbx" {id} type="checkbox" {checked} {disabled} indeterminate={mixed} {onchange} />
-    <label class="cbx" for={id} title={disabled && !working ? 'This listing type is not supported for testing yet.' : undefined}>
+    <label class="cbx" for={id} title={disabled && !working ? 'This listing type is not supported for publishing yet.' : undefined}>
       <span class="checkbox-symbol" aria-hidden="true">
         <svg width="12" height="10" viewBox="0 0 12 10">
           {#if mixed}<path class="mixed-mark" d="M2 5h8" />{:else}<polyline points="1.5 6 4.5 9 10.5 1" />{/if}
@@ -171,27 +172,28 @@
   {#key editing.id}<ItemListingEditor {profile} kind={editing.kind} initialDraft={editing} onprevious={closeEditor} onsaved={() => { void closeEditor(); notify({ kind: 'success', message: 'Listing saved.' }); }} />{/key}
 {:else}
 <div class="marketplace-listings">
-  <MarketplaceToolbar bind:selected={filter} selectedCount={chosen.length} publishDisabled={working} publishing={testing} onpublish={testSelected} />
+  <MarketplaceToolbar bind:selected={filter} selectedCount={chosen.length} publishDisabled={working} publishing={publishing} onpublish={publishSelected} />
   <section class="listing-content" aria-label="Saved listings" aria-busy={loading}>
     <div class="list-heading">
       <div><h1>Saved listings</h1><p>Save listings here, then select them when you’re ready to publish.</p></div>
       <input class="search" type="search" aria-label="Search saved listings" placeholder="Search listings" bind:value={search} />
     </div>
     {#if error}<div class="feedback" role="alert"><p>{error}</p><button type="button" class="action-button action-button--secondary" onclick={refresh}>Try again</button></div>{/if}
-    {#if testFeedback !== 'idle'}
+    {#if publishFeedback !== 'idle'}
       <div class="test-status" role="status" aria-live="polite">
         <div>
-          {#if testFeedback === 'testing'}
-            <p>Testing listing {testIndex + 1} of {testQueue.length}: {title(testQueue[testIndex])}</p>
-            <p>Finish signing in or any verification prompts in Chrome. Your listing will be filled automatically.</p>
-          {:else if testFeedback === 'tested'}<p>Listing filled in Facebook. Review it in Chrome.</p>
-          {:else if testFeedback === 'cancelled'}<p>Test cancelled.</p>
-          {:else if testFeedback === 'error'}<p class="test-error"><LocalizedFeedback message={testError} /></p>{/if}
+          {#if publishFeedback === 'publishing'}
+            <p>Publishing listing {publishIndex + 1} of {publishQueue.length}: {title(publishQueue[publishIndex])}</p>
+            <p>Finish signing in or any verification prompts in Chrome. Your listing will be filled and submitted automatically.</p>
+          {:else if publishFeedback === 'submitted'}<p>Publish sent to Facebook. Review the result in Chrome before continuing.</p>
+          {:else if publishFeedback === 'unknown'}<p>Could not confirm whether Publish was sent. Check Facebook before continuing or retrying this listing.</p>
+          {:else if publishFeedback === 'cancelled'}<p>Publishing stopped. Check Facebook before retrying this listing.</p>
+          {:else if publishFeedback === 'error'}<p class="test-error"><LocalizedFeedback message={publishError} /></p>{/if}
         </div>
         <div class="test-actions">
-          {#if testFeedback === 'tested' && testQueue.length}<button class="action-button action-button--secondary" type="button" onclick={nextItem}>Next listing ({testIndex + 2} / {testQueue.length})</button>{/if}
-          {#if testFeedback === 'error' && testQueue.length}<button class="action-button action-button--secondary" type="button" onclick={testItem}>Try again</button>{/if}
-          {#if testQueue.length}<button class="action-button action-button--secondary" type="button" onclick={cancelTest}>Cancel</button>{/if}
+          {#if ['submitted', 'unknown'].includes(publishFeedback) && publishQueue.length}<button class="action-button action-button--secondary" type="button" onclick={nextItem}>Next listing ({publishIndex + 2} / {publishQueue.length})</button>{/if}
+          {#if publishFeedback === 'error' && publishQueue.length}<button class="action-button action-button--secondary" type="button" onclick={publishItem}>Try again</button>{/if}
+          {#if publishQueue.length}<button class="action-button action-button--secondary" type="button" onclick={cancelPublish}>Cancel</button>{/if}
         </div>
       </div>
     {/if}

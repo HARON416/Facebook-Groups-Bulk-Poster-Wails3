@@ -3,13 +3,16 @@ package main
 import (
 	"bytes"
 	"context"
+	"crypto/sha256"
 	"encoding/json"
 	"errors"
+	"fmt"
 	"io"
 	"math"
 	"net/http"
 	"net/http/cookiejar"
 	"net/url"
+	"strconv"
 	"strings"
 	"sync"
 	"time"
@@ -24,16 +27,38 @@ var errMarketplaceLocationTemporary = errors.New("Could not search locations. Pl
 var errMarketplaceLocationConnection = errors.New("Location search needs a fresh Facebook connection")
 
 type MarketplaceLocationHit struct {
-	PageID     string  `json:"pageID"`
-	Label      string  `json:"label"`
-	Subtitle   string  `json:"subtitle"`
-	Latitude   float64 `json:"latitude"`
-	Longitude  float64 `json:"longitude"`
-	City       string  `json:"city"`
-	PostalCode string  `json:"postalCode"`
+	PageID       string  `json:"pageID"`
+	Label        string  `json:"label"`
+	Subtitle     string  `json:"subtitle"`
+	Latitude     float64 `json:"latitude"`
+	Longitude    float64 `json:"longitude"`
+	City         string  `json:"city"`
+	PostalCode   string  `json:"postalCode"`
+	SearchType   string  `json:"searchType,omitempty"`
+	SearchQuery  string  `json:"searchQuery,omitempty"`
+	AddressKey   string  `json:"addressKey,omitempty"`
+	SearchParams string  `json:"searchParams,omitempty"`
 }
 
-func parseMarketplaceLocations(body []byte) ([]MarketplaceLocationHit, error) {
+// Provider street addresses need not have a Facebook page. Keep their local
+// selection identity separate from pageID; never invent a Facebook page ID.
+func marketplaceGeocodedAddressKey(label string, lat, lon float64) string {
+	label = strings.ToLower(strings.Join(strings.Fields(label), " "))
+	if label == "" || math.IsNaN(lat) || math.IsNaN(lon) || math.IsInf(lat, 0) || math.IsInf(lon, 0) || math.Abs(lat) > 90 || math.Abs(lon) > 180 {
+		return ""
+	}
+	canonical := label + "\x00" + strconv.FormatFloat(lat, 'f', 6, 64) + "\x00" + strconv.FormatFloat(lon, 'f', 6, 64)
+	return fmt.Sprintf("address:%x", sha256.Sum256([]byte(canonical)))
+}
+
+func marketplaceSameLocation(saved *MarketplaceLocationHit, live MarketplaceLocationHit) bool {
+	if saved.PageID != "" {
+		return saved.PageID == live.PageID
+	}
+	return saved.AddressKey != "" && live.PageID == "" && saved.AddressKey == live.AddressKey
+}
+
+func parseMarketplaceLocations(body []byte, address ...bool) ([]MarketplaceLocationHit, error) {
 	decoder := json.NewDecoder(bytes.NewReader(bytes.TrimPrefix(bytes.TrimSpace(body), []byte("for (;;);"))))
 	var results []MarketplaceLocationHit
 	found := false
@@ -81,19 +106,28 @@ func parseMarketplaceLocations(body []byte) ([]MarketplaceLocationHit, error) {
 		edges := *envelope.Data.Search.Streets.Edges
 		for _, edge := range edges {
 			n := edge.Node
-			if n == nil || n.Page == nil || !decimalID(n.Page.ID) || strings.TrimSpace(n.Label) == "" || n.Location == nil || n.Location.Latitude == nil || n.Location.Longitude == nil {
+			if n == nil || strings.TrimSpace(n.Label) == "" || n.Location == nil || n.Location.Latitude == nil || n.Location.Longitude == nil {
 				continue
 			}
 			lat, lon := *n.Location.Latitude, *n.Location.Longitude
 			if math.IsNaN(lat) || math.IsNaN(lon) || math.Abs(lat) > 90 || math.Abs(lon) > 180 {
 				return nil, errMarketplaceLocationConnection
 			}
-			if !seen[n.Page.ID] {
-				results = append(results, MarketplaceLocationHit{n.Page.ID, n.Label, n.Subtitle, lat, lon, n.Location.Reverse.City, n.Location.Reverse.PostalCode})
-				seen[n.Page.ID] = true
+			pageID, addressKey := "", ""
+			if n.Page != nil && decimalID(n.Page.ID) {
+				pageID = n.Page.ID
+			} else if n.Page == nil && len(address) > 0 && address[0] {
+				addressKey = marketplaceGeocodedAddressKey(n.Label, lat, lon)
+			} else {
+				continue
+			}
+			key := pageID + addressKey
+			if key != "" && !seen[key] {
+				results = append(results, MarketplaceLocationHit{PageID: pageID, AddressKey: addressKey, Label: n.Label, Subtitle: n.Subtitle, Latitude: lat, Longitude: lon, City: n.Location.Reverse.City, PostalCode: n.Location.Reverse.PostalCode})
+				seen[key] = true
 			}
 		}
-		if len(edges) > 0 && len(results) == 0 {
+		if len(edges) > 0 && len(results) == 0 && !(len(address) > 0 && address[0]) {
 			return nil, errMarketplaceLocationConnection
 		}
 	}
@@ -106,7 +140,7 @@ func parseMarketplaceLocations(body []byte) ([]MarketplaceLocationHit, error) {
 	return results, nil
 }
 
-func marketplaceLocationBody(raw, query string) (string, error) {
+func marketplaceLocationBody(raw, query string, contextParams ...string) (string, error) {
 	fields := strings.Split(raw, "&")
 	found := false
 	for i, field := range fields {
@@ -123,6 +157,12 @@ func marketplaceLocationBody(raw, query string) (string, error) {
 		var variables, params map[string]json.RawMessage
 		if err != nil || json.Unmarshal([]byte(decoded), &variables) != nil || variables == nil || json.Unmarshal(variables["params"], &params) != nil || params == nil {
 			return "", errMarketplaceLocationConnection
+		}
+		if len(contextParams) > 0 && contextParams[0] != "" {
+			params = nil
+			if json.Unmarshal([]byte(contextParams[0]), &params) != nil || params == nil || string(params["caller"]) != `"MARKETPLACE"` || string(params["search_type"]) != `"STREET_PLACE_TYPEAHEAD"` {
+				return "", errors.New("Invalid saved house address search context")
+			}
 		}
 		params["query"], _ = json.Marshal(query)
 		variables["params"], _ = json.Marshal(params)
@@ -230,6 +270,9 @@ func (replay *marketplaceLocationReplay) search(ctx context.Context, query strin
 	}
 	defer response.Body.Close()
 	replay.jar.SetCookies(replay.endpoint, response.Cookies())
+	if ctx.Err() != nil {
+		return nil, ctx.Err()
+	}
 	if response.StatusCode == 401 || response.StatusCode == 403 || response.StatusCode >= 300 && response.StatusCode < 400 || cookieUser(cookieHeader(replay.jar.Cookies(replay.endpoint)).Get("Cookie")) != replay.request.User {
 		return nil, errMarketplaceLocationConnection
 	}
@@ -249,15 +292,48 @@ func (replay *marketplaceLocationReplay) search(ctx context.Context, query strin
 	if len(bodyBytes) > 8*1024*1024 {
 		return nil, errors.New("Could not read location search results")
 	}
-	return parseMarketplaceLocations(bodyBytes)
+	form, _ := url.ParseQuery(replay.request.Body)
+	var variables struct {
+		Params struct {
+			SearchType string `json:"search_type"`
+		} `json:"params"`
+	}
+	_ = json.Unmarshal([]byte(form.Get("variables")), &variables)
+	var rawVariables map[string]json.RawMessage
+	_ = json.Unmarshal([]byte(form.Get("variables")), &rawVariables)
+	var savedParams map[string]json.RawMessage
+	_ = json.Unmarshal(rawVariables["params"], &savedParams)
+	if savedParams != nil {
+		savedParams["query"], _ = json.Marshal(query)
+	}
+	searchParams, _ := json.Marshal(savedParams)
+	if ctx.Err() != nil {
+		return nil, ctx.Err()
+	}
+	hits, err := parseMarketplaceLocations(bodyBytes, variables.Params.SearchType == "STREET_PLACE_TYPEAHEAD")
+	if err != nil {
+		// A malformed/transient search payload does not prove the login expired.
+		// Keep the capture; authentication failures are checked above.
+		return nil, errMarketplaceLocationTemporary
+	}
+	for i := range hits {
+		hits[i].SearchType = variables.Params.SearchType
+		hits[i].SearchQuery = query
+		if variables.Params.SearchType == "STREET_PLACE_TYPEAHEAD" {
+			hits[i].SearchParams = string(searchParams)
+		}
+	}
+	return hits, nil
 }
-func (m *ProfileService) SearchMarketplaceLocations(ctx context.Context, profileID, query string) ([]MarketplaceLocationHit, error) {
+func (m *ProfileService) SearchMarketplaceLocations(ctx context.Context, profileID, query string, address bool) ([]MarketplaceLocationHit, error) {
 	s, err := m.session(profileID)
 	if err != nil {
 		return nil, err
 	}
-	query = strings.TrimSpace(query)
-	if query == "" {
+	if !address {
+		query = strings.TrimSpace(query)
+	}
+	if strings.TrimSpace(query) == "" {
 		return []MarketplaceLocationHit{}, nil
 	}
 	if len(query) > 1024 {
@@ -268,7 +344,7 @@ func (m *ProfileService) SearchMarketplaceLocations(ctx context.Context, profile
 	ctx, deadline := context.WithTimeout(ctx, 45*time.Second)
 	defer deadline()
 	s.mu.Lock()
-	load := s.marketplaceLocationLoad
+	load := s.locationLoadForMode(address)
 	browser := s.browser
 	s.mu.Unlock()
 	if load == nil {
@@ -276,8 +352,9 @@ func (m *ProfileService) SearchMarketplaceLocations(ctx context.Context, profile
 	}
 	load.mu.Lock()
 	replay := load.replay
+	modeMatches := load.status.Address == address
 	load.mu.Unlock()
-	if replay == nil {
+	if replay == nil || !modeMatches {
 		return nil, errMarketplaceLocationConnection
 	}
 	// Browser and replay can rotate cookies independently. Observe the live
@@ -306,6 +383,11 @@ func (m *ProfileService) SearchMarketplaceLocations(ctx context.Context, profile
 		return nil
 	}
 	hits, err := replay.search(ctx, query, verify)
+	if errors.Is(err, context.Canceled) {
+		// A newer keystroke routinely supersedes a typeahead request. Return
+		// quietly across the binding; the UI ignores stale search generations.
+		return []MarketplaceLocationHit{}, nil
+	}
 	if errors.Is(err, errMarketplaceLocationConnection) {
 		load.invalidateLocationReplay(replay)
 	}

@@ -229,3 +229,62 @@ func TestMarketplaceAvailabilityStaleExpandedBrowserIntegration(t *testing.T) {
 		t.Fatalf("Ambiguous controls must not be clicked: %v, %v", result, err)
 	}
 }
+
+func TestMarketplaceItemCategoryExtrasBrowserIntegration(t *testing.T) {
+	if !*browserIntegration {
+		t.Skip("enable with -browser-integration")
+	}
+	chrome, ok := launcher.LookPath()
+	if !ok {
+		t.Fatal("Chrome required")
+	}
+	capture, err := os.ReadFile("testdata/marketplace/item-category-extras.html")
+	if err != nil {
+		t.Fatal(err)
+	}
+	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "text/html; charset=utf-8")
+		_, _ = w.Write(capture)
+	}))
+	defer server.Close()
+	service := &GroupsService{profileDir: t.TempDir(), chromePath: chrome, headless: true}
+	t.Cleanup(func() { _ = service.shutdown(true) })
+	ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
+	defer cancel()
+	page, err := service.prepareMarketplaceTestPage(ctx, server.URL)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if err := page.Context(ctx).WaitLoad(); err != nil {
+		t.Fatal(err)
+	}
+	// Use the supplied DOM structure with anonymized captions. Fail immediately
+	// if any ignored category field receives focus, a click, or input.
+	_, err = page.Context(ctx).Eval(`()=>{
+ window.extraEvents=0;window.availabilityClicks=0;
+ for(const id of ['_r_6l_','_r_6o_','_r_6s_','_r_70_']){
+  const el=document.getElementById(id);const control=el.closest('label')||el;
+  for(const event of ['click','focusin','input'])control.addEventListener(event,()=>extraEvents++);
+ }
+ const control=document.getElementById('_r_5v_').closest('label');
+ control.onclick=()=>{availabilityClicks++;control.setAttribute('aria-expanded','true');const menu=document.createElement('div');menu.role='listbox';menu.id='availability-options';control.setAttribute('aria-controls',menu.id);
+ for(let i=0;i<2;i++){const option=document.createElement('div');option.role='option';option.id='fresh___'+i;option.textContent='Option '+i;option.onclick=()=>{window.chosen=i;const selected=document.createElement('span');selected.textContent=option.textContent;control.append(selected);control.setAttribute('aria-expanded','false');menu.remove()};menu.append(option)}document.body.append(menu)};
+}`)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if err := marketplaceChoose(ctx, page, "Availability", "in-stock"); err != nil {
+		t.Fatal(err)
+	}
+	if err := marketplaceText(ctx, page, "SKU", "REF-123"); err != nil {
+		t.Fatal(err)
+	}
+	result, err := page.Context(ctx).Eval(`()=>({extraEvents,availabilityClicks,chosen,sku:document.getElementById('_r_66_').value})`)
+	if err != nil {
+		t.Fatal(err)
+	}
+	v := result.Value
+	if v.Get("extraEvents").Int() != 0 || v.Get("availabilityClicks").Int() != 1 || v.Get("chosen").Int() != 1 || v.Get("sku").Str() != "REF-123" {
+		t.Fatalf("Category fields were confused with supported fields: %v", v)
+	}
+}

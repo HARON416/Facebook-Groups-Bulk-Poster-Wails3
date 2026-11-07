@@ -17,6 +17,7 @@ type MarketplaceLocationStatus struct {
 	State    string `json:"state"`
 	Message  string `json:"message"`
 	Captured bool   `json:"captured"`
+	Address  bool   `json:"address"`
 }
 
 type marketplaceLocationLoad struct {
@@ -41,16 +42,28 @@ func (load *marketplaceLocationLoad) snapshot() MarketplaceLocationStatus {
 	return status
 }
 
-func (m *ProfileService) GetMarketplaceLocationStatus(profileID string) (MarketplaceLocationStatus, error) {
+// Called with the service mutex held. Captures are independent for city and
+// address search; the active browser job remains marketplaceLocationLoad.
+func (s *GroupsService) locationLoadForMode(address bool) *marketplaceLocationLoad {
+	if load := s.marketplaceLocationLoads[address]; load != nil {
+		return load
+	}
+	if load := s.marketplaceLocationLoad; load != nil && load.status.Address == address {
+		return load
+	}
+	return nil
+}
+
+func (m *ProfileService) GetMarketplaceLocationStatus(profileID string, address bool) (MarketplaceLocationStatus, error) {
 	s, err := m.session(profileID)
 	if err != nil {
 		return MarketplaceLocationStatus{}, err
 	}
 	s.mu.Lock()
-	load := s.marketplaceLocationLoad
+	load := s.locationLoadForMode(address)
 	s.mu.Unlock()
 	if load == nil {
-		return MarketplaceLocationStatus{State: "idle"}, nil
+		return MarketplaceLocationStatus{State: "idle", Address: address}, nil
 	}
 	return load.snapshot(), nil
 }
@@ -69,7 +82,7 @@ func (m *ProfileService) CancelMarketplaceLocation(profileID string, runID uint6
 
 const marketplaceItemURL = "https://web.facebook.com/marketplace/create/item"
 
-func (m *ProfileService) OpenMarketplaceLocation(ctx context.Context, profileID, query string) error {
+func (m *ProfileService) OpenMarketplaceLocation(ctx context.Context, profileID, query string, address bool) error {
 	s, err := m.session(profileID)
 	if err != nil {
 		return err
@@ -78,7 +91,11 @@ func (m *ProfileService) OpenMarketplaceLocation(ctx context.Context, profileID,
 	if query == "" || len(query) > 1024 {
 		return errors.New("Enter a town or city")
 	}
-	return s.openMarketplaceLocation(ctx, marketplaceItemURL, query)
+	target := marketplaceItemURL
+	if address {
+		target = marketplaceTestHomeURL
+	}
+	return s.openMarketplaceLocation(ctx, target, query)
 }
 
 // Keep Marketplace in its own tab, using the account's existing browser cookies.
@@ -91,6 +108,13 @@ func (s *GroupsService) openMarketplaceLocation(ctx context.Context, target stri
 	defer s.mu.Unlock()
 	if s.closed {
 		return errors.New("Postika is shutting down")
+	}
+	address := marketplaceAddressTarget(target)
+	if cached := s.locationLoadForMode(address); cached != nil {
+		status := cached.snapshot()
+		if status.State == "ready" && status.Captured {
+			return nil
+		}
 	}
 	if err := s.ensureBrowser(ctx); err != nil {
 		return err
@@ -106,7 +130,7 @@ func (s *GroupsService) openMarketplaceLocation(ctx context.Context, target stri
 		previous.mu.Lock()
 		oldReplay := previous.replay
 		previous.mu.Unlock()
-		if oldReplay != nil {
+		if oldReplay != nil && previous.status.Address == address {
 			oldReplay.stop()
 		}
 	}
@@ -142,11 +166,15 @@ func (s *GroupsService) openMarketplaceLocation(ctx context.Context, target stri
 	}
 	job, stop := s.operationContext(context.Background())
 	s.marketplaceLocationRunID++
-	load := &marketplaceLocationLoad{cancel: stop, done: make(chan struct{}), status: MarketplaceLocationStatus{RunID: s.marketplaceLocationRunID, State: "checking", Message: facebookLoginWaitMessage}}
+	load := &marketplaceLocationLoad{cancel: stop, done: make(chan struct{}), status: MarketplaceLocationStatus{RunID: s.marketplaceLocationRunID, State: "checking", Message: facebookLoginWaitMessage, Address: marketplaceAddressTarget(target)}}
 	if len(queries) > 0 {
 		load.seed = strings.TrimSpace(queries[0])
 	}
 	s.marketplaceLocationLoad = load
+	if s.marketplaceLocationLoads == nil {
+		s.marketplaceLocationLoads = make(map[bool]*marketplaceLocationLoad)
+	}
+	s.marketplaceLocationLoads[address] = load
 	browserPage := s.marketplaceLocationPage
 	go func() {
 		defer close(load.done)
@@ -238,7 +266,10 @@ func (s *GroupsService) waitForMarketplaceLogin(ctx context.Context, browserPage
 					break
 				}
 				load.set("expanding_details", "")
-				expanded, err := expandMarketplaceDetails(ctx, page, &details)
+				expanded, err := true, error(nil)
+				if !load.status.Address {
+					expanded, err = expandMarketplaceDetails(ctx, page, &details)
+				}
 				if err != nil {
 					return err
 				}

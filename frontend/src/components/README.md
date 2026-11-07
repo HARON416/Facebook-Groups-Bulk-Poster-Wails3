@@ -25,8 +25,8 @@ translation pipeline when adding options. Do not guess Facebook values.
 promotion preference, friend visibility, and product tags are saved per account.
 Saved drafts without those preferences receive the defaults in
 `emptyItemListing()`. Promotion preferences do not launch ads, and the editor
-does not publish listings or transfer photos from a phone. Those integrations
-belong to later steps. Never display a posted timestamp for an unpublished draft.
+does not publish listings or transfer photos from a phone. Publishing is an explicit
+action from Saved listings. Never display a posted timestamp for an unpublished draft.
 
 Listing photos use pointer capture for rearranging inside desktop WebViews, matching
 PostComposer. Native HTML drag events remain responsible for external file drops.
@@ -125,14 +125,22 @@ BroadcastChannel, opens Marketplace, and resets the create window for another
 listing. Search and listing-type filters compose; select-all applies to visible
 item rows while preserving selections outside the filter.
 
-`Publish selected` uses the same `testMarketplaceListingMedia` dispatcher as the listing
-editor's Test button. It uploads the saved photos/video and fills the saved item
-fields in the selected account's Facebook form, then clicks the enabled Next button once. It never clicks Publish.
-Items, all eight supplied vehicle types, and homes for sale are selectable for testing; home rentals remain disabled. Multiple
-listings are tested one at a time: after reviewing the filled form, Next listing starts
-the next selected item so forms are never silently overwritten. The queue supports
-Cancel and retry, locks selection/edit/delete during the run, and aborts on account
-switch or window destruction. All saved listings remain Draft.
+`Publish selected` calls `publishMarketplaceListingMedia`, using the explicit native
+`PublishMarketplaceListingMedia` binding (stable ID 4270654621). Items, all eight
+vehicle types, and homes for sale or rent (including private rooms) share preparation:
+wait for page stability, upload saved media, fill fields, Next, choose groups, and
+wait for Publish readiness. Only this binding clicks Publish, once. The editor's
+Test bindings still stop before clicking Publish.
+
+Multiple listings are submitted one at a time. After reviewing Facebook's result,
+Next listing starts the next selected listing. The queue supports Cancel, locks
+selection/edit/delete during the run, and aborts on account switch or destruction.
+Preparation failures offer retry. Once a click may have been dispatched, transport
+errors produce an unknown outcome and never trigger an automatic retry. Submitted
+means the click was sent, not that Facebook accepted or approved the listing; the
+UI asks the user to review Chrome. Submitted and uncertain entries are deselected.
+Saved listings retain their local Draft status rather than inventing a publication
+timestamp or claiming confirmed publication.
 
 Item Test resolves navigation through the supplied two-segment progress structure
 and its adjacent action row. The first step has one action; the second has two
@@ -147,8 +155,11 @@ action to be enabled. It respects `aria-disabled="true"`, native disabled state,
 inert/busy ancestors, and visible loading-state elements; explicit false or an
 absent disabled attribute permits readiness once loading ends. The control is
 reacquired through replacements without matching a translated label. This check
-is shared by items and supported vehicle types and is available to future home automation; home
-form filling remains unsupported. No Publish click or focus is dispatched.
+is shared by items, supported vehicle types, and homes. Test dispatches no Publish
+click or focus. Publish reacquires the ready control, hovers, verifies that it is
+still the active footer action, and dispatches one mouse press/release. Cancellation
+before dispatch stops the click; cancellation or a lost connection during dispatch
+requires reviewing Facebook before retrying.
 
 These selectors are language-independent within the captured Facebook layout,
 not a stable Facebook API. Menu order and grouped preference order remain explicit
@@ -160,6 +171,12 @@ A reorder with unchanged counts cannot be detected reliably and requires an upda
 mapping. Optional-field layouts also need live verification across accounts.
 Condition and Availability are separated by their positions around Description
 and the tags/SKU/location section, rather than by mutable required-state attributes.
+Availability is the last dropdown before that section. Category-specific controls
+between Description and Availability are excluded; ordinary optional text inputs
+do not define the section boundary. The anonymized supplied phone-category DOM in
+`testdata/marketplace/item-category-extras.html` verifies Availability selection
+and SKU input without clicks, focus, or input in Compatible Cell Phone, Watch Band
+Material, Watch Band Size, or Color.
 Briefly duplicated dropdown controls are allowed to settle during the
 caller-cancellable wait; no ambiguous control is clicked.
 SKU resolution requires its `aria-describedby` relationship to resolve inside the
@@ -289,10 +306,11 @@ group confirmation, browser startup, and location search) keep their own bounds.
 A local Chrome regression enables Vehicle type after 26 seconds (past the former
 25-second cap), then verifies caller cancellation and browser-close detection.
 
-Home-for-sale Test opens `/marketplace/create/rental` and selects For Sale before
-uploading media. The home binding has stable ID 4270654620; the shared media runner
+Home Test opens `/marketplace/create/rental` and selects Sale or Rent before
+uploading media. Rentals set the selected private-room mode before media is added,
+since changing modes can rebuild the form and clear uploads. The home binding has stable ID 4270654620; the shared media runner
 accepts exactly one fields variant and permits up to 50 home photos plus one accepted
-video, retaining the existing item/vehicle limits. Native validation requires Sale,
+video, retaining the existing item/vehicle limits. Native validation requires Sale or Rent,
 a supplied property type, whole-number bedrooms/price, integer or half bathrooms,
 a selected address matching its location hit, and a description. Optional square
 feet and advanced dropdown values are checked before launching Chrome.
@@ -300,13 +318,109 @@ The supplied six-combobox sale schema identifies Home offer, Property type,
 Laundry, Parking, Air conditioning, and Heating structurally; bedroom/bathroom
 inputs precede Price, and square feet follows Description. The existing home option
 lists supply canonical menu slots/counts; closed-form HTML alone does not establish
-that every locale/account retains those menu orders. The current selected-location
-search is reused for Address, matching the chosen live suggestion and subtitle;
-live address suggestions still depend on Facebook's page and shared search source.
-Rent/private-room automation is not enabled. Item/vehicle/Home sale flows share
+that every locale/account retains those menu orders. Address search captures the
+home composer's `STREET_PLACE_TYPEAHEAD` request rather than the item composer's
+city-filtered `PLACE_TYPEAHEAD` request. It preserves the captured provider,
+`ADDRESS_FIRST` ordering, geocode fallback, and viewer coordinates when changing
+only the query. The common `city_street_search.street_results.edges` parser reads
+both responses; the supplied house response fixture verifies street addresses and
+distinct page IDs for identical city captions. Home capture skips item-only More
+details expansion. Status and replay reject a different search mode. Selected
+hits retain their search type and the query that produced them. House filling
+reuses that original query rather than assuming the displayed address returns
+the same ranked results. Older saved home addresses can retry caption/city queries
+when a response omits their identity; each retry still requires the saved identity.
+House hits also retain the captured non-authentication `params` as `searchParams`.
+During house form lookup only, matching native address-search requests reuse those
+params (provider, ordering, viewer coordinates, fallback and exact query whitespace).
+Chrome keeps its current cookies, authentication fields, document ID, headers and
+normal response rendering; unrelated GraphQL operations pass through. Interception
+ends after selection, failure or cancellation. Existing selections without this
+metadata must be selected again to reproduce their original search context. City
+queries continue to trim whitespace; house queries retain it end to end.
+Old home drafts captured through city search must reselect an address before
+testing. Item and vehicle searches keep their city configuration.
+City and house address captures are cached independently per account in memory.
+After the initial capture and verification, the setup tab closes. Subsequent
+queries replay the captured request in Go without typing into Facebook's form
+or requiring its browser tab to stay open. Status polling requests the editor's
+mode, and opening an already-ready capture returns without launching Chrome.
+Switching modes does not revoke the other capture. Hidden editors do not start
+typeahead searches. Superseded searches
+finish quietly across the binding; stale UI generations still ignore their
+results. Unreadable search payloads remain retryable without discarding the
+session. House street results with `page: null` and valid coordinates are retained
+with a separate `addressKey` derived from their normalized address and coordinates;
+`pageID` remains empty. The key is used for UI selection, drafts, home validation,
+and live response matching. Empty page IDs never match each other. City/item/
+vehicle searches continue to require page IDs. Invalid address rows without
+coordinates are skipped. The supplied Nairobi street sample is covered by parser,
+native browser, and app UI select-clear-search-select regressions. Editing or
+refocusing the query clears its previous touched validation state; leaving an
+unselected query still prompts for a selection.
+Authentication rejection or an observed account change invalidates only the
+affected capture. Shutdown revokes both caches. Local HTTP regression tests cover
+mode switching without opening a browser, temporary payload recovery, empty house
+results, superseded queries, and isolated authentication expiry. Browser tests
+verify house and city setup tabs close and later queries replay without reopening
+the browser.
+Whole-property rentals use the existing rental editor fields and pass their
+availability date and pet settings to native automation. The editable Facebook
+date is entered numerically for the form locale and checked after blur, accepting
+numeric, ISO, and localized short/long month-name displays of the same date.
+Month, day and year are all retained in the comparison; a different date or an
+invalid field still fails. Rental regressions reformat the date before verifying
+that pet settings are enabled and the flow reaches Next. Rental address
+lookup excludes the date combobox; four switches map to private-room mode, cats,
+dogs, and Promote in the supplied form order. Private-room rentals use the supplied
+seven-dropdown/five-switch schema: Bathroom Type follows Rental type, and furnished
+state follows the private-room switch. Native validation requires occupants and a
+Private/Shared bathroom choice in this mode. The existing editor's occupants,
+bathroom type and furnished state are passed to native automation. Occupants occur
+before the monthly price; bedroom/bathroom counts occur after Bathroom Type and
+before the address. Other dropdown and pet-switch positions account for the extra
+room controls without matching translated labels or generated IDs.
+Pet switches verify Facebook's acknowledged `aria-checked` state rather than a
+transient native checkbox toggle. Inputs are reacquired across replacements;
+one unacknowledged mouse click can retry through Space after a grace period.
+Both pet settings are confirmed together before advancing to Next. Browser
+regressions cover delayed acknowledgement, ignored clicks, mismatched native
+properties, enabling and disabling pets, and refusing unacknowledged changes.
+Item/vehicle/Home sale and rental flows share
 Next, automatic selection of up to 20 suggested groups, and read-only Publish
 readiness. Home form/dropdown filling has no added elapsed-time cap and inherits
-caller cancellation. `testdata/marketplace/home-sale.html` is the anonymized capture;
+caller cancellation. `testdata/marketplace/home-sale.html`, `home-rent.html`, and
+`home-room.html` are anonymized captures;
 local Chrome tests cover required/all-optional fields, 50 photos/video, duplicate
 address captions disambiguated by subtitle, RTL/altered captions, indexed menu
-reordering, replaced controls, and zero Publish clicks.
+reordering, replaced controls, rental pet switches and US/UK date formatting,
+both private-room modes, occupants and bathroom choices, furnished state, retained
+media after a mode change, and zero Publish clicks.
+
+Location/address selection observes the form's own
+`MarketplaceSearchAddressDataSourceQuery` response for the typed query. The saved
+Facebook page ID resolves the live caption/subtitle, so city versus address
+formatting and changing check-in counts do not have to match saved text. If that
+response omits the saved page ID, selection stops rather than guessing between
+similarly named places. Without a captured response, exact saved captions remain
+the fallback. Selection resolves the current label/subtitle and dispatches
+`click()` to its nested option (or outer row when no nested option exists) in one
+DOM evaluation. Offscreen/clipped options already in the DOM require no scrolling,
+focus, or coordinate click; actual hidden/stale rows and ambiguous matches remain
+excluded. The selected value and closed popup are verified after dispatch.
+Only if the matching row has not been rendered does discovery move the active
+popup/sidebar in small 16–48px steps, with at least 450ms between steps. Discovery
+stays at the bottom rather than reversing back to the top, reacquires current rows
+on each check, and respects cancellation/browser closure without an overall
+selection deadline. Lists with `aria-busy` never scroll, including while loading.
+For completed lists (`aria-busy="false"`), after a
+three-second response grace period, an unmatched saved label/subtitle reports the
+expected value and available captions instead of scanning indefinitely.
+Disabled matches wait without scrolling. The preview
+is not a scroll target. This helper is shared by items, vehicles, and homes for sale.
+Local Chrome fixtures verify offscreen DOM clicks with zero suggestion/sidebar
+scrolls (including the supplied ten-result Facebook HTML), completed-list mismatch
+diagnostics without scrolling, saved/live caption differences, changing counts,
+missing place IDs, delayed and virtualized results, subtitle disambiguation, cancellation,
+and untouched preview scroll. Live Facebook must still accept the synthetic click;
+readiness is not inferred from click dispatch alone.

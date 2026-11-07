@@ -3853,7 +3853,6 @@ msgstr "Could not load video thumbnail."
 #~ msgstr "Media sent to Facebook. Review the listing in Chrome."
 
 #: src/components/ItemListingEditor.svelte
-#: src/components/MarketplaceListings.svelte
 msgid "Test cancelled."
 msgstr "Test cancelled."
 
@@ -3862,12 +3861,10 @@ msgid "Add at least one photo or video."
 msgstr "Add at least one photo or video."
 
 #: src/components/ItemListingEditor.svelte
-#: src/components/MarketplaceListings.svelte
 msgid "Finish signing in or any verification prompts in Chrome. Your listing will be filled automatically."
 msgstr "Finish signing in or any verification prompts in Chrome. Your listing will be filled automatically."
 
 #: src/components/ItemListingEditor.svelte
-#: src/components/MarketplaceListings.svelte
 msgid "Listing filled in Facebook. Review it in Chrome."
 msgstr "Listing filled in Facebook. Review it in Chrome."
 
@@ -4059,12 +4056,10 @@ msgstr "Delete {0}"
 #~ msgid "Only item and Car/Truck listings can be tested at the moment."
 #~ msgstr "Only item and Car/Truck listings can be tested at the moment."
 
-#. 0: testIndex + 1; 1: testQueue.length; 2: title(testQueue[testIndex])
-#: src/components/MarketplaceListings.svelte
-msgid "Testing listing {0} of {1}: {2}"
-msgstr "Testing listing {0} of {1}: {2}"
+#~ msgid "Testing listing {0} of {1}: {2}"
+#~ msgstr "Testing listing {0} of {1}: {2}"
 
-#. 0: testIndex + 2; 1: testQueue.length
+#. 0: publishIndex + 2; 1: publishQueue.length
 #: src/components/MarketplaceListings.svelte
 msgid "Next listing ({0} / {1})"
 msgstr "Next listing ({0} / {1})"
@@ -4078,6 +4073,30 @@ msgstr "Next listing ({0} / {1})"
 #~ msgid "Only item, Car/Truck, Motorcycle, Powersport, and RV/Camper listings can be tested at the moment."
 #~ msgstr "Only item, Car/Truck, Motorcycle, Powersport, and RV/Camper listings can be tested at the moment."
 
+#~ msgid "This listing type is not supported for testing yet."
+#~ msgstr "This listing type is not supported for testing yet."
+
 #: src/components/MarketplaceListings.svelte
-msgid "This listing type is not supported for testing yet."
-msgstr "This listing type is not supported for testing yet."
+msgid "This listing type is not supported for publishing yet."
+msgstr "This listing type is not supported for publishing yet."
+
+#. 0: publishIndex + 1; 1: publishQueue.length; 2: title(publishQueue[publishIndex])
+#: src/components/MarketplaceListings.svelte
+msgid "Publishing listing {0} of {1}: {2}"
+msgstr "Publishing listing {0} of {1}: {2}"
+
+#: src/components/MarketplaceListings.svelte
+msgid "Finish signing in or any verification prompts in Chrome. Your listing will be filled and submitted automatically."
+msgstr "Finish signing in or any verification prompts in Chrome. Your listing will be filled and submitted automatically."
+
+#: src/components/MarketplaceListings.svelte
+msgid "Publish sent to Facebook. Review the result in Chrome before continuing."
+msgstr "Publish sent to Facebook. Review the result in Chrome before continuing."
+
+#: src/components/MarketplaceListings.svelte
+msgid "Could not confirm whether Publish was sent. Check Facebook before continuing or retrying this listing."
+msgstr "Could not confirm whether Publish was sent. Check Facebook before continuing or retrying this listing."
+
+#: src/components/MarketplaceListings.svelte
+msgid "Publishing stopped. Check Facebook before retrying this listing."
+msgstr "Publishing stopped. Check Facebook before retrying this listing."

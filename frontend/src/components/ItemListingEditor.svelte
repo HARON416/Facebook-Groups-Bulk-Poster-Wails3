@@ -184,17 +184,17 @@
   let locationSearching = $state(false), locationSearched = $state(false), locationSearchError = $state(false), locationPromptDismissed = $state(false);
   let locationSearchVersion = 0, lastLocationQuery = '', locationSearchAfter = 0;
   let locationTimer: ReturnType<typeof setTimeout> | undefined;
-  const locationOptions = $derived(locationHits.map(hit => ({ value: hit.pageID, label: hit.label, description: hit.subtitle })));
+  const locationOptions = $derived(locationHits.map(hit => ({ value: hit.pageID || hit.addressKey || '', label: hit.label, description: hit.subtitle })));
   async function searchLocations() {
-    if (Date.now() < locationSearchAfter || !profile || !locationStatus?.captured || locationStatus.state !== 'ready' || !locationQuery.trim() || fields.location) return;
-    const query = locationQuery.trim();
+    if (destroyed || !visible || locationDialogOpen || Date.now() < locationSearchAfter || !profile || !locationStatus?.captured || locationStatus.state !== 'ready' || !locationQuery.trim() || fields.location) return;
+    const query = home ? locationQuery : locationQuery.trim();
     if (lastLocationQuery === query) return;
     lastLocationQuery = query;
     const version = ++locationSearchVersion;
     locationSearching = true; locationSearchError = false; locationSearched = false; locationHits = [];
     try {
-      const hits = await createAccountService(profile.id).SearchMarketplaceLocations(query);
-      if (destroyed || version !== locationSearchVersion || query !== locationQuery.trim()) return;
+      const hits = await createAccountService(profile.id).SearchMarketplaceLocations(query, home);
+      if (destroyed || version !== locationSearchVersion || query !== (home ? locationQuery : locationQuery.trim())) return;
       locationHits = hits ?? []; locationSearched = true;
     } catch {
       if (!destroyed && version === locationSearchVersion) { locationSearchError = true; lastLocationQuery = ''; void refreshLocationStatus(); }
@@ -202,21 +202,22 @@
   }
   function locationQueryChanged(query: string) {
     clearTimeout(locationTimer); locationSearchVersion++; lastLocationQuery = ''; locationSearchAfter = Date.now() + 250;
+    locationTouched = false;
     fields.location = ''; fields.locationData = null;
     if (home) fields.address = '';
     locationHits = []; locationSearching = false; locationSearched = false; locationSearchError = false;
     if (!query.trim()) { locationPromptDismissed = false; return; }
     locationTimer = setTimeout(() => {
-      if (destroyed) return;
+      if (destroyed || !visible) return;
       if (locationStatus?.state === 'ready' && locationStatus.captured) void searchLocations();
       else if (!locationBrowserOpened && !locationPromptDismissed && !locationDialogOpen) locationDialogOpen = true;
     }, 250);
   }
   function selectLocation(option: ListingFieldOption) {
-    const hit = locationHits.find(hit => hit.pageID === option.value);
+    const hit = locationHits.find(hit => (hit.pageID || hit.addressKey) === option.value);
     if (!hit) return;
     clearTimeout(locationTimer); locationSearchVersion++;
-    fields.location = hit.pageID; fields.locationData = { ...hit }; locationQuery = hit.label;
+    fields.location = option.value; fields.locationData = { ...hit }; locationQuery = hit.label;
     if (home) fields.address = hit.label;
     locationHits = []; locationSearched = false; locationSearching = false;
   }
@@ -227,7 +228,7 @@
     if (!profile || !visible || destroyed) return;
     const generation = locationGeneration;
     try {
-      const status = await createAccountService(profile.id).GetMarketplaceLocationStatus();
+      const status = await createAccountService(profile.id).GetMarketplaceLocationStatus(home);
       if (destroyed || generation !== locationGeneration || locationStatus && status.runID < locationStatus.runID) return;
       if (locationStatus && status.runID > locationStatus.runID) {
         locationSearchVersion++; lastLocationQuery = ''; locationSearchError = false;
@@ -341,6 +342,10 @@
           videoFile = draft.video ?? null; showingVideo = initialDraft?.showingVideo ?? false;
           locationQuery = initialDraft?.locationQuery ?? draft.fields.locationData?.label ?? (home ? draft.fields.address : '') ?? '';
           locationTouched = initialDraft?.locationTouched ?? false;
+          if (home && fields.locationData?.searchType !== 'STREET_PLACE_TYPEAHEAD') {
+            fields.location = ''; fields.locationData = null; fields.address = '';
+            locationTouched = Boolean(locationQuery.trim());
+          }
           photos = draft.photos.map(file => ({ id: crypto.randomUUID(), file, url: URL.createObjectURL(file) }));
           activePhoto = Math.min(initialDraft?.activePhoto ?? 0, Math.max(0, photos.length - 1));
         }
@@ -401,7 +406,7 @@
 </script>
 
 {#snippet locationField()}
-            <ListingFieldSelect id="listing-location" required={kind !== 'items'} invalid={locationTouched && !fields.locationData && (kind !== 'items' || locationQuery.trim() !== '')} errorMessage="Please enter a valid location." onblur={() => { if (!locationDialogOpen && !restoringLocationFocus) locationTouched = true; }} label={home ? 'Address' : 'Location'} placeholder={home ? 'Enter an address' : 'Enter a town or city'} leadingIcon="map-pin" searchable options={locationOptions} bind:value={fields.location} bind:query={locationQuery} remote showResults={locationSearching || locationSearched} loading={locationSearching} emptyText="No locations found." onquery={locationQueryChanged} onselect={selectLocation} />
+            <ListingFieldSelect id="listing-location" required={kind !== 'items'} invalid={locationTouched && !locationSearching && !locationWaiting && !locationDialogOpen && !locationSearchError && !fields.locationData && (kind !== 'items' || locationQuery.trim() !== '')} errorMessage="Please enter a valid location." onfocus={() => { locationTouched = false; }} onblur={() => { if (!locationDialogOpen && !restoringLocationFocus) locationTouched = true; }} label={home ? 'Address' : 'Location'} placeholder={home ? 'Enter an address' : 'Enter a town or city'} leadingIcon="map-pin" searchable options={locationOptions} bind:value={fields.location} bind:query={locationQuery} remote showResults={locationSearching || locationSearched} loading={locationSearching} emptyText="No locations found." onquery={locationQueryChanged} onselect={selectLocation} />
             {#if locationStatus && !['idle', 'cancelled', 'ready'].includes(locationStatus.state)}
               <div class="location-status" role="status" aria-live="polite">
                 {#if locationStatus.state === 'waiting_login'}<p class="hint">Finish signing in or any verification prompts in Chrome. Your login will be detected automatically.</p>
@@ -422,7 +427,7 @@
             {#if locationPollError}<p class="hint invalid" role="alert"><LocalizedFeedback message={locationPollError} /></p>{/if}
 {/snippet}
 
-{#if locationDialogOpen && profile}<LocationSearchDialog {profile} query={locationQuery} onclose={closeLocationDialog} />{/if}
+{#if locationDialogOpen && profile}<LocationSearchDialog {profile} query={locationQuery} address={home} onclose={closeLocationDialog} />{/if}
 
 <svelte:window onpointermove={movePointer} onpointerup={endPointer} onpointercancel={clearDrag} onblur={() => { clearDrag(); pauseMedia(); }} onkeydown={(event) => { if (event.key === 'Escape') clearDrag(); }} />
 

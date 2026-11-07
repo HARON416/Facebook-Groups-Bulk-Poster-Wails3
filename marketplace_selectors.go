@@ -26,15 +26,20 @@ const marketplaceStructuralControl = `(name, selector) => {
   case 'Availability': {
    const controls=all('label[role="combobox"][aria-haspopup="listbox"]');
    if(descriptions.length===1) {
-    // Required-state attributes may change once Condition has a value. The
-    // captured Availability section lies after Description and before tags/SKU/location.
+    // Categories can insert their own dropdowns and text inputs after
+    // Description. Availability is the last dropdown before tags/SKU/location,
+    // not the first dropdown before an arbitrary optional text field.
     const description=descriptions[0];
-    const boundaries=all('textarea,input[type="text"],input[role="combobox"]').filter(el=>el!==description && before(description,el));
-    matches=controls.filter(el=>before(description,el) && boundaries.every(boundary=>before(el,boundary)));
+    const boundaries=all('textarea,input[type="text"],input[role="combobox"]').filter(el=>el!==description && before(description,el) && (
+     el.getAttribute('role')==='combobox' || el.closest('label')?.querySelector('[role="list"]') || el.hasAttribute('aria-describedby')
+    ));
+    const candidates=controls.filter(el=>before(description,el) && boundaries.every(boundary=>before(el,boundary)));
+    if(boundaries.length && candidates.length)matches=[candidates[candidates.length-1]];
    } else matches=controls.filter(el=>el.getAttribute('aria-required')!=='true');
    break;
   }
-  case 'Location': matches=all('input[role="combobox"]'); break;
+  // Rental forms also contain an editable date combobox without suggestions.
+  case 'Location': matches=all('input[role="combobox"]:not([aria-autocomplete="none"])'); break;
   case 'More details': matches=all('div[role="button"][aria-expanded]:not([aria-haspopup]),summary'); break;
   case 'Description': matches=descriptions; break;
   case 'Product tags': matches=all('textarea,input[role="combobox"]').filter(el=>el.closest('label')?.querySelector('[role="list"]')); break;

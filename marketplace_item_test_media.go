@@ -33,6 +33,7 @@ func init() {
 	application.RegisterBindingMethodID((*ProfileService).TestMarketplaceItemMedia, 4270654618)
 	application.RegisterBindingMethodID((*ProfileService).TestMarketplaceVehicleMedia, 4270654619)
 	application.RegisterBindingMethodID((*ProfileService).TestMarketplaceHomeMedia, 4270654620)
+	application.RegisterBindingMethodID((*ProfileService).PublishMarketplaceListingMedia, 4270654621)
 }
 
 func stageMarketplaceTestMedia(media MarketplaceTestMedia) (dir string, photos []string, video string, err error) {
@@ -122,6 +123,12 @@ func (m *ProfileService) TestMarketplaceHomeMedia(ctx context.Context, profileID
 }
 
 func (s *GroupsService) testMarketplaceItemMedia(ctx context.Context, target string, media MarketplaceTestMedia) error {
+	return s.prepareMarketplaceListingMedia(ctx, target, media, nil)
+}
+
+// Test has no final action. Only the explicit Publish binding supplies one,
+// under the same per-account lock as navigation, uploads and field filling.
+func (s *GroupsService) prepareMarketplaceListingMedia(ctx context.Context, target string, media MarketplaceTestMedia, finish func(context.Context, *rod.Page) error) error {
 	variants := 0
 	for _, present := range []bool{media.Fields != nil, media.VehicleFields != nil, media.HomeFields != nil} {
 		if present {
@@ -151,7 +158,7 @@ func (s *GroupsService) testMarketplaceItemMedia(ctx context.Context, target str
 	s.mu.Lock()
 	if s.closed || s.marketplaceTesting {
 		s.mu.Unlock()
-		return errors.New("Another Marketplace test is running or the account is closed")
+		return errors.New("Another Marketplace listing action is running or the account is closed")
 	}
 	s.marketplaceTesting = true
 	s.mu.Unlock()
@@ -187,6 +194,9 @@ func (s *GroupsService) testMarketplaceItemMedia(ctx context.Context, target str
 			return err
 		}
 	}
+	if err := waitMarketplacePageReady(ctx, page); err != nil {
+		return err
+	}
 	// Listing-type changes can rebuild the form and clear its media inputs.
 	// Choose the vehicle type or home offer before assigning files.
 	if media.VehicleFields != nil {
@@ -197,6 +207,12 @@ func (s *GroupsService) testMarketplaceItemMedia(ctx context.Context, target str
 	if media.HomeFields != nil {
 		if err := chooseMarketplaceHome(ctx, page, "Home offer", media.HomeFields.HomeOffer); err != nil {
 			return err
+		}
+		if media.HomeFields.HomeOffer == "rent" {
+			// Changing room mode can rebuild the form; do it before adding media.
+			if err := marketplaceHomeSwitch(ctx, page, "Private room", media.HomeFields.PrivateRoom); err != nil {
+				return err
+			}
 		}
 	}
 	if len(photos) > 0 {
@@ -256,8 +272,13 @@ func (s *GroupsService) testMarketplaceItemMedia(ctx context.Context, target str
 		if err := selectMarketplaceGroups(ctx, page); err != nil {
 			return err
 		}
-		// Testing stops when Publish is ready. Do not click or focus it.
-		return waitMarketplacePublishReady(ctx, page)
+		if err := waitMarketplacePublishReady(ctx, page); err != nil {
+			return err
+		}
+		if finish != nil {
+			return finish(ctx, page)
+		}
+		return nil
 	}
 	return nil
 }

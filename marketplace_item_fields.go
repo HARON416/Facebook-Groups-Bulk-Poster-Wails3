@@ -226,21 +226,72 @@ const marketplaceLocationPopup = `() => {
  return menus[0] || null;
 }`
 
-const marketplaceOption = `(label, subtitle) => {
+const marketplaceOption = `(label, subtitle, identity) => {
  const norm = value => (value || '').replace(/\s+/g,' ').trim().toLocaleLowerCase();
  const menu = (` + marketplaceLocationPopup + `)();
- if(!menu) return null;
+ if(!menu || menu.getAttribute('aria-busy')==='true') return null;
  // Facebook nests a role=option div inside each role=option li. Keep one
  // top-level row, rather than treating both elements as separate results.
  const options = [...menu.querySelectorAll('[role="option"]')].filter(el => {
    const parent = el.parentElement?.closest('[role="option"]');
-   return (!parent || !menu.contains(parent)) && el.getClientRects().length && !el.closest('[hidden],[aria-hidden="true"]');
+   return (!parent || !menu.contains(parent)) && el.getClientRects().length && !el.closest('[hidden],[aria-hidden="true"]') && getComputedStyle(el).visibility!=='hidden';
  });
  const primary = el => el.querySelector('span[dir="auto"]')?.textContent || el.querySelector('span')?.textContent || el.getAttribute('aria-label') || el.textContent;
  let matches = options.filter(el=>norm(primary(el))===norm(label));
- if(subtitle) matches = matches.filter(el=>norm(el.textContent).includes(norm(subtitle)));
+ // A street's subtitle may equal its primary caption. Match the secondary
+ // text itself, rather than accidentally matching the primary caption again.
+ if(subtitle) matches = matches.filter(el=>{
+  const spans=[...el.querySelectorAll('span')].filter(span=>!span.querySelector('span'));
+  return norm(spans.slice(1).map(span=>span.textContent).join(' ')).includes(norm(subtitle));
+ });
+ // Identical captions can represent different coordinates or page IDs. Only
+ // use their order after the current response has identified the saved hit,
+ // and all identically captioned rows from that response have rendered.
+ if(identity){
+  if(matches.length!==identity.count)return null;
+  return matches[identity.index]||null;
+ }
  if(matches.length>1) throw new Error('Multiple matching options: '+label);
  return matches[0] || null;
+}`
+
+// Resolve and dispatch in the same evaluation, including offscreen DOM rows.
+// Click the nested option so its React handler and the outer row both receive
+// the event. No focus, scrollIntoView, or coordinate-based click is performed.
+const marketplaceClickLocationOption = `(label,subtitle,identity)=>{
+ const match=(` + marketplaceOption + `)(label,subtitle,identity);
+ if(!match)return 0;
+ const target=match.querySelector('[role="option"]')||match;
+ if(target.closest('[aria-disabled="true"],[disabled],[inert]'))return 1;
+ target.click();return 2;
+}`
+
+// Only discover results that are not in the DOM yet. Small, paced steps keep
+// virtualized suggestions from being skipped; existing matches never scroll.
+const marketplaceScrollLocationSuggestions = `(direction)=>{
+ const menu=(` + marketplaceLocationPopup + `)();if(!menu)return false;
+ // A completed suggestion list already contains its offscreen rows. Moving
+ // ancestors cannot fix a caption/subtitle mismatch and can hide the input.
+ if(menu.hasAttribute('aria-busy'))return false;
+ const control=(` + marketplaceNamedControl + `)('Location','input[role="combobox"]');
+ const candidates=[];
+ for(const start of [menu,control]) {
+  for(let el=start;el && el!==document.body && el!==document.documentElement;el=el.parentElement) {
+   if(!candidates.includes(el) && el.scrollHeight>el.clientHeight+2 && /auto|scroll/.test(getComputedStyle(el).overflowY))candidates.push(el);
+  }
+ }
+ for(const el of candidates) {
+  const canMove=direction>0?el.scrollTop+el.clientHeight<el.scrollHeight-2:el.scrollTop>0;
+  if(canMove){el.scrollTop+=direction*Math.max(16,Math.min(48,el.clientHeight*0.1));return true}
+ }
+ return false;
+}`
+
+const marketplaceCompletedLocationSuggestions = `()=>{
+ const menu=(` + marketplaceLocationPopup + `)();
+ if(!menu || menu.getAttribute('aria-busy')!=='false')return null;
+ return [...menu.querySelectorAll('li[role="option"]')].map(el=>
+  [...el.querySelectorAll('span[dir="auto"]')].map(span=>span.textContent).join(' | '));
 }`
 
 const marketplaceLocationSelected = `(label) => {
@@ -530,17 +581,121 @@ func fillMarketplaceItemFields(ctx context.Context, page *rod.Page, fields Marke
 }
 
 func marketplaceSelectLocation(ctx context.Context, page *rod.Page, location *MarketplaceLocationHit) error {
-	if err := marketplaceText(ctx, page, "Location", location.Label); err != nil {
-		return err
+	return marketplaceSelectLocationQuery(ctx, page, location, location.Label)
+}
+
+var errMarketplaceLocationNotReturned = errors.New("Facebook's address search did not return the saved location")
+
+func marketplaceSelectLocationQuery(ctx context.Context, page *rod.Page, location *MarketplaceLocationHit, query string) error {
+	// House results can have indistinguishable captions. Never select from the
+	// previous query's menu before observing this query's response.
+	home := location.SearchType == "STREET_PLACE_TYPEAHEAD"
+	if home {
+		var cancel context.CancelFunc
+		ctx, cancel = context.WithTimeout(ctx, 20*time.Second)
+		defer cancel()
 	}
-	option, err := page.Context(ctx).ElementByJS(rod.Eval(marketplaceOption, location.Label, location.Subtitle))
+	failures, restore, err := marketplaceHomeSearchContext(ctx, page, location, query)
 	if err != nil {
-		return fmt.Errorf("Could not match the selected location in Facebook: %w", err)
+		return fmt.Errorf("Could not restore the saved house address search: %w", err)
 	}
-	if err = option.Click(proto.InputMouseButtonLeft, 1); err != nil {
+	defer restore()
+	updates, stop, err := marketplaceLiveLocations(ctx, page, query)
+	if err != nil {
+		return fmt.Errorf("Could not observe Facebook location search: %w", err)
+	}
+	defer stop()
+	if err := marketplaceText(ctx, page, "Location", query); err != nil {
 		return err
 	}
-	if err = page.Context(ctx).Wait(rod.Eval(marketplaceLocationSelected, location.Label)); err != nil {
+	var unmatchedSince time.Time
+	caption, subtitle := location.Label, location.Subtitle
+	var identity *marketplaceLocationRowIdentity
+	responseReady := !home
+	for {
+		select {
+		case err := <-failures:
+			return fmt.Errorf("Could not restore the saved house address search: %w", err)
+		default:
+		}
+		if ctx.Err() != nil {
+			return fmt.Errorf("Could not select the Facebook location: %w", ctx.Err())
+		}
+		if _, err := (proto.TargetGetTargetInfo{TargetID: page.TargetID}).Call(page.Browser().Context(ctx)); err != nil {
+			if ctx.Err() != nil {
+				return fmt.Errorf("Could not select the Facebook location: %w", ctx.Err())
+			}
+			return errors.New("Facebook was closed before the location was selected")
+		}
+		select {
+		case hits := <-updates:
+			found := -1
+			for i, hit := range hits {
+				if marketplaceSameLocation(location, hit) {
+					caption, subtitle = hit.Label, hit.Subtitle
+					found = i
+					break
+				}
+			}
+			if found < 0 {
+				if location.PageID == "" {
+					return fmt.Errorf("%w %q (geocoded address) for query %q", errMarketplaceLocationNotReturned, location.Label, query)
+				}
+				return fmt.Errorf("%w %q (page ID %s) for query %q", errMarketplaceLocationNotReturned, location.Label, location.PageID, query)
+			}
+			identity = marketplaceLocationRowFor(hits, found)
+			responseReady = true
+			unmatchedSince = time.Time{}
+		default:
+		}
+		if !responseReady {
+			select {
+			case <-ctx.Done():
+				return fmt.Errorf("Could not confirm Facebook's current house address results: %w", ctx.Err())
+			case <-time.After(100 * time.Millisecond):
+			}
+			continue
+		}
+		result, err := page.Context(ctx).Eval(marketplaceClickLocationOption, caption, subtitle, identity)
+		if err != nil {
+			return fmt.Errorf("Could not match the selected location in Facebook: %w", err)
+		}
+		if result.Value.Int() == 2 {
+			break
+		}
+		if result.Value.Int() == 0 {
+			completed, err := page.Context(ctx).Eval(marketplaceCompletedLocationSuggestions)
+			if err != nil {
+				return fmt.Errorf("Could not inspect Facebook location suggestions: %w", err)
+			}
+			if !completed.Value.Nil() {
+				// Allow an outstanding typeahead response to replace stale results.
+				if unmatchedSince.IsZero() {
+					unmatchedSince = time.Now()
+				}
+				if time.Since(unmatchedSince) >= 3*time.Second {
+					return fmt.Errorf("Facebook's loaded location suggestions do not match the saved location %q (details %q). Available suggestions: %s", location.Label, location.Subtitle, completed.Value.JSON("", ""))
+				}
+			} else {
+				unmatchedSince = time.Time{}
+			}
+			_, err = page.Context(ctx).Eval(marketplaceScrollLocationSuggestions, 1)
+			if err != nil {
+				return fmt.Errorf("Could not reveal additional Facebook locations: %w", err)
+			}
+			// Stay at the bottom while awaiting results; never sweep back to the
+			// top and move the location input away from its suggestions.
+		}
+		timer := time.NewTimer(450 * time.Millisecond)
+		select {
+		case <-ctx.Done():
+			timer.Stop()
+			return fmt.Errorf("Could not select the Facebook location: %w", ctx.Err())
+		case <-timer.C:
+		}
+	}
+
+	if err := page.Context(ctx).Wait(rod.Eval(marketplaceLocationSelected, caption)); err != nil {
 		return fmt.Errorf("Facebook did not confirm the selected location: %w", err)
 	}
 	return nil

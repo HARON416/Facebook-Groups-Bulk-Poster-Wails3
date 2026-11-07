@@ -42,6 +42,14 @@ func TestMarketplaceWindowUI(t *testing.T) {
 	testAccountWorkspacesUI(t, false, "marketplace")
 }
 
+func TestMarketplacePublishUI(t *testing.T) {
+	testAccountWorkspacesUI(t, false, "marketplace-publish")
+}
+
+func TestHouseLocationEditingUI(t *testing.T) {
+	testAccountWorkspacesUI(t, false, "house-location")
+}
+
 func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool, viewOnly ...string) {
 	t.Helper()
 	if !*browserIntegration {
@@ -88,6 +96,7 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool, viewOnly ...strin
 	}
 	var maximised, minimised, closed atomic.Bool
 	var createListingOpens atomic.Int64
+	var marketplacePublishes atomic.Int64
 	createListingMethod := fnv.New32a()
 	_, _ = createListingMethod.Write([]byte("main.ProfileService.OpenCreateListing"))
 	var locationOpens atomic.Int64
@@ -140,6 +149,26 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool, viewOnly ...strin
 			return
 		}
 		w.Header().Set("Content-Type", "application/json")
+		if len(viewOnly) > 0 && viewOnly[0] == "marketplace-publish" && call.Args.MethodID == 4270654621 {
+			var id string
+			var media MarketplaceTestMedia
+			if len(call.Args.Args) != 2 || json.Unmarshal(call.Args.Args[0], &id) != nil || json.Unmarshal(call.Args.Args[1], &media) != nil || id != "default" || len(media.Photos) != 1 {
+				t.Error("Publish did not receive the selected account and saved media")
+			}
+			n := marketplacePublishes.Add(1)
+			if (n == 1 && media.Fields == nil) || (n == 2 && media.VehicleFields == nil) || (n >= 3 && media.HomeFields == nil) {
+				t.Error("Publish used the wrong listing payload")
+			}
+			result := MarketplacePublishResult{State: "submitted"}
+			if n == 2 {
+				result.State = "unknown"
+			}
+			if n == 3 {
+				result.State, result.Message = "failed", "Fixture preparation failed"
+			}
+			_ = json.NewEncoder(w).Encode(result)
+			return
+		}
 		if call.Args.MethodID == createListingMethod.Sum32() {
 			createListingOpens.Add(1)
 			_ = json.NewEncoder(w).Encode(nil)
@@ -147,8 +176,12 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool, viewOnly ...strin
 		}
 		if call.Args.MethodID == locationSearchMethod.Sum32() {
 			var id, query string
+			var address bool
 			_ = json.Unmarshal(call.Args.Args[0], &id)
 			_ = json.Unmarshal(call.Args.Args[1], &query)
+			if len(call.Args.Args) > 2 {
+				_ = json.Unmarshal(call.Args.Args[2], &address)
+			}
 			if id != "default" {
 				t.Error("location search used the wrong account")
 			}
@@ -162,15 +195,44 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool, viewOnly ...strin
 				if query == "Old" {
 					label = "Old City"
 				}
-				hits = append(hits, MarketplaceLocationHit{PageID: "114751268540391", Label: label, Subtitle: "City", Latitude: -1.28333, Longitude: 36.8167, City: "Nairobi"})
+				if strings.TrimSpace(query) == "langley" {
+					label = "Langley, BC, Canada"
+					if address && len(viewOnly) > 0 && viewOnly[0] == "house-location" && query != "langley " {
+						t.Error("House query whitespace was removed before search")
+					}
+				}
+				kind := "PLACE_TYPEAHEAD"
+				if address {
+					kind = "STREET_PLACE_TYPEAHEAD"
+				}
+				hits = append(hits, MarketplaceLocationHit{PageID: "114751268540391", Label: label, Subtitle: "City", Latitude: -1.28333, Longitude: 36.8167, City: "Nairobi", SearchType: kind, SearchQuery: query})
+				if address && query == "nairobi" {
+					body, readErr := os.ReadFile("testdata/marketplace/home-geocoded-addresses.json")
+					if readErr != nil {
+						t.Error(readErr)
+					}
+					parsed, parseErr := parseMarketplaceLocations(body, true)
+					if parseErr != nil {
+						t.Error(parseErr)
+					}
+					hits = parsed
+					for i := range hits {
+						hits[i].SearchType = kind
+						hits[i].SearchQuery = query
+					}
+				}
 			}
 			_ = json.NewEncoder(w).Encode(hits)
 			return
 		}
 		if call.Args.MethodID == locationStatusMethod.Sum32() {
 			var id string
+			var address bool
 			_ = json.Unmarshal(call.Args.Args[0], &id)
-			status := MarketplaceLocationStatus{State: "idle"}
+			if len(call.Args.Args) > 1 {
+				_ = json.Unmarshal(call.Args.Args[1], &address)
+			}
+			status := MarketplaceLocationStatus{State: "idle", Address: address}
 			if locationProfile.Load() == id {
 				status.RunID, status.State = locationRun.Load(), locationState.Load().(string)
 				status.Captured = status.State == "ready"
@@ -187,7 +249,7 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool, viewOnly ...strin
 		if call.Args.MethodID == locationMethod.Sum32() {
 			var id string
 			var query string
-			if len(call.Args.Args) != 2 || json.Unmarshal(call.Args.Args[0], &id) != nil || json.Unmarshal(call.Args.Args[1], &query) != nil || strings.TrimSpace(query) == "" {
+			if len(call.Args.Args) != 3 || json.Unmarshal(call.Args.Args[0], &id) != nil || json.Unmarshal(call.Args.Args[1], &query) != nil || strings.TrimSpace(query) == "" {
 				t.Error("location browser did not receive an account and initial query")
 			}
 			locationProfile.Store(id)
@@ -438,6 +500,79 @@ func testAccountWorkspacesUI(t *testing.T, pageFetchOnly bool, viewOnly ...strin
 		awaitPage(target, fmt.Sprintf(`() => document.querySelector('dialog[aria-labelledby="theme-picker-heading"]')?.open && document.querySelectorAll('#theme-options [data-theme-id]').length===%d`, themeCount))
 		target.MustElement(fmt.Sprintf(`[data-theme-id="%s"]`, id)).MustClick()
 		awaitPage(target, `() => !document.querySelector('dialog[aria-labelledby="theme-picker-heading"]').open`)
+	}
+
+	if len(viewOnly) > 0 && viewOnly[0] == "marketplace-publish" {
+		listing, err := browser.Page(proto.TargetCreateTarget{URL: server.URL + "/?view=marketplace"})
+		if err != nil {
+			t.Fatal(err)
+		}
+		awaitPage(listing, `()=>document.querySelector('.empty h2')?.textContent==='No saved listings yet' && !!document.querySelector('.marketplace-toolbar')`)
+		_, err = listing.Eval(`async ()=>{
+		 const db=await new Promise((resolve,reject)=>{const r=indexedDB.open('postika-marketplace-drafts',1);r.onsuccess=()=>resolve(r.result);r.onerror=reject});
+		 await new Promise((resolve,reject)=>{const tx=db.transaction('items','readwrite');
+		 [['items','Item'],['vehicles','Vehicle'],['homes','Sale'],['homes','Room']].forEach(([kind,title],i)=>{
+		  const id=String(i);tx.objectStore('items').put({id,profileID:'default',kind,updatedAt:100-i,fields:{title,price:'20',vehicleType:'car-truck',homeOffer:i===3?'rent':'sale',privateRoom:i===3},photos:[{name:'photo.png',type:'image/png',lastModified:1,data:new Uint8Array([1,2,3]).buffer}]},['listing','default',id]);
+		 });tx.oncomplete=resolve;tx.onerror=reject});db.close();window.dispatchEvent(new Event('postika:listings-changed'));
+		}`)
+		if err != nil {
+			t.Fatal(err)
+		}
+		awaitPage(listing, `()=>document.querySelectorAll('tbody tr').length===4`)
+		listing.MustElement(`label[for="marketplace-select-all"]`).MustClick()
+		awaitPage(listing, `()=>document.querySelector('.marketplace-toolbar .action-button--primary').textContent.includes('(4)')`)
+		listing.MustElement(".marketplace-toolbar .action-button--primary").MustClick()
+		awaitPage(listing, `()=>document.querySelector('.test-status')?.textContent.includes('Publish sent to Facebook') && document.querySelector('.test-actions button')?.textContent.includes('Next listing (2 / 4)') && !document.querySelector('#marketplace-select-0').checked`)
+		if marketplacePublishes.Load() != 1 {
+			t.Fatal("First listing was not published exactly once")
+		}
+		listing.MustElement(".test-actions button").MustClick()
+		awaitPage(listing, `()=>document.querySelector('.test-status')?.textContent.includes('Could not confirm whether Publish was sent') && document.querySelector('.test-actions button')?.textContent.includes('Next listing (3 / 4)') && !document.querySelector('#marketplace-select-1').checked`)
+		if marketplacePublishes.Load() != 2 {
+			t.Fatal("Uncertain publication was retried automatically")
+		}
+		listing.MustElement(".test-actions button").MustClick()
+		awaitPage(listing, `()=>document.querySelector('.test-error')?.textContent.includes('Fixture preparation failed') && document.querySelector('.test-actions button')?.textContent==='Try again' && document.querySelector('#marketplace-select-2').checked`)
+		listing.MustElement(".test-actions button").MustClick()
+		awaitPage(listing, `()=>document.querySelector('.test-actions button')?.textContent.includes('Next listing (4 / 4)')`)
+		listing.MustElement(".test-actions button").MustClick()
+		awaitPage(listing, `()=>document.querySelector('.test-status')?.textContent.includes('Publish sent to Facebook') && document.querySelectorAll('.test-actions button').length===0 && [...document.querySelectorAll('tbody input[type=checkbox]')].every(input=>!input.checked)`)
+		if marketplacePublishes.Load() != 5 {
+			t.Fatal("Publish queue skipped or repeated a listing")
+		}
+		return
+	}
+
+	if len(viewOnly) > 0 && viewOnly[0] == "house-location" {
+		listing, err := browser.Page(proto.TargetCreateTarget{URL: server.URL + "/?view=create-listing"})
+		if err != nil {
+			t.Fatal(err)
+		}
+		awaitPage(listing, `()=>!!document.querySelector('#create-listing-homes')`)
+		listing.MustElement("#create-listing-homes").MustClick()
+		awaitPage(listing, `()=>!!document.querySelector('#listing-location')`)
+		listing.MustElement("#listing-location").MustInput("langley ")
+		awaitPage(listing, `()=>document.querySelector('#location-search-dialog')?.open`)
+		listing.MustElement("#location-search-dialog .location-continue").MustClick()
+		awaitPage(listing, `()=>!document.querySelector('#location-search-dialog')`)
+		locationState.Store("ready")
+		awaitPage(listing, `()=>document.querySelector('#listing-location-option-0')?.textContent.includes('Langley')`)
+		listing.MustElement("#listing-location-option-0").MustClick()
+		awaitPage(listing, `()=>document.querySelector('#listing-location').value==='Langley, BC, Canada'`)
+		listing.MustElement("#listing-price").MustClick()
+		listing.MustElement("#listing-location").MustSelectAllText().MustInput("nairobi")
+		awaitPage(listing, `()=>document.querySelector('#listing-location').getAttribute('aria-invalid')==='false'`)
+		awaitPage(listing, `()=>document.querySelectorAll('#listing-location-options [role=option]').length===3 && document.querySelector('#listing-location-option-0')?.textContent.includes('Nairobi Pl, Oakland')`)
+		listing.MustElement("#listing-price").MustClick()
+		awaitPage(listing, `()=>document.querySelector('#listing-location').getAttribute('aria-invalid')==='true'`)
+		listing.MustElement("#listing-location").MustClick()
+		awaitPage(listing, `()=>document.querySelector('#listing-location').getAttribute('aria-invalid')==='false' && !!document.querySelector('#listing-location-option-0')`)
+		listing.MustElement("#listing-location-option-0").MustClick()
+		awaitPage(listing, `()=>document.querySelector('#listing-location').value==='Nairobi Pl, Oakland, CA 94605, United States' && document.querySelector('#listing-location').getAttribute('aria-invalid')==='false'`)
+		if locationOpens.Load() != 1 || locationSearchCalls.Load() != 2 {
+			t.Fatalf("Editing a selected address repeated setup or skipped search: opens=%d searches=%d", locationOpens.Load(), locationSearchCalls.Load())
+		}
+		return
 	}
 
 	if len(viewOnly) > 0 && viewOnly[0] == "marketplace" {

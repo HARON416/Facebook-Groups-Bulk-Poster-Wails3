@@ -16,14 +16,26 @@ export function encodeMediaFile(file: File, signal: AbortSignal): Promise<string
 }
 
 export function canTestMarketplaceListing(kind: MarketplaceListingKind, fields: ItemListingFields): boolean {
-  return kind === 'items' || (kind === 'vehicles' && ['car-truck', 'motorcycle', 'powersport', 'rv-camper', 'trailer', 'boat', 'commercial-industrial', 'other'].includes(fields.vehicleType)) || (kind === 'homes' && fields.homeOffer === 'sale');
+  return kind === 'items' || (kind === 'vehicles' && ['car-truck', 'motorcycle', 'powersport', 'rv-camper', 'trailer', 'boat', 'commercial-industrial', 'other'].includes(fields.vehicleType)) || (kind === 'homes' && (fields.homeOffer === 'sale' || fields.homeOffer === 'rent'));
 }
 
 export async function testMarketplaceItemMedia(profileID: string, photos: File[], video: File | null, fields: ItemListingFields, signal: AbortSignal): Promise<void> {
   return testMarketplaceListingMedia('items', profileID, photos, video, fields, signal);
 }
 
+export interface MarketplacePublishResult { state: 'submitted' | 'unknown' | 'failed'; message?: string }
+
 export async function testMarketplaceListingMedia(kind: MarketplaceListingKind, profileID: string, photos: File[], video: File | null, fields: ItemListingFields, signal: AbortSignal): Promise<void> {
+  await runMarketplaceListingMedia(kind, profileID, photos, video, fields, signal, false);
+}
+
+export async function publishMarketplaceListingMedia(kind: MarketplaceListingKind, profileID: string, photos: File[], video: File | null, fields: ItemListingFields, signal: AbortSignal): Promise<MarketplacePublishResult> {
+  const result = await runMarketplaceListingMedia(kind, profileID, photos, video, fields, signal, true) as MarketplacePublishResult | null;
+  if (result?.state === 'failed') throw new Error(result.message || 'Could not prepare listing for publishing.');
+  return result?.state === 'submitted' ? result : { state: 'unknown' };
+}
+
+async function runMarketplaceListingMedia(kind: MarketplaceListingKind, profileID: string, photos: File[], video: File | null, fields: ItemListingFields, signal: AbortSignal, publishing: boolean): Promise<unknown> {
   if (!canTestMarketplaceListing(kind, fields)) throw new Error('This listing type is not supported for testing yet');
   const vehicle = kind === 'vehicles';
   const home = kind === 'homes';
@@ -54,12 +66,21 @@ export async function testMarketplaceListingMedia(kind: MarketplaceListingKind, 
     bathrooms: fields.bathrooms, price: fields.price, address: fields.address, location: fields.locationData,
     description: fields.description, squareFeet: fields.squareFeet, laundry: fields.laundry,
     parking: fields.parking, airConditioning: fields.airConditioning, heating: fields.heating,
+    privateRoom: fields.privateRoom, dateAvailable: fields.dateAvailable,
+    occupants: fields.occupants, bathroomType: fields.bathroomType, roomFurnished: fields.roomFurnished,
+    catFriendly: fields.catFriendly, dogFriendly: fields.dogFriendly,
     promoteAfterPublish: fields.promoteAfterPublish,
   };
   const details = home ? { homeFields } : vehicle ? { vehicleFields } : { fields: itemFields };
-  const request = Call.ByID(home ? 4270654620 : vehicle ? 4270654619 : 4270654618,
+  const request = Call.ByID(publishing ? 4270654621 : home ? 4270654620 : vehicle ? 4270654619 : 4270654618,
     profileID, { photos: uploads, video: movie, ...details });
   const abort = () => { void request.cancel().catch(() => {}); };
   signal.addEventListener('abort', abort, { once: true });
-  try { await request; } finally { signal.removeEventListener('abort', abort); }
+  try { return await request; }
+  catch (cause) {
+    // A broken binding response can arrive after Publish was clicked. Keep
+    // that outcome distinct from preparation errors, which are safe to retry.
+    if (publishing) return { state: 'unknown' };
+    throw cause;
+  } finally { signal.removeEventListener('abort', abort); }
 }
