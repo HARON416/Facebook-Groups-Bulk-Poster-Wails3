@@ -4,7 +4,7 @@ Unicode true
 !define INFO_PROJECTNAME "postika"
 !define INFO_COMPANYNAME "Postika Technologies"
 !define INFO_PRODUCTNAME "Postika"
-!define INFO_PRODUCTVERSION "0.1.12"
+!define INFO_PRODUCTVERSION "0.1.13"
 !define INFO_COPYRIGHT "Copyright (c) 2026 Postika Technologies"
 !define PRODUCT_EXECUTABLE "postika.exe"
 !define POSTIKA_WEBSITE "https://postika.softwrhq.com"
